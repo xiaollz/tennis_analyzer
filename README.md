@@ -1,153 +1,103 @@
-# Tennis Pose Analyzer
+# Tennis Analyzer v2 — Modern Forehand Evaluation
 
-基于 YOLO Pose 的网球动作分析工具，分析练习视频并输出带骨架标注和生物力学指标的视频。
+AI-powered tennis forehand analysis based on the **Modern Forehand** framework derived from:
 
-## 功能
+- **Dr. Brian Gordon** — Type 3 forehand biomechanics, straight-arm extension
+- **Rick Macci** — compact unit turn, elbow mechanics, "the flip"
+- **Tennis Doctor** — four non-negotiables, kinetic chain sequencing
+- **Feel Tennis** — modern forehand 8-step model
 
-- 姿态估计：使用 YOLO11-pose 检测人体17个关键点
-- 骨架可视化：在视频上叠加彩色骨架
-- 生物力学指标：实时显示关节角度、髋肩分离角等
-- 跨平台：支持 Mac (MPS) / Linux (CUDA) / CPU
+## Features
 
-## 🎾 AI 教练分析流程 (AI Coach Analysis Workflow)
+- **Pose Estimation**: YOLO Pose (COCO 17-keypoint) for real-time body tracking
+- **Joint Trajectory Tracking**: Track and visualise any joint's path with configurable trails
+- **14 KPI Metrics** across 6 swing phases:
+  - Phase 1: Preparation & Unit Turn (shoulder rotation, knee bend, spine posture)
+  - Phase 3: Kinetic Chain (sequence, hip-shoulder separation, hand path linearity)
+  - Phase 4: Contact Point (position, elbow angle, body freeze, head stability)
+  - Phase 5: Extension & Follow-Through (forward extension, follow-through path)
+  - Phase 6: Balance & Recovery (head stability, spine consistency)
+- **Automatic Impact Detection**: wrist-speed peak analysis
+- **Annotated Video Output**: skeleton overlay + trajectory trails + HUD
+- **Comprehensive Report**: Markdown report with radar charts, KPI bar charts, coaching tips
+- **Gradio Web UI**: interactive analysis interface
 
-这是获取深度技术分析报告的标准流程：
+## Quick Start
 
-### 1. 准备视频
-将你的网球练习视频（推荐正手/单反训练）放入 `data/videos/` 目录。
-*例如：`data/videos/forehand_practice.mp4`*
-
-### 2. 提取关键帧与音频
-运行提取脚本，将视频分解为图像帧和音频数据。
-```bash
-# 语法：python3 scripts/extract_key_frames.py <视频路径> --output_dir <输出目录>
-python3 scripts/extract_key_frames.py data/videos/forehand_practice.mp4 --output_dir data/processed/forehand_analysis_01
-```
-
-### 3. 生成教练报告
-运行报告生成脚本，读取上一步的数据并生成 Markdown 报告。
-```bash
-# 语法：python3 scripts/generate_coach_report.py <数据目录>
-python3 scripts/generate_coach_report.py data/processed/forehand_analysis_01
-```
-
-### 4. 查看报告
-分析报告将会自动生成在 `reports/tennis_analysis_report.md`。
-可以直接用 Markdown 阅读器打开查看图文并茂的分析结果。
-
----
-
-## 安装
+### Installation
 
 ```bash
-cd /Users/qsy/Desktop/tennis
-
-# 创建虚拟环境（推荐）
-python3 -m venv venv
-source venv/bin/activate
-
-# 安装依赖
 pip install -r requirements.txt
-
-# 或者安装为包
-pip install -e .
 ```
 
-## 使用
-
-### 命令行
+### Command-Line Analysis
 
 ```bash
-# 基本用法
-python -m tennis_analyzer.main input.mp4 -o output.mp4
-
-# 🎯 推荐：Hybrid 击球点（音频+关键点） + Big3 面板 + 动力链反馈（合并到一个视频）
-# 注意：在网络受限环境下请用本地模型路径，例如 models/yolo11m-pose.pt
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -m models/yolo11m-pose.pt --impact-mode hybrid --big3-ui
-
-# 如果你的视频里“落地声+击球声”很近，建议开启/加大去重窗口（默认 0.8s）
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -m models/yolo11m-pose.pt --impact-mode hybrid --impact-merge-s 1.2 --big3-ui
-
-# 指定模型（更快但精度稍低）
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -m yolo11s-pose.pt
-
-# 指定设备
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -d mps  # Mac
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -d cuda # NVIDIA GPU
-
-# 不显示指标
-python -m tennis_analyzer.main input.mp4 -o output.mp4 --no-metrics
-
-# 调整置信度阈值
-python -m tennis_analyzer.main input.mp4 -o output.mp4 -c 0.3
+python main.py analyse --video path/to/forehand.mp4 --output-dir ./output
 ```
 
-### 作为库使用
+Options:
+- `--right-handed` / `--left-handed`: specify dominant hand (default: right)
+- `--joints right_wrist right_elbow right_hip`: specify joints to track
+- `--model yolo11m-pose.pt`: specify YOLO model
 
-```python
-from tennis_analyzer.core import PoseEstimator, VideoProcessor
-from tennis_analyzer.visualization import SkeletonDrawer
-from tennis_analyzer.analysis import BiomechanicsAnalyzer
+### Gradio Web UI
 
-# 初始化
-estimator = PoseEstimator(model_name="yolo11m-pose.pt", device="mps")
-drawer = SkeletonDrawer()
-analyzer = BiomechanicsAnalyzer()
-
-# 处理视频
-for frame_idx, frame, results in estimator.predict_video("input.mp4"):
-    for person in results["persons"]:
-        # 绘制骨架
-        frame = drawer.draw(frame, person["keypoints"], person["confidence"])
-
-        # 计算指标
-        metrics = analyzer.analyze(person["keypoints"], person["confidence"])
-        print(f"Frame {frame_idx}: {metrics}")
+```bash
+python main.py ui --port 7860
 ```
 
-## 显示的指标
-
-| 指标 | 说明 |
-|------|------|
-| L/R Knee | 左/右膝盖弯曲角度 |
-| L/R Elbow | 左/右肘部弯曲角度 |
-| X-Factor | 髋肩分离角（发力关键） |
-| Shoulder | 肩部旋转角度 |
-
-## 模型选择
-
-| 模型 | 精度 | 速度 | 推荐场景 |
-|------|------|------|----------|
-| yolo11n-pose | 较低 | 最快 | 实时预览 |
-| yolo11s-pose | 中等 | 快 | 日常使用 |
-| yolo11m-pose | 较高 | 中等 | **推荐** |
-| yolo11l-pose | 高 | 较慢 | 精细分析 |
-| yolo11x-pose | 最高 | 最慢 | 最高精度 |
-
-## 目录结构
+## Architecture
 
 ```
-tennis/
-├── scripts/                 # Python scripts for analysis and extraction
-│   ├── extract_key_frames.py
-│   ├── generate_coach_report.py
-│   └── ...
-├── data/                    # Data storage
-│   ├── videos/              # Raw video files
-│   ├── processed/           # Extracted frames and outputs
-│   └── metadata/            # JSON metadata files
-├── models/                  # ML models (YOLO weights)
-├── docs/                    # Documentation
-├── reports/                 # Generated analysis reports
-├── tennis_analyzer/         # Core package source code
-├── requirements.txt
-└── README.md
+tennis_analyzer_v2/
+├── config/
+│   ├── keypoints.py          # COCO 17-keypoint definitions
+│   └── framework_config.py   # All evaluation thresholds & weights
+├── core/
+│   ├── pose_estimator.py     # YOLO Pose wrapper
+│   └── video_processor.py    # Video I/O with auto-rotation
+├── analysis/
+│   ├── trajectory.py         # Joint trajectory management & smoothing
+│   └── kinematic_calculator.py  # Angle, rotation, body-plane geometry
+├── evaluation/
+│   ├── event_detector.py     # Impact detection & swing phase estimation
+│   ├── kpi.py                # 14 KPI definitions with scoring logic
+│   └── forehand_evaluator.py # Orchestration: data → metrics → scores
+├── report/
+│   ├── visualizer.py         # Skeleton, trajectory, chart drawing
+│   └── report_generator.py   # Markdown report generation
+├── main.py                   # CLI + Gradio UI entry point
+└── docs/
+    ├── architecture_v2.md
+    └── learn_ytb/            # Reference transcripts
 ```
 
-## 后续计划
+## Evaluation Framework
 
-- [ ] 动作分类（正手/反手/发球/截击）
-- [ ] 动作阶段检测（引拍/击球/随挥）
-- [ ] 更多网球专用指标
-- [ ] 与 Feel Tennis 教学要点对比
-- [ ] Web 界面
+The evaluation is structured around 6 phases of a modern forehand:
+
+| Phase | Weight | Key Metrics |
+|-------|--------|-------------|
+| Preparation & Unit Turn | 15% | Shoulder rotation (X-Factor), knee bend, spine posture |
+| Loading & Lag | 10% | Wrist layback, elbow-hand drop |
+| Kinetic Chain | 20% | Sequential peak ordering, hip-shoulder separation, hand path linearity |
+| Contact Point | 25% | Contact position, elbow angle (straight-arm vs double-bend), body freeze, head stability |
+| Extension & Follow-Through | 15% | Forward extension distance, follow-through path ratio |
+| Balance & Recovery | 15% | Overall head stability, spine consistency |
+
+Each KPI produces a 0-100 score with human-readable coaching feedback.
+
+## Model Selection
+
+| Model | Accuracy | Speed | Recommended Use |
+|-------|----------|-------|-----------------|
+| yolo11n-pose | Lower | Fastest | Real-time preview |
+| yolo11s-pose | Medium | Fast | Quick analysis |
+| yolo11m-pose | Higher | Medium | **Recommended** |
+| yolo11l-pose | High | Slower | Detailed analysis |
+| yolo11x-pose | Highest | Slowest | Maximum accuracy |
+
+## License
+
+MIT
