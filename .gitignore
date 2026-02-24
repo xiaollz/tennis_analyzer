@@ -61,8 +61,10 @@ local.ipforward.plist
 tmux.conf
 hyper2.tcl
 
-# ===== 文档（个人学习笔记，不关联核心代码） =====
+# ===== 文档（保留 learn_ytb 学习笔记，排除其他个人文档） =====
 docs/
+!docs/learn_ytb/
+!docs/learn_ytb/**
 
 # ===== MCP 服务端相关（独立项目） =====
 scripts/mcp-server-youtube-transcript/
