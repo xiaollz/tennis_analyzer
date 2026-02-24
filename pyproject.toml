@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tennis-analyzer"
+version = "0.1.0"
+description = "Tennis pose analysis using YOLO26-pose"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.3.0",
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "torch>=2.0.0",
+]
+
+[project.scripts]
+tennis-analyze = "tennis_analyzer.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]

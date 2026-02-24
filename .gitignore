@@ -1,0 +1,68 @@
+# ===== 虚拟环境 =====
+venv/
+.venv/
+env/
+
+# ===== 生成报告 =====
+reports/
+
+# ===== 模型权重（大文件，不上传） =====
+models/
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# ===== 视频和帧数据（大文件） =====
+data/videos/
+frame
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ===== 数据分析缓存（可重新生成） =====
+data/metadata/
+
+# ===== Python 缓存 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.pytest_cache/
+
+# ===== Claude CLI 本地配置 =====
+.claude/
+
+# ===== macOS =====
+.DS_Store
+**/.DS_Store
+
+# ===== 运行日志和进程文件 =====
+*.log
+*.pid
+run*.log
+run*.pid
+
+# ===== 临时文件 =====
+*.tmp
+*.temp
+/tmp/
+
+# ===== IDE =====
+.vscode/settings.json
+.idea/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== 本地配置（不含敏感信息） =====
+local.ipforward.plist
+tmux.conf
+hyper2.tcl
+
+# ===== 文档（个人学习笔记，不关联核心代码） =====
+docs/
+
+# ===== MCP 服务端相关（独立项目） =====
+scripts/mcp-server-youtube-transcript/
