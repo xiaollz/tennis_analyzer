@@ -1,17 +1,17 @@
-"""Key Performance Indicator (KPI) definitions for Modern Forehand evaluation.
+"""关键绩效指标 (KPI) 定义 — Modern Forehand 评估。
 
-Each KPI is a self-contained class that:
-    1. Receives relevant data (keypoints, trajectories, frame indices).
-    2. Computes a raw metric value.
-    3. Maps it to a 0-100 score using the thresholds from ``FrameworkConfig``.
-    4. Returns a ``KPIResult`` with the score, raw value, rating, and feedback.
+每个 KPI 是一个独立的类：
+    1. 接收相关数据（关键点、轨迹、帧索引）。
+    2. 计算原始指标值。
+    3. 使用 ``FrameworkConfig`` 中的阈值映射到 0-100 分。
+    4. 返回 ``KPIResult``：分数、原始值、评级、中文反馈。
 
-KPIs are grouped by swing phase:
-    Phase 1 – Preparation: ShoulderRotationKPI, KneeBendKPI, SpineAngleKPI
-    Phase 3 – Kinetic Chain: KineticChainSequenceKPI, HipShoulderSeparationKPI, HandPathLinearityKPI
-    Phase 4 – Contact: ContactPointKPI, ElbowAngleAtContactKPI, BodyFreezeKPI, HeadStabilityKPI
-    Phase 5 – Extension: ForwardExtensionKPI, FollowThroughPathKPI
-    Phase 6 – Balance: OverallHeadStabilityKPI, SpineConsistencyKPI
+KPI 按挥拍阶段分组：
+    阶段 1 – 准备：肩部旋转、膝盖弯曲、脊柱姿态
+    阶段 3 – 动力链：动力链顺序、髋肩分离、手部路径线性度
+    阶段 4 – 击球：击球点位置、肘部角度、身体刹车、头部稳定性
+    阶段 5 – 延伸：前向延伸、随挥路径
+    阶段 6 – 平衡：整体头部稳定性、脊柱一致性
 """
 
 from __future__ import annotations
@@ -37,20 +37,20 @@ from analysis.kinematic_calculator import (
 )
 
 
-# ── Result container ─────────────────────────────────────────────────
+# ── 结果容器 ────────────────────────────────────────────────────────
 
 @dataclass
 class KPIResult:
-    """Result of a single KPI evaluation."""
+    """单个 KPI 的评估结果。"""
     kpi_id: str
     name: str
     phase: str
     raw_value: Optional[float]
     unit: str
     score: float          # 0-100
-    rating: str           # "excellent", "good", "fair", "poor", "n/a"
-    feedback: str         # human-readable coaching tip
-    details: Dict[str, Any] = None  # optional extra data
+    rating: str           # "优秀", "良好", "一般", "较差", "无数据"
+    feedback: str         # 中文教练反馈
+    details: Dict[str, Any] = None
 
     def __post_init__(self):
         if self.details is None:
@@ -58,14 +58,8 @@ class KPIResult:
 
 
 def _linear_score(value: float, poor: float, good: float, excellent: float) -> float:
-    """Map a value to 0-100 using a piecewise-linear scale.
-
-    For metrics where *larger is better* (e.g. shoulder rotation):
-        poor < good < excellent  →  score rises with value.
-    For metrics where *smaller is better* (e.g. head displacement):
-        poor > good > excellent  →  score rises as value decreases.
-    """
-    if excellent > poor:  # larger is better
+    """将值映射到 0-100 分（分段线性）。"""
+    if excellent > poor:  # 越大越好
         if value >= excellent:
             return 100.0
         if value <= poor:
@@ -73,7 +67,7 @@ def _linear_score(value: float, poor: float, good: float, excellent: float) -> f
         if value >= good:
             return 70.0 + 30.0 * (value - good) / max(excellent - good, 1e-6)
         return 20.0 + 50.0 * (value - poor) / max(good - poor, 1e-6)
-    else:  # smaller is better
+    else:  # 越小越好
         if value <= excellent:
             return 100.0
         if value >= poor:
@@ -85,19 +79,17 @@ def _linear_score(value: float, poor: float, good: float, excellent: float) -> f
 
 def _rating_from_score(score: float) -> str:
     if score >= 85:
-        return "excellent"
+        return "优秀"
     if score >= 65:
-        return "good"
+        return "良好"
     if score >= 40:
-        return "fair"
-    return "poor"
+        return "一般"
+    return "较差"
 
 
-# ── Abstract base ────────────────────────────────────────────────────
+# ── 抽象基类 ────────────────────────────────────────────────────────
 
 class BaseKPI(ABC):
-    """Abstract base for all KPIs."""
-
     kpi_id: str = ""
     name: str = ""
     phase: str = ""
@@ -112,19 +104,20 @@ class BaseKPI(ABC):
 
 
 # =====================================================================
-# Phase 1: Preparation
+# 阶段 1：准备 & 转体
 # =====================================================================
 
 class ShoulderRotationKPI(BaseKPI):
-    """P1.1 – Maximum shoulder rotation (X-Factor) during preparation."""
+    """P1.1 – 准备阶段最大肩部旋转（X-Factor）。"""
     kpi_id = "P1.1"
-    name = "Shoulder Rotation (X-Factor)"
+    name = "肩部旋转 (X-Factor)"
     phase = "preparation"
-    unit = "degrees"
+    unit = "度"
 
     def evaluate(self, *, shoulder_rotation_values: List[float], **kw) -> KPIResult:
         if not shoulder_rotation_values:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a", "Insufficient data for shoulder rotation.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "肩部旋转数据不足，无法评估。")
 
         max_rot = float(max(shoulder_rotation_values))
         c = self.cfg.preparation
@@ -132,77 +125,77 @@ class ShoulderRotationKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if max_rot >= c.shoulder_rotation_excellent:
-            fb = f"Excellent shoulder turn of {max_rot:.0f}°. Full coil achieved."
+            fb = f"肩部转体出色（{max_rot:.0f}°），充分蓄力。背部几乎面向球网，这是现代正手的标志。"
         elif max_rot >= c.shoulder_rotation_good:
-            fb = f"Good shoulder turn ({max_rot:.0f}°). Try to reach 90°+ for maximum coil."
+            fb = f"肩部转体良好（{max_rot:.0f}°）。尝试将肩膀再多转一些，目标是≥90°以获得最大蓄力。"
         else:
-            fb = f"Shoulder turn is only {max_rot:.0f}°. Focus on a full unit turn — shoulders should rotate ≥90° relative to hips."
+            fb = f"肩部转体不足（{max_rot:.0f}°）。需要加强整体转体（Unit Turn），肩膀相对于髋部应旋转≥90°。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, max_rot, self.unit, score, rating, fb)
 
 
 class KneeBendKPI(BaseKPI):
-    """P1.4 – Knee bend on the loaded leg during preparation."""
+    """P1.4 – 准备阶段负重腿膝盖弯曲。"""
     kpi_id = "P1.4"
-    name = "Knee Bend (Loading)"
+    name = "膝盖弯曲（蓄力）"
     phase = "preparation"
-    unit = "degrees"
+    unit = "度"
 
     def evaluate(self, *, knee_angle_values: List[float], **kw) -> KPIResult:
         if not knee_angle_values:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a", "Insufficient data for knee bend.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "膝盖弯曲数据不足，无法评估。")
 
         min_angle = float(min(knee_angle_values))
         c = self.cfg.preparation
-        # Smaller angle = more bend = better
         score = _linear_score(min_angle, c.knee_bend_poor, c.knee_bend_good, c.knee_bend_excellent)
         rating = _rating_from_score(score)
 
         if min_angle <= c.knee_bend_excellent:
-            fb = f"Great knee bend ({min_angle:.0f}°). Strong lower-body loading."
+            fb = f"膝盖弯曲充分（{min_angle:.0f}°），下肢蓄力出色。地面反作用力是力量的源泉。"
         elif min_angle <= c.knee_bend_good:
-            fb = f"Decent knee bend ({min_angle:.0f}°). Try to sink a bit lower for more ground-force."
+            fb = f"膝盖弯曲尚可（{min_angle:.0f}°）。尝试再蹲低一些，目标≤140°以获得更多地面力量。"
         else:
-            fb = f"Legs too straight ({min_angle:.0f}°). Bend your knees more to load the legs — aim for ≤140°."
+            fb = f"腿部过于僵直（{min_angle:.0f}°）。需要更多弯曲膝盖来蓄力，目标≤140°。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, min_angle, self.unit, score, rating, fb)
 
 
 class SpineAngleKPI(BaseKPI):
-    """P1.3 – Spine posture (deviation from vertical)."""
+    """P1.3 – 脊柱姿态（偏离垂直角度）。"""
     kpi_id = "P1.3"
-    name = "Spine Posture"
+    name = "脊柱姿态"
     phase = "preparation"
-    unit = "degrees"
+    unit = "度"
 
     def evaluate(self, *, spine_angle_values: List[float], **kw) -> KPIResult:
         if not spine_angle_values:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a", "Insufficient data for spine angle.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "脊柱角度数据不足，无法评估。")
 
         avg_lean = float(np.mean(spine_angle_values))
         c = self.cfg.preparation
-        # Smaller lean = better
         score = _linear_score(avg_lean, c.spine_lean_warning, c.spine_lean_good_max, 5.0)
         rating = _rating_from_score(score)
 
         if avg_lean <= c.spine_lean_good_max:
-            fb = f"Good upright posture (avg lean {avg_lean:.1f}°)."
+            fb = f"脊柱姿态良好（平均倾斜{avg_lean:.1f}°），保持了直立的身体姿态。"
         else:
-            fb = f"Excessive forward lean ({avg_lean:.1f}°). Keep spine straighter — aim for <{c.spine_lean_good_max:.0f}° from vertical."
+            fb = f"身体前倾过多（{avg_lean:.1f}°）。保持脊柱更直立，目标<{c.spine_lean_good_max:.0f}°。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, avg_lean, self.unit, score, rating, fb)
 
 
 # =====================================================================
-# Phase 3: Kinetic Chain
+# 阶段 3：动力链
 # =====================================================================
 
 class KineticChainSequenceKPI(BaseKPI):
-    """KC3.1 – Sequential peak-speed ordering: hip → shoulder → elbow → wrist."""
+    """KC3.1 – 动力链顺序：髋 → 肩 → 肘 → 腕。"""
     kpi_id = "KC3.1"
-    name = "Kinetic Chain Sequence"
+    name = "动力链顺序"
     phase = "kinetic_chain"
-    unit = "sequence_score"
+    unit = "顺序分"
 
     def evaluate(
         self,
@@ -215,17 +208,16 @@ class KineticChainSequenceKPI(BaseKPI):
         **kw,
     ) -> KPIResult:
         peaks = [
-            ("hip", hip_peak_frame),
-            ("shoulder", shoulder_peak_frame),
-            ("elbow", elbow_peak_frame),
-            ("wrist", wrist_peak_frame),
+            ("髋", hip_peak_frame),
+            ("肩", shoulder_peak_frame),
+            ("肘", elbow_peak_frame),
+            ("腕", wrist_peak_frame),
         ]
         available = [(name, f) for name, f in peaks if f is not None]
         if len(available) < 3:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Not enough joint data to evaluate kinetic chain sequence.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "关节数据不足，无法评估动力链顺序。")
 
-        # Check if the order is correct (each peak should come after the previous)
         correct_pairs = 0
         total_pairs = 0
         delays = []
@@ -241,29 +233,29 @@ class KineticChainSequenceKPI(BaseKPI):
         score = seq_ratio * 100.0
         rating = _rating_from_score(score)
 
-        order_str = " → ".join(f"{n}(f{f})" for n, f in available)
+        order_str = " → ".join(f"{n}(帧{f})" for n, f in available)
         if score >= 85:
-            fb = f"Excellent kinetic chain sequence: {order_str}. Proper proximal-to-distal firing."
+            fb = f"动力链顺序正确：{order_str}。从近端到远端的依次发力模式良好。"
         elif score >= 50:
-            fb = f"Partially correct sequence: {order_str}. Some segments fire simultaneously — work on sequential hip-then-shoulder rotation."
+            fb = f"动力链部分正确：{order_str}。部分环节同时发力，需要加强髋部先行旋转。"
         else:
-            fb = f"Kinetic chain out of order: {order_str}. Focus on legs → hips → torso → arm sequence."
+            fb = f"动力链顺序混乱：{order_str}。应遵循「腿→髋→躯干→手臂」的发力顺序。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, score, self.unit, score, rating, fb,
                          details={"order": order_str, "delays_s": delays})
 
 
 class HipShoulderSeparationKPI(BaseKPI):
-    """KC3.2 – Maximum hip-shoulder separation angle during forward swing."""
+    """KC3.2 – 前挥阶段最大髋肩分离角。"""
     kpi_id = "KC3.2"
-    name = "Hip-Shoulder Separation"
+    name = "髋肩分离角"
     phase = "kinetic_chain"
-    unit = "degrees"
+    unit = "度"
 
     def evaluate(self, *, hip_shoulder_sep_values: List[float], **kw) -> KPIResult:
         if not hip_shoulder_sep_values:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Insufficient data for hip-shoulder separation.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "髋肩分离数据不足，无法评估。")
 
         max_sep = float(max(hip_shoulder_sep_values))
         c = self.cfg.kinetic_chain
@@ -271,32 +263,28 @@ class HipShoulderSeparationKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if max_sep >= c.hip_shoulder_separation_excellent:
-            fb = f"Excellent hip-shoulder separation ({max_sep:.0f}°). Great X-Factor stretch."
+            fb = f"髋肩分离角出色（{max_sep:.0f}°），X-Factor 拉伸充分。"
         elif max_sep >= c.hip_shoulder_separation_good:
-            fb = f"Good separation ({max_sep:.0f}°). Hips are leading the shoulders."
+            fb = f"髋肩分离角良好（{max_sep:.0f}°），髋部领先于肩部旋转。"
         else:
-            fb = f"Low hip-shoulder separation ({max_sep:.0f}°). Let your hips rotate first — create a 'coil' before the shoulders follow."
+            fb = f"髋肩分离角不足（{max_sep:.0f}°）。让髋部先转，肩膀延迟跟随，制造「弹弓效应」。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, max_sep, self.unit, score, rating, fb)
 
 
 class HandPathLinearityKPI(BaseKPI):
-    """KC3.4 – Linearity of the hand path through the contact zone."""
+    """KC3.4 – 击球区手部路径线性度。"""
     kpi_id = "KC3.4"
-    name = "Hand Path Linearity"
+    name = "手部路径线性度"
     phase = "kinetic_chain"
     unit = "R²"
 
     def evaluate(self, *, wrist_positions_contact_zone: Optional[np.ndarray] = None, **kw) -> KPIResult:
         if wrist_positions_contact_zone is None or len(wrist_positions_contact_zone) < 3:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Insufficient data for hand path linearity.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "击球区手部位置数据不足，无法评估。")
 
         pts = np.asarray(wrist_positions_contact_zone, dtype=np.float64)
-        # Fit a line and compute R²
-        x = pts[:, 0]
-        y = pts[:, 1]
-        # Use total least squares (PCA) for direction-agnostic fit
         centroid = pts.mean(axis=0)
         centered = pts - centroid
         _, s, _ = np.linalg.svd(centered, full_matrices=False)
@@ -310,30 +298,30 @@ class HandPathLinearityKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if r_squared >= c.hand_path_linearity_excellent:
-            fb = f"Very linear hand path (R²={r_squared:.2f}). Clean swing through the contact zone."
+            fb = f"手部路径非常直线（R²={r_squared:.2f}），击球区挥拍路径干净利落。"
         elif r_squared >= c.hand_path_linearity_good:
-            fb = f"Reasonably linear hand path (R²={r_squared:.2f}). Minor arc detected."
+            fb = f"手部路径较直（R²={r_squared:.2f}），有轻微弧度。"
         else:
-            fb = f"Hand path is too curved (R²={r_squared:.2f}). Aim for a straighter path through the ball — swing from inside-out."
+            fb = f"手部路径弯曲过大（R²={r_squared:.2f}）。击球区应保持更直的挥拍路径，从内向外击球。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, r_squared, self.unit, score, rating, fb)
 
 
 # =====================================================================
-# Phase 4: Contact
+# 阶段 4：击球
 # =====================================================================
 
 class ContactPointKPI(BaseKPI):
-    """C4.1 – Contact point position (wrist forward of hip, normalised)."""
+    """C4.1 – 击球点位置（手腕在髋部前方的距离）。"""
     kpi_id = "C4.1"
-    name = "Contact Point Position"
+    name = "击球点位置"
     phase = "contact"
-    unit = "torso_heights"
+    unit = "躯干高度比"
 
     def evaluate(self, *, contact_forward_norm: Optional[float] = None, **kw) -> KPIResult:
         if contact_forward_norm is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure contact point position.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量击球点位置。")
 
         c = self.cfg.contact
         val = contact_forward_norm
@@ -344,7 +332,6 @@ class ContactPointKPI(BaseKPI):
         elif val <= c.contact_forward_good_max:
             score = 85.0
         else:
-            # Too far in front
             overshoot = val - c.contact_forward_good_max
             score = max(40.0, 85.0 - overshoot * 100.0)
 
@@ -352,55 +339,53 @@ class ContactPointKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if score >= 70:
-            fb = f"Good contact point ({val:.2f} torso-heights in front). Ball met well in front of body."
+            fb = f"击球点位置良好（{val:.2f}躯干高度），在身体前方充分击球。"
         elif val < c.contact_forward_good_min:
-            fb = f"Contact too close to body ({val:.2f}). Hit the ball further in front — extend your arm forward."
+            fb = f"击球点过于靠近身体（{val:.2f}）。需要在更前方击球，手臂向前伸展。"
         else:
-            fb = f"Contact too far in front ({val:.2f}). You may be over-reaching — adjust timing."
+            fb = f"击球点过于靠前（{val:.2f}）。可能过度前伸，调整击球时机。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 class ElbowAngleAtContactKPI(BaseKPI):
-    """C4.2 – Elbow angle at the moment of contact."""
+    """C4.2 – 击球时肘部角度。"""
     kpi_id = "C4.2"
-    name = "Elbow Angle at Contact"
+    name = "击球时肘部角度"
     phase = "contact"
-    unit = "degrees"
+    unit = "度"
 
     def evaluate(self, *, elbow_angle_at_contact: Optional[float] = None, **kw) -> KPIResult:
         if elbow_angle_at_contact is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure elbow angle at contact.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量击球时肘部角度。")
 
         c = self.cfg.contact
         angle = elbow_angle_at_contact
 
-        # Determine which style and score accordingly
         in_straight = c.straight_arm_min <= angle <= c.straight_arm_max
         in_double_bend = c.double_bend_min <= angle <= c.double_bend_max
 
         if in_straight:
             score = 90.0
-            style = "straight-arm (Gordon Type 3)"
-            fb = f"Straight-arm contact ({angle:.0f}°) — {style} style. Excellent extension."
+            style = "直臂型 (Gordon Type 3)"
+            fb = f"直臂击球（{angle:.0f}°）— {style}风格。手臂充分伸展，符合现代正手标准。"
         elif in_double_bend:
             score = 90.0
-            style = "double-bend"
-            fb = f"Double-bend contact ({angle:.0f}°) — {style} style. Good compact structure."
+            style = "双弯型"
+            fb = f"双弯击球（{angle:.0f}°）— {style}风格。紧凑的手臂结构，控制力好。"
         elif c.double_bend_max < angle < c.straight_arm_min:
-            # In between: acceptable but not optimal
             score = 60.0
-            style = "intermediate"
-            fb = f"Elbow angle at contact is {angle:.0f}° — between double-bend and straight-arm. Commit to one style for consistency."
+            style = "过渡型"
+            fb = f"肘部角度{angle:.0f}°，介于双弯和直臂之间。建议选择一种风格并坚持练习。"
         elif angle < c.double_bend_min:
             score = 30.0
-            style = "too bent"
-            fb = f"Arm too bent at contact ({angle:.0f}°). Extend more — you're losing power from a cramped position."
+            style = "过度弯曲"
+            fb = f"击球时手臂过度弯曲（{angle:.0f}°）。需要更多伸展，避免「夹臂」击球。"
         else:
             score = 70.0
-            style = "hyper-extended"
-            fb = f"Arm angle at contact ({angle:.0f}°) is fine."
+            style = "过度伸展"
+            fb = f"击球时肘部角度{angle:.0f}°，基本正常。"
 
         rating = _rating_from_score(score)
         return KPIResult(self.kpi_id, self.name, self.phase, angle, self.unit, score, rating, fb,
@@ -408,16 +393,16 @@ class ElbowAngleAtContactKPI(BaseKPI):
 
 
 class BodyFreezeKPI(BaseKPI):
-    """C4.3 – Torso angular velocity at contact (should be near zero = 'blocking')."""
+    """C4.3 – 击球时躯干角速度（应接近零 = 「刹车」）。"""
     kpi_id = "C4.3"
-    name = "Body Freeze at Contact"
+    name = "身体刹车"
     phase = "contact"
-    unit = "degrees/s"
+    unit = "度/秒"
 
     def evaluate(self, *, torso_angular_velocity_at_contact: Optional[float] = None, **kw) -> KPIResult:
         if torso_angular_velocity_at_contact is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure torso angular velocity at contact.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量击球时躯干角速度。")
 
         c = self.cfg.contact
         val = abs(torso_angular_velocity_at_contact)
@@ -425,24 +410,24 @@ class BodyFreezeKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val <= c.body_freeze_good_max:
-            fb = f"Good body freeze at contact ({val:.0f}°/s). Chest stops rotating to create a stable platform."
+            fb = f"击球时身体刹车良好（{val:.0f}°/s），胸部停止旋转提供了稳定的击球平台。"
         else:
-            fb = f"Body still rotating at contact ({val:.0f}°/s). Try to 'block' your torso at impact — chest should face the target and stop."
+            fb = f"击球时身体仍在旋转（{val:.0f}°/s）。尝试在击球瞬间「刹住」躯干，胸部面向目标后停止旋转。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 class HeadStabilityAtContactKPI(BaseKPI):
-    """C4.4 – Head stability around the contact point."""
+    """C4.4 – 击球点附近头部稳定性。"""
     kpi_id = "C4.4"
-    name = "Head Stability at Contact"
+    name = "击球时头部稳定性"
     phase = "contact"
-    unit = "normalised_displacement"
+    unit = "归一化位移"
 
     def evaluate(self, *, head_displacement_norm: Optional[float] = None, **kw) -> KPIResult:
         if head_displacement_norm is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure head stability.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量头部稳定性。")
 
         c = self.cfg.contact
         val = head_displacement_norm
@@ -450,28 +435,28 @@ class HeadStabilityAtContactKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val <= c.head_stability_good_max:
-            fb = f"Excellent head stability ({val:.3f}). Eyes stayed on the ball."
+            fb = f"头部稳定性出色（{val:.3f}），眼睛始终注视击球点。"
         else:
-            fb = f"Head moved too much around contact ({val:.3f}). Keep your eyes on the contact point — head should be the last thing to move."
+            fb = f"击球时头部移动过大（{val:.3f}）。保持眼睛注视击球点，头部应该是最后移动的部位。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 # =====================================================================
-# Phase 5: Extension & Follow-Through
+# 阶段 5：延伸 & 随挥
 # =====================================================================
 
 class ForwardExtensionKPI(BaseKPI):
-    """E5.1 – Forward extension distance after contact (normalised by torso height)."""
+    """E5.1 – 击球后前向延伸距离。"""
     kpi_id = "E5.1"
-    name = "Forward Extension"
+    name = "前向延伸"
     phase = "extension"
-    unit = "torso_heights"
+    unit = "躯干高度比"
 
     def evaluate(self, *, forward_extension_norm: Optional[float] = None, **kw) -> KPIResult:
         if forward_extension_norm is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure forward extension.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量前向延伸距离。")
 
         c = self.cfg.extension
         val = forward_extension_norm
@@ -479,26 +464,26 @@ class ForwardExtensionKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val >= c.forward_extension_excellent:
-            fb = f"Excellent forward extension ({val:.2f} torso-heights). Great penetration through the ball."
+            fb = f"前向延伸出色（{val:.2f}躯干高度），击球后充分穿透球体。"
         elif val >= c.forward_extension_good:
-            fb = f"Good extension ({val:.2f}). Continue pushing through the ball toward the target."
+            fb = f"前向延伸良好（{val:.2f}）。继续向目标方向推送球拍。"
         else:
-            fb = f"Limited forward extension ({val:.2f}). Extend your arm further through the ball after contact — aim for 2-3 feet of forward travel."
+            fb = f"前向延伸不足（{val:.2f}）。击球后手臂应继续向目标方向延伸60-90厘米。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 class FollowThroughPathKPI(BaseKPI):
-    """E5.2 – Follow-through path: upward-to-forward ratio."""
+    """E5.2 – 随挥路径：上升/前进比例。"""
     kpi_id = "E5.2"
-    name = "Follow-Through Path"
+    name = "随挥路径"
     phase = "extension"
-    unit = "ratio"
+    unit = "比值"
 
     def evaluate(self, *, upward_forward_ratio: Optional[float] = None, **kw) -> KPIResult:
         if upward_forward_ratio is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure follow-through path.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量随挥路径。")
 
         c = self.cfg.extension
         val = upward_forward_ratio
@@ -506,28 +491,28 @@ class FollowThroughPathKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val <= c.followthrough_upward_forward_good_max:
-            fb = f"Good follow-through balance (up/fwd ratio: {val:.2f}). Forward extension before upward finish."
+            fb = f"随挥路径平衡（上升/前进比={val:.2f}），先前伸再上升的模式正确。"
         else:
-            fb = f"Follow-through goes up too quickly (ratio: {val:.2f}). Extend forward first, then let the racket rise naturally via shoulder rotation."
+            fb = f"随挥上升过快（比值={val:.2f}）。击球后先向前延伸，再让球拍自然通过肩部旋转上升。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 # =====================================================================
-# Phase 6: Balance
+# 阶段 6：平衡
 # =====================================================================
 
 class OverallHeadStabilityKPI(BaseKPI):
-    """B6.2 – Head vertical stability over the entire swing."""
+    """B6.1 – 整个挥拍过程中头部垂直稳定性。"""
     kpi_id = "B6.1"
-    name = "Overall Head Stability"
+    name = "整体头部稳定性"
     phase = "balance"
-    unit = "normalised_std"
+    unit = "归一化标准差"
 
     def evaluate(self, *, head_y_std_norm: Optional[float] = None, **kw) -> KPIResult:
         if head_y_std_norm is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure overall head stability.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量整体头部稳定性。")
 
         c = self.cfg.balance
         val = head_y_std_norm
@@ -535,24 +520,24 @@ class OverallHeadStabilityKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val <= c.head_vertical_stability_good:
-            fb = f"Excellent head stability throughout the swing (std: {val:.3f})."
+            fb = f"整个挥拍过程中头部稳定性出色（标准差={val:.3f}）。"
         else:
-            fb = f"Head bounces vertically during the swing (std: {val:.3f}). Maintain a consistent head height — avoid dipping or rising."
+            fb = f"挥拍过程中头部上下跳动（标准差={val:.3f}）。保持头部高度一致，避免起伏。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 class SpineConsistencyKPI(BaseKPI):
-    """B6.2 – Spine angle consistency throughout the swing."""
+    """B6.2 – 挥拍过程中脊柱角度一致性。"""
     kpi_id = "B6.2"
-    name = "Spine Consistency"
+    name = "脊柱一致性"
     phase = "balance"
-    unit = "degrees_std"
+    unit = "度标准差"
 
     def evaluate(self, *, spine_angle_std: Optional[float] = None, **kw) -> KPIResult:
         if spine_angle_std is None:
-            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "n/a",
-                             "Could not measure spine consistency.")
+            return KPIResult(self.kpi_id, self.name, self.phase, None, self.unit, 0, "无数据",
+                             "无法测量脊柱一致性。")
 
         c = self.cfg.balance
         val = spine_angle_std
@@ -560,15 +545,15 @@ class SpineConsistencyKPI(BaseKPI):
         rating = _rating_from_score(score)
 
         if val <= c.spine_consistency_good:
-            fb = f"Consistent spine posture (std: {val:.1f}°). Good body control."
+            fb = f"脊柱姿态一致（标准差={val:.1f}°），身体控制良好。"
         else:
-            fb = f"Spine angle varies too much (std: {val:.1f}°). Keep your torso stable — avoid hunching or leaning during the swing."
+            fb = f"脊柱角度变化过大（标准差={val:.1f}°）。保持躯干稳定，避免挥拍时弯腰或前倾。"
 
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
 # =====================================================================
-# KPI Registry
+# KPI 注册表
 # =====================================================================
 
 ALL_KPIS = [
