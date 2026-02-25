@@ -1,7 +1,8 @@
-"""Tennis Analyzer v2 — 综合测试套件。
+"""Tennis Analyzer v3 — 综合测试套件。
 
-覆盖所有核心模块：配置、运动学计算、轨迹管理、击球检测、KPI 评分、
-评估引擎、可视化和报告生成。
+覆盖所有核心模块：配置（8阶段 + 单反）、运动学计算（v3 新增函数）、
+轨迹管理、击球检测、KPI 评分（20 正手 + 17 单反）、评估引擎、
+可视化和报告生成。
 """
 
 import sys
@@ -11,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import pytest
 import numpy as np
 
-from config.framework_config import DEFAULT_CONFIG, FrameworkConfig
+from config.framework_config import DEFAULT_CONFIG, FrameworkConfig, ScoringWeights
 from config.keypoints import COCO_KEYPOINTS, KEYPOINT_NAMES, SKELETON_CONNECTIONS, NUM_KEYPOINTS
 from analysis.trajectory import JointTrajectory, TrajectoryStore
 from analysis.kinematic_calculator import (
@@ -20,16 +21,34 @@ from analysis.kinematic_calculator import (
     torso_height_px, shoulder_width_px,
     wrist_forward_normalised, nose_position,
     shoulder_center, hip_center,
+    # v3 new
+    elbow_behind_torso_normalised,
+    wrist_below_elbow_distance,
+    hip_center_vertical_position,
+    compute_vertical_acceleration,
+    elbow_to_torso_distance,
+    forearm_angle,
+    compute_angular_velocity,
+    wrist_lateral_displacement,
+    compute_wiper_sweep_angle,
+    hip_line_angle,
+    shoulder_line_angle,
+    compute_rotation_speed,
+    compute_peak_rotation_speed,
+    hip_shoulder_separation_timing,
 )
 from evaluation.event_detector import (
     WristSpeedDetector, ImpactEvent, SwingEvent, SwingPhaseEstimator,
 )
 from evaluation.kpi import (
     ShoulderRotationKPI, KneeBendKPI, SpineAngleKPI,
-    KineticChainSequenceKPI, HipShoulderSeparationKPI,
-    HandPathLinearityKPI, ContactPointKPI, ElbowAngleAtContactKPI,
-    BodyFreezeKPI, HeadStabilityAtContactKPI,
-    ForwardExtensionKPI, FollowThroughPathKPI,
+    ElbowBackPositionKPI, RacketDropKPI,
+    GroundForceProxyKPI, HipRotationSpeedKPI,
+    HipShoulderSeparationKPI, HipShoulderTimingKPI,
+    ElbowTuckKPI, HandPathLinearityKPI,
+    ContactPointKPI, ElbowAngleAtContactKPI,
+    BodyFreezeKPI, HeadStabilityAtContactKPI, SIRProxyKPI,
+    ForwardExtensionKPI, WiperSweepKPI,
     OverallHeadStabilityKPI, SpineConsistencyKPI,
     ALL_KPIS, KPIResult, _linear_score, _rating_from_score,
 )
@@ -114,12 +133,28 @@ class TestConfig:
             assert 0 <= s < 17
             assert 0 <= e < 17
 
-    def test_default_config(self):
+    def test_default_config_v3_8_phases(self):
+        """v3: 8 阶段权重配置。"""
         cfg = DEFAULT_CONFIG
-        assert cfg.scoring.preparation == 0.15
-        assert cfg.scoring.contact == 0.25
         weights = cfg.scoring.as_dict()
+        assert len(weights) == 8
         assert abs(sum(weights.values()) - 1.0) < 1e-6
+        # 检查所有 8 个阶段都存在
+        expected_phases = ["unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                           "lag_drive", "contact", "wiper", "balance"]
+        for phase in expected_phases:
+            assert phase in weights, f"Missing phase: {phase}"
+
+    def test_scoring_weights_v3(self):
+        w = ScoringWeights()
+        assert w.unit_turn == 0.10
+        assert w.slot_prep == 0.10
+        assert w.leg_drive == 0.15
+        assert w.torso_pull == 0.15
+        assert w.lag_drive == 0.10
+        assert w.contact == 0.20
+        assert w.wiper == 0.10
+        assert w.balance == 0.10
 
 
 # =====================================================================
@@ -194,6 +229,42 @@ class TestKinematicCalculator:
         kp, conf = _make_standing_pose()
         pos = nose_position(kp, conf)
         assert pos is not None and len(pos) == 2
+
+    # v3 new functions
+    def test_elbow_behind_torso_normalised(self):
+        kp, conf = _make_standing_pose()
+        val = elbow_behind_torso_normalised(kp, conf, is_right_handed=True, forward_sign=1.0)
+        assert val is not None
+
+    def test_wrist_below_elbow_distance(self):
+        kp, conf = _make_standing_pose()
+        val = wrist_below_elbow_distance(kp, conf, right=True)
+        assert val is not None
+
+    def test_hip_center_vertical_position(self):
+        kp, conf = _make_standing_pose()
+        val = hip_center_vertical_position(kp, conf)
+        assert val is not None
+
+    def test_elbow_to_torso_distance(self):
+        kp, conf = _make_standing_pose()
+        val = elbow_to_torso_distance(kp, conf, right=True)
+        assert val is not None
+
+    def test_forearm_angle(self):
+        kp, conf = _make_standing_pose()
+        val = forearm_angle(kp, conf, right=True)
+        assert val is not None
+
+    def test_hip_line_angle(self):
+        kp, conf = _make_standing_pose()
+        val = hip_line_angle(kp, conf)
+        assert val is not None
+
+    def test_shoulder_line_angle(self):
+        kp, conf = _make_standing_pose()
+        val = shoulder_line_angle(kp, conf)
+        assert val is not None
 
 
 # =====================================================================
@@ -278,7 +349,7 @@ class TestImpactDetector:
 
 
 # =====================================================================
-# KPI tests
+# KPI tests (v3 — 20 KPIs, 8 phases)
 # =====================================================================
 
 class TestKPIs:
@@ -298,48 +369,91 @@ class TestKPIs:
         assert _rating_from_score(50) == "一般"
         assert _rating_from_score(30) == "较差"
 
+    # Phase 1: Unit Turn
     def test_shoulder_rotation_kpi(self):
         kpi = ShoulderRotationKPI()
         result = kpi.evaluate(shoulder_rotation_values=[85.0, 90.0, 75.0])
         assert isinstance(result, KPIResult)
         assert result.raw_value == 90.0
         assert result.score > 70
+        assert result.phase == "unit_turn"
 
     def test_knee_bend_kpi(self):
         kpi = KneeBendKPI()
         result = kpi.evaluate(knee_angle_values=[130.0, 125.0, 140.0])
         assert result.raw_value == 125.0
         assert result.score > 50
+        assert result.phase == "unit_turn"
 
     def test_spine_angle_kpi(self):
         kpi = SpineAngleKPI()
         result = kpi.evaluate(spine_angle_values=[10.0, 12.0, 8.0])
         assert result.score > 70
+        assert result.phase == "unit_turn"
 
-    def test_kinetic_chain_correct_order(self):
-        kpi = KineticChainSequenceKPI()
-        result = kpi.evaluate(
-            hip_peak_frame=10, shoulder_peak_frame=13,
-            elbow_peak_frame=16, wrist_peak_frame=19, fps=30.0,
-        )
-        assert result.score >= 85
+    # Phase 2: Slot Prep
+    def test_elbow_back_position_kpi(self):
+        kpi = ElbowBackPositionKPI()
+        result = kpi.evaluate(elbow_behind_norm_values=[0.3, 0.4, 0.5])
+        assert result.phase == "slot_prep"
+        assert 0 <= result.score <= 100
 
-    def test_kinetic_chain_wrong_order(self):
-        kpi = KineticChainSequenceKPI()
-        result = kpi.evaluate(
-            hip_peak_frame=19, shoulder_peak_frame=16,
-            elbow_peak_frame=13, wrist_peak_frame=10, fps=30.0,
-        )
-        assert result.score < 50
+    def test_racket_drop_kpi(self):
+        kpi = RacketDropKPI()
+        result = kpi.evaluate(wrist_below_elbow_values=[30.0, 40.0, 50.0])
+        assert result.phase == "slot_prep"
+        assert 0 <= result.score <= 100
 
+    # Phase 3: Leg Drive
+    def test_ground_force_proxy_kpi(self):
+        kpi = GroundForceProxyKPI()
+        result = kpi.evaluate(vertical_accel_values=[500.0, 600.0, 700.0])
+        assert result.phase == "leg_drive"
+        assert 0 <= result.score <= 100
+
+    def test_hip_rotation_speed_kpi(self):
+        kpi = HipRotationSpeedKPI()
+        result = kpi.evaluate(hip_rotation_speed_values=[200.0, 300.0, 400.0])
+        assert result.phase == "leg_drive"
+        assert 0 <= result.score <= 100
+
+    # Phase 4: Torso Pull
+    def test_hip_shoulder_separation_kpi(self):
+        kpi = HipShoulderSeparationKPI()
+        result = kpi.evaluate(hip_shoulder_sep_values=[30.0, 35.0, 40.0])
+        assert result.phase == "torso_pull"
+        assert 0 <= result.score <= 100
+
+    def test_hip_shoulder_timing_kpi(self):
+        kpi = HipShoulderTimingKPI()
+        result = kpi.evaluate(hip_shoulder_timing_ms=50.0)
+        assert result.phase == "torso_pull"
+        assert 0 <= result.score <= 100
+
+    # Phase 5: Lag & Elbow Drive
+    def test_elbow_tuck_kpi(self):
+        kpi = ElbowTuckKPI()
+        result = kpi.evaluate(elbow_torso_distance_values=[20.0, 25.0, 30.0])
+        assert result.phase == "lag_drive"
+        assert 0 <= result.score <= 100
+
+    def test_hand_path_linearity_kpi(self):
+        kpi = HandPathLinearityKPI()
+        result = kpi.evaluate(hand_path_r2=0.85)
+        assert result.phase == "lag_drive"
+        assert result.score > 50
+
+    # Phase 6: Contact & SIR
     def test_contact_point_kpi(self):
         kpi = ContactPointKPI()
         result = kpi.evaluate(contact_forward_norm=0.5)
+        assert result.phase == "contact"
         assert result.score > 70
 
     def test_elbow_angle_straight_arm(self):
         kpi = ElbowAngleAtContactKPI()
         result = kpi.evaluate(elbow_angle_at_contact=170.0)
+        assert result.phase == "contact"
         assert result.score >= 85
         assert "直臂" in result.feedback
 
@@ -349,8 +463,62 @@ class TestKPIs:
         assert result.score >= 85
         assert "双弯" in result.feedback
 
-    def test_all_kpis_registered(self):
-        assert len(ALL_KPIS) == 14
+    def test_body_freeze_kpi(self):
+        kpi = BodyFreezeKPI()
+        result = kpi.evaluate(decel_magnitude=800.0)
+        assert result.phase == "contact"
+        assert 0 <= result.score <= 100
+
+    def test_head_stability_at_contact_kpi(self):
+        kpi = HeadStabilityAtContactKPI()
+        result = kpi.evaluate(head_displacement_norm=0.02)
+        assert result.phase == "contact"
+        assert result.score > 50
+
+    def test_sir_proxy_kpi(self):
+        kpi = SIRProxyKPI()
+        result = kpi.evaluate(sir_angular_velocity=300.0)
+        assert result.phase == "contact"
+        assert 0 <= result.score <= 100
+
+    # Phase 7: Wiper
+    def test_forward_extension_kpi(self):
+        kpi = ForwardExtensionKPI()
+        result = kpi.evaluate(extension_ratio=0.6)
+        assert result.phase == "wiper"
+        assert result.score > 50
+
+    def test_wiper_sweep_kpi(self):
+        kpi = WiperSweepKPI()
+        result = kpi.evaluate(wiper_sweep_angle=100.0)
+        assert result.phase == "wiper"
+        assert 0 <= result.score <= 100
+
+    # Phase 8: Balance
+    def test_overall_head_stability_kpi(self):
+        kpi = OverallHeadStabilityKPI()
+        result = kpi.evaluate(head_std_norm=0.01)
+        assert result.phase == "balance"
+        assert result.score > 50
+
+    def test_spine_consistency_kpi(self):
+        kpi = SpineConsistencyKPI()
+        result = kpi.evaluate(spine_angle_std=3.0)
+        assert result.phase == "balance"
+        assert result.score > 50
+
+
+    def test_all_kpis_registered_v3(self):
+        """v3: 20 个正手 KPI。"""
+        assert len(ALL_KPIS) == 20
+
+    def test_all_kpis_phases_are_v3(self):
+        """v3: 所有 KPI 的 phase 应该属于 8 阶段。"""
+        valid_phases = {"unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                        "lag_drive", "contact", "wiper", "balance"}
+        for kpi_cls in ALL_KPIS:
+            kpi = kpi_cls()
+            assert kpi.phase in valid_phases, f"{kpi.kpi_id} has invalid phase: {kpi.phase}"
 
     def test_kpi_na_on_empty_data(self):
         kpi = ShoulderRotationKPI()
@@ -359,7 +527,7 @@ class TestKPIs:
 
 
 # =====================================================================
-# Evaluator integration test
+# Evaluator integration test (v3)
 # =====================================================================
 
 class TestForehandEvaluator:
@@ -370,10 +538,13 @@ class TestForehandEvaluator:
         assert isinstance(report, MultiSwingReport)
         assert 0 <= report.average_score <= 100
         assert len(report.swing_evaluations) >= 1
+        # v3: 20 KPIs
         for ev in report.swing_evaluations:
-            assert len(ev.kpi_results) == 14
+            assert len(ev.kpi_results) == 20
+            valid_phases = {"unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                            "lag_drive", "contact", "wiper", "balance"}
             for kpi in ev.kpi_results:
-                assert kpi.phase in ["preparation", "loading", "kinetic_chain", "contact", "extension", "balance"]
+                assert kpi.phase in valid_phases, f"KPI {kpi.kpi_id} has invalid phase: {kpi.phase}"
 
     def test_evaluate_static_pose(self):
         kp, conf = _make_standing_pose()
@@ -382,7 +553,6 @@ class TestForehandEvaluator:
         evaluator = ForehandEvaluator(fps=30.0)
         report = evaluator.evaluate(kp_series, conf_series, list(range(30)))
         assert isinstance(report, MultiSwingReport)
-        # 即使没有检测到击球，也应该有一个默认评估
         assert len(report.swing_evaluations) >= 1
 
     def test_evaluate_multi_impact(self):
@@ -396,6 +566,16 @@ class TestForehandEvaluator:
         assert report.total_swings == 2
         assert len(report.swing_evaluations) == 2
         assert report.average_score > 0
+
+    def test_v3_phase_scores_8_phases(self):
+        """v3: 评估结果应包含 8 个阶段的评分。"""
+        kp_series, conf_series = _make_swing_sequence(n_frames=60, fps=30.0)
+        evaluator = ForehandEvaluator(fps=30.0, is_right_handed=True)
+        report = evaluator.evaluate(kp_series, conf_series, list(range(60)))
+        for ev in report.swing_evaluations:
+            expected_phases = {"unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                               "lag_drive", "contact", "wiper", "balance"}
+            assert set(ev.phase_scores.keys()) == expected_phases
 
 
 # =====================================================================
@@ -418,7 +598,7 @@ class TestVisualizer:
             kp_mod = kp.copy()
             kp_mod[10, 0] += i * 10
             drawer.update(kp_mod, conf, frame_idx=i)
-        assert len(drawer.trail) <= 31  # deque maxlen + 1 tolerance
+        assert len(drawer.trail) <= 31
         frame = np.zeros((480, 640, 3), dtype=np.uint8)
         result = drawer.draw(frame)
         assert result.sum() > 0
@@ -434,10 +614,13 @@ class TestVisualizer:
         assert JOINT_CN["right_wrist"] == "右手腕"
         assert JOINT_CN["nose"] == "鼻子"
 
-    def test_chart_generator_radar(self, tmp_path):
+    def test_chart_generator_radar_v3(self, tmp_path):
+        """v3: 8 阶段雷达图。"""
         path = str(tmp_path / "radar.png")
         result = ChartGenerator.radar_chart(
-            {"preparation": 80, "kinetic_chain": 70, "contact": 90, "extension": 60, "balance": 75},
+            {"unit_turn": 80, "slot_prep": 75, "leg_drive": 70,
+             "torso_pull": 85, "lag_drive": 65, "contact": 90,
+             "wiper": 60, "balance": 75},
             path,
         )
         assert result != ""
@@ -445,8 +628,8 @@ class TestVisualizer:
 
     def test_chart_generator_kpi_bar(self, tmp_path):
         kpis = [
-            KPIResult("P1.1", "肩部旋转", "preparation", 85.0, "度", 80, "良好", "良好"),
-            KPIResult("P1.4", "膝盖弯曲", "preparation", 130.0, "度", 70, "良好", "尚可"),
+            KPIResult("UT1.1", "肩部旋转", "unit_turn", 85.0, "度", 80, "良好", "良好"),
+            KPIResult("UT1.2", "膝盖弯曲", "unit_turn", 130.0, "度", 70, "良好", "尚可"),
         ]
         path = str(tmp_path / "kpi_bar.png")
         result = ChartGenerator.kpi_bar_chart(kpis, path)
@@ -458,18 +641,26 @@ class TestVisualizer:
         result = ChartGenerator.multi_swing_summary_chart(swing_scores, path)
         assert result != ""
 
+    def test_phase_labels_include_v3(self):
+        """v3: PHASE_LABELS 包含 8 阶段。"""
+        expected = ["unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                    "lag_drive", "contact", "wiper", "balance"]
+        for phase in expected:
+            assert phase in ChartGenerator.PHASE_LABELS
+            assert phase in ChartGenerator.PHASE_COLORS
+
 
 # =====================================================================
-# Report generator tests
+# Report generator tests (v3)
 # =====================================================================
 
 class TestReportGenerator:
-    def test_generate_single_swing_report(self, tmp_path):
+    def test_generate_single_swing_report_v3(self, tmp_path):
         gen = ReportGenerator(output_dir=str(tmp_path))
         kpi_results = [
-            KPIResult("P1.1", "肩部旋转", "preparation", 85.0, "度", 80, "良好", "良好的肩部旋转。"),
+            KPIResult("UT1.1", "肩部旋转", "unit_turn", 85.0, "度", 80, "良好", "良好的肩部旋转。"),
         ]
-        phase_scores = {"preparation": PhaseScore("preparation", 80.0, kpi_results)}
+        phase_scores = {"unit_turn": PhaseScore("unit_turn", 80.0, kpi_results)}
         swing_eval = SwingEvaluation(
             swing_index=0,
             swing_event=SwingEvent(swing_index=0, impact_frame=30),
@@ -492,16 +683,17 @@ class TestReportGenerator:
         assert "现代正手技术分析报告" in content
         assert "综合评分" in content
         assert "肩部旋转" in content
+        assert "8 阶段" in content or "8阶段" in content
 
-    def test_generate_multi_swing_report(self, tmp_path):
+    def test_generate_multi_swing_report_v3(self, tmp_path):
         gen = ReportGenerator(output_dir=str(tmp_path))
-        kpi1 = [KPIResult("P1.1", "肩部旋转", "preparation", 85.0, "度", 80, "良好", "良好")]
-        kpi2 = [KPIResult("P1.1", "肩部旋转", "preparation", 70.0, "度", 60, "一般", "一般")]
+        kpi1 = [KPIResult("UT1.1", "肩部旋转", "unit_turn", 85.0, "度", 80, "良好", "良好")]
+        kpi2 = [KPIResult("UT1.1", "肩部旋转", "unit_turn", 70.0, "度", 60, "一般", "一般")]
         ev1 = SwingEvaluation(0, SwingEvent(0, impact_frame=30),
-                              {"preparation": PhaseScore("preparation", 80.0, kpi1)},
+                              {"unit_turn": PhaseScore("unit_turn", 80.0, kpi1)},
                               80.0, kpi1, arm_style="直臂型")
         ev2 = SwingEvaluation(1, SwingEvent(1, impact_frame=80),
-                              {"preparation": PhaseScore("preparation", 60.0, kpi2)},
+                              {"unit_turn": PhaseScore("unit_turn", 60.0, kpi2)},
                               60.0, kpi2, arm_style="双弯型")
         report = MultiSwingReport([ev1, ev2], 70.0, 0, 1, [30, 80], 2)
         path = gen.generate(report, video_name="multi_test")
@@ -509,6 +701,36 @@ class TestReportGenerator:
         assert "第 1 次击球" in content
         assert "第 2 次击球" in content
         assert "检测到击球次数" in content
+
+    def test_forehand_phase_order_v3(self):
+        """v3: 报告生成器的阶段顺序应为 8 阶段。"""
+        assert len(ReportGenerator.FOREHAND_PHASE_ORDER) == 8
+        assert ReportGenerator.FOREHAND_PHASE_ORDER[0] == "unit_turn"
+        assert ReportGenerator.FOREHAND_PHASE_ORDER[-1] == "balance"
+
+    def test_training_prescription_drills_v3(self):
+        """v3: 训练处方应包含 8 阶段的训练方法。"""
+        gen = ReportGenerator()
+        # 检查 drill IDs 覆盖了 8 个阶段
+        drill_phases = set()
+        for drill_id in gen.FOREHAND_DRILLS:
+            if drill_id.startswith("UT") or drill_id.startswith("P1"):
+                drill_phases.add("unit_turn")
+            elif drill_id.startswith("S2"):
+                drill_phases.add("slot_prep")
+            elif drill_id.startswith("L3"):
+                drill_phases.add("leg_drive")
+            elif drill_id.startswith("T4"):
+                drill_phases.add("torso_pull")
+            elif drill_id.startswith("D5"):
+                drill_phases.add("lag_drive")
+            elif drill_id.startswith("C6"):
+                drill_phases.add("contact")
+            elif drill_id.startswith("W7"):
+                drill_phases.add("wiper")
+            elif drill_id.startswith("B8"):
+                drill_phases.add("balance")
+        assert len(drill_phases) >= 7  # at least 7 of 8 phases covered
 
 
 # =====================================================================
@@ -628,14 +850,11 @@ class TestStrokeClassifier:
         from evaluation.stroke_classifier import StrokeClassifier, StrokeType
         classifier = StrokeClassifier(is_right_handed=True)
         kp, conf = _make_standing_pose()
-        # Right-handed forehand: wrist moves LEFT (to_non_dom_side)
-        # Wrist starts on right side (same side) and moves left
         kp_series = []
         conf_series = []
         for i in range(30):
             kp_mod = kp.copy()
-            # Wrist stays on right side of body center (200) during prep
-            kp_mod[10, 0] = 300 - i * 8  # right wrist moves left
+            kp_mod[10, 0] = 300 - i * 8  # right wrist moves left (forehand for right-handed)
             kp_series.append(kp_mod)
             conf_series.append(conf.copy())
         result = classifier.classify_swing(kp_series, conf_series, list(range(30)), 15)

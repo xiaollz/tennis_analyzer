@@ -1,4 +1,4 @@
-"""Tennis Analyzer v2 — 现代正手 & 单反评估系统。
+"""Tennis Analyzer v3 — 现代正手 & 单反评估系统。
 
 Usage:
     # 命令行分析（自动识别正手/反手）
@@ -461,13 +461,14 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
     import gradio as gr
 
     with gr.Blocks(
-        title="网球分析器 v2 — 正手 & 单反评估",
+        title="网球分析器 v3 — 正手 & 单反评估 (8阶段模型)",
         theme=gr.themes.Soft(),
     ) as demo:
-        gr.Markdown("# 🎾 网球分析器 v2 — 正手 & 单反技术评估")
+        gr.Markdown("# 🎾 网球分析器 v3 — 正手 & 单反技术评估 (8阶段模型)")
         gr.Markdown(
-            "上传挥拍视频，系统将基于 **Modern Forehand / One-Handed Backhand** 理论框架 "
+            "上传挥拍视频，系统将基于 **Modern Forehand 8阶段模型 / One-Handed Backhand** 理论框架 "
             "(Dr. Brian Gordon, Rick Macci, Tennis Doctor) 评估您的技术。\n\n"
+            "**正手 8 阶段**: 一体化转体 → 槽位准备 → 蹬转启动 → 躯干牵引 → 滞后驱动 → 击球与SIR → 雨刷随挥 → 减速平衡\n\n"
             "支持自动识别正手/反手，多次击球独立评分，音频+视觉协同检测击球点。"
         )
 
@@ -628,7 +629,7 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
 # =====================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="网球分析器 v2 — 正手 & 单反评估")
+    parser = argparse.ArgumentParser(description="网球分析器 v3 — 正手 & 单反评估 (8阶段模型)")
     subparsers = parser.add_subparsers(dest="command")
 
     # analyse 子命令

@@ -206,12 +206,20 @@ class ChartGenerator:
     """生成 Matplotlib 分析图表。"""
 
     PHASE_COLORS = {
+        # 正手 8 阶段颜色 (v3)
+        "unit_turn":  "#4CAF50",
+        "slot_prep":  "#8BC34A",
+        "leg_drive":  "#CDDC39",
+        "torso_pull": "#FFC107",
+        "lag_drive":  "#FF9800",
+        "contact":    "#F44336",
+        "wiper":      "#2196F3",
+        "balance":    "#9C27B0",
+        # 旧6阶段兼容
         "preparation": "#4CAF50",
         "loading": "#8BC34A",
         "kinetic_chain": "#FF9800",
-        "contact": "#F44336",
         "extension": "#2196F3",
-        "balance": "#9C27B0",
         # 单反阶段颜色
         "ohb_preparation": "#4CAF50",
         "ohb_backswing": "#8BC34A",
@@ -221,14 +229,21 @@ class ChartGenerator:
         "ohb_balance": "#9C27B0",
     }
 
-    # 正手阶段标签
+    # 正手 8 阶段标签 (v3)
     PHASE_LABELS = {
+        "unit_turn":  "一体化\n转体",
+        "slot_prep":  "槽位\n准备",
+        "leg_drive":  "蹬转\n启动",
+        "torso_pull": "躯干\n牵引",
+        "lag_drive":  "滞后\n驱动",
+        "contact":    "击球\n& SIR",
+        "wiper":      "雨刷\n随挥",
+        "balance":    "减速\n平衡",
+        # 旧6阶段兼容
         "preparation": "准备\n& 转体",
         "loading": "蓄力\n& 落拍",
         "kinetic_chain": "动力链\n& 挥拍",
-        "contact": "击球点",
         "extension": "延伸\n& 随挥",
-        "balance": "平衡\n& 恢复",
         # 单反阶段标签
         "ohb_preparation": "准备\n& 侧身",
         "ohb_backswing": "引拍\n& L形",
@@ -255,7 +270,9 @@ class ChartGenerator:
             phase_order = ["ohb_preparation", "ohb_backswing", "ohb_kinetic_chain",
                            "ohb_contact", "ohb_extension", "ohb_balance"]
         else:
-            phase_order = ["preparation", "kinetic_chain", "contact", "extension", "balance"]
+            # v3 8 阶段模型
+            phase_order = ["unit_turn", "slot_prep", "leg_drive", "torso_pull",
+                           "lag_drive", "contact", "wiper", "balance"]
         for phase in phase_order:
             if phase in phase_scores:
                 labels.append(ChartGenerator.PHASE_LABELS.get(phase, phase))
