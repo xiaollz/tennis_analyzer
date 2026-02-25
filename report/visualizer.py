@@ -371,7 +371,7 @@ class ChartGenerator:
                 for ax in (ax1, ax2):
                     ax.axvline(imp_f, color="green", linestyle="--", linewidth=2, alpha=0.7)
             # 只添加一次 legend
-            ax1.axvline(impact_frames[0], color="green", linestyle="--", linewidth=0, label="击球点")
+            ax1.axvline(impact_frames[0], color="green", linestyle="--", linewidth=2, alpha=0.7, label="击球点")
 
         ax1.set_ylabel("X 位置 (px)", fontsize=11)
         ax2.set_ylabel("Y 位置 (px)", fontsize=11)
