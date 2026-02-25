@@ -4,6 +4,10 @@ from .framework_config import (
     FrameworkConfig,
     DEFAULT_CONFIG,
 )
+from .backhand_config import (
+    BackhandConfig,
+    DEFAULT_BACKHAND_CONFIG,
+)
 from .keypoints import (
     COCO_KEYPOINTS,
     KEYPOINT_NAMES,

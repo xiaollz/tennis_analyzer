@@ -212,8 +212,16 @@ class ChartGenerator:
         "contact": "#F44336",
         "extension": "#2196F3",
         "balance": "#9C27B0",
+        # 单反阶段颜色
+        "ohb_preparation": "#4CAF50",
+        "ohb_backswing": "#8BC34A",
+        "ohb_kinetic_chain": "#FF9800",
+        "ohb_contact": "#F44336",
+        "ohb_extension": "#2196F3",
+        "ohb_balance": "#9C27B0",
     }
 
+    # 正手阶段标签
     PHASE_LABELS = {
         "preparation": "准备\n& 转体",
         "loading": "蓄力\n& 落拍",
@@ -221,6 +229,13 @@ class ChartGenerator:
         "contact": "击球点",
         "extension": "延伸\n& 随挥",
         "balance": "平衡\n& 恢复",
+        # 单反阶段标签
+        "ohb_preparation": "准备\n& 侧身",
+        "ohb_backswing": "引拍\n& L形",
+        "ohb_kinetic_chain": "动力链\n& 前挥",
+        "ohb_contact": "击球点\n& 伸展",
+        "ohb_extension": "ATA收拍\n& 保持侧身",
+        "ohb_balance": "平衡\n& 恢复",
     }
 
     @staticmethod
@@ -229,11 +244,19 @@ class ChartGenerator:
         output_path: str,
         title: str = "各阶段评分雷达图",
         swing_idx: Optional[int] = None,
+        phase_labels: Optional[Dict[str, str]] = None,
     ) -> str:
-        """生成阶段评分雷达图。"""
+        """生成阶段评分雷达图。自动检测正手/单反阶段。"""
         labels = []
         values = []
-        for phase in ["preparation", "kinetic_chain", "contact", "extension", "balance"]:
+        # 自动检测阶段类型：如果 phase_scores 中包含 ohb_ 前缀则是单反
+        all_phases = list(phase_scores.keys())
+        if any(p.startswith("ohb_") for p in all_phases):
+            phase_order = ["ohb_preparation", "ohb_backswing", "ohb_kinetic_chain",
+                           "ohb_contact", "ohb_extension", "ohb_balance"]
+        else:
+            phase_order = ["preparation", "kinetic_chain", "contact", "extension", "balance"]
+        for phase in phase_order:
             if phase in phase_scores:
                 labels.append(ChartGenerator.PHASE_LABELS.get(phase, phase))
                 values.append(phase_scores[phase])
@@ -281,7 +304,7 @@ class ChartGenerator:
         swing_idx: Optional[int] = None,
     ) -> str:
         """生成 KPI 水平条形图。"""
-        valid = [k for k in kpi_results if k.rating != "n/a"]
+        valid = [k for k in kpi_results if k.rating not in ("n/a", "无数据")]
         if not valid:
             return ""
 
@@ -309,11 +332,15 @@ class ChartGenerator:
                 f"{score:.0f}", va="center", fontsize=10, fontweight="bold",
             )
 
+        # 只显示实际使用的阶段
+        used_phases = set(k.phase for k in valid)
         patches = [
             mpatches.Patch(color=c, label=ChartGenerator.PHASE_LABELS.get(p, p).replace("\n", " "))
             for p, c in ChartGenerator.PHASE_COLORS.items()
+            if p in used_phases
         ]
-        ax.legend(handles=patches, loc="lower right", fontsize=9)
+        if patches:
+            ax.legend(handles=patches, loc="lower right", fontsize=9)
 
         plt.tight_layout()
         plt.savefig(output_path, dpi=150, bbox_inches="tight")

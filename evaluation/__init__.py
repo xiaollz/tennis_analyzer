@@ -1,1 +1,1 @@
-"""Modern forehand evaluation modules."""
+"""Tennis stroke evaluation modules — forehand & one-handed backhand."""

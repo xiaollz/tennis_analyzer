@@ -509,3 +509,194 @@ class TestReportGenerator:
         assert "第 1 次击球" in content
         assert "第 2 次击球" in content
         assert "检测到击球次数" in content
+
+
+# =====================================================================
+# Backhand Config tests
+# =====================================================================
+
+class TestBackhandConfig:
+    def test_backhand_config_loads(self):
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        assert DEFAULT_BACKHAND_CONFIG is not None
+        sw = DEFAULT_BACKHAND_CONFIG.scoring
+        total = sw.preparation + sw.backswing + sw.kinetic_chain + sw.contact + sw.extension + sw.balance
+        assert abs(total - 1.0) < 0.01
+
+    def test_backhand_config_phases(self):
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "preparation")
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "backswing")
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "kinetic_chain")
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "contact")
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "extension")
+        assert hasattr(DEFAULT_BACKHAND_CONFIG, "balance")
+
+
+# =====================================================================
+# Backhand KPI tests
+# =====================================================================
+
+class TestBackhandKPI:
+    def test_ohb_shoulder_rotation(self):
+        from evaluation.backhand_kpi import OHB_ShoulderRotationKPI
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kpi = OHB_ShoulderRotationKPI(DEFAULT_BACKHAND_CONFIG)
+        result = kpi.evaluate(shoulder_rotation_values=[50.0, 60.0, 70.0])
+        assert result.kpi_id == "BP1.1"
+        assert 0 <= result.score <= 100
+        assert result.rating != "无数据"
+
+    def test_ohb_knee_bend(self):
+        from evaluation.backhand_kpi import OHB_KneeBendKPI
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kpi = OHB_KneeBendKPI(DEFAULT_BACKHAND_CONFIG)
+        result = kpi.evaluate(knee_angle_values=[130.0, 125.0, 135.0])
+        assert result.kpi_id == "BP1.2"
+        assert 0 <= result.score <= 100
+
+    def test_ohb_contact_arm_extension(self):
+        from evaluation.backhand_kpi import OHB_ArmExtensionKPI
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kpi = OHB_ArmExtensionKPI(DEFAULT_BACKHAND_CONFIG)
+        result = kpi.evaluate(elbow_angle_at_contact=165.0)
+        assert result.kpi_id == "BP4.2"
+        assert result.score > 70
+
+    def test_ohb_none_returns_no_data(self):
+        from evaluation.backhand_kpi import OHB_ShoulderRotationKPI
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kpi = OHB_ShoulderRotationKPI(DEFAULT_BACKHAND_CONFIG)
+        result = kpi.evaluate(shoulder_rotation_values=[])
+        assert result.rating == "无数据"
+        assert result.score == 0.0
+
+    def test_ohb_head_stability(self):
+        from evaluation.backhand_kpi import OHB_HeadStabilityAtContactKPI
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kpi = OHB_HeadStabilityAtContactKPI(DEFAULT_BACKHAND_CONFIG)
+        result = kpi.evaluate(head_displacement_norm=0.02)
+        assert result.kpi_id == "BP4.5"
+        assert result.score > 50
+
+
+# =====================================================================
+# Backhand Evaluator tests
+# =====================================================================
+
+class TestBackhandEvaluator:
+    def test_evaluate_synthetic_swing(self):
+        from evaluation.backhand_evaluator import BackhandEvaluator
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kp_series, conf_series = _make_swing_sequence(n_frames=60, fps=30.0)
+        evaluator = BackhandEvaluator(fps=30.0, is_right_handed=True, cfg=DEFAULT_BACKHAND_CONFIG)
+        report = evaluator.evaluate_multi(kp_series, conf_series, list(range(60)), [])
+        assert isinstance(report, MultiSwingReport)
+        assert 0 <= report.average_score <= 100
+        assert len(report.swing_evaluations) >= 1
+
+    def test_evaluate_multi_impact(self):
+        from evaluation.backhand_evaluator import BackhandEvaluator
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kp_series, conf_series = _make_swing_sequence(n_frames=120, fps=30.0)
+        impacts = [
+            ImpactEvent(30, 31, 500.0, 5.0, (1.0, 0.0), True),
+            ImpactEvent(80, 81, 600.0, 6.0, (1.0, 0.0), False),
+        ]
+        evaluator = BackhandEvaluator(fps=30.0, is_right_handed=True, cfg=DEFAULT_BACKHAND_CONFIG)
+        report = evaluator.evaluate_multi(kp_series, conf_series, list(range(120)), impacts)
+        assert report.total_swings == 2
+        assert len(report.swing_evaluations) == 2
+
+    def test_backhand_phases_are_ohb(self):
+        from evaluation.backhand_evaluator import BackhandEvaluator
+        from config.backhand_config import DEFAULT_BACKHAND_CONFIG
+        kp_series, conf_series = _make_swing_sequence(n_frames=60, fps=30.0)
+        evaluator = BackhandEvaluator(fps=30.0, is_right_handed=True, cfg=DEFAULT_BACKHAND_CONFIG)
+        report = evaluator.evaluate_multi(kp_series, conf_series, list(range(60)), [])
+        for ev in report.swing_evaluations:
+            for phase_key in ev.phase_scores:
+                assert phase_key.startswith("ohb_"), f"Phase {phase_key} should start with ohb_"
+
+
+# =====================================================================
+# Stroke Classifier tests
+# =====================================================================
+
+class TestStrokeClassifier:
+    def test_classify_forehand(self):
+        from evaluation.stroke_classifier import StrokeClassifier, StrokeType
+        classifier = StrokeClassifier(is_right_handed=True)
+        kp, conf = _make_standing_pose()
+        # Right-handed forehand: wrist moves LEFT (to_non_dom_side)
+        # Wrist starts on right side (same side) and moves left
+        kp_series = []
+        conf_series = []
+        for i in range(30):
+            kp_mod = kp.copy()
+            # Wrist stays on right side of body center (200) during prep
+            kp_mod[10, 0] = 300 - i * 8  # right wrist moves left
+            kp_series.append(kp_mod)
+            conf_series.append(conf.copy())
+        result = classifier.classify_swing(kp_series, conf_series, list(range(30)), 15)
+        assert result.stroke_type in (StrokeType.FOREHAND, StrokeType.UNKNOWN)
+
+    def test_classify_all_swings(self):
+        from evaluation.stroke_classifier import StrokeClassifier
+        classifier = StrokeClassifier(is_right_handed=True)
+        kp, conf = _make_standing_pose()
+        kp_series = [kp.copy() for _ in range(60)]
+        conf_series = [conf.copy() for _ in range(60)]
+        results = classifier.classify_all_swings(kp_series, conf_series, list(range(60)), [15, 45])
+        assert len(results) == 2
+
+
+# =====================================================================
+# Report generator — backhand
+# =====================================================================
+
+class TestBackhandReportGenerator:
+    def test_generate_backhand_report(self, tmp_path):
+        gen = ReportGenerator(output_dir=str(tmp_path))
+        kpi_results = [
+            KPIResult("BP1.1", "侧身转体", "ohb_preparation", 50.0, "度", 80, "良好", "良好的侧身转体。"),
+        ]
+        phase_scores = {"ohb_preparation": PhaseScore("ohb_preparation", 80.0, kpi_results)}
+        swing_eval = SwingEvaluation(
+            swing_index=0,
+            swing_event=SwingEvent(swing_index=0, impact_frame=30),
+            phase_scores=phase_scores,
+            overall_score=75.0,
+            kpi_results=kpi_results,
+            arm_style=None,
+        )
+        report = MultiSwingReport(
+            swing_evaluations=[swing_eval],
+            average_score=75.0,
+            best_swing_index=0,
+            worst_swing_index=0,
+            impact_frames=[30],
+            total_swings=1,
+        )
+        path = gen.generate(report, video_name="test_bh", stroke_type="one_handed_backhand")
+        assert Path(path).exists()
+        content = Path(path).read_text(encoding="utf-8")
+        assert "单手反拍" in content
+        assert "综合评分" in content
+        assert "侧身转体" in content
+
+    def test_radar_chart_with_ohb_phases(self, tmp_path):
+        path = str(tmp_path / "radar_ohb.png")
+        result = ChartGenerator.radar_chart(
+            {
+                "ohb_preparation": 80,
+                "ohb_backswing": 70,
+                "ohb_kinetic_chain": 75,
+                "ohb_contact": 90,
+                "ohb_extension": 60,
+                "ohb_balance": 85,
+            },
+            path,
+        )
+        assert result != ""
+        assert Path(path).exists()

@@ -1,8 +1,12 @@
-"""Tennis Analyzer v2 — 现代正手评估系统。
+"""Tennis Analyzer v2 — 现代正手 & 单反评估系统。
 
 Usage:
-    # 命令行分析
+    # 命令行分析（自动识别正手/反手）
     python main.py analyse --video path/to/video.mp4 [--right-handed] [--output-dir ./output]
+
+    # 指定击球类型
+    python main.py analyse --video path/to/video.mp4 --stroke forehand
+    python main.py analyse --video path/to/video.mp4 --stroke backhand
 
     # 启动 Gradio Web UI
     python main.py ui [--port 7860]
@@ -25,12 +29,15 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from config.framework_config import DEFAULT_CONFIG, FrameworkConfig
+from config.backhand_config import DEFAULT_BACKHAND_CONFIG, BackhandConfig
 from config.keypoints import KEYPOINT_NAMES
 from core.video_processor import VideoProcessor, VideoWriter
 from core.pose_estimator import PoseEstimator
 from analysis.trajectory import TrajectoryStore
 from evaluation.forehand_evaluator import ForehandEvaluator, MultiSwingReport
+from evaluation.backhand_evaluator import BackhandEvaluator
 from evaluation.event_detector import HybridImpactDetector, ImpactEvent
+from evaluation.stroke_classifier import StrokeClassifier, StrokeType
 from report.visualizer import SkeletonDrawer, TrajectoryDrawer, ChartGenerator, JOINT_CN
 from report.report_generator import ReportGenerator
 
@@ -39,20 +46,27 @@ from report.report_generator import ReportGenerator
 # Pipeline
 # =====================================================================
 
-class ForehandPipeline:
-    """端到端流水线：视频 → 姿态估计 → 击球检测 → 评估 → 报告。"""
+class TennisAnalysisPipeline:
+    """端到端流水线：视频 → 姿态估计 → 击球检测 → 自动识别 → 评估 → 报告。
+
+    支持正手和单反两种评估模式，可自动识别或手动指定。
+    """
 
     def __init__(
         self,
         model_name: str = "yolo11m-pose.pt",
         is_right_handed: bool = True,
-        cfg: FrameworkConfig = DEFAULT_CONFIG,
+        stroke_mode: str = "auto",  # "auto" / "forehand" / "backhand"
+        fg_cfg: FrameworkConfig = DEFAULT_CONFIG,
+        bh_cfg: BackhandConfig = DEFAULT_BACKHAND_CONFIG,
         output_dir: str = "./output",
         tracked_joints: Optional[List[str]] = None,
         max_trail: int = 30,
     ):
         self.is_right_handed = is_right_handed
-        self.cfg = cfg
+        self.stroke_mode = stroke_mode
+        self.fg_cfg = fg_cfg
+        self.bh_cfg = bh_cfg
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.max_trail = max_trail
@@ -60,6 +74,7 @@ class ForehandPipeline:
         # 核心模块
         self.estimator = PoseEstimator(model_name=model_name)
         self.skeleton_drawer = SkeletonDrawer()
+        self.stroke_classifier = StrokeClassifier(is_right_handed=is_right_handed)
 
         # 默认只追踪 1 个关节：持拍手腕
         default_joints = ["right_wrist"] if is_right_handed else ["left_wrist"]
@@ -93,6 +108,8 @@ class ForehandPipeline:
             report_path : str (Markdown 文件)
             annotated_video_path : str
             chart_paths : dict
+            stroke_type : str ("forehand" / "one_handed_backhand")
+            classifications : list  (每次击球的分类结果)
         """
         video_name = Path(video_path).stem
         vp = VideoProcessor(video_path)
@@ -119,10 +136,8 @@ class ForehandPipeline:
             video_path=video_path,
             fps=fps,
             is_right_handed=self.is_right_handed,
-            cfg=self.cfg.impact_detection,
+            cfg=self.fg_cfg.impact_detection,
         )
-
-        wrist_speeds_per_frame: List[float] = []
 
         for frame_idx, frame in vp.read_frames():
             result = self.estimator.predict(frame)
@@ -143,8 +158,7 @@ class ForehandPipeline:
             store.update(kp, conf, frame_idx)
 
             # 击球检测（逐帧更新）
-            _, wrist_speed = impact_detector.update(frame_idx, kp, conf)
-            wrist_speeds_per_frame.append(wrist_speed)
+            impact_detector.update(frame_idx, kp, conf)
 
             if progress_callback and frame_idx % 10 == 0:
                 progress_callback(frame_idx, vp.total_frames, "姿态估计中...")
@@ -152,15 +166,60 @@ class ForehandPipeline:
         # 完成击球检测
         impact_events = impact_detector.finalize()
 
+        # ── 阶段 1.5: 自动识别击球类型 ──────────────────────────────
+        if progress_callback:
+            progress_callback(vp.total_frames, vp.total_frames, "正在识别击球类型...")
+
+        # 更新分类器的惯用手设置
+        self.stroke_classifier = StrokeClassifier(is_right_handed=self.is_right_handed)
+
+        classifications = []
+        detected_stroke_type = "forehand"
+
+        if self.stroke_mode == "auto" and impact_events:
+            # 自动识别每次击球类型
+            impact_frames = [e.impact_frame_idx for e in impact_events]
+            classifications = self.stroke_classifier.classify_all_swings(
+                keypoints_series, confidence_series, frame_indices, impact_frames,
+            )
+
+            # 统计多数类型
+            type_counts = {}
+            for cls in classifications:
+                t = cls.stroke_type.value
+                type_counts[t] = type_counts.get(t, 0) + 1
+
+            if type_counts:
+                majority_type = max(type_counts, key=type_counts.get)
+                if majority_type in ("one_handed_backhand", "two_handed_backhand"):
+                    detected_stroke_type = "one_handed_backhand"
+                else:
+                    detected_stroke_type = "forehand"
+        elif self.stroke_mode == "backhand":
+            detected_stroke_type = "one_handed_backhand"
+        else:
+            detected_stroke_type = "forehand"
+
+        is_backhand = detected_stroke_type != "forehand"
+
         # ── 阶段 2: 评估（多次击球独立评分）──────────────────────────
         if progress_callback:
-            progress_callback(vp.total_frames, vp.total_frames, "正在评估正手技术...")
+            stroke_cn = "单反" if is_backhand else "正手"
+            progress_callback(vp.total_frames, vp.total_frames, f"正在评估{stroke_cn}技术...")
 
-        evaluator = ForehandEvaluator(
-            fps=fps,
-            is_right_handed=self.is_right_handed,
-            cfg=self.cfg,
-        )
+        if is_backhand:
+            evaluator = BackhandEvaluator(
+                fps=fps,
+                is_right_handed=self.is_right_handed,
+                cfg=self.bh_cfg,
+            )
+        else:
+            evaluator = ForehandEvaluator(
+                fps=fps,
+                is_right_handed=self.is_right_handed,
+                cfg=self.fg_cfg,
+            )
+
         report = evaluator.evaluate_multi(
             keypoints_series, confidence_series, frame_indices, impact_events,
         )
@@ -175,7 +234,7 @@ class ForehandPipeline:
             for drawer in self.trajectory_drawers.values():
                 drawer.clear()
 
-            # 构建击球帧集合，用于标注
+            # 构建击球帧集合
             impact_frame_set = set(report.impact_frames)
 
             for i, (frame, kp, conf) in enumerate(zip(frames_raw, keypoints_series, confidence_series)):
@@ -190,12 +249,13 @@ class ForehandPipeline:
                 # 标记击球帧
                 current_frame = frame_indices[i]
                 if current_frame in impact_frame_set:
-                    # 找到对应的击球序号
                     swing_idx = report.impact_frames.index(current_frame)
                     self._draw_impact_marker(annotated, swing_idx + 1)
 
                 # HUD 叠加
-                annotated = self._draw_hud(annotated, current_frame, report)
+                annotated = self._draw_hud(
+                    annotated, current_frame, report, detected_stroke_type
+                )
 
                 writer.write(annotated)
 
@@ -206,11 +266,17 @@ class ForehandPipeline:
         if progress_callback:
             progress_callback(0, 1, "正在生成分析图表...")
 
-        chart_paths = self._generate_charts(report, store, video_name, frame_indices)
+        chart_paths = self._generate_charts(
+            report, store, video_name, frame_indices, is_backhand
+        )
 
         # ── 阶段 5: 生成报告 ────────────────────────────────────────
         report_gen = ReportGenerator(output_dir=str(self.output_dir))
-        report_path = report_gen.generate(report, video_name=video_name, chart_paths=chart_paths)
+        report_path = report_gen.generate(
+            report, video_name=video_name,
+            chart_paths=chart_paths,
+            stroke_type=detected_stroke_type,
+        )
 
         if progress_callback:
             progress_callback(1, 1, "分析完成！")
@@ -220,6 +286,8 @@ class ForehandPipeline:
             "report_path": report_path,
             "annotated_video_path": annotated_path,
             "chart_paths": chart_paths,
+            "stroke_type": detected_stroke_type,
+            "classifications": classifications,
         }
 
     # ── 辅助方法 ─────────────────────────────────────────────────────
@@ -251,12 +319,17 @@ class ForehandPipeline:
         text_size = cv2.getTextSize(text, font, font_scale, thickness)[0]
         x = (w - text_size[0]) // 2
         y = int(h * 0.08) + text_size[1]
-        # 背景
         cv2.rectangle(frame, (x - 10, y - text_size[1] - 10),
                        (x + text_size[0] + 10, y + 10), (0, 0, 200), -1)
         cv2.putText(frame, text, (x, y), font, font_scale, (255, 255, 255), thickness, cv2.LINE_AA)
 
-    def _draw_hud(self, frame: np.ndarray, frame_idx: int, report: MultiSwingReport) -> np.ndarray:
+    def _draw_hud(
+        self,
+        frame: np.ndarray,
+        frame_idx: int,
+        report: MultiSwingReport,
+        stroke_type: str = "forehand",
+    ) -> np.ndarray:
         """在帧上绘制 HUD 信息。"""
         h, w = frame.shape[:2]
         font = cv2.FONT_HERSHEY_SIMPLEX
@@ -267,8 +340,13 @@ class ForehandPipeline:
         cv2.putText(frame, f"Frame: {frame_idx}", (10, 25),
                     font, font_scale, (255, 255, 255), 1, cv2.LINE_AA)
 
+        # 击球类型
+        stroke_cn = "OHB" if stroke_type != "forehand" else "FH"
+        cv2.putText(frame, f"Type: {stroke_cn}", (10, 50),
+                    font, font_scale, (255, 255, 255), 1, cv2.LINE_AA)
+
         # 击球次数
-        cv2.putText(frame, f"Swings: {report.total_swings}", (10, 50),
+        cv2.putText(frame, f"Swings: {report.total_swings}", (10, 75),
                     font, font_scale, (255, 255, 255), 1, cv2.LINE_AA)
 
         # 平均评分
@@ -284,7 +362,7 @@ class ForehandPipeline:
         for jname, drawer in self.trajectory_drawers.items():
             cn_name = JOINT_CN.get(jname, jname)
             cv2.putText(frame, cn_name, (10, y_offset),
-                        font, font_scale * 0.9, drawer.color, 1, cv2.LINE_AA)
+                        font, font_scale * 0.8, drawer.color, 1, cv2.LINE_AA)
             y_offset -= 20
 
         return frame
@@ -295,6 +373,7 @@ class ForehandPipeline:
         store: TrajectoryStore,
         video_name: str,
         frame_indices: List[int],
+        is_backhand: bool = False,
     ) -> Dict[str, str]:
         """生成所有分析图表。"""
         charts = {}
@@ -309,6 +388,11 @@ class ForehandPipeline:
                 charts["multi_swing_summary"] = summary_path
 
         # 每次击球的雷达图和 KPI 条形图
+        phase_titles = (
+            ReportGenerator.BACKHAND_PHASE_TITLES if is_backhand
+            else ReportGenerator.FOREHAND_PHASE_TITLES
+        )
+
         for ev in report.swing_evaluations:
             idx = ev.swing_index
             suffix = f"_{idx}" if report.total_swings > 1 else ""
@@ -320,6 +404,7 @@ class ForehandPipeline:
                 phase_scores, radar_path,
                 title="各阶段评分雷达图",
                 swing_idx=idx if report.total_swings > 1 else None,
+                phase_labels=phase_titles,
             )
             if result:
                 key = f"radar_{idx}" if report.total_swings > 1 else "radar"
@@ -363,30 +448,41 @@ class ForehandPipeline:
         return charts
 
 
+# 向后兼容别名
+ForehandPipeline = TennisAnalysisPipeline
+
+
 # =====================================================================
 # Gradio UI
 # =====================================================================
 
-def build_gradio_ui(pipeline: ForehandPipeline):
+def build_gradio_ui(pipeline: TennisAnalysisPipeline):
     """构建 Gradio Blocks 界面。"""
     import gradio as gr
 
     with gr.Blocks(
-        title="网球分析器 v2 — 现代正手评估",
+        title="网球分析器 v2 — 正手 & 单反评估",
         theme=gr.themes.Soft(),
     ) as demo:
-        gr.Markdown("# 🎾 网球分析器 v2 — 现代正手技术评估")
+        gr.Markdown("# 🎾 网球分析器 v2 — 正手 & 单反技术评估")
         gr.Markdown(
-            "上传正手挥拍视频，系统将基于 **Modern Forehand** 理论框架 "
+            "上传挥拍视频，系统将基于 **Modern Forehand / One-Handed Backhand** 理论框架 "
             "(Dr. Brian Gordon, Rick Macci, Tennis Doctor) 评估您的技术。\n\n"
-            "支持多次击球独立评分，使用音频+视觉协同检测击球点。"
+            "支持自动识别正手/反手，多次击球独立评分，音频+视觉协同检测击球点。"
         )
 
         with gr.Row():
             with gr.Column(scale=1):
-                video_input = gr.Video(label="上传正手视频")
+                video_input = gr.Video(label="上传挥拍视频")
                 with gr.Row():
                     is_right = gr.Checkbox(value=True, label="右手持拍")
+                    stroke_mode = gr.Radio(
+                        choices=["auto", "forehand", "backhand"],
+                        value="auto",
+                        label="击球类型",
+                        info="auto=自动识别, forehand=正手, backhand=单反",
+                    )
+                with gr.Row():
                     max_trail_slider = gr.Slider(
                         minimum=10, maximum=60, value=30, step=5,
                         label="轨迹保留帧数",
@@ -406,6 +502,7 @@ def build_gradio_ui(pipeline: ForehandPipeline):
                 with gr.Row():
                     overall_score = gr.Number(label="平均综合评分", interactive=False)
                     swing_count = gr.Number(label="检测到击球次数", interactive=False)
+                    detected_type = gr.Textbox(label="识别击球类型", interactive=False)
 
         with gr.Tabs():
             with gr.Tab("标注视频"):
@@ -432,12 +529,14 @@ def build_gradio_ui(pipeline: ForehandPipeline):
                 report_md = gr.Markdown(label="完整报告")
                 report_file = gr.File(label="下载报告")
 
-        def run_analysis(video, right_handed, tracked_joints, max_trail_val):
+        def run_analysis(video, right_handed, stroke, tracked_joints, max_trail_val):
             if video is None:
-                return "请上传视频。", 0, 0, None, None, None, None, [], [], [], "", None
+                return ("请上传视频。", 0, 0, "", None, None, None, None,
+                        [], [], [], "", None)
 
             # 重新配置 pipeline
             pipeline.is_right_handed = right_handed
+            pipeline.stroke_mode = stroke
             pipeline.max_trail = int(max_trail_val)
             pipeline.tracked_joints = (tracked_joints[:2] if tracked_joints else
                                        (["right_wrist"] if right_handed else ["left_wrist"]))
@@ -448,18 +547,28 @@ def build_gradio_ui(pipeline: ForehandPipeline):
             except Exception as e:
                 import traceback
                 traceback.print_exc()
-                return f"错误: {e}", 0, 0, None, None, None, None, [], [], [], "", None
+                return (f"错误: {e}", 0, 0, "", None, None, None, None,
+                        [], [], [], "", None)
 
             report = result["report"]
             charts = result["chart_paths"]
+            stroke_type = result["stroke_type"]
+            stroke_cn = "单手反拍" if stroke_type != "forehand" else "正手"
 
-            # KPI 表格（汇总所有击球）
+            # 选择正确的阶段标题
+            is_bh = stroke_type != "forehand"
+            phase_titles = (
+                ReportGenerator.BACKHAND_PHASE_TITLES if is_bh
+                else ReportGenerator.FOREHAND_PHASE_TITLES
+            )
+
+            # KPI 表格
             kpi_rows = []
             for ev in report.swing_evaluations:
                 prefix = f"[第{ev.swing_index + 1}次] " if report.total_swings > 1 else ""
                 for k in ev.kpi_results:
                     val_str = f"{k.raw_value:.2f}" if k.raw_value is not None else "无数据"
-                    phase_cn = ReportGenerator.PHASE_TITLES.get(k.phase, k.phase)
+                    phase_cn = phase_titles.get(k.phase, k.phase)
                     kpi_rows.append([
                         f"{prefix}{k.kpi_id} {k.name}",
                         phase_cn,
@@ -478,17 +587,15 @@ def build_gradio_ui(pipeline: ForehandPipeline):
             if Path(result["report_path"]).exists():
                 report_text = Path(result["report_path"]).read_text(encoding="utf-8")
 
-            # 雷达图（显示第一次击球的，或唯一的）
             radar_img = charts.get("radar") or charts.get("radar_0")
             multi_img = charts.get("multi_swing_summary")
-
-            # KPI 条形图
             kpi_bar_img = charts.get("kpi_bar") or charts.get("kpi_bar_0")
 
             return (
                 "分析完成！",
                 report.average_score,
                 report.total_swings,
+                stroke_cn,
                 result["annotated_video_path"],
                 radar_img,
                 multi_img,
@@ -502,9 +609,9 @@ def build_gradio_ui(pipeline: ForehandPipeline):
 
         analyse_btn.click(
             fn=run_analysis,
-            inputs=[video_input, is_right, tracked_joints_input, max_trail_slider],
+            inputs=[video_input, is_right, stroke_mode, tracked_joints_input, max_trail_slider],
             outputs=[
-                status_text, overall_score, swing_count,
+                status_text, overall_score, swing_count, detected_type,
                 video_output,
                 radar_chart, multi_swing_chart,
                 kpi_bar_chart, kpi_table,
@@ -521,14 +628,16 @@ def build_gradio_ui(pipeline: ForehandPipeline):
 # =====================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="网球分析器 v2 — 现代正手评估")
+    parser = argparse.ArgumentParser(description="网球分析器 v2 — 正手 & 单反评估")
     subparsers = parser.add_subparsers(dest="command")
 
     # analyse 子命令
-    analyse_parser = subparsers.add_parser("analyse", help="分析正手视频")
+    analyse_parser = subparsers.add_parser("analyse", help="分析挥拍视频")
     analyse_parser.add_argument("--video", required=True, help="视频文件路径")
     analyse_parser.add_argument("--right-handed", action="store_true", default=True)
     analyse_parser.add_argument("--left-handed", action="store_true", default=False)
+    analyse_parser.add_argument("--stroke", choices=["auto", "forehand", "backhand"],
+                                default="auto", help="击球类型 (auto=自动识别)")
     analyse_parser.add_argument("--output-dir", default="./output")
     analyse_parser.add_argument("--model", default="yolo11m-pose.pt")
     analyse_parser.add_argument("--joints", nargs="+", default=None,
@@ -546,9 +655,10 @@ def main():
 
     if args.command == "analyse":
         is_right = not args.left_handed
-        pipeline = ForehandPipeline(
+        pipeline = TennisAnalysisPipeline(
             model_name=args.model,
             is_right_handed=is_right,
+            stroke_mode=args.stroke,
             output_dir=args.output_dir,
             tracked_joints=args.joints,
             max_trail=args.max_trail,
@@ -559,18 +669,22 @@ def main():
             print(f"\r[{pct:5.1f}%] {msg}", end="", flush=True)
 
         print(f"正在分析: {args.video}")
+        print(f"击球类型: {args.stroke}")
         result = pipeline.run(args.video, progress_callback=progress)
         print()
+
         report = result["report"]
+        stroke_cn = "单手反拍" if result["stroke_type"] != "forehand" else "正手"
+        print(f"识别击球类型: {stroke_cn}")
         print(f"检测到击球次数: {report.total_swings}")
         print(f"平均综合评分: {report.average_score:.0f}/100")
         for ev in report.swing_evaluations:
-            print(f"  第{ev.swing_index + 1}次击球: {ev.overall_score:.0f}/100 ({ev.arm_style})")
+            print(f"  第{ev.swing_index + 1}次击球: {ev.overall_score:.0f}/100")
         print(f"报告: {result['report_path']}")
         print(f"标注视频: {result['annotated_video_path']}")
 
     elif args.command == "ui":
-        pipeline = ForehandPipeline(model_name=args.model)
+        pipeline = TennisAnalysisPipeline(model_name=args.model)
         demo = build_gradio_ui(pipeline)
         demo.launch(server_name="0.0.0.0", server_port=args.port, share=args.share)
 
