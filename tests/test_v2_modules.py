@@ -238,7 +238,7 @@ class TestKinematicCalculator:
 
     def test_wrist_below_elbow_distance(self):
         kp, conf = _make_standing_pose()
-        val = wrist_below_elbow_distance(kp, conf, right=True)
+        val = wrist_below_elbow_distance(kp, conf, is_right_handed=True)
         assert val is not None
 
     def test_hip_center_vertical_position(self):
@@ -248,12 +248,12 @@ class TestKinematicCalculator:
 
     def test_elbow_to_torso_distance(self):
         kp, conf = _make_standing_pose()
-        val = elbow_to_torso_distance(kp, conf, right=True)
+        val = elbow_to_torso_distance(kp, conf, is_right_handed=True)
         assert val is not None
 
     def test_forearm_angle(self):
         kp, conf = _make_standing_pose()
-        val = forearm_angle(kp, conf, right=True)
+        val = forearm_angle(kp, conf, is_right_handed=True)
         assert val is not None
 
     def test_hip_line_angle(self):
@@ -394,7 +394,7 @@ class TestKPIs:
     # Phase 2: Slot Prep
     def test_elbow_back_position_kpi(self):
         kpi = ElbowBackPositionKPI()
-        result = kpi.evaluate(elbow_behind_norm_values=[0.3, 0.4, 0.5])
+        result = kpi.evaluate(elbow_behind_values=[0.3, 0.4, 0.5])
         assert result.phase == "slot_prep"
         assert 0 <= result.score <= 100
 
@@ -439,7 +439,9 @@ class TestKPIs:
 
     def test_hand_path_linearity_kpi(self):
         kpi = HandPathLinearityKPI()
-        result = kpi.evaluate(hand_path_r2=0.85)
+        import numpy as _np
+        pts = _np.array([[0,0],[1,1],[2,2],[3,3],[4,4]], dtype=float)
+        result = kpi.evaluate(wrist_positions_contact_zone=pts)
         assert result.phase == "lag_drive"
         assert result.score > 50
 
@@ -484,7 +486,7 @@ class TestKPIs:
     # Phase 7: Wiper
     def test_forward_extension_kpi(self):
         kpi = ForwardExtensionKPI()
-        result = kpi.evaluate(extension_ratio=0.6)
+        result = kpi.evaluate(forward_extension_norm=0.6)
         assert result.phase == "wiper"
         assert result.score > 50
 
@@ -497,7 +499,7 @@ class TestKPIs:
     # Phase 8: Balance
     def test_overall_head_stability_kpi(self):
         kpi = OverallHeadStabilityKPI()
-        result = kpi.evaluate(head_std_norm=0.01)
+        result = kpi.evaluate(head_y_std_norm=0.01)
         assert result.phase == "balance"
         assert result.score > 50
 
