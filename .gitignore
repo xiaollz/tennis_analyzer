@@ -1,5 +1,6 @@
 # ===== 虚拟环境 =====
 venv/
+venv 2/
 .venv/
 env/
 
@@ -60,6 +61,9 @@ run*.pid
 local.ipforward.plist
 tmux.conf
 hyper2.tcl
+
+# ===== VLM API 密钥（绝不提交） =====
+config/vlm_config.json
 
 # ===== 文档（保留 learn_ytb 学习笔记，排除其他个人文档） =====
 docs/

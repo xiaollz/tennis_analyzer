@@ -153,11 +153,12 @@ class BackhandEvaluator:
             forward_sign = 1.0
             if abs(impact_event.peak_velocity_unit[0]) > 0.1:
                 forward_sign = 1.0 if impact_event.peak_velocity_unit[0] > 0 else -1.0
+            forward_axis = self._estimate_forward_axis(impact_event)
 
             # 计算原始指标
             raw = self._compute_raw_metrics(
                 keypoints_series, confidence_series, frame_indices,
-                store, swing_event, forward_sign,
+                store, swing_event, forward_sign, forward_axis,
             )
 
             # 评估所有 KPI
@@ -212,12 +213,23 @@ class BackhandEvaluator:
 
     # ── 内部：原始指标计算 ──────────────────────────────────────────
 
+    @staticmethod
+    def _estimate_forward_axis(impact_event: ImpactEvent) -> Optional[np.ndarray]:
+        """Estimate image-plane forward axis from impact velocity direction."""
+        vx, vy = impact_event.peak_velocity_unit
+        axis = np.array([float(vx), float(vy)], dtype=np.float64)
+        n = float(np.linalg.norm(axis))
+        if n < 1e-6:
+            return None
+        return axis / n
+
     def _compute_raw_metrics(
         self,
         kp_series, conf_series, frame_indices,
         store: TrajectoryStore,
         swing: SwingEvent,
         forward_sign: float,
+        forward_axis_hint: Optional[np.ndarray] = None,
     ) -> Dict[str, Any]:
         """计算单次单反击球所需的所有生物力学原始指标。"""
         raw: Dict[str, Any] = {}
@@ -235,6 +247,27 @@ class BackhandEvaluator:
         non_dom_wrist_idx = KEYPOINT_NAMES[self.non_dom_wrist_key]
         dom_elbow_idx = KEYPOINT_NAMES[self.dom_elbow_key]
         dom_shoulder_idx = KEYPOINT_NAMES[self.dom_shoulder_key]
+
+        # 从准备到击球的持拍手运动估计前进轴
+        forward_axis = None
+        wrist_path = []
+        for i in range(prep_pos, min(impact_pos + 1, len(kp_series))):
+            kp, conf = kp_series[i], conf_series[i]
+            if conf[dom_wrist_idx] >= 0.35:
+                wrist_path.append(kp[dom_wrist_idx].astype(np.float64).copy())
+        if len(wrist_path) >= 2:
+            disp = wrist_path[-1] - wrist_path[0]
+            n = float(np.linalg.norm(disp))
+            if n > 3.0:
+                forward_axis = disp / n
+        if forward_axis is None and forward_axis_hint is not None:
+            axis_hint = np.asarray(forward_axis_hint, dtype=np.float64).reshape(-1)[:2]
+            n = float(np.linalg.norm(axis_hint))
+            if n > 1e-6:
+                forward_axis = axis_hint / n
+        if forward_axis is not None and abs(forward_axis[0]) > 0.1:
+            forward_sign = 1.0 if forward_axis[0] > 0 else -1.0
+        raw["forward_axis"] = forward_axis.tolist() if forward_axis is not None else None
 
         # ── 阶段 1：准备阶段指标 ──────────────────────────────────────
         shoulder_rots = []
@@ -324,7 +357,10 @@ class BackhandEvaluator:
 
             # 击球点位置
             raw["contact_forward_norm"] = wrist_forward_normalised(
-                kp_impact, conf_impact, self.is_right_handed, forward_sign
+                kp_impact, conf_impact,
+                is_right_handed=self.is_right_handed,
+                forward_sign=forward_sign,
+                forward_axis=forward_axis,
             )
 
             # 手臂伸展（肘部角度）

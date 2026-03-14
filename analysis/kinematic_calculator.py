@@ -16,6 +16,13 @@ import numpy as np
 from config.keypoints import KEYPOINT_NAMES
 
 
+_MIN_SHOULDER_WIDTH_PX = 20.0
+_MAX_ELBOW_BEHIND_NORM = 1.5
+_MAX_VERTICAL_ACCEL = 40.0
+_MAX_ANGULAR_VELOCITY = 1200.0
+_MAX_ROTATION_SPEED = 500.0
+
+
 # ── Low-level geometry helpers ────────────────────────────────────────
 
 def _vec_angle(v1: np.ndarray, v2: np.ndarray) -> Optional[float]:
@@ -39,11 +46,36 @@ def _signed_angle_2d(v1: np.ndarray, v2: np.ndarray) -> Optional[float]:
     return float(np.degrees(np.arctan2(cross, dot)))
 
 
+def _unit_vec(v: Optional[np.ndarray]) -> Optional[np.ndarray]:
+    """Return a normalised 2-D vector (or None when degenerate)."""
+    if v is None:
+        return None
+    arr = np.asarray(v, dtype=np.float64).reshape(-1)
+    if arr.size < 2:
+        return None
+    arr2 = arr[:2]
+    n = float(np.linalg.norm(arr2))
+    if n < 1e-6:
+        return None
+    return arr2 / n
+
+
 def _conf_ok(confidence: np.ndarray, idx: int, thr: float = 0.3) -> bool:
     try:
         return float(confidence[idx]) >= thr
     except (IndexError, TypeError):
         return False
+
+
+def _smooth_series(arr: np.ndarray) -> np.ndarray:
+    """Light temporal smoothing to suppress single-frame pose jitter."""
+    if arr.size < 5:
+        return arr
+    kernel = np.array([0.25, 0.5, 0.25], dtype=np.float64)
+    smooth = np.convolve(arr, kernel, mode="same")
+    smooth[0] = arr[0]
+    smooth[-1] = arr[-1]
+    return smooth
 
 
 # ── Joint angle calculators ──────────────────────────────────────────
@@ -162,7 +194,10 @@ def shoulder_width_px(keypoints: np.ndarray, confidence: np.ndarray) -> Optional
     sv = shoulder_line_vector(keypoints, confidence)
     if sv is None:
         return None
-    return float(np.linalg.norm(sv))
+    width = float(np.linalg.norm(sv))
+    if width < _MIN_SHOULDER_WIDTH_PX:
+        return None
+    return width
 
 
 # ── Spine angle ──────────────────────────────────────────────────────
@@ -188,10 +223,12 @@ def wrist_forward_distance(
     confidence: np.ndarray,
     is_right_handed: bool = True,
     forward_sign: float = 1.0,
+    forward_axis: Optional[np.ndarray] = None,
 ) -> Optional[float]:
-    """Horizontal distance of the dominant wrist in front of hip center (pixels).
+    """Distance of dominant wrist in front of hip center (pixels).
 
-    Positive = in front.  Uses *forward_sign* to handle left/right ambiguity.
+    If ``forward_axis`` is provided, project onto this axis for camera-angle robustness.
+    Otherwise fallback to horizontal projection with ``forward_sign``.
     """
     side = "right" if is_right_handed else "left"
     wrist_idx = KEYPOINT_NAMES[f"{side}_wrist"]
@@ -200,7 +237,14 @@ def wrist_forward_distance(
     hc = hip_center(keypoints, confidence)
     if hc is None:
         return None
-    dx = float(keypoints[wrist_idx][0]) - float(hc[0])
+    wrist = keypoints[wrist_idx].astype(np.float64)
+    delta = wrist - hc
+
+    axis = _unit_vec(forward_axis)
+    if axis is not None:
+        return float(np.dot(delta, axis))
+
+    dx = float(delta[0])
     return dx * forward_sign
 
 
@@ -209,9 +253,15 @@ def wrist_forward_normalised(
     confidence: np.ndarray,
     is_right_handed: bool = True,
     forward_sign: float = 1.0,
+    forward_axis: Optional[np.ndarray] = None,
 ) -> Optional[float]:
     """Wrist forward distance normalised by torso height."""
-    dist = wrist_forward_distance(keypoints, confidence, is_right_handed, forward_sign)
+    dist = wrist_forward_distance(
+        keypoints, confidence,
+        is_right_handed=is_right_handed,
+        forward_sign=forward_sign,
+        forward_axis=forward_axis,
+    )
     th = torso_height_px(keypoints, confidence)
     if dist is None or th is None or th < 1e-6:
         return None
@@ -238,6 +288,7 @@ def elbow_behind_torso_distance(
     confidence: np.ndarray,
     is_right_handed: bool = True,
     forward_sign: float = 1.0,
+    forward_axis: Optional[np.ndarray] = None,
 ) -> Optional[float]:
     """How far the dominant elbow is behind the torso center (pixels).
 
@@ -251,8 +302,16 @@ def elbow_behind_torso_distance(
     sc = shoulder_center(keypoints, confidence)
     if sc is None:
         return None
-    # "Behind" is opposite to forward direction
-    dx = float(sc[0]) - float(keypoints[elbow_idx][0])
+    elbow = keypoints[elbow_idx].astype(np.float64)
+    # Positive should mean "elbow behind", i.e. opposite to forward direction.
+    # The vector shoulder - elbow points forward when elbow is behind.
+    delta = sc - elbow
+
+    axis = _unit_vec(forward_axis)
+    if axis is not None:
+        return float(np.dot(delta, axis))
+
+    dx = float(delta[0])
     return dx * forward_sign
 
 
@@ -261,13 +320,19 @@ def elbow_behind_torso_normalised(
     confidence: np.ndarray,
     is_right_handed: bool = True,
     forward_sign: float = 1.0,
+    forward_axis: Optional[np.ndarray] = None,
 ) -> Optional[float]:
     """Elbow behind torso distance normalised by shoulder width."""
-    dist = elbow_behind_torso_distance(keypoints, confidence, is_right_handed, forward_sign)
+    dist = elbow_behind_torso_distance(
+        keypoints, confidence,
+        is_right_handed=is_right_handed,
+        forward_sign=forward_sign,
+        forward_axis=forward_axis,
+    )
     sw = shoulder_width_px(keypoints, confidence)
     if dist is None or sw is None or sw < 1e-6:
         return None
-    return dist / sw
+    return float(np.clip(dist / sw, -_MAX_ELBOW_BEHIND_NORM, _MAX_ELBOW_BEHIND_NORM))
 
 
 def elbow_height_relative(
@@ -335,6 +400,7 @@ def hip_center_vertical_position(
 def compute_vertical_acceleration(
     positions: List[float],
     fps: float,
+    normalise_scale: Optional[float] = None,
 ) -> Optional[float]:
     """Compute peak upward acceleration from a series of vertical positions.
 
@@ -343,24 +409,32 @@ def compute_vertical_acceleration(
 
     In image coords, y increases downward, so upward movement = decreasing y.
     """
-    if len(positions) < 3 or fps <= 0:
+    if len(positions) < 4 or fps <= 0:
         return None
+    positions_arr = np.asarray(positions, dtype=np.float64)
+    valid = np.isfinite(positions_arr)
+    if int(np.sum(valid)) < 4:
+        return None
+    idx = np.arange(len(positions_arr), dtype=np.float64)
+    interp = np.interp(idx, idx[valid], positions_arr[valid])
+
+    if normalise_scale is not None and normalise_scale > 1e-6:
+        interp = interp / float(normalise_scale)
+
+    smooth = _smooth_series(interp)
     dt = 1.0 / fps
-    positions_arr = np.array(positions, dtype=np.float64)
 
-    # Velocity via central difference (negate because image y is inverted)
-    velocity = np.zeros(len(positions_arr))
-    for i in range(1, len(positions_arr) - 1):
-        velocity[i] = -(positions_arr[i + 1] - positions_arr[i - 1]) / (2 * dt)
+    # Use gradient + smoothing to keep derivatives stable.
+    velocity = -np.gradient(smooth, dt)  # negate because image y is inverted
+    accel = np.gradient(velocity, dt)
 
-    # Acceleration via forward difference
-    accel = np.zeros(len(velocity) - 1)
-    for i in range(len(velocity) - 1):
-        accel[i] = (velocity[i + 1] - velocity[i]) / dt
-
-    if len(accel) == 0:
+    if accel.size == 0:
         return None
-    return float(np.max(accel))  # Peak upward acceleration
+    upward = accel[np.isfinite(accel) & (accel > 0.0)]
+    if upward.size == 0:
+        return 0.0
+    peak = float(np.percentile(upward, 95))
+    return float(np.clip(peak, 0.0, _MAX_VERTICAL_ACCEL))
 
 
 # ── Lag & Elbow Drive (Phase 5) ──────────────────────────────────────
@@ -430,24 +504,41 @@ def forearm_angle(
 
 
 def compute_angular_velocity(
-    angles: List[float],
+    angles: List[Optional[float]],
     fps: float,
 ) -> Optional[float]:
     """Compute peak angular velocity from a series of angles (degrees).
 
     Returns peak angular velocity in degrees/second.
     """
-    if len(angles) < 2 or fps <= 0:
+    if len(angles) < 3 or fps <= 0:
         return None
+    arr = np.array([
+        float(a) if a is not None else np.nan
+        for a in angles
+    ], dtype=np.float64)
+    valid = np.isfinite(arr)
+    if int(np.sum(valid)) < 3:
+        return None
+
+    idx = np.arange(len(arr), dtype=np.float64)
+    interp = np.interp(idx, idx[valid], arr[valid])
+    unwrapped = np.rad2deg(np.unwrap(np.deg2rad(interp)))
+    smooth = _smooth_series(unwrapped)
+
     dt = 1.0 / fps
-    velocities = []
-    for i in range(1, len(angles)):
-        dtheta = abs(angles[i] - angles[i - 1])
-        # Handle angle wrapping
-        if dtheta > 180:
-            dtheta = 360 - dtheta
-        velocities.append(dtheta / dt)
-    return float(max(velocities)) if velocities else None
+    velocities = np.abs(np.diff(smooth)) / dt
+
+    # Keep interpolation boundaries conservative when source data is missing.
+    for i in range(len(velocities)):
+        if not (valid[i] and valid[i + 1]):
+            velocities[i] = np.nan
+
+    finite_vel = velocities[np.isfinite(velocities)]
+    if finite_vel.size == 0:
+        return None
+    peak = float(np.percentile(finite_vel, 95))
+    return float(np.clip(peak, 0.0, _MAX_ANGULAR_VELOCITY))
 
 
 # ── Windshield Wiper Follow-Through (Phase 7) ───────────────────────
@@ -550,19 +641,34 @@ def compute_rotation_speed(
         return [0.0] * len(angles)
 
     dt = 1.0 / fps
-    speeds = [0.0]
+    arr = np.array([
+        float(a) if a is not None else np.nan
+        for a in angles
+    ], dtype=np.float64)
+    valid = np.isfinite(arr)
+    if int(np.sum(valid)) < 2:
+        return [0.0] * len(angles)
 
-    for i in range(1, len(angles)):
-        if angles[i] is not None and angles[i - 1] is not None:
-            diff = angles[i] - angles[i - 1]
-            # Handle angle wrapping
-            if diff > 180:
-                diff -= 360
-            elif diff < -180:
-                diff += 360
-            speeds.append(abs(diff) / dt)
-        else:
-            speeds.append(0.0)
+    idx = np.arange(len(arr), dtype=np.float64)
+    interp = np.interp(idx, idx[valid], arr[valid])
+    unwrapped = np.rad2deg(np.unwrap(np.deg2rad(interp)))
+
+    # Light temporal smoothing to reduce single-frame pose jitter.
+    if len(unwrapped) >= 5:
+        kernel = np.array([0.25, 0.5, 0.25], dtype=np.float64)
+        smooth = np.convolve(unwrapped, kernel, mode="same")
+        smooth[0] = unwrapped[0]
+        smooth[-1] = unwrapped[-1]
+    else:
+        smooth = unwrapped
+
+    diff = np.diff(smooth)
+    speeds = [0.0] + [abs(float(d)) / dt for d in diff]
+
+    # Keep missing-data boundaries conservative.
+    for i in range(1, len(speeds)):
+        if not (valid[i] and valid[i - 1]):
+            speeds[i] = 0.0
 
     return speeds
 
@@ -573,8 +679,11 @@ def compute_peak_rotation_speed(
 ) -> Optional[float]:
     """Compute peak rotation speed from a series of angles."""
     speeds = compute_rotation_speed(angles, fps)
-    valid = [s for s in speeds if s > 0]
-    return max(valid) if valid else None
+    valid = np.asarray([s for s in speeds if s > 0], dtype=np.float64)
+    if valid.size == 0:
+        return None
+    peak = float(np.percentile(valid, 95))
+    return float(np.clip(peak, 0.0, _MAX_ROTATION_SPEED))
 
 
 # ── Hip-Shoulder Separation Timing (Phase 3→4) ──────────────────────
@@ -591,7 +700,17 @@ def find_peak_rotation_frame(
     speeds = compute_rotation_speed(angles, fps)
     if not speeds or max(speeds) == 0:
         return None
-    peak_idx = int(np.argmax(speeds))
+
+    # Prefer interior local maxima to avoid boundary noise peaks.
+    candidates = []
+    for i in range(1, len(speeds) - 1):
+        if speeds[i] > 0 and speeds[i] >= speeds[i - 1] and speeds[i] >= speeds[i + 1]:
+            candidates.append(i)
+    if candidates:
+        peak_idx = int(max(candidates, key=lambda i: speeds[i]))
+    else:
+        peak_idx = int(np.argmax(speeds))
+
     if peak_idx < len(frame_indices):
         return frame_indices[peak_idx]
     return None

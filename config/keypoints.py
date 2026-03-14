@@ -1,4 +1,4 @@
-"""COCO 17-keypoint definitions and skeleton topology for YOLO Pose.
+"""COCO 17-keypoint definitions and skeleton topology for pose estimation.
 
 This is the single source of truth for keypoint indices, names, skeleton
 connections, and drawing colours used throughout the project.

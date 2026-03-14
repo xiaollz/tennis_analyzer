@@ -1,11 +1,4 @@
-"""Markdown 报告生成器 v3 — 支持正手8阶段 & 单反评估 + 训练处方。
-
-v3 升级：
-    - 正手从 6 阶段升级到 8 阶段
-    - 新增训练处方系统（每个 KPI 都有对应的训练方法和体感提示）
-    - 新增逐阶段诊断和优先级排序
-    - 新增多次击球一致性分析
-"""
+"""Markdown 报告生成器 v3 — 支持容错型正手原则模型 & 单反评估。"""
 
 from __future__ import annotations
 
@@ -13,28 +6,23 @@ from pathlib import Path
 from typing import Optional, List, Dict
 from datetime import datetime
 
+from config.framework_config import DEFAULT_CONFIG
+from config.backhand_config import DEFAULT_BACKHAND_CONFIG
 from evaluation.forehand_evaluator import MultiSwingReport, SwingEvaluation
 from evaluation.kpi import KPIResult
 
 
 class ReportGenerator:
-    """生成中文 Markdown 评估报告 — 支持正手8阶段 & 单反。"""
+    """生成中文 Markdown 评估报告 — 支持容错型正手原则模型 & 单反。"""
 
-    # ── 正手 8 阶段标题（v3 升级）────────────────────────────────────
     FOREHAND_PHASE_TITLES = {
-        "unit_turn":   "阶段一：一体化转体 (Unit Turn)",
-        "slot_prep":   "阶段二：槽位准备 (Slot Preparation)",
-        "leg_drive":   "阶段三：蹬转与髋部启动 (Leg Drive)",
-        "torso_pull":  "阶段四：躯干与肩部牵引 (Torso Pull)",
-        "lag_drive":   "阶段五：滞后与肘部驱动 (Lag & Elbow Drive)",
-        "contact":     "阶段六：击球与肩内旋 (Contact & SIR)",
-        "wiper":       "阶段七：雨刷式随挥 (Wiper Follow-Through)",
-        "balance":     "阶段八：减速与平衡 (Deceleration & Balance)",
+        "unit_turn": "阶段一：转开、备手与下肢准备",
+        "chain": "阶段二：转髋带动与解旋顺序",
+        "contact": "阶段三：前方接触与手臂结构",
+        "through": "阶段四：向外、向前穿过",
+        "stability": "阶段五：头部与躯干稳定",
     }
-    FOREHAND_PHASE_ORDER = [
-        "unit_turn", "slot_prep", "leg_drive", "torso_pull",
-        "lag_drive", "contact", "wiper", "balance",
-    ]
+    FOREHAND_PHASE_ORDER = ["unit_turn", "chain", "contact", "through", "stability"]
 
     # ── 单反阶段标题 ─────────────────────────────────────────────────
     BACKHAND_PHASE_TITLES = {
@@ -56,113 +44,75 @@ class ReportGenerator:
 
     # ── 训练处方库（v3 新增）──────────────────────────────────────────
     FOREHAND_DRILLS = {
-        # Phase 1: Unit Turn
-        "P1.1": {
-            "drill": "整体转体练习：双手持拍在胸前，蹬地→转髋→转肩一气呵成，背部面向球网。",
-            "feel": "感觉像是用肚脐带动整个身体旋转，而不是手臂拉拍。",
-            "cue": "Rick Macci: 「Turn as a unit — hips, shoulders, racket all together.」",
+        "UT1.1": {
+            "drill": "影子挥拍只做转开和备手，不急着前挥，先把上身完整带走。",
+            "feel": "感觉胸口、肩膀和拍手一起转开，而不是手单独往后拿。",
+            "cue": "Turn as a unit. 准备越简单，比赛里越容错。",
         },
-        "P1.2": {
-            "drill": "分步→蓄力站位练习：做 Split Step 后立即屈膝降低重心，膝盖弯曲约 120°。",
-            "feel": "感觉像坐在高脚凳上，大腿有明显的蓄力感。",
-            "cue": "想象你在弹簧上，先压缩再释放。",
+        "UT1.2": {
+            "drill": "做 split step 后轻微坐下，再开始准备，练腿先承担高度。",
+            "feel": "感觉来球再低一点，你也不用先伸手去捞。",
+            "cue": "Low ball? Use legs and trunk first.",
         },
-        "P1.3": {
-            "drill": "脊柱直立练习：头顶放一本书做影子挥拍，全程保持书不掉落。",
-            "feel": "感觉头顶有一根线向上拉，脊柱始终保持自然直立。",
-            "cue": "Tennis Doctor: 「Head stays still — it's the axis of rotation.」",
+        "UT1.3": {
+            "drill": "慢速影子挥拍，保持头和脊柱高度稳定。",
+            "feel": "像整个人围绕一根中轴旋转，不是弯腰去找球。",
+            "cue": "Posture first, compensation later is a losing trade.",
         },
-        # Phase 2: Slot Preparation
-        "S2.1": {
-            "drill": "肘部后撤练习：转体后，用非持拍手推肘部向后，直到肘部在躯干后方。",
-            "feel": "感觉像是把肘部「钉」在身后，胸肌有轻微拉伸感。",
-            "cue": "Rick Macci: 「Elbow back, elbow back!」肘部是启动前挥的钥匙。",
+        "KC2.1": {
+            "drill": "准备后先把髋部解回来，再让上身跟上。",
+            "feel": "像髋先开门，肩随后被带开。",
+            "cue": "Hip leads, shoulders follow.",
         },
-        "S2.2": {
-            "drill": "拍头下垂练习：在 Slot 位置，放松手腕让拍头自然下垂到膝盖以下。",
-            "feel": "感觉手腕像一个松弛的铰链，拍头因重力自然下垂。",
-            "cue": "「Pat the Dog」— 想象你在身侧拍一只小狗的头。",
+        "KC2.2": {
+            "drill": "做慢动作分解：转开 -> 等球 -> 髋先启动 -> 手再进击球区。",
+            "feel": "前挥不是手去拉，而是身体把手送出去。",
+            "cue": "Do not pull the forward swing with the hand.",
         },
-        # Phase 3: Leg Drive
-        "L3.1": {
-            "drill": "蹬地力量练习：从屈膝位置用力蹬地向上跳，感受地面反作用力传递到髋部。",
-            "feel": "感觉力量从脚底板→小腿→大腿→髋部向上传递，像弹簧释放。",
-            "cue": "Dr. Gordon: 「Power starts from the ground — push the earth away.」",
+        "C3.1": {
+            "drill": "drop feed 到理想击球点，专打身体前方。",
+            "feel": "主观上把球点再拿前一点。",
+            "cue": "Always in front, or as close to always as possible.",
         },
-        "L3.2": {
-            "drill": "髋部旋转速度练习：双手叉腰，快速转髋但保持肩膀不动，感受髋肩分离。",
-            "feel": "感觉像拧毛巾——下半身先转，上半身被拉扯。",
-            "cue": "「Hip fires first」— 髋部是整个动力链的引擎。",
+        "C3.2": {
+            "drill": "做站定喂球，专练不被球挤住，也不主动够球。",
+            "feel": "击球时手臂和身体之间有工作空间。",
+            "cue": "Not jammed, not reaching. Leave room for the swing to work.",
         },
-        # Phase 4: Torso Pull
+        "C3.3": {
+            "drill": "保持你自然的击球手臂样式，但要求每次接触都稳定重复。",
+            "feel": "不是摆职业姿势，而是让结构在普通球上总能工作。",
+            "cue": "Structure matters more than imitation.",
+        },
         "T4.1": {
-            "drill": "髋肩分离练习：面对墙壁，髋部贴墙转动，肩膀保持不动，感受躯干拉伸。",
-            "feel": "感觉腹斜肌和背部有明显的拉伸-收缩感，像弹弓被拉开。",
-            "cue": "「X-Factor」— 髋肩之间的角度差越大，储存的弹性能量越多。",
+            "drill": "沿一条想象中的通道穿过击球区，别在接触区乱绕。",
+            "feel": "手通过球区像在走轨道。",
+            "cue": "The hand path through contact should stay clean.",
         },
         "T4.2": {
-            "drill": "髋肩时序练习：慢动作挥拍，先转髋 → 停顿 → 再转肩，感受时间差。",
-            "feel": "感觉肩膀是被髋部「拖」着走的，不是主动转动。",
-            "cue": "Dr. Gordon: 「Hip leads by 40-80ms — this is where the power comes from.」",
+            "drill": "击球后先把手送向目标，再自然收拍。",
+            "feel": "不是打一碰就收，而是先穿过去。",
+            "cue": "Through the ball before the finish happens.",
         },
-        # Phase 5: Lag & Elbow Drive
-        "D5.1": {
-            "drill": "肘部驱动练习：肘部贴近身体向前推，像出拳一样，手腕和拍头完全被动。",
-            "feel": "感觉肘部像一个活塞向前推进，手腕和球拍像鞭子的末端被甩出去。",
-            "cue": "Rick Macci: 「Lead with the elbow — the racket follows.」",
+        "T4.3": {
+            "drill": "击球后让手同时向前、向身体外侧送出去。",
+            "feel": "像把球从自己身体边上推出去。",
+            "cue": "Out and through, not just up.",
         },
-        "D5.2": {
-            "drill": "手部路径线性度练习：在地上画一条直线，沿线做影子挥拍，手腕应沿直线运动。",
-            "feel": "感觉手在击球区走一条笔直的通道，不是弧线。",
-            "cue": "Tennis Doctor: 「The hand path through contact should be linear.」",
+        "S5.1": {
+            "drill": "击球后继续盯住接触点半拍。",
+            "feel": "头越安静，最后时刻越能自动修正。",
+            "cue": "Quiet head, clearer contact.",
         },
-        # Phase 6: Contact & SIR
-        "C6.1": {
-            "drill": "击球点位置练习：抛球并在身体前方一臂距离处接住，那就是理想击球点。",
-            "feel": "感觉击球时手臂有充分的伸展空间，不是被挤压在身体旁边。",
-            "cue": "「Contact in front of the front hip」— 击球点在前脚髋部的前方。",
+        "S5.2": {
+            "drill": "做慢速连续挥拍，要求头部高度尽量不变。",
+            "feel": "头部像整拍的稳定锚点。",
+            "cue": "Stability gives tolerance.",
         },
-        "C6.2": {
-            "drill": "击球时手臂形态练习：直臂型充分伸展，双弯型保持稳固的L形。",
-            "feel": "直臂型：感觉像推门；双弯型：感觉像甩毛巾。",
-            "cue": "两种风格都正确，关键是击球时手臂形态稳定。",
-        },
-        "C6.3": {
-            "drill": "身体刹车练习：击球时想象胸部撞上一面玻璃墙，身体突然停止旋转。",
-            "feel": "感觉核心肌群突然收紧，身体停止但手臂继续向前。",
-            "cue": "「Body brakes, arm accelerates」— 身体的突然减速让手臂获得鞭打效应。",
-        },
-        "C6.4": {
-            "drill": "头部稳定练习：击球后保持眼睛注视击球点，数到1再抬头。",
-            "feel": "感觉头部像一个固定的轴心，身体围绕它旋转。",
-            "cue": "Federer 的头在击球后始终保持不动——这是控制的关键。",
-        },
-        "C6.5": {
-            "drill": "肩内旋感知练习：手臂水平伸直，快速向内旋转（像开门把手），感受肩部深层肌肉。",
-            "feel": "感觉是「用胸肌和后背打球」，不是手腕或前臂。肩内旋的力量来自胸大肌和背阔肌。",
-            "cue": "Dr. Gordon: 「SIR is the most important power source — it's automatic if the kinetic chain is correct.」",
-        },
-        # Phase 7: Wiper Follow-Through
-        "W7.1": {
-            "drill": "前向延伸练习：击球后，将手向目标方向推送 60-90cm，然后再让球拍上升。",
-            "feel": "感觉像是「穿过球」打，不是「打到球」就停。",
-            "cue": "「Extend through the ball」— 延伸是旋转和深度的来源。",
-        },
-        "W7.2": {
-            "drill": "雨刷式收拍练习：击球后，前臂快速旋前（像雨刷器），拍头从右向左扫过。",
-            "feel": "感觉前臂像拧毛巾一样旋转，拍头自然从右侧扫到左侧。",
-            "cue": "「Windshield wiper」— 这个动作产生重上旋，是现代正手的标志。",
-        },
-        # Phase 8: Balance
-        "B8.1": {
-            "drill": "全程头部稳定练习：在头上放一本书做完整挥拍，全程保持平衡。",
-            "feel": "感觉头部是整个身体的「锚点」，所有旋转都围绕它进行。",
-            "cue": "「Head is the axis」— 头部稳定是所有好击球的基础。",
-        },
-        "B8.2": {
-            "drill": "脊柱一致性练习：练习挥拍时保持腰带扣高度不变，不要上下起伏。",
-            "feel": "感觉像在一个固定高度的平面上旋转，不是上下弹跳。",
-            "cue": "脊柱角度的一致性反映了核心稳定性和动作的可重复性。",
+        "S5.3": {
+            "drill": "低球时先降腿和躯干，不要先弯腰捞手。",
+            "feel": "不同高度来球，身体框架尽量相似。",
+            "cue": "Use the body to organize the contact.",
         },
     }
 
@@ -264,9 +214,19 @@ class ReportGenerator:
         video_name: str = "unknown",
         chart_paths: Optional[Dict[str, str]] = None,
         stroke_type: str = "forehand",
+        vlm_results: Optional[List[Optional[Dict]]] = None,
     ) -> str:
         """生成完整的 Markdown 报告并返回文件路径。"""
+        import os
         chart_paths = chart_paths or {}
+        rel_chart_paths = {}
+        for k, p in chart_paths.items():
+            try:
+                rel_chart_paths[k] = Path(os.path.relpath(p, start=str(self.output_dir))).as_posix()
+            except Exception:
+                rel_chart_paths[k] = str(p)
+        chart_paths = rel_chart_paths
+        
         is_backhand = stroke_type != "forehand"
         phase_titles = self.BACKHAND_PHASE_TITLES if is_backhand else self.FOREHAND_PHASE_TITLES
         phase_order = self.BACKHAND_PHASE_ORDER if is_backhand else self.FOREHAND_PHASE_ORDER
@@ -283,7 +243,7 @@ class ReportGenerator:
         lines.append(f"**击球类型**: {stroke_cn}  ")
         lines.append(f"**检测到击球次数**: {report.total_swings}  ")
         if not is_backhand:
-            lines.append(f"**评估模型**: 8 阶段 Modern Forehand (v3)  ")
+            lines.append(f"**评估模型**: 容错型正手原则模型 (v4)  ")
         lines.append("")
 
         # ── 综合评分概览 ─────────────────────────────────────────────
@@ -318,10 +278,13 @@ class ReportGenerator:
             lines.append("")
 
         # ── 每次击球详细分析 ─────────────────────────────────────────
+        _vlm = vlm_results or []
         for ev in report.swing_evaluations:
+            vlm_data = _vlm[ev.swing_index] if ev.swing_index < len(_vlm) else None
             lines.extend(self._swing_section(
                 ev, chart_paths, report.total_swings,
                 phase_titles, phase_order, stroke_cn, drills,
+                vlm_result=vlm_data,
             ))
 
         # ── 训练处方 ─────────────────────────────────────────────────
@@ -352,17 +315,18 @@ class ReportGenerator:
             lines.append("- **Tennis Doctor** — Inside-Out 路径、保持侧身原则")
             lines.append("- **Feel Tennis** — 单反整体协调、步法与时机")
         else:
-            lines.append("本分析基于 **Modern Forehand v3** 理论框架（8阶段模型），综合以下来源：")
-            lines.append("- **Dr. Brian Gordon** — Type 3 正手生物力学、SIR（肩内旋）、直臂延伸")
-            lines.append("- **Rick Macci** — 紧凑转体、肘部后撤与驱动、「翻转」技术")
-            lines.append("- **Tennis Doctor** — 四大不可妥协原则、动力链顺序、身体刹车")
-            lines.append("- **Feel Tennis** — 现代正手8步模型、用身体打球")
+            lines.append("本分析以 **《容错型正手》** 的底层原则为主：")
+            lines.append("- **前方接触**：球尽量在身体前方完成接触")
+            lines.append("- **简单准备**：转开、备手、等待，不堆多余动作")
+            lines.append("- **髋带动前挥**：手不是发动机，髋和躯干才是")
+            lines.append("- **Out / Up / Through**：手向外、向上、向前穿过球")
+            lines.append("- **容错优先**：先追求普通球不容易打丢")
             lines.append("")
-            lines.append("**8 阶段模型**：一体化转体 → 槽位准备 → 蹬转启动 → 躯干牵引 → 滞后驱动 → 击球与SIR → 雨刷随挥 → 减速平衡")
+            lines.append("**本版评分层**：转开/备手 → 转髋带动 → 前方接触 → 向外向前穿过 → 稳定性")
         lines.append("")
-        lines.append("姿态估计使用 YOLO Pose (COCO 17关键点模型)。"
-                      "所有指标均基于2D关键点轨迹计算，受相机角度限制。"
-                      "建议使用侧面视角、60+FPS 录制以获得最佳分析效果。")
+        lines.append("姿态估计使用 YOLO Pose（COCO 17关键点模型）。"
+                      "本版只保留能由身体关键点稳定估计的原则型指标；拍面角度、真实 wrist lag、球拍与前臂夹角不直接评分。"
+                      "所有指标均基于2D关键点轨迹计算，受相机角度限制。建议使用侧面视角、60+FPS 录制以获得最佳分析效果。")
         lines.append("")
 
         # 写入文件
@@ -382,6 +346,7 @@ class ReportGenerator:
         phase_order: List[str],
         stroke_cn: str,
         drills: Dict,
+        vlm_result: Optional[Dict] = None,
     ) -> List[str]:
         lines = []
         lines.append("---")
@@ -464,6 +429,67 @@ class ReportGenerator:
         bar_key = f"kpi_bar_{ev.swing_index}" if total_swings > 1 else "kpi_bar"
         if bar_key in chart_paths:
             lines.append(f"![KPI 评分详情]({chart_paths[bar_key]})")
+            lines.append("")
+
+        # ── VLM 视觉分析 ─────────────────────────────────────────
+        if vlm_result:
+            lines.extend(self._vlm_section(vlm_result, chart_paths, ev.swing_index, total_swings))
+
+        return lines
+
+    # ── VLM 视觉分析章节 ───────────────────────────────────────────
+
+    @staticmethod
+    def _vlm_section(
+        vlm_result: Dict,
+        chart_paths: Dict[str, str],
+        swing_index: int,
+        total_swings: int,
+    ) -> List[str]:
+        import os
+        lines = []
+        lines.append("### VLM 视觉分析（基于 FTT 原则）")
+        lines.append("")
+
+        # Keyframe grid image
+        grid_path = vlm_result.get("keyframe_grid_path")
+        if grid_path and os.path.exists(grid_path):
+            lines.append(f"![关键帧分析]({grid_path})")
+            lines.append("")
+
+        # Overall assessment
+        if vlm_result.get("overall_assessment"):
+            lines.append(f"**整体评价**: {vlm_result['overall_assessment']}")
+            lines.append("")
+
+        # Strengths
+        strengths = vlm_result.get("strengths", [])
+        if strengths:
+            lines.append("**优点**:")
+            for s in strengths:
+                lines.append(f"- {s}")
+            lines.append("")
+
+        # Issues
+        issues = vlm_result.get("issues", [])
+        if issues:
+            lines.append("**问题诊断**:")
+            lines.append("")
+            for issue in issues:
+                severity = issue.get("severity", "中")
+                severity_tag = {"高": "🔴", "中": "🟡", "低": "🟢"}.get(severity, "⚪")
+                lines.append(f"**{severity_tag} {issue.get('name', '未命名')}** — 严重程度: {severity}")
+                if issue.get("description"):
+                    lines.append(f"- 观察: {issue['description']}")
+                if issue.get("ftt_principle"):
+                    lines.append(f"- FTT 原则: {issue['ftt_principle']}")
+                if issue.get("correction"):
+                    lines.append(f"- 纠正建议: {issue['correction']}")
+                lines.append("")
+
+        # Priority drill
+        if vlm_result.get("priority_drill"):
+            lines.append(f"**最优先训练**: {vlm_result['priority_drill']}")
             lines.append("")
 
         return lines
@@ -550,12 +576,23 @@ class ReportGenerator:
             kpi_avg.setdefault(kpi.kpi_id, []).append(kpi.score)
             kpi_map[kpi.kpi_id] = kpi
 
-        avg_scores = [(kpi_id, float(sum(scores) / len(scores)), kpi_map[kpi_id])
-                      for kpi_id, scores in kpi_avg.items()]
-        avg_scores.sort(key=lambda x: x[1])
+        phase_weights = (
+            DEFAULT_BACKHAND_CONFIG.scoring.as_dict()
+            if is_backhand else DEFAULT_CONFIG.scoring.as_dict()
+        )
+        weak_kpis = []
+        for kpi_id, scores in kpi_avg.items():
+            avg = float(sum(scores) / len(scores))
+            kpi = kpi_map[kpi_id]
+            deficit = max(0.0, 70.0 - avg)
+            if deficit <= 0.0:
+                continue
+            phase_weight = float(phase_weights.get(kpi.phase, 0.1))
+            priority_score = deficit * phase_weight
+            weak_kpis.append((kpi_id, avg, kpi, priority_score))
 
-        # 找出需要训练的 KPI（分数 < 70）
-        weak_kpis = [(kid, avg, kpi) for kid, avg, kpi in avg_scores if avg < 70]
+        # 优先级与总分口径对齐：优先修复“低分且高权重阶段”的问题。
+        weak_kpis.sort(key=lambda x: (-x[3], x[1], x[0]))
 
         if not weak_kpis:
             lines.append("所有指标均达到良好水平，继续保持！可以尝试在更高强度的对抗中保持技术质量。")
@@ -564,8 +601,10 @@ class ReportGenerator:
         lines.append("以下是按优先级排序的训练计划，从最需要改进的指标开始：")
         lines.append("")
 
-        for priority, (kid, avg, kpi) in enumerate(weak_kpis[:5], 1):
-            lines.append(f"### 优先级 {priority}：{kpi.name}（平均 {avg:.0f} 分）")
+        for priority, (kid, avg, kpi, priority_score) in enumerate(weak_kpis[:5], 1):
+            lines.append(
+                f"### 优先级 {priority}：{kpi.name}（平均 {avg:.0f} 分，优先度 {priority_score:.1f}）"
+            )
             lines.append("")
 
             if kid in drills:
@@ -584,7 +623,7 @@ class ReportGenerator:
         # 训练计划建议
         lines.append("### 建议训练计划")
         lines.append("")
-        lines.append("1. **热身**（5分钟）：慢速影子挥拍，专注于完整的 8 阶段动作链。")
+        lines.append("1. **热身**（5分钟）：慢速影子挥拍，专注于“转开 -> 等球 -> 髋带动 -> 前方接触”。")
         lines.append(f"2. **专项训练**（15分钟）：重点练习上述优先级 1（{weak_kpis[0][2].name}）。")
         if len(weak_kpis) >= 2:
             lines.append(f"3. **辅助训练**（10分钟）：练习优先级 2（{weak_kpis[1][2].name}）。")
@@ -612,18 +651,22 @@ class ReportGenerator:
         if value is None:
             return "无数据"
         if isinstance(value, float):
-            if "度" in unit or "°" in unit:
-                return f"{value:.1f}°"
             if "比" in unit or "ratio" in unit or "R²" in unit:
                 return f"{value:.2f}"
             if "归一化" in unit or "标准差" in unit or "norm" in unit:
                 return f"{value:.3f}"
+            # Avoid matching "高度比" as angle; treat explicit angular units only.
+            if unit in ("度", "度/秒", "度标准差") or "°" in unit:
+                return f"{value:.1f}°" if unit == "度" else f"{value:.0f} {unit}"
             if "px/s²" in unit:
                 return f"{value:.0f} {unit}"
-            if "°/s" in unit:
-                return f"{value:.0f} {unit}"
-            if "ms" in unit or "秒" in unit:
-                return f"{value:.0f} {unit}"
+            if "ms" in unit:
+                return f"{value * 1000:.0f} ms"
+            if "秒" in unit:
+                # Avoid misleading "0 秒" for sub-second timing values.
+                if abs(value) < 1.0:
+                    return f"{value * 1000:.0f} ms"
+                return f"{value:.2f} 秒"
             return f"{value:.2f} {unit}"
         return f"{value} {unit}"
 
@@ -675,9 +718,9 @@ class ReportGenerator:
             lines.append("- **非持拍手平衡**：非持拍手的反向伸展是稳定性和力量的关键。")
             lines.append("- **L形杠杆**：引拍时保持肘部弯曲约90°，形成高效的杠杆系统。")
         else:
-            lines.append("- **用身体打球**：力量来自地面反作用力 → 蹬转 → 髋部旋转 → 躯干牵引 → 肩内旋，手臂只是传递工具。")
-            lines.append("- **动力链时序**：髋部先于肩部 40-80ms 启动旋转，这个时间差是力量的来源。")
-            lines.append("- **身体刹车**：击球时身体突然减速，将动量传递给手臂和球拍（鞭打效应）。")
-            lines.append("- **放松手臂**：手臂越放松，鞭打效应越强。主动发力的感觉应该在胸肌和背部，不是手臂。")
+            lines.append("- **容错优先**：不是偶尔打一板神球，而是普通球也不容易打丢。")
+            lines.append("- **前方接触**：来不及时至少也尽量把球点留在身体前侧。")
+            lines.append("- **用腿和躯干组织击球**：低球和难球优先靠下肢与躯干，不先靠手补。")
+            lines.append("- **向外、向上、向前**：现代正手不是只往上刷，必须同时出球、穿球、离身。 ")
 
         return lines

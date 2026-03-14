@@ -295,6 +295,10 @@ class WristSpeedDetector:
         self._sw_px_hist: Deque[float] = deque(maxlen=60)
         self._cooldown_left = 0
 
+        # Per-frame caches for audio-guided recovery.
+        self.frame_speed_px_s: Dict[int, float] = {}
+        self.frame_vel_px_s: Dict[int, np.ndarray] = {}
+
         self.events: List[ImpactEvent] = []
 
     def reset(self):
@@ -305,6 +309,8 @@ class WristSpeedDetector:
         self._vel_px_s.clear()
         self._sw_px_hist.clear()
         self._cooldown_left = 0
+        self.frame_speed_px_s.clear()
+        self.frame_vel_px_s.clear()
         self.events.clear()
 
     def update(
@@ -351,6 +357,8 @@ class WristSpeedDetector:
         self._speed_px_s.append(speed_px_s)
         self._speed_sw_s.append(speed_sw_s)
         self._vel_px_s.append(vel_px_s.astype(np.float64))
+        self.frame_speed_px_s[int(frame_idx)] = speed_px_s
+        self.frame_vel_px_s[int(frame_idx)] = vel_px_s.astype(np.float64)
 
         self._prev_wrist = wrist.copy()
         self._prev_frame_idx = int(frame_idx)
@@ -427,6 +435,31 @@ class WristSpeedDetector:
             audio_confirmed=False,
         )
 
+    def local_peak_near(
+        self,
+        frame_idx: int,
+        window_frames: int = 7,
+    ) -> Optional[Tuple[int, float, Tuple[float, float]]]:
+        """Return local speed peak near `frame_idx` from cached per-frame speeds."""
+        if not self.frame_speed_px_s:
+            return None
+
+        lo = int(frame_idx) - int(window_frames)
+        hi = int(frame_idx) + int(window_frames)
+        candidates = [(f, s) for f, s in self.frame_speed_px_s.items() if lo <= f <= hi]
+        if not candidates:
+            return None
+
+        best_frame, best_speed = max(candidates, key=lambda x: x[1])
+        vel = self.frame_vel_px_s.get(best_frame)
+        if vel is None:
+            unit = (0.0, 0.0)
+        else:
+            norm = float(np.linalg.norm(vel))
+            unit = (float(vel[0] / norm), float(vel[1] / norm)) if norm > 1e-6 else (0.0, 0.0)
+
+        return int(best_frame), float(best_speed), unit
+
 
 # ── 协同击球检测器 ──────────────────────────────────────────────────
 
@@ -446,7 +479,7 @@ class HybridImpactDetector:
         fps: float = 30.0,
         is_right_handed: bool = True,
         cfg: Optional[ImpactDetectionConfig] = None,
-        audio_tolerance_frames: int = 3,
+        audio_tolerance_frames: int = 7,
         merge_within_s: float = 0.8,
         min_verified_peak_speed_px_s: float = 400.0,
     ):
@@ -502,7 +535,8 @@ class HybridImpactDetector:
             # 音频确认
             if event.peak_speed_px_s >= self.min_verified_peak_speed_px_s * 0.7:
                 return ImpactEvent(
-                    impact_frame_idx=event.impact_frame_idx,
+                    # Use audio peak as the impact anchor to reduce frame drift.
+                    impact_frame_idx=nearest,
                     trigger_frame_idx=event.trigger_frame_idx,
                     peak_speed_px_s=event.peak_speed_px_s,
                     peak_speed_sw_s=event.peak_speed_sw_s,
@@ -518,8 +552,45 @@ class HybridImpactDetector:
 
     def finalize(self) -> List[ImpactEvent]:
         """完成检测，合并近距离的击球，返回最终列表。"""
+        self._recover_from_audio_onsets()
         self._merge_close_impacts()
         return [self._verified_events[k] for k in sorted(self._verified_events.keys())]
+
+    def _recover_from_audio_onsets(self):
+        """Add missing impacts anchored by audio onsets when visual-only peak missed."""
+        if not self.audio_detector.available:
+            return
+
+        if self.audio_detector.strong_onset_frames:
+            audio_onsets = sorted(self.audio_detector.strong_onset_frames)
+        else:
+            audio_onsets = list(self.audio_detector.onset_frames)
+
+        if not audio_onsets:
+            return
+
+        existing = sorted(self._verified_events.keys())
+        for onset_frame in audio_onsets:
+            if any(abs(onset_frame - f) <= self.audio_tolerance for f in existing):
+                continue
+
+            peak = self.wrist_detector.local_peak_near(onset_frame, window_frames=self.audio_tolerance)
+            if peak is None:
+                continue
+
+            trigger_frame, peak_speed_px_s, peak_unit = peak
+            if peak_speed_px_s < self.min_verified_peak_speed_px_s * 0.55:
+                continue
+
+            self._verified_events[int(onset_frame)] = ImpactEvent(
+                impact_frame_idx=int(onset_frame),
+                trigger_frame_idx=int(trigger_frame),
+                peak_speed_px_s=float(peak_speed_px_s),
+                peak_speed_sw_s=None,
+                peak_velocity_unit=peak_unit,
+                audio_confirmed=True,
+            )
+            existing.append(int(onset_frame))
 
     def _merge_close_impacts(self):
         """合并时间上过于接近的击球（同一次挥拍的多个峰值）。"""
@@ -564,6 +635,15 @@ class SwingPhaseEstimator:
 
     def __init__(self, fps: float = 30.0):
         self.fps = max(fps, 1.0)
+        # Reference wrist peak speed for "normal tempo" swings (px/s).
+        self.ref_peak_speed_px_s = 1000.0
+
+    def _tempo_scale(self, peak_speed: float) -> float:
+        """Estimate playback-tempo scale (>=1). Higher means slower demonstration tempo."""
+        if peak_speed <= 1e-6:
+            return 1.0
+        scale = self.ref_peak_speed_px_s / peak_speed
+        return float(np.clip(scale, 1.0, 3.0))
 
     def estimate_phases(
         self,
@@ -590,13 +670,18 @@ class SwingPhaseEstimator:
 
         # ── 准备开始：从击球帧向前回溯，直到速度降至峰值的 20%
         peak_speed = float(wrist_speeds[impact_pos]) if impact_pos < len(wrist_speeds) else 0.0
+        tempo_scale = self._tempo_scale(peak_speed)
         threshold = peak_speed * 0.20
         prep_pos = impact_pos
         for i in range(impact_pos - 1, -1, -1):
             if i < len(wrist_speeds) and wrist_speeds[i] < threshold:
                 prep_pos = i
                 break
-        prep_pos = max(0, prep_pos - int(0.3 * self.fps))
+        # Slow-motion demonstrations need a larger look-back window.
+        prep_backtrack = int((0.3 + 0.2 * (tempo_scale - 1.0)) * self.fps)
+        prep_min_lead = int((0.45 + 0.25 * (tempo_scale - 1.0)) * self.fps)
+        prep_pos = max(0, prep_pos - prep_backtrack)
+        prep_pos = min(prep_pos, max(0, impact_pos - prep_min_lead))
 
         # 不超过上一次击球的随挥结束
         if prev_impact_frame is not None:
@@ -613,7 +698,10 @@ class SwingPhaseEstimator:
             if wrist_speeds[i] < ft_threshold:
                 ft_pos = i
                 break
-        ft_pos = min(len(frame_indices) - 1, ft_pos + int(0.2 * self.fps))
+        ft_extend = int((0.2 + 0.25 * (tempo_scale - 1.0)) * self.fps)
+        ft_min_tail = int((0.22 + 0.20 * (tempo_scale - 1.0)) * self.fps)
+        ft_pos = min(len(frame_indices) - 1, ft_pos + ft_extend)
+        ft_pos = max(ft_pos, min(len(frame_indices) - 1, impact_pos + ft_min_tail))
 
         # 不超过下一次击球的准备开始
         if next_impact_frame is not None:

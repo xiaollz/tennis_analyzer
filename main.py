@@ -1,4 +1,4 @@
-"""Tennis Analyzer v3 — 现代正手 & 单反评估系统。
+"""Tennis Analyzer v3 — 容错型正手 & 单反评估系统。
 
 Usage:
     # 命令行分析（自动识别正手/反手）
@@ -17,6 +17,7 @@ from __future__ import annotations
 import sys
 import argparse
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Dict, Tuple
 
@@ -32,12 +33,21 @@ from config.framework_config import DEFAULT_CONFIG, FrameworkConfig
 from config.backhand_config import DEFAULT_BACKHAND_CONFIG, BackhandConfig
 from config.keypoints import KEYPOINT_NAMES
 from core.video_processor import VideoProcessor, VideoWriter
-from core.pose_estimator import PoseEstimator
+from core.pose_estimator import (
+    PoseEstimator,
+    DEFAULT_YOLO_MODEL,
+)
 from analysis.trajectory import TrajectoryStore
 from evaluation.forehand_evaluator import ForehandEvaluator, MultiSwingReport
 from evaluation.backhand_evaluator import BackhandEvaluator
-from evaluation.event_detector import HybridImpactDetector, ImpactEvent
+from evaluation.event_detector import HybridImpactDetector, ImpactEvent, SwingPhaseEstimator
 from evaluation.stroke_classifier import StrokeClassifier, StrokeType
+from evaluation.vlm_analyzer import (
+    KeyframeExtractor,
+    VLMForehandAnalyzer,
+    create_keyframe_grid,
+    save_keyframe_grid,
+)
 from report.visualizer import SkeletonDrawer, TrajectoryDrawer, ChartGenerator, JOINT_CN
 from report.report_generator import ReportGenerator
 
@@ -54,9 +64,9 @@ class TennisAnalysisPipeline:
 
     def __init__(
         self,
-        model_name: str = "yolo11m-pose.pt",
+        model_name: str = DEFAULT_YOLO_MODEL,
         is_right_handed: bool = True,
-        stroke_mode: str = "auto",  # "auto" / "forehand" / "backhand"
+        stroke_mode: str = "forehand",  # "auto" / "forehand" / "backhand"
         fg_cfg: FrameworkConfig = DEFAULT_CONFIG,
         bh_cfg: BackhandConfig = DEFAULT_BACKHAND_CONFIG,
         output_dir: str = "./output",
@@ -70,6 +80,7 @@ class TennisAnalysisPipeline:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.max_trail = max_trail
+        self.model_name = model_name
 
         # 核心模块
         self.estimator = PoseEstimator(model_name=model_name)
@@ -80,6 +91,16 @@ class TennisAnalysisPipeline:
         default_joints = ["right_wrist"] if is_right_handed else ["left_wrist"]
         self.tracked_joints = tracked_joints or default_joints
         self._init_trajectory_drawers()
+
+    def set_pose_estimator(self, model_name: str) -> None:
+        """动态切换姿态模型。"""
+        target_model = str(model_name).strip() if model_name is not None else ""
+        if not target_model:
+            target_model = "auto"
+        if target_model == self.model_name:
+            return
+        self.estimator = PoseEstimator(model_name=target_model)
+        self.model_name = target_model
 
     def _init_trajectory_drawers(self):
         """初始化轨迹绘制器。"""
@@ -164,7 +185,7 @@ class TennisAnalysisPipeline:
                 progress_callback(frame_idx, vp.total_frames, "姿态估计中...")
 
         # 完成击球检测
-        impact_events = impact_detector.finalize()
+        impact_events = self._dedupe_overlapping_impacts(impact_detector.finalize(), store, fps)
 
         # ── 阶段 1.5: 自动识别击球类型 ──────────────────────────────
         if progress_callback:
@@ -224,6 +245,15 @@ class TennisAnalysisPipeline:
             keypoints_series, confidence_series, frame_indices, impact_events,
         )
 
+        # ── 阶段 2.5: VLM 关键帧分析（仅正手）──────────────────────
+        vlm_results = []
+        if not is_backhand and report.swing_evaluations:
+            if progress_callback:
+                progress_callback(0, 1, "正在进行 VLM 视觉分析...")
+            vlm_results = self._run_vlm_analysis(
+                frames_raw, frame_indices, report, video_name,
+            )
+
         # ── 阶段 3: 生成标注视频 ────────────────────────────────────
         if progress_callback:
             progress_callback(0, len(frames_raw), "正在生成标注视频...")
@@ -276,6 +306,7 @@ class TennisAnalysisPipeline:
             report, video_name=video_name,
             chart_paths=chart_paths,
             stroke_type=detected_stroke_type,
+            vlm_results=vlm_results,
         )
 
         if progress_callback:
@@ -288,9 +319,109 @@ class TennisAnalysisPipeline:
             "chart_paths": chart_paths,
             "stroke_type": detected_stroke_type,
             "classifications": classifications,
+            "vlm_results": vlm_results,
         }
 
+    # ── VLM 分析 ──────────────────────────────────────────────────────
+
+    def _run_vlm_analysis(
+        self,
+        frames_raw: List[np.ndarray],
+        frame_indices: List[int],
+        report: MultiSwingReport,
+        video_name: str,
+    ) -> List[Optional[Dict]]:
+        """Run VLM keyframe analysis for each swing. Returns list of VLM results.
+
+        Also saves keyframe grid images to self.output_dir/charts/.
+        """
+        extractor = KeyframeExtractor()
+        analyzer = VLMForehandAnalyzer()
+        results: List[Optional[Dict]] = []
+
+        for ev in report.swing_evaluations:
+            # Extract keyframes
+            keyframes = extractor.extract(frames_raw, frame_indices, ev.swing_event)
+            if not keyframes:
+                results.append(None)
+                continue
+
+            # Create and save grid
+            grid = create_keyframe_grid(keyframes)
+            grid_dir = self.output_dir / "charts"
+            grid_dir.mkdir(exist_ok=True)
+            suffix = f"_{ev.swing_index}" if report.total_swings > 1 else ""
+            grid_path = str(grid_dir / f"{video_name}_keyframes{suffix}.png")
+            save_keyframe_grid(grid, grid_path)
+
+            # Build KPI summary for context
+            kpi_lines = []
+            for kpi in ev.kpi_results:
+                if kpi.rating not in ("无数据", "n/a"):
+                    kpi_lines.append(f"{kpi.name}: {kpi.score:.0f}分 ({kpi.rating})")
+            kpi_summary = "\n".join(kpi_lines)
+
+            # Call VLM
+            vlm_result = analyzer.analyze_swing(grid, kpi_summary=kpi_summary)
+            if vlm_result is not None:
+                vlm_result["keyframe_grid_path"] = grid_path
+            results.append(vlm_result)
+
+        return results
+
     # ── 辅助方法 ─────────────────────────────────────────────────────
+
+    def _dedupe_overlapping_impacts(
+        self,
+        impact_events: List[ImpactEvent],
+        store: TrajectoryStore,
+        fps: float,
+    ) -> List[ImpactEvent]:
+        if len(impact_events) <= 1:
+            return impact_events
+
+        wrist_key = "right_wrist" if self.is_right_handed else "left_wrist"
+        wrist_traj = store.get(wrist_key)
+        wrist_speeds = wrist_traj.get_speeds(smoothed=True)
+        speed_frame_indices = wrist_traj.frame_indices[1:] if len(wrist_traj.frame_indices) > 1 else []
+        if len(wrist_speeds) == 0 or not speed_frame_indices:
+            return impact_events
+
+        estimator = SwingPhaseEstimator(fps=fps)
+        overlap_tolerance = int(round(0.05 * fps))
+        provisional = []
+        for ev in sorted(impact_events, key=lambda item: item.impact_frame_idx):
+            swing = estimator.estimate_phases(
+                impact_frame=ev.impact_frame_idx,
+                wrist_speeds=wrist_speeds,
+                frame_indices=speed_frame_indices,
+            )
+            provisional.append((ev, swing))
+
+        clusters = []
+        current_cluster = [provisional[0]]
+        current_end = provisional[0][1].followthrough_end_frame or provisional[0][0].impact_frame_idx
+        for item in provisional[1:]:
+            ev, swing = item
+            prep_start = swing.prep_start_frame or ev.impact_frame_idx
+            swing_end = swing.followthrough_end_frame or ev.impact_frame_idx
+            if prep_start <= current_end + overlap_tolerance:
+                current_cluster.append(item)
+                current_end = max(current_end, swing_end)
+            else:
+                clusters.append(current_cluster)
+                current_cluster = [item]
+                current_end = swing_end
+        clusters.append(current_cluster)
+
+        deduped = []
+        for cluster in clusters:
+            audio_confirmed = [ev for ev, _ in cluster if ev.audio_confirmed]
+            candidates = audio_confirmed if audio_confirmed else [ev for ev, _ in cluster]
+            best = max(candidates, key=lambda ev: ev.peak_speed_px_s)
+            deduped.append(best)
+
+        return sorted(deduped, key=lambda item: item.impact_frame_idx)
 
     @staticmethod
     def _select_person(persons: list) -> dict:
@@ -312,16 +443,21 @@ class TennisAnalysisPipeline:
     def _draw_impact_marker(frame: np.ndarray, swing_num: int):
         """在帧上绘制击球标记。"""
         h, w = frame.shape[:2]
-        text = f"IMPACT #{swing_num}"
+        text = f"Hit #{swing_num}"
         font = cv2.FONT_HERSHEY_SIMPLEX
-        font_scale = min(w, h) / 600.0
-        thickness = max(2, int(font_scale * 2))
+        font_scale = max(0.45, min(w, h) / 1300.0)
+        thickness = max(1, int(font_scale * 2))
         text_size = cv2.getTextSize(text, font, font_scale, thickness)[0]
-        x = (w - text_size[0]) // 2
-        y = int(h * 0.08) + text_size[1]
-        cv2.rectangle(frame, (x - 10, y - text_size[1] - 10),
-                       (x + text_size[0] + 10, y + 10), (0, 0, 200), -1)
-        cv2.putText(frame, text, (x, y), font, font_scale, (255, 255, 255), thickness, cv2.LINE_AA)
+        x = 10
+        y = h - 12
+        cv2.rectangle(
+            frame,
+            (x - 6, y - text_size[1] - 6),
+            (x + text_size[0] + 6, y + 4),
+            (0, 0, 0),
+            -1,
+        )
+        cv2.putText(frame, text, (x, y), font, font_scale, (0, 255, 255), thickness, cv2.LINE_AA)
 
     def _draw_hud(
         self,
@@ -360,8 +496,8 @@ class TennisAnalysisPipeline:
         # 追踪关节标签
         y_offset = h - 15
         for jname, drawer in self.trajectory_drawers.items():
-            cn_name = JOINT_CN.get(jname, jname)
-            cv2.putText(frame, cn_name, (10, y_offset),
+            label_name = jname.replace('_', ' ').title()
+            cv2.putText(frame, label_name, (10, y_offset),
                         font, font_scale * 0.8, drawer.color, 1, cv2.LINE_AA)
             y_offset -= 20
 
@@ -452,6 +588,11 @@ class TennisAnalysisPipeline:
 ForehandPipeline = TennisAnalysisPipeline
 
 
+def default_report_output_dir(base_dir: str = "reports") -> str:
+    """默认按日期组织输出目录，如 reports/2026-02-26。"""
+    return str(Path(base_dir) / datetime.now().strftime("%Y-%m-%d"))
+
+
 # =====================================================================
 # Gradio UI
 # =====================================================================
@@ -461,15 +602,14 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
     import gradio as gr
 
     with gr.Blocks(
-        title="网球分析器 v3 — 正手 & 单反评估 (8阶段模型)",
+        title="网球分析器 v3 — 容错型正手 & 单反评估",
         theme=gr.themes.Soft(),
     ) as demo:
-        gr.Markdown("# 🎾 网球分析器 v3 — 正手 & 单反技术评估 (8阶段模型)")
+        gr.Markdown("# 🎾 网球分析器 v3 — 容错型正手 & 单反技术评估")
         gr.Markdown(
-            "上传挥拍视频，系统将基于 **Modern Forehand 8阶段模型 / One-Handed Backhand** 理论框架 "
-            "(Dr. Brian Gordon, Rick Macci, Tennis Doctor) 评估您的技术。\n\n"
-            "**正手 8 阶段**: 一体化转体 → 槽位准备 → 蹬转启动 → 躯干牵引 → 滞后驱动 → 击球与SIR → 雨刷随挥 → 减速平衡\n\n"
-            "支持自动识别正手/反手，多次击球独立评分，音频+视觉协同检测击球点。"
+            "上传挥拍视频，系统将基于 **《容错型正手》原则模型 / One-Handed Backhand** 评估您的技术。\n\n"
+            "**正手评估层**: 转开/备手与下肢准备 → 转髋带动 → 前方接触 → 向外/向前穿过 → 稳定性\n\n"
+            "只保留能由身体关键点稳定估计的指标，支持自动识别正手/反手、多次击球独立评分、音频+视觉协同检测击球点。"
         )
 
         with gr.Row():
@@ -479,7 +619,7 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
                     is_right = gr.Checkbox(value=True, label="右手持拍")
                     stroke_mode = gr.Radio(
                         choices=["auto", "forehand", "backhand"],
-                        value="auto",
+                        value="forehand",
                         label="击球类型",
                         info="auto=自动识别, forehand=正手, backhand=单反",
                     )
@@ -487,6 +627,12 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
                     max_trail_slider = gr.Slider(
                         minimum=10, maximum=60, value=30, step=5,
                         label="轨迹保留帧数",
+                    )
+                with gr.Row():
+                    model_input = gr.Textbox(
+                        value="auto",
+                        label="姿态模型",
+                        info=f"auto 或自定义 YOLO 权重（示例: {DEFAULT_YOLO_MODEL}）",
                     )
                 tracked_joints_input = gr.CheckboxGroup(
                     choices=[
@@ -530,15 +676,27 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
                 report_md = gr.Markdown(label="完整报告")
                 report_file = gr.File(label="下载报告")
 
-        def run_analysis(video, right_handed, stroke, tracked_joints, max_trail_val):
+        def run_analysis(
+            video,
+            right_handed,
+            stroke,
+            tracked_joints,
+            max_trail_val,
+            model_name,
+        ):
             if video is None:
                 return ("请上传视频。", 0, 0, "", None, None, None, None,
                         [], [], [], "", None)
+
+            # 每次分析都按当天日期归档输出
+            pipeline.output_dir = Path(default_report_output_dir())
+            pipeline.output_dir.mkdir(parents=True, exist_ok=True)
 
             # 重新配置 pipeline
             pipeline.is_right_handed = right_handed
             pipeline.stroke_mode = stroke
             pipeline.max_trail = int(max_trail_val)
+            pipeline.set_pose_estimator(model_name=model_name)
             pipeline.tracked_joints = (tracked_joints[:2] if tracked_joints else
                                        (["right_wrist"] if right_handed else ["left_wrist"]))
             pipeline._init_trajectory_drawers()
@@ -610,7 +768,14 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
 
         analyse_btn.click(
             fn=run_analysis,
-            inputs=[video_input, is_right, stroke_mode, tracked_joints_input, max_trail_slider],
+            inputs=[
+                video_input,
+                is_right,
+                stroke_mode,
+                tracked_joints_input,
+                max_trail_slider,
+                model_input,
+            ],
             outputs=[
                 status_text, overall_score, swing_count, detected_type,
                 video_output,
@@ -629,7 +794,7 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
 # =====================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="网球分析器 v3 — 正手 & 单反评估 (8阶段模型)")
+    parser = argparse.ArgumentParser(description="网球分析器 v3 — 容错型正手 & 单反评估")
     subparsers = parser.add_subparsers(dest="command")
 
     # analyse 子命令
@@ -638,9 +803,11 @@ def main():
     analyse_parser.add_argument("--right-handed", action="store_true", default=True)
     analyse_parser.add_argument("--left-handed", action="store_true", default=False)
     analyse_parser.add_argument("--stroke", choices=["auto", "forehand", "backhand"],
-                                default="auto", help="击球类型 (auto=自动识别)")
-    analyse_parser.add_argument("--output-dir", default="./output")
-    analyse_parser.add_argument("--model", default="yolo11m-pose.pt")
+                                default="forehand", help="击球类型 (默认=forehand), auto=自动识别")
+    analyse_parser.add_argument("--output-dir", default=None,
+                                help="输出目录（默认按日期写入 reports/YYYY-MM-DD）")
+    analyse_parser.add_argument("--model", default="auto",
+                                help="YOLO 姿态模型名称或权重路径，auto=默认模型")
     analyse_parser.add_argument("--joints", nargs="+", default=None,
                                 help="追踪的关节 (如 right_wrist right_elbow)")
     analyse_parser.add_argument("--max-trail", type=int, default=30,
@@ -649,18 +816,19 @@ def main():
     # ui 子命令
     ui_parser = subparsers.add_parser("ui", help="启动 Gradio Web UI")
     ui_parser.add_argument("--port", type=int, default=7860)
-    ui_parser.add_argument("--model", default="yolo11m-pose.pt")
+    ui_parser.add_argument("--model", default="auto")
     ui_parser.add_argument("--share", action="store_true", default=False)
 
     args = parser.parse_args()
 
     if args.command == "analyse":
         is_right = not args.left_handed
+        output_dir = args.output_dir or default_report_output_dir()
         pipeline = TennisAnalysisPipeline(
             model_name=args.model,
             is_right_handed=is_right,
             stroke_mode=args.stroke,
-            output_dir=args.output_dir,
+            output_dir=output_dir,
             tracked_joints=args.joints,
             max_trail=args.max_trail,
         )
@@ -671,6 +839,7 @@ def main():
 
         print(f"正在分析: {args.video}")
         print(f"击球类型: {args.stroke}")
+        print(f"姿态模型: {pipeline.estimator.model_name}")
         result = pipeline.run(args.video, progress_callback=progress)
         print()
 
@@ -685,7 +854,10 @@ def main():
         print(f"标注视频: {result['annotated_video_path']}")
 
     elif args.command == "ui":
-        pipeline = TennisAnalysisPipeline(model_name=args.model)
+        pipeline = TennisAnalysisPipeline(
+            model_name=args.model,
+            output_dir=default_report_output_dir(),
+        )
         demo = build_gradio_ui(pipeline)
         demo.launch(server_name="0.0.0.0", server_port=args.port, share=args.share)
 

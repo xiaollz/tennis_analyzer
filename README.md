@@ -1,102 +1,56 @@
-# Tennis Analyzer v2 — Modern Forehand Evaluation
+# Tennis Analyzer v3
 
-AI-powered tennis forehand analysis based on the **Modern Forehand** framework derived from:
+基于 YOLO Pose 的网球挥拍分析工具，支持正手/单反评估、击球检测、标注视频与 Markdown 报告生成。
 
-- **Dr. Brian Gordon** — Type 3 forehand biomechanics, straight-arm extension
-- **Rick Macci** — compact unit turn, elbow mechanics, "the flip"
-- **Tennis Doctor** — four non-negotiables, kinetic chain sequencing
-- **Feel Tennis** — modern forehand 8-step model
+## 功能
 
-## Features
+- YOLO Pose（COCO 17 点）人体关键点检测
+- 自动检测击球时刻（视觉+音频）
+- 正手 / 单反技术评分与 KPI 反馈
+- 标注视频输出（骨架、轨迹、HUD）
+- 图表与完整分析报告输出
+- Gradio Web UI
 
-- **Pose Estimation**: YOLO Pose (COCO 17-keypoint) for real-time body tracking
-- **Joint Trajectory Tracking**: Track and visualise any joint's path with configurable trails
-- **14 KPI Metrics** across 6 swing phases:
-  - Phase 1: Preparation & Unit Turn (shoulder rotation, knee bend, spine posture)
-  - Phase 3: Kinetic Chain (sequence, hip-shoulder separation, hand path linearity)
-  - Phase 4: Contact Point (position, elbow angle, body freeze, head stability)
-  - Phase 5: Extension & Follow-Through (forward extension, follow-through path)
-  - Phase 6: Balance & Recovery (head stability, spine consistency)
-- **Automatic Impact Detection**: wrist-speed peak analysis
-- **Annotated Video Output**: skeleton overlay + trajectory trails + HUD
-- **Comprehensive Report**: Markdown report with radar charts, KPI bar charts, coaching tips
-- **Gradio Web UI**: interactive analysis interface
-
-## Quick Start
-
-### Installation
+## 安装
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Command-Line Analysis
+## 命令行
 
 ```bash
-python main.py analyse --video path/to/forehand.mp4 --output-dir ./output
+python main.py analyse --video path/to/video.mp4 --model auto
 ```
 
-Options:
-- `--right-handed` / `--left-handed`: specify dominant hand (default: right)
-- `--joints right_wrist right_elbow right_hip`: specify joints to track
-- `--model yolo11m-pose.pt`: specify YOLO model
+常用参数：
 
-### Gradio Web UI
+- `--stroke auto|forehand|backhand`
+- `--left-handed`（默认右手）
+- `--model`（`auto` 或自定义 YOLO `.pt` 权重）
+- `--output-dir`
+- `--joints`
+
+## Web UI
 
 ```bash
-python main.py ui --port 7860
+python main.py ui --port 7860 --model auto
 ```
 
-## Architecture
+## 项目结构
 
-```
-tennis_analyzer_v2/
-├── config/
-│   ├── keypoints.py          # COCO 17-keypoint definitions
-│   └── framework_config.py   # All evaluation thresholds & weights
+```text
+tennis/
+├── main.py
 ├── core/
-│   ├── pose_estimator.py     # YOLO Pose wrapper
-│   └── video_processor.py    # Video I/O with auto-rotation
+│   ├── pose_estimator.py
+│   └── video_processor.py
 ├── analysis/
-│   ├── trajectory.py         # Joint trajectory management & smoothing
-│   └── kinematic_calculator.py  # Angle, rotation, body-plane geometry
 ├── evaluation/
-│   ├── event_detector.py     # Impact detection & swing phase estimation
-│   ├── kpi.py                # 14 KPI definitions with scoring logic
-│   └── forehand_evaluator.py # Orchestration: data → metrics → scores
 ├── report/
-│   ├── visualizer.py         # Skeleton, trajectory, chart drawing
-│   └── report_generator.py   # Markdown report generation
-├── main.py                   # CLI + Gradio UI entry point
+├── config/
 └── docs/
-    ├── architecture_v2.md
-    └── learn_ytb/            # Reference transcripts
 ```
-
-## Evaluation Framework
-
-The evaluation is structured around 6 phases of a modern forehand:
-
-| Phase | Weight | Key Metrics |
-|-------|--------|-------------|
-| Preparation & Unit Turn | 15% | Shoulder rotation (X-Factor), knee bend, spine posture |
-| Loading & Lag | 10% | Wrist layback, elbow-hand drop |
-| Kinetic Chain | 20% | Sequential peak ordering, hip-shoulder separation, hand path linearity |
-| Contact Point | 25% | Contact position, elbow angle (straight-arm vs double-bend), body freeze, head stability |
-| Extension & Follow-Through | 15% | Forward extension distance, follow-through path ratio |
-| Balance & Recovery | 15% | Overall head stability, spine consistency |
-
-Each KPI produces a 0-100 score with human-readable coaching feedback.
-
-## Model Selection
-
-| Model | Accuracy | Speed | Recommended Use |
-|-------|----------|-------|-----------------|
-| yolo11n-pose | Lower | Fastest | Real-time preview |
-| yolo11s-pose | Medium | Fast | Quick analysis |
-| yolo11m-pose | Higher | Medium | **Recommended** |
-| yolo11l-pose | High | Slower | Detailed analysis |
-| yolo11x-pose | Highest | Slowest | Maximum accuracy |
 
 ## License
 

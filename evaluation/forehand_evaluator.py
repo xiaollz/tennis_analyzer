@@ -1,97 +1,60 @@
-"""Modern Forehand Evaluator v3 — 8阶段编排层。
+"""Fault-tolerant forehand evaluator.
 
-``ForehandEvaluator`` 负责：
-    1. 接收完整的逐帧关键点时间序列。
-    2. 使用 ``HybridImpactDetector`` 检测 **所有** 击球事件。
-    3. 对每次击球独立分段（准备 → 击球 → 随挥）。
-    4. 对每次击球独立计算所有生物力学原始指标（含 v3 新增指标）。
-    5. 对每次击球独立评估 21 个 KPI。
-    6. 汇总为 ``MultiSwingReport``。
+This evaluator follows the principle order from
+``The Fault Tolerant Forehand``:
+    - simple unit turn and preparation,
+    - hip-led chain,
+    - front contact with workable arm structure,
+    - out / through hand path,
+    - head and trunk stability.
 
-v3 升级：
-    - 6阶段 → 8阶段（新增 Slot准备、蹬转启动、滞后驱动、雨刷随挥）
-    - 14 KPI → 21 KPI（新增 SIR代理、肘部后撤、拍头下垂、蹬地力量等）
-    - 新增训练处方系统
+Metrics that require racket tracking are intentionally omitted.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import List, Dict, Optional, Any
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 
-from config.framework_config import FrameworkConfig, DEFAULT_CONFIG
+from config.framework_config import DEFAULT_CONFIG, FrameworkConfig
 from config.keypoints import KEYPOINT_NAMES
 from analysis.trajectory import TrajectoryStore
 from analysis.kinematic_calculator import (
-    shoulder_hip_angle,
-    min_knee_angle,
-    spine_angle_from_vertical,
     elbow_angle,
-    wrist_forward_normalised,
-    nose_position,
-    torso_height_px,
-    shoulder_rotation_signed,
     hip_center,
-    shoulder_center,
-    shoulder_width_px,
-    # v3 new
-    elbow_behind_torso_normalised,
-    wrist_below_elbow_distance,
-    hip_center_vertical_position,
-    compute_vertical_acceleration,
-    elbow_to_torso_distance,
-    forearm_angle,
-    compute_angular_velocity,
-    wrist_lateral_displacement,
-    compute_wiper_sweep_angle,
     hip_line_angle,
-    shoulder_line_angle,
-    compute_rotation_speed,
-    compute_peak_rotation_speed,
     hip_shoulder_separation_timing,
+    min_knee_angle,
+    nose_position,
+    shoulder_center,
+    shoulder_hip_angle,
+    shoulder_line_angle,
+    spine_angle_from_vertical,
+    torso_height_px,
+    wrist_forward_normalised,
 )
-from evaluation.event_detector import (
-    HybridImpactDetector,
-    SwingPhaseEstimator,
-    SwingEvent,
-    ImpactEvent,
-)
+from evaluation.event_detector import ImpactEvent, SwingEvent, SwingPhaseEstimator
 from evaluation.kpi import (
+    ALL_KPIS,
     KPIResult,
-    # Phase 1: Unit Turn
-    ShoulderRotationKPI,
-    KneeBendKPI,
-    SpineAngleKPI,
-    # Phase 2: Slot Preparation
-    ElbowBackPositionKPI,
-    RacketDropKPI,
-    # Phase 3: Leg Drive
-    GroundForceProxyKPI,
-    HipRotationSpeedKPI,
-    # Phase 4: Torso Pull
+    ContactPointKPI,
+    ContactSpacingKPI,
+    ElbowAngleAtContactKPI,
+    ForwardExtensionKPI,
+    HandPathLinearityKPI,
+    HeadStabilityAtContactKPI,
     HipShoulderSeparationKPI,
     HipShoulderTimingKPI,
-    # Phase 5: Lag & Elbow Drive
-    ElbowTuckKPI,
-    HandPathLinearityKPI,
-    # Phase 6: Contact & SIR
-    ContactPointKPI,
-    ElbowAngleAtContactKPI,
-    BodyFreezeKPI,
-    HeadStabilityAtContactKPI,
-    SIRProxyKPI,
-    # Phase 7: Wiper Follow-Through
-    ForwardExtensionKPI,
-    WiperSweepKPI,
-    # Phase 8: Balance
+    KneeBendKPI,
     OverallHeadStabilityKPI,
+    ShoulderRotationKPI,
+    SpineAngleKPI,
     SpineConsistencyKPI,
+    OutsideExtensionKPI,
 )
 
-
-# ── 数据容器 ────────────────────────────────────────────────────────
 
 @dataclass
 class PhaseScore:
@@ -102,7 +65,6 @@ class PhaseScore:
 
 @dataclass
 class SwingEvaluation:
-    """单次击球的完整评估结果。"""
     swing_index: int
     swing_event: SwingEvent
     phase_scores: Dict[str, PhaseScore]
@@ -115,7 +77,6 @@ class SwingEvaluation:
 
 @dataclass
 class MultiSwingReport:
-    """多次击球的综合报告。"""
     swing_evaluations: List[SwingEvaluation]
     average_score: float
     best_swing_index: int
@@ -125,23 +86,15 @@ class MultiSwingReport:
 
 
 class ForehandEvaluator:
-    """评估正手挥拍 — v3 8阶段模型，支持视频中多次击球独立评分。"""
+    """Principle-driven forehand evaluator."""
 
-    # 8 阶段名称（用于报告和 UI）
-    PHASE_ORDER = [
-        "unit_turn", "slot_prep", "leg_drive", "torso_pull",
-        "lag_drive", "contact", "wiper", "balance",
-    ]
-
+    PHASE_ORDER = ["unit_turn", "chain", "contact", "through", "stability"]
     PHASE_NAMES_CN = {
-        "unit_turn": "一体化转体",
-        "slot_prep": "槽位准备",
-        "leg_drive": "蹬转与髋部启动",
-        "torso_pull": "躯干与肩部牵引",
-        "lag_drive": "滞后与肘部驱动",
-        "contact": "击球与肩内旋",
-        "wiper": "雨刷式随挥",
-        "balance": "减速与平衡",
+        "unit_turn": "转开、备手与下肢准备",
+        "chain": "转髋带动与解旋顺序",
+        "contact": "前方接触与手臂结构",
+        "through": "向外、向前穿过",
+        "stability": "头部与躯干稳定",
     }
 
     def __init__(
@@ -153,13 +106,9 @@ class ForehandEvaluator:
         self.fps = fps
         self.is_right_handed = is_right_handed
         self.cfg = cfg
-
         self.wrist_key = "right_wrist" if is_right_handed else "left_wrist"
         self.elbow_key = "right_elbow" if is_right_handed else "left_elbow"
         self.shoulder_key = "right_shoulder" if is_right_handed else "left_shoulder"
-        self.hip_key = "right_hip" if is_right_handed else "left_hip"
-
-    # ── 公开 API ────────────────────────────────────────────────────
 
     def evaluate_multi(
         self,
@@ -168,39 +117,31 @@ class ForehandEvaluator:
         frame_indices: List[int],
         impact_events: List[ImpactEvent],
     ) -> MultiSwingReport:
-        """对多次击球进行独立评估。"""
-        # 构建 TrajectoryStore
         store = TrajectoryStore(fps=self.fps)
         for kp, conf, fidx in zip(keypoints_series, confidence_series, frame_indices):
             store.update(kp, conf, fidx)
 
-        # 获取手腕速度序列
         wrist_traj = store.get(self.wrist_key)
         wrist_speeds = wrist_traj.get_speeds(smoothed=True)
         speed_frame_indices = wrist_traj.frame_indices[1:] if len(wrist_traj.frame_indices) > 1 else []
 
-        # 如果没有检测到击球，尝试作为单次评估
         if not impact_events:
-            eval_result = self._evaluate_no_impact(
-                keypoints_series, confidence_series, frame_indices, store
-            )
+            evaluation = self._evaluate_no_impact(keypoints_series, confidence_series, frame_indices)
             return MultiSwingReport(
-                swing_evaluations=[eval_result],
-                average_score=eval_result.overall_score,
+                swing_evaluations=[evaluation],
+                average_score=evaluation.overall_score,
                 best_swing_index=0,
                 worst_swing_index=0,
                 impact_frames=[],
                 total_swings=0,
             )
 
-        # 对每次击球独立评估
         evaluations: List[SwingEvaluation] = []
         phase_estimator = SwingPhaseEstimator(fps=self.fps)
 
-        for i, impact_event in enumerate(impact_events):
-            prev_impact = impact_events[i - 1].impact_frame_idx if i > 0 else None
-            next_impact = impact_events[i + 1].impact_frame_idx if i < len(impact_events) - 1 else None
-
+        for index, impact_event in enumerate(impact_events):
+            prev_impact = impact_events[index - 1].impact_frame_idx if index > 0 else None
+            next_impact = impact_events[index + 1].impact_frame_idx if index < len(impact_events) - 1 else None
             swing_event = phase_estimator.estimate_phases(
                 impact_frame=impact_event.impact_frame_idx,
                 wrist_speeds=wrist_speeds,
@@ -208,49 +149,47 @@ class ForehandEvaluator:
                 prev_impact_frame=prev_impact,
                 next_impact_frame=next_impact,
             )
-            swing_event.swing_index = i
+            swing_event.swing_index = index
             swing_event.impact_event = impact_event
 
-            # 推断前进方向
             forward_sign = 1.0
             if abs(impact_event.peak_velocity_unit[0]) > 0.1:
                 forward_sign = 1.0 if impact_event.peak_velocity_unit[0] > 0 else -1.0
+            forward_axis = self._estimate_forward_axis(impact_event)
 
-            # 计算原始指标（v3 扩展）
             raw = self._compute_raw_metrics(
-                keypoints_series, confidence_series, frame_indices,
-                store, swing_event, forward_sign,
+                keypoints_series,
+                confidence_series,
+                frame_indices,
+                swing_event,
+                forward_sign,
+                forward_axis,
             )
-
-            # 评估所有 21 个 KPI
             kpi_results = self._evaluate_kpis(raw)
-
-            # 汇总阶段评分
             phase_scores = self._aggregate_phases(kpi_results)
             overall_score = self._compute_overall_score(phase_scores)
 
-            # 判断手臂风格
-            elbow_kpi = next((k for k in kpi_results if k.kpi_id == "C6.2"), None)
-            arm_style = elbow_kpi.details.get("style", "未知") if elbow_kpi and elbow_kpi.details else "未知"
+            elbow_kpi = next((k for k in kpi_results if k.kpi_id == "C3.3"), None)
+            arm_style = elbow_kpi.details.get("style", "未知") if elbow_kpi else "未知"
 
-            evaluations.append(SwingEvaluation(
-                swing_index=i,
-                swing_event=swing_event,
-                phase_scores=phase_scores,
-                overall_score=overall_score,
-                kpi_results=kpi_results,
-                forward_sign=forward_sign,
-                arm_style=arm_style,
-                raw_metrics=raw,
-            ))
+            evaluations.append(
+                SwingEvaluation(
+                    swing_index=index,
+                    swing_event=swing_event,
+                    phase_scores=phase_scores,
+                    overall_score=overall_score,
+                    kpi_results=kpi_results,
+                    forward_sign=forward_sign,
+                    arm_style=arm_style,
+                    raw_metrics=raw,
+                )
+            )
 
-        # 汇总
-        scores = [e.overall_score for e in evaluations]
+        scores = [evaluation.overall_score for evaluation in evaluations]
         avg_score = float(np.mean(scores)) if scores else 0.0
         best_idx = int(np.argmax(scores)) if scores else 0
         worst_idx = int(np.argmin(scores)) if scores else 0
-        impact_frames = [e.impact_frame_idx for e in impact_events]
-
+        impact_frames = [event.impact_frame_idx for event in impact_events]
         return MultiSwingReport(
             swing_evaluations=evaluations,
             average_score=avg_score,
@@ -267,387 +206,307 @@ class ForehandEvaluator:
         frame_indices: Optional[List[int]] = None,
         impact_events: Optional[List[ImpactEvent]] = None,
     ) -> MultiSwingReport:
-        """向后兼容接口。"""
         if frame_indices is None:
             frame_indices = list(range(len(keypoints_series)))
-        if impact_events is None:
-            impact_events = []
         return self.evaluate_multi(
-            keypoints_series, confidence_series, frame_indices, impact_events,
+            keypoints_series,
+            confidence_series,
+            frame_indices,
+            impact_events or [],
         )
 
-    # ── 内部：原始指标计算（v3 扩展）──────────────────────────────────
+    @staticmethod
+    def _estimate_forward_axis(impact_event: ImpactEvent) -> Optional[np.ndarray]:
+        vx, vy = impact_event.peak_velocity_unit
+        axis = np.array([float(vx), float(vy)], dtype=np.float64)
+        norm = float(np.linalg.norm(axis))
+        if norm < 1e-6:
+            return None
+        return axis / norm
+
+    @staticmethod
+    def _relative_rotation_series(angles: List[Optional[float]]) -> List[float]:
+        valid = [float(angle) for angle in angles if angle is not None]
+        if len(valid) < 2:
+            return []
+        arr = np.asarray(valid, dtype=np.float64)
+        doubled = np.deg2rad(arr * 2.0)
+        unwrapped = np.rad2deg(np.unwrap(doubled)) / 2.0
+        base = float(unwrapped[0])
+        return np.clip(np.abs(unwrapped - base), 0.0, 120.0).tolist()
+
+    @staticmethod
+    def _normalised_rms_displacement(points: List[np.ndarray], scale: Optional[float]) -> Optional[float]:
+        if len(points) < 3 or scale is None or scale <= 1e-6:
+            return None
+        arr = np.asarray(points, dtype=np.float64)
+        centered = arr - np.mean(arr, axis=0, keepdims=True)
+        rms = float(np.sqrt(np.mean(np.sum(centered ** 2, axis=1))))
+        return rms / scale
+
+    @staticmethod
+    def _point_to_line_distance(point: np.ndarray, line_start: np.ndarray, line_end: np.ndarray) -> Optional[float]:
+        line_vec = np.asarray(line_end, dtype=np.float64) - np.asarray(line_start, dtype=np.float64)
+        norm = float(np.linalg.norm(line_vec))
+        if norm < 1e-6:
+            return None
+        point_vec = np.asarray(point, dtype=np.float64) - np.asarray(line_start, dtype=np.float64)
+        area_twice = abs(float(np.cross(line_vec, point_vec)))
+        return area_twice / norm
+
+    @staticmethod
+    def _relative_head_point(keypoints: np.ndarray, confidence: np.ndarray) -> Optional[np.ndarray]:
+        nose = nose_position(keypoints, confidence)
+        sc = shoulder_center(keypoints, confidence)
+        hc = hip_center(keypoints, confidence)
+        if nose is None or sc is None or hc is None:
+            return None
+        torso_anchor = 0.5 * (sc + hc)
+        return nose - torso_anchor
+
+    def _dominant_side_axis(self, keypoints: np.ndarray, confidence: np.ndarray) -> Optional[np.ndarray]:
+        shoulder_idx = KEYPOINT_NAMES[self.shoulder_key]
+        if float(confidence[shoulder_idx]) < 0.3:
+            return None
+        sc = shoulder_center(keypoints, confidence)
+        if sc is None:
+            return None
+        axis = keypoints[shoulder_idx].astype(np.float64) - sc
+        norm = float(np.linalg.norm(axis))
+        if norm < 1e-6:
+            return None
+        return axis / norm
 
     def _compute_raw_metrics(
         self,
-        kp_series, conf_series, frame_indices,
-        store: TrajectoryStore,
+        kp_series: List[np.ndarray],
+        conf_series: List[np.ndarray],
+        frame_indices: List[int],
         swing: SwingEvent,
         forward_sign: float,
+        forward_axis_hint: Optional[np.ndarray],
     ) -> Dict[str, Any]:
-        """计算单次击球所需的所有生物力学原始指标。"""
         raw: Dict[str, Any] = {}
-        impact_frame = swing.impact_frame
-        prep_start = swing.prep_start_frame or frame_indices[0]
-        ft_end = swing.followthrough_end_frame or frame_indices[-1]
+        if not frame_indices:
+            return raw
 
-        # 帧索引 → 数组位置映射
-        f2p = {f: i for i, f in enumerate(frame_indices)}
-        impact_pos = f2p.get(impact_frame, len(frame_indices) // 2)
-        prep_pos = f2p.get(prep_start, 0)
-        ft_pos = f2p.get(ft_end, len(frame_indices) - 1)
+        impact_frame = swing.impact_frame if swing.impact_frame is not None else frame_indices[len(frame_indices) // 2]
+        prep_start = swing.prep_start_frame if swing.prep_start_frame is not None else frame_indices[0]
+        ft_end = swing.followthrough_end_frame if swing.followthrough_end_frame is not None else frame_indices[-1]
 
-        # 前挥起始位置（大约在击球前 0.15 秒）
+        frame_to_pos = {frame: idx for idx, frame in enumerate(frame_indices)}
+        impact_pos = frame_to_pos.get(impact_frame, len(frame_indices) // 2)
+        prep_pos = frame_to_pos.get(prep_start, 0)
+        ft_pos = frame_to_pos.get(ft_end, len(frame_indices) - 1)
         forward_swing_start = max(prep_pos, impact_pos - int(0.15 * self.fps))
 
         wrist_idx = KEYPOINT_NAMES[self.wrist_key]
-        elbow_idx = KEYPOINT_NAMES[self.elbow_key]
+        shoulder_angles: List[Optional[float]] = []
+        knee_angles: List[float] = []
+        spine_angles: List[float] = []
 
-        # ================================================================
-        # 阶段 1：一体化转体 (Unit Turn)
-        # ================================================================
-        shoulder_rots = []
-        knee_angles = []
-        spine_angles = []
-        for i in range(prep_pos, min(impact_pos + 1, len(kp_series))):
-            kp, conf = kp_series[i], conf_series[i]
-            sr = shoulder_hip_angle(kp, conf)
-            if sr is not None:
-                shoulder_rots.append(sr)
-            ka = min_knee_angle(kp, conf)
-            if ka is not None:
-                knee_angles.append(ka)
-            sa = spine_angle_from_vertical(kp, conf)
-            if sa is not None:
-                spine_angles.append(sa)
+        for idx in range(prep_pos, min(impact_pos + 1, len(kp_series))):
+            kp = kp_series[idx]
+            conf = conf_series[idx]
+            shoulder_angles.append(shoulder_line_angle(kp, conf))
+            knee_angle = min_knee_angle(kp, conf)
+            if knee_angle is not None:
+                knee_angles.append(float(knee_angle))
+            spine_angle = spine_angle_from_vertical(kp, conf)
+            if spine_angle is not None:
+                spine_angles.append(float(spine_angle))
 
-        raw["shoulder_rotation_values"] = shoulder_rots
+        raw["shoulder_rotation_values"] = self._relative_rotation_series(shoulder_angles)
         raw["knee_angle_values"] = knee_angles
         raw["spine_angle_values"] = spine_angles
 
-        # ================================================================
-        # 阶段 2：槽位准备 (Slot Preparation)
-        # ================================================================
-        # 在引拍阶段（准备到前挥起始）测量肘部后撤和拍头下垂
-        slot_phase_end = min(forward_swing_start + 1, len(kp_series))
-        elbow_behind_values = []
-        wrist_below_elbow_values = []
-        for i in range(prep_pos, slot_phase_end):
-            kp, conf = kp_series[i], conf_series[i]
-            eb = elbow_behind_torso_normalised(kp, conf, self.is_right_handed, forward_sign)
-            if eb is not None:
-                elbow_behind_values.append(eb)
-            wbe = wrist_below_elbow_distance(kp, conf, self.is_right_handed)
-            if wbe is not None:
-                wrist_below_elbow_values.append(wbe)
+        forward_axis = None
+        wrist_positions_fs = []
+        for idx in range(forward_swing_start, min(impact_pos + 1, len(kp_series))):
+            if float(conf_series[idx][wrist_idx]) >= 0.35:
+                wrist_positions_fs.append(kp_series[idx][wrist_idx].astype(np.float64).copy())
+        if len(wrist_positions_fs) >= 2:
+            disp = wrist_positions_fs[-1] - wrist_positions_fs[0]
+            norm = float(np.linalg.norm(disp))
+            if norm > 3.0:
+                forward_axis = disp / norm
+        if forward_axis is None and forward_axis_hint is not None:
+            axis = np.asarray(forward_axis_hint, dtype=np.float64).reshape(-1)[:2]
+            norm = float(np.linalg.norm(axis))
+            if norm > 1e-6:
+                forward_axis = axis / norm
+        raw["forward_axis"] = forward_axis.tolist() if forward_axis is not None else None
 
-        raw["elbow_behind_values"] = elbow_behind_values
-        raw["wrist_below_elbow_values"] = wrist_below_elbow_values
-
-        # ================================================================
-        # 阶段 3：蹬转与髋部启动 (Leg Drive)
-        # ================================================================
-        # 髋部垂直位置序列（用于计算蹬地力量代理）
-        hip_y_positions = []
-        hip_angles_series = []
-        shoulder_angles_series = []
-        leg_drive_start = max(prep_pos, impact_pos - int(0.3 * self.fps))
-        leg_drive_frame_indices = []
-
-        for i in range(leg_drive_start, min(impact_pos + 1, len(kp_series))):
-            kp, conf = kp_series[i], conf_series[i]
-            hy = hip_center_vertical_position(kp, conf)
-            if hy is not None:
-                hip_y_positions.append(hy)
-            ha = hip_line_angle(kp, conf)
-            hip_angles_series.append(ha)
-            sa = shoulder_line_angle(kp, conf)
-            shoulder_angles_series.append(sa)
-            if i < len(frame_indices):
-                leg_drive_frame_indices.append(frame_indices[i])
-
-        # 蹬地力量代理
-        raw["peak_hip_acceleration"] = compute_vertical_acceleration(hip_y_positions, self.fps)
-
-        # 髋部旋转速度
-        raw["peak_hip_rotation_speed"] = compute_peak_rotation_speed(hip_angles_series, self.fps)
-
-        # ================================================================
-        # 阶段 4：躯干与肩部牵引 (Torso Pull)
-        # ================================================================
-        # 髋肩分离角
-        hip_shoulder_seps = []
-        search_start = max(0, impact_pos - int(0.3 * self.fps))
-        for i in range(search_start, min(impact_pos + 1, len(kp_series))):
-            kp, conf = kp_series[i], conf_series[i]
-            angle = shoulder_hip_angle(kp, conf)
-            if angle is not None:
-                hip_shoulder_seps.append(angle)
+        chain_start = max(prep_pos, impact_pos - int(0.30 * self.fps))
+        hip_angles_series: List[Optional[float]] = []
+        shoulder_chain_series: List[Optional[float]] = []
+        chain_frame_indices: List[int] = []
+        hip_shoulder_seps: List[float] = []
+        for idx in range(chain_start, min(impact_pos + 1, len(kp_series))):
+            kp = kp_series[idx]
+            conf = conf_series[idx]
+            separation = shoulder_hip_angle(kp, conf)
+            if separation is not None:
+                hip_shoulder_seps.append(float(separation))
+            hip_angles_series.append(hip_line_angle(kp, conf))
+            shoulder_chain_series.append(shoulder_line_angle(kp, conf))
+            chain_frame_indices.append(frame_indices[idx])
         raw["hip_shoulder_sep_values"] = hip_shoulder_seps
-
-        # 髋肩旋转时序差
-        raw["hip_shoulder_timing_delay"] = hip_shoulder_separation_timing(
-            hip_angles_series, shoulder_angles_series, self.fps, leg_drive_frame_indices
+        raw["hip_shoulder_timing_s"] = hip_shoulder_separation_timing(
+            hip_angles_series,
+            shoulder_chain_series,
+            self.fps,
+            chain_frame_indices,
         )
 
-        # ================================================================
-        # 阶段 5：滞后与肘部驱动 (Lag & Elbow Drive)
-        # ================================================================
-        # 肘部收紧距离（前挥阶段）
-        elbow_tuck_values = []
-        for i in range(forward_swing_start, min(impact_pos + 1, len(kp_series))):
-            kp, conf = kp_series[i], conf_series[i]
-            et = elbow_to_torso_distance(kp, conf, self.is_right_handed)
-            if et is not None:
-                elbow_tuck_values.append(et)
-        raw["min_elbow_tuck"] = min(elbow_tuck_values) if elbow_tuck_values else None
+        raw["wrist_positions_contact_zone"] = None
+        raw["contact_forward_norm"] = None
+        raw["contact_spacing_norm"] = None
+        raw["elbow_angle_at_contact"] = None
+        raw["head_displacement_norm"] = None
+        raw["forward_extension_norm"] = None
+        raw["outside_extension_norm"] = None
 
-        # 手部路径线性度（击球前后 ±5 帧）
-        contact_zone_half = max(3, int(0.05 * self.fps))
-        wrist_positions_cz = []
-        for i in range(max(0, impact_pos - contact_zone_half),
-                       min(len(kp_series), impact_pos + contact_zone_half + 1)):
-            kp, conf = kp_series[i], conf_series[i]
-            if conf[wrist_idx] >= 0.3:
-                wrist_positions_cz.append(kp[wrist_idx].copy())
-        raw["wrist_positions_contact_zone"] = np.array(wrist_positions_cz) if wrist_positions_cz else None
-
-        # ================================================================
-        # 阶段 6：击球与肩内旋 (Contact & SIR)
-        # ================================================================
         if impact_pos < len(kp_series):
             kp_impact = kp_series[impact_pos]
             conf_impact = conf_series[impact_pos]
+            th = torso_height_px(kp_impact, conf_impact)
+            side_axis = self._dominant_side_axis(kp_impact, conf_impact)
+            raw["side_axis"] = side_axis.tolist() if side_axis is not None else None
 
-            raw["contact_forward_norm"] = wrist_forward_normalised(
-                kp_impact, conf_impact, self.is_right_handed, forward_sign
-            )
-            raw["elbow_angle_at_contact"] = elbow_angle(
-                kp_impact, conf_impact, right=self.is_right_handed
-            )
-
-            # 身体刹车：击球时躯干角速度
-            if 0 < impact_pos < len(kp_series) - 1:
-                sr_before = shoulder_hip_angle(kp_series[impact_pos - 1], conf_series[impact_pos - 1])
-                sr_after = shoulder_hip_angle(
-                    kp_series[min(impact_pos + 1, len(kp_series) - 1)],
-                    conf_series[min(impact_pos + 1, len(conf_series) - 1)]
+            contact_half_window = max(3, int(0.05 * self.fps))
+            contact_forward_values: List[float] = []
+            contact_spacing_values: List[float] = []
+            elbow_angles_contact: List[float] = []
+            for idx in range(max(0, impact_pos - contact_half_window), min(len(kp_series), impact_pos + contact_half_window + 1)):
+                kp_window = kp_series[idx]
+                conf_window = conf_series[idx]
+                forward_val = wrist_forward_normalised(
+                    kp_window,
+                    conf_window,
+                    is_right_handed=self.is_right_handed,
+                    forward_sign=forward_sign,
+                    forward_axis=forward_axis,
                 )
-                if sr_before is not None and sr_after is not None:
-                    dt = 2.0 / self.fps
-                    raw["torso_angular_velocity_at_contact"] = abs(sr_after - sr_before) / dt
-                else:
-                    raw["torso_angular_velocity_at_contact"] = None
-            else:
-                raw["torso_angular_velocity_at_contact"] = None
+                if forward_val is not None:
+                    contact_forward_values.append(float(forward_val))
+                elbow_val = elbow_angle(kp_window, conf_window, right=self.is_right_handed)
+                if elbow_val is not None:
+                    elbow_angles_contact.append(float(elbow_val))
+                th_window = torso_height_px(kp_window, conf_window)
+                if th_window is not None and th_window > 1e-6 and float(conf_window[wrist_idx]) >= 0.3:
+                    sc = shoulder_center(kp_window, conf_window)
+                    hc = hip_center(kp_window, conf_window)
+                    if sc is not None and hc is not None:
+                        wrist = kp_window[wrist_idx].astype(np.float64)
+                        torso_clearance = self._point_to_line_distance(wrist, sc, hc)
+                        if torso_clearance is not None:
+                            contact_spacing_values.append(float(torso_clearance / th_window))
 
-            # 击球点附近头部稳定性（±5 帧）
-            head_window = 5
-            nose_positions = []
-            for i in range(max(0, impact_pos - head_window),
-                           min(len(kp_series), impact_pos + head_window + 1)):
-                np_pos = nose_position(kp_series[i], conf_series[i])
-                if np_pos is not None:
-                    nose_positions.append(np_pos)
-            if len(nose_positions) >= 3:
-                nose_arr = np.array(nose_positions)
-                displacement = float(np.std(nose_arr[:, 1]))
-                th = torso_height_px(kp_impact, conf_impact)
-                if th and th > 1e-6:
-                    raw["head_displacement_norm"] = displacement / th
-                else:
-                    raw["head_displacement_norm"] = None
-            else:
-                raw["head_displacement_norm"] = None
+            raw["contact_forward_norm"] = float(np.median(contact_forward_values)) if contact_forward_values else None
+            raw["contact_spacing_norm"] = float(np.median(contact_spacing_values)) if contact_spacing_values else None
+            raw["elbow_angle_at_contact"] = float(np.median(elbow_angles_contact)) if elbow_angles_contact else None
 
-            # SIR 代理：击球前后前臂角速度
-            sir_window = max(3, int(0.1 * self.fps))
-            forearm_angles = []
-            for i in range(max(0, impact_pos - sir_window),
-                           min(len(kp_series), impact_pos + sir_window + 1)):
-                fa = forearm_angle(kp_series[i], conf_series[i], self.is_right_handed)
-                forearm_angles.append(fa if fa is not None else 0.0)
-            raw["forearm_angular_velocity"] = compute_angular_velocity(forearm_angles, self.fps)
+            wrist_positions_contact_zone: List[np.ndarray] = []
+            for idx in range(max(0, impact_pos - contact_half_window), min(len(kp_series), impact_pos + contact_half_window + 1)):
+                if float(conf_series[idx][wrist_idx]) >= 0.3:
+                    wrist_positions_contact_zone.append(kp_series[idx][wrist_idx].astype(np.float64).copy())
+            if wrist_positions_contact_zone:
+                raw["wrist_positions_contact_zone"] = np.asarray(wrist_positions_contact_zone, dtype=np.float64)
 
-        else:
-            raw["contact_forward_norm"] = None
-            raw["elbow_angle_at_contact"] = None
-            raw["torso_angular_velocity_at_contact"] = None
-            raw["head_displacement_norm"] = None
-            raw["forearm_angular_velocity"] = None
+            head_points_contact: List[np.ndarray] = []
+            for idx in range(max(0, impact_pos - 5), min(len(kp_series), impact_pos + 6)):
+                head_point = self._relative_head_point(kp_series[idx], conf_series[idx])
+                if head_point is not None:
+                    head_points_contact.append(head_point)
+            raw["head_displacement_norm"] = self._normalised_rms_displacement(head_points_contact, th)
 
-        # ================================================================
-        # 阶段 7：雨刷式随挥 (Wiper Follow-Through)
-        # ================================================================
-        post_contact_frames = int(self.cfg.wiper.post_contact_window_s * self.fps)
-        if impact_pos < len(kp_series):
-            wrist_at_contact = (
-                kp_series[impact_pos][wrist_idx].copy()
-                if conf_series[impact_pos][wrist_idx] >= 0.3 else None
-            )
-
-            if wrist_at_contact is not None:
+            post_contact_frames = max(6, int(self.cfg.through.post_contact_window_s * self.fps))
+            if float(conf_impact[wrist_idx]) >= 0.3 and th is not None and th > 1e-6:
+                wrist_at_contact = kp_impact[wrist_idx].astype(np.float64).copy()
                 max_forward = 0.0
-                for i in range(impact_pos + 1,
-                               min(len(kp_series), impact_pos + post_contact_frames + 1)):
-                    if conf_series[i][wrist_idx] >= 0.3:
-                        delta = kp_series[i][wrist_idx] - wrist_at_contact
-                        forward_dist = delta[0] * forward_sign
-                        max_forward = max(max_forward, forward_dist)
-
-                th = torso_height_px(kp_series[impact_pos], conf_series[impact_pos])
-                if th and th > 1e-6:
-                    raw["forward_extension_norm"] = max_forward / th
-                else:
-                    raw["forward_extension_norm"] = None
-            else:
-                raw["forward_extension_norm"] = None
-
-            # 雨刷扫过角度
-            wiper_wrist_positions = []
-            wiper_shoulder_centers = []
-            for i in range(impact_pos,
-                           min(len(kp_series), impact_pos + post_contact_frames + 1)):
-                kp, conf = kp_series[i], conf_series[i]
-                if conf[wrist_idx] >= 0.3:
-                    wiper_wrist_positions.append(kp[wrist_idx].astype(np.float64).copy())
-                    sc = shoulder_center(kp, conf)
-                    if sc is not None:
-                        wiper_shoulder_centers.append(sc)
+                max_outside = 0.0
+                valid_post_frames = 0
+                for idx in range(impact_pos + 1, min(len(kp_series), impact_pos + post_contact_frames + 1)):
+                    if float(conf_series[idx][wrist_idx]) < 0.3:
+                        continue
+                    valid_post_frames += 1
+                    delta = kp_series[idx][wrist_idx].astype(np.float64) - wrist_at_contact
+                    if forward_axis is not None:
+                        max_forward = max(max_forward, float(np.dot(delta, forward_axis)))
                     else:
-                        wiper_wrist_positions.pop()
+                        max_forward = max(max_forward, float(delta[0]) * forward_sign)
+                    if side_axis is not None:
+                        max_outside = max(max_outside, float(np.dot(delta, side_axis)))
+                if valid_post_frames >= 3:
+                    raw["forward_extension_norm"] = max_forward / th
+                    raw["outside_extension_norm"] = max_outside / th if side_axis is not None else None
+                raw["post_contact_valid_frames"] = valid_post_frames
 
-            raw["wiper_sweep_angle"] = compute_wiper_sweep_angle(
-                wiper_wrist_positions, wiper_shoulder_centers
-            )
-        else:
-            raw["forward_extension_norm"] = None
-            raw["wiper_sweep_angle"] = None
+        overall_head_points: List[np.ndarray] = []
+        all_spine_angles: List[float] = []
+        scale_frame_pos = impact_pos if impact_pos < len(kp_series) else prep_pos
+        scale = torso_height_px(kp_series[scale_frame_pos], conf_series[scale_frame_pos]) if kp_series else None
+        for idx in range(prep_pos, min(ft_pos + 1, len(kp_series))):
+            head_point = self._relative_head_point(kp_series[idx], conf_series[idx])
+            if head_point is not None:
+                overall_head_points.append(head_point)
+            spine_angle = spine_angle_from_vertical(kp_series[idx], conf_series[idx])
+            if spine_angle is not None:
+                all_spine_angles.append(float(spine_angle))
 
-        # ================================================================
-        # 阶段 8：减速与平衡 (Balance)
-        # ================================================================
-        nose_y_values = []
-        spine_all = []
-        for i in range(prep_pos, min(ft_pos + 1, len(kp_series))):
-            np_pos = nose_position(kp_series[i], conf_series[i])
-            if np_pos is not None:
-                nose_y_values.append(np_pos[1])
-            sa = spine_angle_from_vertical(kp_series[i], conf_series[i])
-            if sa is not None:
-                spine_all.append(sa)
-
-        if len(nose_y_values) >= 3:
-            th_ref = (
-                torso_height_px(kp_series[impact_pos], conf_series[impact_pos])
-                if impact_pos < len(kp_series) else None
-            )
-            if th_ref and th_ref > 1e-6:
-                raw["head_y_std_norm"] = float(np.std(nose_y_values)) / th_ref
-            else:
-                raw["head_y_std_norm"] = None
-        else:
-            raw["head_y_std_norm"] = None
-
-        raw["spine_angle_std"] = float(np.std(spine_all)) if len(spine_all) >= 3 else None
+        raw["overall_head_displacement_norm"] = self._normalised_rms_displacement(overall_head_points, scale)
+        raw["spine_angle_std"] = float(np.std(all_spine_angles)) if len(all_spine_angles) >= 3 else None
         raw["fps"] = self.fps
         return raw
 
-    # ── 内部：KPI 评估（v3: 21 个 KPI）─────────────────────────────────
-
     def _evaluate_kpis(self, raw: Dict[str, Any]) -> List[KPIResult]:
-        """实例化并评估所有 21 个 KPI。"""
-        results = []
-
-        # ── 阶段 1：一体化转体 ──
-        results.append(ShoulderRotationKPI(self.cfg).evaluate(
-            shoulder_rotation_values=raw.get("shoulder_rotation_values", [])))
-        results.append(KneeBendKPI(self.cfg).evaluate(
-            knee_angle_values=raw.get("knee_angle_values", [])))
-        results.append(SpineAngleKPI(self.cfg).evaluate(
-            spine_angle_values=raw.get("spine_angle_values", [])))
-
-        # ── 阶段 2：槽位准备 ──
-        results.append(ElbowBackPositionKPI(self.cfg).evaluate(
-            elbow_behind_values=raw.get("elbow_behind_values", [])))
-        results.append(RacketDropKPI(self.cfg).evaluate(
-            wrist_below_elbow_values=raw.get("wrist_below_elbow_values", [])))
-
-        # ── 阶段 3：蹬转与髋部启动 ──
-        results.append(GroundForceProxyKPI(self.cfg).evaluate(
-            peak_hip_acceleration=raw.get("peak_hip_acceleration")))
-        results.append(HipRotationSpeedKPI(self.cfg).evaluate(
-            peak_hip_rotation_speed=raw.get("peak_hip_rotation_speed")))
-
-        # ── 阶段 4：躯干与肩部牵引 ──
-        results.append(HipShoulderSeparationKPI(self.cfg).evaluate(
-            hip_shoulder_sep_values=raw.get("hip_shoulder_sep_values", [])))
-        results.append(HipShoulderTimingKPI(self.cfg).evaluate(
-            hip_shoulder_timing_delay=raw.get("hip_shoulder_timing_delay")))
-
-        # ── 阶段 5：滞后与肘部驱动 ──
-        results.append(ElbowTuckKPI(self.cfg).evaluate(
-            min_elbow_tuck=raw.get("min_elbow_tuck")))
-        results.append(HandPathLinearityKPI(self.cfg).evaluate(
-            wrist_positions_contact_zone=raw.get("wrist_positions_contact_zone")))
-
-        # ── 阶段 6：击球与肩内旋 ──
-        results.append(ContactPointKPI(self.cfg).evaluate(
-            contact_forward_norm=raw.get("contact_forward_norm")))
-        results.append(ElbowAngleAtContactKPI(self.cfg).evaluate(
-            elbow_angle_at_contact=raw.get("elbow_angle_at_contact")))
-        results.append(BodyFreezeKPI(self.cfg).evaluate(
-            torso_angular_velocity_at_contact=raw.get("torso_angular_velocity_at_contact")))
-        results.append(HeadStabilityAtContactKPI(self.cfg).evaluate(
-            head_displacement_norm=raw.get("head_displacement_norm")))
-        results.append(SIRProxyKPI(self.cfg).evaluate(
-            forearm_angular_velocity=raw.get("forearm_angular_velocity")))
-
-        # ── 阶段 7：雨刷式随挥 ──
-        results.append(ForwardExtensionKPI(self.cfg).evaluate(
-            forward_extension_norm=raw.get("forward_extension_norm")))
-        results.append(WiperSweepKPI(self.cfg).evaluate(
-            wiper_sweep_angle=raw.get("wiper_sweep_angle")))
-
-        # ── 阶段 8：减速与平衡 ──
-        results.append(OverallHeadStabilityKPI(self.cfg).evaluate(
-            head_y_std_norm=raw.get("head_y_std_norm")))
-        results.append(SpineConsistencyKPI(self.cfg).evaluate(
-            spine_angle_std=raw.get("spine_angle_std")))
-
-        return results
-
-    # ── 内部：汇总 ─────────────────────────────────────────────────
+        return [
+            ShoulderRotationKPI(self.cfg).evaluate(shoulder_rotation_values=raw.get("shoulder_rotation_values")),
+            KneeBendKPI(self.cfg).evaluate(knee_angle_values=raw.get("knee_angle_values")),
+            SpineAngleKPI(self.cfg).evaluate(spine_angle_values=raw.get("spine_angle_values")),
+            HipShoulderSeparationKPI(self.cfg).evaluate(hip_shoulder_sep_values=raw.get("hip_shoulder_sep_values")),
+            HipShoulderTimingKPI(self.cfg).evaluate(hip_shoulder_timing_s=raw.get("hip_shoulder_timing_s")),
+            ContactPointKPI(self.cfg).evaluate(contact_forward_norm=raw.get("contact_forward_norm")),
+            ContactSpacingKPI(self.cfg).evaluate(contact_spacing_norm=raw.get("contact_spacing_norm")),
+            ElbowAngleAtContactKPI(self.cfg).evaluate(elbow_angle_at_contact=raw.get("elbow_angle_at_contact")),
+            HandPathLinearityKPI(self.cfg).evaluate(wrist_positions_contact_zone=raw.get("wrist_positions_contact_zone")),
+            ForwardExtensionKPI(self.cfg).evaluate(forward_extension_norm=raw.get("forward_extension_norm")),
+            OutsideExtensionKPI(self.cfg).evaluate(outside_extension_norm=raw.get("outside_extension_norm")),
+            HeadStabilityAtContactKPI(self.cfg).evaluate(head_displacement_norm=raw.get("head_displacement_norm")),
+            OverallHeadStabilityKPI(self.cfg).evaluate(overall_head_displacement_norm=raw.get("overall_head_displacement_norm")),
+            SpineConsistencyKPI(self.cfg).evaluate(spine_angle_std=raw.get("spine_angle_std")),
+        ]
 
     def _aggregate_phases(self, kpi_results: List[KPIResult]) -> Dict[str, PhaseScore]:
-        """按阶段分组并计算阶段评分。"""
         phase_map: Dict[str, List[KPIResult]] = {}
         for kpi in kpi_results:
             phase_map.setdefault(kpi.phase, []).append(kpi)
 
-        phase_scores = {}
+        phase_scores: Dict[str, PhaseScore] = {}
         for phase, kpis in phase_map.items():
-            valid_scores = [k.score for k in kpis if k.rating != "无数据"]
-            avg = float(np.mean(valid_scores)) if valid_scores else 0.0
-            phase_scores[phase] = PhaseScore(phase=phase, score=avg, kpis=kpis)
-
+            valid_scores = [kpi.score for kpi in kpis if kpi.rating not in ("无数据", "n/a")]
+            avg_score = float(np.mean(valid_scores)) if valid_scores else 0.0
+            phase_scores[phase] = PhaseScore(phase=phase, score=avg_score, kpis=kpis)
         return phase_scores
 
     def _compute_overall_score(self, phase_scores: Dict[str, PhaseScore]) -> float:
-        """加权平均计算总分。"""
         weights = self.cfg.scoring.as_dict()
         total_weight = 0.0
         weighted_sum = 0.0
         for phase, weight in weights.items():
-            if phase in phase_scores:
-                weighted_sum += phase_scores[phase].score * weight
-                total_weight += weight
+            if phase not in phase_scores:
+                continue
+            weighted_sum += phase_scores[phase].score * weight
+            total_weight += weight
         return weighted_sum / max(total_weight, 1e-6)
 
-    # ── 无击球回退 ─────────────────────────────────────────────────
-
-    def _evaluate_no_impact(self, kp_series, conf_series, frame_indices, store) -> SwingEvaluation:
-        """无法检测到击球时的回退评估。"""
+    def _evaluate_no_impact(
+        self,
+        keypoints_series: List[np.ndarray],
+        confidence_series: List[np.ndarray],
+        frame_indices: List[int],
+    ) -> SwingEvaluation:
         swing = SwingEvent(
             swing_index=0,
             prep_start_frame=frame_indices[0] if frame_indices else None,
@@ -655,51 +514,26 @@ class ForehandEvaluator:
             followthrough_end_frame=frame_indices[-1] if frame_indices else None,
         )
 
-        shoulder_rots, knee_angles, spine_angles = [], [], []
-        for kp, conf in zip(kp_series, conf_series):
-            sr = shoulder_hip_angle(kp, conf)
-            if sr is not None:
-                shoulder_rots.append(sr)
-            ka = min_knee_angle(kp, conf)
-            if ka is not None:
-                knee_angles.append(ka)
-            sa = spine_angle_from_vertical(kp, conf)
-            if sa is not None:
-                spine_angles.append(sa)
+        shoulder_angles: List[Optional[float]] = []
+        knee_angles: List[float] = []
+        spine_angles: List[float] = []
+        for kp, conf in zip(keypoints_series, confidence_series):
+            shoulder_angles.append(shoulder_line_angle(kp, conf))
+            knee_angle = min_knee_angle(kp, conf)
+            if knee_angle is not None:
+                knee_angles.append(float(knee_angle))
+            spine_angle = spine_angle_from_vertical(kp, conf)
+            if spine_angle is not None:
+                spine_angles.append(float(spine_angle))
 
         raw = {
-            "shoulder_rotation_values": shoulder_rots,
+            "shoulder_rotation_values": self._relative_rotation_series(shoulder_angles),
             "knee_angle_values": knee_angles,
             "spine_angle_values": spine_angles,
         }
-
-        kpi_results = [
-            ShoulderRotationKPI(self.cfg).evaluate(shoulder_rotation_values=shoulder_rots),
-            KneeBendKPI(self.cfg).evaluate(knee_angle_values=knee_angles),
-            SpineAngleKPI(self.cfg).evaluate(spine_angle_values=spine_angles),
-        ]
-
-        # 其余 KPI 标记为无数据
-        na_kpi_classes = [
-            ElbowBackPositionKPI, RacketDropKPI,
-            GroundForceProxyKPI, HipRotationSpeedKPI,
-            HipShoulderSeparationKPI, HipShoulderTimingKPI,
-            ElbowTuckKPI, HandPathLinearityKPI,
-            ContactPointKPI, ElbowAngleAtContactKPI, BodyFreezeKPI,
-            HeadStabilityAtContactKPI, SIRProxyKPI,
-            ForwardExtensionKPI, WiperSweepKPI,
-            OverallHeadStabilityKPI, SpineConsistencyKPI,
-        ]
-        for kpi_cls in na_kpi_classes:
-            kpi = kpi_cls(self.cfg)
-            kpi_results.append(KPIResult(
-                kpi.kpi_id, kpi.name, kpi.phase, None, kpi.unit, 0, "无数据",
-                "未检测到击球 — 无法评估此指标。"
-            ))
-
+        kpi_results = self._evaluate_kpis(raw)
         phase_scores = self._aggregate_phases(kpi_results)
         overall = self._compute_overall_score(phase_scores)
-
         return SwingEvaluation(
             swing_index=0,
             swing_event=swing,
