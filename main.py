@@ -252,6 +252,9 @@ class TennisAnalysisPipeline:
                 progress_callback(0, 1, "正在进行 VLM 视觉分析...")
             vlm_results = self._run_vlm_analysis(
                 frames_raw, frame_indices, report, video_name,
+                keypoints_series=keypoints_series,
+                confidence_series=confidence_series,
+                video_path=video_path,
             )
 
         # ── 阶段 3: 生成标注视频 ────────────────────────────────────
@@ -330,6 +333,9 @@ class TennisAnalysisPipeline:
         frame_indices: List[int],
         report: MultiSwingReport,
         video_name: str,
+        keypoints_series: Optional[List[np.ndarray]] = None,
+        confidence_series: Optional[List[np.ndarray]] = None,
+        video_path: Optional[str] = None,
     ) -> List[Optional[Dict]]:
         """Run VLM keyframe analysis for each swing. Returns list of VLM results.
 
@@ -340,8 +346,13 @@ class TennisAnalysisPipeline:
         results: List[Optional[Dict]] = []
 
         for ev in report.swing_evaluations:
-            # Extract keyframes
-            keyframes = extractor.extract(frames_raw, frame_indices, ev.swing_event)
+            # Extract keyframes (with issue annotations if keypoints available)
+            keyframes = extractor.extract(
+                frames_raw, frame_indices, ev.swing_event,
+                keypoints_series=keypoints_series,
+                confidence_series=confidence_series,
+                is_right_handed=self.is_right_handed,
+            )
             if not keyframes:
                 results.append(None)
                 continue
@@ -354,19 +365,40 @@ class TennisAnalysisPipeline:
             grid_path = str(grid_dir / f"{video_name}_keyframes{suffix}.png")
             save_keyframe_grid(grid, grid_path)
 
-            # Build KPI summary for context
-            kpi_lines = []
-            for kpi in ev.kpi_results:
-                if kpi.rating not in ("无数据", "n/a"):
-                    kpi_lines.append(f"{kpi.name}: {kpi.score:.0f}分 ({kpi.rating})")
-            kpi_summary = "\n".join(kpi_lines)
+            # Compute supplementary metrics (M7/M8/M9)
+            supp_metrics = None
+            if keypoints_series is not None and confidence_series is not None:
+                evaluator = ForehandEvaluator(
+                    fps=self.fps if hasattr(self, 'fps') else 30.0,
+                    is_right_handed=self.is_right_handed,
+                )
+                # Get fps from video
+                from core.video_processor import VideoProcessor
+                try:
+                    evaluator.fps = len(frame_indices) / max(1, frame_indices[-1] - frame_indices[0]) * frame_indices[-1] / max(1, len(frame_indices)) if frame_indices else 30.0
+                except Exception:
+                    pass
+                supp_metrics = evaluator.compute_supplementary_metrics(
+                    keypoints_series, confidence_series, frame_indices,
+                    ev.swing_event,
+                )
 
             # Call VLM
-            vlm_result = analyzer.analyze_swing(grid, kpi_summary=kpi_summary)
+            print(f"[VLM] 正在分析第 {ev.swing_index + 1} 次击球...")
+            vlm_result = analyzer.analyze_swing(
+                grid, video_path=video_path,
+                supplementary_metrics=supp_metrics,
+            )
             if vlm_result is not None:
                 vlm_result["keyframe_grid_path"] = grid_path
+                if supp_metrics:
+                    vlm_result["supplementary_metrics"] = supp_metrics
+                print(f"[VLM] 第 {ev.swing_index + 1} 次击球分析完成，发现 {len(vlm_result.get('issues', []))} 个问题")
+            else:
+                print(f"[VLM] 第 {ev.swing_index + 1} 次击球 VLM 分析未返回结果")
             results.append(vlm_result)
 
+        print(f"[VLM] 总计: {sum(1 for r in results if r is not None)}/{len(results)} 次击球获得 VLM 分析")
         return results
 
     # ── 辅助方法 ─────────────────────────────────────────────────────
@@ -523,39 +555,7 @@ class TennisAnalysisPipeline:
             if ChartGenerator.multi_swing_summary_chart(swing_scores, summary_path):
                 charts["multi_swing_summary"] = summary_path
 
-        # 每次击球的雷达图和 KPI 条形图
-        phase_titles = (
-            ReportGenerator.BACKHAND_PHASE_TITLES if is_backhand
-            else ReportGenerator.FOREHAND_PHASE_TITLES
-        )
-
-        for ev in report.swing_evaluations:
-            idx = ev.swing_index
-            suffix = f"_{idx}" if report.total_swings > 1 else ""
-
-            # 雷达图
-            phase_scores = {p: ps.score for p, ps in ev.phase_scores.items()}
-            radar_path = str(chart_dir / f"{video_name}_radar{suffix}.png")
-            result = ChartGenerator.radar_chart(
-                phase_scores, radar_path,
-                title="各阶段评分雷达图",
-                swing_idx=idx if report.total_swings > 1 else None,
-                phase_labels=phase_titles,
-            )
-            if result:
-                key = f"radar_{idx}" if report.total_swings > 1 else "radar"
-                charts[key] = radar_path
-
-            # KPI 条形图
-            kpi_bar_path = str(chart_dir / f"{video_name}_kpi_bar{suffix}.png")
-            result = ChartGenerator.kpi_bar_chart(
-                ev.kpi_results, kpi_bar_path,
-                title="KPI 评分详情",
-                swing_idx=idx if report.total_swings > 1 else None,
-            )
-            if result:
-                key = f"kpi_bar_{idx}" if report.total_swings > 1 else "kpi_bar"
-                charts[key] = kpi_bar_path
+        # KPI charts removed — VLM analysis is primary output
 
         # 关节轨迹图和速度曲线
         impact_frames_list = report.impact_frames
@@ -746,7 +746,7 @@ def build_gradio_ui(pipeline: TennisAnalysisPipeline):
             if Path(result["report_path"]).exists():
                 report_text = Path(result["report_path"]).read_text(encoding="utf-8")
 
-            radar_img = charts.get("radar") or charts.get("radar_0")
+            radar_img = None  # Radar chart removed
             multi_img = charts.get("multi_swing_summary")
             kpi_bar_img = charts.get("kpi_bar") or charts.get("kpi_bar_0")
 
@@ -847,9 +847,19 @@ def main():
         stroke_cn = "单手反拍" if result["stroke_type"] != "forehand" else "正手"
         print(f"识别击球类型: {stroke_cn}")
         print(f"检测到击球次数: {report.total_swings}")
-        print(f"平均综合评分: {report.average_score:.0f}/100")
-        for ev in report.swing_evaluations:
-            print(f"  第{ev.swing_index + 1}次击球: {ev.overall_score:.0f}/100")
+        # Show VLM scores if available, otherwise fall back to KPI scores
+        vlm_scores = []
+        for i, vr in enumerate(result.get("vlm_results", [])):
+            if vr and vr.get("score") is not None:
+                vlm_scores.append(vr["score"])
+                print(f"  第{i+1}次击球: {vr['score']}/100（VLM）")
+            elif i < len(report.swing_evaluations):
+                print(f"  第{i+1}次击球: {report.swing_evaluations[i].overall_score:.0f}/100")
+        if vlm_scores:
+            avg = sum(vlm_scores) / len(vlm_scores)
+            print(f"VLM 平均评分: {avg:.0f}/100")
+        else:
+            print(f"平均综合评分: {report.average_score:.0f}/100")
         print(f"报告: {result['report_path']}")
         print(f"标注视频: {result['annotated_video_path']}")
 

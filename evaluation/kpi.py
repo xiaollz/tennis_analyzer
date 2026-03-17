@@ -474,19 +474,20 @@ class SpineConsistencyKPI(BaseKPI):
         return KPIResult(self.kpi_id, self.name, self.phase, val, self.unit, score, rating, fb)
 
 
+# Reliable KPIs only — verified against VLM analysis for consistency.
+# Removed: HipShoulderTimingKPI (unmeasurable at 30fps),
+#          SpineAngleKPI (tilt can be good per FTT),
+#          HandPathLinearityKPI (Out path isn't linear),
+#          ContactSpacingKPI (contradictory scoring),
+#          OverallHeadStabilityKPI (duplicate of S5.1),
+#          HipShoulderSeparationKPI (2D projection too noisy).
 ALL_KPIS = [
-    ShoulderRotationKPI,
-    KneeBendKPI,
-    SpineAngleKPI,
-    HipShoulderSeparationKPI,
-    HipShoulderTimingKPI,
-    ContactPointKPI,
-    ContactSpacingKPI,
-    ElbowAngleAtContactKPI,
-    HandPathLinearityKPI,
-    ForwardExtensionKPI,
-    OutsideExtensionKPI,
-    HeadStabilityAtContactKPI,
-    OverallHeadStabilityKPI,
-    SpineConsistencyKPI,
+    ShoulderRotationKPI,       # UT1.1 — direction consistent with VLM
+    KneeBendKPI,               # UT1.2 — reliable, matches VLM
+    ElbowAngleAtContactKPI,    # C3.3 — reliable, matches VLM
+    ContactPointKPI,           # C3.1 — moderate reliability
+    OutsideExtensionKPI,       # T4.3 — Out vector (core FTT concept)
+    ForwardExtensionKPI,       # T4.2 — Through vector, matches VLM
+    HeadStabilityAtContactKPI, # S5.1 — reliable, matches VLM
+    SpineConsistencyKPI,       # S5.3 — reliable
 ]

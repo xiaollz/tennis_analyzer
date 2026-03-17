@@ -1,4 +1,4 @@
-"""Markdown 报告生成器 v3 — 支持容错型正手原则模型 & 单反评估。"""
+"""Markdown 报告生成器 v4 — VLM 为核心，量化指标为辅助参考。"""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from evaluation.kpi import KPIResult
 
 
 class ReportGenerator:
-    """生成中文 Markdown 评估报告 — 支持容错型正手原则模型 & 单反。"""
+    """生成中文 Markdown 评估报告 — VLM 教练分析为主，量化指标为辅。"""
 
     FOREHAND_PHASE_TITLES = {
         "unit_turn": "阶段一：转开、备手与下肢准备",
@@ -226,7 +226,7 @@ class ReportGenerator:
             except Exception:
                 rel_chart_paths[k] = str(p)
         chart_paths = rel_chart_paths
-        
+
         is_backhand = stroke_type != "forehand"
         phase_titles = self.BACKHAND_PHASE_TITLES if is_backhand else self.FOREHAND_PHASE_TITLES
         phase_order = self.BACKHAND_PHASE_ORDER if is_backhand else self.FOREHAND_PHASE_ORDER
@@ -246,33 +246,20 @@ class ReportGenerator:
             lines.append(f"**评估模型**: 容错型正手原则模型 (v4)  ")
         lines.append("")
 
-        # ── 综合评分概览 ─────────────────────────────────────────────
+        # ── 总体印象（取代旧的综合评分概览）─────────────────────────
         lines.append("---")
         lines.append("")
-        lines.append("## 综合评分概览")
+        lines.append("## 总体印象")
         lines.append("")
 
         if report.total_swings > 0:
-            lines.append(f"### 平均综合评分：{report.average_score:.0f} / 100  ({self._score_to_grade(report.average_score)})")
+            lines.append(self._qualitative_summary(report, is_backhand))
             lines.append("")
 
             if report.total_swings > 1:
-                lines.append("| 击球次序 | 综合评分 | 评级 | 击球帧 | 音频确认 |")
-                lines.append("|----------|----------|------|--------|----------|")
-                for ev in report.swing_evaluations:
-                    impact_f = ev.swing_event.impact_frame if ev.swing_event.impact_frame is not None else "—"
-                    audio = "✓" if (ev.swing_event.impact_event and ev.swing_event.impact_event.audio_confirmed) else "—"
-                    grade = self._score_to_grade(ev.overall_score)
-                    lines.append(f"| 第{ev.swing_index + 1}次 | {ev.overall_score:.0f} | {grade} | {impact_f} | {audio} |")
-                lines.append("")
-
-                # 一致性分析
+                # 一致性分析（简化版，不含分数表）
                 lines.extend(self._consistency_analysis(report))
                 lines.append("")
-
-                if "multi_swing_summary" in chart_paths:
-                    lines.append(f"![各次击球评分对比]({chart_paths['multi_swing_summary']})")
-                    lines.append("")
         else:
             lines.append("未检测到有效击球。以下仅评估可用的姿态数据。")
             lines.append("")
@@ -281,21 +268,15 @@ class ReportGenerator:
         _vlm = vlm_results or []
         for ev in report.swing_evaluations:
             vlm_data = _vlm[ev.swing_index] if ev.swing_index < len(_vlm) else None
+            supp = vlm_data.get("supplementary_metrics") if vlm_data else None
             lines.extend(self._swing_section(
                 ev, chart_paths, report.total_swings,
                 phase_titles, phase_order, stroke_cn, drills,
                 vlm_result=vlm_data,
+                supplementary_metrics=supp,
             ))
 
-        # ── 训练处方 ─────────────────────────────────────────────────
-        lines.append("---")
-        lines.append("")
-        lines.append("## 训练处方")
-        lines.append("")
-        lines.extend(self._training_prescription(report, drills, is_backhand))
-        lines.append("")
-
-        # ── 综合教练建议 ─────────────────────────────────────────────
+        # ── 综合教练建议（简化版）─────────────────────────────────────
         lines.append("---")
         lines.append("")
         lines.append("## 综合教练建议")
@@ -321,12 +302,9 @@ class ReportGenerator:
             lines.append("- **髋带动前挥**：手不是发动机，髋和躯干才是")
             lines.append("- **Out / Up / Through**：手向外、向上、向前穿过球")
             lines.append("- **容错优先**：先追求普通球不容易打丢")
-            lines.append("")
-            lines.append("**本版评分层**：转开/备手 → 转髋带动 → 前方接触 → 向外向前穿过 → 稳定性")
         lines.append("")
-        lines.append("姿态估计使用 YOLO Pose（COCO 17关键点模型）。"
-                      "本版只保留能由身体关键点稳定估计的原则型指标；拍面角度、真实 wrist lag、球拍与前臂夹角不直接评分。"
-                      "所有指标均基于2D关键点轨迹计算，受相机角度限制。建议使用侧面视角、60+FPS 录制以获得最佳分析效果。")
+        lines.append("视觉分析由 VLM（视觉语言模型）基于关键帧完成，量化指标由 YOLO Pose（COCO 17关键点）辅助计算。"
+                      "所有量化指标均基于2D关键点轨迹，受相机角度限制。建议使用侧面视角、60+FPS 录制以获得最佳分析效果。")
         lines.append("")
 
         # 写入文件
@@ -334,6 +312,25 @@ class ReportGenerator:
         report_path = self.output_dir / f"{type_tag}_{video_name}.md"
         report_path.write_text("\n".join(lines), encoding="utf-8")
         return str(report_path)
+
+    # ── 总体定性总结（取代旧的分数概览）─────────────────────────────
+
+    def _qualitative_summary(self, report: MultiSwingReport, is_backhand: bool) -> str:
+        """根据整体数据生成一句定性总结，取代分数展示。"""
+        avg = report.average_score
+        n = report.total_swings
+        stroke = "单反" if is_backhand else "正手"
+
+        if avg >= 85:
+            return f"本次共分析 {n} 次{stroke}击球，整体动作质量优秀，各环节衔接流畅，技术框架成熟稳定。"
+        elif avg >= 70:
+            return f"本次共分析 {n} 次{stroke}击球，整体动作框架良好，核心原则基本到位，部分环节仍有优化空间。"
+        elif avg >= 50:
+            return f"本次共分析 {n} 次{stroke}击球，动作框架初步成型，但多个环节需要改进以提高容错性和稳定性。"
+        elif avg >= 30:
+            return f"本次共分析 {n} 次{stroke}击球，技术动作存在较明显的结构性问题，建议从基础动作模式开始重建。"
+        else:
+            return f"本次共分析 {n} 次{stroke}击球，动作模式与目标技术差距较大，建议在教练指导下从分解动作开始练习。"
 
     # ── 单次击球详细分析 ─────────────────────────────────────────────
 
@@ -347,6 +344,7 @@ class ReportGenerator:
         stroke_cn: str,
         drills: Dict,
         vlm_result: Optional[Dict] = None,
+        supplementary_metrics: Optional[Dict] = None,
     ) -> List[str]:
         lines = []
         lines.append("---")
@@ -355,10 +353,10 @@ class ReportGenerator:
         if total_swings > 1:
             lines.append(f"## 第 {ev.swing_index + 1} 次击球分析")
         else:
-            lines.append("## 击球详细分析")
+            lines.append("## 击球分析")
         lines.append("")
 
-        lines.append(f"**综合评分**: {ev.overall_score:.0f} / 100  ({self._score_to_grade(ev.overall_score)})  ")
+        # ── 击球基本信息 ───────────────────────────────────────────
         lines.append(f"**击球类型**: {stroke_cn}  ")
         if ev.arm_style and ev.arm_style != "未知":
             lines.append(f"**手臂风格**: {ev.arm_style}  ")
@@ -371,69 +369,19 @@ class ReportGenerator:
         if ev.swing_event.impact_event and ev.swing_event.impact_event.peak_speed_px_s:
             lines.append(f"**手腕峰值速度**: {ev.swing_event.impact_event.peak_speed_px_s:.0f} px/s  ")
             if ev.swing_event.impact_event.audio_confirmed:
-                lines.append("**音频确认**: ✓ 已确认  ")
+                lines.append("**音频确认**: 已确认  ")
         lines.append("")
 
-        # 雷达图
-        radar_key = f"radar_{ev.swing_index}" if total_swings > 1 else "radar"
-        if radar_key in chart_paths:
-            lines.append(f"![阶段评分雷达图]({chart_paths[radar_key]})")
-            lines.append("")
-
-        # 阶段评分汇总表
-        lines.append("### 各阶段评分")
-        lines.append("")
-        lines.append("| 阶段 | 评分 | 评级 |")
-        lines.append("|------|------|------|")
-        for phase in phase_order:
-            if phase in ev.phase_scores:
-                ps = ev.phase_scores[phase]
-                grade = self._score_to_grade(ps.score)
-                title = phase_titles.get(phase, phase)
-                lines.append(f"| {title} | {ps.score:.0f} | {grade} |")
-        lines.append("")
-
-        # KPI 详细分析（含训练处方）
-        lines.append("### KPI 详细分析")
-        lines.append("")
-
-        for phase in phase_order:
-            if phase not in ev.phase_scores:
-                continue
-            ps = ev.phase_scores[phase]
-            title = phase_titles.get(phase, phase)
-            lines.append(f"#### {title}")
-            lines.append("")
-
-            for kpi in ps.kpis:
-                lines.append(f"**{kpi.kpi_id} — {kpi.name}**")
-                lines.append("")
-                if kpi.rating == "无数据" or kpi.rating == "n/a":
-                    lines.append(f"> *{kpi.feedback}*")
-                else:
-                    val_str = self._format_value(kpi.raw_value, kpi.unit)
-                    lines.append(f"- **评分**: {kpi.score:.0f}/100 ({kpi.rating})")
-                    lines.append(f"- **测量值**: {val_str}")
-                    lines.append(f"- **反馈**: {kpi.feedback}")
-
-                    # 如果评分低于 70，附上训练处方
-                    if kpi.score < 70 and kpi.kpi_id in drills:
-                        drill_info = drills[kpi.kpi_id]
-                        lines.append("")
-                        lines.append(f"  > **训练处方**: {drill_info['drill']}")
-                        lines.append(f"  > **体感提示**: {drill_info['feel']}")
-                        lines.append(f"  > **教练提示**: {drill_info['cue']}")
-                lines.append("")
-
-        # KPI 条形图
-        bar_key = f"kpi_bar_{ev.swing_index}" if total_swings > 1 else "kpi_bar"
-        if bar_key in chart_paths:
-            lines.append(f"![KPI 评分详情]({chart_paths[bar_key]})")
-            lines.append("")
-
-        # ── VLM 视觉分析 ─────────────────────────────────────────
+        # ── 教练分析（VLM — 主体内容）─────────────────────────────
         if vlm_result:
             lines.extend(self._vlm_section(vlm_result, chart_paths, ev.swing_index, total_swings))
+
+        # ── 量化辅助参考 ──────────────────────────────────────────
+        metrics_lines = self._supplementary_metrics_section(
+            ev, phase_titles, phase_order, supplementary_metrics,
+        )
+        if metrics_lines:
+            lines.extend(metrics_lines)
 
         return lines
 
@@ -448,13 +396,22 @@ class ReportGenerator:
     ) -> List[str]:
         import os
         lines = []
-        lines.append("### VLM 视觉分析（基于 FTT 原则）")
+        lines.append("### 教练分析")
         lines.append("")
 
         # Keyframe grid image
-        grid_path = vlm_result.get("keyframe_grid_path")
-        if grid_path and os.path.exists(grid_path):
-            lines.append(f"![关键帧分析]({grid_path})")
+        grid_path = vlm_result.get("keyframe_grid_path", "")
+        if grid_path:
+            basename = os.path.basename(grid_path)
+            rel_path = f"charts/{basename}"
+            lines.append(f"![关键帧分析]({rel_path})")
+            lines.append("")
+
+        # Score
+        if vlm_result.get("score") is not None:
+            score = vlm_result["score"]
+            reasoning = vlm_result.get("score_reasoning", "")
+            lines.append(f"**容错评分**: {score}/100 — {reasoning}")
             lines.append("")
 
         # Overall assessment
@@ -478,7 +435,8 @@ class ReportGenerator:
             for issue in issues:
                 severity = issue.get("severity", "中")
                 severity_tag = {"高": "🔴", "中": "🟡", "低": "🟢"}.get(severity, "⚪")
-                lines.append(f"**{severity_tag} {issue.get('name', '未命名')}** — 严重程度: {severity}")
+                frame_tag = f" [{issue['frame']}]" if issue.get("frame") else ""
+                lines.append(f"**{severity_tag} {issue.get('name', '未命名')}{frame_tag}** — 严重程度: {severity}")
                 if issue.get("description"):
                     lines.append(f"- 观察: {issue['description']}")
                 if issue.get("ftt_principle"):
@@ -487,6 +445,11 @@ class ReportGenerator:
                     lines.append(f"- 纠正建议: {issue['correction']}")
                 lines.append("")
 
+        # Video dynamics
+        if vlm_result.get("video_dynamics"):
+            lines.append(f"**动态分析**: {vlm_result['video_dynamics']}")
+            lines.append("")
+
         # Priority drill
         if vlm_result.get("priority_drill"):
             lines.append(f"**最优先训练**: {vlm_result['priority_drill']}")
@@ -494,7 +457,74 @@ class ReportGenerator:
 
         return lines
 
-    # ── 一致性分析（v3 新增）─────────────────────────────────────────
+    # ── 量化辅助参考章节 ─────────────────────────────────────────────
+
+    def _supplementary_metrics_section(
+        self,
+        ev: SwingEvaluation,
+        phase_titles: Dict[str, str],
+        phase_order: List[str],
+        extra_metrics: Optional[Dict] = None,
+    ) -> List[str]:
+        """从 KPI 结果中提取关键量化数据，以简洁的单行形式呈现。"""
+        lines = []
+
+        # Collect valid KPIs with actual measurements
+        valid_kpis = [
+            kpi for kpi in ev.kpi_results
+            if kpi.rating not in ("无数据", "n/a") and kpi.raw_value is not None
+        ]
+
+        # Also include any externally-supplied supplementary metrics
+        has_extra = extra_metrics and len(extra_metrics) > 0
+
+        if not valid_kpis and not has_extra:
+            return lines
+
+        lines.append("### 量化辅助参考")
+        lines.append("")
+
+        # Format each KPI as a single-line metric description
+        for kpi in valid_kpis:
+            val_str = self._format_value(kpi.raw_value, kpi.unit)
+            # Build a concise one-liner: metric name + value + brief note
+            note = self._metric_note(kpi)
+            if note:
+                lines.append(f"- **{kpi.name}**: {val_str} — {note}")
+            else:
+                lines.append(f"- **{kpi.name}**: {val_str}")
+
+        # Append supplementary metrics (M7/M8/M9)
+        if has_extra:
+            sm = extra_metrics
+            if sm.get("arm_torso_synchrony") is not None:
+                lines.append(f"- **手臂-躯干同步性**: {sm['arm_torso_synchrony']:.2f}（{sm.get('arm_torso_sync_label', '')}）")
+            if sm.get("wrist_v_detected") is not None:
+                if sm["wrist_v_detected"]:
+                    lines.append(f"- **手腕高度模式**: 检测到 V 形 scooping（深度 {sm.get('wrist_v_depth', 0):.2f}）")
+                else:
+                    lines.append("- **手腕高度模式**: 未检测到 scooping")
+            if sm.get("swing_shape_label") is not None:
+                lines.append(f"- **挥拍轨迹**: {sm['swing_shape_label']}（弧度比 {sm.get('swing_arc_ratio', 0):.2f}）")
+
+        lines.append("")
+        return lines
+
+    @staticmethod
+    def _metric_note(kpi: KPIResult) -> str:
+        """为 KPI 生成简短的定性注释，取代分数。"""
+        if kpi.score >= 85:
+            return "良好"
+        elif kpi.score >= 70:
+            return "基本到位"
+        elif kpi.score >= 50:
+            return "需关注"
+        elif kpi.score >= 30:
+            return "明显不足"
+        else:
+            return "亟需改进"
+
+    # ── 一致性分析 ─────────────────────────────────────────────────
 
     def _consistency_analysis(self, report: MultiSwingReport) -> List[str]:
         """分析多次击球的一致性。"""
@@ -504,131 +534,18 @@ class ReportGenerator:
 
         scores = [ev.overall_score for ev in report.swing_evaluations]
         std_dev = float(__import__("numpy").std(scores))
-        score_range = max(scores) - min(scores)
 
-        lines.append("### 击球一致性分析")
+        lines.append("### 击球一致性")
         lines.append("")
 
         if std_dev < 5:
-            lines.append(f"**一致性评级**: 优秀（标准差 {std_dev:.1f}）")
-            lines.append("")
             lines.append("各次击球表现非常稳定，动作模式已经形成良好的肌肉记忆。")
         elif std_dev < 10:
-            lines.append(f"**一致性评级**: 良好（标准差 {std_dev:.1f}）")
-            lines.append("")
             lines.append("各次击球表现较为稳定，但仍有一定波动。建议通过重复练习进一步固化动作模式。")
         elif std_dev < 15:
-            lines.append(f"**一致性评级**: 一般（标准差 {std_dev:.1f}）")
-            lines.append("")
-            lines.append("各次击球表现波动较大，说明动作模式尚未完全稳定。建议降低击球力度，专注于动作的一致性。")
+            lines.append("各次击球表现波动较大，动作模式尚未完全稳定。建议降低击球力度，专注于动作的一致性。")
         else:
-            lines.append(f"**一致性评级**: 待改进（标准差 {std_dev:.1f}）")
-            lines.append("")
-            lines.append("各次击球表现差异显著，说明技术动作尚未形成稳定模式。建议从慢速影子挥拍开始，逐步建立一致的动作模式。")
-
-        # 找出波动最大的阶段
-        if report.total_swings >= 2:
-            phase_stds = {}
-            for phase in report.swing_evaluations[0].phase_scores:
-                phase_scores = []
-                for ev in report.swing_evaluations:
-                    if phase in ev.phase_scores:
-                        phase_scores.append(ev.phase_scores[phase].score)
-                if len(phase_scores) >= 2:
-                    phase_stds[phase] = float(__import__("numpy").std(phase_scores))
-
-            if phase_stds:
-                most_variable = max(phase_stds, key=phase_stds.get)
-                fh_titles = self.FOREHAND_PHASE_TITLES
-                bh_titles = self.BACKHAND_PHASE_TITLES
-                all_titles = {**fh_titles, **bh_titles}
-                title = all_titles.get(most_variable, most_variable)
-                lines.append("")
-                lines.append(f"**波动最大的阶段**: {title}（标准差 {phase_stds[most_variable]:.1f}）— 这是提高一致性的重点。")
-
-        return lines
-
-    # ── 训练处方（v3 新增）────────────────────────────────────────────
-
-    def _training_prescription(
-        self,
-        report: MultiSwingReport,
-        drills: Dict,
-        is_backhand: bool,
-    ) -> List[str]:
-        """生成优先级排序的训练处方。"""
-        lines = []
-
-        # 收集所有 KPI 的平均分
-        all_kpis: List[KPIResult] = []
-        for ev in report.swing_evaluations:
-            all_kpis.extend(ev.kpi_results)
-
-        valid = [k for k in all_kpis if k.rating not in ("无数据", "n/a")]
-        if not valid:
-            lines.append("*数据不足，无法生成训练处方。*")
-            return lines
-
-        # 按 KPI ID 分组取平均
-        kpi_avg: Dict[str, List[float]] = {}
-        kpi_map: Dict[str, KPIResult] = {}
-        for kpi in valid:
-            kpi_avg.setdefault(kpi.kpi_id, []).append(kpi.score)
-            kpi_map[kpi.kpi_id] = kpi
-
-        phase_weights = (
-            DEFAULT_BACKHAND_CONFIG.scoring.as_dict()
-            if is_backhand else DEFAULT_CONFIG.scoring.as_dict()
-        )
-        weak_kpis = []
-        for kpi_id, scores in kpi_avg.items():
-            avg = float(sum(scores) / len(scores))
-            kpi = kpi_map[kpi_id]
-            deficit = max(0.0, 70.0 - avg)
-            if deficit <= 0.0:
-                continue
-            phase_weight = float(phase_weights.get(kpi.phase, 0.1))
-            priority_score = deficit * phase_weight
-            weak_kpis.append((kpi_id, avg, kpi, priority_score))
-
-        # 优先级与总分口径对齐：优先修复“低分且高权重阶段”的问题。
-        weak_kpis.sort(key=lambda x: (-x[3], x[1], x[0]))
-
-        if not weak_kpis:
-            lines.append("所有指标均达到良好水平，继续保持！可以尝试在更高强度的对抗中保持技术质量。")
-            return lines
-
-        lines.append("以下是按优先级排序的训练计划，从最需要改进的指标开始：")
-        lines.append("")
-
-        for priority, (kid, avg, kpi, priority_score) in enumerate(weak_kpis[:5], 1):
-            lines.append(
-                f"### 优先级 {priority}：{kpi.name}（平均 {avg:.0f} 分，优先度 {priority_score:.1f}）"
-            )
-            lines.append("")
-
-            if kid in drills:
-                drill_info = drills[kid]
-                lines.append(f"**训练方法**: {drill_info['drill']}")
-                lines.append("")
-                lines.append(f"**体感提示**: {drill_info['feel']}")
-                lines.append("")
-                lines.append(f"**教练提示**: {drill_info['cue']}")
-            else:
-                lines.append(f"**反馈**: {kpi.feedback}")
-                lines.append("")
-                lines.append("针对此项进行专项训练。")
-            lines.append("")
-
-        # 训练计划建议
-        lines.append("### 建议训练计划")
-        lines.append("")
-        lines.append("1. **热身**（5分钟）：慢速影子挥拍，专注于“转开 -> 等球 -> 髋带动 -> 前方接触”。")
-        lines.append(f"2. **专项训练**（15分钟）：重点练习上述优先级 1（{weak_kpis[0][2].name}）。")
-        if len(weak_kpis) >= 2:
-            lines.append(f"3. **辅助训练**（10分钟）：练习优先级 2（{weak_kpis[1][2].name}）。")
-        lines.append("4. **整合练习**（10分钟）：正常速度挥拍，将专项训练融入完整动作。")
-        lines.append("5. **录像对比**：每周录制一次，使用本分析器对比进步。")
+            lines.append("各次击球表现差异显著，技术动作尚未形成稳定模式。建议从慢速影子挥拍开始，逐步建立一致的动作模式。")
 
         return lines
 
@@ -655,7 +572,6 @@ class ReportGenerator:
                 return f"{value:.2f}"
             if "归一化" in unit or "标准差" in unit or "norm" in unit:
                 return f"{value:.3f}"
-            # Avoid matching "高度比" as angle; treat explicit angular units only.
             if unit in ("度", "度/秒", "度标准差") or "°" in unit:
                 return f"{value:.1f}°" if unit == "度" else f"{value:.0f} {unit}"
             if "px/s²" in unit:
@@ -663,7 +579,6 @@ class ReportGenerator:
             if "ms" in unit:
                 return f"{value * 1000:.0f} ms"
             if "秒" in unit:
-                # Avoid misleading "0 秒" for sub-second timing values.
                 if abs(value) < 1.0:
                     return f"{value * 1000:.0f} ms"
                 return f"{value:.2f} 秒"
@@ -671,7 +586,7 @@ class ReportGenerator:
         return f"{value} {unit}"
 
     def _coaching_summary(self, report: MultiSwingReport, is_backhand: bool = False) -> List[str]:
-        """从所有击球中提取综合教练建议。"""
+        """从所有击球中提取综合教练建议 — 简洁定性版。"""
         lines = []
 
         all_kpis: List[KPIResult] = []
@@ -694,33 +609,22 @@ class ReportGenerator:
                       for kpi_id, scores in kpi_avg.items()]
         avg_scores.sort(key=lambda x: x[1], reverse=True)
 
-        # 优势
-        lines.append("### 技术优势")
-        lines.append("")
-        for _, avg, kpi in avg_scores[:3]:
-            if avg >= 50:
-                lines.append(f"- **{kpi.name}**（平均 {avg:.0f} 分）：{kpi.feedback}")
-        lines.append("")
+        # 做得好的方面
+        good = [kpi for _, avg, kpi in avg_scores[:3] if avg >= 50]
+        if good:
+            lines.append("**做得好的方面**: " + "、".join(kpi.name for kpi in good) + "。")
+            lines.append("")
 
-        # 改进方向
-        lines.append("### 需要改进")
-        lines.append("")
-        for _, avg, kpi in avg_scores[-3:]:
-            if avg < 80:
-                lines.append(f"- **{kpi.name}**（平均 {avg:.0f} 分）：{kpi.feedback}")
-        lines.append("")
+        # 最需要改进的方面
+        weak = [kpi for _, avg, kpi in avg_scores[-3:] if avg < 80]
+        if weak:
+            lines.append("**最需要改进**: " + "、".join(kpi.name for kpi in weak) + "。")
+            lines.append("")
 
         # 核心理念提醒
-        lines.append("### 核心理念")
-        lines.append("")
         if is_backhand:
-            lines.append("- **保持侧身**：单反的力量来自侧身姿态和完全伸展的手臂杠杆。")
-            lines.append("- **非持拍手平衡**：非持拍手的反向伸展是稳定性和力量的关键。")
-            lines.append("- **L形杠杆**：引拍时保持肘部弯曲约90°，形成高效的杠杆系统。")
+            lines.append("记住单反的核心：保持侧身、充分伸展、非持拍手平衡。力量来自地面和转体，不是手臂。")
         else:
-            lines.append("- **容错优先**：不是偶尔打一板神球，而是普通球也不容易打丢。")
-            lines.append("- **前方接触**：来不及时至少也尽量把球点留在身体前侧。")
-            lines.append("- **用腿和躯干组织击球**：低球和难球优先靠下肢与躯干，不先靠手补。")
-            lines.append("- **向外、向上、向前**：现代正手不是只往上刷，必须同时出球、穿球、离身。 ")
+            lines.append("记住容错正手的核心：前方接触、髋带动前挥、向外向前穿过球。普通球不丢比偶尔一板神球更重要。")
 
         return lines

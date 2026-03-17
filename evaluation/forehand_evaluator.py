@@ -40,17 +40,11 @@ from evaluation.kpi import (
     ALL_KPIS,
     KPIResult,
     ContactPointKPI,
-    ContactSpacingKPI,
     ElbowAngleAtContactKPI,
     ForwardExtensionKPI,
-    HandPathLinearityKPI,
     HeadStabilityAtContactKPI,
-    HipShoulderSeparationKPI,
-    HipShoulderTimingKPI,
     KneeBendKPI,
-    OverallHeadStabilityKPI,
     ShoulderRotationKPI,
-    SpineAngleKPI,
     SpineConsistencyKPI,
     OutsideExtensionKPI,
 )
@@ -464,19 +458,242 @@ class ForehandEvaluator:
         return [
             ShoulderRotationKPI(self.cfg).evaluate(shoulder_rotation_values=raw.get("shoulder_rotation_values")),
             KneeBendKPI(self.cfg).evaluate(knee_angle_values=raw.get("knee_angle_values")),
-            SpineAngleKPI(self.cfg).evaluate(spine_angle_values=raw.get("spine_angle_values")),
-            HipShoulderSeparationKPI(self.cfg).evaluate(hip_shoulder_sep_values=raw.get("hip_shoulder_sep_values")),
-            HipShoulderTimingKPI(self.cfg).evaluate(hip_shoulder_timing_s=raw.get("hip_shoulder_timing_s")),
-            ContactPointKPI(self.cfg).evaluate(contact_forward_norm=raw.get("contact_forward_norm")),
-            ContactSpacingKPI(self.cfg).evaluate(contact_spacing_norm=raw.get("contact_spacing_norm")),
             ElbowAngleAtContactKPI(self.cfg).evaluate(elbow_angle_at_contact=raw.get("elbow_angle_at_contact")),
-            HandPathLinearityKPI(self.cfg).evaluate(wrist_positions_contact_zone=raw.get("wrist_positions_contact_zone")),
-            ForwardExtensionKPI(self.cfg).evaluate(forward_extension_norm=raw.get("forward_extension_norm")),
+            ContactPointKPI(self.cfg).evaluate(contact_forward_norm=raw.get("contact_forward_norm")),
             OutsideExtensionKPI(self.cfg).evaluate(outside_extension_norm=raw.get("outside_extension_norm")),
+            ForwardExtensionKPI(self.cfg).evaluate(forward_extension_norm=raw.get("forward_extension_norm")),
             HeadStabilityAtContactKPI(self.cfg).evaluate(head_displacement_norm=raw.get("head_displacement_norm")),
-            OverallHeadStabilityKPI(self.cfg).evaluate(overall_head_displacement_norm=raw.get("overall_head_displacement_norm")),
             SpineConsistencyKPI(self.cfg).evaluate(spine_angle_std=raw.get("spine_angle_std")),
         ]
+
+    def compute_supplementary_metrics(
+        self,
+        kp_series: List[np.ndarray],
+        conf_series: List[np.ndarray],
+        frame_indices: List[int],
+        swing: SwingEvent,
+        forward_sign: float = 1.0,
+    ) -> Dict[str, Any]:
+        """Compute lightweight supplementary metrics M7, M8, M9.
+
+        Returns a dict with keys for each metric, or an empty dict if
+        insufficient data is available.
+        """
+        if not kp_series or not frame_indices:
+            return {}
+
+        result: Dict[str, Any] = {}
+
+        # -- resolve frame positions ------------------------------------------
+        impact_frame = (
+            swing.impact_frame
+            if swing.impact_frame is not None
+            else frame_indices[len(frame_indices) // 2]
+        )
+        prep_start = (
+            swing.prep_start_frame
+            if swing.prep_start_frame is not None
+            else frame_indices[0]
+        )
+        ft_end = (
+            swing.followthrough_end_frame
+            if swing.followthrough_end_frame is not None
+            else frame_indices[-1]
+        )
+
+        frame_to_pos = {frame: idx for idx, frame in enumerate(frame_indices)}
+        impact_pos = frame_to_pos.get(impact_frame, len(frame_indices) // 2)
+        prep_pos = frame_to_pos.get(prep_start, 0)
+        ft_pos = frame_to_pos.get(ft_end, len(frame_indices) - 1)
+
+        wrist_idx = KEYPOINT_NAMES[self.wrist_key]
+
+        # midpoint between prep and impact
+        forward_swing_start = (prep_pos + impact_pos) // 2
+
+        # ── M8: Arm-Torso Synchrony ─────────────────────────────────────
+        try:
+            shoulder_angles_fs: List[Optional[float]] = []
+            wrist_positions_fs: List[Optional[np.ndarray]] = []
+
+            for idx in range(forward_swing_start, min(impact_pos + 1, len(kp_series))):
+                kp = kp_series[idx]
+                conf = conf_series[idx]
+                shoulder_angles_fs.append(shoulder_line_angle(kp, conf))
+                if float(conf[wrist_idx]) >= 0.3:
+                    wrist_positions_fs.append(kp[wrist_idx].astype(np.float64).copy())
+                else:
+                    wrist_positions_fs.append(None)
+
+            # compute shoulder angular velocity series
+            shoulder_ang_vel: List[Optional[float]] = []
+            for i in range(1, len(shoulder_angles_fs)):
+                a_prev = shoulder_angles_fs[i - 1]
+                a_curr = shoulder_angles_fs[i]
+                if a_prev is not None and a_curr is not None:
+                    diff = abs(a_curr - a_prev)
+                    if diff > 180:
+                        diff = 360 - diff
+                    shoulder_ang_vel.append(diff * self.fps)
+                else:
+                    shoulder_ang_vel.append(None)
+
+            # compute wrist displacement speed series
+            wrist_speed: List[Optional[float]] = []
+            for i in range(1, len(wrist_positions_fs)):
+                p_prev = wrist_positions_fs[i - 1]
+                p_curr = wrist_positions_fs[i]
+                if p_prev is not None and p_curr is not None:
+                    dist = float(np.linalg.norm(p_curr - p_prev))
+                    wrist_speed.append(dist * self.fps)
+                else:
+                    wrist_speed.append(None)
+
+            # pair up valid entries for Pearson correlation
+            paired_shoulder: List[float] = []
+            paired_wrist: List[float] = []
+            for sv, wv in zip(shoulder_ang_vel, wrist_speed):
+                if sv is not None and wv is not None:
+                    paired_shoulder.append(sv)
+                    paired_wrist.append(wv)
+
+            if len(paired_shoulder) >= 4:
+                corr = float(np.corrcoef(paired_shoulder, paired_wrist)[0, 1])
+                if np.isnan(corr):
+                    corr = 0.0
+                if corr >= 0.7:
+                    label = "良好"
+                elif corr >= 0.4:
+                    label = "一般"
+                else:
+                    label = "手臂独立"
+                result["arm_torso_synchrony"] = corr
+                result["arm_torso_sync_label"] = label
+            else:
+                result["arm_torso_synchrony"] = None
+                result["arm_torso_sync_label"] = None
+        except Exception:
+            result["arm_torso_synchrony"] = None
+            result["arm_torso_sync_label"] = None
+
+        # ── M9: Wrist Height V-Shape (scooping detector) ────────────────
+        try:
+            wrist_y_values: List[float] = []
+            for idx in range(forward_swing_start, min(impact_pos + 1, len(kp_series))):
+                conf = conf_series[idx]
+                if float(conf[wrist_idx]) >= 0.3:
+                    wrist_y_values.append(float(kp_series[idx][wrist_idx][1]))
+                else:
+                    wrist_y_values.append(np.nan)
+
+            valid_y = [y for y in wrist_y_values if not np.isnan(y)]
+            if len(valid_y) >= 3:
+                start_y = valid_y[0]
+                end_y = valid_y[-1]
+                max_y = max(valid_y)  # lowest point in image coords
+
+                # scooping = wrist goes DOWN (y increases) then UP (y decreases)
+                # V-shape in image coords: max_y > both start_y and end_y
+                if max_y > start_y and max_y > end_y:
+                    # get torso height for normalisation
+                    ref_idx = min(impact_pos, len(kp_series) - 1)
+                    th = torso_height_px(kp_series[ref_idx], conf_series[ref_idx])
+                    if th is not None and th > 1e-6:
+                        v_depth = (max_y - min(start_y, end_y)) / th
+                    else:
+                        v_depth = 0.0
+                else:
+                    v_depth = 0.0
+
+                result["wrist_v_depth"] = v_depth
+                result["wrist_v_detected"] = v_depth > 0.1
+            else:
+                result["wrist_v_depth"] = None
+                result["wrist_v_detected"] = None
+        except Exception:
+            result["wrist_v_depth"] = None
+            result["wrist_v_detected"] = None
+
+        # ── M7: Swing Trajectory Shape ──────────────────────────────────
+        try:
+            wrist_xy: List[np.ndarray] = []
+            for idx in range(prep_pos, min(ft_pos + 1, len(kp_series))):
+                conf = conf_series[idx]
+                if float(conf[wrist_idx]) >= 0.3:
+                    wrist_xy.append(kp_series[idx][wrist_idx].astype(np.float64).copy())
+
+            if len(wrist_xy) >= 3:
+                pts = np.asarray(wrist_xy, dtype=np.float64)
+                # path length
+                diffs = np.diff(pts, axis=0)
+                segment_lengths = np.linalg.norm(diffs, axis=1)
+                path_length = float(np.sum(segment_lengths))
+
+                # chord length
+                chord_vec = pts[-1] - pts[0]
+                chord_length = float(np.linalg.norm(chord_vec))
+
+                if chord_length > 1e-6:
+                    arc_ratio = path_length / chord_length
+                else:
+                    arc_ratio = float("inf")
+
+                # perpendicular distances from chord line (signed)
+                # positive = outward (away from body)
+                ref_idx = min(impact_pos, len(kp_series) - 1)
+                th = torso_height_px(kp_series[ref_idx], conf_series[ref_idx])
+
+                if chord_length > 1e-6 and th is not None and th > 1e-6:
+                    # chord unit vector and its perpendicular
+                    chord_unit = chord_vec / chord_length
+                    # perpendicular: rotate 90 degrees
+                    # choose sign so that "outward" (away from body) is positive
+                    perp = np.array([-chord_unit[1], chord_unit[0]])
+
+                    # determine which side is "outward" using body center
+                    sc = shoulder_center(kp_series[ref_idx], conf_series[ref_idx])
+                    hc = hip_center(kp_series[ref_idx], conf_series[ref_idx])
+                    if sc is not None and hc is not None:
+                        body_center = 0.5 * (sc + hc)
+                        mid_chord = 0.5 * (pts[0] + pts[-1])
+                        body_to_chord = mid_chord - body_center
+                        # "outward" should point away from body
+                        if float(np.dot(perp, body_to_chord)) < 0:
+                            perp = -perp
+
+                    signed_dists: List[float] = []
+                    for pt in pts:
+                        d = float(np.dot(pt - pts[0], perp))
+                        signed_dists.append(d)
+
+                    # max outward distance (could be positive or negative)
+                    max_abs_idx = int(np.argmax(np.abs(signed_dists)))
+                    out_distance = signed_dists[max_abs_idx] / th
+
+                    if out_distance > 0.08:
+                        shape_label = "向外弧形"
+                    elif out_distance < -0.02:
+                        shape_label = "向内收缩"
+                    else:
+                        shape_label = "直线型"
+
+                    result["swing_arc_ratio"] = arc_ratio
+                    result["swing_out_distance"] = out_distance
+                    result["swing_shape_label"] = shape_label
+                else:
+                    result["swing_arc_ratio"] = arc_ratio if arc_ratio != float("inf") else None
+                    result["swing_out_distance"] = None
+                    result["swing_shape_label"] = None
+            else:
+                result["swing_arc_ratio"] = None
+                result["swing_out_distance"] = None
+                result["swing_shape_label"] = None
+        except Exception:
+            result["swing_arc_ratio"] = None
+            result["swing_out_distance"] = None
+            result["swing_shape_label"] = None
+
+        return result
 
     def _aggregate_phases(self, kpi_results: List[KPIResult]) -> Dict[str, PhaseScore]:
         phase_map: Dict[str, List[KPIResult]] = {}

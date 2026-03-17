@@ -481,7 +481,7 @@ class HybridImpactDetector:
         cfg: Optional[ImpactDetectionConfig] = None,
         audio_tolerance_frames: int = 7,
         merge_within_s: float = 0.8,
-        min_verified_peak_speed_px_s: float = 400.0,
+        min_verified_peak_speed_px_s: float = 600.0,
     ):
         self.fps = max(fps, 1.0)
         self.is_right_handed = is_right_handed
