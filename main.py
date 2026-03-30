@@ -345,7 +345,20 @@ class TennisAnalysisPipeline:
         analyzer = VLMForehandAnalyzer()
         results: List[Optional[Dict]] = []
 
-        for ev in report.swing_evaluations:
+        # Limit VLM analysis to max 6 swings (evenly sampled) to save tokens
+        MAX_VLM_SWINGS = 6
+        all_evals = report.swing_evaluations
+        if len(all_evals) > MAX_VLM_SWINGS:
+            step = len(all_evals) / MAX_VLM_SWINGS
+            selected_indices = {int(i * step) for i in range(MAX_VLM_SWINGS)}
+            print(f"[VLM] {len(all_evals)} 次击球，均匀采样 {MAX_VLM_SWINGS} 次进行 VLM 分析")
+        else:
+            selected_indices = set(range(len(all_evals)))
+
+        for ev in all_evals:
+            if ev.swing_index not in selected_indices:
+                results.append(None)
+                continue
             # Extract keyframes (with issue annotations if keypoints available)
             keyframes = extractor.extract(
                 frames_raw, frame_indices, ev.swing_event,

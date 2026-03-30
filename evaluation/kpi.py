@@ -486,7 +486,9 @@ ALL_KPIS = [
     KneeBendKPI,               # UT1.2 — reliable, matches VLM
     ElbowAngleAtContactKPI,    # C3.3 — reliable, matches VLM
     ContactPointKPI,           # C3.1 — moderate reliability
-    OutsideExtensionKPI,       # T4.3 — Out vector (core FTT concept)
+    # OutsideExtensionKPI removed: Out vector's main component is Z-axis
+    # (depth), which is invisible in 2D side view. Use M7 swing_shape_label
+    # (trajectory arc shape) as the Out vector proxy instead.
     ForwardExtensionKPI,       # T4.2 — Through vector, matches VLM
     HeadStabilityAtContactKPI, # S5.1 — reliable, matches VLM
     SpineConsistencyKPI,       # S5.3 — reliable

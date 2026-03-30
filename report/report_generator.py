@@ -424,7 +424,12 @@ class ReportGenerator:
         if strengths:
             lines.append("**优点**:")
             for s in strengths:
-                lines.append(f"- {s}")
+                if isinstance(s, dict):
+                    lines.append(f"- {s.get('description', '')}")
+                    if s.get("body_reason"):
+                        lines.append(f"  - 身体原因: {s['body_reason']}")
+                else:
+                    lines.append(f"- {s}")
             lines.append("")
 
         # Issues
@@ -441,13 +446,45 @@ class ReportGenerator:
                     lines.append(f"- 观察: {issue['description']}")
                 if issue.get("ftt_principle"):
                     lines.append(f"- FTT 原则: {issue['ftt_principle']}")
+                if issue.get("action"):
+                    lines.append(f"- 动作: {issue['action']}")
+                if issue.get("body"):
+                    lines.append(f"- 身体: {issue['body']}")
+                if issue.get("feel"):
+                    lines.append(f"- 感觉: {issue['feel']}")
                 if issue.get("correction"):
                     lines.append(f"- 纠正建议: {issue['correction']}")
+                if issue.get("drill"):
+                    lines.append(f"- 训练方法: {issue['drill']}")
                 lines.append("")
+
+        # Weight transfer & kinetic chain analysis
+        if vlm_result.get("weight_transfer"):
+            lines.append(f"**重心转移分析**: {vlm_result['weight_transfer']}")
+            lines.append("")
+        if vlm_result.get("kinetic_chain"):
+            lines.append(f"**动力链分析**: {vlm_result['kinetic_chain']}")
+            lines.append("")
 
         # Video dynamics
         if vlm_result.get("video_dynamics"):
             lines.append(f"**动态分析**: {vlm_result['video_dynamics']}")
+            lines.append("")
+
+        # Drills section
+        drills = vlm_result.get("drills", [])
+        if drills:
+            lines.append("**推荐训练计划**:")
+            lines.append("")
+            for i, drill in enumerate(drills, 1):
+                if isinstance(drill, dict):
+                    lines.append(f"{i}. **{drill.get('name', '训练')}**")
+                    if drill.get("method"):
+                        lines.append(f"   - 方法: {drill['method']}")
+                    if drill.get("purpose"):
+                        lines.append(f"   - 目的: {drill['purpose']}")
+                    if drill.get("cue"):
+                        lines.append(f"   - 口令: {drill['cue']}")
             lines.append("")
 
         # Priority drill
@@ -487,9 +524,11 @@ class ReportGenerator:
         # Format each KPI as a single-line metric description
         for kpi in valid_kpis:
             val_str = self._format_value(kpi.raw_value, kpi.unit)
-            # Build a concise one-liner: metric name + value + brief note
             note = self._metric_note(kpi)
-            if note:
+            # Flag suspicious values that might be unreliable
+            if kpi.raw_value is not None and kpi.raw_value < 0 and kpi.kpi_id == "C3.1":
+                lines.append(f"- **{kpi.name}**: {val_str} — ⚠️ 可能受相机角度影响")
+            elif note:
                 lines.append(f"- **{kpi.name}**: {val_str} — {note}")
             else:
                 lines.append(f"- **{kpi.name}**: {val_str}")

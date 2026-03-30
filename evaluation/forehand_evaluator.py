@@ -31,6 +31,7 @@ from analysis.kinematic_calculator import (
     shoulder_center,
     shoulder_hip_angle,
     shoulder_line_angle,
+    shoulder_width_px,
     spine_angle_from_vertical,
     torso_height_px,
     wrist_forward_normalised,
@@ -365,7 +366,17 @@ class ForehandEvaluator:
             kp_impact = kp_series[impact_pos]
             conf_impact = conf_series[impact_pos]
             th = torso_height_px(kp_impact, conf_impact)
-            side_axis = self._dominant_side_axis(kp_impact, conf_impact)
+            # Use the frame with widest shoulders (prep phase, player is sideways)
+            # instead of impact frame (player faces net, shoulders appear narrow)
+            best_sw = 0.0
+            best_side_axis = None
+            for idx in range(prep_pos, min(impact_pos + 1, len(kp_series))):
+                sa = self._dominant_side_axis(kp_series[idx], conf_series[idx])
+                sw = shoulder_width_px(kp_series[idx], conf_series[idx])
+                if sa is not None and sw is not None and sw > best_sw:
+                    best_sw = sw
+                    best_side_axis = sa
+            side_axis = best_side_axis if best_side_axis is not None else self._dominant_side_axis(kp_impact, conf_impact)
             raw["side_axis"] = side_axis.tolist() if side_axis is not None else None
 
             contact_half_window = max(3, int(0.05 * self.fps))
@@ -384,9 +395,15 @@ class ForehandEvaluator:
                 )
                 if forward_val is not None:
                     contact_forward_values.append(float(forward_val))
-                elbow_val = elbow_angle(kp_window, conf_window, right=self.is_right_handed)
-                if elbow_val is not None:
-                    elbow_angles_contact.append(float(elbow_val))
+                # Only trust elbow angle when all 3 keypoints have high confidence
+                elbow_key = KEYPOINT_NAMES[self.elbow_key]
+                shoulder_key = KEYPOINT_NAMES[self.shoulder_key]
+                if (float(conf_window[shoulder_key]) >= 0.7
+                        and float(conf_window[elbow_key]) >= 0.7
+                        and float(conf_window[wrist_idx]) >= 0.7):
+                    elbow_val = elbow_angle(kp_window, conf_window, right=self.is_right_handed)
+                    if elbow_val is not None:
+                        elbow_angles_contact.append(float(elbow_val))
                 th_window = torso_height_px(kp_window, conf_window)
                 if th_window is not None and th_window > 1e-6 and float(conf_window[wrist_idx]) >= 0.3:
                     sc = shoulder_center(kp_window, conf_window)
@@ -460,7 +477,6 @@ class ForehandEvaluator:
             KneeBendKPI(self.cfg).evaluate(knee_angle_values=raw.get("knee_angle_values")),
             ElbowAngleAtContactKPI(self.cfg).evaluate(elbow_angle_at_contact=raw.get("elbow_angle_at_contact")),
             ContactPointKPI(self.cfg).evaluate(contact_forward_norm=raw.get("contact_forward_norm")),
-            OutsideExtensionKPI(self.cfg).evaluate(outside_extension_norm=raw.get("outside_extension_norm")),
             ForwardExtensionKPI(self.cfg).evaluate(forward_extension_norm=raw.get("forward_extension_norm")),
             HeadStabilityAtContactKPI(self.cfg).evaluate(head_displacement_norm=raw.get("head_displacement_norm")),
             SpineConsistencyKPI(self.cfg).evaluate(spine_angle_std=raw.get("spine_angle_std")),
@@ -577,6 +593,10 @@ class ForehandEvaluator:
             result["arm_torso_sync_label"] = None
 
         # ── M9: Wrist Height V-Shape (scooping detector) ────────────────
+        # Key insight: normal forehand ALSO goes "low then high" (wrist drops
+        # then rises to contact). True scooping is distinguished by a RAPID
+        # downward plunge followed by a rapid upward recovery — the descent
+        # speed is abnormally high relative to the overall swing speed.
         try:
             wrist_y_values: List[float] = []
             for idx in range(forward_swing_start, min(impact_pos + 1, len(kp_series))):
@@ -587,26 +607,40 @@ class ForehandEvaluator:
                     wrist_y_values.append(np.nan)
 
             valid_y = [y for y in wrist_y_values if not np.isnan(y)]
-            if len(valid_y) >= 3:
+            if len(valid_y) >= 5:
                 start_y = valid_y[0]
                 end_y = valid_y[-1]
                 max_y = max(valid_y)  # lowest point in image coords
+                max_y_idx = valid_y.index(max_y)
 
-                # scooping = wrist goes DOWN (y increases) then UP (y decreases)
-                # V-shape in image coords: max_y > both start_y and end_y
-                if max_y > start_y and max_y > end_y:
-                    # get torso height for normalisation
-                    ref_idx = min(impact_pos, len(kp_series) - 1)
-                    th = torso_height_px(kp_series[ref_idx], conf_series[ref_idx])
-                    if th is not None and th > 1e-6:
-                        v_depth = (max_y - min(start_y, end_y)) / th
-                    else:
-                        v_depth = 0.0
+                ref_idx = min(impact_pos, len(kp_series) - 1)
+                th = torso_height_px(kp_series[ref_idx], conf_series[ref_idx])
+
+                if max_y > start_y and max_y > end_y and th and th > 1e-6:
+                    v_depth = (max_y - min(start_y, end_y)) / th
+
+                    # Compute descent speed: how fast the wrist drops to V bottom
+                    # vs ascent speed: how fast it rises to contact
+                    descent_frames = max(1, max_y_idx)
+                    ascent_frames = max(1, len(valid_y) - 1 - max_y_idx)
+                    descent_speed = (max_y - start_y) / descent_frames  # px/frame downward
+                    ascent_speed = (max_y - end_y) / ascent_frames  # px/frame upward
+
+                    # Scooping signature: rapid descent AND rapid ascent (V shape)
+                    # Normal forehand: gradual descent, then gradual ascent
+                    # Threshold: both speeds must exceed 3 px/frame AND
+                    # the V bottom must be in the first 60% of the window (early plunge)
+                    v_bottom_ratio = max_y_idx / len(valid_y)
+                    is_early_plunge = v_bottom_ratio < 0.6
+                    is_rapid = descent_speed > 3.0 and ascent_speed > 3.0
+                    is_deep = v_depth > 0.3
+
+                    result["wrist_v_depth"] = v_depth
+                    result["wrist_v_detected"] = is_deep and is_rapid and is_early_plunge
                 else:
                     v_depth = 0.0
-
-                result["wrist_v_depth"] = v_depth
-                result["wrist_v_detected"] = v_depth > 0.1
+                    result["wrist_v_depth"] = v_depth
+                    result["wrist_v_detected"] = False
             else:
                 result["wrist_v_depth"] = None
                 result["wrist_v_detected"] = None

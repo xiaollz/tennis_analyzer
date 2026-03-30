@@ -64,12 +64,12 @@ class ContactConfig:
     contact_spacing_excellent_min: float = 0.42
     contact_spacing_excellent_max: float = 0.65
 
-    elbow_angle_good_min: float = 115.0
-    elbow_angle_good_max: float = 165.0
-    elbow_angle_poor_min: float = 95.0
+    elbow_angle_good_min: float = 100.0
+    elbow_angle_good_max: float = 170.0
+    elbow_angle_poor_min: float = 75.0
     elbow_angle_poor_max: float = 178.0
-    elbow_angle_excellent_min: float = 125.0
-    elbow_angle_excellent_max: float = 155.0
+    elbow_angle_excellent_min: float = 110.0
+    elbow_angle_excellent_max: float = 165.0
 
 
 @dataclass(frozen=True)
