@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-04-PLAN.md
-last_updated: "2026-04-03T06:19:16.330Z"
+stopped_at: Completed 03-05-PLAN.md
+last_updated: "2026-04-03T06:24:09.496Z"
 last_activity: 2026-04-03
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 11
-  completed_plans: 7
+  completed_plans: 8
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-03)
 ## Current Position
 
 Phase: 03 (FTT Video Extraction) — EXECUTING
-Plan: 3 of 6
+Plan: 4 of 6
 Status: Ready to execute
 Last activity: 2026-04-03
 
@@ -59,6 +59,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02 P03 | 12min | 2 tasks | 6 files |
 | Phase 03 P01 | 8min | 2 tasks | 5 files |
 | Phase 03 P04 | 28min | 1 tasks | 28 files |
+| Phase 03 P05 | 34min | 1 tasks | 31 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,7 @@ Recent decisions affecting current work:
 - [Phase 03]: 73-video inventory: 33 analyzed + 40 pending from RESEARCH.md table (source of truth)
 - [Phase 03]: Per-plan state slice (batch2_state.json) for parallel-safe batch execution
 - [Phase 03]: Bold-term extraction sparse on Chinese-format output; raw markdown is primary artifact
+- [Phase 03]: 20s delay between API calls for parallel batch safety; non-forehand concepts tagged confidence=0.6
 
 ### Pending Todos
 
@@ -88,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-03T06:19:16.327Z
-Stopped at: Completed 03-04-PLAN.md
+Last session: 2026-04-03T06:24:09.493Z
+Stopped at: Completed 03-05-PLAN.md
 Resume file: None
