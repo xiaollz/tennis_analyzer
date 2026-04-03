@@ -15,9 +15,9 @@
 
 ### Existing Knowledge Extraction
 
-- [ ] **EXIST-01**: Extract structured concepts from all 21+ existing research files in docs/research/
+- [x] **EXIST-01**: Extract structured concepts from all 21+ existing research files in docs/research/
 - [ ] **EXIST-02**: Extract structured concepts from docs/record/learning.md training journey
-- [ ] **EXIST-03**: Extract structured concepts from 24 biomechanics book anatomy files
+- [x] **EXIST-03**: Extract structured concepts from 24 biomechanics book anatomy files
 - [x] **EXIST-04**: Populate canonical concept registry (~200-300 concepts) from existing files
 - [ ] **EXIST-05**: Build initial knowledge graph edges from existing cross-references
 
@@ -109,9 +109,9 @@
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
-| EXIST-01 | Phase 2 | Pending |
+| EXIST-01 | Phase 2 | Complete |
 | EXIST-02 | Phase 2 | Pending |
-| EXIST-03 | Phase 2 | Pending |
+| EXIST-03 | Phase 2 | Complete |
 | EXIST-04 | Phase 2 | Complete |
 | EXIST-05 | Phase 2 | Pending |
 | FTT-01 | Phase 3 | Pending |

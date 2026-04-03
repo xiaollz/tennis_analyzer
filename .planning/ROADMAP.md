@@ -49,8 +49,8 @@ Plans:
 **Plans:** 3 plans
 Plans:
 - [x] 02-01-PLAN.md — Seed registry from legacy JSON + extraction pipeline scaffolding
-- [ ] 02-02-PLAN.md — Extract concepts from all 31 research files
-- [ ] 02-03-PLAN.md — User journey extraction + knowledge graph assembly
+- [x] 02-02-PLAN.md — Extract concepts from all 31 research files
+- [x] 02-03-PLAN.md — User journey extraction + knowledge graph assembly
 **Risk flags**: Pitfall 1 (concept explosion) -- this phase establishes the canonical registry that all future extraction depends on. Pitfall 9 (Chinese-English mismatch) -- ensure bilingual concept names from the start.
 
 ### Phase 3: FTT Video Extraction
