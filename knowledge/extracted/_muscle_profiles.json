@@ -1,0 +1,483 @@
+[
+  {
+    "name": "rotator_cuff",
+    "name_zh": "旋转袖肌群",
+    "body_segment": "upper_body",
+    "function": "Stabilizes shoulder joint; supraspinatus initiates abduction, infraspinatus/teres_minor perform external rotation (ESR), subscapularis performs internal rotation (ISR/Press Slot). Decelerates arm eccentrically during follow-through.",
+    "training_methods": [
+      "external rotation with cable",
+      "90/90 abduction external rotation",
+      "90/90 abduction internal rotation",
+      "towel squeeze external rotation (+20% activation)"
+    ],
+    "common_failures": [
+      "Insufficient deceleration capacity -> brain limits acceleration -> forearm compensation",
+      "Impingement syndrome from fatigue/overuse",
+      "Tendinitis from repetitive follow-through stress"
+    ]
+  },
+  {
+    "name": "deltoid",
+    "name_zh": "三角肌",
+    "body_segment": "upper_body",
+    "function": "Anterior deltoid: shoulder flexion, assists acceleration. Lateral deltoid: shoulder abduction, main accelerator/decelerator for single-hand backhand. Posterior deltoid: shoulder extension, primary arm deceleration after contact.",
+    "training_methods": [
+      "dumbbell front raise",
+      "dumbbell lateral raise",
+      "prone dumbbell snatch"
+    ],
+    "common_failures": [
+      "Posterior deltoid weakness -> inadequate follow-through deceleration -> shoulder injury risk",
+      "Anterior deltoid compensation when chest engagement lacking"
+    ]
+  },
+  {
+    "name": "pectoralis_major",
+    "name_zh": "胸大肌",
+    "body_segment": "upper_body",
+    "function": "Primary 'press' executor in FTT system. Pulls arm toward body midline (adduction). Concentric contraction during forward swing = chest press. Stretched during unit turn (elastic energy storage), then contracts concentrically during acceleration.",
+    "training_methods": [
+      "push-ups",
+      "standing cable press (best tennis-specific)",
+      "bench press",
+      "incline press",
+      "medicine ball chest throw",
+      "dumbbell fly"
+    ],
+    "common_failures": [
+      "Weak pectoralis -> arm-driven hitting instead of chest-driven",
+      "Chest-back imbalance -> anterior scapular syndrome -> pain + reduced racket speed"
+    ]
+  },
+  {
+    "name": "latissimus_dorsi",
+    "name_zh": "背阔肌",
+    "body_segment": "upper_body",
+    "function": "FTT 'glue' connecting arm to trunk. Largest back muscle, spans spine to humerus. Pulls arm down toward body midline and rotates shoulder. Bridge for transferring trunk rotation force to arm. Eccentric during backswing (energy storage), concentric during forward swing.",
+    "training_methods": [
+      "lat pulldown",
+      "rotational pulldown",
+      "seated row",
+      "bent-over barbell row",
+      "deadlift",
+      "pull-ups"
+    ],
+    "common_failures": [
+      "Latissimus disconnect -> arm operates independently from trunk",
+      "Weak lats -> arm-body disconnect -> forearm compensation",
+      "Insufficient eccentric strength -> poor deceleration during follow-through"
+    ]
+  },
+  {
+    "name": "trapezius",
+    "name_zh": "斜方肌",
+    "body_segment": "upper_body",
+    "function": "Connects skull to thoracic spine to scapula. Stabilizes and rotates scapula. Upper/middle/lower portions control scapular position and shoulder posture.",
+    "training_methods": [
+      "seated row",
+      "reverse fly machine",
+      "prone dumbbell snatch",
+      "elbow-to-hip scapular retraction"
+    ],
+    "common_failures": [
+      "Weak trapezius -> scapular instability -> poor force transfer at shoulder junction"
+    ]
+  },
+  {
+    "name": "rhomboids",
+    "name_zh": "菱形肌",
+    "body_segment": "upper_body",
+    "function": "Scapular retraction (pulling scapula toward spine). FTT 'back squeeze' = rhomboid contraction. Works with middle trapezius for scapular control.",
+    "training_methods": [
+      "seated row",
+      "elbow-to-hip scapular retraction",
+      "reverse fly machine",
+      "bent-over barbell row"
+    ],
+    "common_failures": [
+      "Weak rhomboids -> cannot achieve scapular retraction -> scapular glide fails -> slingshot mechanism broken"
+    ]
+  },
+  {
+    "name": "serratus_anterior",
+    "name_zh": "前锯肌",
+    "body_segment": "upper_body",
+    "function": "Scapular protraction (pushing scapula forward). FTT 'wrap the chest' = serratus activation. Critical for scapular glide: retraction->protraction transition. Also active during deceleration phase (eccentric).",
+    "training_methods": [
+      "standing cable press",
+      "medicine ball chest throw",
+      "push-ups (full protraction at top)",
+      "prone swimmer exercise"
+    ],
+    "common_failures": [
+      "Weak serratus -> scapula 'stuck' -> upper body doesn't participate -> core-to-shoulder chain break"
+    ]
+  },
+  {
+    "name": "biceps_brachii",
+    "name_zh": "肱二头肌",
+    "body_segment": "upper_body",
+    "function": "Elbow flexion. During backswing: decelerates arm (with brachialis and brachioradialis). During forward swing: concentric contraction helps guide racket to contact. Active in loading phase for scapular stabilization.",
+    "training_methods": [
+      "lat pulldown (secondary)",
+      "seated row (secondary)",
+      "bicep curls"
+    ],
+    "common_failures": [
+      "Weak biceps -> poor backswing deceleration -> overextended backswing"
+    ]
+  },
+  {
+    "name": "triceps_brachii",
+    "name_zh": "肱三头肌",
+    "body_segment": "upper_body",
+    "function": "Powerful arm extensor. During forward swing: concentric contraction transfers lower body/core force to racket. During contact: isometric hold maintains stable racket face. Key injury prevention muscle for arm and shoulder. Stores elastic energy during backswing.",
+    "training_methods": [
+      "tricep cable pushdown",
+      "half extension",
+      "overhead tricep extension with cable"
+    ],
+    "common_failures": [
+      "Weak triceps -> arm 'collapses' at contact -> forearm forced to compensate",
+      "Insufficient isometric strength -> racket face instability at contact"
+    ]
+  },
+  {
+    "name": "forearm_flexors",
+    "name_zh": "前臂屈肌群",
+    "body_segment": "upper_body",
+    "function": "Grip stabilization and wrist flexion. Includes flexor carpi ulnaris, flexor carpi radialis, flexor digitorum, palmaris longus. Last link in kinetic chain before racket. Flexibility critical for energy transfer efficiency.",
+    "training_methods": [
+      "wrist curls (palms up)",
+      "forearm flexor stretch"
+    ],
+    "common_failures": [
+      "Inflexible flexors -> limited wrist ROM -> shoulder/upper arm compensation -> injury",
+      "Flexor-extensor imbalance -> excessive grip tension -> wrist stiffness"
+    ]
+  },
+  {
+    "name": "forearm_extensors",
+    "name_zh": "前臂伸肌群",
+    "body_segment": "upper_body",
+    "function": "Wrist extension and eccentric deceleration. Includes extensor carpi radialis longus/brevis, extensor carpi ulnaris, extensor digitorum. Critical for follow-through deceleration at wrist. Modern rackets increase radial-ulnar deviation demands.",
+    "training_methods": [
+      "reverse wrist curls (palms down)",
+      "forearm extensor stretch"
+    ],
+    "common_failures": [
+      "Weak extensors -> tennis elbow (lateral epicondylitis)",
+      "Extensors should be >= 70% of flexor strength for balance"
+    ]
+  },
+  {
+    "name": "pronator_teres",
+    "name_zh": "旋前圆肌",
+    "body_segment": "upper_body",
+    "function": "Forearm pronation (internal rotation of forearm). Active during and after contact as part of the SIR->pronation chain. Concentric contraction follows shoulder internal rotation naturally.",
+    "training_methods": [
+      "forearm pronation exercise with dumbbell"
+    ],
+    "common_failures": [
+      "Pronator-supinator imbalance -> excessive compensatory forearm rotation during swing"
+    ]
+  },
+  {
+    "name": "supinator",
+    "name_zh": "旋后肌",
+    "body_segment": "upper_body",
+    "function": "Forearm supination (external rotation of forearm). Active during backswing for deceleration. With brachioradialis and brachialis. Important for spin shots and angle changes.",
+    "training_methods": [
+      "forearm supination exercise with dumbbell"
+    ],
+    "common_failures": [
+      "Weak supinator -> cannot control backswing forearm position -> compensatory movements"
+    ]
+  },
+  {
+    "name": "brachioradialis",
+    "name_zh": "肱桡肌",
+    "body_segment": "upper_body",
+    "function": "Elbow joint stabilization and flexion. Works as decelerator during backswing with biceps and brachialis. Forearm supination assistance.",
+    "training_methods": [
+      "hammer curls",
+      "reverse wrist curls (secondary)"
+    ],
+    "common_failures": [
+      "Weak brachioradialis -> elbow instability during high-speed swings"
+    ]
+  },
+  {
+    "name": "internal_obliques",
+    "name_zh": "腹内斜肌",
+    "body_segment": "core",
+    "function": "Primary trunk rotation executor. Hip-to-chest transmission axis core. Fibers run at ~90 degrees to external obliques. User's 'navel-left twisting force' = left internal oblique activation during right-handed forehand. Pre-stretched during unit turn, releases elastically during forward swing.",
+    "training_methods": [
+      "Russian twist",
+      "side crunch",
+      "cable rotational chop",
+      "medicine ball forehand throw",
+      "single-arm rotational dumbbell snatch"
+    ],
+    "common_failures": [
+      "Inactive obliques -> hip rotates but chest doesn't follow -> 'force breaks at waist'",
+      "Weak obliques -> forearm compensation as arm tries to generate rotation independently"
+    ]
+  },
+  {
+    "name": "external_obliques",
+    "name_zh": "腹外斜肌",
+    "body_segment": "core",
+    "function": "Works with internal obliques for trunk rotation. Contralateral activation pattern: left external + right internal oblique for rightward rotation. Superficial layer of rotational core.",
+    "training_methods": [
+      "Russian twist",
+      "side crunch",
+      "cable rotational chop",
+      "medicine ball forehand throw"
+    ],
+    "common_failures": [
+      "Same as internal obliques -- oblique weakness breaks the hip-to-chest chain"
+    ]
+  },
+  {
+    "name": "rectus_abdominis",
+    "name_zh": "腹直肌",
+    "body_segment": "core",
+    "function": "Trunk flexion ('six-pack'). Auxiliary stabilizer during forehand rotation. Primary role in serve contact flexion. Works with obliques during deceleration phase.",
+    "training_methods": [
+      "crunch",
+      "reverse crunch",
+      "plank",
+      "toe-touch crunch"
+    ],
+    "common_failures": [
+      "Weak rectus -> trunk instability during rotation -> power leaks"
+    ]
+  },
+  {
+    "name": "transversus_abdominis",
+    "name_zh": "腹横肌",
+    "body_segment": "core",
+    "function": "Deepest core muscle, wraps body like natural belt. Stabilizes pelvis and trunk -- provides the anchor point for oblique rotation. Infrastructure muscle: stabilizes the rotation axis.",
+    "training_methods": [
+      "plank",
+      "side plank",
+      "dead bug",
+      "hollow body hold"
+    ],
+    "common_failures": [
+      "Weak transversus -> rotation axis unstable -> wobbling during rotation -> power dissipates",
+      "Cannot stabilize pelvis -> force 'leaks' through midsection"
+    ]
+  },
+  {
+    "name": "erector_spinae",
+    "name_zh": "竖脊肌",
+    "body_segment": "core",
+    "function": "Spinal stabilization and extension. Maintains upright posture throughout stroke. Contains spinalis, longissimus, and iliocostalis. Works with obliques during trunk rotation. Eccentric contraction during forward swing rotation.",
+    "training_methods": [
+      "swimmer exercise",
+      "snow angel",
+      "deadlift",
+      "back extension",
+      "superman"
+    ],
+    "common_failures": [
+      "Weak erectors -> spinal collapse during rotation -> lower back pain",
+      "Lower back strain from insufficient support during open-stance rotation"
+    ]
+  },
+  {
+    "name": "multifidus",
+    "name_zh": "多裂肌",
+    "body_segment": "core",
+    "function": "Deep spinal stabilizer. Works with transversus abdominis for segmental spinal stability. Prevents spinal collapse during high-speed rotation.",
+    "training_methods": [
+      "plank",
+      "swimmer exercise",
+      "superman",
+      "bird-dog"
+    ],
+    "common_failures": [
+      "Weak multifidus -> micro-instability at spinal segments -> chronic lower back issues"
+    ]
+  },
+  {
+    "name": "iliopsoas",
+    "name_zh": "髂腰肌",
+    "body_segment": "core",
+    "function": "Hip flexion. Composed of iliacus and psoas major. Lifts thigh forward, leg recovery after ground push. Active during split step landing (eccentric) to absorb force and protect joints.",
+    "training_methods": [
+      "reverse crunch",
+      "hanging leg raise",
+      "half-kneeling hip flexor stretch"
+    ],
+    "common_failures": [
+      "Tight iliopsoas -> reduced hip ROM -> limits rotation range -> technique constraint",
+      "Strained from constant open-stance rotation demands"
+    ]
+  },
+  {
+    "name": "gluteus_maximus",
+    "name_zh": "臀大肌",
+    "body_segment": "lower_body",
+    "function": "Hip extension (straightening). One of the largest muscles. Primary power generator for ground push-off. Drives hip rotation alongside obliques. Eccentric landing control.",
+    "training_methods": [
+      "squat",
+      "Romanian deadlift",
+      "lunge",
+      "box jump",
+      "squat jump",
+      "single-arm rotational dumbbell snatch"
+    ],
+    "common_failures": [
+      "Weak glutes -> insufficient ground reaction force -> reduced power through chain",
+      "Cannot stabilize pelvis during single-leg phases -> lateral power leaks"
+    ]
+  },
+  {
+    "name": "gluteus_medius",
+    "name_zh": "臀中肌",
+    "body_segment": "lower_body",
+    "function": "Hip abduction and pelvic stability. Maintains pelvis level during single-leg stance (critical for open-stance forehand). Works with gluteus minimus.",
+    "training_methods": [
+      "squat",
+      "side lunge",
+      "lateral band walk",
+      "single-leg balance"
+    ],
+    "common_failures": [
+      "Weak gluteus medius -> pelvis drops on non-stance side -> rotation axis tilts -> power loss and injury risk"
+    ]
+  },
+  {
+    "name": "quadriceps",
+    "name_zh": "股四头肌",
+    "body_segment": "lower_body",
+    "function": "Knee extension. Includes rectus femoris, vastus lateralis, vastus medialis, vastus intermedius. Primary ground-push muscle for every stroke. Eccentric during loading (squat position), concentric during push-off.",
+    "training_methods": [
+      "squat",
+      "front squat",
+      "lunge",
+      "leg press",
+      "box jump",
+      "squat jump"
+    ],
+    "common_failures": [
+      "Weak quads -> cannot maintain low athletic stance -> shallow loading -> less ground reaction force",
+      "Patella tracking issues from quad weakness"
+    ]
+  },
+  {
+    "name": "hamstrings",
+    "name_zh": "腘绳肌",
+    "body_segment": "lower_body",
+    "function": "Knee flexion and hip extension. Includes biceps femoris, semitendinosus, semimembranosus. Eccentric deceleration during landing and direction changes. Works with gluteus maximus for hip extension.",
+    "training_methods": [
+      "Romanian deadlift",
+      "hamstring curl",
+      "Nordic hamstring curl",
+      "supine hamstring stretch"
+    ],
+    "common_failures": [
+      "Tight hamstrings -> related to lower back pain",
+      "Weak hamstrings -> poor landing deceleration -> knee injury risk",
+      "Quad-hamstring imbalance -> ACL risk"
+    ]
+  },
+  {
+    "name": "gastrocnemius",
+    "name_zh": "腓肠肌",
+    "body_segment": "lower_body",
+    "function": "Ankle plantarflexion (pushing off ground). Large longitudinal fiber muscle. First link in ground-up force transfer. Powers running, jumping, and directional changes.",
+    "training_methods": [
+      "calf raise",
+      "squat jump (secondary)",
+      "box jump (secondary)"
+    ],
+    "common_failures": [
+      "Weak calves -> reduced ground reaction force quality -> less force enters kinetic chain"
+    ]
+  },
+  {
+    "name": "soleus",
+    "name_zh": "比目鱼肌",
+    "body_segment": "lower_body",
+    "function": "Deep to gastrocnemius, ankle plantarflexion. Endurance-type muscle for sustained ground push. Works with gastrocnemius for all push-off movements.",
+    "training_methods": [
+      "seated calf raise",
+      "calf raise"
+    ],
+    "common_failures": [
+      "Weak soleus -> fatigue during long rallies -> degraded push-off quality late in match"
+    ]
+  },
+  {
+    "name": "hip_rotators",
+    "name_zh": "髋关节深层旋转肌",
+    "body_segment": "lower_body",
+    "function": "Deep hip external rotation. Includes piriformis, obturator, quadratus femoris. Active during split step (air phase hip rotation). Directs landing toward ball direction.",
+    "training_methods": [
+      "figure-4 stretch",
+      "clamshell exercise",
+      "hip rotation drills"
+    ],
+    "common_failures": [
+      "Tight/weak rotators -> restricted hip rotation range -> limits trunk rotation initiation"
+    ]
+  },
+  {
+    "name": "hip_adductors",
+    "name_zh": "内收肌群",
+    "body_segment": "lower_body",
+    "function": "Hip adduction (pulling leg toward midline). Includes adductor longus, brevis, magnus, gracilis. Active during lateral shuffling (60-80% of tennis movement). Stabilizes during wide stance hitting.",
+    "training_methods": [
+      "side lunge",
+      "lateral shuffle drills",
+      "adductor squeeze"
+    ],
+    "common_failures": [
+      "Weak adductors -> groin strain during wide reaches",
+      "Adductor-abductor imbalance -> lateral movement instability"
+    ]
+  },
+  {
+    "name": "quadratus_lumborum",
+    "name_zh": "腰方肌",
+    "body_segment": "core",
+    "function": "Lateral spine stabilization and side bending. Connects lumbar spine to iliac crest. Deep stabilizer that supports rotational axis integrity.",
+    "training_methods": [
+      "side plank",
+      "suitcase carry"
+    ],
+    "common_failures": [
+      "Weak quadratus lumborum -> lateral instability during rotation -> compensatory trunk lean"
+    ]
+  },
+  {
+    "name": "teres_major",
+    "name_zh": "大圆肌",
+    "body_segment": "upper_body",
+    "function": "Assists latissimus dorsi in arm adduction and internal rotation. Helps pull arm down and rotate it inward during forward swing.",
+    "training_methods": [
+      "lat pulldown (secondary)",
+      "reverse fly machine (secondary)"
+    ],
+    "common_failures": [
+      "Typically fails alongside latissimus dorsi -- compensated by deltoid"
+    ]
+  },
+  {
+    "name": "pectoralis_minor",
+    "name_zh": "胸小肌",
+    "body_segment": "upper_body",
+    "function": "Assists arm forward push. Located deep to pectoralis major. Connects ribs 3-5 to scapula coracoid process.",
+    "training_methods": [
+      "push-ups (secondary)",
+      "standing cable press (secondary)"
+    ],
+    "common_failures": [
+      "Tight pectoralis minor -> pulls scapula forward -> anterior tilt -> impingement risk"
+    ]
+  }
+]
