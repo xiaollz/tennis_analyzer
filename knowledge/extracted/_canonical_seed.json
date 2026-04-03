@@ -1,0 +1,1643 @@
+[
+  {
+    "id": "rotational_kinetic_chain",
+    "name": "Rotational Kinetic Chain",
+    "name_zh": "旋转动力链",
+    "aliases": [
+      "kinetic chain",
+      "whip chain",
+      "energy chain",
+      "power chain"
+    ],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Modern forehand is a whip system driven by a rotational kinetic chain: energy transfers from ground through legs, hips, trunk, shoulder, arm, wrist to racket head, accelerating at each segment.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (proximal segments) → passive (distal segments)",
+    "confidence": 1.0
+  },
+  {
+    "id": "unit_turn",
+    "name": "Unit Turn",
+    "name_zh": "整体转身",
+    "aliases": [
+      "loading phase",
+      "coiling",
+      "backswing rotation",
+      "take back rotation"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Hips, shoulders, arms, and racket rotate away from target as a single unit; the arm moves back as a RESULT of body rotation, not as its own action.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "unit_swing",
+    "name": "Unit Swing",
+    "name_zh": "整体挥拍",
+    "aliases": [
+      "connected swing",
+      "body swing",
+      "whole body swing"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The forward swing mirrors Unit Turn — the entire upper body rotates forward as one unit, not 'rotate body then swing arm'.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "back_muscle_connection_lat_glue",
+    "name": "Back Muscle Connection (Lat Glue)",
+    "name_zh": "背部肌肉连接（背阔肌胶水）",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The latissimus dorsi and posterior shoulder muscles 'glue' the arm to the trunk, creating the foundational connection that makes body-driven hitting possible.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (maintain tension throughout)",
+    "confidence": 1.0
+  },
+  {
+    "id": "place_pull_forward",
+    "name": "Place, Pull Forward",
+    "name_zh": "放置，向前拉",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "After Unit Turn, the hand is already in position (Place); the forward swing intent is to pull FORWARD toward the ball, not to take the racket back. There is no 'backswing' as a separate action.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (mental intent)",
+    "confidence": 1.0
+  },
+  {
+    "id": "elbow_space",
+    "name": "Elbow Space",
+    "name_zh": "肘部空间",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The elbow must maintain a stable distance from the body (visible gap under armpit) throughout the swing — this is the lever's support distance.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (maintain)",
+    "confidence": 1.0
+  },
+  {
+    "id": "fault_tolerance",
+    "name": "Fault Tolerance",
+    "name_zh": "容错性",
+    "aliases": [
+      "fault tolerant",
+      "error margin",
+      "consistency margin"
+    ],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The ability of a stroke to succeed even without perfect timing or execution. Built on six pillars: fundamental theorem, face stability, simplicity, relaxation, Out vector, and large muscle drive.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (emergent property of correct mechanics)",
+    "confidence": 1.0
+  },
+  {
+    "id": "out_vector",
+    "name": "Out Vector",
+    "name_zh": "向外向量",
+    "aliases": [
+      "out direction",
+      "lateral swing",
+      "swing outward"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The racket swings laterally AWAY from the body. This creates centrifugal force that, at range-of-motion limit, forces the racket to rotate around the forearm axis (windshield wiper), producing topspin.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (swing intent) → passive (wiper result)",
+    "confidence": 1.0
+  },
+  {
+    "id": "windshield_wiper",
+    "name": "Windshield Wiper",
+    "name_zh": "雨刷动作",
+    "aliases": [
+      "wiper",
+      "racket flip",
+      "forearm pronation finish"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The racket's rotation around the forearm axis at end of range of motion — the PRIMARY mechanism of topspin in modern forehands, triggered by the Out vector.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (physical result of Out vector)",
+    "confidence": 1.0
+  },
+  {
+    "id": "press_slot",
+    "name": "Press Slot",
+    "name_zh": "按压槽位",
+    "aliases": [
+      "slot",
+      "hitting slot",
+      "power slot",
+      "contact slot"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt",
+      "tpa"
+    ],
+    "description": "The position and moment where the chest muscles explosively engage to drive the arm-racket system through the ball. Racket should reach maximum speed AT contact, not before.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "wrist_lag",
+    "name": "Wrist Lag",
+    "name_zh": "手腕滞后",
+    "aliases": [
+      "lag",
+      "racket lag",
+      "delayed wrist"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The wrist passively trails behind during the forward swing due to inertia as large muscles pull the arm forward. Never manufactured actively.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive",
+    "confidence": 1.0
+  },
+  {
+    "id": "fundamental_theorem_of_tennis",
+    "name": "Fundamental Theorem of Tennis",
+    "name_zh": "网球基本定理",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Two non-negotiable rules: (1) Racket-forearm angle stays 90-135°, never 180°; (2) Contact point must be in front of the body.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (maintain angle)",
+    "confidence": 1.0
+  },
+  {
+    "id": "hip_shoulder_separation",
+    "name": "Hip-Shoulder Separation",
+    "name_zh": "肩髋分离角",
+    "aliases": [
+      "separation",
+      "X-factor",
+      "torso coil",
+      "hip lead"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The angular difference between shoulder rotation and hip rotation during preparation. Pre-stretches core muscles to create additional rotational energy. Range: 0° to ~90°.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (but timing gap is only ~25ms, not consciously separable)",
+    "confidence": 1.0
+  },
+  {
+    "id": "shoulder_tilt_slant",
+    "name": "Shoulder Tilt / Slant",
+    "name_zh": "肩膀倾斜",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The hitting-side shoulder drops lower than the non-hitting side, naturally creating a low-to-high swing path — one of two lever mechanisms for topspin.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "gravity_driven_elbow_drop",
+    "name": "Gravity-Driven Elbow Drop",
+    "name_zh": "重力驱动的肘部微掉",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Allowing gravity to pull the elbow slightly downward during the forward swing, giving the racket head an upward component. The second lever mechanism for topspin.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (allow gravity, don't force)",
+    "confidence": 1.0
+  },
+  {
+    "id": "rotation_axis_at_v_zone_palm_upper",
+    "name": "Rotation Axis at V-Zone (Palm Upper)",
+    "name_zh": "旋转轴心在虎口/手掌上部",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Pros rotate the racket around the V-zone (index-middle finger area) of the palm, NOT around the butt cap. This correct pivot point automatically produces lag, racket flip, and effortless head speed.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (set up grip) → passive (rotation happens naturally)",
+    "confidence": 1.0
+  },
+  {
+    "id": "two_finger_grip_drill",
+    "name": "Two-Finger Grip Drill",
+    "name_zh": "两指握拍练习",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Grip with only index and middle fingers (+ thumb assist), removing ring and pinky fingers entirely. Forces correct rotation axis and prevents wrist manipulation.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (drill)",
+    "confidence": 1.0
+  },
+  {
+    "id": "humble_guide",
+    "name": "Humble Guide",
+    "name_zh": "谦卑的引导者",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The player is not the master of the racket but a servant guiding its inertia. Feel where the racket wants to go and help it arrive — don't command it.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (sensing) + active (guiding)",
+    "confidence": 1.0
+  },
+  {
+    "id": "chest_engagement",
+    "name": "Chest Engagement",
+    "name_zh": "胸肌参与",
+    "aliases": [
+      "chest press",
+      "pec connection",
+      "chest drive"
+    ],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The pectoralis major 'welds' the arm to the trunk. The arm moves forward because the chest rotates with the trunk, NOT because the arm muscles push forward independently.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (isometric/concentric contraction maintaining arm-trunk angle)",
+    "confidence": 1.0
+  },
+  {
+    "id": "paradox_of_power",
+    "name": "Paradox of Power",
+    "name_zh": "力量悖论",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "A seemingly stiffer motion (chest connected) produces heavier balls because the brain only releases full rotational speed when it senses control. Control → confidence → speed.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (emergent)",
+    "confidence": 1.0
+  },
+  {
+    "id": "scapular_glide",
+    "name": "Scapular Glide",
+    "name_zh": "肩胛骨滑动",
+    "aliases": [
+      "scapular retraction",
+      "scapular protraction",
+      "shoulder blade slide"
+    ],
+    "category": "biomechanics",
+    "sources": [
+      "ftt",
+      "tpa"
+    ],
+    "description": "The scapula physically translates (slides, not rotates) on the ribcage: retraction toward spine during preparation, protraction away from spine during forward swing and follow-through.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "scapular_retraction_protraction_formula",
+    "name": "Scapular Retraction-Protraction Formula",
+    "name_zh": "肩胛骨后缩-前伸公式",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Retraction + External Shoulder Rotation (ESR) → Protraction + Internal Shoulder Rotation (ISR). This is the anatomical basis of the back→chest energy transfer.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "trunk_commands_legs_multiply",
+    "name": "Trunk Commands, Legs Multiply",
+    "name_zh": "躯干指挥，腿部放大",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Rotation intent originates from the upper trunk (shoulder line), NOT from the ground up. Legs respond mid-rotation with explosive force multiplication. Legs are the nitrous boost, not the steering wheel.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (trunk intent) + active (leg response)",
+    "confidence": 1.0
+  },
+  {
+    "id": "rotational_pulse_not_long_rotation",
+    "name": "Rotational Pulse (not Long Rotation)",
+    "name_zh": "旋转脉冲（非长旋转）",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The rotation is a short explosive PULSE that terminates at contact (Press Slot), not a long 0°-to-180° rotation. Follow-through is purely inertial.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (short burst)",
+    "confidence": 1.0
+  },
+  {
+    "id": "forearm_compensation",
+    "name": "Forearm Compensation",
+    "name_zh": "小臂代偿",
+    "aliases": [
+      "arm driven hitting",
+      "arm dominant",
+      "forearm dominant"
+    ],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The forearm actively generates force and controls racket direction, bypassing the kinetic chain. The arm becomes the engine instead of the whip tip. Root cause of most amateur forehand problems.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (incorrectly so)",
+    "confidence": 1.0
+  },
+  {
+    "id": "out_up_and_through_three_vector_model",
+    "name": "Out, Up, and Through — Three Vector Model",
+    "name_zh": "向外、向上、穿过——三向量模型",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The complete swing path description: Out (lateral away from body, most critical), Up (low-to-high via trunk tilt), Through (forward extension via chest press).",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "effortless_power_vs_effortful_power",
+    "name": "Effortless Power vs Effortful Power",
+    "name_zh": "省力力量 vs 费力力量",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Effortless power comes from correct biomechanics with minimal fault tolerance sacrifice. Effortful power is a conscious decision to hit harder, with three failure modes: timing degradation, mechanics amplification, chain breakage.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "effortless=passive result, effortful=active choice",
+    "confidence": 1.0
+  },
+  {
+    "id": "foundation_connection_state",
+    "name": "Foundation = Connection State",
+    "name_zh": "地基 = 连接状态",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The forehand foundation is not a specific movement detail but a CONNECTION STATE: back muscles supporting, body parts synchronized (Unit Action), forward-pull mental intent, stable elbow space.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (maintain)",
+    "confidence": 1.0
+  },
+  {
+    "id": "active_vs_passive_action_distinction",
+    "name": "Active vs Passive Action Distinction",
+    "name_zh": "主动动作 vs 被动结果区分",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Active: hip rotation, core uncoil, chest press, unit turn, shoulder tilt. Passive: wrist lag, racket drop, windshield wiper, butt cap pointing at net, follow-through wrapping, racket flip.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "meta-concept",
+    "confidence": 1.0
+  },
+  {
+    "id": "hand_slot_position",
+    "name": "Hand Slot Position",
+    "name_zh": "手部槽位位置",
+    "aliases": [
+      "hand slot",
+      "hand position",
+      "preparation position"
+    ],
+    "category": "technique",
+    "sources": [
+      "ftt",
+      "tpa"
+    ],
+    "description": "After Unit Turn, the hand should be at roughly 45° to the side-front of the body, not behind the body. Incorrect (behind) position forces the arm to 'rush' to the contact point, breaking back connection.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (result of correct Unit Turn)",
+    "confidence": 1.0
+  },
+  {
+    "id": "height_adjustment_hierarchy",
+    "name": "Height Adjustment Hierarchy",
+    "name_zh": "身体高度调整层级",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "For balls at different heights, adjust with: (1st) legs — bend knees/widen stance, (2nd) trunk — tilt torso, (3rd) arm — bend/extend keeping angle, (4th worst) wrist — violates Fundamental Theorem.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "four_gaze_points_visual_system",
+    "name": "Four Gaze Points Visual System",
+    "name_zh": "四注视点视觉系统",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Four critical fixation points: (1) opponent's contact point, (2) ball in flight on opponent's side, (3) bounce point, (4) pre-contact on your side. Predictive saccades, not smooth tracking.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "braking_transfers_momentum",
+    "name": "Braking Transfers Momentum",
+    "name_zh": "制动传递动量",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Each segment's deceleration (braking) transfers momentum to the next segment. Like a whip: the handle stops, the tip cracks. Without braking, no energy transfer occurs.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (intentional braking of proximal segments)",
+    "confidence": 1.0
+  },
+  {
+    "id": "racket_face_stability_in_contact_zone",
+    "name": "Racket Face Stability in Contact Zone",
+    "name_zh": "击球区拍面角度稳定",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Maintaining near-constant racket face angle through the contact zone is the key to fault tolerance. Small unconscious closing (~10°) is normal; deliberate rolling is destructive.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (maintained by large-muscle inertia)",
+    "confidence": 1.0
+  },
+  {
+    "id": "delayed_acceleration_principle",
+    "name": "Delayed Acceleration Principle",
+    "name_zh": "延迟加速原则",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Racket should reach maximum speed AT the moment of contact, not before. Grip pressure: loose (4/10) pre-contact, tighten only at contact. Louis Cayer: 'The swing starts from the contact point.'",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active (timing intent)",
+    "confidence": 1.0
+  },
+  {
+    "id": "correct_trunk_sequencing_5_steps",
+    "name": "Correct Trunk Sequencing (5 steps)",
+    "name_zh": "正确躯干时序（5步）",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "1. Trunk issues rotation command → 2. Stretch chain, hand enters space → 3. Legs explode mid-rotation (multiplier) → 4. Power through Press Slot → 5. Inertial follow-through.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "pronation_via_correct_axis",
+    "name": "Pronation via Correct Axis",
+    "name_zh": "正确轴心下的旋前",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "When rotation axis is at the V-zone, the forearm naturally unlocks for pronation at contact. When axis is at butt cap, forearm is locked and cannot pronate fluently.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (result of correct grip axis)",
+    "confidence": 1.0
+  },
+  {
+    "id": "pro_grip_sequence",
+    "name": "Pro Grip Sequence",
+    "name_zh": "职业选手握拍顺序",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Pros grip sequence: (1) Nest the V-zone reference point on handle first, (2) Sense racket center of gravity, (3) LAST loosely wrap lower fingers. Amateurs death-grip the entire handle.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "slingshot_scapular_model",
+    "name": "Slingshot Scapular Model",
+    "name_zh": "弹弓肩胛骨模型",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Retraction = pulling back the slingshot (storing elastic energy). Protraction = releasing the slingshot (releasing energy). The scapula is a sliding door (translation), not a hinge (rotation).",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "neural_pathway_competition",
+    "name": "Neural Pathway Competition",
+    "name_zh": "神经通路竞争",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Old pattern (arm-dominant) has years of reinforcement with thick neural pathways. New pattern (body-dominant) has thin pathways. Under pressure, the brain defaults to the strongest pathway. Requires ~2000-5000 correct reps to override.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (automatic brain response)",
+    "confidence": 1.0
+  },
+  {
+    "id": "trust_fault_tolerance",
+    "name": "Trust = Fault Tolerance",
+    "name_zh": "信任 = 容错性",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Lack of forehand confidence stems from mechanically flawed strokes. The brain is smart — it doesn't trust low-fault-tolerance shots. Building trust requires building genuinely fault-tolerant mechanics.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (emergent)",
+    "confidence": 1.0
+  },
+  {
+    "id": "foot_freedom_for_hip_rotation",
+    "name": "Foot Freedom for Hip Rotation",
+    "name_zh": "脚的自由与髋旋转",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Full hip rotation is impossible with both feet planted. Four foot patterns: non-hitting foot lifts (most common), both feet pivot, hitting foot kicks back (Federer), both feet airborne (power shots).",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "whip_vs_rigid_arm_trajectory",
+    "name": "Whip vs Rigid Arm Trajectory",
+    "name_zh": "鞭打 vs 刚体手臂轨迹",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Correct: shoulder small arc < elbow medium arc < wrist large arc (three distinct layers = whip transfer). Incorrect: all three layers similar arc (rigid body transport = no sequential acceleration).",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (result of correct chain)",
+    "confidence": 1.0
+  },
+  {
+    "id": "exhale_to_initiate_forward_swing",
+    "name": "Exhale to Initiate Forward Swing",
+    "name_zh": "呼气启动前挥",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The first step of the forward swing is to exhale, which releases tension and enables fluid rotation. Inhale through nose during preparation for oxygen and core stabilization.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "active",
+    "confidence": 1.0
+  },
+  {
+    "id": "contact_zone_as_area_not_point",
+    "name": "Contact Zone as Area, Not Point",
+    "name_zh": "击球区域而非击球点",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "The optimal contact is a ZONE (3D volume), not a precise point. Good fault tolerance expands this zone. Three dimensions: front-back (rotation determines), left-right (Out vector needs space), up-down (grip natural height).",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (property of mechanics)",
+    "confidence": 1.0
+  },
+  {
+    "id": "follow_through_as_diagnostic_not_goal",
+    "name": "Follow-Through as Diagnostic, Not Goal",
+    "name_zh": "随挥是诊断工具，不是目标",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Follow-through itself doesn't affect the shot. It should be the natural continuation of forward swing momentum. Never actively pull the racket to a specific finish position.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive",
+    "confidence": 1.0
+  },
+  {
+    "id": "nitrous_boost_metaphor_legs",
+    "name": "Nitrous Boost Metaphor (Legs)",
+    "name_zh": "氮气加速比喻（腿部）",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Trunk = steering + initial engine. Legs = nitrous oxide boost. Nitrous can't fire when car is still (trunk must start first). Without trunk guidance, leg power has nowhere to go; without leg boost, trunk rotation is too weak.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "metaphor",
+    "confidence": 1.0
+  },
+  {
+    "id": "fingers_as_sensors_not_grippers",
+    "name": "Fingers as Sensors, Not Grippers",
+    "name_zh": "手指是感觉器官，不是抓取工具",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "ftt"
+    ],
+    "description": "Pro players use fingers to SENSE racket inertia and center of gravity. Amateurs use fingers to GRIP and control the racket. Correct: fingers feel where the racket wants to go.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "passive (sensing)",
+    "confidence": 1.0
+  },
+  {
+    "id": "mid_shot_adjustment",
+    "name": "Mid-Shot Adjustment",
+    "name_zh": "击球中调整",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Footwork and swing overlap in time; the back foot remains active during the swing, making the end of the shot the beginning of recovery.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "box_finish",
+    "name": "Box Finish",
+    "name_zh": "盒子随挥检验法",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "At follow-through completion, the upper arm, forearm, racket, and chest should form a regular rectangle (box) — a self-diagnostic tool for swing quality.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "circular_arc_theory",
+    "name": "Circular Arc Theory",
+    "name_zh": "圆弧击球理论",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "The racket travels in a circle around the body; direction is controlled by timing (when the ball meets the arc), not by aiming the swing path at the target.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "gradual_squaring",
+    "name": "Gradual Squaring",
+    "name_zh": "渐进式拍面对正",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "From the top of the backswing, the racket face progressively squares up rather than staying closed and flipping at the last moment.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "kinetic_chain_endpoints",
+    "name": "Kinetic Chain Endpoints",
+    "name_zh": "协调链首尾理论",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "The shoulder (first link, must stay in socket) and index finger (last link, guides pronation) are the two critical control points of the whip chain.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "surprise_theory",
+    "name": "Surprise Theory",
+    "name_zh": "惊喜理论",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Borrowed from Zen in the Art of Archery: the moment of contact should feel like a surprise, not a deliberate act. Ball contact is an obstacle on the swing path, not the goal.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "dual_arm_synchronization",
+    "name": "Dual-Arm Synchronization",
+    "name_zh": "双臂同步",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Imaginary rope connects both arms; non-racket arm extends outward during Unit Turn, then pulls inward at contact to accelerate rotation.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "ball_crosses_racket_width",
+    "name": "Ball Crosses Racket Width",
+    "name_zh": "球横跨拍面宽度旋转法则",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "The ball should always roll across the width (lateral) of the racket face, not its length (longitudinal). This unifies spin production across all strokes.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "braking_chain",
+    "name": "Braking Chain",
+    "name_zh": "制动链",
+    "aliases": [
+      "reactive braking",
+      "segment braking",
+      "deceleration chain"
+    ],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "After contact, segments stop in reverse order (shoulder first, then hip, then legs). The braking of each segment transfers momentum to the next, creating the whip crack effect.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "connected_throw_vs_delayed_whip",
+    "name": "Connected Throw vs Delayed Whip",
+    "name_zh": "整体连结投掷 vs 延迟鞭打",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Two seemingly contradictory models of kinetic chain: (1) whole-body connected throw, (2) hip-leads-arm delayed sequence. Resolution: fix delay first for desynchronized players, add throw feeling later.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "shoulder_whip_vs_chest_press_spectrum",
+    "name": "Shoulder-Whip vs Chest-Press Spectrum",
+    "name_zh": "肩部鞭打型 vs 胸部压迫型光谱",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Two driving paradigms for the forehand: shoulder-whip (Nadal, max spin/power, higher timing tax) vs chest-press (Federer/Sinner, compact, stable, early interception). Players sit on a spectrum.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "racket_rotation_around_center_of_mass",
+    "name": "Racket Rotation Around Center of Mass",
+    "name_zh": "球拍绕质心旋转",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Correct racket flip occurs when the hand pushes outward while the racket head falls back, causing rotation around the racket's center of mass (2x faster, less effort) rather than around the handle end.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "n40ms_release_window",
+    "name": "40ms Release Window",
+    "name_zh": "40毫秒弹性释放窗口",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "From the moment the racket head overtakes the hand to ball contact is only 40ms (3 frames at 60fps). Every millisecond of early release causes linear energy loss.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "power_tax",
+    "name": "Power Tax",
+    "name_zh": "力量税",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Off-center hits lose 30-70% energy (average 50%). Sweet-spot contact is the #1 power factor, ahead of kinetic chain optimization.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "paradoxical_topspin",
+    "name": "Paradoxical Topspin",
+    "name_zh": "上旋悖论",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "The strongest topspin feels like hitting downward. 'Hitting up' creates tension; 'hitting down' relaxes the wrist, enabling more efficient elastic whip.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "trunk_freeze_at_contact",
+    "name": "Trunk Freeze at Contact",
+    "name_zh": "躯干冻结",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "At the moment of contact, the trunk must stop rotating so all remaining momentum transfers into the arm-racket system. Continued trunk rotation = momentum leakage.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "cone_defense",
+    "name": "Cone Defense",
+    "name_zh": "圆锥防守",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "After hitting, move to the center axis of the cone formed by all possible opponent return angles, not to the geometric center of the court.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "over_rotation",
+    "name": "Over-Rotation",
+    "name_zh": "过度旋转",
+    "aliases": [
+      "spinning out",
+      "excessive rotation"
+    ],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "All body segments rotating simultaneously eliminates the speed differential needed for whip acceleration. Fix: each segment must brake before the next fires.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "practice_diversity_theory",
+    "name": "Practice Diversity Theory",
+    "name_zh": "练习多样性理论",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "Low-diversity cooperative rallying creates false confidence. Need one stable hitting unit for 100 variations, not 100 different swings.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "khachanov_apparatus_lock",
+    "name": "Khachanov Apparatus Lock",
+    "name_zh": "卡恰诺夫式提前锁定",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tpa"
+    ],
+    "description": "During full sprint, the hitting arm system (shoulder-arm-racket) must be pre-locked as a rigid apparatus before arriving at the ball, not assembled upon arrival.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p01",
+    "name": "Pat the Dog 主动下压",
+    "name_zh": "拍头过度下坠",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 拍头向斜后方（内+下45°）坠落; 球拍与手臂不在一条线上; 拍面不稳定; 击球阶段拍头朝下. Root cause: Unit Turn 后主动用小臂压拍头做 pat the dog，导致大臂和小臂在肘关节处断开，拍头过度下坠到小臂以下",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p02",
+    "name": "V形 Scooping（向上捞球）",
+    "name_zh": "V形 Scooping（向上捞球）",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 击球前有明显的向上动作（视频可见）; 击球轨迹呈V形（先急降再急升）; 底边领先（拍面朝天）; 球软、浅、无穿透力; 薄的'刷、啪、擦'声音. Root cause: 多重原因：(1) 主动用小臂压拍头导致后续必须向上翻回 (2) 拍头预设位置太低，物理上只能垂直向上拉 (3) 右肩下沉带手下坠 (4) '向上刷造上旋'的错误心智模型",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p03",
+    "name": "手臂独立动作",
+    "name_zh": "小臂代偿",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 击球前小臂有独立的向上翻动作; 手腕高于肘部（小臂与地面呈斜角）; 击球时拍震手; 肘角收缩而非展开（教练127°→140°展开 vs 用户101°→58°收缩）; 手臂-躯干同步性低（最差0.09）. Root cause: 动力链断裂后手臂被迫独立发力补偿。具体链条：Hand Slot 在身后 → 手臂赶路 → 背部张力松掉 → 手臂超车身体 → 小臂向上刷代偿",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p04",
+    "name": "手臂脱节",
+    "name_zh": "动力链断裂",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 力量来自手臂而非身体旋转; 手臂-躯干同步性极低; 手臂在做两件不同于身体的事; 上半身在转但手臂脱节. Root cause: 多环节断裂：(1) 小臂独立动作断开肘关节 (2) 背部张力松掉断开肩关节 (3) 腋下未夹住断开胸-臂连接 (4) 核心旋转缺失断开髋-胸传导",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p05",
+    "name": "击球点偏后",
+    "name_zh": "击球点偏后",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 球离身体近，手臂被挤压; 没有向外延伸的空间，只能向上补偿; 视频数据确认击球点偏后. Root cause: 多重原因：(1) 站位太靠前，球还没弹到合适位置就击球 (2) Pull Forward 意识在实战中断裂 (3) 缺少 separation 导致没时间向前展开",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p06",
+    "name": "'向上刷造上旋'的错误心智模型",
+    "name_zh": "'向上刷造上旋'的错误心智模型",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 不自觉地把肘部放低给'从低到高'留空间; 想着上旋时动作僵、捞球; 向上的意图导致手腕紧张. Root cause: 错误认知：认为上旋需要主动向上刷。实际上旋来自：肩膀倾斜+重力微拉+拍头惯性旋转（windshield wiper），感觉应该像平击/向下击球",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p07",
+    "name": "非整体转动",
+    "name_zh": "Unit Turn 右肩下沉",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 右肩比左肩低; 身体向左倾斜; 重心移到左脚; 右脚无法蹬地（腾空）; 手被带到低位（scooping 前置）. Root cause: Unit Turn 时不是整体转动而是单肩下拉——右肩往右下方拉，左肩不动",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p08",
+    "name": "时机太早",
+    "name_zh": "击球太急",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 站位太靠前，球还没弹起落下就击球; 准备时间不足，unit turn 不完整; 没时间做完整的 separation. Root cause: 站位太靠前 + 缺乏等球意识，导致一切都在赶",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p09",
+    "name": "重心在错误的脚上",
+    "name_zh": "重心在错误的脚上",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 击球时重心在左脚而非右脚; 右脚腾空无法蹬地; 无法执行 pivot. Root cause: Unit Turn 时右肩下沉导致身体向左倾斜，重心被带到左脚",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p10",
+    "name": "背部张力松掉",
+    "name_zh": "背部张力松掉",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 击球时背部张力消失（VLM确认）; 手臂超车身体; 球下网. Root cause: 错误理解为'背部→胸部交替'，导致击球时背部松掉切换到胸部",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p11",
+    "name": "过度转体（Over-rotation）",
+    "name_zh": "过度转体（Over-rotation）",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 身体完全正面朝网; 缺少刹车; 随挥失控. Root cause: 两个原因：(1) 缺少左手收胸作为'刹车' (2) 发力心理模型是'长旋转'（旋转终点设在随挥）而非'短脉冲'（旋转终点=击球瞬间）",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p12",
+    "name": "Separation 动作缺失",
+    "name_zh": "Separation 动作缺失",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 发力突然; 伤手腕; 拍头急剧向下. Root cause: 击球太急导致没时间做 separation；或将 separation 方向搞错（往后拉而非往外往下）",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p13",
+    "name": "手主动引拍",
+    "name_zh": "引拍时手太后拉",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 手太往后拉; 身体跟着后仰; 上半身偏后于下半身; Hand Slot 太后. Root cause: 在'拉手引拍'而非'转身引拍'——手主动往后走带动上身后仰",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p14",
+    "name": "夹肘",
+    "name_zh": "肘部空间不足",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 腋下太紧没有空间向外推; Hand Slot 偏后偏窄; Out 向量无法执行. Root cause: Unit Turn 时大臂贴紧身体，没有打开肘部空间",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p15",
+    "name": "左手未参与 Unit Turn",
+    "name_zh": "左手未参与 Unit Turn",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 左手早早放下; 用右手拉拍; 随挥不完整（胸前就停了）. Root cause: 左手没有引导 Unit Turn，导致用右手主动拉拍而非整体转身",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p16",
+    "name": "Tilt 时机错误",
+    "name_zh": "Tilt 时机错误",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 过早压低右肩导致不平衡; Unit Turn 阶段就做 Tilt. Root cause: 把肩部倾斜（Tilt）放在了 Unit Turn 阶段，应该在蹬地转髋的同时做",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p17",
+    "name": "握拍过紧",
+    "name_zh": "食指指根疼痛",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 食指指根压迫感和疼痛; 每次击球/空挥都有. Root cause: 把旋转轴的'支撑'理解成'顶住'——食指在主动发力压向拍柄",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p18",
+    "name": "握拍不稳",
+    "name_zh": "拍柄跷跷板",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 完全放松时拍柄底部翘起又落下. Root cause: 下方三指完全没有包住拍柄，只有V型区一个接触点",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p19",
+    "name": "发力心理模型错误（从下往上阶梯式）",
+    "name_zh": "发力心理模型错误（从下往上阶梯式）",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 先想蹬地导致躯干落后; 动作变成线性向上而非旋转爆发; 胸 press 时手臂还在后面; 四步分步太机械太慢. Root cause: 心理模型是'蹬地→转髋→腹斜肌→胸→手臂'的线性阶梯，而正确模型是躯干发出旋转意图、腿部放大",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p20",
+    "name": "核心旋转缺失（髋-胸传导断裂）",
+    "name_zh": "核心旋转缺失（髋-胸传导断裂）",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 只想胸部 press 但力传不上来; 力在腰部断掉; 肚脐左方无扭转感觉. Root cause: 腹斜肌（核心旋转中转站）没有被激活，腿的蹬转力无法传到胸部",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "problem_p21",
+    "name": "胸-臂连接断裂（腋下未夹住）",
+    "name_zh": "胸-臂连接断裂（腋下未夹住）",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Symptoms: 胸转了但手臂还在后面; 被迫主动送肘代偿; 大臂离开胸侧. Root cause: 大臂内侧和胸部侧面没有保持接触压力，手臂没有焊在胸上",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 1.0
+  },
+  {
+    "id": "breakthrough_b01",
+    "name": "Extension 和 Pat the Dog 同步，击球稳定性显著提升",
+    "name_zh": "Extension 和 Pat the Dog 同步，击球稳定性显著提升",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Extension 和 Pat the Dog 同步，击球稳定性显著提升. Before: unit turn 后进入 separate 时球拍还停在拍头朝上，导致匆忙倒拍头、手腕补偿. After: elbow extension 和 pat the dog 同步执行，引拍到前挥连接更顺，击球点扎实.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b02",
+    "name": "发现肘部下掉是 scooping 的关键原因，'顶肘'修正",
+    "name_zh": "发现肘部下掉是 scooping 的关键原因，'顶肘'修正",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "发现肘部下掉是 scooping 的关键原因，'顶肘'修正. Before: pat the dog 时肘部也一起往下带，手低于击球点. After: 先把肘部位置固定住（顶肘），右肩旋转参与发力.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b03",
+    "name": "整条手臂是一个整体，小臂不做独立动作",
+    "name_zh": "整条手臂是一个整体，小臂不做独立动作",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "整条手臂是一个整体，小臂不做独立动作. Before: 刻意用小臂压拍头/做 supination/顶肘，大臂小臂在肘关节处断开. After: 整条手臂当一根鞭子，身体转它就跟着走，lag 是自然结果.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b04",
+    "name": "拍头下落和 lag 都是被动结果的认知升级",
+    "name_zh": "拍头下落和 lag 都是被动结果的认知升级",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "拍头下落和 lag 都是被动结果的认知升级. Before: 认为拍头下落是人为的、lag 是自然的（两个不同的东西）. After: 拍头下落和 lag 是同一个物理过程——鞭子末端既滞后又下坠。Unit Turn 后只有一个主动动作（蹬地转髋）.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b05",
+    "name": "新模式首次闪现——无 scooping + 有 Out 向量",
+    "name_zh": "新模式首次闪现——无 scooping + 有 Out 向量",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "新模式首次闪现——无 scooping + 有 Out 向量. Before: 全部击球都有 scooping 和内缩. After: 第 1 次击球 55 分，VLM 评价'无 scooping，有 Out 向量'.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b06",
+    "name": "Scooping 彻底消失 + Out 向量首次稳定出现",
+    "name_zh": "Scooping 彻底消失 + Out 向量首次稳定出现",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Scooping 彻底消失 + Out 向量首次稳定出现. Before: scooping 间歇出现，Out 向量偶尔闪现. After: 5 次击球全部未检测到 scooping；视频3的 Out 向量两次稳定出现；分数从 48→72.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b07",
+    "name": "发现所有问题的根因 = Unit Turn 时右肩下沉导致重心倒向左脚",
+    "name_zh": "发现所有问题的根因 = Unit Turn 时右肩下沉导致重心倒向左脚",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "发现所有问题的根因 = Unit Turn 时右肩下沉导致重心倒向左脚. Before: 各问题分散处理（scooping、重心、够球分别想办法）. After: 找到统一根因：Unit Turn 右肩下沉→身体左倾→重心在左脚→右脚无法蹬地。Unit Turn 阶段肩膀必须水平.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b08",
+    "name": "听到清脆击球声——甜区击球 + 蹬转力学彻底理解",
+    "name_zh": "听到清脆击球声——甜区击球 + 蹬转力学彻底理解",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "听到清脆击球声——甜区击球 + 蹬转力学彻底理解. Before: 没有清脆声 = 击球点不对 + 偏离甜区 = 能量损失 30-70%. After: 右肩保持高位 + 右脚 Pivot 拧转 → 手臂被反作用力甩向右外方 → 击球点更前 → 甜区接触 → 清脆声音.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b09",
+    "name": "Press Slot 体感找到 + 动力链时序突破",
+    "name_zh": "Press Slot 体感找到 + 动力链时序突破",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "Press Slot 体感找到 + 动力链时序突破. Before: slot 在身后，手臂被整个甩过来（用手臂力量），lag 离击球点远. After: slot 在侧前方45度，lag 装载就在击球点附近（短距离弹性释放=纯鞭打）。'手臂不受控制的感觉' = 手臂真的变成被动鞭梢.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b10",
+    "name": "正确的肌肉感觉：背部储能→胸部释放→手腕不参与",
+    "name_zh": "正确的肌肉感觉：背部储能→胸部释放→手腕不参与",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "正确的肌肉感觉：背部储能→胸部释放→手腕不参与. Before: 不清楚哪些肌肉应该有感觉. After: 引拍/Hold 时感受到背部肌肉（背阔肌+肩胛骨后缩）= 弹性储能；往前推时感受到胸部肌肉（胸大肌推压）= Press Slot 释放；完全感受不到手腕 = 手腕真的变成铰链.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b11",
+    "name": "外旋优于下落——拍头下落是蹬转发力的副产品",
+    "name_zh": "外旋优于下落——拍头下落是蹬转发力的副产品",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "外旋优于下落——拍头下落是蹬转发力的副产品. Before: 拍头急剧下落先于身体发力，像两个独立动作. After: 不关注下落、只关注蹬转发力时，身体自然先于拍子动作，避免小臂代偿.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b12",
+    "name": "胸部推压驱动小臂的正确体感 + 内旋是被动结果",
+    "name_zh": "胸部推压驱动小臂的正确体感 + 内旋是被动结果",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "胸部推压驱动小臂的正确体感 + 内旋是被动结果. Before: 不确定前挥的主动发力点. After: 想象小臂往前推但实际小臂没发力，是胸部连着肩膀的肌肉在推，小臂被带动。'没有明显发力感'= 大肌群在工作。内旋（Pronation）是被动结果不是主动发力点.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b13",
+    "name": "两指握拍与胸部 Press 是'设置'和'执行'的关系 + 拍头掉落根因",
+    "name_zh": "两指握拍与胸部 Press 是'设置'和'执行'的关系 + 拍头掉落根因",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "两指握拍与胸部 Press 是'设置'和'执行'的关系 + 拍头掉落根因. Before: 同时想两指和往前荡很别扭；拍头在往前荡时掉落. After: 第一步设置握拍（V型区搭上），第二步执行（只想胸部 press）。拍头掉落是因为支撑点太低，V型区支撑解决.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b14",
+    "name": "'肘部往前推'是错误意象，正确是'胸部往前 press'",
+    "name_zh": "'肘部往前推'是错误意象，正确是'胸部往前 press'",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "'肘部往前推'是错误意象，正确是'胸部往前 press'. Before: 用'肘部往前推/荡'作为挥拍意象. After: '肘部往前推'容易变成手臂发力（肱三头肌/肩部小肌群），正确是'胸部往前 press'——胸大肌连着手臂一起往前走.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b15",
+    "name": "动力链第一次完整串通 + 三个主动动作全部找到体感",
+    "name_zh": "动力链第一次完整串通 + 三个主动动作全部找到体感",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "动力链第一次完整串通 + 三个主动动作全部找到体感. Before: 只想胸部 press 但力在腰部断掉；胸转了手臂还在后面. After: 完整链条：蹬地→转髋→腹斜肌扭转（新增）→胸部转动→手臂被带走（腋下夹着·新增）。FTT 三个主动动作全部有体感：蹬地转髋、腹部展开、胸肌按压.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  },
+  {
+    "id": "breakthrough_b16",
+    "name": "发力心理模型根本性修正：躯干发令→腿部放大",
+    "name_zh": "发力心理模型根本性修正：躯干发令→腿部放大",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "user_experience"
+    ],
+    "description": "发力心理模型根本性修正：躯干发令→腿部放大. Before: 从下往上的阶梯式：蹬地→转髋→腹斜肌→胸→手臂（线性向上，太机械太慢）. After: 躯干发出旋转意图→腿部在旋转中途爆发式放大。发力不是四步而是一个意图：'转！'。旋转是短脉冲不是长旋转.",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": null,
+    "confidence": 0.9
+  }
+]
