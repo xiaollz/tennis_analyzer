@@ -107,3 +107,88 @@ class DiagnosticChain(BaseModel):
     drills: list[str] = Field(description="Drill concept IDs for remediation")
     priority: int = Field(ge=1, le=5, description="1=most common/important")
     vlm_frame: str | None = Field(default=None, description="Which video frame to analyze")
+
+
+# --- Multi-round VLM diagnostic models ---
+
+
+class HypothesisStatus(str, Enum):
+    """Status of a diagnostic hypothesis through the multi-round loop."""
+
+    ACTIVE = "active"
+    CONFIRMED = "confirmed"
+    ELIMINATED = "eliminated"
+
+
+class ObservationJudgment(str, Enum):
+    """VLM judgment for a single observation check."""
+
+    YES = "yes"
+    NO = "no"
+    UNCLEAR = "unclear"
+
+
+class Observation(BaseModel):
+    """A single VLM observation anchored to a specific frame and round."""
+
+    id: str = Field(description="e.g. obs_r1_01")
+    round_number: int = Field(ge=0)
+    frame: str = Field(description="Which frame in the keyframe grid, e.g. 图3")
+    description: str = Field(description="What was seen")
+    judgment: ObservationJudgment
+    confidence: float = Field(ge=0.0, le=1.0)
+    directive_source: str = Field(description="Which check_step or directive generated this")
+
+
+class HypothesisUpdate(BaseModel):
+    """A per-round update action on a hypothesis."""
+
+    hypothesis_id: str
+    action: str = Field(description="confirm, eliminate, or adjust")
+    reason: str
+
+
+class Hypothesis(BaseModel):
+    """A diagnostic hypothesis linking a DiagnosticChain to observations."""
+
+    id: str = Field(description="e.g. hyp_scooping_active_lag")
+    chain_id: str = Field(description="DiagnosticChain ID, dc_ prefix")
+    root_cause_concept_id: str = Field(description="From chain.root_causes")
+    name: str
+    name_zh: str
+    status: HypothesisStatus = HypothesisStatus.ACTIVE
+    confidence: float = Field(default=0.5, ge=0.0, le=1.0)
+    supporting_observations: list[str] = Field(default_factory=list, description="Observation IDs")
+    contradicting_observations: list[str] = Field(default_factory=list)
+    check_steps_completed: list[int] = Field(default_factory=list, description="Indices into chain.check_sequence")
+    round_introduced: int = Field(ge=0)
+    round_resolved: int | None = None
+
+
+class RoundResult(BaseModel):
+    """Captures the full input/output of a single VLM diagnostic round."""
+
+    round_number: int = Field(ge=0)
+    prompt_sent: str = Field(description="Full prompt text sent to VLM")
+    raw_response: str = Field(description="Raw VLM output")
+    observations: list[Observation] = Field(default_factory=list)
+    hypothesis_updates: list[HypothesisUpdate] = Field(default_factory=list)
+    timestamp: str | None = None
+
+
+class DiagnosticSession(BaseModel):
+    """Full state of a multi-round VLM diagnostic session."""
+
+    session_id: str = Field(description="e.g. sess_20260403_143000")
+    video_path: str | None = None
+    image_b64_hash: str | None = None
+    hypotheses: list[Hypothesis] = Field(default_factory=list)
+    observations: list[Observation] = Field(default_factory=list)
+    rounds: list[RoundResult] = Field(default_factory=list)
+    active_chain_ids: list[str] = Field(default_factory=list)
+    checked_steps: dict[str, list[int]] = Field(default_factory=dict)
+    convergence_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    max_rounds: int = Field(default=4, ge=1, le=10)
+    final_result: dict | None = None
+    created_at: str | None = None
+    completed_at: str | None = None
