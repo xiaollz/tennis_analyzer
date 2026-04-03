@@ -236,19 +236,25 @@ def generate_diagnostic_chains(kg: KnowledgeGraph) -> list[DiagnosticChain]:
             continue
 
         # Find drills for root causes
+        # Check drills_for edges first, then fall back to supports-connected drill nodes
         drills = set()
-        for rc in root_causes:
-            for _, target, data in kg.graph.out_edges(rc, data=True):
+        all_chain_nodes = root_causes | {symptom_id}
+        for path in causal_paths:
+            all_chain_nodes.update(path)
+
+        for node_id in all_chain_nodes:
+            for _, target, data in kg.graph.out_edges(node_id, data=True):
                 if data.get("relation") == "drills_for":
                     drills.add(target)
-
-        # Also check if any drill nodes have edges TO root causes
-        for rc in root_causes:
-            for source, _, data in kg.graph.in_edges(rc, data=True):
+                # Also pick up drill nodes connected via supports
+                target_data = kg.graph.nodes.get(target, {})
+                if target_data.get("category") == "drill":
+                    drills.add(target)
+            for source, _, data in kg.graph.in_edges(node_id, data=True):
                 if data.get("relation") == "drills_for":
                     drills.add(source)
-                node_data = kg.graph.nodes.get(source, {})
-                if node_data.get("category") == "drill":
+                source_data = kg.graph.nodes.get(source, {})
+                if source_data.get("category") == "drill":
                     drills.add(source)
 
         # Build check_sequence from the shortest causal path

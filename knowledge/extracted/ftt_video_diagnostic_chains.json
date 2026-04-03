@@ -188,13 +188,308 @@
       ],
       "priority": 2,
       "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p01",
+      "symptom": "Pat the Dog 主动下压",
+      "symptom_zh": "拍头过度下坠",
+      "symptom_concept_id": "problem_p01",
+      "check_sequence": [
+        {
+          "check": "Check: '向上刷造上旋'的错误心智模型 - Symptoms: 不自觉地把肘部放低给'从低到高'留空间; 想着上旋时动作僵、捞球; 向上的意图导致手腕紧张. Root cause: 错误认知：认为上旋需要",
+          "check_zh": "检查: '向上刷造上旋'的错误心智模型",
+          "if_true": "problem_p06",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p09",
+        "problem_p20",
+        "problem_p12",
+        "problem_p16",
+        "problem_p10",
+        "problem_p14",
+        "problem_p15",
+        "problem_p06"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p02",
+      "symptom": "V形 Scooping（向上捞球）",
+      "symptom_zh": "V形 Scooping（向上捞球）",
+      "symptom_concept_id": "problem_p02",
+      "check_sequence": [
+        {
+          "check": "Check: '向上刷造上旋'的错误心智模型 - Symptoms: 不自觉地把肘部放低给'从低到高'留空间; 想着上旋时动作僵、捞球; 向上的意图导致手腕紧张. Root cause: 错误认知：认为上旋需要",
+          "check_zh": "检查: '向上刷造上旋'的错误心智模型",
+          "if_true": "problem_p06",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p09",
+        "problem_p20",
+        "problem_p12",
+        "problem_p16",
+        "problem_p10",
+        "problem_p14",
+        "problem_p15",
+        "problem_p06"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p03",
+      "symptom": "手臂独立动作",
+      "symptom_zh": "小臂代偿",
+      "symptom_concept_id": "problem_p03",
+      "check_sequence": [
+        {
+          "check": "Check: 背部张力松掉 - Symptoms: 击球时背部张力消失（VLM确认）; 手臂超车身体; 球下网. Root cause: 错误理解为'背部→胸部交替'，导致击球时背部松掉切换到",
+          "check_zh": "检查: 背部张力松掉",
+          "if_true": "problem_p10",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p09",
+        "problem_p20",
+        "problem_p12",
+        "problem_p16",
+        "problem_p10",
+        "problem_p14",
+        "problem_p15"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p04",
+      "symptom": "手臂脱节",
+      "symptom_zh": "动力链断裂",
+      "symptom_concept_id": "problem_p04",
+      "check_sequence": [
+        {
+          "check": "Check: 重心在错误的脚上 - Symptoms: 击球时重心在左脚而非右脚; 右脚腾空无法蹬地; 无法执行 pivot. Root cause: Unit Turn 时右肩下沉导致身体向左倾",
+          "check_zh": "检查: 重心在错误的脚上",
+          "if_true": "problem_p09",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p09",
+        "problem_p20",
+        "problem_p16",
+        "problem_p10",
+        "problem_p14",
+        "problem_p15"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p05",
+      "symptom": "击球点偏后",
+      "symptom_zh": "击球点偏后",
+      "symptom_concept_id": "problem_p05",
+      "check_sequence": [
+        {
+          "check": "Check: Unit Turn - Hips, shoulders, arms, and racket rotate away from target as a single unit; the ",
+          "check_zh": "检查: 整体转身",
+          "if_true": "unit_turn",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p09",
+        "problem_p20",
+        "problem_p12",
+        "problem_p16",
+        "problem_p10",
+        "problem_p14",
+        "unit_turn",
+        "problem_p15",
+        "problem_p06"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p07",
+      "symptom": "非整体转动",
+      "symptom_zh": "Unit Turn 右肩下沉",
+      "symptom_concept_id": "problem_p07",
+      "check_sequence": [
+        {
+          "check": "Check: 重心在错误的脚上 - Symptoms: 击球时重心在左脚而非右脚; 右脚腾空无法蹬地; 无法执行 pivot. Root cause: Unit Turn 时右肩下沉导致身体向左倾",
+          "check_zh": "检查: 重心在错误的脚上",
+          "if_true": "problem_p09",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p16",
+        "problem_p09"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p08",
+      "symptom": "时机太早",
+      "symptom_zh": "击球太急",
+      "symptom_concept_id": "problem_p08",
+      "check_sequence": [
+        {
+          "check": "Check: Separation 动作缺失 - Symptoms: 发力突然; 伤手腕; 拍头急剧向下. Root cause: 击球太急导致没时间做 separation；或将 separation 方向搞",
+          "check_zh": "检查: Separation 动作缺失",
+          "if_true": "problem_p12",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p12"
+      ],
+      "drills": [],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p11",
+      "symptom": "过度转体（Over-rotation）",
+      "symptom_zh": "过度转体（Over-rotation）",
+      "symptom_concept_id": "problem_p11",
+      "check_sequence": [
+        {
+          "check": "Check: 左手未参与 Unit Turn - Symptoms: 左手早早放下; 用右手拉拍; 随挥不完整（胸前就停了）. Root cause: 左手没有引导 Unit Turn，导致用右手主动拉拍而非整",
+          "check_zh": "检查: 左手未参与 Unit Turn",
+          "if_true": "problem_p15",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p15",
+        "problem_p20"
+      ],
+      "drills": [],
+      "priority": 3,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p13",
+      "symptom": "手主动引拍",
+      "symptom_zh": "引拍时手太后拉",
+      "symptom_concept_id": "problem_p13",
+      "check_sequence": [
+        {
+          "check": "Check: 左手未参与 Unit Turn - Symptoms: 左手早早放下; 用右手拉拍; 随挥不完整（胸前就停了）. Root cause: 左手没有引导 Unit Turn，导致用右手主动拉拍而非整",
+          "check_zh": "检查: 左手未参与 Unit Turn",
+          "if_true": "problem_p15",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p15"
+      ],
+      "drills": [],
+      "priority": 2,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p17",
+      "symptom": "握拍过紧",
+      "symptom_zh": "食指指根疼痛",
+      "symptom_concept_id": "problem_p17",
+      "check_sequence": [
+        {
+          "check": "Check: 握拍不稳 - Symptoms: 完全放松时拍柄底部翘起又落下. Root cause: 下方三指完全没有包住拍柄，只有V型区一个接触点",
+          "check_zh": "检查: 拍柄跷跷板",
+          "if_true": "problem_p18",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p18"
+      ],
+      "drills": [],
+      "priority": 4,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p19",
+      "symptom": "发力心理模型错误（从下往上阶梯式）",
+      "symptom_zh": "发力心理模型错误（从下往上阶梯式）",
+      "symptom_concept_id": "problem_p19",
+      "check_sequence": [
+        {
+          "check": "Check: 核心旋转缺失（髋-胸传导断裂） - Symptoms: 只想胸部 press 但力传不上来; 力在腰部断掉; 肚脐左方无扭转感觉. Root cause: 腹斜肌（核心旋转中转站）没有被激活，腿的",
+          "check_zh": "检查: 核心旋转缺失（髋-胸传导断裂）",
+          "if_true": "problem_p20",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p20"
+      ],
+      "drills": [],
+      "priority": 4,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_problem_p21",
+      "symptom": "胸-臂连接断裂（腋下未夹住）",
+      "symptom_zh": "胸-臂连接断裂（腋下未夹住）",
+      "symptom_concept_id": "problem_p21",
+      "check_sequence": [
+        {
+          "check": "Check: 核心旋转缺失（髋-胸传导断裂） - Symptoms: 只想胸部 press 但力传不上来; 力在腰部断掉; 肚脐左方无扭转感觉. Root cause: 腹斜肌（核心旋转中转站）没有被激活，腿的",
+          "check_zh": "检查: 核心旋转缺失（髋-胸传导断裂）",
+          "if_true": "problem_p20",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "problem_p20"
+      ],
+      "drills": [],
+      "priority": 4,
+      "vlm_frame": null
     }
   ],
-  "count": 6,
+  "count": 18,
   "from_videos": 0,
   "manually_supplemented": 6,
-  "validation_warnings": [
-    "[supplemented] symptom_concept_id 'trunk_sequencing' not in registry",
-    "[supplemented] symptom_concept_id 'racket_drop' not in registry"
-  ]
+  "graph_generated": 12,
+  "generation_log": {
+    "total_symptoms": 27,
+    "generated_count": 12,
+    "manual_kept": 6,
+    "dedup_skipped": [],
+    "symptoms_without_causes": [
+      "problem_p06",
+      "problem_p09",
+      "problem_p10",
+      "problem_p12",
+      "problem_p14",
+      "problem_p15",
+      "problem_p16",
+      "problem_p18",
+      "problem_p20",
+      "wall_rallying",
+      "lean_in_vs_lean_back",
+      "dont_fight_your_hand",
+      "prep_and_fire",
+      "probe_your_vertical_spacing",
+      "elastic_energy"
+    ]
+  }
 }
