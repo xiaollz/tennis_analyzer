@@ -103,11 +103,6 @@
   ],
   "unit_turn": [
     {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "eccentric"
-    },
-    {
       "muscle": "external_obliques",
       "role": "primary",
       "action": "eccentric"
@@ -124,11 +119,6 @@
     },
     {
       "muscle": "latissimus_dorsi",
-      "role": "primary",
-      "action": "eccentric"
-    },
-    {
-      "muscle": "pectoralis_major",
       "role": "primary",
       "action": "eccentric"
     },
@@ -158,8 +148,18 @@
       "action": "eccentric"
     },
     {
+      "muscle": "pectoralis_major",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
       "muscle": "serratus_anterior",
       "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
       "action": "eccentric"
     },
     {
@@ -500,22 +500,7 @@
   ],
   "press_slot": [
     {
-      "muscle": "deltoid",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
       "muscle": "forearm_flexors",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "latissimus_dorsi",
       "role": "primary",
       "action": "concentric"
     },
@@ -525,22 +510,7 @@
       "action": "concentric"
     },
     {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
       "muscle": "rotator_cuff",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "serratus_anterior",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "trapezius",
       "role": "primary",
       "action": "concentric"
     },
@@ -555,17 +525,27 @@
       "action": "concentric"
     },
     {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
       "muscle": "pectoralis_minor",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "serratus_anterior",
       "role": "secondary",
       "action": "concentric"
     }
   ],
   "wrist_lag": [
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "concentric"
-    },
     {
       "muscle": "forearm_extensors",
       "role": "primary",
@@ -588,16 +568,6 @@
     },
     {
       "muscle": "pronator_teres",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "serratus_anterior",
       "role": "primary",
       "action": "concentric"
     },
@@ -666,11 +636,6 @@
   ],
   "hip_shoulder_separation": [
     {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "eccentric"
-    },
-    {
       "muscle": "external_obliques",
       "role": "primary",
       "action": "eccentric"
@@ -691,17 +656,7 @@
       "action": "eccentric"
     },
     {
-      "muscle": "pectoralis_major",
-      "role": "primary",
-      "action": "eccentric"
-    },
-    {
       "muscle": "rhomboids",
-      "role": "primary",
-      "action": "eccentric"
-    },
-    {
-      "muscle": "serratus_anterior",
       "role": "primary",
       "action": "eccentric"
     },
@@ -723,6 +678,11 @@
     {
       "muscle": "rotator_cuff",
       "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
       "action": "eccentric"
     },
     {
@@ -846,11 +806,6 @@
   ],
   "chest_engagement": [
     {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
       "muscle": "external_obliques",
       "role": "primary",
       "action": "concentric"
@@ -871,16 +826,6 @@
       "action": "concentric"
     },
     {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
-      "muscle": "serratus_anterior",
-      "role": "primary",
-      "action": "concentric"
-    },
-    {
       "muscle": "biceps_brachii",
       "role": "secondary",
       "action": "concentric"
@@ -896,8 +841,18 @@
       "action": "concentric"
     },
     {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
       "muscle": "triceps_brachii",
       "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
       "action": "concentric"
     },
     {
@@ -907,11 +862,6 @@
     }
   ],
   "scapular_glide": [
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "eccentric"
-    },
     {
       "muscle": "external_obliques",
       "role": "primary",
@@ -970,6 +920,11 @@
     {
       "muscle": "triceps_brachii",
       "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
       "action": "eccentric"
     }
   ],
@@ -5997,165 +5952,10 @@
       "action": "mixed"
     }
   ],
-  "n2_10": [
-    {
-      "muscle": "deltoid",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "latissimus_dorsi",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "pectoralis_major",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "trapezius",
-      "role": "primary",
-      "action": "mixed"
-    }
-  ],
-  "n4_7": [
-    {
-      "muscle": "biceps_brachii",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "deltoid",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "latissimus_dorsi",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "pectoralis_major",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "serratus_anterior",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "trapezius",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "triceps_brachii",
-      "role": "primary",
-      "action": "mixed"
-    }
-  ],
-  "tpa": [
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "latissimus_dorsi",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "pectoralis_major",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "mixed"
-    }
-  ],
   "ftt_tpa": [
-    {
-      "muscle": "serratus_anterior",
-      "role": "primary",
-      "action": "mixed"
-    },
     {
       "muscle": "quadriceps",
       "role": "secondary",
-      "action": "mixed"
-    }
-  ],
-  "c_unnamed": [
-    {
-      "muscle": "triceps_brachii",
-      "role": "primary",
-      "action": "mixed"
-    }
-  ],
-  "n10": [
-    {
-      "muscle": "erector_spinae",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "gastrocnemius",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "gluteus_maximus",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "hamstrings",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "pronator_teres",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "quadriceps",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "rhomboids",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "soleus",
-      "role": "primary",
-      "action": "mixed"
-    },
-    {
-      "muscle": "trapezius",
-      "role": "primary",
       "action": "mixed"
     }
   ],
