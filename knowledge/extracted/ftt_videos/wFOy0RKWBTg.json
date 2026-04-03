@@ -1,0 +1,233 @@
+{
+  "video_id": "wFOy0RKWBTg",
+  "concepts": [
+    {
+      "id": "adduction_trigger",
+      "name": "Adduction Trigger",
+      "name_zh": "内收触发点",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在向外向量完成后，通过胸大肌收缩将大臂拉向身体中线的动作，是切换到 Through 向量的开关。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_volley_error",
+      "name": "The Volley Error",
+      "name_zh": "截击式误差",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "动力链断裂，拍头直接从引拍位直线冲向击球点，导致失去加速空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_wfoy0rkwbtg_2",
+      "name": "向外向量的物理验证",
+      "name_zh": "向外向量的物理验证",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥启动瞬间松手，球拍应向侧面飞出，而非向前。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_wfoy0rkwbtg_3",
+      "name": "肩部内收驱动",
+      "name_zh": "肩部内收驱动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用胸肌将大臂拉向胸前，这是加速的真正来源。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_the_drop_test",
+      "name": "**丢拍实验 (The Drop Test)**",
+      "name_zh": "**丢拍实验 (The Drop Test)**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Swing OUT on the Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_wfoy0rkwbtg_5",
+      "name": "**内收加速练习**",
+      "name_zh": "**内收加速练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Swing OUT on the Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "adduction_trigger",
+      "target_id": "the_volley_error",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "adduction_trigger",
+      "target_id": "tp_wfoy0rkwbtg_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "adduction_trigger",
+      "target_id": "tp_wfoy0rkwbtg_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "adduction_trigger",
+      "target_id": "drill_the_drop_test",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "adduction_trigger",
+      "target_id": "drill_wfoy0rkwbtg_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "the_volley_error",
+      "target_id": "tp_wfoy0rkwbtg_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "the_volley_error",
+      "target_id": "tp_wfoy0rkwbtg_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "the_volley_error",
+      "target_id": "drill_the_drop_test",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "the_volley_error",
+      "target_id": "drill_wfoy0rkwbtg_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_wfoy0rkwbtg_2",
+      "target_id": "tp_wfoy0rkwbtg_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_wfoy0rkwbtg_2",
+      "target_id": "drill_the_drop_test",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_wfoy0rkwbtg_2",
+      "target_id": "drill_wfoy0rkwbtg_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_wfoy0rkwbtg_3",
+      "target_id": "drill_the_drop_test",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_wfoy0rkwbtg_3",
+      "target_id": "drill_wfoy0rkwbtg_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_the_drop_test",
+      "target_id": "drill_wfoy0rkwbtg_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Swing OUT on the Forehand",
+      "source_file": "ftt_video_wFOy0RKWBTg",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

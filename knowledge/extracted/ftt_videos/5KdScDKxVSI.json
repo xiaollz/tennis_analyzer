@@ -1,0 +1,311 @@
+{
+  "video_id": "5KdScDKxVSI",
+  "concepts": [
+    {
+      "id": "horizontal_shoulder_adduction_hsa",
+      "name": "Horizontal Shoulder Adduction (HSA)",
+      "name_zh": "水平肩内收",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "胸部与大臂（肱骨）之间夹角缩小的动作，是正手击球产生向前后动力的核心。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "natural_path_grip_setting",
+      "name": "Natural Path Grip Setting",
+      "name_zh": "自然路径握拍设定法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "先确定身体最舒适的挥拍路径和触球点，再根据该点反推最适合自己的握拍方式。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "pectoralhumeral_press",
+      "name": "Pectoral-Humeral Press",
+      "name_zh": "胸肌-肱骨推压",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用胸大肌收缩将大臂向前推，作为击球瞬间的微观动力源。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_5kdscdkxvsi_3",
+      "name": "水平肩内收是正手之魂",
+      "name_zh": "水平肩内收是正手之魂",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球不是靠手臂挥动，而是靠胸部肌肉将大臂整体向前压。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_5kdscdkxvsi_4",
+      "name": "逆向握拍确定法",
+      "name_zh": "逆向握拍确定法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "不要先学握拍再打球，要先找到最舒服的“推球”姿势。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_hsa",
+      "name": "**HSA 纯化练习**",
+      "name_zh": "**HSA 纯化练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Shoulder Adduction Will Transform Forehand Contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_5kdscdkxvsi_6",
+      "name": "**自然握拍寻找法**",
+      "name_zh": "**自然握拍寻找法**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Shoulder Adduction Will Transform Forehand Contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "internal_rotation_trigger",
+      "target_id": "internal_rotation_trigger",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: Shoulder Adduction Will Transform Forehand Contact (V01-02)",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "natural_path_grip_setting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "pectoralhumeral_press",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "tp_5kdscdkxvsi_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "tp_5kdscdkxvsi_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "drill_hsa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "natural_path_grip_setting",
+      "target_id": "pectoralhumeral_press",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "natural_path_grip_setting",
+      "target_id": "tp_5kdscdkxvsi_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "natural_path_grip_setting",
+      "target_id": "tp_5kdscdkxvsi_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "natural_path_grip_setting",
+      "target_id": "drill_hsa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "natural_path_grip_setting",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "pectoralhumeral_press",
+      "target_id": "tp_5kdscdkxvsi_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "pectoralhumeral_press",
+      "target_id": "tp_5kdscdkxvsi_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "pectoralhumeral_press",
+      "target_id": "drill_hsa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "pectoralhumeral_press",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5kdscdkxvsi_3",
+      "target_id": "tp_5kdscdkxvsi_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5kdscdkxvsi_3",
+      "target_id": "drill_hsa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5kdscdkxvsi_3",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5kdscdkxvsi_4",
+      "target_id": "drill_hsa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5kdscdkxvsi_4",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_hsa",
+      "target_id": "drill_5kdscdkxvsi_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Will Transform Forehand Contact",
+      "source_file": "ftt_video_5KdScDKxVSI",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

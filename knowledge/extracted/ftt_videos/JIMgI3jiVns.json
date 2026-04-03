@@ -1,0 +1,182 @@
+{
+  "video_id": "JIMgI3jiVns",
+  "concepts": [
+    {
+      "id": "internal_rotation_trigger",
+      "name": "Internal Rotation Trigger",
+      "name_zh": "内旋启动点",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "肱骨从最大外旋（拉伸）转为内旋（向前滚动）的瞬间，这是球拍触球的最佳解剖时机。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "active_receiving",
+      "name": "Active Receiving",
+      "name_zh": "主动接收",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "使用步法和视觉，有意识地将球“放入”个人特定的内旋启动空间，而非盲目追逐球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_jimgi3jivns_2",
+      "name": "寻找个人内旋启动点",
+      "name_zh": "寻找个人内旋启动点",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "每个人肩膀结构不同，内旋开始的早晚决定了你的最佳触球位置。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_jimgi3jivns_3",
+      "name": "**槽位发现空挥**",
+      "name_zh": "**槽位发现空挥**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: How Shoulder Rotation Syncs Your Contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_jimgi3jivns_4",
+      "name": "**主动接收喂球**",
+      "name_zh": "**主动接收喂球**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: How Shoulder Rotation Syncs Your Contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "forward_swing_progression",
+      "target_id": "forward_swing_progression",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: How Shoulder Rotation Syncs Your Contact (V01-03)",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "internal_rotation_trigger",
+      "target_id": "active_receiving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "internal_rotation_trigger",
+      "target_id": "tp_jimgi3jivns_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "internal_rotation_trigger",
+      "target_id": "drill_jimgi3jivns_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "internal_rotation_trigger",
+      "target_id": "drill_jimgi3jivns_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "active_receiving",
+      "target_id": "tp_jimgi3jivns_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "active_receiving",
+      "target_id": "drill_jimgi3jivns_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "active_receiving",
+      "target_id": "drill_jimgi3jivns_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_jimgi3jivns_2",
+      "target_id": "drill_jimgi3jivns_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_jimgi3jivns_2",
+      "target_id": "drill_jimgi3jivns_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_jimgi3jivns_3",
+      "target_id": "drill_jimgi3jivns_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Shoulder Rotation Syncs Your Contact",
+      "source_file": "ftt_video_JIMgI3jiVns",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

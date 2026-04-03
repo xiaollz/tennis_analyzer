@@ -1,0 +1,380 @@
+{
+  "video_id": "pWzyP-xfLfU",
+  "concepts": [
+    {
+      "id": "innervate_the_racket",
+      "name": "Innervate the Racket",
+      "name_zh": "神经支配球拍",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将球拍视为神经系统的延伸，通过手部触觉参考点感知球拍动量的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "haptic_reference_points",
+      "name": "Haptic Reference Points",
+      "name_zh": "触觉参考点",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手掌中（如虎口V区或掌心）用于感知球拍位置和动量的特定压力区域。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "pivot_point_conflict",
+      "name": "Pivot Point Conflict",
+      "name_zh": "轴心冲突",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "区分“以拍柄末端(Butt Cap)为轴”与“以手部上方(V区)为轴”的两种截然不同的旋转模式。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_pwzyp_xflfu_3",
+      "name": "旋转轴心定位",
+      "name_zh": "旋转轴心定位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "必须让球拍绕着手掌上方的“V区”或掌心旋转，而不是绕着拍柄底盖旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_pwzyp_xflfu_4",
+      "name": "手指的传感器功能",
+      "name_zh": "手指的传感器功能",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手指的主要任务是感知球拍的动量，而不是抓紧球拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_pwzyp_xflfu_5",
+      "name": "近端驱动，远端引导",
+      "name_zh": "近端驱动，远端引导",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "力量由胸、肩胛骨、髋部产生，手仅作为引导者。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_pwzyp_xflfu_6",
+      "name": "**两指迁移训练**",
+      "name_zh": "**两指迁移训练**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Secret to Lag is on Your Handle",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_pwzyp_xflfu_7",
+      "name": "**两指弓步喂球**",
+      "name_zh": "**两指弓步喂球**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Secret to Lag is on Your Handle",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "haptic_reference_points",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "pivot_point_conflict",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "tp_pwzyp_xflfu_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "tp_pwzyp_xflfu_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "tp_pwzyp_xflfu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "innervate_the_racket",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "pivot_point_conflict",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "tp_pwzyp_xflfu_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "tp_pwzyp_xflfu_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "tp_pwzyp_xflfu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "haptic_reference_points",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "pivot_point_conflict",
+      "target_id": "tp_pwzyp_xflfu_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "pivot_point_conflict",
+      "target_id": "tp_pwzyp_xflfu_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "pivot_point_conflict",
+      "target_id": "tp_pwzyp_xflfu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "pivot_point_conflict",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "pivot_point_conflict",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_3",
+      "target_id": "tp_pwzyp_xflfu_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_3",
+      "target_id": "tp_pwzyp_xflfu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_3",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_3",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_4",
+      "target_id": "tp_pwzyp_xflfu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_4",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_4",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_5",
+      "target_id": "drill_pwzyp_xflfu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_pwzyp_xflfu_5",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_pwzyp_xflfu_6",
+      "target_id": "drill_pwzyp_xflfu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Secret to Lag is on Your Handle",
+      "source_file": "ftt_video_pWzyP-xfLfU",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

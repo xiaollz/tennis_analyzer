@@ -1,0 +1,182 @@
+{
+  "video_id": "5jHCDc44SQM",
+  "concepts": [
+    {
+      "id": "trunk_slingshot_effect",
+      "name": "Trunk Slingshot Effect",
+      "name_zh": "躯干弹弓效应",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥过程中，躯干旋转速度超过髋部，从而像弹弓一样被“甩”过去的现象。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "variable_coil_principle",
+      "name": "Variable Coil Principle",
+      "name_zh": "变张力卷绕原则",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "根据来球速度（如120mph发球 vs 慢球）主动调节腹部卷绕程度的策略。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_5jhcdc44sqm_2",
+      "name": "腹部张力感知",
+      "name_zh": "腹部张力感知",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "不要去想角度，要去想腹部皮肤和肌肉的拉伸感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_5jhcdc44sqm_3",
+      "name": "前肩主动拉动",
+      "name_zh": "前肩主动拉动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "非持拍手一侧的肩膀需要主动向后/向上拉开，参与旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_kneetoelbow",
+      "name": "**膝肘驱动钻 (Knee-to-Elbow)**",
+      "name_zh": "**膝肘驱动钻 (Knee-to-Elbow)**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Abdominal Corkscrew ft. Carson Branstine",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "the_abdominal_coil",
+      "target_id": "the_abdominal_coil",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: The Abdominal Corkscrew ft. Carson Branstine (V01-01)",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_slingshot_effect",
+      "target_id": "variable_coil_principle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_slingshot_effect",
+      "target_id": "tp_5jhcdc44sqm_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_slingshot_effect",
+      "target_id": "tp_5jhcdc44sqm_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_slingshot_effect",
+      "target_id": "drill_kneetoelbow",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "variable_coil_principle",
+      "target_id": "tp_5jhcdc44sqm_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "variable_coil_principle",
+      "target_id": "tp_5jhcdc44sqm_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "variable_coil_principle",
+      "target_id": "drill_kneetoelbow",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5jhcdc44sqm_2",
+      "target_id": "tp_5jhcdc44sqm_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5jhcdc44sqm_2",
+      "target_id": "drill_kneetoelbow",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_5jhcdc44sqm_3",
+      "target_id": "drill_kneetoelbow",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Abdominal Corkscrew ft. Carson Branstine",
+      "source_file": "ftt_video_5jHCDc44SQM",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

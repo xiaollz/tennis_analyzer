@@ -1,0 +1,476 @@
+{
+  "video_id": "UB6SbA_KX9E",
+  "concepts": [
+    {
+      "id": "shoulderfirst_initiation",
+      "name": "Shoulder-First Initiation",
+      "name_zh": "肩膀先行启动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在腿部完成加载前，上部躯干（肩线）已经开始发出旋转指令。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hip_pulse_window",
+      "name": "Hip Pulse Window",
+      "name_zh": "髋部脉冲窗口",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "髋部爆发性伸直的动作必须发生在躯干旋转启动之后、触球之前的特定瞬间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "linear_strike_intent",
+      "name": "Linear Strike Intent",
+      "name_zh": "线性击球意图",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "网球与滑冰的区别：滑冰追求持续角动量，网球追求在触球瞬间将旋转转化为线性速度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_ub6sba_kx9e_3",
+      "name": "躯干先行指令",
+      "name_zh": "躯干先行指令",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在准备前挥的瞬间，有意识地用左肩（右手球员）启动旋转，此时腿部仍在“加载”感中。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_ub6sba_kx9e_4",
+      "name": "髋部脉冲捕捉",
+      "name_zh": "髋部脉冲捕捉",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "髋部的爆发（伸直）是一个短暂的脉冲，而不是持续的推力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_ub6sba_kx9e_5",
+      "name": "瞄准按压槽位",
+      "name_zh": "瞄准按压槽位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "不要想着旋转到随挥结束，而是想着把球拍扔进触球前的“槽位”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_ub6sba_kx9e_6",
+      "name": "**滑冰者启动练习**",
+      "name_zh": "**滑冰者启动练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Proper Trunk Sequencing will Transform Your Tennis",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_ub6sba_kx9e_7",
+      "name": "**髋部脉冲同步**",
+      "name_zh": "**髋部脉冲同步**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Proper Trunk Sequencing will Transform Your Tennis",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_ub6sba_kx9e_8",
+      "name": "**槽位停顿训练**",
+      "name_zh": "**槽位停顿训练**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Proper Trunk Sequencing will Transform Your Tennis",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "force_multiplier",
+      "target_id": "force_multiplier",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: Proper Trunk Sequencing will Transform Your Tennis (V01-01)",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "hip_pulse_window",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "linear_strike_intent",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "tp_ub6sba_kx9e_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "tp_ub6sba_kx9e_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "tp_ub6sba_kx9e_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulderfirst_initiation",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "linear_strike_intent",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "tp_ub6sba_kx9e_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "tp_ub6sba_kx9e_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "tp_ub6sba_kx9e_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pulse_window",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "tp_ub6sba_kx9e_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "tp_ub6sba_kx9e_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "tp_ub6sba_kx9e_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "linear_strike_intent",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_3",
+      "target_id": "tp_ub6sba_kx9e_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_3",
+      "target_id": "tp_ub6sba_kx9e_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_3",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_3",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_3",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_4",
+      "target_id": "tp_ub6sba_kx9e_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_4",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_4",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_4",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_5",
+      "target_id": "drill_ub6sba_kx9e_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_5",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_ub6sba_kx9e_5",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_ub6sba_kx9e_6",
+      "target_id": "drill_ub6sba_kx9e_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_ub6sba_kx9e_6",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_ub6sba_kx9e_7",
+      "target_id": "drill_ub6sba_kx9e_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Proper Trunk Sequencing will Transform Your Tennis",
+      "source_file": "ftt_video_UB6SbA_KX9E",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

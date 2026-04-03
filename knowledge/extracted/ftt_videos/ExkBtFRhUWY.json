@@ -1,0 +1,173 @@
+{
+  "video_id": "ExkBtFRhUWY",
+  "concepts": [
+    {
+      "id": "probing",
+      "name": "Probing",
+      "name_zh": "探测/定位能力",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "球员通过视觉判断，主动移动加载脚（右脚）进入与球的最佳空间关系，以确保挥拍轨迹一致性的能力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "reaching_swing",
+      "name": "Reaching Swing",
+      "name_zh": "触达式挥拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "因探测不到位，身体重心未进入球后方，被迫伸长手臂去“够”球的错误补偿动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_exkbtfrhuwy_2",
+      "name": "加载脚置于球后",
+      "name_zh": "加载脚置于球后",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "右脚（右手球员）必须移动到球的飞行轨迹后方，而不是侧面。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_exkbtfrhuwy_3",
+      "name": "单脚平衡挑战",
+      "name_zh": "单脚平衡挑战",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过单脚站立强迫神经系统寻找重心。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_onefoot_probing",
+      "name": "**单脚探测训练 (One-foot Probing)**",
+      "name_zh": "**单脚探测训练 (One-foot Probing)**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Magic of Single-Foot Forehand Training",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "probing",
+      "target_id": "reaching_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "tp_exkbtfrhuwy_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "tp_exkbtfrhuwy_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "drill_onefoot_probing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "reaching_swing",
+      "target_id": "tp_exkbtfrhuwy_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "reaching_swing",
+      "target_id": "tp_exkbtfrhuwy_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "reaching_swing",
+      "target_id": "drill_onefoot_probing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_exkbtfrhuwy_2",
+      "target_id": "tp_exkbtfrhuwy_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_exkbtfrhuwy_2",
+      "target_id": "drill_onefoot_probing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_exkbtfrhuwy_3",
+      "target_id": "drill_onefoot_probing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of Single-Foot Forehand Training",
+      "source_file": "ftt_video_ExkBtFRhUWY",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}
