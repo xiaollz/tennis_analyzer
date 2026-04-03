@@ -46,8 +46,8 @@
 
 ### Anatomical Layer
 
-- [ ] **ANAT-01**: Map each canonical concept to involved muscles (from biomechanics book)
-- [ ] **ANAT-02**: Map each muscle to: function, training methods, common failures
+- [x] **ANAT-01**: Map each canonical concept to involved muscles (from biomechanics book)
+- [x] **ANAT-02**: Map each muscle to: function, training methods, common failures
 - [ ] **ANAT-03**: Connect anatomical data to VLM-detectable features (what you can see in video)
 - [ ] **ANAT-04**: Build "why" explanations: concept → muscle → physics → visible symptom
 
@@ -123,8 +123,8 @@
 | GRAPH-02 | Phase 4 | Pending |
 | GRAPH-03 | Phase 4 | Pending |
 | GRAPH-04 | Phase 4 | Pending |
-| ANAT-01 | Phase 4 | Pending |
-| ANAT-02 | Phase 4 | Pending |
+| ANAT-01 | Phase 4 | Complete |
+| ANAT-02 | Phase 4 | Complete |
 | ANAT-03 | Phase 4 | Pending |
 | ANAT-04 | Phase 4 | Pending |
 | VLM-01 | Phase 5 | Pending |
