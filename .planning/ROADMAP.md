@@ -133,7 +133,10 @@ Plans:
   1. User training records (learning.md) are linked to knowledge graph concepts -- each training entry maps to relevant concepts and progress status
   2. VLM diagnostic output considers the user's known issues and recent breakthroughs (personalized analysis, not generic)
   3. A training plan can be generated based on the user's current knowledge gaps and technique weaknesses, recommending specific drills from the knowledge graph
-**Plans:** TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 07-01-PLAN.md — UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
+- [ ] 07-02-PLAN.md — Personalized VLM context injection + training plan generator (USER-02, USER-03)
 
 ## Progress
 
@@ -150,4 +153,4 @@ Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and
 | 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
 | 5. Output Generation & VLM Engine | 0/3 | Planning complete | - |
 | 6. Secondary Sources | 0/4 | Planning complete | - |
-| 7. User Integration | 0/TBD | Not started | - |
+| 7. User Integration | 0/2 | Planning complete | - |
