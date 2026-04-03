@@ -7,6 +7,8 @@ from knowledge.schemas import (
     RelationType,
     SourceId,
 )
+from knowledge.registry import ConceptRegistry
+from knowledge.graph import KnowledgeGraph
 
 __all__ = [
     "Concept",
@@ -14,6 +16,8 @@ __all__ = [
     "DiagnosticChain",
     "DiagnosticStep",
     "Edge",
+    "KnowledgeGraph",
+    "ConceptRegistry",
     "RelationType",
     "SourceId",
 ]
