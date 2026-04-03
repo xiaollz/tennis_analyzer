@@ -32,7 +32,7 @@
 ### Secondary Source Extraction
 
 - [x] **SEC-01**: Enumerate TomAllsopp channel videos, select technique-relevant subset
-- [ ] **SEC-02**: Analyze selected TomAllsopp videos via Gemini API with structured extraction
+- [x] **SEC-02**: Analyze selected TomAllsopp videos via Gemini API with structured extraction
 - [x] **SEC-03**: Enumerate Feel Tennis channel free videos, select technique-relevant subset
 - [ ] **SEC-04**: Analyze selected Feel Tennis videos via Gemini API with structured extraction
 - [ ] **SEC-05**: Cross-source reconciliation — resolve conflicts (FTT wins), mark agreements as reinforced
@@ -137,7 +137,7 @@
 | OUT-03 | Phase 5 | Complete |
 | OUT-04 | Phase 5 | Complete |
 | SEC-01 | Phase 6 | Complete |
-| SEC-02 | Phase 6 | Pending |
+| SEC-02 | Phase 6 | Complete |
 | SEC-03 | Phase 6 | Complete |
 | SEC-04 | Phase 6 | Pending |
 | SEC-05 | Phase 6 | Pending |
