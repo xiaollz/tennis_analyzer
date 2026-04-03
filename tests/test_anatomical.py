@@ -159,3 +159,210 @@ class TestBuildAnatomicalLayer:
         mapping = json.loads(map_path.read_text())
         assert isinstance(profiles, list)
         assert isinstance(mapping, dict)
+
+
+# === Plan 04-04: Graph enrichment with muscles + VLM features ===
+
+GRAPH_SNAPSHOT_PATH = OUTPUT_DIR / "_graph_snapshot.json"
+MUSCLE_MAP_PATH = OUTPUT_DIR / "_concept_muscle_map.json"
+MUSCLE_PROFILES_PATH = OUTPUT_DIR / "_muscle_profiles.json"
+
+
+def _load_enriched_graph():
+    """Helper: load graph and run enrichment pipeline."""
+    from knowledge.graph import KnowledgeGraph
+    from knowledge.graph_assembler import (
+        enrich_with_muscles,
+        annotate_vlm_features,
+        add_visible_as_edges,
+    )
+
+    kg = KnowledgeGraph.from_json(GRAPH_SNAPSHOT_PATH)
+    enrich_with_muscles(kg, MUSCLE_MAP_PATH)
+    annotate_vlm_features(kg)
+    add_visible_as_edges(kg)
+    return kg
+
+
+class TestEnrichGraphWithMuscles:
+    """Tests for muscle data integration into graph nodes."""
+
+    def test_enrich_graph_with_muscles(self):
+        """After enrichment, 50%+ of technique nodes have non-empty muscles_involved."""
+        kg = _load_enriched_graph()
+        technique_nodes = [
+            (nid, data)
+            for nid, data in kg.graph.nodes(data=True)
+            if data.get("category") == "technique"
+        ]
+        total = len(technique_nodes)
+        with_muscles = sum(
+            1 for _, data in technique_nodes if data.get("muscles_involved")
+        )
+        coverage = with_muscles / total if total > 0 else 0
+        assert coverage >= 0.50, (
+            f"Technique nodes with muscles: {with_muscles}/{total} = {coverage:.1%}, need 50%+"
+        )
+
+    def test_muscles_are_english_names(self):
+        """Muscle names in enriched nodes should be English (from concept_muscle_map)."""
+        kg = _load_enriched_graph()
+        for nid, data in kg.graph.nodes(data=True):
+            muscles = data.get("muscles_involved", [])
+            for m in muscles:
+                # English muscle names use only ASCII
+                assert m.isascii(), (
+                    f"Non-ASCII muscle name '{m}' in node '{nid}'"
+                )
+
+
+class TestVlmFeatureAnnotation:
+    """Tests for VLM feature population on graph nodes."""
+
+    def test_symptom_vlm_features(self):
+        """Symptom nodes have vlm_features populated (all symptom nodes should have 1+ feature)."""
+        kg = _load_enriched_graph()
+        symptom_nodes = [
+            (nid, data)
+            for nid, data in kg.graph.nodes(data=True)
+            if data.get("category") == "symptom"
+        ]
+        total = len(symptom_nodes)
+        assert total > 0, "No symptom nodes found"
+        with_vlm = sum(
+            1 for _, data in symptom_nodes if data.get("vlm_features")
+        )
+        coverage = with_vlm / total if total > 0 else 0
+        assert coverage >= 0.75, (
+            f"Symptom nodes with VLM features: {with_vlm}/{total} = {coverage:.1%}, need 75%+"
+        )
+
+    def test_technique_vlm_features(self):
+        """Technique nodes get observable body position features based on keywords."""
+        kg = _load_enriched_graph()
+        technique_nodes = [
+            (nid, data)
+            for nid, data in kg.graph.nodes(data=True)
+            if data.get("category") == "technique"
+        ]
+        with_vlm = sum(
+            1 for _, data in technique_nodes if data.get("vlm_features")
+        )
+        # At least some technique nodes should have VLM features
+        assert with_vlm >= 10, (
+            f"Only {with_vlm} technique nodes have VLM features, need at least 10"
+        )
+
+
+class TestVisibleAsEdges:
+    """Tests for visible_as edges connecting techniques to symptoms."""
+
+    def test_visible_as_edges_exist(self):
+        """New visible_as edges connect technique concepts to their visual manifestation."""
+        kg = _load_enriched_graph()
+        visible_as_edges = [
+            (u, v, d)
+            for u, v, k, d in kg.graph.edges(data=True, keys=True)
+            if k == "visible_as" or d.get("relation") == "visible_as"
+        ]
+        assert len(visible_as_edges) >= 5, (
+            f"Only {len(visible_as_edges)} visible_as edges found, need at least 5"
+        )
+
+
+class TestWhyChainTraversal:
+    """Tests for 'why' explanation chain building."""
+
+    def test_why_chain_traversal(self):
+        """build_why_explanation returns valid chains for at least 10 concepts."""
+        from knowledge.graph import KnowledgeGraph
+        from knowledge.graph_assembler import (
+            enrich_with_muscles,
+            annotate_vlm_features,
+            add_visible_as_edges,
+            build_why_explanation,
+        )
+
+        kg = KnowledgeGraph.from_json(GRAPH_SNAPSHOT_PATH)
+        enrich_with_muscles(kg, MUSCLE_MAP_PATH)
+        annotate_vlm_features(kg)
+        add_visible_as_edges(kg)
+
+        valid_chains = 0
+        for nid, data in kg.graph.nodes(data=True):
+            if data.get("category") in ("technique", "biomechanics"):
+                chain = build_why_explanation(kg, nid, MUSCLE_PROFILES_PATH)
+                if chain and chain.get("muscles") and chain.get("visible_symptoms"):
+                    valid_chains += 1
+        assert valid_chains >= 10, (
+            f"Only {valid_chains} valid why-chains, need at least 10"
+        )
+
+    def test_why_chain_structure(self):
+        """Why chain has required keys: concept, muscles, physics, visible_symptoms."""
+        from knowledge.graph import KnowledgeGraph
+        from knowledge.graph_assembler import (
+            enrich_with_muscles,
+            annotate_vlm_features,
+            add_visible_as_edges,
+            build_why_explanation,
+        )
+
+        kg = KnowledgeGraph.from_json(GRAPH_SNAPSHOT_PATH)
+        enrich_with_muscles(kg, MUSCLE_MAP_PATH)
+        annotate_vlm_features(kg)
+        add_visible_as_edges(kg)
+
+        # Find a technique node with muscles
+        for nid, data in kg.graph.nodes(data=True):
+            if data.get("muscles_involved"):
+                chain = build_why_explanation(kg, nid, MUSCLE_PROFILES_PATH)
+                if chain:
+                    assert "concept" in chain
+                    assert "muscles" in chain
+                    assert "physics" in chain
+                    assert "visible_symptoms" in chain
+                    assert isinstance(chain["muscles"], list)
+                    assert isinstance(chain["visible_symptoms"], list)
+                    return
+        pytest.fail("No node with muscles found for why-chain test")
+
+
+class TestRegistrySnapshotUpdated:
+    """Tests for registry snapshot update with enrichment data."""
+
+    def test_registry_snapshot_updated(self):
+        """After update, registry snapshot has nodes with muscles_involved and vlm_features."""
+        from knowledge.graph import KnowledgeGraph
+        from knowledge.graph_assembler import (
+            enrich_with_muscles,
+            annotate_vlm_features,
+            add_visible_as_edges,
+            update_registry_snapshot,
+        )
+
+        kg = KnowledgeGraph.from_json(GRAPH_SNAPSHOT_PATH)
+        enrich_with_muscles(kg, MUSCLE_MAP_PATH)
+        annotate_vlm_features(kg)
+        add_visible_as_edges(kg)
+
+        # Write to a temp path to avoid corrupting actual data
+        import tempfile
+        with tempfile.NamedTemporaryFile(suffix=".json", delete=False, mode="w") as f:
+            import shutil
+            shutil.copy2(REGISTRY_PATH, f.name)
+            tmp_path = Path(f.name)
+
+        try:
+            update_registry_snapshot(kg, tmp_path)
+            updated = json.loads(tmp_path.read_text())
+            with_muscles = sum(1 for c in updated if c.get("muscles_involved"))
+            with_vlm = sum(1 for c in updated if c.get("vlm_features"))
+            assert with_muscles > 50, (
+                f"Only {with_muscles} concepts with muscles in registry"
+            )
+            assert with_vlm > 20, (
+                f"Only {with_vlm} concepts with VLM features in registry"
+            )
+        finally:
+            tmp_path.unlink(missing_ok=True)
