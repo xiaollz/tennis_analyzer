@@ -54,7 +54,7 @@
 ### VLM Diagnostic Engine
 
 - [x] **VLM-01**: Build prompt generator that compiles VLM prompt from knowledge graph subgraph
-- [ ] **VLM-02**: Implement two-pass VLM analysis (quick scan → targeted deep analysis with relevant subgraph)
+- [x] **VLM-02**: Implement two-pass VLM analysis (quick scan → targeted deep analysis with relevant subgraph)
 - [x] **VLM-03**: Complete diagnostic coverage — every known forehand symptom has a diagnostic chain
 - [x] **VLM-04**: Each diagnostic output includes: what's wrong, why (biomechanics), how to fix (drill), how to check (criteria)
 - [x] **VLM-05**: VLM prompt stays within ~10K char budget via query-based subgraph injection
@@ -128,7 +128,7 @@
 | ANAT-03 | Phase 4 | Complete |
 | ANAT-04 | Phase 4 | Complete |
 | VLM-01 | Phase 5 | Complete |
-| VLM-02 | Phase 5 | Pending |
+| VLM-02 | Phase 5 | Complete |
 | VLM-03 | Phase 5 | Complete |
 | VLM-04 | Phase 5 | Complete |
 | VLM-05 | Phase 5 | Complete |
