@@ -31,7 +31,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The canonical concept registry can add a concept, detect a near-duplicate via fuzzy match, and return the canonical ID
   3. A NetworkX directed multigraph can be created, populated with test nodes/edges, and queried for a causal chain (A causes B causes C)
   4. Running `pytest` on the schema module passes with at least one test per model and one test for dedup matching
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 01-01-PLAN.md — Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
+- [ ] 01-02-PLAN.md — ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
 **Risk flags**: Pitfall 1 (concept explosion) -- dedup strategy must be designed here, not bolted on later. Pitfall 6 (undirected edges) -- enforce typed directed edges at schema level.
 
 ### Phase 2: Existing Knowledge Extraction
@@ -116,7 +119,7 @@ Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Schema & Infrastructure | 0/TBD | Not started | - |
+| 1. Schema & Infrastructure | 0/2 | Planning complete | - |
 | 2. Existing Knowledge Extraction | 0/TBD | Not started | - |
 | 3. FTT Video Extraction | 0/TBD | Not started | - |
 | 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
