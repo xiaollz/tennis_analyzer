@@ -1,0 +1,200 @@
+{
+  "chains": [
+    {
+      "id": "dc_arm_driven_hitting",
+      "symptom": "Arm initiating swing instead of body rotation",
+      "symptom_zh": "手臂主导挥拍而非身体旋转",
+      "symptom_concept_id": "forearm_compensation",
+      "check_sequence": [
+        {
+          "check": "Is the hip rotating before the shoulder?",
+          "check_zh": "髋部是否在肩部之前旋转？",
+          "if_true": "kinetic_chain_sequence",
+          "if_false": null
+        },
+        {
+          "check": "Is the arm starting the swing independently?",
+          "check_zh": "手臂是否独立启动挥拍？",
+          "if_true": "forearm_compensation",
+          "if_false": null
+        },
+        {
+          "check": "Is there visible lag between trunk and racket?",
+          "check_zh": "躯干和球拍之间是否有可见的滞后？",
+          "if_true": "wrist_lag",
+          "if_false": "forearm_compensation"
+        }
+      ],
+      "root_causes": [
+        "forearm_compensation",
+        "unit_turn"
+      ],
+      "drills": [
+        "drop_feed_rotation_drill",
+        "weighted_racket_swing"
+      ],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_scooping",
+      "symptom": "Racket dropping too low and scooping up through contact",
+      "symptom_zh": "球拍下沉过低，从下向上舀球",
+      "symptom_concept_id": "racket_drop",
+      "check_sequence": [
+        {
+          "check": "Does the racket drop below the hand before forward swing?",
+          "check_zh": "球拍在前挥前是否低于手部？",
+          "if_true": "racket_drop",
+          "if_false": null
+        },
+        {
+          "check": "Is the swing path steeply upward through contact?",
+          "check_zh": "挥拍路径是否在击球点陡峭上升？",
+          "if_true": "racket_drop",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "racket_drop",
+        "wrist_lag"
+      ],
+      "drills": [
+        "contact_point_drill"
+      ],
+      "priority": 2,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_missing_out_vector",
+      "symptom": "No forward extension through the contact zone",
+      "symptom_zh": "击球区缺乏向前延伸",
+      "symptom_concept_id": "swing_out",
+      "check_sequence": [
+        {
+          "check": "Does the racket extend forward through contact?",
+          "check_zh": "球拍是否在触球后向前延伸？",
+          "if_true": "swing_out",
+          "if_false": null
+        },
+        {
+          "check": "Is the follow-through wrapping around the body too early?",
+          "check_zh": "随挥是否过早缠绕身体？",
+          "if_true": "over_rotation",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "swing_out",
+        "over_rotation"
+      ],
+      "drills": [
+        "swing_out_target_drill"
+      ],
+      "priority": 2,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_over_rotation",
+      "symptom": "Excessive body rotation past the contact point",
+      "symptom_zh": "身体过度旋转超过击球点",
+      "symptom_concept_id": "over_rotation",
+      "check_sequence": [
+        {
+          "check": "Does the chest face the net before contact?",
+          "check_zh": "胸部是否在击球前就面向球网？",
+          "if_true": "over_rotation",
+          "if_false": null
+        },
+        {
+          "check": "Is the non-dominant arm flying open?",
+          "check_zh": "非持拍手臂是否向外飞开？",
+          "if_true": "non_dominant_arm_role",
+          "if_false": null
+        },
+        {
+          "check": "Is the head turning away before contact?",
+          "check_zh": "头部是否在击球前转开？",
+          "if_true": "over_rotation",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "over_rotation",
+        "non_dominant_arm_role"
+      ],
+      "drills": [
+        "freeze_at_contact_drill",
+        "non_dominant_arm_catch"
+      ],
+      "priority": 1,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_early_release",
+      "symptom": "Wrist releasing before reaching the contact zone",
+      "symptom_zh": "手腕在到达击球区前就释放",
+      "symptom_concept_id": "wrist_lag",
+      "check_sequence": [
+        {
+          "check": "Is the wrist angle maintained until contact zone?",
+          "check_zh": "手腕角度是否保持到击球区？",
+          "if_true": "wrist_lag",
+          "if_false": null
+        },
+        {
+          "check": "Does the racket head pass the hand before contact?",
+          "check_zh": "拍头是否在触球前超过手部？",
+          "if_true": "wrist_lag",
+          "if_false": null
+        }
+      ],
+      "root_causes": [
+        "wrist_lag",
+        "forearm_compensation"
+      ],
+      "drills": [
+        "lag_awareness_drill"
+      ],
+      "priority": 2,
+      "vlm_frame": null
+    },
+    {
+      "id": "dc_trunk_momentum_leak",
+      "symptom": "Loss of rotational energy in trunk sequencing",
+      "symptom_zh": "躯干序列中旋转能量泄漏",
+      "symptom_concept_id": "trunk_sequencing",
+      "check_sequence": [
+        {
+          "check": "Is there a visible separation between hip and shoulder rotation?",
+          "check_zh": "髋部和肩部旋转之间是否有可见的分离？",
+          "if_true": "trunk_sequencing",
+          "if_false": null
+        },
+        {
+          "check": "Does the trunk decelerate smoothly after contact?",
+          "check_zh": "躯干在击球后是否平稳减速？",
+          "if_true": "trunk_sequencing",
+          "if_false": "over_rotation"
+        }
+      ],
+      "root_causes": [
+        "trunk_sequencing",
+        "kinetic_chain_sequence"
+      ],
+      "drills": [
+        "trunk_rotation_drill",
+        "abdominal_corkscrew"
+      ],
+      "priority": 2,
+      "vlm_frame": null
+    }
+  ],
+  "count": 6,
+  "from_videos": 0,
+  "manually_supplemented": 6,
+  "validation_warnings": [
+    "[supplemented] symptom_concept_id 'trunk_sequencing' not in registry",
+    "[supplemented] symptom_concept_id 'racket_drop' not in registry"
+  ]
+}
