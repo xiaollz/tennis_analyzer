@@ -215,3 +215,106 @@ class TestAssembleGraphIntegration:
             assert output_path.exists()
             data = json.loads(output_path.read_text())
             assert len(data["nodes"]) == 582
+
+
+# ---------------------------------------------------------------------------
+# Plan 03: Graph Validation Tests
+# ---------------------------------------------------------------------------
+
+
+class TestGraphValidation:
+    """Tests for knowledge/graph_validator.py -- cycle detection, orphan analysis, visualization."""
+
+    def test_no_causal_cycles(self):
+        """After break_cycles, causal subgraph must have 0 cycles."""
+        from knowledge.graph_validator import validate_graph, break_cycles
+
+        kg = KnowledgeGraph.from_json(Path("knowledge/extracted/_graph_snapshot.json"))
+        removed = break_cycles(kg)
+        report = validate_graph(kg)
+        assert report["cycle_count"] == 0, f"Found {report['cycle_count']} cycles after break_cycles"
+
+    def test_orphan_detection(self):
+        """Validator correctly identifies isolated nodes."""
+        from knowledge.graph_validator import validate_graph
+
+        # Build a small graph with one isolate
+        kg = KnowledgeGraph()
+        c1 = _make_concept("node_a")
+        c2 = _make_concept("node_b")
+        c3 = _make_concept("node_isolate")
+        for c in (c1, c2, c3):
+            kg.add_concept(c)
+        kg.add_edge(Edge(
+            source_id="node_a", target_id="node_b",
+            relation="causes", confidence=0.9,
+            evidence="test", source_file="test",
+        ))
+        report = validate_graph(kg)
+        assert report["orphan_count"] == 1
+        assert "node_isolate" in report["orphan_sample"]
+
+    def test_component_analysis(self):
+        """Validator reports connected component count and sizes."""
+        from knowledge.graph_validator import validate_graph
+
+        kg = KnowledgeGraph()
+        for cid in ("a", "b", "c", "d"):
+            kg.add_concept(_make_concept(cid))
+        kg.add_edge(Edge(
+            source_id="a", target_id="b",
+            relation="causes", confidence=0.9,
+            evidence="test", source_file="test",
+        ))
+        kg.add_edge(Edge(
+            source_id="c", target_id="d",
+            relation="supports", confidence=0.8,
+            evidence="test", source_file="test",
+        ))
+        report = validate_graph(kg)
+        assert report["component_count"] == 2
+        assert sorted(report["component_sizes"]) == [2, 2]
+
+    def test_validation_report_structure(self):
+        """Report has all required keys."""
+        from knowledge.graph_validator import validate_graph
+
+        kg = KnowledgeGraph.from_json(Path("knowledge/extracted/_graph_snapshot.json"))
+        report = validate_graph(kg)
+        for key in ("orphan_count", "cycle_count", "component_count", "edge_type_distribution"):
+            assert key in report, f"Missing key: {key}"
+
+    def test_visualize_subgraph(self):
+        """Visualization function produces a PNG file without error."""
+        from knowledge.graph_validator import visualize_subgraph
+
+        kg = KnowledgeGraph.from_json(Path("knowledge/extracted/_graph_snapshot.json"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            out = Path(tmpdir) / "test_viz.png"
+            visualize_subgraph(kg, "unit_turn", depth=1, output_path=str(out))
+            assert out.exists(), "PNG file not created"
+            assert out.stat().st_size > 0, "PNG file is empty"
+
+    def test_break_cycles_removes_lowest_confidence(self):
+        """break_cycles removes the lowest-confidence edge in a cycle."""
+        from knowledge.graph_validator import break_cycles, validate_graph
+
+        kg = KnowledgeGraph()
+        for cid in ("x", "y"):
+            kg.add_concept(_make_concept(cid))
+        # Create cycle: x -> y (0.9) and y -> x (0.5)
+        kg.add_edge(Edge(
+            source_id="x", target_id="y",
+            relation="causes", confidence=0.9,
+            evidence="strong", source_file="test",
+        ))
+        kg.add_edge(Edge(
+            source_id="y", target_id="x",
+            relation="causes", confidence=0.5,
+            evidence="weak", source_file="test",
+        ))
+        removed = break_cycles(kg)
+        assert len(removed) >= 1
+        # The weak edge should be removed
+        report = validate_graph(kg)
+        assert report["cycle_count"] == 0
