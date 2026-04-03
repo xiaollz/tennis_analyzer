@@ -87,8 +87,8 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
 - [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
-- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
-- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
+- [x] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [x] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 6 (undirected edges) -- validate all edges have type and direction. Pitfall 10 (no visualization) -- add simple graph visualization utility for debugging.
 
 ### Phase 5: Output Generation & VLM Engine
@@ -103,7 +103,7 @@ Plans:
   5. The generated VLM prompt template replaces the hardcoded prompt in vlm_analyzer.py
 **Plans:** 4 plans
 Plans:
-- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [x] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
 - [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
 - [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
 - [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
@@ -121,7 +121,7 @@ Plans:
 **Plans:** 4 plans
 Plans:
 - [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
-- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
 - [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
 - [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 5 (reconciliation complexity) -- reconciliation is a separate explicit pass, not embedded in extraction. Pitfall 4 (transcript quality) -- use Gemini video understanding as primary, transcripts as supplementary.
