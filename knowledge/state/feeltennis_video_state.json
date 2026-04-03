@@ -155,7 +155,7 @@
       "analysis_file": null,
       "extracted_file": null,
       "analyzed_at": null,
-      "error": "All 3 attempts failed for vfsS9JAAdMc"
+      "error": "proxy_timeout: video too long (1160s) for proxy to process"
     },
     "DfBF-Xtbo_4": {
       "video_id": "DfBF-Xtbo_4",
@@ -492,9 +492,9 @@
       "title": "Modern Tennis Forehand Technique In 8 Steps",
       "url": "https://www.youtube.com/watch?v=9KRYA9ZlYmM",
       "duration": 1472,
-      "status": "analyzed",
+      "status": "extracted",
       "analysis_file": "docs/research/feeltennis_video_analyses/9KRYA9ZlYmM.md",
-      "extracted_file": null,
+      "extracted_file": "knowledge/extracted/feeltennis_videos/9KRYA9ZlYmM.json",
       "analyzed_at": "2026-04-03",
       "error": "All 3 attempts failed for 9KRYA9ZlYmM"
     },
