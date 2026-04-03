@@ -148,6 +148,14 @@ def update_trail(trail, kp, conf, joint_idx, max_trail=30):
         trail.pop(0)
 
 
+def auto_rotate(frame):
+    """If portrait (h > w), rotate 90° clockwise to landscape."""
+    h, w = frame.shape[:2]
+    if h > w:
+        return cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+    return frame
+
+
 def main():
     import sys as _sys
     video_path = _sys.argv[1] if len(_sys.argv) > 1 else "/Users/qsy/Desktop/tennis/videos/606addd62628acf5f2a19fdec79662b0.mp4"
@@ -159,9 +167,16 @@ def main():
     H = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    mid_x = W // 2
 
-    print(f"Video: {W}x{H}, {fps}fps, {total_frames} frames")
+    # Auto-detect portrait and adjust dimensions
+    is_portrait = H > W
+    if is_portrait:
+        W, H = H, W  # swap for rotated dimensions
+        print(f"Video: {W}x{H} (auto-rotated from portrait), {fps}fps, {total_frames} frames")
+    else:
+        print(f"Video: {W}x{H}, {fps}fps, {total_frames} frames")
+
+    mid_x = W // 2
     print(f"Split at x={mid_x}: left=coach, right=user")
 
     estimator = PoseEstimator()
@@ -191,6 +206,8 @@ def main():
         ret, frame = cap.read()
         if not ret:
             break
+        if is_portrait:
+            frame = auto_rotate(frame)
         frames_raw_all.append(frame.copy())
 
         left_half = frame[:, :mid_x].copy()

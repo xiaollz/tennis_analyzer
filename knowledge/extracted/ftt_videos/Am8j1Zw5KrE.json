@@ -1,0 +1,320 @@
+{
+  "video_id": "Am8j1Zw5KrE",
+  "concepts": [
+    {
+      "id": "elbowhip_plane_clearance",
+      "name": "Elbow-Hip Plane Clearance",
+      "name_zh": "肘部过髋平面",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "肘部必须运动到髋部前方，才能解锁肩膀内收的有效行程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown",
+      "name": "\"拉向中线\"",
+      "name_zh": "感觉到胸肌明显隆起。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "| **多高度躯干对正练习**",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_am8j1zw5kre_2",
+      "name": "肩膀内收是最终驱动力",
+      "name_zh": "肩膀内收是最终驱动力",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "正手的最后加速不是靠手腕，而是靠肩膀内收（大臂靠向胸部）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_am8j1zw5kre_3",
+      "name": "肘部必须领先于髋部",
+      "name_zh": "肘部必须领先于髋部",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "如果肘部卡在身体侧后方，肩膀内收的肌肉无法发力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_am8j1zw5kre_4",
+      "name": "保持拍面在击球区内的稳定性",
+      "name_zh": "保持拍面在击球区内的稳定性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在整个击球区域内，拍面角度的变化不应超过10度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_am8j1zw5kre_5",
+      "name": "**阴影内收感官训练**",
+      "name_zh": "**阴影内收感官训练**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_am8j1zw5kre_6",
+      "name": "**多高度躯干对正练习**",
+      "name_zh": "**多高度躯干对正练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "horizontal_shoulder_adduction_hsa",
+      "target_id": "horizontal_shoulder_adduction_hsa",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: Shoulder Adduction Unlocks the Tennis Forehand (V01-01)",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "mid_shot_adjustment",
+      "target_id": "mid_shot_adjustment",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: Shoulder Adduction Unlocks the Tennis Forehand (V01-02)",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "unknown",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "tp_am8j1zw5kre_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "tp_am8j1zw5kre_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "tp_am8j1zw5kre_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "drill_am8j1zw5kre_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "elbowhip_plane_clearance",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown",
+      "target_id": "tp_am8j1zw5kre_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown",
+      "target_id": "tp_am8j1zw5kre_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown",
+      "target_id": "tp_am8j1zw5kre_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown",
+      "target_id": "drill_am8j1zw5kre_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_2",
+      "target_id": "tp_am8j1zw5kre_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_2",
+      "target_id": "tp_am8j1zw5kre_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_2",
+      "target_id": "drill_am8j1zw5kre_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_2",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_3",
+      "target_id": "tp_am8j1zw5kre_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_3",
+      "target_id": "drill_am8j1zw5kre_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_3",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_4",
+      "target_id": "drill_am8j1zw5kre_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_am8j1zw5kre_4",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_am8j1zw5kre_5",
+      "target_id": "drill_am8j1zw5kre_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Shoulder Adduction Unlocks the Tennis Forehand",
+      "source_file": "ftt_video_Am8j1Zw5KrE",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

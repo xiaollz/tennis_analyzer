@@ -1,0 +1,302 @@
+{
+  "video_id": "hNVbbPEob3g",
+  "concepts": [
+    {
+      "id": "chest_lag",
+      "name": "Chest Lag",
+      "name_zh": "胸部滞后",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "躯干已经开始旋转，但大臂相对于胸部平面向后滑动的现象，导致动力链断裂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "attached_arm",
+      "name": "Attached Arm",
+      "name_zh": "手臂附着感",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥启动瞬间，大臂与胸部保持相对静止的锁定状态，作为一个整体向前推进。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "timing_window",
+      "name": "Timing Window",
+      "name_zh": "击球时间窗",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "允许有效击球的时间范围。滞后越多，窗口越窄；连接越紧，窗口越宽。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_hnvbbpeob3g_3",
+      "name": "手臂附着锁定",
+      "name_zh": "手臂附着锁定",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥启动时，想象大臂“粘”在胸肌侧面。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_hnvbbpeob3g_4",
+      "name": "减少自由度",
+      "name_zh": "减少自由度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过锁定大臂，将复杂的“多关节运动”简化为“单轴旋转”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_hnvbbpeob3g_5",
+      "name": "**单脚平衡击球**",
+      "name_zh": "**单脚平衡击球**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_hnvbbpeob3g_6",
+      "name": "**腋下夹球/毛巾练习**",
+      "name_zh": "**腋下夹球/毛巾练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "chest_lag",
+      "target_id": "attached_arm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_lag",
+      "target_id": "timing_window",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_lag",
+      "target_id": "tp_hnvbbpeob3g_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_lag",
+      "target_id": "tp_hnvbbpeob3g_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_lag",
+      "target_id": "drill_hnvbbpeob3g_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_lag",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "attached_arm",
+      "target_id": "timing_window",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "attached_arm",
+      "target_id": "tp_hnvbbpeob3g_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "attached_arm",
+      "target_id": "tp_hnvbbpeob3g_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "attached_arm",
+      "target_id": "drill_hnvbbpeob3g_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "attached_arm",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_window",
+      "target_id": "tp_hnvbbpeob3g_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_window",
+      "target_id": "tp_hnvbbpeob3g_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_window",
+      "target_id": "drill_hnvbbpeob3g_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_window",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_hnvbbpeob3g_3",
+      "target_id": "tp_hnvbbpeob3g_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_hnvbbpeob3g_3",
+      "target_id": "drill_hnvbbpeob3g_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_hnvbbpeob3g_3",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_hnvbbpeob3g_4",
+      "target_id": "drill_hnvbbpeob3g_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_hnvbbpeob3g_4",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_hnvbbpeob3g_5",
+      "target_id": "drill_hnvbbpeob3g_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Chest Engagement Makes Controlling the Racket Face Easy",
+      "source_file": "ftt_video_hNVbbPEob3g",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

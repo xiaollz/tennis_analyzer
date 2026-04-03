@@ -63,13 +63,13 @@ Plans:
   3. All remaining ~85 videos have been analyzed via Gemini API with raw analysis saved as Markdown and structured concepts as JSON
   4. FTT video concepts are merged into the canonical registry with deduplication (registry stays under ~500 concepts total)
   5. Diagnostic chains (symptom-to-cause-to-fix patterns) are extracted from FTT content
-**Plans:** 3/6 plans executed
+**Plans:** 2/6 plans executed
 Plans:
 - [x] 03-01-PLAN.md — Video inventory + pipeline infrastructure (state manager, analyzer, extractor)
-- [x] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
-- [ ] 03-03-PLAN.md — Gemini API batch 1: 12 forehand-priority videos
-- [x] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
-- [x] 03-05-PLAN.md — Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
+- [ ] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
+- [x] 03-03-PLAN.md — Gemini API batch 1: 12 forehand-priority videos
+- [ ] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
+- [ ] 03-05-PLAN.md — Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
 - [ ] 03-06-PLAN.md — Merge all into registry + extract diagnostic chains
 **Risk flags**: Pitfall 2 (API rate limits/cost) -- use Flash model, implement checkpointing, set daily budget caps. Pitfall 7 (losing raw analysis) -- always save raw Markdown before structured extraction. Pitfall 8 (non-deterministic extraction) -- temperature=0, pin model versions.
 
@@ -132,7 +132,7 @@ Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and
 |-------|----------------|--------|-----------|
 | 1. Schema & Infrastructure | 2/2 | Complete | 2026-04-03 |
 | 2. Existing Knowledge Extraction | 0/3 | Planning complete | - |
-| 3. FTT Video Extraction | 3/6 | In Progress|  |
+| 3. FTT Video Extraction | 2/6 | In Progress|  |
 | 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
 | 5. Output Generation & VLM Engine | 0/TBD | Not started | - |
 | 6. Secondary Sources | 0/TBD | Not started | - |

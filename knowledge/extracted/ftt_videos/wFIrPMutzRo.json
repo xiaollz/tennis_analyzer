@@ -1,0 +1,311 @@
+{
+  "video_id": "wFIrPMutzRo",
+  "concepts": [
+    {
+      "id": "side_bending",
+      "name": "Side Bending",
+      "name_zh": "脊柱侧屈",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在旋转过程中，脊柱向击球侧产生的侧向弯曲，用以解锁旋转空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hip_pop",
+      "name": "Hip Pop",
+      "name_zh": "髋部弹射",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "臀部肌肉收缩导致击球侧髋部在击球瞬间向前爆发性转动的现象。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_stretch",
+      "name": "对角线拉伸 (The X Stretch)",
+      "name_zh": "对角线拉伸 (The X Stretch)",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "引拍时，左肩（右手正手）与右髋之间的距离被拉长。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "side_bend_for_release",
+      "name": "侧屈解锁 (Side Bend for Release)",
+      "name_zh": "侧屈解锁 (Side Bend for Release)",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球瞬间，身体不能完全竖直，必须向右侧（右手正手）微倾。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_wfirpmutzro_4",
+      "name": "**药球对角线投掷**",
+      "name_zh": "**药球对角线投掷**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: 2 Secrets to Rotational Power - Side Bending + X",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_pvc",
+      "name": "**钢管/PVC锁定旋转**",
+      "name_zh": "**钢管/PVC锁定旋转**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: 2 Secrets to Rotational Power - Side Bending + X",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_wfirpmutzro_6",
+      "name": "**肘膝相碰练习**",
+      "name_zh": "**肘膝相碰练习**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: 2 Secrets to Rotational Power - Side Bending + X",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "chest_engagement",
+      "target_id": "chest_engagement",
+      "relation": "supports",
+      "confidence": 0.7,
+      "evidence": "Referenced in video: 2 Secrets to Rotational Power - Side Bending + X (V01-01)",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "hip_pop",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "the_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "side_bend_for_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "drill_wfirpmutzro_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "drill_pvc",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bending",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pop",
+      "target_id": "the_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pop",
+      "target_id": "side_bend_for_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pop",
+      "target_id": "drill_wfirpmutzro_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pop",
+      "target_id": "drill_pvc",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_pop",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "the_stretch",
+      "target_id": "side_bend_for_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "the_stretch",
+      "target_id": "drill_wfirpmutzro_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "the_stretch",
+      "target_id": "drill_pvc",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "the_stretch",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bend_for_release",
+      "target_id": "drill_wfirpmutzro_4",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bend_for_release",
+      "target_id": "drill_pvc",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "side_bend_for_release",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_wfirpmutzro_4",
+      "target_id": "drill_pvc",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_wfirpmutzro_4",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_pvc",
+      "target_id": "drill_wfirpmutzro_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 2 Secrets to Rotational Power - Side Bending + X",
+      "source_file": "ftt_video_wFIrPMutzRo",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

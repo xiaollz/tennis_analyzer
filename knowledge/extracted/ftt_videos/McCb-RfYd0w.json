@@ -1,0 +1,233 @@
+{
+  "video_id": "McCb-RfYd0w",
+  "concepts": [
+    {
+      "id": "left_side_pressing_back",
+      "name": "Left Side Pressing Back",
+      "name_zh": "左侧向后压回",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥过程中，左手/左胸主动向身体内侧及后方挤压的动作，用于抵消旋转产生的离心力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "vector_cancellation",
+      "name": "Vector Cancellation",
+      "name_zh": "向量抵消",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "旋转产生的向外动量与左手向内的压回力量相互抵消，最终呈现出“肘部收紧”的视觉效果。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "minimal_rotation_finish",
+      "name": "Minimal Rotation Finish",
+      "name_zh": "低旋转结束位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "当球员为了控制方向（如跑动中打直线）而减少躯干旋转时，压回动作会导致双臂交叉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_mccb_rfyd0w_3",
+      "name": "左侧压回动作",
+      "name_zh": "左侧压回动作",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在击球瞬间，左手不是无力地垂下，而是像在胸前挤压一个气球一样向内后方发力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_the_musetti_drill",
+      "name": "**穆塞蒂直线模拟 (The Musetti Drill)**",
+      "name_zh": "**穆塞蒂直线模拟 (The Musetti Drill)**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Magic of the Non-Dominant Side on the Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_mccb_rfyd0w_5",
+      "name": "**阻力带压回感知**",
+      "name_zh": "**阻力带压回感知**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: The Magic of the Non-Dominant Side on the Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "left_side_pressing_back",
+      "target_id": "vector_cancellation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "left_side_pressing_back",
+      "target_id": "minimal_rotation_finish",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "left_side_pressing_back",
+      "target_id": "tp_mccb_rfyd0w_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "left_side_pressing_back",
+      "target_id": "drill_the_musetti_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "left_side_pressing_back",
+      "target_id": "drill_mccb_rfyd0w_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "vector_cancellation",
+      "target_id": "minimal_rotation_finish",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "vector_cancellation",
+      "target_id": "tp_mccb_rfyd0w_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "vector_cancellation",
+      "target_id": "drill_the_musetti_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "vector_cancellation",
+      "target_id": "drill_mccb_rfyd0w_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "minimal_rotation_finish",
+      "target_id": "tp_mccb_rfyd0w_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "minimal_rotation_finish",
+      "target_id": "drill_the_musetti_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "minimal_rotation_finish",
+      "target_id": "drill_mccb_rfyd0w_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_mccb_rfyd0w_3",
+      "target_id": "drill_the_musetti_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_mccb_rfyd0w_3",
+      "target_id": "drill_mccb_rfyd0w_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_the_musetti_drill",
+      "target_id": "drill_mccb_rfyd0w_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Magic of the Non-Dominant Side on the Forehand",
+      "source_file": "ftt_video_McCb-RfYd0w",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

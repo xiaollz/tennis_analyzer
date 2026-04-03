@@ -1,0 +1,467 @@
+{
+  "video_id": "xLs469ZVMPU",
+  "concepts": [
+    {
+      "id": "counterrotational_brake_crbrake",
+      "name": "Counter-Rotational Brake (CR-Brake)",
+      "name_zh": "反向旋转制动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过身体某部位（通常是腿）向挥拍相反方向运动，来减速或停止髋部旋转，从而产生鞭打效应。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "hitting_leg_kickback",
+      "name": "Hitting Leg Kickback",
+      "name_zh": "击球腿后踢",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球时右腿向后方踢出，用于制动并保持身体重心向前进入球场。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "left_foot_upacross",
+      "name": "Left Foot Up/Across",
+      "name_zh": "左脚抬起/横跨",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "非压力下或大范围移动时，左脚向上或向右横跨，提供极高的旋转控制容错性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "front_foot_press",
+      "name": "Front Foot Press",
+      "name_zh": "前脚压力制动",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "类似棒球投手，通过前脚掌强力按压地面产生静态阻力来停止旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "transient_rotation",
+      "name": "Transient Rotation",
+      "name_zh": "瞬时旋转",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "髋部旋转必须是有始有终的（Start-Stop），而不是无休止的转动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "tp_xls469zvmpu_5",
+      "name": "瞬时旋转原则",
+      "name_zh": "瞬时旋转原则",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "髋部火速启动后必须立即制动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "tp_xls469zvmpu_6",
+      "name": "三种制动模式的选择",
+      "name_zh": "三种制动模式的选择",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "- **后踢 (Kickback)**: 针对浅球、慢球，身体向前压时使用。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "drill_xls469zvmpu_7",
+      "name": "**药球反向制动投掷**",
+      "name_zh": "**药球反向制动投掷**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drill_xls469zvmpu_8",
+      "name": "**左脚自由挥拍**",
+      "name_zh": "**左脚自由挥拍**",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Drill from FTT video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "hitting_leg_kickback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "left_foot_upacross",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "front_foot_press",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "transient_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "tp_xls469zvmpu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "counterrotational_brake_crbrake",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "left_foot_upacross",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "front_foot_press",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "transient_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "tp_xls469zvmpu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_leg_kickback",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "front_foot_press",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "transient_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "tp_xls469zvmpu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "left_foot_upacross",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_press",
+      "target_id": "transient_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_press",
+      "target_id": "tp_xls469zvmpu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_press",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_press",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_press",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "transient_rotation",
+      "target_id": "tp_xls469zvmpu_5",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "transient_rotation",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "transient_rotation",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "transient_rotation",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_xls469zvmpu_5",
+      "target_id": "tp_xls469zvmpu_6",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_xls469zvmpu_5",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_xls469zvmpu_5",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_xls469zvmpu_6",
+      "target_id": "drill_xls469zvmpu_7",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "tp_xls469zvmpu_6",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    },
+    {
+      "source_id": "drill_xls469zvmpu_7",
+      "target_id": "drill_xls469zvmpu_8",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Forehand Over-Rotation - 3 Techniques",
+      "source_file": "ftt_video_xLs469ZVMPU",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}
