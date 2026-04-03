@@ -1,0 +1,173 @@
+{
+  "video_id": "Vg8lbXOhM3E",
+  "concepts": [
+    {
+      "id": "tilt_at_the_hips",
+      "name": "Tilt at the hips",
+      "name_zh": "髋部倾斜",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调通过髋关节的微屈来启动背部和腿部的动力链，而不是直立站立。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "wider_feet",
+      "name": "Wider feet",
+      "name_zh": "宽站位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "增加双脚间距以提升稳定性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "short_low_approach",
+      "name": "Short Low Approach",
+      "name_zh": "短低来球处理",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "这是比赛中最常出现但练习中最常被忽略的情况（练习中人们常让球跳两下）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "follow_into_net",
+      "name": "Follow into net",
+      "name_zh": "随球上网",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调处理完短球后的战术衔接。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "ftf_2",
+      "name": "视频中提到的“稳定击球单元”就是 FTF 理论的核心——即尽量减少挥拍中不必要的变量。\n2.",
+      "name_zh": "视频中提到的“稳定击球单元”就是 FTF 理论的核心——即尽量减少挥拍中不必要的变量。\n2.",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 视频中提到的“稳定击球单元”就是 FTF 理论的核心——即尽量减少挥拍中不必要的变量。\n2.",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "follow_into_net",
+      "target_id": "wider_feet",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "follow_into_net",
+      "target_id": "short_low_approach",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "follow_into_net",
+      "target_id": "ftf_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "follow_into_net",
+      "target_id": "tilt_at_the_hips",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "wider_feet",
+      "target_id": "short_low_approach",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "wider_feet",
+      "target_id": "ftf_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "wider_feet",
+      "target_id": "tilt_at_the_hips",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "short_low_approach",
+      "target_id": "ftf_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "short_low_approach",
+      "target_id": "tilt_at_the_hips",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    },
+    {
+      "source_id": "ftf_2",
+      "target_id": "tilt_at_the_hips",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Training to Play Loose in Matches",
+      "source_file": "ftt_video_Vg8lbXOhM3E",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

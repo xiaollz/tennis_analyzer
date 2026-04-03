@@ -1,0 +1,302 @@
+{
+  "video_id": "cIIEYn42o4g",
+  "concepts": [
+    {
+      "id": "backscratch_position",
+      "name": "Backscratch Position",
+      "name_zh": "抓背位",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Backscratch Position",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "forearm",
+      "name": "Forearm",
+      "name_zh": "前臂",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Forearm",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "jackknifing",
+      "name": "Jackknifing",
+      "name_zh": "“折刀式错误”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Jackknifing",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "bopping_action",
+      "name": "Bopping Action",
+      "name_zh": "“轻拍动作”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Bopping Action",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "daniil_medvedev",
+      "name": "Daniil Medvedev",
+      "name_zh": "丹尼尔·梅德韦杰夫",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Daniil Medvedev",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "pete_sampras",
+      "name": "Pete Sampras",
+      "name_zh": "皮特·桑普拉斯",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Pete Sampras",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "sabine_lisicki",
+      "name": "Sabine Lisicki",
+      "name_zh": "萨宾·利斯基",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Sabine Lisicki",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "backscratch_position",
+      "target_id": "sabine_lisicki",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "backscratch_position",
+      "target_id": "jackknifing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "backscratch_position",
+      "target_id": "bopping_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "backscratch_position",
+      "target_id": "daniil_medvedev",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "backscratch_position",
+      "target_id": "forearm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "backscratch_position",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "sabine_lisicki",
+      "target_id": "jackknifing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "sabine_lisicki",
+      "target_id": "bopping_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "sabine_lisicki",
+      "target_id": "daniil_medvedev",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "sabine_lisicki",
+      "target_id": "forearm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "sabine_lisicki",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "jackknifing",
+      "target_id": "bopping_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "jackknifing",
+      "target_id": "daniil_medvedev",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "jackknifing",
+      "target_id": "forearm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "jackknifing",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "bopping_action",
+      "target_id": "daniil_medvedev",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "bopping_action",
+      "target_id": "forearm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "bopping_action",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "daniil_medvedev",
+      "target_id": "forearm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "daniil_medvedev",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    },
+    {
+      "source_id": "forearm",
+      "target_id": "pete_sampras",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The #1 Backscratch Mistake -- How to Fix It",
+      "source_file": "ftt_video_cIIEYn42o4g",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

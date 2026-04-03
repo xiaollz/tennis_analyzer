@@ -1,0 +1,47 @@
+{
+  "video_id": "emZxTmSVSa8",
+  "concepts": [
+    {
+      "id": "dragonet_swing",
+      "name": "Dragonet Swing 辅助器",
+      "name_zh": "Dragonet Swing 辅助器",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "使用带滑块的训练棒。如果加速模式正确（由内向外且有爆发性的末端加速），滑块会发出清脆的“咔哒”声，提供实时声音反馈。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "late_acceleration",
+      "name": "Late Acceleration",
+      "name_zh": "延迟加速",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视频强调不要过早发力，而是通过正确的路径和末端的手指抓握产生速度。这种延迟加速能显著提高击球的稳定性和容错度，因为动作更自然、更少僵硬。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "dragonet_swing",
+      "target_id": "late_acceleration",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Master Pronation in 2 Minutes at Home",
+      "source_file": "ftt_video_emZxTmSVSa8",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

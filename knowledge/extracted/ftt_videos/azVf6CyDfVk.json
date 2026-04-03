@@ -1,0 +1,80 @@
+{
+  "video_id": "azVf6CyDfVk",
+  "concepts": [
+    {
+      "id": "tpa_tennis_tom_allsopp_tpa_tennis_weight_transfer_exercise_for_more_power_on_your_forehand",
+      "name": ": TPA tennis\n\n这部由 Tom Allsopp 制作的 TPA Tennis 教学视频《Weight Transfer Exercise For More Power On Your Forehand》深入浅出地讲解了网球正手中最重要的动力来源之一",
+      "name_zh": ": TPA tennis\n\n这部由 Tom Allsopp 制作的 TPA Tennis 教学视频《Weight Transfer Exercise For More Power On Your Forehand》深入浅出地讲解了网球正手中最重要的动力来源之一",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "重心转移的节奏与时机**。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "timing_of_transfer",
+      "name": "Timing of Transfer",
+      "name_zh": "转移时机",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "这是视频的核心——**重心必须在挥拍动作正式开始前，就开始向左腿转移。**",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "sinner_lag",
+      "name": "制造 Sinner 式的“暴力 Lag”",
+      "name_zh": "制造 Sinner 式的“暴力 Lag”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Sinner 正手最显著的特征是巨大的拍头滞后。本视频揭示了 Lag 的成因：**当下半身已经开始向左转动并支撑时，上半身仍保持闭合且引拍未完成，这种上下身的“拮抗”和“时间差”拉扯出了延迟。** 如果你先挥拍再移重心，Lag 就会消失。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "tpa_tennis_tom_allsopp_tpa_tennis_weight_transfer_exercise_for_more_power_on_your_forehand",
+      "target_id": "sinner_lag",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Weight Transfer Exercise For More Power",
+      "source_file": "ftt_video_azVf6CyDfVk",
+      "resolution": null
+    },
+    {
+      "source_id": "tpa_tennis_tom_allsopp_tpa_tennis_weight_transfer_exercise_for_more_power_on_your_forehand",
+      "target_id": "timing_of_transfer",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Weight Transfer Exercise For More Power",
+      "source_file": "ftt_video_azVf6CyDfVk",
+      "resolution": null
+    },
+    {
+      "source_id": "sinner_lag",
+      "target_id": "timing_of_transfer",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Weight Transfer Exercise For More Power",
+      "source_file": "ftt_video_azVf6CyDfVk",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

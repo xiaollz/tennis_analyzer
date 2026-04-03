@@ -1,0 +1,173 @@
+{
+  "video_id": "dZadhzVEsds",
+  "concepts": [
+    {
+      "id": "vertical_component",
+      "name": "Vertical component",
+      "name_zh": "垂直成分",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "球拍像钟摆一样下落再上升，负责产生球的高度和上旋。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "cheat_code",
+      "name": "Cheat Code",
+      "name_zh": "作弊码",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将“肩部倾斜”比作网球击球中的作弊码，能轻松获得高度和旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "wall_rallying",
+      "name": "Wall Rallying",
+      "name_zh": "墙练习",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "用二指法在墙上对练，暴露击球距离过近或发力太死的问题。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "mental_release",
+      "name": "Mental Release",
+      "name_zh": "心理释放",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调不要为了寻找“信号”而抓紧球拍，要从心理上放弃对球拍轨迹的死板控制。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "gentle_upward_diagonal",
+      "name": "“Gentle Upward Diagonal”",
+      "name_zh": "柔和的向上对角线",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "力量释放的方向应该是斜向上的。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "mental_release",
+      "target_id": "gentle_upward_diagonal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "mental_release",
+      "target_id": "wall_rallying",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "mental_release",
+      "target_id": "cheat_code",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "mental_release",
+      "target_id": "vertical_component",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "gentle_upward_diagonal",
+      "target_id": "wall_rallying",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "gentle_upward_diagonal",
+      "target_id": "cheat_code",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "gentle_upward_diagonal",
+      "target_id": "vertical_component",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "wall_rallying",
+      "target_id": "cheat_code",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "wall_rallying",
+      "target_id": "vertical_component",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    },
+    {
+      "source_id": "cheat_code",
+      "target_id": "vertical_component",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Hard Without Missing Long",
+      "source_file": "ftt_video_dZadhzVEsds",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

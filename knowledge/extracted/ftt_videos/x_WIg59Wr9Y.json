@@ -1,0 +1,380 @@
+{
+  "video_id": "x_WIg59Wr9Y",
+  "concepts": [
+    {
+      "id": "racket_overtaking_hand",
+      "name": "Racket Overtaking Hand",
+      "name_zh": "球拍超越手部",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在击球前约 0.04 秒，球拍头部会迅速摆动并超越手部，这是弹性势能转化为动能的关键点。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "compensatory_contraction",
+      "name": "Compensatory Contraction",
+      "name_zh": "代偿性收紧",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "如果时机错误（释放过早），大脑会试图通过收缩手腕伸展肌（wrist extenders）来强行控制拍面角度。这种“硬拉”动作不仅降低球速，还是导致网球肘等伤病的主要原因。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_spring",
+      "name": "The Spring",
+      "name_zh": "核心比喻——“弹簧”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将手腕的延迟（Lag）和拉伸比作压缩的弹簧。训练的目标是让这个弹簧在撞击球的那一刻才弹出。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "elena_rybakina",
+      "name": "Elena Rybakina",
+      "name_zh": "莱巴金娜",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **正面示例：** 常规击球符合 3 帧规律。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "amelia",
+      "name": "Amelia",
+      "name_zh": "学生案例",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **一月前：** 释放窗口长达 6 帧（120fps 下的 12 帧），能量流失严重，动作虽稳但缺乏爆发力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "your_swing_starts_at_contact",
+      "name": "Your swing starts at contact",
+      "name_zh": "你的挥拍在触球瞬间开始",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Coaching cue from FTT: Your swing starts at contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "elastic_energy",
+      "name": "Elastic Energy",
+      "name_zh": "弹性动能",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Elastic Energy",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "effortless_crack",
+      "name": "“Effortless Crack”",
+      "name_zh": "轻松的炸裂感",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: “Effortless Crack”",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "the_spring",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "elena_rybakina",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "racket_overtaking_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "elastic_energy",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "effortless_crack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "compensatory_contraction",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "elena_rybakina",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "racket_overtaking_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "elastic_energy",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "effortless_crack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "the_spring",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elena_rybakina",
+      "target_id": "racket_overtaking_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elena_rybakina",
+      "target_id": "elastic_energy",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elena_rybakina",
+      "target_id": "effortless_crack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elena_rybakina",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elena_rybakina",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_overtaking_hand",
+      "target_id": "elastic_energy",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_overtaking_hand",
+      "target_id": "effortless_crack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_overtaking_hand",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_overtaking_hand",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elastic_energy",
+      "target_id": "effortless_crack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elastic_energy",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "elastic_energy",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "effortless_crack",
+      "target_id": "your_swing_starts_at_contact",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "effortless_crack",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    },
+    {
+      "source_id": "your_swing_starts_at_contact",
+      "target_id": "amelia",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Should Start Your Swing at Contact",
+      "source_file": "ftt_video_x_WIg59Wr9Y",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

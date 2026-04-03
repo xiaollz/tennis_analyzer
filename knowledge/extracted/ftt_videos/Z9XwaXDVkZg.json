@@ -1,0 +1,668 @@
+{
+  "video_id": "Z9XwaXDVkZg",
+  "concepts": [
+    {
+      "id": "upper_back_engagement",
+      "name": "Upper Back Engagement",
+      "name_zh": "核心稳定性：上背部激活",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   这是视频最重要的技术支柱。要求在引拍和击球过程中，有意识地让肩胛骨向后、向下收紧（Down and Back）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "twohanded_pulling_action",
+      "name": "Two-handed Pulling Action",
+      "name_zh": "双手拉动动作",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "虽然是单反，但意识上是双手向两侧拉开，左手负责平衡和“瞄准”动能链。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "soft_tissue_complex",
+      "name": "Soft Tissue Complex",
+      "name_zh": "“软组织复合体”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "形容拍头下落时，感觉重量是“掉”在背部和肩膀的肌肉群上，而不是悬空的。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "sensory_cues",
+      "name": "Sensory Cues",
+      "name_zh": "感觉提示",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **“Land on it”：** 感觉掉拍的重量“落在”肌肉支撑上。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "a_tiny_little_pull_through",
+      "name": "“A tiny little pull through”",
+      "name_zh": "“A tiny little pull through”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球时只需轻轻向前一拉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "coaching_cues",
+      "name": "Coaching Cues",
+      "name_zh": "教练口令",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **“Down and Back”：** 针对肩胛骨的口令。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "chest_to_the_ground",
+      "name": "“Chest to the Ground”",
+      "name_zh": "“Chest to the Ground”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "针对低球的处理口令，防止球员弯腰而不屈腿。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "break_the_velocity_limit",
+      "name": "“Break the velocity limit”",
+      "name_zh": "“Break the velocity limit”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "指通过增加上旋来打破平击球的速度上限，使球能落在界内。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_1",
+      "name": "分析要点 1",
+      "name_zh": "稳定性对比",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视频展示了 Alexa 在**未激活上背部**时的击球——球拍在空中飘忽，即便动作看起来相似，但回球精准度下降，且易向外侧漂移。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_90",
+      "name": "90度角",
+      "name_zh": "90度角",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 90度角",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "alexa",
+      "name": "视频展示了 Alexa 在",
+      "name_zh": "视频展示了 Alexa 在",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 视频展示了 Alexa 在",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "break_the_velocity_limit",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "a_tiny_little_pull_through",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "twohanded_pulling_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "soft_tissue_complex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "sensory_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_ground",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "a_tiny_little_pull_through",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "twohanded_pulling_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "soft_tissue_complex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "sensory_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "break_the_velocity_limit",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "twohanded_pulling_action",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "soft_tissue_complex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "sensory_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "a_tiny_little_pull_through",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "soft_tissue_complex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "sensory_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pulling_action",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "sensory_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_complex",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_cues",
+      "target_id": "coaching_cues",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_cues",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_cues",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_cues",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_cues",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_cues",
+      "target_id": "alexa",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_cues",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_cues",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_cues",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "alexa",
+      "target_id": "upper_back_engagement",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "alexa",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "alexa",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "upper_back_engagement",
+      "target_id": "c_1",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "upper_back_engagement",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    },
+    {
+      "source_id": "c_1",
+      "target_id": "c_90",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the One-Handed Backhand",
+      "source_file": "ftt_video_Z9XwaXDVkZg",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

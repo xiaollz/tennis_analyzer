@@ -1,0 +1,467 @@
+{
+  "video_id": "PjvOQkqH9DA",
+  "concepts": [
+    {
+      "id": "defensive_slice_selection",
+      "name": "Defensive Slice Selection",
+      "name_zh": "防守中的削球选择",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "当被动奔跑救球时，不要尝试高难度的削球（如费德勒式的低平切削）。建议采用“高轨迹削球”（Chip Floater），让球越过球网较高位置，虽然球速慢且不深，但能确保极高的过网率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "passing_shot_targeting",
+      "name": "Passing Shot Targeting",
+      "name_zh": "穿越球的目标选择",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "面对上网对手，不要追求边线或极端角度。技术要点是：**对准球网中心发力击打**。这迫使对手必须打出一个高质量的截击才能得分，而非寄希望于你失误。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "metaphors",
+      "name": "Metaphors",
+      "name_zh": "比喻",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **“面包圈与面包棍” (Bagels and Breadsticks)：** 指代 6-0 和 6-1 的悬殊比分。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_ball_lights_up",
+      "name": "The ball lights up",
+      "name_zh": "“球亮了起来”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "形容球员看到绝佳进攻机会时的直觉和视觉瞬间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "you_cant_beat_me_tennis",
+      "name": "You can't beat me tennis",
+      "name_zh": "“你赢不了我网球”",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "一种心理暗示，通过不出错让对手感到绝望。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "make_them_earn_it",
+      "name": "Make them earn it",
+      "name_zh": "“让他证明给你看”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强迫对手通过打出致胜球来赢球，而不是送出非受迫性失误。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "land_and_ready",
+      "name": "Land and Ready",
+      "name_zh": "“落地并准备好”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调发球后的瞬间转换。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "amanda_anisimova",
+      "name": "Amanda Anisimova",
+      "name_zh": "阿曼达·阿尼西莫娃",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 作为斯瓦泰克的对手，她虽然拥有强大的回球火力（接发球抢攻），但因为斯瓦泰克的高容错战术，她被迫陷入不断尝试高难度球的陷阱，最终崩溃。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "ash_barty",
+      "name": "Ash Barty",
+      "name_zh": "巴蒂",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "被提及在处理削球时的灵活性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "ash_barty",
+      "target_id": "you_cant_beat_me_tennis",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "defensive_slice_selection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "make_them_earn_it",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "the_ball_lights_up",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "land_and_ready",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "ash_barty",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "defensive_slice_selection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "make_them_earn_it",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "the_ball_lights_up",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "land_and_ready",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "you_cant_beat_me_tennis",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "make_them_earn_it",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "the_ball_lights_up",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "land_and_ready",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "defensive_slice_selection",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "make_them_earn_it",
+      "target_id": "the_ball_lights_up",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "make_them_earn_it",
+      "target_id": "land_and_ready",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "make_them_earn_it",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "make_them_earn_it",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "make_them_earn_it",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "the_ball_lights_up",
+      "target_id": "land_and_ready",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "the_ball_lights_up",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "the_ball_lights_up",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "the_ball_lights_up",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "land_and_ready",
+      "target_id": "passing_shot_targeting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "land_and_ready",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "land_and_ready",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "passing_shot_targeting",
+      "target_id": "metaphors",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "passing_shot_targeting",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    },
+    {
+      "source_id": "metaphors",
+      "target_id": "amanda_anisimova",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Never Lose Another Winnable Match",
+      "source_file": "ftt_video_PjvOQkqH9DA",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

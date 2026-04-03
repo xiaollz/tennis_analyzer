@@ -1,0 +1,1178 @@
+{
+  "video_id": "lwS7Xxqrrdw",
+  "concepts": [
+    {
+      "id": "simple_version",
+      "name": "Simple Version",
+      "name_zh": "简化挥拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在加入髋部、躯干和步法之前，先找到一个受控的、小幅度的挥拍版本。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "hand_roles",
+      "name": "Hand Roles",
+      "name_zh": "左右手的分工",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **右手（驱动者）：** 负责将球拍拉过球场（Pulling），产生“驱动向量”（Drive Vector）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "左手",
+      "name_zh": "控制者",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "负责控制拍头方向和翻转，产生“旋转向量”（Rolling Vector/Spin）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "adding_velocity",
+      "name": "Adding Velocity",
+      "name_zh": "力量整合",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在手部基础稳定后，通过双腿弯曲、躯干转动和髋部带动的“动力链”来增加球速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "targeting",
+      "name": "Targeting",
+      "name_zh": "目标控制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **斜线（Cross-court）：** 左手更积极地带动拍头划过更远的弧度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "down_the_line",
+      "name": "Down the line",
+      "name_zh": "直线",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "右手发挥主导作用，保持拍面更长时间的直线推送，减少拍头的过早翻转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "contact_point_depth",
+      "name": "Contact Point Depth",
+      "name_zh": "击球点深度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   强调击球点必须在身体前方，留出足够的空间让双臂和肩膀能够完全“释放”和“解旋”（Unwind）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "two_separate_levers",
+      "name": "Two Separate Levers",
+      "name_zh": "“两个独立的杠杆”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将双手比作两个操纵杆，通过调整两手的发力比例来微调击球效果。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "chin_over_shoulder",
+      "name": "Chin over shoulder",
+      "name_zh": "“下巴过肩”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "提示转体深度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "release_the_right_shoulder",
+      "name": "Release the right shoulder",
+      "name_zh": "“释放右手肩”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "确保击球点靠前，驱动向量得以释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "never_hold_hands_tight",
+      "name": "Never hold hands tight",
+      "name_zh": "“不要僵硬”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调手感的松弛。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "simplicity_first",
+      "name": "Simplicity First",
+      "name_zh": "从简入繁",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "理论核心是减少不必要的动作。视频强调先做“小版挥拍”，这种极简的基础在压力下不易崩溃，增加了容错性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "spacing",
+      "name": "Spacing",
+      "name_zh": "空间换容错",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调击球点前方留出空间。当击球点有足够的“释放区域”时，即使击球时机稍有早晚，右手肩膀依然能完成驱动，从而提高了稳定性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "andre_agassi",
+      "name": "Andre Agassi",
+      "name_zh": "阿加西",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 视频在讲解“直线球（Down the line）”时提到了他们。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_3",
+      "name": "强调手感的松弛。\n\n### 3. 视频的核心论点",
+      "name_zh": "强调手感的松弛。\n\n### 3. 视频的核心论点",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 强调手感的松弛。\n\n### 3. 视频的核心论点",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "targeting",
+      "target_id": "never_hold_hands_tight",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "spacing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "contact_point_depth",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "chin_over_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "simplicity_first",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "targeting",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "spacing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "contact_point_depth",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "chin_over_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "simplicity_first",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "never_hold_hands_tight",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "contact_point_depth",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "chin_over_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "simplicity_first",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "chin_over_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "simplicity_first",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "contact_point_depth",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "simplicity_first",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "chin_over_shoulder",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "adding_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simplicity_first",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "release_the_right_shoulder",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "adding_velocity",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "release_the_right_shoulder",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "c_3",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "c_3",
+      "target_id": "two_separate_levers",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "c_3",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "c_3",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "c_3",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "c_3",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "two_separate_levers",
+      "target_id": "andre_agassi",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "two_separate_levers",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "two_separate_levers",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "two_separate_levers",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "andre_agassi",
+      "target_id": "hand_roles",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "andre_agassi",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "andre_agassi",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "hand_roles",
+      "target_id": "simple_version",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "hand_roles",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    },
+    {
+      "source_id": "simple_version",
+      "target_id": "down_the_line",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Simple Foundation of the 2-Handed Backhand",
+      "source_file": "ftt_video_lwS7Xxqrrdw",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

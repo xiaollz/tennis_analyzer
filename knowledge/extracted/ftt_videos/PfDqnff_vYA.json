@@ -1,0 +1,563 @@
+{
+  "video_id": "PfDqnff_vYA",
+  "concepts": [
+    {
+      "id": "outward_throwing_motion",
+      "name": "Outward Throwing Motion",
+      "name_zh": "向外投掷意识",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球时不是向上或向前拍打，而是将球拍向身体的击球侧（右手球员向右，左手球员向左）“扔”出去。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "lower_contact_zone_drill",
+      "name": "Lower Contact Zone Drill",
+      "name_zh": "低位接触点练习",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "为了打破“必须打过网”的心理负担，在网前进行高压练习，喂球高度比发球抛球低，重点在于触发纯粹的投掷动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "trunk_leaning",
+      "name": "Trunk Leaning",
+      "name_zh": "躯干倾斜调节",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "当球离身体太近（被挤到）时，通过向后或向侧面倾斜躯干来创造空间，以维持“向外投掷”的力臂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "nesting_the_racket",
+      "name": "Nesting the Racket",
+      "name_zh": "握拍嵌套",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "球拍应深嵌在手掌的“V型槽”中，并贴合食指根部的掌心位置。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "bottom_fingers_release",
+      "name": "Bottom Fingers Release",
+      "name_zh": "手指引导/放松",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在准备阶段，手掌下方的几个手指可以稍微离开拍柄，仅靠食指和拇指区域感知球拍，以确保挥拍开始时的极度放松。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "external_shoulder_rotation_elbow_penetration",
+      "name": "External Shoulder Rotation & Elbow Penetration",
+      "name_zh": "肩膀外旋与肘部推进",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "挥拍启动时，肘部领先向前推进，肩膀完成充分的外旋。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "layback_forearm_stretch",
+      "name": "Layback & Forearm Stretch",
+      "name_zh": "延迟/掉拍头",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "拍头在挥动过程中自然下掉，产生前臂的拉伸感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "pronation_internal_rotation",
+      "name": "Pronation & Internal Rotation",
+      "name_zh": "前旋与内旋释放",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在击球瞬间及随后的随挥中，通过前臂内旋完成爆发释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "grip_shifting",
+      "name": "Grip Shifting",
+      "name_zh": "握拍转换",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "随着击球平面从水平（正手）移向高空（高压），握拍应从东方式（Eastern）向大陆式（Continental）逐渐偏移。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "blacked_out",
+      "name": "Blacked out",
+      "name_zh": "“黑掉”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "学员描述进入一种直觉性、无意识击球状态的词汇。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "lower_contact_zone_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "external_shoulder_rotation_elbow_penetration",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "grip_shifting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "outward_throwing_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "blacked_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "bottom_fingers_release",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "external_shoulder_rotation_elbow_penetration",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "grip_shifting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "outward_throwing_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "blacked_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "lower_contact_zone_drill",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "grip_shifting",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "outward_throwing_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "blacked_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "external_shoulder_rotation_elbow_penetration",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "outward_throwing_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "blacked_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "grip_shifting",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "outward_throwing_motion",
+      "target_id": "blacked_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "outward_throwing_motion",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "outward_throwing_motion",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "outward_throwing_motion",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "outward_throwing_motion",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "blacked_out",
+      "target_id": "pronation_internal_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "blacked_out",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "blacked_out",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "blacked_out",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "pronation_internal_rotation",
+      "target_id": "nesting_the_racket",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "pronation_internal_rotation",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "pronation_internal_rotation",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "nesting_the_racket",
+      "target_id": "layback_forearm_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "nesting_the_racket",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    },
+    {
+      "source_id": "layback_forearm_stretch",
+      "target_id": "trunk_leaning",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Serve is So Slow",
+      "source_file": "ftt_video_PfDqnff_vYA",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

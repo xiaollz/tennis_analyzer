@@ -1,0 +1,233 @@
+{
+  "video_id": "1-g1OD8gh-I",
+  "concepts": [
+    {
+      "id": "the_pivot",
+      "name": "The Pivot",
+      "name_zh": "转轴动作",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "随着挥拍，右脚像圆规的轴心一样在原地旋转，脚跟离地，最后脚尖点地。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "static_pivot",
+      "name": "Static Pivot",
+      "name_zh": "静态转轴练习",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "不带球。先加载右腿（左脚尖着地），然后旋转身体，在转动的同时将重心换到左脚，右脚脚尖点地结束。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "timing_drills",
+      "name": "Timing Drills",
+      "name_zh": "双重时机训练",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **右脚发力：** 在重心转移到左脚*之前*击球（典型的开放式正手）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "finish_on_your_right_toe",
+      "name": "Finish on your right toe",
+      "name_zh": "Finish on your right toe",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Coaching cue from FTT: Finish on your right toe",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "c_45",
+      "name": "视频中虽然没用过多花哨的比喻，但通过“45度角”和“脚尖点地”的视觉演示，传达了",
+      "name_zh": "视频中虽然没用过多花哨的比喻，但通过“45度角”和“脚尖点地”的视觉演示，传达了",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 视频中虽然没用过多花哨的比喻，但通过“45度角”和“脚尖点地”的视觉演示，传达了",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "tom",
+      "name": "学员右脚腾空往往是因为想通过跳跃来补偿转动能力的不足。Tom 的口令",
+      "name_zh": "学员右脚腾空往往是因为想通过跳跃来补偿转动能力的不足。Tom 的口令",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 学员右脚腾空往往是因为想通过跳跃来补偿转动能力的不足。Tom 的口令",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "timing_drills",
+      "target_id": "the_pivot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_drills",
+      "target_id": "tom",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_drills",
+      "target_id": "static_pivot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_drills",
+      "target_id": "c_45",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "timing_drills",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "the_pivot",
+      "target_id": "tom",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "the_pivot",
+      "target_id": "static_pivot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "the_pivot",
+      "target_id": "c_45",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "the_pivot",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "tom",
+      "target_id": "static_pivot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "tom",
+      "target_id": "c_45",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "tom",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "static_pivot",
+      "target_id": "c_45",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "static_pivot",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    },
+    {
+      "source_id": "c_45",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: This One Move Instantly Improves Your Forehand",
+      "source_file": "ftt_video_1-g1OD8gh-I",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

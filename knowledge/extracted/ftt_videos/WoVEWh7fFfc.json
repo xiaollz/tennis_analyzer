@@ -1,0 +1,380 @@
+{
+  "video_id": "WoVEWh7fFfc",
+  "concepts": [
+    {
+      "id": "elastic_loading",
+      "name": "Elastic Loading",
+      "name_zh": "弹性加载",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用球拍自身的动量实现“拉紧-释放”的弹性，而非单纯靠肌肉发力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "laser",
+      "name": "Laser",
+      "name_zh": "“激光”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "形容动作做对后，击球不仅有力且路径精准。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "momentumdriven",
+      "name": "Momentum-Driven",
+      "name_zh": "动量驱动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "容错理论主张利用物理动量而非肌肉收缩。视频中强调的拍头内向环绕和弹性加载，正是为了减少对肌肉精准控制的依赖，从而提高容错率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "simplified_perception",
+      "name": "Simplified Perception",
+      "name_zh": "简化的感知",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视频提到的“远端教学法”，通过让球员感知最末端的运动，让大脑自动协调身体其他部位，降低了在高速运动中思考动作的认知负担。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "whack",
+      "name": "Whack",
+      "name_zh": "通过球拍动量的合理利用，在不增加额外体力的前提下，在击球区产生爆发力",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Whack",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "push_the_hands_away",
+      "name": "“Push the hands away”",
+      "name_zh": "“Push the hands away”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: “Push the hands away”",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "drag_it_forward",
+      "name": "“Drag it forward”",
+      "name_zh": "“Drag it forward”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: “Drag it forward”",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "distal_end_coaching",
+      "name": "“Distal End Coaching”",
+      "name_zh": "“Distal End Coaching”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: “Distal End Coaching”",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "momentumdriven",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "laser",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "whack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "simplified_perception",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "distal_end_coaching",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "push_the_hands_away",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "laser",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "whack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "simplified_perception",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "distal_end_coaching",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "momentumdriven",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "laser",
+      "target_id": "whack",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "laser",
+      "target_id": "simplified_perception",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "laser",
+      "target_id": "distal_end_coaching",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "laser",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "laser",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "whack",
+      "target_id": "simplified_perception",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "whack",
+      "target_id": "distal_end_coaching",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "whack",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "whack",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "simplified_perception",
+      "target_id": "distal_end_coaching",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "simplified_perception",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "simplified_perception",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "distal_end_coaching",
+      "target_id": "drag_it_forward",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "distal_end_coaching",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    },
+    {
+      "source_id": "drag_it_forward",
+      "target_id": "elastic_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 57-Year-Old Ripping Forehands (and Serves)",
+      "source_file": "ftt_video_WoVEWh7fFfc",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

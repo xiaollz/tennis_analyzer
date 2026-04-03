@@ -1,0 +1,233 @@
+{
+  "video_id": "KU7FHy1qQOI",
+  "concepts": [
+    {
+      "id": "probing",
+      "name": "Probing",
+      "name_zh": "探寻球",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用眼睛和脚的配合，不断调整身体位置，以找到那个最舒适、最省力的击球点。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "trunk_rotation",
+      "name": "Trunk Rotation",
+      "name_zh": "躯干转动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "躯干的角速度与球拍的角速度直接相关。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "kinesthetic_movie",
+      "name": "Kinesthetic Movie",
+      "name_zh": "“动态电影”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "教练要求球员在脑中预演击球的画面，将视觉意象转化为动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "jammed_or_restricted",
+      "name": "“Jammed or Restricted”",
+      "name_zh": "被挤压或受限",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "意识到如果离球太近或击球点太低，身体会产生不适感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "rotational_pulse",
+      "name": "“Rotational Pulse”",
+      "name_zh": "旋转脉冲",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调旋转不是僵硬的扭转，而是一个快速、简短的发力爆发。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "carson_branstine",
+      "name": "Carson Branstine",
+      "name_zh": "Carson Branstine",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 出现在视频引用的案例中（Abdominal Corkscrew）。分析了她如何通过“腹部软木塞旋转”和侧向弯曲来获得省力的爆发，而无需过度挥动手臂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "probing",
+      "target_id": "trunk_rotation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "jammed_or_restricted",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "rotational_pulse",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "carson_branstine",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "kinesthetic_movie",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_rotation",
+      "target_id": "jammed_or_restricted",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_rotation",
+      "target_id": "rotational_pulse",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_rotation",
+      "target_id": "carson_branstine",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "trunk_rotation",
+      "target_id": "kinesthetic_movie",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "jammed_or_restricted",
+      "target_id": "rotational_pulse",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "jammed_or_restricted",
+      "target_id": "carson_branstine",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "jammed_or_restricted",
+      "target_id": "kinesthetic_movie",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "rotational_pulse",
+      "target_id": "carson_branstine",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "rotational_pulse",
+      "target_id": "kinesthetic_movie",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    },
+    {
+      "source_id": "carson_branstine",
+      "target_id": "kinesthetic_movie",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Physics, Geometry, and Biomechanics of Power",
+      "source_file": "ftt_video_KU7FHy1qQOI",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

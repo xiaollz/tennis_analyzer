@@ -1,0 +1,233 @@
+{
+  "video_id": "9NirSL59an0",
+  "concepts": [
+    {
+      "id": "swinging_down_sensation",
+      "name": "Swinging Down Sensation",
+      "name_zh": "向下挥拍的感觉",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "为了保持放松，大脑需要避开“向上击球”的意图，因为这通常会导致肌肉紧绷。产生上旋的最佳感觉实际上类似于向下击球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "wrist_lag_to_neutral",
+      "name": "Wrist Lag to Neutral",
+      "name_zh": "手腕从滞后到中性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球瞬间，手腕从滞后（Lag）状态回到中性位置。如果试图在此时继续向后拉手腕，会导致拍面不稳定。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "upstream_controls_downstream",
+      "name": "Upstream Controls Downstream",
+      "name_zh": "上游肌肉控制下游",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过胸部和肩部等“上游”大肌肉产生张力，可以让“下游”的手腕和手部保持放松，从而利用弹性势能。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "top_edge_leading",
+      "name": "Top Edge Leading",
+      "name_zh": "上边缘领先",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球时，球拍的上边缘应领先于下边缘。如果下边缘领先，球容易飞出底线。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_paradox",
+      "name": "The Paradox",
+      "name_zh": "“悖论”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "指产生最强上旋的方法在感觉上像是向下击球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "weighted_shadow_swing",
+      "name": "Weighted Shadow Swing",
+      "name_zh": "加重阴影挥拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "使用2.5磅的负重（如小哑铃或特制重拍）进行挥拍，迫使身体募集胸部和大肌肉，并自然找到“压力槽”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "swinging_down_sensation",
+      "target_id": "upstream_controls_downstream",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "swinging_down_sensation",
+      "target_id": "weighted_shadow_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "swinging_down_sensation",
+      "target_id": "the_paradox",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "swinging_down_sensation",
+      "target_id": "wrist_lag_to_neutral",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "swinging_down_sensation",
+      "target_id": "top_edge_leading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "upstream_controls_downstream",
+      "target_id": "weighted_shadow_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "upstream_controls_downstream",
+      "target_id": "the_paradox",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "upstream_controls_downstream",
+      "target_id": "wrist_lag_to_neutral",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "upstream_controls_downstream",
+      "target_id": "top_edge_leading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "weighted_shadow_swing",
+      "target_id": "the_paradox",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "weighted_shadow_swing",
+      "target_id": "wrist_lag_to_neutral",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "weighted_shadow_swing",
+      "target_id": "top_edge_leading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "the_paradox",
+      "target_id": "wrist_lag_to_neutral",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "the_paradox",
+      "target_id": "top_edge_leading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    },
+    {
+      "source_id": "wrist_lag_to_neutral",
+      "target_id": "top_edge_leading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Paradoxical Nature of Modern Topspin",
+      "source_file": "ftt_video_9NirSL59an0",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

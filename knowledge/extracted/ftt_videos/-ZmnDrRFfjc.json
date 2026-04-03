@@ -1,0 +1,233 @@
+{
+  "video_id": "-ZmnDrRFfjc",
+  "concepts": [
+    {
+      "id": "defend_with_height",
+      "name": "Defend with Height",
+      "name_zh": "防守中的高度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **增加留空时间：** 高弧度的防守球在空中停留时间更长，为球员争取回位到防守中心点的时间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "pick_your_pattern",
+      "name": "Pick Your Pattern",
+      "name_zh": "选择击球模式",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **打破对手偏好的路径：** 识别对手擅长的套路（如辛纳擅长的反手斜线对攻）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "net_clearance",
+      "name": "Net Clearance",
+      "name_zh": "净网高度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "这是容错理论的核心。通过防守时拉高弧度，人为地消除了网前失误的可能性，提高了生存率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "no_second_chances",
+      "name": "No second chances",
+      "name_zh": "No second chances",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Coaching cue from FTT: No second chances",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "optin_to_the_pattern",
+      "name": "Opt-in to the pattern",
+      "name_zh": "Opt-in to the pattern",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Coaching cue from FTT: Opt-in to the pattern",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "opt",
+      "name": "\"Opt",
+      "name_zh": "in to the pattern\"",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: \"Opt",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "defend_with_height",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "optin_to_the_pattern",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "opt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "net_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "no_second_chances",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "defend_with_height",
+      "target_id": "optin_to_the_pattern",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "defend_with_height",
+      "target_id": "opt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "defend_with_height",
+      "target_id": "net_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "defend_with_height",
+      "target_id": "no_second_chances",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "optin_to_the_pattern",
+      "target_id": "opt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "optin_to_the_pattern",
+      "target_id": "net_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "optin_to_the_pattern",
+      "target_id": "no_second_chances",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "opt",
+      "target_id": "net_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "opt",
+      "target_id": "no_second_chances",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    },
+    {
+      "source_id": "net_clearance",
+      "target_id": "no_second_chances",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Brilliant Alcaraz Tactics ANYONE Can Use",
+      "source_file": "ftt_video_-ZmnDrRFfjc",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}
