@@ -10,8 +10,8 @@
 - [x] **INFRA-01**: Define Pydantic schema for concepts (id, name, aliases, source, type, description, muscles, VLM features)
 - [x] **INFRA-02**: Define Pydantic schema for edges (source→target, type: causes/fixes/requires/contradicts, confidence, evidence)
 - [x] **INFRA-03**: Define Pydantic schema for diagnostic chains (symptom→root causes→drills, with branching logic)
-- [ ] **INFRA-04**: Build canonical concept registry with deduplication (fuzzy match + LLM-assisted merge)
-- [ ] **INFRA-05**: Set up NetworkX directed multigraph as knowledge graph backend
+- [x] **INFRA-04**: Build canonical concept registry with deduplication (fuzzy match + LLM-assisted merge)
+- [x] **INFRA-05**: Set up NetworkX directed multigraph as knowledge graph backend
 
 ### Existing Knowledge Extraction
 
@@ -107,8 +107,8 @@
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
 | EXIST-01 | Phase 2 | Pending |
 | EXIST-02 | Phase 2 | Pending |
 | EXIST-03 | Phase 2 | Pending |

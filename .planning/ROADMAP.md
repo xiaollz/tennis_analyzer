@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 2 plans
 Plans:
 - [x] 01-01-PLAN.md — Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
-- [ ] 01-02-PLAN.md — ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
+- [x] 01-02-PLAN.md — ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
 **Risk flags**: Pitfall 1 (concept explosion) -- dedup strategy must be designed here, not bolted on later. Pitfall 6 (undirected edges) -- enforce typed directed edges at schema level.
 
 ### Phase 2: Existing Knowledge Extraction
