@@ -35,7 +35,7 @@
 - [x] **SEC-02**: Analyze selected TomAllsopp videos via Gemini API with structured extraction
 - [x] **SEC-03**: Enumerate Feel Tennis channel free videos, select technique-relevant subset
 - [x] **SEC-04**: Analyze selected Feel Tennis videos via Gemini API with structured extraction
-- [ ] **SEC-05**: Cross-source reconciliation — resolve conflicts (FTT wins), mark agreements as reinforced
+- [x] **SEC-05**: Cross-source reconciliation — resolve conflicts (FTT wins), mark agreements as reinforced
 
 ### Knowledge Graph Assembly
 
@@ -140,7 +140,7 @@
 | SEC-02 | Phase 6 | Complete |
 | SEC-03 | Phase 6 | Complete |
 | SEC-04 | Phase 6 | Complete |
-| SEC-05 | Phase 6 | Pending |
+| SEC-05 | Phase 6 | Complete |
 | USER-01 | Phase 7 | Pending |
 | USER-02 | Phase 7 | Pending |
 | USER-03 | Phase 7 | Pending |

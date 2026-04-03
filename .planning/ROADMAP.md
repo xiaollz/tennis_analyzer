@@ -122,7 +122,7 @@ Plans:
 - [x] 06-01-PLAN.md — Curate video lists for both channels + state files (SEC-01, SEC-03)
 - [x] 06-02-PLAN.md — TomAllsopp Gemini API extraction (~45 videos) (SEC-02)
 - [x] 06-03-PLAN.md — Feel Tennis Gemini API extraction (~45 videos) (SEC-04)
-- [ ] 06-04-PLAN.md — Cross-source reconciliation + merge into registry (SEC-05)
+- [x] 06-04-PLAN.md — Cross-source reconciliation + merge into registry (SEC-05)
 **Risk flags**: Pitfall 5 (reconciliation complexity) -- reconciliation is a separate explicit pass, not embedded in extraction. Pitfall 4 (transcript quality) -- use Gemini video understanding as primary, transcripts as supplementary.
 
 ### Phase 7: User Integration
