@@ -66,7 +66,7 @@ Plans:
 **Plans:** 6 plans
 Plans:
 - [x] 03-01-PLAN.md — Video inventory + pipeline infrastructure (state manager, analyzer, extractor)
-- [ ] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
+- [x] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
 - [ ] 03-03-PLAN.md — Gemini API batch 1: 12 forehand-priority videos
 - [ ] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
 - [ ] 03-05-PLAN.md — Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
