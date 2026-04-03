@@ -314,3 +314,186 @@ class TestWithRealChains:
         for chain in real_chains:
             prompt = real_compiler.compile_pass2_prompt([chain.id])
             assert chain.symptom_zh in prompt
+
+
+# ---------------------------------------------------------------------------
+# Two-pass VLM integration tests (05-03)
+# ---------------------------------------------------------------------------
+
+class TestTwoPassVLMIntegration:
+    """Test two-pass VLM analysis flow in VLMForehandAnalyzer."""
+
+    @pytest.fixture
+    def dummy_image(self):
+        """Create a minimal numpy array to act as a keyframe grid."""
+        import numpy as np
+        return np.zeros((100, 100, 3), dtype=np.uint8)
+
+    @pytest.fixture
+    def analyzer_with_compiler(self, graph, chains):
+        """Create VLMForehandAnalyzer with graph and chains (two-pass enabled)."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        cfg = {
+            "provider": "openai_compatible",
+            "api_key": "test-key",
+            "base_url": "http://test",
+            "model": "test-model",
+            "two_pass_enabled": True,
+        }
+        analyzer = VLMForehandAnalyzer(config=cfg, graph=graph, chains=chains)
+        return analyzer
+
+    @pytest.fixture
+    def analyzer_no_compiler(self):
+        """Create VLMForehandAnalyzer without graph (single-pass fallback)."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        cfg = {
+            "provider": "openai_compatible",
+            "api_key": "test-key",
+            "base_url": "http://test",
+            "model": "test-model",
+        }
+        return VLMForehandAnalyzer(config=cfg)
+
+    def test_two_pass_flow(self, analyzer_with_compiler, dummy_image, monkeypatch):
+        """When graph+chains provided, analyze_swing makes 2 VLM calls."""
+        call_log = []
+
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+            call_log.append({"user_text": user_text, "system_prompt": system_prompt})
+            if len(call_log) == 1:
+                # Pass 1: return symptom numbers
+                return "I see symptoms 1"
+            else:
+                # Pass 2: return valid JSON
+                return json.dumps({
+                    "issues": [{"name": "test", "severity": "中"}],
+                    "strengths": [],
+                    "overall_assessment": "test",
+                    "score": 70,
+                    "drills": [],
+                })
+
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        monkeypatch.setattr(VLMForehandAnalyzer, "_call_vlm", mock_call_vlm)
+
+        result = analyzer_with_compiler.analyze_swing(dummy_image)
+        assert len(call_log) == 2, f"Expected 2 VLM calls, got {len(call_log)}"
+        # Pass 1 should use symptom checklist prompt
+        assert call_log[0]["system_prompt"] is not None
+        # Pass 2 should use diagnostic prompt
+        assert call_log[1]["system_prompt"] is not None
+        assert result is not None
+        assert "issues" in result
+
+    def test_single_pass_fallback(self, analyzer_no_compiler, dummy_image, monkeypatch):
+        """When no graph is provided, falls back to single-pass with _FTT_SYSTEM_PROMPT."""
+        call_log = []
+
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+            call_log.append({"system_prompt": system_prompt})
+            return json.dumps({
+                "issues": [],
+                "strengths": [],
+                "overall_assessment": "good",
+                "score": 80,
+                "drills": [],
+            })
+
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        monkeypatch.setattr(VLMForehandAnalyzer, "_call_vlm", mock_call_vlm)
+
+        result = analyzer_no_compiler.analyze_swing(dummy_image)
+        assert len(call_log) == 1, "Single-pass should make exactly 1 VLM call"
+        assert result is not None
+
+    def test_pass1_parsing_numeric(self, analyzer_with_compiler):
+        """_parse_symptom_response extracts numbers and maps to chain IDs."""
+        # Chains sorted by priority: dc_arm_driven_hitting (1), dc_scooping (2)
+        result = analyzer_with_compiler._parse_symptom_response("1, 2")
+        assert "dc_arm_driven_hitting" in result
+        assert "dc_scooping" in result
+
+    def test_pass1_parsing_text_with_numbers(self, analyzer_with_compiler):
+        """Handles 'I see symptoms 1 and 2' format."""
+        result = analyzer_with_compiler._parse_symptom_response("I see symptoms 1 and 2")
+        assert "dc_arm_driven_hitting" in result
+        assert "dc_scooping" in result
+
+    def test_pass1_parsing_empty(self, analyzer_with_compiler):
+        """Empty or no-symptom response returns empty list."""
+        assert analyzer_with_compiler._parse_symptom_response("") == []
+        assert analyzer_with_compiler._parse_symptom_response("no symptoms detected") == []
+
+    def test_pass1_parsing_out_of_range(self, analyzer_with_compiler):
+        """Out-of-range numbers are ignored."""
+        result = analyzer_with_compiler._parse_symptom_response("1, 99")
+        assert "dc_arm_driven_hitting" in result
+        assert len(result) == 1
+
+    def test_two_pass_disabled_uses_single_pass(self, graph, chains, dummy_image, monkeypatch):
+        """When two_pass_enabled=False, uses single-pass even with compiler."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        cfg = {
+            "provider": "openai_compatible",
+            "api_key": "test-key",
+            "base_url": "http://test",
+            "model": "test-model",
+            "two_pass_enabled": False,
+        }
+        analyzer = VLMForehandAnalyzer(config=cfg, graph=graph, chains=chains)
+        call_log = []
+
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+            call_log.append({"system_prompt": system_prompt})
+            return json.dumps({
+                "issues": [],
+                "strengths": [],
+                "overall_assessment": "ok",
+                "score": 75,
+                "drills": [],
+            })
+
+        monkeypatch.setattr(VLMForehandAnalyzer, "_call_vlm", mock_call_vlm)
+        result = analyzer.analyze_swing(dummy_image)
+        assert len(call_log) == 1, "Disabled two-pass should make 1 call"
+        assert result is not None
+
+    def test_provider_system_prompt_param(self):
+        """_call_openai_compatible, _call_anthropic, _call_gemini accept system_prompt."""
+        import inspect
+        from evaluation.vlm_analyzer import (
+            _call_openai_compatible,
+            _call_anthropic,
+            _call_gemini,
+        )
+        for fn in [_call_openai_compatible, _call_anthropic, _call_gemini]:
+            sig = inspect.signature(fn)
+            assert "system_prompt" in sig.parameters, (
+                f"{fn.__name__} missing system_prompt parameter"
+            )
+
+    def test_two_pass_fallback_on_pass1_failure(
+        self, analyzer_with_compiler, dummy_image, monkeypatch
+    ):
+        """If pass1 VLM call returns None, falls back to single-pass."""
+        call_log = []
+
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+            call_log.append(True)
+            if len(call_log) == 1:
+                return None  # Pass 1 fails
+            return json.dumps({
+                "issues": [],
+                "strengths": [],
+                "overall_assessment": "fallback",
+                "score": 60,
+                "drills": [],
+            })
+
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        monkeypatch.setattr(VLMForehandAnalyzer, "_call_vlm", mock_call_vlm)
+        result = analyzer_with_compiler.analyze_swing(dummy_image)
+        # Should have made 2 calls: failed pass1 + fallback single-pass
+        assert len(call_log) == 2
+        assert result is not None
