@@ -1,6 +1,122 @@
 {
   "video_id": "BbGzWTp5pCM",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "multisplitstep",
+      "name": "Multi-Split-Step",
+      "name_zh": "多重垫步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在球机练习或对方击球节奏不明时，保持连续的小幅跳动而非静止等待。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "match_intensity_practice",
+      "name": "Match Intensity Practice",
+      "name_zh": "比赛强度练习",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在练习中模拟比赛时的呼吸频率、移动速度和精神张力，而非“慢动作”热身模式。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "forceful_exhale",
+      "name": "Forceful Exhale",
+      "name_zh": "强力呼气",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球瞬间通过爆发式呼气来为身体供氧并释放躯干张力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "宽站位与重心压低",
+      "name_zh": "宽站位与重心压低",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Practicing in Slow Motion is Killing Match Play",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "multisplitstep",
+      "target_id": "match_intensity_practice",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    },
+    {
+      "source_id": "multisplitstep",
+      "target_id": "forceful_exhale",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    },
+    {
+      "source_id": "multisplitstep",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    },
+    {
+      "source_id": "match_intensity_practice",
+      "target_id": "forceful_exhale",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    },
+    {
+      "source_id": "match_intensity_practice",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    },
+    {
+      "source_id": "forceful_exhale",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Practicing in Slow Motion is Killing Match Play",
+      "source_file": "ftt_video_BbGzWTp5pCM",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

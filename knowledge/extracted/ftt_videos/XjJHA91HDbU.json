@@ -1,6 +1,161 @@
 {
   "video_id": "XjJHA91HDbU",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "serving_throw_vector",
+      "name": "Serving Throw Vector",
+      "name_zh": "发球投掷矢量",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手部投掷动作的物理路径与球实际飞行路径之间的夹角（通常为15-30度）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_offset_principle",
+      "name": "The Offset Principle",
+      "name_zh": "偏置原理",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "职业选手通过向目标侧方投掷手，利用肩部内旋将球“甩”回目标的机制。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "建立投掷偏置",
+      "name_zh": "建立投掷偏置",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Don't Swing AT the Ball on the Overhead",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "serving_throw_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "发球也存在 Out/Up/Through 的矢量分离，手负责 Out/Up，旋转负责 Through。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "the_offset_principle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "发球也存在 Out/Up/Through 的矢量分离，手负责 Out/Up，旋转负责 Through。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "发球也存在 Out/Up/Through 的矢量分离，手负责 Out/Up，旋转负责 Through。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "serving_throw_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "偏置路径增加了击球区的长度，降低了对精准时机的依赖。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "the_offset_principle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "偏置路径增加了击球区的长度，降低了对精准时机的依赖。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "偏置路径增加了击球区的长度，降低了对精准时机的依赖。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "serving_throw_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "稳定性来源于大关节路径的重复性，而非末端调整。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "the_offset_principle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "稳定性来源于大关节路径的重复性，而非末端调整。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "稳定性来源于大关节路径的重复性，而非末端调整。",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "serving_throw_vector",
+      "target_id": "the_offset_principle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Don't Swing AT the Ball on the Overhead",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "serving_throw_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Don't Swing AT the Ball on the Overhead",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    },
+    {
+      "source_id": "the_offset_principle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Don't Swing AT the Ball on the Overhead",
+      "source_file": "ftt_video_XjJHA91HDbU",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

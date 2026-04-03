@@ -1,6 +1,173 @@
 {
   "video_id": "GsHkML2mVEI",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "the_timing_window",
+      "name": "The Timing Window",
+      "name_zh": "时序重叠窗口",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "躯干开始向前旋转时，小臂仍处于向后翻转（外旋）过程中的重叠时间段。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "roll_while_driving",
+      "name": "Roll while Driving",
+      "name_zh": "随动翻转 (纳达尔式)",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "小臂的翻转几乎完全发生在前挥驱动开始之后。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "roll_before_driving",
+      "name": "Roll before Driving",
+      "name_zh": "先行翻转 (西冈式)",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "小臂在躯干转动前已完成大部分翻转，但关键在于转动瞬间翻转仍未停止。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "double_bend",
+      "name": "Double Bend",
+      "name_zh": "双弯曲准备",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在处理低球时，髋部和膝盖同时弯曲以保持躯干垂直和平衡。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "非打球侧肩胛骨触发器",
+      "name_zh": "非打球侧肩胛骨触发器",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Nishioka's Unique Backswing Timing",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "the_timing_window",
+      "target_id": "roll_while_driving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_timing_window",
+      "target_id": "roll_before_driving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_timing_window",
+      "target_id": "double_bend",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_timing_window",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "roll_while_driving",
+      "target_id": "roll_before_driving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "roll_while_driving",
+      "target_id": "double_bend",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "roll_while_driving",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "roll_before_driving",
+      "target_id": "double_bend",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "roll_before_driving",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    },
+    {
+      "source_id": "double_bend",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Nishioka's Unique Backswing Timing",
+      "source_file": "ftt_video_GsHkML2mVEI",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

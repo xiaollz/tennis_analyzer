@@ -1,6 +1,266 @@
 {
   "video_id": "FxDmVi3EFnE",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "the_through_vector",
+      "name": "The Through Vector",
+      "name_zh": "贯穿向量",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在向上刷球的同时，球拍必须有一个显著的向前的位移，以延长击球窗口。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "string_snapback",
+      "name": "String Snap-back",
+      "name_zh": "球弦回弹",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "聚酯弦在受压后向下变形并迅速向上弹回，这是产生上旋的物理本质。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "launch_angle_predictability",
+      "name": "Launch Angle Predictability",
+      "name_zh": "出球角可预测性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "弦床变形越大（张力越低），出球角度越不稳定，需要在旋转和控制间平衡。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "向上与向前的结合",
+      "name_zh": "向上与向前的结合",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: The Truth About the Topspin Pro",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "the_through_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了“击球点”是一个误区，我们需要的是“击球区域”。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了“击球点”是一个误区，我们需要的是“击球区域”。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "launch_angle_predictability",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了“击球点”是一个误区，我们需要的是“击球区域”。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了“击球点”是一个误区，我们需要的是“击球区域”。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "c_40ms",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "细化了弹性释放的具体物理机制（向下变形再向上回弹）。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "c_40ms",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "细化了弹性释放的具体物理机制（向下变形再向上回弹）。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "launch_angle_predictability",
+      "target_id": "c_40ms",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "细化了弹性释放的具体物理机制（向下变形再向上回弹）。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "c_40ms",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "细化了弹性释放的具体物理机制（向下变形再向上回弹）。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "展示了在旋转脉冲驱动下，手部如何自然完成贯穿动作。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "展示了在旋转脉冲驱动下，手部如何自然完成贯穿动作。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "launch_angle_predictability",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "展示了在旋转脉冲驱动下，手部如何自然完成贯穿动作。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "展示了在旋转脉冲驱动下，手部如何自然完成贯穿动作。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "解释了慢球需要更多的主动“贯穿向量”来建立容错性。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "解释了慢球需要更多的主动“贯穿向量”来建立容错性。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "launch_angle_predictability",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "解释了慢球需要更多的主动“贯穿向量”来建立容错性。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "解释了慢球需要更多的主动“贯穿向量”来建立容错性。",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "string_snapback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "launch_angle_predictability",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "the_through_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "launch_angle_predictability",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "string_snapback",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    },
+    {
+      "source_id": "launch_angle_predictability",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Truth About the Topspin Pro",
+      "source_file": "ftt_video_FxDmVi3EFnE",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

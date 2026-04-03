@@ -1,6 +1,266 @@
 {
   "video_id": "NEpD7fIM7HI",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "c_90degree_rackethand_angle",
+      "name": "90-Degree Racket/Hand Angle",
+      "name_zh": "90度拍手固定角",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "引拍到随挥过程中，球拍与前臂始终保持约90-135度的夹角，严禁手腕下压。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_z_bend_posture",
+      "name": "The \"Z\" Bend Posture",
+      "name_zh": "“Z”字型重心结构",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过膝盖和髋部的双重弯曲（形成Z字）来处理低球，而非通过改变手部高度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "string_calibration",
+      "name": "String Calibration",
+      "name_zh": "琴弦反馈校准",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "根据球线张力、球感反馈，动态调整挥拍轨迹的“切入深度”而非死记硬背动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_knife_release",
+      "name": "Shoulder Knife Release",
+      "name_zh": "肩部“切刀”释放",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在动力链末端，通过肩部肌肉的拉伸与释放产生额外的球头速度（Knife）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "unit_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削同样遵循“大肌肉驱动小肌肉固定”的原则。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "unit_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削同样遵循“大肌肉驱动小肌肉固定”的原则。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "string_calibration",
+      "target_id": "unit_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削同样遵循“大肌肉驱动小肌肉固定”的原则。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_knife_release",
+      "target_id": "unit_swing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削同样遵循“大肌肉驱动小肌肉固定”的原则。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削中的手腕代偿比正手更隐蔽，危害更大。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削中的手腕代偿比正手更隐蔽，危害更大。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "string_calibration",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削中的手腕代偿比正手更隐蔽，危害更大。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_knife_release",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削中的手腕代偿比正手更隐蔽，危害更大。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了“腿部是高度调整的第一优先级”。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了“腿部是高度调整的第一优先级”。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "string_calibration",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了“腿部是高度调整的第一优先级”。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_knife_release",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了“腿部是高度调整的第一优先级”。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削的加速并非来自手臂，而是肩胛骨的弹性势能。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削的加速并非来自手臂，而是肩胛骨的弹性势能。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "string_calibration",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削的加速并非来自手臂，而是肩胛骨的弹性势能。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_knife_release",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "切削的加速并非来自手臂，而是肩胛骨的弹性势能。",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "the_z_bend_posture",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "string_calibration",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_90degree_rackethand_angle",
+      "target_id": "shoulder_knife_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "string_calibration",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_z_bend_posture",
+      "target_id": "shoulder_knife_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    },
+    {
+      "source_id": "string_calibration",
+      "target_id": "shoulder_knife_release",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Learning from Federer's Slice - 4 Tips + 3 Drills",
+      "source_file": "ftt_video_NEpD7fIM7HI",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

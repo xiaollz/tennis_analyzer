@@ -1,6 +1,122 @@
 {
   "video_id": "42BfbKsTGb4",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "receiving_vs_sending",
+      "name": "Receiving vs. Sending",
+      "name_zh": "接收 vs 发送",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "认为网球由“接收球（移动到正确位置）”和“发送球（挥拍）”两部分组成。大多数人只练发送。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "legonly_balance",
+      "name": "Leg-only Balance",
+      "name_zh": "纯腿部平衡",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在移动中完全依靠腿部维持平衡，而不使用手臂作为平衡杆，从而释放手臂进行挥拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "kinesthetic_contact_sense",
+      "name": "Kinesthetic Contact Sense",
+      "name_zh": "击球点本体感觉",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "像知道手掌位置一样，清晰感知球拍在空间中最佳击球点位置的能力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "腿部主导平衡",
+      "name_zh": "腿部主导平衡",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "receiving_vs_sending",
+      "target_id": "legonly_balance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    },
+    {
+      "source_id": "receiving_vs_sending",
+      "target_id": "kinesthetic_contact_sense",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    },
+    {
+      "source_id": "receiving_vs_sending",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    },
+    {
+      "source_id": "legonly_balance",
+      "target_id": "kinesthetic_contact_sense",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    },
+    {
+      "source_id": "legonly_balance",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    },
+    {
+      "source_id": "kinesthetic_contact_sense",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: You Aren't Practicing Half of Tennis - RECEIVING",
+      "source_file": "ftt_video_42BfbKsTGb4",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

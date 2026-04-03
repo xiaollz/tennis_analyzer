@@ -1,6 +1,173 @@
 {
   "video_id": "wd4YRQW3TOc",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "flush_roll_back",
+      "name": "Flush Roll Back",
+      "name_zh": "平整后滚",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在引拍切换到前挥的瞬间，拍面相对于一个垂直平面保持平整地向后滚动，而不是翻转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意图)",
+      "confidence": 0.8
+    },
+    {
+      "id": "soft_tissue_stretch",
+      "name": "Soft Tissue Stretch",
+      "name_zh": "软组织拉伸",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用惯性（躯干前拉，球拍由于质量留在后面）拉伸肩部和小臂的软组织，储存弹性势能。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "incidence_angle_consistency",
+      "name": "Incidence Angle Consistency",
+      "name_zh": "入射角一致性",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在手臂旋转释放的过程中，通过补偿机制使拍面相对于球的入射角度保持不变。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "intuition_optimization",
+      "name": "Intuition Optimization",
+      "name_zh": "直觉优化",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "建立基本框架后，依靠身体的直觉去微调拉伸与释放的节奏，而非死磕机械动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "上旋源于拉伸",
+      "name_zh": "上旋源于拉伸",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: 4 Tips For Effortless, Controllable Topspin",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "flush_roll_back",
+      "target_id": "soft_tissue_stretch",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "flush_roll_back",
+      "target_id": "incidence_angle_consistency",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "flush_roll_back",
+      "target_id": "intuition_optimization",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "flush_roll_back",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_stretch",
+      "target_id": "incidence_angle_consistency",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_stretch",
+      "target_id": "intuition_optimization",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_tissue_stretch",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "incidence_angle_consistency",
+      "target_id": "intuition_optimization",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "incidence_angle_consistency",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    },
+    {
+      "source_id": "intuition_optimization",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips For Effortless, Controllable Topspin",
+      "source_file": "ftt_video_wd4YRQW3TOc",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

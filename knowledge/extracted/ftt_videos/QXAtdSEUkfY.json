@@ -1,6 +1,122 @@
 {
   "video_id": "QXAtdSEUkfY",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "deep_back_knee_dip",
+      "name": "Deep Back Knee Dip",
+      "name_zh": "后膝深蹲",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过大幅度弯曲后腿膝盖，使重心降至球的高度，同时为向前驱动储备弹性势能。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hip_hinge_for_path",
+      "name": "Hip Hinge for Path",
+      "name_zh": "髋部铰链路径",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "保持背部挺直的同时从髋部向前倾斜，利用躯干角度自然创造“从下向上”的挥拍轨迹。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "front_foot_clearance",
+      "name": "Front Foot Clearance",
+      "name_zh": "越过前脚原则",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手部和球拍在完成击球前必须完全延伸并越过前脚所在的垂直平面。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "后膝深蹲驱动",
+      "name_zh": "后膝深蹲驱动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: 3 Tips to Rip the Low Backhand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "deep_back_knee_dip",
+      "target_id": "hip_hinge_for_path",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    },
+    {
+      "source_id": "deep_back_knee_dip",
+      "target_id": "front_foot_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    },
+    {
+      "source_id": "deep_back_knee_dip",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_hinge_for_path",
+      "target_id": "front_foot_clearance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    },
+    {
+      "source_id": "hip_hinge_for_path",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    },
+    {
+      "source_id": "front_foot_clearance",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 3 Tips to Rip the Low Backhand",
+      "source_file": "ftt_video_QXAtdSEUkfY",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

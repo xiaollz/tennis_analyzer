@@ -1,6 +1,152 @@
 {
   "video_id": "dDYKuNZtdyU",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "pull_slot",
+      "name": "Pull Slot",
+      "name_zh": "拉力槽位",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "挥拍过程中，上背部大肌肉群（肩胛骨）开始主动收缩，将双臂向相反方向“撕开”的特定空间位置。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "offhand_trigger",
+      "name": "Off-hand Trigger",
+      "name_zh": "非持拍手触发信号",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "非持拍手开始向后方移动的瞬间，标志着主动拉力过程的开始。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "twohanded_pull",
+      "name": "Two-handed Pull",
+      "name_zh": "双向拉伸发力",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "并非单臂挥动，而是通过背部连接，使两手像拉弓一样向前后两个方向同时发力，以获得平衡和精度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "识别拉力槽位",
+      "name_zh": "识别拉力槽位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Find Your One-Handed Backhand Pull Slot",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "the_rip",
+      "name": "The Rip",
+      "name_zh": "背部撕裂练习",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Find Your One-Handed Backhand Pull Slot",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "left_hand_guide",
+      "name": "Left Hand Guide",
+      "name_zh": "左手护送钻",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Find Your One-Handed Backhand Pull Slot",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "pull_slot",
+      "target_id": "offhand_trigger",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    },
+    {
+      "source_id": "pull_slot",
+      "target_id": "twohanded_pull",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    },
+    {
+      "source_id": "pull_slot",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    },
+    {
+      "source_id": "offhand_trigger",
+      "target_id": "twohanded_pull",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    },
+    {
+      "source_id": "offhand_trigger",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pull",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your One-Handed Backhand Pull Slot",
+      "source_file": "ftt_video_dDYKuNZtdyU",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

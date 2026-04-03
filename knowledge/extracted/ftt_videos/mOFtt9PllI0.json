@@ -1,6 +1,173 @@
 {
   "video_id": "mOFtt9PllI0",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "measured_aggression_technical",
+      "name": "Measured Aggression (Technical)",
+      "name_zh": "技术性克制攻击",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "并非战术选择，而是基于身体与球的几何空间（Spacing）实时决定击球强度的能力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "motor_plan_updating",
+      "name": "Motor Plan Updating",
+      "name_zh": "运动计划实时更新",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在球弹起后到击球前的瞬间，根据球的实际轨迹实时修正挥拍轨迹和接触方式，而非预设动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_freeze_response",
+      "name": "The Freeze Response",
+      "name_zh": "压力冻结反应",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在高压时刻，大脑停止更新运动计划，导致身体执行预设的、与当前几何条件不符的错误动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "playing_average",
+      "name": "Playing Average",
+      "name_zh": "追求平均质量",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "放弃追求“制胜分”，转而追求在任何空间条件下都能打出高质量的“平均球”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "几何驱动决策",
+      "name_zh": "几何驱动决策",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: The Geometry of Measured Aggression",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "measured_aggression_technical",
+      "target_id": "motor_plan_updating",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "measured_aggression_technical",
+      "target_id": "the_freeze_response",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "measured_aggression_technical",
+      "target_id": "playing_average",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "measured_aggression_technical",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "motor_plan_updating",
+      "target_id": "the_freeze_response",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "motor_plan_updating",
+      "target_id": "playing_average",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "motor_plan_updating",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "the_freeze_response",
+      "target_id": "playing_average",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "the_freeze_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    },
+    {
+      "source_id": "playing_average",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Geometry of Measured Aggression",
+      "source_file": "ftt_video_mOFtt9PllI0",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

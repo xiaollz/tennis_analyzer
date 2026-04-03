@@ -1,6 +1,173 @@
 {
   "video_id": "XXlndjnrA4E",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "peripheral_vision",
+      "name": "Peripheral Vision",
+      "name_zh": "周视/余光",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用视网膜边缘感知物体的运动轨迹，处理速度比中央视觉更快、更直觉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "foveal_vision",
+      "name": "Foveal Vision",
+      "name_zh": "中央视觉/焦点",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视网膜中心区域对细节的精确聚焦，用于捕捉特定瞬间（如对手击球瞬间）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "calm_gaze",
+      "name": "Calm Gaze",
+      "name_zh": "冷静凝视",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "眼睛“休息”在对手击球点，不急于追球，允许大脑通过周视处理信息。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "twofixation_rhythm",
+      "name": "Two-Fixation Rhythm",
+      "name_zh": "两次固定节奏",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在一次击球周期内，眼睛仅进行两次清晰聚焦：1.对手触球点；2.球飞行中途的某点。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "视觉切换机制",
+      "name_zh": "视觉切换机制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Peripheral Vision Lets You Volley Like the Pros",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "peripheral_vision",
+      "target_id": "foveal_vision",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_vision",
+      "target_id": "calm_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_vision",
+      "target_id": "twofixation_rhythm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_vision",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "foveal_vision",
+      "target_id": "calm_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "foveal_vision",
+      "target_id": "twofixation_rhythm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "foveal_vision",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "calm_gaze",
+      "target_id": "twofixation_rhythm",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "calm_gaze",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    },
+    {
+      "source_id": "twofixation_rhythm",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Peripheral Vision Lets You Volley Like the Pros",
+      "source_file": "ftt_video_XXlndjnrA4E",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

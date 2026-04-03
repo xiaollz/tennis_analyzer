@@ -1,6 +1,584 @@
 {
   "video_id": "E_zmENJIj4g",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "ocular_dominance_alignment",
+      "name": "Ocular Dominance Alignment",
+      "name_zh": "视觉主导对齐",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "根据主导眼（左/右）决定引拍时躯干转动的幅度，以保持对球场的边缘视觉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "puredextral_pinpoint",
+      "name": "Pure-dextral Pinpoint",
+      "name_zh": "纯右利手点式步",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "右眼主导球员通过将后脚踩向击球侧，在不转头的情况下增加肩髋拉伸。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "thoracic_spring_loading",
+      "name": "Thoracic Spring Loading",
+      "name_zh": "胸椎弹簧加载",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过胸椎后伸（Extension）储存弹性势能，在击球瞬间释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "arm_slot_planarity",
+      "name": "Arm Slot Planarity",
+      "name_zh": "挥拍平面一致性",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "肘部与肩膀旋转平面保持在同一斜面上，以实现最大动量传递。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "coiling",
+      "name": "Coiling",
+      "name_zh": "对角线拉伸",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "chest_to_the_sky",
+      "name": "Chest to the Sky",
+      "name_zh": "胸部向天",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "inplane",
+      "name": "In-Plane",
+      "name_zh": "保持平面",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "unknown_concept",
+      "name": "对角线拉伸感知",
+      "name_zh": "对角线拉伸感知",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_9090",
+      "name": "90-90 静态投掷",
+      "name_zh": "90-90 静态投掷",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "inplane",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "确认了肩胛骨是动力链中极强的能量放大器。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "inplane",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "将正手的 Up 向量在发球中通过胸椎后伸极大化。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "inplane",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视觉系统不仅影响击球瞬间，还决定了准备动作的解剖学极限。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "inplane",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了利用器械自身的物理惯性能减少肌肉主动发力。",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "puredextral_pinpoint",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "thoracic_spring_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "arm_slot_planarity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "coiling",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "ocular_dominance_alignment",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "thoracic_spring_loading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "arm_slot_planarity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "coiling",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "puredextral_pinpoint",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "arm_slot_planarity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "coiling",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "thoracic_spring_loading",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "coiling",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "arm_slot_planarity",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "coiling",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "inplane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
+      "source_file": "ftt_video_E_zmENJIj4g",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

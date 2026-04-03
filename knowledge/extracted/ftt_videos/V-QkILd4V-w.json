@@ -1,6 +1,353 @@
 {
   "video_id": "V-QkILd4V-w",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "split_step_synchronization",
+      "name": "Split Step Synchronization",
+      "name_zh": "垫步同步化",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视觉捕捉抛球轨迹与身体垫步落地的节奏匹配，是接发球的第一动力源。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "predictive_gravity_tracking",
+      "name": "Predictive Gravity Tracking",
+      "name_zh": "预测性重力追踪",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用抛球上升到顶点的重力感来预判击球时机，而非仅仅盯着击球瞬间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "visualfootwork_linkage",
+      "name": "Visual-Footwork Linkage",
+      "name_zh": "视足联动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视觉信息的获取质量直接决定了第一步启动的爆发力，视觉迟钝则步法僵硬。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "抛球追踪法",
+      "name_zh": "抛球追踪法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: 8 Visual Return Strategies Tested by WTA Pro",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "soft_gaze",
+      "name": "Soft Gaze",
+      "name_zh": "柔和聚焦",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: 8 Visual Return Strategies Tested by WTA Pro",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "unknown_concept",
+      "relation": "causes",
+      "confidence": 0.6,
+      "evidence": "当视觉跟不上时，身体无法转身，只能靠小臂去“捞”或“挡”，这是 C25 的根源。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "unknown_concept",
+      "relation": "causes",
+      "confidence": 0.6,
+      "evidence": "当视觉跟不上时，身体无法转身，只能靠小臂去“捞”或“挡”，这是 C25 的根源。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "unknown_concept",
+      "relation": "causes",
+      "confidence": 0.6,
+      "evidence": "当视觉跟不上时，身体无法转身，只能靠小臂去“捞”或“挡”，这是 C25 的根源。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "causes",
+      "confidence": 0.6,
+      "evidence": "当视觉跟不上时，身体无法转身，只能靠小臂去“捞”或“挡”，这是 C25 的根源。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_gaze",
+      "target_id": "unknown_concept",
+      "relation": "causes",
+      "confidence": 0.6,
+      "evidence": "当视觉跟不上时，身体无法转身，只能靠小臂去“捞”或“挡”，这是 C25 的根源。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "垫步不是独立的跳跃，而是视觉驱动的“预加载”。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "垫步不是独立的跳跃，而是视觉驱动的“预加载”。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "垫步不是独立的跳跃，而是视觉驱动的“预加载”。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "垫步不是独立的跳跃，而是视觉驱动的“预加载”。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_gaze",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "垫步不是独立的跳跃，而是视觉驱动的“预加载”。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了在高速对抗中，追踪球的轨迹比盯着击球瞬间更有效。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了在高速对抗中，追踪球的轨迹比盯着击球瞬间更有效。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了在高速对抗中，追踪球的轨迹比盯着击球瞬间更有效。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了在高速对抗中，追踪球的轨迹比盯着击球瞬间更有效。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_gaze",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了在高速对抗中，追踪球的轨迹比盯着击球瞬间更有效。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "正确的视觉模式已内化为强神经通路，错误指令会被本能覆盖。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "正确的视觉模式已内化为强神经通路，错误指令会被本能覆盖。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "正确的视觉模式已内化为强神经通路，错误指令会被本能覆盖。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "正确的视觉模式已内化为强神经通路，错误指令会被本能覆盖。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "soft_gaze",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "正确的视觉模式已内化为强神经通路，错误指令会被本能覆盖。",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "predictive_gravity_tracking",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "visualfootwork_linkage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "split_step_synchronization",
+      "target_id": "soft_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "visualfootwork_linkage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "predictive_gravity_tracking",
+      "target_id": "soft_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "visualfootwork_linkage",
+      "target_id": "soft_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "soft_gaze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 8 Visual Return Strategies Tested by WTA Pro",
+      "source_file": "ftt_video_V-QkILd4V-w",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

@@ -1,6 +1,134 @@
 {
   "video_id": "wVa4XQPcaqs",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "probing",
+      "name": "Probing",
+      "name_zh": "探测/间距调整",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "球员主动调整身体与球的相对空间，以进入“按压槽位”的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "static_force_verification",
+      "name": "Static Force Verification",
+      "name_zh": "静态压力验证",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过向墙壁施压来检测当前身体结构是否能有效传递躯干力量。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "静态推墙验证",
+      "name_zh": "静态推墙验证",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Use The Wall to Find Your Perfect Contact",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "probing",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "C10, C19, C21",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "static_force_verification",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "C10, C19, C21",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "C10, C19, C21",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "V01-01, T01",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "static_force_verification",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "V01-01, T01",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "V01-01, T01",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "static_force_verification",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Use The Wall to Find Your Perfect Contact",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Use The Wall to Find Your Perfect Contact",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    },
+    {
+      "source_id": "static_force_verification",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Use The Wall to Find Your Perfect Contact",
+      "source_file": "ftt_video_wVa4XQPcaqs",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

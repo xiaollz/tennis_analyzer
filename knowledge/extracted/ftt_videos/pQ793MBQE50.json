@@ -1,6 +1,173 @@
 {
   "video_id": "pQ793MBQE50",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "pull_slot",
+      "name": "Pull Slot",
+      "name_zh": "拉动槽位",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "身体前方一个特定的空间点，在此处肩胛骨能产生最大的向后拉力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "twohanded_pull",
+      "name": "Two-Handed Pull",
+      "name_zh": "双手拉动阶段",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在前挥启动到分手的瞬间，非持拍手协助持拍手进入槽位并启动旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "orthogonal_grip",
+      "name": "Orthogonal Grip",
+      "name_zh": "正交握拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "确保前臂与球拍柄之间呈 90 度夹角，使手腕能进行有效的径向/尺向偏转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "wrist_resistance",
+      "name": "Wrist Resistance",
+      "name_zh": "手腕抗力",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "与正手不同，单反需要主动的前臂张力来防止手腕在击球区发生“翻转”崩溃。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "肩胛骨后缩驱动",
+      "name_zh": "肩胛骨后缩驱动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: How Scap Retraction Powers One-Handed Backhand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "pull_slot",
+      "target_id": "twohanded_pull",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "pull_slot",
+      "target_id": "orthogonal_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "pull_slot",
+      "target_id": "wrist_resistance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "pull_slot",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pull",
+      "target_id": "orthogonal_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pull",
+      "target_id": "wrist_resistance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "twohanded_pull",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_grip",
+      "target_id": "wrist_resistance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_grip",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    },
+    {
+      "source_id": "wrist_resistance",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Scap Retraction Powers One-Handed Backhand",
+      "source_file": "ftt_video_pQ793MBQE50",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

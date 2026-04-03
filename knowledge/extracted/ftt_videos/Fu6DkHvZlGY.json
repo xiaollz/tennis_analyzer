@@ -1,6 +1,173 @@
 {
   "video_id": "Fu6DkHvZlGY",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "pure_dextral_pinpoint",
+      "name": "Pure Dextral Pinpoint",
+      "name_zh": "纯右利式并步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "并步时将后脚置于前脚的“击球侧”（右侧），而非后方。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "peripheral_target_vision",
+      "name": "Peripheral Target Vision",
+      "name_zh": "外周目标视觉",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用主导眼（右眼）在引拍阶段通过视野边缘锁定发球区目标。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "left_arm_leverage",
+      "name": "Left Arm Leverage",
+      "name_zh": "左臂杠杆",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "抛球后左臂主动向“上、右、后”拉伸，以增加躯干的弹性势能。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "spinal_planes_of_motion",
+      "name": "Spinal Planes of Motion",
+      "name_zh": "脊柱三维运动",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "发球涉及水平面旋转、矢状面伸展/屈曲和额状面侧弯的综合。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "纯右利式并步位",
+      "name_zh": "纯右利式并步位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "pure_dextral_pinpoint",
+      "target_id": "peripheral_target_vision",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "pure_dextral_pinpoint",
+      "target_id": "left_arm_leverage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "pure_dextral_pinpoint",
+      "target_id": "spinal_planes_of_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "pure_dextral_pinpoint",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_target_vision",
+      "target_id": "left_arm_leverage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_target_vision",
+      "target_id": "spinal_planes_of_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "peripheral_target_vision",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "left_arm_leverage",
+      "target_id": "spinal_planes_of_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "left_arm_leverage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    },
+    {
+      "source_id": "spinal_planes_of_motion",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pure-Dextral Pinpoint - Serve Like Mensik",
+      "source_file": "ftt_video_Fu6DkHvZlGY",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

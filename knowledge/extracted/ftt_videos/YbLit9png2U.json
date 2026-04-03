@@ -1,6 +1,161 @@
 {
   "video_id": "YbLit9png2U",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "orthogonal_throwing_vector",
+      "name": "Orthogonal Throwing Vector",
+      "name_zh": "正交投掷向量",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手部和球拍的实际运动轨迹与球的最终飞行路径之间存在显著的角度差（正交性）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_umpires_chair_cue",
+      "name": "The Umpire's Chair Cue",
+      "name_zh": "裁判椅指向标",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在踢旋发球中，将球拍“扔”向侧面裁判椅的心理意图，以产生最大转速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "正交发力原则",
+      "name_zh": "正交发力原则",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Fix Your Kick Serve by Throwing Sideways",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "orthogonal_throwing_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了在极端上旋（Kick）中，Out 向量几乎是主导方向。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "the_umpires_chair_cue",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了在极端上旋（Kick）中，Out 向量几乎是主导方向。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "证明了在极端上旋（Kick）中，Out 向量几乎是主导方向。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_throwing_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "平击成分越多，Through 向量比例增加，但 Out 向量依然存在。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "the_umpires_chair_cue",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "平击成分越多，Through 向量比例增加，但 Out 向量依然存在。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "平击成分越多，Through 向量比例增加，但 Out 向量依然存在。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_throwing_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认手臂只是动量的传递者，其轨迹由躯干旋转和投掷意图决定。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "the_umpires_chair_cue",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认手臂只是动量的传递者，其轨迹由躯干旋转和投掷意图决定。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认手臂只是动量的传递者，其轨迹由躯干旋转和投掷意图决定。",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_throwing_vector",
+      "target_id": "the_umpires_chair_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Kick Serve by Throwing Sideways",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "orthogonal_throwing_vector",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Kick Serve by Throwing Sideways",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    },
+    {
+      "source_id": "the_umpires_chair_cue",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fix Your Kick Serve by Throwing Sideways",
+      "source_file": "ftt_video_YbLit9png2U",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

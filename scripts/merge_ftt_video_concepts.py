@@ -104,6 +104,110 @@ def _parse_relation(rel_str: str) -> RelationType:
     return mapping.get(normalized, RelationType.SUPPORTS)
 
 
+# ── Quality filter ──────────────────────────────────────────────────────
+
+
+def _is_quality_concept_fn():
+    """Return a quality filter function for concept dicts.
+
+    Extracted as a factory so tests can import it.
+    """
+    def _is_quality_concept(c_data: dict) -> bool:
+        """Filter out garbage concepts."""
+        cid = c_data.get("id", "")
+        name = c_data.get("name", "")
+        # Too short ID
+        if len(cid) < 3:
+            return False
+        # Numeric-only IDs like c_5
+        if re.match(r"^c_\d+$", cid):
+            return False
+        # ID too long (>40 chars means it's a sentence, not a concept)
+        if len(cid) > 40:
+            return False
+        # unknown_concept placeholder
+        if cid == "unknown_concept":
+            return False
+        # Player names (common pattern in extraction)
+        player_names = {
+            "giovanni", "mpetshi", "perricard", "shapovalov", "sinner",
+            "alcaraz", "federer", "nadal", "djokovic", "draper",
+            "aliassime", "branstine", "allsopp", "mensik", "fonseca",
+            "nishioka", "de_minaur", "rublev", "rune", "khachanov",
+            "griekspoor", "schwartzman", "berrettini", "tsitsipas",
+            "medvedev", "zverev", "sampras",
+        }
+        cid_lower = cid.lower()
+        if any(pn in cid_lower for pn in player_names):
+            return False
+        # Per-video hash IDs (drill_VIDEOID_N, tp_VIDEOID_N patterns)
+        if re.match(r"^(drill|tp)_[a-z0-9]{8,}_\d+$", cid, re.IGNORECASE):
+            return False
+        # Drill with video ID hash (drill_xxxxx format where xxxxx looks like a video ID)
+        if re.match(r"^drill_[a-z0-9_]{10,}$", cid) and "_" in cid[6:]:
+            return False
+        # OTI drill references (specific match session references)
+        if cid.startswith("oti_"):
+            return False
+        # Name is too long (likely a sentence)
+        if len(name) > 50:
+            return False
+        # Name starts with ** (markdown bold not stripped)
+        if name.startswith("**") or name.startswith("*"):
+            return False
+        # Description field used as name (contains colons, newlines, etc)
+        if ":" in name and len(name) > 25:
+            return False
+        # Pure Chinese name with no meaningful English ID
+        if re.match(r"^[\u4e00-\u9fff\s]+$", name) and len(cid) < 5:
+            return False
+        # Generic coaching/cue concepts that don't add knowledge graph value
+        generic_terms = {
+            "coaching_command", "coaching_cue", "coaching_cues", "cues",
+            "feeling_cue", "visual_cue", "sensory_cues", "distal_end_coaching",
+            "coaching_cues_body_mechanics",
+        }
+        if cid in generic_terms:
+            return False
+        # Teaching point IDs that are just Chinese transliterations
+        if re.match(r"^tp_[a-z0-9]+_\d+$", cid):
+            return False
+        # Single common word concepts that are too generic
+        generic_singles = {
+            "legs", "timing", "balance", "power", "speed", "rhythm",
+            "contact", "follow_through", "grip", "stance", "rotation",
+            "extension", "relaxation", "acceleration", "deceleration",
+        }
+        if cid in generic_singles:
+            return False
+        # Names with quotation marks (typically pulled from text, not real concepts)
+        if name.startswith('"') or name.startswith("'"):
+            return False
+        # Concept name contains "you" / motivational phrases
+        if re.match(r"^you\s", name, re.IGNORECASE):
+            return False
+        # Non-concept terms
+        non_concept_patterns = {
+            "amelia", "jacob_degrom", "degrom",
+            "metaphors", "metaphor", "analogy", "analogies",
+            "concrete_vs_sand", "external_cues", "internal_cues",
+            "stable_vs_loose",
+        }
+        if cid in non_concept_patterns:
+            return False
+        # Phrases that are instructions, not concepts (>5 words)
+        word_count = len(name.split())
+        if word_count > 5:
+            return False
+        # IDs that look like they contain video IDs (mixed case alphanumeric, not pure words)
+        # Video IDs have digits mixed in like "pWzyP_xfLfU" -> "pwzyp_xflfu"
+        if re.match(r"^[a-z]+_[a-z]*\d[a-z0-9]*$", cid) and len(cid) > 15:
+            return False
+        return True
+
+    return _is_quality_concept
+
+
 # ── Markdown concept extraction ─────────────────────────────────────────
 
 
@@ -477,98 +581,7 @@ def merge_concepts_into_registry() -> tuple[dict, ConceptRegistry, list[dict]]:
     all_chains: list[dict] = []
     new_concepts: list[Concept] = []
 
-    # Quality filter: skip concepts that are clearly garbage
-    def _is_quality_concept(c_data: dict) -> bool:
-        """Filter out garbage concepts."""
-        cid = c_data.get("id", "")
-        name = c_data.get("name", "")
-        # Too short ID
-        if len(cid) < 3:
-            return False
-        # Numeric-only IDs like c_5
-        if re.match(r"^c_\d+$", cid):
-            return False
-        # ID too long (>40 chars means it's a sentence, not a concept)
-        if len(cid) > 40:
-            return False
-        # unknown_concept placeholder
-        if cid == "unknown_concept":
-            return False
-        # Player names (common pattern in extraction)
-        player_names = {
-            "giovanni", "mpetshi", "perricard", "shapovalov", "sinner",
-            "alcaraz", "federer", "nadal", "djokovic", "draper",
-            "aliassime", "branstine", "allsopp", "mensik", "fonseca",
-            "nishioka", "de_minaur", "rublev", "rune", "khachanov",
-            "griekspoor", "schwartzman", "berrettini", "tsitsipas",
-            "medvedev", "zverev",
-        }
-        cid_lower = cid.lower()
-        if any(pn in cid_lower for pn in player_names):
-            return False
-        # Per-video hash IDs (drill_VIDEOID_N, tp_VIDEOID_N patterns)
-        if re.match(r"^(drill|tp)_[a-z0-9]{8,}_\d+$", cid, re.IGNORECASE):
-            return False
-        # Drill with video ID hash (drill_xxxxx format where xxxxx looks like a video ID)
-        if re.match(r"^drill_[a-z0-9_]{10,}$", cid) and "_" in cid[6:]:
-            return False
-        # OTI drill references (specific match session references)
-        if cid.startswith("oti_"):
-            return False
-        # Name is too long (likely a sentence)
-        if len(name) > 50:
-            return False
-        # Name starts with ** (markdown bold not stripped)
-        if name.startswith("**") or name.startswith("*"):
-            return False
-        # Description field used as name (contains colons, newlines, etc)
-        if ":" in name and len(name) > 25:
-            return False
-        # Pure Chinese name with no meaningful English ID
-        if re.match(r"^[\u4e00-\u9fff\s]+$", name) and len(cid) < 5:
-            return False
-        # Generic coaching/cue concepts that don't add knowledge graph value
-        generic_terms = {
-            "coaching_command", "coaching_cue", "coaching_cues", "cues",
-            "feeling_cue", "visual_cue", "sensory_cues", "distal_end_coaching",
-            "coaching_cues_body_mechanics",
-        }
-        if cid in generic_terms:
-            return False
-        # Teaching point IDs that are just Chinese transliterations
-        if re.match(r"^tp_[a-z0-9]+_\d+$", cid):
-            return False
-        # Single common word concepts that are too generic
-        generic_singles = {
-            "legs", "timing", "balance", "power", "speed", "rhythm",
-            "contact", "follow_through", "grip", "stance", "rotation",
-            "extension", "relaxation", "acceleration", "deceleration",
-        }
-        if cid in generic_singles:
-            return False
-        # Names with quotation marks (typically pulled from text, not real concepts)
-        if name.startswith('"') or name.startswith("'"):
-            return False
-        # Concept name contains "you" / motivational phrases
-        if re.match(r"^you\s", name, re.IGNORECASE):
-            return False
-        # Student/player case studies and non-concept terms
-        non_concept_patterns = {
-            "amelia", "jacob_degrom", "degrom", "pete_sampras", "sampras",
-            "metaphors", "metaphor", "analogy", "analogies",
-            "concrete_vs_sand", "cues", "external_cues", "internal_cues",
-            "stable_vs_loose",
-        }
-        if cid in non_concept_patterns:
-            return False
-        # Phrases that are instructions, not concepts (>4 words)
-        word_count = len(name.split())
-        if word_count > 5:
-            return False
-        # IDs that look like they contain video IDs (long alphanumeric segments)
-        if re.match(r"^[a-z]+_[a-z0-9]{8,}$", cid):
-            return False
-        return True
+    is_quality = _is_quality_concept_fn()
 
     for vf in video_files:
         data = json.loads(vf.read_text())
@@ -580,7 +593,7 @@ def merge_concepts_into_registry() -> tuple[dict, ConceptRegistry, list[dict]]:
         for c_data in data.get("concepts", []):
             stats["total_raw_concepts_from_videos"] += 1
 
-            if not _is_quality_concept(c_data):
+            if not is_quality(c_data):
                 video_filtered += 1
                 continue
 

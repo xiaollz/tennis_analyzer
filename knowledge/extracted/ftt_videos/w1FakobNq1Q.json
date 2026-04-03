@@ -1,6 +1,368 @@
 {
   "video_id": "w1FakobNq1Q",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "c_810_anxiety_rule",
+      "name": "8/10 Anxiety Rule",
+      "name_zh": "8/10 焦虑准则",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "竞技状态下焦虑感应保持在8/10，既能保持专注又不会触发“冻结”反应。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "fight_response",
+      "name": "Fight Response",
+      "name_zh": "战斗反应",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "交感神经系统触发的积极竞技状态，表现为脚下移动活跃、挥拍果断。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "highmargin_velocity",
+      "name": "High-Margin Velocity",
+      "name_zh": "高容错速率",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在瞄准安全目标（高过网高度、远离边线）的同时，保持职业级的挥拍速度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "pattern_breaking_bh",
+      "name": "Pattern Breaking BH",
+      "name_zh": "破局反拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在处于劣势的斜线对攻中，通过变直线（即使不追求制胜）来改变拉锯节奏。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "焦虑调节",
+      "name_zh": "焦虑调节",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Breaking Down the Greatest Tiebreak Ever Played",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "c_810",
+      "name": "8/10 压力阶梯",
+      "name_zh": "8/10 压力阶梯",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Breaking Down the Greatest Tiebreak Ever Played",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "明确了小臂代偿的心理诱因：焦虑触发了交感神经的“冻结”反应。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "明确了小臂代偿的心理诱因：焦虑触发了交感神经的“冻结”反应。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "明确了小臂代偿的心理诱因：焦虑触发了交感神经的“冻结”反应。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "pattern_breaking_bh",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "明确了小臂代偿的心理诱因：焦虑触发了交感神经的“冻结”反应。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "明确了小臂代偿的心理诱因：焦虑触发了交感神经的“冻结”反应。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "阿尔卡拉斯的成功在于他完全信任自己的发力系统，即使失误也不怀疑。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "阿尔卡拉斯的成功在于他完全信任自己的发力系统，即使失误也不怀疑。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "阿尔卡拉斯的成功在于他完全信任自己的发力系统，即使失误也不怀疑。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "pattern_breaking_bh",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "阿尔卡拉斯的成功在于他完全信任自己的发力系统，即使失误也不怀疑。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "阿尔卡拉斯的成功在于他完全信任自己的发力系统，即使失误也不怀疑。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视频中提到的“Loose Forearm”正是手臂作为被动传递者的视觉特征。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视频中提到的“Loose Forearm”正是手臂作为被动传递者的视觉特征。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视频中提到的“Loose Forearm”正是手臂作为被动传递者的视觉特征。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "pattern_breaking_bh",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视频中提到的“Loose Forearm”正是手臂作为被动传递者的视觉特征。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "视频中提到的“Loose Forearm”正是手臂作为被动传递者的视觉特征。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了 FTT 的核心：不要追求完美击球点，要追求容错区域。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了 FTT 的核心：不要追求完美击球点，要追求容错区域。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了 FTT 的核心：不要追求完美击球点，要追求容错区域。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "pattern_breaking_bh",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了 FTT 的核心：不要追求完美击球点，要追求容错区域。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "unknown_concept",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "再次确认了 FTT 的核心：不要追求完美击球点，要追求容错区域。",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "fight_response",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "highmargin_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "pattern_breaking_bh",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "c_810_anxiety_rule",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "highmargin_velocity",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "pattern_breaking_bh",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "fight_response",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "pattern_breaking_bh",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "highmargin_velocity",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    },
+    {
+      "source_id": "pattern_breaking_bh",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Breaking Down the Greatest Tiebreak Ever Played",
+      "source_file": "ftt_video_w1FakobNq1Q",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

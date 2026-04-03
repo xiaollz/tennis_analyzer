@@ -1,6 +1,173 @@
 {
   "video_id": "Qszz0N4fRb4",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "probing",
+      "name": "Probing",
+      "name_zh": "空间探测/寻位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过精确步法和视觉，主动寻找身体与球之间最舒适的相对空间位置的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "singular_sensation",
+      "name": "Singular Sensation",
+      "name_zh": "单一感知",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在高速挥拍过程中，将复杂的力学过程简化为一个单一的身体感觉（如“扔出球拍”）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "abdominal_x",
+      "name": "Abdominal X",
+      "name_zh": "腹部X轴拉伸",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球侧肩膀与对侧髋部之间的对角线拉伸与收缩，是躯干动力的核心。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "positive_balance",
+      "name": "Positive Balance",
+      "name_zh": "积极平衡",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "击球瞬间重心微弱但明确的前移（后脚在击球后落点前移），用于增加球速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "以释放为核心构建挥拍",
+      "name_zh": "以释放为核心构建挥拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Why You Get Tight, and How to Fix It",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "probing",
+      "target_id": "singular_sensation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "abdominal_x",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "positive_balance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "probing",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "singular_sensation",
+      "target_id": "abdominal_x",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "singular_sensation",
+      "target_id": "positive_balance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "singular_sensation",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "abdominal_x",
+      "target_id": "positive_balance",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "abdominal_x",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    },
+    {
+      "source_id": "positive_balance",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why You Get Tight, and How to Fix It",
+      "source_file": "ftt_video_Qszz0N4fRb4",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

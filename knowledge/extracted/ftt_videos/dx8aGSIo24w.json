@@ -1,6 +1,122 @@
 {
   "video_id": "dx8aGSIo24w",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "double_bend",
+      "name": "Double Bend",
+      "name_zh": "双重弯曲",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "同时在膝盖和髋部进行深蹲，以保持躯干正直的同时降低重心。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "wide_base_for_torque",
+      "name": "Wide Base for Torque",
+      "name_zh": "宽基座扭矩",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "保持双脚间距大于肩宽，为躯干旋转提供稳定的反作用力支点。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "momentum_drop",
+      "name": "Momentum Drop",
+      "name_zh": "动量掉拍",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "引拍时拍头先略微抬起再利用重力下落，增加挥拍的流畅度和动量。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "双重弯曲下蹲",
+      "name_zh": "双重弯曲下蹲",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: 4 Tips for Two-Handers",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "double_bend",
+      "target_id": "wide_base_for_torque",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    },
+    {
+      "source_id": "double_bend",
+      "target_id": "momentum_drop",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    },
+    {
+      "source_id": "double_bend",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    },
+    {
+      "source_id": "wide_base_for_torque",
+      "target_id": "momentum_drop",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    },
+    {
+      "source_id": "wide_base_for_torque",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    },
+    {
+      "source_id": "momentum_drop",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: 4 Tips for Two-Handers",
+      "source_file": "ftt_video_dx8aGSIo24w",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

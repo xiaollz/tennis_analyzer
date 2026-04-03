@@ -1,6 +1,95 @@
 {
   "video_id": "OYf48k-cfNI",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "the_80_shot",
+      "name": "The 80% Shot",
+      "name_zh": "80% 击球原则",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "赢得比赛不靠 100% 的完美击球，而靠在受限位置打出 80% 质量的球，而非失误。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "jammed_execution",
+      "name": "Jammed Execution",
+      "name_zh": "挤压式执行",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "当球速过快或位移不足导致手臂无法完全伸展时，通过躯干和挥拍轨迹的完整性来补偿空间缺失。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "容错性执行",
+      "name_zh": "容错性执行",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Fault Tolerance In Action",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    },
+    {
+      "id": "the_jammed_drill",
+      "name": "The Jammed Drill",
+      "name_zh": "故意挤压训练",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Training drill from FTT video: Fault Tolerance In Action",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "the_80_shot",
+      "target_id": "jammed_execution",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fault Tolerance In Action",
+      "source_file": "ftt_video_OYf48k-cfNI",
+      "resolution": null
+    },
+    {
+      "source_id": "the_80_shot",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fault Tolerance In Action",
+      "source_file": "ftt_video_OYf48k-cfNI",
+      "resolution": null
+    },
+    {
+      "source_id": "jammed_execution",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Fault Tolerance In Action",
+      "source_file": "ftt_video_OYf48k-cfNI",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }

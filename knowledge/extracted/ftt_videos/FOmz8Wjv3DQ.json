@@ -1,6 +1,233 @@
 {
   "video_id": "FOmz8Wjv3DQ",
-  "concepts": [],
-  "edges": [],
+  "concepts": [
+    {
+      "id": "glide_step",
+      "name": "Glide Step",
+      "name_zh": "滑步/滑行步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在移动中脚不接触地面或轻微掠过地面，以快速调整重心并扩大支撑底座的动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "triple_bend",
+      "name": "Triple Bend",
+      "name_zh": "三重弯曲",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "踝关节、膝关节、髋关节同时保持弯曲状态，是募集下肢爆发力和维持平衡的力学前提。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "landing_in_motion",
+      "name": "Landing in Motion",
+      "name_zh": "动态着陆",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将分腿垫步的着陆过程直接转化为向球移动的第一步，而非先着陆再启动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "stance_width_leverage",
+      "name": "Stance Width Leverage",
+      "name_zh": "站姿宽度杠杆",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过增加双脚间距，将垂直向上的推力转化为更强的横向（Lateral）推力和平衡控制力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "force_absorption",
+      "name": "Force Absorption",
+      "name_zh": "力量吸收",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "ftt"
+      ],
+      "description": "落地时通过三重弯曲缓冲动能，将其转化为势能以备下一次爆发，防止动量泄漏。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "unknown_concept",
+      "name": "站姿宽度",
+      "name_zh": "站姿宽度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Teaching point from FTT video: Deeper Than Just Footwork - Movement Fundamentals",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.7
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "glide_step",
+      "target_id": "triple_bend",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "glide_step",
+      "target_id": "landing_in_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "glide_step",
+      "target_id": "stance_width_leverage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "glide_step",
+      "target_id": "force_absorption",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "glide_step",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "triple_bend",
+      "target_id": "landing_in_motion",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "triple_bend",
+      "target_id": "stance_width_leverage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "triple_bend",
+      "target_id": "force_absorption",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "triple_bend",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "landing_in_motion",
+      "target_id": "stance_width_leverage",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "landing_in_motion",
+      "target_id": "force_absorption",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "landing_in_motion",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "stance_width_leverage",
+      "target_id": "force_absorption",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "stance_width_leverage",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    },
+    {
+      "source_id": "force_absorption",
+      "target_id": "unknown_concept",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Deeper Than Just Footwork - Movement Fundamentals",
+      "source_file": "ftt_video_FOmz8Wjv3DQ",
+      "resolution": null
+    }
+  ],
   "diagnostic_chains": []
 }
