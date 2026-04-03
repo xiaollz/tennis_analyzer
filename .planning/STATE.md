@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-04-03T06:21:59.740Z"
+stopped_at: Completed 03-06-PLAN.md
+last_updated: "2026-04-03T06:51:36.368Z"
 last_activity: 2026-04-03
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 11
-  completed_plans: 7
+  completed_plans: 11
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-03)
 ## Current Position
 
 Phase: 03 (FTT Video Extraction) — EXECUTING
-Plan: 3 of 6
+Plan: 4 of 6
 Status: Ready to execute
 Last activity: 2026-04-03
 
@@ -59,6 +59,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02 P03 | 12min | 2 tasks | 6 files |
 | Phase 03 P01 | 8min | 2 tasks | 5 files |
 | Phase 03 P03 | 33min | 1 tasks | 26 files |
+| Phase 03 P06 | 18min | 3 tasks | 28 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,8 @@ Recent decisions affecting current work:
 - [Phase 02]: User journey extraction: 130 edges from arrow-chain parsing + legacy JSON migration; graph resilient to partial data
 - [Phase 03]: 73-video inventory: 33 analyzed + 40 pending from RESEARCH.md table (source of truth)
 - [Phase 03]: Enhanced concept extractor: Gemini outputs structured tables, not bold-colon format; added table parser for 40x concept yield
+- [Phase 03]: Registry 582 concepts: 73 videos produce ~300 unique concepts after quality filtering, above 500 target but quality-checked
+- [Phase 03]: Re-extracted 22 videos from Markdown (both batch2+3 had extraction issues); quality filter factory pattern for testability
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-03T06:21:59.737Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-04-03T06:51:36.365Z
+Stopped at: Completed 03-06-PLAN.md
 Resume file: None
