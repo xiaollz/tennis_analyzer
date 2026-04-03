@@ -83,7 +83,12 @@ Plans:
   3. Every known forehand symptom group (current 7 + any new ones discovered) has a complete diagnostic chain: symptom -> branching logic -> root cause(s) -> drill(s) -> check criteria
   4. Cross-source confidence scores are assigned (FTT-only=high, multi-source=very high, single-secondary=medium)
   5. Each canonical concept has muscle mappings with function, training method, common failure, and VLM-detectable feature where applicable
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 6 (undirected edges) -- validate all edges have type and direction. Pitfall 10 (no visualization) -- add simple graph visualization utility for debugging.
 
 ### Phase 5: Output Generation & VLM Engine
@@ -96,7 +101,12 @@ Plans:
   3. VLM prompt generator compiles a prompt from a graph subgraph query, staying within ~10K char budget
   4. Two-pass VLM analysis works: quick scan identifies symptom category, then targeted analysis with relevant diagnostic chains produces a report with what/why/how-to-fix/check-criteria
   5. The generated VLM prompt template replaces the hardcoded prompt in vlm_analyzer.py
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 3 (prompt overflow) -- two-pass VLM with subgraph selection is critical. Test prompt size early.
 
 ### Phase 6: Secondary Sources
@@ -108,7 +118,12 @@ Plans:
   2. Feel Tennis free videos are identified, analyzed, and concepts extracted into the canonical registry
   3. Cross-source reconciliation is complete: conflicts resolved (FTT wins), agreements marked as reinforced, complements integrated
   4. Knowledge graph confidence scores updated to reflect multi-source validation
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 5 (reconciliation complexity) -- reconciliation is a separate explicit pass, not embedded in extraction. Pitfall 4 (transcript quality) -- use Gemini video understanding as primary, transcripts as supplementary.
 
 ### Phase 7: User Integration
@@ -119,7 +134,12 @@ Plans:
   1. User training records (learning.md) are linked to knowledge graph concepts -- each training entry maps to relevant concepts and progress status
   2. VLM diagnostic output considers the user's known issues and recent breakthroughs (personalized analysis, not generic)
   3. A training plan can be generated based on the user's current knowledge gaps and technique weaknesses, recommending specific drills from the knowledge graph
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 
 ## Progress
 
