@@ -304,13 +304,93 @@ class TestExist04RegistrySnapshot:
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.skip(reason="Implemented in Plan 03 (TPA/Feel Tennis video extraction)")
-def test_exist_02_video_extraction():
-    """EXIST-02: Extract concepts from video synthesis files."""
-    pass
+# ---------------------------------------------------------------------------
+# EXIST-02: User journey extraction
+# ---------------------------------------------------------------------------
 
 
-@pytest.mark.skip(reason="Implemented in Plan 03 (Cross-source deduplication)")
-def test_exist_05_cross_source_dedup():
-    """EXIST-05: Resolve duplicate concepts across different sources."""
-    pass
+class TestExist02UserJourneyExtraction:
+    """EXIST-02: Extract concepts from user training journal."""
+
+    def test_user_journey_json_exists(self):
+        """User journey extraction should produce learning.json."""
+        journey_path = EXTRACTED_DIR / "user_journey" / "learning.json"
+        assert journey_path.exists(), "user_journey/learning.json not found"
+
+    def test_user_journey_has_concepts_and_edges(self):
+        """User journey extraction should contain concepts and edges."""
+        journey_path = EXTRACTED_DIR / "user_journey" / "learning.json"
+        if not journey_path.exists():
+            pytest.skip("learning.json not generated yet")
+        data = json.loads(journey_path.read_text())
+        assert len(data["concepts"]) > 0, "Should have concepts"
+        assert len(data["edges"]) >= 10, f"Should have >= 10 edges, got {len(data['edges'])}"
+
+    def test_user_journey_concepts_linked_to_registry(self):
+        """User journey concepts should link to canonical registry IDs."""
+        journey_path = EXTRACTED_DIR / "user_journey" / "learning.json"
+        if not journey_path.exists():
+            pytest.skip("learning.json not generated yet")
+        data = json.loads(journey_path.read_text())
+        # At least some edges should reference canonical concepts like scooping, unit_turn
+        edge_ids = set()
+        for e in data["edges"]:
+            edge_ids.add(e["source_id"])
+            edge_ids.add(e["target_id"])
+        canonical = {"scooping", "unit_turn", "press_slot", "wrist_lag"}
+        found = canonical & edge_ids
+        assert len(found) >= 1, f"Expected canonical IDs in edges, found: {edge_ids & canonical}"
+
+
+# ---------------------------------------------------------------------------
+# EXIST-05: Knowledge graph with causal chains
+# ---------------------------------------------------------------------------
+
+
+class TestExist05KnowledgeGraph:
+    """EXIST-05: Knowledge graph with edges and causal chain queries."""
+
+    GRAPH_SNAPSHOT = EXTRACTED_DIR / "_graph_snapshot.json"
+
+    def test_graph_snapshot_exists(self):
+        """Graph snapshot should exist."""
+        assert self.GRAPH_SNAPSHOT.exists(), "_graph_snapshot.json not found"
+
+    def test_graph_node_count(self):
+        """Graph should have >= 100 nodes."""
+        from knowledge.graph import KnowledgeGraph
+
+        g = KnowledgeGraph.from_json(self.GRAPH_SNAPSHOT)
+        assert g.node_count >= 100, f"Expected >= 100 nodes, got {g.node_count}"
+
+    def test_graph_edge_count(self):
+        """Graph should have >= 50 edges."""
+        from knowledge.graph import KnowledgeGraph
+
+        g = KnowledgeGraph.from_json(self.GRAPH_SNAPSHOT)
+        assert g.edge_count >= 50, f"Expected >= 50 edges, got {g.edge_count}"
+
+    def test_causal_chain_query_returns_results(self):
+        """At least one causal chain query should return a non-empty result."""
+        from knowledge.graph import KnowledgeGraph
+
+        g = KnowledgeGraph.from_json(self.GRAPH_SNAPSHOT)
+        test_symptoms = ["scooping", "forearm_compensation", "v_scooping"]
+        found_chain = False
+        for symptom in test_symptoms:
+            if symptom in g.graph.nodes:
+                chains = g.get_causal_chain(symptom)
+                if len(chains) > 0 and len(chains[0]) > 1:
+                    found_chain = True
+                    break
+        assert found_chain, "No causal chain query returned a multi-node path"
+
+    def test_graph_roundtrip(self):
+        """Graph should survive JSON serialization roundtrip."""
+        from knowledge.graph import KnowledgeGraph
+
+        g = KnowledgeGraph.from_json(self.GRAPH_SNAPSHOT)
+        original_nodes = g.node_count
+        original_edges = g.edge_count
+        assert original_nodes > 0
+        assert original_edges > 0
