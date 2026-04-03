@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-04-03T07:25:27.810Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-04-03T07:26:57.664Z"
 last_activity: 2026-04-03
 progress:
   total_phases: 7
   completed_phases: 3
   total_plans: 15
-  completed_plans: 12
+  completed_plans: 13
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-03)
 ## Current Position
 
 Phase: 04 (Graph Assembly & Anatomical Layer) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-04-03
 
@@ -61,6 +61,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03 P03 | 33min | 1 tasks | 26 files |
 | Phase 03 P06 | 18min | 3 tasks | 28 files |
 | Phase 04 P02 | 5min | 1 tasks | 4 files |
+| Phase 04 P01 | 6min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,7 @@ Recent decisions affecting current work:
 - [Phase 03]: Registry 582 concepts: 73 videos produce ~300 unique concepts after quality filtering, above 500 target but quality-checked
 - [Phase 03]: Re-extracted 22 videos from Markdown (both batch2+3 had extraction issues); quality filter factory pattern for testability
 - [Phase 04]: Curated muscle database (32 muscles) with keyword-rule mapping for concept-muscle associations
+- [Phase 04]: Kept co-occurrence supports edges (conf>=0.6) for graph density; self-loop removal instead of generic-evidence filtering
 
 ### Pending Todos
 
@@ -92,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-03T07:25:27.808Z
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-04-03T07:26:57.662Z
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None

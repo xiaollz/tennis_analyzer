@@ -39,10 +39,10 @@
 
 ### Knowledge Graph Assembly
 
-- [ ] **GRAPH-01**: Complete concept graph with all sources merged, deduplicated, and connected
-- [ ] **GRAPH-02**: Causal edge chains validated (no orphan nodes, no cycles in diagnostic paths)
+- [x] **GRAPH-01**: Complete concept graph with all sources merged, deduplicated, and connected
+- [x] **GRAPH-02**: Causal edge chains validated (no orphan nodes, no cycles in diagnostic paths)
 - [ ] **GRAPH-03**: Every diagnostic chain has: entry symptom → branching logic → root cause(s) → drill(s) → check criteria
-- [ ] **GRAPH-04**: Cross-source confidence scoring (FTT-only=high, multi-source agreement=very high, single secondary=medium)
+- [x] **GRAPH-04**: Cross-source confidence scoring (FTT-only=high, multi-source agreement=very high, single secondary=medium)
 
 ### Anatomical Layer
 
@@ -119,10 +119,10 @@
 | FTT-03 | Phase 3 | Complete |
 | FTT-04 | Phase 3 | Complete |
 | FTT-05 | Phase 3 | Complete |
-| GRAPH-01 | Phase 4 | Pending |
-| GRAPH-02 | Phase 4 | Pending |
+| GRAPH-01 | Phase 4 | Complete |
+| GRAPH-02 | Phase 4 | Complete |
 | GRAPH-03 | Phase 4 | Pending |
-| GRAPH-04 | Phase 4 | Pending |
+| GRAPH-04 | Phase 4 | Complete |
 | ANAT-01 | Phase 4 | Complete |
 | ANAT-02 | Phase 4 | Complete |
 | ANAT-03 | Phase 4 | Pending |
