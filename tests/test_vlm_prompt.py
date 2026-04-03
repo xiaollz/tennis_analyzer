@@ -344,9 +344,11 @@ class TestTwoPassVLMIntegration:
         return analyzer
 
     @pytest.fixture
-    def analyzer_no_compiler(self):
+    def analyzer_no_compiler(self, monkeypatch):
         """Create VLMForehandAnalyzer without graph (single-pass fallback)."""
         from evaluation.vlm_analyzer import VLMForehandAnalyzer
+        # Prevent auto-loading real graph from disk
+        monkeypatch.setattr(VLMForehandAnalyzer, "_try_auto_load_compiler", staticmethod(lambda: None))
         cfg = {
             "provider": "openai_compatible",
             "api_key": "test-key",

@@ -20,6 +20,16 @@ import numpy as np
 
 from evaluation.event_detector import SwingEvent
 
+# Optional knowledge-graph imports (graceful degradation when unavailable)
+try:
+    from knowledge.output.vlm_prompt import VLMPromptCompiler
+    from knowledge.graph import KnowledgeGraph
+    from knowledge.schemas import DiagnosticChain
+
+    _HAS_KNOWLEDGE = True
+except ImportError:
+    _HAS_KNOWLEDGE = False
+
 
 # ── Config ──────────────────────────────────────────────────────────
 
@@ -661,6 +671,7 @@ def _encode_image(img: np.ndarray) -> str:
 def _call_openai_compatible(
     api_key: str, base_url: str, model: str, image_b64: str, user_text: str,
     extra_headers: Optional[Dict] = None,
+    system_prompt: Optional[str] = None,
 ) -> Optional[str]:
     """Call any OpenAI-compatible vision API (Qwen-VL, GPT-4o, proxies)."""
     try:
@@ -677,7 +688,7 @@ def _call_openai_compatible(
         model=model,
         max_tokens=4096,
         messages=[
-            {"role": "system", "content": _FTT_SYSTEM_PROMPT},
+            {"role": "system", "content": system_prompt or _FTT_SYSTEM_PROMPT},
             {"role": "user", "content": [
                 {"type": "image_url", "image_url": {
                     "url": f"data:image/jpeg;base64,{image_b64}",
@@ -691,6 +702,7 @@ def _call_openai_compatible(
 
 def _call_anthropic(
     api_key: str, base_url: str, model: str, image_b64: str, user_text: str,
+    system_prompt: Optional[str] = None,
 ) -> Optional[str]:
     """Call Anthropic Claude vision API."""
     try:
@@ -706,7 +718,7 @@ def _call_anthropic(
     resp = client.messages.create(
         model=model,
         max_tokens=2048,
-        system=_FTT_SYSTEM_PROMPT,
+        system=system_prompt or _FTT_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": [
             {"type": "image", "source": {
                 "type": "base64", "media_type": "image/jpeg", "data": image_b64,
@@ -719,6 +731,7 @@ def _call_anthropic(
 
 def _call_gemini(
     api_key: str, model: str, image_b64: str, user_text: str,
+    system_prompt: Optional[str] = None,
 ) -> Optional[str]:
     """Call Google Gemini vision API."""
     try:
@@ -735,7 +748,7 @@ def _call_gemini(
     from PIL import Image
     img = Image.open(io.BytesIO(image_bytes))
 
-    full_prompt = _FTT_SYSTEM_PROMPT + "\n\n" + user_text
+    full_prompt = (system_prompt or _FTT_SYSTEM_PROMPT) + "\n\n" + user_text
     resp = gm.generate_content([full_prompt, img])
     return resp.text
 
@@ -756,13 +769,46 @@ class VLMForehandAnalyzer:
         "gemini": "gemini-2.0-flash",
     }
 
-    def __init__(self, config: Optional[Dict] = None):
+    def __init__(self, config: Optional[Dict] = None, graph=None, chains=None):
         cfg = config or load_vlm_config()
         self.provider = cfg.get("provider", "openai_compatible")
         self.api_key = cfg.get("api_key", "")
         self.base_url = cfg.get("base_url", "")
         self.model = cfg.get("model", "") or self._DEFAULT_MODELS.get(self.provider, "")
         self.extra_headers = cfg.get("extra_headers", {})
+        self.two_pass_enabled = cfg.get("two_pass_enabled", True)
+
+        # Initialize VLMPromptCompiler for two-pass analysis
+        self.compiler = None
+        if _HAS_KNOWLEDGE:
+            if graph is not None and chains is not None:
+                self.compiler = VLMPromptCompiler(graph, chains)
+            else:
+                self.compiler = self._try_auto_load_compiler()
+
+        # Build number->chain_id mapping for pass1 response parsing
+        self._chain_id_by_number: Dict[int, str] = {}
+        if self.compiler is not None:
+            sorted_chains = sorted(self.compiler.chains, key=lambda c: c.priority)
+            for i, chain in enumerate(sorted_chains, 1):
+                self._chain_id_by_number[i] = chain.id
+
+    @staticmethod
+    def _try_auto_load_compiler():
+        """Try to auto-load graph and chains from default extracted paths."""
+        try:
+            graph_path = Path(__file__).resolve().parent.parent / "knowledge" / "extracted" / "_graph_snapshot.json"
+            chains_path = Path(__file__).resolve().parent.parent / "knowledge" / "extracted" / "ftt_video_diagnostic_chains.json"
+            if not graph_path.exists() or not chains_path.exists():
+                return None
+            graph = KnowledgeGraph.from_json(graph_path)
+            import json as _json
+            chains_data = _json.loads(chains_path.read_text())
+            chains = [DiagnosticChain(**c) for c in chains_data["chains"]]
+            return VLMPromptCompiler(graph, chains)
+        except Exception as exc:
+            print(f"[VLM] Auto-load knowledge graph failed: {exc}")
+            return None
 
     def analyze_swing(
         self,
@@ -776,54 +822,169 @@ class VLMForehandAnalyzer:
             return None
 
         image_b64 = _encode_image(keyframe_grid)
-        user_text = _USER_PROMPT
 
-        # Build quantitative context from supplementary metrics
-        # Only include metrics that are reliable — filter out unreliable ones
-        quant_lines = []
-        if supplementary_metrics:
-            sm = supplementary_metrics
-            # M8: Only report if clearly good or clearly bad (skip ambiguous middle)
-            sync = sm.get("arm_torso_synchrony")
-            if sync is not None and (sync >= 0.7 or sync <= 0.3):
-                quant_lines.append(f"- 手臂-躯干同步性: {sync:.2f} ({sm.get('arm_torso_sync_label', '')})")
-            # M9: Only report if scooping detected (no news = good news)
-            if sm.get("wrist_v_detected"):
-                quant_lines.append(f"- 手腕高度模式: 检测到V形scooping（下沉深度 {sm.get('wrist_v_depth', 0):.2f}）")
-            # M7: Always report trajectory shape (most reliable metric)
-            if sm.get("swing_shape_label") is not None:
-                quant_lines.append(f"- 挥拍轨迹: {sm['swing_shape_label']}（弧度比 {sm.get('swing_arc_ratio', 0):.2f}）")
+        if self.compiler and self.two_pass_enabled:
+            return self._analyze_two_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
+        else:
+            return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
 
-        if quant_lines:
-            user_text += "\n\n以下是关键点算法检测到的量化辅助信息：\n" + "\n".join(quant_lines)
-            user_text += "\n\n重要：量化数据仅供参考，可能因相机角度或检测噪声而不准确。你必须以自己的视觉观察为第一判断依据。只有当量化数据与你的视觉观察一致时才引用；如果矛盾，以视觉观察为准并说明数据可能不准。特别注意：scooping 深度 <0.2 可能是正常的被动拍头下落，不一定是问题。"
-        elif kpi_summary:
-            user_text += f"\n\n以下是骨骼姿态评分摘要供参考：\n{kpi_summary}"
+    # ── Two-pass analysis ──────────────────────────────────────────
 
-        # Primary: keyframe grid analysis (more detailed)
-        try:
-            if self.provider == "anthropic":
-                raw = _call_anthropic(self.api_key, self.base_url, self.model, image_b64, user_text)
-            elif self.provider == "gemini":
-                raw = _call_gemini(self.api_key, self.model, image_b64, user_text)
-            else:
-                raw = _call_openai_compatible(self.api_key, self.base_url, self.model, image_b64, user_text, self.extra_headers)
-        except Exception as exc:
-            print(f"[VLM] API 调用失败 ({self.provider}/{self.model}): {exc}")
+    def _analyze_two_pass(
+        self,
+        image_b64: str,
+        kpi_summary: str,
+        supplementary_metrics: Optional[Dict],
+        video_path: Optional[str],
+    ) -> Optional[Dict]:
+        """Two-pass VLM analysis: symptom scan then targeted diagnostics."""
+        # Pass 1: Quick symptom scan
+        pass1_prompt = self.compiler.compile_pass1_prompt()
+        pass1_user = "Review the 6-frame grid and identify symptom categories."
+        pass1_raw = self._call_vlm(image_b64, pass1_user, system_prompt=pass1_prompt)
+        if pass1_raw is None:
+            # Fallback to single-pass on failure
+            return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
+
+        detected = self._parse_symptom_response(pass1_raw)
+        if not detected:
+            # No symptoms detected or parse failure -> single-pass fallback
+            return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
+
+        # Pass 2: Deep analysis with targeted diagnostic context
+        pass2_prompt = self.compiler.compile_pass2_prompt(detected)
+        user_text = self._build_user_text(kpi_summary, supplementary_metrics)
+        pass2_raw = self._call_vlm(image_b64, user_text, system_prompt=pass2_prompt)
+        if pass2_raw is None:
             return None
 
-        if raw is None:
-            return None
-
-        result = _parse_json_response(raw)
-
-        # Optional: supplement with full video analysis for dynamic insights
+        result = _parse_json_response(pass2_raw)
         if result and video_path and self.provider == "openai_compatible":
             video_insight = self._analyze_video_dynamics(video_path)
             if video_insight:
                 result["video_dynamics"] = video_insight
-
         return result
+
+    # ── Single-pass analysis (fallback / legacy) ───────────────────
+
+    def _analyze_single_pass(
+        self,
+        image_b64: str,
+        kpi_summary: str,
+        supplementary_metrics: Optional[Dict],
+        video_path: Optional[str],
+    ) -> Optional[Dict]:
+        """Single-pass VLM analysis using static prompt (current/legacy behavior)."""
+        # Use graph-backed static prompt if compiler available, else hardcoded
+        sys_prompt = None
+        if self.compiler:
+            try:
+                sys_prompt = self.compiler.compile_system_prompt()
+            except Exception:
+                sys_prompt = None  # fall through to _FTT_SYSTEM_PROMPT default
+
+        user_text = self._build_user_text(kpi_summary, supplementary_metrics)
+        raw = self._call_vlm(image_b64, user_text, system_prompt=sys_prompt)
+        if raw is None:
+            return None
+
+        result = _parse_json_response(raw)
+        if result and video_path and self.provider == "openai_compatible":
+            video_insight = self._analyze_video_dynamics(video_path)
+            if video_insight:
+                result["video_dynamics"] = video_insight
+        return result
+
+    # ── VLM call dispatcher ────────────────────────────────────────
+
+    def _call_vlm(
+        self, image_b64: str, user_text: str, system_prompt: Optional[str] = None,
+    ) -> Optional[str]:
+        """Dispatch to the correct provider backend with optional system_prompt."""
+        try:
+            if self.provider == "anthropic":
+                return _call_anthropic(
+                    self.api_key, self.base_url, self.model, image_b64, user_text,
+                    system_prompt=system_prompt,
+                )
+            elif self.provider == "gemini":
+                return _call_gemini(
+                    self.api_key, self.model, image_b64, user_text,
+                    system_prompt=system_prompt,
+                )
+            else:
+                return _call_openai_compatible(
+                    self.api_key, self.base_url, self.model, image_b64, user_text,
+                    self.extra_headers, system_prompt=system_prompt,
+                )
+        except Exception as exc:
+            print(f"[VLM] API call failed ({self.provider}/{self.model}): {exc}")
+            return None
+
+    # ── Pass 1 response parsing ────────────────────────────────────
+
+    def _parse_symptom_response(self, raw: str) -> List[str]:
+        """Parse Pass 1 VLM response into detected chain IDs.
+
+        Extracts numbers from the response and maps them to chain IDs
+        via the priority-sorted numbering used in symptom_checklist.j2.
+        Returns empty list if no valid numbers found.
+        """
+        if not raw or not raw.strip():
+            return []
+
+        # Extract all integers from the response
+        numbers = [int(n) for n in re.findall(r"\d+", raw)]
+        if not numbers:
+            return []
+
+        # Map to chain IDs (only valid numbers within range)
+        detected = []
+        for n in numbers:
+            cid = self._chain_id_by_number.get(n)
+            if cid and cid not in detected:
+                detected.append(cid)
+
+        return detected
+
+    # ── User text builder ──────────────────────────────────────────
+
+    @staticmethod
+    def _build_user_text(
+        kpi_summary: str = "", supplementary_metrics: Optional[Dict] = None,
+    ) -> str:
+        """Build user text with optional quantitative context."""
+        user_text = _USER_PROMPT
+
+        quant_lines: List[str] = []
+        if supplementary_metrics:
+            sm = supplementary_metrics
+            sync = sm.get("arm_torso_synchrony")
+            if sync is not None and (sync >= 0.7 or sync <= 0.3):
+                quant_lines.append(
+                    f"- 手臂-躯干同步性: {sync:.2f} ({sm.get('arm_torso_sync_label', '')})"
+                )
+            if sm.get("wrist_v_detected"):
+                quant_lines.append(
+                    f"- 手腕高度模式: 检测到V形scooping（下沉深度 {sm.get('wrist_v_depth', 0):.2f}）"
+                )
+            if sm.get("swing_shape_label") is not None:
+                quant_lines.append(
+                    f"- 挥拍轨迹: {sm['swing_shape_label']}（弧度比 {sm.get('swing_arc_ratio', 0):.2f}）"
+                )
+
+        if quant_lines:
+            user_text += "\n\n以下是关键点算法检测到的量化辅助信息：\n" + "\n".join(quant_lines)
+            user_text += (
+                "\n\n重要：量化数据仅供参考，可能因相机角度或检测噪声而不准确。"
+                "你必须以自己的视觉观察为第一判断依据。只有当量化数据与你的视觉观察一致时才引用；"
+                "如果矛盾，以视觉观察为准并说明数据可能不准。"
+                "特别注意：scooping 深度 <0.2 可能是正常的被动拍头下落，不一定是问题。"
+            )
+        elif kpi_summary:
+            user_text += f"\n\n以下是骨骼姿态评分摘要供参考：\n{kpi_summary}"
+
+        return user_text
 
     def _analyze_video_dynamics(self, video_path: str) -> Optional[str]:
         """Send full video for dynamic motion analysis (supplement to keyframe)."""
