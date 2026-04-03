@@ -68,6 +68,7 @@ config/youtube_api_config.json
 
 # ===== 构建输出（EPUB中间产物、图片等） =====
 output/
+!knowledge/output/
 
 # ===== 文档（保留学习笔记和研究资料，排除其他个人文档） =====
 docs/
