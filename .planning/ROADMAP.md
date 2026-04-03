@@ -119,7 +119,7 @@ Plans:
   4. Knowledge graph confidence scores updated to reflect multi-source validation
 **Plans:** 4 plans
 Plans:
-- [ ] 06-01-PLAN.md — Curate video lists for both channels + state files (SEC-01, SEC-03)
+- [x] 06-01-PLAN.md — Curate video lists for both channels + state files (SEC-01, SEC-03)
 - [ ] 06-02-PLAN.md — TomAllsopp Gemini API extraction (~45 videos) (SEC-02)
 - [ ] 06-03-PLAN.md — Feel Tennis Gemini API extraction (~45 videos) (SEC-04)
 - [ ] 06-04-PLAN.md — Cross-source reconciliation + merge into registry (SEC-05)
