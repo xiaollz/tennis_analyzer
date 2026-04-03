@@ -105,8 +105,8 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
 - [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
-- [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
-- [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
+- [x] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [x] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 3 (prompt overflow) -- two-pass VLM with subgraph selection is critical. Test prompt size early.
 
 ### Phase 6: Secondary Sources
@@ -120,7 +120,7 @@ Plans:
   4. Knowledge graph confidence scores updated to reflect multi-source validation
 **Plans:** 4 plans
 Plans:
-- [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [x] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
 - [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
 - [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
 - [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
@@ -137,7 +137,7 @@ Plans:
 **Plans:** 4 plans
 Plans:
 - [ ] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
-- [ ] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
 - [ ] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
 - [ ] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
 
