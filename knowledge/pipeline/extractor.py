@@ -82,6 +82,8 @@ FILE_HANDLERS: dict[str, callable] = {
     "28_bio": extract_biomechanics,
     # Generic fallback entries
     "03_youtube": extract_generic,
+    # User training journey
+    "learning": extract_user_journey,  # noqa: E501
 }
 
 # Correct processing order: synthesis first, then primary sources,
