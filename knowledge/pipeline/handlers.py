@@ -182,6 +182,12 @@ def _extract_concepts_from_headers(
         if not en_name or len(en_name) < 3:
             continue
 
+        # Filter out junk: purely numeric, too short after cleanup,
+        # or doesn't contain at least 2 alphabetic chars
+        alpha_count = sum(1 for ch in en_name if ch.isalpha())
+        if alpha_count < 2:
+            continue
+
         cid = registry.resolve(en_name)
         if cid:
             if cid not in seen_ids:
@@ -191,8 +197,8 @@ def _extract_concepts_from_headers(
                     existing.sources.append(source_tag)
         else:
             # Only create if this looks like a real concept name
-            if len(en_name) > 40:
-                continue  # Too long to be a concept name
+            if len(en_name) > 40 or len(en_name) < 4:
+                continue  # Too long or too short to be a concept name
             cid, new_c = _resolve_or_create(
                 name=en_name,
                 name_zh=clean_title,

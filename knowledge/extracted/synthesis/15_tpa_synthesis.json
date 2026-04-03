@@ -1,0 +1,46 @@
+{
+  "source_file": "15_tpa_synthesis.md",
+  "concepts": [
+    {
+      "id": "tpa_tennis_tom_allsopp_15",
+      "name": "TPA Tennis Tom Allsopp 15",
+      "name_zh": "TPA Tennis (Tom Allsopp) 15 视频综合提炼 — 新增洞察",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 15_tpa_synthesis.md: TPA Tennis (Tom Allsopp) 15 视频综合提炼 — 新增洞察",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "scooping",
+      "name": "Scooping",
+      "name_zh": "解决 Scooping（捞球）— 四把钥匙",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 15_tpa_synthesis.md: 解决 Scooping（捞球）— 四把钥匙",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "gradual_squaring",
+      "target_id": "wrist_lag",
+      "relation": "supports",
+      "confidence": 0.9,
+      "evidence": "Cross-reference in 15_tpa_synthesis.md: 让 lag 更平滑",
+      "source_file": "15_tpa_synthesis.md",
+      "resolution": null
+    }
+  ]
+}

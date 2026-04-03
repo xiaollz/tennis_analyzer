@@ -1,0 +1,186 @@
+{
+  "source_file": "13_synthesis.md",
+  "concepts": [
+    {
+      "id": "part_1",
+      "name": "Part 1",
+      "name_zh": "Part 1: 统一的现代正手生物力学模型（从地面到球拍）",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: Part 1: 统一的现代正手生物力学模型（从地面到球拍）",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "out_up_and_through",
+      "name": "Out, Up, and Through",
+      "name_zh": "Out, Up, and Through——三向量模型",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: Out, Up, and Through——三向量模型",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "follow_through",
+      "name": "Follow-Through",
+      "name_zh": "随挥（Follow-Through）",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: 随挥（Follow-Through）",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "n5_out",
+      "name": "5 Out",
+      "name_zh": "支柱 5：Out 向量",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: 支柱 5：Out 向量",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "n1_supination_pronation",
+      "name": "1 / supination / pronation",
+      "name_zh": "错误 1：主动制造手腕滞后 / 刻意 supination / pronation 时序",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: 错误 1：主动制造手腕滞后 / 刻意 supination / pronation 时序",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "revolutionary_tennis",
+      "name": "Revolutionary Tennis",
+      "name_zh": "视觉与 Revolutionary Tennis 的视觉理论比较",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: 视觉与 Revolutionary Tennis 的视觉理论比较",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "ftt",
+      "name": "FTT 推荐的金标准",
+      "name_zh": "Drop Feed 训练法（FTT 推荐的金标准）",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt",
+        "biomechanics_book"
+      ],
+      "description": "Concept from 13_synthesis.md: Drop Feed 训练法（FTT 推荐的金标准）",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "x_drill",
+      "name": "X-Drill",
+      "name_zh": "X-Drill 体能训练",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt",
+        "tpa"
+      ],
+      "description": "Concept from 13_synthesis.md: X-Drill 体能训练",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "vs",
+      "name": "\" \" vs \" \"",
+      "name_zh": "\"向上刷\" vs \"向外甩\"",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: \"向上刷\" vs \"向外甩\"",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "name_zh": "YouTube 来源的局限性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from 13_synthesis.md: YouTube 来源的局限性",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.9
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "unit_turn",
+      "target_id": "problem_p05",
+      "relation": "causes",
+      "confidence": 0.9,
+      "evidence": "四个定位：错误意识 → Unit Turn 高度固定 → 击球点偏后 → 手臂内收补偿",
+      "source_file": "13_synthesis.md",
+      "resolution": null
+    },
+    {
+      "source_id": "elbow_space",
+      "target_id": "breakthrough_b01",
+      "relation": "causes",
+      "confidence": 0.9,
+      "evidence": "3/5:  \"Unit turn → elbow up → extension + pat the dog 同步\"",
+      "source_file": "13_synthesis.md",
+      "resolution": null
+    },
+    {
+      "source_id": "vs",
+      "target_id": "youtube",
+      "relation": "supports",
+      "confidence": 0.9,
+      "evidence": "Cross-reference in 13_synthesis.md: 传统/YouTube",
+      "source_file": "13_synthesis.md",
+      "resolution": null
+    }
+  ]
+}
