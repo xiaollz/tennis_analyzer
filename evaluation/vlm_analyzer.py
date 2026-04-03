@@ -769,7 +769,7 @@ class VLMForehandAnalyzer:
         "gemini": "gemini-2.0-flash",
     }
 
-    def __init__(self, config: Optional[Dict] = None, graph=None, chains=None):
+    def __init__(self, config: Optional[Dict] = None, graph=None, chains=None, user_profile_path=None):
         cfg = config or load_vlm_config()
         self.provider = cfg.get("provider", "openai_compatible")
         self.api_key = cfg.get("api_key", "")
@@ -778,13 +778,16 @@ class VLMForehandAnalyzer:
         self.extra_headers = cfg.get("extra_headers", {})
         self.two_pass_enabled = cfg.get("two_pass_enabled", True)
 
+        # Load user profile if available
+        user_profile = self._try_load_user_profile(user_profile_path)
+
         # Initialize VLMPromptCompiler for two-pass analysis
         self.compiler = None
         if _HAS_KNOWLEDGE:
             if graph is not None and chains is not None:
-                self.compiler = VLMPromptCompiler(graph, chains)
+                self.compiler = VLMPromptCompiler(graph, chains, user_profile=user_profile)
             else:
-                self.compiler = self._try_auto_load_compiler()
+                self.compiler = self._try_auto_load_compiler(user_profile=user_profile)
 
         # Build number->chain_id mapping for pass1 response parsing
         self._chain_id_by_number: Dict[int, str] = {}
@@ -794,7 +797,33 @@ class VLMForehandAnalyzer:
                 self._chain_id_by_number[i] = chain.id
 
     @staticmethod
-    def _try_auto_load_compiler():
+    def _try_load_user_profile(profile_path=None):
+        """Try to load UserProfile from given path or default location.
+
+        Returns None gracefully if file doesn't exist or loading fails.
+        """
+        if not _HAS_KNOWLEDGE:
+            return None
+        try:
+            from knowledge.user_profile import UserProfile
+        except ImportError:
+            return None
+
+        if profile_path is not None:
+            p = Path(profile_path)
+        else:
+            p = Path(__file__).resolve().parent.parent / "knowledge" / "extracted" / "user_journey" / "user_profile.json"
+
+        if not p.exists():
+            return None
+        try:
+            return UserProfile.from_json(p)
+        except Exception as exc:
+            print(f"[VLM] Failed to load user profile: {exc}")
+            return None
+
+    @staticmethod
+    def _try_auto_load_compiler(user_profile=None):
         """Try to auto-load graph and chains from default extracted paths."""
         try:
             graph_path = Path(__file__).resolve().parent.parent / "knowledge" / "extracted" / "_graph_snapshot.json"
@@ -805,7 +834,7 @@ class VLMForehandAnalyzer:
             import json as _json
             chains_data = _json.loads(chains_path.read_text())
             chains = [DiagnosticChain(**c) for c in chains_data["chains"]]
-            return VLMPromptCompiler(graph, chains)
+            return VLMPromptCompiler(graph, chains, user_profile=user_profile)
         except Exception as exc:
             print(f"[VLM] Auto-load knowledge graph failed: {exc}")
             return None

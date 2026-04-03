@@ -348,7 +348,7 @@ class TestTwoPassVLMIntegration:
         """Create VLMForehandAnalyzer without graph (single-pass fallback)."""
         from evaluation.vlm_analyzer import VLMForehandAnalyzer
         # Prevent auto-loading real graph from disk
-        monkeypatch.setattr(VLMForehandAnalyzer, "_try_auto_load_compiler", staticmethod(lambda: None))
+        monkeypatch.setattr(VLMForehandAnalyzer, "_try_auto_load_compiler", staticmethod(lambda user_profile=None: None))
         cfg = {
             "provider": "openai_compatible",
             "api_key": "test-key",

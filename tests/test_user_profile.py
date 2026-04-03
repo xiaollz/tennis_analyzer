@@ -353,3 +353,221 @@ class TestBuildProfileFromLearning:
         valid = {s.value for s in ConceptStatus}
         for cid, link in profile.concept_map.items():
             assert link.status.value in valid, f"{cid} has invalid status {link.status}"
+
+
+# ---------------------------------------------------------------------------
+# VLM user context injection tests (07-02)
+# ---------------------------------------------------------------------------
+
+
+class TestVLMUserContextInjection:
+    """Tests for VLMPromptCompiler accepting UserProfile and injecting user context."""
+
+    @pytest.fixture
+    def graph(self):
+        from knowledge.graph import KnowledgeGraph
+        from knowledge.schemas import Concept, ConceptType, Edge, RelationType
+
+        kg = KnowledgeGraph()
+        kg.add_concept(Concept(
+            id="forearm_compensation",
+            name="Forearm Compensation",
+            name_zh="小臂代偿",
+            category=ConceptType.SYMPTOM,
+            description="Arm drives swing",
+            confidence=0.95,
+        ))
+        kg.add_concept(Concept(
+            id="scooping_motion",
+            name="Scooping Motion",
+            name_zh="捞球动作",
+            category=ConceptType.SYMPTOM,
+            description="V-shaped swing",
+            confidence=0.9,
+        ))
+        kg.add_concept(Concept(
+            id="unit_turn",
+            name="Unit Turn",
+            name_zh="整体转身",
+            category=ConceptType.TECHNIQUE,
+            description="Body rotation",
+            confidence=0.95,
+        ))
+        kg.add_concept(Concept(
+            id="drop_feed_rotation_drill",
+            name="Drop Feed Rotation Drill",
+            name_zh="喂球旋转练习",
+            category=ConceptType.DRILL,
+            description="Practice body rotation",
+            confidence=1.0,
+        ))
+        kg.add_edge(Edge(
+            source_id="unit_turn",
+            target_id="forearm_compensation",
+            relation=RelationType.CAUSES,
+            confidence=0.85,
+            evidence="Missing unit turn causes arm-driven hitting",
+            source_file="ftt_book",
+        ))
+        kg.add_edge(Edge(
+            source_id="drop_feed_rotation_drill",
+            target_id="forearm_compensation",
+            relation=RelationType.DRILLS_FOR,
+            confidence=0.9,
+            evidence="Drill addresses arm compensation",
+            source_file="ftt_video",
+        ))
+        return kg
+
+    @pytest.fixture
+    def chains(self):
+        from knowledge.schemas import DiagnosticChain, DiagnosticStep
+
+        return [
+            DiagnosticChain(
+                id="dc_arm_driven_hitting",
+                symptom="Arm initiating swing",
+                symptom_zh="手臂主导挥拍",
+                symptom_concept_id="forearm_compensation",
+                check_sequence=[DiagnosticStep(
+                    check="Is the hip rotating?",
+                    check_zh="髋部是否旋转？",
+                    if_true="forearm_compensation",
+                    if_false=None,
+                )],
+                root_causes=["forearm_compensation"],
+                drills=["drop_feed_rotation_drill"],
+                priority=1,
+            ),
+        ]
+
+    @pytest.fixture
+    def user_profile(self):
+        return UserProfile(
+            sessions=[
+                SessionEntry(
+                    date="2026-03-24",
+                    summary="Session 1",
+                    concept_links=[],
+                    breakthroughs=["Fixed scooping"],
+                ),
+            ],
+            concept_map={
+                "forearm_compensation": ConceptLink(
+                    concept_id="forearm_compensation",
+                    status=ConceptStatus.STRUGGLING,
+                    first_seen="2026-03-15",
+                    last_seen="2026-03-24",
+                    cues=["let body rotate first"],
+                ),
+                "scooping_motion": ConceptLink(
+                    concept_id="scooping_motion",
+                    status=ConceptStatus.REGRESSED,
+                    first_seen="2026-03-15",
+                    last_seen="2026-03-24",
+                    cues=["top edge leading"],
+                ),
+                "unit_turn": ConceptLink(
+                    concept_id="unit_turn",
+                    status=ConceptStatus.MASTERED,
+                    first_seen="2026-03-15",
+                    last_seen="2026-03-24",
+                    cues=[],
+                ),
+            },
+        )
+
+    def test_compiler_accepts_user_profile(self, graph, chains, user_profile):
+        """Test 1: VLMPromptCompiler accepts optional user_profile parameter."""
+        from knowledge.output.vlm_prompt import VLMPromptCompiler
+
+        compiler = VLMPromptCompiler(graph, chains, user_profile=user_profile)
+        assert compiler.user_profile is user_profile
+
+    def test_compile_pass2_with_user_profile_injects_context(
+        self, graph, chains, user_profile
+    ):
+        """Test 2: compile_pass2_prompt with user_profile injects user context section."""
+        from knowledge.output.vlm_prompt import VLMPromptCompiler
+
+        compiler = VLMPromptCompiler(graph, chains, user_profile=user_profile)
+        prompt = compiler.compile_pass2_prompt(["dc_arm_driven_hitting"])
+        # Should contain user context markers
+        assert "用户训练画像" in prompt
+        # Should contain user's struggle concepts
+        assert "小臂代偿" in prompt or "forearm_compensation" in prompt
+
+    def test_compile_pass2_without_user_profile_unchanged(self, graph, chains):
+        """Test 3: compile_pass2_prompt without user_profile works exactly as before."""
+        from knowledge.output.vlm_prompt import VLMPromptCompiler
+
+        compiler_no_profile = VLMPromptCompiler(graph, chains)
+        compiler_none_profile = VLMPromptCompiler(graph, chains, user_profile=None)
+        prompt_no = compiler_no_profile.compile_pass2_prompt(["dc_arm_driven_hitting"])
+        prompt_none = compiler_none_profile.compile_pass2_prompt(["dc_arm_driven_hitting"])
+        assert prompt_no == prompt_none
+        assert "用户训练画像" not in prompt_no
+
+    def test_user_context_budget_enforcement(self, graph, chains):
+        """Test 4: User context section stays under 1500 chars even with 50+ concept links."""
+        from knowledge.output.vlm_prompt import VLMPromptCompiler
+
+        # Build a profile with 60 struggling concepts
+        concept_map = {}
+        for i in range(60):
+            cid = f"concept_{i:03d}"
+            concept_map[cid] = ConceptLink(
+                concept_id=cid,
+                status=ConceptStatus.STRUGGLING,
+                first_seen="2026-01-01",
+                last_seen="2026-03-24",
+                cues=[f"cue for concept {i}", f"another cue {i}"],
+            )
+        big_profile = UserProfile(sessions=[], concept_map=concept_map)
+        compiler = VLMPromptCompiler(graph, chains, user_profile=big_profile)
+        user_ctx = compiler.compile_user_context(["dc_arm_driven_hitting"])
+        assert len(user_ctx) <= 1500, f"User context too long: {len(user_ctx)} chars"
+
+    def test_user_context_highlights_detected_chain_symptoms(
+        self, graph, chains, user_profile
+    ):
+        """Test 5: User context highlights concepts matching detected chain symptoms."""
+        from knowledge.output.vlm_prompt import VLMPromptCompiler
+
+        compiler = VLMPromptCompiler(graph, chains, user_profile=user_profile)
+        user_ctx = compiler.compile_user_context(["dc_arm_driven_hitting"])
+        # forearm_compensation is both an active issue and a detected chain symptom
+        assert "已知反复出现" in user_ctx or "known recurring" in user_ctx.lower()
+
+    def test_vlm_analyzer_auto_loads_user_profile(self, graph, chains, tmp_path):
+        """Test 6: VLMForehandAnalyzer auto-loads user_profile.json if it exists."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+
+        # Create a minimal user profile JSON
+        profile = UserProfile(
+            sessions=[],
+            concept_map={
+                "forearm_compensation": ConceptLink(
+                    concept_id="forearm_compensation",
+                    status=ConceptStatus.STRUGGLING,
+                    first_seen="2026-03-15",
+                    last_seen="2026-03-24",
+                    cues=[],
+                ),
+            },
+        )
+        profile_path = tmp_path / "user_profile.json"
+        profile.to_json(profile_path)
+
+        cfg = {
+            "provider": "openai_compatible",
+            "api_key": "test-key",
+            "base_url": "http://test",
+            "model": "test-model",
+        }
+        analyzer = VLMForehandAnalyzer(
+            config=cfg, graph=graph, chains=chains,
+            user_profile_path=profile_path,
+        )
+        assert analyzer.compiler is not None
+        assert analyzer.compiler.user_profile is not None

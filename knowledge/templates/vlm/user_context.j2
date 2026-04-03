@@ -1,0 +1,15 @@
+【用户训练画像】
+当前主要问题（按优先级）：
+{% for issue in active_issues %}
+- {{ issue.concept_name }}（{{ issue.status }}）最近出现: {{ issue.last_seen }}{% if issue.is_recurring %} [已知反复出现]{% endif %}
+{% if issue.cues %}  提示语: {{ issue.cues[0] }}{% endif %}
+{% endfor %}
+
+{% if breakthroughs %}
+近期突破：
+{% for bt in breakthroughs %}
+- {{ bt.summary }}（{{ bt.date }}）
+{% endfor %}
+{% endif %}
+
+注意：如果检测到用户的已知问题，优先使用对该用户有效的提示语（cues）。如果检测到已掌握的技术出现退步，特别标注"退步警告"。

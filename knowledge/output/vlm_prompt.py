@@ -15,17 +15,24 @@ for only the detected symptoms, staying within the ~10K char budget.
 from __future__ import annotations
 
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import jinja2
 
 from knowledge.graph import KnowledgeGraph
 from knowledge.schemas import DiagnosticChain
 
+if TYPE_CHECKING:
+    from knowledge.user_profile import UserProfile
+
 
 _TEMPLATE_DIR = Path(__file__).parent.parent / "templates" / "vlm"
 
 # Maximum character budget for the dynamic diagnostic section in Pass 2.
 _DYNAMIC_BUDGET = 10_000
+
+# Maximum character budget for the user context section in Pass 2.
+_USER_CONTEXT_BUDGET = 1_500
 
 
 class VLMPromptCompiler:
@@ -37,11 +44,19 @@ class VLMPromptCompiler:
         The full knowledge graph (used for subgraph extraction).
     chains : list[DiagnosticChain]
         All available diagnostic chains (18 in current system).
+    user_profile : UserProfile | None
+        Optional user training profile for personalized diagnostics.
     """
 
-    def __init__(self, graph: KnowledgeGraph, chains: list[DiagnosticChain]) -> None:
+    def __init__(
+        self,
+        graph: KnowledgeGraph,
+        chains: list[DiagnosticChain],
+        user_profile: "UserProfile | None" = None,
+    ) -> None:
         self.graph = graph
         self.chains = chains
+        self.user_profile = user_profile
         self.chain_map: dict[str, DiagnosticChain] = {c.id: c for c in chains}
         self.env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(str(_TEMPLATE_DIR)),
@@ -68,12 +83,75 @@ class VLMPromptCompiler:
         sorted_chains = sorted(self.chains, key=lambda c: c.priority)
         return template.render(chains=sorted_chains)
 
-    def compile_pass2_prompt(self, detected_chain_ids: list[str]) -> str:
-        """Pass 2: Static prompt + targeted diagnostic context.
+    def compile_user_context(self, detected_chain_ids: list[str]) -> str:
+        """Render personalized user context section for Pass 2.
 
-        Combines the full static coaching prompt with dynamic diagnostic
-        sections for only the detected symptom chains.  Budget-enforced:
-        the dynamic section is truncated if it exceeds 10K chars.
+        Returns empty string if no user_profile is set.
+        Budget-enforced: truncated to ``_USER_CONTEXT_BUDGET`` chars.
+
+        Parameters
+        ----------
+        detected_chain_ids : list[str]
+            Chain IDs detected in Pass 1 — used to cross-reference with
+            user's known issues and mark overlapping concepts.
+        """
+        if self.user_profile is None:
+            return ""
+
+        # Collect symptom concept IDs from detected chains
+        detected_symptom_ids: set[str] = set()
+        for cid in detected_chain_ids:
+            chain = self.chain_map.get(cid)
+            if chain:
+                detected_symptom_ids.add(chain.symptom_concept_id)
+                detected_symptom_ids.update(chain.root_causes)
+
+        # Build active issues with resolved concept names
+        active = self.user_profile.active_issues()
+        issue_items = []
+        for link in active[:5]:
+            node_data = self.graph.graph.nodes.get(link.concept_id, {})
+            concept_name = node_data.get("name_zh") or node_data.get("name") or link.concept_id
+            is_recurring = link.concept_id in detected_symptom_ids
+            issue_items.append({
+                "concept_name": concept_name,
+                "status": link.status.value,
+                "last_seen": link.last_seen,
+                "cues": link.cues,
+                "is_recurring": is_recurring,
+            })
+
+        # Build recent breakthroughs
+        bt_sessions = self.user_profile.recent_breakthroughs(n=3)
+        bt_items = []
+        for session in bt_sessions:
+            bt_items.append({
+                "summary": "; ".join(session.breakthroughs[:2]),
+                "date": session.date,
+            })
+
+        template = self.env.get_template("user_context.j2")
+        rendered = template.render(
+            active_issues=issue_items,
+            breakthroughs=bt_items,
+        )
+
+        # Budget enforcement: truncate at line boundary
+        if len(rendered) > _USER_CONTEXT_BUDGET:
+            cut = rendered.rfind("\n", 0, _USER_CONTEXT_BUDGET)
+            if cut == -1:
+                cut = _USER_CONTEXT_BUDGET
+            rendered = rendered[:cut]
+
+        return rendered
+
+    def compile_pass2_prompt(self, detected_chain_ids: list[str]) -> str:
+        """Pass 2: Static prompt + user context + targeted diagnostic context.
+
+        Combines the full static coaching prompt with optional user context
+        and dynamic diagnostic sections for only the detected symptom chains.
+        Budget-enforced: user context gets up to 1.5K chars, diagnostics
+        get up to 8.5K chars (total ~10K dynamic budget).
 
         Parameters
         ----------
@@ -81,6 +159,11 @@ class VLMPromptCompiler:
             Chain IDs detected in Pass 1 (e.g. ``["dc_arm_driven_hitting"]``).
         """
         static = self.compile_system_prompt()
+
+        # User context (personalized, optional)
+        user_ctx = self.compile_user_context(detected_chain_ids)
+
+        # Diagnostic context
         subgraph = self._extract_relevant_subgraph(detected_chain_ids)
         matched_chains = [
             self.chain_map[cid]
@@ -91,11 +174,16 @@ class VLMPromptCompiler:
         template = self.env.get_template("diagnostic_deep.j2")
         dynamic = template.render(subgraph=subgraph, chains=matched_chains)
 
-        # Budget enforcement: truncate if dynamic section exceeds budget.
-        if len(dynamic) > _DYNAMIC_BUDGET:
-            dynamic = self._truncate_by_confidence(dynamic, subgraph, _DYNAMIC_BUDGET)
+        # Budget enforcement: diagnostics get remaining budget after user context.
+        diag_budget = _DYNAMIC_BUDGET - len(user_ctx)
+        if len(dynamic) > diag_budget:
+            dynamic = self._truncate_by_confidence(dynamic, subgraph, diag_budget)
 
-        return static + "\n\n" + dynamic
+        parts = [static]
+        if user_ctx:
+            parts.append(user_ctx)
+        parts.append(dynamic)
+        return "\n\n".join(parts)
 
     # ------------------------------------------------------------------
     # Internal helpers
