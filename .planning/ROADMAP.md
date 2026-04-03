@@ -117,7 +117,12 @@ Plans:
   2. Feel Tennis free videos are identified, analyzed, and concepts extracted into the canonical registry
   3. Cross-source reconciliation is complete: conflicts resolved (FTT wins), agreements marked as reinforced, complements integrated
   4. Knowledge graph confidence scores updated to reflect multi-source validation
-**Plans:** TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 06-01-PLAN.md — Curate video lists for both channels + state files (SEC-01, SEC-03)
+- [ ] 06-02-PLAN.md — TomAllsopp Gemini API extraction (~45 videos) (SEC-02)
+- [ ] 06-03-PLAN.md — Feel Tennis Gemini API extraction (~45 videos) (SEC-04)
+- [ ] 06-04-PLAN.md — Cross-source reconciliation + merge into registry (SEC-05)
 **Risk flags**: Pitfall 5 (reconciliation complexity) -- reconciliation is a separate explicit pass, not embedded in extraction. Pitfall 4 (transcript quality) -- use Gemini video understanding as primary, transcripts as supplementary.
 
 ### Phase 7: User Integration
@@ -144,5 +149,5 @@ Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and
 | 3. FTT Video Extraction | 2/6 | In Progress|  |
 | 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
 | 5. Output Generation & VLM Engine | 0/3 | Planning complete | - |
-| 6. Secondary Sources | 0/TBD | Not started | - |
+| 6. Secondary Sources | 0/4 | Planning complete | - |
 | 7. User Integration | 0/TBD | Not started | - |
