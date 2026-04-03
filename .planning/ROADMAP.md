@@ -154,7 +154,7 @@ Plans:
   6. Round 0 (scan) reuses the existing Pass 1 symptom checklist -- no regression
 **Plans:** 2 plans
 Plans:
-- [ ] 08-01-PLAN.md -- Pydantic data models (Hypothesis, Observation, RoundResult, DiagnosticSession) + tests
+- [x] 08-01-PLAN.md -- Pydantic data models (Hypothesis, Observation, RoundResult, DiagnosticSession) + tests
 - [ ] 08-02-PLAN.md -- MultiRoundAnalyzer orchestrator + convergence + analyze_swing_iterative() + session persistence
 **Risk flags**: Infinite loop risk -- convergence must be guaranteed by hard max rounds. Fallback to v1.0 must be seamless.
 

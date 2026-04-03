@@ -76,7 +76,7 @@
 
 ### Multi-Round Loop Infrastructure
 
-- [ ] **MR-01**: Define Pydantic models for Hypothesis, Observation, DiagnosticSession, and RoundResult
+- [x] **MR-01**: Define Pydantic models for Hypothesis, Observation, DiagnosticSession, and RoundResult
 - [ ] **MR-02**: Implement `MultiRoundAnalyzer` class that orchestrates the observe-reason-re-observe loop
 - [ ] **MR-03**: Implement convergence detection: exit loop when dominant hypothesis reaches confidence >= 0.8 or max rounds (4) reached
 - [ ] **MR-04**: Implement `analyze_swing_iterative()` in VLMForehandAnalyzer as the v2.0 entry point, with fallback to v1.0 `analyze_swing()`
