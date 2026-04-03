@@ -1,0 +1,563 @@
+{
+  "video_id": "T5meVwBOKR4",
+  "concepts": [
+    {
+      "id": "proximal_to_distal_whip",
+      "name": "Proximal to Distal Whip",
+      "name_zh": "近端到远端的鞭打机制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "力量从臀部（近端）开始，逐级传递到球拍头（远端）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "three_main_links",
+      "name": "Three Main Links",
+      "name_zh": "三动力链环节",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "躯干（Trunk）、手臂（Arm）、球拍（Racket）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "momentum_handoff",
+      "name": "Momentum Handoff",
+      "name_zh": "动量交接",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "动量必须高效地从躯干传给手臂，再从手臂传给球拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "lag_angle",
+      "name": "Lag Angle",
+      "name_zh": "手腕滞后角",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "阿尔卡拉斯的手腕拉伸角度从90度爆发式张开到160-170度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "deloading",
+      "name": "Deloading",
+      "name_zh": "随挥的减速机制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "随挥是鞭打的逆向过程，将球拍动能收回躯干以保护关节。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "reverse_the_whip",
+      "name": "Reverse the Whip",
+      "name_zh": "“逆向鞭打”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "将随挥比作回收能量，通过身体向左侧倾倒来卸力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_135",
+      "name": "“135度原则”",
+      "name_zh": "“135度原则”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "虽然阿尔卡拉斯能做到170度，但教练建议普通人追求135度的手腕张角以避免受伤。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "create_space",
+      "name": "Create Space",
+      "name_zh": "“制造空间”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调空间是高效交接的前提。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "brandon_nakashima",
+      "name": "Brandon Nakashima",
+      "name_zh": "中岛布兰登",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 正手非常优秀但在顶级对比下效率约80%。存在“动量泄漏”（击球时躯干仍在旋转）；击球距离身体过近导致空间不足；重心有时处于“中性或负平衡”（后仰）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "rafael_nadal",
+      "name": "Rafael Nadal",
+      "name_zh": "纳达尔",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 正手的生物力学标杆。躯干爆发后瞬间冻结。他极强的跑动中击球能力源于即便在失去重心时，也能通过高效的动量交接（尤其在手腕端）补偿力量。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "brandon_nakashima",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "deloading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "c_135",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "lag_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "create_space",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "reverse_the_whip",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "deloading",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "c_135",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "lag_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "create_space",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "brandon_nakashima",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "c_135",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "lag_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "create_space",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "deloading",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "lag_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "create_space",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "c_135",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "lag_angle",
+      "target_id": "create_space",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "lag_angle",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "lag_angle",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "lag_angle",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "lag_angle",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "create_space",
+      "target_id": "rafael_nadal",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "create_space",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "create_space",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "create_space",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "rafael_nadal",
+      "target_id": "momentum_handoff",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "rafael_nadal",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "rafael_nadal",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "momentum_handoff",
+      "target_id": "proximal_to_distal_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "momentum_handoff",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    },
+    {
+      "source_id": "proximal_to_distal_whip",
+      "target_id": "three_main_links",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Alcaraz Hits Harder Than Everyone",
+      "source_file": "ftt_video_T5meVwBOKR4",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

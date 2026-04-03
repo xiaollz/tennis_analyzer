@@ -1,0 +1,122 @@
+{
+  "video_id": "1W1rope5l0k",
+  "concepts": [
+    {
+      "id": "pushing",
+      "name": "Pushing",
+      "name_zh": "避免“推球”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "如果抛球太靠身体右侧（右手球员），人会下意识地像打正手截击一样去“推”球，这会锁死旋前动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "slappingbumping",
+      "name": "Slapping/Bumping",
+      "name_zh": "“拍打动作”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "感觉前臂和球拍像是在完成一个向外的“拍打”动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "throwing_chain",
+      "name": "Throwing Chain",
+      "name_zh": "“投掷链”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "发球不仅仅是手腕，而是整个肩、胸、背组成的动力链的释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_2",
+      "name": "前臂的旋转，是发球力量的关键。\n    2.",
+      "name_zh": "前臂的旋转，是发球力量的关键。\n    2.",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: 前臂的旋转，是发球力量的关键。\n    2.",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "slappingbumping",
+      "target_id": "c_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    },
+    {
+      "source_id": "slappingbumping",
+      "target_id": "throwing_chain",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    },
+    {
+      "source_id": "slappingbumping",
+      "target_id": "pushing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    },
+    {
+      "source_id": "c_2",
+      "target_id": "throwing_chain",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    },
+    {
+      "source_id": "c_2",
+      "target_id": "pushing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    },
+    {
+      "source_id": "throwing_chain",
+      "target_id": "pushing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Every Pro Serves In-to-Out",
+      "source_file": "ftt_video_1W1rope5l0k",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

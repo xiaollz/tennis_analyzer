@@ -1,0 +1,302 @@
+{
+  "video_id": "lbdQpIHvXYA",
+  "concepts": [
+    {
+      "id": "volitional_throw_back",
+      "name": "Volitional Throw Back",
+      "name_zh": "主观的球拍后甩",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Volitional Throw Back",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "hitting_systemapparatus",
+      "name": "Hitting System/Apparatus",
+      "name_zh": "“击球机构/系统”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Hitting System/Apparatus",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "attaching_the_racket_to_the_upper_back",
+      "name": "Attaching the racket to the upper back",
+      "name_zh": "“将球拍连接到上背部”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Attaching the racket to the upper back",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "prep_and_fire",
+      "name": "Prep and Fire",
+      "name_zh": "“提前锁定，然后开火”",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Prep and Fire",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "probe_your_vertical_spacing",
+      "name": "Probe your vertical spacing",
+      "name_zh": "“探测垂直空间”",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Probe your vertical spacing",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "karen_khachanov",
+      "name": "Karen Khachanov",
+      "name_zh": "卡恰诺夫",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Karen Khachanov",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "alexander_zverev",
+      "name": "Alexander Zverev",
+      "name_zh": "兹维列夫",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Alexander Zverev",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "probe_your_vertical_spacing",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "attaching_the_racket_to_the_upper_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "volitional_throw_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "karen_khachanov",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "hitting_systemapparatus",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "alexander_zverev",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "probe_your_vertical_spacing",
+      "target_id": "attaching_the_racket_to_the_upper_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "probe_your_vertical_spacing",
+      "target_id": "volitional_throw_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "probe_your_vertical_spacing",
+      "target_id": "karen_khachanov",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "probe_your_vertical_spacing",
+      "target_id": "hitting_systemapparatus",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "probe_your_vertical_spacing",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "attaching_the_racket_to_the_upper_back",
+      "target_id": "volitional_throw_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "attaching_the_racket_to_the_upper_back",
+      "target_id": "karen_khachanov",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "attaching_the_racket_to_the_upper_back",
+      "target_id": "hitting_systemapparatus",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "attaching_the_racket_to_the_upper_back",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "volitional_throw_back",
+      "target_id": "karen_khachanov",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "volitional_throw_back",
+      "target_id": "hitting_systemapparatus",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "volitional_throw_back",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "karen_khachanov",
+      "target_id": "hitting_systemapparatus",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "karen_khachanov",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_systemapparatus",
+      "target_id": "prep_and_fire",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Stabilization Secret in Khachanov's Forehand",
+      "source_file": "ftt_video_lbdQpIHvXYA",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

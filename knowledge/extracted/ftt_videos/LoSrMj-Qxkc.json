@@ -1,0 +1,173 @@
+{
+  "video_id": "LoSrMj-Qxkc",
+  "concepts": [
+    {
+      "id": "layback",
+      "name": "Layback",
+      "name_zh": "拍头滞后",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "整个肩胛骨复合体支持肩膀进入深度的外旋（External Rotation），拍头下落位置极低。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_timing_tax",
+      "name": "Shoulder Timing Tax",
+      "name_zh": "“肩部时机税”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "指鞭打型正手由于动力链长、动作复杂，在击球时需要支付的时间代价。在处理高飘短球时，必须等待球升起再下落才能合力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "hand_on_the_ball",
+      "name": "Hand on the ball",
+      "name_zh": "“手放在球上”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "描述胸部驱动型选手的触球感觉，强调对球的精准控制而非暴力鞭打。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "shoestring_balls",
+      "name": "Shoe-string balls",
+      "name_zh": "“鞋带高度的球”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "指极低的球。视频指出这种球是鞭打型选手的强项，因为他们能靠极速的肩部翻转制造超强上旋拉起弧线。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "negative_balance",
+      "name": "Negative Balance",
+      "name_zh": "消极平衡",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "身体后仰击球，需要极强的肩膀和臀部弹性才能发力（Vacherot 常用）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "negative_balance",
+      "target_id": "shoulder_timing_tax",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "negative_balance",
+      "target_id": "hand_on_the_ball",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "negative_balance",
+      "target_id": "shoestring_balls",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "negative_balance",
+      "target_id": "layback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_timing_tax",
+      "target_id": "hand_on_the_ball",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_timing_tax",
+      "target_id": "shoestring_balls",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_timing_tax",
+      "target_id": "layback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "hand_on_the_ball",
+      "target_id": "shoestring_balls",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "hand_on_the_ball",
+      "target_id": "layback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    },
+    {
+      "source_id": "shoestring_balls",
+      "target_id": "layback",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Their Mothers are Sisters, Their Forehands AREN'T",
+      "source_file": "ftt_video_LoSrMj-Qxkc",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

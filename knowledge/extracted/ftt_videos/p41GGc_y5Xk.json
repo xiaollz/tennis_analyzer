@@ -1,0 +1,122 @@
+{
+  "video_id": "p41GGc_y5Xk",
+  "concepts": [
+    {
+      "id": "sensory_function",
+      "name": "Sensory Function",
+      "name_zh": "手部的感知功能",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "手不是用来死磕力量的，而是作为“传感器”来感知拍头在空间中的位置和方向。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "eastern_grip",
+      "name": "Eastern Grip",
+      "name_zh": "东方式握拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   核心压力点在**食指的指节背面**（与球拍柄接触的位置）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "semiwestern_grip",
+      "name": "Semi-Western Grip",
+      "name_zh": "半西方式握拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   压力感更集中在**手指和手掌底部（靠近小指一侧）**，且感觉是在拍柄的前部。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_10000",
+      "name": "“10,000次法则”",
+      "name_zh": "“10,000次法则”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调直觉的建立需要海量的重复，让大脑学习手部肌肉与拍头位置的映射关系。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "c_10000",
+      "target_id": "semiwestern_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    },
+    {
+      "source_id": "c_10000",
+      "target_id": "sensory_function",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    },
+    {
+      "source_id": "c_10000",
+      "target_id": "eastern_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    },
+    {
+      "source_id": "semiwestern_grip",
+      "target_id": "sensory_function",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    },
+    {
+      "source_id": "semiwestern_grip",
+      "target_id": "eastern_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    },
+    {
+      "source_id": "sensory_function",
+      "target_id": "eastern_grip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Your Hand Controls Every Shot",
+      "source_file": "ftt_video_p41GGc_y5Xk",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

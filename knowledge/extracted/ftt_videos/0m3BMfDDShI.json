@@ -1,0 +1,233 @@
+{
+  "video_id": "0m3BMfDDShI",
+  "concepts": [
+    {
+      "id": "elbow_drop",
+      "name": "Elbow Drop",
+      "name_zh": "肘部掉落",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用重力驱动肘部微降，产生自然的高度差。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_table_metaphor",
+      "name": "The Table Metaphor",
+      "name_zh": "“桌面挥拍”比喻",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "想象面前有一张与击球高度齐平的桌子，挥拍时手臂和球拍像是沿着桌面滑行。这能防止球员在击高球时习惯性地先掉拍头。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "c_25",
+      "name": "2.5磅负重训练",
+      "name_zh": "2.5磅负重训练",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "让球员手持2.5磅的哑铃（或小配重）进行正手挥拍。由于重量增加，球员会不由自主地激活背阔肌来支撑，从而体会到“背部肌肉稳定”的感觉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "fewer_moving_parts",
+      "name": "Fewer Moving Parts",
+      "name_zh": "减少移动件",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "强调“整体挥拍”（Unit Swing），减少了手腕和肘部独立活动的可能，降低了出错概率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "structural_connection",
+      "name": "Structural Connection",
+      "name_zh": "结构性连接",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "通过激活背阔肌，将轻便的球拍与厚重的躯干相连，增加了击球时的质量惯性和稳定性（即增强了抵抗冲击的能力）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "simplest_possible_effective_forehand",
+      "name": "Simplest Possible Effective Forehand",
+      "name_zh": "最简化",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Simplest Possible Effective Forehand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "elbow_drop",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "fewer_moving_parts",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "c_25",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "structural_connection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "the_table_metaphor",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "elbow_drop",
+      "target_id": "fewer_moving_parts",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "elbow_drop",
+      "target_id": "c_25",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "elbow_drop",
+      "target_id": "structural_connection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "elbow_drop",
+      "target_id": "the_table_metaphor",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "fewer_moving_parts",
+      "target_id": "c_25",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "fewer_moving_parts",
+      "target_id": "structural_connection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "fewer_moving_parts",
+      "target_id": "the_table_metaphor",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_25",
+      "target_id": "structural_connection",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "c_25",
+      "target_id": "the_table_metaphor",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    },
+    {
+      "source_id": "structural_connection",
+      "target_id": "the_table_metaphor",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Build This Foundation - The Rest Will Follow",
+      "source_file": "ftt_video_0m3BMfDDShI",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

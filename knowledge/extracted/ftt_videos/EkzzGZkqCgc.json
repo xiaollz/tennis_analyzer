@@ -1,0 +1,173 @@
+{
+  "video_id": "EkzzGZkqCgc",
+  "concepts": [
+    {
+      "id": "swing_vector",
+      "name": "Swing Vector",
+      "name_zh": "挥拍向量",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "许多球员的挥拍向量直接指向球，导致无法掉拍头。正确的挥拍向量应该是“由内向外”(In-to-Out)，在开始挥拍时，手部的移动方向应该是向身体侧面（右方，针对右手球员），而不是直接向前。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "opposing_forces",
+      "name": "Opposing Forces",
+      "name_zh": "手与拍头的对冲力",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "“掉拍头”（Racket Flip）的秘密在于：在开始前挥的瞬间，**手向外推，拍头向后翻转**。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "coaching_command",
+      "name": "Coaching Command",
+      "name_zh": "教练口令",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "**“把手甩出去” (Throw the hand out)** —— 强调在前挥开始时手部水平向外的位移。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "jack_sock",
+      "name": "Jack Sock",
+      "name_zh": "杰克·索克",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **分析要点：** 索克的手部外推发生得比别人更早且幅度更大。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "throw_the_hand_out",
+      "name": "Throw the hand out",
+      "name_zh": "“把手甩出去”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Throw the hand out",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "coaching_command",
+      "target_id": "opposing_forces",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_command",
+      "target_id": "swing_vector",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_command",
+      "target_id": "throw_the_hand_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "coaching_command",
+      "target_id": "jack_sock",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "opposing_forces",
+      "target_id": "swing_vector",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "opposing_forces",
+      "target_id": "throw_the_hand_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "opposing_forces",
+      "target_id": "jack_sock",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_vector",
+      "target_id": "throw_the_hand_out",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_vector",
+      "target_id": "jack_sock",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    },
+    {
+      "source_id": "throw_the_hand_out",
+      "target_id": "jack_sock",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why Your Racket Doesn't Flip",
+      "source_file": "ftt_video_EkzzGZkqCgc",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

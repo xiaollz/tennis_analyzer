@@ -1,0 +1,302 @@
+{
+  "video_id": "Bhzd6cM-oFU",
+  "concepts": [
+    {
+      "id": "magnus_effect",
+      "name": "Magnus Effect",
+      "name_zh": "马格努斯效应",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Magnus Effect",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "loop",
+      "name": "Loop",
+      "name_zh": "引拍环",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Loop",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "feeling_cue",
+      "name": "Feeling Cue",
+      "name_zh": "感觉提示",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Feeling Cue",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "visual_cue",
+      "name": "Visual Cue",
+      "name_zh": "视觉提示",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Visual Cue",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_whip",
+      "name": "Shoulder Whip",
+      "name_zh": "“肩膀鞭打”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Shoulder Whip",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "stretch_reflex",
+      "name": "Stretch Reflex",
+      "name_zh": "利用拉伸反射",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Stretch Reflex",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "andy_roddick",
+      "name": "Andy Roddick",
+      "name_zh": "安迪·罗迪克",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Andy Roddick",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "andy_roddick",
+      "target_id": "loop",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "andy_roddick",
+      "target_id": "stretch_reflex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "andy_roddick",
+      "target_id": "visual_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "andy_roddick",
+      "target_id": "magnus_effect",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "andy_roddick",
+      "target_id": "shoulder_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "andy_roddick",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "loop",
+      "target_id": "stretch_reflex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "loop",
+      "target_id": "visual_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "loop",
+      "target_id": "magnus_effect",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "loop",
+      "target_id": "shoulder_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "loop",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "stretch_reflex",
+      "target_id": "visual_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "stretch_reflex",
+      "target_id": "magnus_effect",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "stretch_reflex",
+      "target_id": "shoulder_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "stretch_reflex",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "visual_cue",
+      "target_id": "magnus_effect",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "visual_cue",
+      "target_id": "shoulder_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "visual_cue",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "magnus_effect",
+      "target_id": "shoulder_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "magnus_effect",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    },
+    {
+      "source_id": "shoulder_whip",
+      "target_id": "feeling_cue",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How to Hit Crazy Slice Like Carlos Alcaraz",
+      "source_file": "ftt_video_Bhzd6cM-oFU",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

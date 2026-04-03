@@ -1,0 +1,233 @@
+{
+  "video_id": "hqganBxzQNM",
+  "concepts": [
+    {
+      "id": "horizontal_swing_plane",
+      "name": "Horizontal Swing Plane",
+      "name_zh": "水平挥拍平面",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在练习正手力量时，首先要专注于水平的“半圆”轨迹，而不是过早考虑“由下向上”的摩擦。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "packing_the_latsscapula",
+      "name": "Packing the Lats/Scapula",
+      "name_zh": "背阔肌与肩胛骨的“锁定”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在引拍和变向瞬间，背阔肌需向下、向后收紧，使肩胛骨稳定。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "the_bounce",
+      "name": "The Bounce",
+      "name_zh": "能量“反弹”机制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "利用后背强大的肌肉群（背阔肌等）作为支撑，让手臂在引拍变向时像撞击在坚固的墙上一样“反弹”回来，而不是拉扯脆弱的软组织。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "optimal_strike_height",
+      "name": "Optimal Strike Height",
+      "name_zh": "击球高度的选择",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "寻找最能发挥爆发力的爆发点（通常在胸部到肩部之间的高度），而不是在过高或过低的位置挣扎。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "trunk_tilt",
+      "name": "Trunk Tilt",
+      "name_zh": "躯干倾斜",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "如果球略高，可以通过躯干稍微后仰来调整，而不是只动肩膀。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "uncap_the_power",
+      "name": "Uncap the power",
+      "name_zh": "能量的“盖子”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "认为很多球员的力量被限制住了，负重练习是为了“揭开力量的盖子”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "uncap_the_power",
+      "target_id": "optimal_strike_height",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "uncap_the_power",
+      "target_id": "packing_the_latsscapula",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "uncap_the_power",
+      "target_id": "the_bounce",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "uncap_the_power",
+      "target_id": "horizontal_swing_plane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "uncap_the_power",
+      "target_id": "trunk_tilt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "optimal_strike_height",
+      "target_id": "packing_the_latsscapula",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "optimal_strike_height",
+      "target_id": "the_bounce",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "optimal_strike_height",
+      "target_id": "horizontal_swing_plane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "optimal_strike_height",
+      "target_id": "trunk_tilt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "packing_the_latsscapula",
+      "target_id": "the_bounce",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "packing_the_latsscapula",
+      "target_id": "horizontal_swing_plane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "packing_the_latsscapula",
+      "target_id": "trunk_tilt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "the_bounce",
+      "target_id": "horizontal_swing_plane",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "the_bounce",
+      "target_id": "trunk_tilt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    },
+    {
+      "source_id": "horizontal_swing_plane",
+      "target_id": "trunk_tilt",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Why I Give Every Student a Weight to Swing",
+      "source_file": "ftt_video_hqganBxzQNM",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

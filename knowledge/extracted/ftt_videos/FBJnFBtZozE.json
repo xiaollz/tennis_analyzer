@@ -1,0 +1,668 @@
+{
+  "video_id": "FBJnFBtZozE",
+  "concepts": [
+    {
+      "id": "recovery",
+      "name": "Recovery",
+      "name_zh": "回位脚步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Recovery",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "forward_splitstep",
+      "name": "Forward Split-step",
+      "name_zh": "前冲式分腿垫步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Forward Split-step",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "apex",
+      "name": "Apex",
+      "name_zh": "最高点",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Apex",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "net_approach",
+      "name": "Net Approach",
+      "name_zh": "随球上网",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Net Approach",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "fire_the_back_foot_through",
+      "name": "Fire the back foot through",
+      "name_zh": "后脚发力蹬出",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Fire the back foot through",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "freeze",
+      "name": "Freeze",
+      "name_zh": "冻结",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Freeze",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "choke",
+      "name": "Choke",
+      "name_zh": "窒息",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Choke",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "outcome_independence",
+      "name": "Outcome Independence",
+      "name_zh": "结果独立性",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Outcome Independence",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "jannik_sinner",
+      "name": "Jannik Sinner",
+      "name_zh": "扬尼克·辛纳",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Jannik Sinner",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "carlos_alcaraz",
+      "name": "Carlos Alcaraz",
+      "name_zh": "卡洛斯·阿尔卡拉斯",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Carlos Alcaraz",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "novak_djokovic",
+      "name": "Novak Djokovic",
+      "name_zh": "诺瓦克·德约科维奇",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Novak Djokovic",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "net_approach",
+      "target_id": "novak_djokovic",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "recovery",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "fire_the_back_foot_through",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "choke",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "outcome_independence",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "net_approach",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "recovery",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "fire_the_back_foot_through",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "choke",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "outcome_independence",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "novak_djokovic",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "fire_the_back_foot_through",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "choke",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "outcome_independence",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "recovery",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "choke",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "outcome_independence",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "fire_the_back_foot_through",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "outcome_independence",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "choke",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "outcome_independence",
+      "target_id": "apex",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "outcome_independence",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "outcome_independence",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "outcome_independence",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "outcome_independence",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "apex",
+      "target_id": "forward_splitstep",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "apex",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "apex",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "apex",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "forward_splitstep",
+      "target_id": "jannik_sinner",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "forward_splitstep",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "forward_splitstep",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "jannik_sinner",
+      "target_id": "carlos_alcaraz",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "jannik_sinner",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    },
+    {
+      "source_id": "carlos_alcaraz",
+      "target_id": "freeze",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: How Sinner Choke-Proofed His Game",
+      "source_file": "ftt_video_FBJnFBtZozE",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

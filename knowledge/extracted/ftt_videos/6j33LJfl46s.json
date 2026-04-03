@@ -1,0 +1,47 @@
+{
+  "video_id": "6j33LJfl46s",
+  "concepts": [
+    {
+      "id": "stretchshortening_cycle",
+      "name": "Stretch-Shortening Cycle",
+      "name_zh": "拉伸-收缩循环",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "肌肉在收缩前先进行快速拉伸。肩胛骨后收正是为了触发这种生理反射，使前推时的收缩更有力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "retraction_esr_protraction_isr",
+      "name": "“Retraction + ESR → Protraction + ISR”",
+      "name_zh": "“Retraction + ESR → Protraction + ISR”",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: “Retraction + ESR → Protraction + ISR”",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "stretchshortening_cycle",
+      "target_id": "retraction_esr_protraction_isr",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Scapular Glide on the Tennis Forehand",
+      "source_file": "ftt_video_6j33LJfl46s",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

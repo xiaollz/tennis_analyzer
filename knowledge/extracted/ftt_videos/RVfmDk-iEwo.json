@@ -1,0 +1,233 @@
+{
+  "video_id": "RVfmDk-iEwo",
+  "concepts": [
+    {
+      "id": "in_front_of_the_slot",
+      "name": "In front of the slot",
+      "name_zh": "在插槽位之前",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: In front of the slot",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "behind_the_slot",
+      "name": "Behind the slot",
+      "name_zh": "在插槽位之后",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Behind the slot",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "out_of_phase",
+      "name": "Out of Phase",
+      "name_zh": "相位差",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Out of Phase",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "hitting_spring",
+      "name": "Hitting Spring",
+      "name_zh": "“击球弹簧”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Hitting Spring",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "eye_chart",
+      "name": "Eye Chart",
+      "name_zh": "“视力表”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Eye Chart",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "racket_out_of_phase_with_the_hand",
+      "name": "Racket out of phase with the hand",
+      "name_zh": "“让拍头与手失去相位”",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Racket out of phase with the hand",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "behind_the_slot",
+      "target_id": "hitting_spring",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "behind_the_slot",
+      "target_id": "racket_out_of_phase_with_the_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "behind_the_slot",
+      "target_id": "in_front_of_the_slot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "behind_the_slot",
+      "target_id": "out_of_phase",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "behind_the_slot",
+      "target_id": "eye_chart",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_spring",
+      "target_id": "racket_out_of_phase_with_the_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_spring",
+      "target_id": "in_front_of_the_slot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_spring",
+      "target_id": "out_of_phase",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_spring",
+      "target_id": "eye_chart",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_out_of_phase_with_the_hand",
+      "target_id": "in_front_of_the_slot",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_out_of_phase_with_the_hand",
+      "target_id": "out_of_phase",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_out_of_phase_with_the_hand",
+      "target_id": "eye_chart",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "in_front_of_the_slot",
+      "target_id": "out_of_phase",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "in_front_of_the_slot",
+      "target_id": "eye_chart",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    },
+    {
+      "source_id": "out_of_phase",
+      "target_id": "eye_chart",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Find Your Hand Slot, Everything Gets Easier",
+      "source_file": "ftt_video_RVfmDk-iEwo",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

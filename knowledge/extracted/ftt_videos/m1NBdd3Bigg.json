@@ -1,0 +1,563 @@
+{
+  "video_id": "m1NBdd3Bigg",
+  "concepts": [
+    {
+      "id": "c_9090_preparation",
+      "name": "90-90 Preparation",
+      "name_zh": "90-90 准备姿势",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   腋下夹角约为90度，肘部弯曲角度约为90度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "stable_vs_loose",
+      "name": "Stable vs. Loose",
+      "name_zh": "肩膀的“稳定”与“放松”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   肩膀前部的软组织必须完全放松。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "spacing_toss",
+      "name": "Spacing & Toss",
+      "name_zh": "抛球与空间感",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   **侧向空间：** 身体与球之间需要合适的距离，太近或太低会丧失挥拍速度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "upward_throwing_motion",
+      "name": "Upward Throwing Motion",
+      "name_zh": "向上投掷动作",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   发球本质上是向上投掷。如果像投棒球一样向前投，很难过网。向上投掷可以在保持“肩膀鞭打”的同时获得过网高度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "avoid_shrugging_the_traps",
+      "name": "Avoid Shrugging the Traps",
+      "name_zh": "避免耸肩",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   不要用斜方肌去“伸手够球”，这会破坏肩膀的转动效率。应该通过**躯干延伸**来获得高度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "chest_to_the_sky",
+      "name": "Chest to the Sky",
+      "name_zh": "胸部朝天",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   这是一个重要的拉伸动作，增加背部反弓和躯干的向上动力，从而增加过网容错率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "legs",
+      "name": "Legs",
+      "name_zh": "腿部动作的简化",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   不要过度关注压腿（屈膝）。如果发球技术还未成熟，过度的屈膝会干扰上半身的协调性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "dont_press_whip",
+      "name": "Don't press, whip",
+      "name_zh": "“不要压，要抽”",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "从推球过网转变为鞭打球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "subordination",
+      "name": "Subordination",
+      "name_zh": "从属关系",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "视频明确提到，速度、方向等都是“从属于” (Subordinate) 高效的肩膀动作的。如果你为了追求力量（例如猛力屈膝）而破坏了肩膀的协调，那就是本末倒置。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "johnny_alexa_2",
+      "name": "Johnny 以 Alexa 的发球作为“最简有效发球”的模板。\n    2.",
+      "name_zh": "Johnny 以 Alexa 的发球作为“最简有效发球”的模板。\n    2.",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Johnny 以 Alexa 的发球作为“最简有效发球”的模板。\n    2.",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "stable_vs_loose",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "avoid_shrugging_the_traps",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "subordination",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "dont_press_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "johnny_alexa_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "upward_throwing_motion",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "avoid_shrugging_the_traps",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "subordination",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "dont_press_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "johnny_alexa_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "stable_vs_loose",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "subordination",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "dont_press_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "johnny_alexa_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "avoid_shrugging_the_traps",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "dont_press_whip",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "johnny_alexa_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "subordination",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_press_whip",
+      "target_id": "johnny_alexa_2",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_press_whip",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_press_whip",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_press_whip",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_press_whip",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "johnny_alexa_2",
+      "target_id": "legs",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "johnny_alexa_2",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "johnny_alexa_2",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "johnny_alexa_2",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "legs",
+      "target_id": "spacing_toss",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "legs",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "legs",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing_toss",
+      "target_id": "chest_to_the_sky",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "spacing_toss",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    },
+    {
+      "source_id": "chest_to_the_sky",
+      "target_id": "c_9090_preparation",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: Simple Serve Progressions",
+      "source_file": "ftt_video_m1NBdd3Bigg",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}

@@ -1,0 +1,380 @@
+{
+  "video_id": "gehRK0Y6AdQ",
+  "concepts": [
+    {
+      "id": "hitting_through_the_ball",
+      "name": "Hitting Through the Ball",
+      "name_zh": "击穿球体",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "这是核心要点。无论打平击还是上旋，都必须“击穿”球体。上旋不是单纯的向上摩擦，而是带有向前的驱动力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "racket_entry_angle",
+      "name": "Racket Entry Angle",
+      "name_zh": "球拍进入角度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在接近球时，拍头应处于水平线以下。这种角度在向前发力的同时，能自然产生向上的击球轨迹。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "lean_in_vs_lean_back",
+      "name": "Lean In vs. Lean Back",
+      "name_zh": "向前倾斜 vs. 向后仰",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "不要为了拉起球而往后仰（那是初学者的错误）。即使打上旋也要向前倾，利用腿部和躯干的压低来创造净空高度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "swing_path",
+      "name": "Swing Path",
+      "name_zh": "挥拍轨迹",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "并非传统教学中常说的“C”型轨迹，而是更接近一种扁平的斜向上轨迹。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "preacceleration_level",
+      "name": "Pre-acceleration Level",
+      "name_zh": "起速前的拍位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "ftt"
+      ],
+      "description": "在加速挥拍前，手部应至少降到球的高度。避免从高处“俯冲式”击球再折返向上（Dive-bombing），那会导致击球节奏极其不稳定。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "dont_fight_your_hand",
+      "name": "Don't fight your hand",
+      "name_zh": "教练口令：不要和你的手较劲",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "ftt"
+      ],
+      "description": "如果你感觉到挥拍不顺滑，通常是球距（侧向或深度）出了问题，而不是动作本身的问题。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "adaptive_response_drill",
+      "name": "Adaptive Response Drill",
+      "name_zh": "训练方法：适应性反应练习",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "*   当球短且身体前倾时，打得更平（Flatter）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    },
+    {
+      "id": "forwarddriving",
+      "name": "Forward-driving",
+      "name_zh": "即使是产生极高转速的上旋球，职业球员的球拍轨迹也是高度向前的",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "ftt"
+      ],
+      "description": "Concept from FTT: Forward-driving",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": null,
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "swing_path",
+      "target_id": "preacceleration_level",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "hitting_through_the_ball",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "racket_entry_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "adaptive_response_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "dont_fight_your_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "swing_path",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "hitting_through_the_ball",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "racket_entry_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "adaptive_response_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "dont_fight_your_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "preacceleration_level",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_through_the_ball",
+      "target_id": "racket_entry_angle",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_through_the_ball",
+      "target_id": "adaptive_response_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_through_the_ball",
+      "target_id": "dont_fight_your_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_through_the_ball",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "hitting_through_the_ball",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_entry_angle",
+      "target_id": "adaptive_response_drill",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_entry_angle",
+      "target_id": "dont_fight_your_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_entry_angle",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "racket_entry_angle",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "adaptive_response_drill",
+      "target_id": "dont_fight_your_hand",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "adaptive_response_drill",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "adaptive_response_drill",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_fight_your_hand",
+      "target_id": "forwarddriving",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "dont_fight_your_hand",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    },
+    {
+      "source_id": "forwarddriving",
+      "target_id": "lean_in_vs_lean_back",
+      "relation": "supports",
+      "confidence": 0.6,
+      "evidence": "Co-occurring in video: The Pros Brush Differently From You",
+      "source_file": "ftt_video_gehRK0Y6AdQ",
+      "resolution": null
+    }
+  ],
+  "diagnostic_chains": []
+}
