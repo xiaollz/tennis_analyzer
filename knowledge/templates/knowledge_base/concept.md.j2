@@ -1,0 +1,45 @@
+# {{ concept.name }} ({{ concept.name_zh }})
+
+**Category:** {{ concept.category }}
+**Confidence:** {{ "%.0f"|format(concept.confidence * 100) }}%
+**Sources:** {{ concept.sources | join(", ") }}
+
+## Description
+
+{{ concept.description }}
+
+{% if concept.vlm_features %}
+## VLM Observable Features
+
+{% for f in concept.vlm_features %}
+- {{ f }}
+{% endfor %}
+{% endif %}
+
+{% if concept.muscles_involved %}
+## Muscles Involved
+
+{% for m in concept.muscles_involved %}
+- {{ m | replace("_", " ") | title }}
+{% endfor %}
+{% endif %}
+
+{% if outgoing_edges %}
+## Relationships (Outgoing)
+
+| Target | Type | Confidence | Evidence |
+|--------|------|------------|----------|
+{% for e in outgoing_edges %}
+| [{{ e.target_name }}](../{{ e.target_category }}/{{ e.target_id }}.md) | {{ e.relation }} | {{ "%.0f"|format(e.confidence * 100) }}% | {{ e.evidence[:80] }}{% if e.evidence|length > 80 %}...{% endif %} |
+{% endfor %}
+{% endif %}
+
+{% if incoming_edges %}
+## Referenced By (Incoming)
+
+| Source | Type | Confidence |
+|--------|------|------------|
+{% for e in incoming_edges %}
+| [{{ e.source_name }}](../{{ e.source_category }}/{{ e.source_id }}.md) | {{ e.relation }} | {{ "%.0f"|format(e.confidence * 100) }}% |
+{% endfor %}
+{% endif %}

@@ -1,0 +1,30 @@
+# Diagnostic Chain: {{ chain.symptom }}
+
+**Symptom (ZH):** {{ chain.symptom_zh }}
+**Symptom Concept:** {{ chain.symptom_concept_id }}
+**Priority:** {{ chain.priority }}
+{% if chain.vlm_frame %}**VLM Frame:** {{ chain.vlm_frame }}{% endif %}
+
+## Check Sequence
+
+{% for step in chain.check_sequence %}
+### Step {{ loop.index }}
+
+**Check:** {{ step.check }}
+**Check (ZH):** {{ step.check_zh }}
+- **If True:** {{ step.if_true }}
+{% if step.if_false %}- **If False:** {{ step.if_false }}{% endif %}
+
+{% endfor %}
+
+## Root Causes
+
+{% for rc in chain.root_causes %}
+- {{ rc }}
+{% endfor %}
+
+## Recommended Drills
+
+{% for drill in chain.drills %}
+- {{ drill }}
+{% endfor %}

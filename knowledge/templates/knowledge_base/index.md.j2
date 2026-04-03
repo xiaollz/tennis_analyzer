@@ -1,0 +1,15 @@
+# Tennis Forehand Knowledge Base
+
+**Nodes:** {{ node_count }} | **Edges:** {{ edge_count }} | **Diagnostic Chains:** {{ chain_count }}
+
+## Topic Groups
+
+{% for group in groups %}
+- [{{ group.display_name }}]({{ group.category }}/index.md) ({{ group.count }} concepts)
+{% endfor %}
+
+{% if chain_count > 0 %}
+## Diagnostic Chains
+
+- [Diagnostic Chains](diagnostic_chains/index.md) ({{ chain_count }} chains)
+{% endif %}

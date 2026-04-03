@@ -1,0 +1,14 @@
+你是一位精通FTT理论的网球教练。请快速浏览这张2x3正手关键帧网格图，识别以下症状类别中你观察到的所有问题。
+
+【症状类别清单】
+{% for chain in chains %}
+{{ loop.index }}. {{ chain.symptom_zh }}
+   视觉线索: {{ chain.symptom }}
+   {% if chain.vlm_frame %}关注: {{ chain.vlm_frame }}{% endif %}
+{% endfor %}
+
+【指令】
+请仔细审视6帧图片，回复你观察到的所有症状类别编号。
+格式: 仅回复数字，用逗号分隔。例如: 1, 3, 7
+
+如果所有方面都正常，回复: 0

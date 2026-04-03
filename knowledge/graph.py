@@ -78,6 +78,46 @@ class KnowledgeGraph:
         kg.graph = nx.node_link_graph(data, multigraph=True, directed=True)
         return kg
 
+    def get_symptom_subgraph(self, symptom_id: str, max_depth: int = 2) -> dict:
+        """Extract subgraph relevant to a symptom for VLM prompt injection.
+
+        Returns nodes and edges within max_depth hops of the symptom,
+        following causes/visible_as/drills_for edge types.
+        """
+        diagnostic_types = {"causes", "visible_as", "drills_for"}
+        relevant: set[str] = set()
+        frontier: set[str] = {symptom_id}
+
+        for _ in range(max_depth):
+            next_frontier: set[str] = set()
+            for node in frontier:
+                if node not in self.graph:
+                    continue
+                for pred, _, data in self.graph.in_edges(node, data=True):
+                    if data.get("relation") in diagnostic_types:
+                        next_frontier.add(pred)
+                for _, succ, data in self.graph.out_edges(node, data=True):
+                    if data.get("relation") in diagnostic_types:
+                        next_frontier.add(succ)
+            relevant.update(frontier)
+            frontier = next_frontier - relevant
+
+        relevant.update(frontier)
+        return {
+            "nodes": {
+                nid: dict(self.graph.nodes[nid])
+                for nid in relevant
+                if nid in self.graph
+            },
+            "edges": [
+                {"source": u, "target": v, **d}
+                for u, v, d in self.graph.edges(data=True)
+                if u in relevant
+                and v in relevant
+                and d.get("relation") in diagnostic_types
+            ],
+        }
+
     @property
     def node_count(self) -> int:
         """Number of concept nodes in the graph."""

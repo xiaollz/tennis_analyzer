@@ -1,0 +1,44 @@
+【根因诊断逻辑链——从症状追溯根因】
+
+以下是针对检测到的问题的因果链。诊断时必须沿链条向上追溯，找到最深层的根因，而不是只描述表面症状。优先报告根因，表面症状作为佐证。
+
+{% for chain in chains %}
+■ {{ chain.symptom_zh }}（{{ chain.symptom }}）
+  优先级: {{ chain.priority }}
+  {% if chain.vlm_frame %}关注帧: {{ chain.vlm_frame }}{% endif %}
+
+  诊断路径:
+  {% for step in chain.check_sequence %}
+  {{ loop.index }}. {{ step.check_zh }}（{{ step.check }}）
+     → 是: {{ step.if_true }}
+     {% if step.if_false %}→ 否: {{ step.if_false }}{% endif %}
+  {% endfor %}
+
+  根因: {{ chain.root_causes | join(", ") }}
+  推荐训练: {{ chain.drills | join(", ") }}
+
+{% endfor %}
+{% if subgraph and subgraph.nodes %}
+【相关概念详情】
+{% for nid, node in subgraph.nodes.items() %}
+{% if node.get("name") %}
+- {{ node.get("name", nid) }}{% if node.get("name_zh") %}（{{ node["name_zh"] }}）{% endif %}
+  {% if node.get("description") %}{{ node["description"][:200] }}{% endif %}
+  {% if node.get("vlm_features") %}VLM特征: {{ node["vlm_features"] | join("; ") }}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if subgraph and subgraph.edges %}
+【因果关系】
+{% for edge in subgraph.edges %}
+- {{ edge.get("source", "?") }} --[{{ edge.get("relation", "?") }}]--> {{ edge.get("target", "?") }}
+  {% if edge.get("evidence") %}证据: {{ edge["evidence"][:100] }}{% endif %}
+{% endfor %}
+{% endif %}
+
+【诊断优先级规则】
+1. 先看动力链时序：如果手臂先于身体，其他问题都是它的下游症状
+2. 再看连接：如果手臂脱离身体，scooping和缺Out都是必然结果
+3. 然后看击球点：位置错误会导致代偿性的刷球/够球
+4. 最后看细节：在前三个问题解决后再优化
+报告中请把最上游的根因放在issues列表第一位，标为severity="高"

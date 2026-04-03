@@ -1,0 +1,9 @@
+# {{ display_name }}
+
+{{ count }} concepts in this category.
+
+| Concept | Confidence | Description |
+|---------|------------|-------------|
+{% for c in concepts %}
+| [{{ c.name }}]({{ c.id }}.md) | {{ "%.0f"|format(c.confidence * 100) }}% | {{ c.description[:80] }}{% if c.description|length > 80 %}...{% endif %} |
+{% endfor %}
