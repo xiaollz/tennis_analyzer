@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Running `pytest` on the schema module passes with at least one test per model and one test for dedup matching
 **Plans:** 2 plans
 Plans:
-- [ ] 01-01-PLAN.md — Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
+- [x] 01-01-PLAN.md — Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
 - [ ] 01-02-PLAN.md — ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
 **Risk flags**: Pitfall 1 (concept explosion) -- dedup strategy must be designed here, not bolted on later. Pitfall 6 (undirected edges) -- enforce typed directed edges at schema level.
 
