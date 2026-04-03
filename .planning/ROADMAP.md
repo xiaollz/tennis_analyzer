@@ -104,7 +104,7 @@ Plans:
 **Plans:** 3 plans
 Plans:
 - [x] 05-01-PLAN.md — JSON + Markdown export generators (Jinja2 templates, topic-grouped structure)
-- [ ] 05-02-PLAN.md — VLM prompt compiler (graph-to-prompt, static templates + dynamic subgraph injection)
+- [x] 05-02-PLAN.md — VLM prompt compiler (graph-to-prompt, static templates + dynamic subgraph injection)
 - [ ] 05-03-PLAN.md — Two-pass VLM integration into vlm_analyzer.py
 **Risk flags**: Pitfall 3 (prompt overflow) -- two-pass VLM with subgraph selection is critical. Test prompt size early.
 

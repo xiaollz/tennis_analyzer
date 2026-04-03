@@ -53,18 +53,18 @@
 
 ### VLM Diagnostic Engine
 
-- [ ] **VLM-01**: Build prompt generator that compiles VLM prompt from knowledge graph subgraph
+- [x] **VLM-01**: Build prompt generator that compiles VLM prompt from knowledge graph subgraph
 - [ ] **VLM-02**: Implement two-pass VLM analysis (quick scan → targeted deep analysis with relevant subgraph)
-- [ ] **VLM-03**: Complete diagnostic coverage — every known forehand symptom has a diagnostic chain
-- [ ] **VLM-04**: Each diagnostic output includes: what's wrong, why (biomechanics), how to fix (drill), how to check (criteria)
-- [ ] **VLM-05**: VLM prompt stays within ~10K char budget via query-based subgraph injection
+- [x] **VLM-03**: Complete diagnostic coverage — every known forehand symptom has a diagnostic chain
+- [x] **VLM-04**: Each diagnostic output includes: what's wrong, why (biomechanics), how to fix (drill), how to check (criteria)
+- [x] **VLM-05**: VLM prompt stays within ~10K char budget via query-based subgraph injection
 
 ### Output Generation
 
 - [x] **OUT-01**: JSON knowledge graph export (nodes + edges + diagnostic chains, machine-readable)
 - [x] **OUT-02**: Markdown knowledge base export (organized by topic hierarchy, human-readable)
 - [x] **OUT-03**: Markdown includes cross-references, source citations, confidence levels
-- [ ] **OUT-04**: VLM prompt template file (generated from graph, replaces hardcoded prompt in vlm_analyzer.py)
+- [x] **OUT-04**: VLM prompt template file (generated from graph, replaces hardcoded prompt in vlm_analyzer.py)
 
 ### User Integration
 
@@ -127,15 +127,15 @@
 | ANAT-02 | Phase 4 | Complete |
 | ANAT-03 | Phase 4 | Complete |
 | ANAT-04 | Phase 4 | Complete |
-| VLM-01 | Phase 5 | Pending |
+| VLM-01 | Phase 5 | Complete |
 | VLM-02 | Phase 5 | Pending |
-| VLM-03 | Phase 5 | Pending |
-| VLM-04 | Phase 5 | Pending |
-| VLM-05 | Phase 5 | Pending |
+| VLM-03 | Phase 5 | Complete |
+| VLM-04 | Phase 5 | Complete |
+| VLM-05 | Phase 5 | Complete |
 | OUT-01 | Phase 5 | Complete |
 | OUT-02 | Phase 5 | Complete |
 | OUT-03 | Phase 5 | Complete |
-| OUT-04 | Phase 5 | Pending |
+| OUT-04 | Phase 5 | Complete |
 | SEC-01 | Phase 6 | Pending |
 | SEC-02 | Phase 6 | Pending |
 | SEC-03 | Phase 6 | Pending |
