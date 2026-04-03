@@ -46,7 +46,11 @@ Plans:
   2. The canonical concept registry contains 150-300 unique concepts with no obvious duplicates (manual spot-check of 20 random pairs)
   3. The initial knowledge graph has nodes and edges from existing cross-references, and a simple query like "what causes elbow flying out" returns at least one causal chain
   4. Biomechanics book anatomy files (24 files) are extracted with muscle-to-concept mappings
-**Plans**: TBD
+**Plans:** 3 plans
+Plans:
+- [ ] 02-01-PLAN.md — Seed registry from legacy JSON + extraction pipeline scaffolding
+- [ ] 02-02-PLAN.md — Extract concepts from all 31 research files
+- [ ] 02-03-PLAN.md — User journey extraction + knowledge graph assembly
 **Risk flags**: Pitfall 1 (concept explosion) -- this phase establishes the canonical registry that all future extraction depends on. Pitfall 9 (Chinese-English mismatch) -- ensure bilingual concept names from the start.
 
 ### Phase 3: FTT Video Extraction
@@ -119,8 +123,8 @@ Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Schema & Infrastructure | 0/2 | Planning complete | - |
-| 2. Existing Knowledge Extraction | 0/TBD | Not started | - |
+| 1. Schema & Infrastructure | 2/2 | Complete | 2026-04-03 |
+| 2. Existing Knowledge Extraction | 0/3 | Planning complete | - |
 | 3. FTT Video Extraction | 0/TBD | Not started | - |
 | 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
 | 5. Output Generation & VLM Engine | 0/TBD | Not started | - |
