@@ -136,7 +136,7 @@ Plans:
 **Plans:** 2 plans
 Plans:
 - [x] 07-01-PLAN.md — UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
-- [ ] 07-02-PLAN.md — Personalized VLM context injection + training plan generator (USER-02, USER-03)
+- [x] 07-02-PLAN.md — Personalized VLM context injection + training plan generator (USER-02, USER-03)
 
 ## Progress
 
