@@ -16,9 +16,34 @@
       "biomechanics_book"
     ],
     "description": "Modern forehand is a whip system driven by a rotational kinetic chain: energy transfers from ground through legs, hips, trunk, shoulder, arm, wrist to racket head, accelerating at each segment.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (proximal segments) → passive (distal segments)",
+    "vlm_features": [
+      "sequential segment activation visible",
+      "proximal-to-distal sequencing",
+      "energy transfer visible through segment sequencing"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "biceps_brachii",
+      "deltoid",
+      "gastrocnemius",
+      "hip_rotators",
+      "iliopsoas",
+      "pectoralis_major",
+      "pronator_teres",
+      "serratus_anterior",
+      "soleus",
+      "triceps_brachii",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -37,15 +62,28 @@
       "tpa"
     ],
     "description": "Hips, shoulders, arms, and racket rotate away from target as a single unit; the arm moves back as a RESULT of body rotation, not as its own action.",
-    "vlm_features": [],
-    "muscles_involved": [
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "腹斜肌"
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "hip rotation direction and timing"
     ],
-    "active_or_passive": "active",
+    "muscles_involved": [
+      "erector_spinae",
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "biceps_brachii",
+      "deltoid",
+      "hip_rotators",
+      "iliopsoas",
+      "serratus_anterior",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -62,8 +100,24 @@
       "ftt"
     ],
     "description": "The forward swing mirrors Unit Turn — the entire upper body rotates forward as one unit, not 'rotate body then swing arm'.",
-    "vlm_features": [],
-    "muscles_involved": [],
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "biceps_brachii",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
     "active_or_passive": "active",
     "confidence": 1.0
   },
@@ -77,9 +131,32 @@
       "ftt"
     ],
     "description": "The latissimus dorsi and posterior shoulder muscles 'glue' the arm to the trunk, creating the foundational connection that makes body-driven hitting possible.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (maintain tension throughout)",
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "transversus_abdominis",
+      "biceps_brachii",
+      "deltoid",
+      "gluteus_medius",
+      "pectoralis_major",
+      "pronator_teres",
+      "quadriceps",
+      "rhomboids",
+      "serratus_anterior",
+      "trapezius",
+      "triceps_brachii",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -114,9 +191,25 @@
       "ftt"
     ],
     "description": "The elbow must maintain a stable distance from the body (visible gap under armpit) throughout the swing — this is the lever's support distance.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (maintain)",
+    "vlm_features": [
+      "foot position and spacing",
+      "weight distribution between feet",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "quadriceps",
+      "biceps_brachii",
+      "brachioradialis",
+      "deltoid",
+      "gastrocnemius",
+      "serratus_anterior",
+      "soleus",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -152,9 +245,28 @@
       "ftt"
     ],
     "description": "The racket swings laterally AWAY from the body. This creates centrifugal force that, at range-of-motion limit, forces the racket to rotate around the forearm axis (windshield wiper), producing topspin.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (swing intent) → passive (wiper result)",
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "gastrocnemius",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "pronator_teres",
+      "quadriceps",
+      "biceps_brachii",
+      "deltoid",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -171,9 +283,23 @@
       "ftt"
     ],
     "description": "The racket's rotation around the forearm axis at end of range of motion — the PRIMARY mechanism of topspin in modern forehands, triggered by the Out vector.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (physical result of Out vector)",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "pronator_teres",
+      "biceps_brachii",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -192,22 +318,24 @@
       "tpa"
     ],
     "description": "The position and moment where the chest muscles explosively engage to drive the arm-racket system through the ball. Racket should reach maximum speed AT contact, not before.",
-    "vlm_features": [],
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "arm position relative to body"
+    ],
     "muscles_involved": [
-      "三角肌",
-      "前三角肌",
-      "胸大肌",
-      "菱形肌",
-      "冈下肌",
-      "斜方肌",
-      "背阔肌",
-      "小圆肌",
-      "后三角肌",
-      "冈上肌",
-      "肩胛下肌",
-      "前锯肌",
-      "胸肌",
-      "竖脊肌"
+      "deltoid",
+      "erector_spinae",
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "rotator_cuff",
+      "serratus_anterior",
+      "trapezius",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_minor"
     ],
     "active_or_passive": "active",
     "confidence": 1.0
@@ -226,16 +354,25 @@
       "ftt"
     ],
     "description": "The wrist passively trails behind during the forward swing due to inertia as large muscles pull the arm forward. Never manufactured actively.",
-    "vlm_features": [],
-    "muscles_involved": [
-      "腹斜肌",
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "前锯肌"
+    "vlm_features": [
+      "wrist angle at contact",
+      "wrist lag visibility",
+      "wrist snap timing"
     ],
-    "active_or_passive": "passive",
+    "muscles_involved": [
+      "erector_spinae",
+      "forearm_extensors",
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "pronator_teres",
+      "rhomboids",
+      "serratus_anterior",
+      "biceps_brachii",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -248,9 +385,23 @@
       "ftt"
     ],
     "description": "Two non-negotiable rules: (1) Racket-forearm angle stays 90-135°, never 180°; (2) Contact point must be in front of the body.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (maintain angle)",
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_major",
+      "pronator_teres",
+      "serratus_anterior",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -268,16 +419,27 @@
       "ftt"
     ],
     "description": "The angular difference between shoulder rotation and hip rotation during preparation. Pre-stretches core muscles to create additional rotational energy. Range: 0° to ~90°.",
-    "vlm_features": [],
-    "muscles_involved": [
-      "腹斜肌",
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "前锯肌"
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "hip rotation direction and timing"
     ],
-    "active_or_passive": "active (but timing gap is only ~25ms, not consciously separable)",
+    "muscles_involved": [
+      "erector_spinae",
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "serratus_anterior",
+      "deltoid",
+      "hip_rotators",
+      "iliopsoas",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -290,9 +452,18 @@
       "ftt"
     ],
     "description": "The hitting-side shoulder drops lower than the non-hitting side, naturally creating a low-to-high swing path — one of two lever mechanisms for topspin.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -305,9 +476,19 @@
       "ftt"
     ],
     "description": "Allowing gravity to pull the elbow slightly downward during the forward swing, giving the racket head an upward component. The second lever mechanism for topspin.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (allow gravity, don't force)",
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "elbow position relative to torso"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "brachioradialis",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -320,9 +501,18 @@
       "ftt"
     ],
     "description": "Pros rotate the racket around the V-zone (index-middle finger area) of the palm, NOT around the butt cap. This correct pivot point automatically produces lag, racket flip, and effortless head speed.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (set up grip) → passive (rotation happens naturally)",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -336,8 +526,17 @@
     ],
     "description": "Grip with only index and middle fingers (+ thumb assist), removing ring and pinky fingers entirely. Forces correct rotation axis and prevents wrist manipulation.",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (drill)",
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pronator_teres",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -369,16 +568,26 @@
       "ftt"
     ],
     "description": "The pectoralis major 'welds' the arm to the trunk. The arm moves forward because the chest rotates with the trunk, NOT because the arm muscles push forward independently.",
-    "vlm_features": [],
-    "muscles_involved": [
-      "腹斜肌",
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "前锯肌"
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility",
+      "arm position relative to body"
     ],
-    "active_or_passive": "active (isometric/concentric contraction maintaining arm-trunk angle)",
+    "muscles_involved": [
+      "erector_spinae",
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "serratus_anterior",
+      "biceps_brachii",
+      "deltoid",
+      "pectoralis_minor",
+      "triceps_brachii",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -411,16 +620,27 @@
       "tpa"
     ],
     "description": "The scapula physically translates (slides, not rotates) on the ribcage: retraction toward spine during preparation, protraction away from spine during forward swing and follow-through.",
-    "vlm_features": [],
-    "muscles_involved": [
-      "腹斜肌",
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "前锯肌"
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "forward swing initiation point"
     ],
-    "active_or_passive": "active",
+    "muscles_involved": [
+      "erector_spinae",
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "rotator_cuff",
+      "serratus_anterior",
+      "deltoid",
+      "forearm_extensors",
+      "multifidus",
+      "trapezius",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -433,9 +653,29 @@
       "ftt"
     ],
     "description": "Retraction + External Shoulder Rotation (ESR) → Protraction + Internal Shoulder Rotation (ISR). This is the anatomical basis of the back→chest energy transfer.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "energy transfer visible through segment sequencing",
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "quadriceps",
+      "rhomboids",
+      "rotator_cuff",
+      "serratus_anterior",
+      "deltoid",
+      "pectoralis_minor",
+      "trapezius",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -448,9 +688,24 @@
       "ftt"
     ],
     "description": "Rotation intent originates from the upper trunk (shoulder line), NOT from the ground up. Legs respond mid-rotation with explosive force multiplication. Legs are the nitrous boost, not the steering wheel.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (trunk intent) + active (leg response)",
+    "vlm_features": [
+      "ground reaction force visible through leg extension",
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "quadriceps",
+      "deltoid",
+      "gastrocnemius",
+      "soleus",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -463,9 +718,27 @@
       "ftt"
     ],
     "description": "The rotation is a short explosive PULSE that terminates at contact (Press Slot), not a long 0°-to-180° rotation. Follow-through is purely inertial.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (short burst)",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "ball-racket contact position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "internal_obliques",
+      "pectoralis_major",
+      "rotator_cuff",
+      "triceps_brachii",
+      "deltoid",
+      "forearm_extensors",
+      "latissimus_dorsi",
+      "rhomboids",
+      "serratus_anterior",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -483,9 +756,26 @@
       "biomechanics_book"
     ],
     "description": "The forearm actively generates force and controls racket direction, bypassing the kinetic chain. The arm becomes the engine instead of the whip tip. Root cause of most amateur forehand problems.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (incorrectly so)",
+    "vlm_features": [
+      "ground reaction force visible through leg extension",
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "biceps_brachii",
+      "iliopsoas",
+      "pectoralis_major",
+      "pronator_teres",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -498,8 +788,28 @@
       "ftt"
     ],
     "description": "The complete swing path description: Out (lateral away from body, most critical), Up (low-to-high via trunk tilt), Through (forward extension via chest press).",
-    "vlm_features": [],
-    "muscles_involved": [],
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gastrocnemius",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "quadriceps",
+      "deltoid",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "pectoralis_minor",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
     "active_or_passive": "active",
     "confidence": 1.0
   },
@@ -514,8 +824,15 @@
     ],
     "description": "Effortless power comes from correct biomechanics with minimal fault tolerance sacrifice. Effortful power is a conscious decision to hit harder, with three failure modes: timing degradation, mechanics amplification, chain breakage.",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "effortless=passive result, effortful=active choice",
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -563,9 +880,27 @@
       "tpa"
     ],
     "description": "After Unit Turn, the hand should be at roughly 45° to the side-front of the body, not behind the body. Incorrect (behind) position forces the arm to 'rush' to the contact point, breaking back connection.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (result of correct Unit Turn)",
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_major",
+      "serratus_anterior",
+      "trapezius",
+      "erector_spinae",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -578,9 +913,29 @@
       "ftt"
     ],
     "description": "For balls at different heights, adjust with: (1st) legs — bend knees/widen stance, (2nd) trunk — tilt torso, (3rd) arm — bend/extend keeping angle, (4th worst) wrist — violates Fundamental Theorem.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility",
+      "wrist angle at contact"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "biceps_brachii",
+      "gastrocnemius",
+      "pectoralis_major",
+      "pronator_teres",
+      "serratus_anterior",
+      "soleus",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -608,9 +963,26 @@
       "ftt"
     ],
     "description": "Each segment's deceleration (braking) transfers momentum to the next segment. Like a whip: the handle stops, the tip cracks. Without braking, no energy transfer occurs.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (intentional braking of proximal segments)",
+    "vlm_features": [
+      "energy transfer visible through segment sequencing",
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "rotator_cuff",
+      "deltoid",
+      "forearm_extensors",
+      "hamstrings",
+      "iliopsoas",
+      "pectoralis_major",
+      "rhomboids",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -623,9 +995,24 @@
       "ftt"
     ],
     "description": "Maintaining near-constant racket face angle through the contact zone is the key to fault tolerance. Small unconscious closing (~10°) is normal; deliberate rolling is destructive.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (maintained by large-muscle inertia)",
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "forearm_extensors",
+      "forearm_flexors",
+      "transversus_abdominis",
+      "triceps_brachii",
+      "gluteus_medius",
+      "pectoralis_major",
+      "pronator_teres",
+      "quadriceps",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -638,9 +1025,23 @@
       "ftt"
     ],
     "description": "Racket should reach maximum speed AT the moment of contact, not before. Grip pressure: loose (4/10) pre-contact, tighten only at contact. Louis Cayer: 'The swing starts from the contact point.'",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active (timing intent)",
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "grip position on handle"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "triceps_brachii",
+      "deltoid",
+      "pronator_teres",
+      "serratus_anterior",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -653,9 +1054,29 @@
       "ftt"
     ],
     "description": "1. Trunk issues rotation command → 2. Stretch chain, hand enters space → 3. Legs explode mid-rotation (multiplier) → 4. Power through Press Slot → 5. Inertial follow-through.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "trunk rotation angle relative to baseline"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "quadriceps",
+      "rotator_cuff",
+      "deltoid",
+      "forearm_extensors",
+      "rhomboids",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -668,9 +1089,25 @@
       "ftt"
     ],
     "description": "When rotation axis is at the V-zone, the forearm naturally unlocks for pronation at contact. When axis is at butt cap, forearm is locked and cannot pronate fluently.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (result of correct grip axis)",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "ball-racket contact position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "pronator_teres",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_major",
+      "erector_spinae",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -683,9 +1120,17 @@
       "ftt"
     ],
     "description": "Pros grip sequence: (1) Nest the V-zone reference point on handle first, (2) Sense racket center of gravity, (3) LAST loosely wrap lower fingers. Amateurs death-grip the entire handle.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -698,9 +1143,22 @@
       "ftt"
     ],
     "description": "Retraction = pulling back the slingshot (storing elastic energy). Protraction = releasing the slingshot (releasing energy). The scapula is a sliding door (translation), not a hinge (rotation).",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "stretch-shortening visible in muscle groups",
+      "energy transfer visible through segment sequencing",
+      "visible trunk/hip rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "rhomboids",
+      "serratus_anterior",
+      "latissimus_dorsi",
+      "trapezius",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -743,8 +1201,21 @@
       "ftt"
     ],
     "description": "Full hip rotation is impossible with both feet planted. Four foot patterns: non-hitting foot lifts (most common), both feet pivot, hitting foot kicks back (Federer), both feet airborne (power shots).",
-    "vlm_features": [],
-    "muscles_involved": [],
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "hip rotation direction and timing"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "hip_rotators",
+      "iliopsoas",
+      "latissimus_dorsi",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
     "active_or_passive": "active",
     "confidence": 1.0
   },
@@ -758,9 +1229,28 @@
       "ftt"
     ],
     "description": "Correct: shoulder small arc < elbow medium arc < wrist large arc (three distinct layers = whip transfer). Incorrect: all three layers similar arc (rigid body transport = no sequential acceleration).",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (result of correct chain)",
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "wrist angle at contact"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "biceps_brachii",
+      "brachioradialis",
+      "deltoid",
+      "gluteus_maximus",
+      "iliopsoas",
+      "pectoralis_major",
+      "pronator_teres",
+      "serratus_anterior",
+      "erector_spinae"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -773,9 +1263,23 @@
       "ftt"
     ],
     "description": "The first step of the forward swing is to exhale, which releases tension and enables fluid rotation. Inhale through nose during preparation for oxygen and core stabilization.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "active",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "deltoid",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -788,9 +1292,25 @@
       "ftt"
     ],
     "description": "The optimal contact is a ZONE (3D volume), not a precise point. Good fault tolerance expands this zone. Three dimensions: front-back (rotation determines), left-right (Out vector needs space), up-down (grip natural height).",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (property of mechanics)",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "ball-racket contact position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "triceps_brachii",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "pronator_teres",
+      "erector_spinae",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -803,8 +1323,21 @@
       "ftt"
     ],
     "description": "Follow-through itself doesn't affect the shot. It should be the natural continuation of forward swing momentum. Never actively pull the racket to a specific finish position.",
-    "vlm_features": [],
-    "muscles_involved": [],
+    "vlm_features": [
+      "racket path after contact",
+      "finishing position relative to shoulder",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rotator_cuff",
+      "deltoid",
+      "forearm_extensors",
+      "rhomboids",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
     "active_or_passive": "passive",
     "confidence": 1.0
   },
@@ -818,9 +1351,21 @@
       "ftt"
     ],
     "description": "Trunk = steering + initial engine. Legs = nitrous oxide boost. Nitrous can't fire when car is still (trunk must start first). Without trunk guidance, leg power has nowhere to go; without leg boost, trunk rotation is too weak.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "metaphor",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "trunk rotation angle relative to baseline"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "gluteus_maximus",
+      "quadriceps",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -833,9 +1378,17 @@
       "ftt"
     ],
     "description": "Pro players use fingers to SENSE racket inertia and center of gravity. Amateurs use fingers to GRIP and control the racket. Correct: fingers feel where the racket wants to go.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "passive (sensing)",
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -849,9 +1402,22 @@
       "ftt"
     ],
     "description": "Footwork and swing overlap in time; the back foot remains active during the swing, making the end of the shot the beginning of recovery.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "quadriceps",
+      "deltoid",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -865,9 +1431,26 @@
       "ftt"
     ],
     "description": "At follow-through completion, the upper arm, forearm, racket, and chest should form a regular rectangle (box) — a self-diagnostic tool for swing quality.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rotator_cuff",
+      "biceps_brachii",
+      "deltoid",
+      "pectoralis_minor",
+      "pronator_teres",
+      "rhomboids",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -880,9 +1463,18 @@
       "tpa"
     ],
     "description": "The racket travels in a circle around the body; direction is controlled by timing (when the ball meets the arc), not by aiming the swing path at the target.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -896,9 +1488,25 @@
       "ftt"
     ],
     "description": "From the top of the backswing, the racket face progressively squares up rather than staying closed and flipping at the last moment.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "deltoid",
+      "pronator_teres",
+      "triceps_brachii",
+      "erector_spinae"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -912,9 +1520,27 @@
       "biomechanics_book"
     ],
     "description": "The shoulder (first link, must stay in socket) and index finger (last link, guides pronation) are the two critical control points of the whip chain.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pronator_teres",
+      "quadriceps",
+      "deltoid",
+      "forearm_extensors",
+      "forearm_flexors",
+      "iliopsoas",
+      "pectoralis_major",
+      "serratus_anterior",
+      "erector_spinae"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -927,9 +1553,20 @@
       "tpa"
     ],
     "description": "Borrowed from Zen in the Art of Archery: the moment of contact should feel like a surprise, not a deliberate act. Ball contact is an obstacle on the swing path, not the goal.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "triceps_brachii",
+      "deltoid",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -942,9 +1579,25 @@
       "tpa"
     ],
     "description": "Imaginary rope connects both arms; non-racket arm extends outward during Unit Turn, then pulls inward at contact to accelerate rotation.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "ball-racket contact position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_major",
+      "erector_spinae",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -957,9 +1610,23 @@
       "tpa"
     ],
     "description": "The ball should always roll across the width (lateral) of the racket face, not its length (longitudinal). This unifies spin production across all strokes.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "latissimus_dorsi",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -976,9 +1643,25 @@
       "tpa"
     ],
     "description": "After contact, segments stop in reverse order (shoulder first, then hip, then legs). The braking of each segment transfers momentum to the next, creating the whip crack effect.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "ball-racket contact position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "internal_obliques",
+      "triceps_brachii",
+      "deltoid",
+      "gluteus_maximus",
+      "iliopsoas",
+      "pectoralis_major",
+      "quadriceps",
+      "erector_spinae",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -991,9 +1674,22 @@
       "tpa"
     ],
     "description": "Two seemingly contradictory models of kinetic chain: (1) whole-body connected throw, (2) hip-leads-arm delayed sequence. Resolution: fix delay first for desynchronized players, add throw feeling later.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "biceps_brachii",
+      "iliopsoas",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1006,9 +1702,24 @@
       "tpa"
     ],
     "description": "Two driving paradigms for the forehand: shoulder-whip (Nadal, max spin/power, higher timing tax) vs chest-press (Federer/Sinner, compact, stable, early interception). Players sit on a spectrum.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "pectoralis_major",
+      "deltoid",
+      "gluteus_maximus",
+      "iliopsoas",
+      "pectoralis_minor",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1021,9 +1732,23 @@
       "tpa"
     ],
     "description": "Correct racket flip occurs when the hand pushes outward while the racket head falls back, causing rotation around the racket's center of mass (2x faster, less effort) rather than around the handle end.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "pectoralis_major",
+      "deltoid",
+      "latissimus_dorsi",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1036,9 +1761,18 @@
       "tpa"
     ],
     "description": "From the moment the racket head overtakes the hand to ball contact is only 40ms (3 frames at 60fps). Every millisecond of early release causes linear energy loss.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact",
+      "racket face angle"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -1051,9 +1785,24 @@
       "tpa"
     ],
     "description": "Off-center hits lose 30-70% energy (average 50%). Sweet-spot contact is the #1 power factor, ahead of kinetic chain optimization.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "triceps_brachii",
+      "pectoralis_major",
+      "serratus_anterior",
+      "erector_spinae",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1066,9 +1815,18 @@
       "tpa"
     ],
     "description": "The strongest topspin feels like hitting downward. 'Hitting up' creates tension; 'hitting down' relaxes the wrist, enabling more efficient elastic whip.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "wrist angle at contact"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "iliopsoas",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1081,9 +1839,26 @@
       "tpa"
     ],
     "description": "At the moment of contact, the trunk must stop rotating so all remaining momentum transfers into the arm-racket system. Continued trunk rotation = momentum leakage.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "trunk rotation angle relative to baseline"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "triceps_brachii",
+      "biceps_brachii",
+      "pectoralis_major",
+      "serratus_anterior",
+      "erector_spinae",
+      "rectus_abdominis",
+      "rotator_cuff",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -1098,8 +1873,13 @@
     ],
     "description": "After hitting, move to the center axis of the cone formed by all possible opponent return angles, not to the geometric center of the court.",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1117,9 +1897,23 @@
       "biomechanics_book"
     ],
     "description": "All body segments rotating simultaneously eliminates the speed differential needed for whip acceleration. Fix: each segment must brake before the next fires.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "hip rotation direction and timing"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "gluteus_maximus",
+      "internal_obliques",
+      "hip_rotators",
+      "iliopsoas",
+      "pectoralis_major",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1132,9 +1926,17 @@
       "tpa"
     ],
     "description": "Low-diversity cooperative rallying creates false confidence. Need one stable hitting unit for 100 variations, not 100 different swings.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1147,9 +1949,16 @@
       "tpa"
     ],
     "description": "During full sprint, the hitting arm system (shoulder-arm-racket) must be pre-locked as a rigid apparatus before arriving at the ball, not assembled upon arrival.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "biceps_brachii",
+      "deltoid"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1162,9 +1971,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 拍头向斜后方（内+下45°）坠落; 球拍与手臂不在一条线上; 拍面不稳定; 击球阶段拍头朝下. Root cause: Unit Turn 后主动用小臂压拍头做 pat the dog，导致大臂和小臂在肘关节处断开，拍头过度下坠到小臂以下",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 拍头向斜后方（内+下45°）坠落; 球拍与手臂不在一条线上; 拍面不稳定; 击球阶段拍头朝下. Root cause: Unit Turn 后主动用小臂压拍头做 pat the dog，导致大臂和小臂在肘关节处断开，拍头过度下坠到小臂以下"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -1177,7 +1995,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 击球前有明显的向上动作（视频可见）; 击球轨迹呈V形（先急降再急升）; 底边领先（拍面朝天）; 球软、浅、无穿透力; 薄的'刷、啪、擦'声音. Root cause: 多重原因：(1) 主动用小臂压拍头导致后续必须向上翻回 (2) 拍头预设位置太低，物理上只能垂直向上拉 (3) 右肩下沉带手下坠 (4) '向上刷造上旋'的错误心智模型",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 击球前有明显的向上动作（视频可见）; 击球轨迹呈V形（先急降再急升）; 底边领先（拍面朝天）; 球软、浅、无穿透力; 薄的'刷、啪、擦'声音. Root cause: 多重原因：(1) 主动用小臂压拍头导致后续必须向上翻回 (2) 拍头预设位置太低，物理上只能垂直向上拉 (3) 右肩下沉带手下坠 (4) '向上刷造上旋'的错误心智模型"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1192,7 +2012,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 击球前小臂有独立的向上翻动作; 手腕高于肘部（小臂与地面呈斜角）; 击球时拍震手; 肘角收缩而非展开（教练127°→140°展开 vs 用户101°→58°收缩）; 手臂-躯干同步性低（最差0.09）. Root cause: 动力链断裂后手臂被迫独立发力补偿。具体链条：Hand Slot 在身后 → 手臂赶路 → 背部张力松掉 → 手臂超车身体 → 小臂向上刷代偿",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 击球前小臂有独立的向上翻动作; 手腕高于肘部（小臂与地面呈斜角）; 击球时拍震手; 肘角收缩而非展开（教练127°→140°展开 vs 用户101°→58°收缩）; 手臂-躯干同步性低（最差0.09）. Root cause: 动力链断裂后手臂被迫独立发力补偿。具体链条：Hand Slot 在身后 → 手臂赶路 → 背部张力松掉 → 手臂超车身体 → 小臂向上刷代偿"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1207,7 +2029,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 力量来自手臂而非身体旋转; 手臂-躯干同步性极低; 手臂在做两件不同于身体的事; 上半身在转但手臂脱节. Root cause: 多环节断裂：(1) 小臂独立动作断开肘关节 (2) 背部张力松掉断开肩关节 (3) 腋下未夹住断开胸-臂连接 (4) 核心旋转缺失断开髋-胸传导",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 力量来自手臂而非身体旋转; 手臂-躯干同步性极低; 手臂在做两件不同于身体的事; 上半身在转但手臂脱节. Root cause: 多环节断裂：(1) 小臂独立动作断开肘关节 (2) 背部张力松掉断开肩关节 (3) 腋下未夹住断开胸-臂连接 (4) 核心旋转缺失断开髋-胸传导"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1222,9 +2046,17 @@
       "user_experience"
     ],
     "description": "Symptoms: 球离身体近，手臂被挤压; 没有向外延伸的空间，只能向上补偿; 视频数据确认击球点偏后. Root cause: 多重原因：(1) 站位太靠前，球还没弹到合适位置就击球 (2) Pull Forward 意识在实战中断裂 (3) 缺少 separation 导致没时间向前展开",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 球离身体近，手臂被挤压; 没有向外延伸的空间，只能向上补偿; 视频数据确认击球点偏后. Root cause: 多重原因：(1) 站位太靠前，球还没弹到合适位置就击球 (2) Pull Forward 意识在实战中断裂 (3) 缺少 separation 导致没时间向前展开"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "gluteus_maximus",
+      "latissimus_dorsi",
+      "erector_spinae"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1237,9 +2069,15 @@
       "user_experience"
     ],
     "description": "Symptoms: 不自觉地把肘部放低给'从低到高'留空间; 想着上旋时动作僵、捞球; 向上的意图导致手腕紧张. Root cause: 错误认知：认为上旋需要主动向上刷。实际上旋来自：肩膀倾斜+重力微拉+拍头惯性旋转（windshield wiper），感觉应该像平击/向下击球",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 不自觉地把肘部放低给'从低到高'留空间; 想着上旋时动作僵、捞球; 向上的意图导致手腕紧张. Root cause: 错误认知：认为上旋需要主动向上刷。实际上旋来自：肩膀倾斜+重力微拉+拍头惯性旋转（windshield wiper），感觉应该像平击/向下击球"
+    ],
+    "muscles_involved": [
+      "pronator_teres",
+      "forearm_extensors",
+      "forearm_flexors"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1252,9 +2090,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 右肩比左肩低; 身体向左倾斜; 重心移到左脚; 右脚无法蹬地（腾空）; 手被带到低位（scooping 前置）. Root cause: Unit Turn 时不是整体转动而是单肩下拉——右肩往右下方拉，左肩不动",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 右肩比左肩低; 身体向左倾斜; 重心移到左脚; 右脚无法蹬地（腾空）; 手被带到低位（scooping 前置）. Root cause: Unit Turn 时不是整体转动而是单肩下拉——右肩往右下方拉，左肩不动"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1267,9 +2114,19 @@
       "user_experience"
     ],
     "description": "Symptoms: 站位太靠前，球还没弹起落下就击球; 准备时间不足，unit turn 不完整; 没时间做完整的 separation. Root cause: 站位太靠前 + 缺乏等球意识，导致一切都在赶",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 站位太靠前，球还没弹起落下就击球; 准备时间不足，unit turn 不完整; 没时间做完整的 separation. Root cause: 站位太靠前 + 缺乏等球意识，导致一切都在赶"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "gluteus_maximus",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1282,9 +2139,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 击球时重心在左脚而非右脚; 右脚腾空无法蹬地; 无法执行 pivot. Root cause: Unit Turn 时右肩下沉导致身体向左倾斜，重心被带到左脚",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 击球时重心在左脚而非右脚; 右脚腾空无法蹬地; 无法执行 pivot. Root cause: Unit Turn 时右肩下沉导致身体向左倾斜，重心被带到左脚"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1297,7 +2163,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 击球时背部张力消失（VLM确认）; 手臂超车身体; 球下网. Root cause: 错误理解为'背部→胸部交替'，导致击球时背部松掉切换到胸部",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 击球时背部张力消失（VLM确认）; 手臂超车身体; 球下网. Root cause: 错误理解为'背部→胸部交替'，导致击球时背部松掉切换到胸部"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1312,9 +2180,16 @@
       "user_experience"
     ],
     "description": "Symptoms: 身体完全正面朝网; 缺少刹车; 随挥失控. Root cause: 两个原因：(1) 缺少左手收胸作为'刹车' (2) 发力心理模型是'长旋转'（旋转终点设在随挥）而非'短脉冲'（旋转终点=击球瞬间）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 身体完全正面朝网; 缺少刹车; 随挥失控. Root cause: 两个原因：(1) 缺少左手收胸作为'刹车' (2) 发力心理模型是'长旋转'（旋转终点设在随挥）而非'短脉冲'（旋转终点=击球瞬间）"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -1327,9 +2202,16 @@
       "user_experience"
     ],
     "description": "Symptoms: 发力突然; 伤手腕; 拍头急剧向下. Root cause: 击球太急导致没时间做 separation；或将 separation 方向搞错（往后拉而非往外往下）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 发力突然; 伤手腕; 拍头急剧向下. Root cause: 击球太急导致没时间做 separation；或将 separation 方向搞错（往后拉而非往外往下）"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "gluteus_maximus",
+      "erector_spinae"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1342,7 +2224,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 手太往后拉; 身体跟着后仰; 上半身偏后于下半身; Hand Slot 太后. Root cause: 在'拉手引拍'而非'转身引拍'——手主动往后走带动上身后仰",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 手太往后拉; 身体跟着后仰; 上半身偏后于下半身; Hand Slot 太后. Root cause: 在'拉手引拍'而非'转身引拍'——手主动往后走带动上身后仰"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1357,9 +2241,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 腋下太紧没有空间向外推; Hand Slot 偏后偏窄; Out 向量无法执行. Root cause: Unit Turn 时大臂贴紧身体，没有打开肘部空间",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 腋下太紧没有空间向外推; Hand Slot 偏后偏窄; Out 向量无法执行. Root cause: Unit Turn 时大臂贴紧身体，没有打开肘部空间"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 1.0
   },
   {
@@ -1372,9 +2265,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 左手早早放下; 用右手拉拍; 随挥不完整（胸前就停了）. Root cause: 左手没有引导 Unit Turn，导致用右手主动拉拍而非整体转身",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 左手早早放下; 用右手拉拍; 随挥不完整（胸前就停了）. Root cause: 左手没有引导 Unit Turn，导致用右手主动拉拍而非整体转身"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 1.0
   },
   {
@@ -1387,9 +2289,18 @@
       "user_experience"
     ],
     "description": "Symptoms: 过早压低右肩导致不平衡; Unit Turn 阶段就做 Tilt. Root cause: 把肩部倾斜（Tilt）放在了 Unit Turn 阶段，应该在蹬地转髋的同时做",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 过早压低右肩导致不平衡; Unit Turn 阶段就做 Tilt. Root cause: 把肩部倾斜（Tilt）放在了 Unit Turn 阶段，应该在蹬地转髋的同时做"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 1.0
   },
   {
@@ -1402,7 +2313,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 食指指根压迫感和疼痛; 每次击球/空挥都有. Root cause: 把旋转轴的'支撑'理解成'顶住'——食指在主动发力压向拍柄",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 食指指根压迫感和疼痛; 每次击球/空挥都有. Root cause: 把旋转轴的'支撑'理解成'顶住'——食指在主动发力压向拍柄"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1417,7 +2330,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 完全放松时拍柄底部翘起又落下. Root cause: 下方三指完全没有包住拍柄，只有V型区一个接触点",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 完全放松时拍柄底部翘起又落下. Root cause: 下方三指完全没有包住拍柄，只有V型区一个接触点"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1432,9 +2347,16 @@
       "user_experience"
     ],
     "description": "Symptoms: 先想蹬地导致躯干落后; 动作变成线性向上而非旋转爆发; 胸 press 时手臂还在后面; 四步分步太机械太慢. Root cause: 心理模型是'蹬地→转髋→腹斜肌→胸→手臂'的线性阶梯，而正确模型是躯干发出旋转意图、腿部放大",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 先想蹬地导致躯干落后; 动作变成线性向上而非旋转爆发; 胸 press 时手臂还在后面; 四步分步太机械太慢. Root cause: 心理模型是'蹬地→转髋→腹斜肌→胸→手臂'的线性阶梯，而正确模型是躯干发出旋转意图、腿部放大"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1447,9 +2369,16 @@
       "user_experience"
     ],
     "description": "Symptoms: 只想胸部 press 但力传不上来; 力在腰部断掉; 肚脐左方无扭转感觉. Root cause: 腹斜肌（核心旋转中转站）没有被激活，腿的蹬转力无法传到胸部",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "Symptoms: 只想胸部 press 但力传不上来; 力在腰部断掉; 肚脐左方无扭转感觉. Root cause: 腹斜肌（核心旋转中转站）没有被激活，腿的蹬转力无法传到胸部"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 1.0
   },
   {
@@ -1462,7 +2391,9 @@
       "user_experience"
     ],
     "description": "Symptoms: 胸转了但手臂还在后面; 被迫主动送肘代偿; 大臂离开胸侧. Root cause: 大臂内侧和胸部侧面没有保持接触压力，手臂没有焊在胸上",
-    "vlm_features": [],
+    "vlm_features": [
+      "Symptoms: 胸转了但手臂还在后面; 被迫主动送肘代偿; 大臂离开胸侧. Root cause: 大臂内侧和胸部侧面没有保持接触压力，手臂没有焊在胸上"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 1.0
@@ -1477,9 +2408,21 @@
       "user_experience"
     ],
     "description": "Extension 和 Pat the Dog 同步，击球稳定性显著提升. Before: unit turn 后进入 separate 时球拍还停在拍头朝上，导致匆忙倒拍头、手腕补偿. After: elbow extension 和 pat the dog 同步执行，引拍到前挥连接更顺，击球点扎实.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "elbow position relative to torso",
+      "elbow extension angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "brachioradialis",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.9
   },
   {
@@ -1507,9 +2450,15 @@
       "user_experience"
     ],
     "description": "整条手臂是一个整体，小臂不做独立动作. Before: 刻意用小臂压拍头/做 supination/顶肘，大臂小臂在肘关节处断开. After: 整条手臂当一根鞭子，身体转它就跟着走，lag 是自然结果.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forearm position in backswing",
+      "palm orientation",
+      "wrist lag angle behind forearm"
+    ],
+    "muscles_involved": [
+      "supinator"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.9
   },
   {
@@ -1522,9 +2471,19 @@
       "user_experience"
     ],
     "description": "拍头下落和 lag 都是被动结果的认知升级. Before: 认为拍头下落是人为的、lag 是自然的（两个不同的东西）. After: 拍头下落和 lag 是同一个物理过程——鞭子末端既滞后又下坠。Unit Turn 后只有一个主动动作（蹬地转髋）.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist lag angle behind forearm",
+      "racket lag behind hand"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.9
   },
   {
@@ -1568,8 +2527,15 @@
     ],
     "description": "发现所有问题的根因 = Unit Turn 时右肩下沉导致重心倒向左脚. Before: 各问题分散处理（scooping、重心、够球分别想办法）. After: 找到统一根因：Unit Turn 右肩下沉→身体左倾→重心在左脚→右脚无法蹬地。Unit Turn 阶段肩膀必须水平.",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.9
   },
   {
@@ -1597,9 +2563,20 @@
       "user_experience"
     ],
     "description": "Press Slot 体感找到 + 动力链时序突破. Before: slot 在身后，手臂被整个甩过来（用手臂力量），lag 离击球点远. After: slot 在侧前方45度，lag 装载就在击球点附近（短距离弹性释放=纯鞭打）。'手臂不受控制的感觉' = 手臂真的变成被动鞭梢.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist lag angle behind forearm",
+      "racket lag behind hand",
+      "chest press forward motion"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "rotator_cuff",
+      "deltoid",
+      "latissimus_dorsi",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.9
   },
   {
@@ -1612,9 +2589,20 @@
       "user_experience"
     ],
     "description": "正确的肌肉感觉：背部储能→胸部释放→手腕不参与. Before: 不清楚哪些肌肉应该有感觉. After: 引拍/Hold 时感受到背部肌肉（背阔肌+肩胛骨后缩）= 弹性储能；往前推时感受到胸部肌肉（胸大肌推压）= Press Slot 释放；完全感受不到手腕 = 手腕真的变成铰链.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline",
+      "arm slot position"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "rotator_cuff",
+      "deltoid",
+      "latissimus_dorsi",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.9
   },
   {
@@ -1642,9 +2630,16 @@
       "user_experience"
     ],
     "description": "胸部推压驱动小臂的正确体感 + 内旋是被动结果. Before: 不确定前挥的主动发力点. After: 想象小臂往前推但实际小臂没发力，是胸部连着肩膀的肌肉在推，小臂被带动。'没有明显发力感'= 大肌群在工作。内旋（Pronation）是被动结果不是主动发力点.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forearm rotation angle",
+      "racket face rotation after contact"
+    ],
+    "muscles_involved": [
+      "pronator_teres",
+      "forearm_extensors",
+      "forearm_flexors"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.9
   },
   {
@@ -1657,9 +2652,17 @@
       "user_experience"
     ],
     "description": "两指握拍与胸部 Press 是'设置'和'执行'的关系 + 拍头掉落根因. Before: 同时想两指和往前荡很别扭；拍头在往前荡时掉落. After: 第一步设置握拍（V型区搭上），第二步执行（只想胸部 press）。拍头掉落是因为支撑点太低，V型区支撑解决.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.9
   },
   {
@@ -1672,9 +2675,17 @@
       "user_experience"
     ],
     "description": "'肘部往前推'是错误意象，正确是'胸部往前 press'. Before: 用'肘部往前推/荡'作为挥拍意象. After: '肘部往前推'容易变成手臂发力（肱三头肌/肩部小肌群），正确是'胸部往前 press'——胸大肌连着手臂一起往前走.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.9
   },
   {
@@ -1687,9 +2698,17 @@
       "user_experience"
     ],
     "description": "动力链第一次完整串通 + 三个主动动作全部找到体感. Before: 只想胸部 press 但力在腰部断掉；胸转了手臂还在后面. After: 完整链条：蹬地→转髋→腹斜肌扭转（新增）→胸部转动→手臂被带走（腋下夹着·新增）。FTT 三个主动动作全部有体感：蹬地转髋、腹部展开、胸肌按压.",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.9
   },
   {
@@ -1747,9 +2766,18 @@
       "ftt"
     ],
     "description": "Concept from 13_synthesis.md: 随挥（Follow-Through）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "racket path after contact",
+      "finishing position relative to shoulder"
+    ],
+    "muscles_involved": [
+      "rotator_cuff",
+      "deltoid",
+      "forearm_extensors",
+      "rhomboids",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.9
   },
   {
@@ -1777,9 +2805,18 @@
       "ftt"
     ],
     "description": "Concept from 13_synthesis.md: 错误 1：主动制造手腕滞后 / 刻意 supination / pronation 时序",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forearm rotation angle",
+      "racket face rotation after contact",
+      "forearm position in backswing"
+    ],
+    "muscles_involved": [
+      "pronator_teres",
+      "forearm_extensors",
+      "forearm_flexors",
+      "supinator"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.9
   },
   {
@@ -1915,8 +2952,15 @@
     ],
     "description": "Concept from 17_kinetic_chain_synthesis.md: 动力链时序修复指南 — TPA Tennis 8视频精华提炼",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.9
   },
   {
@@ -1944,9 +2988,17 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: Part 1: 正手击球（Forehand Contact）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -1974,9 +3026,25 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 手腕滞后不是引拍（Wrist Lag is NOT Backswing）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist angle at contact",
+      "wrist lag visibility",
+      "wrist snap timing"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "pronator_teres",
+      "rhomboids",
+      "deltoid",
+      "triceps_brachii",
+      "erector_spinae"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -2004,9 +3072,15 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 手肘伸展（Elbow Extension）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "elbow position relative to torso",
+      "elbow extension angle"
+    ],
+    "muscles_involved": [
+      "brachioradialis",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2019,9 +3093,17 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 调整击球高度（Adjusting to Contact）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -2094,9 +3176,14 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 以髋引导（Lead With The Hips）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2109,9 +3196,14 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 脚如何解放髋（How the Feet Liberate the Hips）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2124,9 +3216,18 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 腹部弹簧的展开（The Abdominal Coil）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk coil angle",
+      "shoulder turn depth"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "rectus_abdominis",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -2139,9 +3240,23 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 整体转、整体挥（Unit Turn, Unit Swing）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder turn relative to hips",
+      "racket position behind body",
+      "swing path direction"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "deltoid",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -2154,9 +3269,18 @@
       "ftt"
     ],
     "description": "Concept from 01_ftt_book.md: 正挥进阶（Forward Swing Progression）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "forward swing initiation point"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2170,8 +3294,10 @@
     ],
     "description": "Concept from 01_ftt_book.md: 正手力量清单（The Forehand POWER Checklist）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2215,8 +3341,13 @@
     ],
     "description": "Concept from 01_ftt_book.md: 击溃推挡型选手（Training to Crush the Pusher）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2321,8 +3452,14 @@
     ],
     "description": "Concept from 02_revolutionary_tennis.md: 分步跳（Split Step）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2351,8 +3488,10 @@
     ],
     "description": "Concept from 02_revolutionary_tennis.md: Step 3: 身体的力量区 (Your Body's Power Zone)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2365,9 +3504,18 @@
       "ftt"
     ],
     "description": "Concept from 02_revolutionary_tennis.md: \"前向站位\"（Forward Stance）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "foot position and spacing",
+      "weight distribution between feet",
+      "forward swing initiation point"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2381,8 +3529,10 @@
     ],
     "description": "Concept from 02_revolutionary_tennis.md: Step 5: 控制你的力量 (Control Your Power)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2425,9 +3575,17 @@
       "ftt"
     ],
     "description": "Concept from 02_revolutionary_tennis.md: 参考击球点（Reference the Contact Spot）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -2441,8 +3599,13 @@
     ],
     "description": "Concept from 02_revolutionary_tennis.md: Step 8: 正手底线击球 (The Forehand Groundstroke)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2516,8 +3679,10 @@
     ],
     "description": "不费力的力量（Effortless Power）**：通过正确生物力学产生",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2636,8 +3801,14 @@
     ],
     "description": "Concept from 06_ftt_blog_movement.md: Fault Tolerant Tennis 博客研究笔记：移动、步法、运动能力、平衡与生物力学",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -2651,8 +3822,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第一部分：移动与步法（Movement & Footwork）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2666,8 +3843,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 运动准备姿势（The Athletic Ready Position）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2681,8 +3864,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 动态位置 vs 静态位置（Dynamic vs Static Positions）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2696,8 +3885,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 分腿跳：为什么、何时、如何（The Split-Step: Why, When, and How）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2710,9 +3905,19 @@
       "ftt"
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 解放脚，解放髋（Free the Feet, Free the Hips）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2726,8 +3931,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 三重弯曲与运动能力（Triple Flexion Athleticism）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2740,9 +3951,20 @@
       "ftt"
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 网球中的平衡秘密（Balance Secrets in Tennis）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "body balance at contact",
+      "recovery position"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "gastrocnemius",
+      "quadriceps",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -2756,8 +3978,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 眼睛的秘密（Secrets of the Eye）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2771,8 +3999,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 跳视追踪循环（The Saccadic Tracking Loop）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2786,8 +4020,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 四注视点视觉系统（4 Fixation Visual System）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2801,8 +4041,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 视觉将改变你的比赛（Vision Will Transform Your Match Play）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2816,8 +4062,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 像德约科维奇那样看球（See The Ball Like Novak Djokovic）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2831,8 +4083,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 不要像费德勒那样看球（Don't Watch The Ball Like Federer）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2846,8 +4104,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 为什么你莫名其妙地失误——是视觉（Why You Miss for No Reason – It's Vision）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2861,8 +4125,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第四部分：本体感觉与击球基础（Proprioception & Stroke Fundamentals）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2876,8 +4146,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 本体感觉到底是什么（What is Proprioception, Anyway?）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2891,8 +4167,15 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 中性的力量（The Power of Neutral）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_maximus",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -2906,8 +4189,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 两条统治每一拍的规则（Two Rules that Govern EVERY Shot）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2921,8 +4210,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 击球生产的四个步骤（4 Steps to Stroke Production）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2936,8 +4231,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第五部分：心理与感觉（Mental Game & Feel）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2951,8 +4252,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 失去感觉（Losing the Feeling）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2966,8 +4273,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 确定感是一种感觉（也是作弊码）（Certainty is a Feeling and Cheat Code）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2981,8 +4294,15 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 突破瓶颈（Smashing Through Plateaus）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -2996,8 +4316,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 容错到底是什么（So What is Fault Tolerance, Anyway?）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3011,8 +4337,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 直觉悖论（The Intuition Paradox）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3026,8 +4358,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 稳定性的残酷数学（The Brutal Math of Consistency）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -3041,8 +4379,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第六部分：比赛策略与系统（Match Strategy & Systems）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3056,8 +4400,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 接球循环（The Receiving Loop）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3071,8 +4421,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 执行功能——第四技能类（Executive Function – The 4th Skill Class）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3086,8 +4442,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 你必须在没有节奏的情况下赢球（You Must Win Without Rhythm）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3101,8 +4463,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第七部分：步法深层理解与身体保护（Advanced Footwork & Body Protection）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3116,8 +4484,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 当步法不重要时（When Footwork Doesn't Matter）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3130,9 +4504,18 @@
       "ftt"
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 保护膝盖的秘密（The Secret to Saving Your Knees）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "knee bend angle",
+      "knee drive direction"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3146,8 +4529,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 我怎么能失误那个球（How Can I Miss That?）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3161,8 +4550,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 练习出色比赛糟糕（Great In Practice, Bad in Matches）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3176,8 +4571,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 我突然开始失误了（I Just Started Missing）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3190,9 +4591,21 @@
       "ftt"
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 大陆式握拍的奥秘（The Mystery of the Continental Grip）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3206,8 +4619,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 第八部分：教练提示与身体力学（Coaching Cues & Body Mechanics）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3220,9 +4639,18 @@
       "ftt"
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 铜牌建议：\"弯膝盖\"（Bronze: \"Bend Your Knees\"）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "knee bend angle",
+      "knee drive direction"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3236,8 +4664,14 @@
     ],
     "description": "Concept from 07_ftt_blog_vision_movement.md: 焦虑的秘密：永不紧张（The Anxiety Secret: Never Choke Again）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3281,8 +4715,10 @@
     ],
     "description": "Concept from 08_ftt_blog_vision_strategy.md: The Power of Patience（耐心的力量）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -3326,8 +4762,13 @@
     ],
     "description": "Concept from 18_ftt_build_foundation.md: FTT \"Build This Foundation\" — 正手地基课（最基础一课）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "quadriceps"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3340,9 +4781,18 @@
       "ftt"
     ],
     "description": "Concept from 18_ftt_build_foundation.md: ⭐ \"Holding Up, Pull Forward\" — 最关键的心理表象",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forward swing initiation point",
+      "forward weight shift"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "latissimus_dorsi",
+      "quadriceps"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -3356,8 +4806,13 @@
     ],
     "description": "Concept from 18_ftt_build_foundation.md: 小网球练习（Mini Tennis）",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "quadriceps"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3370,9 +4825,20 @@
       "ftt"
     ],
     "description": "Concept from 19_forearm_compensation_analysis.md: \"Hips, Hit!\" 时序",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "iliopsoas",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3385,9 +4851,18 @@
       "ftt"
     ],
     "description": "Concept from 19_forearm_compensation_analysis.md: VLM 识别的因果链（3/26）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3400,9 +4875,18 @@
       "ftt"
     ],
     "description": "Concept from 19_forearm_compensation_analysis.md: A6：右脚 Pivot（有效）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3415,9 +4899,18 @@
       "ftt"
     ],
     "description": "Concept from 19_forearm_compensation_analysis.md: A4：Nike Swoosh 形状意识（有效）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3430,9 +4923,20 @@
       "ftt"
     ],
     "description": "Concept from 19_forearm_compensation_analysis.md: 第二阶段：建立背部连接 + Pull Forward（1-2 周）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point",
+      "forward swing initiation point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "latissimus_dorsi",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -3445,9 +4949,21 @@
       "ftt"
     ],
     "description": "Concept from 20_ftt_grip_rotation_axis.md: FTT \"The Pros Grip Differently From You\" — 握拍旋转轴与触觉参考点",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "grip position on handle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "pronator_teres",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3460,9 +4976,21 @@
       "ftt"
     ],
     "description": "Concept from 20_ftt_grip_rotation_axis.md: 三、两指握拍练习法（Two Finger Drill）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "grip position on handle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "forearm_extensors",
+      "forearm_flexors",
+      "internal_obliques",
+      "pronator_teres",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3475,9 +5003,17 @@
       "ftt"
     ],
     "description": "Concept from 23_ftt_trunk_sequencing.md: FTT \"Proper Trunk Sequencing\" — 躯干时序与发力心理模型",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -3490,9 +5026,17 @@
       "ftt"
     ],
     "description": "Concept from 23_ftt_trunk_sequencing.md: 腿部 = 力量放大器（Force Multiplier）",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -3520,9 +5064,16 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_1.md: Master Pronation in 2 Minutes at Home",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forearm rotation angle",
+      "racket face rotation after contact"
+    ],
+    "muscles_involved": [
+      "pronator_teres",
+      "forearm_extensors",
+      "forearm_flexors"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -3581,8 +5132,12 @@
     ],
     "description": "Concept from 09_ftt_videos_2.md: Scapular Glide on the Tennis Forehand",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "rhomboids",
+      "serratus_anterior",
+      "trapezius"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -3625,7 +5180,11 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_3.md: Why Your Racket Doesn't Flip",
-    "vlm_features": [],
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.6
@@ -3731,8 +5290,13 @@
     ],
     "description": "Concept from 09_ftt_videos_3.md: C. 接发球技术 (Return of Serve)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -3790,9 +5354,14 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_3.md: C. 空间与动力槽 (Space & Power Slot)",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm slot position",
+      "racket drop into slot"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.6
   },
   {
@@ -3835,9 +5404,18 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_3.md: **Drill 2: 负重推压向量练习 (Weighted Pressing Vectors)**",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "weight transfer direction",
+      "center of gravity shift",
+      "chest press forward motion"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.6
   },
   {
@@ -3866,9 +5444,14 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_3.md: **Drill 4: 双臂飞鸟练习 (Two-armed Fly)**",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "biceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -3881,9 +5464,19 @@
       "ftt"
     ],
     "description": "Concept from 09_ftt_videos_3.md: 对正在学习“Sinner式正手”和“Unit Turn重心问题”学员的启发",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder turn relative to hips",
+      "racket position behind body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.6
   },
   {
@@ -3897,7 +5490,10 @@
       "tpa"
     ],
     "description": "Concept from 09_ftt_videos_3.md: 与上一个视频 (Weight Transfer Exercise) 的关联",
-    "vlm_features": [],
+    "vlm_features": [
+      "weight transfer direction",
+      "center of gravity shift"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.6
@@ -3927,9 +5523,17 @@
       "tpa"
     ],
     "description": "Concept from 14_tpa_videos_1.md: 训练二：刻意预留距离练习 (Intentional Distance Drill)",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "foot position and spacing",
+      "weight distribution between feet"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -3942,9 +5546,19 @@
       "tpa"
     ],
     "description": "Concept from 14_tpa_videos_1.md: 对特定学员（解决 Unit Turn 重心、Scooping、缺 Out 向量）的启发",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder turn relative to hips",
+      "racket position behind body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.6
   },
   {
@@ -3957,9 +5571,14 @@
       "tpa"
     ],
     "description": "Concept from 14_tpa_videos_1.md: Drill 训练方法：Zipchip 投掷法",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4047,7 +5666,11 @@
       "tpa"
     ],
     "description": "Concept from 14_tpa_videos_2.md: The 2 Moves to Release the Racket Head",
-    "vlm_features": [],
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.6
@@ -4108,8 +5731,15 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_1.md: The Forehand Kinetic Chain Made Simple",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4122,9 +5752,22 @@
       "tpa"
     ],
     "description": "Concept from 16_tpa_kinetic_chain_1.md: **手臂内旋（旋前/Pronation）的本质**",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forearm rotation angle",
+      "racket face rotation after contact"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "pronator_teres",
+      "quadriceps",
+      "forearm_extensors",
+      "forearm_flexors",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4138,8 +5781,15 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_2.md: Forehand Kinetic Chain Video Analysis",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4153,8 +5803,17 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_2.md: **重心转移与接地感（Grounding）**",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "gastrocnemius",
+      "pectoralis_major",
+      "serratus_anterior",
+      "soleus"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4168,8 +5827,15 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_2.md: A. 拍头滞后与底盖指向 (Handle/Butt Cap Lead)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4183,8 +5849,15 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_2.md: C. 防止“过早拉动” (Anti-Early Pulling)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4198,8 +5871,15 @@
     ],
     "description": "Concept from 16_tpa_kinetic_chain_2.md: D. 下肢的蹬转 (Lower Body Mechanics)",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "quadriceps",
+      "pectoralis_major",
+      "serratus_anterior"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.6
   },
   {
@@ -4214,19 +5894,13 @@
     "description": "Biomechanics concept from 25_biomechanics_upper_body.md: 肩部训练（第2章，共10个动作）",
     "vlm_features": [],
     "muscles_involved": [
-      "三角肌",
-      "前三角肌",
-      "胸大肌",
-      "菱形肌",
-      "冈下肌",
-      "斜方肌",
-      "背阔肌",
-      "小圆肌",
-      "后三角肌",
-      "冈上肌",
-      "肩胛下肌"
+      "deltoid",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "trapezius"
     ],
-    "active_or_passive": null,
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4241,26 +5915,17 @@
     "description": "Biomechanics concept from 25_biomechanics_upper_body.md: 胸部训练（第4章，共7个动作）",
     "vlm_features": [],
     "muscles_involved": [
-      "胸大肌",
-      "三角肌",
-      "前三角肌",
-      "三头肌",
-      "肱三头肌",
-      "竖脊肌",
-      "前锯肌",
-      "二头肌",
-      "肱二头肌",
-      "胸肌",
-      "背阔肌",
-      "后三角肌",
-      "菱形肌",
-      "斜方肌",
-      "内斜",
-      "外斜",
-      "小圆肌",
-      "冈下肌"
+      "biceps_brachii",
+      "deltoid",
+      "erector_spinae",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids",
+      "serratus_anterior",
+      "trapezius",
+      "triceps_brachii"
     ],
-    "active_or_passive": null,
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4275,13 +5940,12 @@
     "description": "Biomechanics concept from 25_biomechanics_upper_body.md: TPA概念 → 解剖学证据",
     "vlm_features": [],
     "muscles_involved": [
-      "竖脊肌",
-      "背阔肌",
-      "胸大肌",
-      "菱形肌",
-      "腹斜肌"
+      "erector_spinae",
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "rhomboids"
     ],
-    "active_or_passive": null,
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4294,12 +5958,15 @@
       "biomechanics_book"
     ],
     "description": "Biomechanics concept from 26_biomechanics_core_legs.md: 九、关键概念对照表：书 ↔ FTT/TPA",
-    "vlm_features": [],
-    "muscles_involved": [
-      "腹斜肌",
-      "前锯肌"
+    "vlm_features": [
+      "leg drive direction",
+      "push-off leg extension"
     ],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "serratus_anterior",
+      "quadriceps"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4314,10 +5981,9 @@
     "description": "Biomechanics concept from 27_biomechanics_new_insights.md: ⭐ 肱三头肌 = 正手中被忽视的关键肌肉",
     "vlm_features": [],
     "muscles_involved": [
-      "三头肌",
-      "肱三头肌"
+      "triceps_brachii"
     ],
-    "active_or_passive": null,
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4332,24 +5998,17 @@
     "description": "Biomechanics concept from 27_biomechanics_new_insights.md: ⭐ 完整拉伸方案 — 10个针对网球的关键拉伸",
     "vlm_features": [],
     "muscles_involved": [
-      "腓肠肌",
-      "比目鱼肌",
-      "臀大肌",
-      "竖脊肌",
-      "腘绳肌",
-      "二头肌",
-      "四头肌",
-      "股四头肌",
-      "腕伸肌",
-      "尺侧腕伸肌",
-      "旋前圆肌",
-      "腕屈肌",
-      "尺侧腕屈肌",
-      "棘下肌",
-      "菱形肌",
-      "斜方肌"
+      "erector_spinae",
+      "gastrocnemius",
+      "gluteus_maximus",
+      "hamstrings",
+      "pronator_teres",
+      "quadriceps",
+      "rhomboids",
+      "soleus",
+      "trapezius"
     ],
-    "active_or_passive": null,
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4512,9 +6171,14 @@
       "ftt"
     ],
     "description": "利用重力驱动肘部微降，产生自然的高度差。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "elbow position relative to torso",
+      "elbow extension angle"
+    ],
+    "muscles_involved": [
+      "brachioradialis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4542,9 +6206,17 @@
       "ftt"
     ],
     "description": "强调“整体挥拍”（Unit Swing），减少了手腕和肘部独立活动的可能，降低了出错概率。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4663,8 +6335,13 @@
     ],
     "description": "如果抛球太靠身体右侧（右手球员），人会下意识地像打正手截击一样去“推”球，这会锁死旋前动作。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -4722,9 +6399,18 @@
       "ftt"
     ],
     "description": "在移动中完全依靠腿部维持平衡，而不使用手臂作为平衡杆，从而释放手臂进行挥拍。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "leg drive direction",
+      "push-off leg extension",
+      "body balance at contact"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "quadriceps"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -4752,9 +6438,15 @@
       "ftt"
     ],
     "description": "胸部与大臂（肱骨）之间夹角缩小的动作，是正手击球产生向前后动力的核心。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact"
+    ],
+    "muscles_involved": [
+      "deltoid",
+      "pectoralis_major"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4767,9 +6459,16 @@
       "ftt"
     ],
     "description": "先确定身体最舒适的挥拍路径和触球点，再根据该点反推最适合自己的握拍方式。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -4782,9 +6481,17 @@
       "ftt"
     ],
     "description": "利用胸大肌收缩将大臂向前推，作为击球瞬间的微观动力源。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -4992,9 +6699,17 @@
       "ftt"
     ],
     "description": "为了保持放松，大脑需要避开“向上击球”的意图，因为这通常会导致肌肉紧绷。产生上旋的最佳感觉实际上类似于向下击球。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5007,9 +6722,17 @@
       "ftt"
     ],
     "description": "击球瞬间，手腕从滞后（Lag）状态回到中性位置。如果试图在此时继续向后拉手腕，会导致拍面不稳定。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist angle at contact",
+      "wrist lag visibility",
+      "wrist snap timing"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5067,9 +6790,18 @@
       "ftt"
     ],
     "description": "使用2.5磅的负重（如小哑铃或特制重拍）进行挥拍，迫使身体募集胸部和大肌肉，并自然找到“压力槽”。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing",
+      "weight transfer direction"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5098,8 +6830,14 @@
     ],
     "description": "在球机练习或对方击球节奏不明时，保持连续的小幅跳动而非静止等待。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5127,7 +6865,9 @@
       "ftt"
     ],
     "description": "击球瞬间通过爆发式呼气来为身体供氧并释放躯干张力。",
-    "vlm_features": [],
+    "vlm_features": [
+      "ground reaction force visible through leg extension"
+    ],
     "muscles_involved": [],
     "active_or_passive": "Active",
     "confidence": 0.8
@@ -5172,9 +6912,20 @@
       "ftt"
     ],
     "description": "Concept from FTT: Shoulder Whip",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "deltoid",
+      "gluteus_maximus",
+      "iliopsoas",
+      "erector_spinae"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5247,9 +6998,17 @@
       "ftt"
     ],
     "description": "通过胸椎后伸（Extension）储存弹性势能，在击球瞬间释放。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Passive",
+    "vlm_features": [
+      "weight shift to back foot",
+      "knee bend depth"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -5277,9 +7036,24 @@
       "ftt"
     ],
     "description": "Teaching point from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point",
+      "trunk coil angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "pectoralis_major",
+      "biceps_brachii",
+      "deltoid",
+      "pectoralis_minor",
+      "serratus_anterior",
+      "triceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.7
   },
   {
@@ -5292,9 +7066,19 @@
       "ftt"
     ],
     "description": "Teaching point from FTT video: Coiling/Spinal Motion/Eye Dominance/Arm Slot - 15 Serves",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point",
+      "trunk coil angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "biceps_brachii",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.7
   },
   {
@@ -5307,9 +7091,17 @@
       "ftt"
     ],
     "description": "许多球员的挥拍向量直接指向球，导致无法掉拍头。正确的挥拍向量应该是“由内向外”(In-to-Out)，在开始挥拍时，手部的移动方向应该是向身体侧面（右方，针对右手球员），而不是直接向前。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5322,7 +7114,11 @@
       "ftt"
     ],
     "description": "“掉拍头”（Racket Flip）的秘密在于：在开始前挥的瞬间，**手向外推，拍头向后翻转**。",
-    "vlm_features": [],
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -5382,9 +7178,17 @@
       "ftt"
     ],
     "description": "因探测不到位，身体重心未进入球后方，被迫伸长手臂去“够”球的错误补偿动作。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5412,9 +7216,18 @@
       "ftt"
     ],
     "description": "Concept from FTT: Forward Split-step",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "forward swing initiation point",
+      "forward weight shift"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -5458,8 +7271,10 @@
     ],
     "description": "Concept from FTT: Fire the back foot through",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5548,8 +7363,10 @@
     ],
     "description": "将分腿垫步的着陆过程直接转化为向球移动的第一步，而非先着陆再启动。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "muscles_involved": [
+      "hamstrings"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5562,9 +7379,21 @@
       "ftt"
     ],
     "description": "通过增加双脚间距，将垂直向上的推力转化为更强的横向（Lateral）推力和平衡控制力。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Passive",
+    "vlm_features": [
+      "foot position and spacing",
+      "weight distribution between feet"
+    ],
+    "muscles_involved": [
+      "gastrocnemius",
+      "gluteus_maximus",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators",
+      "latissimus_dorsi",
+      "soleus"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -5622,9 +7451,20 @@
       "ftt"
     ],
     "description": "Concept from FTT: External Shoulder Rotation Timing",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "shoulder rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "rotator_cuff",
+      "deltoid",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5637,9 +7477,20 @@
       "ftt"
     ],
     "description": "Concept from FTT: Press the Left-Arm Back",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point",
+      "chest press forward motion"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "biceps_brachii",
+      "deltoid",
+      "latissimus_dorsi",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -5698,8 +7549,10 @@
     ],
     "description": "Concept from FTT: Abdominal X",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5728,8 +7581,10 @@
     ],
     "description": "Concept from FTT: Pull and Hold",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5758,8 +7613,10 @@
     ],
     "description": "Concept from FTT: Pull with your Upper-Back",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5817,9 +7674,14 @@
       "ftt"
     ],
     "description": "抛球后左臂主动向“上、右、后”拉伸，以增加躯干的弹性势能。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "biceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5863,8 +7725,10 @@
     ],
     "description": "聚酯弦在受压后向下变形并迅速向上弹回，这是产生上旋的物理本质。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Passive",
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -5997,9 +7861,19 @@
       "ftt"
     ],
     "description": "躯干的角速度与球拍的角速度直接相关。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "trunk rotation angle relative to baseline"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "rectus_abdominis",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6042,9 +7916,17 @@
       "ftt"
     ],
     "description": "强调旋转不是僵硬的扭转，而是一个快速、简短的发力爆发。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -6057,9 +7939,19 @@
       "ftt"
     ],
     "description": "整个肩胛骨复合体支持肩膀进入深度的外旋（External Rotation），拍头下落位置极低。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rotator_cuff",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6072,9 +7964,14 @@
       "ftt"
     ],
     "description": "指鞭打型正手由于动力链长、动作复杂，在击球时需要支付的时间代价。在处理高飘短球时，必须等待球升起再下落才能合力。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact"
+    ],
+    "muscles_involved": [
+      "deltoid"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6117,9 +8014,17 @@
       "ftt"
     ],
     "description": "身体后仰击球，需要极强的肩膀和臀部弹性才能发力（Vacherot 常用）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "body balance at contact",
+      "recovery position"
+    ],
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "quadriceps"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -6148,8 +8053,10 @@
     ],
     "description": "旋转产生的向外动量与左手向内的压回力量相互抵消，最终呈现出“肘部收紧”的视觉效果。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Passive",
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6162,9 +8069,22 @@
       "ftt"
     ],
     "description": "当球员为了控制方向（如跑动中打直线）而减少躯干旋转时，压回动作会导致双臂交叉。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Passive",
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "rotator_cuff",
+      "deltoid",
+      "forearm_extensors",
+      "rhomboids",
+      "serratus_anterior",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6208,8 +8128,13 @@
     ],
     "description": "通过膝盖和髋部的双重弯曲（形成Z字）来处理低球，而非通过改变手部高度。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "erector_spinae",
+      "transversus_abdominis",
+      "gluteus_medius",
+      "quadriceps"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -6237,9 +8162,14 @@
       "ftt"
     ],
     "description": "在动力链末端，通过肩部肌肉的拉伸与释放产生额外的球头速度（Knife）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact"
+    ],
+    "muscles_involved": [
+      "deltoid"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6313,8 +8243,13 @@
     ],
     "description": "为了打破“必须打过网”的心理负担，在网前进行高压练习，喂球高度比发球抛球低，重点在于触发纯粹的投掷动作。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -6327,9 +8262,17 @@
       "ftt"
     ],
     "description": "当球离身体太近（被挤到）时，通过向后或向侧面倾斜躯干来创造空间，以维持“向外投掷”的力臂。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6342,7 +8285,11 @@
       "ftt"
     ],
     "description": "球拍应深嵌在手掌的“V型槽”中，并贴合食指根部的掌心位置。",
-    "vlm_features": [],
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -6372,9 +8319,19 @@
       "ftt"
     ],
     "description": "拍头在挥动过程中自然下掉，产生前臂的拉伸感。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "latissimus_dorsi",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6387,9 +8344,23 @@
       "ftt"
     ],
     "description": "在击球瞬间及随后的随挥中，通过前臂内旋完成爆发释放。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "visible trunk/hip rotation angle",
+      "shoulder-hip separation angle",
+      "forearm rotation angle"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "pronator_teres",
+      "forearm_extensors",
+      "forearm_flexors",
+      "rotator_cuff",
+      "teres_major",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -6402,9 +8373,16 @@
       "ftt"
     ],
     "description": "随着击球平面从水平（正手）移向高空（高压），握拍应从东方式（Eastern）向大陆式（Continental）逐渐偏移。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6432,9 +8410,14 @@
       "ftt"
     ],
     "description": "当被动奔跑救球时，不要尝试高难度的削球（如费德勒式的低平切削）。建议采用“高轨迹削球”（Chip Floater），让球越过球网较高位置，虽然球速慢且不深，但能确保极高的过网率。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6552,9 +8535,14 @@
       "ftt"
     ],
     "description": "通过大幅度弯曲后腿膝盖，使重心降至球的高度，同时为向前驱动储备弹性势能。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "knee bend angle",
+      "knee drive direction"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6612,7 +8600,10 @@
       "ftt"
     ],
     "description": "Concept from FTT: In front of the slot",
-    "vlm_features": [],
+    "vlm_features": [
+      "arm slot position",
+      "racket drop into slot"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -6627,7 +8618,10 @@
       "ftt"
     ],
     "description": "Concept from FTT: Behind the slot",
-    "vlm_features": [],
+    "vlm_features": [
+      "arm slot position",
+      "racket drop into slot"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -6687,9 +8681,15 @@
       "ftt"
     ],
     "description": "力量从臀部（近端）开始，逐级传递到球拍头（远端）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "sequential segment acceleration visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6702,9 +8702,22 @@
       "ftt"
     ],
     "description": "躯干（Trunk）、手臂（Arm）、球拍（Racket）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility",
+      "arm position relative to body"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "biceps_brachii",
+      "pectoralis_major",
+      "serratus_anterior",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6732,7 +8745,10 @@
       "ftt"
     ],
     "description": "阿尔卡拉斯的手腕拉伸角度从90度爆发式张开到160-170度。",
-    "vlm_features": [],
+    "vlm_features": [
+      "wrist lag angle behind forearm",
+      "racket lag behind hand"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -6747,9 +8763,17 @@
       "ftt"
     ],
     "description": "随挥是鞭打的逆向过程，将球拍动能收回躯干以保护关节。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "weight shift to back foot",
+      "knee bend depth"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -6762,9 +8786,15 @@
       "ftt"
     ],
     "description": "将随挥比作回收能量，通过身体向左侧倾倒来卸力。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "sequential segment acceleration visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -6822,9 +8852,14 @@
       "ftt"
     ],
     "description": "髋部爆发性伸直的动作必须发生在躯干旋转启动之后、触球之前的特定瞬间。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6898,8 +8933,14 @@
     ],
     "description": "视觉捕捉抛球轨迹与身体垫步落地的节奏匹配，是接发球的第一动力源。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "muscles_involved": [
+      "gastrocnemius",
+      "quadriceps",
+      "gluteus_medius",
+      "hip_adductors",
+      "hip_rotators"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -6943,8 +8984,13 @@
     ],
     "description": "Teaching point from FTT video: 8 Visual Return Strategies Tested by WTA Pro",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "transversus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.7
   },
   {
@@ -6957,9 +9003,14 @@
       "ftt"
     ],
     "description": "强调通过髋关节的微屈来启动背部和腿部的动力链，而不是直立站立。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7032,9 +9083,17 @@
       "ftt"
     ],
     "description": "利用球拍自身的动量实现“拉紧-释放”的弹性，而非单纯靠肌肉发力。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "weight shift to back foot",
+      "knee bend depth"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -7108,8 +9167,13 @@
     ],
     "description": "Concept from FTT: “Push the hands away”",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7122,7 +9186,10 @@
       "ftt"
     ],
     "description": "Concept from FTT: “Drag it forward”",
-    "vlm_features": [],
+    "vlm_features": [
+      "forward swing initiation point",
+      "forward weight shift"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7228,8 +9295,10 @@
     ],
     "description": "*   这是视频最重要的技术支柱。要求在引拍和击球过程中，有意识地让肩胛骨向后、向下收紧（Down and Back）。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -7243,8 +9312,10 @@
     ],
     "description": "虽然是单反，但意识上是双手向两侧拉开，左手负责平衡和“瞄准”动能链。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7273,8 +9344,10 @@
     ],
     "description": "击球时只需轻轻向前一拉。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7287,9 +9360,22 @@
       "ftt"
     ],
     "description": "针对低球的处理口令，防止球员弯腰而不屈腿。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "chest opening/closing angle",
+      "pectoral engagement visible"
+    ],
+    "muscles_involved": [
+      "gluteus_maximus",
+      "pectoralis_major",
+      "quadriceps",
+      "deltoid",
+      "gastrocnemius",
+      "pectoralis_minor",
+      "serratus_anterior",
+      "soleus",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7348,8 +9434,10 @@
     ],
     "description": "Concept from FTT: Backscratch Position",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7362,9 +9450,18 @@
       "ftt"
     ],
     "description": "Concept from FTT: Forearm",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm position relative to body",
+      "arm extension at contact point"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "biceps_brachii",
+      "pronator_teres",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7422,9 +9519,14 @@
       "ftt"
     ],
     "description": "挥拍过程中，上背部大肌肉群（肩胛骨）开始主动收缩，将双臂向相反方向“撕开”的特定空间位置。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "arm slot position",
+      "racket drop into slot"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7453,8 +9555,10 @@
     ],
     "description": "Training drill from FTT video: Find Your One-Handed Backhand Pull Slot",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7468,8 +9572,10 @@
     ],
     "description": "Training drill from FTT video: Find Your One-Handed Backhand Pull Slot",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7512,7 +9618,9 @@
       "ftt"
     ],
     "description": "用二指法在墙上对练，暴露击球距离过近或发力太死的问题。",
-    "vlm_features": [],
+    "vlm_features": [
+      "用二指法在墙上对练，暴露击球距离过近或发力太死的问题。"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7557,7 +9665,9 @@
       "ftt"
     ],
     "description": "保持双脚间距大于肩宽，为躯干旋转提供稳定的反作用力支点。",
-    "vlm_features": [],
+    "vlm_features": [
+      "joint rotation angle and speed"
+    ],
     "muscles_involved": [],
     "active_or_passive": "Active",
     "confidence": 0.8
@@ -7573,8 +9683,13 @@
     ],
     "description": "使用带滑块的训练棒。如果加速模式正确（由内向外且有爆发性的末端加速），滑块会发出清脆的“咔哒”声，提供实时声音反馈。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7587,9 +9702,15 @@
       "ftt"
     ],
     "description": "视频强调不要过早发力，而是通过正确的路径和末端的手指抓握产生速度。这种延迟加速能显著提高击球的稳定性和容错度，因为动作更自然、更少僵硬。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "racket acceleration visible through blur/speed",
+      "segment sequencing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7662,9 +9783,17 @@
       "ftt"
     ],
     "description": "在接近球时，拍头应处于水平线以下。这种角度在向前发力的同时，能自然产生向上的击球轨迹。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7677,9 +9806,13 @@
       "ftt"
     ],
     "description": "不要为了拉起球而往后仰（那是初学者的错误）。即使打上旋也要向前倾，利用腿部和躯干的压低来创造净空高度。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "不要为了拉起球而往后仰（那是初学者的错误）。即使打上旋也要向前倾，利用腿部和躯干的压低来创造净空高度。"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7692,9 +9825,17 @@
       "ftt"
     ],
     "description": "并非传统教学中常说的“C”型轨迹，而是更接近一种扁平的斜向上轨迹。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7707,9 +9848,14 @@
       "ftt"
     ],
     "description": "在加速挥拍前，手部应至少降到球的高度。避免从高处“俯冲式”击球再折返向上（Dive-bombing），那会导致击球节奏极其不稳定。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "racket acceleration visible through blur/speed",
+      "segment sequencing"
+    ],
+    "muscles_involved": [
+      "pectoralis_major"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7722,7 +9868,9 @@
       "ftt"
     ],
     "description": "如果你感觉到挥拍不顺滑，通常是球距（侧向或深度）出了问题，而不是动作本身的问题。",
-    "vlm_features": [],
+    "vlm_features": [
+      "如果你感觉到挥拍不顺滑，通常是球距（侧向或深度）出了问题，而不是动作本身的问题。"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7738,8 +9886,10 @@
     ],
     "description": "*   当球短且身体前倾时，打得更平（Flatter）。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7752,7 +9902,10 @@
       "ftt"
     ],
     "description": "Concept from FTT: Forward-driving",
-    "vlm_features": [],
+    "vlm_features": [
+      "forward swing initiation point",
+      "forward weight shift"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7767,9 +9920,19 @@
       "ftt"
     ],
     "description": "躯干已经开始旋转，但大臂相对于胸部平面向后滑动的现象，导致动力链断裂。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist lag angle behind forearm",
+      "racket lag behind hand",
+      "chest opening/closing angle"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "pectoralis_minor",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7798,8 +9961,13 @@
     ],
     "description": "在练习正手力量时，首先要专注于水平的“半圆”轨迹，而不是过早考虑“由下向上”的摩擦。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7813,8 +9981,13 @@
     ],
     "description": "在引拍和变向瞬间，背阔肌需向下、向后收紧，使肩胛骨稳定。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "rhomboids",
+      "serratus_anterior",
+      "latissimus_dorsi",
+      "trapezius"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -7857,9 +10030,17 @@
       "ftt"
     ],
     "description": "如果球略高，可以通过躯干稍微后仰来调整，而不是只动肩膀。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "trunk rotation angle relative to baseline",
+      "upper body coil visibility"
+    ],
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "erector_spinae",
+      "rectus_abdominis"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7873,8 +10054,10 @@
     ],
     "description": "认为很多球员的力量被限制住了，负重练习是为了“揭开力量的盖子”。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "gluteus_maximus"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -7888,8 +10071,10 @@
     ],
     "description": "Concept from FTT: Volitional Throw Back",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -7917,7 +10102,9 @@
       "ftt"
     ],
     "description": "Concept from FTT: Prep and Fire",
-    "vlm_features": [],
+    "vlm_features": [
+      "Concept from FTT: Prep and Fire"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7932,7 +10119,9 @@
       "ftt"
     ],
     "description": "Concept from FTT: Probe your vertical spacing",
-    "vlm_features": [],
+    "vlm_features": [
+      "Concept from FTT: Probe your vertical spacing"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -7963,8 +10152,10 @@
     ],
     "description": "*   **右手（驱动者）：** 负责将球拍拉过球场（Pulling），产生“驱动向量”（Drive Vector）。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "latissimus_dorsi"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -8022,9 +10213,17 @@
       "ftt"
     ],
     "description": "*   强调击球点必须在身体前方，留出足够的空间让双臂和肩膀能够完全“释放”和“解旋”（Unwind）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "ball-racket contact position relative to body",
+      "arm extension at contact"
+    ],
+    "muscles_involved": [
+      "forearm_flexors",
+      "triceps_brachii",
+      "pectoralis_major",
+      "rotator_cuff"
+    ],
+    "active_or_passive": "stabilizing",
     "confidence": 0.8
   },
   {
@@ -8052,9 +10251,14 @@
       "ftt"
     ],
     "description": "提示转体深度。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact"
+    ],
+    "muscles_involved": [
+      "deltoid"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8067,9 +10271,14 @@
       "ftt"
     ],
     "description": "确保击球点靠前，驱动向量得以释放。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "shoulder rotation angle",
+      "shoulder position at contact"
+    ],
+    "muscles_involved": [
+      "deltoid"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8143,8 +10352,14 @@
     ],
     "description": "*   腋下夹角约为90度，肘部弯曲角度约为90度。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "external_obliques",
+      "internal_obliques",
+      "latissimus_dorsi",
+      "rhomboids",
+      "erector_spinae"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -8157,7 +10372,10 @@
       "ftt"
     ],
     "description": "*   **侧向空间：** 身体与球之间需要合适的距离，太近或太低会丧失挥拍速度。",
-    "vlm_features": [],
+    "vlm_features": [
+      "ball position at peak",
+      "toss arm extension"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -8202,9 +10420,19 @@
       "ftt"
     ],
     "description": "从推球过网转变为鞭打球。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible",
+      "sequential segment acceleration visible"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "iliopsoas",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -8322,9 +10550,16 @@
       "ftt"
     ],
     "description": "*   核心压力点在**食指的指节背面**（与球拍柄接触的位置）。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8337,9 +10572,16 @@
       "ftt"
     ],
     "description": "*   压力感更集中在**手指和手掌底部（靠近小指一侧）**，且感觉是在拍柄的前部。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8352,9 +10594,16 @@
       "ftt"
     ],
     "description": "确保前臂与球拍柄之间呈 90 度夹角，使手腕能进行有效的径向/尺向偏转。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "grip position on handle",
+      "knuckle alignment visibility"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8367,9 +10616,21 @@
       "ftt"
     ],
     "description": "与正手不同，单反需要主动的前臂张力来防止手腕在击球区发生“翻转”崩溃。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "wrist angle at contact",
+      "wrist lag visibility",
+      "wrist snap timing"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "gluteus_maximus",
+      "quadriceps",
+      "gastrocnemius",
+      "pronator_teres",
+      "soleus"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8472,9 +10733,18 @@
       "ftt"
     ],
     "description": "在挥拍早期，利用胸大肌的力量防止手臂滞后（Lag）于躯干，强制手臂随转体向前移动。关键点是手肘相对于躯干不应向后摆动。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist lag angle behind forearm",
+      "racket lag behind hand",
+      "chest press forward motion"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -8502,9 +10772,17 @@
       "ftt"
     ],
     "description": "辛纳的动作非常紧凑。较短的引拍路径可以牺牲极少的力量，换取极大的控球精度。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "swing path direction",
+      "racket face angle through swing"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "pectoralis_major",
+      "deltoid",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "passive",
     "confidence": 0.8
   },
   {
@@ -8608,8 +10886,10 @@
     ],
     "description": "在旋转过程中，脊柱向击球侧产生的侧向弯曲，用以解锁旋转空间。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "muscles_involved": [
+      "quadratus_lumborum"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8622,9 +10902,14 @@
       "ftt"
     ],
     "description": "臀部肌肉收缩导致击球侧髋部在击球瞬间向前爆发性转动的现象。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "hip rotation direction and timing",
+      "hip-shoulder separation visible"
+    ],
+    "muscles_involved": [
+      "iliopsoas"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8653,8 +10938,10 @@
     ],
     "description": "击球瞬间，身体不能完全竖直，必须向右侧（右手正手）微倾。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "muscles_involved": [
+      "quadratus_lumborum"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.7
   },
   {
@@ -8668,8 +10955,10 @@
     ],
     "description": "在向外向量完成后，通过胸大肌收缩将大臂拉向身体中线的动作，是切换到 Through 向量的开关。",
     "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "muscles_involved": [
+      "pectoralis_major"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8787,9 +11076,15 @@
       "ftt"
     ],
     "description": "击球时右腿向后方踢出，用于制动并保持身体重心向前进入球场。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "leg drive direction",
+      "push-off leg extension"
+    ],
+    "muscles_involved": [
+      "latissimus_dorsi",
+      "quadriceps"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8817,9 +11112,17 @@
       "ftt"
     ],
     "description": "类似棒球投手，通过前脚掌强力按压地面产生静态阻力来停止旋转。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": "Active",
+    "vlm_features": [
+      "chest press forward motion",
+      "arm adduction toward midline"
+    ],
+    "muscles_involved": [
+      "pectoralis_major",
+      "deltoid",
+      "serratus_anterior",
+      "triceps_brachii"
+    ],
+    "active_or_passive": "active",
     "confidence": 0.8
   },
   {
@@ -8832,7 +11135,11 @@
       "ftt"
     ],
     "description": "在击球前约 0.04 秒，球拍头部会迅速摆动并超越手部，这是弹性势能转化为动能的关键点。",
-    "vlm_features": [],
+    "vlm_features": [
+      "racket face angle",
+      "racket head speed indicators",
+      "racket path"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
@@ -8847,9 +11154,17 @@
       "ftt"
     ],
     "description": "如果时机错误（释放过早），大脑会试图通过收缩手腕伸展肌（wrist extenders）来强行控制拍面角度。这种“硬拉”动作不仅降低球速，还是导致网球肘等伤病的主要原因。",
-    "vlm_features": [],
-    "muscles_involved": [],
-    "active_or_passive": null,
+    "vlm_features": [
+      "wrist angle at contact",
+      "wrist lag visibility",
+      "wrist snap timing"
+    ],
+    "muscles_involved": [
+      "forearm_extensors",
+      "forearm_flexors",
+      "pronator_teres"
+    ],
+    "active_or_passive": "mixed",
     "confidence": 0.8
   },
   {
@@ -8907,7 +11222,9 @@
       "ftt"
     ],
     "description": "Concept from FTT: Elastic Energy",
-    "vlm_features": [],
+    "vlm_features": [
+      "Concept from FTT: Elastic Energy"
+    ],
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8

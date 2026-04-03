@@ -335,3 +335,323 @@ def assemble_graph(
     }
 
     return stats
+
+
+# === Plan 04-04: Anatomical enrichment functions ===
+
+
+def enrich_with_muscles(kg: KnowledgeGraph, muscle_map_path: Path) -> int:
+    """Integrate muscle data from concept-muscle map into graph nodes.
+
+    For each concept in the map, update graph node attributes:
+    - muscles_involved: list of English muscle names
+    - active_or_passive: determined by predominant action type
+
+    Returns:
+        Number of nodes enriched.
+    """
+    data = json.loads(muscle_map_path.read_text())
+    enriched = 0
+    for concept_id, muscles in data.items():
+        if concept_id not in kg.graph.nodes:
+            continue
+        muscle_names = [m["muscle"] for m in muscles]
+        kg.graph.nodes[concept_id]["muscles_involved"] = muscle_names
+
+        # Determine active_or_passive from predominant action
+        actions = [m.get("action", "") for m in muscles]
+        concentric = sum(1 for a in actions if "concentric" in a.lower())
+        eccentric = sum(1 for a in actions if "eccentric" in a.lower())
+        isometric = sum(1 for a in actions if "isometric" in a.lower() or "stabiliz" in a.lower())
+        if concentric > eccentric and concentric > isometric:
+            kg.graph.nodes[concept_id]["active_or_passive"] = "active"
+        elif eccentric > concentric:
+            kg.graph.nodes[concept_id]["active_or_passive"] = "passive"
+        elif isometric >= concentric and isometric > 0:
+            kg.graph.nodes[concept_id]["active_or_passive"] = "stabilizing"
+        else:
+            kg.graph.nodes[concept_id]["active_or_passive"] = "mixed"
+
+        enriched += 1
+
+    logger.info("Enriched %d nodes with muscle data", enriched)
+    return enriched
+
+
+# Keyword -> VLM-observable features mapping for technique nodes
+_TECHNIQUE_VLM_KEYWORDS: dict[str, list[str]] = {
+    "rotation": ["visible trunk/hip rotation angle", "shoulder-hip separation angle"],
+    "hip": ["hip rotation direction and timing", "hip-shoulder separation visible"],
+    "trunk": ["trunk rotation angle relative to baseline", "upper body coil visibility"],
+    "wrist": ["wrist angle at contact", "wrist lag visibility", "wrist snap timing"],
+    "unit_turn": ["shoulder turn relative to hips", "racket position behind body"],
+    "contact": ["ball-racket contact position relative to body", "arm extension at contact"],
+    "follow_through": ["racket path after contact", "finishing position relative to shoulder"],
+    "grip": ["grip position on handle", "knuckle alignment visibility"],
+    "stance": ["foot position and spacing", "weight distribution between feet"],
+    "load": ["weight shift to back foot", "knee bend depth"],
+    "swing": ["swing path direction", "racket face angle through swing"],
+    "elbow": ["elbow position relative to torso", "elbow extension angle"],
+    "shoulder": ["shoulder rotation angle", "shoulder position at contact"],
+    "knee": ["knee bend angle", "knee drive direction"],
+    "arm": ["arm position relative to body", "arm extension at contact point"],
+    "racket": ["racket face angle", "racket head speed indicators", "racket path"],
+    "leg": ["leg drive direction", "push-off leg extension"],
+    "toss": ["ball position at peak", "toss arm extension"],
+    "coil": ["trunk coil angle", "shoulder turn depth"],
+    "weight": ["weight transfer direction", "center of gravity shift"],
+    "balance": ["body balance at contact", "recovery position"],
+    "backswing": ["backswing path and height", "racket take-back position"],
+    "forward": ["forward swing initiation point", "forward weight shift"],
+    "acceleration": ["racket acceleration visible through blur/speed", "segment sequencing"],
+    "deceleration": ["follow-through path length", "body deceleration posture"],
+    "pronation": ["forearm rotation angle", "racket face rotation after contact"],
+    "supination": ["forearm position in backswing", "palm orientation"],
+    "lag": ["wrist lag angle behind forearm", "racket lag behind hand"],
+    "whip": ["sequential segment acceleration visible", "whip-like motion path"],
+    "press": ["chest press forward motion", "arm adduction toward midline"],
+    "chest": ["chest opening/closing angle", "pectoral engagement visible"],
+    "slot": ["arm slot position", "racket drop into slot"],
+}
+
+# Biomechanics keyword -> VLM features
+_BIOMECH_VLM_KEYWORDS: dict[str, list[str]] = {
+    "kinetic_chain": ["sequential segment activation visible", "proximal-to-distal sequencing"],
+    "angular_momentum": ["rotation speed visible at each segment"],
+    "elastic": ["stretch-shortening visible in muscle groups"],
+    "torque": ["joint rotation angle and speed"],
+    "force": ["ground reaction force visible through leg extension"],
+    "energy": ["energy transfer visible through segment sequencing"],
+}
+
+
+def annotate_vlm_features(kg: KnowledgeGraph) -> int:
+    """Populate VLM-detectable features on graph nodes by category.
+
+    - Symptoms: description IS the VLM feature
+    - Techniques: keyword-based mapping to observable features
+    - Biomechanics: joint angles and segment positions
+    - Drills: no VLM features (instructions, not visible)
+
+    Returns:
+        Number of nodes annotated.
+    """
+    annotated = 0
+    for nid, data in kg.graph.nodes(data=True):
+        category = data.get("category", "")
+        desc = (data.get("description") or "").lower()
+        name = (data.get("name") or "").lower()
+        node_id = nid.lower()
+
+        if category == "symptom":
+            # Symptom description IS a VLM feature
+            original_desc = data.get("description", "")
+            if original_desc:
+                kg.graph.nodes[nid]["vlm_features"] = [original_desc]
+                annotated += 1
+
+        elif category == "technique":
+            features: list[str] = []
+            seen: set[str] = set()
+            # Check name, id, and description against keyword map
+            text = f"{node_id} {name} {desc}"
+            for keyword, vlm_feats in _TECHNIQUE_VLM_KEYWORDS.items():
+                if keyword in text:
+                    for f in vlm_feats:
+                        if f not in seen:
+                            features.append(f)
+                            seen.add(f)
+            # Limit to top 3 most relevant
+            if features:
+                kg.graph.nodes[nid]["vlm_features"] = features[:3]
+                annotated += 1
+
+        elif category == "biomechanics":
+            features = []
+            seen = set()
+            text = f"{node_id} {name} {desc}"
+            # Try biomechanics-specific keywords first
+            for keyword, vlm_feats in _BIOMECH_VLM_KEYWORDS.items():
+                if keyword in text:
+                    for f in vlm_feats:
+                        if f not in seen:
+                            features.append(f)
+                            seen.add(f)
+            # Also try technique keywords (many biomechanics concepts relate)
+            for keyword, vlm_feats in _TECHNIQUE_VLM_KEYWORDS.items():
+                if keyword in text:
+                    for f in vlm_feats:
+                        if f not in seen:
+                            features.append(f)
+                            seen.add(f)
+            if features:
+                kg.graph.nodes[nid]["vlm_features"] = features[:3]
+                annotated += 1
+
+        # Drills, mental_model, connection: no VLM features
+
+    logger.info("Annotated %d nodes with VLM features", annotated)
+    return annotated
+
+
+def add_visible_as_edges(kg: KnowledgeGraph) -> int:
+    """Create visible_as edges connecting technique/biomechanics concepts to symptom nodes.
+
+    For nodes with VLM features, find symptom nodes whose description has keyword
+    overlap, and add a visible_as edge.
+
+    Returns:
+        Number of visible_as edges added.
+    """
+    # Collect symptom nodes with tokenized descriptions
+    symptom_tokens: dict[str, set[str]] = {}
+    symptom_descs: dict[str, str] = {}
+    for nid, data in kg.graph.nodes(data=True):
+        if data.get("category") == "symptom":
+            desc = (data.get("description") or "").lower()
+            tokens = set(re.findall(r"[a-z_]{3,}", desc))
+            symptom_tokens[nid] = tokens
+            symptom_descs[nid] = desc
+
+    added = 0
+    for nid, data in kg.graph.nodes(data=True):
+        if data.get("category") not in ("technique", "biomechanics"):
+            continue
+        vlm_feats = data.get("vlm_features", [])
+        if not vlm_feats:
+            continue
+
+        # Tokenize VLM features for matching
+        feat_text = " ".join(vlm_feats).lower()
+        feat_tokens = set(re.findall(r"[a-z_]{3,}", feat_text))
+
+        # Also use node name/id tokens
+        name_tokens = set(re.findall(r"[a-z_]{3,}", f"{nid} {(data.get('name') or '').lower()}"))
+        all_tokens = feat_tokens | name_tokens
+
+        for symptom_id, stokens in symptom_tokens.items():
+            # Need meaningful overlap (not just common words)
+            overlap = all_tokens & stokens - {"the", "and", "for", "from", "with", "that", "this", "not"}
+            if len(overlap) >= 2:
+                # Check edge doesn't already exist
+                existing = kg.graph.get_edge_data(nid, symptom_id, key="visible_as")
+                if existing is None:
+                    edge = Edge(
+                        source_id=nid,
+                        target_id=symptom_id,
+                        relation=RelationType.VISIBLE_AS,
+                        confidence=0.7,
+                        evidence=f"VLM feature overlap: {', '.join(sorted(overlap)[:5])}",
+                        source_file="graph_assembler:add_visible_as_edges",
+                    )
+                    kg.add_edge(edge)
+                    added += 1
+
+    logger.info("Added %d visible_as edges", added)
+    return added
+
+
+def build_why_explanation(
+    kg: KnowledgeGraph, concept_id: str, muscle_profiles_path: Path
+) -> dict | None:
+    """Build a 'why' explanation chain for a concept.
+
+    Returns dict: {concept, muscles: [{name, function, role}], physics, visible_symptoms}
+    or None if concept not found.
+    """
+    if concept_id not in kg.graph.nodes:
+        return None
+
+    data = kg.graph.nodes[concept_id]
+
+    # Load muscle profiles for detail lookup
+    profiles = json.loads(muscle_profiles_path.read_text())
+    profile_map = {p["name"]: p for p in profiles}
+
+    # Build muscle details
+    muscles_involved = data.get("muscles_involved", [])
+    muscle_details = []
+    for muscle_name in muscles_involved:
+        profile = profile_map.get(muscle_name, {})
+        muscle_details.append({
+            "name": muscle_name,
+            "function": profile.get("function", ""),
+            "role": "primary",  # Default; could be refined from concept_muscle_map
+        })
+
+    # Physics: from description + causal chain context
+    physics = data.get("description", "")
+    # Enrich with causal predecessors
+    predecessors = [
+        (u, d)
+        for u, _, d in kg.graph.in_edges(concept_id, data=True)
+        if d.get("relation") == "causes"
+    ]
+    if predecessors:
+        causes_text = "; ".join(
+            f"{u}: {kg.graph.nodes.get(u, {}).get('description', '')[:80]}"
+            for u, _ in predecessors[:3]
+        )
+        physics = f"{physics} [Caused by: {causes_text}]"
+
+    # Visible symptoms: from node's vlm_features + connected symptom nodes
+    visible_symptoms: list[str] = list(data.get("vlm_features", []))
+    # Add symptoms from visible_as edges
+    for _, target, edata in kg.graph.out_edges(concept_id, data=True):
+        if edata.get("relation") == "visible_as":
+            target_data = kg.graph.nodes.get(target, {})
+            desc = target_data.get("description", "")
+            if desc and desc not in visible_symptoms:
+                visible_symptoms.append(desc)
+    # Also check cause edges to symptoms
+    for _, target, edata in kg.graph.out_edges(concept_id, data=True):
+        if edata.get("relation") == "causes":
+            target_data = kg.graph.nodes.get(target, {})
+            if target_data.get("category") == "symptom":
+                desc = target_data.get("description", "")
+                if desc and desc not in visible_symptoms:
+                    visible_symptoms.append(desc)
+
+    return {
+        "concept": {
+            "id": concept_id,
+            "name": data.get("name", ""),
+            "description": data.get("description", ""),
+        },
+        "muscles": muscle_details,
+        "physics": physics,
+        "visible_symptoms": visible_symptoms,
+    }
+
+
+def update_registry_snapshot(kg: KnowledgeGraph, registry_path: Path) -> int:
+    """Update registry snapshot with muscles_involved and vlm_features from graph.
+
+    Returns:
+        Number of concepts updated.
+    """
+    data = json.loads(registry_path.read_text())
+    updated = 0
+    for concept in data:
+        cid = concept.get("id", "")
+        if cid in kg.graph.nodes:
+            node_data = kg.graph.nodes[cid]
+            muscles = node_data.get("muscles_involved", [])
+            vlm = node_data.get("vlm_features", [])
+            active_passive = node_data.get("active_or_passive")
+            changed = False
+            if muscles:
+                concept["muscles_involved"] = muscles
+                changed = True
+            if vlm:
+                concept["vlm_features"] = vlm
+                changed = True
+            if active_passive:
+                concept["active_or_passive"] = active_passive
+                changed = True
+            if changed:
+                updated += 1
+
+    registry_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    logger.info("Updated %d concepts in registry snapshot", updated)
+    return updated

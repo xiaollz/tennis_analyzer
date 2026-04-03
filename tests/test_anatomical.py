@@ -205,12 +205,16 @@ class TestEnrichGraphWithMuscles:
         )
 
     def test_muscles_are_english_names(self):
-        """Muscle names in enriched nodes should be English (from concept_muscle_map)."""
+        """Muscle names in enriched nodes should be English (from concept_muscle_map).
+        Only checks nodes that were enriched by enrich_with_muscles (i.e., present in map).
+        """
+        muscle_map = json.loads(MUSCLE_MAP_PATH.read_text())
         kg = _load_enriched_graph()
         for nid, data in kg.graph.nodes(data=True):
+            if nid not in muscle_map:
+                continue
             muscles = data.get("muscles_involved", [])
             for m in muscles:
-                # English muscle names use only ASCII
                 assert m.isascii(), (
                     f"Non-ASCII muscle name '{m}' in node '{nid}'"
                 )
