@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roadmap transforms ~200KB of existing research text and ~115 YouTube videos into a structured knowledge graph powering a VLM diagnostic engine. The journey starts with schema design (Phase 1), bootstraps the canonical concept registry from existing files (Phase 2), achieves complete FTT channel coverage (Phase 3), assembles the full knowledge graph with anatomical depth (Phase 4), generates machine and human outputs including the upgraded VLM engine (Phase 5), expands to secondary sources (Phase 6), and finally integrates the user's personal training journey (Phase 7).
+This roadmap transforms ~200KB of existing research text and ~115 YouTube videos into a structured knowledge graph powering a VLM diagnostic engine. The journey starts with schema design (Phase 1), bootstraps the canonical concept registry from existing files (Phase 2), achieves complete FTT channel coverage (Phase 3), assembles the full knowledge graph with anatomical depth (Phase 4), generates machine and human outputs including the upgraded VLM engine (Phase 5), expands to secondary sources (Phase 6), integrates the user's personal training journey (Phase 7), and then upgrades to a multi-round iterative VLM diagnostic system (Phases 8-10).
 
 ## Phases
 
@@ -12,13 +12,16 @@ This roadmap transforms ~200KB of existing research text and ~115 YouTube videos
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Schema & Infrastructure** - Define Pydantic models, pipeline scaffolding, and knowledge graph backend
-- [ ] **Phase 2: Existing Knowledge Extraction** - Extract structured concepts from all existing research files into canonical registry
-- [ ] **Phase 3: FTT Video Extraction** - Complete FTT YouTube channel coverage (~85 remaining videos)
-- [ ] **Phase 4: Graph Assembly & Anatomical Layer** - Build full knowledge graph with diagnostic chains and muscle-level depth
-- [ ] **Phase 5: Output Generation & VLM Engine** - Dual-format export and upgraded VLM diagnostic system
-- [ ] **Phase 6: Secondary Sources** - TomAllsopp and Feel Tennis extraction with cross-source reconciliation
-- [ ] **Phase 7: User Integration** - Personal training journey connected to knowledge graph for personalized diagnostics
+- [x] **Phase 1: Schema & Infrastructure** - Define Pydantic models, pipeline scaffolding, and knowledge graph backend
+- [x] **Phase 2: Existing Knowledge Extraction** - Extract structured concepts from all existing research files into canonical registry
+- [x] **Phase 3: FTT Video Extraction** - Complete FTT YouTube channel coverage (~85 remaining videos)
+- [x] **Phase 4: Graph Assembly & Anatomical Layer** - Build full knowledge graph with diagnostic chains and muscle-level depth
+- [x] **Phase 5: Output Generation & VLM Engine** - Dual-format export and upgraded VLM diagnostic system
+- [x] **Phase 6: Secondary Sources** - TomAllsopp and Feel Tennis extraction with cross-source reconciliation
+- [x] **Phase 7: User Integration** - Personal training journey connected to knowledge graph for personalized diagnostics
+- [ ] **Phase 8: Multi-Round Loop Infrastructure** - Hypothesis/observation data models + MultiRoundAnalyzer orchestrator + convergence logic
+- [ ] **Phase 9: Knowledge-Driven Directives & Hypothesis Tracking** - Graph-to-observation compilation + hypothesis lifecycle + cross-hypothesis causal reasoning
+- [ ] **Phase 10: Hallucination Mitigation & Report Integration** - Quantitative cross-validation + contradiction detection + diagnostic journey report section
 
 ## Phase Details
 
@@ -33,8 +36,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Running `pytest` on the schema module passes with at least one test per model and one test for dedup matching
 **Plans:** 2 plans
 Plans:
-- [x] 01-01-PLAN.md — Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
-- [x] 01-02-PLAN.md — ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
+- [x] 01-01-PLAN.md -- Pydantic schemas (Concept, Edge, DiagnosticChain) + package scaffolding
+- [x] 01-02-PLAN.md -- ConceptRegistry with fuzzy dedup + KnowledgeGraph wrapper
 **Risk flags**: Pitfall 1 (concept explosion) -- dedup strategy must be designed here, not bolted on later. Pitfall 6 (undirected edges) -- enforce typed directed edges at schema level.
 
 ### Phase 2: Existing Knowledge Extraction
@@ -48,9 +51,9 @@ Plans:
   4. Biomechanics book anatomy files (24 files) are extracted with muscle-to-concept mappings
 **Plans:** 3 plans
 Plans:
-- [x] 02-01-PLAN.md — Seed registry from legacy JSON + extraction pipeline scaffolding
-- [x] 02-02-PLAN.md — Extract concepts from all 31 research files
-- [x] 02-03-PLAN.md — User journey extraction + knowledge graph assembly
+- [x] 02-01-PLAN.md -- Seed registry from legacy JSON + extraction pipeline scaffolding
+- [x] 02-02-PLAN.md -- Extract concepts from all 31 research files
+- [x] 02-03-PLAN.md -- User journey extraction + knowledge graph assembly
 **Risk flags**: Pitfall 1 (concept explosion) -- this phase establishes the canonical registry that all future extraction depends on. Pitfall 9 (Chinese-English mismatch) -- ensure bilingual concept names from the start.
 
 ### Phase 3: FTT Video Extraction
@@ -65,12 +68,12 @@ Plans:
   5. Diagnostic chains (symptom-to-cause-to-fix patterns) are extracted from FTT content
 **Plans:** 2/6 plans executed
 Plans:
-- [x] 03-01-PLAN.md — Video inventory + pipeline infrastructure (state manager, analyzer, extractor)
-- [x] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
-- [x] 03-03-PLAN.md — Gemini API batch 1: 12 forehand-priority videos
-- [x] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
-- [x] 03-05-PLAN.md — Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
-- [x] 03-06-PLAN.md — Merge all into registry + extract diagnostic chains
+- [x] 03-01-PLAN.md -- Video inventory + pipeline infrastructure (state manager, analyzer, extractor)
+- [x] 03-02-PLAN.md -- Re-extract concepts from 33 existing video analyses (no API)
+- [x] 03-03-PLAN.md -- Gemini API batch 1: 12 forehand-priority videos
+- [x] 03-04-PLAN.md -- Gemini API batch 2: 13 philosophy/tactics/topspin videos
+- [x] 03-05-PLAN.md -- Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
+- [x] 03-06-PLAN.md -- Merge all into registry + extract diagnostic chains
 **Risk flags**: Pitfall 2 (API rate limits/cost) -- use Flash model, implement checkpointing, set daily budget caps. Pitfall 7 (losing raw analysis) -- always save raw Markdown before structured extraction. Pitfall 8 (non-deterministic extraction) -- temperature=0, pin model versions.
 
 ### Phase 4: Graph Assembly & Anatomical Layer
@@ -85,10 +88,10 @@ Plans:
   5. Each canonical concept has muscle mappings with function, training method, common failure, and VLM-detectable feature where applicable
 **Plans:** 4 plans
 Plans:
-- [x] 04-01-PLAN.md — Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
-- [x] 04-02-PLAN.md — Anatomical extraction: muscle profiles from biomechanics Markdown files
-- [x] 04-03-PLAN.md — Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
-- [x] 04-04-PLAN.md — VLM feature annotation + muscle integration + "why" explanation chains
+- [x] 04-01-PLAN.md -- Edge assembly: sync 582 registry nodes + load 1665 edges with fuzzy resolution + confidence scoring
+- [x] 04-02-PLAN.md -- Anatomical extraction: muscle profiles from biomechanics Markdown files
+- [x] 04-03-PLAN.md -- Graph validation (cycles, orphans) + diagnostic chain generation (15-25 chains)
+- [x] 04-04-PLAN.md -- VLM feature annotation + muscle integration + "why" explanation chains
 **Risk flags**: Pitfall 6 (undirected edges) -- validate all edges have type and direction. Pitfall 10 (no visualization) -- add simple graph visualization utility for debugging.
 
 ### Phase 5: Output Generation & VLM Engine
@@ -103,9 +106,9 @@ Plans:
   5. The generated VLM prompt template replaces the hardcoded prompt in vlm_analyzer.py
 **Plans:** 3 plans
 Plans:
-- [x] 05-01-PLAN.md — JSON + Markdown export generators (Jinja2 templates, topic-grouped structure)
-- [x] 05-02-PLAN.md — VLM prompt compiler (graph-to-prompt, static templates + dynamic subgraph injection)
-- [x] 05-03-PLAN.md — Two-pass VLM integration into vlm_analyzer.py
+- [x] 05-01-PLAN.md -- JSON + Markdown export generators (Jinja2 templates, topic-grouped structure)
+- [x] 05-02-PLAN.md -- VLM prompt compiler (graph-to-prompt, static templates + dynamic subgraph injection)
+- [x] 05-03-PLAN.md -- Two-pass VLM integration into vlm_analyzer.py
 **Risk flags**: Pitfall 3 (prompt overflow) -- two-pass VLM with subgraph selection is critical. Test prompt size early.
 
 ### Phase 6: Secondary Sources
@@ -119,10 +122,10 @@ Plans:
   4. Knowledge graph confidence scores updated to reflect multi-source validation
 **Plans:** 4 plans
 Plans:
-- [x] 06-01-PLAN.md — Curate video lists for both channels + state files (SEC-01, SEC-03)
-- [x] 06-02-PLAN.md — TomAllsopp Gemini API extraction (~45 videos) (SEC-02)
-- [x] 06-03-PLAN.md — Feel Tennis Gemini API extraction (~45 videos) (SEC-04)
-- [x] 06-04-PLAN.md — Cross-source reconciliation + merge into registry (SEC-05)
+- [x] 06-01-PLAN.md -- Curate video lists for both channels + state files (SEC-01, SEC-03)
+- [x] 06-02-PLAN.md -- TomAllsopp Gemini API extraction (~45 videos) (SEC-02)
+- [x] 06-03-PLAN.md -- Feel Tennis Gemini API extraction (~45 videos) (SEC-04)
+- [x] 06-04-PLAN.md -- Cross-source reconciliation + merge into registry (SEC-05)
 **Risk flags**: Pitfall 5 (reconciliation complexity) -- reconciliation is a separate explicit pass, not embedded in extraction. Pitfall 4 (transcript quality) -- use Gemini video understanding as primary, transcripts as supplementary.
 
 ### Phase 7: User Integration
@@ -135,22 +138,67 @@ Plans:
   3. A training plan can be generated based on the user's current knowledge gaps and technique weaknesses, recommending specific drills from the knowledge graph
 **Plans:** 2 plans
 Plans:
-- [x] 07-01-PLAN.md — UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
-- [x] 07-02-PLAN.md — Personalized VLM context injection + training plan generator (USER-02, USER-03)
+- [x] 07-01-PLAN.md -- UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
+- [x] 07-02-PLAN.md -- Personalized VLM context injection + training plan generator (USER-02, USER-03)
+
+### Phase 8: Multi-Round Loop Infrastructure
+**Goal**: The core multi-round diagnostic loop exists -- data models, orchestrator, convergence detection, and session persistence -- ready for graph-driven directives in Phase 9
+**Depends on**: Phase 5 (existing two-pass VLM), Phase 7 (user profile integration)
+**Requirements**: MR-01, MR-02, MR-03, MR-04, MR-05, CP-01, CP-02
+**Success Criteria** (what must be TRUE):
+  1. Hypothesis, Observation, DiagnosticSession, RoundResult models are defined in knowledge/schemas.py with full Pydantic validation
+  2. `MultiRoundAnalyzer` can orchestrate 2-4 VLM rounds using the existing `_call_vlm()` backend
+  3. Convergence detection works: loop exits when dominant hypothesis >= 0.8 confidence, all hypotheses eliminated except one, no change for 2 rounds, or max 4 rounds
+  4. `analyze_swing_iterative()` in VLMForehandAnalyzer falls back cleanly to v1.0 `analyze_swing()` on any failure
+  5. Full DiagnosticSession is saved as JSON after each analysis for debugging/replay
+  6. Round 0 (scan) reuses the existing Pass 1 symptom checklist -- no regression
+**Plans:** TBD (estimated 2 plans)
+**Risk flags**: Infinite loop risk -- convergence must be guaranteed by hard max rounds. Fallback to v1.0 must be seamless.
+
+### Phase 9: Knowledge-Driven Directives & Hypothesis Tracking
+**Goal**: The multi-round loop is driven by the knowledge graph -- each round asks specific questions derived from diagnostic chains, and hypotheses are tracked with cross-causal reasoning
+**Depends on**: Phase 8
+**Requirements**: KD-01, KD-02, KD-03, KD-04, HT-01, HT-02, HT-03, HT-04
+**Success Criteria** (what must be TRUE):
+  1. `compile_observation_directive()` generates a focused prompt (< 4K chars) from active hypotheses and unchecked diagnostic steps
+  2. `observation_directive.j2` template renders hypothesis context + frame-specific observation questions
+  3. `confirmation.j2` template renders full evidence summary for the final round, producing root_cause_tree JSON
+  4. Hypothesis lifecycle works end-to-end: created from Pass 1 -> updated by observations -> confirmed/eliminated -> cross-checked via causal chains
+  5. Cross-hypothesis reasoning: if hypothesis A is confirmed and graph shows A causes B, hypothesis B is auto-eliminated and added as downstream symptom
+  6. Each round eliminates or confirms at least one hypothesis in > 80% of test cases
+**Plans:** TBD (estimated 3 plans)
+**Risk flags**: Prompt drift -- hypothesis context must stay compact. Cross-hypothesis reasoning depends on graph quality (causal edges must be correct). VLM structured output parsing reliability.
+
+### Phase 10: Hallucination Mitigation & Report Integration
+**Goal**: The multi-round system handles VLM errors gracefully and produces a readable diagnostic journey report that shows the reasoning process
+**Depends on**: Phase 9
+**Requirements**: HM-01, HM-02, HM-03, HM-04, RG-01, RG-02, RG-03, RG-04
+**Success Criteria** (what must be TRUE):
+  1. Observation anchoring enforced: VLM responses without frame references are flagged and re-prompted
+  2. Cross-round contradiction detection triggers re-observation (tested with at least 3 synthetic contradiction scenarios)
+  3. Quantitative cross-validation compares VLM observations against kinematic data for elbow angle, wrist trajectory, and shoulder rotation where data is available
+  4. Report generator produces a "diagnostic journey" narrative section showing hypotheses tested and eliminated
+  5. Final root_cause_tree JSON is backward compatible with v1.0 format (existing report rendering works unchanged)
+  6. Diagnostic journey section is optional (flag-controlled) and renders as readable narrative, not log dump
+**Plans:** TBD (estimated 2-3 plans)
+**Risk flags**: Over-engineering hallucination mitigation -- keep it simple (anchoring + contradiction detection + quantitative check). Report verbosity -- the journey section must be concise.
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 
-Note: Phase 6 depends on Phases 3+4; Phase 7 depends on Phases 4+5. Phases 5 and 6 could theoretically run in parallel after Phase 4, but sequential execution is simpler for a solo developer.
+Phase 8 depends on Phases 5+7 (existing VLM + user profile). Phase 9 depends on Phase 8 (loop exists). Phase 10 depends on Phase 9 (directives + hypotheses work).
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Schema & Infrastructure | 2/2 | Complete | 2026-04-03 |
-| 2. Existing Knowledge Extraction | 0/3 | Planning complete | - |
-| 3. FTT Video Extraction | 2/6 | In Progress|  |
-| 4. Graph Assembly & Anatomical Layer | 0/TBD | Not started | - |
-| 5. Output Generation & VLM Engine | 0/3 | Planning complete | - |
-| 6. Secondary Sources | 0/4 | Planning complete | - |
-| 7. User Integration | 0/2 | Planning complete | - |
+| 2. Existing Knowledge Extraction | 3/3 | Complete | - |
+| 3. FTT Video Extraction | 6/6 | Complete | - |
+| 4. Graph Assembly & Anatomical Layer | 4/4 | Complete | - |
+| 5. Output Generation & VLM Engine | 3/3 | Complete | - |
+| 6. Secondary Sources | 4/4 | Complete | - |
+| 7. User Integration | 2/2 | Complete | - |
+| 8. Multi-Round Loop Infrastructure | 0/TBD | Not started | - |
+| 9. Knowledge-Driven Directives & Hypothesis Tracking | 0/TBD | Not started | - |
+| 10. Hallucination Mitigation & Report Integration | 0/TBD | Not started | - |
