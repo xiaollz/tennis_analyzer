@@ -61,9 +61,9 @@
 
 ### Output Generation
 
-- [ ] **OUT-01**: JSON knowledge graph export (nodes + edges + diagnostic chains, machine-readable)
-- [ ] **OUT-02**: Markdown knowledge base export (organized by topic hierarchy, human-readable)
-- [ ] **OUT-03**: Markdown includes cross-references, source citations, confidence levels
+- [x] **OUT-01**: JSON knowledge graph export (nodes + edges + diagnostic chains, machine-readable)
+- [x] **OUT-02**: Markdown knowledge base export (organized by topic hierarchy, human-readable)
+- [x] **OUT-03**: Markdown includes cross-references, source citations, confidence levels
 - [ ] **OUT-04**: VLM prompt template file (generated from graph, replaces hardcoded prompt in vlm_analyzer.py)
 
 ### User Integration
@@ -132,9 +132,9 @@
 | VLM-03 | Phase 5 | Pending |
 | VLM-04 | Phase 5 | Pending |
 | VLM-05 | Phase 5 | Pending |
-| OUT-01 | Phase 5 | Pending |
-| OUT-02 | Phase 5 | Pending |
-| OUT-03 | Phase 5 | Pending |
+| OUT-01 | Phase 5 | Complete |
+| OUT-02 | Phase 5 | Complete |
+| OUT-03 | Phase 5 | Complete |
 | OUT-04 | Phase 5 | Pending |
 | SEC-01 | Phase 6 | Pending |
 | SEC-02 | Phase 6 | Pending |
