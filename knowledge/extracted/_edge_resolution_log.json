@@ -1,0 +1,122 @@
+{
+  "resolved_count": 881,
+  "unresolvable_count": 784,
+  "final_edge_count": 869,
+  "edge_type_distribution": {
+    "supports": 790,
+    "causes": 79
+  },
+  "raw_edge_counts": {
+    "supports": 1533,
+    "causes": 132,
+    "total": 1665
+  },
+  "filter_stats": {
+    "self_loops_removed": 7,
+    "low_confidence_supports_removed": 0,
+    "empty_evidence_removed": 0,
+    "dedup_merges": 5
+  },
+  "unresolvable_samples": [
+    {
+      "source_id": "pick_your_pattern",
+      "target_id": "opt",
+      "relation": "supports"
+    },
+    {
+      "source_id": "defend_with_height",
+      "target_id": "opt",
+      "relation": "supports"
+    },
+    {
+      "source_id": "optin_to_the_pattern",
+      "target_id": "opt",
+      "relation": "supports"
+    },
+    {
+      "source_id": "opt",
+      "target_id": "net_clearance",
+      "relation": "supports"
+    },
+    {
+      "source_id": "opt",
+      "target_id": "no_second_chances",
+      "relation": "supports"
+    },
+    {
+      "source_id": "simplest_possible_effective_forehand",
+      "target_id": "c_25",
+      "relation": "supports"
+    },
+    {
+      "source_id": "elbow_drop",
+      "target_id": "c_25",
+      "relation": "supports"
+    },
+    {
+      "source_id": "fewer_moving_parts",
+      "target_id": "c_25",
+      "relation": "supports"
+    },
+    {
+      "source_id": "c_25",
+      "target_id": "structural_connection",
+      "relation": "supports"
+    },
+    {
+      "source_id": "c_25",
+      "target_id": "the_table_metaphor",
+      "relation": "supports"
+    },
+    {
+      "source_id": "timing_drills",
+      "target_id": "c_45",
+      "relation": "supports"
+    },
+    {
+      "source_id": "the_pivot",
+      "target_id": "c_45",
+      "relation": "supports"
+    },
+    {
+      "source_id": "tom",
+      "target_id": "c_45",
+      "relation": "supports"
+    },
+    {
+      "source_id": "static_pivot",
+      "target_id": "c_45",
+      "relation": "supports"
+    },
+    {
+      "source_id": "c_45",
+      "target_id": "finish_on_your_right_toe",
+      "relation": "supports"
+    },
+    {
+      "source_id": "slappingbumping",
+      "target_id": "c_2",
+      "relation": "supports"
+    },
+    {
+      "source_id": "c_2",
+      "target_id": "throwing_chain",
+      "relation": "supports"
+    },
+    {
+      "source_id": "c_2",
+      "target_id": "pushing",
+      "relation": "supports"
+    },
+    {
+      "source_id": "receiving_vs_sending",
+      "target_id": "unknown_concept",
+      "relation": "supports"
+    },
+    {
+      "source_id": "legonly_balance",
+      "target_id": "unknown_concept",
+      "relation": "supports"
+    }
+  ]
+}
