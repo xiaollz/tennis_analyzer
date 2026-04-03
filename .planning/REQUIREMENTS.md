@@ -25,7 +25,7 @@
 
 - [x] **FTT-01**: Enumerate all FTT YouTube channel videos (complete list with titles, URLs, durations)
 - [ ] **FTT-02**: Identify already-analyzed videos (~30) and extract structured concepts from existing analyses
-- [ ] **FTT-03**: Analyze remaining ~85 FTT videos via Gemini API with structured extraction
+- [x] **FTT-03**: Analyze remaining ~85 FTT videos via Gemini API with structured extraction
 - [ ] **FTT-04**: Merge FTT video concepts into canonical registry (deduplication)
 - [ ] **FTT-05**: Extract diagnostic chains from FTT content (symptom→cause→fix patterns)
 
@@ -116,7 +116,7 @@
 | EXIST-05 | Phase 2 | Complete |
 | FTT-01 | Phase 3 | Complete |
 | FTT-02 | Phase 3 | Pending |
-| FTT-03 | Phase 3 | Pending |
+| FTT-03 | Phase 3 | Complete |
 | FTT-04 | Phase 3 | Pending |
 | FTT-05 | Phase 3 | Pending |
 | GRAPH-01 | Phase 4 | Pending |

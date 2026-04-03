@@ -68,7 +68,7 @@ Plans:
 - [x] 03-01-PLAN.md — Video inventory + pipeline infrastructure (state manager, analyzer, extractor)
 - [ ] 03-02-PLAN.md — Re-extract concepts from 33 existing video analyses (no API)
 - [ ] 03-03-PLAN.md — Gemini API batch 1: 12 forehand-priority videos
-- [ ] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
+- [x] 03-04-PLAN.md — Gemini API batch 2: 13 philosophy/tactics/topspin videos
 - [ ] 03-05-PLAN.md — Gemini API batch 3: 14 remaining videos (movement/serve/backhand)
 - [ ] 03-06-PLAN.md — Merge all into registry + extract diagnostic chains
 **Risk flags**: Pitfall 2 (API rate limits/cost) -- use Flash model, implement checkpointing, set daily budget caps. Pitfall 7 (losing raw analysis) -- always save raw Markdown before structured extraction. Pitfall 8 (non-deterministic extraction) -- temperature=0, pin model versions.
