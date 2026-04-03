@@ -135,7 +135,7 @@ Plans:
   3. A training plan can be generated based on the user's current knowledge gaps and technique weaknesses, recommending specific drills from the knowledge graph
 **Plans:** 2 plans
 Plans:
-- [ ] 07-01-PLAN.md — UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
+- [x] 07-01-PLAN.md — UserProfile model + session-to-concept linking via fuzzy registry resolve (USER-01)
 - [ ] 07-02-PLAN.md — Personalized VLM context injection + training plan generator (USER-02, USER-03)
 
 ## Progress

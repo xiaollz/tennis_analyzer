@@ -68,7 +68,7 @@
 
 ### User Integration
 
-- [ ] **USER-01**: Connect user training records (learning.md) to knowledge graph concepts
+- [x] **USER-01**: Connect user training records (learning.md) to knowledge graph concepts
 - [ ] **USER-02**: Personalized diagnostics — VLM considers user's known issues and progress
 - [ ] **USER-03**: Training plan generation based on current knowledge gaps and breakthroughs
 
@@ -141,7 +141,7 @@
 | SEC-03 | Phase 6 | Complete |
 | SEC-04 | Phase 6 | Complete |
 | SEC-05 | Phase 6 | Complete |
-| USER-01 | Phase 7 | Pending |
+| USER-01 | Phase 7 | Complete |
 | USER-02 | Phase 7 | Pending |
 | USER-03 | Phase 7 | Pending |
 
