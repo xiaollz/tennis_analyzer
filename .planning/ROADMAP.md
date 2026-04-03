@@ -152,7 +152,10 @@ Plans:
   4. `analyze_swing_iterative()` in VLMForehandAnalyzer falls back cleanly to v1.0 `analyze_swing()` on any failure
   5. Full DiagnosticSession is saved as JSON after each analysis for debugging/replay
   6. Round 0 (scan) reuses the existing Pass 1 symptom checklist -- no regression
-**Plans:** TBD (estimated 2 plans)
+**Plans:** 2 plans
+Plans:
+- [ ] 08-01-PLAN.md -- Pydantic data models (Hypothesis, Observation, RoundResult, DiagnosticSession) + tests
+- [ ] 08-02-PLAN.md -- MultiRoundAnalyzer orchestrator + convergence + analyze_swing_iterative() + session persistence
 **Risk flags**: Infinite loop risk -- convergence must be guaranteed by hard max rounds. Fallback to v1.0 must be seamless.
 
 ### Phase 9: Knowledge-Driven Directives & Hypothesis Tracking
