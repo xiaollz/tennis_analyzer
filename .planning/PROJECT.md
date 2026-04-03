@@ -6,7 +6,17 @@ A comprehensive knowledge engineering system that extracts, structures, and oper
 
 ## Core Value
 
-**The VLM diagnostic engine must trace any visible forehand flaw back to its biomechanical root cause and prescribe the correct drill — not just describe what's wrong, but explain WHY and HOW to fix it.**
+**The VLM diagnostic engine must trace any visible forehand flaw back to its biomechanical root cause through multi-round iterative analysis — observe, think, re-observe, correct, confirm — producing an "Aha moment" where the user realizes the single root cause behind all their surface symptoms.**
+
+## Current Milestone: v2.0 Multi-Round VLM Diagnostic System
+
+**Goal:** Upgrade from single-pass VLM analysis to a multi-round iterative diagnostic loop that uses the knowledge graph to guide what to observe, reasons about observations, and re-observes to verify root causes.
+
+**Target features:**
+- Knowledge-driven observation directives (VLM prompts generated from knowledge graph specify WHAT to look for)
+- Multi-round iterative analysis (observe → think with knowledge graph → re-observe → correct → confirm)
+- Progressive root cause narrowing (each round eliminates hypotheses, not just describes symptoms)
+- Observation-specific frame requests (after first pass, system requests specific frames/angles to verify hypotheses)
 
 ## Requirements
 
