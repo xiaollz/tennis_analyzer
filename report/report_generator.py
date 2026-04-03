@@ -414,12 +414,125 @@ class ReportGenerator:
             lines.append(f"**容错评分**: {score}/100 — {reasoning}")
             lines.append("")
 
-        # Overall assessment
+        # ── New format: Root Cause Tree ──
+        root_tree = vlm_result.get("root_cause_tree")
+        if root_tree:
+            lines.extend(ReportGenerator._format_root_cause_tree(vlm_result))
+        else:
+            # ── Legacy format fallback ──
+            lines.extend(ReportGenerator._format_legacy_issues(vlm_result))
+
+        return lines
+
+    # ── 根因树格式（新版） ─────────────────────────────────────────────
+
+    @staticmethod
+    def _format_root_cause_tree(vlm_result: Dict) -> List[str]:
+        lines = []
+        tree = vlm_result["root_cause_tree"]
+
+        # Overall narrative (the story)
+        if vlm_result.get("overall_narrative"):
+            lines.append(f"**整体评价**: {vlm_result['overall_narrative']}")
+            lines.append("")
+
+        # Root cause
+        lines.append("**根因诊断**:")
+        lines.append("")
+        lines.append(f"> **{tree.get('root_cause', '')}**")
+        lines.append("")
+        if tree.get("root_cause_evidence"):
+            lines.append(f"- 视觉证据: {tree['root_cause_evidence']}")
+        if tree.get("root_cause_body"):
+            lines.append(f"- 生物力学: {tree['root_cause_body']}")
+        if tree.get("root_cause_feel"):
+            lines.append(f"- 感觉对比: {tree['root_cause_feel']}")
+        lines.append("")
+
+        # Downstream symptoms (causal tree)
+        symptoms = tree.get("downstream_symptoms", [])
+        if symptoms:
+            lines.append("**因果树 — 根因如何导致你看到的每个表面问题：**")
+            lines.append("")
+            lines.append("```")
+            root_short = tree.get("root_cause", "根因")[:30]
+            lines.append(f"  {root_short}")
+            for i, s in enumerate(symptoms):
+                connector = "├──" if i < len(symptoms) - 1 else "└──"
+                lines.append(f"  {connector} → {s.get('symptom', '')} [{s.get('frame', '')}]")
+                if s.get("how_root_cause_creates_it"):
+                    lines.append(f"  {'│' if i < len(symptoms) - 1 else ' '}     原因: {s['how_root_cause_creates_it'][:80]}")
+            lines.append("```")
+            lines.append("")
+
+            # Detailed per-symptom evidence
+            for s in symptoms:
+                lines.append(f"  - **{s.get('symptom', '')}** [{s.get('frame', '')}]: {s.get('how_root_cause_creates_it', '')}")
+                if s.get("visual_evidence"):
+                    lines.append(f"    视觉证据: {s['visual_evidence']}")
+            lines.append("")
+
+        # Fix section (the Aha moment)
+        fix = tree.get("fix", {})
+        if fix:
+            if fix.get("insight"):
+                lines.append(f"**顿悟**: {fix['insight']}")
+                lines.append("")
+            if fix.get("mental_model_shift"):
+                lines.append(f"**认知转变**: {fix['mental_model_shift']}")
+                lines.append("")
+            if fix.get("one_drill"):
+                lines.append(f"**唯一训练**: {fix['one_drill']}")
+                if fix.get("drill_method"):
+                    lines.append(f"- 方法: {fix['drill_method']}")
+                if fix.get("drill_feel_cue"):
+                    lines.append(f"- 口令: {fix['drill_feel_cue']}")
+                if fix.get("check_criteria"):
+                    lines.append(f"- 检验: {fix['check_criteria']}")
+                lines.append("")
+
+        # Secondary root cause (if exists)
+        secondary = vlm_result.get("secondary_root_cause")
+        if secondary and secondary.get("root_cause"):
+            lines.append("---")
+            lines.append("")
+            lines.append(f"**次要根因**: {secondary['root_cause']}")
+            if secondary.get("evidence"):
+                lines.append(f"- 证据: {secondary['evidence']}")
+            sec_fix = secondary.get("fix", {})
+            if sec_fix and sec_fix.get("one_drill"):
+                lines.append(f"- 训练: {sec_fix['one_drill']}")
+            lines.append("")
+
+        # Strengths
+        strengths = vlm_result.get("strengths", [])
+        if strengths:
+            lines.append("**做得好的方面**:")
+            for s in strengths:
+                if isinstance(s, dict):
+                    lines.append(f"- {s.get('description', '')}")
+                    if s.get("progress_signal"):
+                        lines.append(f"  进步信号: {s['progress_signal']}")
+                else:
+                    lines.append(f"- {s}")
+            lines.append("")
+
+        # Kinetic chain narrative
+        if vlm_result.get("kinetic_chain_narrative"):
+            lines.append(f"**动力链故事**: {vlm_result['kinetic_chain_narrative']}")
+            lines.append("")
+
+        return lines
+
+    @staticmethod
+    def _format_legacy_issues(vlm_result: Dict) -> List[str]:
+        """Fallback for old-format VLM responses (issues list)."""
+        lines = []
+
         if vlm_result.get("overall_assessment"):
             lines.append(f"**整体评价**: {vlm_result['overall_assessment']}")
             lines.append("")
 
-        # Strengths
         strengths = vlm_result.get("strengths", [])
         if strengths:
             lines.append("**优点**:")
@@ -432,7 +545,6 @@ class ReportGenerator:
                     lines.append(f"- {s}")
             lines.append("")
 
-        # Issues
         issues = vlm_result.get("issues", [])
         if issues:
             lines.append("**问题诊断**:")
@@ -442,8 +554,6 @@ class ReportGenerator:
                 severity_tag = {"高": "🔴", "中": "🟡", "低": "🟢"}.get(severity, "⚪")
                 frame_tag = f" [{issue['frame']}]" if issue.get("frame") else ""
                 lines.append(f"**{severity_tag} {issue.get('name', '未命名')}{frame_tag}** — 严重程度: {severity}")
-                if issue.get("description"):
-                    lines.append(f"- 观察: {issue['description']}")
                 if issue.get("ftt_principle"):
                     lines.append(f"- FTT 原则: {issue['ftt_principle']}")
                 if issue.get("action"):
@@ -452,13 +562,10 @@ class ReportGenerator:
                     lines.append(f"- 身体: {issue['body']}")
                 if issue.get("feel"):
                     lines.append(f"- 感觉: {issue['feel']}")
-                if issue.get("correction"):
-                    lines.append(f"- 纠正建议: {issue['correction']}")
                 if issue.get("drill"):
                     lines.append(f"- 训练方法: {issue['drill']}")
                 lines.append("")
 
-        # Weight transfer & kinetic chain analysis
         if vlm_result.get("weight_transfer"):
             lines.append(f"**重心转移分析**: {vlm_result['weight_transfer']}")
             lines.append("")
@@ -466,12 +573,6 @@ class ReportGenerator:
             lines.append(f"**动力链分析**: {vlm_result['kinetic_chain']}")
             lines.append("")
 
-        # Video dynamics
-        if vlm_result.get("video_dynamics"):
-            lines.append(f"**动态分析**: {vlm_result['video_dynamics']}")
-            lines.append("")
-
-        # Drills section
         drills = vlm_result.get("drills", [])
         if drills:
             lines.append("**推荐训练计划**:")
@@ -487,7 +588,6 @@ class ReportGenerator:
                         lines.append(f"   - 口令: {drill['cue']}")
             lines.append("")
 
-        # Priority drill
         if vlm_result.get("priority_drill"):
             lines.append(f"**最优先训练**: {vlm_result['priority_drill']}")
             lines.append("")

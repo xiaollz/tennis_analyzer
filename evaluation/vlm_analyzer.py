@@ -1084,24 +1084,50 @@ def _parse_json_response(text: str) -> Optional[Dict]:
             pass
 
     print("[VLM] 警告: 无法解析返回的 JSON")
+    print(f"[VLM] 原始响应前500字符: {text[:500]}")
     return None
 
 
 def _validate_analysis(data: Dict) -> Dict:
-    data.setdefault("issues", [])
-    data.setdefault("strengths", [])
-    data.setdefault("overall_assessment", "")
-    data.setdefault("priority_drill", "")
+    # Support both new root_cause_tree format and legacy issues format
+    if "root_cause_tree" in data:
+        # New format — validate root cause tree
+        tree = data["root_cause_tree"]
+        tree.setdefault("root_cause", "")
+        tree.setdefault("root_cause_evidence", "")
+        tree.setdefault("root_cause_body", "")
+        tree.setdefault("root_cause_feel", "")
+        tree.setdefault("downstream_symptoms", [])
+        tree.setdefault("fix", {})
+        data.setdefault("secondary_root_cause", None)
+        data.setdefault("overall_narrative", "")
+        data.setdefault("kinetic_chain_narrative", "")
+        # Build issues list from tree for backward compatibility (annotation etc.)
+        compat_issues = []
+        for s in tree.get("downstream_symptoms", []):
+            compat_issues.append({
+                "name": s.get("symptom", ""),
+                "severity": "高",
+                "frame": s.get("frame", ""),
+                "description": s.get("how_root_cause_creates_it", ""),
+            })
+        data["issues"] = compat_issues
+    else:
+        # Legacy format
+        data.setdefault("issues", [])
+        valid_issues = []
+        for issue in data.get("issues", []):
+            if isinstance(issue, dict) and "name" in issue:
+                issue.setdefault("severity", "中")
+                issue.setdefault("description", "")
+                issue.setdefault("ftt_principle", "")
+                issue.setdefault("correction", "")
+                valid_issues.append(issue)
+        data["issues"] = valid_issues
+        data.setdefault("overall_assessment", "")
 
-    valid_issues = []
-    for issue in data.get("issues", []):
-        if isinstance(issue, dict) and "name" in issue:
-            issue.setdefault("severity", "中")
-            issue.setdefault("description", "")
-            issue.setdefault("ftt_principle", "")
-            issue.setdefault("correction", "")
-            valid_issues.append(issue)
-    data["issues"] = valid_issues
+    data.setdefault("strengths", [])
+    data.setdefault("priority_drill", "")
 
     if not isinstance(data.get("strengths"), list):
         data["strengths"] = []
