@@ -1,6 +1,76 @@
 {
   "video_id": "bevlgdgdrH4",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "serve_to_forehand_mapping",
+      "name": "Serve-to-Forehand Mapping",
+      "name_zh": "发球-正手空间映射",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "利用高位发球的击球点空间感，通过旋转手臂轴线，迁移至低位正手击球点的感知方法。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知迁移)",
+      "confidence": 0.8
+    },
+    {
+      "id": "elbow_leading_rotation",
+      "name": "Elbow Leading Rotation",
+      "name_zh": "肘部引导旋入",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在前挥过程中，有意识地让肘部领先于肩膀并向内旋转，以确保击球点在前。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (干预阶段)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_bevlgdgdrH4",
+      "target_id": "C06",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了 FTT 中“肘部空间”是防止手臂主导的关键。",
+      "source_file": "tomallsopp_video_bevlgdgdrH4"
+    },
+    {
+      "source_id": "video_bevlgdgdrH4",
+      "target_id": "C37",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "视频提到 supination（旋后）帮助肘部定位，这为进入 C10 按压槽位提供了路径。",
+      "source_file": "tomallsopp_video_bevlgdgdrH4"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C06",
+      "name_zh": "肘部空间",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C30",
+      "name_zh": "手部槽位位置",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T12",
+      "name_zh": "手部插槽位",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "DC01",
+      "name_zh": "手臂主导发力",
+      "relationship": "Refines"
+    }
+  ]
 }

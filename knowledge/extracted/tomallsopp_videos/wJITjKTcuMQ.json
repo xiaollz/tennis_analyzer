@@ -1,6 +1,86 @@
 {
   "video_id": "wJITjKTcuMQ",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "tell_the_time_wristwatch",
+      "name": "Tell the Time (Wristwatch)",
+      "name_zh": "腕表看时法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "想象右手腕戴表，随挥结束时手背朝向脸部，以便能“看清时间”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (as cue)",
+      "confidence": 0.8
+    },
+    {
+      "id": "early_butt_cap_facing",
+      "name": "Early Butt-cap Facing",
+      "name_zh": "底盖提前对正",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在随挥的极早期（击球后瞬间）就让球拍底盖指向对手，而非延迟旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (as cue)",
+      "confidence": 0.8
+    },
+    {
+      "id": "back_of_racket_to_head",
+      "name": "Back of Racket to Head",
+      "name_zh": "拍背贴头",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "随挥结束时球拍背面靠近头部。主要针对东方式或大陆式握拍的初学者。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (as cue)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_wJITjKTcuMQ",
+      "target_id": "C37",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "旋前不应是随挥最后的点缀，而应在击球瞬间就开始爆发。",
+      "source_file": "tomallsopp_video_wJITjKTcuMQ"
+    },
+    {
+      "source_id": "video_wJITjKTcuMQ",
+      "target_id": "C06",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "保持肘部空间和及时的肘部折叠是防止“刚体手臂”的关键。",
+      "source_file": "tomallsopp_video_wJITjKTcuMQ"
+    },
+    {
+      "source_id": "video_wJITjKTcuMQ",
+      "target_id": "C38",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "随挥不是一成不变的，必须根据握拍（东方式 vs 西方式）进行个性化调整。",
+      "source_file": "tomallsopp_video_wJITjKTcuMQ"
+    },
+    {
+      "source_id": "video_wJITjKTcuMQ",
+      "target_id": "C46",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "视频提供的四个方法本质上是四种不同的诊断协议。",
+      "source_file": "tomallsopp_video_wJITjKTcuMQ"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

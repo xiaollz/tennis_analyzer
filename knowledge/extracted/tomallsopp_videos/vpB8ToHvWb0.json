@@ -1,6 +1,53 @@
 {
   "video_id": "vpB8ToHvWb0",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "bracing_for_failure",
+      "name": "Bracing for Failure",
+      "name_zh": "为失败而紧绷",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间因恐惧失误而产生的肌肉主动收缩，导致动力链断裂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (Bad)",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_heavy_object_constraint",
+      "name": "The Heavy Object Constraint",
+      "name_zh": "重物约束机制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过挥舞极重物体（如长管、斧头），迫使身体放弃小肌肉代偿，自动进入生物力学最优路径。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (Result)",
+      "confidence": 0.8
+    },
+    {
+      "id": "contact_as_an_obstacle",
+      "name": "Contact as an Obstacle",
+      "name_zh": "击球点是“路障”",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将击球点视为挥拍路径上偶然遇到的障碍，而非挥拍的目标终点。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

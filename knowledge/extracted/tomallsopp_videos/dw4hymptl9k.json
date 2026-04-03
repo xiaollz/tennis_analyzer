@@ -1,6 +1,94 @@
 {
   "video_id": "dw4hymptl9k",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "connected_supination_rotation",
+      "name": "Connected Supination-Rotation",
+      "name_zh": "同步旋后转体",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "身体转动与手臂旋后（球拍后倒）应同步发生，而非先转体再掉拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (Result of timing)",
+      "confidence": 0.8
+    },
+    {
+      "id": "grip_dependent_supination_limit",
+      "name": "Grip-Dependent Supination Limit",
+      "name_zh": "握拍相关的旋后极限",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "东方式握拍在旋后时拍面更易朝天，因此需限制旋后幅度；半西方式则天然更容错。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (Awareness)",
+      "confidence": 0.8
+    },
+    {
+      "id": "finish_led_path_training",
+      "name": "Finish-Led Path Training",
+      "name_zh": "终点导向路径训练",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过设定明确的随挥终点（如拍底对对手）来反向塑造正确的手臂旋转路径。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"转体即掉拍\"`",
+      "name_zh": "视频录制检查转体启动与拍头下掉是否在同一帧开始。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "*注：此训练是 D10 (三合一) 的进阶版，更强调触球后的旋转释放。*\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Wrist Lag)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C46",
+      "name_zh": "随挥是诊断工具",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T02",
+      "name_zh": "盒子随挥检验法",
+      "relationship": "Is_instance_of"
+    },
+    {
+      "ref_id": "T12",
+      "name_zh": "手部插槽位 (Hand Slot)",
+      "relationship": "Supports"
+    }
+  ]
 }

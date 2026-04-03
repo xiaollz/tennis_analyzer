@@ -1,6 +1,98 @@
 {
   "video_id": "utZkaHi9XXM",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "anatomy_driven_style",
+      "name": "Anatomy-Driven Style",
+      "name_zh": "解剖驱动型风格",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "根据男女骨骼差异（肩宽 vs 髋宽）决定的自然引拍倾向。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "pronation_takeback_atp",
+      "name": "Pronation Takeback (ATP)",
+      "name_zh": "旋前引拍 (ATP式)",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍时小臂呈旋前状态，肘部抬高，拍头保持在身体右侧。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "supination_takeback_wta",
+      "name": "Supination Takeback (WTA)",
+      "name_zh": "旋后引拍 (WTA式)",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍时小臂呈旋后状态，肘部下沉靠近身体，拍头容易进入身后。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "elbow_touch_test",
+      "name": "Elbow Touch Test",
+      "name_zh": "肘部触碰测试",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "双手合十伸直，尝试让双肘接触，用以检测肩部/手臂的解剖柔韧性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "natural_feed_diagnostic",
+      "name": "Natural Feed Diagnostic",
+      "name_zh": "自然喂球诊断法",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过观察球员在无意识“喂球”时的引拍动作，判断其最自然的动力链模式。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"像喂球一样挥拍\"`",
+      "name_zh": "录像对比：喂球时的引拍 vs 正常对打时的引拍。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "1. 双手合十伸直；2. 保持手臂伸直尝试并拢双肘。",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

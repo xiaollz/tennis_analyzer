@@ -1,6 +1,38 @@
 {
   "video_id": "5JKBxOpVEdc",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "roller_coaster_model",
+      "name": "Roller Coaster Model",
+      "name_zh": "过山车模型",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将引拍顶点视为过山车最高点，利用重力而非肌肉力量完成掉拍和初始加速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (掉拍过程)",
+      "confidence": 0.8
+    },
+    {
+      "id": "anti_choppy_principle",
+      "name": "Anti-Choppy Principle",
+      "name_zh": "反断续原则",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "反对将正手拆解为“引拍-掉拍-前挥”的离散步骤，主张一个连续的、由高到低的轨迹。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识控制)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

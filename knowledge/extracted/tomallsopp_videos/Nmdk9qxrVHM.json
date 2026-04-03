@@ -1,6 +1,89 @@
 {
   "video_id": "Nmdk9qxrVHM",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "receiving_skills",
+      "name": "Receiving Skills",
+      "name_zh": "接收技能（预测）",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "对来球位置、时间、旋转和深度的预判能力，是动力链启动的前提。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识焦点)",
+      "confidence": 0.8
+    },
+    {
+      "id": "sending_skills",
+      "name": "Sending Skills",
+      "name_zh": "发送技能（技术）",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "身体通过动力链将能量传递给球的物理动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (正确预判后的产物)",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_45_degree_stability",
+      "name": "45-Degree Stability",
+      "name_zh": "45度稳定性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球点应保持在身体侧前方约45度角，以确保手部在拍后提供最大支撑。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "decision_technique_link",
+      "name": "Decision-Technique Link",
+      "name_zh": "决策-技术联动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球选择（战术决策）直接决定了动力链的形态，错误的决策会导致技术动作变形。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C40",
+      "name_zh": "神经通路竞争",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C41",
+      "name_zh": "信任=容错性",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T01",
+      "name_zh": "击球中调整",
+      "relationship": "Refines"
+    }
+  ]
 }

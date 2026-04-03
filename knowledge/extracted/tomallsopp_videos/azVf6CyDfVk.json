@@ -1,6 +1,92 @@
 {
   "video_id": "azVf6CyDfVk",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "semi_open_weight_transfer",
+      "name": "Semi-Open Weight Transfer",
+      "name_zh": "半开放式重心转移",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在半开放阵式下，通过“右脚加载-左脚踩下-击球”的特定节奏完成动力传递。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_right_left_hit_rhythm",
+      "name": "The \"Right-Left-Hit\" Rhythm",
+      "name_zh": "“右-左-打”节奏",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "一种通过步法引导动力链时序的心理/动作口令，确保重心在挥拍前已转移。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_azVf6CyDfVk",
+      "target_id": "T10",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "强化了正手是“全身投掷”而非“局部挥击”的理念。",
+      "source_file": "tomallsopp_video_azVf6CyDfVk"
+    },
+    {
+      "source_id": "video_azVf6CyDfVk",
+      "target_id": "C11",
+      "relation": "provides_cause_for",
+      "confidence": 0.8,
+      "evidence": "揭示了 Lag 的物理来源之一是下肢制动产生的惯性。",
+      "source_file": "tomallsopp_video_azVf6CyDfVk"
+    },
+    {
+      "source_id": "video_azVf6CyDfVk",
+      "target_id": "C01",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "证明了旋转类运动在动力链底层逻辑上的一致性。",
+      "source_file": "tomallsopp_video_azVf6CyDfVk"
+    },
+    {
+      "source_id": "video_azVf6CyDfVk",
+      "target_id": "C42",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "具体的步法操作（半开放转移）是实现髋旋转自由的手段。",
+      "source_file": "tomallsopp_video_azVf6CyDfVk"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Wrist Lag)",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C36",
+      "name_zh": "正确躯干时序",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T10",
+      "name_zh": "整体连结投掷 vs 延迟鞭打",
+      "relationship": "Supports"
+    }
+  ]
 }

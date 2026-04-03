@@ -1,6 +1,53 @@
 {
   "video_id": "Gv7sF5DKK5E",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "early_squaring",
+      "name": "Early Squaring",
+      "name_zh": "**拍面提前对正**",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在球拍下降到击球高度的过程中，提前开始旋转拍头使弦床面向球网，而非在击球瞬间才翻转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识引导)",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_flip_trap",
+      "name": "The Flip Trap",
+      "name_zh": "**翻转陷阱**",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "球员过度追求“拍狗(Pat the dog)”动作导致拍面长时间朝下，最后被迫在击球点前瞬间剧烈翻转拍头。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (错误结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "gradual_rotation",
+      "name": "Gradual Rotation",
+      "name_zh": "**渐进式旋转**",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "拍头从引拍最高点到击球点的旋转应该是平滑且持续的，而不是突然的。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

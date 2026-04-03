@@ -1,6 +1,101 @@
 {
   "video_id": "NG0rluboWLI",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "strong_position",
+      "name": "Strong Position",
+      "name_zh": "强力位/稳定构型",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "像推购物车或骑车一样，手腕在触球瞬间保持的结构性支撑感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (保持)",
+      "confidence": 0.8
+    },
+    {
+      "id": "doorknob_analogy",
+      "name": "Doorknob Analogy",
+      "name_zh": "门把手类比",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "形容小臂从右向左的旋前（Pronation）动作，类似转动门把手。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (释放)",
+      "confidence": 0.8
+    },
+    {
+      "id": "passive_but_releasing",
+      "name": "Passive but Releasing",
+      "name_zh": "被动释放态",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "手腕不主动发力，但随动量自然释放，而非僵硬锁死。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "emergency_manipulation",
+      "name": "Emergency Manipulation",
+      "name_zh": "紧急操控",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "当到位不准或球速过快时，主动使用手腕来“救球”的代偿行为。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_NG0rluboWLI",
+      "target_id": "C34",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了为了容错性，触球瞬间不应有剧烈的手腕翻转。",
+      "source_file": "tomallsopp_video_NG0rluboWLI"
+    },
+    {
+      "source_id": "video_NG0rluboWLI",
+      "target_id": "C25",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "细化了代偿的场景：它是“紧急避险”工具，而非常规发力工具。",
+      "source_file": "tomallsopp_video_NG0rluboWLI"
+    },
+    {
+      "source_id": "video_NG0rluboWLI",
+      "target_id": "C37",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "提供了旋前动作的具体体感类比。",
+      "source_file": "tomallsopp_video_NG0rluboWLI"
+    },
+    {
+      "source_id": "video_NG0rluboWLI",
+      "target_id": "C11",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "扩展了 Lag 的生命周期：Lag 不止是引拍，触球后的释放也是 Lag 的一部分。",
+      "source_file": "tomallsopp_video_NG0rluboWLI"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

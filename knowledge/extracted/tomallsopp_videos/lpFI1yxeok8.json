@@ -1,6 +1,112 @@
 {
   "video_id": "lpFI1yxeok8",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "winning_the_race",
+      "name": "Winning the Race",
+      "name_zh": "赢得比赛(拍头超过身体)",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间，躯干制动，动量传递至手臂，使拍头速度超过身体转速的现象。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Passive**",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_2_foot_window_pushing",
+      "name": "2-Foot Window Pushing",
+      "name_zh": "两英尺窗口推球",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "因不信任时机，试图在极长的线性轨迹中寻找球，导致手臂僵硬前推。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (Bad)",
+      "confidence": 0.8
+    },
+    {
+      "id": "stability_grip_7_10",
+      "name": "Stability Grip (7/10)",
+      "name_zh": "7成力稳定握拍",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间并非完全放松，而是保持约7/10的握力以确保拍面稳定和手指感知。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_lpFI1yxeok8",
+      "target_id": "C33",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了 FTT 中“制动”是产生爆发力的前提。",
+      "source_file": "tomallsopp_video_lpFI1yxeok8"
+    },
+    {
+      "source_id": "video_lpFI1yxeok8",
+      "target_id": "C48",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "细化了握拍力度：不是死握，是“稳定的连接”，为手指感知提供基础。",
+      "source_file": "tomallsopp_video_lpFI1yxeok8"
+    },
+    {
+      "source_id": "video_lpFI1yxeok8",
+      "target_id": "C41",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "解释了你为什么会产生 C25 小臂代偿——本质是心理上不信任旋转的容错。",
+      "source_file": "tomallsopp_video_lpFI1yxeok8"
+    },
+    {
+      "source_id": "video_lpFI1yxeok8",
+      "target_id": "C46",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "视频整篇都在通过随挥的僵硬程度诊断动力链问题。",
+      "source_file": "tomallsopp_video_lpFI1yxeok8"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C41",
+      "name_zh": "信任=容错性",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C45",
+      "name_zh": "击球区域而非击球点",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "Extends"
+    }
+  ]
 }

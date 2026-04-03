@@ -1,6 +1,117 @@
 {
   "video_id": "WfrbPg1D5LM",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "release_feeling",
+      "name": "Release Feeling",
+      "name_zh": "释放感",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间将积累的弹性势能完全甩出的心理与生理感知，而非持续发力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "stop_to_fire",
+      "name": "Stop to Fire",
+      "name_zh": "制动触发",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "动力链中前一环节（如躯干）的减速/制动是后一环节（如手臂）加速的前提。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (制动)",
+      "confidence": 0.8
+    },
+    {
+      "id": "pulling_trap",
+      "name": "Pulling Trap",
+      "name_zh": "拉动陷阱",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "球员试图通过肌肉主动向前方拉动球拍，导致肌肉僵硬和动力链断裂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_WfrbPg1D5LM",
+      "target_id": "C33",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "细化了制动的必要性：不制动，动量就无法高效传递。",
+      "source_file": "tomallsopp_video_WfrbPg1D5LM"
+    },
+    {
+      "source_id": "video_WfrbPg1D5LM",
+      "target_id": "C27",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "“拉”属于费力力量（内耗），“投”属于省力力量（高效）。",
+      "source_file": "tomallsopp_video_WfrbPg1D5LM"
+    },
+    {
+      "source_id": "video_WfrbPg1D5LM",
+      "target_id": "C43",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "提供了鞭打动作的具体生活化实例。",
+      "source_file": "tomallsopp_video_WfrbPg1D5LM"
+    },
+    {
+      "source_id": "video_WfrbPg1D5LM",
+      "target_id": "C25",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "解释了小臂代偿的心理根源：因为想“控制”和“拉动”球拍。",
+      "source_file": "tomallsopp_video_WfrbPg1D5LM"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Wrist Lag)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T05",
+      "name_zh": "协调链首尾理论",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T09",
+      "name_zh": "制动链",
+      "relationship": "Supports"
+    }
+  ]
 }

@@ -1,6 +1,127 @@
 {
   "video_id": "ogW0IiguqSA",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "connected_supination",
+      "name": "Connected Supination",
+      "name_zh": "**同步旋后旋转**",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在躯干旋转的同时，手臂同步进行旋后（Supination），而不是先转体再甩手。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知上)",
+      "confidence": 0.8
+    },
+    {
+      "id": "racket_tip_forward_takeback",
+      "name": "Racket Tip Forward Takeback",
+      "name_zh": "**拍头朝前引拍**",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍完成时拍头指向球网（前方），增加前挥时拍头“追赶”的距离，从而产生巨大滞后。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "racket_patience",
+      "name": "Racket Patience",
+      "name_zh": "**球拍耐心**",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "刻意延迟球拍前挥的启动时间，让身体动量先积累，迫使球拍在最后时刻爆发。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"指网\"`",
+      "name_zh": "录像检查引拍顶点位置。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "**与已有训练关系**: \n- 建议作为 **D11 (躯干甩臂热身)** 的进阶版。\n- 在执行 **D10 (三合一)** 之前，先用方法一建立连接感。\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_ogW0IiguqSA",
+      "target_id": "C03",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "为“整体”增加了微观的手臂旋后细节，防止拉拍过大。",
+      "source_file": "tomallsopp_video_ogW0IiguqSA"
+    },
+    {
+      "source_id": "video_ogW0IiguqSA",
+      "target_id": "C35",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了“慢引快打”中“慢”到“快”的转换点。",
+      "source_file": "tomallsopp_video_ogW0IiguqSA"
+    },
+    {
+      "source_id": "video_ogW0IiguqSA",
+      "target_id": "C02",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "扩展了 Unit Turn 的末端形态，提供了一种极端的弹性加载方式。",
+      "source_file": "tomallsopp_video_ogW0IiguqSA"
+    },
+    {
+      "source_id": "video_ogW0IiguqSA",
+      "target_id": "C30",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "只要手进入了 Slot，Lag 的过程是在前挥路径中完成的。",
+      "source_file": "tomallsopp_video_ogW0IiguqSA"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Lag)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C35",
+      "name_zh": "延迟加速原则",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T10",
+      "name_zh": "整体连结投掷vs延迟鞭打",
+      "relationship": "Supports"
+    }
+  ]
 }

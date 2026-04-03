@@ -1,6 +1,53 @@
 {
   "video_id": "UVrZoQ70wxU",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "elbow_release",
+      "name": "Elbow Release",
+      "name_zh": "肘部释放",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球随挥阶段，肘部角度不应锁死，而应自然伸展或旋转，以完成动量传递。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "muscle_antagonism",
+      "name": "Muscle Antagonism",
+      "name_zh": "肌肉对抗内耗",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "当肱二头肌和肱三头肌同时发力锁死关节时，力量在内部抵消，导致击球无力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (to avoid)",
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_pronation_vs_hand_roll",
+      "name": "Shoulder Pronation vs. Hand Roll",
+      "name_zh": "肩部旋前 vs 翻手腕",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "随挥的旋转应源自整个肩膀的旋前（内旋），而非末端手腕的主动翻转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

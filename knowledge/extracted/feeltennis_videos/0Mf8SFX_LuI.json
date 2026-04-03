@@ -1,6 +1,101 @@
 {
   "video_id": "0Mf8SFX_LuI",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "segmented_forehand",
+      "name": "Segmented Forehand",
+      "name_zh": "分段式正手",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "将正手拆解为多个身体部位在不同时间启动，利用时间差产生拉伸。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (启动顺序)",
+      "confidence": 0.8
+    },
+    {
+      "id": "elastic_band_effect",
+      "name": "Elastic Band Effect",
+      "name_zh": "橡皮筋效应",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "通过身体各段（髋、肩、手）的拉伸积累弹性势能，然后瞬间释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "three_level_stretch",
+      "name": "Three-Level Stretch",
+      "name_zh": "三级拉伸模型",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "现代正手的三个拉伸点：1.下肢vs上身；2.上身vs手臂；3.前臂vs手部。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Mixed",
+      "confidence": 0.8
+    },
+    {
+      "id": "power_risk_tradeoff",
+      "name": "Power-Risk Tradeoff",
+      "name_zh": "力量-风险权衡",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "越现代、分段越多的正手力量越大，但对时机要求极高，风险随之增加。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_0Mf8SFX_LuI",
+      "target_id": "C13",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了 FTT 中关于旋转动力链的核心描述。",
+      "source_file": "feeltennis_video_0Mf8SFX_LuI"
+    },
+    {
+      "source_id": "video_0Mf8SFX_LuI",
+      "target_id": "C07",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "为 FTT 的“容错”原则提供了具体边界：分段越多，容错越低。",
+      "source_file": "feeltennis_video_0Mf8SFX_LuI"
+    },
+    {
+      "source_id": "video_0Mf8SFX_LuI",
+      "target_id": "T10",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "这种模式是 FTT 推荐的“高容错”范本。",
+      "source_file": "feeltennis_video_0Mf8SFX_LuI"
+    },
+    {
+      "source_id": "video_0Mf8SFX_LuI",
+      "target_id": "C40",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "解释了为什么改变发力模式很难，因为旧的“整体”模式根深蒂固。",
+      "source_file": "feeltennis_video_0Mf8SFX_LuI"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

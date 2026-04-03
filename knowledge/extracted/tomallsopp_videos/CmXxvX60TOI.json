@@ -1,6 +1,53 @@
 {
   "video_id": "CmXxvX60TOI",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "rhythm_matching",
+      "name": "Rhythm Matching",
+      "name_zh": "节奏匹配原则",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍的速度和节奏应与来球的速度完全匹配，而非越快越好。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "continuous_loop",
+      "name": "Continuous Loop",
+      "name_zh": "连续环形引拍",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "避免在引拍最高点或转身后出现停顿，保持球拍始终在运动中。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (由节奏驱动)",
+      "confidence": 0.8
+    },
+    {
+      "id": "stop_start_syndrome",
+      "name": "Stop-Start Syndrome",
+      "name_zh": "停走综合症",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "业余球员过早转身并停住，导致击球瞬间需要重新启动肌肉，造成僵硬。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (错误意识)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

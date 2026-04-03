@@ -1,6 +1,74 @@
 {
   "video_id": "nVRFbq1jFEw",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "grip_rotation_correlation",
+      "name": "Grip-Rotation Correlation",
+      "name_zh": "握拍-旋转关联律",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "握拍越偏西方式，越需要大幅度的身体旋转来将击球点带到身前。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结构要求)",
+      "confidence": 0.8
+    },
+    {
+      "id": "supination_rotation_sync",
+      "name": "Supination-Rotation Sync",
+      "name_zh": "旋后-旋转同步化",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "并非先转髋再掉拍头，而是身体旋转启动的同时，手臂进入旋后（掉拍头/拉伸）状态。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知上)",
+      "confidence": 0.8
+    },
+    {
+      "id": "zipchip_analogy",
+      "name": "ZipChip Analogy",
+      "name_zh": "ZipChip/打水漂类比",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "使用小飞盘或打水漂的动作来模拟“旋转+旋后+旋前”的完整动力链。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后/旋后 (Supination)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前 (Pronation)",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T05",
+      "name_zh": "协调链首尾理论",
+      "relationship": "Supports"
+    }
+  ]
 }

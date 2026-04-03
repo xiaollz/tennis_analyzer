@@ -115,6 +115,7 @@ def reconcile_all(
     registry: ConceptRegistry,
     tomallsopp_dir: Path,
     feeltennis_dir: Path,
+    ref_id_map: dict[str, str] | None = None,
 ) -> ReconciliationResult:
     """Run full cross-source reconciliation against the FTT-primary registry.
 
@@ -139,11 +140,12 @@ def reconcile_all(
     # Track complement concept IDs for second-pass boosting
     complement_ids: dict[str, str] = {}  # lowered name -> concept_id in registry
 
-    def _load_concepts_from_dir(dir_path: Path, source_label: str) -> list[tuple[Concept, str]]:
-        """Load all concepts from per-video JSONs in a directory."""
-        results = []
+    def _load_from_dir(dir_path: Path, source_label: str):
+        """Load new concepts and existing concept refs from per-video JSONs."""
+        new_concepts = []
+        existing_refs = []  # (ref_id, relationship, source_label)
         if not dir_path.exists():
-            return results
+            return new_concepts, existing_refs
         for json_file in sorted(dir_path.glob("*.json")):
             try:
                 data = json.loads(json_file.read_text())
@@ -152,18 +154,57 @@ def reconcile_all(
             for c_data in data.get("concepts", []):
                 try:
                     concept = Concept(**c_data)
-                    results.append((concept, source_label))
+                    new_concepts.append((concept, source_label))
                 except Exception:
                     continue
-        return results
+            # Process existing concept references (from markdown Sections 2 and 5)
+            for ref in data.get("existing_concept_refs", []):
+                ref_id = ref.get("ref_id", "")
+                relationship = ref.get("relationship", "Supports")
+                existing_refs.append((ref_id, relationship, source_label))
+        return new_concepts, existing_refs
 
-    # Load all secondary concepts
-    ta_concepts = _load_concepts_from_dir(tomallsopp_dir, "tomallsopp")
-    ft_concepts = _load_concepts_from_dir(feeltennis_dir, "feeltennis")
+    # Load all secondary data
+    ta_concepts, ta_refs = _load_from_dir(tomallsopp_dir, "tomallsopp")
+    ft_concepts, ft_refs = _load_from_dir(feeltennis_dir, "feeltennis")
     all_secondary = ta_concepts + ft_concepts
+    all_refs = ta_refs + ft_refs
+
+    # Process existing concept references as agreements
+    # These are explicit references like "C01 (Supports)" from Gemini analysis
+    _ref_map = ref_id_map or {}
+    for ref_id, relationship, source_label in all_refs:
+        # Resolve short ID (e.g., "C01") to registry concept ID via provided mapping
+        matched_id = _ref_map.get(ref_id)
+        if matched_id is None:
+            # Fallback to fuzzy resolve (works for some IDs)
+            matched_id = registry.resolve(ref_id, threshold=70)
+        if matched_id is None:
+            continue
+        matched_concept = registry.get(matched_id)
+        if matched_concept and "ftt" in matched_concept.sources:
+            rel_lower = relationship.lower()
+            if rel_lower in ("contradicts",):
+                conflicts += 1
+                conflict_log.append({
+                    "concept_name": ref_id,
+                    "source": source_label,
+                    "matched_ftt_id": matched_id,
+                    "reason": f"Explicit contradiction relationship from video analysis",
+                    "ftt_overrides": True,
+                })
+            else:
+                # Supports, Refines, Extends, Is_instance_of -> agreement
+                agreements += 1
+                if matched_id not in boost_tracker:
+                    boost_tracker[matched_id] = set()
+                boost_tracker[matched_id].add(source_label)
 
     # First pass: classify each concept
     for concept, source_label in all_secondary:
+        # Quality filter: skip concepts with invalid/empty names
+        if len(concept.name.strip()) < 5 or concept.name.startswith("**"):
+            continue
         classification = classify_concept(concept, registry)
 
         if classification == "agreement":

@@ -1,6 +1,94 @@
 {
   "video_id": "9td4hgpkSAA",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "playing_the_violin",
+      "name": "Playing the Violin",
+      "name_zh": "提琴手肩膀",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球时肩膀耸起靠近耳朵的紧张状态，阻碍旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (Error)",
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_braking",
+      "name": "Shoulder Braking",
+      "name_zh": "肩部制动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间肩膀停止向前位移，转为原地旋转，以释放手臂鞭打。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (Result of timing)",
+      "confidence": 0.8
+    },
+    {
+      "id": "mogul_step",
+      "name": "Mogul Step",
+      "name_zh": "莫格尔步/跑动步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球后左脚交叉跨过右脚的步法，过度使用会导致失去球场位置。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"沉肩\"`",
+      "name_zh": "镜子中观察脖子是否变长。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C04",
+      "name_zh": "背部肌肉连接",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T09",
+      "name_zh": "制动链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C25",
+      "name_zh": "小臂代偿",
+      "relationship": "Supports"
+    }
+  ]
 }

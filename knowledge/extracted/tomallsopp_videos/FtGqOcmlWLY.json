@@ -1,6 +1,99 @@
 {
   "video_id": "FtGqOcmlWLY",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "mirror_pivot",
+      "name": "Mirror Pivot",
+      "name_zh": "镜像转体感",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "想象先打一个左手正手再转回右手正手的完整轴心旋转感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知)",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_45_degree_forward_bias",
+      "name": "45-degree Forward Bias",
+      "name_zh": "45度前置引导",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将左脚稍置于右脚前方45度，以自然引导重心向前而非单纯横向。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "r_l_r_adjustment_step",
+      "name": "R-L-R Adjustment Step",
+      "name_zh": "右-左-右调整步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "针对远球，通过右脚启动、左脚过渡、右脚重新找位的动态开放式步法。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_FtGqOcmlWLY",
+      "target_id": "C01",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了“力量自下而上”的合法性，严禁手臂主动轮转。",
+      "source_file": "tomallsopp_video_FtGqOcmlWLY"
+    },
+    {
+      "source_id": "video_FtGqOcmlWLY",
+      "target_id": "C29",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "明确了“离地”应该是 passive（被动）的，是能量过剩的释放。",
+      "source_file": "tomallsopp_video_FtGqOcmlWLY"
+    },
+    {
+      "source_id": "video_FtGqOcmlWLY",
+      "target_id": "T01",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "解决了在实战动态中如何进入 C42（脚的自由）状态。",
+      "source_file": "tomallsopp_video_FtGqOcmlWLY"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C24",
+      "name_zh": "旋转脉冲",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T01",
+      "name_zh": "击球中调整",
+      "relationship": "Is_instance_of"
+    }
+  ]
 }

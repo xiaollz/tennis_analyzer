@@ -1,6 +1,104 @@
 {
   "video_id": "EWrlCzQV4Hk",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "torque_release",
+      "name": "Torque Release",
+      "name_zh": "扭矩释放效应",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "当从开放式步法向前跨步进入中性步时，身体预先积攒的旋转张力会消失。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "distance_shortening",
+      "name": "Distance Shortening",
+      "name_zh": "空间压缩风险",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "面对快速球时，向前跨步会缩短人球距离，导致反应时间不足。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hip_rotation_block",
+      "name": "Hip Rotation Block",
+      "name_zh": "髋部转动锁死",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "在处理短球时，若强行使用开放式步法（右脚在前），会物理性地限制髋部向左旋转的空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "rhythm_relief",
+      "name": "Rhythm Relief",
+      "name_zh": "节奏减压",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "在热身阶段通过中性步的重心转移来寻找节奏，从而让手臂进入放松状态。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"拧紧，松开\"`",
+      "name_zh": "闭眼感受核心肌肉的拉伸感变化。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "热身时，无论球在哪，都尝试小步调整后用中性步击球。",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C13",
+      "name_zh": "肩髋分离角",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C27",
+      "name_zh": "省力力量 vs 费力力量",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Supports"
+    }
+  ]
 }

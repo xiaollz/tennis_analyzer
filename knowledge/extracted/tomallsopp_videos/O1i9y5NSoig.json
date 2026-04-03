@@ -1,6 +1,74 @@
 {
   "video_id": "O1i9y5NSoig",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "auditory_lag_feedback",
+      "name": "Auditory Lag Feedback",
+      "name_zh": "听觉滞后反馈",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "利用“Snappy Wrist”装置发出的“咔哒”声来判断手腕滞后发生的精确瞬间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果检测)",
+      "confidence": 0.8
+    },
+    {
+      "id": "double_snap_timing",
+      "name": "Double Snap Timing",
+      "name_zh": "双重响声时序",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "理想的正手包含两次响声：一次是前挥启动时的滞后（Lag），一次是击球后的旋前（Pronation）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "atp_vs_wta_lag_timing",
+      "name": "ATP vs WTA Lag Timing",
+      "name_zh": "ATP与WTA滞后时序差异",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "ATP风格滞后发生在转体启动**后**的前挥途中；WTA风格滞后发生得更早且更主动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Wrist Lag)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C36",
+      "name_zh": "正确躯干时序",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前",
+      "relationship": "Supports"
+    }
+  ]
 }

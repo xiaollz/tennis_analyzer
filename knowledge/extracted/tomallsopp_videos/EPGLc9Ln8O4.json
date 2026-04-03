@@ -1,6 +1,107 @@
 {
   "video_id": "EPGLc9Ln8O4",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "lower_body_braking",
+      "name": "Lower Body Braking",
+      "name_zh": "下肢制动加速",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过有意识地减缓或停止下半身的旋转，将动量强制转移到上半身和球拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识)",
+      "confidence": 0.8
+    },
+    {
+      "id": "right_leg_counterbalance",
+      "name": "Right Leg Counterbalance",
+      "name_zh": "右腿后踢平衡",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间右腿向后方踢出，作为旋转的拮抗力，防止身体过度转动并增加鞭打速度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "anchored_pivot",
+      "name": "Anchored Pivot",
+      "name_zh": "锚定转轴",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "保持后脚脚尖着地并旋转，而非整个脚掌离地，以维持旋转轴的稳定性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_EPGLc9Ln8O4",
+      "target_id": "C33",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了“制动”是业余与职业的分水岭。",
+      "source_file": "tomallsopp_video_EPGLc9Ln8O4"
+    },
+    {
+      "source_id": "video_EPGLc9Ln8O4",
+      "target_id": "T23",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "解释了为什么阿尔卡拉斯看起来在“跳舞”，其实是在制动。",
+      "source_file": "tomallsopp_video_EPGLc9Ln8O4"
+    },
+    {
+      "source_id": "video_EPGLc9Ln8O4",
+      "target_id": "C28",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "强调了在不稳定的跳跃中无法建立正确的神经通路。",
+      "source_file": "tomallsopp_video_EPGLc9Ln8O4"
+    },
+    {
+      "source_id": "video_EPGLc9Ln8O4",
+      "target_id": "C42",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "明确了制动是暂时的，随挥阶段需要释放压力以保护关节。",
+      "source_file": "tomallsopp_video_EPGLc9Ln8O4"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T09",
+      "name_zh": "制动链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T23",
+      "name_zh": "反应性制动",
+      "relationship": "Is_instance_of"
+    }
+  ]
 }

@@ -1,6 +1,71 @@
 {
   "video_id": "IhLcK-ScJ1k",
   "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "edges": [
+    {
+      "source_id": "video_IhLcK-ScJ1k",
+      "target_id": "C33",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了 FTT 中关于“制动”是加速前提的理论。",
+      "source_file": "tomallsopp_video_IhLcK-ScJ1k"
+    },
+    {
+      "source_id": "video_IhLcK-ScJ1k",
+      "target_id": "C42",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "细化了在动态/跳跃情况下，脚部如何通过反向运动维持髋部稳定。",
+      "source_file": "tomallsopp_video_IhLcK-ScJ1k"
+    },
+    {
+      "source_id": "video_IhLcK-ScJ1k",
+      "target_id": "C25",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "狂野的随挥是小臂代偿（DC01）的典型视觉特征。",
+      "source_file": "tomallsopp_video_IhLcK-ScJ1k"
+    },
+    {
+      "source_id": "video_IhLcK-ScJ1k",
+      "target_id": "T02",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "提供了一个具体的几何标准来检查“连接状态”。",
+      "source_file": "tomallsopp_video_IhLcK-ScJ1k"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C46",
+      "name_zh": "随挥是诊断工具",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T02",
+      "name_zh": "盒子随挥检验法",
+      "relationship": "Is_instance_of"
+    },
+    {
+      "ref_id": "T09",
+      "name_zh": "制动链",
+      "relationship": "Supports"
+    }
+  ]
 }

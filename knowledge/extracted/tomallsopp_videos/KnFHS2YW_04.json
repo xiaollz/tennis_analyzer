@@ -1,6 +1,54 @@
 {
   "video_id": "KnFHS2YW_04",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "hand_behind_the_racket",
+      "name": "Hand Behind the Racket",
+      "name_zh": "手部后方支撑位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间，手掌和小臂处于拍面正后方的结构排列，以提供最大杠杆力和稳定性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "grip_individuality",
+      "name": "Grip Individuality",
+      "name_zh": "握拍个体差异论",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "握拍受手掌大小、形状及球拍手柄品牌形状影响，不存在绝对统一的“完美”刻度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C38",
+      "name_zh": "职业选手握拍顺序",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T12",
+      "name_zh": "手部插槽位",
+      "relationship": "Refines"
+    }
+  ]
 }

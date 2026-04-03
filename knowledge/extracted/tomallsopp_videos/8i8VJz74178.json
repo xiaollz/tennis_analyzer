@@ -1,6 +1,83 @@
 {
   "video_id": "8i8VJz74178",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "c_200x_weight_mental_model",
+      "name": "200x Weight Mental Model",
+      "name_zh": "200倍重力心理模型",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "想象球拍重200倍，迫使身体放弃手臂发力，改用重力和惯性挥拍。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "takeback_speed_matching",
+      "name": "Takeback Speed Matching",
+      "name_zh": "引拍速度匹配原则",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍的节奏应与来球速度挂钩：球快则引拍快，球慢则引拍慢且舒展，而非原地等待。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "momentum_runway",
+      "name": "Momentum Runway",
+      "name_zh": "动量跑道",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将引拍空间视为加速跑道，行程越长，到达击球点时的自然动量越大。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "",
+      "name_zh": "靠手臂“鞭打”产生速度",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "靠更大的挥拍半径和重力落下产生自然动量",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "C27, V01-03",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "\"跟着球走\"",
+      "name_zh": "录像检查引拍过程中是否有明显的“静止等待”帧。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

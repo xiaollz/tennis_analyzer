@@ -1,6 +1,112 @@
 {
   "video_id": "muxc0h0YAJg",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "c_3_point_alignment_geometry",
+      "name": "3-Point Alignment Geometry",
+      "name_zh": "三点对齐几何",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间，肘部在肩膀前，手在肘部前。形成一个稳定的力学支撑结构。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (正确旋转的结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "grip_elbow_interference",
+      "name": "Grip-Elbow Interference",
+      "name_zh": "握拍-肘部干扰",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "越闭合的握拍（西方式）越容易导致肘部向躯干内侧收缩，阻碍手臂绕轴旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "strength_stability_test",
+      "name": "Strength Stability Test",
+      "name_zh": "力量稳定性测试",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "想象在击球点推重物，只有肘部在肩前时才能发力，否则会感到“被挤压(jammed)”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知练习)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_muxc0h0YAJg",
+      "target_id": "C06",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了 FTT 中“空间即力量”的原则，量化了空间的视觉标准。",
+      "source_file": "tomallsopp_video_muxc0h0YAJg"
+    },
+    {
+      "source_id": "video_muxc0h0YAJg",
+      "target_id": "C36",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "展示了躯干先于手臂旋转如何自然地将手臂“带到”理想击球位置。",
+      "source_file": "tomallsopp_video_muxc0h0YAJg"
+    },
+    {
+      "source_id": "video_muxc0h0YAJg",
+      "target_id": "C38",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "提醒西方式握拍者需要更主动地寻找“向外向量(C08)”，防止肘部锁死。",
+      "source_file": "tomallsopp_video_muxc0h0YAJg"
+    },
+    {
+      "source_id": "video_muxc0h0YAJg",
+      "target_id": "C01",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认网球不是“推”的运动，而是“甩”的运动。",
+      "source_file": "tomallsopp_video_muxc0h0YAJg"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C06",
+      "name_zh": "肘部空间",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C30",
+      "name_zh": "手部槽位位置",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C36",
+      "name_zh": "正确躯干时序",
+      "relationship": "Supports"
+    }
+  ]
 }

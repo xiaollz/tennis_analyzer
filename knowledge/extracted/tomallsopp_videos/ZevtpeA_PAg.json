@@ -1,6 +1,38 @@
 {
   "video_id": "ZevtpeA_PAg",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "separation_phase",
+      "name": "Separation Phase",
+      "name_zh": "分离相/拉开阶段",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在引拍完成（旋前）后，进入槽位（旋后）前，手臂向后下方进一步延伸，使拍面短暂平指向地的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (为了获得被动稳定性)",
+      "confidence": 0.8
+    },
+    {
+      "id": "one_quick_stroke",
+      "name": "One Quick Stroke",
+      "name_zh": "快速一摸",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "对“拍狗”动作时长的限定：必须是动态经过，而非静态停留。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

@@ -1,6 +1,53 @@
 {
   "video_id": "cwwKLLw9mII",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "topspin_levels_1_3",
+      "name": "Topspin Levels (1-3)",
+      "name_zh": "上旋三级阶梯",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "将上旋强度量化为1-3级，用于训练中的自我感知和控制。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "flat_foundation",
+      "name": "Flat Foundation",
+      "name_zh": "平击地基论",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "认为网球的根基是干净的平击，上旋只是在此基础上的“插件”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "solid_sound_feedback",
+      "name": "Solid Sound Feedback",
+      "name_zh": "击球音效反馈",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "通过击球瞬间的“砰”声（平击）还是“嘶”声（薄摩擦）来判断动力链效率。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

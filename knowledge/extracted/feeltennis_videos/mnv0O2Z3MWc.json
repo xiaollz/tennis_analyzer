@@ -1,6 +1,74 @@
 {
   "video_id": "mnv0O2Z3MWc",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "c_3_step_forward_pattern",
+      "name": "3-Step Forward Pattern",
+      "name_zh": "3步向前步法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "进攻短球时的标准步法：垫步-1-2-3（在第3步落地击球）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "dynamic_balance",
+      "name": "Dynamic Balance",
+      "name_zh": "动态平衡",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "在身体重心移动过程中，通过肌肉控制维持躯干稳定而非僵硬。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "brain_triggered_recovery",
+      "name": "Brain-Triggered Recovery",
+      "name_zh": "大脑触发的补救步",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "当重心过早失去平衡向前倒时，大脑强制后腿前跨以防摔倒的被动动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T23",
+      "name_zh": "反应性制动",
+      "relationship": "Is_instance_of"
+    }
+  ]
 }

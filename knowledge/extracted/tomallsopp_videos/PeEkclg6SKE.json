@@ -1,6 +1,64 @@
 {
   "video_id": "PeEkclg6SKE",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "wrist_forearm_trigger",
+      "name": "Wrist-Forearm Trigger",
+      "name_zh": "手腕-小臂触发链",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过手腕的微小转动意图，诱导整个小臂乃至肩膀进入旋转序列的机制。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (Initiation)",
+      "confidence": 0.8
+    },
+    {
+      "id": "circular_directional_control",
+      "name": "Circular Directional Control",
+      "name_zh": "圆周方向控制",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "不通过改变挥拍路径，而是通过在旋转圆弧上的“早击”或“晚击”来决定球的走向。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (Timing)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C09",
+      "name_zh": "雨刷动作",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T03",
+      "name_zh": "圆弧击球理论",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前",
+      "relationship": "Extends"
+    }
+  ]
 }

@@ -1,6 +1,53 @@
 {
   "video_id": "PgTEeHaLJ8U",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "smash_factor",
+      "name": "Smash Factor",
+      "name_zh": "击球粉碎因子",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "球速与拍头速度的比值。衡量击球效率的指标，即如何用更小的挥速产生更大的球速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "racket_stability",
+      "name": "Racket Stability",
+      "name_zh": "击球稳定性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间球拍在手中不发生位移或翻转的能力，尤其是在非甜区击球时。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (结构上)",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_grip_paradox",
+      "name": "The Grip Paradox",
+      "name_zh": "握拍悖论",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "只有当手掌与手柄的“结构性贴合”足够稳固时，大脑才敢允许小臂肌肉完全放松。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

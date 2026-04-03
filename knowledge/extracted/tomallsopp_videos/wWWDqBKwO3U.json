@@ -1,6 +1,107 @@
 {
   "video_id": "wWWDqBKwO3U",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "throwing_the_arm",
+      "name": "Throwing the Arm",
+      "name_zh": "甩动手臂发力",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "模仿打水漂或侧投球的动作，通过小臂的旋后（Supination）启动前挥，而非直线拉动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (启动感)",
+      "confidence": 0.8
+    },
+    {
+      "id": "natural_pat_the_dog",
+      "name": "Natural Pat the Dog",
+      "name_zh": "自然拍狗位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "拍面朝下不是刻意摆放，而是由于引拍宽度和半西方式握拍在重力下产生的自然状态。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "supination_driven_lag",
+      "name": "Supination-driven Lag",
+      "name_zh": "旋后驱动滞后",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "滞后（Lag）是由手臂向外甩出的旋后动作惯性产生的，不是手腕主动向后。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_wWWDqBKwO3U",
+      "target_id": "C01",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "为动力链的“末端释放”提供了一个极佳的动作比喻。",
+      "source_file": "tomallsopp_video_wWWDqBKwO3U"
+    },
+    {
+      "source_id": "video_wWWDqBKwO3U",
+      "target_id": "C11",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "解释了滞后的物理来源：是旋后惯性而非手腕肌肉。",
+      "source_file": "tomallsopp_video_wWWDqBKwO3U"
+    },
+    {
+      "source_id": "video_wWWDqBKwO3U",
+      "target_id": "C08",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了引拍空间（宽度）对正确力学的重要性。",
+      "source_file": "tomallsopp_video_wWWDqBKwO3U"
+    },
+    {
+      "source_id": "video_wWWDqBKwO3U",
+      "target_id": "C41",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "揭示了技术动作背后的心理障碍：害怕来不及击球。",
+      "source_file": "tomallsopp_video_wWWDqBKwO3U"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后 (Wrist Lag)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C41",
+      "name_zh": "信任=容错性",
+      "relationship": "Supports"
+    }
+  ]
 }

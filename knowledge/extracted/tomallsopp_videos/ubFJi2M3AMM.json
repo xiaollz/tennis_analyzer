@@ -1,6 +1,84 @@
 {
   "video_id": "ubFJi2M3AMM",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "active_wrist_loading",
+      "name": "Active Wrist Loading",
+      "name_zh": "主动手腕加载",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在身体旋转启动前，有意识地用手腕向后撇来制造拉伸感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_driven_supination",
+      "name": "Shoulder-Driven Supination",
+      "name_zh": "肩膀驱动的旋后",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "旋后动作（手心向上转）的发力源在肩膀和上臂，而非小臂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (启动感)",
+      "confidence": 0.8
+    },
+    {
+      "id": "maneuvering_the_arm",
+      "name": "Maneuvering the Arm",
+      "name_zh": "摆弄手臂而非手",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "意识焦点放在移动整个手臂单元，而不是通过手指/手掌去操控拍头。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C11",
+      "name_zh": "手腕滞后",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C25",
+      "name_zh": "小臂代偿",
+      "relationship": "Is_instance_of"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前/旋后",
+      "relationship": "Extends"
+    },
+    {
+      "ref_id": "C40",
+      "name_zh": "神经通路竞争",
+      "relationship": "Is_instance_of"
+    }
+  ]
 }

@@ -1,6 +1,74 @@
 {
   "video_id": "ub4qPxEalI8",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "sequential_finger_pressure",
+      "name": "Sequential Finger Pressure",
+      "name_zh": "**手指序列加压**",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在前挥过程中，压力从手掌末端（小指/无名指）向食指方向依次传递的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知层面)",
+      "confidence": 0.8
+    },
+    {
+      "id": "good_hands_concept",
+      "name": "Good Hands Concept",
+      "name_zh": "**“好手”概念**",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "指能够通过手指微调，在任何身体位置下操控拍头释放的能力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (长期训练结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_1_2_3_4",
+      "name": "\"1-2-3-4 释放\"",
+      "name_zh": "听拍头划破空气的声音是否清脆。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "先用两指（小指无名指）打球，寻找释放感，再逐渐加入其他手指。",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C17",
+      "name_zh": "两指握拍练习",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C38",
+      "name_zh": "职业选手握拍顺序",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "Extends"
+    }
+  ]
 }

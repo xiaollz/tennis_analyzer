@@ -1,6 +1,53 @@
 {
   "video_id": "M1umUwuPe0w",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "pat_the_horse",
+      "name": "Pat the Horse",
+      "name_zh": "拍马比喻",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "针对高球，拍头不需要下沉到球下方太多，而是保持在较高位置滞后。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "body_hitting_drill",
+      "name": "Body Hitting Drill",
+      "name_zh": "身体撞击练习",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "不使用球拍，仅靠躯干旋转来“撞击”想象中的球，体会动力源。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "neutral_takeback",
+      "name": "Neutral Takeback",
+      "name_zh": "中性引拍位置",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍完成时手腕不提前后靠，保持自然中性，为被动滞后留出空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

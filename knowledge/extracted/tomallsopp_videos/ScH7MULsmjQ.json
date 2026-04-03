@@ -1,6 +1,74 @@
 {
   "video_id": "ScH7MULsmjQ",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "palm_string_alignment",
+      "name": "Palm-String Alignment",
+      "name_zh": "掌面-弦面一致性",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "东方式握拍使手掌平面与拍面几乎平行，增强“用手打球”的直觉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "grip_as_a_forcing_function",
+      "name": "Grip as a Forcing Function",
+      "name_zh": "握拍作为强制机制",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过改变握拍（向东方式移动）来强制身体产生正确的动力链动作（如旋前）。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_45_degree_spacing_rule",
+      "name": "45-Degree Spacing Rule",
+      "name_zh": "45度空间法则",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "东方式握拍要求球与身体保持约45度角的斜前方空间，而非过近。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C06",
+      "name_zh": "肘部空间",
+      "relationship": "supports"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前 (Pronation)",
+      "relationship": "supports"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "refines"
+    },
+    {
+      "ref_id": "C43",
+      "name_zh": "鞭打vs刚体手臂轨迹",
+      "relationship": "supports"
+    }
+  ]
 }

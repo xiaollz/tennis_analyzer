@@ -1,6 +1,38 @@
 {
   "video_id": "vd-hgPw_KYw",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "mid_shot_adjustments",
+      "name": "Mid-shot Adjustments",
+      "name_zh": "击球中调整",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在挥拍过程中（而非挥拍前）通过微小的步法移动来优化击球空间的能力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "safety_paradox_of_jamming",
+      "name": "Safety Paradox of Jamming",
+      "name_zh": "挤压的安全悖论",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "球员因为害怕在移动中失去平衡，潜意识里选择让球靠近身体（被挤到），因为“够得着”比“够不着”更有安全感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

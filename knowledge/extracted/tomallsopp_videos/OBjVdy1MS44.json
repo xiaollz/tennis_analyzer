@@ -1,6 +1,38 @@
 {
   "video_id": "OBjVdy1MS44",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "contact_shape_preservation",
+      "name": "Contact Shape Preservation",
+      "name_zh": "**击球形态保持**",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在整个挥拍过程中（从引拍到随挥），保持击球瞬间手臂与球拍形成的几何形状，而不是在挥拍过程中去“寻找”或“创造”角度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识上保持)",
+      "confidence": 0.8
+    },
+    {
+      "id": "hand_elbow_shoulder_alignment",
+      "name": "Hand-Elbow-Shoulder Alignment",
+      "name_zh": "**手-肘-肩对齐序列**",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "理想击球点的空间标准：手在肘部前方，肘在肩部前方。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (正确站位的产物)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

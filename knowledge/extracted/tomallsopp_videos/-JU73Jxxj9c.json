@@ -1,6 +1,84 @@
 {
   "video_id": "-JU73Jxxj9c",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "grip_pressure_waveform",
+      "name": "Grip Pressure Waveform",
+      "name_zh": "握拍压力波形图",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "握拍力量随挥拍周期动态变化的曲线，而非恒定值。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识控制)",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_rollercoaster_peak_dip",
+      "name": "The Rollercoaster Peak Dip",
+      "name_zh": "过山车顶点卸力",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在引拍最高点（转换点）瞬间降低握拍压力，以换取最大的重力加速度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_-JU73Jxxj9c",
+      "target_id": "C15",
+      "relation": "provides_mechanism_for",
+      "confidence": 0.8,
+      "evidence": "解释了如何实现 C15：通过主动降低握拍压力来释放重力。",
+      "source_file": "tomallsopp_video_-JU73Jxxj9c"
+    },
+    {
+      "source_id": "video_-JU73Jxxj9c",
+      "target_id": "C48",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "明确了手指在 40ms 击球窗口内必须从“传感器”切换到“夹子”模式。",
+      "source_file": "tomallsopp_video_-JU73Jxxj9c"
+    },
+    {
+      "source_id": "video_-JU73Jxxj9c",
+      "target_id": "C46",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "紧张的随挥说明击球后没有及时释放压力，会导致制动过硬。",
+      "source_file": "tomallsopp_video_-JU73Jxxj9c"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C15",
+      "name_zh": "重力驱动的肘部微掉",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C20",
+      "name_zh": "力量悖论",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C35",
+      "name_zh": "延迟加速原则",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "Refines"
+    }
+  ]
 }

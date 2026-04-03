@@ -1,6 +1,68 @@
 {
   "video_id": "2D7UlPQHce4",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "the_slap",
+      "name": "The Slap",
+      "name_zh": "抽打感",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "强调手腕从滞后(Lag)到释放(Release)的瞬间加速感，类似于用手掌扇耳光。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active (心理模型)** / Passive (物理结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "rug_beating_metaphor",
+      "name": "Rug Beating Metaphor",
+      "name_zh": "拍地毯比喻",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "将击球动作类比为用拍子抽打挂在绳上的地毯除尘，强调瞬间的爆发与反弹。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "trampoline_effect",
+      "name": "Trampoline Effect",
+      "name_zh": "蹦床效应",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "意识到球线和球拍的弹性，通过“抽打”动作触发球拍的能量反馈，而非“推”球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "wrist_bulge_anti_pattern",
+      "name": "Wrist Bulge (Anti-pattern)",
+      "name_zh": "手腕过度凸起",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "释放手腕时，手背与小臂夹角过大，导致力量流失和受伤风险。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (错误)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

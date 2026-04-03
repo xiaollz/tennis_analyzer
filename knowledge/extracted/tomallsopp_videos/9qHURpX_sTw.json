@@ -1,6 +1,54 @@
 {
   "video_id": "9qHURpX_sTw",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "continental_baseline_test",
+      "name": "Continental Baseline Test",
+      "name_zh": "大陆式地基测试",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在发球区内使用大陆式握拍连续对打正反手，以此检测球员对拍头的纯粹控制力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "slice_family_synergy",
+      "name": "Slice Family Synergy",
+      "name_zh": "切削家族协同",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将切削、截击、发球视为一个基于大陆式握拍的力学整体，而非孤立技术。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C16",
+      "name_zh": "旋转轴心在虎口",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C48",
+      "name_zh": "手指是传感器不是夹子",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T22",
+      "name_zh": "练习多样性理论",
+      "relationship": "Supports"
+    }
+  ]
 }

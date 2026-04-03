@@ -1,6 +1,78 @@
 {
   "video_id": "Le0dgmeL-LE",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "the_string_connection",
+      "name": "The String Connection",
+      "name_zh": "绳索连接感",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "想象双臂被一根固定长度的绳子系住，在引拍过程中保持相对距离不变。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (感知)",
+      "confidence": 0.8
+    },
+    {
+      "id": "continuous_takeback",
+      "name": "Continuous Takeback",
+      "name_zh": "连续引拍流",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍动作不应在转身结束时停顿，而应是一个流动的、直接进入掉拍头的过程。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (节奏)",
+      "confidence": 0.8
+    },
+    {
+      "id": "catch_the_racket_finish",
+      "name": "Catch the Racket Finish",
+      "name_zh": "抓拍式随挥",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "随挥结束时，左手在右肩上方主动抓住拍颈，以强制身体完成完整旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_Le0dgmeL-LE",
+      "target_id": "C35",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "连续的引拍是为了利用弹性势能，停顿会使“弹弓”失效。",
+      "source_file": "tomallsopp_video_Le0dgmeL-LE"
+    },
+    {
+      "source_id": "video_Le0dgmeL-LE",
+      "target_id": "C03",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "细化了 Unit Swing 中双臂如何作为“刚体”随躯干转动。",
+      "source_file": "tomallsopp_video_Le0dgmeL-LE"
+    },
+    {
+      "source_id": "video_Le0dgmeL-LE",
+      "target_id": "D13",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "抓拍动作实际上是强制执行了左手的制动功能，帮助动量传递。",
+      "source_file": "tomallsopp_video_Le0dgmeL-LE"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

@@ -1,6 +1,38 @@
 {
   "video_id": "zNxIL1US07o",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "the_delay_mindset",
+      "name": "The Delay Mindset",
+      "name_zh": "延迟心态",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "有意识地等待球拍，不急于挥动，让身体转动先行启动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "connected_vs_separated_spectrum",
+      "name": "Connected vs. Separated Spectrum",
+      "name_zh": "连结-分离光谱",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "将正手分为“完全同步(初级)”到“身体大幅领先(高级)”的连续体。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

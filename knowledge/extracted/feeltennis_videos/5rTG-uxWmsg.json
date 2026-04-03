@@ -1,6 +1,53 @@
 {
   "video_id": "5rTG-uxWmsg",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "slapping_intent",
+      "name": "Slapping Intent",
+      "name_zh": "鞭打/扇耳光意图",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "击球时追求“清脆响声”和“打透”球的心理意图，而非摩擦感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "press_roll",
+      "name": "Press & Roll",
+      "name_zh": "按压并滚动",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "通过将球按在静止拍面上向上滚动的动作，体会摩擦力与向前压力的结合。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "upward_swing_path",
+      "name": "Upward Swing Path",
+      "name_zh": "向上挥拍轨迹",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "整个手臂系统（大杠杆）的宏观向上运动，而非手腕（小杠杆）的微观动作。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

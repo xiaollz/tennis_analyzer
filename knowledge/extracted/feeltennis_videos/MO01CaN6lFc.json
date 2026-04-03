@@ -2,21 +2,52 @@
   "video_id": "MO01CaN6lFc",
   "concepts": [
     {
-      "id": "unknown_concept",
-      "name": "总评**",
-      "name_zh": "总评**",
+      "id": "intercepting_mindset",
+      "name": "Intercepting Mindset",
+      "name_zh": "拦截心态",
       "aliases": [],
-      "category": "technique",
+      "category": "mental_model",
       "sources": [
         "feeltennis"
       ],
-      "description": "必看 (MUST-WATCH)**。这是将 FTT 理论转化为肌肉记忆的关键实战篇。",
+      "description": "将击球视为“拦截”飞行的球，而非等待球到达某个点。",
       "vlm_features": [],
       "muscles_involved": [],
-      "active_or_passive": null,
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "speed_timing_paradox",
+      "name": "Speed-Timing Paradox",
+      "name_zh": "速度-时机悖论",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "面对快球时，直觉是增加挥拍速度（导致失控），正确做法是提早启动时机。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_strike_zone_spatial",
+      "name": "The Strike Zone (Spatial)",
+      "name_zh": "空间击球区",
+      "aliases": [],
+      "category": "drill",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "在地面标记出的物理区域，要求球拍必须在球进入该区域时与其汇合。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
       "confidence": 0.8
     }
   ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

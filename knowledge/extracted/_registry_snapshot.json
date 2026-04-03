@@ -13,7 +13,9 @@
     "sources": [
       "ftt",
       "tpa",
-      "biomechanics_book"
+      "biomechanics_book",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Modern forehand is a whip system driven by a rotational kinetic chain: energy transfers from ground through legs, hips, trunk, shoulder, arm, wrist to racket head, accelerating at each segment.",
     "vlm_features": [
@@ -44,7 +46,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "unit_turn",
@@ -59,7 +61,9 @@
     "category": "technique",
     "sources": [
       "ftt",
-      "tpa"
+      "tpa",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Hips, shoulders, arms, and racket rotate away from target as a single unit; the arm moves back as a RESULT of body rotation, not as its own action.",
     "vlm_features": [
@@ -84,7 +88,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "unit_swing",
@@ -128,7 +132,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "The latissimus dorsi and posterior shoulder muscles 'glue' the arm to the trunk, creating the foundational connection that makes body-driven hitting possible.",
     "vlm_features": [
@@ -157,7 +162,7 @@
       "rectus_abdominis"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "place_pull_forward",
@@ -188,7 +193,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "The elbow must maintain a stable distance from the body (visible gap under armpit) throughout the swing — this is the lever's support distance.",
     "vlm_features": [
@@ -210,7 +216,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "fault_tolerance",
@@ -223,13 +229,15 @@
     ],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "The ability of a stroke to succeed even without perfect timing or execution. Built on six pillars: fundamental theorem, face stability, simplicity, relaxation, Out vector, and large muscle drive.",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "passive (emergent property of correct mechanics)",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "out_vector",
@@ -280,7 +288,8 @@
     ],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "The racket's rotation around the forearm axis at end of range of motion — the PRIMARY mechanism of topspin in modern forehands, triggered by the Out vector.",
     "vlm_features": [
@@ -300,7 +309,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "press_slot",
@@ -351,7 +360,8 @@
     ],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "The wrist passively trails behind during the forward swing due to inertia as large muscles pull the arm forward. Never manufactured actively.",
     "vlm_features": [
@@ -373,7 +383,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "fundamental_theorem_of_tennis",
@@ -416,7 +426,9 @@
     ],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "The angular difference between shoulder rotation and hip rotation during preparation. Pre-stretches core muscles to create additional rotational energy. Range: 0° to ~90°.",
     "vlm_features": [
@@ -440,7 +452,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "shoulder_tilt_slant",
@@ -473,7 +485,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Allowing gravity to pull the elbow slightly downward during the forward swing, giving the racket head an upward component. The second lever mechanism for topspin.",
     "vlm_features": [
@@ -489,7 +502,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "rotation_axis_at_v_zone_palm_upper",
@@ -498,7 +511,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Pros rotate the racket around the V-zone (index-middle finger area) of the palm, NOT around the butt cap. This correct pivot point automatically produces lag, racket flip, and effortless head speed.",
     "vlm_features": [
@@ -513,7 +527,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "two_finger_grip_drill",
@@ -522,7 +536,8 @@
     "aliases": [],
     "category": "drill",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Grip with only index and middle fingers (+ thumb assist), removing ring and pinky fingers entirely. Forces correct rotation axis and prevents wrist manipulation.",
     "vlm_features": [],
@@ -537,7 +552,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "humble_guide",
@@ -546,13 +561,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "The player is not the master of the racket but a servant guiding its inertia. Feel where the racket wants to go and help it arrive — don't command it.",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "passive (sensing) + active (guiding)",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "chest_engagement",
@@ -597,13 +613,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "A seemingly stiffer motion (chest connected) produces heavier balls because the brain only releases full rotational speed when it senses control. Control → confidence → speed.",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "passive (emergent)",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "scapular_glide",
@@ -820,7 +837,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis"
     ],
     "description": "Effortless power comes from correct biomechanics with minimal fault tolerance sacrifice. Effortful power is a conscious decision to hit harder, with three failure modes: timing degradation, mechanics amplification, chain breakage.",
     "vlm_features": [],
@@ -833,7 +851,7 @@
       "serratus_anterior"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "foundation_connection_state",
@@ -877,7 +895,8 @@
     "category": "technique",
     "sources": [
       "ftt",
-      "tpa"
+      "tpa",
+      "tomallsopp"
     ],
     "description": "After Unit Turn, the hand should be at roughly 45° to the side-front of the body, not behind the body. Incorrect (behind) position forces the arm to 'rush' to the contact point, breaking back connection.",
     "vlm_features": [
@@ -901,7 +920,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "stabilizing",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "height_adjustment_hierarchy",
@@ -910,7 +929,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "For balls at different heights, adjust with: (1st) legs — bend knees/widen stance, (2nd) trunk — tilt torso, (3rd) arm — bend/extend keeping angle, (4th worst) wrist — violates Fundamental Theorem.",
     "vlm_features": [
@@ -936,7 +956,7 @@
       "rectus_abdominis"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "four_gaze_points_visual_system",
@@ -960,7 +980,9 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Each segment's deceleration (braking) transfers momentum to the next segment. Like a whip: the handle stops, the tip cracks. Without braking, no energy transfer occurs.",
     "vlm_features": [
@@ -983,7 +1005,7 @@
       "serratus_anterior"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "racket_face_stability_in_contact_zone",
@@ -1022,7 +1044,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Racket should reach maximum speed AT the moment of contact, not before. Grip pressure: loose (4/10) pre-contact, tighten only at contact. Louis Cayer: 'The swing starts from the contact point.'",
     "vlm_features": [
@@ -1042,7 +1065,7 @@
       "rotator_cuff"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "correct_trunk_sequencing_5_steps",
@@ -1051,7 +1074,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "1. Trunk issues rotation command → 2. Stretch chain, hand enters space → 3. Legs explode mid-rotation (multiplier) → 4. Power through Press Slot → 5. Inertial follow-through.",
     "vlm_features": [
@@ -1077,7 +1101,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "pronation_via_correct_axis",
@@ -1086,7 +1110,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "When rotation axis is at the V-zone, the forearm naturally unlocks for pronation at contact. When axis is at butt cap, forearm is locked and cannot pronate fluently.",
     "vlm_features": [
@@ -1108,7 +1133,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "stabilizing",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "pro_grip_sequence",
@@ -1117,7 +1142,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Pros grip sequence: (1) Nest the V-zone reference point on handle first, (2) Sense racket center of gravity, (3) LAST loosely wrap lower fingers. Amateurs death-grip the entire handle.",
     "vlm_features": [
@@ -1131,7 +1157,7 @@
       "pronator_teres"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "slingshot_scapular_model",
@@ -1168,13 +1194,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Old pattern (arm-dominant) has years of reinforcement with thick neural pathways. New pattern (body-dominant) has thin pathways. Under pressure, the brain defaults to the strongest pathway. Requires ~2000-5000 correct reps to override.",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "passive (automatic brain response)",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "trust_fault_tolerance",
@@ -1198,7 +1225,9 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Full hip rotation is impossible with both feet planted. Four foot patterns: non-hitting foot lifts (most common), both feet pivot, hitting foot kicks back (Federer), both feet airborne (power shots).",
     "vlm_features": [
@@ -1217,7 +1246,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "whip_vs_rigid_arm_trajectory",
@@ -1226,7 +1255,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Correct: shoulder small arc < elbow medium arc < wrist large arc (three distinct layers = whip transfer). Incorrect: all three layers similar arc (rigid body transport = no sequential acceleration).",
     "vlm_features": [
@@ -1251,7 +1281,7 @@
       "erector_spinae"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.9
   },
   {
     "id": "exhale_to_initiate_forward_swing",
@@ -1289,7 +1319,9 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "The optimal contact is a ZONE (3D volume), not a precise point. Good fault tolerance expands this zone. Three dimensions: front-back (rotation determines), left-right (Out vector needs space), up-down (grip natural height).",
     "vlm_features": [
@@ -1311,7 +1343,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "stabilizing",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "follow_through_as_diagnostic_not_goal",
@@ -1320,7 +1352,9 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Follow-through itself doesn't affect the shot. It should be the natural continuation of forward swing momentum. Never actively pull the racket to a specific finish position.",
     "vlm_features": [
@@ -1339,7 +1373,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "nitrous_boost_metaphor_legs",
@@ -1399,7 +1433,8 @@
     "category": "technique",
     "sources": [
       "tpa",
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Footwork and swing overlap in time; the back foot remains active during the swing, making the end of the shot the beginning of recovery.",
     "vlm_features": [
@@ -1418,7 +1453,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "mixed",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "box_finish",
@@ -1428,7 +1463,8 @@
     "category": "technique",
     "sources": [
       "tpa",
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "At follow-through completion, the upper arm, forearm, racket, and chest should form a regular rectangle (box) — a self-diagnostic tool for swing quality.",
     "vlm_features": [
@@ -1451,7 +1487,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "circular_arc_theory",
@@ -1485,7 +1521,8 @@
     "category": "technique",
     "sources": [
       "tpa",
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "From the top of the backswing, the racket face progressively squares up rather than staying closed and flipping at the last moment.",
     "vlm_features": [
@@ -1507,7 +1544,7 @@
       "erector_spinae"
     ],
     "active_or_passive": "passive",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "kinetic_chain_endpoints",
@@ -1894,7 +1931,8 @@
     "sources": [
       "tpa",
       "ftt",
-      "biomechanics_book"
+      "biomechanics_book",
+      "tomallsopp"
     ],
     "description": "All body segments rotating simultaneously eliminates the speed differential needed for whip acceleration. Fix: each segment must brake before the next fires.",
     "vlm_features": [
@@ -1914,7 +1952,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "active",
-    "confidence": 1.0
+    "confidence": 0.95
   },
   {
     "id": "practice_diversity_theory",
@@ -5487,7 +5525,9 @@
     "category": "technique",
     "sources": [
       "ftt",
-      "tpa"
+      "tpa",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "Concept from 09_ftt_videos_3.md: 与上一个视频 (Weight Transfer Exercise) 的关联",
     "vlm_features": [
@@ -5496,7 +5536,7 @@
     ],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.6
+    "confidence": 0.95
   },
   {
     "id": "the_calling_drill",
@@ -6226,13 +6266,14 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "通过激活背阔肌，将轻便的球拍与厚重的躯干相连，增加了击球时的质量惯性和稳定性（即增强了抵抗冲击的能力）。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "simplest_possible_effective_forehand",
@@ -6381,13 +6422,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "认为网球由“接收球（移动到正确位置）”和“发送球（挥拍）”两部分组成。大多数人只练发送。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "legonly_balance",
@@ -6772,13 +6814,14 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "指产生最强上旋的方法在感觉上像是向下击球。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "weighted_shadow_swing",
@@ -7314,13 +7357,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Concept from FTT: Outcome Independence",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "glide_step",
@@ -7329,13 +7373,14 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "在移动中脚不接触地面或轻微掠过地面，以快速调整重心并扩大支撑底座的动作。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "Active",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "triple_bend",
@@ -7359,7 +7404,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis"
     ],
     "description": "将分腿垫步的着陆过程直接转化为向球移动的第一步，而非先着陆再启动。",
     "vlm_features": [],
@@ -7367,7 +7413,7 @@
       "hamstrings"
     ],
     "active_or_passive": "mixed",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "stance_width_leverage",
@@ -7418,13 +7464,14 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "Concept from FTT: The Serve is a Throw",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "serve_direction_throw_direction",
@@ -7913,7 +7960,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "强调旋转不是僵硬的扭转，而是一个快速、简短的发力爆发。",
     "vlm_features": [
@@ -7927,7 +7975,7 @@
       "transversus_abdominis"
     ],
     "active_or_passive": "active",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "layback",
@@ -7961,7 +8009,8 @@
     "aliases": [],
     "category": "biomechanics",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "指鞭打型正手由于动力链长、动作复杂，在击球时需要支付的时间代价。在处理高飘短球时，必须等待球升起再下落才能合力。",
     "vlm_features": [
@@ -7972,7 +8021,7 @@
       "deltoid"
     ],
     "active_or_passive": "mixed",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "hand_on_the_ball",
@@ -8011,7 +8060,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis"
     ],
     "description": "身体后仰击球，需要极强的肩膀和臀部弹性才能发力（Vacherot 常用）。",
     "vlm_features": [
@@ -8025,7 +8075,7 @@
       "quadriceps"
     ],
     "active_or_passive": "stabilizing",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "left_side_pressing_back",
@@ -8282,7 +8332,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "球拍应深嵌在手掌的“V型槽”中，并贴合食指根部的掌心位置。",
     "vlm_features": [
@@ -8292,7 +8343,7 @@
     ],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "bottom_fingers_release",
@@ -8517,13 +8568,15 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis",
+      "tomallsopp"
     ],
     "description": "动量缺失**。当身体不动时，大脑被迫用小臂“加速”来弥补力量。 | 练习“正向平衡”，用**身体的位移**代替手臂的挥动。只要身体在向前走，手臂只需保持连接（C04）。 |",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.95
   },
   {
     "id": "deep_back_knee_dip",
@@ -8567,13 +8620,14 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "手部和球拍在完成击球前必须完全延伸并越过前脚所在的垂直平面。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "singular_sensation",
@@ -9632,13 +9686,14 @@
     "aliases": [],
     "category": "mental_model",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "强调不要为了寻找“信号”而抓紧球拍，要从心理上放弃对球拍轨迹的死板控制。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": null,
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "gentle_upward_diagonal",
@@ -9822,7 +9877,8 @@
     "aliases": [],
     "category": "technique",
     "sources": [
-      "ftt"
+      "ftt",
+      "feeltennis"
     ],
     "description": "并非传统教学中常说的“C”型轨迹，而是更接近一种扁平的斜向上轨迹。",
     "vlm_features": [
@@ -9836,7 +9892,7 @@
       "triceps_brachii"
     ],
     "active_or_passive": "mixed",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "preacceleration_level",
@@ -11028,13 +11084,14 @@
     "aliases": [],
     "category": "connection",
     "sources": [
-      "ftt"
+      "ftt",
+      "tomallsopp"
     ],
     "description": "在手臂旋转释放的过程中，通过补偿机制使拍面相对于球的入射角度保持不变。",
     "vlm_features": [],
     "muscles_involved": [],
     "active_or_passive": "Passive",
-    "confidence": 0.8
+    "confidence": 0.9
   },
   {
     "id": "intuition_optimization",
@@ -11243,5 +11300,2255 @@
     "muscles_involved": [],
     "active_or_passive": null,
     "confidence": 0.8
+  },
+  {
+    "id": "grip_pressure_waveform",
+    "name": "Grip Pressure Waveform",
+    "name_zh": "握拍压力波形图",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "握拍力量随挥拍周期动态变化的曲线，而非恒定值。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (意识控制)",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_rollercoaster_peak_dip",
+    "name": "The Rollercoaster Peak Dip",
+    "name_zh": "过山车顶点卸力",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在引拍最高点（转换点）瞬间降低握拍压力，以换取最大的重力加速度。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "roller_coaster_model",
+    "name": "Roller Coaster Model",
+    "name_zh": "过山车模型",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将引拍顶点视为过山车最高点，利用重力而非肌肉力量完成掉拍和初始加速。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (掉拍过程)",
+    "confidence": 0.6
+  },
+  {
+    "id": "anti_choppy_principle",
+    "name": "Anti-Choppy Principle",
+    "name_zh": "反断续原则",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "反对将正手拆解为“引拍-掉拍-前挥”的离散步骤，主张一个连续的、由高到低的轨迹。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (意识控制)",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_200x_weight_mental_model",
+    "name": "200x Weight Mental Model",
+    "name_zh": "200倍重力心理模型",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "想象球拍重200倍，迫使身体放弃手臂发力，改用重力和惯性挥拍。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "takeback_speed_matching",
+    "name": "Takeback Speed Matching",
+    "name_zh": "引拍速度匹配原则",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍的节奏应与来球速度挂钩：球快则引拍快，球慢则引拍慢且舒展，而非原地等待。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "momentum_runway",
+    "name": "Momentum Runway",
+    "name_zh": "动量跑道",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将引拍空间视为加速跑道，行程越长，到达击球点时的自然动量越大。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_",
+    "name": "\"跟着球走\"",
+    "name_zh": "录像检查引拍过程中是否有明显的“静止等待”帧。",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "---\n\n### 第八部分：比喻与类比",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "解释什么概念 (ID)",
+    "confidence": 0.6
+  },
+  {
+    "id": "continental_baseline_test",
+    "name": "Continental Baseline Test",
+    "name_zh": "大陆式地基测试",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在发球区内使用大陆式握拍连续对打正反手，以此检测球员对拍头的纯粹控制力。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "slice_family_synergy",
+    "name": "Slice Family Synergy",
+    "name_zh": "切削家族协同",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将切削、截击、发球视为一个基于大陆式握拍的力学整体，而非孤立技术。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "playing_the_violin",
+    "name": "Playing the Violin",
+    "name_zh": "提琴手肩膀",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球时肩膀耸起靠近耳朵的紧张状态，阻碍旋转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (Error)",
+    "confidence": 0.6
+  },
+  {
+    "id": "shoulder_braking",
+    "name": "Shoulder Braking",
+    "name_zh": "肩部制动",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间肩膀停止向前位移，转为原地旋转，以释放手臂鞭打。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (Result of timing)",
+    "confidence": 0.6
+  },
+  {
+    "id": "rhythm_matching",
+    "name": "Rhythm Matching",
+    "name_zh": "节奏匹配原则",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍的速度和节奏应与来球的速度完全匹配，而非越快越好。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "continuous_loop",
+    "name": "Continuous Loop",
+    "name_zh": "连续环形引拍",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "避免在引拍最高点或转身后出现停顿，保持球拍始终在运动中。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (由节奏驱动)",
+    "confidence": 0.6
+  },
+  {
+    "id": "stop_start_syndrome",
+    "name": "Stop-Start Syndrome",
+    "name_zh": "停走综合症",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "业余球员过早转身并停住，导致击球瞬间需要重新启动肌肉，造成僵硬。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (错误意识)",
+    "confidence": 0.6
+  },
+  {
+    "id": "lower_body_braking",
+    "name": "Lower Body Braking",
+    "name_zh": "下肢制动加速",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过有意识地减缓或停止下半身的旋转，将动量强制转移到上半身和球拍。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (意识)",
+    "confidence": 0.6
+  },
+  {
+    "id": "right_leg_counterbalance",
+    "name": "Right Leg Counterbalance",
+    "name_zh": "右腿后踢平衡",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间右腿向后方踢出，作为旋转的拮抗力，防止身体过度转动并增加鞭打速度。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "anchored_pivot",
+    "name": "Anchored Pivot",
+    "name_zh": "锚定转轴",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "保持后脚脚尖着地并旋转，而非整个脚掌离地，以维持旋转轴的稳定性。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "mirror_pivot",
+    "name": "Mirror Pivot",
+    "name_zh": "镜像转体感",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "想象先打一个左手正手再转回右手正手的完整轴心旋转感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (感知)",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_45_degree_forward_bias",
+    "name": "45-degree Forward Bias",
+    "name_zh": "45度前置引导",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将左脚稍置于右脚前方45度，以自然引导重心向前而非单纯横向。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_flip_trap",
+    "name": "The Flip Trap",
+    "name_zh": "**翻转陷阱**",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "球员过度追求“拍狗(Pat the dog)”动作导致拍面长时间朝下，最后被迫在击球点前瞬间剧烈翻转拍头。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (错误结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "gradual_rotation",
+    "name": "Gradual Rotation",
+    "name_zh": "**渐进式旋转**",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "拍头从引拍最高点到击球点的旋转应该是平滑且持续的，而不是突然的。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_individuality",
+    "name": "Grip Individuality",
+    "name_zh": "握拍个体差异论",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "握拍受手掌大小、形状及球拍手柄品牌形状影响，不存在绝对统一的“完美”刻度。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_swing_mapping",
+    "name": "Grip-Swing Mapping",
+    "name_zh": "握拍-挥拍映射",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "握拍越靠近大陆式，动作越倾向于“摆动(Swing)”；越靠近西方式，越倾向于“投掷(Throw)”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (由握拍决定)",
+    "confidence": 0.6
+  },
+  {
+    "id": "pivot_transfer_timing",
+    "name": "Pivot-Transfer Timing",
+    "name_zh": "转轴-重心转移时序",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "区分“击球前转移重心”与“击球后转移重心”的两种合法节奏。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "heavy_object_rotation",
+    "name": "Heavy Object Rotation",
+    "name_zh": "重物旋转感知",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过想象/练习挥动重物，自然诱发手臂的旋前与旋后，而非主动控制手腕。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (诱发结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_contact_depth_correlation",
+    "name": "Grip-Contact Depth Correlation",
+    "name_zh": "握拍-击球点深度关联",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "握拍越闭合（向西方式偏移），理想击球点越靠前且身体越需对正球场。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (力学要求)",
+    "confidence": 0.6
+  },
+  {
+    "id": "shoulder_squareness",
+    "name": "Shoulder Squareness",
+    "name_zh": "肩膀对正度",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间双肩连线与球网的平行程度。半西方式要求高度对正。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "hand_behind_ball_strength",
+    "name": "Hand-Behind-Ball Strength",
+    "name_zh": "手在球后的力量感",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间手部处于拍头后方支撑，而非侧向拉扯，提供最强刚性。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "continuous_takeback",
+    "name": "Continuous Takeback",
+    "name_zh": "连续引拍流",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍动作不应在转身结束时停顿，而应是一个流动的、直接进入掉拍头的过程。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (节奏)",
+    "confidence": 0.6
+  },
+  {
+    "id": "catch_the_racket_finish",
+    "name": "Catch the Racket Finish",
+    "name_zh": "抓拍式随挥",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "随挥结束时，左手在右肩上方主动抓住拍颈，以强制身体完成完整旋转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "pat_the_horse",
+    "name": "Pat the Horse",
+    "name_zh": "拍马比喻",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "针对高球，拍头不需要下沉到球下方太多，而是保持在较高位置滞后。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "body_hitting_drill",
+    "name": "Body Hitting Drill",
+    "name_zh": "身体撞击练习",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "不使用球拍，仅靠躯干旋转来“撞击”想象中的球，体会动力源。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "neutral_takeback",
+    "name": "Neutral Takeback",
+    "name_zh": "中性引拍位置",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍完成时手腕不提前后靠，保持自然中性，为被动滞后留出空间。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "strong_position",
+    "name": "Strong Position",
+    "name_zh": "强力位/稳定构型",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "像推购物车或骑车一样，手腕在触球瞬间保持的结构性支撑感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (保持)",
+    "confidence": 0.6
+  },
+  {
+    "id": "doorknob_analogy",
+    "name": "Doorknob Analogy",
+    "name_zh": "门把手类比",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "形容小臂从右向左的旋前（Pronation）动作，类似转动门把手。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (释放)",
+    "confidence": 0.6
+  },
+  {
+    "id": "passive_but_releasing",
+    "name": "Passive but Releasing",
+    "name_zh": "被动释放态",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "手腕不主动发力，但随动量自然释放，而非僵硬锁死。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "emergency_manipulation",
+    "name": "Emergency Manipulation",
+    "name_zh": "紧急操控",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "当到位不准或球速过快时，主动使用手腕来“救球”的代偿行为。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "sending_skills",
+    "name": "Sending Skills",
+    "name_zh": "发送技能（技术）",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "身体通过动力链将能量传递给球的物理动作。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (正确预判后的产物)",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_45_degree_stability",
+    "name": "45-Degree Stability",
+    "name_zh": "45度稳定性",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球点应保持在身体侧前方约45度角，以确保手部在拍后提供最大支撑。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "decision_technique_link",
+    "name": "Decision-Technique Link",
+    "name_zh": "决策-技术联动",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球选择（战术决策）直接决定了动力链的形态，错误的决策会导致技术动作变形。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "auditory_lag_feedback",
+    "name": "Auditory Lag Feedback",
+    "name_zh": "听觉滞后反馈",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "利用“Snappy Wrist”装置发出的“咔哒”声来判断手腕滞后发生的精确瞬间。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果检测)",
+    "confidence": 0.6
+  },
+  {
+    "id": "atp_vs_wta_lag_timing",
+    "name": "ATP vs WTA Lag Timing",
+    "name_zh": "ATP与WTA滞后时序差异",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "ATP风格滞后发生在转体启动**后**的前挥途中；WTA风格滞后发生得更早且更主动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "around_vs_across_path",
+    "name": "Around vs. Across Path",
+    "name_zh": "“绕球”与“横跨”路径",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "低球需要球拍轨迹从球的侧后方“绕过”(Around)；高球需要拍面更平地“横跨”(Across)球的后部。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "high_ball_shoulder_opening",
+    "name": "High Ball Shoulder Opening",
+    "name_zh": "高球肩膀开放补偿",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "处理高球时，肩膀需要比低球更早、更大幅度地打开，以创造“横跨”击球的空间。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Active**",
+    "confidence": 0.6
+  },
+  {
+    "id": "contact_shape_preservation",
+    "name": "Contact Shape Preservation",
+    "name_zh": "**击球形态保持**",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在整个挥拍过程中（从引拍到随挥），保持击球瞬间手臂与球拍形成的几何形状，而不是在挥拍过程中去“寻找”或“创造”角度。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (意识上保持)",
+    "confidence": 0.6
+  },
+  {
+    "id": "hand_elbow_shoulder_alignment",
+    "name": "Hand-Elbow-Shoulder Alignment",
+    "name_zh": "**手-肘-肩对齐序列**",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "理想击球点的空间标准：手在肘部前方，肘在肩部前方。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (正确站位的产物)",
+    "confidence": 0.6
+  },
+  {
+    "id": "wrist_forearm_trigger",
+    "name": "Wrist-Forearm Trigger",
+    "name_zh": "手腕-小臂触发链",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过手腕的微小转动意图，诱导整个小臂乃至肩膀进入旋转序列的机制。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (Initiation)",
+    "confidence": 0.6
+  },
+  {
+    "id": "circular_directional_control",
+    "name": "Circular Directional Control",
+    "name_zh": "圆周方向控制",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "不通过改变挥拍路径，而是通过在旋转圆弧上的“早击”或“晚击”来决定球的走向。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (Timing)",
+    "confidence": 0.6
+  },
+  {
+    "id": "smash_factor",
+    "name": "Smash Factor",
+    "name_zh": "击球粉碎因子",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "球速与拍头速度的比值。衡量击球效率的指标，即如何用更小的挥速产生更大的球速。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "racket_stability",
+    "name": "Racket Stability",
+    "name_zh": "击球稳定性",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间球拍在手中不发生位移或翻转的能力，尤其是在非甜区击球时。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (结构上)",
+    "confidence": 0.6
+  },
+  {
+    "id": "palm_string_alignment",
+    "name": "Palm-String Alignment",
+    "name_zh": "掌面-弦面一致性",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "东方式握拍使手掌平面与拍面几乎平行，增强“用手打球”的直觉。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_as_a_forcing_function",
+    "name": "Grip as a Forcing Function",
+    "name_zh": "握拍作为强制机制",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过改变握拍（向东方式移动）来强制身体产生正确的动力链动作（如旋前）。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_45_degree_spacing_rule",
+    "name": "45-Degree Spacing Rule",
+    "name_zh": "45度空间法则",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "东方式握拍要求球与身体保持约45度角的斜前方空间，而非过近。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "post_contact_reverse_kinetic_chain",
+    "name": "Post-contact Reverse Kinetic Chain",
+    "name_zh": "后触球反向动力链",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "触球后，动力链顺序反转：拍头最快，带动手臂，最后带动身体。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "deceleration_to_acceleration_principle",
+    "name": "Deceleration-to-Acceleration Principle",
+    "name_zh": "减速换加速原则",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "为了让末端（拍头）加速，近端（躯干）必须在特定时刻制动或减速。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (制动部分)",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_block_symptom",
+    "name": "The \"Block\" Symptom",
+    "name_zh": "“整体块”症状",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "手臂和身体像一个刚体一样同步旋转，缺乏独立性，导致拍头速度丢失。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (错误)",
+    "confidence": 0.6
+  },
+  {
+    "id": "muscle_antagonism",
+    "name": "Muscle Antagonism",
+    "name_zh": "肌肉对抗内耗",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "当肱二头肌和肱三头肌同时发力锁死关节时，力量在内部抵消，导致击球无力。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (to avoid)",
+    "confidence": 0.6
+  },
+  {
+    "id": "shoulder_pronation_vs_hand_roll",
+    "name": "Shoulder Pronation vs. Hand Roll",
+    "name_zh": "肩部旋前 vs 翻手腕",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "随挥的旋转应源自整个肩膀的旋前（内旋），而非末端手腕的主动翻转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_drink_stability",
+    "name": "The Drink Stability",
+    "name_zh": "饮品稳定性感知",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过想象或实际手持杯子来保持非主导手在击球瞬间的水平高度与稳定性。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (训练中)",
+    "confidence": 0.6
+  },
+  {
+    "id": "arm_crossing_restriction",
+    "name": "Arm Crossing Restriction",
+    "name_zh": "交叉臂限制",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "非主导手横跨身体中线，导致躯干旋转受阻，属于动力链断裂。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (错误)",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_45_5_golf_separation",
+    "name": "45°+5° Golf Separation",
+    "name_zh": "45°+5°高尔夫分离模型",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "职业选手引拍时肩膀比髋部多转45°，启动瞬间髋部先走再增加5°分离，随后释放。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (引拍) / Passive (启动)",
+    "confidence": 0.6
+  },
+  {
+    "id": "deep_ball_open_stance",
+    "name": "Deep Ball Open Stance",
+    "name_zh": "深球开放式步法",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在面对深球或高球时，通过左脚向外踩（右手球员）保持开放式，以确保旋转空间。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "release_feeling",
+    "name": "Release Feeling",
+    "name_zh": "释放感",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间将积累的弹性势能完全甩出的心理与生理感知，而非持续发力。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "stop_to_fire",
+    "name": "Stop to Fire",
+    "name_zh": "制动触发",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "动力链中前一环节（如躯干）的减速/制动是后一环节（如手臂）加速的前提。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (制动)",
+    "confidence": 0.6
+  },
+  {
+    "id": "pulling_trap",
+    "name": "Pulling Trap",
+    "name_zh": "拉动陷阱",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "球员试图通过肌肉主动向前方拉动球拍，导致肌肉僵硬和动力链断裂。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "one_quick_stroke",
+    "name": "One Quick Stroke",
+    "name_zh": "快速一摸",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "对“拍狗”动作时长的限定：必须是动态经过，而非静态停留。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_right_left_hit_rhythm",
+    "name": "The \"Right-Left-Hit\" Rhythm",
+    "name_zh": "“右-左-打”节奏",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "一种通过步法引导动力链时序的心理/动作口令，确保重心在挥拍前已转移。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "serve_to_forehand_mapping",
+    "name": "Serve-to-Forehand Mapping",
+    "name_zh": "发球-正手空间映射",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "利用高位发球的击球点空间感，通过旋转手臂轴线，迁移至低位正手击球点的感知方法。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (感知迁移)",
+    "confidence": 0.6
+  },
+  {
+    "id": "connected_supination_rotation",
+    "name": "Connected Supination-Rotation",
+    "name_zh": "同步旋后转体",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "身体转动与手臂旋后（球拍后倒）应同步发生，而非先转体再掉拍。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (Result of timing)",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_dependent_supination_limit",
+    "name": "Grip-Dependent Supination Limit",
+    "name_zh": "握拍相关的旋后极限",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "东方式握拍在旋后时拍面更易朝天，因此需限制旋后幅度；半西方式则天然更容错。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (Awareness)",
+    "confidence": 0.6
+  },
+  {
+    "id": "finish_led_path_training",
+    "name": "Finish-Led Path Training",
+    "name_zh": "终点导向路径训练",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过设定明确的随挥终点（如拍底对对手）来反向塑造正确的手臂旋转路径。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "right_left_hit_pattern",
+    "name": "Right-Left-Hit Pattern",
+    "name_zh": "右-左-击球模式",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "针对中低高度球，先加载右脚，跨出左脚锁定重心，然后击球。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (加载与跨步)",
+    "confidence": 0.6
+  },
+  {
+    "id": "winning_the_race",
+    "name": "Winning the Race",
+    "name_zh": "赢得比赛(拍头超过身体)",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间，躯干制动，动量传递至手臂，使拍头速度超过身体转速的现象。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Passive**",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_2_foot_window_pushing",
+    "name": "2-Foot Window Pushing",
+    "name_zh": "两英尺窗口推球",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "因不信任时机，试图在极长的线性轨迹中寻找球，导致手臂僵硬前推。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (Bad)",
+    "confidence": 0.6
+  },
+  {
+    "id": "stability_grip_7_10",
+    "name": "Stability Grip (7/10)",
+    "name_zh": "7成力稳定握拍",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间并非完全放松，而是保持约7/10的握力以确保拍面稳定和手指感知。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_3_point_alignment_geometry",
+    "name": "3-Point Alignment Geometry",
+    "name_zh": "三点对齐几何",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间，肘部在肩膀前，手在肘部前。形成一个稳定的力学支撑结构。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (正确旋转的结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "grip_elbow_interference",
+    "name": "Grip-Elbow Interference",
+    "name_zh": "握拍-肘部干扰",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "越闭合的握拍（西方式）越容易导致肘部向躯干内侧收缩，阻碍手臂绕轴旋转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "strength_stability_test",
+    "name": "Strength Stability Test",
+    "name_zh": "力量稳定性测试",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "想象在击球点推重物，只有肘部在肩前时才能发力，否则会感到“被挤压(jammed)”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (感知练习)",
+    "confidence": 0.6
+  },
+  {
+    "id": "zipchip_analogy",
+    "name": "ZipChip Analogy",
+    "name_zh": "ZipChip/打水漂类比",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "使用小飞盘或打水漂的动作来模拟“旋转+旋后+旋前”的完整动力链。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "racket_tip_forward_takeback",
+    "name": "Racket Tip Forward Takeback",
+    "name_zh": "**拍头朝前引拍**",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍完成时拍头指向球网（前方），增加前挥时拍头“追赶”的距离，从而产生巨大滞后。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "racket_patience",
+    "name": "Racket Patience",
+    "name_zh": "**球拍耐心**",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "刻意延迟球拍前挥的启动时间，让身体动量先积累，迫使球拍在最后时刻爆发。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "backwards_pivot",
+    "name": "Backwards Pivot",
+    "name_zh": "后向轴转",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间，非压力脚（左脚）向后方撤步或旋转，以腾出空间让髋部完全转动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (初期练习)",
+    "confidence": 0.6
+  },
+  {
+    "id": "golf_long_drive_analogy",
+    "name": "Golf Long-Drive Analogy",
+    "name_zh": "高尔夫长打类比",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "借鉴高尔夫球员通过左脚后撤来增加躯干旋转速度和力量的力学原理。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "N/A",
+    "confidence": 0.6
+  },
+  {
+    "id": "shoulder_shrug_anchor",
+    "name": "Shoulder Shrug Anchor",
+    "name_zh": "肩膀耸起锚定",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球时肩膀离开肩胛骨插槽向上耸起，试图通过锁死肩关节来寻找稳定性。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "stone_skimming_feel",
+    "name": "Stone Skimming Feel",
+    "name_zh": "打水漂感",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "模拟将石头平滑甩过水面的动作，强调前臂的旋后(Supination)与旋前(Pronation)的自然释放。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_together_feel",
+    "name": "The \"Together\" Feel",
+    "name_zh": "“在一起”体感",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "击球瞬间，球拍的移动与身体转动完全同步，没有明显的先后滞后感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Active**",
+    "confidence": 0.6
+  },
+  {
+    "id": "no_flip_forehand",
+    "name": "No-Flip Forehand",
+    "name_zh": "无翻转正手",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "避免在击球前出现剧烈的、不可控的手腕翻转动作，追求更平滑的动力传递。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "sequential_finger_pressure",
+    "name": "Sequential Finger Pressure",
+    "name_zh": "**手指序列加压**",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在前挥过程中，压力从手掌末端（小指/无名指）向食指方向依次传递的过程。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (感知层面)",
+    "confidence": 0.6
+  },
+  {
+    "id": "good_hands_concept",
+    "name": "Good Hands Concept",
+    "name_zh": "**“好手”概念**",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "指能够通过手指微调，在任何身体位置下操控拍头释放的能力。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (长期训练结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_1_2_3_4",
+    "name": "\"1-2-3-4 释放\"",
+    "name_zh": "听拍头划破空气的声音是否清脆。",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "先用两指（小指无名指）打球，寻找释放感，再逐渐加入其他手指。",
+    "confidence": 0.6
+  },
+  {
+    "id": "active_wrist_loading",
+    "name": "Active Wrist Loading",
+    "name_zh": "主动手腕加载",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在身体旋转启动前，有意识地用手腕向后撇来制造拉伸感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "shoulder_driven_supination",
+    "name": "Shoulder-Driven Supination",
+    "name_zh": "肩膀驱动的旋后",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "旋后动作（手心向上转）的发力源在肩膀和上臂，而非小臂。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (启动感)",
+    "confidence": 0.6
+  },
+  {
+    "id": "maneuvering_the_arm",
+    "name": "Maneuvering the Arm",
+    "name_zh": "摆弄手臂而非手",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "意识焦点放在移动整个手臂单元，而不是通过手指/手掌去操控拍头。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "anatomy_driven_style",
+    "name": "Anatomy-Driven Style",
+    "name_zh": "解剖驱动型风格",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "根据男女骨骼差异（肩宽 vs 髋宽）决定的自然引拍倾向。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "pronation_takeback_atp",
+    "name": "Pronation Takeback (ATP)",
+    "name_zh": "旋前引拍 (ATP式)",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "引拍时小臂呈旋前状态，肘部抬高，拍头保持在身体右侧。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "elbow_touch_test",
+    "name": "Elbow Touch Test",
+    "name_zh": "肘部触碰测试",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "双手合十伸直，尝试让双肘接触，用以检测肩部/手臂的解剖柔韧性。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "natural_feed_diagnostic",
+    "name": "Natural Feed Diagnostic",
+    "name_zh": "自然喂球诊断法",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过观察球员在无意识“喂球”时的引拍动作，判断其最自然的动力链模式。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "safety_paradox_of_jamming",
+    "name": "Safety Paradox of Jamming",
+    "name_zh": "挤压的安全悖论",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "球员因为害怕在移动中失去平衡，潜意识里选择让球靠近身体（被挤到），因为“够得着”比“够不着”更有安全感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "bracing_for_failure",
+    "name": "Bracing for Failure",
+    "name_zh": "为失败而紧绷",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在击球瞬间因恐惧失误而产生的肌肉主动收缩，导致动力链断裂。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (Bad)",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_heavy_object_constraint",
+    "name": "The Heavy Object Constraint",
+    "name_zh": "重物约束机制",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "通过挥舞极重物体（如长管、斧头），迫使身体放弃小肌肉代偿，自动进入生物力学最优路径。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (Result)",
+    "confidence": 0.6
+  },
+  {
+    "id": "contact_as_an_obstacle",
+    "name": "Contact as an Obstacle",
+    "name_zh": "击球点是“路障”",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将击球点视为挥拍路径上偶然遇到的障碍，而非挥拍的目标终点。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "tell_the_time_wristwatch",
+    "name": "Tell the Time (Wristwatch)",
+    "name_zh": "腕表看时法",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "想象右手腕戴表，随挥结束时手背朝向脸部，以便能“看清时间”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (as cue)",
+    "confidence": 0.6
+  },
+  {
+    "id": "early_butt_cap_facing",
+    "name": "Early Butt-cap Facing",
+    "name_zh": "底盖提前对正",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "在随挥的极早期（击球后瞬间）就让球拍底盖指向对手，而非延迟旋转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (as cue)",
+    "confidence": 0.6
+  },
+  {
+    "id": "back_of_racket_to_head",
+    "name": "Back of Racket to Head",
+    "name_zh": "拍背贴头",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "随挥结束时球拍背面靠近头部。主要针对东方式或大陆式握拍的初学者。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (as cue)",
+    "confidence": 0.6
+  },
+  {
+    "id": "throwing_the_arm",
+    "name": "Throwing the Arm",
+    "name_zh": "甩动手臂发力",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "模仿打水漂或侧投球的动作，通过小臂的旋后（Supination）启动前挥，而非直线拉动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (启动感)",
+    "confidence": 0.6
+  },
+  {
+    "id": "natural_pat_the_dog",
+    "name": "Natural Pat the Dog",
+    "name_zh": "自然拍狗位",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "拍面朝下不是刻意摆放，而是由于引拍宽度和半西方式握拍在重力下产生的自然状态。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "supination_driven_lag",
+    "name": "Supination-driven Lag",
+    "name_zh": "旋后驱动滞后",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "滞后（Lag）是由手臂向外甩出的旋后动作惯性产生的，不是手腕主动向后。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_delay_mindset",
+    "name": "The Delay Mindset",
+    "name_zh": "延迟心态",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "有意识地等待球拍，不急于挥动，让身体转动先行启动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "connected_vs_separated_spectrum",
+    "name": "Connected vs. Separated Spectrum",
+    "name_zh": "连结-分离光谱",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "tomallsopp"
+    ],
+    "description": "将正手分为“完全同步(初级)”到“身体大幅领先(高级)”的连续体。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "segmented_forehand",
+    "name": "Segmented Forehand",
+    "name_zh": "分段式正手",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将正手拆解为多个身体部位在不同时间启动，利用时间差产生拉伸。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (启动顺序)",
+    "confidence": 0.6
+  },
+  {
+    "id": "elastic_band_effect",
+    "name": "Elastic Band Effect",
+    "name_zh": "橡皮筋效应",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "通过身体各段（髋、肩、手）的拉伸积累弹性势能，然后瞬间释放。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "three_level_stretch",
+    "name": "Three-Level Stretch",
+    "name_zh": "三级拉伸模型",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "现代正手的三个拉伸点：1.下肢vs上身；2.上身vs手臂；3.前臂vs手部。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Mixed",
+    "confidence": 0.6
+  },
+  {
+    "id": "power_risk_tradeoff",
+    "name": "Power-Risk Tradeoff",
+    "name_zh": "力量-风险权衡",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "越现代、分段越多的正手力量越大，但对时机要求极高，风险随之增加。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_slap",
+    "name": "The Slap",
+    "name_zh": "抽打感",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "强调手腕从滞后(Lag)到释放(Release)的瞬间加速感，类似于用手掌扇耳光。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Active (心理模型)** / Passive (物理结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "rug_beating_metaphor",
+    "name": "Rug Beating Metaphor",
+    "name_zh": "拍地毯比喻",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将击球动作类比为用拍子抽打挂在绳上的地毯除尘，强调瞬间的爆发与反弹。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "trampoline_effect",
+    "name": "Trampoline Effect",
+    "name_zh": "蹦床效应",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "意识到球线和球拍的弹性，通过“抽打”动作触发球拍的能量反馈，而非“推”球。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "wrist_bulge_anti_pattern",
+    "name": "Wrist Bulge (Anti-pattern)",
+    "name_zh": "手腕过度凸起",
+    "aliases": [],
+    "category": "symptom",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "释放手腕时，手背与小臂夹角过大，导致力量流失和受伤风险。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (错误)",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_blue_block",
+    "name": "The Blue Block",
+    "name_zh": "蓝色质量块模型",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将躯干和髋部视为一个整体的蓝色方块，正手即是该方块的90°/90°旋转。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (旋转)",
+    "confidence": 0.6
+  },
+  {
+    "id": "interception_border",
+    "name": "Interception Border",
+    "name_zh": "拦截边界线",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "以领头脚为界，球拍必须在球越过此线前进行“拦截”，防止球挤到身体。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (定位)",
+    "confidence": 0.6
+  },
+  {
+    "id": "guiding_tension",
+    "name": "Guiding Tension",
+    "name_zh": "引导性张力",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "在击球瞬间及之后极短时间内，双臂保持一定张力以确保球沿预定轨道飞行。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (微调)",
+    "confidence": 0.6
+  },
+  {
+    "id": "slapping_intent",
+    "name": "Slapping Intent",
+    "name_zh": "鞭打/扇耳光意图",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "击球时追求“清脆响声”和“打透”球的心理意图，而非摩擦感。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "press_roll",
+    "name": "Press & Roll",
+    "name_zh": "按压并滚动",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "通过将球按在静止拍面上向上滚动的动作，体会摩擦力与向前压力的结合。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "triangle_movement",
+    "name": "Triangle Movement",
+    "name_zh": "三角形移动",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "移动时不与底线平行，而是以斜角向球移动，形成“拦截”态势。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "hitting_with_weight",
+    "name": "Hitting with Weight",
+    "name_zh": "体重击球感",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将注意力从“手臂如何挥”转移到“身体重心如何向前穿过球”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "core_initiation",
+    "name": "Core Initiation",
+    "name_zh": "核心启动",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "所有的击球动作（正/反/发）都由肚脐/核心的转动或收缩启动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "ready_state",
+    "name": "Ready State",
+    "name_zh": "动态准备状态",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "不仅仅是站位，而是一种持续微动、像跳绳一样的心理和生理警觉状态。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Active**",
+    "confidence": 0.6
+  },
+  {
+    "id": "trigger_finger_support",
+    "name": "Trigger Finger Support",
+    "name_zh": "食指支撑位",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "食指与中指分开，食指第一节指骨在拍柄下方提供支撑，增加对拍头的控制。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "**Active**",
+    "confidence": 0.6
+  },
+  {
+    "id": "flight_data_gap",
+    "name": "Flight Data Gap",
+    "name_zh": "飞行数据缺口",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "识别球的方向很快，但判断深度和速度需要更多时间（数据），在此之前不应锁定步法。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "distance_penalty",
+    "name": "Distance Penalty",
+    "name_zh": "距离惩罚",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "提前进入关闭式会缩短人球距离，导致在面对深球时反应时间锐减。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "load_hit",
+    "name": "\"Load... Hit\"",
+    "name_zh": "确保“Load”的过程持续到球弹起之后。",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "*此训练是 D09 (髋打低速喂球) 的前置逻辑训练。*\n\n---\n\n### 第八部分：比喻与类比",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "解释什么概念 (ID)",
+    "confidence": 0.6
+  },
+  {
+    "id": "torque_release",
+    "name": "Torque Release",
+    "name_zh": "扭矩释放效应",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "当从开放式步法向前跨步进入中性步时，身体预先积攒的旋转张力会消失。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "distance_shortening",
+    "name": "Distance Shortening",
+    "name_zh": "空间压缩风险",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "面对快速球时，向前跨步会缩短人球距离，导致反应时间不足。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "rhythm_relief",
+    "name": "Rhythm Relief",
+    "name_zh": "节奏减压",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "在热身阶段通过中性步的重心转移来寻找节奏，从而让手臂进入放松状态。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "intercepting_mindset",
+    "name": "Intercepting Mindset",
+    "name_zh": "拦截心态",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将击球视为“拦截”飞行的球，而非等待球到达某个点。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "speed_timing_paradox",
+    "name": "Speed-Timing Paradox",
+    "name_zh": "速度-时机悖论",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "面对快球时，直觉是增加挥拍速度（导致失控），正确做法是提早启动时机。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_strike_zone_spatial",
+    "name": "The Strike Zone (Spatial)",
+    "name_zh": "空间击球区",
+    "aliases": [],
+    "category": "drill",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "在地面标记出的物理区域，要求球拍必须在球进入该区域时与其汇合。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "topspin_levels_1_3",
+    "name": "Topspin Levels (1-3)",
+    "name_zh": "上旋三级阶梯",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "将上旋强度量化为1-3级，用于训练中的自我感知和控制。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "flat_foundation",
+    "name": "Flat Foundation",
+    "name_zh": "平击地基论",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "认为网球的根基是干净的平击，上旋只是在此基础上的“插件”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "solid_sound_feedback",
+    "name": "Solid Sound Feedback",
+    "name_zh": "击球音效反馈",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "通过击球瞬间的“砰”声（平击）还是“嘶”声（薄摩擦）来判断动力链效率。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_backswing_illusion",
+    "name": "The Backswing Illusion",
+    "name_zh": "引拍错觉",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "观察者看到的球拍向后移动的长距离，实际上是身体旋转带动的，而非手臂向后挥动。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (结果)",
+    "confidence": 0.6
+  },
+  {
+    "id": "arm_s_contribution",
+    "name": "Arm's Contribution",
+    "name_zh": "手臂贡献量",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "在引拍过程中，手臂相对于胸腔做的真实位移（通常只是微小的抬起）。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (动作)",
+    "confidence": 0.6
+  },
+  {
+    "id": "brain_s_calculation_bias",
+    "name": "Brain's Calculation Bias",
+    "name_zh": "大脑计算偏差",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "大脑倾向于让拍头与球处于同一高度以提高甜区命中率，从而抵制“掉拍头”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive (本能)",
+    "confidence": 0.6
+  },
+  {
+    "id": "trajectory_visualization",
+    "name": "Trajectory Visualization",
+    "name_zh": "轨迹可视化",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "击球者预想的球过网高度直接决定了拍头掉落的深度。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "fast_vs_hard_paradox",
+    "name": "Fast vs. Hard Paradox",
+    "name_zh": "快与重的悖论",
+    "aliases": [],
+    "category": "biomechanics",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "“发狠力(Hard)”会导致肌肉僵硬阻断鞭打；“挥速快(Fast)”则要求肌肉松弛。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "natural_upward_arc",
+    "name": "Natural Upward Arc",
+    "name_zh": "自然向上弧线",
+    "aliases": [],
+    "category": "connection",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "拍头在击球点靠前时，由于动力链惯性自然处于上升轨道，无需刻意“捞”。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "c_3_step_forward_pattern",
+    "name": "3-Step Forward Pattern",
+    "name_zh": "3步向前步法",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "进攻短球时的标准步法：垫步-1-2-3（在第3步落地击球）。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active",
+    "confidence": 0.6
+  },
+  {
+    "id": "brain_triggered_recovery",
+    "name": "Brain-Triggered Recovery",
+    "name_zh": "大脑触发的补救步",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "当重心过早失去平衡向前倒时，大脑强制后腿前跨以防摔倒的被动动作。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Passive",
+    "confidence": 0.6
+  },
+  {
+    "id": "the_forward_backswing",
+    "name": "The Forward Backswing",
+    "name_zh": "**向前引拍模型**",
+    "aliases": [],
+    "category": "mental_model",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "认为引拍动作是由非持拍手侧（左侧）向球的方向主动“挤压/推进”而产生的，而非持拍手向后拉。",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "Active (左侧推进)",
+    "confidence": 0.6
+  },
+  {
+    "id": "left",
+    "name": "\"Left!\"",
+    "name_zh": "录像检查引拍第一步是否由左侧启动。",
+    "aliases": [],
+    "category": "technique",
+    "sources": [
+      "feeltennis"
+    ],
+    "description": "*此训练是 **D11 (躯干甩臂热身)** 的进阶版，增加了对抗阻力和明确的心理指向。*\n\n---\n\n### 第八部分：比喻与类比",
+    "vlm_features": [],
+    "muscles_involved": [],
+    "active_or_passive": "解释什么概念 (ID)",
+    "confidence": 0.6
   }
 ]

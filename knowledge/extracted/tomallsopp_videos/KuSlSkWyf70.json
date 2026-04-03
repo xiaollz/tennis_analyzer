@@ -1,6 +1,119 @@
 {
   "video_id": "KuSlSkWyf70",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "grip_swing_mapping",
+      "name": "Grip-Swing Mapping",
+      "name_zh": "握拍-挥拍映射",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "握拍越靠近大陆式，动作越倾向于“摆动(Swing)”；越靠近西方式，越倾向于“投掷(Throw)”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (由握拍决定)",
+      "confidence": 0.8
+    },
+    {
+      "id": "pivot_transfer_timing",
+      "name": "Pivot-Transfer Timing",
+      "name_zh": "转轴-重心转移时序",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "区分“击球前转移重心”与“击球后转移重心”的两种合法节奏。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "heavy_object_rotation",
+      "name": "Heavy Object Rotation",
+      "name_zh": "重物旋转感知",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过想象/练习挥动重物，自然诱发手臂的旋前与旋后，而非主动控制手腕。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (诱发结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "vs",
+      "name": "`\"先转再打\" vs \"一起动\"`",
+      "name_zh": "观察重心在击球瞬间的分布。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "*此训练是 D06 (负重空挥) 的进阶版，更强调旋转轴心的感知。*\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_KuSlSkWyf70",
+      "target_id": "C38",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "解释了为什么西方式握拍更容易产生极高的转速（投掷力学）。",
+      "source_file": "tomallsopp_video_KuSlSkWyf70"
+    },
+    {
+      "source_id": "video_KuSlSkWyf70",
+      "target_id": "C43",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "修正了对“直臂”的极端理解，强调了动力链的连通性。",
+      "source_file": "tomallsopp_video_KuSlSkWyf70"
+    },
+    {
+      "source_id": "video_KuSlSkWyf70",
+      "target_id": "C15",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了 FTT 中“掉拍头”是重力产物而非主动下压。",
+      "source_file": "tomallsopp_video_KuSlSkWyf70"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C15",
+      "name_zh": "重力驱动",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T05",
+      "name_zh": "协调链首尾理论",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "旋前 (Pronation)",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C43",
+      "name_zh": "鞭打 vs 刚体",
+      "relationship": "Refines"
+    }
+  ]
 }

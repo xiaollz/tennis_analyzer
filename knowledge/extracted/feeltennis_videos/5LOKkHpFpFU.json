@@ -1,6 +1,112 @@
 {
   "video_id": "5LOKkHpFpFU",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "the_blue_block",
+      "name": "The Blue Block",
+      "name_zh": "蓝色质量块模型",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "将躯干和髋部视为一个整体的蓝色方块，正手即是该方块的90°/90°旋转。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (旋转)",
+      "confidence": 0.8
+    },
+    {
+      "id": "interception_border",
+      "name": "Interception Border",
+      "name_zh": "拦截边界线",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "以领头脚为界，球拍必须在球越过此线前进行“拦截”，防止球挤到身体。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (定位)",
+      "confidence": 0.8
+    },
+    {
+      "id": "guiding_tension",
+      "name": "Guiding Tension",
+      "name_zh": "引导性张力",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "在击球瞬间及之后极短时间内，双臂保持一定张力以确保球沿预定轨道飞行。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (微调)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_5LOKkHpFpFU",
+      "target_id": "C02",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "强化了 Unit Turn 不仅仅是引拍，而是整个身体质量的重新定向。",
+      "source_file": "feeltennis_video_5LOKkHpFpFU"
+    },
+    {
+      "source_id": "video_5LOKkHpFpFU",
+      "target_id": "C18",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "视频展示了当手臂完全作为“乘客”时，正手的简洁性。",
+      "source_file": "feeltennis_video_5LOKkHpFpFU"
+    },
+    {
+      "source_id": "video_5LOKkHpFpFU",
+      "target_id": "C45",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "将“区域”具象化为一条不可逾越的“边界线”，更易于视觉化。",
+      "source_file": "feeltennis_video_5LOKkHpFpFU"
+    },
+    {
+      "source_id": "video_5LOKkHpFpFU",
+      "target_id": "C29",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "用数据证明了“主动做随挥”对球的轨迹没有任何物理贡献。",
+      "source_file": "feeltennis_video_5LOKkHpFpFU"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C02",
+      "name_zh": "整体转身 (Unit Turn)",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C45",
+      "name_zh": "击球区域而非击球点",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C46",
+      "name_zh": "随挥是诊断工具",
+      "relationship": "Supports"
+    }
+  ]
 }

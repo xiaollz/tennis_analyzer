@@ -1,6 +1,53 @@
 {
   "video_id": "qgO4PC2NZw8",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "the_arm_throw",
+      "name": "The Arm Throw",
+      "name_zh": "手臂投掷感",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在高强度击球时，有意识地将手臂/球拍“扔”向击球区的动作，而非等待被动拉动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    },
+    {
+      "id": "connected_rotation",
+      "name": "Connected Rotation",
+      "name_zh": "同步旋转感",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "感觉手臂、肩膀和躯干作为一个整体同时向球转动的感知状态。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_together_feel",
+      "name": "The \"Together\" Feel",
+      "name_zh": "“在一起”体感",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间，球拍的移动与身体转动完全同步，没有明显的先后滞后感。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

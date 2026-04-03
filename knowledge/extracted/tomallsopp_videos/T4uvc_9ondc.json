@@ -1,6 +1,79 @@
 {
   "video_id": "T4uvc_9ondc",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "post_contact_reverse_kinetic_chain",
+      "name": "Post-contact Reverse Kinetic Chain",
+      "name_zh": "后触球反向动力链",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "触球后，动力链顺序反转：拍头最快，带动手臂，最后带动身体。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "deceleration_to_acceleration_principle",
+      "name": "Deceleration-to-Acceleration Principle",
+      "name_zh": "减速换加速原则",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "为了让末端（拍头）加速，近端（躯干）必须在特定时刻制动或减速。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (制动部分)",
+      "confidence": 0.8
+    },
+    {
+      "id": "the_block_symptom",
+      "name": "The \"Block\" Symptom",
+      "name_zh": "“整体块”症状",
+      "aliases": [],
+      "category": "symptom",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "手臂和身体像一个刚体一样同步旋转，缺乏独立性，导致拍头速度丢失。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (错误)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "DC04",
+      "name_zh": "过度旋转",
+      "relationship": "Is_instance_of"
+    },
+    {
+      "ref_id": "T19",
+      "name_zh": "躯干冻结",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C18",
+      "name_zh": "谦卑的引导者",
+      "relationship": "Supports"
+    }
+  ]
 }

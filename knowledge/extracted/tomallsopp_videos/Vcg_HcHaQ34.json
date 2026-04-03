@@ -1,6 +1,89 @@
 {
   "video_id": "Vcg_HcHaQ34",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "c_45_5_golf_separation",
+      "name": "45°+5° Golf Separation",
+      "name_zh": "45°+5°高尔夫分离模型",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "职业选手引拍时肩膀比髋部多转45°，启动瞬间髋部先走再增加5°分离，随后释放。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (引拍) / Passive (启动)",
+      "confidence": 0.8
+    },
+    {
+      "id": "deep_ball_open_stance",
+      "name": "Deep Ball Open Stance",
+      "name_zh": "深球开放式步法",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在面对深球或高球时，通过左脚向外踩（右手球员）保持开放式，以确保旋转空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_Vcg_HcHaQ34",
+      "target_id": "C13",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "为 FTT 的分离角提供了量化的视觉标准。",
+      "source_file": "tomallsopp_video_Vcg_HcHaQ34"
+    },
+    {
+      "source_id": "video_Vcg_HcHaQ34",
+      "target_id": "C36",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "确认了“延迟加速”和“动力链传递”的物理过程。",
+      "source_file": "tomallsopp_video_Vcg_HcHaQ34"
+    },
+    {
+      "source_id": "video_Vcg_HcHaQ34",
+      "target_id": "C42",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "解决了在防守/深球压力下如何维持旋转动力链的步法问题。",
+      "source_file": "tomallsopp_video_Vcg_HcHaQ34"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C02",
+      "name_zh": "整体转身(Unit Turn)",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C13",
+      "name_zh": "肩髋分离角",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C36",
+      "name_zh": "正确躯干时序",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Extends"
+    }
+  ]
 }

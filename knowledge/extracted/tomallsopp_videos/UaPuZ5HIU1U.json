@@ -1,6 +1,102 @@
 {
   "video_id": "UaPuZ5HIU1U",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "the_drink_stability",
+      "name": "The Drink Stability",
+      "name_zh": "饮品稳定性感知",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "通过想象或实际手持杯子来保持非主导手在击球瞬间的水平高度与稳定性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (训练中)",
+      "confidence": 0.8
+    },
+    {
+      "id": "nda_counterbalance",
+      "name": "NDA Counterbalance",
+      "name_zh": "非主导手被动平衡",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在失去平衡或大范围移动时，非主导手向后摆动以抵消身体倾斜，这属于救球补偿而非标准技术。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "arm_crossing_restriction",
+      "name": "Arm Crossing Restriction",
+      "name_zh": "交叉臂限制",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "非主导手横跨身体中线，导致躯干旋转受阻，属于动力链断裂。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (错误)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_UaPuZ5HIU1U",
+      "target_id": "C33",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了 FTT 中“制动”是加速的前提。",
+      "source_file": "tomallsopp_video_UaPuZ5HIU1U"
+    },
+    {
+      "source_id": "video_UaPuZ5HIU1U",
+      "target_id": "D13",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "抓拍是实现 D13 的一种具体且易执行的手段。",
+      "source_file": "tomallsopp_video_UaPuZ5HIU1U"
+    },
+    {
+      "source_id": "video_UaPuZ5HIU1U",
+      "target_id": "C04",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "夹球不仅稳定了左手，还强迫背阔肌参与连接，防止“飞袖”。",
+      "source_file": "tomallsopp_video_UaPuZ5HIU1U"
+    },
+    {
+      "source_id": "video_UaPuZ5HIU1U",
+      "target_id": "T10",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "强调了网球正手与其他投掷类运动在动力链上的普适性。",
+      "source_file": "tomallsopp_video_UaPuZ5HIU1U"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "DC04",
+      "name_zh": "过度旋转",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "T09",
+      "name_zh": "制动链",
+      "relationship": "Supports"
+    }
+  ]
 }

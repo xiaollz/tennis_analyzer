@@ -1,6 +1,127 @@
 {
   "video_id": "LU9yamZPOnw",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "grip_contact_depth_correlation",
+      "name": "Grip-Contact Depth Correlation",
+      "name_zh": "握拍-击球点深度关联",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "握拍越闭合（向西方式偏移），理想击球点越靠前且身体越需对正球场。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (力学要求)",
+      "confidence": 0.8
+    },
+    {
+      "id": "shoulder_squareness",
+      "name": "Shoulder Squareness",
+      "name_zh": "肩膀对正度",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间双肩连线与球网的平行程度。半西方式要求高度对正。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hand_behind_ball_strength",
+      "name": "Hand-Behind-Ball Strength",
+      "name_zh": "手在球后的力量感",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "击球瞬间手部处于拍头后方支撑，而非侧向拉扯，提供最强刚性。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"找准位置\"`",
+      "name_zh": "感受哪种握拍在哪个位置最“有劲”。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_LU9yamZPOnw",
+      "target_id": "C02",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "转身不仅是引拍，更是为了在前挥中实现“完全对正”。",
+      "source_file": "tomallsopp_video_LU9yamZPOnw"
+    },
+    {
+      "source_id": "video_LU9yamZPOnw",
+      "target_id": "C42",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了站位是为了服务于旋转轴的自由度。",
+      "source_file": "tomallsopp_video_LU9yamZPOnw"
+    },
+    {
+      "source_id": "video_LU9yamZPOnw",
+      "target_id": "C30",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "展示了当手部不在正确槽位（太靠后）时的力学崩溃。",
+      "source_file": "tomallsopp_video_LU9yamZPOnw"
+    },
+    {
+      "source_id": "video_LU9yamZPOnw",
+      "target_id": "C35",
+      "relation": "provides_reason_for",
+      "confidence": 0.8,
+      "evidence": "解释了为什么击球点滞后会导致“费力力量” (C27)。",
+      "source_file": "tomallsopp_video_LU9yamZPOnw"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C02",
+      "name_zh": "整体转身",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C30",
+      "name_zh": "手部槽位位置",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C37",
+      "name_zh": "正确轴心下的旋前",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Supports"
+    }
+  ]
 }

@@ -1,6 +1,89 @@
 {
   "video_id": "8b96lTo4zKA",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "triangle_movement",
+      "name": "Triangle Movement",
+      "name_zh": "三角形移动",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "移动时不与底线平行，而是以斜角向球移动，形成“拦截”态势。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "hitting_with_weight",
+      "name": "Hitting with Weight",
+      "name_zh": "体重击球感",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "将注意力从“手臂如何挥”转移到“身体重心如何向前穿过球”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "core_initiation",
+      "name": "Core Initiation",
+      "name_zh": "核心启动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "所有的击球动作（正/反/发）都由肚脐/核心的转动或收缩启动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"迎上去打\"`",
+      "name_zh": "击球后的落脚点是否在击球前落脚点的前方。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C25",
+      "name_zh": "小臂代偿",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C27",
+      "name_zh": "省力力量",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C29",
+      "name_zh": "主动vs被动区分",
+      "relationship": "Supports"
+    }
+  ]
 }

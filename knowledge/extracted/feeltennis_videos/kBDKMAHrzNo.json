@@ -1,6 +1,83 @@
 {
   "video_id": "kBDKMAHrzNo",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "brain_s_calculation_bias",
+      "name": "Brain's Calculation Bias",
+      "name_zh": "大脑计算偏差",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "大脑倾向于让拍头与球处于同一高度以提高甜区命中率，从而抵制“掉拍头”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (本能)",
+      "confidence": 0.8
+    },
+    {
+      "id": "trajectory_visualization",
+      "name": "Trajectory Visualization",
+      "name_zh": "轨迹可视化",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "击球者预想的球过网高度直接决定了拍头掉落的深度。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "fast_vs_hard_paradox",
+      "name": "Fast vs. Hard Paradox",
+      "name_zh": "快与重的悖论",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "“发狠力(Hard)”会导致肌肉僵硬阻断鞭打；“挥速快(Fast)”则要求肌肉松弛。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "natural_upward_arc",
+      "name": "Natural Upward Arc",
+      "name_zh": "自然向上弧线",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "拍头在击球点靠前时，由于动力链惯性自然处于上升轨道，无需刻意“捞”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"过绳子\"`",
+      "name_zh": "观察拍头是否在准备击球前自然下掉。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

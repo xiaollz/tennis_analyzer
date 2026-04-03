@@ -1,6 +1,127 @@
 {
   "video_id": "pAFDt_e5rQI",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "backwards_pivot",
+      "name": "Backwards Pivot",
+      "name_zh": "后向轴转",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在击球瞬间，非压力脚（左脚）向后方撤步或旋转，以腾出空间让髋部完全转动。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (初期练习)",
+      "confidence": 0.8
+    },
+    {
+      "id": "lead_foot_clearance",
+      "name": "Lead Foot Clearance",
+      "name_zh": "引导脚清空",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在中性球处理中，主动抬起或移动左脚，消除地面对旋转的阻力。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "golf_long_drive_analogy",
+      "name": "Golf Long-Drive Analogy",
+      "name_zh": "高尔夫长打类比",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "借鉴高尔夫球员通过左脚后撤来增加躯干旋转速度和力量的力学原理。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "N/A",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "\"清空空间\"",
+      "name_zh": "观察髋部转动是否比平时更剧烈。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "**关系**: 补充 D11 (躯干甩臂)，作为移动中的进阶版本。\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_pAFDt_e5rQI",
+      "target_id": "C42",
+      "relation": "is_instance_of",
+      "confidence": 0.8,
+      "evidence": "这是 C42 在处理深球时的具体战术应用。",
+      "source_file": "tomallsopp_video_pAFDt_e5rQI"
+    },
+    {
+      "source_id": "video_pAFDt_e5rQI",
+      "target_id": "C01",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了现代网球是旋转驱动而非线性驱动。",
+      "source_file": "tomallsopp_video_pAFDt_e5rQI"
+    },
+    {
+      "source_id": "video_pAFDt_e5rQI",
+      "target_id": "D13",
+      "relation": "provides_context",
+      "confidence": 0.8,
+      "evidence": "解释了为什么 D13 训练对防止“过度旋转”至关重要。",
+      "source_file": "tomallsopp_video_pAFDt_e5rQI"
+    },
+    {
+      "source_id": "video_pAFDt_e5rQI",
+      "target_id": "T23",
+      "relation": "extends",
+      "confidence": 0.8,
+      "evidence": "引入了跨学科的力学解释，增强了对“空间创造”的理解。",
+      "source_file": "tomallsopp_video_pAFDt_e5rQI"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C33",
+      "name_zh": "制动传递动量",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T19",
+      "name_zh": "躯干冻结",
+      "relationship": "Contradicts"
+    },
+    {
+      "ref_id": "D13",
+      "name_zh": "左手收胸制动",
+      "relationship": "Supports"
+    }
+  ]
 }

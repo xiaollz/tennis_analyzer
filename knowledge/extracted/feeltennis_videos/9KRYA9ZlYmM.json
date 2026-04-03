@@ -1,6 +1,116 @@
 {
   "video_id": "9KRYA9ZlYmM",
-  "concepts": [],
-  "edges": [],
-  "diagnostic_chains": []
+  "concepts": [
+    {
+      "id": "ready_state",
+      "name": "Ready State",
+      "name_zh": "动态准备状态",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "不仅仅是站位，而是一种持续微动、像跳绳一样的心理和生理警觉状态。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    },
+    {
+      "id": "trigger_finger_support",
+      "name": "Trigger Finger Support",
+      "name_zh": "食指支撑位",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "食指与中指分开，食指第一节指骨在拍柄下方提供支撑，增加对拍头的控制。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    },
+    {
+      "id": "bowling_motion",
+      "name": "Bowling Motion",
+      "name_zh": "保龄球式路径",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "想象挥拍路径像保龄球一样从后向前直线穿过，而非像铁饼一样横向圆弧。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active** (Intention)",
+      "confidence": 0.8
+    },
+    {
+      "id": "compress_roll",
+      "name": "Compress & Roll",
+      "name_zh": "挤压与滚动",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "触球时感觉球在弦床上被挤压并向上滚动，而非单纯的“刷”球表面。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active** (Intention)",
+      "confidence": 0.8
+    },
+    {
+      "id": "c_",
+      "name": "`\"跳起来\"`",
+      "name_zh": "身体是否有弹性感。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "引拍到位后，完全松开手腕，让球拍边缘（Edge）垂直下落。",
+      "confidence": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "video_9KRYA9ZlYmM",
+      "target_id": "C48",
+      "relation": "refines",
+      "confidence": 0.8,
+      "evidence": "提供了具体的握拍手指分布细节，增强了对拍面角度的感知。",
+      "source_file": "feeltennis_video_9KRYA9ZlYmM"
+    },
+    {
+      "source_id": "video_9KRYA9ZlYmM",
+      "target_id": "C11",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "再次确认了 Lag 是动力链时序的自然结果，严禁主动制造。",
+      "source_file": "feeltennis_video_9KRYA9ZlYmM"
+    },
+    {
+      "source_id": "video_9KRYA9ZlYmM",
+      "target_id": "T07",
+      "relation": "provides_drill_for",
+      "confidence": 0.8,
+      "evidence": "接拍动作是强制肩膀旋转和双臂协调的极佳诊断工具。",
+      "source_file": "feeltennis_video_9KRYA9ZlYmM"
+    },
+    {
+      "source_id": "video_9KRYA9ZlYmM",
+      "target_id": "T08",
+      "relation": "supports",
+      "confidence": 0.8,
+      "evidence": "强调了球在弦床上的停留感，这与 FTT 的击球区域概念一致。",
+      "source_file": "feeltennis_video_9KRYA9ZlYmM"
+    }
+  ],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

@@ -1,6 +1,69 @@
 {
   "video_id": "OBZaRtH7OQY",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "consistent_arm_angle_principle",
+      "name": "Consistent Arm Angle Principle",
+      "name_zh": "恒定手臂夹角原则",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "无论击球高度如何，肘部的弯曲程度应保持一致，通过改变身体与球的横向距离来适应高度变化。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    },
+    {
+      "id": "around_vs_across_path",
+      "name": "Around vs. Across Path",
+      "name_zh": "“绕球”与“横跨”路径",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "低球需要球拍轨迹从球的侧后方“绕过”(Around)；高球需要拍面更平地“横跨”(Across)球的后部。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "high_ball_shoulder_opening",
+      "name": "High Ball Shoulder Opening",
+      "name_zh": "高球肩膀开放补偿",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "处理高球时，肩膀需要比低球更早、更大幅度地打开，以创造“横跨”击球的空间。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "**Active**",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C06",
+      "name_zh": "肘部空间",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C31",
+      "name_zh": "高度调整层级",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "T08",
+      "name_zh": "球横跨拍面宽度旋转法则",
+      "relationship": "Supports"
+    }
+  ]
 }

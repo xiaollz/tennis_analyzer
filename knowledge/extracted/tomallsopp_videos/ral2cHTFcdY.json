@@ -1,6 +1,53 @@
 {
   "video_id": "ral2cHTFcdY",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "trailing_the_racket",
+      "name": "Trailing the Racket",
+      "name_zh": "球拍拖曳",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "引拍过程中，由肩膀转动“拖”着球拍走，而不是手带着球拍走。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (由转身驱动)",
+      "confidence": 0.8
+    },
+    {
+      "id": "gradual_squaring",
+      "name": "Gradual Squaring",
+      "name_zh": "渐进式对正",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "在前挥过程中，拍面是逐渐转正的，而不是在击球瞬间突然从“拍天”翻转到“拍球”。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (意识引导)",
+      "confidence": 0.8
+    },
+    {
+      "id": "no_flip_forehand",
+      "name": "No-Flip Forehand",
+      "name_zh": "无翻转正手",
+      "aliases": [],
+      "category": "biomechanics",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "避免在击球前出现剧烈的、不可控的手腕翻转动作，追求更平滑的动力传递。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

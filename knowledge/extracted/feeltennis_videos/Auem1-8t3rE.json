@@ -1,6 +1,83 @@
 {
   "video_id": "Auem1-8t3rE",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "default_open_stance",
+      "name": "Default Open Stance",
+      "name_zh": "默认开放式起手",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "无论来球如何，第一步始终保持开放式，作为所有步法的母体。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "flight_data_gap",
+      "name": "Flight Data Gap",
+      "name_zh": "飞行数据缺口",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "识别球的方向很快，但判断深度和速度需要更多时间（数据），在此之前不应锁定步法。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "distance_penalty",
+      "name": "Distance Penalty",
+      "name_zh": "距离惩罚",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "提前进入关闭式会缩短人球距离，导致在面对深球时反应时间锐减。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive",
+      "confidence": 0.8
+    },
+    {
+      "id": "timed_weight_transfer",
+      "name": "Timed Weight Transfer",
+      "name_zh": "定时重心转移",
+      "aliases": [],
+      "category": "connection",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "重心转移必须与击球时机同步，通过在外部脚（右脚）上的等待来积蓄能量。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active",
+      "confidence": 0.8
+    },
+    {
+      "id": "load_hit",
+      "name": "\"Load... Hit\"",
+      "name_zh": "确保“Load”的过程持续到球弹起之后。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "*此训练是 D09 (髋打低速喂球) 的前置逻辑训练。*\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

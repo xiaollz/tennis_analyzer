@@ -1,16 +1,53 @@
 {
   "video_id": "vcWAEcF6klU",
-  "concepts": [],
-  "edges": [
+  "concepts": [
     {
-      "source_id": "feel_tennis",
-      "target_id": "feel_tennis",
-      "relation": "supports",
-      "confidence": 0.7,
-      "evidence": "Referenced in video: [FeelTennis] Tennis Forehand Unit Turn - It's Not A Backswing",
-      "source_file": "feeltennis_video_vcWAEcF6klU",
-      "resolution": null
+      "id": "the_forward_backswing",
+      "name": "The Forward Backswing",
+      "name_zh": "**向前引拍模型**",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "认为引拍动作是由非持拍手侧（左侧）向球的方向主动“挤压/推进”而产生的，而非持拍手向后拉。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (左侧推进)",
+      "confidence": 0.8
+    },
+    {
+      "id": "visual_illusion_of_backswing",
+      "name": "Visual Illusion of Backswing",
+      "name_zh": "**引拍视觉错觉**",
+      "aliases": [],
+      "category": "mental_model",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "观察者看到球拍向后移动，但球员体感应是身体左侧向前，这种空间位移与身体感知的差异。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Passive (空间结果)",
+      "confidence": 0.8
+    },
+    {
+      "id": "left",
+      "name": "\"Left!\"",
+      "name_zh": "录像检查引拍第一步是否由左侧启动。",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "feeltennis"
+      ],
+      "description": "*此训练是 **D11 (躯干甩臂热身)** 的进阶版，增加了对抗阻力和明确的心理指向。*\n\n---\n\n### 第八部分：比喻与类比",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "解释什么概念 (ID)",
+      "confidence": 0.8
     }
   ],
-  "diagnostic_chains": []
+  "edges": [],
+  "diagnostic_chains": [],
+  "existing_concept_refs": []
 }

@@ -1,6 +1,59 @@
 {
   "video_id": "ftyfZXr3Zcw",
-  "concepts": [],
+  "concepts": [
+    {
+      "id": "right_left_hit_pattern",
+      "name": "Right-Left-Hit Pattern",
+      "name_zh": "右-左-击球模式",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "针对中低高度球，先加载右脚，跨出左脚锁定重心，然后击球。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (加载与跨步)",
+      "confidence": 0.8
+    },
+    {
+      "id": "right_hit_left_pattern",
+      "name": "Right-Hit-Left Pattern",
+      "name_zh": "右-击球-左模式",
+      "aliases": [],
+      "category": "technique",
+      "sources": [
+        "tomallsopp"
+      ],
+      "description": "针对高球或大范围移动，在右脚支撑下击球，击球瞬间或之后左脚才落地。",
+      "vlm_features": [],
+      "muscles_involved": [],
+      "active_or_passive": "Active (支撑发力)",
+      "confidence": 0.8
+    }
+  ],
   "edges": [],
-  "diagnostic_chains": []
+  "diagnostic_chains": [],
+  "existing_concept_refs": [
+    {
+      "ref_id": "C01",
+      "name_zh": "旋转动力链",
+      "relationship": "Supports"
+    },
+    {
+      "ref_id": "C42",
+      "name_zh": "脚的自由与髋旋转",
+      "relationship": "Extends"
+    },
+    {
+      "ref_id": "T01",
+      "name_zh": "击球中调整",
+      "relationship": "Refines"
+    },
+    {
+      "ref_id": "C23",
+      "name_zh": "躯干指挥腿部放大",
+      "relationship": "Supports"
+    }
+  ]
 }
