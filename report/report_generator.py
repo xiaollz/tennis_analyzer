@@ -288,7 +288,7 @@ class ReportGenerator:
         lines.append("")
         lines.append("## 综合教练建议")
         lines.append("")
-        lines.extend(self._coaching_summary(report, is_backhand))
+        lines.extend(self._coaching_summary(report, is_backhand, vlm_results=_vlm))
         lines.append("")
 
         # ── 方法论说明 ───────────────────────────────────────────────
@@ -345,47 +345,81 @@ class ReportGenerator:
 
     @staticmethod
     def _multi_swing_summary(vlm_results: list, report) -> List[str]:
-        """Generate a summary paragraph across all swings — core issues first."""
+        """Generate a coach-style narrative summary across all swings."""
         lines = []
         lines.append("## 核心问题")
         lines.append("")
 
-        # Collect root causes from all swings
-        root_causes = []
-        for v in vlm_results:
+        # Collect root causes with swing indices
+        from collections import Counter
+        swing_causes: List[tuple] = []  # (swing_1based, root_cause_text)
+        for i, v in enumerate(vlm_results):
             if not v:
                 continue
             tree = v.get("root_cause_tree", {})
             rc = tree.get("root_cause", "")
             if rc:
-                root_causes.append(rc)
+                swing_causes.append((i + 1, rc))
             elif v.get("issues"):
-                # Legacy format: use first issue name
-                root_causes.append(v["issues"][0].get("name", ""))
+                swing_causes.append((i + 1, v["issues"][0].get("name", "")))
 
-        if not root_causes:
+        if not swing_causes:
             return lines
 
-        # Count frequency of similar root causes (simple dedup by first 10 chars)
-        from collections import Counter
-        short_causes = [rc[:15] for rc in root_causes]
-        freq = Counter(short_causes)
-        top_cause_prefix = freq.most_common(1)[0][0] if freq else ""
+        # Group by similar root causes (prefix-based dedup)
+        short_to_full: Dict[str, str] = {}
+        short_to_swings: Dict[str, List[int]] = {}
+        for swing_num, rc in swing_causes:
+            prefix = rc[:15]
+            short_to_full.setdefault(prefix, rc)
+            short_to_swings.setdefault(prefix, []).append(swing_num)
 
-        # Find the most representative full root cause text
-        main_cause = next((rc for rc in root_causes if rc.startswith(top_cause_prefix)), root_causes[0])
-        occurrence = freq.most_common(1)[0][1] if freq else 0
+        # Sort groups by frequency (descending)
+        groups = sorted(short_to_swings.items(), key=lambda x: -len(x[1]))
+        main_prefix, main_swings = groups[0]
+        main_cause = short_to_full[main_prefix]
+        total = report.total_swings
 
-        lines.append(f"**{report.total_swings} 次击球中，{occurrence} 次出现同一个核心问题：{main_cause}**")
+        # Build a coach-style narrative paragraph (max 5 sentences)
+        parts = []
+
+        # Sentence 1-2: main problem and where it shows up
+        if len(main_swings) == total:
+            parts.append(f"看完这 {total} 个球，每一个都指向同一件事：**{main_cause}**。")
+        elif len(main_swings) >= total * 0.6:
+            swing_list = "、".join(str(s) for s in main_swings)
+            parts.append(
+                f"这 {total} 个球里，第 {swing_list} 球都有同一个核心问题：**{main_cause}**。"
+            )
+        else:
+            swing_list = "、".join(str(s) for s in main_swings)
+            parts.append(
+                f"第 {swing_list} 球暴露了一个关键问题：**{main_cause}**。"
+            )
+
+        # Sentence 3: how the main problem manifests (use downstream symptoms if available)
+        manifestations = []
+        for swing_num, rc in swing_causes:
+            if rc[:15] != main_prefix:
+                continue
+            v = vlm_results[swing_num - 1]
+            if v and v.get("root_cause_tree", {}).get("downstream_symptoms"):
+                for s in v["root_cause_tree"]["downstream_symptoms"][:2]:
+                    symptom = s.get("symptom", "")
+                    if symptom and symptom not in manifestations:
+                        manifestations.append(symptom)
+        if manifestations:
+            parts.append(f"它导致了{'、'.join(manifestations[:3])}等表面现象。")
+
+        # Sentence 4: secondary issue if exists
+        if len(groups) > 1:
+            sec_prefix, sec_swings = groups[1]
+            sec_cause = short_to_full[sec_prefix]
+            sec_list = "、".join(str(s) for s in sec_swings)
+            parts.append(f"另外，第 {sec_list} 球还有一个不同的问题：{sec_cause}。")
+
+        lines.append(" ".join(parts))
         lines.append("")
-
-        # List which swings had which issues (compact)
-        if len(freq) > 1:
-            for prefix, count in freq.most_common(3):
-                matching = [i + 1 for i, rc in enumerate(root_causes) if rc[:15] == prefix]
-                full = next((rc for rc in root_causes if rc.startswith(prefix)), prefix)
-                lines.append(f"- 第 {'、'.join(map(str, matching))} 球：{full[:50]}")
-            lines.append("")
 
         return lines
 
@@ -451,15 +485,25 @@ class ReportGenerator:
             lines.append("## 击球分析")
         lines.append("")
 
-        # ── Compact mode: one-liner summary only ──
+        # ── Compact mode: two-line summary ──
         if compact and vlm_result:
             score = vlm_result.get("score")
             tree = vlm_result.get("root_cause_tree", {})
             rc = tree.get("root_cause", "")
+            # Line 1: score + root cause
             if score:
                 lines.append(f"评分 {score}/100 — {rc}" if rc else f"评分 {score}/100")
             elif rc:
                 lines.append(rc)
+            # Line 2: notable difference from other swings (secondary issue or unique symptom)
+            secondary = vlm_result.get("secondary_root_cause")
+            symptoms = tree.get("downstream_symptoms", [])
+            if secondary and secondary.get("root_cause"):
+                lines.append(f"  另见：{secondary['root_cause']}")
+            elif symptoms:
+                unique_symptom = symptoms[0].get("symptom", "")
+                if unique_symptom:
+                    lines.append(f"  表现：{unique_symptom}")
             lines.append("")
             return lines
 
@@ -541,15 +585,11 @@ class ReportGenerator:
 
     @staticmethod
     def _format_diagnostic_journey(session_data: Dict) -> List[str]:
-        """Render the multi-round diagnostic journey as a readable narrative.
+        """Compress multi-round diagnostic journey into 1-2 sentence summary.
 
-        RG-01: Shows iterative reasoning process
-        RG-02: Narrative style, not log dump
-        RG-04: Can be suppressed by caller via include_journey=False
-
-        Args:
-            session_data: Serialized DiagnosticSession dict with rounds,
-                         hypotheses, and observations.
+        Instead of listing every hypothesis and observation, distill the
+        reasoning path into a brief narrative: what was suspected, what was
+        ruled out, and what was confirmed.
         """
         lines: List[str] = []
         rounds = session_data.get("rounds", [])
@@ -558,124 +598,80 @@ class ReportGenerator:
         if not rounds:
             return lines
 
-        lines.append("### 诊断推理过程")
-        lines.append("")
-
-        # Build hypothesis lookup
-        hyp_map = {h["id"]: h for h in hypotheses}
-
-        # Narrative round labels
-        _ROUND_LABELS = {
-            0: "初步扫描",
-            -1: "根因确认",  # sentinel for last round
-        }
-
-        for i, rnd in enumerate(rounds):
-            round_num = rnd.get("round_number", i)
-            is_last = i == len(rounds) - 1
-
-            # Round header
-            if round_num == 0:
-                label = "初步扫描"
-            elif is_last:
-                label = "根因确认"
-            else:
-                label = f"针对性观察 (第{round_num}轮)"
-
-            lines.append(f"**{label}:**")
-            lines.append("")
-
-            observations = rnd.get("observations", [])
-            updates = rnd.get("hypothesis_updates", [])
-
-            if round_num == 0:
-                # Round 0: report initial hypothesis creation
-                active_hyps = [h for h in hypotheses if h.get("round_introduced", 0) == 0]
-                if active_hyps:
-                    hyp_names = [h.get("name_zh") or h.get("name", "?") for h in active_hyps]
-                    lines.append(f"- 初步假设: {', '.join(hyp_names)}")
-                else:
-                    lines.append("- 扫描未发现明显问题")
-                lines.append("")
-                continue
-
-            # Intermediate/final rounds: observations + hypothesis updates
-            if observations:
-                for obs in observations[:5]:  # Cap at 5 observations per round
-                    frame = obs.get("frame", "")
-                    desc = obs.get("description", "")[:100]
-                    judgment = obs.get("judgment", "")
-                    judgment_cn = {"yes": "是", "no": "否", "unclear": "不确定"}.get(judgment, judgment)
-
-                    override = obs.get("override_reason")
-                    if override:
-                        lines.append(f"- {frame}: {desc} -> **{judgment_cn}**（量化数据修正）")
-                    else:
-                        lines.append(f"- {frame}: {desc} -> **{judgment_cn}**")
-
-            if updates:
-                lines.append("")
-                for upd in updates:
-                    hyp_id = upd.get("hypothesis_id", "")
-                    action = upd.get("action", "")
-                    reason = upd.get("reason", "")[:80]
-                    hyp = hyp_map.get(hyp_id, {})
-                    hyp_name = hyp.get("name_zh") or hyp.get("name", hyp_id)
-
-                    if action == "confirm":
-                        lines.append(f"- **确认**: {hyp_name} — {reason}")
-                    elif action == "eliminate":
-                        lines.append(f"- **排除**: {hyp_name} — {reason}")
-                    elif action == "adjust":
-                        lines.append(f"- **调整**: {hyp_name} — {reason}")
-
-            lines.append("")
-
-        # Summary: final hypothesis state
         confirmed = [h for h in hypotheses if h.get("status") == "confirmed"]
         eliminated = [h for h in hypotheses if h.get("status") == "eliminated"]
-        if confirmed:
-            names = [h.get("name_zh") or h.get("name", "?") for h in confirmed]
-            lines.append(f"**诊断结论**: {', '.join(names)}")
-            if eliminated:
-                elim_names = [h.get("name_zh") or h.get("name", "?") for h in eliminated]
-                lines.append(f"**已排除**: {', '.join(elim_names)}")
-            lines.append("")
 
+        if not confirmed and not eliminated:
+            return lines
+
+        lines.append("**诊断路径：**", )
+
+        # Build a 1-2 sentence narrative
+        parts = []
+        if eliminated:
+            elim_names = [h.get("name_zh") or h.get("name", "?") for h in eliminated]
+            parts.append(f"排除了{', '.join(elim_names)}")
+        if confirmed:
+            conf_names = [h.get("name_zh") or h.get("name", "?") for h in confirmed]
+            # Try to get the reason from the last round's confirm action
+            confirm_reason = ""
+            for rnd in reversed(rounds):
+                for upd in rnd.get("hypothesis_updates", []):
+                    if upd.get("action") == "confirm" and upd.get("reason"):
+                        confirm_reason = upd["reason"][:60]
+                        break
+                if confirm_reason:
+                    break
+            if confirm_reason:
+                parts.append(f"确认{', '.join(conf_names)}（{confirm_reason}）")
+            else:
+                parts.append(f"确认{', '.join(conf_names)}")
+
+        num_rounds = len(rounds)
+        prefix = f"经过 {num_rounds} 轮观察，" if num_rounds > 1 else ""
+        lines.append(f"{prefix}{'，'.join(parts)}。")
         lines.append("")
 
         return lines
 
-    # ── 根因树格式（新版） ─────────────────────────────────────────────
+    # ── 根因树格式（v4 半结构化 + v3 JSON 兼容） ──────────────────────
 
     @staticmethod
     def _format_root_cause_tree(vlm_result: Dict) -> List[str]:
-        lines = []
+        lines: List[str] = []
         tree = vlm_result["root_cause_tree"]
 
-        # Overall narrative — 简短故事
+        # Core diagnosis / overall narrative
         if vlm_result.get("overall_narrative"):
-            lines.append(vlm_result['overall_narrative'])
+            lines.append(vlm_result["overall_narrative"])
             lines.append("")
 
-        # Root cause — 核心问题
+        # Root cause
         lines.append(f"> **根因：{tree.get('root_cause', '')}**")
         lines.append("")
+
+        # Evidence + Body
         evidence_parts = []
         if tree.get("root_cause_evidence"):
-            evidence_parts.append(tree['root_cause_evidence'])
+            evidence_parts.append(tree["root_cause_evidence"])
         if tree.get("root_cause_body"):
-            evidence_parts.append(tree['root_cause_body'])
+            evidence_parts.append(tree["root_cause_body"])
         if evidence_parts:
             lines.append(" ".join(evidence_parts))
             lines.append("")
+
+        # Feel
         if tree.get("root_cause_feel"):
             lines.append(f"*{tree['root_cause_feel']}*")
             lines.append("")
 
-        # Causal tree — 因果树（紧凑版）
-        symptoms = tree.get("downstream_symptoms", [])
-        if symptoms:
+        # Causal explanation (v4: free paragraph) or downstream symptoms (v3: tree)
+        if tree.get("causal_explanation"):
+            lines.append(tree["causal_explanation"])
+            lines.append("")
+        elif tree.get("downstream_symptoms"):
+            # v3 fallback: render causal tree from itemized symptoms
+            symptoms = tree["downstream_symptoms"]
             root_short = tree.get("root_cause", "根因")[:25]
             lines.append("```")
             lines.append(f"  {root_short}")
@@ -687,14 +683,14 @@ class ReportGenerator:
             lines.append("```")
             lines.append("")
 
-        # Fix — 顿悟 + 训练（合并为一段）
+        # Fix — 训练方法
         fix = tree.get("fix", {})
         if fix:
             fix_parts = []
             if fix.get("insight"):
                 fix_parts.append(f"**{fix['insight']}**")
             if fix.get("mental_model_shift"):
-                fix_parts.append(fix['mental_model_shift'])
+                fix_parts.append(fix["mental_model_shift"])
             if fix_parts:
                 lines.append(" ".join(fix_parts))
                 lines.append("")
@@ -720,13 +716,13 @@ class ReportGenerator:
                 lines.append(f"练：{sec_fix['one_drill']}")
             lines.append("")
 
-        # Strengths（只保留核心，不要进步信号的冗余描述）
+        # Strengths
         strengths = vlm_result.get("strengths", [])
         if strengths:
             strength_texts = []
             for s in strengths:
                 if isinstance(s, dict):
-                    strength_texts.append(s.get('description', ''))
+                    strength_texts.append(s.get("description", ""))
                 else:
                     strength_texts.append(str(s))
             if strength_texts:
@@ -940,46 +936,84 @@ class ReportGenerator:
             return f"{value:.2f} {unit}"
         return f"{value} {unit}"
 
-    def _coaching_summary(self, report: MultiSwingReport, is_backhand: bool = False) -> List[str]:
-        """从所有击球中提取综合教练建议 — 简洁定性版。"""
+    def _coaching_summary(
+        self,
+        report: MultiSwingReport,
+        is_backhand: bool = False,
+        vlm_results: Optional[List[Optional[Dict]]] = None,
+        user_profile: Optional[Dict] = None,
+    ) -> List[str]:
+        """Generate a coach-style closing paragraph — personal, actionable."""
         lines = []
+        _vlm = vlm_results or []
 
+        # Collect the primary root cause across all swings (for focus recommendation)
+        primary_fix = ""
+        primary_root = ""
+        for v in _vlm:
+            if not v:
+                continue
+            tree = v.get("root_cause_tree", {})
+            if tree.get("root_cause"):
+                primary_root = tree["root_cause"]
+                fix = tree.get("fix", {})
+                if fix.get("one_drill"):
+                    primary_fix = fix["one_drill"]
+                break  # use first available
+
+        # Collect KPI-based strengths
         all_kpis: List[KPIResult] = []
         for ev in report.swing_evaluations:
             all_kpis.extend(ev.kpi_results)
 
         valid = [k for k in all_kpis if k.rating not in ("无数据", "n/a")]
-        if not valid:
-            lines.append("*数据不足，无法生成教练建议。*")
-            return lines
+        good_names = []
+        if valid:
+            kpi_avg: Dict[str, List[float]] = {}
+            kpi_map: Dict[str, KPIResult] = {}
+            for kpi in valid:
+                kpi_avg.setdefault(kpi.kpi_id, []).append(kpi.score)
+                kpi_map[kpi.kpi_id] = kpi
+            avg_scores = [(kpi_id, float(sum(s) / len(s)), kpi_map[kpi_id])
+                          for kpi_id, s in kpi_avg.items()]
+            avg_scores.sort(key=lambda x: x[1], reverse=True)
+            good_names = [kpi.name for _, avg, kpi in avg_scores[:2] if avg >= 60]
 
-        # 按 KPI ID 分组，取平均分
-        kpi_avg: Dict[str, List[float]] = {}
-        kpi_map: Dict[str, KPIResult] = {}
-        for kpi in valid:
-            kpi_avg.setdefault(kpi.kpi_id, []).append(kpi.score)
-            kpi_map[kpi.kpi_id] = kpi
+        # Build a single narrative paragraph
+        parts = []
 
-        avg_scores = [(kpi_id, float(sum(scores) / len(scores)), kpi_map[kpi_id])
-                      for kpi_id, scores in kpi_avg.items()]
-        avg_scores.sort(key=lambda x: x[1], reverse=True)
+        # Acknowledge what's working
+        if good_names:
+            parts.append(f"{'和'.join(good_names)}做得不错，这些保持住。")
 
-        # 做得好的方面
-        good = [kpi for _, avg, kpi in avg_scores[:3] if avg >= 50]
-        if good:
-            lines.append("**做得好的方面**: " + "、".join(kpi.name for kpi in good) + "。")
-            lines.append("")
+        # Reference user training history if available
+        if user_profile and user_profile.get("recent_focus"):
+            recent = user_profile["recent_focus"]
+            parts.append(f"结合你最近在练的「{recent}」，")
 
-        # 最需要改进的方面
-        weak = [kpi for _, avg, kpi in avg_scores[-3:] if avg < 80]
-        if weak:
-            lines.append("**最需要改进**: " + "、".join(kpi.name for kpi in weak) + "。")
-            lines.append("")
-
-        # 核心理念提醒
-        if is_backhand:
-            lines.append("记住单反的核心：保持侧身、充分伸展、非持拍手平衡。力量来自地面和转体，不是手臂。")
+        # Core advice: one focus for next session
+        if primary_root and primary_fix:
+            parts.append(
+                f"下次训练只抓一件事：解决「{primary_root}」—— {primary_fix}。"
+                "其他先不管，把这一个练到不用想为止。"
+            )
+        elif primary_root:
+            parts.append(
+                f"下次训练的重点：专攻「{primary_root}」。"
+                "一次只改一件事，改透了再往下走。"
+            )
         else:
-            lines.append("记住容错正手的核心：前方接触、髋带动前挥、向外向前穿过球。普通球不丢比偶尔一板神球更重要。")
+            # Fallback to general principle
+            if is_backhand:
+                parts.append(
+                    "继续巩固侧身转体和手臂伸展，"
+                    "下次训练选一个最薄弱的环节重点练，不要同时改多个。"
+                )
+            else:
+                parts.append(
+                    "继续巩固动力链连接，"
+                    "下次训练选一个最薄弱的环节重点练，不要同时改多个。"
+                )
 
+        lines.append(" ".join(parts))
         return lines

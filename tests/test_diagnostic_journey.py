@@ -140,22 +140,22 @@ class TestDiagnosticJourneyGeneration:
         session_data = _make_3_round_session()
         lines = ReportGenerator._format_diagnostic_journey(session_data)
 
-        # Should have content
-        assert len(lines) > 5
+        # Should have content (compressed: header + narrative + blank)
+        assert len(lines) >= 2
         # Should have journey header
-        assert any("诊断推理过程" in l for l in lines)
+        assert any("诊断路径" in l for l in lines)
 
     def test_empty_session_returns_empty(self):
         session_data = _make_session_data(rounds=[], hypotheses=[])
         lines = ReportGenerator._format_diagnostic_journey(session_data)
         assert len(lines) == 0
 
-    def test_round_0_shows_initial_hypotheses(self):
+    def test_compressed_journey_mentions_reasoning(self):
         session_data = _make_3_round_session()
         lines = ReportGenerator._format_diagnostic_journey(session_data)
         text = "\n".join(lines)
-        # Should mention initial hypotheses
-        assert "初步假设" in text or "初步扫描" in text
+        # Compressed format should mention the number of rounds
+        assert "轮观察" in text or "诊断路径" in text
 
     def test_confirmed_hypothesis_appears_in_conclusion(self):
         session_data = _make_3_round_session()
@@ -171,12 +171,11 @@ class TestDiagnosticJourneyGeneration:
         assert "排除" in text
         assert "拍头下压" in text
 
-    def test_convergence_score_shown(self):
+    def test_compressed_journey_is_concise(self):
         session_data = _make_3_round_session()
         lines = ReportGenerator._format_diagnostic_journey(session_data)
-        text = "\n".join(lines)
-        assert "收敛度" in text
-        assert "90%" in text
+        # Compressed format should be no more than 5 lines total
+        assert len(lines) <= 5
 
 
 # ---------------------------------------------------------------------------
@@ -195,20 +194,15 @@ class TestNarrativeStyle:
         assert "obs_r1_01" not in text  # No raw observation IDs
         assert "hyp_dc_" not in text  # No raw hypothesis IDs
 
-    def test_observations_have_frame_references(self):
+    def test_compressed_narrative_is_readable(self):
         session_data = _make_3_round_session()
         lines = ReportGenerator._format_diagnostic_journey(session_data)
         text = "\n".join(lines)
-        # Observations should reference frames
-        assert "图" in text
-
-    def test_round_labels_are_descriptive(self):
-        session_data = _make_3_round_session()
-        lines = ReportGenerator._format_diagnostic_journey(session_data)
-        text = "\n".join(lines)
-        # Should use descriptive labels, not "Round 0", "Round 1"
-        assert "初步扫描" in text
-        assert "根因确认" in text
+        # Should be a readable sentence, not raw data
+        assert "。" in text  # ends with Chinese period
+        # Should not contain verbose round-by-round labels
+        assert "Round 0" not in text
+        assert "Round 1" not in text
 
 
 # ---------------------------------------------------------------------------
@@ -231,8 +225,8 @@ class TestBackwardCompatibility:
         lines = ReportGenerator._vlm_section(v1_result, {}, 0, 1)
         text = "\n".join(lines)
         # Should have root cause tree but NOT journey
-        assert "根因诊断" in text
-        assert "诊断推理过程" not in text
+        assert "根因" in text
+        assert "诊断路径" not in text
 
     def test_v2_result_has_both_journey_and_tree(self):
         """v2.0 result with diagnostic_session -> journey + root_cause_tree."""
@@ -248,8 +242,8 @@ class TestBackwardCompatibility:
         lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1)
         text = "\n".join(lines)
         # Should have BOTH
-        assert "诊断推理过程" in text
-        assert "根因诊断" in text
+        assert "诊断路径" in text
+        assert "根因" in text
 
     def test_v2_result_journey_suppressed(self):
         """include_journey=False suppresses the journey section."""
@@ -265,8 +259,8 @@ class TestBackwardCompatibility:
         lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1, include_journey=False)
         text = "\n".join(lines)
         # Journey suppressed, tree still present
-        assert "诊断推理过程" not in text
-        assert "根因诊断" in text
+        assert "诊断路径" not in text
+        assert "根因" in text
 
     def test_legacy_format_still_works(self):
         """v1.0 result with issues list (no root_cause_tree) still works."""
@@ -279,7 +273,7 @@ class TestBackwardCompatibility:
         lines = ReportGenerator._vlm_section(legacy_result, {}, 0, 1)
         text = "\n".join(lines)
         assert "手臂主导" in text
-        assert "诊断推理过程" not in text
+        assert "诊断路径" not in text
 
 
 # ---------------------------------------------------------------------------
@@ -296,7 +290,7 @@ class TestJourneyOptional:
         }
         lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1)
         text = "\n".join(lines)
-        assert "诊断推理过程" in text
+        assert "诊断路径" in text
 
     def test_include_journey_false(self):
         """Explicitly setting include_journey=False hides it."""
@@ -305,4 +299,4 @@ class TestJourneyOptional:
         }
         lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1, include_journey=False)
         text = "\n".join(lines)
-        assert "诊断推理过程" not in text
+        assert "诊断路径" not in text
