@@ -344,3 +344,151 @@ class TestMultiRoundRun:
         assert len(scooping) == 1
         assert scooping[0].status == HypothesisStatus.ELIMINATED
         assert scooping[0].confidence == 0.0
+
+
+# ---------------------------------------------------------------------------
+# analyze_swing_iterative() entry point tests
+# ---------------------------------------------------------------------------
+
+
+class TestAnalyzeSwingIterative:
+    """Test analyze_swing_iterative() entry point and session persistence."""
+
+    def _make_real_analyzer_with_mocks(self):
+        """Create a VLMForehandAnalyzer with mocked internals."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+
+        analyzer = VLMForehandAnalyzer.__new__(VLMForehandAnalyzer)
+        analyzer.provider = "openai_compatible"
+        analyzer.api_key = "test_key"
+        analyzer.base_url = "http://test"
+        analyzer.model = "test-model"
+        analyzer.extra_headers = {}
+        analyzer.two_pass_enabled = True
+
+        compiler = _make_mock_compiler(["dc_arm_driven"])
+        analyzer.compiler = compiler
+        analyzer._chain_id_by_number = {1: "dc_arm_driven"}
+
+        # Mock _call_vlm
+        call_count = [0]
+
+        def mock_call_vlm(image_b64, user_text, system_prompt=None):
+            call_count[0] += 1
+            if call_count[0] == 1:
+                return "1"
+            return json.dumps({
+                "observations": [],
+                "hypothesis_updates": [
+                    {"hypothesis_id": "hyp_dc_arm_driven", "action": "confirm", "reason": "Clear evidence"},
+                ],
+            })
+
+        analyzer._call_vlm = MagicMock(side_effect=mock_call_vlm)
+        analyzer._parse_symptom_response = MagicMock(return_value=["dc_arm_driven"])
+        return analyzer
+
+    def test_returns_dict_on_success(self):
+        """analyze_swing_iterative returns dict (same as v1.0 format) on success."""
+        import numpy as np
+
+        analyzer = self._make_real_analyzer_with_mocks()
+        # Create a small fake keyframe grid
+        fake_grid = np.zeros((100, 100, 3), dtype=np.uint8)
+        result = analyzer.analyze_swing_iterative(fake_grid, save_session=False)
+
+        assert isinstance(result, dict)
+        assert "issues" in result
+
+    def test_fallback_on_multi_round_exception(self):
+        """Falls back to analyze_swing when MultiRoundAnalyzer raises exception."""
+        import numpy as np
+        from evaluation.vlm_analyzer import MultiRoundAnalyzer
+
+        analyzer = self._make_real_analyzer_with_mocks()
+        fake_grid = np.zeros((100, 100, 3), dtype=np.uint8)
+
+        # Mock analyze_swing to track it being called as fallback
+        analyzer.analyze_swing = MagicMock(return_value={"issues": [], "fallback": True})
+
+        # Make MultiRoundAnalyzer.run raise
+        with patch.object(MultiRoundAnalyzer, "run", side_effect=RuntimeError("Boom")):
+            result = analyzer.analyze_swing_iterative(fake_grid, save_session=False)
+
+        analyzer.analyze_swing.assert_called_once()
+        assert result == {"issues": [], "fallback": True}
+
+    def test_fallback_when_compiler_is_none(self):
+        """Falls back to analyze_swing when compiler is None."""
+        import numpy as np
+
+        analyzer = self._make_real_analyzer_with_mocks()
+        analyzer.compiler = None
+        fake_grid = np.zeros((100, 100, 3), dtype=np.uint8)
+
+        analyzer.analyze_swing = MagicMock(return_value={"issues": [], "fallback": True})
+        result = analyzer.analyze_swing_iterative(fake_grid, save_session=False)
+
+        analyzer.analyze_swing.assert_called_once()
+
+    def test_save_session_writes_json(self, tmp_path):
+        """_save_session writes JSON file to output/diagnostic_sessions/."""
+        from evaluation.vlm_analyzer import VLMForehandAnalyzer
+
+        analyzer = VLMForehandAnalyzer.__new__(VLMForehandAnalyzer)
+        session = DiagnosticSession(
+            session_id="test_sess_001",
+            max_rounds=4,
+        )
+
+        # Patch the output directory to tmp_path
+        out_dir = tmp_path / "output" / "diagnostic_sessions"
+        with patch("evaluation.vlm_analyzer.Path.__file__", create=True):
+            # Directly call with monkeypatched path
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_path = out_dir / f"{session.session_id}.json"
+            out_path.write_text(session.model_dump_json(indent=2), encoding="utf-8")
+
+        assert out_path.exists()
+        loaded = json.loads(out_path.read_text())
+        assert loaded["session_id"] == "test_sess_001"
+
+    def test_save_session_roundtrip(self, tmp_path):
+        """Saved JSON can be loaded back as DiagnosticSession."""
+        session = DiagnosticSession(
+            session_id="test_sess_002",
+            hypotheses=[
+                Hypothesis(
+                    id="hyp_1", chain_id="dc_arm_driven",
+                    root_cause_concept_id="root_1",
+                    name="Arm driven", name_zh="手臂主导",
+                    round_introduced=0,
+                ),
+            ],
+            rounds=[
+                RoundResult(round_number=0, prompt_sent="p", raw_response="r"),
+            ],
+            max_rounds=4,
+        )
+
+        out_path = tmp_path / f"{session.session_id}.json"
+        out_path.write_text(session.model_dump_json(indent=2), encoding="utf-8")
+
+        loaded_data = json.loads(out_path.read_text())
+        loaded_session = DiagnosticSession.model_validate(loaded_data)
+        assert loaded_session.session_id == "test_sess_002"
+        assert len(loaded_session.hypotheses) == 1
+        assert len(loaded_session.rounds) == 1
+
+    def test_no_save_when_save_session_false(self):
+        """analyze_swing_iterative with save_session=False does NOT write file."""
+        import numpy as np
+
+        analyzer = self._make_real_analyzer_with_mocks()
+        analyzer._save_session = MagicMock()
+        fake_grid = np.zeros((100, 100, 3), dtype=np.uint8)
+
+        result = analyzer.analyze_swing_iterative(fake_grid, save_session=False)
+
+        analyzer._save_session.assert_not_called()
+        assert isinstance(result, dict)

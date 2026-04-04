@@ -1306,6 +1306,59 @@ class VLMForehandAnalyzer:
         except Exception:
             return None
 
+    # ── V2.0 multi-round entry point ──────────────────────────────────
+
+    def analyze_swing_iterative(
+        self,
+        keyframe_grid: np.ndarray,
+        kpi_summary: str = "",
+        video_path: Optional[str] = None,
+        supplementary_metrics: Optional[Dict] = None,
+        max_rounds: int = 4,
+        save_session: bool = True,
+    ) -> Optional[Dict]:
+        """V2.0 entry point: multi-round iterative VLM analysis.
+
+        Falls back to v1.0 analyze_swing() on ANY failure.
+        Returns the same dict format as analyze_swing() for backward compat.
+        """
+        try:
+            if not self.compiler or not self.two_pass_enabled:
+                return self.analyze_swing(keyframe_grid, kpi_summary, video_path, supplementary_metrics)
+
+            image_b64 = _encode_image(keyframe_grid)
+            mra = MultiRoundAnalyzer(self, max_rounds=max_rounds)
+            session = mra.run(image_b64, kpi_summary, supplementary_metrics, video_path)
+
+            if save_session:
+                self._save_session(session, video_path)
+
+            # Return the final_result dict (same schema as v1.0 output)
+            return session.final_result
+
+        except Exception as exc:
+            print(f"[VLM] Multi-round failed ({exc}), falling back to v1.0")
+            return self.analyze_swing(keyframe_grid, kpi_summary, video_path, supplementary_metrics)
+
+    def _save_session(
+        self, session: "DiagnosticSession", video_path: Optional[str] = None
+    ) -> Optional[Path]:
+        """Save full DiagnosticSession as JSON for debugging/replay.
+
+        Saves to: output/diagnostic_sessions/{session_id}.json
+        Creates directory if needed. Returns path or None on failure.
+        """
+        try:
+            out_dir = Path(__file__).resolve().parent.parent / "output" / "diagnostic_sessions"
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_path = out_dir / f"{session.session_id}.json"
+            out_path.write_text(session.model_dump_json(indent=2), encoding="utf-8")
+            print(f"[VLM] Session saved: {out_path}")
+            return out_path
+        except Exception as exc:
+            print(f"[VLM] Failed to save session: {exc}")
+            return None
+
 
 # ── Response parsing ────────────────────────────────────────────────
 
