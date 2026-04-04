@@ -1,0 +1,68 @@
+你正在对一次正手击球进行最终确认轮诊断。请综合所有轮次的观察证据，确认根因并生成诊断结果。
+
+【诊断历程】
+共进行了{{ total_rounds }}轮观察分析。
+
+【假设状态】
+{% for h in hypotheses %}
+{% if h.status == "confirmed" %}
+[已确认] {{ h.name_zh }}（置信度: {{ "%.2f"|format(h.confidence) }}）
+{% elif h.status == "active" %}
+[待确认] {{ h.name_zh }}（置信度: {{ "%.2f"|format(h.confidence) }}）
+{% elif h.status == "eliminated" %}
+[已排除] {{ h.name_zh }}（原因: 证据不支持）
+{% endif %}
+{% endfor %}
+
+【证据汇总】
+{% for h in confirmed_and_active %}
+■ {{ h.name_zh }}
+  {% if h.supporting_obs %}支持证据:
+  {% for obs in h.supporting_obs %}
+  + {{ obs.frame }}: {{ obs.description }}（置信度{{ "%.2f"|format(obs.confidence) }}）
+  {% endfor %}
+  {% endif %}
+  {% if h.contradicting_obs %}反对证据:
+  {% for obs in h.contradicting_obs %}
+  - {{ obs.frame }}: {{ obs.description }}（置信度{{ "%.2f"|format(obs.confidence) }}）
+  {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% if causal_chains %}
+【因果链】
+{% for chain_info in causal_chains %}
+{{ chain_info.root_cause }} → {{ chain_info.downstream | join(" → ") }}
+{% endfor %}
+{% endif %}
+
+【任务】
+基于以上所有证据，请生成最终诊断报告。注意：
+1. 将最上游的根因放在issues列表第一位
+2. 下游症状标注为downstream_of字段
+3. 每个issue必须引用支持它的具体观察证据
+
+【输出格式】
+严格JSON：
+{
+  "issues": [
+    {
+      "name": "问题中文名",
+      "severity": "高/中/低",
+      "description": "详细描述",
+      "confidence": 0.0到1.0,
+      "chain_id": "诊断链ID",
+      "root_cause": true或false,
+      "downstream_of": "上游根因ID或null",
+      "evidence": ["支持证据摘要"]
+    }
+  ],
+  "strengths": ["做得好的方面"],
+  "overall_assessment": "总体评价",
+  "root_cause_tree": {
+    "primary_root_cause": "最上游根因ID",
+    "downstream_symptoms": ["下游症状ID列表"],
+    "confidence": 0.0到1.0,
+    "causal_chain": ["根因 -> 中间 -> 症状"]
+  }
+}

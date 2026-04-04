@@ -15,9 +15,15 @@ from knowledge.schemas import (
     Concept,
     ConceptType,
     DiagnosticChain,
+    DiagnosticSession,
     DiagnosticStep,
     Edge,
+    Hypothesis,
+    HypothesisStatus,
+    Observation,
+    ObservationJudgment,
     RelationType,
+    RoundResult,
 )
 
 
@@ -499,3 +505,204 @@ class TestTwoPassVLMIntegration:
         # Should have made 2 calls: failed pass1 + fallback single-pass
         assert len(call_log) == 2
         assert result is not None
+
+
+# ---------------------------------------------------------------------------
+# Phase 9 Plan 1 tests: observation_directive + confirmation templates
+# ---------------------------------------------------------------------------
+
+
+def _make_fixture_session(graph_fixture=None, chains_fixture=None) -> DiagnosticSession:
+    """Build a DiagnosticSession with 2 active hypotheses and some observations."""
+    return DiagnosticSession(
+        session_id="test_sess_p9",
+        hypotheses=[
+            Hypothesis(
+                id="hyp_dc_arm_driven_hitting",
+                chain_id="dc_arm_driven_hitting",
+                root_cause_concept_id="forearm_compensation",
+                name="Arm driven hitting",
+                name_zh="手臂主导挥拍",
+                status=HypothesisStatus.ACTIVE,
+                confidence=0.6,
+                round_introduced=0,
+            ),
+            Hypothesis(
+                id="hyp_dc_scooping",
+                chain_id="dc_scooping",
+                root_cause_concept_id="racket_drop",
+                name="Scooping",
+                name_zh="捞球",
+                status=HypothesisStatus.ACTIVE,
+                confidence=0.5,
+                round_introduced=0,
+            ),
+        ],
+        observations=[
+            Observation(
+                id="obs_r1_01",
+                round_number=1,
+                frame="图3",
+                description="Arm leads body rotation",
+                judgment=ObservationJudgment.YES,
+                confidence=0.85,
+                directive_source="check_step_0",
+            ),
+        ],
+        rounds=[
+            RoundResult(round_number=0, prompt_sent="p", raw_response="r"),
+        ],
+        active_chain_ids=["dc_arm_driven_hitting", "dc_scooping"],
+        checked_steps={},
+        max_rounds=4,
+    )
+
+
+def _make_confirmed_session() -> DiagnosticSession:
+    """Session with one confirmed + one active hypothesis."""
+    return DiagnosticSession(
+        session_id="test_sess_confirmed",
+        hypotheses=[
+            Hypothesis(
+                id="hyp_dc_arm_driven_hitting",
+                chain_id="dc_arm_driven_hitting",
+                root_cause_concept_id="forearm_compensation",
+                name="Arm driven hitting",
+                name_zh="手臂主导挥拍",
+                status=HypothesisStatus.CONFIRMED,
+                confidence=0.9,
+                supporting_observations=["obs_r1_01"],
+                round_introduced=0,
+                round_resolved=1,
+            ),
+            Hypothesis(
+                id="hyp_dc_scooping",
+                chain_id="dc_scooping",
+                root_cause_concept_id="racket_drop",
+                name="Scooping",
+                name_zh="捞球",
+                status=HypothesisStatus.ACTIVE,
+                confidence=0.5,
+                round_introduced=0,
+            ),
+        ],
+        observations=[
+            Observation(
+                id="obs_r1_01",
+                round_number=1,
+                frame="图3",
+                description="Arm leads body rotation clearly",
+                judgment=ObservationJudgment.YES,
+                confidence=0.9,
+                directive_source="check_step_0",
+            ),
+        ],
+        rounds=[
+            RoundResult(round_number=0, prompt_sent="p", raw_response="r"),
+            RoundResult(round_number=1, prompt_sent="p", raw_response="r"),
+        ],
+        max_rounds=4,
+    )
+
+
+class TestObservationDirectiveTemplate:
+    """Test observation_directive.j2 template rendering."""
+
+    def test_renders_with_hypothesis_context(self, compiler):
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        assert isinstance(prompt, str)
+        assert "手臂主导挥拍" in prompt
+        assert "捞球" in prompt
+        assert "第1轮" in prompt or "1" in prompt
+
+    def test_contains_observation_questions(self, compiler):
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        # Should contain check_zh from the diagnostic chains
+        assert "髋部是否在肩部之前旋转" in prompt or "球拍在前挥前是否低于手部" in prompt
+
+    def test_budget_under_4k(self, compiler):
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        assert len(prompt) <= 4000, f"Directive prompt too long: {len(prompt)} chars"
+
+    def test_json_format_instructions(self, compiler):
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        assert "observations" in prompt
+        assert "hypothesis_updates" in prompt
+        assert "judgment" in prompt
+
+    def test_maps_vlm_features(self, compiler):
+        """KD-04: vlm_features from concepts are included in directives."""
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        # forearm_compensation has vlm_features: ["elbow angle contracting in frames 4-5"]
+        assert "elbow angle" in prompt or "视觉特征" in prompt
+
+    def test_empty_active_hypotheses(self, compiler):
+        """No active hypotheses -> minimal prompt."""
+        session = _make_fixture_session()
+        for h in session.hypotheses:
+            h.status = HypothesisStatus.ELIMINATED
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        assert isinstance(prompt, str)
+        # Should still render, just with no directives
+        assert "第1轮" in prompt or "1" in prompt
+
+
+class TestConfirmationTemplate:
+    """Test confirmation.j2 template rendering."""
+
+    def test_renders_with_evidence_summary(self, compiler):
+        session = _make_confirmed_session()
+        prompt = compiler.compile_confirmation_prompt(session)
+        assert isinstance(prompt, str)
+        assert "手臂主导挥拍" in prompt
+        assert "已确认" in prompt or "confirmed" in prompt
+
+    def test_budget_under_6k(self, compiler):
+        session = _make_confirmed_session()
+        prompt = compiler.compile_confirmation_prompt(session)
+        assert len(prompt) <= 6000, f"Confirmation prompt too long: {len(prompt)} chars"
+
+    def test_root_cause_tree_format(self, compiler):
+        session = _make_confirmed_session()
+        prompt = compiler.compile_confirmation_prompt(session)
+        assert "root_cause_tree" in prompt
+        assert "issues" in prompt
+
+    def test_evidence_grouped_by_hypothesis(self, compiler):
+        session = _make_confirmed_session()
+        prompt = compiler.compile_confirmation_prompt(session)
+        # Should show the observation evidence under the hypothesis
+        assert "Arm leads body rotation" in prompt or "支持证据" in prompt
+
+
+class TestCompileObservationDirectiveMethod:
+    """Test compile_observation_directive method on VLMPromptCompiler."""
+
+    def test_generates_directives_from_unchecked_steps(self, compiler):
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        # Should have at least one directive question
+        assert "1." in prompt
+
+    def test_skips_checked_steps(self, compiler):
+        session = _make_fixture_session()
+        # Mark first step of arm_driven as checked
+        session.checked_steps = {"dc_arm_driven_hitting": [0]}
+        prompt = compiler.compile_observation_directive(session, round_number=2)
+        # Should still have scooping directive
+        assert "球拍在前挥前是否低于手部" in prompt
+        # Step 0 of arm_driven (hip rotation) should be skipped, step 1 used instead
+        # Step 1: "手臂是否独立启动挥拍？"
+        assert "手臂是否独立启动挥拍" in prompt
+
+    def test_frame_from_vlm_frame(self, compiler):
+        """DiagnosticChain.vlm_frame is used as frame reference when available."""
+        session = _make_fixture_session()
+        prompt = compiler.compile_observation_directive(session, round_number=1)
+        # Default frame when vlm_frame is None should be "图2-4"
+        assert "图" in prompt

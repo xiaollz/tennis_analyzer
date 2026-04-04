@@ -1,0 +1,39 @@
+你正在对一次正手击球进行第{{ round_number }}轮诊断分析。
+
+【当前假设】
+{% for h in active_hypotheses %}
+- {{ h.name_zh }}（置信度: {{ "%.2f"|format(h.confidence) }}）
+  {% if h.supporting_observations %}支持证据: {{ h.supporting_observations | length }}条{% endif %}
+  {% if h.contradicting_observations %}反对证据: {{ h.contradicting_observations | length }}条{% endif %}
+{% endfor %}
+
+【本轮观察任务】
+请仔细观察以下具体细节，不要做全面分析。每个问题只需回答观察到的具体现象。
+{% for directive in directives %}
+{{ loop.index }}. {% if directive.frame %}在{{ directive.frame }}中：{% endif %}{{ directive.question_zh }}
+   {% if directive.vlm_features %}视觉特征: {{ directive.vlm_features | join("; ") }}{% endif %}
+   关联假设: {{ directive.hypothesis_id }}
+{% endfor %}
+
+【回答格式】
+严格JSON，不要添加任何其他文字：
+{
+  "observations": [
+    {
+      "id": "obs_r{{ round_number }}_01",
+      "round_number": {{ round_number }},
+      "frame": "观察的帧编号，如图3",
+      "description": "具体看到了什么",
+      "judgment": "yes或no或unclear",
+      "confidence": 0.0到1.0,
+      "directive_source": "对应的检查项编号"
+    }
+  ],
+  "hypothesis_updates": [
+    {
+      "hypothesis_id": "假设ID",
+      "action": "confirm或eliminate或adjust",
+      "reason": "基于什么观察得出此判断"
+    }
+  ]
+}

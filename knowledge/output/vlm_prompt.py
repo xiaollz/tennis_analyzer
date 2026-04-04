@@ -23,6 +23,7 @@ from knowledge.graph import KnowledgeGraph
 from knowledge.schemas import DiagnosticChain
 
 if TYPE_CHECKING:
+    from knowledge.schemas import DiagnosticSession, Hypothesis, Observation
     from knowledge.user_profile import UserProfile
 
 
@@ -33,6 +34,12 @@ _DYNAMIC_BUDGET = 10_000
 
 # Maximum character budget for the user context section in Pass 2.
 _USER_CONTEXT_BUDGET = 1_500
+
+# Budget for observation directive prompts (per round).
+_DIRECTIVE_BUDGET = 4_000
+
+# Budget for final confirmation prompt.
+_CONFIRMATION_BUDGET = 6_000
 
 
 class VLMPromptCompiler:
@@ -185,6 +192,100 @@ class VLMPromptCompiler:
         parts.append(dynamic)
         return "\n\n".join(parts)
 
+    def compile_observation_directive(
+        self,
+        session: "DiagnosticSession",
+        round_number: int,
+    ) -> str:
+        """Generate a targeted observation prompt for a specific diagnostic round.
+
+        Converts active hypotheses + unchecked diagnostic steps into
+        frame-specific VLM questions. Maps DiagnosticStep.check,
+        Concept.vlm_features, and DiagnosticChain.vlm_frame into directives.
+
+        Budget-enforced: output stays under ``_DIRECTIVE_BUDGET`` chars.
+
+        Parameters
+        ----------
+        session : DiagnosticSession
+            Current session state with hypotheses and checked_steps.
+        round_number : int
+            Which diagnostic round (1-based).
+        """
+        active_hypotheses = [
+            h for h in session.hypotheses
+            if h.status.value == "active"
+        ]
+
+        directives = self._generate_directives(session, active_hypotheses)
+
+        template = self.env.get_template("observation_directive.j2")
+        rendered = template.render(
+            round_number=round_number,
+            active_hypotheses=active_hypotheses,
+            directives=directives,
+        )
+
+        if len(rendered) > _DIRECTIVE_BUDGET:
+            cut = rendered.rfind("\n", 0, _DIRECTIVE_BUDGET)
+            if cut == -1:
+                cut = _DIRECTIVE_BUDGET
+            rendered = rendered[:cut]
+
+        return rendered
+
+    def compile_confirmation_prompt(self, session: "DiagnosticSession") -> str:
+        """Generate the final confirmation round prompt with full evidence summary.
+
+        Summarises all observations grouped by hypothesis and requests
+        a root_cause_tree JSON output compatible with v1.0 format.
+
+        Budget-enforced: output stays under ``_CONFIRMATION_BUDGET`` chars.
+
+        Parameters
+        ----------
+        session : DiagnosticSession
+            Current session with all hypotheses and observations.
+        """
+        obs_map: dict[str, list] = {}
+        for obs in session.observations:
+            obs_map.setdefault(obs.directive_source, []).append(obs)
+
+        # Build per-hypothesis evidence view
+        confirmed_and_active = []
+        for h in session.hypotheses:
+            if h.status.value in ("confirmed", "active"):
+                sup_obs = [
+                    o for o in session.observations if o.id in h.supporting_observations
+                ]
+                con_obs = [
+                    o for o in session.observations if o.id in h.contradicting_observations
+                ]
+                confirmed_and_active.append({
+                    "name_zh": h.name_zh,
+                    "supporting_obs": sup_obs,
+                    "contradicting_obs": con_obs,
+                })
+
+        # Build causal chain summaries from confirmed hypotheses
+        causal_chains = self._build_causal_chain_summaries(session)
+
+        template = self.env.get_template("confirmation.j2")
+        rendered = template.render(
+            total_rounds=len(session.rounds),
+            hypotheses=session.hypotheses,
+            confirmed_and_active=confirmed_and_active,
+            causal_chains=causal_chains,
+        )
+
+        if len(rendered) > _CONFIRMATION_BUDGET:
+            cut = rendered.rfind("\n", 0, _CONFIRMATION_BUDGET)
+            if cut == -1:
+                cut = _CONFIRMATION_BUDGET
+            rendered = rendered[:cut]
+
+        return rendered
+
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
@@ -233,3 +334,81 @@ class VLMPromptCompiler:
         if cut == -1:
             cut = budget
         return dynamic[:cut] + "\n\n[...truncated to fit budget...]"
+
+    def _generate_directives(
+        self,
+        session: "DiagnosticSession",
+        active_hypotheses: list,
+    ) -> list[dict]:
+        """Convert active hypotheses + unchecked steps into observation directives.
+
+        For each active hypothesis, find the next unchecked DiagnosticStep in
+        its chain and map it into a directive with frame, question, and
+        VLM features from the graph.
+
+        This implements KD-04: DiagnosticStep.check + Concept.vlm_features
+        + DiagnosticChain.vlm_frame -> specific VLM questions.
+        """
+        directives: list[dict] = []
+
+        for hyp in active_hypotheses:
+            chain = self.chain_map.get(hyp.chain_id)
+            if not chain:
+                continue
+
+            # Determine which check steps are already done
+            checked = set(session.checked_steps.get(hyp.chain_id, []))
+
+            # Find next unchecked step
+            for idx, step in enumerate(chain.check_sequence):
+                if idx in checked:
+                    continue
+
+                # Resolve VLM features from the concept referenced by this step
+                concept_id = step.if_true
+                vlm_features: list[str] = []
+                if concept_id and concept_id in self.graph.graph:
+                    node_data = self.graph.graph.nodes[concept_id]
+                    vlm_features = node_data.get("vlm_features", [])
+
+                directives.append({
+                    "hypothesis_id": hyp.id,
+                    "chain_id": hyp.chain_id,
+                    "step_index": idx,
+                    "frame": chain.vlm_frame or "图2-4",
+                    "question_zh": step.check_zh,
+                    "question_en": step.check,
+                    "vlm_features": vlm_features,
+                })
+
+                # Only one directive per hypothesis per round to keep focused
+                break
+
+        return directives
+
+    def _build_causal_chain_summaries(
+        self, session: "DiagnosticSession"
+    ) -> list[dict]:
+        """Build causal chain summary dicts for confirmed hypotheses."""
+        summaries: list[dict] = []
+        confirmed = [
+            h for h in session.hypotheses if h.status.value == "confirmed"
+        ]
+
+        for hyp in confirmed:
+            # Use get_causal_chain to find paths from root cause
+            paths = self.graph.get_causal_chain(hyp.root_cause_concept_id)
+            if paths:
+                # Use the longest path as the most informative chain
+                longest = max(paths, key=len)
+                summaries.append({
+                    "root_cause": hyp.root_cause_concept_id,
+                    "downstream": longest[1:] if len(longest) > 1 else [],
+                })
+            else:
+                summaries.append({
+                    "root_cause": hyp.root_cause_concept_id,
+                    "downstream": [],
+                })
+
+        return summaries
