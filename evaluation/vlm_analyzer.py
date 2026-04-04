@@ -806,6 +806,7 @@ class MultiRoundAnalyzer:
             video_path=video_path,
             image_b64_hash=img_hash,
             max_rounds=self.max_rounds,
+            supplementary_metrics=supplementary_metrics,
             created_at=datetime.now(timezone.utc).isoformat(),
         )
         self._status_snapshots = []
@@ -831,14 +832,26 @@ class MultiRoundAnalyzer:
             round_result = self._execute_diagnostic_round(round_num, image_b64, is_final=is_last)
             self.session.rounds.append(round_result)
 
+            # HM-01: Observation anchoring validation
+            self._validate_observation_anchoring(round_result.observations)
+
             # Apply observation-based confidence scoring (HT-02)
             self._score_observations(round_result.observations)
+
+            # HM-03: Quantitative cross-validation against kinematic data
+            self._cross_validate_kinematics(round_result.observations)
 
             # Apply VLM hypothesis updates
             self._apply_hypothesis_updates(round_result.hypothesis_updates)
 
             # Collect observations into session
             self.session.observations.extend(round_result.observations)
+
+            # HM-02: Contradiction detection across rounds
+            self._detect_and_record_contradictions(round_result.observations)
+
+            # HM-04: Collect re-observation candidates
+            self._update_reobserve_candidates(round_result.observations)
 
             # Update checked_steps from the directives used in this round
             self._update_checked_steps(round_result)
@@ -1147,6 +1160,48 @@ class MultiRoundAnalyzer:
         snapshot = {(h.id, h.status.value) for h in self.session.hypotheses}
         self._status_snapshots.append(snapshot)
 
+    # ------------------------------------------------------------------
+    # Hallucination Mitigation (HM-01 through HM-04)
+    # ------------------------------------------------------------------
+
+    def _validate_observation_anchoring(self, observations: list["Observation"]) -> None:
+        """HM-01: Validate that observations are anchored to frames."""
+        try:
+            from evaluation.hallucination_mitigation import validate_anchoring
+            validate_anchoring(observations)
+        except ImportError:
+            pass
+
+    def _cross_validate_kinematics(self, observations: list["Observation"]) -> None:
+        """HM-03: Cross-validate VLM observations against YOLO kinematic data."""
+        try:
+            from evaluation.hallucination_mitigation import cross_validate_with_kinematics
+            cross_validate_with_kinematics(observations, self.session.supplementary_metrics)
+        except ImportError:
+            pass
+
+    def _detect_and_record_contradictions(self, new_observations: list["Observation"]) -> None:
+        """HM-02: Detect cross-round contradictions."""
+        try:
+            from evaluation.hallucination_mitigation import detect_contradictions
+            contradictions = detect_contradictions(self.session, new_observations)
+            self.session.contradictions.extend(contradictions)
+        except ImportError:
+            pass
+
+    def _update_reobserve_candidates(self, new_observations: list["Observation"]) -> None:
+        """HM-04: Collect low-confidence / unanchored / contradicted observations for re-observation."""
+        try:
+            from evaluation.hallucination_mitigation import collect_reobserve_candidates
+            candidates = collect_reobserve_candidates(self.session, new_observations)
+            # Deduplicate with existing
+            existing = set(self.session.reobserve_candidates)
+            for c in candidates:
+                if c not in existing:
+                    self.session.reobserve_candidates.append(c)
+        except ImportError:
+            pass
+
     def _check_convergence(self) -> bool:
         """Check stopping criteria:
         1. Top hypothesis confidence >= 0.8
@@ -1190,7 +1245,11 @@ class MultiRoundAnalyzer:
         return 1.0 - (active_count / total)
 
     def _build_final_result(self) -> dict:
-        """Build v1.0-compatible result dict from session state."""
+        """Build v1.0-compatible result dict from session state.
+
+        Includes diagnostic_session data for the report generator's
+        diagnostic journey section (RG-01).
+        """
         issues = []
         for h in self.session.hypotheses:
             if h.status in (HypothesisStatus.CONFIRMED, HypothesisStatus.ACTIVE):
@@ -1202,13 +1261,21 @@ class MultiRoundAnalyzer:
                     "chain_id": h.chain_id,
                 })
 
-        return {
+        result = {
             "issues": issues,
             "strengths": [],
             "overall_assessment": f"Multi-round analysis ({len(self.session.rounds)} rounds)",
             "convergence_score": self.session.convergence_score,
             "rounds_completed": len(self.session.rounds),
         }
+
+        # Include serialized session for diagnostic journey report (RG-01)
+        try:
+            result["diagnostic_session"] = self.session.model_dump()
+        except Exception:
+            pass
+
+        return result
 
 
 # ── Main Analyzer ───────────────────────────────────────────────────

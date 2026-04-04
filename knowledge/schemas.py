@@ -138,6 +138,8 @@ class Observation(BaseModel):
     judgment: ObservationJudgment
     confidence: float = Field(ge=0.0, le=1.0)
     directive_source: str = Field(description="Which check_step or directive generated this")
+    is_anchored: bool = Field(default=True, description="Whether observation has valid frame+feature anchoring")
+    override_reason: str | None = Field(default=None, description="If overridden by quantitative data, why")
 
 
 class HypothesisUpdate(BaseModel):
@@ -190,5 +192,8 @@ class DiagnosticSession(BaseModel):
     convergence_score: float = Field(default=0.0, ge=0.0, le=1.0)
     max_rounds: int = Field(default=4, ge=1, le=10)
     final_result: dict | None = None
+    supplementary_metrics: dict | None = Field(default=None, description="YOLO kinematic data for cross-validation")
+    reobserve_candidates: list[str] = Field(default_factory=list, description="Observation IDs needing re-observation")
+    contradictions: list[dict] = Field(default_factory=list, description="Detected contradiction pairs")
     created_at: str | None = None
     completed_at: str | None = None
