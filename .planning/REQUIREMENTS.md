@@ -98,23 +98,23 @@
 
 ### Hallucination Mitigation
 
-- [ ] **HM-01**: Observation anchoring: every VLM observation must reference a specific frame number and visual feature; unanchored observations are flagged
-- [ ] **HM-02**: Contradiction detection: if VLM contradicts itself across rounds on the same visual feature, trigger re-observation with more specific prompt
-- [ ] **HM-03**: Quantitative cross-validation: compare VLM observations against YOLO-based kinematic data (elbow angle, wrist trajectory) where available; override VLM on clear conflict
-- [ ] **HM-04**: Confidence-weighted observations: low-confidence (< 0.5) observations trigger re-observation in next round
+- [x] **HM-01**: Observation anchoring: every VLM observation must reference a specific frame number and visual feature; unanchored observations are flagged
+- [x] **HM-02**: Contradiction detection: if VLM contradicts itself across rounds on the same visual feature, trigger re-observation with more specific prompt
+- [x] **HM-03**: Quantitative cross-validation: compare VLM observations against YOLO-based kinematic data (elbow angle, wrist trajectory) where available; override VLM on clear conflict
+- [x] **HM-04**: Confidence-weighted observations: low-confidence (< 0.5) observations trigger re-observation in next round
 
 ### Report Generation
 
-- [ ] **RG-01**: New report section "diagnostic journey" showing the iterative reasoning process (hypotheses tested, evidence found, eliminations)
-- [ ] **RG-02**: Diagnostic journey renders as a narrative, not a log dump (readable by a non-technical tennis player)
-- [ ] **RG-03**: Existing root_cause_tree format preserved in final output -- multi-round produces the same JSON schema as v1.0 for backward compatibility
-- [ ] **RG-04**: Optional: diagnostic journey section can be hidden/collapsed for users who only want the result
+- [x] **RG-01**: New report section "diagnostic journey" showing the iterative reasoning process (hypotheses tested, evidence found, eliminations)
+- [x] **RG-02**: Diagnostic journey renders as a narrative, not a log dump (readable by a non-technical tennis player)
+- [x] **RG-03**: Existing root_cause_tree format preserved in final output -- multi-round produces the same JSON schema as v1.0 for backward compatibility
+- [x] **RG-04**: Optional: diagnostic journey section can be hidden/collapsed for users who only want the result
 
 ### Cost and Performance
 
 - [x] **CP-01**: Multi-round analysis stays under $0.01 per swing on Gemini Flash
 - [x] **CP-02**: Total latency under 20 seconds for typical 3-round analysis
-- [ ] **CP-03**: Focused per-round prompts stay under 4K chars each (except final confirmation at ~6K)
+- [x] **CP-03**: Focused per-round prompts stay under 4K chars each (except final confirmation at ~6K)
 
 ## Future Requirements (v3+)
 
@@ -162,13 +162,13 @@
 | MR-01 through MR-05 | Phase 8 | Complete |
 | KD-01 through KD-04 | Phase 9 | Complete |
 | HT-01 through HT-04 | Phase 9 | Complete |
-| HM-01 through HM-04 | Phase 10 | Pending |
-| RG-01 through RG-04 | Phase 10 | Pending |
-| CP-01 through CP-03 | Phase 8-10 | Pending |
+| HM-01 through HM-04 | Phase 10 | Complete |
+| RG-01 through RG-04 | Phase 10 | Complete |
+| CP-01 through CP-03 | Phase 8-10 | Complete |
 
 **Coverage:**
 - v1 requirements: 38 total, all complete
-- v2 requirements: 21 total, all pending
+- v2 requirements: 21 total, all complete
 - Mapped to phases: 59
 - Unmapped: 0
 

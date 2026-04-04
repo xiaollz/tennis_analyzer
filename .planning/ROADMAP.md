@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 7: User Integration** - Personal training journey connected to knowledge graph for personalized diagnostics
 - [x] **Phase 8: Multi-Round Loop Infrastructure** - Hypothesis/observation data models + MultiRoundAnalyzer orchestrator + convergence logic
 - [x] **Phase 9: Knowledge-Driven Directives & Hypothesis Tracking** - Graph-to-observation compilation + hypothesis lifecycle + cross-hypothesis causal reasoning
-- [ ] **Phase 10: Hallucination Mitigation & Report Integration** - Quantitative cross-validation + contradiction detection + diagnostic journey report section
+- [x] **Phase 10: Hallucination Mitigation & Report Integration** - Quantitative cross-validation + contradiction detection + diagnostic journey report section
 
 ## Phase Details
 
@@ -186,7 +186,10 @@ Plans:
   4. Report generator produces a "diagnostic journey" narrative section showing hypotheses tested and eliminated
   5. Final root_cause_tree JSON is backward compatible with v1.0 format (existing report rendering works unchanged)
   6. Diagnostic journey section is optional (flag-controlled) and renders as readable narrative, not log dump
-**Plans:** TBD (estimated 2-3 plans)
+**Plans:** 2 plans
+Plans:
+- [x] 10-01-PLAN.md -- Hallucination mitigation (anchoring, contradiction detection, YOLO cross-validation, re-observation triggers)
+- [x] 10-02-PLAN.md -- Diagnostic journey report section (narrative generation, backward compatibility)
 **Risk flags**: Over-engineering hallucination mitigation -- keep it simple (anchoring + contradiction detection + quantitative check). Report verbosity -- the journey section must be concise.
 
 ## Progress
@@ -207,4 +210,4 @@ Phase 8 depends on Phases 5+7 (existing VLM + user profile). Phase 9 depends on 
 | 7. User Integration | 2/2 | Complete | - |
 | 8. Multi-Round Loop Infrastructure | 2/2 | Complete | 2026-04-04 |
 | 9. Knowledge-Driven Directives & Hypothesis Tracking | 2/2 | Complete | 2026-04-04 |
-| 10. Hallucination Mitigation & Report Integration | 0/TBD | Not started | - |
+| 10. Hallucination Mitigation & Report Integration | 2/2 | Complete | 2026-04-04 |
