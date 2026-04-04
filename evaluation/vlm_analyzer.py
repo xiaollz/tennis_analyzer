@@ -25,6 +25,10 @@ try:
     from knowledge.output.vlm_prompt import VLMPromptCompiler
     from knowledge.graph import KnowledgeGraph
     from knowledge.schemas import DiagnosticChain
+    from knowledge.schemas import (
+        Hypothesis, HypothesisStatus, Observation, ObservationJudgment,
+        HypothesisUpdate, RoundResult, DiagnosticSession,
+    )
 
     _HAS_KNOWLEDGE = True
 except ImportError:
@@ -751,6 +755,255 @@ def _call_gemini(
     full_prompt = (system_prompt or _FTT_SYSTEM_PROMPT) + "\n\n" + user_text
     resp = gm.generate_content([full_prompt, img])
     return resp.text
+
+
+# ── Multi-Round Orchestrator ──────────────────────────────────────────
+
+
+class MultiRoundAnalyzer:
+    """Orchestrates multi-round VLM diagnostic loop.
+
+    Uses the existing VLMForehandAnalyzer._call_vlm() for VLM calls
+    and VLMPromptCompiler for prompt generation. Tracks hypotheses
+    across rounds and detects convergence.
+    """
+
+    def __init__(self, analyzer: "VLMForehandAnalyzer", max_rounds: int = 4):
+        self.analyzer = analyzer
+        self.max_rounds = max_rounds
+        self.session: "DiagnosticSession | None" = None
+        self._status_snapshots: list[set[tuple[str, str]]] = []
+
+    def run(
+        self,
+        image_b64: str,
+        kpi_summary: str = "",
+        supplementary_metrics: dict | None = None,
+        video_path: str | None = None,
+    ) -> "DiagnosticSession":
+        """Execute the full multi-round diagnostic loop.
+
+        Round 0: Symptom scan (reuses Pass 1 checklist)
+        Round 1-N: Targeted observation rounds
+        Final: Confirmation round or best-effort result
+        """
+        import hashlib
+        from datetime import datetime, timezone
+
+        session_id = f"sess_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
+        img_hash = hashlib.md5(image_b64[:200].encode()).hexdigest()[:12]
+
+        self.session = DiagnosticSession(
+            session_id=session_id,
+            video_path=video_path,
+            image_b64_hash=img_hash,
+            max_rounds=self.max_rounds,
+            created_at=datetime.now(timezone.utc).isoformat(),
+        )
+        self._status_snapshots = []
+
+        # Round 0: symptom scan (reuses existing Pass 1)
+        detected_chain_ids = self._execute_round_0(image_b64)
+        if not detected_chain_ids:
+            # No symptoms detected -> return empty session with final_result
+            self.session.final_result = {"issues": [], "strengths": [], "overall_assessment": "No issues detected"}
+            self.session.completed_at = datetime.now(timezone.utc).isoformat()
+            return self.session
+
+        # Create initial hypotheses
+        self.session.hypotheses = self._create_initial_hypotheses(detected_chain_ids)
+        self.session.active_chain_ids = list(detected_chain_ids)
+
+        # Take initial status snapshot
+        self._take_status_snapshot()
+
+        # Diagnostic rounds 1..max_rounds
+        for round_num in range(1, self.max_rounds + 1):
+            round_result = self._execute_diagnostic_round(round_num, image_b64)
+            self.session.rounds.append(round_result)
+
+            # Apply hypothesis updates
+            self._apply_hypothesis_updates(round_result.hypothesis_updates)
+
+            # Collect observations into session
+            self.session.observations.extend(round_result.observations)
+
+            # Take snapshot and check convergence
+            self._take_status_snapshot()
+            if self._check_convergence():
+                break
+
+        # Build final result from session state
+        self.session.convergence_score = self._compute_convergence_score()
+        self.session.final_result = self._build_final_result()
+        self.session.completed_at = datetime.now(timezone.utc).isoformat()
+        return self.session
+
+    def _execute_round_0(self, image_b64: str) -> list[str]:
+        """Round 0: symptom scan. Returns detected chain IDs.
+        Reuses compile_pass1_prompt() and _parse_symptom_response() exactly."""
+        pass1_prompt = self.analyzer.compiler.compile_pass1_prompt()
+        pass1_user = "Review the 6-frame grid and identify symptom categories."
+        raw = self.analyzer._call_vlm(image_b64, pass1_user, system_prompt=pass1_prompt)
+
+        round_result = RoundResult(
+            round_number=0,
+            prompt_sent=pass1_prompt,
+            raw_response=raw or "",
+        )
+        self.session.rounds.append(round_result)
+
+        if raw is None:
+            return []
+
+        return self.analyzer._parse_symptom_response(raw)
+
+    def _create_initial_hypotheses(self, detected_chain_ids: list[str]) -> list["Hypothesis"]:
+        """Create one Hypothesis per detected chain, linked to chain's primary root cause."""
+        hypotheses = []
+        for cid in detected_chain_ids:
+            chain = self.analyzer.compiler.chain_map.get(cid)
+            if not chain:
+                continue
+            root_cause = chain.root_causes[0] if chain.root_causes else cid
+            hyp = Hypothesis(
+                id=f"hyp_{cid}",
+                chain_id=cid,
+                root_cause_concept_id=root_cause,
+                name=chain.symptom,
+                name_zh=chain.symptom_zh,
+                status=HypothesisStatus.ACTIVE,
+                confidence=0.5,
+                round_introduced=0,
+            )
+            hypotheses.append(hyp)
+        return hypotheses
+
+    def _execute_diagnostic_round(self, round_num: int, image_b64: str) -> "RoundResult":
+        """Execute one diagnostic round: compile directive -> call VLM -> parse -> return RoundResult."""
+        active_ids = [h.chain_id for h in self.session.hypotheses if h.status == HypothesisStatus.ACTIVE]
+        prompt = self.analyzer.compiler.compile_pass2_prompt(active_ids)
+        user_text = f"Round {round_num}: Evaluate active hypotheses based on visual evidence."
+        raw = self.analyzer._call_vlm(image_b64, user_text, system_prompt=prompt)
+
+        observations = []
+        hypothesis_updates = []
+
+        if raw:
+            try:
+                data = json.loads(raw)
+                for obs_data in data.get("observations", []):
+                    try:
+                        obs = Observation(**obs_data)
+                        observations.append(obs)
+                    except Exception:
+                        pass
+                for upd_data in data.get("hypothesis_updates", []):
+                    try:
+                        upd = HypothesisUpdate(**upd_data)
+                        hypothesis_updates.append(upd)
+                    except Exception:
+                        pass
+            except (json.JSONDecodeError, TypeError):
+                pass  # No-op round if parse fails
+
+        from datetime import datetime, timezone
+
+        return RoundResult(
+            round_number=round_num,
+            prompt_sent=prompt,
+            raw_response=raw or "",
+            observations=observations,
+            hypothesis_updates=hypothesis_updates,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )
+
+    def _apply_hypothesis_updates(self, updates: list["HypothesisUpdate"]) -> None:
+        """Apply VLM hypothesis updates to session.hypotheses."""
+        hyp_map = {h.id: h for h in self.session.hypotheses}
+        current_round = len(self.session.rounds) - 1
+
+        for upd in updates:
+            hyp = hyp_map.get(upd.hypothesis_id)
+            if not hyp:
+                continue
+            if upd.action == "confirm":
+                hyp.status = HypothesisStatus.CONFIRMED
+                hyp.confidence = max(hyp.confidence, 0.8)
+                hyp.round_resolved = current_round
+            elif upd.action == "eliminate":
+                hyp.status = HypothesisStatus.ELIMINATED
+                hyp.confidence = 0.0
+                hyp.round_resolved = current_round
+            # "adjust": keep active, no confidence/status change
+
+    def _take_status_snapshot(self) -> None:
+        """Record current hypothesis statuses for stagnation detection."""
+        snapshot = {(h.id, h.status.value) for h in self.session.hypotheses}
+        self._status_snapshots.append(snapshot)
+
+    def _check_convergence(self) -> bool:
+        """Check stopping criteria:
+        1. Top hypothesis confidence >= 0.8
+        2. Only 1 active hypothesis left
+        3. No status change for 2 consecutive rounds
+        """
+        active = [h for h in self.session.hypotheses if h.status == HypothesisStatus.ACTIVE]
+
+        # Criterion 1: top confidence >= 0.8
+        all_confs = [h.confidence for h in self.session.hypotheses if h.status != HypothesisStatus.ELIMINATED]
+        if all_confs and max(all_confs) >= 0.8:
+            self.session.convergence_score = self._compute_convergence_score()
+            return True
+
+        # Criterion 2: only 1 active hypothesis
+        if len(active) <= 1:
+            self.session.convergence_score = self._compute_convergence_score()
+            return True
+
+        # Criterion 3: no change for 2 consecutive rounds
+        if len(self._status_snapshots) >= 3:
+            if self._status_snapshots[-1] == self._status_snapshots[-2] == self._status_snapshots[-3]:
+                self.session.convergence_score = self._compute_convergence_score()
+                return True
+
+        return False
+
+    def _compute_convergence_score(self) -> float:
+        """Per V2_RESEARCH.md:
+        If any confirmed: max(h.confidence for confirmed hypotheses)
+        Else: 1.0 - (active_count / initial_count)
+        """
+        confirmed = [h for h in self.session.hypotheses if h.status == HypothesisStatus.CONFIRMED]
+        if confirmed:
+            return max(h.confidence for h in confirmed)
+
+        total = len(self.session.hypotheses)
+        if total == 0:
+            return 0.0
+        active_count = len([h for h in self.session.hypotheses if h.status == HypothesisStatus.ACTIVE])
+        return 1.0 - (active_count / total)
+
+    def _build_final_result(self) -> dict:
+        """Build v1.0-compatible result dict from session state."""
+        issues = []
+        for h in self.session.hypotheses:
+            if h.status in (HypothesisStatus.CONFIRMED, HypothesisStatus.ACTIVE):
+                issues.append({
+                    "name": h.name_zh or h.name,
+                    "severity": "高" if h.status == HypothesisStatus.CONFIRMED else "中",
+                    "description": f"Hypothesis {h.id}: {h.name}",
+                    "confidence": h.confidence,
+                    "chain_id": h.chain_id,
+                })
+
+        return {
+            "issues": issues,
+            "strengths": [],
+            "overall_assessment": f"Multi-round analysis ({len(self.session.rounds)} rounds)",
+            "convergence_score": self.session.convergence_score,
+            "rounds_completed": len(self.session.rounds),
+        }
 
 
 # ── Main Analyzer ───────────────────────────────────────────────────
