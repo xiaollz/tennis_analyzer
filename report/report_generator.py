@@ -642,9 +642,6 @@ class ReportGenerator:
                 lines.append(f"**已排除**: {', '.join(elim_names)}")
             lines.append("")
 
-        convergence = session_data.get("convergence_score", 0)
-        rounds_count = len(rounds)
-        lines.append(f"*经过{rounds_count}轮分析，收敛度: {convergence:.0%}*")
         lines.append("")
 
         return lines
