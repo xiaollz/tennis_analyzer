@@ -264,16 +264,23 @@ class ReportGenerator:
             lines.append("未检测到有效击球。以下仅评估可用的姿态数据。")
             lines.append("")
 
-        # ── 每次击球详细分析 ─────────────────────────────────────────
+        # ── 核心问题总结（多球时生成）─────────────────────────────────
         _vlm = vlm_results or []
+        if report.total_swings > 1 and any(v for v in _vlm if v):
+            lines.extend(self._multi_swing_summary(_vlm, report))
+
+        # ── 每次击球详细分析（只展开重点球）─────────────────────────────
+        highlight_indices = self._pick_highlight_swings(_vlm, report)
         for ev in report.swing_evaluations:
             vlm_data = _vlm[ev.swing_index] if ev.swing_index < len(_vlm) else None
             supp = vlm_data.get("supplementary_metrics") if vlm_data else None
+            is_highlight = ev.swing_index in highlight_indices
             lines.extend(self._swing_section(
                 ev, chart_paths, report.total_swings,
                 phase_titles, phase_order, stroke_cn, drills,
                 vlm_result=vlm_data,
                 supplementary_metrics=supp,
+                compact=not is_highlight,
             ))
 
         # ── 综合教练建议（简化版）─────────────────────────────────────
@@ -334,6 +341,92 @@ class ReportGenerator:
 
     # ── 单次击球详细分析 ─────────────────────────────────────────────
 
+    # ── 多球总结 + 重点球选择 ────────────────────────────────────────
+
+    @staticmethod
+    def _multi_swing_summary(vlm_results: list, report) -> List[str]:
+        """Generate a summary paragraph across all swings — core issues first."""
+        lines = []
+        lines.append("## 核心问题")
+        lines.append("")
+
+        # Collect root causes from all swings
+        root_causes = []
+        for v in vlm_results:
+            if not v:
+                continue
+            tree = v.get("root_cause_tree", {})
+            rc = tree.get("root_cause", "")
+            if rc:
+                root_causes.append(rc)
+            elif v.get("issues"):
+                # Legacy format: use first issue name
+                root_causes.append(v["issues"][0].get("name", ""))
+
+        if not root_causes:
+            return lines
+
+        # Count frequency of similar root causes (simple dedup by first 10 chars)
+        from collections import Counter
+        short_causes = [rc[:15] for rc in root_causes]
+        freq = Counter(short_causes)
+        top_cause_prefix = freq.most_common(1)[0][0] if freq else ""
+
+        # Find the most representative full root cause text
+        main_cause = next((rc for rc in root_causes if rc.startswith(top_cause_prefix)), root_causes[0])
+        occurrence = freq.most_common(1)[0][1] if freq else 0
+
+        lines.append(f"**{report.total_swings} 次击球中，{occurrence} 次出现同一个核心问题：{main_cause}**")
+        lines.append("")
+
+        # List which swings had which issues (compact)
+        if len(freq) > 1:
+            for prefix, count in freq.most_common(3):
+                matching = [i + 1 for i, rc in enumerate(root_causes) if rc[:15] == prefix]
+                full = next((rc for rc in root_causes if rc.startswith(prefix)), prefix)
+                lines.append(f"- 第 {'、'.join(map(str, matching))} 球：{full[:50]}")
+            lines.append("")
+
+        return lines
+
+    @staticmethod
+    def _pick_highlight_swings(vlm_results: list, report) -> set:
+        """Pick 1-2 most representative swings for detailed analysis."""
+        if report.total_swings <= 2:
+            return set(range(report.total_swings))
+
+        scored = []
+        for i, v in enumerate(vlm_results):
+            if not v:
+                scored.append((i, 0))
+                continue
+            # Prefer swings with root_cause_tree (richer analysis)
+            has_tree = 1 if v.get("root_cause_tree") else 0
+            issue_count = len(v.get("issues", []))
+            has_journey = 1 if v.get("diagnostic_session") else 0
+            score = has_tree * 3 + issue_count + has_journey * 2
+            scored.append((i, score))
+
+        scored.sort(key=lambda x: -x[1])
+        # Pick top 2, but try to pick different root causes
+        highlights = {scored[0][0]}
+        if len(scored) > 1:
+            first_rc = ""
+            v0 = vlm_results[scored[0][0]]
+            if v0:
+                first_rc = v0.get("root_cause_tree", {}).get("root_cause", "")[:15]
+            for idx, _ in scored[1:]:
+                v = vlm_results[idx]
+                if v:
+                    rc = v.get("root_cause_tree", {}).get("root_cause", "")[:15]
+                    if rc != first_rc:
+                        highlights.add(idx)
+                        break
+            if len(highlights) < 2:
+                highlights.add(scored[1][0])
+
+        return highlights
+
     def _swing_section(
         self,
         ev: SwingEvaluation,
@@ -345,16 +438,30 @@ class ReportGenerator:
         drills: Dict,
         vlm_result: Optional[Dict] = None,
         supplementary_metrics: Optional[Dict] = None,
+        compact: bool = False,
     ) -> List[str]:
         lines = []
         lines.append("---")
         lines.append("")
 
         if total_swings > 1:
-            lines.append(f"## 第 {ev.swing_index + 1} 次击球分析")
+            label = f"## 第 {ev.swing_index + 1} 次击球" + (" (详细)" if not compact else "")
+            lines.append(label)
         else:
             lines.append("## 击球分析")
         lines.append("")
+
+        # ── Compact mode: one-liner summary only ──
+        if compact and vlm_result:
+            score = vlm_result.get("score")
+            tree = vlm_result.get("root_cause_tree", {})
+            rc = tree.get("root_cause", "")
+            if score:
+                lines.append(f"评分 {score}/100 — {rc}" if rc else f"评分 {score}/100")
+            elif rc:
+                lines.append(rc)
+            lines.append("")
+            return lines
 
         # ── 击球基本信息 ───────────────────────────────────────────
         lines.append(f"**击球类型**: {stroke_cn}  ")
