@@ -867,11 +867,70 @@ class MultiRoundAnalyzer:
             if self._check_convergence():
                 break
 
-        # Build final result from session state
+        # Build final result: try confirmation round VLM output first, fallback to hypothesis state
         self.session.convergence_score = self._compute_convergence_score()
-        self.session.final_result = self._build_final_result()
+
+        # Check if last round produced a root_cause_tree from VLM confirmation
+        vlm_final = self._try_confirmation_vlm(image_b64) if image_b64 else None
+        if vlm_final and "root_cause_tree" in vlm_final:
+            vlm_final["diagnostic_session"] = self.session.model_dump() if hasattr(self.session, 'model_dump') else {}
+            vlm_final["convergence_score"] = self.session.convergence_score
+            vlm_final["rounds_completed"] = len(self.session.rounds)
+            self.session.final_result = vlm_final
+        else:
+            self.session.final_result = self._build_final_result()
+
         self.session.completed_at = datetime.now(timezone.utc).isoformat()
         return self.session
+
+    def _try_confirmation_vlm(self, image_b64: str) -> dict | None:
+        """Final VLM call with full system prompt + confirmed hypotheses context.
+
+        This produces the root_cause_tree format that the report generator expects.
+        Uses the same system prompt as v1.0 single-pass but with hypothesis evidence injected.
+        """
+        try:
+            compiler = self.analyzer.compiler
+            if not compiler:
+                return None
+
+            # Build evidence summary from confirmed hypotheses
+            confirmed = [h for h in self.session.hypotheses if h.status == HypothesisStatus.CONFIRMED]
+            active = [h for h in self.session.hypotheses if h.status == HypothesisStatus.ACTIVE]
+            top_hypotheses = confirmed + sorted(active, key=lambda h: -h.confidence)[:3]
+
+            if not top_hypotheses:
+                return None
+
+            # Use the full system prompt (root_cause_tree format) with hypothesis context
+            system_prompt = compiler.compile_system_prompt()
+
+            # Build user text with evidence from multi-round analysis
+            evidence_lines = []
+            for h in top_hypotheses:
+                status = "确认" if h.status == HypothesisStatus.CONFIRMED else f"高度怀疑(置信度{h.confidence:.0%})"
+                evidence_lines.append(f"- {h.name_zh or h.name}: {status}")
+
+            obs_lines = []
+            for obs in self.session.observations[-10:]:  # last 10 observations
+                obs_lines.append(f"- {obs.frame}: {obs.description[:60]}")
+
+            user_text = f"""以下是多轮诊断的中间结果，请基于这些证据生成最终的根因树分析。
+
+【已确认/高度怀疑的假设】
+{chr(10).join(evidence_lines)}
+
+【关键观察记录】
+{chr(10).join(obs_lines)}
+
+请输出严格JSON（root_cause_tree格式）。注意：上面列出的多个假设可能是同一个根因的不同表现，请追溯到最深层的共同根因。"""
+
+            raw = self.analyzer._call_vlm(image_b64, user_text, system_prompt=system_prompt)
+            if raw:
+                return _parse_json_response(raw)
+        except Exception as exc:
+            print(f"[VLM] Confirmation round failed: {exc}")
+        return None
 
     def _execute_round_0(self, image_b64: str) -> list[str]:
         """Round 0: symptom scan. Returns detected chain IDs.
