@@ -393,6 +393,7 @@ class ReportGenerator:
         chart_paths: Dict[str, str],
         swing_index: int,
         total_swings: int,
+        include_journey: bool = True,
     ) -> List[str]:
         import os
         lines = []
@@ -414,6 +415,11 @@ class ReportGenerator:
             lines.append(f"**容错评分**: {score}/100 — {reasoning}")
             lines.append("")
 
+        # ── Diagnostic Journey (v2.0 multi-round) ──
+        diag_session = vlm_result.get("diagnostic_session")
+        if diag_session and include_journey:
+            lines.extend(ReportGenerator._format_diagnostic_journey(diag_session))
+
         # ── New format: Root Cause Tree ──
         root_tree = vlm_result.get("root_cause_tree")
         if root_tree:
@@ -421,6 +427,118 @@ class ReportGenerator:
         else:
             # ── Legacy format fallback ──
             lines.extend(ReportGenerator._format_legacy_issues(vlm_result))
+
+        return lines
+
+    # ── 诊断推理过程（v2.0 多轮诊断）────────────────────────────────────
+
+    @staticmethod
+    def _format_diagnostic_journey(session_data: Dict) -> List[str]:
+        """Render the multi-round diagnostic journey as a readable narrative.
+
+        RG-01: Shows iterative reasoning process
+        RG-02: Narrative style, not log dump
+        RG-04: Can be suppressed by caller via include_journey=False
+
+        Args:
+            session_data: Serialized DiagnosticSession dict with rounds,
+                         hypotheses, and observations.
+        """
+        lines: List[str] = []
+        rounds = session_data.get("rounds", [])
+        hypotheses = session_data.get("hypotheses", [])
+
+        if not rounds:
+            return lines
+
+        lines.append("### 诊断推理过程")
+        lines.append("")
+
+        # Build hypothesis lookup
+        hyp_map = {h["id"]: h for h in hypotheses}
+
+        # Narrative round labels
+        _ROUND_LABELS = {
+            0: "初步扫描",
+            -1: "根因确认",  # sentinel for last round
+        }
+
+        for i, rnd in enumerate(rounds):
+            round_num = rnd.get("round_number", i)
+            is_last = i == len(rounds) - 1
+
+            # Round header
+            if round_num == 0:
+                label = "初步扫描"
+            elif is_last:
+                label = "根因确认"
+            else:
+                label = f"针对性观察 (第{round_num}轮)"
+
+            lines.append(f"**{label}:**")
+            lines.append("")
+
+            observations = rnd.get("observations", [])
+            updates = rnd.get("hypothesis_updates", [])
+
+            if round_num == 0:
+                # Round 0: report initial hypothesis creation
+                active_hyps = [h for h in hypotheses if h.get("round_introduced", 0) == 0]
+                if active_hyps:
+                    hyp_names = [h.get("name_zh") or h.get("name", "?") for h in active_hyps]
+                    lines.append(f"- 初步假设: {', '.join(hyp_names)}")
+                else:
+                    lines.append("- 扫描未发现明显问题")
+                lines.append("")
+                continue
+
+            # Intermediate/final rounds: observations + hypothesis updates
+            if observations:
+                for obs in observations[:5]:  # Cap at 5 observations per round
+                    frame = obs.get("frame", "")
+                    desc = obs.get("description", "")[:100]
+                    judgment = obs.get("judgment", "")
+                    judgment_cn = {"yes": "是", "no": "否", "unclear": "不确定"}.get(judgment, judgment)
+
+                    override = obs.get("override_reason")
+                    if override:
+                        lines.append(f"- {frame}: {desc} -> **{judgment_cn}**（量化数据修正）")
+                    else:
+                        lines.append(f"- {frame}: {desc} -> **{judgment_cn}**")
+
+            if updates:
+                lines.append("")
+                for upd in updates:
+                    hyp_id = upd.get("hypothesis_id", "")
+                    action = upd.get("action", "")
+                    reason = upd.get("reason", "")[:80]
+                    hyp = hyp_map.get(hyp_id, {})
+                    hyp_name = hyp.get("name_zh") or hyp.get("name", hyp_id)
+
+                    if action == "confirm":
+                        lines.append(f"- **确认**: {hyp_name} — {reason}")
+                    elif action == "eliminate":
+                        lines.append(f"- **排除**: {hyp_name} — {reason}")
+                    elif action == "adjust":
+                        lines.append(f"- **调整**: {hyp_name} — {reason}")
+
+            lines.append("")
+
+        # Summary: final hypothesis state
+        confirmed = [h for h in hypotheses if h.get("status") == "confirmed"]
+        eliminated = [h for h in hypotheses if h.get("status") == "eliminated"]
+        if confirmed:
+            names = [h.get("name_zh") or h.get("name", "?") for h in confirmed]
+            lines.append(f"**诊断结论**: {', '.join(names)}")
+            if eliminated:
+                elim_names = [h.get("name_zh") or h.get("name", "?") for h in eliminated]
+                lines.append(f"**已排除**: {', '.join(elim_names)}")
+            lines.append("")
+
+        convergence = session_data.get("convergence_score", 0)
+        rounds_count = len(rounds)
+        lines.append(f"*经过{rounds_count}轮分析，收敛度: {convergence:.0%}*")
+        lines.append("")
 
         return lines
 
