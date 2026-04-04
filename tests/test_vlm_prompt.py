@@ -258,19 +258,19 @@ class TestVLMPromptCompiler:
             assert chain.symptom_zh in prompt, f"Missing chain: {chain.symptom_zh}"
 
     def test_output_schema_preserved(self, compiler):
-        """Pass 2 prompt contains the JSON output format specification."""
+        """Pass 2 prompt contains the output format specification (semi-structured v4)."""
         prompt = compiler.compile_pass2_prompt(["dc_arm_driven_hitting"])
-        assert "issues" in prompt
-        assert "strengths" in prompt
-        assert "overall_assessment" in prompt
-        assert "score" in prompt
-        assert "drills" in prompt
+        # v4 semi-structured tags
+        assert "SCORE" in prompt
+        assert "ROOT_CAUSE" in prompt
+        assert "STRENGTHS" in prompt
+        assert "KINETIC_CHAIN" in prompt
 
     def test_static_prompt_content(self, compiler):
         """Static system prompt contains key coaching content."""
         prompt = compiler.compile_system_prompt()
-        assert "逐帧分析指南" in prompt
-        assert "核心原则" in prompt
+        assert "逐帧检查清单" in prompt
+        assert "核心生物力学原则" in prompt
         assert "Drill 知识库" in prompt
         assert "输出格式" in prompt
 
@@ -286,8 +286,9 @@ class TestVLMPromptCompiler:
         assert "Drill 知识库" in prompt
         # Diagnostic chains (dynamic)
         assert "诊断路径" in prompt or "根因" in prompt
-        # Output format
-        assert "严格JSON" in prompt
+        # Output format (v4 semi-structured, not JSON)
+        assert "SCORE" in prompt
+        assert "ROOT_CAUSE" in prompt
 
 
 class TestWithRealChains:

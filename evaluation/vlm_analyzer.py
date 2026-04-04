@@ -1693,17 +1693,150 @@ class VLMForehandAnalyzer:
 
 # ── Response parsing ────────────────────────────────────────────────
 
-def _parse_json_response(text: str) -> Optional[Dict]:
-    """Extract structured JSON from VLM response text."""
+
+def _extract_tag(text: str, tag: str) -> str:
+    """Extract the value after a TAG: line. Returns empty string if not found."""
+    pattern = rf"^{tag}:\s*(.+)$"
+    m = re.search(pattern, text, re.MULTILINE)
+    return m.group(1).strip() if m else ""
+
+
+def _extract_section_after_tag(text: str, tag: str, next_tags: List[str]) -> str:
+    """Extract free-form text between a TAG: line and the next known tag."""
+    pattern = rf"^{tag}:\s*(.+?)$"
+    m = re.search(pattern, text, re.MULTILINE)
+    if not m:
+        return ""
+    start = m.end()
+    # Find the earliest next tag
+    end = len(text)
+    for nt in next_tags:
+        nt_match = re.search(rf"^{nt}:", text[start:], re.MULTILINE)
+        if nt_match:
+            end = min(end, start + nt_match.start())
+    return text[start:end].strip()
+
+
+def _parse_semi_structured_response(text: str) -> Optional[Dict]:
+    """Parse the new semi-structured VLM output format (v4).
+
+    Expected format has labeled lines like SCORE:, ROOT_CAUSE:, etc.
+    with free-form paragraphs between them.
+    """
     text = text.strip()
 
-    # Try direct parse
+    # Must have at least SCORE and ROOT_CAUSE to be valid semi-structured
+    if not re.search(r"^SCORE:", text, re.MULTILINE):
+        return None
+    if not re.search(r"^ROOT_CAUSE:", text, re.MULTILINE):
+        return None
+
+    ALL_TAGS = [
+        "SCORE", "ROOT_CAUSE", "EVIDENCE", "BODY", "FEEL",
+        "SECONDARY", "FIX", "METHOD", "CUE", "CHECK",
+        "STRENGTHS", "KINETIC_CHAIN",
+    ]
+
+    # Extract score
+    score_str = _extract_tag(text, "SCORE")
+    try:
+        score = int(re.search(r"\d+", score_str).group())
+    except (AttributeError, ValueError):
+        score = 50
+
+    # Extract core diagnosis: text between SCORE line and ROOT_CAUSE line
+    score_match = re.search(r"^SCORE:.+$", text, re.MULTILINE)
+    rc_match = re.search(r"^ROOT_CAUSE:", text, re.MULTILINE)
+    core_diagnosis = ""
+    if score_match and rc_match:
+        core_diagnosis = text[score_match.end():rc_match.start()].strip()
+
+    root_cause = _extract_tag(text, "ROOT_CAUSE")
+    evidence = _extract_tag(text, "EVIDENCE")
+    body = _extract_tag(text, "BODY")
+    feel = _extract_tag(text, "FEEL")
+
+    # Causal explanation: free text between FEEL line and SECONDARY/FIX
+    causal_explanation = _extract_section_after_tag(
+        text, "FEEL", ["SECONDARY", "FIX"]
+    )
+
+    secondary = _extract_tag(text, "SECONDARY")
+    fix_name = _extract_tag(text, "FIX")
+    method = _extract_tag(text, "METHOD")
+    cue = _extract_tag(text, "CUE")
+    check = _extract_tag(text, "CHECK")
+    strengths_raw = _extract_tag(text, "STRENGTHS")
+    kinetic_chain = _extract_tag(text, "KINETIC_CHAIN")
+
+    # If KINETIC_CHAIN spans multiple lines, grab the paragraph
+    if kinetic_chain:
+        kc_section = _extract_section_after_tag(text, "KINETIC_CHAIN", [])
+        if kc_section:
+            kinetic_chain = kinetic_chain + " " + kc_section
+
+    # Build the unified data dict (compatible with report generator)
+    data = {
+        "format": "semi_structured_v4",
+        "score": score,
+        "core_diagnosis": core_diagnosis,
+        "root_cause_tree": {
+            "root_cause": root_cause,
+            "root_cause_evidence": evidence,
+            "root_cause_body": body,
+            "root_cause_feel": feel,
+            "causal_explanation": causal_explanation,
+            "downstream_symptoms": [],  # no longer itemized; causal_explanation replaces this
+            "fix": {
+                "one_drill": fix_name,
+                "drill_method": method,
+                "drill_feel_cue": cue,
+                "check_criteria": check,
+            },
+        },
+        "secondary_root_cause": {"root_cause": secondary} if secondary else None,
+        "overall_narrative": core_diagnosis,
+        "kinetic_chain_narrative": kinetic_chain,
+        "strengths": [s.strip() for s in strengths_raw.split("；") if s.strip()] if strengths_raw else [],
+        "priority_drill": fix_name,
+        "issues": [],  # backward compat — root cause is the single issue
+        "raw_text": text,
+    }
+
+    # Build a single compat issue from root cause for annotation layer
+    if root_cause:
+        data["issues"].append({
+            "name": root_cause,
+            "severity": "高",
+            "frame": "",
+            "description": causal_explanation or core_diagnosis,
+        })
+
+    return data
+
+
+def _parse_json_response(text: str) -> Optional[Dict]:
+    """Extract structured data from VLM response text.
+
+    Supports three formats:
+    1. Semi-structured v4 (SCORE: / ROOT_CAUSE: tags) — preferred
+    2. JSON with root_cause_tree (v3)
+    3. Legacy JSON with issues list
+    """
+    text = text.strip()
+
+    # 1. Try semi-structured format first (new v4 default)
+    result = _parse_semi_structured_response(text)
+    if result:
+        return result
+
+    # 2. Try direct JSON parse
     try:
         return _validate_analysis(json.loads(text))
     except json.JSONDecodeError:
         pass
 
-    # Try markdown code block
+    # 3. Try markdown code block
     match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
     if match:
         try:
@@ -1711,7 +1844,7 @@ def _parse_json_response(text: str) -> Optional[Dict]:
         except json.JSONDecodeError:
             pass
 
-    # Find first { ... } block
+    # 4. Find first { ... } block
     start = text.find("{")
     end = text.rfind("}")
     if start != -1 and end > start:
@@ -1720,20 +1853,22 @@ def _parse_json_response(text: str) -> Optional[Dict]:
         except json.JSONDecodeError:
             pass
 
-    print("[VLM] 警告: 无法解析返回的 JSON")
+    print("[VLM] 警告: 无法解析 VLM 响应")
     print(f"[VLM] 原始响应前500字符: {text[:500]}")
     return None
 
 
 def _validate_analysis(data: Dict) -> Dict:
+    """Validate and normalize JSON-format analysis (v3 and legacy)."""
     # Support both new root_cause_tree format and legacy issues format
     if "root_cause_tree" in data:
-        # New format — validate root cause tree
+        # v3 format — validate root cause tree
         tree = data["root_cause_tree"]
         tree.setdefault("root_cause", "")
         tree.setdefault("root_cause_evidence", "")
         tree.setdefault("root_cause_body", "")
         tree.setdefault("root_cause_feel", "")
+        tree.setdefault("causal_explanation", "")
         tree.setdefault("downstream_symptoms", [])
         tree.setdefault("fix", {})
         data.setdefault("secondary_root_cause", None)
