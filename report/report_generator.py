@@ -549,95 +549,89 @@ class ReportGenerator:
         lines = []
         tree = vlm_result["root_cause_tree"]
 
-        # Overall narrative (the story)
+        # Overall narrative — 简短故事
         if vlm_result.get("overall_narrative"):
-            lines.append(f"**整体评价**: {vlm_result['overall_narrative']}")
+            lines.append(vlm_result['overall_narrative'])
             lines.append("")
 
-        # Root cause
-        lines.append("**根因诊断**:")
+        # Root cause — 核心问题
+        lines.append(f"> **根因：{tree.get('root_cause', '')}**")
         lines.append("")
-        lines.append(f"> **{tree.get('root_cause', '')}**")
-        lines.append("")
+        evidence_parts = []
         if tree.get("root_cause_evidence"):
-            lines.append(f"- 视觉证据: {tree['root_cause_evidence']}")
+            evidence_parts.append(tree['root_cause_evidence'])
         if tree.get("root_cause_body"):
-            lines.append(f"- 生物力学: {tree['root_cause_body']}")
+            evidence_parts.append(tree['root_cause_body'])
+        if evidence_parts:
+            lines.append(" ".join(evidence_parts))
+            lines.append("")
         if tree.get("root_cause_feel"):
-            lines.append(f"- 感觉对比: {tree['root_cause_feel']}")
-        lines.append("")
+            lines.append(f"*{tree['root_cause_feel']}*")
+            lines.append("")
 
-        # Downstream symptoms (causal tree)
+        # Causal tree — 因果树（紧凑版）
         symptoms = tree.get("downstream_symptoms", [])
         if symptoms:
-            lines.append("**因果树 — 根因如何导致你看到的每个表面问题：**")
-            lines.append("")
+            root_short = tree.get("root_cause", "根因")[:25]
             lines.append("```")
-            root_short = tree.get("root_cause", "根因")[:30]
             lines.append(f"  {root_short}")
             for i, s in enumerate(symptoms):
                 connector = "├──" if i < len(symptoms) - 1 else "└──"
-                lines.append(f"  {connector} → {s.get('symptom', '')} [{s.get('frame', '')}]")
-                if s.get("how_root_cause_creates_it"):
-                    lines.append(f"  {'│' if i < len(symptoms) - 1 else ' '}     原因: {s['how_root_cause_creates_it'][:80]}")
+                cause_short = s.get("how_root_cause_creates_it", "")[:60]
+                lines.append(f"  {connector} {s.get('symptom', '')} [{s.get('frame', '')}]")
+                lines.append(f"  {'│' if i < len(symptoms) - 1 else ' '}   {cause_short}")
             lines.append("```")
             lines.append("")
 
-            # Detailed per-symptom evidence
-            for s in symptoms:
-                lines.append(f"  - **{s.get('symptom', '')}** [{s.get('frame', '')}]: {s.get('how_root_cause_creates_it', '')}")
-                if s.get("visual_evidence"):
-                    lines.append(f"    视觉证据: {s['visual_evidence']}")
-            lines.append("")
-
-        # Fix section (the Aha moment)
+        # Fix — 顿悟 + 训练（合并为一段）
         fix = tree.get("fix", {})
         if fix:
+            fix_parts = []
             if fix.get("insight"):
-                lines.append(f"**顿悟**: {fix['insight']}")
-                lines.append("")
+                fix_parts.append(f"**{fix['insight']}**")
             if fix.get("mental_model_shift"):
-                lines.append(f"**认知转变**: {fix['mental_model_shift']}")
+                fix_parts.append(fix['mental_model_shift'])
+            if fix_parts:
+                lines.append(" ".join(fix_parts))
                 lines.append("")
             if fix.get("one_drill"):
-                lines.append(f"**唯一训练**: {fix['one_drill']}")
-                if fix.get("drill_method"):
-                    lines.append(f"- 方法: {fix['drill_method']}")
-                if fix.get("drill_feel_cue"):
-                    lines.append(f"- 口令: {fix['drill_feel_cue']}")
-                if fix.get("check_criteria"):
-                    lines.append(f"- 检验: {fix['check_criteria']}")
+                lines.append(f"**练这个：** {fix['one_drill']}")
+                method = fix.get("drill_method", "")
+                cue = fix.get("drill_feel_cue", "")
+                check = fix.get("check_criteria", "")
+                if method:
+                    lines.append(f"做法：{method}")
+                if cue:
+                    lines.append(f"口令：{cue}")
+                if check:
+                    lines.append(f"做对了 = {check}")
                 lines.append("")
 
-        # Secondary root cause (if exists)
+        # Secondary root cause
         secondary = vlm_result.get("secondary_root_cause")
         if secondary and secondary.get("root_cause"):
-            lines.append("---")
-            lines.append("")
-            lines.append(f"**次要根因**: {secondary['root_cause']}")
-            if secondary.get("evidence"):
-                lines.append(f"- 证据: {secondary['evidence']}")
+            lines.append(f"另外注意：{secondary['root_cause']}")
             sec_fix = secondary.get("fix", {})
             if sec_fix and sec_fix.get("one_drill"):
-                lines.append(f"- 训练: {sec_fix['one_drill']}")
+                lines.append(f"练：{sec_fix['one_drill']}")
             lines.append("")
 
-        # Strengths
+        # Strengths（只保留核心，不要进步信号的冗余描述）
         strengths = vlm_result.get("strengths", [])
         if strengths:
-            lines.append("**做得好的方面**:")
+            strength_texts = []
             for s in strengths:
                 if isinstance(s, dict):
-                    lines.append(f"- {s.get('description', '')}")
-                    if s.get("progress_signal"):
-                        lines.append(f"  进步信号: {s['progress_signal']}")
+                    strength_texts.append(s.get('description', ''))
                 else:
-                    lines.append(f"- {s}")
-            lines.append("")
+                    strength_texts.append(str(s))
+            if strength_texts:
+                lines.append(f"**做得好：** {'；'.join(strength_texts)}")
+                lines.append("")
 
         # Kinetic chain narrative
         if vlm_result.get("kinetic_chain_narrative"):
-            lines.append(f"**动力链故事**: {vlm_result['kinetic_chain_narrative']}")
+            lines.append(f"**力量传导：** {vlm_result['kinetic_chain_narrative']}")
             lines.append("")
 
         return lines
