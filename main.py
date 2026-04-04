@@ -396,9 +396,12 @@ class TennisAnalysisPipeline:
                     ev.swing_event,
                 )
 
-            # Call VLM
+            # Call VLM (v2.0: multi-round iterative, fallback to v1.0 single-pass)
             print(f"[VLM] 正在分析第 {ev.swing_index + 1} 次击球...")
-            vlm_result = analyzer.analyze_swing(
+            vlm_result = analyzer.analyze_swing_iterative(
+                grid, video_path=video_path,
+                supplementary_metrics=supp_metrics,
+            ) if hasattr(analyzer, 'analyze_swing_iterative') else analyzer.analyze_swing(
                 grid, video_path=video_path,
                 supplementary_metrics=supp_metrics,
             )
@@ -406,7 +409,10 @@ class TennisAnalysisPipeline:
                 vlm_result["keyframe_grid_path"] = grid_path
                 if supp_metrics:
                     vlm_result["supplementary_metrics"] = supp_metrics
-                print(f"[VLM] 第 {ev.swing_index + 1} 次击球分析完成，发现 {len(vlm_result.get('issues', []))} 个问题")
+                issue_count = len(vlm_result.get('issues', []))
+                rounds = vlm_result.get('diagnostic_session', {}).get('rounds', [])
+                round_info = f"（{len(rounds)}轮迭代）" if rounds else ""
+                print(f"[VLM] 第 {ev.swing_index + 1} 次击球分析完成，发现 {issue_count} 个问题{round_info}")
             else:
                 print(f"[VLM] 第 {ev.swing_index + 1} 次击球 VLM 分析未返回结果")
             results.append(vlm_result)
