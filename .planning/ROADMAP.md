@@ -19,8 +19,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: Output Generation & VLM Engine** - Dual-format export and upgraded VLM diagnostic system
 - [x] **Phase 6: Secondary Sources** - TomAllsopp and Feel Tennis extraction with cross-source reconciliation
 - [x] **Phase 7: User Integration** - Personal training journey connected to knowledge graph for personalized diagnostics
-- [ ] **Phase 8: Multi-Round Loop Infrastructure** - Hypothesis/observation data models + MultiRoundAnalyzer orchestrator + convergence logic
-- [ ] **Phase 9: Knowledge-Driven Directives & Hypothesis Tracking** - Graph-to-observation compilation + hypothesis lifecycle + cross-hypothesis causal reasoning
+- [x] **Phase 8: Multi-Round Loop Infrastructure** - Hypothesis/observation data models + MultiRoundAnalyzer orchestrator + convergence logic
+- [x] **Phase 9: Knowledge-Driven Directives & Hypothesis Tracking** - Graph-to-observation compilation + hypothesis lifecycle + cross-hypothesis causal reasoning
 - [ ] **Phase 10: Hallucination Mitigation & Report Integration** - Quantitative cross-validation + contradiction detection + diagnostic journey report section
 
 ## Phase Details
@@ -169,7 +169,10 @@ Plans:
   4. Hypothesis lifecycle works end-to-end: created from Pass 1 -> updated by observations -> confirmed/eliminated -> cross-checked via causal chains
   5. Cross-hypothesis reasoning: if hypothesis A is confirmed and graph shows A causes B, hypothesis B is auto-eliminated and added as downstream symptom
   6. Each round eliminates or confirms at least one hypothesis in > 80% of test cases
-**Plans:** TBD (estimated 3 plans)
+**Plans:** 2 plans
+Plans:
+- [x] 09-01-PLAN.md -- Observation directive templates + compile_observation_directive() + compile_confirmation_prompt()
+- [x] 09-02-PLAN.md -- Hypothesis tracker (confidence scoring, cross-causal reasoning, progressive narrowing) + MultiRoundAnalyzer integration
 **Risk flags**: Prompt drift -- hypothesis context must stay compact. Cross-hypothesis reasoning depends on graph quality (causal edges must be correct). VLM structured output parsing reliability.
 
 ### Phase 10: Hallucination Mitigation & Report Integration
@@ -202,6 +205,6 @@ Phase 8 depends on Phases 5+7 (existing VLM + user profile). Phase 9 depends on 
 | 5. Output Generation & VLM Engine | 3/3 | Complete | - |
 | 6. Secondary Sources | 4/4 | Complete | - |
 | 7. User Integration | 2/2 | Complete | - |
-| 8. Multi-Round Loop Infrastructure | 0/TBD | Not started | - |
-| 9. Knowledge-Driven Directives & Hypothesis Tracking | 0/TBD | Not started | - |
+| 8. Multi-Round Loop Infrastructure | 2/2 | Complete | 2026-04-04 |
+| 9. Knowledge-Driven Directives & Hypothesis Tracking | 2/2 | Complete | 2026-04-04 |
 | 10. Hallucination Mitigation & Report Integration | 0/TBD | Not started | - |

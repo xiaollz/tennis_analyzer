@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Completed 08-02-PLAN.md
-last_updated: "2026-04-04T01:11:29.660Z"
-last_activity: 2026-04-04
+status: executing
+stopped_at: Completed 09-02-PLAN.md
+last_updated: "2026-04-04T01:25:00Z"
+last_activity: 2026-04-04 -- Phase 09 complete
 progress:
   total_phases: 10
-  completed_phases: 8
-  total_plans: 26
-  completed_plans: 26
-  percent: 0
+  completed_phases: 9
+  total_plans: 28
+  completed_plans: 28
+  percent: 90
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-03)
 
 **Core value:** VLM diagnostic engine must trace any visible forehand flaw back to its biomechanical root cause and prescribe the correct drill.
-**Current focus:** Phase 08 — Multi-Round Loop Infrastructure
+**Current focus:** Phase 09 — Knowledge-Driven Directives & Hypothesis Tracking
 
 ## Current Position
 
-Phase: 08 (Multi-Round Loop Infrastructure) — EXECUTING
-Plan: 2 of 2
-Status: Phase complete — ready for verification
-Last activity: 2026-04-04
+Phase: 10 (Hallucination Mitigation & Report Integration) — NOT STARTED
+Plan: 0 of TBD
+Status: Phase 09 complete, Phase 10 next
+Last activity: 2026-04-04 -- Phase 09 complete (2 plans)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
@@ -75,6 +75,8 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 07 P02 | 6min | 2 tasks | 7 files |
 | Phase 08 P01 | 2min | 1 tasks | 2 files |
 | Phase 08 P02 | 5min | 2 tasks | 2 files |
+| Phase 09 P01 | 5min | 4 tasks | 4 files |
+| Phase 09 P02 | 8min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -110,6 +112,9 @@ Recent decisions affecting current work:
 - [Phase 07]: User context 1500 char budget within 10K dynamic; drill scoring +3 regressed +2 struggling
 - [Phase 08]: HypothesisUpdate.action is str not enum; adjust means stay active with changed confidence
 - [Phase 08]: Round 0 reuses compile_pass1_prompt exactly for no v1.0 regression; convergence uses 3 criteria + max_rounds guard
+- [Phase 09]: One directive per hypothesis per round for focus; default frame 图2-4 when vlm_frame is None
+- [Phase 09]: Confidence deltas: +0.15 support, -0.20 contradict, scaled by observation confidence; auto-thresholds at 0.15/0.85
+- [Phase 09]: Cross-hypothesis reasoning: forward causal traversal from confirmed root cause auto-eliminates downstream active hypotheses
 
 ### Pending Todos
 
@@ -122,6 +127,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T01:11:29.658Z
-Stopped at: Completed 08-02-PLAN.md
+Last session: 2026-04-04T01:25:00Z
+Stopped at: Completed 09-02-PLAN.md
 Resume file: None

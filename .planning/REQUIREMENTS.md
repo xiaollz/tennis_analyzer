@@ -84,17 +84,17 @@
 
 ### Knowledge-Driven Observation Directives
 
-- [ ] **KD-01**: New VLMPromptCompiler method `compile_observation_directive()` that generates targeted observation prompts from active hypotheses + unchecked diagnostic steps
-- [ ] **KD-02**: New Jinja2 template `observation_directive.j2` for per-round targeted observation prompts (hypothesis context + specific frame/feature questions)
-- [ ] **KD-03**: New Jinja2 template `confirmation.j2` for the final confirmation round (all evidence summary + root_cause_tree generation)
-- [ ] **KD-04**: Directive generation maps `DiagnosticStep.check` + `Concept.vlm_features` + `DiagnosticChain.vlm_frame` into specific VLM questions
+- [x] **KD-01**: New VLMPromptCompiler method `compile_observation_directive()` that generates targeted observation prompts from active hypotheses + unchecked diagnostic steps
+- [x] **KD-02**: New Jinja2 template `observation_directive.j2` for per-round targeted observation prompts (hypothesis context + specific frame/feature questions)
+- [x] **KD-03**: New Jinja2 template `confirmation.j2` for the final confirmation round (all evidence summary + root_cause_tree generation)
+- [x] **KD-04**: Directive generation maps `DiagnosticStep.check` + `Concept.vlm_features` + `DiagnosticChain.vlm_frame` into specific VLM questions
 
 ### Hypothesis Tracking
 
-- [ ] **HT-01**: Hypothesis lifecycle: created (from Pass 1 detected chains) -> active -> confirmed/eliminated (via VLM observations)
-- [ ] **HT-02**: Confidence scoring: each observation that supports/contradicts a hypothesis adjusts its confidence
-- [ ] **HT-03**: Cross-hypothesis reasoning via KnowledgeGraph.get_causal_chain(): if confirmed hypothesis A causes hypothesis B in the graph, auto-eliminate B as independent root cause and mark as downstream symptom
-- [ ] **HT-04**: Progressive narrowing guarantee: each round must either confirm or eliminate at least one hypothesis (enforced by the observation directive design, not by hard constraint)
+- [x] **HT-01**: Hypothesis lifecycle: created (from Pass 1 detected chains) -> active -> confirmed/eliminated (via VLM observations)
+- [x] **HT-02**: Confidence scoring: each observation that supports/contradicts a hypothesis adjusts its confidence
+- [x] **HT-03**: Cross-hypothesis reasoning via KnowledgeGraph.get_causal_chain(): if confirmed hypothesis A causes hypothesis B in the graph, auto-eliminate B as independent root cause and mark as downstream symptom
+- [x] **HT-04**: Progressive narrowing guarantee: each round must either confirm or eliminate at least one hypothesis (enforced by the observation directive design, not by hard constraint)
 
 ### Hallucination Mitigation
 
@@ -159,9 +159,9 @@
 | VLM-01 through VLM-05 | Phase 5 | Complete |
 | OUT-01 through OUT-04 | Phase 5 | Complete |
 | USER-01 through USER-03 | Phase 7 | Complete |
-| MR-01 through MR-05 | Phase 8 | Pending |
-| KD-01 through KD-04 | Phase 9 | Pending |
-| HT-01 through HT-04 | Phase 9 | Pending |
+| MR-01 through MR-05 | Phase 8 | Complete |
+| KD-01 through KD-04 | Phase 9 | Complete |
+| HT-01 through HT-04 | Phase 9 | Complete |
 | HM-01 through HM-04 | Phase 10 | Pending |
 | RG-01 through RG-04 | Phase 10 | Pending |
 | CP-01 through CP-03 | Phase 8-10 | Pending |
