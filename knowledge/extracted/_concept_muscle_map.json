@@ -7693,5 +7693,914 @@
       "role": "secondary",
       "action": "mixed"
     }
+  ],
+  "grip_pressure_waveform": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "pectoralis_major",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "eccentric"
+    }
+  ],
+  "takeback_speed_matching": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "gradual_rotation": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "transversus_abdominis",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "grip_swing_mapping": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pectoralis_major",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "heavy_object_rotation": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "mixed"
+    },
+    {
+      "muscle": "transversus_abdominis",
+      "role": "stabilizer",
+      "action": "mixed"
+    }
+  ],
+  "grip_contact_depth_correlation": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "primary",
+      "action": "isometric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pectoralis_major",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "rotator_cuff",
+      "role": "stabilizer",
+      "action": "mixed"
+    }
+  ],
+  "continuous_takeback": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "neutral_takeback": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "doorknob_analogy": [
+    {
+      "muscle": "pronator_teres",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_extensors",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "emergency_manipulation": [
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "c_45_degree_stability": [
+    {
+      "muscle": "erector_spinae",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "transversus_abdominis",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "gluteus_medius",
+      "role": "secondary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "auditory_lag_feedback": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "high_ball_shoulder_opening": [
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "hand_elbow_shoulder_alignment": [
+    {
+      "muscle": "brachioradialis",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "racket_stability": [
+    {
+      "muscle": "erector_spinae",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "transversus_abdominis",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "gluteus_medius",
+      "role": "secondary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "post_contact_reverse_kinetic_chain": [
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "primary",
+      "action": "isometric"
+    },
+    {
+      "muscle": "pectoralis_major",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "rotator_cuff",
+      "role": "stabilizer",
+      "action": "mixed"
+    }
+  ],
+  "arm_crossing_restriction": [
+    {
+      "muscle": "biceps_brachii",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "c_45_5_golf_separation": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "gluteus_maximus",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "deep_ball_open_stance": [
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gastrocnemius",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "soleus",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "pulling_trap": [
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "grip_dependent_supination_limit": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "supinator",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "finish_led_path_training": [
+    {
+      "muscle": "rotator_cuff",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_extensors",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "eccentric"
+    }
+  ],
+  "c_2_foot_window_pushing": [
+    {
+      "muscle": "pectoralis_major",
+      "role": "primary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "concentric"
+    }
+  ],
+  "stability_grip_7_10": [
+    {
+      "muscle": "erector_spinae",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "transversus_abdominis",
+      "role": "primary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "gluteus_medius",
+      "role": "secondary",
+      "action": "stabilizer"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "grip_elbow_interference": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "brachioradialis",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "racket_tip_forward_takeback": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "backwards_pivot": [
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "shoulder_shrug_anchor": [
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "sequential_finger_pressure": [
+    {
+      "muscle": "pectoralis_major",
+      "role": "primary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "concentric"
+    }
+  ],
+  "active_wrist_loading": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "gastrocnemius",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "soleus",
+      "role": "secondary",
+      "action": "eccentric"
+    }
+  ],
+  "pronation_takeback_atp": [
+    {
+      "muscle": "external_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "internal_obliques",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "rhomboids",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_extensors",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "secondary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "erector_spinae",
+      "role": "stabilizer",
+      "action": "eccentric"
+    }
+  ],
+  "elbow_touch_test": [
+    {
+      "muscle": "brachioradialis",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "tell_the_time_wristwatch": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "eccentric"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "eccentric"
+    }
+  ],
+  "back_of_racket_to_head": [
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "eccentric"
+    }
+  ],
+  "throwing_the_arm": [
+    {
+      "muscle": "biceps_brachii",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "supinator",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "wrist_bulge_anti_pattern": [
+    {
+      "muscle": "forearm_extensors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "forearm_flexors",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "pronator_teres",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "press_roll": [
+    {
+      "muscle": "pectoralis_major",
+      "role": "primary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "deltoid",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "serratus_anterior",
+      "role": "secondary",
+      "action": "concentric"
+    },
+    {
+      "muscle": "triceps_brachii",
+      "role": "secondary",
+      "action": "concentric"
+    }
+  ],
+  "triangle_movement": [
+    {
+      "muscle": "gastrocnemius",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gluteus_medius",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "hip_adductors",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "hip_rotators",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "distance_penalty": [
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gastrocnemius",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "soleus",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "load_hit": [
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gastrocnemius",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "soleus",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "distance_shortening": [
+    {
+      "muscle": "gluteus_maximus",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "quadriceps",
+      "role": "primary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "gastrocnemius",
+      "role": "secondary",
+      "action": "mixed"
+    },
+    {
+      "muscle": "soleus",
+      "role": "secondary",
+      "action": "mixed"
+    }
+  ],
+  "solid_sound_feedback": [
+    {
+      "muscle": "latissimus_dorsi",
+      "role": "secondary",
+      "action": "mixed"
+    }
   ]
 }
