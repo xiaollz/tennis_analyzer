@@ -77,10 +77,10 @@
 ### Multi-Round Loop Infrastructure
 
 - [x] **MR-01**: Define Pydantic models for Hypothesis, Observation, DiagnosticSession, and RoundResult
-- [ ] **MR-02**: Implement `MultiRoundAnalyzer` class that orchestrates the observe-reason-re-observe loop
-- [ ] **MR-03**: Implement convergence detection: exit loop when dominant hypothesis reaches confidence >= 0.8 or max rounds (4) reached
-- [ ] **MR-04**: Implement `analyze_swing_iterative()` in VLMForehandAnalyzer as the v2.0 entry point, with fallback to v1.0 `analyze_swing()`
-- [ ] **MR-05**: Round history persistence: save full DiagnosticSession as JSON for debugging and replay
+- [x] **MR-02**: Implement `MultiRoundAnalyzer` class that orchestrates the observe-reason-re-observe loop
+- [x] **MR-03**: Implement convergence detection: exit loop when dominant hypothesis reaches confidence >= 0.8 or max rounds (4) reached
+- [x] **MR-04**: Implement `analyze_swing_iterative()` in VLMForehandAnalyzer as the v2.0 entry point, with fallback to v1.0 `analyze_swing()`
+- [x] **MR-05**: Round history persistence: save full DiagnosticSession as JSON for debugging and replay
 
 ### Knowledge-Driven Observation Directives
 
@@ -112,8 +112,8 @@
 
 ### Cost and Performance
 
-- [ ] **CP-01**: Multi-round analysis stays under $0.01 per swing on Gemini Flash
-- [ ] **CP-02**: Total latency under 20 seconds for typical 3-round analysis
+- [x] **CP-01**: Multi-round analysis stays under $0.01 per swing on Gemini Flash
+- [x] **CP-02**: Total latency under 20 seconds for typical 3-round analysis
 - [ ] **CP-03**: Focused per-round prompts stay under 4K chars each (except final confirmation at ~6K)
 
 ## Future Requirements (v3+)
