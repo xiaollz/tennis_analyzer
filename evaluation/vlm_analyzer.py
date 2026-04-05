@@ -1778,14 +1778,87 @@ def _extract_section_after_tag(text: str, tag: str, next_tags: List[str]) -> str
 
 
 def _parse_observation_response(text: str) -> Optional[Dict]:
-    """Parse the observation-only VLM output format (observation_v1).
+    """Parse the observation-only VLM output (Q1-Q35 format or field-based).
 
-    Expected format has FRAME_1: through FRAME_6: sections and an OVERALL: section,
-    each containing sub-fields like shoulder:, torso:, hitting_arm:, etc.
+    Supports both Q-numbered format (Q1: answer) and field-based format (shoulder: answer).
     """
     text = text.strip()
 
-    # Must have at least one FRAME_ and OVERALL to be valid observation format
+    # Try Q-numbered format first (Q1: through Q35:)
+    q_pattern = re.compile(r"^Q(\d+):\s*(.+?)$", re.MULTILINE)
+    q_matches = list(q_pattern.finditer(text))
+    if len(q_matches) >= 10:  # At least 10 Q answers to be valid
+        answers = {}
+        for m in q_matches:
+            q_num = int(m.group(1))
+            answers[f"Q{q_num}"] = m.group(2).strip()
+
+        # Map Q numbers to semantic categories per frame
+        frames = {
+            "1": {
+                "shoulder_level": answers.get("Q1", ""),
+                "body_rotation": answers.get("Q2", ""),
+                "arm_chest_gap": answers.get("Q3", ""),
+                "non_hitting_arm": answers.get("Q4", ""),
+                "knee_bend": answers.get("Q5", ""),
+                "racket_position": answers.get("Q6", ""),
+            },
+            "2": {
+                "rotation_sequence": answers.get("Q7", ""),
+                "arm_timing": answers.get("Q8", ""),
+                "arm_chest_gap": answers.get("Q9", ""),
+                "hand_drop": answers.get("Q10", ""),
+                "back_foot": answers.get("Q11", ""),
+                "torso_lean": answers.get("Q12", ""),
+            },
+            "3": {
+                "wrist_drop": answers.get("Q13", ""),
+                "trajectory_shape": answers.get("Q14", ""),
+                "racket_head_position": answers.get("Q15", ""),
+                "racket_face": answers.get("Q16", ""),
+                "body_rotation": answers.get("Q17", ""),
+            },
+            "4": {
+                "body_facing": answers.get("Q18", ""),
+                "elbow_space": answers.get("Q19", ""),
+                "contact_point": answers.get("Q20", ""),
+                "non_hitting_arm": answers.get("Q21", ""),
+                "back_foot": answers.get("Q22", ""),
+                "elbow_angle": answers.get("Q23", ""),
+            },
+            "5": {
+                "arm_direction": answers.get("Q24", ""),
+                "trajectory_extension": answers.get("Q25", ""),
+                "racket_rotation": answers.get("Q26", ""),
+                "non_hitting_arm": answers.get("Q27", ""),
+            },
+            "6": {
+                "finish_position": answers.get("Q28", ""),
+                "box_shape": answers.get("Q29", ""),
+                "balance": answers.get("Q30", ""),
+                "back_foot_final": answers.get("Q31", ""),
+            },
+        }
+        overall = {
+            "movement_sequence": answers.get("Q32", ""),
+            "arm_body_sync": answers.get("Q33", ""),
+            "trajectory_shape": answers.get("Q34", ""),
+            "weight_transfer": answers.get("Q35", ""),
+        }
+
+        result = {
+            "format": "observation_v2",
+            "frames": frames,
+            "overall": overall,
+            "raw_answers": answers,
+            # Backward compat
+            "issues": [],
+            "strengths": [],
+            "score": None,
+        }
+        return result
+
+    # Fallback: try old field-based format (FRAME_1: shoulder: / torso: etc.)
     if not re.search(r"^FRAME_\d+:", text, re.MULTILINE):
         return None
     if not re.search(r"^OVERALL:", text, re.MULTILINE):
@@ -1800,8 +1873,6 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
     frames: Dict[str, Dict[str, str]] = {}
     overall: Dict[str, str] = {}
 
-    # Split text into sections by FRAME_N: and OVERALL:
-    # Find all section boundaries
     section_pattern = re.compile(r"^(FRAME_(\d+)|OVERALL):", re.MULTILINE)
     matches = list(section_pattern.finditer(text))
 
