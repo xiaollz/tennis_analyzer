@@ -1793,9 +1793,9 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
             q_num = int(m.group(1))
             answers[f"Q{q_num}"] = m.group(2).strip()
 
-        # Map Q numbers to semantic categories per frame
+        # Map Q numbers to semantic categories per phase
         frames = {
-            "1": {
+            "prep": {
                 "shoulder_level": answers.get("Q1", ""),
                 "body_rotation": answers.get("Q2", ""),
                 "arm_chest_gap": answers.get("Q3", ""),
@@ -1803,7 +1803,7 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
                 "knee_bend": answers.get("Q5", ""),
                 "racket_position": answers.get("Q6", ""),
             },
-            "2": {
+            "start": {
                 "rotation_sequence": answers.get("Q7", ""),
                 "arm_timing": answers.get("Q8", ""),
                 "arm_chest_gap": answers.get("Q9", ""),
@@ -1811,39 +1811,38 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
                 "back_foot": answers.get("Q11", ""),
                 "torso_lean": answers.get("Q12", ""),
             },
-            "3": {
+            "accel": {
                 "wrist_drop": answers.get("Q13", ""),
                 "trajectory_shape": answers.get("Q14", ""),
                 "racket_head_position": answers.get("Q15", ""),
                 "racket_face": answers.get("Q16", ""),
                 "body_rotation": answers.get("Q17", ""),
             },
-            "4": {
+            "contact": {
                 "body_facing": answers.get("Q18", ""),
                 "elbow_space": answers.get("Q19", ""),
                 "contact_point": answers.get("Q20", ""),
                 "non_hitting_arm": answers.get("Q21", ""),
                 "back_foot": answers.get("Q22", ""),
-                "elbow_angle": answers.get("Q23", ""),
             },
-            "5": {
-                "arm_direction": answers.get("Q24", ""),
-                "trajectory_extension": answers.get("Q25", ""),
-                "racket_rotation": answers.get("Q26", ""),
-                "non_hitting_arm": answers.get("Q27", ""),
+            "after": {
+                "arm_direction": answers.get("Q23", ""),
+                "racket_rotation": answers.get("Q24", ""),
+                "non_hitting_arm": answers.get("Q25", ""),
             },
-            "6": {
-                "finish_position": answers.get("Q28", ""),
-                "box_shape": answers.get("Q29", ""),
-                "balance": answers.get("Q30", ""),
-                "back_foot_final": answers.get("Q31", ""),
+            "finish": {
+                "finish_position": answers.get("Q26", ""),
+                "box_shape": answers.get("Q27", ""),
+                "balance": answers.get("Q28", ""),
+                "back_foot_final": answers.get("Q29", ""),
             },
         }
         overall = {
-            "movement_sequence": answers.get("Q32", ""),
-            "arm_body_sync": answers.get("Q33", ""),
-            "trajectory_shape": answers.get("Q34", ""),
-            "weight_transfer": answers.get("Q35", ""),
+            "movement_sequence": answers.get("Q30", ""),
+            "arm_body_sync": answers.get("Q31", ""),
+            "trajectory_shape": answers.get("Q32", ""),
+            "weight_transfer": answers.get("Q33", ""),
+            "rhythm": answers.get("Q34", ""),
         }
 
         result = {
