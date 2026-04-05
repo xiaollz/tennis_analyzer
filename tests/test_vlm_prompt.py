@@ -258,37 +258,36 @@ class TestVLMPromptCompiler:
             assert chain.symptom_zh in prompt, f"Missing chain: {chain.symptom_zh}"
 
     def test_output_schema_preserved(self, compiler):
-        """Pass 2 prompt contains the output format specification (semi-structured v5)."""
+        """Pass 2 prompt contains the observation output format specification."""
         prompt = compiler.compile_pass2_prompt(["dc_arm_driven_hitting"])
-        # v5 semi-structured tags (STRENGTHS and KINETIC_CHAIN removed in v5)
-        assert "SCORE" in prompt
-        assert "ROOT_CAUSE" in prompt
-        assert "EVIDENCE" in prompt
-        assert "FIX" in prompt
+        # observation_v1 format tags
+        assert "FRAME_1" in prompt
+        assert "OVERALL" in prompt
+        assert "shoulder" in prompt
+        assert "torso" in prompt
 
     def test_static_prompt_content(self, compiler):
-        """Static system prompt contains key coaching content."""
+        """Static system prompt contains key observation-only content."""
         prompt = compiler.compile_system_prompt()
-        assert "逐帧检查清单" in prompt
-        assert "核心生物力学原则" in prompt
-        assert "Drill 知识库" in prompt
+        assert "纯视觉观察" in prompt
+        assert "FRAME_1" in prompt
+        assert "OVERALL" in prompt
         assert "输出格式" in prompt
 
     def test_prompt_template_replaces_hardcoded(self, compiler):
         """VLMPromptCompiler can produce a complete prompt covering all sections."""
         prompt = compiler.compile_pass2_prompt(["dc_arm_driven_hitting"])
-        # Frame guide
-        assert "图1 准备完成" in prompt
-        assert "图6 随挥结束" in prompt
-        # Principles
-        assert "正手是旋转驱动的鞭打系统" in prompt
-        # Drills
-        assert "Drill 知识库" in prompt
+        # Frame observation structure
+        assert "FRAME_1" in prompt
+        assert "FRAME_6" in prompt
+        # Observation fields
+        assert "shoulder" in prompt
+        assert "hitting_arm" in prompt
         # Diagnostic chains (dynamic)
         assert "诊断路径" in prompt or "根因" in prompt
-        # Output format (v4 semi-structured, not JSON)
-        assert "SCORE" in prompt
-        assert "ROOT_CAUSE" in prompt
+        # Observation format tags
+        assert "OVERALL" in prompt
+        assert "movement_sequence" in prompt
 
 
 class TestWithRealChains:

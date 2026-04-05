@@ -1777,11 +1777,92 @@ def _extract_section_after_tag(text: str, tag: str, next_tags: List[str]) -> str
     return text[start:end].strip()
 
 
+def _parse_observation_response(text: str) -> Optional[Dict]:
+    """Parse the observation-only VLM output format (observation_v1).
+
+    Expected format has FRAME_1: through FRAME_6: sections and an OVERALL: section,
+    each containing sub-fields like shoulder:, torso:, hitting_arm:, etc.
+    """
+    text = text.strip()
+
+    # Must have at least one FRAME_ and OVERALL to be valid observation format
+    if not re.search(r"^FRAME_\d+:", text, re.MULTILINE):
+        return None
+    if not re.search(r"^OVERALL:", text, re.MULTILINE):
+        return None
+
+    FRAME_FIELDS = [
+        "shoulder", "torso", "hitting_arm", "non_hitting_arm",
+        "racket", "lower_body", "timing",
+    ]
+    OVERALL_FIELDS = ["movement_sequence", "arm_body_sync", "trajectory_shape"]
+
+    frames: Dict[str, Dict[str, str]] = {}
+    overall: Dict[str, str] = {}
+
+    # Split text into sections by FRAME_N: and OVERALL:
+    # Find all section boundaries
+    section_pattern = re.compile(r"^(FRAME_(\d+)|OVERALL):", re.MULTILINE)
+    matches = list(section_pattern.finditer(text))
+
+    for i, m in enumerate(matches):
+        section_start = m.end()
+        section_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        section_text = text[section_start:section_end].strip()
+        section_name = m.group(1)
+
+        if section_name.startswith("FRAME_"):
+            frame_num = m.group(2)
+            frame_data: Dict[str, str] = {}
+            for field in FRAME_FIELDS:
+                field_match = re.search(
+                    rf"^{field}:\s*(.+?)$", section_text, re.MULTILINE
+                )
+                if field_match:
+                    frame_data[field] = field_match.group(1).strip()
+                else:
+                    frame_data[field] = ""
+            frames[frame_num] = frame_data
+
+        elif section_name == "OVERALL":
+            for field in OVERALL_FIELDS:
+                field_match = re.search(
+                    rf"^{field}:\s*(.+?)$", section_text, re.MULTILINE
+                )
+                if field_match:
+                    overall[field] = field_match.group(1).strip()
+                else:
+                    overall[field] = ""
+
+    if not frames:
+        return None
+
+    # Build the result dict
+    data: Dict = {
+        "format": "observation_v1",
+        "frames": frames,
+        "overall": overall,
+        "raw_text": text,
+        # Backward-compat fields so downstream code doesn't break
+        "score": None,
+        "core_diagnosis": "",
+        "root_cause_tree": None,
+        "secondary_root_cause": None,
+        "overall_narrative": "",
+        "kinetic_chain_narrative": "",
+        "strengths": [],
+        "priority_drill": "",
+        "issues": [],
+    }
+    return data
+
+
 def _parse_semi_structured_response(text: str) -> Optional[Dict]:
-    """Parse the new semi-structured VLM output format (v4).
+    """Parse the semi-structured VLM output format (v4/v5).
 
     Expected format has labeled lines like SCORE:, ROOT_CAUSE:, etc.
-    with free-form paragraphs between them.
+    with free-form paragraphs between them.  Kept as fallback for legacy
+    coaching-mode prompts.
     """
     text = text.strip()
 
@@ -1889,14 +1970,20 @@ def _parse_semi_structured_response(text: str) -> Optional[Dict]:
 def _parse_json_response(text: str) -> Optional[Dict]:
     """Extract structured data from VLM response text.
 
-    Supports three formats:
-    1. Semi-structured v4 (SCORE: / ROOT_CAUSE: tags) — preferred
-    2. JSON with root_cause_tree (v3)
-    3. Legacy JSON with issues list
+    Supports four formats (tried in order):
+    1. Observation-only v1 (FRAME_1: / OVERALL: tags) — new default
+    2. Semi-structured v4/v5 (SCORE: / ROOT_CAUSE: tags) — legacy coaching
+    3. JSON with root_cause_tree (v3)
+    4. Legacy JSON with issues list
     """
     text = text.strip()
 
-    # 1. Try semi-structured format first (new v4 default)
+    # 1. Try observation format first (new observation-only default)
+    result = _parse_observation_response(text)
+    if result:
+        return result
+
+    # 2. Try semi-structured format (legacy coaching prompt fallback)
     result = _parse_semi_structured_response(text)
     if result:
         return result
