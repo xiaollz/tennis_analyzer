@@ -405,14 +405,10 @@ class TennisAnalysisPipeline:
             except Exception:
                 pass  # 视频片段提取失败不影响分析，回退到关键帧
 
-            # Call VLM (v2.0: multi-round iterative, fallback to v1.0 single-pass)
+            # Call VLM (v4: pure observation → diagnosis engine does reasoning)
             mode_label = "视频" if swing_clip_path else "关键帧"
             print(f"[VLM] 正在分析第 {ev.swing_index + 1} 次击球（{mode_label}模式）...")
-            vlm_result = analyzer.analyze_swing_iterative(
-                grid, video_path=video_path,
-                supplementary_metrics=supp_metrics,
-                swing_video_path=swing_clip_path,
-            ) if hasattr(analyzer, 'analyze_swing_iterative') else analyzer.analyze_swing(
+            vlm_result = analyzer.analyze_swing(
                 grid, video_path=video_path,
                 supplementary_metrics=supp_metrics,
                 swing_video_path=swing_clip_path,
