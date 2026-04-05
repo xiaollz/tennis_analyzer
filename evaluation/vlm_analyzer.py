@@ -141,13 +141,15 @@ class KeyframeExtractor:
             pos = max(0, min(pos, n - 1))
             frame = frames_raw[pos].copy()
 
-            # Draw joint trajectories up to this frame.
-            # trail indices are relative to swing_start.
+            # Draw joint trajectories: sliding window of last ~15 frames (0.5s at 30fps)
+            # Only show recent trail, not full accumulation from swing start.
+            _TRAIL_WINDOW = 15
             trail_end_rel = max(0, min(pos - swing_start + 1, len(wrist_trail)))
+            trail_start_rel = max(0, trail_end_rel - _TRAIL_WINDOW)
 
-            # Elbow: cyan trail
+            # Elbow: cyan trail (windowed)
             if elbow_trail:
-                pts_e = [p for p in elbow_trail[:trail_end_rel] if p is not None]
+                pts_e = [p for p in elbow_trail[trail_start_rel:trail_end_rel] if p is not None]
                 if len(pts_e) >= 2:
                     for i in range(1, len(pts_e)):
                         dx = pts_e[i][0] - pts_e[i-1][0]
@@ -157,9 +159,9 @@ class KeyframeExtractor:
                         alpha = 0.4 + 0.6 * (i / len(pts_e))
                         cv2.line(frame, pts_e[i-1], pts_e[i], (int(200*alpha), int(200*alpha), 0), 2, cv2.LINE_AA)
 
-            # Wrist: yellow trail (drawn on top)
+            # Wrist: yellow trail (windowed, drawn on top)
             if wrist_trail:
-                pts_w = [p for p in wrist_trail[:trail_end_rel] if p is not None]
+                pts_w = [p for p in wrist_trail[trail_start_rel:trail_end_rel] if p is not None]
                 if len(pts_w) >= 2:
                     for i in range(1, len(pts_w)):
                         dx = pts_w[i][0] - pts_w[i-1][0]
