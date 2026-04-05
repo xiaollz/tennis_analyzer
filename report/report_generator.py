@@ -216,7 +216,15 @@ class ReportGenerator:
         stroke_type: str = "forehand",
         vlm_results: Optional[List[Optional[Dict]]] = None,
     ) -> str:
-        """生成完整的 Markdown 报告并返回文件路径。"""
+        """生成完整的 Markdown 报告并返回文件路径。
+
+        报告结构（v5 简化版）：
+        1. 标题 + 基本信息
+        2. 核心问题（多球时，自然段叙述）
+        3. 每球分析：问题（含分数）→ 因果叙述 → 训练方法
+        4. 量化辅助参考（所有球汇总，放最后）
+        5. 下次训练叮嘱（简短）
+        """
         import os
         chart_paths = chart_paths or {}
         rel_chart_paths = {}
@@ -234,84 +242,41 @@ class ReportGenerator:
         stroke_cn = "单手反拍" if is_backhand else "现代正手"
 
         lines: List[str] = []
+        _vlm = vlm_results or []
 
         # ── 标题 ─────────────────────────────────────────────────────
-        lines.append(f"# {stroke_cn}技术分析报告")
+        lines.append(f"# {stroke_cn}技术分析")
         lines.append("")
-        lines.append(f"**视频**: {video_name}  ")
-        lines.append(f"**分析日期**: {datetime.now().strftime('%Y-%m-%d %H:%M')}  ")
-        lines.append(f"**击球类型**: {stroke_cn}  ")
-        lines.append(f"**检测到击球次数**: {report.total_swings}  ")
-        if not is_backhand:
-            lines.append(f"**评估模型**: 容错型正手原则模型 (v4)  ")
+        lines.append(f"**视频**: {video_name} | **日期**: {datetime.now().strftime('%Y-%m-%d %H:%M')} | **击球数**: {report.total_swings}")
         lines.append("")
 
-        # ── 总体印象（取代旧的综合评分概览）─────────────────────────
-        lines.append("---")
-        lines.append("")
-        lines.append("## 总体印象")
-        lines.append("")
-
-        if report.total_swings > 0:
-            lines.append(self._qualitative_summary(report, is_backhand))
-            lines.append("")
-
-            if report.total_swings > 1:
-                # 一致性分析（简化版，不含分数表）
-                lines.extend(self._consistency_analysis(report))
-                lines.append("")
-        else:
-            lines.append("未检测到有效击球。以下仅评估可用的姿态数据。")
-            lines.append("")
-
-        # ── 核心问题总结（多球时生成）─────────────────────────────────
-        _vlm = vlm_results or []
+        # ── 核心问题（多球时生成，自然段叙述）────────────────────────
         if report.total_swings > 1 and any(v for v in _vlm if v):
             lines.extend(self._multi_swing_summary(_vlm, report))
 
-        # ── 每次击球详细分析（只展开重点球）─────────────────────────────
+        # ── 每球分析 ─────────────────────────────────────────────────
         highlight_indices = self._pick_highlight_swings(_vlm, report)
         for ev in report.swing_evaluations:
             vlm_data = _vlm[ev.swing_index] if ev.swing_index < len(_vlm) else None
-            supp = vlm_data.get("supplementary_metrics") if vlm_data else None
             is_highlight = ev.swing_index in highlight_indices
             lines.extend(self._swing_section(
                 ev, chart_paths, report.total_swings,
                 phase_titles, phase_order, stroke_cn, drills,
                 vlm_result=vlm_data,
-                supplementary_metrics=supp,
                 compact=not is_highlight,
             ))
 
-        # ── 综合教练建议（简化版）─────────────────────────────────────
+        # ── 量化辅助参考（所有球汇总，放在最后）─────────────────────
+        all_metrics_lines = self._all_swings_metrics(report, _vlm)
+        if all_metrics_lines:
+            lines.append("---")
+            lines.append("")
+            lines.extend(all_metrics_lines)
+
+        # ── 下次训练叮嘱 ─────────────────────────────────────────────
         lines.append("---")
-        lines.append("")
-        lines.append("## 综合教练建议")
         lines.append("")
         lines.extend(self._coaching_summary(report, is_backhand, vlm_results=_vlm))
-        lines.append("")
-
-        # ── 方法论说明 ───────────────────────────────────────────────
-        lines.append("---")
-        lines.append("")
-        lines.append("## 分析方法")
-        lines.append("")
-        if is_backhand:
-            lines.append("本分析基于 **Modern One-Handed Backhand** 理论框架，综合以下来源：")
-            lines.append("- **Dr. Brian Gordon** — 单反生物力学、L形杠杆系统")
-            lines.append("- **Rick Macci** — 侧身转体、非持拍手平衡、ATA收拍")
-            lines.append("- **Tennis Doctor** — Inside-Out 路径、保持侧身原则")
-            lines.append("- **Feel Tennis** — 单反整体协调、步法与时机")
-        else:
-            lines.append("本分析以 **《容错型正手》** 的底层原则为主：")
-            lines.append("- **前方接触**：球尽量在身体前方完成接触")
-            lines.append("- **简单准备**：转开、备手、等待，不堆多余动作")
-            lines.append("- **髋带动前挥**：手不是发动机，髋和躯干才是")
-            lines.append("- **Out / Up / Through**：手向外、向上、向前穿过球")
-            lines.append("- **容错优先**：先追求普通球不容易打丢")
-        lines.append("")
-        lines.append("视觉分析由 VLM（视觉语言模型）基于关键帧完成，量化指标由 YOLO Pose（COCO 17关键点）辅助计算。"
-                      "所有量化指标均基于2D关键点轨迹，受相机角度限制。建议使用侧面视角、60+FPS 录制以获得最佳分析效果。")
         lines.append("")
 
         # 写入文件
@@ -320,38 +285,19 @@ class ReportGenerator:
         report_path.write_text("\n".join(lines), encoding="utf-8")
         return str(report_path)
 
-    # ── 总体定性总结（取代旧的分数概览）─────────────────────────────
-
-    def _qualitative_summary(self, report: MultiSwingReport, is_backhand: bool) -> str:
-        """根据整体数据生成一句定性总结，取代分数展示。"""
-        avg = report.average_score
-        n = report.total_swings
-        stroke = "单反" if is_backhand else "正手"
-
-        if avg >= 85:
-            return f"本次共分析 {n} 次{stroke}击球，整体动作质量优秀，各环节衔接流畅，技术框架成熟稳定。"
-        elif avg >= 70:
-            return f"本次共分析 {n} 次{stroke}击球，整体动作框架良好，核心原则基本到位，部分环节仍有优化空间。"
-        elif avg >= 50:
-            return f"本次共分析 {n} 次{stroke}击球，动作框架初步成型，但多个环节需要改进以提高容错性和稳定性。"
-        elif avg >= 30:
-            return f"本次共分析 {n} 次{stroke}击球，技术动作存在较明显的结构性问题，建议从基础动作模式开始重建。"
-        else:
-            return f"本次共分析 {n} 次{stroke}击球，动作模式与目标技术差距较大，建议在教练指导下从分解动作开始练习。"
-
-    # ── 单次击球详细分析 ─────────────────────────────────────────────
-
     # ── 多球总结 + 重点球选择 ────────────────────────────────────────
 
     @staticmethod
     def _multi_swing_summary(vlm_results: list, report) -> List[str]:
-        """Generate a coach-style narrative summary across all swings."""
+        """Generate a coach-style narrative summary across all swings.
+
+        Outputs a natural paragraph without bold formatting or lists.
+        """
         lines = []
         lines.append("## 核心问题")
         lines.append("")
 
         # Collect root causes with swing indices
-        from collections import Counter
         swing_causes: List[tuple] = []  # (swing_1based, root_cause_text)
         for i, v in enumerate(vlm_results):
             if not v:
@@ -380,21 +326,20 @@ class ReportGenerator:
         main_cause = short_to_full[main_prefix]
         total = report.total_swings
 
-        # Build a coach-style narrative paragraph (max 5 sentences)
+        # Build a coach-style narrative paragraph (no bold, no lists)
         parts = []
 
-        # Sentence 1-2: main problem and where it shows up
         if len(main_swings) == total:
-            parts.append(f"看完这 {total} 个球，每一个都指向同一件事：**{main_cause}**。")
+            parts.append(f"看完这 {total} 个球，每一个都指向同一件事：{main_cause}。")
         elif len(main_swings) >= total * 0.6:
             swing_list = "、".join(str(s) for s in main_swings)
             parts.append(
-                f"这 {total} 个球里，第 {swing_list} 球都有同一个核心问题：**{main_cause}**。"
+                f"这 {total} 个球里，第 {swing_list} 球都有同一个核心问题：{main_cause}。"
             )
         else:
             swing_list = "、".join(str(s) for s in main_swings)
             parts.append(
-                f"第 {swing_list} 球暴露了一个关键问题：**{main_cause}**。"
+                f"第 {swing_list} 球暴露了一个关键问题：{main_cause}。"
             )
 
         # Sentence 3: how the main problem manifests (use downstream symptoms if available)
@@ -474,69 +419,42 @@ class ReportGenerator:
         supplementary_metrics: Optional[Dict] = None,
         compact: bool = False,
     ) -> List[str]:
+        """生成单球分析。
+
+        详细模式：问题（含分数）→ 因果叙述 → 训练方法
+        Compact 模式：一行评分 + 根因
+        """
         lines = []
         lines.append("---")
         lines.append("")
 
         if total_swings > 1:
-            label = f"## 第 {ev.swing_index + 1} 次击球" + (" (详细)" if not compact else "")
-            lines.append(label)
+            lines.append(f"## 第 {ev.swing_index + 1} 球")
         else:
             lines.append("## 击球分析")
         lines.append("")
 
-        # ── Compact mode: two-line summary ──
+        # ── Compact mode: one line ──
         if compact and vlm_result:
             score = vlm_result.get("score")
             tree = vlm_result.get("root_cause_tree", {})
             rc = tree.get("root_cause", "")
-            # Line 1: score + root cause
-            if score:
-                lines.append(f"评分 {score}/100 — {rc}" if rc else f"评分 {score}/100")
+            if score and rc:
+                lines.append(f"{score}/100 — {rc}")
+            elif score:
+                lines.append(f"{score}/100")
             elif rc:
                 lines.append(rc)
-            # Line 2: notable difference from other swings (secondary issue or unique symptom)
-            secondary = vlm_result.get("secondary_root_cause")
-            symptoms = tree.get("downstream_symptoms", [])
-            if secondary and secondary.get("root_cause"):
-                lines.append(f"  另见：{secondary['root_cause']}")
-            elif symptoms:
-                unique_symptom = symptoms[0].get("symptom", "")
-                if unique_symptom:
-                    lines.append(f"  表现：{unique_symptom}")
             lines.append("")
             return lines
 
-        # ── 击球基本信息 ───────────────────────────────────────────
-        lines.append(f"**击球类型**: {stroke_cn}  ")
-        if ev.arm_style and ev.arm_style != "未知":
-            lines.append(f"**手臂风格**: {ev.arm_style}  ")
-        if ev.swing_event.impact_frame is not None:
-            lines.append(f"**击球帧**: {ev.swing_event.impact_frame}  ")
-        if ev.swing_event.prep_start_frame is not None:
-            lines.append(f"**准备开始帧**: {ev.swing_event.prep_start_frame}  ")
-        if ev.swing_event.followthrough_end_frame is not None:
-            lines.append(f"**随挥结束帧**: {ev.swing_event.followthrough_end_frame}  ")
-        if ev.swing_event.impact_event and ev.swing_event.impact_event.peak_speed_px_s:
-            lines.append(f"**手腕峰值速度**: {ev.swing_event.impact_event.peak_speed_px_s:.0f} px/s  ")
-            if ev.swing_event.impact_event.audio_confirmed:
-                lines.append("**音频确认**: 已确认  ")
-        lines.append("")
-
-        # ── 教练分析（VLM — 主体内容）─────────────────────────────
+        # ── 详细模式：三部分结构 ──
         if vlm_result:
             lines.extend(self._vlm_section(vlm_result, chart_paths, ev.swing_index, total_swings))
 
-        # ── 量化辅助参考 ──────────────────────────────────────────
-        metrics_lines = self._supplementary_metrics_section(
-            ev, phase_titles, phase_order, supplementary_metrics,
-        )
-        if metrics_lines:
-            lines.extend(metrics_lines)
-
         return lines
 
-    # ── VLM 视觉分析章节 ───────────────────────────────────────────
+    # ── VLM 视觉分析章节（v5 简化：三部分结构）─────────────────────
 
     @staticmethod
     def _vlm_section(
@@ -544,52 +462,96 @@ class ReportGenerator:
         chart_paths: Dict[str, str],
         swing_index: int,
         total_swings: int,
-        include_journey: bool = True,
     ) -> List[str]:
+        """三部分结构：问题是什么 → 为什么 → 怎么解决。"""
         import os
         lines = []
-        lines.append("### 教练分析")
-        lines.append("")
 
         # Keyframe grid image
         grid_path = vlm_result.get("keyframe_grid_path", "")
         if grid_path:
             basename = os.path.basename(grid_path)
             rel_path = f"charts/{basename}"
-            lines.append(f"![关键帧分析]({rel_path})")
+            lines.append(f"![关键帧]({rel_path})")
             lines.append("")
 
-        # Score
-        if vlm_result.get("score") is not None:
-            score = vlm_result["score"]
-            reasoning = vlm_result.get("score_reasoning", "")
-            lines.append(f"**容错评分**: {score}/100 — {reasoning}")
+        tree = vlm_result.get("root_cause_tree", {})
+
+        # ── 第一部分：问题是什么（含分数）──
+        score = vlm_result.get("score")
+        core_diagnosis = vlm_result.get("overall_narrative", "")
+        root_cause = tree.get("root_cause", "")
+
+        if score is not None and root_cause:
+            lines.append(f"**{score}/100** — {root_cause}")
+        elif score is not None:
+            lines.append(f"**{score}/100**")
+        elif root_cause:
+            lines.append(f"**{root_cause}**")
+        lines.append("")
+
+        # Core diagnosis paragraph (natural text, no bold)
+        if core_diagnosis:
+            lines.append(core_diagnosis)
             lines.append("")
 
-        # ── Diagnostic Journey (v2.0 multi-round) ──
-        diag_session = vlm_result.get("diagnostic_session")
-        if diag_session and include_journey:
-            lines.extend(ReportGenerator._format_diagnostic_journey(diag_session))
+        # Evidence line
+        evidence = tree.get("root_cause_evidence", "")
+        if evidence:
+            lines.append(f"证据：{evidence}")
+            lines.append("")
 
-        # ── New format: Root Cause Tree ──
-        root_tree = vlm_result.get("root_cause_tree")
-        if root_tree:
-            lines.extend(ReportGenerator._format_root_cause_tree(vlm_result))
-        else:
-            # ── Legacy format fallback ──
-            lines.extend(ReportGenerator._format_legacy_issues(vlm_result))
+        # ── 第二部分：为什么（因果叙述段落）──
+        causal = tree.get("causal_explanation", "")
+        if causal:
+            lines.append(causal)
+            lines.append("")
+        elif tree.get("downstream_symptoms"):
+            # v3 fallback: build a paragraph from symptom list
+            symptoms = tree["downstream_symptoms"]
+            symptom_texts = []
+            for s in symptoms:
+                how = s.get("how_root_cause_creates_it", "")
+                symptom_name = s.get("symptom", "")
+                if how:
+                    symptom_texts.append(f"{symptom_name}（{how}）")
+                elif symptom_name:
+                    symptom_texts.append(symptom_name)
+            if symptom_texts:
+                lines.append(f"{root_cause}导致了：{'，'.join(symptom_texts)}。")
+                lines.append("")
+
+        # Secondary root cause (inline)
+        secondary = vlm_result.get("secondary_root_cause")
+        if secondary and secondary.get("root_cause"):
+            lines.append(f"另外注意：{secondary['root_cause']}")
+            lines.append("")
+
+        # ── 第三部分：怎么解决（训练方法）──
+        fix = tree.get("fix", {})
+        if fix and fix.get("one_drill"):
+            lines.append(f"**练这个：{fix['one_drill']}**")
+            method = fix.get("drill_method", "")
+            cue = fix.get("drill_feel_cue", "")
+            check = fix.get("check_criteria", "")
+            if method:
+                lines.append(f"做法：{method}")
+            if cue:
+                lines.append(f"口令：{cue}")
+            if check:
+                lines.append(f"做对标准：{check}")
+            lines.append("")
 
         return lines
 
-    # ── 诊断推理过程（v2.0 多轮诊断）────────────────────────────────────
+    # ── 诊断推理过程（保留为内部方法，报告中不再显示）──────────────────
 
     @staticmethod
     def _format_diagnostic_journey(session_data: Dict) -> List[str]:
         """Compress multi-round diagnostic journey into 1-2 sentence summary.
 
-        Instead of listing every hypothesis and observation, distill the
-        reasoning path into a brief narrative: what was suspected, what was
-        ruled out, and what was confirmed.
+        Not shown in reports (v5), but kept for backward compatibility
+        and internal use.
         """
         lines: List[str] = []
         rounds = session_data.get("rounds", [])
@@ -604,16 +566,14 @@ class ReportGenerator:
         if not confirmed and not eliminated:
             return lines
 
-        lines.append("**诊断路径：**", )
+        lines.append("**诊断路径：**")
 
-        # Build a 1-2 sentence narrative
         parts = []
         if eliminated:
             elim_names = [h.get("name_zh") or h.get("name", "?") for h in eliminated]
             parts.append(f"排除了{', '.join(elim_names)}")
         if confirmed:
             conf_names = [h.get("name_zh") or h.get("name", "?") for h in confirmed]
-            # Try to get the reason from the last round's confirm action
             confirm_reason = ""
             for rnd in reversed(rounds):
                 for upd in rnd.get("hypothesis_updates", []):
@@ -634,231 +594,64 @@ class ReportGenerator:
 
         return lines
 
-    # ── 根因树格式（v4 半结构化 + v3 JSON 兼容） ──────────────────────
+    # ── 量化辅助参考（所有球汇总）────────────────────────────────────
 
-    @staticmethod
-    def _format_root_cause_tree(vlm_result: Dict) -> List[str]:
-        lines: List[str] = []
-        tree = vlm_result["root_cause_tree"]
-
-        # Core diagnosis / overall narrative
-        if vlm_result.get("overall_narrative"):
-            lines.append(vlm_result["overall_narrative"])
-            lines.append("")
-
-        # Root cause
-        lines.append(f"> **根因：{tree.get('root_cause', '')}**")
-        lines.append("")
-
-        # Evidence + Body
-        evidence_parts = []
-        if tree.get("root_cause_evidence"):
-            evidence_parts.append(tree["root_cause_evidence"])
-        if tree.get("root_cause_body"):
-            evidence_parts.append(tree["root_cause_body"])
-        if evidence_parts:
-            lines.append(" ".join(evidence_parts))
-            lines.append("")
-
-        # Feel
-        if tree.get("root_cause_feel"):
-            lines.append(f"*{tree['root_cause_feel']}*")
-            lines.append("")
-
-        # Causal explanation (v4: free paragraph) or downstream symptoms (v3: tree)
-        if tree.get("causal_explanation"):
-            lines.append(tree["causal_explanation"])
-            lines.append("")
-        elif tree.get("downstream_symptoms"):
-            # v3 fallback: render causal tree from itemized symptoms
-            symptoms = tree["downstream_symptoms"]
-            root_short = tree.get("root_cause", "根因")[:25]
-            lines.append("```")
-            lines.append(f"  {root_short}")
-            for i, s in enumerate(symptoms):
-                connector = "├──" if i < len(symptoms) - 1 else "└──"
-                cause_short = s.get("how_root_cause_creates_it", "")[:60]
-                lines.append(f"  {connector} {s.get('symptom', '')} [{s.get('frame', '')}]")
-                lines.append(f"  {'│' if i < len(symptoms) - 1 else ' '}   {cause_short}")
-            lines.append("```")
-            lines.append("")
-
-        # Fix — 训练方法
-        fix = tree.get("fix", {})
-        if fix:
-            fix_parts = []
-            if fix.get("insight"):
-                fix_parts.append(f"**{fix['insight']}**")
-            if fix.get("mental_model_shift"):
-                fix_parts.append(fix["mental_model_shift"])
-            if fix_parts:
-                lines.append(" ".join(fix_parts))
-                lines.append("")
-            if fix.get("one_drill"):
-                lines.append(f"**练这个：** {fix['one_drill']}")
-                method = fix.get("drill_method", "")
-                cue = fix.get("drill_feel_cue", "")
-                check = fix.get("check_criteria", "")
-                if method:
-                    lines.append(f"做法：{method}")
-                if cue:
-                    lines.append(f"口令：{cue}")
-                if check:
-                    lines.append(f"做对了 = {check}")
-                lines.append("")
-
-        # Secondary root cause
-        secondary = vlm_result.get("secondary_root_cause")
-        if secondary and secondary.get("root_cause"):
-            lines.append(f"另外注意：{secondary['root_cause']}")
-            sec_fix = secondary.get("fix", {})
-            if sec_fix and sec_fix.get("one_drill"):
-                lines.append(f"练：{sec_fix['one_drill']}")
-            lines.append("")
-
-        # Strengths
-        strengths = vlm_result.get("strengths", [])
-        if strengths:
-            strength_texts = []
-            for s in strengths:
-                if isinstance(s, dict):
-                    strength_texts.append(s.get("description", ""))
-                else:
-                    strength_texts.append(str(s))
-            if strength_texts:
-                lines.append(f"**做得好：** {'；'.join(strength_texts)}")
-                lines.append("")
-
-        # Kinetic chain narrative
-        if vlm_result.get("kinetic_chain_narrative"):
-            lines.append(f"**力量传导：** {vlm_result['kinetic_chain_narrative']}")
-            lines.append("")
-
-        return lines
-
-    @staticmethod
-    def _format_legacy_issues(vlm_result: Dict) -> List[str]:
-        """Fallback for old-format VLM responses (issues list)."""
-        lines = []
-
-        if vlm_result.get("overall_assessment"):
-            lines.append(f"**整体评价**: {vlm_result['overall_assessment']}")
-            lines.append("")
-
-        strengths = vlm_result.get("strengths", [])
-        if strengths:
-            lines.append("**优点**:")
-            for s in strengths:
-                if isinstance(s, dict):
-                    lines.append(f"- {s.get('description', '')}")
-                    if s.get("body_reason"):
-                        lines.append(f"  - 身体原因: {s['body_reason']}")
-                else:
-                    lines.append(f"- {s}")
-            lines.append("")
-
-        issues = vlm_result.get("issues", [])
-        if issues:
-            lines.append("**问题诊断**:")
-            lines.append("")
-            for issue in issues:
-                severity = issue.get("severity", "中")
-                severity_tag = {"高": "🔴", "中": "🟡", "低": "🟢"}.get(severity, "⚪")
-                frame_tag = f" [{issue['frame']}]" if issue.get("frame") else ""
-                lines.append(f"**{severity_tag} {issue.get('name', '未命名')}{frame_tag}** — 严重程度: {severity}")
-                if issue.get("ftt_principle"):
-                    lines.append(f"- FTT 原则: {issue['ftt_principle']}")
-                if issue.get("action"):
-                    lines.append(f"- 动作: {issue['action']}")
-                if issue.get("body"):
-                    lines.append(f"- 身体: {issue['body']}")
-                if issue.get("feel"):
-                    lines.append(f"- 感觉: {issue['feel']}")
-                if issue.get("drill"):
-                    lines.append(f"- 训练方法: {issue['drill']}")
-                lines.append("")
-
-        if vlm_result.get("weight_transfer"):
-            lines.append(f"**重心转移分析**: {vlm_result['weight_transfer']}")
-            lines.append("")
-        if vlm_result.get("kinetic_chain"):
-            lines.append(f"**动力链分析**: {vlm_result['kinetic_chain']}")
-            lines.append("")
-
-        drills = vlm_result.get("drills", [])
-        if drills:
-            lines.append("**推荐训练计划**:")
-            lines.append("")
-            for i, drill in enumerate(drills, 1):
-                if isinstance(drill, dict):
-                    lines.append(f"{i}. **{drill.get('name', '训练')}**")
-                    if drill.get("method"):
-                        lines.append(f"   - 方法: {drill['method']}")
-                    if drill.get("purpose"):
-                        lines.append(f"   - 目的: {drill['purpose']}")
-                    if drill.get("cue"):
-                        lines.append(f"   - 口令: {drill['cue']}")
-            lines.append("")
-
-        if vlm_result.get("priority_drill"):
-            lines.append(f"**最优先训练**: {vlm_result['priority_drill']}")
-            lines.append("")
-
-        return lines
-
-    # ── 量化辅助参考章节 ─────────────────────────────────────────────
-
-    def _supplementary_metrics_section(
+    def _all_swings_metrics(
         self,
-        ev: SwingEvaluation,
-        phase_titles: Dict[str, str],
-        phase_order: List[str],
-        extra_metrics: Optional[Dict] = None,
+        report: MultiSwingReport,
+        vlm_results: list,
     ) -> List[str]:
-        """从 KPI 结果中提取关键量化数据，以简洁的单行形式呈现。"""
+        """把所有球的量化指标汇总到报告最后，不在每球内部显示。"""
         lines = []
 
-        # Collect valid KPIs with actual measurements
-        valid_kpis = [
-            kpi for kpi in ev.kpi_results
-            if kpi.rating not in ("无数据", "n/a") and kpi.raw_value is not None
-        ]
+        all_valid_kpis = []
+        all_extra = []
+        for ev in report.swing_evaluations:
+            valid = [
+                kpi for kpi in ev.kpi_results
+                if kpi.rating not in ("无数据", "n/a") and kpi.raw_value is not None
+            ]
+            if valid:
+                all_valid_kpis.append((ev.swing_index, valid))
+            # supplementary metrics from VLM
+            if ev.swing_index < len(vlm_results) and vlm_results[ev.swing_index]:
+                sm = vlm_results[ev.swing_index].get("supplementary_metrics")
+                if sm:
+                    all_extra.append((ev.swing_index, sm))
 
-        # Also include any externally-supplied supplementary metrics
-        has_extra = extra_metrics and len(extra_metrics) > 0
-
-        if not valid_kpis and not has_extra:
+        if not all_valid_kpis and not all_extra:
             return lines
 
-        lines.append("### 量化辅助参考")
+        lines.append("## 量化辅助参考")
         lines.append("")
 
-        # Format each KPI as a single-line metric description
-        for kpi in valid_kpis:
-            val_str = self._format_value(kpi.raw_value, kpi.unit)
-            note = self._metric_note(kpi)
-            # Flag suspicious values that might be unreliable
-            if kpi.raw_value is not None and kpi.raw_value < 0 and kpi.kpi_id == "C3.1":
-                lines.append(f"- **{kpi.name}**: {val_str} — ⚠️ 可能受相机角度影响")
-            elif note:
-                lines.append(f"- **{kpi.name}**: {val_str} — {note}")
-            else:
-                lines.append(f"- **{kpi.name}**: {val_str}")
-
-        # Append supplementary metrics (M7/M8/M9)
-        if has_extra:
-            sm = extra_metrics
-            if sm.get("arm_torso_synchrony") is not None:
-                lines.append(f"- **手臂-躯干同步性**: {sm['arm_torso_synchrony']:.2f}（{sm.get('arm_torso_sync_label', '')}）")
-            if sm.get("wrist_v_detected") is not None:
-                if sm["wrist_v_detected"]:
-                    lines.append(f"- **手腕高度模式**: 检测到 V 形 scooping（深度 {sm.get('wrist_v_depth', 0):.2f}）")
+        for swing_idx, kpis in all_valid_kpis:
+            if report.total_swings > 1:
+                lines.append(f"**第 {swing_idx + 1} 球**")
+            for kpi in kpis:
+                val_str = self._format_value(kpi.raw_value, kpi.unit)
+                note = self._metric_note(kpi)
+                if kpi.raw_value is not None and kpi.raw_value < 0 and kpi.kpi_id == "C3.1":
+                    lines.append(f"- {kpi.name}: {val_str} (可能受相机角度影响)")
+                elif note:
+                    lines.append(f"- {kpi.name}: {val_str} ({note})")
                 else:
-                    lines.append("- **手腕高度模式**: 未检测到 scooping")
-            if sm.get("swing_shape_label") is not None:
-                lines.append(f"- **挥拍轨迹**: {sm['swing_shape_label']}（弧度比 {sm.get('swing_arc_ratio', 0):.2f}）")
+                    lines.append(f"- {kpi.name}: {val_str}")
 
-        lines.append("")
+            # Supplementary metrics for this swing
+            for extra_idx, sm in all_extra:
+                if extra_idx == swing_idx:
+                    if sm.get("arm_torso_synchrony") is not None:
+                        lines.append(f"- 手臂-躯干同步性: {sm['arm_torso_synchrony']:.2f} ({sm.get('arm_torso_sync_label', '')})")
+                    if sm.get("wrist_v_detected") is not None:
+                        if sm["wrist_v_detected"]:
+                            lines.append(f"- 手腕高度模式: V形scooping (深度 {sm.get('wrist_v_depth', 0):.2f})")
+                        else:
+                            lines.append("- 手腕高度模式: 正常")
+                    if sm.get("swing_shape_label") is not None:
+                        lines.append(f"- 挥拍轨迹: {sm['swing_shape_label']} (弧度比 {sm.get('swing_arc_ratio', 0):.2f})")
+            lines.append("")
+
         return lines
 
     @staticmethod
@@ -874,31 +667,6 @@ class ReportGenerator:
             return "明显不足"
         else:
             return "亟需改进"
-
-    # ── 一致性分析 ─────────────────────────────────────────────────
-
-    def _consistency_analysis(self, report: MultiSwingReport) -> List[str]:
-        """分析多次击球的一致性。"""
-        lines = []
-        if report.total_swings < 2:
-            return lines
-
-        scores = [ev.overall_score for ev in report.swing_evaluations]
-        std_dev = float(__import__("numpy").std(scores))
-
-        lines.append("### 击球一致性")
-        lines.append("")
-
-        if std_dev < 5:
-            lines.append("各次击球表现非常稳定，动作模式已经形成良好的肌肉记忆。")
-        elif std_dev < 10:
-            lines.append("各次击球表现较为稳定，但仍有一定波动。建议通过重复练习进一步固化动作模式。")
-        elif std_dev < 15:
-            lines.append("各次击球表现波动较大，动作模式尚未完全稳定。建议降低击球力度，专注于动作的一致性。")
-        else:
-            lines.append("各次击球表现差异显著，技术动作尚未形成稳定模式。建议从慢速影子挥拍开始，逐步建立一致的动作模式。")
-
-        return lines
 
     # ── 辅助方法 ─────────────────────────────────────────────────────
 
@@ -941,13 +709,11 @@ class ReportGenerator:
         report: MultiSwingReport,
         is_backhand: bool = False,
         vlm_results: Optional[List[Optional[Dict]]] = None,
-        user_profile: Optional[Dict] = None,
     ) -> List[str]:
-        """Generate a coach-style closing paragraph — personal, actionable."""
+        """简短叮嘱：下次练什么，一句话。"""
         lines = []
         _vlm = vlm_results or []
 
-        # Collect the primary root cause across all swings (for focus recommendation)
         primary_fix = ""
         primary_root = ""
         for v in _vlm:
@@ -959,61 +725,18 @@ class ReportGenerator:
                 fix = tree.get("fix", {})
                 if fix.get("one_drill"):
                     primary_fix = fix["one_drill"]
-                break  # use first available
+                break
 
-        # Collect KPI-based strengths
-        all_kpis: List[KPIResult] = []
-        for ev in report.swing_evaluations:
-            all_kpis.extend(ev.kpi_results)
-
-        valid = [k for k in all_kpis if k.rating not in ("无数据", "n/a")]
-        good_names = []
-        if valid:
-            kpi_avg: Dict[str, List[float]] = {}
-            kpi_map: Dict[str, KPIResult] = {}
-            for kpi in valid:
-                kpi_avg.setdefault(kpi.kpi_id, []).append(kpi.score)
-                kpi_map[kpi.kpi_id] = kpi
-            avg_scores = [(kpi_id, float(sum(s) / len(s)), kpi_map[kpi_id])
-                          for kpi_id, s in kpi_avg.items()]
-            avg_scores.sort(key=lambda x: x[1], reverse=True)
-            good_names = [kpi.name for _, avg, kpi in avg_scores[:2] if avg >= 60]
-
-        # Build a single narrative paragraph
-        parts = []
-
-        # Acknowledge what's working
-        if good_names:
-            parts.append(f"{'和'.join(good_names)}做得不错，这些保持住。")
-
-        # Reference user training history if available
-        if user_profile and user_profile.get("recent_focus"):
-            recent = user_profile["recent_focus"]
-            parts.append(f"结合你最近在练的「{recent}」，")
-
-        # Core advice: one focus for next session
         if primary_root and primary_fix:
-            parts.append(
-                f"下次训练只抓一件事：解决「{primary_root}」—— {primary_fix}。"
+            lines.append(
+                f"下次训练只抓一件事：{primary_fix}，解决{primary_root}。"
                 "其他先不管，把这一个练到不用想为止。"
             )
         elif primary_root:
-            parts.append(
-                f"下次训练的重点：专攻「{primary_root}」。"
-                "一次只改一件事，改透了再往下走。"
+            lines.append(
+                f"下次训练专攻{primary_root}。一次只改一件事，改透了再往下走。"
             )
         else:
-            # Fallback to general principle
-            if is_backhand:
-                parts.append(
-                    "继续巩固侧身转体和手臂伸展，"
-                    "下次训练选一个最薄弱的环节重点练，不要同时改多个。"
-                )
-            else:
-                parts.append(
-                    "继续巩固动力链连接，"
-                    "下次训练选一个最薄弱的环节重点练，不要同时改多个。"
-                )
+            lines.append("一次只改一件事，改透了再往下走。")
 
-        lines.append(" ".join(parts))
         return lines

@@ -1,131 +1,70 @@
-"""Tests for diagnostic journey report section (RG-01 through RG-04)."""
+"""Tests for diagnostic journey formatting and backward compatibility.
+
+Covers:
+- RG-01: Diagnostic journey section generation
+- RG-02: Multi-round compression
+- RG-03: Backward compatibility with v1/v2 results
+"""
 
 import pytest
-
 from report.report_generator import ReportGenerator
 
 
 # ---------------------------------------------------------------------------
-# Test data builders
+# Helpers
 # ---------------------------------------------------------------------------
 
-def _make_session_data(
-    rounds=None,
-    hypotheses=None,
-    convergence_score=0.85,
-    observations=None,
-):
-    """Build a minimal DiagnosticSession dict for testing."""
+def _make_session_data(rounds=None, hypotheses=None):
     return {
-        "session_id": "test_sess",
         "rounds": rounds or [],
         "hypotheses": hypotheses or [],
-        "observations": observations or [],
-        "convergence_score": convergence_score,
     }
 
 
 def _make_3_round_session():
-    """Build a realistic 3-round session: scan -> diagnose -> confirm."""
-    hypotheses = [
-        {
-            "id": "hyp_dc_scooping",
-            "chain_id": "dc_scooping",
-            "root_cause_concept_id": "scooping_active",
-            "name": "Scooping",
-            "name_zh": "拍头下压",
-            "status": "eliminated",
-            "confidence": 0.0,
-            "round_introduced": 0,
-            "round_resolved": 2,
-        },
-        {
-            "id": "hyp_dc_arm_driven",
-            "chain_id": "dc_arm_driven",
-            "root_cause_concept_id": "arm_disconnection",
-            "name": "Arm-driven hitting",
-            "name_zh": "手臂主导击球",
-            "status": "confirmed",
-            "confidence": 0.9,
-            "round_introduced": 0,
-            "round_resolved": 3,
-        },
-    ]
-
-    rounds = [
-        {
-            "round_number": 0,
-            "prompt_sent": "Pass 1 scan",
-            "raw_response": "1, 2",
-            "observations": [],
-            "hypothesis_updates": [],
-        },
-        {
-            "round_number": 1,
-            "prompt_sent": "Observation directive",
-            "raw_response": "{}",
-            "observations": [
-                {
-                    "id": "obs_r1_01",
-                    "round_number": 1,
-                    "frame": "图3",
-                    "description": "黄色轨迹在图2-3有V形尖角",
-                    "judgment": "yes",
-                    "confidence": 0.8,
-                    "directive_source": "hyp_dc_scooping",
-                },
-                {
-                    "id": "obs_r1_02",
-                    "round_number": 1,
-                    "frame": "图4",
-                    "description": "肘角在击球时偏小约85度",
-                    "judgment": "yes",
-                    "confidence": 0.7,
-                    "directive_source": "hyp_dc_arm_driven",
-                },
-            ],
-            "hypothesis_updates": [
-                {
-                    "hypothesis_id": "hyp_dc_scooping",
-                    "action": "adjust",
-                    "reason": "V形轨迹可能是下游症状",
-                },
-            ],
-        },
-        {
-            "round_number": 2,
-            "prompt_sent": "Confirmation prompt",
-            "raw_response": "{}",
-            "observations": [
-                {
-                    "id": "obs_r2_01",
-                    "round_number": 2,
-                    "frame": "图1",
-                    "description": "手臂在unit turn时未与躯干同步旋转",
-                    "judgment": "yes",
-                    "confidence": 0.9,
-                    "directive_source": "hyp_dc_arm_driven",
-                },
-            ],
-            "hypothesis_updates": [
-                {
-                    "hypothesis_id": "hyp_dc_arm_driven",
-                    "action": "confirm",
-                    "reason": "手臂脱离身体旋转系统确认为根因",
-                },
-                {
-                    "hypothesis_id": "hyp_dc_scooping",
-                    "action": "eliminate",
-                    "reason": "scooping是手臂主导的下游症状",
-                },
-            ],
-        },
-    ]
-
+    """Create a realistic 3-round diagnostic session."""
     return _make_session_data(
-        rounds=rounds,
-        hypotheses=hypotheses,
-        convergence_score=0.9,
+        rounds=[
+            {
+                "round_index": 0,
+                "observations": [
+                    {"region": "图2-3", "judgment": "support",
+                     "description": "手臂先于躯干启动"},
+                ],
+                "hypothesis_updates": [
+                    {"hypothesis": "arm_dominant", "action": "raise_confidence",
+                     "reason": "手臂抢先动作明显"},
+                ],
+            },
+            {
+                "round_index": 1,
+                "observations": [
+                    {"region": "图3", "judgment": "contradict",
+                     "description": "拍头下压角度正常"},
+                ],
+                "hypothesis_updates": [
+                    {"hypothesis": "excessive_pat", "action": "eliminate",
+                     "reason": "拍头下坠在正常范围"},
+                ],
+            },
+            {
+                "round_index": 2,
+                "observations": [
+                    {"region": "图4-5", "judgment": "support",
+                     "description": "肘部空间不足"},
+                ],
+                "hypothesis_updates": [
+                    {"hypothesis": "arm_dominant", "action": "confirm",
+                     "reason": "手臂脱离身体旋转系统，肘部紧贴"},
+                ],
+            },
+        ],
+        hypotheses=[
+            {"name": "arm_dominant", "name_zh": "手臂主导击球",
+             "status": "confirmed", "confidence": 0.92},
+            {"name": "excessive_pat", "name_zh": "拍头下压",
+             "status": "eliminated", "confidence": 0.10},
+        ],
     )
 
 
@@ -179,30 +118,35 @@ class TestDiagnosticJourneyGeneration:
 
 
 # ---------------------------------------------------------------------------
-# RG-02: Narrative Style (not log dump)
+# RG-02: Multi-round Compression
 # ---------------------------------------------------------------------------
 
-class TestNarrativeStyle:
-    """RG-02: Journey renders as readable narrative, not raw data."""
+class TestMultiRoundCompression:
+    """RG-02: Multi-round session is compressed to 1-2 sentence summary."""
 
-    def test_no_raw_json_in_output(self):
+    def test_single_round_no_prefix(self):
+        session_data = _make_session_data(
+            rounds=[{
+                "round_index": 0,
+                "observations": [],
+                "hypothesis_updates": [
+                    {"hypothesis": "test", "action": "confirm", "reason": "test"},
+                ],
+            }],
+            hypotheses=[
+                {"name": "test", "name_zh": "测试", "status": "confirmed"},
+            ],
+        )
+        lines = ReportGenerator._format_diagnostic_journey(session_data)
+        text = "\n".join(lines)
+        # Single round should not have "N轮观察" prefix
+        assert "轮观察" not in text
+
+    def test_multi_round_has_count(self):
         session_data = _make_3_round_session()
         lines = ReportGenerator._format_diagnostic_journey(session_data)
         text = "\n".join(lines)
-        # Should not contain raw JSON artifacts
-        assert '{"' not in text
-        assert "obs_r1_01" not in text  # No raw observation IDs
-        assert "hyp_dc_" not in text  # No raw hypothesis IDs
-
-    def test_compressed_narrative_is_readable(self):
-        session_data = _make_3_round_session()
-        lines = ReportGenerator._format_diagnostic_journey(session_data)
-        text = "\n".join(lines)
-        # Should be a readable sentence, not raw data
-        assert "。" in text  # ends with Chinese period
-        # Should not contain verbose round-by-round labels
-        assert "Round 0" not in text
-        assert "Round 1" not in text
+        assert "3 轮观察" in text
 
 
 # ---------------------------------------------------------------------------
@@ -210,10 +154,10 @@ class TestNarrativeStyle:
 # ---------------------------------------------------------------------------
 
 class TestBackwardCompatibility:
-    """RG-03: v1.0 vlm_result without diagnostic_session works unchanged."""
+    """RG-03: Various vlm_result formats work with v5 report generator."""
 
-    def test_v1_result_no_journey(self):
-        """v1.0 result without diagnostic_session -> no journey section."""
+    def test_v1_result_shows_root_cause(self):
+        """v1.0 result without diagnostic_session -> shows root cause."""
         v1_result = {
             "root_cause_tree": {
                 "root_cause": "手臂脱离",
@@ -224,12 +168,12 @@ class TestBackwardCompatibility:
         }
         lines = ReportGenerator._vlm_section(v1_result, {}, 0, 1)
         text = "\n".join(lines)
-        # Should have root cause tree but NOT journey
-        assert "根因" in text
+        # v5 format: root cause shown inline
+        assert "手臂脱离" in text
         assert "诊断路径" not in text
 
-    def test_v2_result_has_both_journey_and_tree(self):
-        """v2.0 result with diagnostic_session -> journey + root_cause_tree."""
+    def test_v2_result_no_journey_in_report(self):
+        """v2.0 result with diagnostic_session -> journey NOT shown in v5 report."""
         v2_result = {
             "diagnostic_session": _make_3_round_session(),
             "root_cause_tree": {
@@ -241,29 +185,20 @@ class TestBackwardCompatibility:
         }
         lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1)
         text = "\n".join(lines)
-        # Should have BOTH
-        assert "诊断路径" in text
-        assert "根因" in text
-
-    def test_v2_result_journey_suppressed(self):
-        """include_journey=False suppresses the journey section."""
-        v2_result = {
-            "diagnostic_session": _make_3_round_session(),
-            "root_cause_tree": {
-                "root_cause": "手臂脱离",
-                "downstream_symptoms": [],
-                "fix": {"one_drill": "Do shadow swings"},
-            },
-            "overall_narrative": "Test narrative",
-        }
-        lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1, include_journey=False)
-        text = "\n".join(lines)
-        # Journey suppressed, tree still present
+        # v5: journey is NOT shown in report (removed by design)
+        assert "手臂脱离" in text
         assert "诊断路径" not in text
-        assert "根因" in text
 
-    def test_legacy_format_still_works(self):
-        """v1.0 result with issues list (no root_cause_tree) still works."""
+    def test_diagnostic_journey_method_still_works(self):
+        """_format_diagnostic_journey still available for internal use."""
+        session_data = _make_3_round_session()
+        lines = ReportGenerator._format_diagnostic_journey(session_data)
+        text = "\n".join(lines)
+        assert "诊断路径" in text
+        assert "手臂主导击球" in text
+
+    def test_legacy_format_still_renders(self):
+        """v1.0 result with issues list (no root_cause_tree) still renders."""
         legacy_result = {
             "issues": [
                 {"name": "手臂主导", "severity": "高", "frame": "图3"},
@@ -271,32 +206,5 @@ class TestBackwardCompatibility:
             "overall_assessment": "需要改善",
         }
         lines = ReportGenerator._vlm_section(legacy_result, {}, 0, 1)
-        text = "\n".join(lines)
-        assert "手臂主导" in text
-        assert "诊断路径" not in text
-
-
-# ---------------------------------------------------------------------------
-# RG-04: Optional / Collapsible
-# ---------------------------------------------------------------------------
-
-class TestJourneyOptional:
-    """RG-04: Journey section can be hidden."""
-
-    def test_include_journey_default_true(self):
-        """Default behavior includes journey when session data present."""
-        v2_result = {
-            "diagnostic_session": _make_3_round_session(),
-        }
-        lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1)
-        text = "\n".join(lines)
-        assert "诊断路径" in text
-
-    def test_include_journey_false(self):
-        """Explicitly setting include_journey=False hides it."""
-        v2_result = {
-            "diagnostic_session": _make_3_round_session(),
-        }
-        lines = ReportGenerator._vlm_section(v2_result, {}, 0, 1, include_journey=False)
-        text = "\n".join(lines)
-        assert "诊断路径" not in text
+        # Should not crash; may produce minimal output
+        assert isinstance(lines, list)

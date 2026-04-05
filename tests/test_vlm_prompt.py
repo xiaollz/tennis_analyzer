@@ -258,13 +258,13 @@ class TestVLMPromptCompiler:
             assert chain.symptom_zh in prompt, f"Missing chain: {chain.symptom_zh}"
 
     def test_output_schema_preserved(self, compiler):
-        """Pass 2 prompt contains the output format specification (semi-structured v4)."""
+        """Pass 2 prompt contains the output format specification (semi-structured v5)."""
         prompt = compiler.compile_pass2_prompt(["dc_arm_driven_hitting"])
-        # v4 semi-structured tags
+        # v5 semi-structured tags (STRENGTHS and KINETIC_CHAIN removed in v5)
         assert "SCORE" in prompt
         assert "ROOT_CAUSE" in prompt
-        assert "STRENGTHS" in prompt
-        assert "KINETIC_CHAIN" in prompt
+        assert "EVIDENCE" in prompt
+        assert "FIX" in prompt
 
     def test_static_prompt_content(self, compiler):
         """Static system prompt contains key coaching content."""

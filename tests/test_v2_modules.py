@@ -537,10 +537,8 @@ class TestReportGenerator:
         path = gen.generate(report, video_name="test")
         assert Path(path).exists()
         content = Path(path).read_text(encoding="utf-8")
-        assert "现代正手技术分析报告" in content
-        assert "综合评分" in content
+        assert "现代正手技术分析" in content
         assert "肩部旋转" in content
-        assert "容错型正手原则模型" in content
 
     def test_generate_multi_swing_report_v3(self, tmp_path):
         gen = ReportGenerator(output_dir=str(tmp_path))
@@ -555,9 +553,9 @@ class TestReportGenerator:
         report = MultiSwingReport([ev1, ev2], 70.0, 0, 1, [30, 80], 2)
         path = gen.generate(report, video_name="multi_test")
         content = Path(path).read_text(encoding="utf-8")
-        assert "第 1 次击球" in content
-        assert "第 2 次击球" in content
-        assert "检测到击球次数" in content
+        assert "第 1 球" in content
+        assert "第 2 球" in content
+        assert "击球数" in content
 
     def test_forehand_phase_order_v3(self):
         assert len(ReportGenerator.FOREHAND_PHASE_ORDER) == 5
@@ -749,7 +747,6 @@ class TestBackhandReportGenerator:
         assert Path(path).exists()
         content = Path(path).read_text(encoding="utf-8")
         assert "单手反拍" in content
-        assert "综合评分" in content
         assert "侧身转体" in content
 
     def test_radar_chart_with_ohb_phases(self, tmp_path):
