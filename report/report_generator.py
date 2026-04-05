@@ -524,6 +524,19 @@ class ReportGenerator:
                 lines.append(f"{root_cause}导致了：{'，'.join(symptom_texts)}。")
                 lines.append("")
 
+        # 量化佐证（诊断引擎产出）
+        quant_evidence = vlm_result.get("quant_evidence", "")
+        if quant_evidence:
+            lines.append(quant_evidence)
+            lines.append("")
+
+        # VLM 与量化数据矛盾（如有）
+        contradictions = vlm_result.get("contradictions", [])
+        if contradictions:
+            for c in contradictions:
+                lines.append(f"⚠️ {c['correction']}")
+            lines.append("")
+
         # Secondary root cause (inline)
         secondary = vlm_result.get("secondary_root_cause")
         if secondary and secondary.get("root_cause"):

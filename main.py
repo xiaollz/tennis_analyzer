@@ -409,6 +409,25 @@ class TennisAnalysisPipeline:
                 vlm_result["keyframe_grid_path"] = grid_path
                 if supp_metrics:
                     vlm_result["supplementary_metrics"] = supp_metrics
+
+                # 诊断引擎：VLM 视觉输出 + 量化数据交叉验证
+                try:
+                    from evaluation.diagnosis_engine import diagnose
+                    diag_metrics = {
+                        "arm_torso_synchrony": supp_metrics.get("arm_torso_synchrony") if supp_metrics else None,
+                        "scooping_depth": supp_metrics.get("scooping_depth") if supp_metrics else None,
+                        "scooping_detected": supp_metrics.get("scooping_detected", False) if supp_metrics else False,
+                        "forward_extension": supp_metrics.get("forward_extension") if supp_metrics else None,
+                        "shoulder_rotation": supp_metrics.get("shoulder_rotation") if supp_metrics else None,
+                        "swing_arc_ratio": supp_metrics.get("swing_arc_ratio") if supp_metrics else None,
+                    }
+                    vlm_result = diagnose(vlm_result, diag_metrics)
+                    contradictions = vlm_result.get("contradictions", [])
+                    if contradictions:
+                        print(f"[诊断] 发现 {len(contradictions)} 处VLM与量化数据矛盾")
+                except Exception as exc:
+                    pass  # 诊断引擎失败不影响主流程
+
                 issue_count = len(vlm_result.get('issues', []))
                 rounds = vlm_result.get('diagnostic_session', {}).get('rounds', [])
                 round_info = f"（{len(rounds)}轮迭代）" if rounds else ""
