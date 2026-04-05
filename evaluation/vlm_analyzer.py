@@ -110,7 +110,11 @@ class KeyframeExtractor:
             ft_end_pos,
         ]
 
-        # Pre-compute joint trajectories for drawing on keyframes
+        # Pre-compute joint trajectories ONLY within this swing's range
+        # (prep_pos → ft_end_pos) to avoid leaking trails from adjacent swings.
+        swing_start = max(0, prep_pos)
+        swing_end = min(ft_end_pos + 1, n)
+
         wrist_trail: List[Optional[Tuple[int, int]]] = []
         elbow_trail: List[Optional[Tuple[int, int]]] = []
         if keypoints_series is not None and confidence_series is not None:
@@ -118,7 +122,7 @@ class KeyframeExtractor:
             side = "right" if is_right_handed else "left"
             wrist_idx = KEYPOINT_NAMES[f"{side}_wrist"]
             elbow_idx = KEYPOINT_NAMES[f"{side}_elbow"]
-            for i in range(n):
+            for i in range(swing_start, swing_end):
                 if float(confidence_series[i][wrist_idx]) >= 0.3:
                     wrist_trail.append((int(keypoints_series[i][wrist_idx][0]), int(keypoints_series[i][wrist_idx][1])))
                 else:
@@ -128,28 +132,40 @@ class KeyframeExtractor:
                 else:
                     elbow_trail.append(None)
 
+        # Max pixel distance between consecutive trail points before breaking
+        # the line (prevents spurious cross-swing connections).
+        _MAX_TRAIL_GAP_PX = 150
+
         result: List[Tuple[str, np.ndarray]] = []
         for (label, _cn), pos in zip(KEYFRAME_LABELS, positions):
             pos = max(0, min(pos, n - 1))
             frame = frames_raw[pos].copy()
 
-            # Draw joint trajectories up to this frame
-            trail_start = max(0, prep_pos)
-            trail_end = min(pos + 1, n)
+            # Draw joint trajectories up to this frame.
+            # trail indices are relative to swing_start.
+            trail_end_rel = max(0, min(pos - swing_start + 1, len(wrist_trail)))
 
             # Elbow: cyan trail
             if elbow_trail:
-                pts_e = [p for p in elbow_trail[trail_start:trail_end] if p is not None]
+                pts_e = [p for p in elbow_trail[:trail_end_rel] if p is not None]
                 if len(pts_e) >= 2:
                     for i in range(1, len(pts_e)):
+                        dx = pts_e[i][0] - pts_e[i-1][0]
+                        dy = pts_e[i][1] - pts_e[i-1][1]
+                        if dx*dx + dy*dy > _MAX_TRAIL_GAP_PX * _MAX_TRAIL_GAP_PX:
+                            continue
                         alpha = 0.4 + 0.6 * (i / len(pts_e))
                         cv2.line(frame, pts_e[i-1], pts_e[i], (int(200*alpha), int(200*alpha), 0), 2, cv2.LINE_AA)
 
             # Wrist: yellow trail (drawn on top)
             if wrist_trail:
-                pts_w = [p for p in wrist_trail[trail_start:trail_end] if p is not None]
+                pts_w = [p for p in wrist_trail[:trail_end_rel] if p is not None]
                 if len(pts_w) >= 2:
                     for i in range(1, len(pts_w)):
+                        dx = pts_w[i][0] - pts_w[i-1][0]
+                        dy = pts_w[i][1] - pts_w[i-1][1]
+                        if dx*dx + dy*dy > _MAX_TRAIL_GAP_PX * _MAX_TRAIL_GAP_PX:
+                            continue
                         alpha = 0.4 + 0.6 * (i / len(pts_w))
                         cv2.line(frame, pts_w[i-1], pts_w[i], (0, int(255*alpha), int(255*alpha)), 2, cv2.LINE_AA)
 
@@ -1732,9 +1748,10 @@ def _parse_semi_structured_response(text: str) -> Optional[Dict]:
         return None
 
     ALL_TAGS = [
-        "SCORE", "ROOT_CAUSE", "EVIDENCE", "BODY", "FEEL",
+        "SCORE", "ROOT_CAUSE", "EVIDENCE",
         "SECONDARY", "FIX", "METHOD", "CUE", "CHECK",
-        "STRENGTHS", "KINETIC_CHAIN",
+        # Legacy tags — still parsed for backward compat but no longer prompted
+        "BODY", "FEEL", "STRENGTHS", "KINETIC_CHAIN",
     ]
 
     # Extract score
@@ -1753,23 +1770,35 @@ def _parse_semi_structured_response(text: str) -> Optional[Dict]:
 
     root_cause = _extract_tag(text, "ROOT_CAUSE")
     evidence = _extract_tag(text, "EVIDENCE")
-    body = _extract_tag(text, "BODY")
-    feel = _extract_tag(text, "FEEL")
 
-    # Causal explanation: free text between FEEL line and SECONDARY/FIX
+    # Causal explanation: free text between EVIDENCE line and SECONDARY/FIX
+    # (In the new format, the causal paragraph follows EVIDENCE directly)
     causal_explanation = _extract_section_after_tag(
-        text, "FEEL", ["SECONDARY", "FIX"]
+        text, "EVIDENCE", ["SECONDARY", "FIX"]
     )
+
+    # Legacy fallback: if BODY/FEEL tags exist, try extracting causal from FEEL
+    if not causal_explanation:
+        body = _extract_tag(text, "BODY")
+        feel = _extract_tag(text, "FEEL")
+        causal_explanation = _extract_section_after_tag(
+            text, "FEEL", ["SECONDARY", "FIX"]
+        )
+        # Incorporate body/feel into causal explanation if present
+        if body and not causal_explanation:
+            causal_explanation = body
+        if feel and causal_explanation:
+            causal_explanation = causal_explanation + " " + feel
 
     secondary = _extract_tag(text, "SECONDARY")
     fix_name = _extract_tag(text, "FIX")
     method = _extract_tag(text, "METHOD")
     cue = _extract_tag(text, "CUE")
     check = _extract_tag(text, "CHECK")
+
+    # Legacy tags — parse if present but don't require
     strengths_raw = _extract_tag(text, "STRENGTHS")
     kinetic_chain = _extract_tag(text, "KINETIC_CHAIN")
-
-    # If KINETIC_CHAIN spans multiple lines, grab the paragraph
     if kinetic_chain:
         kc_section = _extract_section_after_tag(text, "KINETIC_CHAIN", [])
         if kc_section:
@@ -1777,16 +1806,14 @@ def _parse_semi_structured_response(text: str) -> Optional[Dict]:
 
     # Build the unified data dict (compatible with report generator)
     data = {
-        "format": "semi_structured_v4",
+        "format": "semi_structured_v5",
         "score": score,
         "core_diagnosis": core_diagnosis,
         "root_cause_tree": {
             "root_cause": root_cause,
             "root_cause_evidence": evidence,
-            "root_cause_body": body,
-            "root_cause_feel": feel,
             "causal_explanation": causal_explanation,
-            "downstream_symptoms": [],  # no longer itemized; causal_explanation replaces this
+            "downstream_symptoms": [],
             "fix": {
                 "one_drill": fix_name,
                 "drill_method": method,
@@ -1796,7 +1823,7 @@ def _parse_semi_structured_response(text: str) -> Optional[Dict]:
         },
         "secondary_root_cause": {"root_cause": secondary} if secondary else None,
         "overall_narrative": core_diagnosis,
-        "kinetic_chain_narrative": kinetic_chain,
+        "kinetic_chain_narrative": kinetic_chain,  # kept for backward compat
         "strengths": [s.strip() for s in strengths_raw.split("；") if s.strip()] if strengths_raw else [],
         "priority_drill": fix_name,
         "issues": [],  # backward compat — root cause is the single issue

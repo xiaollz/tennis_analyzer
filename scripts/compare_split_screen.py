@@ -285,7 +285,11 @@ def main():
         if ukp is not None:
             draw_skeleton_direct(frame, ukp, uconf, x_offset=mid_x)
 
-        # Cumulative trails up to this frame
+        # Trailing-window trajectories up to this frame (avoid accumulating
+        # previous swings' trails which makes later keyframes messy).
+        _TRAIL_WINDOW = max(30, int(fps * 1.0))  # ~1 second or 30 frames
+        _MAX_GAP_PX = 150
+        trail_lo = max(0, ki - _TRAIL_WINDOW)
         for side_data, x_off in [
             ((coach_kps_all, elbow_idx, COLOR_ELBOW), 0),
             ((coach_kps_all, wrist_idx, COLOR_WRIST), 0),
@@ -294,13 +298,17 @@ def main():
         ]:
             kps_list, joint_idx, color = side_data
             pts = []
-            for i in range(ki + 1):
+            for i in range(trail_lo, ki + 1):
                 kp, conf = kps_list[i]
                 if kp is not None and _conf_ok(conf, joint_idx):
                     pts.append((int(kp[joint_idx][0]), int(kp[joint_idx][1])))
             if len(pts) >= 2:
                 n = len(pts)
                 for i in range(1, n):
+                    dx = pts[i][0] - pts[i-1][0]
+                    dy = pts[i][1] - pts[i-1][1]
+                    if dx*dx + dy*dy > _MAX_GAP_PX * _MAX_GAP_PX:
+                        continue
                     alpha = 0.4 + 0.6 * (i / n)
                     c = tuple(int(v * alpha) for v in color)
                     pt1 = (pts[i-1][0] + x_off, pts[i-1][1])
