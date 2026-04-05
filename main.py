@@ -396,14 +396,26 @@ class TennisAnalysisPipeline:
                     ev.swing_event,
                 )
 
+            # 提取当前 swing 的视频片段供 VLM 视频模式使用
+            swing_clip_path = None
+            try:
+                swing_clip_path = self._extract_swing_clip(
+                    video_path, ev.swing_event, frame_indices, fps,
+                )
+            except Exception:
+                pass  # 视频片段提取失败不影响分析，回退到关键帧
+
             # Call VLM (v2.0: multi-round iterative, fallback to v1.0 single-pass)
-            print(f"[VLM] 正在分析第 {ev.swing_index + 1} 次击球...")
+            mode_label = "视频" if swing_clip_path else "关键帧"
+            print(f"[VLM] 正在分析第 {ev.swing_index + 1} 次击球（{mode_label}模式）...")
             vlm_result = analyzer.analyze_swing_iterative(
                 grid, video_path=video_path,
                 supplementary_metrics=supp_metrics,
+                swing_video_path=swing_clip_path,
             ) if hasattr(analyzer, 'analyze_swing_iterative') else analyzer.analyze_swing(
                 grid, video_path=video_path,
                 supplementary_metrics=supp_metrics,
+                swing_video_path=swing_clip_path,
             )
             if vlm_result is not None:
                 vlm_result["keyframe_grid_path"] = grid_path
@@ -440,6 +452,42 @@ class TennisAnalysisPipeline:
         return results
 
     # ── 辅助方法 ─────────────────────────────────────────────────────
+
+    def _extract_swing_clip(
+        self,
+        video_path: str,
+        swing_event,
+        frame_indices: List[int],
+        fps: float,
+    ) -> Optional[str]:
+        """Extract a short video clip for the current swing using ffmpeg.
+
+        Returns path to the clip file, or None if extraction fails.
+        """
+        import subprocess
+        prep = swing_event.prep_start_frame or frame_indices[0]
+        ft_end = swing_event.followthrough_end_frame or frame_indices[-1]
+
+        # Add 0.3s buffer on each side
+        start_sec = max(0, prep / fps - 0.3)
+        duration = (ft_end - prep) / fps + 0.6
+
+        clip_dir = self.output_dir / "clips"
+        clip_dir.mkdir(exist_ok=True)
+        clip_path = clip_dir / f"swing_{swing_event.impact_frame}.mp4"
+
+        cmd = [
+            "ffmpeg", "-y", "-ss", f"{start_sec:.2f}",
+            "-i", str(video_path),
+            "-t", f"{duration:.2f}",
+            "-c:v", "libx264", "-preset", "ultrafast",
+            "-crf", "28", "-an",
+            str(clip_path),
+        ]
+        result = subprocess.run(cmd, capture_output=True, timeout=10)
+        if result.returncode == 0 and clip_path.exists():
+            return str(clip_path)
+        return None
 
     def _dedupe_overlapping_impacts(
         self,

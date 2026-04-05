@@ -690,31 +690,56 @@ def _encode_image(img: np.ndarray) -> str:
     return base64.b64encode(buf.tobytes()).decode("utf-8")
 
 
+def _encode_video(video_path: str) -> str:
+    """Video file → base64 string for VLM API."""
+    from pathlib import Path
+    p = Path(video_path)
+    if not p.exists():
+        raise FileNotFoundError(f"视频文件不存在: {video_path}")
+    data = p.read_bytes()
+    return base64.b64encode(data).decode("utf-8")
+
+
 def _call_openai_compatible(
     api_key: str, base_url: str, model: str, image_b64: str, user_text: str,
     extra_headers: Optional[Dict] = None,
     system_prompt: Optional[str] = None,
+    video_b64: Optional[str] = None,
 ) -> Optional[str]:
-    """Call any OpenAI-compatible vision API (Qwen-VL, GPT-4o, proxies)."""
+    """Call any OpenAI-compatible vision API (Qwen-VL, GPT-4o, proxies).
+
+    If video_b64 is provided, sends video instead of image.
+    """
     try:
         from openai import OpenAI
     except ImportError:
         print("[VLM] 安装 openai 包: pip install openai")
         return None
 
-    kwargs = {"api_key": api_key, "base_url": base_url or None, "timeout": 120.0}
+    kwargs = {"api_key": api_key, "base_url": base_url or None, "timeout": 180.0}
     if extra_headers:
         kwargs["default_headers"] = extra_headers
     client = OpenAI(**kwargs)
+
+    # Build content: video or image
+    if video_b64:
+        media_content = {
+            "type": "image_url",
+            "image_url": {"url": f"data:video/mp4;base64,{video_b64}"},
+        }
+    else:
+        media_content = {
+            "type": "image_url",
+            "image_url": {"url": f"data:image/jpeg;base64,{image_b64}"},
+        }
+
     resp = client.chat.completions.create(
         model=model,
         max_tokens=4096,
         messages=[
             {"role": "system", "content": system_prompt or _FTT_SYSTEM_PROMPT},
             {"role": "user", "content": [
-                {"type": "image_url", "image_url": {
-                    "url": f"data:image/jpeg;base64,{image_b64}",
-                }},
+                media_content,
                 {"type": "text", "text": user_text},
             ]},
         ],
@@ -1447,6 +1472,7 @@ class VLMForehandAnalyzer:
         kpi_summary: str = "",
         video_path: Optional[str] = None,
         supplementary_metrics: Optional[Dict] = None,
+        swing_video_path: Optional[str] = None,
     ) -> Optional[Dict]:
         if not self.api_key:
             print(f"[VLM] 跳过: 未在 config/vlm_config.json 中设置 api_key")
@@ -1454,10 +1480,19 @@ class VLMForehandAnalyzer:
 
         image_b64 = _encode_image(keyframe_grid)
 
+        # 视频模式：如果有 swing 视频片段，用视频代替关键帧
+        video_b64 = None
+        if swing_video_path:
+            try:
+                video_b64 = _encode_video(swing_video_path)
+                print(f"[VLM] 使用视频模式分析")
+            except Exception as exc:
+                print(f"[VLM] 视频编码失败，回退到关键帧模式: {exc}")
+
         if self.compiler and self.two_pass_enabled:
-            return self._analyze_two_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
+            return self._analyze_two_pass(image_b64, kpi_summary, supplementary_metrics, video_path, video_b64=video_b64)
         else:
-            return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
+            return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path, video_b64=video_b64)
 
     # ── Two-pass analysis ──────────────────────────────────────────
 
@@ -1467,12 +1502,13 @@ class VLMForehandAnalyzer:
         kpi_summary: str,
         supplementary_metrics: Optional[Dict],
         video_path: Optional[str],
+        video_b64: Optional[str] = None,
     ) -> Optional[Dict]:
         """Two-pass VLM analysis: symptom scan then targeted diagnostics."""
         # Pass 1: Quick symptom scan
         pass1_prompt = self.compiler.compile_pass1_prompt()
-        pass1_user = "Review the 6-frame grid and identify symptom categories."
-        pass1_raw = self._call_vlm(image_b64, pass1_user, system_prompt=pass1_prompt)
+        pass1_user = "观察这次击球，识别你看到的症状类别。" if video_b64 else "Review the 6-frame grid and identify symptom categories."
+        pass1_raw = self._call_vlm(image_b64, pass1_user, system_prompt=pass1_prompt, video_b64=video_b64)
         if pass1_raw is None:
             # Fallback to single-pass on failure
             return self._analyze_single_pass(image_b64, kpi_summary, supplementary_metrics, video_path)
@@ -1504,6 +1540,7 @@ class VLMForehandAnalyzer:
         kpi_summary: str,
         supplementary_metrics: Optional[Dict],
         video_path: Optional[str],
+        video_b64: Optional[str] = None,
     ) -> Optional[Dict]:
         """Single-pass VLM analysis using static prompt (current/legacy behavior)."""
         # Use graph-backed static prompt if compiler available, else hardcoded
@@ -1515,7 +1552,7 @@ class VLMForehandAnalyzer:
                 sys_prompt = None  # fall through to _FTT_SYSTEM_PROMPT default
 
         user_text = self._build_user_text(kpi_summary, supplementary_metrics)
-        raw = self._call_vlm(image_b64, user_text, system_prompt=sys_prompt)
+        raw = self._call_vlm(image_b64, user_text, system_prompt=sys_prompt, video_b64=video_b64)
         if raw is None:
             return None
 
@@ -1530,8 +1567,12 @@ class VLMForehandAnalyzer:
 
     def _call_vlm(
         self, image_b64: str, user_text: str, system_prompt: Optional[str] = None,
+        video_b64: Optional[str] = None,
     ) -> Optional[str]:
-        """Dispatch to the correct provider backend with optional system_prompt."""
+        """Dispatch to the correct provider backend with optional system_prompt.
+
+        If video_b64 is provided, sends video instead of image (preferred mode).
+        """
         try:
             if self.provider == "anthropic":
                 return _call_anthropic(
@@ -1547,6 +1588,7 @@ class VLMForehandAnalyzer:
                 return _call_openai_compatible(
                     self.api_key, self.base_url, self.model, image_b64, user_text,
                     self.extra_headers, system_prompt=system_prompt,
+                    video_b64=video_b64,
                 )
         except Exception as exc:
             print(f"[VLM] API call failed ({self.provider}/{self.model}): {exc}")
