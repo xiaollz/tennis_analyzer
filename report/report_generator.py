@@ -298,6 +298,9 @@ class ReportGenerator:
         lines.append("")
 
         # Collect root causes with swing indices
+        def _strip_trailing_period(s: str) -> str:
+            return s.rstrip("。.") if s else s
+
         swing_causes: List[tuple] = []  # (swing_1based, root_cause_text)
         for i, v in enumerate(vlm_results):
             if not v:
@@ -330,16 +333,16 @@ class ReportGenerator:
         parts = []
 
         if len(main_swings) == total:
-            parts.append(f"看完这 {total} 个球，每一个都指向同一件事：{main_cause}。")
+            parts.append(f"看完这 {total} 个球，每一个都指向同一件事：{_strip_trailing_period(main_cause)}。")
         elif len(main_swings) >= total * 0.6:
             swing_list = "、".join(str(s) for s in main_swings)
             parts.append(
-                f"这 {total} 个球里，第 {swing_list} 球都有同一个核心问题：{main_cause}。"
+                f"这 {total} 个球里，第 {swing_list} 球都有同一个核心问题：{_strip_trailing_period(main_cause)}。"
             )
         else:
             swing_list = "、".join(str(s) for s in main_swings)
             parts.append(
-                f"第 {swing_list} 球暴露了一个关键问题：{main_cause}。"
+                f"第 {swing_list} 球暴露了一个关键问题：{_strip_trailing_period(main_cause)}。"
             )
 
         # Sentence 3: how the main problem manifests (use downstream symptoms if available)
@@ -361,7 +364,7 @@ class ReportGenerator:
             sec_prefix, sec_swings = groups[1]
             sec_cause = short_to_full[sec_prefix]
             sec_list = "、".join(str(s) for s in sec_swings)
-            parts.append(f"另外，第 {sec_list} 球还有一个不同的问题：{sec_cause}。")
+            parts.append(f"另外，第 {sec_list} 球还有一个不同的问题：{_strip_trailing_period(sec_cause)}。")
 
         lines.append(" ".join(parts))
         lines.append("")
@@ -728,9 +731,10 @@ class ReportGenerator:
                 break
 
         if primary_root and primary_fix:
+            pr = primary_root.rstrip("。.")
             lines.append(
-                f"下次训练只抓一件事：{primary_fix}，解决{primary_root}。"
-                "其他先不管，把这一个练到不用想为止。"
+                f"下次训练只抓一件事：{primary_fix}。"
+                f"因为{pr}是你目前所有问题的源头，解决了它，捞球、缺 Out、随挥塌陷会连带消失。"
             )
         elif primary_root:
             lines.append(
