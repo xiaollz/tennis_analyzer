@@ -1793,56 +1793,47 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
             q_num = int(m.group(1))
             answers[f"Q{q_num}"] = m.group(2).strip()
 
-        # Map Q numbers to semantic categories per phase
+        # Map Q numbers to semantic categories (v4 compact format)
         frames = {
-            "prep": {
-                "shoulder_level": answers.get("Q1", ""),
-                "body_rotation": answers.get("Q2", ""),
-                "arm_chest_gap": answers.get("Q3", ""),
-                "non_hitting_arm": answers.get("Q4", ""),
-                "knee_bend": answers.get("Q5", ""),
-                "racket_position": answers.get("Q6", ""),
+            "sync": {
+                "arm_body_sync": answers.get("Q1", ""),
+                "sync_breakdown_phase": answers.get("Q2", ""),
+                "arm_chest_gap_change": answers.get("Q3", ""),
             },
-            "start": {
-                "rotation_sequence": answers.get("Q7", ""),
-                "arm_timing": answers.get("Q8", ""),
-                "arm_chest_gap": answers.get("Q9", ""),
-                "hand_drop": answers.get("Q10", ""),
-                "back_foot": answers.get("Q11", ""),
-                "torso_lean": answers.get("Q12", ""),
+            "shoulder_torso": {
+                "shoulder_level": answers.get("Q4", ""),
+                "body_rotation_depth": answers.get("Q5", ""),
+                "torso_lean": answers.get("Q6", ""),
+                "body_facing_at_contact": answers.get("Q7", ""),
             },
-            "accel": {
-                "wrist_drop": answers.get("Q13", ""),
-                "trajectory_shape": answers.get("Q14", ""),
-                "racket_head_position": answers.get("Q15", ""),
-                "racket_face": answers.get("Q16", ""),
-                "body_rotation": answers.get("Q17", ""),
+            "arm_racket": {
+                "hand_drop": answers.get("Q8", ""),
+                "trajectory_shape": answers.get("Q9", ""),
+                "racket_face": answers.get("Q10", ""),
+                "arm_direction_after": answers.get("Q11", ""),
             },
-            "contact": {
-                "body_facing": answers.get("Q18", ""),
-                "elbow_space": answers.get("Q19", ""),
-                "contact_point": answers.get("Q20", ""),
-                "non_hitting_arm": answers.get("Q21", ""),
-                "back_foot": answers.get("Q22", ""),
+            "left_hand": {
+                "left_hand_prep": answers.get("Q12", ""),
+                "left_hand_action": answers.get("Q13", ""),
             },
-            "after": {
-                "arm_direction": answers.get("Q23", ""),
-                "racket_rotation": answers.get("Q24", ""),
-                "non_hitting_arm": answers.get("Q25", ""),
+            "lower_body": {
+                "knee_bend": answers.get("Q14", ""),
+                "weight_transfer": answers.get("Q15", ""),
+                "back_foot": answers.get("Q16", ""),
             },
-            "finish": {
-                "finish_position": answers.get("Q26", ""),
-                "box_shape": answers.get("Q27", ""),
-                "balance": answers.get("Q28", ""),
-                "back_foot_final": answers.get("Q29", ""),
+            "dynamics": {
+                "first_mover": answers.get("Q17", ""),
+                "rhythm": answers.get("Q18", ""),
+                "trunk_decel": answers.get("Q19", ""),
+                "finish_balance": answers.get("Q20", ""),
             },
         }
         overall = {
-            "movement_sequence": answers.get("Q30", ""),
-            "arm_body_sync": answers.get("Q31", ""),
-            "trajectory_shape": answers.get("Q32", ""),
-            "weight_transfer": answers.get("Q33", ""),
-            "rhythm": answers.get("Q34", ""),
+            "arm_body_sync": answers.get("Q1", ""),
+            "trajectory_shape": answers.get("Q9", ""),
+            "movement_sequence": answers.get("Q17", ""),
+            "weight_transfer": answers.get("Q15", ""),
+            "rhythm": answers.get("Q18", ""),
         }
 
         result = {
