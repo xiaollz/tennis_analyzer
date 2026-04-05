@@ -7,8 +7,8 @@
       "symptom_concept_id": "forearm_compensation",
       "check_sequence": [
         {
-          "check": "Is the hip rotating before the shoulder?",
-          "check_zh": "髋部是否在肩部之前旋转？",
+          "check": "Is the trunk (shoulder line) initiating rotation, with legs amplifying mid-rotation?",
+          "check_zh": "躯干（肩线）是否先发出旋转意图，腿部在中途爆发式加入放大？",
           "if_true": "kinetic_chain_sequence",
           "if_false": null
         },
@@ -166,8 +166,8 @@
       "symptom_concept_id": "trunk_sequencing",
       "check_sequence": [
         {
-          "check": "Is there a visible separation between hip and shoulder rotation?",
-          "check_zh": "髋部和肩部旋转之间是否有可见的分离？",
+          "check": "Was hip-shoulder separation angle pre-loaded during Unit Turn (shoulder 90° / hip 45°)?",
+          "check_zh": "Unit Turn时是否已预蓄好髋肩分离角（肩转90°髋转45°）？蹬地时自动释放？",
           "if_true": "trunk_sequencing",
           "if_false": null
         },
@@ -446,8 +446,8 @@
     },
     {
       "id": "dc_problem_p21",
-      "symptom": "胸-臂连接断裂（腋下未夹住）",
-      "symptom_zh": "胸-臂连接断裂（腋下未夹住）",
+      "symptom": "胸-臂连接断裂（胸肌未锁定）",
+      "symptom_zh": "胸-臂连接断裂（胸肌未锁定）",
       "symptom_concept_id": "problem_p21",
       "check_sequence": [
         {
