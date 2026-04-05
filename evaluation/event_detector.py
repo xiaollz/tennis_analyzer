@@ -683,11 +683,12 @@ class SwingPhaseEstimator:
         prep_pos = max(0, prep_pos - prep_backtrack)
         prep_pos = min(prep_pos, max(0, impact_pos - prep_min_lead))
 
-        # 不超过上一次击球的随挥结束
+        # 不超过上一次击球的随挥区域
+        # 使用上一球 impact + 0.7s 作为安全边界（随挥通常在 0.5s 内完成）
         if prev_impact_frame is not None:
             prev_pos = f2p.get(prev_impact_frame, 0)
-            min_prep = prev_pos + int(0.2 * self.fps)
-            prep_pos = max(prep_pos, min_prep)
+            prev_ft_safe = min(len(frame_indices) - 1, prev_pos + int(0.7 * self.fps))
+            prep_pos = max(prep_pos, prev_ft_safe)
 
         event.prep_start_frame = frame_indices[min(prep_pos, len(frame_indices) - 1)]
 
