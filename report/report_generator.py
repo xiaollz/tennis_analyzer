@@ -558,6 +558,19 @@ class ReportGenerator:
                 lines.append(f"做对标准：{check}")
             lines.append("")
 
+        # ── VLM 原始观察数据（供用户对照检查）──
+        raw_answers = vlm_result.get("raw_answers", {})
+        if raw_answers:
+            lines.append("<details>")
+            lines.append("<summary>VLM 视觉观察原始数据（点击展开）</summary>")
+            lines.append("")
+            lines.append("```")
+            for q_num in sorted(raw_answers.keys(), key=lambda k: int(k[1:]) if k[1:].isdigit() else 999):
+                lines.append(f"{q_num}: {raw_answers[q_num]}")
+            lines.append("```")
+            lines.append("</details>")
+            lines.append("")
+
         return lines
 
     # ── 诊断推理过程（保留为内部方法，报告中不再显示）──────────────────
