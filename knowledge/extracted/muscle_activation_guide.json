@@ -1,0 +1,788 @@
+{
+  "meta": {
+    "title": "正手肌肉激活感知指南",
+    "source": "《网球运动系统训练》Paul Roetert & Mark Kovacs, 人民邮电出版社 2015",
+    "purpose": "诊断引擎使用——将每个阶段的肌肉激活映射到用户可感知的体感提示",
+    "created": "2026-04-03",
+    "note": "页码引用格式: Ch1 = 第1章运动力学, Ch2 = 肩部, Ch3 = 手臂手腕, Ch4 = 胸部, Ch5 = 背部, Ch6 = 核心, Ch7 = 腿部, Ch8 = 转体, Ch9 = 步法, Ch10 = 损伤预防"
+  },
+
+  "phases": {
+    "preparation": {
+      "description": "引拍/Unit Turn 阶段——向后挥拍期，全身离心收缩储存弹性势能",
+      "muscle_activations": [
+        {
+          "muscle_zh": "腓肠肌",
+          "muscle_en": "gastrocnemius",
+          "contraction_type": "离心收缩",
+          "role": "蹬地准备——膝盖弯曲时被拉伸，储存蹬伸能量",
+          "feel_cue": "后脚小腿有'压缩弹簧'的感觉，脚跟微微抬起",
+          "if_missing": "脚底平贴地面，蹬转时没有'弹射'感，起步慢",
+          "source": "Ch1 p.15 图1.5a; Ch7 p.143-144"
+        },
+        {
+          "muscle_zh": "比目鱼肌",
+          "muscle_en": "soleus",
+          "contraction_type": "离心收缩",
+          "role": "耐力型蹬地储能——与腓肠肌协同但偏耐力",
+          "feel_cue": "小腿深层有持续的张力感，像绷紧的橡皮筋",
+          "if_missing": "长rally后脚底发力质量下降，蹬地变'软'",
+          "source": "Ch1 p.15 图1.5a; Ch7 p.143-144"
+        },
+        {
+          "muscle_zh": "股四头肌",
+          "muscle_en": "quadriceps",
+          "contraction_type": "离心收缩",
+          "role": "膝盖弯曲储能——像蹲下压弹簧，为蹬伸做准备",
+          "feel_cue": "大腿前侧有'坐下去'的拉伸负荷感，膝盖弯曲约30-45度",
+          "if_missing": "站得太直，重心太高，蹬地无力，到位后仓促击球",
+          "source": "Ch1 p.15 图1.5a; Ch7 p.125-126"
+        },
+        {
+          "muscle_zh": "臀大肌",
+          "muscle_en": "gluteus_maximus",
+          "contraction_type": "离心收缩",
+          "role": "髋关节加载——髋部旋转时被拉伸储能",
+          "feel_cue": "后侧臀部有'拧毛巾'的张力感，髋在被扭开",
+          "if_missing": "髋转不充分，separation angle小，上半身旋转幅度受限",
+          "source": "Ch1 p.15 图1.5a; Ch7 p.121-126"
+        },
+        {
+          "muscle_zh": "臀中肌",
+          "muscle_en": "gluteus_medius",
+          "contraction_type": "等长收缩",
+          "role": "髋部稳定——单腿支撑时防止骨盆倾斜",
+          "feel_cue": "支撑腿外侧臀部有'撑住'的稳定感",
+          "if_missing": "引拍时身体晃动，重心不稳，力量传递效率下降",
+          "source": "Ch9 p.176; Ch7 p.126"
+        },
+        {
+          "muscle_zh": "腹内斜肌",
+          "muscle_en": "internal_oblique",
+          "contraction_type": "离心收缩",
+          "role": "躯干预拉伸——肩线超前髋线时被拉伸，储存旋转弹性势能",
+          "feel_cue": "肚脐左方一指处（右手持拍）有拉伸张力，像拧毛巾",
+          "if_missing": "髋转了但胸没跟上，'力在腰部断掉'，手臂被迫独立发力",
+          "source": "Ch1 p.15 图1.5a; Ch6 p.100-104; Ch8 p.145"
+        },
+        {
+          "muscle_zh": "腹外斜肌",
+          "muscle_en": "external_oblique",
+          "contraction_type": "离心收缩",
+          "role": "与腹内斜肌协同——对侧外斜配合同侧内斜完成躯干扭转储能",
+          "feel_cue": "腹部两侧有均匀的旋转张力，不是某一点而是一整片",
+          "if_missing": "旋转动力不足，前挥'弹性释放'的爆发力减弱",
+          "source": "Ch1 p.15 图1.5a; Ch6 p.100-104; Ch8 p.145"
+        },
+        {
+          "muscle_zh": "腹横肌",
+          "muscle_en": "transversus_abdominis",
+          "contraction_type": "等长收缩",
+          "role": "深层稳定——像天然腰带包裹身体，锁定旋转轴心",
+          "feel_cue": "腹部深层有'收紧'感，不是吸肚子而是内部自动绷住",
+          "if_missing": "旋转时腰部松垮晃动，力量'泄漏'在中间，传递效率低",
+          "source": "Ch6 p.100-101; Ch8 p.145"
+        },
+        {
+          "muscle_zh": "竖脊肌",
+          "muscle_en": "erector_spinae",
+          "contraction_type": "离心收缩",
+          "role": "脊柱稳定+旋转储能——保持直立姿势同时允许躯干旋转",
+          "feel_cue": "后腰两侧有均匀的张力，脊柱感觉'挺拔但有弹性'",
+          "if_missing": "旋转时弯腰驼背，力量传递路径弯曲，效率大幅下降",
+          "source": "Ch1 p.15 图1.5a; Ch6 p.100-101"
+        },
+        {
+          "muscle_zh": "背阔肌",
+          "muscle_en": "latissimus_dorsi",
+          "contraction_type": "离心收缩",
+          "role": "手臂-躯干连接储能——被拉伸产生弹性势能，是FTT的'胶水'",
+          "feel_cue": "背部两侧（腋下到腰部）有拉伸感，像弓弦被拉开，手臂被'托住'",
+          "if_missing": "背部松垮，手臂自由下坠，感觉手臂和身体'脱节'，无法借到躯干旋转的力",
+          "source": "Ch1 p.15-16 图1.5a; Ch5 p.87-89"
+        },
+        {
+          "muscle_zh": "中三角肌+后三角肌",
+          "muscle_en": "middle_and_posterior_deltoid",
+          "contraction_type": "离心收缩",
+          "role": "肩部旋转到位——在肩部外展/水平外展位储存势能",
+          "feel_cue": "肩膀后侧有'绷住'的感觉，像拉弹弓的橡皮筋",
+          "if_missing": "引拍时肩膀松散，手臂'飘'在外面，击球加速缺少弹性起点",
+          "source": "Ch1 p.15 图1.5a; Ch2 p.32-33"
+        },
+        {
+          "muscle_zh": "冈下肌+小圆肌",
+          "muscle_en": "infraspinatus_and_teres_minor",
+          "contraction_type": "离心收缩",
+          "role": "肩外旋蓄势(ESR)——弹弓拉开阶段，旋转袖储存旋转势能",
+          "feel_cue": "肩膀深层后方有'拧'的感觉，像把门把手往外旋到极限",
+          "if_missing": "前挥时内旋速度慢、幅度小，拍头速度上不去",
+          "source": "Ch1 p.15 图1.5a; Ch2 p.32-34"
+        },
+        {
+          "muscle_zh": "菱形肌",
+          "muscle_en": "rhomboids",
+          "contraction_type": "向心收缩",
+          "role": "肩胛骨后缩——'Pull the blade back'，肩胛骨向脊柱靠拢",
+          "feel_cue": "两块肩胛骨之间有'夹紧铅笔'的感觉，背部中间在收缩",
+          "if_missing": "肩胛骨前移散开，无法完成后缩→前伸的弹弓序列，Scapular Glide失效",
+          "source": "Ch2 p.31; Ch5 p.88, p.92"
+        },
+        {
+          "muscle_zh": "胸大肌",
+          "muscle_en": "pectoralis_major",
+          "contraction_type": "离心收缩（被拉伸）",
+          "role": "弹弓蓄能——Unit Turn时胸肌被拉伸储存弹性势能(SSC)",
+          "feel_cue": "胸口前面有'打开'的拉伸感，像弓弦被拉开",
+          "if_missing": "前挥时胸部没有'弹回'的爆发力，只靠手臂推",
+          "source": "Ch4 p.73-74"
+        },
+        {
+          "muscle_zh": "肱二头肌+肱肌+肱桡肌",
+          "muscle_en": "biceps_brachialis_brachioradialis",
+          "contraction_type": "向心收缩（减速功能）",
+          "role": "引拍减速器——向后挥拍到位后主动减速手臂",
+          "feel_cue": "上臂前侧在引拍结束时有短暂的'刹车'感",
+          "if_missing": "引拍过大（手臂停不住），需要更多时间回到击球位置，timing变差",
+          "source": "Ch3 p.63"
+        }
+      ]
+    },
+
+    "acceleration": {
+      "description": "向前挥拍/加速阶段——离心→向心切换，弹性势能释放+向心收缩加速",
+      "muscle_activations": [
+        {
+          "muscle_zh": "腓肠肌+比目鱼肌",
+          "muscle_en": "gastrocnemius_and_soleus",
+          "contraction_type": "向心+离心交替",
+          "role": "蹬地推力——产生地面反作用力，是动力链第一站",
+          "feel_cue": "后脚有力地蹬离地面，小腿有'弹射'的爆发感",
+          "if_missing": "蹬地无力，力量从源头就不够，整条链都打折",
+          "source": "Ch1 p.15-16 图1.5b; Ch7 p.143-144"
+        },
+        {
+          "muscle_zh": "股四头肌+臀大肌",
+          "muscle_en": "quadriceps_and_gluteus_maximus",
+          "contraction_type": "向心+离心交替",
+          "role": "膝髋蹬伸——膝盖伸展+髋关节旋转，放大地面反作用力",
+          "feel_cue": "大腿和臀部有'弹起来'的爆发感，力量从脚底往上涌",
+          "if_missing": "上半身有旋转意图但没有下半身放大，击球显得'只有上半身在动'",
+          "source": "Ch1 p.15-16 图1.5b; Ch7 p.121-128"
+        },
+        {
+          "muscle_zh": "腹内斜肌+腹外斜肌",
+          "muscle_en": "internal_and_external_obliques",
+          "contraction_type": "向心收缩（弹性释放）",
+          "role": "躯干旋转引擎——预拉伸→弹性释放=腹部展开(Abdominal Uncoil)",
+          "feel_cue": "肚脐左方的扭转张力突然'弹开'，力量从腹部螺旋上升到胸口",
+          "if_missing": "髋到胸之间断链，手臂被迫提前接管发力（小臂代偿）",
+          "source": "Ch1 p.15-16 图1.5b; Ch6 p.104; Ch8 p.145"
+        },
+        {
+          "muscle_zh": "竖脊肌+背部脊伸肌",
+          "muscle_en": "erector_spinae_and_spinal_extensors",
+          "contraction_type": "向心+离心交替",
+          "role": "躯干旋转支撑——维持旋转过程中脊柱的稳定和直立",
+          "feel_cue": "后腰有'柱子'般的支撑感，旋转是围绕这根柱子发生的",
+          "if_missing": "旋转时身体前倾、弯腰，力量方向不对，球飞行轨迹不稳定",
+          "source": "Ch1 p.15-16 图1.5b; Ch6 p.100-101"
+        },
+        {
+          "muscle_zh": "背阔肌",
+          "muscle_en": "latissimus_dorsi",
+          "contraction_type": "向心收缩",
+          "role": "加速期主驱动之一——从离心切换到向心，释放储存的弹性势能并主动加速",
+          "feel_cue": "背部两侧'收紧'推着手臂往前走，手臂被躯干'发射'出去",
+          "if_missing": "手臂与躯干脱节，躯干在转但手臂跟不上，拍速上不去",
+          "source": "Ch1 p.15-16 图1.5b; Ch5 p.87-89"
+        },
+        {
+          "muscle_zh": "前三角肌",
+          "muscle_en": "anterior_deltoid",
+          "contraction_type": "向心收缩",
+          "role": "手臂提升——将手臂保持在击球高度，特别是高球",
+          "feel_cue": "肩膀前面有往前推的感觉，但不是主导发力而是跟随躯干",
+          "if_missing": "击球点偏低，特别是高弹跳球处理困难",
+          "source": "Ch1 p.15-16 图1.5b; Ch2 p.32-33"
+        },
+        {
+          "muscle_zh": "肩胛下肌",
+          "muscle_en": "subscapularis",
+          "contraction_type": "向心收缩",
+          "role": "肩内旋(SIR/ISR)——Press Slot的核心执行者，拍头速度的三大来源之一",
+          "feel_cue": "肩膀深层内部有快速'拧'的感觉（像拧毛巾），不是手臂在甩",
+          "if_missing": "拍头加速不够，缺少最后的'提速'，球出去'肉'",
+          "source": "Ch1 p.15-16 图1.5b; Ch2 p.32-33"
+        },
+        {
+          "muscle_zh": "胸大肌",
+          "muscle_en": "pectoralis_major",
+          "contraction_type": "向心收缩",
+          "role": "Press的主执行者——将手臂拉向身体中线(内收)，是FTT 'chest press'的解剖基础",
+          "feel_cue": "胸口有'推门'的感觉，手臂像焊在胸上被一起推出去",
+          "if_missing": "手臂独立甩动，与胸脱节，是'arm hitting'而非'body hitting'",
+          "source": "Ch1 p.15-16 图1.5b; Ch4 p.72-74"
+        },
+        {
+          "muscle_zh": "前锯肌",
+          "muscle_en": "serratus_anterior",
+          "contraction_type": "向心收缩",
+          "role": "肩胛骨前伸——执行Scapular Glide的前半程='Wrap the chest'",
+          "feel_cue": "肋骨侧面有肩胛骨往前'滑'的感觉，胸口'打开'变成'包住'",
+          "if_missing": "肩胛骨'卡住'不前伸，力量在肩膀处中断，上半身无法完全参与",
+          "source": "Ch4 p.72; Ch6 p.100; Ch8 p.147-148"
+        },
+        {
+          "muscle_zh": "肱二头肌",
+          "muscle_en": "biceps_brachii",
+          "contraction_type": "向心收缩",
+          "role": "球拍定位——使球拍在正确位置接触球",
+          "feel_cue": "上臂前侧有轻微的'锁定'感，肘部角度被维持住",
+          "if_missing": "击球点飘忽，拍面角度不稳定",
+          "source": "Ch1 p.15-16 图1.5b"
+        },
+        {
+          "muscle_zh": "肱三头肌",
+          "muscle_en": "triceps_brachii",
+          "contraction_type": "向心收缩",
+          "role": "力量传递——将核心和躯干的力量通过肘伸展传递给球拍",
+          "feel_cue": "上臂后侧有跟随式的'推出'感，不是主动伸臂而是被躯干带着伸",
+          "if_missing": "力量在肘关节处'漏掉'，球拍速度比躯干旋转速度应产生的更低",
+          "source": "Ch3 p.54; Ch4 p.74"
+        },
+        {
+          "muscle_zh": "旋前圆肌+旋前方肌",
+          "muscle_en": "pronator_teres_and_pronator_quadratus",
+          "contraction_type": "向心收缩（协同）",
+          "role": "前臂旋前——配合肩内旋(SIR)的协同收缩，非主动发力",
+          "feel_cue": "前臂有自然的'翻转'感，是跟随肩旋转的，不是自己发起的",
+          "if_missing": "正确时不应被感知；如果强烈感知到前臂在'拧'，说明前臂在代偿",
+          "source": "Ch3 p.53, p.64, p.70-71"
+        }
+      ]
+    },
+
+    "contact": {
+      "description": "击球瞬间——肌肉输出达到峰值，关键肌群呈等长或最大向心收缩",
+      "muscle_activations": [
+        {
+          "muscle_zh": "胸大肌+肩胛下肌+背阔肌",
+          "muscle_en": "pectoralis_major_subscapularis_latissimus_dorsi",
+          "contraction_type": "最大向心收缩",
+          "role": "三大加速肌群协同——触球瞬间呈现最高肌肉活动，是拍速的主要来源",
+          "feel_cue": "触球时整个上半身有一个'合力'感——胸、背、肩深层同时发力",
+          "if_missing": "触球感觉'空'，力量只在手臂上，球出去没有穿透力",
+          "source": "Ch2 p.32-33 (加速阶段高肌肉活动); Ch4 p.73-74"
+        },
+        {
+          "muscle_zh": "肱三头肌",
+          "muscle_en": "triceps_brachii",
+          "contraction_type": "等长收缩",
+          "role": "肘关节锁定——触球时肘关节基本不伸缩，肱三头肌维持拍面稳定",
+          "feel_cue": "肘关节在触球瞬间有'锁死'的坚固感，不颤不弯",
+          "if_missing": "击球时手臂'塌掉'，拍面不稳，前臂被迫代偿来补偿支撑力不足",
+          "source": "Ch3 p.54 ('击球期间肘关节基本上不会伸长或缩短')"
+        },
+        {
+          "muscle_zh": "前臂屈肌群",
+          "muscle_en": "forearm_flexors",
+          "contraction_type": "等长收缩（短暂握紧）",
+          "role": "握力瞬间加强——触球瞬间握拍力量从3-4提升到7-8(满分10)",
+          "feel_cue": "触球时手指有瞬间'咬住'球拍的感觉，触球后马上放松",
+          "if_missing": "球拍在触球时松动偏转，控制差，能量损耗大",
+          "source": "Ch3 p.46-48, p.54"
+        },
+        {
+          "muscle_zh": "前臂伸肌群",
+          "muscle_en": "forearm_extensors",
+          "contraction_type": "等长收缩",
+          "role": "手腕稳定——与屈肌对抗维持手腕中立位，防止触球冲击改变拍面",
+          "feel_cue": "手腕在触球时有'刚性铰链'感，不软不翘",
+          "if_missing": "触球时手腕被球撞弯，力量反传回手臂，增加网球肘风险",
+          "source": "Ch3 p.46-48"
+        },
+        {
+          "muscle_zh": "腹横肌+多裂肌",
+          "muscle_en": "transversus_abdominis_and_multifidus",
+          "contraction_type": "等长收缩",
+          "role": "核心冻结——击球瞬间锁定躯干，防止旋转惯性导致身体继续转动",
+          "feel_cue": "腹部深层有瞬间'绷紧'感，身体像被'钉'在那一刻",
+          "if_missing": "击球点不稳，每次触球位置不同，控制和力量都不可预测",
+          "source": "Ch6 p.100-101, p.106"
+        },
+        {
+          "muscle_zh": "旋转袖肌群",
+          "muscle_en": "rotator_cuff",
+          "contraction_type": "等长/最大向心→离心过渡",
+          "role": "肩关节稳定——在巨大的旋转力下保持肱骨头在肩关节盂中稳定",
+          "feel_cue": "肩膀深层有'锁住'的感觉，球拍虽然高速但肩膀不散",
+          "if_missing": "触球时肩膀有'松脱'感或疼痛，长期可能导致旋转袖撞击综合症",
+          "source": "Ch2 p.24-26, p.32-33"
+        }
+      ]
+    },
+
+    "followthrough": {
+      "description": "随挥/减速阶段——全部由离心收缩完成，是被动制动不是主动做出",
+      "muscle_activations": [
+        {
+          "muscle_zh": "冈下肌",
+          "muscle_en": "infraspinatus",
+          "contraction_type": "离心收缩",
+          "role": "肩外旋减速——通过后旋转袖的离心收缩减慢手臂内旋速度",
+          "feel_cue": "肩膀后方深层有'拽住'的拉伸感，像在给手臂拉刹车",
+          "if_missing": "肩膀前方疼痛（旋转袖撞击），长期导致手臂不敢加速→代偿",
+          "source": "Ch1 p.16 图1.5c; Ch2 p.32-33"
+        },
+        {
+          "muscle_zh": "小圆肌",
+          "muscle_en": "teres_minor",
+          "contraction_type": "离心收缩",
+          "role": "与冈下肌协同减速——外旋减速的第二执行者",
+          "feel_cue": "肩膀外侧后方有与冈下肌类似的拉伸感",
+          "if_missing": "冈下肌独自承担减速→过劳→肌腱炎风险增加",
+          "source": "Ch1 p.16 图1.5c; Ch2 p.32-33"
+        },
+        {
+          "muscle_zh": "后三角肌",
+          "muscle_en": "posterior_deltoid",
+          "contraction_type": "离心收缩",
+          "role": "手臂水平面减速——在所有击球的随挥减速中发挥最大作用",
+          "feel_cue": "肩膀后面有'兜住'手臂的感觉，手臂在自然减速不是突然停住",
+          "if_missing": "随挥突然中断或不完整，能量散失到关节而非肌肉吸收",
+          "source": "Ch1 p.16 图1.5c; Ch2 p.32"
+        },
+        {
+          "muscle_zh": "菱形肌",
+          "muscle_en": "rhomboids",
+          "contraction_type": "离心收缩",
+          "role": "肩胛骨减速——防止肩胛骨过度前伸，制动Scapular Glide",
+          "feel_cue": "肩胛骨之间有'拉回来'的弹性感",
+          "if_missing": "肩膀被拉得太前→前方肩胛肌症候群→慢性肩痛",
+          "source": "Ch1 p.16 图1.5c; Ch5 p.92"
+        },
+        {
+          "muscle_zh": "前锯肌",
+          "muscle_en": "serratus_anterior",
+          "contraction_type": "离心收缩",
+          "role": "肩胛骨减速控制——在前伸到最大后控制回收",
+          "feel_cue": "肋骨侧面有'放慢'的感觉",
+          "if_missing": "肩胛骨运动不协调，翼状肩胛",
+          "source": "Ch1 p.16 图1.5c; Ch2 p.32"
+        },
+        {
+          "muscle_zh": "斜方肌",
+          "muscle_en": "trapezius",
+          "contraction_type": "离心收缩",
+          "role": "肩胛骨整体稳定——在减速过程中维持肩胛骨的位置控制",
+          "feel_cue": "上背部有均匀的'托住'感，肩膀不塌",
+          "if_missing": "随挥时耸肩或肩膀前塌，姿态变形",
+          "source": "Ch1 p.16 图1.5c; Ch2 p.31"
+        },
+        {
+          "muscle_zh": "肱三头肌",
+          "muscle_en": "triceps_brachii",
+          "contraction_type": "离心收缩",
+          "role": "肘关节减速——防止击球后肘部过度伸展",
+          "feel_cue": "上臂后侧有轻柔的'缓冲'感",
+          "if_missing": "随挥后肘关节撞击式超伸→肘部损伤风险",
+          "source": "Ch1 p.16 图1.5c; Ch3 p.54"
+        },
+        {
+          "muscle_zh": "腕伸肌群",
+          "muscle_en": "wrist_extensors",
+          "contraction_type": "离心收缩",
+          "role": "手腕减速——控制随挥末端的手腕运动",
+          "feel_cue": "前臂外侧（手背侧）有拉伸的减速感",
+          "if_missing": "手腕失控甩动→手腕损伤，特别是尺侧痛",
+          "source": "Ch1 p.16 图1.5c; Ch3 p.46-48"
+        },
+        {
+          "muscle_zh": "核心肌群（腹斜肌+竖脊肌）",
+          "muscle_en": "core_obliques_and_erector_spinae",
+          "contraction_type": "离心收缩",
+          "role": "躯干减速——防止过度旋转(over-rotation)",
+          "feel_cue": "腹部和后腰有'踩刹车'的感觉，身体面向侧前方约45度就停住",
+          "if_missing": "过度旋转，胸口完全正对球网，能量泄漏，随挥方向不可控",
+          "source": "Ch6 p.106; Ch8 p.145-146"
+        }
+      ]
+    }
+  },
+
+  "key_transitions": [
+    {
+      "transition": "背阔肌离心→向心切换",
+      "when": "引拍结束到前挥开始",
+      "feel_cue": "感觉力量从背部'存入'变成'释放出去'——背部从被拉伸变成主动推手臂",
+      "ftt_concept": "背部连接→胸部推开（肩胛骨滑动Scapular Glide的翻转点）",
+      "biomechanics": "拉伸-缩短循环(SSC)：离心储存弹性势能→向心释放时获得额外能量",
+      "source": "Ch1 p.15-16; Ch5 p.87-89"
+    },
+    {
+      "transition": "胸大肌离心→向心切换",
+      "when": "Unit Turn完成到前挥加速",
+      "feel_cue": "胸口从'打开'变成'合上'——像弹弓松手，不是主动推而是弹回来",
+      "ftt_concept": "弹弓模型：Unit Turn拉开胸肌→前挥胸肌弹回 = SSC释放",
+      "biomechanics": "SSC效率远高于纯向心收缩，这就是为什么充分的Unit Turn能增加拍速",
+      "source": "Ch4 p.73-74"
+    },
+    {
+      "transition": "腹斜肌离心→向心切换（腹部展开）",
+      "when": "Separation Angle最大时到躯干释放旋转",
+      "feel_cue": "肚脐左方的扭转张力'弹开'——不是主动转而是让它自己弹回来",
+      "ftt_concept": "Abdominal Uncoil：弹性释放天然是脉冲式的，不是持续用力",
+      "biomechanics": "预拉伸→释放储存能量是爆发式的，支持FTT'短脉冲不是长旋转'的理念",
+      "source": "Ch6 p.104; Ch8 p.145"
+    },
+    {
+      "transition": "肩胛骨后缩→前伸切换",
+      "when": "引拍到前挥的过渡点",
+      "feel_cue": "肩胛骨从'夹铅笔'变成'包胸推'——背部到胸部的力量接力",
+      "ftt_concept": "Scapular Glide = 菱形肌收缩(后缩) → 前锯肌收缩(前伸) 的序列切换",
+      "biomechanics": "肩胛骨前伸增加约60度肩关节活动范围，是加速空间的倍增器",
+      "source": "Ch2 p.31; Ch5 p.88"
+    },
+    {
+      "transition": "下肢离心→向心切换（蹬地爆发）",
+      "when": "loaded position到蹬伸瞬间",
+      "feel_cue": "从'坐下去'变成'弹起来'——大腿和小腿同时蹬伸，力从脚底往上涌",
+      "ftt_concept": "腿部是力量放大器(amplifier)而非发起者(engine)——躯干发令，腿部放大",
+      "biomechanics": "蹬地产生地面反作用力(GRF)，通过腓肠肌→股四头肌→臀大肌→核心向上传递",
+      "source": "Ch1 p.15-16; Ch7 p.121-126, p.143-144"
+    },
+    {
+      "transition": "向心加速→离心减速切换（触球后）",
+      "when": "触球瞬间到随挥开始",
+      "feel_cue": "从'全力输出'变成'自然放慢'——身体自动踩刹车，不是你主动停",
+      "ftt_concept": "随挥是被动结果：全部由离心收缩完成，不需要主动做任何事",
+      "biomechanics": "加速用大肌群(胸+背+肩胛下肌)，减速用小肌群(冈下肌+小圆肌+后三角肌)——结构性不对称",
+      "source": "Ch1 p.16 图1.5c; Ch2 p.32-33"
+    },
+    {
+      "transition": "肩内旋(SIR)→前臂旋前的联动",
+      "when": "触球前后的连续动作",
+      "feel_cue": "肩膀深层内旋→前臂自然翻转——是一个连续的链条反应，不是两个独立动作",
+      "ftt_concept": "Press Slot包含两层：①肩关节内旋(肩胛下肌) ②前臂旋前(旋前圆肌)——它们是同一个'press'的不同环节",
+      "biomechanics": "SIR+前臂旋前=所谓'甩手腕'的真相：它是肩内旋的末端传导，不是前臂独立发起的",
+      "source": "Ch3 p.53, p.70-71; Ch2 p.32-34"
+    }
+  ],
+
+  "problem_muscle_map": [
+    {
+      "problem": "手臂独立发力（arm-driven hitting）",
+      "problem_zh": "手臂和身体脱节，用手臂而非躯干打球",
+      "missing_muscles": [
+        {"muscle": "背阔肌", "muscle_en": "latissimus_dorsi", "phase": "引拍+加速"},
+        {"muscle": "胸大肌", "muscle_en": "pectoralis_major", "phase": "加速"},
+        {"muscle": "腹斜肌", "muscle_en": "obliques", "phase": "加速"}
+      ],
+      "missing_phase": "加速阶段——背阔肌离心→向心切换缺失，胸大肌未参与",
+      "what_should_feel": "引拍时背部有拉伸感（储能），前挥时胸口有'推门'感（释能），手臂只是被带着走",
+      "what_actually_feels": "只感觉到手臂在用力，背部和胸口没感觉，肩膀和肘都很累",
+      "fix_muscle_cue": "想象背部是弓（引拍=拉弓弦），胸口是弹弓（前挥=松弹弓），手臂是弓箭（被发射出去）",
+      "fix_training": ["坐姿划船 Ch5 p.94", "站姿前推 Ch4 p.77-78", "正手实心球投掷 Ch8 p.157-158"],
+      "source": "Ch5 p.87-89; Ch4 p.72-74; Ch1 p.15-16"
+    },
+    {
+      "problem": "小臂代偿（forearm compensation）",
+      "problem_zh": "前臂过度主动发力，甩手腕/scooping",
+      "missing_muscles": [
+        {"muscle": "腹斜肌", "muscle_en": "obliques", "phase": "加速（核心传动轴断裂）"},
+        {"muscle": "背阔肌", "muscle_en": "latissimus_dorsi", "phase": "引拍（手臂-躯干脱节）"},
+        {"muscle": "前锯肌", "muscle_en": "serratus_anterior", "phase": "加速（肩胛骨不前伸）"},
+        {"muscle": "肱三头肌", "muscle_en": "triceps_brachii", "phase": "触球（等长支撑不足）"}
+      ],
+      "missing_phase": "多阶段断裂——核心→肩→手臂的传导链条中有一个或多个环节缺失",
+      "what_should_feel": "力量从脚底→腹部→胸口→肩膀→手臂像波浪传递，前臂几乎'感觉不到在做什么'",
+      "what_actually_feels": "前臂在'推/拧/甩'，触球时肘内侧有压力（高尔夫球肘风险），手腕酸",
+      "fix_muscle_cue": "关注链条的'上游'：先检查肚脐左方有没有扭转感（腹斜肌），再检查背部有没有拉伸感（背阔肌），再检查胸口有没有推出感（胸大肌）",
+      "fix_training": ["俄罗斯式扭转 Ch6 p.113-114", "颈前下拉 Ch5 p.86", "肱三头肌拉力器下压 Ch3 p.50", "前臂屈伸肌平衡训练 Ch3 p.58-64"],
+      "injury_risk": "内上髁炎（高尔夫球肘，肘内侧痛）——涉及正手球时伸展手腕的肌腱 (Ch10 p.180)",
+      "source": "Ch3 p.46-54; Ch6 p.100-104; Ch5 p.84-85; Ch10 p.180"
+    },
+    {
+      "problem": "Scooping（勺形挥拍轨迹）",
+      "problem_zh": "拍头先掉下去再翻上来，V形而非Nike Swoosh形",
+      "missing_muscles": [
+        {"muscle": "背阔肌", "muscle_en": "latissimus_dorsi", "phase": "引拍→加速过渡"},
+        {"muscle": "肱三头肌", "muscle_en": "triceps_brachii", "phase": "触球（拍面控制）"}
+      ],
+      "missing_phase": "引拍到加速的过渡——背阔肌没有'托住'手臂，手臂因重力自由下坠",
+      "what_should_feel": "引拍时手臂被背部'托着'，不是自由掉落。前挥轨迹是从低到高的平滑弧线",
+      "what_actually_feels": "手臂在引拍末端'掉'了一下然后往上'捞'，轨迹像勺子",
+      "fix_muscle_cue": "背阔肌=吊床，手臂躺在上面，引拍时吊床收紧（离心），前挥时吊床弹起来（向心）",
+      "fix_training": ["颈前下拉 Ch5 p.86", "转体下拉 Ch5 p.88", "坐姿划船 Ch5 p.94"],
+      "source": "Ch1 p.15-16; Ch5 p.87-89"
+    },
+    {
+      "problem": "缺Out/穿透力不足",
+      "problem_zh": "球旋转够但没有穿透力，缺少Forward的分量",
+      "missing_muscles": [
+        {"muscle": "胸大肌", "muscle_en": "pectoralis_major", "phase": "加速（chest press不充分）"},
+        {"muscle": "前锯肌", "muscle_en": "serratus_anterior", "phase": "加速（肩胛骨前伸不够）"},
+        {"muscle": "股四头肌+臀大肌", "muscle_en": "quadriceps_and_gluteus_maximus", "phase": "加速（蹬地不足）"}
+      ],
+      "missing_phase": "加速阶段——向前的推力不够，旋转有了但线性推进（linear momentum）不足",
+      "what_should_feel": "触球时有'穿透球'的感觉，力量向前方倾泻；蹬地有明确的向前推力",
+      "what_actually_feels": "球在旋转但像'飘'着过去，落地后没有冲刺力；或者只是在空中挂了一道弧线",
+      "fix_muscle_cue": "蹬地时想象把地板往后推（GRF向前）；胸口想象'推门'而不只是'转身'",
+      "fix_training": ["站姿前推 Ch4 p.77-78", "胸前扔实心球 Ch4 p.84", "深蹲 Ch7 p.125-126"],
+      "source": "Ch1 p.14-16; Ch4 p.72-74; Ch7 p.121-126"
+    },
+    {
+      "problem": "过度旋转（over-rotation）",
+      "problem_zh": "击球后身体转过头，胸口完全正对球网",
+      "missing_muscles": [
+        {"muscle": "腹横肌", "muscle_en": "transversus_abdominis", "phase": "触球（核心冻结不足）"},
+        {"muscle": "多裂肌", "muscle_en": "multifidus", "phase": "触球（脊柱过度旋转）"},
+        {"muscle": "菱形肌", "muscle_en": "rhomboids", "phase": "随挥（肩带减速不足）"},
+        {"muscle": "背阔肌", "muscle_en": "latissimus_dorsi", "phase": "随挥（后链制动不足）"}
+      ],
+      "missing_phase": "触球到随挥——制动肌群力量不足，旋转惯性继续带着身体转",
+      "what_should_feel": "击球完成时身体面向侧前方约45度就停住，'左手收胸'时有阻力感",
+      "what_actually_feels": "身体控制不住一直转，面向球网甚至超过；重心往前扑",
+      "fix_muscle_cue": "想象击球时腹部有一个'急刹车'按钮——在触球时按下。非持拍手主动收到左肩提供额外制动",
+      "fix_training": ["平板支撑（含侧身）Ch6 p.108-112", "卧雪天使 Ch6 p.117-118", "俯卧两头起 Ch6 p.119-120"],
+      "source": "Ch6 p.100-101, p.106; Ch8 p.145-146"
+    },
+    {
+      "problem": "Timing晚/赶球",
+      "problem_zh": "总是来不及到位，被迫仓促击球",
+      "missing_muscles": [
+        {"muscle": "腓肠肌+比目鱼肌", "muscle_en": "gastrocnemius_and_soleus", "phase": "启动（蹬地推力不足）"},
+        {"muscle": "臀中肌", "muscle_en": "gluteus_medius", "phase": "移动（侧向移动效率低）"},
+        {"muscle": "内收肌群", "muscle_en": "adductors", "phase": "移动（侧滑步收脚慢）"}
+      ],
+      "missing_phase": "击球前的移动准备阶段——腿部力量/爆发力不足导致到位慢",
+      "what_should_feel": "到位后有'等球'的从容感，膝盖已经弯好，有完整的Unit Turn时间",
+      "what_actually_feels": "'赶球'的紧迫感，到了还在跑，没时间做引拍",
+      "fix_muscle_cue": "练小碎步质量（split step=减重技巧）；强化侧向移动的肌群",
+      "fix_training": ["跳箱 Ch7 p.139-140", "侧弓步 Ch7 p.133-134", "提踵 Ch7 p.143-144", "小碎步训练 Ch9 p.173-174"],
+      "source": "Ch7 p.121-144; Ch9 p.164-176"
+    },
+    {
+      "problem": "肩膀疼痛/不敢加速",
+      "problem_zh": "击球后肩膀痛，或者身体下意识不敢全力加速",
+      "missing_muscles": [
+        {"muscle": "冈下肌+小圆肌", "muscle_en": "infraspinatus_and_teres_minor", "phase": "随挥（外旋减速能力不足）"},
+        {"muscle": "后三角肌", "muscle_en": "posterior_deltoid", "phase": "随挥（水平面减速不足）"},
+        {"muscle": "菱形肌+斜方肌", "muscle_en": "rhomboids_and_trapezius", "phase": "随挥（肩胛骨稳定不足）"}
+      ],
+      "missing_phase": "随挥阶段——减速小肌群力量不足，大脑预防性限制加速",
+      "what_should_feel": "随挥时肩后方有均匀的减速拉伸感，手臂自然减速不是突然卡住",
+      "what_actually_feels": "击球后肩膀前方有撞击感/疼痛，或者身体'留着力'不敢全力",
+      "fix_muscle_cue": "减速肌群（外旋肌+后三角肌）的离心力量是加速能力的安全阀——先练减速才能放心加速",
+      "fix_training": ["外旋拉力器 Ch2 p.38", "90/90外展外旋 Ch2 p.40", "反式蝶机展肩 Ch5 p.92-93", "肩部收缩外旋弹力带 Ch10 p.200-201"],
+      "injury_risk": "旋转袖撞击综合症(Ch10 p.180)；肩部肌腱炎(Ch10 p.180)",
+      "source": "Ch2 p.32-34; Ch1 p.16; Ch10 p.180"
+    },
+    {
+      "problem": "Separation不足（肩髋分离角小）",
+      "problem_zh": "引拍时肩线和髋线一起转，没有扭转张力",
+      "missing_muscles": [
+        {"muscle": "腹斜肌", "muscle_en": "obliques", "phase": "引拍（无法储存旋转弹性势能）"},
+        {"muscle": "胸大肌", "muscle_en": "pectoralis_major", "phase": "引拍（未被充分拉伸）"},
+        {"muscle": "菱形肌", "muscle_en": "rhomboids", "phase": "引拍（肩胛骨后缩不充分）"}
+      ],
+      "missing_phase": "引拍阶段——肩线没有超前于髋线旋转，未产生足够的预拉伸",
+      "what_should_feel": "引拍末端腹部有明显的'扭拧'张力，像一条湿毛巾被拧开",
+      "what_actually_feels": "整个身体一块板一起转，腹部没有张力，感觉'平'",
+      "fix_muscle_cue": "髋先停，肩继续转——想象肚脐面向球网但肩膀面向围栏",
+      "fix_training": ["俄罗斯式扭转 Ch6 p.113-114", "吊绳旋转削球 Ch8 p.147-148", "正手实心球投掷（开放式）Ch8 p.157-158"],
+      "source": "Ch6 p.104; Ch8 p.145-146; Ch4 p.73-74"
+    },
+    {
+      "problem": "下背部疼痛",
+      "problem_zh": "击球或长rally后下背部疼痛",
+      "missing_muscles": [
+        {"muscle": "腹横肌", "muscle_en": "transversus_abdominis", "phase": "全程（深层稳定不足）"},
+        {"muscle": "多裂肌", "muscle_en": "multifidus", "phase": "全程（脊柱稳定不足）"},
+        {"muscle": "腘绳肌", "muscle_en": "hamstrings", "phase": "蹬地（灵活性不足导致下背代偿）"}
+      ],
+      "missing_phase": "全程——核心稳定肌群力量不足以满足开放式站位转体的高要求",
+      "what_should_feel": "旋转时脊柱有稳定的支撑感，力量绕脊柱旋转但脊柱本身不晃",
+      "what_actually_feels": "打球时腰部有'扭到'或疲劳的感觉，特别是开放式站位的大力球",
+      "fix_muscle_cue": "先用平板支撑建立核心稳定基础，再进行旋转训练；注意拉伸腘绳肌和髋屈肌",
+      "fix_training": ["平板支撑 Ch6 p.108-112", "游泳 Ch6 p.115-116", "仰卧抱膝伸展 Ch10 p.191-192", "仰卧腘绳肌伸展 Ch10 p.193-194"],
+      "injury_risk": "下背部扭伤——躯体力量不足以满足转体高要求 (Ch10 p.181)",
+      "source": "Ch6 p.100-106; Ch10 p.181"
+    },
+    {
+      "problem": "握拍太紧/前臂疲劳",
+      "problem_zh": "打球一会儿前臂就酸胀，握拍放不松",
+      "missing_muscles": [
+        {"muscle": "前臂屈肌群", "muscle_en": "forearm_flexors", "phase": "全程（耐力不足）"},
+        {"muscle": "前臂伸肌群", "muscle_en": "forearm_extensors", "phase": "全程（屈伸失衡）"}
+      ],
+      "missing_phase": "全程——前臂屈伸肌力量/耐力不平衡，握拍力度无法调节",
+      "what_should_feel": "握拍力度大部分时间在3-4/10，仅触球瞬间短暂到7-8/10后立即放松",
+      "what_actually_feels": "全程握紧不放松，前臂一直绷着，打完一盘手指僵硬",
+      "fix_muscle_cue": "触球后有意识地松手指（但别松到球拍飞出去）；伸肌不应低于屈肌力量的70%",
+      "fix_training": ["正握腕弯举 Ch3 p.58", "反握腕弯举 Ch3 p.60", "前臂伸肌拉伸 Ch10 p.196-197", "前臂屈肌拉伸 Ch10 p.198-199"],
+      "injury_risk": "网球肘（外上髁炎）Ch10 p.180；手腕疼痛 Ch10 p.180",
+      "source": "Ch3 p.46-48, p.54; Ch10 p.180, p.196-199"
+    }
+  ],
+
+  "kinetic_chain_complete_path": {
+    "description": "力量从地面到球拍的完整解剖学路径",
+    "path": [
+      {"station": "地面反作用力", "muscle": "蹬地产生", "source": "Ch1 p.8"},
+      {"station": "踝关节蹬伸", "muscle": "腓肠肌+比目鱼肌", "contraction": "向心", "source": "Ch7 p.143-144"},
+      {"station": "膝关节蹬伸", "muscle": "股四头肌", "contraction": "向心", "source": "Ch7 p.125-126"},
+      {"station": "髋关节伸展+旋转", "muscle": "臀大肌+髂腰肌", "contraction": "向心", "source": "Ch7 p.121-126"},
+      {"station": "深层稳定（旋转轴心）", "muscle": "腹横肌+多裂肌", "contraction": "等长", "source": "Ch6 p.100-101"},
+      {"station": "躯干旋转（传动轴）", "muscle": "腹内斜肌+腹外斜肌", "contraction": "向心（弹性释放）", "source": "Ch6 p.100-104; Ch8 p.145"},
+      {"station": "肩胛骨前伸", "muscle": "前锯肌", "contraction": "向心", "source": "Ch4 p.72; Ch6 p.100"},
+      {"station": "胸部Press", "muscle": "胸大肌", "contraction": "向心", "source": "Ch4 p.72-74"},
+      {"station": "手臂-躯干连接", "muscle": "背阔肌", "contraction": "向心", "source": "Ch5 p.87-89"},
+      {"station": "肩内旋(SIR/Press Slot)", "muscle": "肩胛下肌+胸大肌+背阔肌", "contraction": "向心", "source": "Ch2 p.32-33"},
+      {"station": "肘伸展+传递", "muscle": "肱三头肌", "contraction": "向心→等长", "source": "Ch3 p.54"},
+      {"station": "前臂旋前", "muscle": "旋前圆肌", "contraction": "向心（协同）", "source": "Ch3 p.64, p.70-71"},
+      {"station": "握力+拍面控制", "muscle": "前臂屈肌群+伸肌群", "contraction": "等长", "source": "Ch3 p.46-48"}
+    ],
+    "common_break_points": [
+      {"location": "髋→核心", "cause": "腹斜肌弱或未激活", "symptom": "髋转了但胸没跟上", "source": "Ch6 p.100-104"},
+      {"location": "核心→肩", "cause": "前锯肌弱，肩胛骨不前伸", "symptom": "肩胛骨'卡住'，上半身不参与", "source": "Ch5 p.84-85"},
+      {"location": "肩→手臂", "cause": "背阔肌不参与，手臂脱离", "symptom": "手臂独立甩动", "source": "Ch5 p.87-89"},
+      {"location": "深层稳定", "cause": "腹横肌失稳", "symptom": "旋转时晃动，力量泄漏", "source": "Ch6 p.100-101"}
+    ]
+  },
+
+  "structural_asymmetry_warning": {
+    "description": "加速与减速的结构性不对称——受伤的根源",
+    "acceleration_muscles": {
+      "type": "大肌群",
+      "muscles": ["胸大肌", "背阔肌", "肩胛下肌", "前三角肌"],
+      "force_capacity": "高"
+    },
+    "deceleration_muscles": {
+      "type": "小肌群",
+      "muscles": ["冈下肌", "小圆肌", "后三角肌"],
+      "force_capacity": "低"
+    },
+    "implication": "加速力量天然远大于减速力量。必须专门训练外旋肌群(减速侧)来保护肩膀。否则大脑会预防性限制加速→手臂代偿。",
+    "source": "Ch2 p.32-34; Ch5 p.89"
+  },
+
+  "injury_prevention_map": [
+    {
+      "injury_zh": "旋转袖撞击综合症",
+      "injury_en": "rotator_cuff_impingement",
+      "symptom": "做过顶动作或提重物时肩部疼痛",
+      "cause": "肌肉疲劳；不正确的技巧，特别是过头动作",
+      "prevention_muscles": ["冈下肌", "小圆肌", "后三角肌", "菱形肌"],
+      "prevention_training": ["外旋拉力器 Ch2 p.38", "90/90外展外旋 Ch2 p.40", "肩部收缩外旋弹力带 Ch10 p.200"],
+      "source": "Ch10 p.180"
+    },
+    {
+      "injury_zh": "内上髁炎（高尔夫球肘）",
+      "injury_en": "medial_epicondylitis",
+      "symptom": "肘部内侧疼痛",
+      "cause": "正手球和发球时伸展手腕的肌腱过度使用",
+      "prevention_muscles": ["前臂屈肌群", "前臂伸肌群（平衡训练）"],
+      "prevention_training": ["正握腕弯举 Ch3 p.58", "反握腕弯举 Ch3 p.60", "前臂屈肌拉伸 Ch10 p.198-199"],
+      "related_technique_issue": "小臂代偿——前臂过度主动发力",
+      "source": "Ch10 p.180"
+    },
+    {
+      "injury_zh": "外上髁炎（网球肘）",
+      "injury_en": "lateral_epicondylitis",
+      "symptom": "肘部外侧疼痛",
+      "cause": "不正确的反手击球技巧；反手击球过晚",
+      "prevention_muscles": ["前臂伸肌群", "前臂屈肌群（平衡训练）"],
+      "prevention_training": ["反握腕弯举 Ch3 p.60", "前臂伸肌拉伸 Ch10 p.196-197"],
+      "source": "Ch10 p.180"
+    },
+    {
+      "injury_zh": "手腕疼痛",
+      "injury_en": "wrist_pain",
+      "symptom": "手腕桡骨侧或尺骨侧疼痛",
+      "cause": "尺侧偏移；握拍太紧；现代球拍增加的桡-尺偏运动",
+      "prevention_muscles": ["桡侧伸腕长肌（外展肌）", "尺侧伸腕肌（内收肌）"],
+      "prevention_training": ["正握腕弯举 Ch3 p.58", "反握腕弯举 Ch3 p.60", "前臂外旋 Ch3 p.62", "前臂内旋 Ch3 p.64"],
+      "source": "Ch3 p.54; Ch10 p.180"
+    },
+    {
+      "injury_zh": "下背部扭伤",
+      "injury_en": "lower_back_strain",
+      "symptom": "突然的背部疼痛，特别是转体时",
+      "cause": "核心力量不足以满足开放式站位转体的高要求",
+      "prevention_muscles": ["腹横肌", "多裂肌", "竖脊肌", "腘绳肌"],
+      "prevention_training": ["平板支撑 Ch6 p.108-112", "游泳 Ch6 p.115-116", "仰卧腘绳肌伸展 Ch10 p.193-194"],
+      "source": "Ch10 p.181"
+    },
+    {
+      "injury_zh": "髋屈肌扭伤",
+      "injury_en": "hip_flexor_strain",
+      "symptom": "场上难以移动，髋前方疼痛",
+      "cause": "开放式站位频繁变向；腘绳肌和股四头肌紧张",
+      "prevention_muscles": ["髂腰肌", "腘绳肌", "股四头肌"],
+      "prevention_training": ["半跪姿髋屈肌伸展 Ch10 p.189-190", "4字型伸展 Ch10 p.191-192", "仰卧腘绳肌伸展 Ch10 p.193-194"],
+      "source": "Ch10 p.181"
+    }
+  ],
+
+  "training_prescription_by_priority": {
+    "description": "基于本书的正手改进训练优先级",
+    "priority_1_back_connection": {
+      "rationale": "大多数人胸强背弱，背阔肌是动力链物理桥梁（脊柱→肱骨唯一大面积连接）",
+      "exercises": [
+        {"name": "坐姿划船", "muscles": "背阔肌+菱形肌+斜方肌", "note": "书中评价'可能是最重要的上半身训练'", "source": "Ch5 p.94-95"},
+        {"name": "颈前下拉/引体向上", "muscles": "背阔肌专项", "source": "Ch5 p.86"},
+        {"name": "肘到臀肩胛骨后缩", "muscles": "菱形肌+肩胛骨控制", "source": "Ch2 p.36"}
+      ]
+    },
+    "priority_2_rotator_cuff_balance": {
+      "rationale": "减速肌群(外旋)力量是加速能力的安全阀——先练减速才能放心加速",
+      "exercises": [
+        {"name": "外旋拉力器", "muscles": "冈下肌+小圆肌", "note": "手肘夹毛巾可增加激活率约20%", "source": "Ch2 p.38"},
+        {"name": "90/90外展外旋", "muscles": "高位外旋减速", "source": "Ch2 p.40"},
+        {"name": "90/90外展内旋", "muscles": "肩胛下肌(Press Slot直接训练)", "source": "Ch2 p.42"}
+      ]
+    },
+    "priority_3_core_rotation": {
+      "rationale": "腹斜肌是髋→胸传动轴的核心执行者，核心旋转力量决定能传递多少力",
+      "exercises": [
+        {"name": "俄罗斯式扭转(实心球)", "muscles": "腹斜肌旋转力量", "note": "最直接对应正手的核心训练", "source": "Ch6 p.113-114"},
+        {"name": "正手实心球投掷(开放式)", "muscles": "前锯肌+腹斜肌+臀大肌", "note": "最直接模拟正手击球", "source": "Ch8 p.157-158"},
+        {"name": "侧身平板支撑", "muscles": "腹斜肌稳定", "source": "Ch6 p.112"}
+      ]
+    },
+    "priority_4_chest_press": {
+      "rationale": "胸大肌是'Press'的主执行者，75%的击球是正手和发球",
+      "exercises": [
+        {"name": "站姿前推(拉力器)", "muscles": "胸大肌+旋转袖+核心", "note": "最佳功能性胸肌训练——站立、单臂、需要核心稳定", "source": "Ch4 p.77-78"},
+        {"name": "胸前扔实心球", "muscles": "胸大肌SSC爆发力", "source": "Ch4 p.84"},
+        {"name": "俯卧撑", "muscles": "基础胸肌力量", "source": "Ch4 p.74-76"}
+      ]
+    },
+    "priority_5_legs_power": {
+      "rationale": "腿部是力量放大器——蹬地质量决定整条链的输入能量",
+      "exercises": [
+        {"name": "深蹲", "muscles": "股四头肌+臀大肌", "note": "每次击球都需要类似深蹲的姿势", "source": "Ch7 p.125-126"},
+        {"name": "罗马尼亚硬拉", "muscles": "后链(腘绳肌+臀大肌+竖脊肌)", "source": "Ch7 p.127-128"},
+        {"name": "提踵", "muscles": "腓肠肌+比目鱼肌", "note": "动力链从地面向上的第一站", "source": "Ch7 p.143-144"}
+      ]
+    },
+    "priority_6_forearm_balance": {
+      "rationale": "前臂是力量传递的最后一站，屈伸平衡防止网球肘/高尔夫球肘",
+      "exercises": [
+        {"name": "正握腕弯举", "muscles": "前臂屈肌", "source": "Ch3 p.58"},
+        {"name": "反握腕弯举", "muscles": "前臂伸肌", "note": "伸肌不应低于屈肌力量的70%", "source": "Ch3 p.60"},
+        {"name": "前臂外旋/内旋", "muscles": "旋后肌/旋前圆肌", "source": "Ch3 p.62-64"}
+      ]
+    },
+    "general_parameters": {
+      "sets": "2-3组",
+      "reps": "10-12次/组",
+      "medicine_ball_weight": "2-3kg",
+      "frequency": "每周2-3次，训练间至少休息1天",
+      "flexibility_training": "每天进行，训练或比赛后效果最佳",
+      "source": "Ch8 p.146; Ch10 p.182"
+    }
+  }
+}
