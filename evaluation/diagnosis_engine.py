@@ -119,6 +119,9 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
     {"keywords": ["转体不足", "没转体", "rotation insufficient", "no rotation", "转体小"],
      "concept": "unit_turn", "frame_range": None,
      "severity": 0.7, "label": "Unit Turn不足"},
+    {"keywords": ["只转上半身", "髋没转", "肩转了髋没", "上半身转下半身没", "only upper body"],
+     "concept": "upper_body_only_turn", "frame_range": None,
+     "severity": 0.9, "label": "只转上半身不转髋（缺少核心蓄力）"},
     {"keywords": ["击球点偏后", "击球点靠后", "被挤压", "late contact", "cramped"],
      "concept": "problem_p05", "frame_range": None,
      "severity": 0.6, "label": "击球点偏后"},
@@ -244,9 +247,14 @@ _CONCEPT_TO_METRIC_VALIDATION: Dict[str, List[Dict[str, Any]]] = {
 
 _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
     "problem_p03": {
-        "drill": "腋下贴住练习",
-        "method": "将一个网球或毛巾夹在击球手臂腋下，做完整挥拍。如果掉落说明手臂在做独立动作。",
-        "why": "腋下贴住强制手臂成为躯干的一部分，消除手臂独立发力的空间，让身体旋转自然带动手臂。",
+        "drill": "外旋+沉肩锁定练习",
+        "method": "Unit Turn 时轻微外旋持拍手+沉肩。感觉到背部肩胛骨区域和胸侧三角区同时绷紧。然后只靠转体挥拍。",
+        "why": "外旋激活冈下肌+小圆肌（后），沉肩激活背阔肌（下），胸大肌（前）同时工作。三面锁住手臂，手臂不可能独立动作。",
+    },
+    "upper_body_only_turn": {
+        "drill": "双手抱球整体转体",
+        "method": "双手抱篮球在胸前做 Unit Turn。因为双手被球锁住，身体被迫整体转（包括髋部）。转到位后暂停 1 秒，感受右腿臀部后侧的拉伸感。每天 20 次。",
+        "why": "只转上半身不转髋 = 没有核心蓄力 = 后续所有发力都得靠手臂代偿。抱球强制髋部跟着转，重建整体转动的肌肉记忆。",
     },
     "problem_p02": {
         "drill": "平推穿透练习",
@@ -458,6 +466,13 @@ Q_DIRECT_MAPPING: Dict[str, Dict[str, Any]] = {
         "positive_concept": "good_shoulder_level",
         "negative_concept": "problem_p07",
         "severity": 0.7,
+    },
+    "Q5b": {  # 髋部是否跟着肩膀一起转
+        "positive_signals": ["一起转", "跟着转", "髋部也转", "整体转", "都转了"],
+        "negative_signals": ["只有肩膀", "髋没动", "髋部没转", "只转上半身", "肩膀在转髋部没", "差很多"],
+        "positive_concept": "good_unit_turn",
+        "negative_concept": "upper_body_only_turn",
+        "severity": 0.9,
     },
     "Q6": {  # 躯干后仰
         "positive_signals": ["直立", "保持直立", "没有后仰"],

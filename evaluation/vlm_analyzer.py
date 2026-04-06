@@ -1803,6 +1803,7 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
             "shoulder_torso": {
                 "shoulder_level": answers.get("Q4", ""),
                 "body_rotation_depth": answers.get("Q5", ""),
+                "hip_follow_shoulder": answers.get("Q5b", ""),
                 "torso_lean": answers.get("Q6", ""),
                 "body_facing_at_contact": answers.get("Q7", ""),
             },
