@@ -562,14 +562,15 @@ def _map_via_q_direct(vlm_result: Dict) -> List[Dict[str, Any]]:
         is_positive = any(sig in answer_lower for sig in mapping["positive_signals"])
 
         if is_negative and not is_positive:
+            # Use the actual VLM answer as the observation, not "Q1检测到问题"
             matched.append({
-                "observation": f"{q_num}: {answer[:100]}",
+                "observation": answer[:150],
                 "keyword_matched": q_num,
                 "mapped_concept": mapping["negative_concept"],
                 "frame": None,
                 "field": q_num,
                 "severity": mapping["severity"],
-                "label": f"{q_num}检测到问题",
+                "label": answer[:50],
                 "source": "q_direct",
             })
         elif is_positive and not is_negative:
@@ -702,31 +703,70 @@ def _get_node_name_zh(concept_id: str) -> str:
     return concept_id
 
 
-def _trace_root_causes(concept_ids: List[str]) -> Tuple[Optional[str], List[Dict[str, str]]]:
+def _trace_root_causes(
+    concept_ids: List[str],
+    matched_concepts_for_voting: Optional[List[Dict]] = None,
+) -> Tuple[Optional[str], List[Dict[str, str]]]:
     """Trace from symptom concepts to root causes.
 
     Strategy:
     1. First try diagnostic chains (most accurate, human-verified)
     2. Then multi-path graph traversal with voting
-    3. Root cause = the one that most symptoms trace back to
+    3. Root cause = the one with highest weighted votes
 
     Returns (root_cause_id, causal_chain_list).
     """
-    # Step 1: Try diagnostic chains first
-    chains = _load_chains()
-    chain_root = _try_diagnostic_chains(concept_ids, chains)
-    if chain_root:
-        return chain_root
+    if matched_concepts_for_voting is None:
+        matched_concepts_for_voting = []
+    # Note: diagnostic chains have data quality issues (p09 appears as root cause
+    # for almost everything). Skipping chain lookup, using direct observation instead.
 
-    # Step 2: Multi-path graph traversal with root cause voting
+    # Step 2: Simple strategy — highest severity directly observed concept = root cause
+    # Graph traversal tends to go too deep to abstract concepts like "重心"
+    # Direct observation is more actionable and accurate
+    if concept_ids:
+        # Count frequency: concepts observed multiple times are stronger candidates
+        from collections import Counter
+        freq = Counter(concept_ids)
+        # Pick: highest frequency first, then highest severity
+        best_id = max(
+            set(concept_ids),
+            key=lambda c: (freq[c], next(
+                (m["severity"] for m in matched_concepts_for_voting
+                 if m.get("mapped_concept") == c), 0
+            )),
+        )
+        # Build simple causal chain from graph (1 hop only for context)
+        reverse_causes = _build_causes_graph()
+        causal_chain = []
+        parents = reverse_causes.get(best_id, [])
+        if parents:
+            parent = parents[0]
+            causal_chain.append({
+                "from": parent,
+                "from_name": _get_node_name_zh(parent),
+                "to": best_id,
+                "to_name": _get_node_name_zh(best_id),
+                "relation": "causes",
+            })
+        return best_id, causal_chain
+
+    # Fallback: graph traversal (only when no direct observations)
+    MAX_DEPTH = 3
     reverse_causes = _build_causes_graph()
-    root_vote: Dict[str, int] = {}  # root_id -> vote count
-    root_best_chain: Dict[str, List[str]] = {}  # root_id -> best chain to it
+    root_vote: Dict[str, int] = {}
+    root_best_chain: Dict[str, List[str]] = {}
 
     for concept_id in concept_ids:
         visited = set()
 
-        def _walk(node: str, path: List[str]) -> None:
+        def _walk(node: str, path: List[str], depth: int) -> None:
+            if depth >= MAX_DEPTH:
+                root = path[-1]
+                root_vote[root] = root_vote.get(root, 0) + 1
+                if root not in root_best_chain or len(path) > len(root_best_chain[root]):
+                    root_best_chain[root] = list(path)
+                return
             parents = reverse_causes.get(node, [])
             if not parents:
                 root = path[-1]
@@ -737,18 +777,53 @@ def _trace_root_causes(concept_ids: List[str]) -> Tuple[Optional[str], List[Dict
             for parent in parents:
                 if parent not in visited and parent != "c_unnamed":
                     visited.add(parent)
-                    _walk(parent, path + [parent])
+                    _walk(parent, path + [parent], depth + 1)
 
         visited.add(concept_id)
-        _walk(concept_id, [concept_id])
+        _walk(concept_id, [concept_id], 0)
+
+    # High-severity directly observed concepts are strong root cause candidates
+    # Even if they have parents in the graph, they might be the most actionable root cause
+    from collections import Counter
+    direct_counts = Counter(concept_ids)
+    for concept_id, count in direct_counts.items():
+        # If this concept was observed multiple times (e.g., Q1 and Q17 both → problem_p03)
+        # it's a strong root cause candidate
+        if count >= 2:
+            root_vote[concept_id] = root_vote.get(concept_id, 0) + count * 3
+            if concept_id not in root_best_chain:
+                root_best_chain[concept_id] = [concept_id]
+        # Also boost concepts with no parents (true roots)
+        if concept_id not in reverse_causes or not reverse_causes.get(concept_id):
+            root_vote[concept_id] = root_vote.get(concept_id, 0) + 2
+            if concept_id not in root_best_chain:
+                root_best_chain[concept_id] = [concept_id]
 
     if not root_vote:
         if concept_ids:
             return concept_ids[0], []
         return None, []
 
-    # Pick root cause with most votes (most symptoms trace to it)
-    root_cause_id = max(root_vote, key=lambda k: root_vote[k])
+    # Pick root cause: votes weighted by severity of the original observations
+    # Concepts with higher severity observations pointing to them are better candidates
+    directly_observed = set(concept_ids)
+    # Boost directly observed concepts by their severity
+    concept_severity = {}
+    for cid in concept_ids:
+        concept_severity[cid] = max(concept_severity.get(cid, 0), 0.5)
+    for m in matched_concepts_for_voting:
+        cid = m.get("mapped_concept", "")
+        sev = m.get("severity", 0)
+        concept_severity[cid] = max(concept_severity.get(cid, 0), sev)
+
+    # Strongly prefer directly observed concepts over graph-discovered ones
+    root_cause_id = max(
+        root_vote,
+        key=lambda k: (
+            root_vote[k] * concept_severity.get(k, 0.1),  # votes × severity
+            10 if k in directly_observed else 0,  # huge boost for direct observations
+        ),
+    )
     best_chain = root_best_chain.get(root_cause_id, [])
 
     causal_chain: List[Dict[str, str]] = []
@@ -959,17 +1034,13 @@ def _get_fix(root_cause_id: Optional[str], matched_concepts: List[Dict]) -> Dict
 def _compute_score(
     matched_concepts: List[Dict],
     quant_validation: Dict[str, List[str]],
+    vlm_score: Optional[int] = None,
 ) -> int:
     """基于问题严重度计算评分（0-100，越高越好）。
 
-    评分规则：
-    - 基础分 70
-    - 每个匹配的问题概念扣 severity * 30
-    - 有量化验证确认的问题双倍扣分（额外再扣一次）
-    - 做得好的方面（severity == 0）每个加 5 分
-    - 最终裁剪到 0-100
+    如果 VLM 给了分数，取诊断引擎计算分和 VLM 分的平均值。
     """
-    base = 70
+    base = 80  # Higher base; problems deduct 5-8 points each (unique concepts only)
 
     problems = [m for m in matched_concepts if m["severity"] > 0]
     good_things = [m for m in matched_concepts if m["severity"] == 0]
@@ -986,17 +1057,27 @@ def _compute_score(
                 if v.get("confirm_text", "").split("{")[0] in ct:
                     confirmed_concept_ids.add(concept_id)
 
-    # 扣分
+    # 扣分（去重：同一概念只扣一次，取最高 severity）
+    seen_deducted = set()
     for m in problems:
-        deduction = m["severity"] * 30
-        if m["mapped_concept"] in confirmed_concept_ids:
-            deduction *= 2  # 量化确认的问题双倍扣分
+        cid = m["mapped_concept"]
+        if cid in seen_deducted:
+            continue
+        seen_deducted.add(cid)
+        deduction = min(8, m["severity"] * 10)
+        if cid in confirmed_concept_ids:
+            deduction = min(12, deduction * 1.5)
         base -= deduction
 
     # 加分
     base += len(good_things) * 5
 
-    return max(0, min(100, int(base)))
+    engine_score = max(20, min(100, int(base)))  # Floor at 20 (not 0)
+
+    # 如果 VLM 也给了分，取平均
+    if vlm_score is not None and isinstance(vlm_score, (int, float)):
+        return int((engine_score + vlm_score) / 2)
+    return engine_score
 
 
 def _generate_narrative(
@@ -1152,7 +1233,10 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     problem_concept_ids = [
         m["mapped_concept"] for m in matched_concepts if m["severity"] > 0
     ]
-    root_cause_id, causal_chain = _trace_root_causes(problem_concept_ids)
+    root_cause_id, causal_chain = _trace_root_causes(
+        problem_concept_ids,
+        matched_concepts_for_voting=matched_concepts,
+    )
 
     # ── Step 3: 量化验证 ──
     quant_validation = _validate_with_metrics(matched_concepts, metrics)
