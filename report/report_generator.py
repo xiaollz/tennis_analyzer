@@ -524,7 +524,53 @@ class ReportGenerator:
                 lines.append(f"{root_cause}导致了：{'，'.join(symptom_texts)}。")
                 lines.append("")
 
-        # 量化佐证（诊断引擎产出）
+        # ── 诊断引擎推理过程 ──
+        evidence_chain = vlm_result.get("evidence_chain", [])
+        causal_chain = vlm_result.get("causal_chain", [])
+        quant_validation = vlm_result.get("quant_validation", {})
+
+        if evidence_chain or causal_chain or quant_validation:
+            lines.append("<details>")
+            lines.append("<summary>诊断推理过程（点击展开）</summary>")
+            lines.append("")
+
+            # 观察→概念映射
+            if evidence_chain:
+                lines.append("**VLM观察 → 知识库概念映射：**")
+                for e in evidence_chain[:5]:
+                    obs = e.get("observation", "")[:60]
+                    concept = e.get("mapped_concept", "")
+                    lines.append(f"- {obs} → `{concept}`")
+                lines.append("")
+
+            # 因果链
+            if causal_chain:
+                lines.append("**知识图谱因果链：**")
+                for c in causal_chain:
+                    lines.append(f"- {c.get('from_name', '')} → 导致 → {c.get('to_name', '')}")
+                lines.append("")
+
+            # 量化验证
+            confirmed = quant_validation.get("confirmed", [])
+            contradicted = quant_validation.get("contradicted", [])
+            if confirmed or contradicted:
+                lines.append("**量化数据交叉验证：**")
+                for c in confirmed:
+                    lines.append(f"- ✅ {c}")
+                for c in contradicted:
+                    lines.append(f"- ⚠️ {c}")
+                lines.append("")
+
+            # 用户历史
+            user_history = vlm_result.get("user_history")
+            if user_history:
+                lines.append(f"**训练历史：** {user_history[:200]}")
+                lines.append("")
+
+            lines.append("</details>")
+            lines.append("")
+
+        # 量化佐证（叙述中的简洁版）
         quant_evidence = vlm_result.get("quant_evidence", "")
         if quant_evidence:
             lines.append(quant_evidence)

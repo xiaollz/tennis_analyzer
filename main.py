@@ -255,6 +255,7 @@ class TennisAnalysisPipeline:
                 keypoints_series=keypoints_series,
                 confidence_series=confidence_series,
                 video_path=video_path,
+                fps=fps,
             )
 
         # ── 阶段 3: 生成标注视频 ────────────────────────────────────
@@ -336,6 +337,7 @@ class TennisAnalysisPipeline:
         keypoints_series: Optional[List[np.ndarray]] = None,
         confidence_series: Optional[List[np.ndarray]] = None,
         video_path: Optional[str] = None,
+        fps: float = 30.0,
     ) -> List[Optional[Dict]]:
         """Run VLM keyframe analysis for each swing. Returns list of VLM results.
 
@@ -402,8 +404,8 @@ class TennisAnalysisPipeline:
                 swing_clip_path = self._extract_swing_clip(
                     video_path, ev.swing_event, frame_indices, fps,
                 )
-            except Exception:
-                pass  # 视频片段提取失败不影响分析，回退到关键帧
+            except Exception as exc:
+                print(f"[VLM] 视频片段提取失败: {exc}")  # 回退到关键帧
 
             # Call VLM (v4: pure observation → diagnosis engine does reasoning)
             mode_label = "视频" if swing_clip_path else "关键帧"
