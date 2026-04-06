@@ -250,16 +250,19 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "drill": "外旋+沉肩锁定练习",
         "method": "Unit Turn 时轻微外旋持拍手+沉肩。感觉到背部肩胛骨区域和胸侧三角区同时绷紧。然后只靠转体挥拍。",
         "why": "外旋激活冈下肌+小圆肌（后），沉肩激活背阔肌（下），胸大肌（前）同时工作。三面锁住手臂，手臂不可能独立动作。",
+        "muscle_cue": "做对时你应该感觉到：背部肩胛骨区域绷紧（冈下肌+小圆肌），胸侧跨腋下的三角区绷紧（胸大肌）。如果只感觉到手臂在用力但背部没感觉，说明锁定没到位。",
     },
     "upper_body_only_turn": {
         "drill": "双手抱球整体转体",
         "method": "双手抱篮球在胸前做 Unit Turn。因为双手被球锁住，身体被迫整体转（包括髋部）。转到位后暂停 1 秒，感受右腿臀部后侧的拉伸感。每天 20 次。",
         "why": "只转上半身不转髋 = 没有核心蓄力 = 后续所有发力都得靠手臂代偿。抱球强制髋部跟着转，重建整体转动的肌肉记忆。",
+        "muscle_cue": "转到位时你应该感觉到：臀部和大腿后侧有明显拉伸感（臀肌+髋关节离心收缩在蓄力）。如果只感觉到腰在扭但臀部没感觉，说明髋没有真正参与转体。",
     },
     "problem_p02": {
         "drill": "平推穿透练习",
         "method": "站在离网2米处，用拍面平推球过网，不允许任何向上动作。目标是让球平飞过网。",
         "why": "V形scooping的根因是手臂做了独立的下压+上翻。平推练习消除向上意图，重建水平穿透路径。",
+        "muscle_cue": "正确的前挥你应该感觉到：背部有'先存后放'的切换感——引拍时背阔肌拉伸蓄力，前挥时从背部释放力量向前。如果感觉是手腕在主动翻转，说明背阔肌的离心→向心切换没有发生。",
     },
     "problem_p01": {
         "drill": "拍头高度控制练习",
@@ -275,16 +278,19 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "drill": "左手收胸刹车练习",
         "method": "击球瞬间左手主动收向右胸口，感受身体被'刹住'。随挥是惯性不是主动继续转。",
         "why": "过度转体的根因是缺少刹车机制。左手收胸提供反向力矩，让旋转脉冲终点=击球瞬间。",
+        "muscle_cue": "刹车成功时你应该感觉到：腹部侧面有一股'刹车感'（腹斜肌在做离心制动）。如果转体停不住、整个人跟着转过去，说明腹斜肌的离心制动没有启动。",
     },
     "problem_p04": {
         "drill": "蹬地→转髋→腹斜肌串联练习",
         "method": "站立，右脚蹬地→感受力经髋部→左下腹（肚脐左侧）有拧转感→胸部被带走。从慢速开始。",
         "why": "动力链断裂通常在3个点：膝-髋、髋-腹斜肌、胸-臂。逐段串联让能量完整传递。",
+        "muscle_cue": "串联做对时你应该依次感觉到：脚掌蹬地→臀部发力→肚脐左侧有拧转感（腹斜肌向心收缩）→胸部被带着转。哪个环节'断感觉'了，动力链就断在哪。",
     },
     "problem_p05": {
         "drill": "弹...落...打 三拍节奏练习",
         "method": "球弹起时说'弹'，最高点说'落'，下落到击球高度说'打'。退后半步给自己更多时间。",
         "why": "击球点偏后的根因通常是站太前+准备时间不足。三拍节奏强制建立时空余量。",
+        "muscle_cue": "击球时向外延展做对了，你应该感觉到：胸部有'往前推'的感觉（前锯肌+胸大肌做向心收缩）。如果击球后手臂立刻往身体内侧收，说明胸部肌肉的向心推送不够。",
     },
     "problem_p09": {
         "drill": "后脚蹬地启动练习",
@@ -295,6 +301,7 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "drill": "背部张力保持练习",
         "method": "引拍后感受背阔肌张力，整个前挥过程保持这个张力不松。击球后才允许释放。",
         "why": "背部松掉导致手臂失去'根'，变成独立运动。背部张力是手臂连接身体的关键中转站。",
+        "muscle_cue": "引拍到位时你应该感觉到：背部两侧（背阔肌）有拉伸感，像拉开的弹弓。根据运动生物力学研究，引拍阶段背阔肌做离心收缩来储存弹性势能。如果引拍时背部没有这种'被拉开'的感觉，说明背阔肌没有参与。",
     },
     "problem_p13": {
         "drill": "左手引导Unit Turn练习",
@@ -325,6 +332,7 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "drill": "腹斜肌激活练习",
         "method": "站立，双手交叉放胸前，蹬地后感受肚脐左方有拧转感。这个拧转感=腹斜肌在工作。",
         "why": "腹斜肌是腿→胸的能量中转站。激活不了=力在腰部断掉。",
+        "muscle_cue": "蹬地后你应该感觉到：肚脐左方有拧转感（腹斜肌向心收缩在传递旋转力）。如果蹬地后只感觉到腿在用力、腰部以上没感觉，说明腹斜肌没有被激活。",
     },
 }
 
@@ -1043,6 +1051,70 @@ def _get_fix(root_cause_id: Optional[str], matched_concepts: List[Dict]) -> Dict
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  概念→肌肉生物力学映射（基于运动生物力学研究 Ch1 图1.5）
+# ══════════════════════════════════════════════════════════════════════
+
+_CONCEPT_TO_MUSCLE: Dict[str, Dict[str, str]] = {
+    "problem_p03": {
+        "muscle": "背阔肌",
+        "action": "离心收缩",
+        "phase": "引拍阶段",
+        "feel": "引拍时背部两侧有拉伸感",
+        "absence": "如果引拍时背部完全没感觉、只感觉手臂在动，说明背阔肌没有参与，手臂就失去了与身体的连接",
+        "science": "根据运动生物力学研究，引拍阶段背阔肌做离心收缩来储存弹性势能，是手臂连接身体旋转系统的'胶水'",
+    },
+    "problem_p02": {
+        "muscle": "背阔肌（离心→向心切换）",
+        "action": "离心→向心切换",
+        "phase": "引拍→前挥过渡",
+        "feel": "从背部'存力'到'释放力'的切换感，像弹弓从拉开到弹出",
+        "absence": "如果前挥时感觉是手腕在主动翻转而不是背部在释放力量，说明离心→向心的切换失败了，手臂被迫自己做V形scooping来补偿",
+        "science": "根据运动生物力学研究，背阔肌在引拍时做离心收缩（储能），前挥时切换为向心收缩（释放）——这个切换是平滑挥拍弧线的动力来源",
+    },
+    "problem_p05": {
+        "muscle": "前锯肌 + 胸大肌",
+        "action": "向心收缩",
+        "phase": "击球→随挥阶段",
+        "feel": "胸部有'往前推'的感觉",
+        "absence": "如果击球后手臂立刻内收、没有向外延展，说明前锯肌和胸大肌的向心推送不足",
+        "science": "根据运动生物力学研究，向前挥拍阶段胸大肌做向心收缩驱动上臂加速，前锯肌推动肩胛骨前伸实现向外延展",
+    },
+    "problem_p11": {
+        "muscle": "腹斜肌",
+        "action": "离心制动",
+        "phase": "击球瞬间",
+        "feel": "腹部侧面有'刹车感'",
+        "absence": "如果转体停不住、整个人跟着转过去，说明腹斜肌的离心制动没有启动",
+        "science": "根据运动生物力学研究，击球阶段腹斜肌需要从向心（驱动旋转）切换到离心（制动旋转），这个切换提供精确的旋转终点控制",
+    },
+    "upper_body_only_turn": {
+        "muscle": "臀肌 + 髋关节",
+        "action": "离心收缩",
+        "phase": "引拍阶段",
+        "feel": "臀部和大腿后侧有拉伸感",
+        "absence": "如果引拍时只感觉腰在扭但臀部没感觉，说明髋关节没有参与转体，核心蓄力就不存在",
+        "science": "根据运动生物力学研究，引拍阶段臀肌和髋关节做离心收缩来启动整体旋转和蓄力，是动力链的第一个重要环节",
+    },
+    "problem_p04": {
+        "muscle": "腹斜肌（核心中转）",
+        "action": "向心收缩",
+        "phase": "前挥阶段",
+        "feel": "肚脐左侧有拧转感",
+        "absence": "如果蹬地后力量传不到上半身，说明腹斜肌这个'中转站'没有工作",
+        "science": "根据运动生物力学研究，前挥阶段腹斜肌做向心+离心收缩实现躯干旋转，是腿→胸能量传递的关键中转",
+    },
+    "problem_p10": {
+        "muscle": "背阔肌",
+        "action": "离心收缩（维持张力）",
+        "phase": "引拍→前挥全程",
+        "feel": "背部两侧持续的绷紧感，像拉开的弹弓",
+        "absence": "如果前挥过程中背部突然松掉，手臂就失去了'根'，变成独立运动",
+        "science": "根据运动生物力学研究，背阔肌在整个引拍-前挥过程中维持张力，是手臂连接身体旋转系统的关键'胶水'肌肉",
+    },
+}
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  Step 6: 生成诊断叙述
 # ══════════════════════════════════════════════════════════════════════
 
@@ -1151,7 +1223,7 @@ def _generate_narrative(
 
     parts.append(para1)
 
-    # ── Paragraph 2: Why it happens (causal chain) ──
+    # ── Paragraph 2: Why it happens (causal chain + muscle insight) ──
     if causal_chain:
         root_name = _get_node_name_zh(root_cause_id) if root_cause_id else "未知"
         chain_desc = []
@@ -1171,6 +1243,32 @@ def _generate_narrative(
     else:
         para2 = ""
 
+    # ── Muscle insight: add to root cause + top 1 symptom (max 2) ──
+    if para2 and problem_concepts:
+        muscle_parts: List[str] = []
+        # Collect concept IDs to add muscle cues for: root cause + top symptom
+        muscle_cue_targets: List[str] = []
+        if root_cause_id and root_cause_id in _CONCEPT_TO_MUSCLE:
+            muscle_cue_targets.append(root_cause_id)
+        for m in problem_concepts[:2]:
+            cid = m["mapped_concept"]
+            if cid not in muscle_cue_targets and cid in _CONCEPT_TO_MUSCLE:
+                muscle_cue_targets.append(cid)
+                if len(muscle_cue_targets) >= 2:
+                    break
+
+        for cid in muscle_cue_targets:
+            mdata = _CONCEPT_TO_MUSCLE[cid]
+            cue = (
+                f"{mdata['science']}。"
+                f"你{mdata['phase']}应该感觉到{mdata['feel']}"
+                f"——{mdata['absence']}。"
+            )
+            muscle_parts.append(cue)
+
+        if muscle_parts:
+            para2 += "\n\n" + "\n\n".join(muscle_parts)
+
     if user_history:
         para2 += f"\n\n⚠ 训练历史提醒：{user_history}"
 
@@ -1184,6 +1282,8 @@ def _generate_narrative(
             para3 += f"做法：{fix['method']}"
         if fix.get("why"):
             para3 += f"原理：{fix['why']}"
+        if fix.get("muscle_cue"):
+            para3 += f"\n肌肉感知检验：{fix['muscle_cue']}"
     else:
         para3 = "当前未找到针对性的训练建议，建议继续录制视频观察。"
 
