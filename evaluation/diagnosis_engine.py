@@ -433,54 +433,241 @@ def _extract_observations_text(vlm_result: Dict) -> List[Dict[str, Any]]:
     return observations
 
 
+# ══════════════════════════════════════════════════════════════════════
+#  Q 编号直接映射表（v4 精确映射）
+# ══════════════════════════════════════════════════════════════════════
+
+Q_DIRECT_MAPPING: Dict[str, Dict[str, Any]] = {
+    "Q1": {  # 手臂身体同步
+        "positive_signals": ["一起动", "同步", "跟着", "一起走", "连着", "follow"],
+        "negative_signals": ["自己先", "先动", "独立", "手臂先", "先开始", "脱节", "不同步", "先于"],
+        "positive_concept": "arm_body_connected",
+        "negative_concept": "problem_p03",
+        "severity": 0.9,
+    },
+    "Q3": {  # 胸臂间隙变化
+        "positive_signals": ["没有变化", "一直贴着", "保持", "紧贴"],
+        "negative_signals": ["分开", "变大", "脱离", "离开", "间隙增大"],
+        "positive_concept": "arm_body_connected",
+        "negative_concept": "problem_p03",
+        "severity": 0.8,
+    },
+    "Q4": {  # 准备阶段肩膀水平
+        "positive_signals": ["同一水平", "平的", "水平", "一样高"],
+        "negative_signals": ["右肩低", "右肩比左肩低", "不平", "右边低"],
+        "positive_concept": "good_shoulder_level",
+        "negative_concept": "problem_p07",
+        "severity": 0.7,
+    },
+    "Q6": {  # 躯干后仰
+        "positive_signals": ["直立", "保持直立", "没有后仰"],
+        "negative_signals": ["后仰", "往后", "后倾", "后倒"],
+        "positive_concept": "good_posture",
+        "negative_concept": "trunk_leaning",
+        "severity": 0.5,
+    },
+    "Q7": {  # 击球时身体朝向
+        "positive_signals": ["侧身", "45度", "保持侧身"],
+        "negative_signals": ["正面", "完全正面", "朝网", "正对球网"],
+        "positive_concept": "good_rotation",
+        "negative_concept": "problem_p11",
+        "severity": 0.7,
+    },
+    "Q8": {  # 手下降程度
+        "positive_signals": ["没有", "轻微", "缓慢"],
+        "negative_signals": ["急剧", "很多", "大幅", "突然下坠", "明显下降"],
+        "positive_concept": "smooth_drop",
+        "negative_concept": "problem_p01",
+        "severity": 0.7,
+    },
+    "Q9": {  # 轨迹形状
+        "positive_signals": ["平缓", "弧线", "(a)", "向上弧线"],
+        "negative_signals": ["V形", "V字", "(b)", "急剧下坠再上升", "V-shape"],
+        "positive_concept": "smooth_arc",
+        "negative_concept": "problem_p02",
+        "severity": 0.8,
+    },
+    "Q11": {  # 击球后手臂方向
+        "positive_signals": ["向前", "延伸", "向前延伸"],
+        "negative_signals": ["内侧", "向内", "收", "向身体", "立刻向"],
+        "positive_concept": "swing_out",
+        "negative_concept": "problem_p05",
+        "severity": 0.6,
+    },
+    "Q12": {  # 左手准备位置
+        "positive_signals": ["伸向前方", "指向", "在球拍上"],
+        "negative_signals": ["垂在身侧", "放下", "垂着"],
+        "positive_concept": "non_hitting_hand_pointing",
+        "negative_concept": "problem_p15",
+        "severity": 0.5,
+    },
+    "Q13": {  # 左手击球时动作
+        "positive_signals": ["收回", "胸口", "收到胸", "刹车"],
+        "negative_signals": ["垂着", "没动", "甩在身后", "一直垂"],
+        "positive_concept": "non_hitting_hand_braking",
+        "negative_concept": "problem_p15",
+        "severity": 0.6,
+    },
+    "Q14": {  # 膝盖弯曲
+        "positive_signals": ["明显弯曲", "弯曲蓄力", "弯了很多"],
+        "negative_signals": ["几乎直立", "直的", "没弯", "很少弯"],
+        "positive_concept": "good_knee_bend",
+        "negative_concept": "straight_legs",
+        "severity": 0.5,
+    },
+    "Q16": {  # 后脚状态
+        "positive_signals": ["脚尖", "拧转", "pivot"],
+        "negative_signals": ["平踩", "不动", "离地", "跳"],
+        "positive_concept": "a6_pivot",
+        "negative_concept": "problem_p09",
+        "severity": 0.4,
+    },
+    "Q17": {  # 最先动的部位
+        "positive_signals": ["下半身", "腿", "髋", "躯干", "肩膀"],
+        "negative_signals": ["手臂", "手", "持拍手"],
+        "positive_concept": "good_sequence",
+        "negative_concept": "problem_p03",
+        "severity": 0.8,
+    },
+    "Q19": {  # 躯干减速
+        "positive_signals": ["有", "减速", "停顿", "击球之前"],
+        "negative_signals": ["没有", "一直在转", "没有减速"],
+        "positive_concept": "trunk_deceleration",
+        "negative_concept": "problem_p11",
+        "severity": 0.6,
+    },
+}
+
+
+def _map_via_q_direct(vlm_result: Dict) -> List[Dict[str, Any]]:
+    """Use Q-number direct mapping for precise concept matching.
+
+    This is more accurate than keyword search because we know exactly
+    what each Q is asking about.
+    """
+    matched = []
+    raw_answers = vlm_result.get("raw_answers", {})
+    if not raw_answers:
+        return matched
+
+    for q_num, mapping in Q_DIRECT_MAPPING.items():
+        answer = raw_answers.get(q_num, "")
+        if not answer or answer == "看不清":
+            continue
+
+        answer_lower = answer.lower()
+
+        # Check negative signals (problem detected)
+        is_negative = any(sig in answer_lower for sig in mapping["negative_signals"])
+        is_positive = any(sig in answer_lower for sig in mapping["positive_signals"])
+
+        if is_negative and not is_positive:
+            matched.append({
+                "observation": f"{q_num}: {answer[:100]}",
+                "keyword_matched": q_num,
+                "mapped_concept": mapping["negative_concept"],
+                "frame": None,
+                "field": q_num,
+                "severity": mapping["severity"],
+                "label": f"{q_num}检测到问题",
+                "source": "q_direct",
+            })
+        elif is_positive and not is_negative:
+            matched.append({
+                "observation": f"{q_num}: {answer[:100]}",
+                "keyword_matched": q_num,
+                "mapped_concept": mapping["positive_concept"],
+                "frame": None,
+                "field": q_num,
+                "severity": 0.0,
+                "label": f"{q_num}正常",
+                "source": "q_direct",
+            })
+
+    return matched
+
+
+def _cross_validate_q_answers(
+    q_matched: List[Dict], raw_answers: Dict[str, str],
+) -> List[Dict[str, Any]]:
+    """Cross-validate Q answers to detect contradictions.
+
+    Example: Q1 says arm syncs with body, but Q8 says wrist drops sharply
+    → contradiction → lower Q1 confidence.
+    """
+    contradictions = []
+
+    # Q1(同步) vs Q8(手下降) 矛盾检测
+    q1 = raw_answers.get("Q1", "")
+    q8 = raw_answers.get("Q8", "")
+    if q1 and q8:
+        q1_positive = any(s in q1 for s in ["一起", "同步", "跟着"])
+        q8_negative = any(s in q8 for s in ["急剧", "突然", "大幅"])
+        if q1_positive and q8_negative:
+            contradictions.append({
+                "q_pair": "Q1 vs Q8",
+                "detail": f"Q1说手臂同步({q1[:30]})，但Q8说手腕急剧下降({q8[:30]})",
+                "action": "降低Q1置信度",
+            })
+
+    # Q5(转体深度) vs Q7(击球时朝向) 一致性
+    q5 = raw_answers.get("Q5", "")
+    q7 = raw_answers.get("Q7", "")
+    if q5 and q7:
+        q5_little = any(s in q5 for s in ["一点", "很少", "不够"])
+        q7_full = any(s in q7 for s in ["正面", "完全"])
+        if q5_little and q7_full:
+            contradictions.append({
+                "q_pair": "Q5 vs Q7",
+                "detail": f"准备时转体少({q5[:30]})但击球时已正面朝网({q7[:30]})——转体不够但过度转了",
+            })
+
+    return contradictions
+
+
 def _map_observations_to_concepts(
     observations: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     """Map VLM observations to knowledge graph concepts using keyword matching.
 
+    This is the fallback when Q-direct mapping is not available.
     Returns list of matched concepts with evidence.
     """
     matched: List[Dict[str, Any]] = []
-    seen_concepts: Dict[str, Dict] = {}  # concept_id -> best match
+    seen_concepts: Dict[str, Dict] = {}
 
     for obs in observations:
         text = obs["text"]
         frame = obs["frame"]
 
         for rule in OBSERVATION_TO_CONCEPT:
-            # Check if any keyword matches
             for kw in rule["keywords"]:
                 if kw.lower() in text.lower():
                     concept_id = rule["concept"]
-
-                    # Check frame_range constraint if specified
                     if rule["frame_range"] is not None and frame is not None:
                         if frame not in rule["frame_range"]:
                             continue
 
                     match_info = {
-                        "observation": text[:200],  # Truncate long texts
+                        "observation": text[:200],
                         "keyword_matched": kw,
                         "mapped_concept": concept_id,
                         "frame": frame,
                         "field": obs["field"],
                         "severity": rule["severity"],
                         "label": rule["label"],
+                        "source": "keyword",
                     }
 
-                    # Keep the best match per concept (highest severity, or first)
                     if concept_id not in seen_concepts:
                         seen_concepts[concept_id] = match_info
                         matched.append(match_info)
                     elif rule["severity"] > seen_concepts[concept_id]["severity"]:
-                        # Replace with higher severity match
                         idx = next(i for i, m in enumerate(matched) if m["mapped_concept"] == concept_id)
                         matched[idx] = match_info
                         seen_concepts[concept_id] = match_info
+                    break
 
-                    break  # Only need one keyword to match per rule
-
-    # Sort by severity descending
     matched.sort(key=lambda m: m["severity"], reverse=True)
     return matched
 
@@ -516,22 +703,36 @@ def _get_node_name_zh(concept_id: str) -> str:
 
 
 def _trace_root_causes(concept_ids: List[str]) -> Tuple[Optional[str], List[Dict[str, str]]]:
-    """Trace from symptom concepts to root causes via causes edges.
+    """Trace from symptom concepts to root causes.
+
+    Strategy:
+    1. First try diagnostic chains (most accurate, human-verified)
+    2. Then multi-path graph traversal with voting
+    3. Root cause = the one that most symptoms trace back to
 
     Returns (root_cause_id, causal_chain_list).
     """
+    # Step 1: Try diagnostic chains first
+    chains = _load_chains()
+    chain_root = _try_diagnostic_chains(concept_ids, chains)
+    if chain_root:
+        return chain_root
+
+    # Step 2: Multi-path graph traversal with root cause voting
     reverse_causes = _build_causes_graph()
-    all_chains: List[List[str]] = []
+    root_vote: Dict[str, int] = {}  # root_id -> vote count
+    root_best_chain: Dict[str, List[str]] = {}  # root_id -> best chain to it
 
     for concept_id in concept_ids:
-        # Walk backwards through causes edges
         visited = set()
 
         def _walk(node: str, path: List[str]) -> None:
             parents = reverse_causes.get(node, [])
             if not parents:
-                # Reached a root — record
-                all_chains.append(list(path))
+                root = path[-1]
+                root_vote[root] = root_vote.get(root, 0) + 1
+                if root not in root_best_chain or len(path) > len(root_best_chain[root]):
+                    root_best_chain[root] = list(path)
                 return
             for parent in parents:
                 if parent not in visited and parent != "c_unnamed":
@@ -541,17 +742,15 @@ def _trace_root_causes(concept_ids: List[str]) -> Tuple[Optional[str], List[Dict
         visited.add(concept_id)
         _walk(concept_id, [concept_id])
 
-    if not all_chains:
-        # No causes found in graph; the concepts themselves are the "root"
+    if not root_vote:
         if concept_ids:
             return concept_ids[0], []
         return None, []
 
-    # Find the longest chain (deepest root cause)
-    best_chain = max(all_chains, key=len)
-    root_cause_id = best_chain[-1]  # Last element is the deepest upstream cause
+    # Pick root cause with most votes (most symptoms trace to it)
+    root_cause_id = max(root_vote, key=lambda k: root_vote[k])
+    best_chain = root_best_chain.get(root_cause_id, [])
 
-    # Build causal chain as list of edges
     causal_chain: List[Dict[str, str]] = []
     for i in range(len(best_chain) - 1):
         causal_chain.append({
@@ -563,6 +762,50 @@ def _trace_root_causes(concept_ids: List[str]) -> Tuple[Optional[str], List[Dict
         })
 
     return root_cause_id, causal_chain
+
+
+def _try_diagnostic_chains(
+    concept_ids: List[str], chains: List[Dict],
+) -> Optional[Tuple[str, List[Dict[str, str]]]]:
+    """Try to match symptoms against the 18 hand-verified diagnostic chains.
+
+    These are the most accurate causal paths. If a match is found,
+    use the chain's root_cause directly instead of graph traversal.
+    """
+    if not chains:
+        return None
+
+    best_match = None
+    best_score = 0
+
+    for chain in chains:
+        symptom_id = chain.get("symptom_concept_id", "")
+        root_causes = chain.get("root_causes", [])
+        if not symptom_id or not root_causes:
+            continue
+
+        # Check if this chain's symptom matches any of our concepts
+        for cid in concept_ids:
+            if cid == symptom_id or symptom_id in cid or cid in symptom_id:
+                score = chain.get("priority", 5)
+                if best_match is None or score < best_score:
+                    best_match = chain
+                    best_score = score
+
+    if best_match:
+        root_id = best_match["root_causes"][0] if best_match["root_causes"] else None
+        if root_id:
+            chain_steps = best_match.get("check_sequence", [])
+            causal_chain = [{
+                "from": root_id,
+                "from_name": _get_node_name_zh(root_id),
+                "to": best_match.get("symptom_concept_id", ""),
+                "to_name": best_match.get("symptom_zh", best_match.get("symptom", "")),
+                "relation": "causes (diagnostic chain)",
+            }]
+            return root_id, causal_chain
+
+    return None
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -716,33 +959,44 @@ def _get_fix(root_cause_id: Optional[str], matched_concepts: List[Dict]) -> Dict
 def _compute_score(
     matched_concepts: List[Dict],
     quant_validation: Dict[str, List[str]],
-    vlm_score: Optional[int],
 ) -> int:
-    """Compute a diagnosis score (0-100, higher = better).
+    """基于问题严重度计算评分（0-100，越高越好）。
 
-    Based on severity of matched issues and quantitative validation.
+    评分规则：
+    - 基础分 70
+    - 每个匹配的问题概念扣 severity * 30
+    - 有量化验证确认的问题双倍扣分（额外再扣一次）
+    - 做得好的方面（severity == 0）每个加 5 分
+    - 最终裁剪到 0-100
     """
-    if not matched_concepts:
-        return vlm_score if vlm_score is not None else 70
+    base = 70
 
-    # Filter to actual problems (severity > 0)
     problems = [m for m in matched_concepts if m["severity"] > 0]
-    if not problems:
-        return vlm_score if vlm_score is not None else 75
+    good_things = [m for m in matched_concepts if m["severity"] == 0]
 
-    # Max severity determines base deduction
-    max_severity = max(m["severity"] for m in problems)
-    total_severity = sum(m["severity"] for m in problems)
+    # 收集被量化确认的概念 ID
+    confirmed_texts = quant_validation.get("confirmed", [])
+    # 简单判断：如果 confirm_text 里包含"证实"或"检测到"，对应概念被量化确认
+    confirmed_concept_ids: set = set()
+    for match in problems:
+        concept_id = match["mapped_concept"]
+        validations = _CONCEPT_TO_METRIC_VALIDATION.get(concept_id, [])
+        for v in validations:
+            for ct in confirmed_texts:
+                if v.get("confirm_text", "").split("{")[0] in ct:
+                    confirmed_concept_ids.add(concept_id)
 
-    # Base score starts at 80, deducted by severity
-    base = 80 - int(max_severity * 30) - int(min(total_severity - max_severity, 2.0) * 10)
+    # 扣分
+    for m in problems:
+        deduction = m["severity"] * 30
+        if m["mapped_concept"] in confirmed_concept_ids:
+            deduction *= 2  # 量化确认的问题双倍扣分
+        base -= deduction
 
-    # Contradictions add back some points (maybe not as bad as thought)
-    contradictions = len(quant_validation.get("contradicted", []))
-    base += contradictions * 5
+    # 加分
+    base += len(good_things) * 5
 
-    # Clamp
-    return max(15, min(85, base))
+    return max(0, min(100, int(base)))
 
 
 def _generate_narrative(
@@ -875,8 +1129,24 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     result = dict(vlm_result)
 
     # ── Step 1: 提取 VLM 观察并映射到概念 ──
+    # 优先使用 Q 编号直接映射（更精确），然后用关键词匹配补充
+    q_matched = _map_via_q_direct(vlm_result)
     observations = _extract_observations_text(vlm_result)
-    matched_concepts = _map_observations_to_concepts(observations)
+    keyword_matched = _map_observations_to_concepts(observations)
+
+    # 合并：Q 直接映射优先，关键词补充未覆盖的概念
+    seen_ids = {m["mapped_concept"] for m in q_matched}
+    matched_concepts = list(q_matched)
+    for m in keyword_matched:
+        if m["mapped_concept"] not in seen_ids:
+            matched_concepts.append(m)
+            seen_ids.add(m["mapped_concept"])
+    matched_concepts.sort(key=lambda m: m["severity"], reverse=True)
+
+    # Q 交叉验证
+    raw_answers = vlm_result.get("raw_answers", {})
+    q_contradictions = _cross_validate_q_answers(q_matched, raw_answers) if raw_answers else []
+    result["q_contradictions"] = q_contradictions
 
     # ── Step 2: 沿知识图谱追溯根因 ──
     problem_concept_ids = [
