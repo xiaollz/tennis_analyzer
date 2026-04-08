@@ -1785,13 +1785,13 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
     text = text.strip()
 
     # Try Q-numbered format first (Q1: through Q35:)
-    q_pattern = re.compile(r"^Q(\d+):\s*(.+?)$", re.MULTILINE)
+    q_pattern = re.compile(r"^Q(\d+[a-z]?):\s*(.+?)$", re.MULTILINE)
     q_matches = list(q_pattern.finditer(text))
     if len(q_matches) >= 10:  # At least 10 Q answers to be valid
         answers = {}
         for m in q_matches:
-            q_num = int(m.group(1))
-            answers[f"Q{q_num}"] = m.group(2).strip()
+            q_key = m.group(1)
+            answers[f"Q{q_key}"] = m.group(2).strip()
 
         # Map Q numbers to semantic categories (v4 compact format)
         frames = {
@@ -1827,6 +1827,33 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
                 "rhythm": answers.get("Q18", ""),
                 "trunk_decel": answers.get("Q19", ""),
                 "finish_balance": answers.get("Q20", ""),
+            },
+            # L4 preparation extensions (Q21-Q26) — new 5-layer prompt
+            "preparation": {
+                "unit_turn_start_vs_ball": answers.get("Q21", ""),
+                "unit_turn_finish_vs_ball": answers.get("Q22", ""),
+                "left_shoulder_leads": answers.get("Q23", ""),
+                "racket_hold_up": answers.get("Q24", ""),
+                "scapular_glide_jersey": answers.get("Q25", ""),
+                "place_then_pull": answers.get("Q26", ""),
+            },
+            # L5 footwork (Q27-Q32) — new 5-layer prompt
+            "footwork": {
+                "split_step_visible": answers.get("Q27", ""),
+                "split_landing_vs_opp_contact": answers.get("Q28", ""),
+                "first_foot_to_move": answers.get("Q29", ""),
+                "right_foot_pivot": answers.get("Q30", ""),
+                "stance_at_contact": answers.get("Q31", ""),
+                "steps_and_recovery": answers.get("Q32", ""),
+            },
+            # Extra observations (Q33-Q38) — wave-2 video-watching insights
+            "extra_observations": {
+                "spine_side_bend_at_contact": answers.get("Q33", ""),
+                "active_feet_during_wait": answers.get("Q34", ""),
+                "split_airborne_orientation": answers.get("Q35", ""),
+                "grip_pivot_point": answers.get("Q36", ""),
+                "intercept_vs_chase": answers.get("Q37", ""),
+                "takeback_speed_match": answers.get("Q38", ""),
             },
         }
         overall = {

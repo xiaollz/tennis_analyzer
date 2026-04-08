@@ -493,6 +493,23 @@ class ReportGenerator:
             lines.append(f"**{root_cause}**")
         lines.append("")
 
+        # ── 根因层级（v4.1 新增；缺失时跳过保持向后兼容）──
+        root_layer = tree.get("layer") or vlm_result.get("root_cause_layer")
+        if root_layer:
+            layer_label = ReportGenerator._format_layer(root_layer)
+            lines.append(f"根因层级：{layer_label}")
+            lines.append("")
+
+        # ── 准备阶段诊断（L4/L5 时单独高亮）──
+        if root_layer in ("L4", "L5", "L4_PREPARATION", "L5_FOOTWORK"):
+            prep_notes = tree.get("preparation_notes") or vlm_result.get("preparation_diagnosis")
+            lines.append("**准备阶段诊断**")
+            if prep_notes:
+                lines.append(prep_notes if isinstance(prep_notes, str) else "；".join(prep_notes))
+            else:
+                lines.append("根因落在准备阶段（unit turn / 步伐 / 站位），击球瞬间的所有问题都是被这一层带出来的。下次训练把注意力放在球过网之前的那 0.5 秒。")
+            lines.append("")
+
         # Core diagnosis paragraph (natural text, no bold)
         if core_diagnosis:
             lines.append(core_diagnosis)
@@ -610,14 +627,62 @@ class ReportGenerator:
             lines.append("<details>")
             lines.append("<summary>VLM 视觉观察原始数据（点击展开）</summary>")
             lines.append("")
-            lines.append("```")
-            for q_num in sorted(raw_answers.keys(), key=lambda k: int(k[1:]) if k[1:].isdigit() else 999):
-                lines.append(f"{q_num}: {raw_answers[q_num]}")
-            lines.append("```")
+
+            # v4.1: try to group by layer if layer mapping is available
+            layer_map = vlm_result.get("question_layers") or vlm_result.get("raw_answer_layers")
+            if isinstance(layer_map, dict) and layer_map:
+                grouped: Dict[str, List[str]] = {}
+                for q_num, ans in raw_answers.items():
+                    layer = layer_map.get(q_num) or "UNGROUPED"
+                    grouped.setdefault(layer, []).append(f"{q_num}: {ans}")
+                # Stable layer ordering
+                layer_order = [
+                    "L1_CONTACT", "L2_RHYTHM_TIMING", "L3_KINETIC_CHAIN",
+                    "L4_PREPARATION", "L5_FOOTWORK", "UNGROUPED",
+                ]
+                ordered_keys = [k for k in layer_order if k in grouped] + \
+                    [k for k in grouped if k not in layer_order]
+                for layer in ordered_keys:
+                    lines.append(f"**{ReportGenerator._format_layer(layer)}**")
+                    lines.append("```")
+                    for entry in sorted(
+                        grouped[layer],
+                        key=lambda s: int(s.split(":")[0][1:]) if s.split(":")[0][1:].isdigit() else 999,
+                    ):
+                        lines.append(entry)
+                    lines.append("```")
+                    lines.append("")
+            else:
+                # Backward-compatible flat list
+                lines.append("```")
+                for q_num in sorted(raw_answers.keys(), key=lambda k: int(k[1:]) if k[1:].isdigit() else 999):
+                    lines.append(f"{q_num}: {raw_answers[q_num]}")
+                lines.append("```")
             lines.append("</details>")
             lines.append("")
 
         return lines
+
+    # ── 层级标签格式化（v4.1）─────────────────────────────────────────
+    @staticmethod
+    def _format_layer(layer: str) -> str:
+        """Map layer code (L1..L5 or L*_NAME) to a human-readable Chinese label."""
+        if not layer:
+            return ""
+        labels = {
+            "L1": "L1 接触瞬间",
+            "L1_CONTACT": "L1 接触瞬间",
+            "L2": "L2 节奏与时机",
+            "L2_RHYTHM_TIMING": "L2 节奏与时机",
+            "L3": "L3 动力链",
+            "L3_KINETIC_CHAIN": "L3 动力链",
+            "L4": "L4 准备阶段",
+            "L4_PREPARATION": "L4 准备阶段",
+            "L5": "L5 步伐与站位",
+            "L5_FOOTWORK": "L5 步伐与站位",
+            "UNGROUPED": "未分组观察",
+        }
+        return labels.get(layer, layer)
 
     # ── 诊断推理过程（保留为内部方法，报告中不再显示）──────────────────
 
