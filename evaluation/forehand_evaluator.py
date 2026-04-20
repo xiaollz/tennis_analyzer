@@ -727,6 +727,33 @@ class ForehandEvaluator:
             result["swing_out_distance"] = None
             result["swing_shape_label"] = None
 
+        # ── min_knee_angle: L5 footwork signal for diagnosis engine ──
+        # Sampled across the full swing window so engine sees the deepest bend
+        # actually achieved during preparation/loading.
+        try:
+            knee_vals: List[float] = []
+            for idx in range(prep_pos, min(ft_pos + 1, len(kp_series))):
+                ka = min_knee_angle(kp_series[idx], conf_series[idx])
+                if ka is not None:
+                    knee_vals.append(float(ka))
+            result["min_knee_angle"] = float(min(knee_vals)) if knee_vals else None
+        except Exception:
+            result["min_knee_angle"] = None
+
+        # ── shoulder_rotation (peak rotation in degrees): L4 prep signal ──
+        # Same metric the ShoulderRotationKPI uses, exposed here so the
+        # diagnosis engine receives it (supp_metrics is the only metrics
+        # dict main.py forwards to diagnose()).
+        try:
+            shoulder_angles_full: List[Optional[float]] = [
+                shoulder_line_angle(kp_series[i], conf_series[i])
+                for i in range(prep_pos, min(impact_pos + 1, len(kp_series)))
+            ]
+            rot_series = self._relative_rotation_series(shoulder_angles_full)
+            result["shoulder_rotation"] = float(max(rot_series)) if rot_series else None
+        except Exception:
+            result["shoulder_rotation"] = None
+
         return result
 
     def _aggregate_phases(self, kpi_results: List[KPIResult]) -> Dict[str, PhaseScore]:

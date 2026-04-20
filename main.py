@@ -430,13 +430,16 @@ class TennisAnalysisPipeline:
                         "forward_extension": supp_metrics.get("forward_extension") if supp_metrics else None,
                         "shoulder_rotation": supp_metrics.get("shoulder_rotation") if supp_metrics else None,
                         "swing_arc_ratio": supp_metrics.get("swing_arc_ratio") if supp_metrics else None,
+                        "min_knee_angle": supp_metrics.get("min_knee_angle") if supp_metrics else None,
                     }
                     vlm_result = diagnose(vlm_result, diag_metrics)
                     contradictions = vlm_result.get("contradictions", [])
                     if contradictions:
                         print(f"[诊断] 发现 {len(contradictions)} 处VLM与量化数据矛盾")
                 except Exception as exc:
-                    pass  # 诊断引擎失败不影响主流程
+                    import traceback
+                    print(f"[诊断引擎错误] {type(exc).__name__}: {exc}")
+                    traceback.print_exc()
 
                 issue_count = len(vlm_result.get('issues', []))
                 rounds = vlm_result.get('diagnostic_session', {}).get('rounds', [])

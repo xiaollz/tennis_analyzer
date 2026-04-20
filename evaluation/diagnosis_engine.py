@@ -431,6 +431,11 @@ _CONCEPT_TO_METRIC_VALIDATION: Dict[str, List[Dict[str, Any]]] = {
          "confirm_text": "肩部转开只有{val:.0f}°（正常应>60°），转体确实严重不足",
          "contradict_text": "肩部转开{val:.0f}°，转体并非不足"},
     ],
+    "straight_legs": [  # 下肢未承载（与 _KPI_INJECTION_RULES 阈值对齐）
+        {"metric": "min_knee_angle", "check": lambda v: v is not None and v > 150,
+         "confirm_text": "最小膝角{val:.0f}°（应≤140°），下肢承载偏弱",
+         "contradict_text": "最小膝角{val:.0f}°，下肢承载充分"},
+    ],
     "problem_p11": [  # 过度转体
         {"metric": "shoulder_rotation", "check": lambda v: v is not None and v > 90,
          "confirm_text": "肩部转开{val:.0f}°，确实过度",
@@ -469,6 +474,18 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "method": "双手抱篮球在胸前做 Unit Turn。因为双手被球锁住，身体被迫整体转（包括髋部）。转到位后暂停 1 秒，感受右腿臀部后侧的拉伸感。每天 20 次。",
         "why": "只转上半身不转髋 = 没有核心蓄力 = 后续所有发力都得靠手臂代偿。抱球强制髋部跟着转，重建整体转动的肌肉记忆。",
         "muscle_cue": "转到位时你应该感觉到：臀部和大腿后侧有明显拉伸感（臀肌+髋关节离心收缩在蓄力）。如果只感觉到腰在扭但臀部没感觉，说明髋没有真正参与转体。",
+    },
+    "unit_turn": {
+        "drill": "对镜 Unit Turn 深度检验",
+        "method": "对着镜子做 Unit Turn，到位后暂停。低头看下巴是否贴到右肩——贴到=够了，看到胸口=远没转够。配合：右脚先后撤半步落稳重心→再整体转→右肩转到下巴下。每组 10 次。",
+        "why": "肩部转开 < 60° 等于核心没拉开，腹斜肌没有弹性势能，蹬地后没力量可释放，下游必然出现手臂代偿。先转开度，再谈鞭打。",
+        "muscle_cue": "转开到位时你应该感觉到：左侧腹斜肌被拉伸（像拉满的弓）+背阔肌张力上升+右大腿后侧绷紧。如果只感觉肩膀转但腹部没拉伸感，说明只转了上半身没转髋。",
+    },
+    "straight_legs": {
+        "drill": "Triple Bend 蹲位准备",
+        "method": "Unit Turn 时刻意把膝盖压过脚尖（≤140°），重心明显沉下去半个身位。大腿前侧应有承重感，臀部下沉。前挥时从这个低位蹬地起来。",
+        "why": "腿直 = 没有蓄力的弹性势能 = 蹬地输出 0 = 只能用手臂。下肢承载是动力链最底层的发动机，腿不弯，上面所有的转体、Press、鞭打都是空架子。",
+        "muscle_cue": "做对时你应该感觉到：股四头肌（大腿前）+臀大肌共同承重，膝关节有'压住弹簧'的感觉。如果膝盖几乎是直的、感觉不到大腿承重，说明腿没参与发力。",
     },
     "problem_p02": {
         "drill": "平推穿透练习",
@@ -1292,8 +1309,17 @@ def _build_causes_graph() -> Dict[str, List[str]]:
     return reverse_causes
 
 
+_NAME_OVERRIDE_ZH: Dict[str, str] = {
+    "straight_legs": "下肢未承载（腿没弯）",
+    "upper_body_only_turn": "只转上半身（髋未参与）",
+    "unit_turn": "Unit Turn 转开不足",
+}
+
+
 def _get_node_name_zh(concept_id: str) -> str:
-    """Get Chinese name of a concept from graph."""
+    """Get Chinese name of a concept from graph or override map."""
+    if concept_id in _NAME_OVERRIDE_ZH:
+        return _NAME_OVERRIDE_ZH[concept_id]
     graph_data = _load_graph_data()
     for node in graph_data.get("nodes", []):
         if node.get("id") == concept_id:
@@ -1365,8 +1391,10 @@ def _trace_root_causes(
                 })
         return root_id, causal_chain
 
-    # Note: diagnostic chains have data quality issues (p09 appears as root cause
-    # for almost everything). Skipping chain lookup, using direct observation instead.
+    # Diagnostic chains skipped here intentionally: when KPI injection seeds
+    # a clear L4/L5 root, the top-down branch above wins. Chains may still
+    # be useful for symptom-driven lookup once their `root_causes` ordering
+    # is tightened — see _try_diagnostic_chains for the (currently unused) path.
 
     # Step 2: Simple strategy — highest severity directly observed concept = root cause
     # Graph traversal tends to go too deep to abstract concepts like "重心"
@@ -1582,6 +1610,102 @@ def _validate_with_metrics(
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  KPI → 概念注入（让量化信号参与根因竞争）
+# ══════════════════════════════════════════════════════════════════════
+#
+# 设计动机：v4.2 的 top-down "earliest layer wins" 推理只看
+# matched_concepts，而 matched_concepts 只来自 VLM 观察映射。
+# KPI 信号原先只用于"交叉验证文本"，从未进入候选池，导致：
+# VLM 漏掉 L4/L5 问题 → engine 报 L3 为根因（违反 earliest-layer 原则）。
+# 这里把 KPI 提供的硬证据注入 matched_concepts，让上游层有竞争资格。
+
+_KPI_INJECTION_RULES: List[Dict[str, Any]] = [
+    # —— L5 Footwork ——
+    {
+        "metric": "min_knee_angle",
+        "concept": "straight_legs",
+        "thresholds": [(160, 1.0, "下肢承载严重不足"),
+                       (150, 0.7, "下肢承载偏弱")],
+        "above_threshold": True,  # 数值大于阈值=问题（膝角越大=越直）
+        "observation_template": "量化检测：最小膝角 {val:.0f}°，{label}（应 ≤140°）",
+        "frame": "preparation",
+    },
+    # —— L4 Preparation ——
+    {
+        "metric": "shoulder_rotation",
+        "concept": "unit_turn",
+        "thresholds": [(30, 1.0, "肩部转开严重不足"),
+                       (50, 0.7, "肩部转开偏弱")],
+        "above_threshold": False,  # 数值小于阈值=问题
+        "observation_template": "量化检测：肩部转开 {val:.0f}°，{label}（应 ≥60°）",
+        "frame": "preparation",
+    },
+]
+
+
+def _inject_kpi_problems(
+    matched_concepts: List[Dict[str, Any]],
+    metrics: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Inject KPI-evidenced concepts into matched_concepts.
+
+    KPI signals provide independent evidence of preparation/footwork problems
+    that VLM may miss. Without injection, _find_earliest_layer_problem would
+    only see VLM-derived concepts and could not honor the L5→L1 priority.
+
+    Concepts already in matched_concepts (from VLM) are upgraded if KPI
+    confirms higher severity, but never downgraded.
+    """
+    if not metrics:
+        return matched_concepts
+
+    existing: Dict[str, Dict[str, Any]] = {
+        m["mapped_concept"]: m for m in matched_concepts
+    }
+
+    for rule in _KPI_INJECTION_RULES:
+        val = metrics.get(rule["metric"])
+        if val is None:
+            continue
+
+        # Find the most severe threshold this value crosses
+        triggered: Optional[Tuple[float, str]] = None
+        for threshold, severity, label in rule["thresholds"]:
+            crossed = (val > threshold) if rule["above_threshold"] else (val < threshold)
+            if crossed:
+                triggered = (severity, label)
+                break  # thresholds ordered most-severe first
+
+        if triggered is None:
+            continue
+
+        severity, label = triggered
+        observation = rule["observation_template"].format(val=val, label=label)
+        concept_id = rule["concept"]
+
+        if concept_id in existing:
+            # Upgrade severity if KPI is more confident than VLM
+            current = existing[concept_id]
+            if severity > current.get("severity", 0):
+                current["severity"] = severity
+                current["observation"] = observation + " | " + current.get("observation", "")
+                current["source"] = "kpi+vlm"
+        else:
+            matched_concepts.append({
+                "observation": observation,
+                "mapped_concept": concept_id,
+                "label": _get_node_name_zh(concept_id),
+                "severity": severity,
+                "frame": rule["frame"],
+                "source": "kpi",
+            })
+            existing[concept_id] = matched_concepts[-1]
+
+    matched_concepts.sort(key=lambda m: m.get("severity", 0), reverse=True)
+    return matched_concepts
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  Step 4: 用户历史对比
 # ══════════════════════════════════════════════════════════════════════
 
@@ -1601,6 +1725,7 @@ _CONCEPT_TO_RECURRING_KEYWORDS: Dict[str, List[str]] = {
     "problem_p15": ["左手"],
     "problem_p13": ["手主动引拍"],
     "unit_turn": ["转体不足", "Unit Turn"],
+    "straight_legs": ["腿没弯", "下肢承载", "triple bend"],
     # Preparation phase recurring keywords
     "prep01_late_split_step": ["分腿晚", "split晚"],
     "prep02_no_split_step": ["没有分腿", "split缺失"],
@@ -1729,6 +1854,22 @@ _CONCEPT_TO_MUSCLE: Dict[str, Dict[str, str]] = {
         "feel": "臀部和大腿后侧有拉伸感",
         "absence": "如果引拍时只感觉腰在扭但臀部没感觉，说明髋关节没有参与转体，核心蓄力就不存在",
         "science": "根据运动生物力学研究，引拍阶段臀肌和髋关节做离心收缩来启动整体旋转和蓄力，是动力链的第一个重要环节",
+    },
+    "unit_turn": {
+        "muscle": "腹外斜肌 + 背阔肌 + 髋外旋肌群",
+        "action": "离心收缩储能",
+        "phase": "Unit Turn",
+        "feel": "左侧腹斜肌被拉开、背部张力上升、右大腿后侧绷紧",
+        "absence": "如果只感觉肩膀在转但腹部没有拉伸感，说明转开幅度不够，核心弹性势能没建立",
+        "science": "muscle_activation_guide preparation: 腹外斜肌+背阔肌通过离心收缩储能形成的肩髋分离角，是后续蹬地转髋能爆发出力量的物理前提",
+    },
+    "straight_legs": {
+        "muscle": "股四头肌 + 臀大肌",
+        "action": "离心收缩承重",
+        "phase": "Unit Turn 后到蹬地前",
+        "feel": "大腿前侧承重感、膝盖像压住弹簧",
+        "absence": "如果膝盖几乎是直的、大腿前侧没承重感，说明腿没参与蓄力，蹬地时无弹性可释放",
+        "science": "运动生物力学：下肢承载（triple bend）是动力链最底层的弹性势能来源，腿直则力量传递链断在源头",
     },
     "problem_p04": {
         "muscle": "腹斜肌（核心中转）",
@@ -2068,6 +2209,11 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     raw_answers = vlm_result.get("raw_answers", {})
     q_contradictions = _cross_validate_q_answers(q_matched, raw_answers) if raw_answers else []
     result["q_contradictions"] = q_contradictions
+
+    # ── Step 1.5: KPI 信号注入到 matched_concepts ──
+    # 让 L4/L5 量化证据进入 earliest-layer 候选池，避免 VLM 漏报时
+    # 系统把下游症状（L3 小臂代偿）误判为根因。
+    matched_concepts = _inject_kpi_problems(matched_concepts, metrics)
 
     # ── Step 2: 沿知识图谱追溯根因 ──
     problem_concept_ids = [
