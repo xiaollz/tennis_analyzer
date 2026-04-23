@@ -1706,6 +1706,130 @@ def _inject_kpi_problems(
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  Step 1.6: VLM 观察 ↔ 量化数据 仲裁
+# ══════════════════════════════════════════════════════════════════════
+#
+# 设计动机：
+#   VLM 和量化算法是两个独立的"检测器"，类似医院的 CT 影像 + 血液检查：
+#     - VLM = 视觉观察（主观，易受拍摄角度/光线影响）
+#     - 量化算法 = 数值检测（客观，基于坐标/时序）
+#   知识库推理引擎才是"医生"，需要综合两类证据下诊断。
+#
+#   历史 bug（2026-04-22 用户发现）：
+#     VLM 视觉上看到 "V 形轨迹" → 映射到 problem_p02 (Scooping)
+#     量化算法检测到 scooping_depth < 阈值 / scooping_detected=False
+#     旧系统仍把 problem_p02 列入问题 + 并列两个矛盾结论
+#     实际上这是"现代正手的被动 lag drop"（拍头因惯性下落，非错误）
+#
+#   仲裁层职责：当量化数据给出明确反驳性证据时，撤销 VLM 的 False Positive。
+#
+# 规则设计原则：
+#   1. 仅对 VLM 来源（q_direct / keyword）的概念生效，不对 KPI 注入的生效
+#   2. 必须有明确的"反驳性数值阈值"（不是模糊判断）
+#   3. resolution_text 用医生视角写清楚"为什么判定已解决"
+
+_ARBITRATION_RULES: List[Dict[str, Any]] = [
+    # —— Scooping / V 形轨迹 ——
+    # 用户 2026-04-22 场景：VLM 看到 V 形，算法确认无 scooping
+    # 判定为现代正手被动 lag drop，非业余主动捞球
+    {
+        "concept": "problem_p02",
+        "vlm_only": True,  # 仅对纯 VLM 来源的概念生效，KPI 加持过的保留
+        "arbitrate": lambda m: (
+            # 算法给出明确的"非 scooping"证据：
+            # scooping_detected=False 且 scooping_depth 未超阈值
+            (m.get("scooping_detected") is False)
+            and (m.get("scooping_depth") is None or m.get("scooping_depth") <= 0.3)
+        ),
+        "resolution_text": (
+            "VLM 视觉观察到手腕 V 形轨迹，但算法量化检测未发现显著 scooping"
+            "（scooping_depth 未超阈值）。判定为**现代正手的被动 lag drop**——"
+            "拍头因重力和惯性自然下落，被身体旋转带回击球位，并非业余的"
+            "小臂主动下压+上翻。所有现代职业选手（费德勒、纳达尔、辛纳）侧面"
+            "轨迹也呈 V 形，属于正手标志性特征，不是问题。"
+        ),
+        "short_note": "V 形 = 现代正手被动 lag drop（非 scooping），已解决",
+    },
+    # —— 可扩展：其他 VLM-算法冲突规则 ——
+    # 模板：
+    # {
+    #     "concept": "problem_pXX",
+    #     "vlm_only": True,
+    #     "arbitrate": lambda m: <明确反驳条件>,
+    #     "resolution_text": "<医生视角解释>",
+    #     "short_note": "<一句话结论>",
+    # },
+]
+
+
+def _arbitrate_vlm_vs_metrics(
+    matched_concepts: List[Dict[str, Any]],
+    metrics: Dict[str, Any],
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """VLM 观察 ↔ 量化数据 仲裁层。
+
+    当量化算法给出对 VLM 观察的明确反驳时，将 VLM 映射的问题从候选池移除，
+    避免知识库推理引擎把"被动自然现象"误判为问题。
+
+    Parameters
+    ----------
+    matched_concepts : list
+        Step 1 + 1.5 合并后的概念列表（含 VLM 来源 + KPI 来源）
+    metrics : dict
+        量化数据
+
+    Returns
+    -------
+    (cleaned_concepts, arbitration_log)
+        cleaned_concepts : 经仲裁后保留的概念
+        arbitration_log : 被撤销的 VLM 观察 + 医生视角的解释
+    """
+    if not matched_concepts or not metrics:
+        return matched_concepts, []
+
+    cleaned: List[Dict[str, Any]] = []
+    arbitration_log: List[Dict[str, Any]] = []
+
+    for m in matched_concepts:
+        concept_id = m.get("mapped_concept")
+        source = m.get("source", "unknown")
+        rule = next(
+            (r for r in _ARBITRATION_RULES if r["concept"] == concept_id),
+            None,
+        )
+
+        # 无规则 → 保留
+        if rule is None:
+            cleaned.append(m)
+            continue
+
+        # 仅 VLM 来源规则，但当前 match 是 KPI 加持的 → 保留（KPI 独立证据不撤销）
+        if rule.get("vlm_only") and source not in {"q_direct", "keyword"}:
+            cleaned.append(m)
+            continue
+
+        # 执行仲裁判定
+        try:
+            arbitration_triggered = rule["arbitrate"](metrics)
+        except Exception:
+            arbitration_triggered = False
+
+        if arbitration_triggered:
+            # 撤销该 VLM 观察，记入仲裁日志
+            arbitration_log.append({
+                "concept": concept_id,
+                "label": m.get("label", _get_node_name_zh(concept_id)),
+                "vlm_observation": m.get("observation", ""),
+                "resolution": rule["resolution_text"],
+                "short_note": rule["short_note"],
+            })
+        else:
+            cleaned.append(m)
+
+    return cleaned, arbitration_log
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  Step 4: 用户历史对比
 # ══════════════════════════════════════════════════════════════════════
 
@@ -2041,6 +2165,7 @@ def _generate_narrative(
     user_history: Optional[str],
     fix: Dict[str, str],
     metrics: Dict[str, Any],
+    arbitration_log: Optional[List[Dict[str, Any]]] = None,
 ) -> str:
     """Generate a coach-style diagnosis narrative in Chinese.
 
@@ -2069,6 +2194,16 @@ def _generate_narrative(
             para1 += f"但需要注意：{'；'.join(contradicted[:2])}。"
     else:
         para1 = "从视频中未观察到明显的技术问题，各项指标表现尚可。"
+
+    # v4.3: 仲裁日志 —— 被量化数据撤销的 VLM 观察（医生视角展示）
+    if arbitration_log:
+        arb_notes = []
+        for item in arbitration_log:
+            arb_notes.append(f"• {item['short_note']}")
+        para1 += (
+            f"\n\n🔬 **VLM-算法仲裁**（共 {len(arbitration_log)} 条 VLM 观察被量化数据撤销）：\n"
+            + "\n".join(arb_notes)
+        )
 
     # Add raw metric numbers if available
     metric_notes = []
@@ -2215,6 +2350,13 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     # 系统把下游症状（L3 小臂代偿）误判为根因。
     matched_concepts = _inject_kpi_problems(matched_concepts, metrics)
 
+    # ── Step 1.6: VLM ↔ 量化数据 仲裁 ──
+    # 当 VLM 视觉观察与量化算法冲突时（如 V 形轨迹 vs scooping 未检测），
+    # 以量化数据为准撤销 VLM 的 false positive。避免"矛盾并列"误导用户。
+    matched_concepts, arbitration_log = _arbitrate_vlm_vs_metrics(
+        matched_concepts, metrics
+    )
+
     # ── Step 2: 沿知识图谱追溯根因 ──
     problem_concept_ids = [
         m["mapped_concept"] for m in matched_concepts if m["severity"] > 0
@@ -2245,6 +2387,7 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     narrative = _generate_narrative(
         matched_concepts, causal_chain, root_cause_id,
         quant_validation, user_history, fix, metrics,
+        arbitration_log=arbitration_log,
     )
 
     # ── Assemble output ──
@@ -2268,6 +2411,9 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     result["causal_chain"] = causal_chain
 
     result["quant_validation"] = quant_validation
+
+    # v4.3: 仲裁日志（VLM 观察被量化数据撤销的列表）
+    result["arbitration_log"] = arbitration_log
 
     result["user_history"] = user_history
 
