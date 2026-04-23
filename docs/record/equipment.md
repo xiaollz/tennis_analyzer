@@ -60,6 +60,56 @@
 
 ---
 
+---
+
+## 🎯 用户打法特征（影响选线）
+
+- **正手**：辛纳式 — 胸部挤压 + Double-bend + 低手位 + 短引 + 左臂后压
+- **反手**：**Musetti 式单反** — 上旋 + 流畅 + 主动挥拍 + 前臂内旋制造 spin + 高 take-back + 左手延时松开
+- **综合**：**双上旋主导派** —— 两种打法都要上旋，需求：
+  - Spin ⭐⭐⭐
+  - Pocketing 咬球 ⭐⭐⭐
+  - Snapback ⭐⭐
+  - 护臂 ⭐⭐（单反+聚酯 = 网球肘高发）
+
+**关键提醒**：
+- 99 G2 是控制拍，**自身不产生 spin** → 选线必须 spin-friendly 才能满足打法
+- 单反风格 → **软聚酯优先**，避开硬聚酯（Tour Bite）长期用
+
+---
+
+## 🧵 线材选择矩阵
+
+### VCORE 98 的 5 个选择（辛纳正手友好）
+
+| # | 方案 | 磅数 | 价位 | 适用 | 要点 |
+|---|---|---|---|---|---|
+| 1 ⭐ | Yonex PolyTour Strike 主 / Pro 横 | 50/48 | 💰💰💰 | 首选稳定 | 专家调研结论 |
+| 2 💰 | Solinco Tour Bite 1.25 全穿 | 48 | 💰💰 | 便宜替代 | spin 猛、社区金标 |
+| 3 💰 | Yonex PolyTour Pro 1.25 全穿 | 52 | 💰💰 | 最便宜 Yonex | 圆形 poly、稳 |
+| 4 🛡️ | Isospeed Cream 1.25 全穿 | 52 | 💰💰 | 护臂优先 | 软聚酯、护肘 |
+| 5 🔥 | Solinco Hyper-G Soft 1.25 全穿 | 48 | 💰💰 | spin 偏重 | 社区万能答案 |
+
+### NordicDots 99 G2 的 5 个选择（Musetti 单反友好）
+
+| # | 方案 | 磅数 | 价位 | 适用 | 要点 |
+|---|---|---|---|---|---|
+| 1 ⭐ | NordicDots TS127 Soft 全穿（厂送） | 48 | 免费 | 首批基准 | 官方调校 |
+| 2 🔥 | Head Lynx Tour 1.25 全穿 | 50 | 💰💰 | spin 升级 | Tennisnerd 推荐 |
+| 3 🛡️ | **Isospeed Cream 1.25 全穿** | 50 | 💰💰 | **单反首选** | **Musetti 式单反黄金线** |
+| 4 📖 | Solinco Confidential 1.25 全穿 | 48 | 💰💰💰 | 经典对标 | Tennisnerd 对标 TS127 |
+| 5 💰 | Solinco Hyper-G Soft 1.25 全穿 | 48 | 💰💰 | spin + 便宜 | 密线床补 spin |
+
+### 不推荐长期用
+
+| 线 | 原因 |
+|---|---|
+| Tour Bite（99 G2）| 太硬，和 16×20 密线床叠加会扎手，伤单反 |
+| Confidential（长期 99 G2）| flat control 抑制 spin，违背你的上旋需求 |
+| Luxilon ALU Power 全穿 | 硬、贵、保磅差，业余性价比低 |
+
+---
+
 ## 球线使用记录
 
 | 缠线日期 | 拍子 | 线型 | 配置 | 磅数 | 到期（估算）| 实际换线日 | 备注 |
