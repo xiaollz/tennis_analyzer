@@ -1565,18 +1565,23 @@ def _try_diagnostic_chains(
 def _validate_with_metrics(
     matched_concepts: List[Dict[str, Any]],
     metrics: Dict[str, Any],
+    excluded_concepts: Optional[set] = None,
 ) -> Dict[str, List[str]]:
     """Validate concept matches against quantitative metrics.
 
     Returns {"confirmed": [...], "contradicted": [...]}.
+
+    excluded_concepts: concepts already handled by arbitration layer;
+    skip here to avoid double-reporting the same VLM-vs-metric conflict.
     """
     confirmed: List[str] = []
     contradicted: List[str] = []
+    excluded = excluded_concepts or set()
 
     checked_concepts = set()
     for match in matched_concepts:
         concept_id = match["mapped_concept"]
-        if concept_id in checked_concepts:
+        if concept_id in checked_concepts or concept_id in excluded:
             continue
         checked_concepts.add(concept_id)
 
@@ -1808,10 +1813,15 @@ def _arbitrate_vlm_vs_metrics(
             cleaned.append(m)
             continue
 
-        # 执行仲裁判定
+        # 执行仲裁判定（narrow catch：只吞 lambda 逻辑异常，不吞配置错误）
         try:
             arbitration_triggered = rule["arbitrate"](metrics)
-        except Exception:
+        except (TypeError, KeyError, AttributeError) as e:
+            import logging
+            logging.warning(
+                f"Arbitration rule for {concept_id} failed: {type(e).__name__}: {e}. "
+                f"Falling back to non-arbitrated (VLM observation retained)."
+            )
             arbitration_triggered = False
 
         if arbitration_triggered:
@@ -2367,7 +2377,11 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     )
 
     # ── Step 3: 量化验证 ──
-    quant_validation = _validate_with_metrics(matched_concepts, metrics)
+    # 排除已被仲裁层处理的概念，避免双重展示同一 VLM-metric 冲突
+    arbitrated_ids = {item["concept"] for item in arbitration_log}
+    quant_validation = _validate_with_metrics(
+        matched_concepts, metrics, excluded_concepts=arbitrated_ids
+    )
 
     # ── Step 4: 用户历史对比 ──
     user_history = _check_user_history(matched_concepts)
