@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baseline — Tennis Swing Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #F7F3EC; font-family: 'Inter', system-ui, sans-serif; color: #2A2925; }
+  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .fadein { animation: fadein 0.25s ease-out; }
+  button { font-family: inherit; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef, useCallback } = React;
+
+// ═══ Design tokens (from tennis/project/tokens.jsx) ═══
+
+const T = {
+  bg:        '#F7F3EC',
+  paper:     '#FDFBF6',
+  paperAlt:  '#F1ECE2',
+  ink:       '#2A2925',
+  ink2:      '#5A544A',
+  ink3:      '#8A8276',
+  line:      'rgba(42,41,37,0.10)',
+  lineSoft:  'rgba(42,41,37,0.06)',
+  clay:      '#C8553D',
+  clayDeep:  '#A8432F',
+  amber:     '#E8B04B',
+  amberSoft: '#F3D38A',
+  court:     '#9AAE60',
+  serif: '"Fraunces", "Iowan Old Style", Georgia, serif',
+  sans:  '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+  mono:  '"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace',
+};
+
+const API = '/api';
+
+// ═══ Icon set ═══
+
+const Icon = ({ name, size = 20, color = T.ink2, stroke = 1.6 }) => {
+  const p = { fill: 'none', stroke: color, strokeWidth: stroke, strokeLinecap: 'round', strokeLinejoin: 'round' };
+  const paths = {
+    home:    <><path d="M3 10.5L12 3l9 7.5" {...p}/><path d="M5 9.5V20h14V9.5" {...p}/></>,
+    plus:    <><path d="M12 5v14M5 12h14" {...p}/></>,
+    upload:  <><path d="M12 16V4m0 0l-5 5m5-5l5 5" {...p}/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" {...p}/></>,
+    play:    <><path d="M7 5l12 7-12 7V5z" fill={color} stroke="none"/></>,
+    pause:   <><rect x="6" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/></>,
+    check:   <><path d="M4 12l5 5 11-12" {...p}/></>,
+    chevR:   <><path d="M9 5l7 7-7 7" {...p}/></>,
+    chevL:   <><path d="M15 5l-7 7 7 7" {...p}/></>,
+    sparkle: <><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" {...p}/></>,
+    arrowR:  <><path d="M5 12h14M13 6l6 6-6 6" {...p}/></>,
+    racquet: <><ellipse cx="10" cy="10" rx="6" ry="7" {...p}/><path d="M14.2 14.8L20 20.5" {...p}/></>,
+    target:  <><circle cx="12" cy="12" r="9" {...p}/><circle cx="12" cy="12" r="5" {...p}/><circle cx="12" cy="12" r="1.5" fill={color} stroke="none"/></>,
+    alert:   <><circle cx="12" cy="12" r="9" {...p}/><path d="M12 7v6M12 16.5v.5" {...p}/></>,
+    trash:   <><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" {...p}/></>,
+    film:    <><rect x="3" y="5" width="18" height="14" rx="2" {...p}/><path d="M3 9h18M3 15h18M8 5v14M16 5v14" {...p}/></>,
+    book:    <><path d="M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4V4z" {...p}/><path d="M20 4h-7a3 3 0 00-3 3v13a2 2 0 012-2h8V4z" {...p}/></>,
+    wave:    <><path d="M3 12c2-4 3-4 5 0s3 4 5 0 3-4 5 0 3 4 5 0" {...p}/></>,
+  };
+  return <svg width={size} height={size} viewBox="0 0 24 24">{paths[name]}</svg>;
+};
+
+// ═══ Typography primitives ═══
+
+const Serif = ({ children, size = 28, weight = 400, style = {}, as: As = 'div', italic = false, opsz }) => (
+  <As style={{
+    fontFamily: T.serif, fontWeight: weight, fontSize: size,
+    fontStyle: italic ? 'italic' : 'normal',
+    letterSpacing: size >= 32 ? -0.4 : -0.2,
+    lineHeight: 1.08, color: T.ink,
+    fontVariationSettings: opsz ? `"opsz" ${opsz}` : undefined,
+    ...style,
+  }}>{children}</As>
+);
+
+const Sans = ({ children, size = 14, weight = 400, color = T.ink, style = {}, as: As = 'div', upper = false, track }) => (
+  <As style={{
+    fontFamily: T.sans, fontWeight: weight, fontSize: size,
+    letterSpacing: upper ? 1.2 : (track ?? -0.1),
+    lineHeight: 1.4, color,
+    textTransform: upper ? 'uppercase' : 'none',
+    ...style,
+  }}>{children}</As>
+);
+
+const Mono = ({ children, size = 12, weight = 500, color = T.ink2, style = {} }) => (
+  <span style={{ fontFamily: T.mono, fontWeight: weight, fontSize: size, color, ...style }}>{children}</span>
+);
+
+const Tag = ({ children, tone = 'ink', style = {} }) => {
+  const tones = {
+    ink:    { bg: T.paperAlt, fg: T.ink2, bd: T.line },
+    clay:   { bg: '#F6E4DC', fg: T.clayDeep, bd: 'rgba(168,67,47,0.18)' },
+    amber:  { bg: '#FBEDCE', fg: '#8A6820', bd: 'rgba(138,104,32,0.2)' },
+    court:  { bg: '#E7EDD4', fg: '#5D6F33', bd: 'rgba(93,111,51,0.2)' },
+    ghost:  { bg: 'transparent', fg: T.ink3, bd: T.line },
+  }[tone];
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 5,
+      padding: '3px 9px', borderRadius: 999,
+      background: tones.bg, color: tones.fg,
+      border: `0.5px solid ${tones.bd}`,
+      fontFamily: T.sans, fontSize: 11, fontWeight: 500,
+      letterSpacing: 0.1, whiteSpace: 'nowrap',
+      ...style,
+    }}>{children}</span>
+  );
+};
+
+const CTA = ({ children, tone = 'clay', onClick, full, icon, disabled, style = {} }) => {
+  const tones = {
+    clay: { bg: T.clay, fg: '#fff' },
+    ink:  { bg: T.ink, fg: T.bg },
+    ghost:{ bg: 'transparent', fg: T.ink, bd: T.line },
+  }[tone];
+  return (
+    <button onClick={onClick} disabled={disabled} style={{
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+      height: 52, padding: '0 22px', borderRadius: 14,
+      border: tones.bd ? `0.5px solid ${tones.bd}` : 'none',
+      background: tones.bg, color: tones.fg,
+      fontSize: 15, fontWeight: 560, letterSpacing: -0.1,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      opacity: disabled ? 0.4 : 1,
+      width: full ? '100%' : 'auto',
+      ...style,
+    }}>
+      {icon && <Icon name={icon} size={18} color={tones.fg}/>}
+      {children}
+    </button>
+  );
+};
+
+// ═══ Layout shell ═══
+
+const AppShell = ({ title, eyebrow, onBack, children, footer }) => (
+  <div style={{
+    minHeight: '100vh', maxWidth: 640, margin: '0 auto', background: T.bg,
+    display: 'flex', flexDirection: 'column',
+  }}>
+    <div style={{
+      padding: '22px 22px 14px', display: 'flex',
+      alignItems: 'center', gap: 14, position: 'sticky', top: 0,
+      background: T.bg, zIndex: 10, borderBottom: `0.5px solid ${T.lineSoft}`,
+    }}>
+      {onBack && (
+        <button onClick={onBack} style={{
+          width: 36, height: 36, borderRadius: 999, border: `0.5px solid ${T.line}`,
+          background: T.paper, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          cursor: 'pointer',
+        }}><Icon name="chevL" size={16}/></button>
+      )}
+      <div style={{ flex: 1 }}>
+        {eyebrow && <Sans size={11} upper weight={500} color={T.ink3}>{eyebrow}</Sans>}
+        {title && <Serif size={20} weight={400} style={{ marginTop: eyebrow ? 2 : 0 }}>{title}</Serif>}
+      </div>
+    </div>
+    <div style={{ flex: 1, padding: '8px 22px 28px', width: '100%' }}>
+      {children}
+    </div>
+    {footer && (
+      <div style={{
+        position: 'sticky', bottom: 0, padding: '14px 22px 24px',
+        background: T.paper, borderTop: `0.5px solid ${T.line}`,
+      }}>{footer}</div>
+    )}
+  </div>
+);
+
+// ═══ API client ═══
+
+const api = {
+  async listVideos() {
+    const r = await fetch(`${API}/videos`);
+    return r.json();
+  },
+  async getVideo(id) {
+    const r = await fetch(`${API}/videos/${id}`);
+    if (!r.ok) throw new Error('not found');
+    return r.json();
+  },
+  async deleteVideo(id) {
+    return fetch(`${API}/videos/${id}`, { method: 'DELETE' });
+  },
+  async uploadVideo(file) {
+    const fd = new FormData();
+    fd.append('file', file);
+    const r = await fetch(`${API}/videos`, { method: 'POST', body: fd });
+    if (!r.ok) throw new Error('upload failed');
+    return r.json();
+  },
+  async getJob(id) {
+    const r = await fetch(`${API}/jobs/${id}`);
+    return r.json();
+  },
+  async startDiagnose(clipId) {
+    const r = await fetch(`${API}/clips/${clipId}/diagnose`, { method: 'POST' });
+    return r.json();
+  },
+  async getDiagnosis(clipId) {
+    const r = await fetch(`${API}/diagnoses/${clipId}`);
+    if (!r.ok) throw new Error('no diagnosis');
+    return r.json();
+  },
+};
+
+// Poll a job until it reaches terminal state
+async function pollJob(jobId, onProgress, intervalMs = 800) {
+  while (true) {
+    const job = await api.getJob(jobId);
+    if (onProgress) onProgress(job);
+    if (job.status === 'done' || job.status === 'error') return job;
+    await new Promise(r => setTimeout(r, intervalMs));
+  }
+}
+
+// ═══ Screens ═══
+
+// ── Home ─────────────────────────────────────────────────────────
+
+function Home({ onPick, onUpload, reloadKey }) {
+  const [videos, setVideos] = useState(null);
+  useEffect(() => {
+    api.listVideos().then(r => setVideos(r.videos || [])).catch(() => setVideos([]));
+  }, [reloadKey]);
+
+  return (
+    <AppShell eyebrow="Baseline" title="Your sessions">
+      <div style={{ marginBottom: 20 }}>
+        <Sans size={14} color={T.ink2}>
+          Upload a practice video. Baseline will cut it into clips by the sound of each hit,
+          then run pose, visual and diagnostic analysis on whichever clip you pick.
+        </Sans>
+      </div>
+
+      <div
+        onClick={onUpload}
+        style={{
+          padding: 20, borderRadius: 18,
+          background: T.paper,
+          border: `1.5px dashed rgba(200,85,61,0.35)`,
+          display: 'flex', alignItems: 'center', gap: 14,
+          cursor: 'pointer', marginBottom: 24,
+        }}
+      >
+        <div style={{
+          width: 48, height: 48, borderRadius: 14, background: T.clay,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <Icon name="upload" size={22} color="#fff"/>
+        </div>
+        <div style={{ flex: 1 }}>
+          <Sans size={15} weight={600}>Upload a new session</Sans>
+          <Sans size={12} color={T.ink2} style={{ marginTop: 2 }}>
+            MP4 / MOV, any length. Ideally 60 fps from the side.
+          </Sans>
+        </div>
+        <Icon name="chevR" size={18} color={T.ink3}/>
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+        <Sans size={11} upper weight={500} color={T.ink3}>
+          Recent · {videos === null ? '…' : videos.length}
+        </Sans>
+      </div>
+
+      {videos === null && <Sans size={13} color={T.ink3}>Loading…</Sans>}
+      {videos && videos.length === 0 && (
+        <div style={{
+          padding: 18, borderRadius: 14, background: T.paperAlt,
+          border: `0.5px solid ${T.line}`, textAlign: 'center',
+        }}>
+          <Sans size={13} color={T.ink2}>No sessions yet. Upload one to get started.</Sans>
+        </div>
+      )}
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {videos && videos.map(v => (
+          <div key={v.video_id} style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: 14, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
+          }} onClick={() => onPick(v.video_id)}>
+            <div style={{
+              width: 44, height: 44, borderRadius: 11, background: T.paperAlt,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}><Icon name="film" size={20} color={T.ink2}/></div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <Sans size={13} weight={600} style={{ marginBottom: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {v.filename || v.video_id}
+              </Sans>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+                <Mono size={10} color={T.ink3}>
+                  {v.duration_s ? `${v.duration_s.toFixed(1)}s` : '—'}
+                </Mono>
+                <Sans size={11} color={T.ink3}>·</Sans>
+                <Sans size={11} color={T.ink3}>
+                  {v.has_segments ? `${v.clip_count} clips` : 'pending…'}
+                </Sans>
+              </div>
+            </div>
+            <Icon name="chevR" size={16} color={T.ink3}/>
+          </div>
+        ))}
+      </div>
+    </AppShell>
+  );
+}
+
+// ── Upload / segmenting ──────────────────────────────────────────
+
+function Uploading({ file, onDone, onCancel }) {
+  const [stage, setStage] = useState('upload');
+  const [progress, setProgress] = useState(0);
+  const [message, setMessage] = useState('Uploading…');
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        setMessage('Uploading…');
+        const { video_id, job_id } = await api.uploadVideo(file);
+        setStage('segment');
+        setMessage('Detecting hits…');
+        const job = await pollJob(job_id, j => {
+          setProgress(j.progress || 0);
+          setMessage(j.message || '');
+        });
+        if (job.status === 'done') onDone(video_id);
+        else setError(job.error || 'Segmentation failed');
+      } catch (e) {
+        setError(String(e.message || e));
+      }
+    })();
+  }, []);
+
+  return (
+    <AppShell eyebrow="Step 1 · Import" title={stage === 'upload' ? 'Uploading' : 'Listening for hits'} onBack={onCancel}>
+      <div style={{
+        borderRadius: 18, background: T.paper, border: `0.5px solid ${T.line}`,
+        padding: 24, marginBottom: 16,
+      }}>
+        <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
+          {stage === 'upload' ? 'Preparing video' : 'Audio · auto-cuts'}
+        </Sans>
+        <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.15, marginBottom: 16 }}>
+          {message}
+        </Serif>
+        <div style={{
+          height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden',
+        }}>
+          <div style={{
+            height: '100%', width: `${Math.max(2, progress * 100)}%`,
+            background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+            transition: 'width 0.3s',
+          }}/>
+        </div>
+        <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
+          {(progress * 100).toFixed(0)}%
+        </Sans>
+      </div>
+
+      {error && (
+        <div style={{
+          padding: 14, borderRadius: 12, background: '#F6E4DC',
+          border: `0.5px solid rgba(168,67,47,0.2)`, display: 'flex', gap: 10,
+        }}>
+          <Icon name="alert" size={18} color={T.clayDeep}/>
+          <Sans size={12} color={T.clayDeep}>{error}</Sans>
+        </div>
+      )}
+    </AppShell>
+  );
+}
+
+// ── Clip grid ────────────────────────────────────────────────────
+
+function ClipGrid({ videoId, onBack, onPickClip }) {
+  const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
+
+  useEffect(() => {
+    api.getVideo(videoId).then(setData).catch(e => setErr(String(e)));
+  }, [videoId]);
+
+  if (err) return (
+    <AppShell eyebrow="Not found" onBack={onBack}>
+      <Sans color={T.clayDeep}>{err}</Sans>
+    </AppShell>
+  );
+  if (!data) return (
+    <AppShell eyebrow="Loading" onBack={onBack}>
+      <Sans color={T.ink3}>Loading…</Sans>
+    </AppShell>
+  );
+
+  const clips = data.clips || [];
+
+  return (
+    <AppShell
+      eyebrow={`Step 2 · Choose · ${clips.length} clips`}
+      title="Pick your clip"
+      onBack={onBack}
+    >
+      {data.error && (
+        <div style={{ padding: 14, borderRadius: 12, background: '#FBEDCE', marginBottom: 14 }}>
+          <Sans size={12} color="#8A6820">{data.error}</Sans>
+        </div>
+      )}
+
+      <Sans size={13} color={T.ink2} style={{ marginBottom: 18 }}>
+        Baseline detected <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans> across{' '}
+        <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta.duration_s?.toFixed(1)}s</Sans>.
+        Tap a clip to run pose, visual and diagnostic analysis on it.
+      </Sans>
+
+      <div style={{
+        display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10,
+      }}>
+        {clips.map(c => (
+          <ClipCard key={c.clip_id} clip={c} onClick={() => onPickClip(c.clip_id)}/>
+        ))}
+      </div>
+
+      {clips.length === 0 && (
+        <div style={{
+          padding: 24, borderRadius: 14, background: T.paperAlt,
+          border: `0.5px solid ${T.line}`, textAlign: 'center',
+        }}>
+          <Sans size={13} color={T.ink2}>
+            No hits detected. Try a louder or closer-mic'd video.
+          </Sans>
+        </div>
+      )}
+    </AppShell>
+  );
+}
+
+function ClipCard({ clip, onClick }) {
+  const duration = (clip.end_s - clip.start_s).toFixed(1);
+  const startTime = fmtTime(clip.start_s);
+  return (
+    <div onClick={onClick} style={{
+      position: 'relative', aspectRatio: '3/4',
+      borderRadius: 12, overflow: 'hidden',
+      border: `0.5px solid ${T.line}`,
+      background: T.paperAlt, cursor: 'pointer',
+    }}>
+      <img
+        src={`${API}/clips/${clip.clip_id}/thumbnail`}
+        alt=""
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        onError={e => { e.target.style.display = 'none'; }}
+      />
+      {/* type + hit count badge */}
+      <div style={{
+        position: 'absolute', top: 6, left: 6,
+        padding: '2px 6px', borderRadius: 4,
+        background: 'rgba(42,41,37,0.85)', color: T.bg,
+        fontFamily: T.mono, fontSize: 9, fontWeight: 500, letterSpacing: 0.5,
+      }}>{clip.impact_times_s.length}× HIT</div>
+      {/* time/dur strip */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0,
+        padding: '18px 8px 6px',
+        background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%)',
+        display: 'flex', justifyContent: 'space-between',
+      }}>
+        <Mono size={9} color="#fff">{startTime}</Mono>
+        <Mono size={9} color="rgba(255,255,255,0.75)">{duration}s</Mono>
+      </div>
+    </div>
+  );
+}
+
+function fmtTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+// ── Loading / analyzing ──────────────────────────────────────────
+
+function Analyzing({ clipId, onDone, onBack }) {
+  const [progress, setProgress] = useState(0);
+  const [message, setMessage] = useState('Queued…');
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { job_id, status } = await api.startDiagnose(clipId);
+        if (status === 'already_done') {
+          onDone(clipId);
+          return;
+        }
+        const job = await pollJob(job_id, j => {
+          setProgress(j.progress || 0);
+          setMessage(j.message || '');
+        }, 1000);
+        if (job.status === 'done') onDone(clipId);
+        else setError(job.error || 'Diagnosis failed');
+      } catch (e) {
+        setError(String(e.message || e));
+      }
+    })();
+  }, [clipId]);
+
+  const stages = [
+    { t: 'Pose estimation',      threshold: 0.2 },
+    { t: 'Impact detection',     threshold: 0.4 },
+    { t: 'Biomechanics KPIs',    threshold: 0.6 },
+    { t: 'Gemini visual reading', threshold: 0.85 },
+    { t: 'Knowledge inference',  threshold: 1.0 },
+  ];
+
+  return (
+    <AppShell eyebrow="Analyzing" title="Reading your swing" onBack={onBack}>
+      {/* Hero placeholder */}
+      <div style={{
+        borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
+        position: 'relative', marginBottom: 20, background: '#2E2C28', height: 220,
+      }}>
+        <video
+          src={`${API}/clips/${clipId}/video`}
+          autoPlay muted loop playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
+        />
+        <div style={{
+          position: 'absolute', top: 0, bottom: 0, left: `${Math.max(10, progress * 90)}%`, width: 1,
+          background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
+          boxShadow: `0 0 10px ${T.amber}`, transition: 'left 0.5s',
+        }}/>
+      </div>
+
+      <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
+        {message || 'Working'}
+      </Sans>
+      <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.1, marginBottom: 22 }}>
+        Tracing keypoints<br/>
+        <Serif as="span" size={28} italic weight={380} style={{ color: T.clayDeep }}>
+          across this clip.
+        </Serif>
+      </Serif>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+        <Mono size={11} color={T.ink2}>OVERALL</Mono>
+        <div>
+          <Serif size={20} weight={400} as="span">{(progress * 100).toFixed(0)}</Serif>
+          <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
+        </div>
+      </div>
+      <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden', marginBottom: 22 }}>
+        <div style={{
+          height: '100%', width: `${Math.max(2, progress * 100)}%`,
+          background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+          transition: 'width 0.5s',
+        }}/>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {stages.map((st, i) => {
+          const done = progress >= st.threshold;
+          const active = !done && (i === 0 || progress >= stages[i - 1].threshold);
+          return (
+            <div key={i} style={{
+              display: 'flex', alignItems: 'center', gap: 12,
+              padding: '10px 0',
+              borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
+            }}>
+              <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
+                {done ? (
+                  <div style={{
+                    width: 18, height: 18, borderRadius: 999, background: T.ink,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}><Icon name="check" size={11} color={T.bg} stroke={2.5}/></div>
+                ) : active ? (
+                  <div style={{
+                    width: 18, height: 18, borderRadius: 999,
+                    border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
+                    animation: 'spin 0.9s linear infinite',
+                  }}/>
+                ) : (
+                  <div style={{ width: 8, height: 8, borderRadius: 999, background: T.line }}/>
+                )}
+              </div>
+              <Sans size={14} weight={active ? 600 : 500} color={done ? T.ink : active ? T.ink : T.ink3}>{st.t}</Sans>
+            </div>
+          );
+        })}
+      </div>
+
+      {error && (
+        <div style={{
+          marginTop: 20, padding: 14, borderRadius: 12, background: '#F6E4DC',
+          border: `0.5px solid rgba(168,67,47,0.2)`,
+        }}>
+          <Sans size={12} color={T.clayDeep}>{error}</Sans>
+        </div>
+      )}
+    </AppShell>
+  );
+}
+
+// ── Results (tabbed shell) ────────────────────────────────────────
+
+function Results({ clipId, onBack }) {
+  const [diag, setDiag] = useState(null);
+  const [err, setErr] = useState(null);
+  const [tab, setTab] = useState('data');
+
+  useEffect(() => {
+    api.getDiagnosis(clipId).then(r => setDiag(r.result || r)).catch(e => setErr(String(e)));
+  }, [clipId]);
+
+  if (err) return (
+    <AppShell eyebrow="Not found" onBack={onBack}>
+      <Sans color={T.clayDeep}>{err}</Sans>
+    </AppShell>
+  );
+  if (!diag) return (
+    <AppShell eyebrow="Loading" onBack={onBack}>
+      <Sans color={T.ink3}>Loading…</Sans>
+    </AppShell>
+  );
+
+  const overallScore = diag.overall_score;
+
+  return (
+    <AppShell onBack={onBack}>
+      {/* Top: clip + score */}
+      <div style={{
+        borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
+        marginBottom: 12, background: '#2E2C28',
+      }}>
+        <video
+          src={diag.artifacts?.annotated_video ? `${diag.artifacts.annotated_video}?` : `${API}/clips/${clipId}/video`}
+          controls playsInline
+          style={{ width: '100%', display: 'block', maxHeight: 300 }}
+        />
+      </div>
+
+      <div style={{ marginBottom: 18, display: 'flex', alignItems: 'baseline', gap: 12 }}>
+        <div style={{ flex: 1 }}>
+          <Sans size={11} upper weight={500} color={T.ink3}>Overall score</Sans>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 4 }}>
+            <Serif size={48} weight={400} opsz={72}>{overallScore != null ? Number(overallScore).toFixed(0) : '—'}</Serif>
+            <Sans size={12} color={T.ink3}>/ 100</Sans>
+            <Tag tone="clay" style={{ marginLeft: 8 }}>{diag.stroke_type === 'forehand' ? 'Forehand' : 'Backhand'}</Tag>
+          </div>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div style={{
+        display: 'flex', gap: 8, marginBottom: 16,
+        background: T.paperAlt, padding: 4, borderRadius: 12,
+        border: `0.5px solid ${T.line}`,
+      }}>
+        {[
+          { id: 'data', label: 'Biomechanics' },
+          { id: 'vlm',  label: 'Observations' },
+          { id: 'coach',label: 'Coach' },
+        ].map(t => (
+          <button key={t.id} onClick={() => setTab(t.id)} style={{
+            flex: 1, border: 'none', cursor: 'pointer',
+            padding: '10px 8px', borderRadius: 9,
+            background: tab === t.id ? T.paper : 'transparent',
+            boxShadow: tab === t.id ? '0 1px 4px rgba(0,0,0,0.04)' : 'none',
+            fontFamily: T.sans, fontSize: 13, fontWeight: tab === t.id ? 600 : 500,
+            color: tab === t.id ? T.ink : T.ink3,
+          }}>{t.label}</button>
+        ))}
+      </div>
+
+      <div className="fadein" key={tab}>
+        {tab === 'data'  && <TabData  diag={diag}/>}
+        {tab === 'vlm'   && <TabVLM   diag={diag}/>}
+        {tab === 'coach' && <TabCoach diag={diag}/>}
+      </div>
+    </AppShell>
+  );
+}
+
+function TabData({ diag }) {
+  const swings = diag.swings || [];
+  if (swings.length === 0) return <Sans color={T.ink3}>No swing data extracted.</Sans>;
+  const swing = swings[0];
+  const phases = swing.phase_scores || {};
+  const phaseLabels = {
+    unit_turn: 'Unit Turn',
+    chain:     'Kinetic Chain',
+    contact:   'Contact',
+    through:   'Follow-Through',
+    stability: 'Stability',
+  };
+
+  // Key metrics grid — pick the 4 most informative
+  const metrics = (swing.kpi_results || []).slice(0, 4);
+
+  return (
+    <div>
+      {diag.artifacts?.keyframe_grid && (
+        <div style={{
+          borderRadius: 14, overflow: 'hidden', border: `0.5px solid ${T.line}`,
+          marginBottom: 16, background: T.paper,
+        }}>
+          <img src={diag.artifacts.keyframe_grid} alt="" style={{ width: '100%', display: 'block' }}/>
+          <div style={{ padding: '8px 12px', background: T.paperAlt }}>
+            <Mono size={10} color={T.ink3}>Keyframe grid · VLM input</Mono>
+          </div>
+        </div>
+      )}
+
+      <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>Key metrics</Sans>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
+        {metrics.map((m, i) => (
+          <div key={i} style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '14px 14px 12px',
+          }}>
+            <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 8 }}>
+              {m.label || m.name}
+            </Sans>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+              <Serif size={26} weight={400} opsz={72}>{fmtValue(m.value)}</Serif>
+              {m.unit && <Sans size={11} color={T.ink3}>{m.unit}</Sans>}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 8 }}>
+              <div style={{
+                width: 6, height: 6, borderRadius: 999,
+                background: m.score > 70 ? T.court : m.score > 50 ? T.amber : T.clay,
+              }}/>
+              <Sans size={10} color={T.ink3}>
+                {m.level || `score ${m.score != null ? Math.round(m.score) : '—'}`}
+              </Sans>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>By phase</Sans>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {Object.entries(phases).map(([key, ps]) => (
+          <div key={key} style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
+            padding: '12px 14px',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+              <Sans size={13} weight={600}>{phaseLabels[key] || key}</Sans>
+              <Mono size={12} color={T.ink2}>{(ps.score || 0).toFixed(0)} / 100</Mono>
+            </div>
+            <div style={{ height: 3, background: T.paperAlt, borderRadius: 2, overflow: 'hidden' }}>
+              <div style={{
+                height: '100%', width: `${Math.max(0, Math.min(100, ps.score || 0))}%`,
+                background: ps.score > 70 ? T.court : ps.score > 50 ? T.amber : T.clay,
+              }}/>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function fmtValue(v) {
+  if (v == null) return '—';
+  if (typeof v === 'number') {
+    const abs = Math.abs(v);
+    if (abs >= 100) return v.toFixed(0);
+    if (abs >= 10) return v.toFixed(1);
+    return v.toFixed(2);
+  }
+  return String(v);
+}
+
+function TabVLM({ diag }) {
+  const vlm = diag.vlm;
+  if (!vlm) return <Sans color={T.ink3}>No visual observations produced (VLM unavailable for this clip).</Sans>;
+
+  const observations = vlm.observations || [];
+  const narrative = diag.diagnosis?.narrative || vlm.narrative;
+
+  return (
+    <div>
+      {narrative && (
+        <div style={{
+          background: T.ink, borderRadius: 18, padding: '18px 18px 16px',
+          color: '#fff', marginBottom: 20, position: 'relative', overflow: 'hidden',
+        }}>
+          <div style={{
+            position: 'absolute', right: -30, top: -30, width: 140, height: 140,
+            borderRadius: 999, background: T.clay, opacity: 0.3, filter: 'blur(20px)',
+          }}/>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+            <Icon name="sparkle" size={14} color={T.amber}/>
+            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.3 }}>
+              Gemini · visual reading
+            </Sans>
+          </div>
+          <Sans size={13} style={{ color: '#fff', lineHeight: 1.55, whiteSpace: 'pre-wrap' }}>
+            {typeof narrative === 'string' ? narrative : JSON.stringify(narrative)}
+          </Sans>
+        </div>
+      )}
+
+      <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
+        Observations · {observations.length}
+      </Sans>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {observations.map((obs, i) => (
+          <div key={i} style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '12px 14px',
+          }}>
+            <div style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
+              {obs.phase && <Tag tone="ghost">{obs.phase}</Tag>}
+              {obs.severity && <Tag tone={obs.severity === 'high' ? 'clay' : obs.severity === 'medium' ? 'amber' : 'court'}>
+                {obs.severity}
+              </Tag>}
+            </div>
+            <Sans size={13} weight={600} style={{ marginBottom: 4, lineHeight: 1.35 }}>
+              {obs.observation || obs.title || obs.summary}
+            </Sans>
+            {obs.evidence && (
+              <Sans size={11} color={T.ink3} style={{ lineHeight: 1.5 }}>
+                <Icon name="wave" size={11} color={T.ink3}/> {typeof obs.evidence === 'string' ? obs.evidence : JSON.stringify(obs.evidence)}
+              </Sans>
+            )}
+          </div>
+        ))}
+        {observations.length === 0 && <Sans color={T.ink3}>No observations.</Sans>}
+      </div>
+
+      {diag.diagnosis?.arbitration && diag.diagnosis.arbitration.length > 0 && (
+        <div style={{ marginTop: 22 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            Cross-checks · VLM vs metrics
+          </Sans>
+          {diag.diagnosis.arbitration.map((a, i) => (
+            <div key={i} style={{
+              background: T.paperAlt, border: `0.5px solid ${T.line}`, borderRadius: 12,
+              padding: '10px 12px', marginBottom: 6,
+            }}>
+              <Sans size={12} color={T.ink2} style={{ lineHeight: 1.5 }}>
+                {typeof a === 'string' ? a : (a.resolution_text || JSON.stringify(a))}
+              </Sans>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TabCoach({ diag }) {
+  const d = diag.diagnosis || {};
+  const root = d.root_cause;
+  const drill = d.drill_recommendation;
+  const issues = d.issues || [];
+  const chain = d.causal_chain || [];
+
+  return (
+    <div>
+      {root ? (
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+          overflow: 'hidden', marginBottom: 20,
+        }}>
+          <div style={{ padding: '16px 18px 14px' }}>
+            <Tag tone="clay" style={{ marginBottom: 12 }}>Root cause</Tag>
+            <Serif size={22} weight={400} opsz={60} style={{ lineHeight: 1.25, marginBottom: 10 }}>
+              {root.label || root.name || root.concept || 'Root cause identified'}
+            </Serif>
+            <Sans size={13} color={T.ink2} style={{ lineHeight: 1.55 }}>
+              {root.description || root.explanation || root.why || ''}
+            </Sans>
+          </div>
+          {chain.length > 0 && (
+            <div style={{ padding: '12px 18px 16px', background: T.paperAlt }}>
+              <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 10 }}>
+                Causal chain
+              </Sans>
+              {chain.map((c, i) => (
+                <div key={i} style={{
+                  display: 'flex', alignItems: 'center', gap: 10, padding: '6px 0',
+                }}>
+                  <Mono size={11} color={T.ink3}>{String(i + 1).padStart(2, '0')}</Mono>
+                  <Sans size={12} color={T.ink}>
+                    {typeof c === 'string' ? c : (c.label || c.concept || JSON.stringify(c))}
+                  </Sans>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div style={{ padding: 16, borderRadius: 14, background: T.paperAlt, marginBottom: 20 }}>
+          <Sans color={T.ink2}>No root cause identified for this swing.</Sans>
+        </div>
+      )}
+
+      {issues.length > 0 && (
+        <div style={{ marginBottom: 20 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
+            Also worth working on · {issues.length}
+          </Sans>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {issues.slice(0, 5).map((iss, i) => (
+              <div key={i} style={{
+                background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
+                padding: '12px 14px', display: 'flex', gap: 12, alignItems: 'center',
+              }}>
+                <Mono size={11} color={T.clay} weight={600}>
+                  {String(i + 2).padStart(2, '0')}
+                </Mono>
+                <Sans size={13} color={T.ink} style={{ flex: 1 }}>
+                  {typeof iss === 'string' ? iss : (iss.label || iss.name || iss.concept || JSON.stringify(iss))}
+                </Sans>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {drill && (
+        <div>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
+            Training plan
+          </Sans>
+          <div style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+            padding: '14px 16px', display: 'flex', gap: 14,
+          }}>
+            <div style={{
+              width: 44, height: 44, borderRadius: 11, flexShrink: 0,
+              background: T.clay, color: '#fff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: T.serif, fontSize: 22, fontWeight: 500,
+            }}>A</div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <Sans size={13} weight={600} style={{ marginBottom: 4, lineHeight: 1.3 }}>
+                {drill.name || drill.title || drill.drill || 'Recommended drill'}
+              </Sans>
+              <Sans size={12} color={T.ink2} style={{ lineHeight: 1.55 }}>
+                {drill.description || drill.how || drill.body || ''}
+              </Sans>
+              {drill.cue && (
+                <div style={{ marginTop: 10, paddingTop: 8, borderTop: `0.5px dashed ${T.line}` }}>
+                  <Sans size={10} upper weight={500} color={T.ink3} style={{ marginBottom: 3 }}>Cue</Sans>
+                  <Sans size={12} weight={600} color={T.clay}>"{drill.cue}"</Sans>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ═══ App state machine ═══
+
+function App() {
+  const [route, setRoute] = useState({ name: 'home' });
+  const [uploadFile, setUploadFile] = useState(null);
+  const [homeKey, setHomeKey] = useState(0);
+  const fileRef = useRef();
+
+  const pickFile = () => fileRef.current?.click();
+  const onFileChosen = e => {
+    const f = e.target.files?.[0];
+    if (f) {
+      setUploadFile(f);
+      setRoute({ name: 'upload' });
+    }
+    e.target.value = '';
+  };
+
+  return (
+    <>
+      <input ref={fileRef} type="file" accept="video/*" style={{ display: 'none' }} onChange={onFileChosen}/>
+
+      {route.name === 'home' && (
+        <Home
+          reloadKey={homeKey}
+          onPick={id => setRoute({ name: 'clips', videoId: id })}
+          onUpload={pickFile}
+        />
+      )}
+      {route.name === 'upload' && (
+        <Uploading
+          file={uploadFile}
+          onDone={videoId => setRoute({ name: 'clips', videoId })}
+          onCancel={() => { setRoute({ name: 'home' }); setHomeKey(k => k+1); }}
+        />
+      )}
+      {route.name === 'clips' && (
+        <ClipGrid
+          videoId={route.videoId}
+          onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k+1); }}
+          onPickClip={clipId => setRoute({ name: 'analyze', clipId })}
+        />
+      )}
+      {route.name === 'analyze' && (
+        <Analyzing
+          clipId={route.clipId}
+          onDone={clipId => setRoute({ name: 'result', clipId })}
+          onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+        />
+      )}
+      {route.name === 'result' && (
+        <Results
+          clipId={route.clipId}
+          onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+        />
+      )}
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

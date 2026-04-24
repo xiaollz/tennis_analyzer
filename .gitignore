@@ -7,6 +7,11 @@ env/
 # ===== 生成报告 =====
 reports/
 
+# ===== Baseline app runtime data =====
+storage/
+frontend/dist/*.html.tmp
+
+
 # ===== 模型权重（大文件，不上传） =====
 models/
 *.pt

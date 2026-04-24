@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baseline — Tennis Swing Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #e8e4db; font-family: 'Inter', system-ui, sans-serif; }
+  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+
+// ═══ design-canvas.jsx ═══
+
+// DesignCanvas.jsx — Figma-ish design canvas wrapper
+// Warm gray grid bg + Sections + Artboards + PostIt notes.
+// Artboards are reorderable (grip-drag), labels/titles are inline-editable,
+// and any artboard can be opened in a fullscreen focus overlay (←/→/Esc).
+// State persists to a .design-canvas.state.json sidecar via the host
+// bridge. No assets, no deps.
+//
+// Usage:
+//   <DesignCanvas>
+//     <DCSection id="onboarding" title="Onboarding" subtitle="First-run variants">
+//       <DCArtboard id="a" label="A · Dusk" width={260} height={480}>…</DCArtboard>
+//       <DCArtboard id="b" label="B · Minimal" width={260} height={480}>…</DCArtboard>
+//     </DCSection>
+//   </DesignCanvas>
+
+const DC = {
+  bg: '#f0eee9',
+  grid: 'rgba(0,0,0,0.06)',
+  label: 'rgba(60,50,40,0.7)',
+  title: 'rgba(40,30,20,0.85)',
+  subtitle: 'rgba(60,50,40,0.6)',
+  postitBg: '#fef4a8',
+  postitText: '#5a4a2a',
+  font: '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+};
+
+// One-time CSS injection (classes are dc-prefixed so they don't collide with
+// the hosted design's own styles).
+if (typeof document !== 'undefined' && !document.getElementById('dc-styles')) {
+  const s = document.createElement('style');
+  s.id = 'dc-styles';
+  s.textContent = [
+    '.dc-editable{cursor:text;outline:none;white-space:nowrap;border-radius:3px;padding:0 2px;margin:0 -2px}',
+    '.dc-editable:focus{background:#fff;box-shadow:0 0 0 1.5px #c96442}',
+    '[data-dc-slot]{transition:transform .18s cubic-bezier(.2,.7,.3,1)}',
+    '[data-dc-slot].dc-dragging{transition:none;z-index:10;pointer-events:none}',
+    '[data-dc-slot].dc-dragging .dc-card{box-shadow:0 12px 40px rgba(0,0,0,.25),0 0 0 2px #c96442;transform:scale(1.02)}',
+    '.dc-card{transition:box-shadow .15s,transform .15s}',
+    '.dc-card *{scrollbar-width:none}',
+    '.dc-card *::-webkit-scrollbar{display:none}',
+    '.dc-labelrow{display:flex;align-items:center;gap:4px;height:24px}',
+    '.dc-grip{cursor:grab;display:flex;align-items:center;padding:5px 4px;border-radius:4px;transition:background .12s}',
+    '.dc-grip:hover{background:rgba(0,0,0,.08)}',
+    '.dc-grip:active{cursor:grabbing}',
+    '.dc-labeltext{cursor:pointer;border-radius:4px;padding:3px 6px;display:flex;align-items:center;transition:background .12s}',
+    '.dc-labeltext:hover{background:rgba(0,0,0,.05)}',
+    '.dc-expand{position:absolute;bottom:100%;right:0;margin-bottom:5px;z-index:2;opacity:0;transition:opacity .12s,background .12s;',
+    '  width:22px;height:22px;border-radius:5px;border:none;cursor:pointer;padding:0;',
+    '  background:transparent;color:rgba(60,50,40,.7);display:flex;align-items:center;justify-content:center}',
+    '.dc-expand:hover{background:rgba(0,0,0,.06);color:#2a251f}',
+    '[data-dc-slot]:hover .dc-expand{opacity:1}',
+  ].join('\n');
+  document.head.appendChild(s);
+}
+
+const DCCtx = React.createContext(null);
+
+// ─────────────────────────────────────────────────────────────
+// DesignCanvas — stateful wrapper around the pan/zoom viewport.
+// Owns runtime state (per-section order, renamed titles/labels, focused
+// artboard). Order/titles/labels persist to a .design-canvas.state.json
+// sidecar next to the HTML. Reads go via plain fetch() so the saved
+// arrangement is visible anywhere the HTML + sidecar are served together
+// (omelette preview, direct link, downloaded zip). Writes go through the
+// host's window.omelette bridge — editing requires the omelette runtime.
+// Focus is ephemeral.
+// ─────────────────────────────────────────────────────────────
+const DC_STATE_FILE = '.design-canvas.state.json';
+
+function DesignCanvas({ children, minScale, maxScale, style }) {
+  const [state, setState] = React.useState({ sections: {}, focus: null });
+  // Hold rendering until the sidecar read settles so the saved order/titles
+  // appear on first paint (no source-order flash). didRead gates writes until
+  // the read settles so the empty initial state can't clobber a slow read;
+  // skipNextWrite suppresses the one echo-write that would otherwise follow
+  // hydration.
+  const [ready, setReady] = React.useState(false);
+  const didRead = React.useRef(false);
+  const skipNextWrite = React.useRef(false);
+
+  React.useEffect(() => {
+    let off = false;
+    fetch('./' + DC_STATE_FILE)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((saved) => {
+        if (off || !saved || !saved.sections) return;
+        skipNextWrite.current = true;
+        setState((s) => ({ ...s, sections: saved.sections }));
+      })
+      .catch(() => {})
+      .finally(() => { didRead.current = true; if (!off) setReady(true); });
+    const t = setTimeout(() => { if (!off) setReady(true); }, 150);
+    return () => { off = true; clearTimeout(t); };
+  }, []);
+
+  React.useEffect(() => {
+    if (!didRead.current) return;
+    if (skipNextWrite.current) { skipNextWrite.current = false; return; }
+    const t = setTimeout(() => {
+      window.omelette?.writeFile(DC_STATE_FILE, JSON.stringify({ sections: state.sections })).catch(() => {});
+    }, 250);
+    return () => clearTimeout(t);
+  }, [state.sections]);
+
+  // Build registries synchronously from children so FocusOverlay can read
+  // them in the same render. Only direct DCSection > DCArtboard children are
+  // walked — wrapping them in other elements opts out of focus/reorder.
+  const registry = {};     // slotId -> { sectionId, artboard }
+  const sectionMeta = {};  // sectionId -> { title, subtitle, slotIds[] }
+  const sectionOrder = [];
+  React.Children.forEach(children, (sec) => {
+    if (!sec || sec.type !== DCSection) return;
+    const sid = sec.props.id ?? sec.props.title;
+    if (!sid) return;
+    sectionOrder.push(sid);
+    const persisted = state.sections[sid] || {};
+    const srcIds = [];
+    React.Children.forEach(sec.props.children, (ab) => {
+      if (!ab || ab.type !== DCArtboard) return;
+      const aid = ab.props.id ?? ab.props.label;
+      if (!aid) return;
+      registry[`${sid}/${aid}`] = { sectionId: sid, artboard: ab };
+      srcIds.push(aid);
+    });
+    const kept = (persisted.order || []).filter((k) => srcIds.includes(k));
+    sectionMeta[sid] = {
+      title: persisted.title ?? sec.props.title,
+      subtitle: sec.props.subtitle,
+      slotIds: [...kept, ...srcIds.filter((k) => !kept.includes(k))],
+    };
+  });
+
+  const api = React.useMemo(() => ({
+    state,
+    section: (id) => state.sections[id] || {},
+    patchSection: (id, p) => setState((s) => ({
+      ...s,
+      sections: { ...s.sections, [id]: { ...s.sections[id], ...(typeof p === 'function' ? p(s.sections[id] || {}) : p) } },
+    })),
+    setFocus: (slotId) => setState((s) => ({ ...s, focus: slotId })),
+  }), [state]);
+
+  // Esc exits focus; any outside pointerdown commits an in-progress rename.
+  React.useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') api.setFocus(null); };
+    const onPd = (e) => {
+      const ae = document.activeElement;
+      if (ae && ae.isContentEditable && !ae.contains(e.target)) ae.blur();
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onPd, true);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', onPd, true);
+    };
+  }, [api]);
+
+  return (
+    <DCCtx.Provider value={api}>
+      <DCViewport minScale={minScale} maxScale={maxScale} style={style}>{ready && children}</DCViewport>
+      {state.focus && registry[state.focus] && (
+        <DCFocusOverlay entry={registry[state.focus]} sectionMeta={sectionMeta} sectionOrder={sectionOrder} />
+      )}
+    </DCCtx.Provider>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// DCViewport — transform-based pan/zoom (internal)
+//
+// Input mapping (Figma-style):
+//   • trackpad pinch  → zoom   (ctrlKey wheel; Safari gesture* events)
+//   • trackpad scroll → pan    (two-finger)
+//   • mouse wheel     → zoom   (notched; distinguished from trackpad scroll)
+//   • middle-drag / primary-drag-on-bg → pan
+//
+// Transform state lives in a ref and is written straight to the DOM
+// (translate3d + will-change) so wheel ticks don't go through React —
+// keeps pans at 60fps on dense canvases.
+// ─────────────────────────────────────────────────────────────
+function DCViewport({ children, minScale = 0.1, maxScale = 8, style = {} }) {
+  const vpRef = React.useRef(null);
+  const worldRef = React.useRef(null);
+  const tf = React.useRef({ x: 0, y: 0, scale: 1 });
+
+  const apply = React.useCallback(() => {
+    const { x, y, scale } = tf.current;
+    const el = worldRef.current;
+    if (el) el.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+  }, []);
+
+  React.useEffect(() => {
+    const vp = vpRef.current;
+    if (!vp) return;
+
+    const zoomAt = (cx, cy, factor) => {
+      const r = vp.getBoundingClientRect();
+      const px = cx - r.left, py = cy - r.top;
+      const t = tf.current;
+      const next = Math.min(maxScale, Math.max(minScale, t.scale * factor));
+      const k = next / t.scale;
+      // keep the world point under the cursor fixed
+      t.x = px - (px - t.x) * k;
+      t.y = py - (py - t.y) * k;
+      t.scale = next;
+      apply();
+    };
+
+    // Mouse-wheel vs trackpad-scroll heuristic. A physical wheel sends
+    // line-mode deltas (Firefox) or large integer pixel deltas with no X
+    // component (Chrome/Safari, typically multiples of 100/120). Trackpad
+    // two-finger scroll sends small/fractional pixel deltas, often with
+    // non-zero deltaX. ctrlKey is set by the browser for trackpad pinch.
+    const isMouseWheel = (e) =>
+      e.deltaMode !== 0 ||
+      (e.deltaX === 0 && Number.isInteger(e.deltaY) && Math.abs(e.deltaY) >= 40);
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      if (isGesturing) return; // Safari: gesture* owns the pinch — discard concurrent wheels
+      if (e.ctrlKey) {
+        // trackpad pinch (or explicit ctrl+wheel)
+        zoomAt(e.clientX, e.clientY, Math.exp(-e.deltaY * 0.01));
+      } else if (isMouseWheel(e)) {
+        // notched mouse wheel — fixed-ratio step per click
+        zoomAt(e.clientX, e.clientY, Math.exp(-Math.sign(e.deltaY) * 0.18));
+      } else {
+        // trackpad two-finger scroll — pan
+        tf.current.x -= e.deltaX;
+        tf.current.y -= e.deltaY;
+        apply();
+      }
+    };
+
+    // Safari sends native gesture* events for trackpad pinch with a smooth
+    // e.scale; preferring these over the ctrl+wheel fallback gives a much
+    // better feel there. No-ops on other browsers. Safari also fires
+    // ctrlKey wheel events during the same pinch — isGesturing makes
+    // onWheel drop those entirely so they neither zoom nor pan.
+    let gsBase = 1;
+    let isGesturing = false;
+    const onGestureStart = (e) => { e.preventDefault(); isGesturing = true; gsBase = tf.current.scale; };
+    const onGestureChange = (e) => {
+      e.preventDefault();
+      zoomAt(e.clientX, e.clientY, (gsBase * e.scale) / tf.current.scale);
+    };
+    const onGestureEnd = (e) => { e.preventDefault(); isGesturing = false; };
+
+    // Drag-pan: middle button anywhere, or primary button on canvas
+    // background (anything that isn't an artboard or an inline editor).
+    let drag = null;
+    const onPointerDown = (e) => {
+      const onBg = !e.target.closest('[data-dc-slot], .dc-editable');
+      if (!(e.button === 1 || (e.button === 0 && onBg))) return;
+      e.preventDefault();
+      vp.setPointerCapture(e.pointerId);
+      drag = { id: e.pointerId, lx: e.clientX, ly: e.clientY };
+      vp.style.cursor = 'grabbing';
+    };
+    const onPointerMove = (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      tf.current.x += e.clientX - drag.lx;
+      tf.current.y += e.clientY - drag.ly;
+      drag.lx = e.clientX; drag.ly = e.clientY;
+      apply();
+    };
+    const onPointerUp = (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      vp.releasePointerCapture(e.pointerId);
+      drag = null;
+      vp.style.cursor = '';
+    };
+
+    vp.addEventListener('wheel', onWheel, { passive: false });
+    vp.addEventListener('gesturestart', onGestureStart, { passive: false });
+    vp.addEventListener('gesturechange', onGestureChange, { passive: false });
+    vp.addEventListener('gestureend', onGestureEnd, { passive: false });
+    vp.addEventListener('pointerdown', onPointerDown);
+    vp.addEventListener('pointermove', onPointerMove);
+    vp.addEventListener('pointerup', onPointerUp);
+    vp.addEventListener('pointercancel', onPointerUp);
+    return () => {
+      vp.removeEventListener('wheel', onWheel);
+      vp.removeEventListener('gesturestart', onGestureStart);
+      vp.removeEventListener('gesturechange', onGestureChange);
+      vp.removeEventListener('gestureend', onGestureEnd);
+      vp.removeEventListener('pointerdown', onPointerDown);
+      vp.removeEventListener('pointermove', onPointerMove);
+      vp.removeEventListener('pointerup', onPointerUp);
+      vp.removeEventListener('pointercancel', onPointerUp);
+    };
+  }, [apply, minScale, maxScale]);
+
+  const gridSvg = `url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M120 0H0v120' fill='none' stroke='${encodeURIComponent(DC.grid)}' stroke-width='1'/%3E%3C/svg%3E")`;
+  return (
+    <div
+      ref={vpRef}
+      className="design-canvas"
+      style={{
+        height: '100vh', width: '100vw',
+        background: DC.bg,
+        overflow: 'hidden',
+        overscrollBehavior: 'none',
+        touchAction: 'none',
+        position: 'relative',
+        fontFamily: DC.font,
+        boxSizing: 'border-box',
+        ...style,
+      }}
+    >
+      <div
+        ref={worldRef}
+        style={{
+          position: 'absolute', top: 0, left: 0,
+          transformOrigin: '0 0',
+          willChange: 'transform',
+          width: 'max-content', minWidth: '100%',
+          minHeight: '100%',
+          padding: '60px 0 80px',
+        }}
+      >
+        <div style={{ position: 'absolute', inset: -6000, backgroundImage: gridSvg, backgroundSize: '120px 120px', pointerEvents: 'none', zIndex: -1 }} />
+        {children}
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// DCSection — editable title + h-row of artboards in persisted order
+// ─────────────────────────────────────────────────────────────
+function DCSection({ id, title, subtitle, children, gap = 48 }) {
+  const ctx = React.useContext(DCCtx);
+  const sid = id ?? title;
+  const all = React.Children.toArray(children);
+  const artboards = all.filter((c) => c && c.type === DCArtboard);
+  const rest = all.filter((c) => !(c && c.type === DCArtboard));
+  const srcOrder = artboards.map((a) => a.props.id ?? a.props.label);
+  const sec = (ctx && sid && ctx.section(sid)) || {};
+
+  const order = React.useMemo(() => {
+    const kept = (sec.order || []).filter((k) => srcOrder.includes(k));
+    return [...kept, ...srcOrder.filter((k) => !kept.includes(k))];
+  }, [sec.order, srcOrder.join('|')]);
+
+  const byId = Object.fromEntries(artboards.map((a) => [a.props.id ?? a.props.label, a]));
+
+  return (
+    <div data-dc-section={sid} style={{ marginBottom: 80, position: 'relative' }}>
+      <div style={{ padding: '0 60px 56px' }}>
+        <DCEditable tag="div" value={sec.title ?? title}
+          onChange={(v) => ctx && sid && ctx.patchSection(sid, { title: v })}
+          style={{ fontSize: 28, fontWeight: 600, color: DC.title, letterSpacing: -0.4, marginBottom: 6, display: 'inline-block' }} />
+        {subtitle && <div style={{ fontSize: 16, color: DC.subtitle }}>{subtitle}</div>}
+      </div>
+      <div style={{ display: 'flex', gap, padding: '0 60px', alignItems: 'flex-start', width: 'max-content' }}>
+        {order.map((k) => (
+          <DCArtboardFrame key={k} sectionId={sid} artboard={byId[k]} order={order}
+            label={(sec.labels || {})[k] ?? byId[k].props.label}
+            onRename={(v) => ctx && ctx.patchSection(sid, (x) => ({ labels: { ...x.labels, [k]: v } }))}
+            onReorder={(next) => ctx && ctx.patchSection(sid, { order: next })}
+            onFocus={() => ctx && ctx.setFocus(`${sid}/${k}`)} />
+        ))}
+      </div>
+      {rest}
+    </div>
+  );
+}
+
+// DCArtboard — marker; rendered by DCArtboardFrame via DCSection.
+function DCArtboard() { return null; }
+
+function DCArtboardFrame({ sectionId, artboard, label, order, onRename, onReorder, onFocus }) {
+  const { id: rawId, label: rawLabel, width = 260, height = 480, children, style = {} } = artboard.props;
+  const id = rawId ?? rawLabel;
+  const ref = React.useRef(null);
+
+  // Live drag-reorder: dragged card sticks to cursor; siblings slide into
+  // their would-be slots in real time via transforms. DOM order only
+  // changes on drop.
+  const onGripDown = (e) => {
+    e.preventDefault(); e.stopPropagation();
+    const me = ref.current;
+    // translateX is applied in local (pre-scale) space but pointer deltas and
+    // getBoundingClientRect().left are screen-space — divide by the viewport's
+    // current scale so the dragged card tracks the cursor at any zoom level.
+    const scale = me.getBoundingClientRect().width / me.offsetWidth || 1;
+    const peers = Array.from(document.querySelectorAll(`[data-dc-section="${sectionId}"] [data-dc-slot]`));
+    const homes = peers.map((el) => ({ el, id: el.dataset.dcSlot, x: el.getBoundingClientRect().left }));
+    const slotXs = homes.map((h) => h.x);
+    const startIdx = order.indexOf(id);
+    const startX = e.clientX;
+    let liveOrder = order.slice();
+    me.classList.add('dc-dragging');
+
+    const layout = () => {
+      for (const h of homes) {
+        if (h.id === id) continue;
+        const slot = liveOrder.indexOf(h.id);
+        h.el.style.transform = `translateX(${(slotXs[slot] - h.x) / scale}px)`;
+      }
+    };
+
+    const move = (ev) => {
+      const dx = ev.clientX - startX;
+      me.style.transform = `translateX(${dx / scale}px)`;
+      const cur = homes[startIdx].x + dx;
+      let nearest = 0, best = Infinity;
+      for (let i = 0; i < slotXs.length; i++) {
+        const d = Math.abs(slotXs[i] - cur);
+        if (d < best) { best = d; nearest = i; }
+      }
+      if (liveOrder.indexOf(id) !== nearest) {
+        liveOrder = order.filter((k) => k !== id);
+        liveOrder.splice(nearest, 0, id);
+        layout();
+      }
+    };
+
+    const up = () => {
+      document.removeEventListener('pointermove', move);
+      document.removeEventListener('pointerup', up);
+      const finalSlot = liveOrder.indexOf(id);
+      me.classList.remove('dc-dragging');
+      me.style.transform = `translateX(${(slotXs[finalSlot] - homes[startIdx].x) / scale}px)`;
+      // After the settle transition, kill transitions + clear transforms +
+      // commit the reorder in the same frame so there's no visual snap-back.
+      setTimeout(() => {
+        for (const h of homes) { h.el.style.transition = 'none'; h.el.style.transform = ''; }
+        if (liveOrder.join('|') !== order.join('|')) onReorder(liveOrder);
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          for (const h of homes) h.el.style.transition = '';
+        }));
+      }, 180);
+    };
+    document.addEventListener('pointermove', move);
+    document.addEventListener('pointerup', up);
+  };
+
+  return (
+    <div ref={ref} data-dc-slot={id} style={{ position: 'relative', flexShrink: 0 }}>
+      <div className="dc-labelrow" style={{ position: 'absolute', bottom: '100%', left: -4, marginBottom: 4, color: DC.label }}>
+        <div className="dc-grip" onPointerDown={onGripDown} title="Drag to reorder">
+          <svg width="9" height="13" viewBox="0 0 9 13" fill="currentColor"><circle cx="2" cy="2" r="1.1"/><circle cx="7" cy="2" r="1.1"/><circle cx="2" cy="6.5" r="1.1"/><circle cx="7" cy="6.5" r="1.1"/><circle cx="2" cy="11" r="1.1"/><circle cx="7" cy="11" r="1.1"/></svg>
+        </div>
+        <div className="dc-labeltext" onClick={onFocus} title="Click to focus">
+          <DCEditable value={label} onChange={onRename} onClick={(e) => e.stopPropagation()}
+            style={{ fontSize: 15, fontWeight: 500, color: DC.label, lineHeight: 1 }} />
+        </div>
+      </div>
+      <button className="dc-expand" onClick={onFocus} onPointerDown={(e) => e.stopPropagation()} title="Focus">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M7 1h4v4M5 11H1V7M11 1L7.5 4.5M1 11l3.5-3.5"/></svg>
+      </button>
+      <div className="dc-card"
+        style={{ borderRadius: 2, boxShadow: '0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06)', overflow: 'hidden', width, height, background: '#fff', ...style }}>
+        {children || <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#bbb', fontSize: 13, fontFamily: DC.font }}>{id}</div>}
+      </div>
+    </div>
+  );
+}
+
+// Inline rename — commits on blur or Enter.
+function DCEditable({ value, onChange, style, tag = 'span', onClick }) {
+  const T = tag;
+  return (
+    <T className="dc-editable" contentEditable suppressContentEditableWarning
+      onClick={onClick}
+      onPointerDown={(e) => e.stopPropagation()}
+      onBlur={(e) => onChange && onChange(e.currentTarget.textContent)}
+      onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.currentTarget.blur(); } }}
+      style={style}>{value}</T>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Focus mode — overlay one artboard; ←/→ within section, ↑/↓ across
+// sections, Esc or backdrop click to exit.
+// ─────────────────────────────────────────────────────────────
+function DCFocusOverlay({ entry, sectionMeta, sectionOrder }) {
+  const ctx = React.useContext(DCCtx);
+  const { sectionId, artboard } = entry;
+  const sec = ctx.section(sectionId);
+  const meta = sectionMeta[sectionId];
+  const peers = meta.slotIds;
+  const aid = artboard.props.id ?? artboard.props.label;
+  const idx = peers.indexOf(aid);
+  const secIdx = sectionOrder.indexOf(sectionId);
+
+  const go = (d) => { const n = peers[(idx + d + peers.length) % peers.length]; if (n) ctx.setFocus(`${sectionId}/${n}`); };
+  const goSection = (d) => {
+    const ns = sectionOrder[(secIdx + d + sectionOrder.length) % sectionOrder.length];
+    const first = sectionMeta[ns] && sectionMeta[ns].slotIds[0];
+    if (first) ctx.setFocus(`${ns}/${first}`);
+  };
+
+  React.useEffect(() => {
+    const k = (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); goSection(-1); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); goSection(1); }
+    };
+    document.addEventListener('keydown', k);
+    return () => document.removeEventListener('keydown', k);
+  });
+
+  const { width = 260, height = 480, children } = artboard.props;
+  const [vp, setVp] = React.useState({ w: window.innerWidth, h: window.innerHeight });
+  React.useEffect(() => { const r = () => setVp({ w: window.innerWidth, h: window.innerHeight }); window.addEventListener('resize', r); return () => window.removeEventListener('resize', r); }, []);
+  const scale = Math.max(0.1, Math.min((vp.w - 200) / width, (vp.h - 260) / height, 2));
+
+  const [ddOpen, setDd] = React.useState(false);
+  const Arrow = ({ dir, onClick }) => (
+    <button onClick={(e) => { e.stopPropagation(); onClick(); }}
+      style={{ position: 'absolute', top: '50%', [dir]: 28, transform: 'translateY(-50%)',
+        border: 'none', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.9)',
+        width: 44, height: 44, borderRadius: 22, fontSize: 18, cursor: 'pointer',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background .15s' }}
+      onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,.18)')}
+      onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,.08)')}>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <path d={dir === 'left' ? 'M11 3L5 9l6 6' : 'M7 3l6 6-6 6'} /></svg>
+    </button>
+  );
+
+  // Portal to body so position:fixed is the real viewport regardless of any
+  // transform on DesignCanvas's ancestors (including the canvas zoom itself).
+  return ReactDOM.createPortal(
+    <div onClick={() => ctx.setFocus(null)}
+      onWheel={(e) => e.preventDefault()}
+      style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(24,20,16,.6)', backdropFilter: 'blur(14px)',
+        fontFamily: DC.font, color: '#fff' }}>
+
+      {/* top bar: section dropdown (left) · close (right) */}
+      <div onClick={(e) => e.stopPropagation()}
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 72, display: 'flex', alignItems: 'flex-start', padding: '16px 20px 0', gap: 16 }}>
+        <div style={{ position: 'relative' }}>
+          <button onClick={() => setDd((o) => !o)}
+            style={{ border: 'none', background: 'transparent', color: '#fff', cursor: 'pointer', padding: '6px 8px',
+              borderRadius: 6, textAlign: 'left', fontFamily: 'inherit' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 18, fontWeight: 600, letterSpacing: -0.3 }}>{meta.title}</span>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" style={{ opacity: .7 }}><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </span>
+            {meta.subtitle && <span style={{ display: 'block', fontSize: 13, opacity: .6, fontWeight: 400, marginTop: 2 }}>{meta.subtitle}</span>}
+          </button>
+          {ddOpen && (
+            <div style={{ position: 'absolute', top: '100%', left: 0, marginTop: 4, background: '#2a251f', borderRadius: 8,
+              boxShadow: '0 8px 32px rgba(0,0,0,.4)', padding: 4, minWidth: 200, zIndex: 10 }}>
+              {sectionOrder.map((sid) => (
+                <button key={sid} onClick={() => { setDd(false); const f = sectionMeta[sid].slotIds[0]; if (f) ctx.setFocus(`${sid}/${f}`); }}
+                  style={{ display: 'block', width: '100%', textAlign: 'left', border: 'none', cursor: 'pointer',
+                    background: sid === sectionId ? 'rgba(255,255,255,.1)' : 'transparent', color: '#fff',
+                    padding: '8px 12px', borderRadius: 5, fontSize: 14, fontWeight: sid === sectionId ? 600 : 400, fontFamily: 'inherit' }}>
+                  {sectionMeta[sid].title}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        <div style={{ flex: 1 }} />
+        <button onClick={() => ctx.setFocus(null)}
+          onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,.12)')}
+          onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+          style={{ border: 'none', background: 'transparent', color: 'rgba(255,255,255,.7)', width: 32, height: 32,
+            borderRadius: 16, fontSize: 20, cursor: 'pointer', lineHeight: 1, transition: 'background .12s' }}>×</button>
+      </div>
+
+      {/* card centered, label + index below — only the card itself stops
+          propagation so any backdrop click (including the margins around
+          the card) exits focus */}
+      <div
+        style={{ position: 'absolute', top: 64, bottom: 56, left: 100, right: 100, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+        <div onClick={(e) => e.stopPropagation()} style={{ width: width * scale, height: height * scale, position: 'relative' }}>
+          <div style={{ width, height, transform: `scale(${scale})`, transformOrigin: 'top left', background: '#fff', borderRadius: 2, overflow: 'hidden',
+            boxShadow: '0 20px 80px rgba(0,0,0,.4)' }}>
+            {children || <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#bbb' }}>{aid}</div>}
+          </div>
+        </div>
+        <div onClick={(e) => e.stopPropagation()} style={{ fontSize: 14, fontWeight: 500, opacity: .85, textAlign: 'center' }}>
+          {(sec.labels || {})[aid] ?? artboard.props.label}
+          <span style={{ opacity: .5, marginLeft: 10, fontVariantNumeric: 'tabular-nums' }}>{idx + 1} / {peers.length}</span>
+        </div>
+      </div>
+
+      <Arrow dir="left" onClick={() => go(-1)} />
+      <Arrow dir="right" onClick={() => go(1)} />
+
+      {/* dots */}
+      <div onClick={(e) => e.stopPropagation()}
+        style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8 }}>
+        {peers.map((p, i) => (
+          <button key={p} onClick={() => ctx.setFocus(`${sectionId}/${p}`)}
+            style={{ border: 'none', padding: 0, cursor: 'pointer', width: 6, height: 6, borderRadius: 3,
+              background: i === idx ? '#fff' : 'rgba(255,255,255,.3)' }} />
+        ))}
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Post-it — absolute-positioned sticky note
+// ─────────────────────────────────────────────────────────────
+function DCPostIt({ children, top, left, right, bottom, rotate = -2, width = 180 }) {
+  return (
+    <div style={{
+      position: 'absolute', top, left, right, bottom, width,
+      background: DC.postitBg, padding: '14px 16px',
+      fontFamily: '"Comic Sans MS", "Marker Felt", "Segoe Print", cursive',
+      fontSize: 14, lineHeight: 1.4, color: DC.postitText,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08)',
+      transform: `rotate(${rotate}deg)`,
+      zIndex: 5,
+    }}>{children}</div>
+  );
+}
+
+Object.assign(window, { DesignCanvas, DCSection, DCArtboard, DCPostIt });
+
+
+
+// ═══ ios-frame.jsx ═══
+
+// iOS.jsx — Simplified iOS 26 (Liquid Glass) device frame
+// Based on the iOS 26 UI Kit + Figma status bar spec. No assets, no deps.
+// Exports: IOSDevice, IOSStatusBar, IOSNavBar, IOSGlassPill, IOSList, IOSListRow, IOSKeyboard
+
+// ─────────────────────────────────────────────────────────────
+// Status bar
+// ─────────────────────────────────────────────────────────────
+function IOSStatusBar({ dark = false, time = '9:41' }) {
+  const c = dark ? '#fff' : '#000';
+  return (
+    <div style={{
+      display: 'flex', gap: 154, alignItems: 'center', justifyContent: 'center',
+      padding: '21px 24px 19px', boxSizing: 'border-box',
+      position: 'relative', zIndex: 20, width: '100%',
+    }}>
+      <div style={{ flex: 1, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 1.5 }}>
+        <span style={{
+          fontFamily: '-apple-system, "SF Pro", system-ui', fontWeight: 590,
+          fontSize: 17, lineHeight: '22px', color: c,
+        }}>{time}</span>
+      </div>
+      <div style={{ flex: 1, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, paddingTop: 1, paddingRight: 1 }}>
+        <svg width="19" height="12" viewBox="0 0 19 12">
+          <rect x="0" y="7.5" width="3.2" height="4.5" rx="0.7" fill={c}/>
+          <rect x="4.8" y="5" width="3.2" height="7" rx="0.7" fill={c}/>
+          <rect x="9.6" y="2.5" width="3.2" height="9.5" rx="0.7" fill={c}/>
+          <rect x="14.4" y="0" width="3.2" height="12" rx="0.7" fill={c}/>
+        </svg>
+        <svg width="17" height="12" viewBox="0 0 17 12">
+          <path d="M8.5 3.2C10.8 3.2 12.9 4.1 14.4 5.6L15.5 4.5C13.7 2.7 11.2 1.5 8.5 1.5C5.8 1.5 3.3 2.7 1.5 4.5L2.6 5.6C4.1 4.1 6.2 3.2 8.5 3.2Z" fill={c}/>
+          <path d="M8.5 6.8C9.9 6.8 11.1 7.3 12 8.2L13.1 7.1C11.8 5.9 10.2 5.1 8.5 5.1C6.8 5.1 5.2 5.9 3.9 7.1L5 8.2C5.9 7.3 7.1 6.8 8.5 6.8Z" fill={c}/>
+          <circle cx="8.5" cy="10.5" r="1.5" fill={c}/>
+        </svg>
+        <svg width="27" height="13" viewBox="0 0 27 13">
+          <rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke={c} strokeOpacity="0.35" fill="none"/>
+          <rect x="2" y="2" width="20" height="9" rx="2" fill={c}/>
+          <path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill={c} fillOpacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Liquid glass pill — blur + tint + shine
+// ─────────────────────────────────────────────────────────────
+function IOSGlassPill({ children, dark = false, style = {} }) {
+  return (
+    <div style={{
+      height: 44, minWidth: 44, borderRadius: 9999,
+      position: 'relative', overflow: 'hidden',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      boxShadow: dark
+        ? '0 2px 6px rgba(0,0,0,0.35), 0 6px 16px rgba(0,0,0,0.2)'
+        : '0 1px 3px rgba(0,0,0,0.07), 0 3px 10px rgba(0,0,0,0.06)',
+      ...style,
+    }}>
+      {/* blur + tint */}
+      <div style={{
+        position: 'absolute', inset: 0, borderRadius: 9999,
+        backdropFilter: 'blur(12px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+        background: dark ? 'rgba(120,120,128,0.28)' : 'rgba(255,255,255,0.5)',
+      }} />
+      {/* shine */}
+      <div style={{
+        position: 'absolute', inset: 0, borderRadius: 9999,
+        boxShadow: dark
+          ? 'inset 1.5px 1.5px 1px rgba(255,255,255,0.15), inset -1px -1px 1px rgba(255,255,255,0.08)'
+          : 'inset 1.5px 1.5px 1px rgba(255,255,255,0.7), inset -1px -1px 1px rgba(255,255,255,0.4)',
+        border: dark ? '0.5px solid rgba(255,255,255,0.15)' : '0.5px solid rgba(0,0,0,0.06)',
+      }} />
+      <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', padding: '0 4px' }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Navigation bar — glass pills + large title
+// ─────────────────────────────────────────────────────────────
+function IOSNavBar({ title = 'Title', dark = false, trailingIcon = true }) {
+  const muted = dark ? 'rgba(255,255,255,0.6)' : '#404040';
+  const text = dark ? '#fff' : '#000';
+  const pillIcon = (content) => (
+    <IOSGlassPill dark={dark}>
+      <div style={{ width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {content}
+      </div>
+    </IOSGlassPill>
+  );
+  return (
+    <div style={{
+      display: 'flex', flexDirection: 'column', gap: 10,
+      paddingTop: 62, paddingBottom: 10, position: 'relative', zIndex: 5,
+    }}>
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '0 16px',
+      }}>
+        {/* back chevron */}
+        {pillIcon(
+          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" style={{ marginLeft: -1 }}>
+            <path d="M10 2L2 10l8 8" stroke={muted} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        )}
+        {/* trailing ellipsis */}
+        {trailingIcon && pillIcon(
+          <svg width="22" height="6" viewBox="0 0 22 6">
+            <circle cx="3" cy="3" r="2.5" fill={muted}/>
+            <circle cx="11" cy="3" r="2.5" fill={muted}/>
+            <circle cx="19" cy="3" r="2.5" fill={muted}/>
+          </svg>
+        )}
+      </div>
+      {/* large title */}
+      <div style={{
+        padding: '0 16px',
+        fontFamily: '-apple-system, system-ui',
+        fontSize: 34, fontWeight: 700, lineHeight: '41px',
+        color: text, letterSpacing: 0.4,
+      }}>{title}</div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Grouped list (inset card, r:26) + row (52px)
+// ─────────────────────────────────────────────────────────────
+function IOSListRow({ title, detail, icon, chevron = true, isLast = false, dark = false }) {
+  const text = dark ? '#fff' : '#000';
+  const sec = dark ? 'rgba(235,235,245,0.6)' : 'rgba(60,60,67,0.6)';
+  const ter = dark ? 'rgba(235,235,245,0.3)' : 'rgba(60,60,67,0.3)';
+  const sep = dark ? 'rgba(84,84,88,0.65)' : 'rgba(60,60,67,0.12)';
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', minHeight: 52,
+      padding: '0 16px', position: 'relative',
+      fontFamily: '-apple-system, system-ui', fontSize: 17,
+      letterSpacing: -0.43,
+    }}>
+      {icon && (
+        <div style={{
+          width: 30, height: 30, borderRadius: 7, background: icon,
+          marginRight: 12, flexShrink: 0,
+        }} />
+      )}
+      <div style={{ flex: 1, color: text }}>{title}</div>
+      {detail && <span style={{ color: sec, marginRight: 6 }}>{detail}</span>}
+      {chevron && (
+        <svg width="8" height="14" viewBox="0 0 8 14" style={{ flexShrink: 0 }}>
+          <path d="M1 1l6 6-6 6" stroke={ter} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )}
+      {!isLast && (
+        <div style={{
+          position: 'absolute', bottom: 0, right: 0,
+          left: icon ? 58 : 16, height: 0.5, background: sep,
+        }} />
+      )}
+    </div>
+  );
+}
+
+function IOSList({ header, children, dark = false }) {
+  const hc = dark ? 'rgba(235,235,245,0.6)' : 'rgba(60,60,67,0.6)';
+  const bg = dark ? '#1C1C1E' : '#fff';
+  return (
+    <div>
+      {header && (
+        <div style={{
+          fontFamily: '-apple-system, system-ui', fontSize: 13,
+          color: hc, textTransform: 'uppercase',
+          padding: '8px 36px 6px', letterSpacing: -0.08,
+        }}>{header}</div>
+      )}
+      <div style={{
+        background: bg, borderRadius: 26,
+        margin: '0 16px', overflow: 'hidden',
+      }}>{children}</div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Device frame
+// ─────────────────────────────────────────────────────────────
+function IOSDevice({
+  children, width = 402, height = 874, dark = false,
+  title, keyboard = false,
+}) {
+  return (
+    <div style={{
+      width, height, borderRadius: 48, overflow: 'hidden',
+      position: 'relative', background: dark ? '#000' : '#F2F2F7',
+      boxShadow: '0 40px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.12)',
+      fontFamily: '-apple-system, system-ui, sans-serif',
+      WebkitFontSmoothing: 'antialiased',
+    }}>
+      {/* dynamic island */}
+      <div style={{
+        position: 'absolute', top: 11, left: '50%', transform: 'translateX(-50%)',
+        width: 126, height: 37, borderRadius: 24, background: '#000', zIndex: 50,
+      }} />
+      {/* status bar (absolute) */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10 }}>
+        <IOSStatusBar dark={dark} />
+      </div>
+      {/* nav + content */}
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        {title !== undefined && <IOSNavBar title={title} dark={dark} />}
+        <div style={{ flex: 1, overflow: 'auto' }}>{children}</div>
+        {keyboard && <IOSKeyboard dark={dark} />}
+      </div>
+      {/* home indicator — always on top */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 60,
+        height: 34, display: 'flex', justifyContent: 'center', alignItems: 'flex-end',
+        paddingBottom: 8, pointerEvents: 'none',
+      }}>
+        <div style={{
+          width: 139, height: 5, borderRadius: 100,
+          background: dark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.25)',
+        }} />
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// Keyboard — iOS 26 liquid glass
+// ─────────────────────────────────────────────────────────────
+function IOSKeyboard({ dark = false }) {
+  const glyph = dark ? 'rgba(255,255,255,0.7)' : '#595959';
+  const sugg = dark ? 'rgba(255,255,255,0.6)' : '#333';
+  const keyBg = dark ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.85)';
+
+  // special-key icons
+  const icons = {
+    shift: <svg width="19" height="17" viewBox="0 0 19 17"><path d="M9.5 1L1 9.5h4.5V16h8V9.5H18L9.5 1z" fill={glyph}/></svg>,
+    del: <svg width="23" height="17" viewBox="0 0 23 17"><path d="M7 1h13a2 2 0 012 2v11a2 2 0 01-2 2H7l-6-7.5L7 1z" fill="none" stroke={glyph} strokeWidth="1.6" strokeLinejoin="round"/><path d="M10 5l7 7M17 5l-7 7" stroke={glyph} strokeWidth="1.6" strokeLinecap="round"/></svg>,
+    ret: <svg width="20" height="14" viewBox="0 0 20 14"><path d="M18 1v6H4m0 0l4-4M4 7l4 4" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  };
+
+  const key = (content, { w, flex, ret, fs = 25, k } = {}) => (
+    <div key={k} style={{
+      height: 42, borderRadius: 8.5,
+      flex: flex ? 1 : undefined, width: w, minWidth: 0,
+      background: ret ? '#08f' : keyBg,
+      boxShadow: '0 1px 0 rgba(0,0,0,0.075)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: '-apple-system, "SF Compact", system-ui',
+      fontSize: fs, fontWeight: 458, color: ret ? '#fff' : glyph,
+    }}>{content}</div>
+  );
+
+  const row = (keys, pad = 0) => (
+    <div style={{ display: 'flex', gap: 6.5, justifyContent: 'center', padding: `0 ${pad}px` }}>
+      {keys.map(l => key(l, { flex: true, k: l }))}
+    </div>
+  );
+
+  return (
+    <div style={{
+      position: 'relative', zIndex: 15, borderRadius: 27, overflow: 'hidden',
+      padding: '11px 0 2px',
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      boxShadow: dark
+        ? '0 -2px 20px rgba(0,0,0,0.09)'
+        : '0 -1px 6px rgba(0,0,0,0.018), 0 -3px 20px rgba(0,0,0,0.012)',
+    }}>
+      {/* liquid glass bg — same recipe as nav pills */}
+      <div style={{
+        position: 'absolute', inset: 0, borderRadius: 27,
+        backdropFilter: 'blur(12px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+        background: dark ? 'rgba(120,120,128,0.14)' : 'rgba(255,255,255,0.25)',
+      }} />
+      <div style={{
+        position: 'absolute', inset: 0, borderRadius: 27,
+        boxShadow: dark
+          ? 'inset 1.5px 1.5px 1px rgba(255,255,255,0.15)'
+          : 'inset 1.5px 1.5px 1px rgba(255,255,255,0.7), inset -1px -1px 1px rgba(255,255,255,0.4)',
+        border: dark ? '0.5px solid rgba(255,255,255,0.15)' : '0.5px solid rgba(0,0,0,0.06)',
+        pointerEvents: 'none',
+      }} />
+
+      {/* autocorrect bar */}
+      <div style={{
+        display: 'flex', gap: 20, alignItems: 'center',
+        padding: '8px 22px 13px', width: '100%', boxSizing: 'border-box',
+        position: 'relative',
+      }}>
+        {['"The"', 'the', 'to'].map((w, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && <div style={{ width: 1, height: 25, background: '#ccc', opacity: 0.3 }} />}
+            <div style={{
+              flex: 1, textAlign: 'center',
+              fontFamily: '-apple-system, system-ui', fontSize: 17,
+              color: sugg, letterSpacing: -0.43, lineHeight: '22px',
+            }}>{w}</div>
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* key layout */}
+      <div style={{
+        display: 'flex', flexDirection: 'column', gap: 13,
+        padding: '0 6.5px', width: '100%', boxSizing: 'border-box',
+        position: 'relative',
+      }}>
+        {row(['q','w','e','r','t','y','u','i','o','p'])}
+        {row(['a','s','d','f','g','h','j','k','l'], 20)}
+        <div style={{ display: 'flex', gap: 14.25, alignItems: 'center' }}>
+          {key(icons.shift, { w: 45, k: 'shift' })}
+          <div style={{ display: 'flex', gap: 6.5, flex: 1 }}>
+            {['z','x','c','v','b','n','m'].map(l => key(l, { flex: true, k: l }))}
+          </div>
+          {key(icons.del, { w: 45, k: 'del' })}
+        </div>
+        <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+          {key('ABC', { w: 92.25, fs: 18, k: 'abc' })}
+          {key('', { flex: true, k: 'space' })}
+          {key(icons.ret, { w: 92.25, ret: true, k: 'ret' })}
+        </div>
+      </div>
+
+      {/* bottom spacer (emoji+mic area, icons omitted) */}
+      <div style={{ height: 56, width: '100%', position: 'relative' }} />
+    </div>
+  );
+}
+
+Object.assign(window, {
+  IOSDevice, IOSStatusBar, IOSNavBar, IOSGlassPill, IOSList, IOSListRow, IOSKeyboard,
+});
+
+
+// ═══ tokens.jsx ═══
+// tokens.jsx — Baseline design tokens + shared primitives
+
+const T = {
+  // Palette — warm clay + amber gold + deep charcoal on cream
+  bg:        '#F7F3EC',   // app background
+  paper:     '#FDFBF6',   // card
+  paperAlt:  '#F1ECE2',   // sunken panel
+  ink:       '#2A2925',   // primary text
+  ink2:      '#5A544A',   // secondary text
+  ink3:      '#8A8276',   // tertiary / meta
+  line:      'rgba(42,41,37,0.10)',
+  lineSoft:  'rgba(42,41,37,0.06)',
+  clay:      '#C8553D',   // primary accent (racquet grip red)
+  clayDeep:  '#A8432F',
+  amber:     '#E8B04B',   // highlight (court lines)
+  amberSoft: '#F3D38A',
+  court:     '#9AAE60',   // grass court green (rare, as accent)
+  // Typography
+  serif:     '"Fraunces", "Iowan Old Style", Georgia, serif',
+  sans:      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+  mono:      '"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace',
+};
+
+// ─── Icon set (stroke, 1.5px, 24x24, ink2 default) ───
+const Icon = ({ name, size = 20, color = T.ink2, stroke = 1.6 }) => {
+  const p = { fill: 'none', stroke: color, strokeWidth: stroke, strokeLinecap: 'round', strokeLinejoin: 'round' };
+  const paths = {
+    home:    <><path d="M3 10.5L12 3l9 7.5" {...p}/><path d="M5 9.5V20h14V9.5" {...p}/></>,
+    plus:    <><path d="M12 5v14M5 12h14" {...p}/></>,
+    camera:  <><rect x="3" y="7" width="18" height="13" rx="2.5" {...p}/><path d="M8 7l1.5-2.5h5L16 7" {...p}/><circle cx="12" cy="13.5" r="3.5" {...p}/></>,
+    history: <><path d="M3 12a9 9 0 1 0 3-6.7" {...p}/><path d="M3 4v4.5h4.5" {...p}/><path d="M12 7.5V12l3 2" {...p}/></>,
+    user:    <><circle cx="12" cy="8" r="4" {...p}/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" {...p}/></>,
+    play:    <><path d="M7 5l12 7-12 7V5z" fill={color} stroke="none"/></>,
+    pause:   <><rect x="6" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/></>,
+    chevR:   <><path d="M9 5l7 7-7 7" {...p}/></>,
+    chevL:   <><path d="M15 5l-7 7 7 7" {...p}/></>,
+    chevD:   <><path d="M5 9l7 7 7-7" {...p}/></>,
+    check:   <><path d="M4 12l5 5 11-12" {...p}/></>,
+    circle:  <><circle cx="12" cy="12" r="9" {...p}/></>,
+    sparkle: <><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" {...p}/></>,
+    upload:  <><path d="M12 16V4m0 0l-5 5m5-5l5 5" {...p}/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" {...p}/></>,
+    film:    <><rect x="3" y="5" width="18" height="14" rx="2" {...p}/><path d="M3 9h18M3 15h18M8 5v14M16 5v14" {...p}/></>,
+    scissors:<><circle cx="6" cy="6" r="3" {...p}/><circle cx="6" cy="18" r="3" {...p}/><path d="M20 4L9 15M14 10l6 10M9 9l4 4" {...p}/></>,
+    racquet: <><ellipse cx="10" cy="10" rx="6" ry="7" {...p}/><path d="M14.2 14.8L20 20.5" {...p}/><path d="M6 7l8 6M14 7l-8 6" {...p}/></>,
+    trend:   <><path d="M3 17l6-6 4 4 8-9" {...p}/><path d="M14 6h7v7" {...p}/></>,
+    target:  <><circle cx="12" cy="12" r="9" {...p}/><circle cx="12" cy="12" r="5" {...p}/><circle cx="12" cy="12" r="1.5" fill={color} stroke="none"/></>,
+    clock:   <><circle cx="12" cy="12" r="9" {...p}/><path d="M12 7v5l3 2" {...p}/></>,
+    share:   <><circle cx="6" cy="12" r="2.5" {...p}/><circle cx="18" cy="6" r="2.5" {...p}/><circle cx="18" cy="18" r="2.5" {...p}/><path d="M8 11l8-4M8 13l8 4" {...p}/></>,
+    search:  <><circle cx="11" cy="11" r="6" {...p}/><path d="M16 16l4 4" {...p}/></>,
+    filter:  <><path d="M4 5h16l-6 8v6l-4-2v-4L4 5z" {...p}/></>,
+    wave:    <><path d="M3 12c2-4 3-4 5 0s3 4 5 0 3-4 5 0 3 4 5 0" {...p}/></>,
+    book:    <><path d="M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4V4z" {...p}/><path d="M20 4h-7a3 3 0 00-3 3v13a2 2 0 012-2h8V4z" {...p}/></>,
+    bolt:    <><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z" {...p}/></>,
+    hand:    <><path d="M8 11V5a1.5 1.5 0 013 0v6M11 11V4a1.5 1.5 0 013 0v7M14 11V6a1.5 1.5 0 013 0v8M17 9a1.5 1.5 0 013 0v6a6 6 0 01-6 6h-2a6 6 0 01-6-6v-3" {...p}/></>,
+    alert:   <><circle cx="12" cy="12" r="9" {...p}/><path d="M12 7v6M12 16.5v.5" {...p}/></>,
+    spark2:  <><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M6.3 17.7l2.8-2.8M14.9 9.1l2.8-2.8" {...p}/></>,
+    dots:    <><circle cx="5" cy="12" r="1.5" fill={color} stroke="none"/><circle cx="12" cy="12" r="1.5" fill={color} stroke="none"/><circle cx="19" cy="12" r="1.5" fill={color} stroke="none"/></>,
+    arrowR:  <><path d="M5 12h14M13 6l6 6-6 6" {...p}/></>,
+  };
+  return <svg width={size} height={size} viewBox="0 0 24 24">{paths[name]}</svg>;
+};
+
+// ─── Primitives ───
+
+const Serif = ({ children, size = 28, weight = 400, style = {}, as: As = 'div', italic = false, opsz }) => (
+  <As style={{
+    fontFamily: T.serif, fontWeight: weight, fontSize: size,
+    fontStyle: italic ? 'italic' : 'normal',
+    letterSpacing: size >= 32 ? -0.4 : -0.2,
+    lineHeight: 1.08, color: T.ink,
+    fontVariationSettings: opsz ? `"opsz" ${opsz}` : undefined,
+    ...style,
+  }}>{children}</As>
+);
+
+const Sans = ({ children, size = 14, weight = 400, color = T.ink, style = {}, as: As = 'div', upper = false, track }) => (
+  <As style={{
+    fontFamily: T.sans, fontWeight: weight, fontSize: size,
+    letterSpacing: upper ? 1.2 : (track ?? -0.1),
+    lineHeight: 1.4, color,
+    textTransform: upper ? 'uppercase' : 'none',
+    ...style,
+  }}>{children}</As>
+);
+
+const Mono = ({ children, size = 12, weight = 500, color = T.ink2, style = {} }) => (
+  <span style={{
+    fontFamily: T.mono, fontWeight: weight, fontSize: size,
+    letterSpacing: 0, color, ...style,
+  }}>{children}</span>
+);
+
+// Subtly striped video/image placeholder
+const Placeholder = ({ w = '100%', h = 200, label, tone = 'clay', style = {} }) => {
+  const stripes = {
+    clay:  ['#E8D4C8', '#DDC4B5'],
+    ink:   ['#3A3833', '#2E2C28'],
+    sand:  ['#EAE2D2', '#E0D6C2'],
+    amber: ['#F3DBA8', '#EBCF94'],
+  }[tone] || ['#E8D4C8', '#DDC4B5'];
+  const labelColor = tone === 'ink' ? 'rgba(255,255,255,0.7)' : 'rgba(42,41,37,0.5)';
+  return (
+    <div style={{
+      width: w, height: h, position: 'relative', overflow: 'hidden',
+      background: `repeating-linear-gradient(135deg, ${stripes[0]} 0 8px, ${stripes[1]} 8px 16px)`,
+      ...style,
+    }}>
+      {label && (
+        <div style={{
+          position: 'absolute', inset: 0, display: 'flex',
+          alignItems: 'center', justifyContent: 'center',
+          fontFamily: T.mono, fontSize: 10, color: labelColor,
+          letterSpacing: 1.5, textTransform: 'uppercase',
+        }}>{label}</div>
+      )}
+    </div>
+  );
+};
+
+// Pill tag
+const Tag = ({ children, tone = 'ink', style = {} }) => {
+  const tones = {
+    ink:    { bg: T.paperAlt,  fg: T.ink2,    bd: T.line },
+    clay:   { bg: '#F6E4DC',   fg: T.clayDeep,bd: 'rgba(168,67,47,0.18)' },
+    amber:  { bg: '#FBEDCE',   fg: '#8A6820', bd: 'rgba(138,104,32,0.2)' },
+    court:  { bg: '#E7EDD4',   fg: '#5D6F33', bd: 'rgba(93,111,51,0.2)' },
+    ghost:  { bg: 'transparent', fg: T.ink3, bd: T.line },
+  }[tone];
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 5,
+      padding: '3px 9px', borderRadius: 999,
+      background: tones.bg, color: tones.fg,
+      border: `0.5px solid ${tones.bd}`,
+      fontFamily: T.sans, fontSize: 11, fontWeight: 500,
+      letterSpacing: 0.1, whiteSpace: 'nowrap',
+      ...style,
+    }}>{children}</span>
+  );
+};
+
+// ─── Inner screen shell (no iOS nav bar — we draw our own, Anthropic-style) ───
+const Screen = ({ children, bg = T.bg, style = {} }) => (
+  <div style={{
+    width: '100%', height: '100%', background: bg,
+    fontFamily: T.sans, color: T.ink, overflow: 'hidden',
+    display: 'flex', flexDirection: 'column',
+    paddingTop: 54, // status bar room
+    ...style,
+  }}>
+    {children}
+  </div>
+);
+
+// Custom nav — small back/close + optional right action + optional eyebrow
+const NavBar = ({ left, right, eyebrow, onBg }) => (
+  <div style={{
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    padding: '10px 18px 6px', minHeight: 44,
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 40 }}>{left}</div>
+    {eyebrow && (
+      <Sans size={11} upper weight={500} color={onBg ? 'rgba(255,255,255,0.75)' : T.ink3}
+            style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+        {eyebrow}
+      </Sans>
+    )}
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 40, justifyContent: 'flex-end' }}>{right}</div>
+  </div>
+);
+
+// Circular icon button (nav)
+const NavBtn = ({ icon, label, onDark, filled, onClick }) => (
+  <button onClick={onClick} style={{
+    display: 'inline-flex', alignItems: 'center', gap: 6,
+    height: 34, padding: label ? '0 12px 0 10px' : '0', width: label ? 'auto' : 34,
+    borderRadius: 999, border: `0.5px solid ${onDark ? 'rgba(255,255,255,0.2)' : T.line}`,
+    background: filled ? T.ink : (onDark ? 'rgba(255,255,255,0.08)' : T.paper),
+    color: filled ? T.bg : (onDark ? '#fff' : T.ink),
+    fontFamily: T.sans, fontSize: 13, fontWeight: 500, cursor: 'pointer',
+    justifyContent: 'center',
+  }}>
+    {icon && <Icon name={icon} size={16} color={filled ? T.bg : (onDark ? '#fff' : T.ink)} />}
+    {label}
+  </button>
+);
+
+// Tab bar (bottom)
+const TabBar = ({ active = 'home' }) => {
+  const tabs = [
+    { id: 'home',    icon: 'home',    label: 'Sessions' },
+    { id: 'capture', icon: 'plus',    label: 'Capture' },
+    { id: 'library', icon: 'history', label: 'Library' },
+    { id: 'profile', icon: 'user',    label: 'Profile' },
+  ];
+  return (
+    <div style={{
+      padding: '6px 12px 22px',
+      borderTop: `0.5px solid ${T.line}`,
+      background: T.paper,
+      display: 'flex', justifyContent: 'space-around',
+    }}>
+      {tabs.map(t => (
+        <div key={t.id} style={{
+          flex: 1, display: 'flex', flexDirection: 'column',
+          alignItems: 'center', gap: 3, padding: '6px 0',
+        }}>
+          {t.id === 'capture' ? (
+            <div style={{
+              width: 34, height: 34, borderRadius: 999,
+              background: T.clay, display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <Icon name="plus" size={18} color="#fff" stroke={2} />
+            </div>
+          ) : (
+            <Icon name={t.icon} size={20} color={active === t.id ? T.ink : T.ink3} stroke={active === t.id ? 1.8 : 1.5} />
+          )}
+          <Sans size={10} weight={active === t.id ? 600 : 500}
+                color={active === t.id ? T.ink : T.ink3} style={{ letterSpacing: 0.1 }}>
+            {t.label}
+          </Sans>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Big CTA button
+const CTA = ({ children, tone = 'clay', onClick, full, icon, style = {} }) => {
+  const tones = {
+    clay:  { bg: T.clay,   fg: '#fff' },
+    ink:   { bg: T.ink,    fg: T.bg },
+    ghost: { bg: 'transparent', fg: T.ink, bd: T.line },
+  }[tone];
+  return (
+    <button onClick={onClick} style={{
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+      height: 52, padding: '0 22px', borderRadius: 14,
+      border: tones.bd ? `0.5px solid ${tones.bd}` : 'none',
+      background: tones.bg, color: tones.fg,
+      fontFamily: T.sans, fontSize: 15, fontWeight: 560, letterSpacing: -0.1,
+      cursor: 'pointer', width: full ? '100%' : 'auto',
+      ...style,
+    }}>
+      {icon && <Icon name={icon} size={18} color={tones.fg} />}
+      {children}
+    </button>
+  );
+};
+
+Object.assign(window, { T, Icon, Serif, Sans, Mono, Placeholder, Tag, Screen, NavBar, NavBtn, TabBar, CTA });
+
+
+// ═══ screens/Onboarding.jsx ═══
+// Onboarding — warm, calm, full-bleed
+function Onboarding() {
+  return (
+    <Screen bg={T.bg} style={{ paddingTop: 54, position: 'relative' }}>
+      {/* Decorative amber arc — evokes a top-spin trajectory */}
+      <svg width="100%" height="320" viewBox="0 0 390 320" style={{ position: 'absolute', top: 60, left: 0 }}>
+        <defs>
+          <linearGradient id="arc-g" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor={T.amber} stopOpacity="0"/>
+            <stop offset="0.4" stopColor={T.amber} stopOpacity="0.8"/>
+            <stop offset="1" stopColor={T.clay} stopOpacity="0.9"/>
+          </linearGradient>
+        </defs>
+        <path d="M -30 240 Q 160 -40 430 200" stroke="url(#arc-g)" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+        <path d="M -30 260 Q 160 -20 430 220" stroke={T.amber} strokeOpacity="0.25" strokeWidth="1" fill="none" strokeDasharray="2 4"/>
+        {/* ball */}
+        <circle cx="340" cy="130" r="8" fill={T.amber}/>
+        <path d="M 333 128 Q 340 132 347 128" stroke="#fff" strokeOpacity="0.6" strokeWidth="0.8" fill="none"/>
+        <path d="M 333 134 Q 340 130 347 134" stroke="#fff" strokeOpacity="0.6" strokeWidth="0.8" fill="none"/>
+      </svg>
+
+      {/* Wordmark */}
+      <div style={{ padding: '18px 24px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{
+          width: 22, height: 22, borderRadius: 4,
+          background: T.clay, display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <div style={{ width: 8, height: 8, background: T.amber, borderRadius: 999 }}/>
+        </div>
+        <Sans size={13} weight={600} style={{ letterSpacing: 1.5, textTransform: 'uppercase' }}>Baseline</Sans>
+      </div>
+
+      {/* Hero */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 24px 24px' }}>
+        <Sans size={11} weight={500} color={T.clay} upper style={{ marginBottom: 14 }}>
+          ⋅ Computer Vision · Motion Science
+        </Sans>
+        <Serif size={44} weight={380} opsz={80} style={{ lineHeight: 1.02, marginBottom: 14 }}>
+          See your swing<br/>
+          <Serif as="span" size={44} weight={380} italic style={{ color: T.clayDeep }}>the way a coach does.</Serif>
+        </Serif>
+        <Sans size={15} color={T.ink2} style={{ maxWidth: 300, marginBottom: 28, lineHeight: 1.5 }}>
+          Record a rally. Baseline finds every stroke, measures your body, and explains what to fix — in plain language.
+        </Sans>
+
+        {/* Three-step ribbon */}
+        <div style={{
+          display: 'flex', gap: 0, marginBottom: 28,
+          border: `0.5px solid ${T.line}`, borderRadius: 14, background: T.paper, overflow: 'hidden',
+        }}>
+          {[
+            { n: '01', t: 'Import', s: 'Your rally video' },
+            { n: '02', t: 'Detect', s: 'Each stroke, auto-cut' },
+            { n: '03', t: 'Coach',  s: 'Insights + drills' },
+          ].map((s, i) => (
+            <div key={s.n} style={{
+              flex: 1, padding: '14px 12px',
+              borderLeft: i > 0 ? `0.5px solid ${T.line}` : 'none',
+            }}>
+              <Mono size={10} color={T.clay}>{s.n}</Mono>
+              <Sans size={13} weight={600} style={{ marginTop: 4 }}>{s.t}</Sans>
+              <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>{s.s}</Sans>
+            </div>
+          ))}
+        </div>
+
+        <CTA tone="clay" icon="arrowR" full>Start a session</CTA>
+        <div style={{ textAlign: 'center', marginTop: 14 }}>
+          <Sans size={13} color={T.ink3} as="span">Have an account? </Sans>
+          <Sans size={13} weight={600} color={T.ink} as="span" style={{ textDecoration: 'underline', textDecorationColor: T.line, textUnderlineOffset: 4 }}>Sign in</Sans>
+        </div>
+      </div>
+    </Screen>
+  );
+}
+window.Onboarding = Onboarding;
+
+
+// ═══ screens/Home.jsx ═══
+// Home / Sessions — the list of past analysis sessions
+function Home() {
+  const sessions = [
+    {
+      date: 'Today',
+      time: '4:12 PM',
+      title: 'Afternoon rally — hard court',
+      strokes: 42, minutes: 38,
+      focus: 'Forehand',
+      status: 'new',
+      score: 78,
+      delta: '+4',
+    },
+    {
+      date: 'Wed',
+      time: '6:45 PM',
+      title: 'Baseline drill with Marco',
+      strokes: 118, minutes: 52,
+      focus: 'Backhand',
+      status: 'reviewed',
+      score: 74,
+      delta: '+2',
+    },
+    {
+      date: 'Mon',
+      time: '7:30 AM',
+      title: 'Serve practice — 1st & 2nd',
+      strokes: 64, minutes: 24,
+      focus: 'Serve',
+      status: 'reviewed',
+      score: 71,
+      delta: '—',
+    },
+    {
+      date: 'Apr 18',
+      time: '5:10 PM',
+      title: 'Match vs. Daniel',
+      strokes: 203, minutes: 71,
+      focus: 'Full match',
+      status: 'reviewed',
+      score: 68,
+      delta: '−1',
+    },
+  ];
+
+  return (
+    <Screen bg={T.bg}>
+      {/* Header */}
+      <div style={{ padding: '14px 20px 8px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+          <Sans size={12} weight={600} upper style={{ letterSpacing: 1.4 }}>Baseline</Sans>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <NavBtn icon="search" />
+            <div style={{
+              width: 34, height: 34, borderRadius: 999, background: T.amberSoft,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              border: `0.5px solid ${T.line}`,
+              fontFamily: T.serif, fontSize: 14, fontWeight: 500, color: T.clayDeep,
+            }}>L</div>
+          </div>
+        </div>
+        <Serif size={34} weight={380} opsz={72} style={{ letterSpacing: -0.6 }}>
+          Good afternoon,<br/>
+          <Serif as="span" size={34} italic weight={380} style={{ color: T.clayDeep }}>Lin.</Serif>
+        </Serif>
+        <Sans size={14} color={T.ink2} style={{ marginTop: 10 }}>
+          Eight sessions this month. Your forehand consistency is up <Sans as="span" size={14} weight={600} color={T.ink}>12%</Sans>.
+        </Sans>
+      </div>
+
+      {/* Weekly chart card */}
+      <div style={{ padding: '18px 20px 0' }}>
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+          padding: '16px 18px',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <Sans size={11} weight={500} color={T.ink3} upper>This week</Sans>
+            <Sans size={11} weight={500} color={T.clay}>View trends →</Sans>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 6 }}>
+            <Serif size={36} weight={380}>74</Serif>
+            <Sans size={12} color={T.ink3}>/100 form index</Sans>
+            <Sans size={12} weight={600} color="#5D6F33" style={{ marginLeft: 'auto' }}>▲ 3.2</Sans>
+          </div>
+          {/* tiny sparkline */}
+          <svg width="100%" height="54" viewBox="0 0 300 54" style={{ marginTop: 10, display: 'block' }}>
+            <defs>
+              <linearGradient id="sp-g" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor={T.clay} stopOpacity="0.18"/>
+                <stop offset="1" stopColor={T.clay} stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 36 L43 30 L86 34 L129 22 L172 26 L215 14 L258 18 L300 8 L300 54 L0 54 Z" fill="url(#sp-g)"/>
+            <path d="M0 36 L43 30 L86 34 L129 22 L172 26 L215 14 L258 18 L300 8" stroke={T.clay} strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+            {[0,43,86,129,172,215,258,300].map((x, i) => (
+              <circle key={i} cx={x} cy={[36,30,34,22,26,14,18,8][i]} r={i === 7 ? 3 : 1.5} fill={i === 7 ? T.clay : T.amber}/>
+            ))}
+          </svg>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
+            {['M','T','W','T','F','S','S','·'].map((d, i) => (
+              <Mono key={i} size={10} color={i === 7 ? T.clay : T.ink3}>{d}</Mono>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Sessions list */}
+      <div style={{ padding: '22px 20px 0', flex: 1 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
+          <Sans size={11} weight={500} upper color={T.ink3}>Recent sessions</Sans>
+          <Sans size={11} weight={500} color={T.ink2}>All</Sans>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {sessions.map((s, i) => (
+            <div key={i} style={{
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+              padding: '14px 16px', display: 'flex', gap: 12, alignItems: 'center',
+              position: 'relative',
+            }}>
+              {/* date tile */}
+              <div style={{
+                width: 52, flexShrink: 0, textAlign: 'center',
+                borderRight: `0.5px solid ${T.line}`, paddingRight: 12,
+              }}>
+                <Serif size={20} weight={400}>{s.date.split(' ')[1] || s.date.slice(0,3)}</Serif>
+                <Mono size={9} color={T.ink3} style={{ display: 'block', marginTop: 2 }}>{s.time}</Mono>
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', gap: 6, marginBottom: 4, alignItems: 'center' }}>
+                  <Tag tone={s.focus === 'Forehand' ? 'clay' : s.focus === 'Backhand' ? 'amber' : s.focus === 'Serve' ? 'court' : 'ink'}>
+                    {s.focus}
+                  </Tag>
+                  {s.status === 'new' && <Tag tone="ink" style={{ background: T.ink, color: T.bg, border: 'none' }}>New</Tag>}
+                </div>
+                <Sans size={14} weight={600} style={{ marginBottom: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {s.title}
+                </Sans>
+                <Sans size={11} color={T.ink3}>
+                  <Mono size={11} color={T.ink3}>{s.strokes}</Mono> strokes · <Mono size={11} color={T.ink3}>{s.minutes}</Mono> min
+                </Sans>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <Serif size={22} weight={400}>{s.score}</Serif>
+                <Mono size={10} color={s.delta.startsWith('+') ? '#5D6F33' : s.delta.startsWith('−') ? T.clay : T.ink3}
+                      style={{ display: 'block' }}>{s.delta}</Mono>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ height: 20 }}/>
+      </div>
+
+      <TabBar active="home"/>
+    </Screen>
+  );
+}
+window.Home = Home;
+
+
+// ═══ screens/Import.jsx ═══
+// Import — video import & auto-segmentation in progress
+function ImportScreen() {
+  const segments = [
+    { t: '0:04', type: 'Forehand', conf: 0.94, sel: true },
+    { t: '0:11', type: 'Forehand', conf: 0.91, sel: true },
+    { t: '0:19', type: 'Backhand', conf: 0.88, sel: false },
+    { t: '0:27', type: 'Forehand', conf: 0.96, sel: true },
+    { t: '0:36', type: 'Serve',    conf: 0.82, sel: false },
+    { t: '0:44', type: 'Forehand', conf: 0.89, sel: true },
+    { t: '0:53', type: 'Backhand', conf: 0.92, sel: true },
+    { t: '1:02', type: 'Forehand', conf: 0.78, sel: false },
+  ];
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" />}
+        right={<NavBtn label="Cancel" />}
+        eyebrow="Step 1 · Import"
+      />
+
+      {/* Video preview with waveform */}
+      <div style={{ padding: '4px 20px 0' }}>
+        <div style={{ borderRadius: 18, overflow: 'hidden', position: 'relative', border: `0.5px solid ${T.line}` }}>
+          <Placeholder h={190} tone="ink" label="Rally_0424.mov · 1:12" />
+          {/* play overlay */}
+          <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{
+              width: 56, height: 56, borderRadius: 999, background: 'rgba(247,243,236,0.92)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              border: '0.5px solid rgba(42,41,37,0.3)',
+            }}>
+              <Icon name="play" size={24} color={T.ink}/>
+            </div>
+          </div>
+          {/* meta strip */}
+          <div style={{
+            position: 'absolute', top: 10, left: 10, display: 'flex', gap: 6,
+          }}>
+            <Tag tone="ink" style={{ background: 'rgba(0,0,0,0.55)', color: '#fff', border: 'none', backdropFilter: 'blur(8px)' }}>
+              1080p · 60fps
+            </Tag>
+          </div>
+        </div>
+
+        {/* Waveform timeline */}
+        <div style={{ marginTop: 14, background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14, padding: '12px 14px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+            <Sans size={11} weight={500} color={T.ink3} upper>Audio · auto-cuts</Sans>
+            <Sans size={11} weight={600} color={T.clay}>Re-detect</Sans>
+          </div>
+          {/* waveform */}
+          <svg width="100%" height="44" viewBox="0 0 340 44" style={{ display: 'block' }}>
+            {Array.from({ length: 100 }).map((_, i) => {
+              const h = 4 + Math.abs(Math.sin(i * 0.8) * 14) + Math.abs(Math.cos(i * 0.3) * 6);
+              const isHit = [6, 13, 22, 31, 41, 52, 62, 72, 85].includes(i);
+              return (
+                <rect key={i} x={i * 3.4} y={22 - h/2} width={2} height={h} rx={1}
+                      fill={isHit ? T.clay : 'rgba(42,41,37,0.25)'}/>
+              );
+            })}
+            {/* cut markers */}
+            {[20, 45, 75, 105, 140, 180, 215, 250].map((x, i) => (
+              <line key={i} x1={x} y1={0} x2={x} y2={44} stroke={T.amber} strokeWidth="0.8" strokeDasharray="2 2"/>
+            ))}
+            {/* playhead */}
+            <line x1="72" y1="0" x2="72" y2="44" stroke={T.ink} strokeWidth="1.5"/>
+            <circle cx="72" cy="2" r="3" fill={T.ink}/>
+          </svg>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6 }}>
+            <Mono size={10} color={T.ink3}>0:00</Mono>
+            <Mono size={10} color={T.ink3}>1:12</Mono>
+          </div>
+        </div>
+      </div>
+
+      {/* Detection summary */}
+      <div style={{ padding: '16px 20px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
+          <Sans size={11} weight={500} upper color={T.ink3}>Detected · 8 strokes</Sans>
+          <Sans size={11} weight={500} color={T.ink2}>5 selected</Sans>
+        </div>
+
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          overflow: 'hidden',
+        }}>
+          {segments.map((s, i) => (
+            <div key={i} style={{
+              display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px',
+              borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
+              background: s.sel ? 'rgba(200,85,61,0.04)' : 'transparent',
+            }}>
+              <div style={{
+                width: 18, height: 18, borderRadius: 5,
+                border: `1.2px solid ${s.sel ? T.clay : T.line}`,
+                background: s.sel ? T.clay : 'transparent',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+              }}>
+                {s.sel && <Icon name="check" size={11} color="#fff" stroke={2.5}/>}
+              </div>
+              <Mono size={11} color={T.ink2} style={{ width: 40 }}>{s.t}</Mono>
+              <Sans size={13} weight={500} style={{ flex: 1 }}>{s.type}</Sans>
+              <div style={{
+                width: 44, height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden',
+              }}>
+                <div style={{
+                  width: `${s.conf * 100}%`, height: '100%',
+                  background: s.conf > 0.9 ? T.court : s.conf > 0.85 ? T.amber : T.clay,
+                }}/>
+              </div>
+              <Mono size={10} color={T.ink3} style={{ width: 28, textAlign: 'right' }}>{(s.conf*100).toFixed(0)}%</Mono>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div style={{ padding: '18px 20px 24px', marginTop: 'auto', borderTop: `0.5px solid ${T.line}`, background: T.paper }}>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <CTA tone="ghost" icon="scissors">Trim</CTA>
+          <CTA tone="ink" icon="arrowR" full>Review 5 clips</CTA>
+        </div>
+      </div>
+    </Screen>
+  );
+}
+window.ImportScreen = ImportScreen;
+
+
+// ═══ screens/ClipGrid.jsx ═══
+// ClipGrid — select which detected clips to analyze (photo-album style)
+function ClipGrid() {
+  const clips = [
+    { t: '0:04', type: 'FH', dur: '1.4s', sel: true,  tone: 'clay'  },
+    { t: '0:11', type: 'FH', dur: '1.2s', sel: true,  tone: 'clay'  },
+    { t: '0:19', type: 'BH', dur: '1.3s', sel: false, tone: 'amber' },
+    { t: '0:27', type: 'FH', dur: '1.5s', sel: true,  tone: 'clay'  },
+    { t: '0:36', type: 'SV', dur: '2.1s', sel: false, tone: 'ink'   },
+    { t: '0:44', type: 'FH', dur: '1.3s', sel: true,  tone: 'clay'  },
+    { t: '0:53', type: 'BH', dur: '1.2s', sel: true,  tone: 'amber' },
+    { t: '1:02', type: 'FH', dur: '1.4s', sel: false, tone: 'clay'  },
+    { t: '1:10', type: 'BH', dur: '1.3s', sel: false, tone: 'amber' },
+  ];
+  const toneBg = { clay: '#F6E4DC', amber: '#FBEDCE', ink: '#E4E2DC' };
+  const selected = clips.filter(c => c.sel).length;
+
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" />}
+        right={<NavBtn label="Select all" />}
+        eyebrow="Step 2 · Choose"
+      />
+
+      <div style={{ padding: '6px 20px 16px' }}>
+        <Serif size={28} weight={400} style={{ marginBottom: 6 }}>
+          Pick your clips
+        </Serif>
+        <Sans size={13} color={T.ink2} style={{ maxWidth: 320 }}>
+          Tap any stroke to include it in this analysis. <Sans as="span" size={13} weight={600} color={T.ink}>5 of 9</Sans> selected.
+        </Sans>
+      </div>
+
+      {/* Filter chips */}
+      <div style={{ padding: '0 20px 14px', display: 'flex', gap: 6, overflowX: 'auto' }}>
+        {[
+          { l: 'All · 9', a: true },
+          { l: 'Forehand · 5' },
+          { l: 'Backhand · 3' },
+          { l: 'Serve · 1' },
+        ].map((c, i) => (
+          <div key={i} style={{
+            padding: '6px 12px', borderRadius: 999,
+            border: `0.5px solid ${c.a ? T.ink : T.line}`,
+            background: c.a ? T.ink : T.paper,
+            color: c.a ? T.bg : T.ink2,
+            fontFamily: T.sans, fontSize: 12, fontWeight: 500, whiteSpace: 'nowrap',
+          }}>{c.l}</div>
+        ))}
+      </div>
+
+      {/* Grid */}
+      <div style={{
+        padding: '0 16px', display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)', gap: 10,
+        flex: 1, alignContent: 'flex-start',
+      }}>
+        {clips.map((c, i) => (
+          <div key={i} style={{
+            position: 'relative', aspectRatio: '3/4',
+            borderRadius: 12, overflow: 'hidden',
+            border: `${c.sel ? 2 : 0.5}px solid ${c.sel ? T.clay : T.line}`,
+            background: toneBg[c.tone],
+          }}>
+            {/* video placeholder with mini figure */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: `repeating-linear-gradient(135deg, ${toneBg[c.tone]} 0 6px, rgba(0,0,0,0.04) 6px 12px)`,
+            }}/>
+            {/* tiny stick figure */}
+            <svg viewBox="0 0 40 60" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+              <g stroke={T.ink} strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.55">
+                <circle cx="22" cy="16" r="3" fill={T.ink} stroke="none"/>
+                <line x1="22" y1="19" x2="20" y2="32"/>
+                <line x1="20" y1="32" x2="14" y2="42"/>
+                <line x1="20" y1="32" x2="28" y2="44"/>
+                {/* arms swinging */}
+                {c.type === 'FH' && (<>
+                  <line x1="22" y1="23" x2="33" y2="16"/>
+                  <line x1="22" y1="23" x2="11" y2="28"/>
+                  <line x1="33" y1="16" x2="38" y2="8" stroke={T.clay} strokeWidth="1.2"/>
+                </>)}
+                {c.type === 'BH' && (<>
+                  <line x1="22" y1="23" x2="10" y2="16"/>
+                  <line x1="10" y1="16" x2="4" y2="10" stroke={T.clay} strokeWidth="1.2"/>
+                </>)}
+                {c.type === 'SV' && (<>
+                  <line x1="22" y1="22" x2="26" y2="6"/>
+                  <line x1="26" y1="6" x2="30" y2="2" stroke={T.clay} strokeWidth="1.2"/>
+                  <line x1="22" y1="22" x2="14" y2="26"/>
+                </>)}
+              </g>
+            </svg>
+            {/* type badge */}
+            <div style={{
+              position: 'absolute', top: 6, left: 6,
+              padding: '2px 6px', borderRadius: 4,
+              background: 'rgba(42,41,37,0.85)', color: T.bg,
+              fontFamily: T.mono, fontSize: 9, fontWeight: 500, letterSpacing: 0.5,
+            }}>{c.type}</div>
+            {/* selected check */}
+            {c.sel && (
+              <div style={{
+                position: 'absolute', top: 6, right: 6, width: 20, height: 20,
+                borderRadius: 999, background: T.clay,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.15)',
+              }}>
+                <Icon name="check" size={12} color="#fff" stroke={2.5}/>
+              </div>
+            )}
+            {/* time/dur strip */}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0,
+              padding: '10px 8px 6px',
+              background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%)',
+              display: 'flex', justifyContent: 'space-between',
+            }}>
+              <Mono size={9} color="#fff">{c.t}</Mono>
+              <Mono size={9} color="rgba(255,255,255,0.75)">{c.dur}</Mono>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom action bar */}
+      <div style={{
+        padding: '14px 20px 24px', borderTop: `0.5px solid ${T.line}`,
+        background: T.paper, display: 'flex', gap: 12, alignItems: 'center',
+      }}>
+        <div style={{ flex: 1 }}>
+          <Mono size={10} color={T.ink3}>SELECTED</Mono>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <Serif size={22} weight={400}>{selected}</Serif>
+            <Sans size={12} color={T.ink3}>clips · ~ 6.8s total</Sans>
+          </div>
+        </div>
+        <CTA tone="clay" icon="sparkle">Analyze</CTA>
+      </div>
+    </Screen>
+  );
+}
+window.ClipGrid = ClipGrid;
+
+
+// ═══ screens/Loading.jsx ═══
+// Loading — analysis in progress, minimal progress bar + staged status
+function Loading() {
+  const stages = [
+    { t: 'Extracting frames',     s: 'done', d: '0:02' },
+    { t: 'Pose estimation',       s: 'done', d: '0:08' },
+    { t: 'Biomechanics features', s: 'live', d: '0:14', pct: 68 },
+    { t: 'Gemini visual reading', s: 'queue' },
+    { t: 'Knowledge inference',   s: 'queue' },
+  ];
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" />}
+        right={<NavBtn label="Run in background" />}
+        eyebrow="Analyzing"
+      />
+
+      {/* Hero pose preview */}
+      <div style={{ padding: '12px 20px 0' }}>
+        <div style={{ borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`, position: 'relative' }}>
+          <Placeholder h={220} tone="ink" />
+          {/* stickfigure overlay */}
+          <svg viewBox="0 0 200 220" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+            <g stroke={T.amber} strokeWidth="2" fill="none" strokeLinecap="round">
+              <line x1="100" y1="50" x2="98" y2="110"/>
+              <line x1="98" y1="110" x2="78" y2="160"/>
+              <line x1="98" y1="110" x2="118" y2="160"/>
+              <line x1="78" y1="160" x2="72" y2="210"/>
+              <line x1="118" y1="160" x2="126" y2="210"/>
+              <line x1="100" y1="80" x2="135" y2="70"/>
+              <line x1="100" y1="80" x2="68" y2="90"/>
+              <line x1="135" y1="70" x2="165" y2="45"/>
+            </g>
+            <g fill={T.clay}>
+              {[[100,50],[100,80],[98,110],[78,160],[118,160],[72,210],[126,210],[135,70],[68,90],[165,45]].map((p,i)=>(
+                <circle key={i} cx={p[0]} cy={p[1]} r="3.2" stroke="#fff" strokeWidth="1"/>
+              ))}
+            </g>
+          </svg>
+          {/* scan line */}
+          <div style={{
+            position: 'absolute', top: 0, bottom: 0, left: '45%', width: 1,
+            background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
+            boxShadow: `0 0 10px ${T.amber}`,
+          }}/>
+        </div>
+      </div>
+
+      {/* Headline */}
+      <div style={{ padding: '22px 24px 0' }}>
+        <Sans size={11} weight={500} upper color={T.clay} style={{ marginBottom: 8 }}>Reading your swing</Sans>
+        <Serif size={30} weight={400} opsz={72} style={{ lineHeight: 1.1 }}>
+          Tracing 33 keypoints<br/>
+          <Serif as="span" size={30} italic weight={380} style={{ color: T.clayDeep }}>across 5 strokes.</Serif>
+        </Serif>
+      </div>
+
+      {/* Progress meter */}
+      <div style={{ padding: '22px 24px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+          <Mono size={11} color={T.ink2}>OVERALL</Mono>
+          <div>
+            <Serif size={20} weight={400} as="span">42</Serif>
+            <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>% · ~ 38s left</Sans>
+          </div>
+        </div>
+        <div style={{
+          height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden',
+        }}>
+          <div style={{
+            height: '100%', width: '42%',
+            background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+          }}/>
+        </div>
+      </div>
+
+      {/* Stages */}
+      <div style={{ padding: '22px 24px 0', flex: 1 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          {stages.map((st, i) => (
+            <div key={i} style={{
+              display: 'flex', alignItems: 'center', gap: 12,
+              padding: '12px 0',
+              borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
+            }}>
+              {/* status dot */}
+              <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
+                {st.s === 'done' && (
+                  <div style={{
+                    width: 18, height: 18, borderRadius: 999, background: T.ink,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <Icon name="check" size={11} color={T.bg} stroke={2.5}/>
+                  </div>
+                )}
+                {st.s === 'live' && (
+                  <div style={{
+                    width: 18, height: 18, borderRadius: 999,
+                    border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
+                    animation: 'spin 0.9s linear infinite',
+                  }}/>
+                )}
+                {st.s === 'queue' && (
+                  <div style={{
+                    width: 8, height: 8, borderRadius: 999, background: T.line,
+                  }}/>
+                )}
+              </div>
+              <div style={{ flex: 1 }}>
+                <Sans size={14} weight={st.s === 'live' ? 600 : 500}
+                      color={st.s === 'queue' ? T.ink3 : T.ink}>{st.t}</Sans>
+                {st.s === 'live' && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 4 }}>
+                    <div style={{ flex: 1, height: 2, background: T.paperAlt, borderRadius: 1, overflow: 'hidden' }}>
+                      <div style={{ width: `${st.pct}%`, height: '100%', background: T.clay }}/>
+                    </div>
+                    <Mono size={10} color={T.ink3}>{st.pct}%</Mono>
+                  </div>
+                )}
+              </div>
+              {st.d && <Mono size={10} color={T.ink3}>{st.d}</Mono>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer tip */}
+      <div style={{
+        padding: '14px 20px 26px', margin: '0 16px 16px',
+        background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+        display: 'flex', gap: 10, alignItems: 'flex-start',
+      }}>
+        <Icon name="sparkle" size={16} color={T.clay}/>
+        <div style={{ flex: 1 }}>
+          <Sans size={12} weight={600} style={{ marginBottom: 2 }}>Did you know</Sans>
+          <Sans size={12} color={T.ink2} style={{ lineHeight: 1.5 }}>
+            Pro forehands average 92°–110° of hip rotation from load to contact. We'll show yours next.
+          </Sans>
+        </div>
+      </div>
+
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    </Screen>
+  );
+}
+window.Loading = Loading;
+
+
+// ═══ screens/ResultShell.jsx ═══
+// Shared shell for result screens — tab header + stroke selector strip
+
+const ResultHeader = ({ activeTab }) => {
+  const tabs = [
+    { id: 'data',  label: 'Biomechanics', sub: 'Data' },
+    { id: 'vlm',   label: 'Observations', sub: 'VLM' },
+    { id: 'diag',  label: 'Coach',        sub: 'Drills' },
+  ];
+  return (
+    <>
+      <NavBar
+        left={<NavBtn icon="chevL" />}
+        right={<><NavBtn icon="share"/><NavBtn icon="dots"/></>}
+        eyebrow="Session · Today 4:12 PM"
+      />
+      {/* Stroke scrubber — thumbnails of selected clips */}
+      <div style={{ padding: '0 20px 14px' }}>
+        <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 2 }}>
+          {[
+            { t: 'FH', sel: true,  n: '01' },
+            { t: 'FH', sel: false, n: '02' },
+            { t: 'FH', sel: false, n: '03' },
+            { t: 'BH', sel: false, n: '04' },
+            { t: 'FH', sel: false, n: '05' },
+            { t: '+', n: '' },
+          ].map((c, i) => (
+            <div key={i} style={{
+              minWidth: c.t === '+' ? 44 : 52, height: 60,
+              borderRadius: 8, position: 'relative',
+              border: `${c.sel ? 2 : 0.5}px solid ${c.sel ? T.clay : T.line}`,
+              background: c.t === 'BH' ? '#FBEDCE' : c.t === '+' ? T.paper : '#F6E4DC',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              overflow: 'hidden', flexShrink: 0,
+            }}>
+              {c.t === '+' ? (
+                <Icon name="plus" size={16} color={T.ink3}/>
+              ) : (
+                <>
+                  <Mono size={9} color={T.ink} style={{ position: 'absolute', top: 4, left: 5 }}>{c.n}</Mono>
+                  <Sans size={11} weight={700} color={T.clayDeep}>{c.t}</Sans>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Tab header */}
+      <div style={{
+        margin: '0 20px', padding: 3,
+        background: T.paperAlt, borderRadius: 12,
+        display: 'flex', gap: 2,
+      }}>
+        {tabs.map(t => (
+          <div key={t.id} style={{
+            flex: 1, padding: '9px 8px', borderRadius: 9,
+            background: activeTab === t.id ? T.paper : 'transparent',
+            boxShadow: activeTab === t.id ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+            textAlign: 'center',
+          }}>
+            <Sans size={13} weight={activeTab === t.id ? 600 : 500}
+                  color={activeTab === t.id ? T.ink : T.ink3}>{t.label}</Sans>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+window.ResultHeader = ResultHeader;
+
+
+// ═══ screens/ResultData.jsx ═══
+// Result — Biomechanics (Data) tab
+function ResultData() {
+  return (
+    <Screen bg={T.bg}>
+      <ResultHeader activeTab="data"/>
+
+      <div style={{ flex: 1, overflow: 'auto', padding: '16px 20px 24px' }}>
+        {/* Video + skeleton overlay */}
+        <div style={{ borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`, position: 'relative' }}>
+          <Placeholder h={240} tone="ink" />
+          <svg viewBox="0 0 390 240" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+            {/* skeleton */}
+            <g stroke={T.amber} strokeWidth="2" fill="none" strokeLinecap="round">
+              <line x1="180" y1="60" x2="185" y2="110"/>
+              <line x1="185" y1="110" x2="172" y2="160"/>
+              <line x1="185" y1="110" x2="200" y2="160"/>
+              <line x1="172" y1="160" x2="166" y2="215"/>
+              <line x1="200" y1="160" x2="210" y2="215"/>
+              <line x1="185" y1="85" x2="220" y2="78"/>
+              <line x1="185" y1="85" x2="150" y2="100"/>
+              <line x1="220" y1="78" x2="260" y2="55"/>
+              <line x1="260" y1="55" x2="295" y2="38"/>
+            </g>
+            <g>
+              {[[180,60],[185,85],[185,110],[172,160],[200,160],[166,215],[210,215],[220,78],[150,100],[260,55],[295,38]].map((p,i)=>(
+                <circle key={i} cx={p[0]} cy={p[1]} r="3.5" fill={T.clay} stroke="#fff" strokeWidth="1"/>
+              ))}
+            </g>
+            {/* angle arc at elbow */}
+            <path d="M 215 78 A 14 14 0 0 1 228 92" stroke={T.amber} strokeWidth="1.2" fill="none"/>
+            <text x="234" y="92" fill={T.amber} style={{ fontFamily: T.mono, fontSize: 10, fontWeight: 600 }}>112°</text>
+          </svg>
+          {/* bottom scrubber */}
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            padding: '28px 14px 12px',
+            background: 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <Icon name="pause" size={18} color="#fff"/>
+              <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.25)', borderRadius: 2 }}>
+                <div style={{ width: '64%', height: '100%', background: '#fff', borderRadius: 2, position: 'relative' }}>
+                  <div style={{ position: 'absolute', right: -5, top: -3, width: 9, height: 9, borderRadius: 999, background: T.amber }}/>
+                </div>
+              </div>
+              <Mono size={10} color="#fff">0:00.9 / 1.4s</Mono>
+            </div>
+            {/* phase labels */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
+              {['Load','Turn','Contact','Follow'].map((p,i) => (
+                <Mono key={i} size={9} color={i === 2 ? T.amber : 'rgba(255,255,255,0.55)'} style={{ fontWeight: 600 }}>{p}</Mono>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Phase indicator — now at "Contact" */}
+        <div style={{ marginTop: 14, display: 'flex', gap: 6, alignItems: 'center' }}>
+          <Tag tone="clay">Contact phase</Tag>
+          <Sans size={11} color={T.ink3}>Frame 47 / 84</Sans>
+        </div>
+
+        {/* Key metrics — big numbers */}
+        <div style={{ marginTop: 20, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10 }}>
+          {[
+            { label: 'Racquet speed', v: '72', u: 'mph', ref: 'pro avg 78', good: false },
+            { label: 'Hip rotation',  v: '104', u: '°', ref: 'ideal 100–110', good: true },
+            { label: 'Shoulder turn', v: '88',  u: '°', ref: 'ideal 95+', good: false },
+            { label: 'Contact height',v: '1.24', u: 'm', ref: 'shoulder line', good: true },
+          ].map((m, i) => (
+            <div key={i} style={{
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+              padding: '14px 14px 12px',
+            }}>
+              <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 8 }}>
+                {m.label}
+              </Sans>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                <Serif size={30} weight={400} opsz={72}>{m.v}</Serif>
+                <Sans size={12} color={T.ink3}>{m.u}</Sans>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 8 }}>
+                <div style={{
+                  width: 6, height: 6, borderRadius: 999,
+                  background: m.good ? T.court : T.clay,
+                }}/>
+                <Sans size={10} color={T.ink3}>{m.ref}</Sans>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Angle timeline chart */}
+        <div style={{
+          marginTop: 14, background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          padding: '14px 16px',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+            <div>
+              <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1 }}>Joint angles · time</Sans>
+              <Sans size={13} weight={600} style={{ marginTop: 2 }}>Elbow · Shoulder · Hip</Sans>
+            </div>
+            <Sans size={11} color={T.clay} weight={500}>Compare pro →</Sans>
+          </div>
+          <svg width="100%" height="110" viewBox="0 0 340 110" style={{ display: 'block' }}>
+            {/* grid */}
+            {[0, 1, 2, 3].map(i => (
+              <line key={i} x1="0" y1={i * 30 + 10} x2="340" y2={i * 30 + 10} stroke={T.line} strokeWidth="0.5" strokeDasharray="2 3"/>
+            ))}
+            {/* phase bands */}
+            <rect x="0" y="0" width="85" height="110" fill={T.paperAlt} opacity="0.5"/>
+            <rect x="170" y="0" width="85" height="110" fill={T.paperAlt} opacity="0.5"/>
+            {/* elbow (clay) */}
+            <path d="M0 70 C 40 70, 60 60, 85 50 S 140 30, 170 30 S 220 80, 255 85 S 310 70, 340 60" stroke={T.clay} strokeWidth="2" fill="none"/>
+            {/* shoulder (amber) */}
+            <path d="M0 80 C 40 78, 60 70, 85 55 S 140 40, 170 40 S 220 65, 255 70 S 310 80, 340 85" stroke={T.amber} strokeWidth="2" fill="none"/>
+            {/* hip (court) */}
+            <path d="M0 90 C 40 88, 60 80, 85 60 S 140 35, 170 35 S 220 55, 255 60 S 310 85, 340 90" stroke={T.court} strokeWidth="2" fill="none"/>
+            {/* contact marker */}
+            <line x1="185" y1="0" x2="185" y2="110" stroke={T.ink} strokeWidth="1" strokeDasharray="2 2"/>
+            <text x="190" y="12" fill={T.ink} style={{ fontFamily: T.mono, fontSize: 9, fontWeight: 600 }}>CONTACT</text>
+          </svg>
+          <div style={{ display: 'flex', gap: 14, marginTop: 6 }}>
+            {[['Elbow', T.clay], ['Shoulder', T.amber], ['Hip', T.court]].map(([l, c]) => (
+              <div key={l} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                <div style={{ width: 10, height: 2, background: c, borderRadius: 1 }}/>
+                <Sans size={10} color={T.ink2}>{l}</Sans>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pro comparison ghost */}
+        <div style={{
+          marginTop: 14, background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          padding: '14px 16px', display: 'flex', gap: 14, alignItems: 'center',
+        }}>
+          <div style={{ width: 80, height: 80, borderRadius: 10, background: T.paperAlt, position: 'relative', flexShrink: 0 }}>
+            <svg viewBox="0 0 80 80" width="80" height="80">
+              <g stroke={T.ink3} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45">
+                <circle cx="42" cy="18" r="4" fill={T.ink3} stroke="none"/>
+                <line x1="42" y1="22" x2="40" y2="44"/>
+                <line x1="40" y1="44" x2="32" y2="58"/>
+                <line x1="40" y1="44" x2="50" y2="58"/>
+                <line x1="42" y1="28" x2="58" y2="22"/>
+                <line x1="58" y1="22" x2="72" y2="12"/>
+              </g>
+              <g stroke={T.clay} strokeWidth="1.5" fill="none" strokeLinecap="round">
+                <circle cx="42" cy="18" r="4" fill={T.clay} stroke="none"/>
+                <line x1="42" y1="22" x2="42" y2="44"/>
+                <line x1="42" y1="44" x2="34" y2="60"/>
+                <line x1="42" y1="44" x2="52" y2="60"/>
+                <line x1="42" y1="28" x2="62" y2="18"/>
+                <line x1="62" y1="18" x2="78" y2="5"/>
+              </g>
+            </svg>
+          </div>
+          <div style={{ flex: 1 }}>
+            <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 4 }}>vs. Djokovic FH</Sans>
+            <Sans size={13} weight={600} style={{ marginBottom: 4 }}>Shoulder turn 7° shorter</Sans>
+            <Sans size={11} color={T.ink2} style={{ lineHeight: 1.5 }}>
+              Your non-dominant arm finishes lower. More rotation = more uncoiling energy.
+            </Sans>
+          </div>
+        </div>
+
+        <div style={{ height: 16 }}/>
+      </div>
+    </Screen>
+  );
+}
+window.ResultData = ResultData;
+
+
+// ═══ screens/ResultVLM.jsx ═══
+// Result — VLM observations tab
+function ResultVLM() {
+  const insights = [
+    {
+      t: '0:00.3', phase: 'Load',
+      title: 'Unit turn is abbreviated',
+      body: 'Your left hand releases the racquet a beat early. Pro players keep both hands on through the turn — it stores coil and keeps the racquet head above the wrist.',
+      tone: 'attention',
+      evidence: 'Left-hand wrist ↓ at T+0.28s',
+    },
+    {
+      t: '0:00.7', phase: 'Swing',
+      title: 'Clean, compact backswing',
+      body: 'Racquet drops into the slot with the butt-cap pointed at the ball. This is the right shape for topspin.',
+      tone: 'good',
+      evidence: 'Racquet lag angle ≈ 96°',
+    },
+    {
+      t: '0:00.9', phase: 'Contact',
+      title: 'Contact is slightly behind the front hip',
+      body: 'Your strike zone is ~ 12 cm behind where it should be. You are still driving forward, but the racquet face closes late — which is why some balls land short.',
+      tone: 'issue',
+      evidence: 'Hip-to-wrist ΔX = −0.12m',
+    },
+    {
+      t: '0:01.1', phase: 'Follow-through',
+      title: 'Finish is flat',
+      body: 'Racquet ends near the opposite hip rather than wrapping over the shoulder. On harder swings this caps your topspin RPM.',
+      tone: 'attention',
+      evidence: 'Finish height 0.88m (shoulder 1.41m)',
+    },
+  ];
+  const toneMap = {
+    good:      { bd: '#9AAE60', fg: '#5D6F33', bg: '#F1F4E6', dot: '#9AAE60', label: 'Strength' },
+    attention: { bd: T.amber,   fg: '#8A6820',  bg: '#FBEDCE', dot: T.amber,   label: 'Watch' },
+    issue:     { bd: T.clay,    fg: T.clayDeep, bg: '#F6E4DC', dot: T.clay,    label: 'Fix' },
+  };
+
+  return (
+    <Screen bg={T.bg}>
+      <ResultHeader activeTab="vlm"/>
+      <div style={{ flex: 1, overflow: 'auto', padding: '16px 20px 24px' }}>
+        {/* Summary block */}
+        <div style={{
+          background: T.ink, borderRadius: 18, padding: '18px 18px 16px',
+          color: '#fff', position: 'relative', overflow: 'hidden',
+        }}>
+          <div style={{
+            position: 'absolute', right: -30, top: -30, width: 140, height: 140,
+            borderRadius: 999, background: T.clay, opacity: 0.3, filter: 'blur(20px)',
+          }}/>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+            <Icon name="sparkle" size={14} color={T.amber}/>
+            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.3 }}>
+              Gemini · visual reading
+            </Sans>
+          </div>
+          <Serif size={22} weight={400} opsz={60} style={{ color: '#fff', lineHeight: 1.2, marginBottom: 10 }}>
+            A balanced forehand with<br/>
+            <Serif as="span" size={22} italic weight={380} style={{ color: T.amberSoft }}>one clear fix: contact point.</Serif>
+          </Serif>
+          <Sans size={12} color="rgba(255,255,255,0.7)" style={{ lineHeight: 1.55 }}>
+            Your mechanics are clean through the load and swing. The single biggest gain is moving contact 10–15 cm forward — everything downstream improves with it.
+          </Sans>
+          <div style={{
+            display: 'flex', gap: 14, marginTop: 14,
+            paddingTop: 12, borderTop: '0.5px solid rgba(255,255,255,0.12)',
+          }}>
+            {[['4', 'observations'], ['1', 'strength'], ['1', 'fix']].map(([n,l],i) => (
+              <div key={i}>
+                <Serif size={22} weight={400} style={{ color: '#fff' }}>{n}</Serif>
+                <Sans size={10} color="rgba(255,255,255,0.55)" upper style={{ letterSpacing: 1.1, marginTop: 2 }}>{l}</Sans>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline of insights */}
+        <div style={{ marginTop: 20, display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1 }}>Timeline · 4 observations</Sans>
+          <Sans size={11} weight={500} color={T.ink2}>All phases</Sans>
+        </div>
+
+        <div style={{ position: 'relative', paddingLeft: 22 }}>
+          {/* vertical line */}
+          <div style={{ position: 'absolute', left: 7, top: 8, bottom: 8, width: 1, background: T.line }}/>
+
+          {insights.map((ins, i) => {
+            const tm = toneMap[ins.tone];
+            return (
+              <div key={i} style={{ position: 'relative', marginBottom: 12 }}>
+                {/* node */}
+                <div style={{
+                  position: 'absolute', left: -22, top: 14,
+                  width: 14, height: 14, borderRadius: 999,
+                  background: tm.dot, border: '2px solid ' + T.bg,
+                  boxShadow: `0 0 0 1px ${tm.dot}40`,
+                }}/>
+                <div style={{
+                  background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+                  padding: '12px 14px',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+                    <Mono size={10} color={T.ink2} weight={600}>{ins.t}</Mono>
+                    <Sans size={10} upper color={T.ink3} style={{ letterSpacing: 1 }}>· {ins.phase}</Sans>
+                    <Tag tone={ins.tone === 'good' ? 'court' : ins.tone === 'issue' ? 'clay' : 'amber'} style={{ marginLeft: 'auto' }}>
+                      {tm.label}
+                    </Tag>
+                  </div>
+                  <Sans size={14} weight={600} style={{ marginBottom: 5, lineHeight: 1.3 }}>{ins.title}</Sans>
+                  <Sans size={12} color={T.ink2} style={{ lineHeight: 1.55 }}>{ins.body}</Sans>
+                  <div style={{
+                    marginTop: 10, paddingTop: 8,
+                    borderTop: `0.5px dashed ${T.line}`,
+                    display: 'flex', alignItems: 'center', gap: 8,
+                  }}>
+                    <Icon name="wave" size={14} color={T.ink3}/>
+                    <Mono size={10} color={T.ink3}>{ins.evidence}</Mono>
+                    <Sans size={11} weight={500} color={T.clay} style={{ marginLeft: 'auto' }}>Jump to →</Sans>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* footer card */}
+        <div style={{
+          background: T.paperAlt, borderRadius: 14, padding: '12px 14px',
+          display: 'flex', gap: 10, alignItems: 'center', marginTop: 4,
+        }}>
+          <Icon name="book" size={18} color={T.ink2}/>
+          <Sans size={12} color={T.ink2} style={{ flex: 1, lineHeight: 1.5 }}>
+            Cross-referenced against <Sans as="span" size={12} weight={600} color={T.ink}>124 pro-level forehands</Sans> in Baseline's reference corpus.
+          </Sans>
+        </div>
+      </div>
+    </Screen>
+  );
+}
+window.ResultVLM = ResultVLM;
+
+
+// ═══ screens/ResultCoach.jsx ═══
+// Result — Coach tab: diagnosis + drill plan
+function ResultCoach() {
+  return (
+    <Screen bg={T.bg}>
+      <ResultHeader activeTab="diag"/>
+      <div style={{ flex: 1, overflow: 'auto', padding: '16px 20px 24px' }}>
+        {/* Primary diagnosis — layered from data + VLM */}
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+          overflow: 'hidden',
+        }}>
+          <div style={{ padding: '16px 18px 14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+              <Tag tone="clay">Root cause</Tag>
+              <Sans size={11} color={T.ink3}>Priority 1 of 3</Sans>
+            </div>
+            <Serif size={24} weight={400} opsz={60} style={{ lineHeight: 1.2, marginBottom: 10 }}>
+              Late contact caused by<br/>
+              <Serif as="span" size={24} italic weight={380} style={{ color: T.clayDeep }}>insufficient hip drive.</Serif>
+            </Serif>
+            <Sans size={12} color={T.ink2} style={{ lineHeight: 1.55 }}>
+              Your hip rotation is on par with the reference, but it starts <Sans as="span" size={12} weight={600} color={T.ink}>0.08s too late</Sans>. That pushes contact behind the front hip and shortens follow-through.
+            </Sans>
+          </div>
+
+          {/* Reasoning chain — from the knowledge engine */}
+          <div style={{ padding: '12px 18px 16px', background: T.paperAlt }}>
+            <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 10 }}>
+              How we know
+            </Sans>
+            {[
+              { l: 'Biomechanics', t: 'Hip onset ΔT = +0.08s late', k: 'data' },
+              { l: 'Visual',        t: '"Contact slightly behind the front hip"', k: 'vlm' },
+              { l: 'Pattern',       t: 'Matches "delayed kinetic chain" — 71% match', k: 'infer' },
+            ].map((r, i) => (
+              <div key={i} style={{
+                display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0',
+                borderTop: i > 0 ? `0.5px solid ${T.line}` : 'none',
+              }}>
+                <div style={{
+                  width: 22, height: 22, borderRadius: 6,
+                  background: r.k === 'data' ? T.clay : r.k === 'vlm' ? T.ink : T.amber,
+                  color: r.k === 'vlm' ? T.bg : r.k === 'data' ? '#fff' : T.ink,
+                  fontFamily: T.mono, fontSize: 9, fontWeight: 700,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                }}>
+                  {r.k === 'data' ? 'D' : r.k === 'vlm' ? 'V' : 'R'}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <Sans size={10} upper color={T.ink3} style={{ letterSpacing: 0.8 }}>{r.l}</Sans>
+                  <Sans size={12} color={T.ink}>{r.t}</Sans>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Secondary findings */}
+        <div style={{ marginTop: 20, marginBottom: 10 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1 }}>Also worth working on</Sans>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {[
+            { n: '02', t: 'Shoulder turn stops 7° short', why: 'Limits uncoiling energy.' },
+            { n: '03', t: 'Low, flat follow-through',      why: 'Caps topspin RPM.' },
+          ].map((f, i) => (
+            <div key={i} style={{
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
+              padding: '12px 14px', display: 'flex', gap: 12, alignItems: 'center',
+            }}>
+              <Mono size={11} color={T.clay} weight={600}>{f.n}</Mono>
+              <div style={{ flex: 1 }}>
+                <Sans size={13} weight={600}>{f.t}</Sans>
+                <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>{f.why}</Sans>
+              </div>
+              <Icon name="chevR" size={14} color={T.ink3}/>
+            </div>
+          ))}
+        </div>
+
+        {/* Drill plan */}
+        <div style={{ marginTop: 22, marginBottom: 10, display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1 }}>Your training plan · 3 drills</Sans>
+          <Sans size={11} weight={500} color={T.clay}>~ 25 min</Sans>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {[
+            {
+              n: 'A', min: '8 min', reps: '3 × 10',
+              title: 'Drop-and-hit with exaggerated hip lead',
+              body: 'Start rotated. Feed a ball, drive hips before the arm. Record one rep from the side.',
+              tag: 'Fixes root cause', tone: 'clay',
+            },
+            {
+              n: 'B', min: '10 min', reps: '4 × 8',
+              title: 'Window forehand · ball in front',
+              body: 'Place a cone at your front hip. Only strike balls you catch in front of the cone. Miss = reset.',
+              tag: 'Strike zone', tone: 'amber',
+            },
+            {
+              n: 'C', min: '7 min', reps: '2 × 12',
+              title: 'Shoulder-over-shoulder finish',
+              body: 'Exaggerate the finish so the non-dominant shoulder finishes in front. Rebuilds topspin shape.',
+              tag: 'Follow-through', tone: 'court',
+            },
+          ].map((d, i) => (
+            <div key={i} style={{
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+              padding: '14px 16px', display: 'flex', gap: 14,
+            }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 11, flexShrink: 0,
+                background: d.tone === 'clay' ? T.clay : d.tone === 'amber' ? T.amberSoft : '#D5DEBD',
+                color: d.tone === 'amber' ? '#8A6820' : d.tone === 'court' ? '#5D6F33' : '#fff',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: T.serif, fontSize: 22, fontWeight: 500,
+              }}>{d.n}</div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: 4 }}>
+                  <Tag tone={d.tone}>{d.tag}</Tag>
+                  <Mono size={10} color={T.ink3}>{d.min} · {d.reps}</Mono>
+                </div>
+                <Sans size={13} weight={600} style={{ marginBottom: 4, lineHeight: 1.3 }}>{d.title}</Sans>
+                <Sans size={11} color={T.ink2} style={{ lineHeight: 1.5 }}>{d.body}</Sans>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Next session target */}
+        <div style={{
+          marginTop: 18, background: T.ink, borderRadius: 16,
+          padding: '14px 16px', color: '#fff',
+          display: 'flex', gap: 12, alignItems: 'center',
+        }}>
+          <Icon name="target" size={22} color={T.amber}/>
+          <div style={{ flex: 1 }}>
+            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>Next session goal</Sans>
+            <Sans size={13} weight={500} style={{ color: '#fff', marginTop: 3, lineHeight: 1.4 }}>
+              Contact point within 5 cm of front hip on 8 / 10 forehands.
+            </Sans>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
+          <CTA tone="ghost" icon="share">Share</CTA>
+          <CTA tone="clay" icon="arrowR" full>Start drill A</CTA>
+        </div>
+      </div>
+    </Screen>
+  );
+}
+window.ResultCoach = ResultCoach;
+
+
+// ═══ screens/Profile.jsx ═══
+// Profile — history & progress comparison
+function Profile() {
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" />}
+        right={<NavBtn icon="dots" />}
+        eyebrow="Profile"
+      />
+
+      {/* Header card */}
+      <div style={{ padding: '4px 20px 0' }}>
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+          padding: '18px', display: 'flex', gap: 14, alignItems: 'center',
+        }}>
+          <div style={{
+            width: 56, height: 56, borderRadius: 999,
+            background: T.amberSoft, border: `0.5px solid ${T.line}`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontFamily: T.serif, fontSize: 24, fontWeight: 400, color: T.clayDeep,
+          }}>L</div>
+          <div style={{ flex: 1 }}>
+            <Serif size={22} weight={400}>Lin Wang</Serif>
+            <Sans size={12} color={T.ink3} style={{ marginTop: 2 }}>
+              UTR 4.8 · Right-handed · 2-hand backhand
+            </Sans>
+          </div>
+          <NavBtn label="Edit"/>
+        </div>
+      </div>
+
+      {/* Stats strip */}
+      <div style={{ padding: '14px 20px 0' }}>
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0,
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          overflow: 'hidden',
+        }}>
+          {[
+            { v: '38', l: 'sessions' },
+            { v: '1,412', l: 'strokes' },
+            { v: '74', l: 'form index' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              padding: '14px 12px', textAlign: 'center',
+              borderLeft: i > 0 ? `0.5px solid ${T.line}` : 'none',
+            }}>
+              <Serif size={24} weight={400}>{s.v}</Serif>
+              <Sans size={10} upper color={T.ink3} style={{ letterSpacing: 1, marginTop: 4 }}>{s.l}</Sans>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Progress chart — 30 day */}
+      <div style={{ padding: '18px 20px 0' }}>
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+          padding: '16px 18px',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+            <Sans size={11} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1 }}>Form index · 30 days</Sans>
+            <Sans size={11} weight={500} color={T.clay}>Filter ↓</Sans>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <Serif size={30} weight={400}>74</Serif>
+            <Sans size={11} color={T.court} weight={600}>▲ 6.4 vs. last month</Sans>
+          </div>
+          <svg width="100%" height="100" viewBox="0 0 340 100" style={{ marginTop: 8 }}>
+            <defs>
+              <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor={T.clay} stopOpacity="0.14"/>
+                <stop offset="1" stopColor={T.clay} stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            {/* target band */}
+            <rect x="0" y="28" width="340" height="14" fill={T.amber} opacity="0.08"/>
+            <text x="4" y="26" fill={T.amber} style={{ fontFamily: T.mono, fontSize: 9, fontWeight: 600 }}>TARGET 75</text>
+            <path d="M0 78 L20 74 L40 72 L60 78 L80 70 L100 66 L120 64 L140 68 L160 58 L180 54 L200 56 L220 48 L240 50 L260 42 L280 38 L300 34 L320 30 L340 28 L340 100 L0 100 Z" fill="url(#pg)"/>
+            <path d="M0 78 L20 74 L40 72 L60 78 L80 70 L100 66 L120 64 L140 68 L160 58 L180 54 L200 56 L220 48 L240 50 L260 42 L280 38 L300 34 L320 30 L340 28" stroke={T.clay} strokeWidth="1.5" fill="none"/>
+            <circle cx="340" cy="28" r="4" fill={T.clay} stroke="#fff" strokeWidth="2"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Strokes breakdown */}
+      <div style={{ padding: '18px 20px 0' }}>
+        <Sans size={11} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 10 }}>By stroke type</Sans>
+        {[
+          { l: 'Forehand', v: 78, delta: '+5', n: 624 },
+          { l: 'Backhand', v: 71, delta: '+3', n: 482 },
+          { l: 'Serve',    v: 68, delta: '−1', n: 214 },
+          { l: 'Volley',   v: 64, delta: '0',  n: 92 },
+        ].map((s, i) => (
+          <div key={i} style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
+            padding: '12px 14px', marginBottom: 8,
+            display: 'flex', alignItems: 'center', gap: 12,
+          }}>
+            <div style={{ width: 80 }}>
+              <Sans size={13} weight={600}>{s.l}</Sans>
+              <Mono size={10} color={T.ink3}>{s.n} strokes</Mono>
+            </div>
+            <div style={{ flex: 1, height: 5, background: T.paperAlt, borderRadius: 3, overflow: 'hidden' }}>
+              <div style={{ width: `${s.v}%`, height: '100%',
+                background: i === 0 ? T.clay : i === 1 ? T.amber : i === 2 ? T.court : T.ink3 }}/>
+            </div>
+            <Serif size={18} weight={400} style={{ width: 26, textAlign: 'right' }}>{s.v}</Serif>
+            <Mono size={10} color={s.delta.startsWith('+') ? '#5D6F33' : s.delta.startsWith('−') ? T.clay : T.ink3}
+                  style={{ width: 18, textAlign: 'right' }}>{s.delta}</Mono>
+          </div>
+        ))}
+      </div>
+
+      {/* Side-by-side card */}
+      <div style={{ padding: '16px 20px 20px' }}>
+        <div style={{
+          background: T.ink, borderRadius: 16, padding: '14px 16px',
+          display: 'flex', gap: 12, alignItems: 'center',
+        }}>
+          <Icon name="hand" size={20} color={T.amber}/>
+          <div style={{ flex: 1 }}>
+            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>Compare</Sans>
+            <Sans size={13} weight={500} style={{ color: '#fff', marginTop: 2 }}>
+              Two forehands, 3 weeks apart — side by side.
+            </Sans>
+          </div>
+          <Icon name="arrowR" size={18} color="#fff"/>
+        </div>
+      </div>
+
+      <TabBar active="profile"/>
+    </Screen>
+  );
+}
+window.Profile = Profile;
+
+
+// ═══ screens/System.jsx ═══
+// System — design system overview card
+function SystemPage() {
+  return (
+    <div style={{
+      width: '100%', height: '100%', background: T.bg,
+      fontFamily: T.sans, color: T.ink, overflow: 'auto', padding: '28px 28px 32px',
+    }}>
+      <Sans size={11} upper weight={600} color={T.clay} style={{ letterSpacing: 1.4, marginBottom: 10 }}>
+        Baseline — design system
+      </Sans>
+      <Serif size={36} weight={400} opsz={72} style={{ marginBottom: 6 }}>
+        A warm, quiet surface<br/>
+        <Serif as="span" size={36} italic weight={380} style={{ color: T.clayDeep }}>for athletic data.</Serif>
+      </Serif>
+      <Sans size={13} color={T.ink2} style={{ maxWidth: 520, lineHeight: 1.55, marginBottom: 28 }}>
+        Borrowed from Anthropic's restrained typography and paper-like surfaces; tuned warm with clay red and amber gold from a leather racquet grip. Numbers live in a serif to feel considered — never clinical.
+      </Sans>
+
+      {/* Palette */}
+      <Sans size={10} upper weight={600} color={T.ink3} style={{ letterSpacing: 1.2, marginBottom: 10 }}>Palette</Sans>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8, marginBottom: 22 }}>
+        {[
+          { c: T.bg,    n: 'Cream',   h: '#F7F3EC' },
+          { c: T.paper, n: 'Paper',   h: '#FDFBF6' },
+          { c: T.ink,   n: 'Ink',     h: '#2A2925' },
+          { c: T.clay,  n: 'Clay',    h: '#C8553D' },
+          { c: T.amber, n: 'Amber',   h: '#E8B04B' },
+          { c: T.court, n: 'Court',   h: '#9AAE60' },
+        ].map((p, i) => (
+          <div key={i}>
+            <div style={{
+              height: 64, borderRadius: 10, background: p.c,
+              border: `0.5px solid ${T.line}`,
+            }}/>
+            <Sans size={11} weight={600} style={{ marginTop: 6 }}>{p.n}</Sans>
+            <Mono size={9} color={T.ink3}>{p.h}</Mono>
+          </div>
+        ))}
+      </div>
+
+      {/* Type */}
+      <Sans size={10} upper weight={600} color={T.ink3} style={{ letterSpacing: 1.2, marginBottom: 10 }}>Type</Sans>
+      <div style={{
+        background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+        padding: '18px 20px', marginBottom: 22,
+      }}>
+        <Serif size={42} weight={400} opsz={100} style={{ lineHeight: 1.05 }}>Fraunces</Serif>
+        <Sans size={11} color={T.ink3} style={{ marginBottom: 14 }}>Display · headings · key numbers</Sans>
+        <Sans size={22} weight={500}>Inter</Sans>
+        <Sans size={11} color={T.ink3} style={{ marginBottom: 14 }}>Body · UI · labels</Sans>
+        <Mono size={14} weight={600}>JetBrains Mono</Mono>
+        <Sans size={11} color={T.ink3}>Timestamps · angles · mph</Sans>
+      </div>
+
+      {/* Components strip */}
+      <Sans size={10} upper weight={600} color={T.ink3} style={{ letterSpacing: 1.2, marginBottom: 10 }}>Components</Sans>
+      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+        <CTA tone="clay" icon="sparkle">Analyze</CTA>
+        <CTA tone="ink">Start drill</CTA>
+        <CTA tone="ghost" icon="share">Share</CTA>
+        <Tag tone="clay">Forehand</Tag>
+        <Tag tone="amber">Backhand</Tag>
+        <Tag tone="court">Strength</Tag>
+        <Tag tone="ink">Reviewed</Tag>
+      </div>
+
+      <div style={{ marginTop: 30 }}>
+        <Sans size={10} upper weight={600} color={T.ink3} style={{ letterSpacing: 1.2, marginBottom: 10 }}>User flow</Sans>
+        <div style={{
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          padding: '16px 18px', display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap',
+        }}>
+          {['Onboard', 'Home', 'Import', 'Choose clips', 'Analyzing', 'Data', 'VLM', 'Coach', 'Profile'].map((s, i, a) => (
+            <React.Fragment key={s}>
+              <div style={{
+                padding: '6px 12px', borderRadius: 8, background: T.paperAlt,
+                fontFamily: T.mono, fontSize: 11, fontWeight: 600, color: T.ink,
+              }}>{String(i+1).padStart(2,'0')} {s}</div>
+              {i < a.length - 1 && <Icon name="arrowR" size={14} color={T.ink3}/>}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+window.SystemPage = SystemPage;
+
+
+// ═══ App shell ═══
+const Phone = ({ Comp, dark = false }) => (
+  <IOSDevice width={390} height={844} dark={dark}>
+    <Comp/>
+  </IOSDevice>
+);
+
+function App() {
+  return (
+    <DesignCanvas initialScale={0.72}>
+      <DCSection id="system" title="Baseline" subtitle="Warm, quiet, Anthropic-adjacent design system for a tennis motion coach">
+        <DCArtboard id="sys" label="Design system" width={880} height={760}>
+          <SystemPage/>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="flow" title="Core flow" subtitle="Import → segment → choose → analyze → results">
+        <DCArtboard id="s1" label="01 · Onboarding" width={390} height={844}>
+          <div data-screen-label="01 Onboarding" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={Onboarding}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="s2" label="02 · Home / Sessions" width={390} height={844}>
+          <div data-screen-label="02 Home" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={Home}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="s3" label="03 · Import &amp; auto-cut" width={390} height={844}>
+          <div data-screen-label="03 Import" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={ImportScreen}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="s4" label="04 · Choose clips" width={390} height={844}>
+          <div data-screen-label="04 Choose" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={ClipGrid}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="s5" label="05 · Analyzing" width={390} height={844}>
+          <div data-screen-label="05 Loading" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={Loading}/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="results" title="Results · three layers" subtitle="Pose-derived data · Gemini visual reading · Inference engine + drills">
+        <DCArtboard id="r1" label="06 · Biomechanics" width={390} height={844}>
+          <div data-screen-label="06 Data" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={ResultData}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="r2" label="07 · VLM observations" width={390} height={844}>
+          <div data-screen-label="07 VLM" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={ResultVLM}/>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="r3" label="08 · Coach &amp; drills" width={390} height={844}>
+          <div data-screen-label="08 Coach" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={ResultCoach}/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="profile" title="Progress" subtitle="History, trends and stroke-type breakdown">
+        <DCArtboard id="p1" label="09 · Profile" width={390} height={844}>
+          <div data-screen-label="09 Profile" style={{ width: '100%', height: '100%' }}>
+            <Phone Comp={Profile}/>
+          </div>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
