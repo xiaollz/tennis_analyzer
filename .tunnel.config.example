@@ -1,0 +1,19 @@
+# Baseline tunnel config — copy this to `.tunnel.config` and fill in.
+#
+# `.tunnel.config` is git-ignored; keep your authtoken private.
+#
+# How to get these values:
+#   1. Sign up at https://dashboard.ngrok.com/signup (free, no card)
+#   2. Authtoken:
+#        https://dashboard.ngrok.com/get-started/your-authtoken
+#   3. Reserve a static domain (free tier gives you 1):
+#        https://dashboard.ngrok.com/cloud-edge/domains
+#        → click "+ New Domain" → pick something like "qsy-tennis"
+#        → it becomes "qsy-tennis.ngrok-free.app"
+
+# Your ngrok auth token (long random string, starts with digits)
+NGROK_AUTHTOKEN=
+
+# The static domain you reserved (no https:// prefix, no trailing slash)
+# Example: qsy-tennis.ngrok-free.app
+NGROK_DOMAIN=

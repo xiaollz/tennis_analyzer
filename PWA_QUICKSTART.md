@@ -1,148 +1,191 @@
 # Baseline PWA — 公网部署快速指南
 
 > 把 Baseline 装到你手机的主屏幕，用任意网络访问。
-> 一条命令搞定。
+> 一条命令搞定，0 元，URL 永远不变。
 
 ---
 
 ## TL;DR
 
 ```bash
+# 一次性配置（5 分钟）
+cp .tunnel.config.example .tunnel.config
+# 编辑 .tunnel.config，填入两个值（见下方）
+# 然后：
+
 ./start-public.sh
 ```
 
-输出会给你一个 `https://xxx.trycloudflare.com` 的 URL。
+输出会给你一个 `https://你-的-名字.ngrok-free.app` 的 URL。
 
-在手机 Safari 里打开 → 分享 → 添加到主屏幕。
-
-完成。
+在手机 Safari 里打开 → 分享 → 添加到主屏幕。**装一次永远能用**。
 
 ---
 
-## 它到底做了什么
+## 一次性配置：3 步搞定
 
-### 1️⃣ 启动后端 + 前端
+### 1️⃣ 注册 ngrok（免费，不要信用卡）
 
-`./start-public.sh` 启动 FastAPI（监听 `127.0.0.1:8765`），所有
-分析能力 + 前端 UI 都从这里来。
+https://dashboard.ngrok.com/signup
 
-### 2️⃣ 起一个 Cloudflare 隧道
+邮箱 + 密码，1 分钟搞定。
 
-`cloudflared tunnel --url http://127.0.0.1:8765` 在 Cloudflare 边缘节点
-和你的电脑之间建一条加密管道。
+### 2️⃣ 拿两个值
 
-外面的人通过 `https://xxx.trycloudflare.com` 访问 → Cloudflare 转发到
-你电脑的 8765 端口 → FastAPI 处理 → 响应原路返回。
+#### a. **Authtoken**
 
-**你不需要 Cloudflare 账号、不需要域名、不需要开放路由器端口**。
+登录后到：https://dashboard.ngrok.com/get-started/your-authtoken
 
-### 3️⃣ Baseline 已经是 PWA
+复制那一长串（看起来像 `2abc...XYZ`，~50 字符）。
 
-`frontend/dist/` 下：
+#### b. **静态域名**（免费 1 个）
 
-| 文件 | 作用 |
-|---|---|
-| `manifest.webmanifest` | 告诉浏览器"这是个 App，不是网页" |
-| `sw.js` | service worker — 缓存壳层，让 App 启动飞快 |
-| `icon-192.png` / `icon-512.png` | 主屏图标 |
-| `apple-touch-icon.png` | iOS 主屏图标（圆角自动加） |
-| `index.html` | 已加 PWA meta 标签 + safe-area + 全屏样式 |
+到：https://dashboard.ngrok.com/cloud-edge/domains
 
-满足这些，浏览器就允许"添加到主屏幕"，并以**全屏 standalone**
-模式打开（没有 Safari 顶部地址栏，看起来跟原生 App 一样）。
+点 **+ New Domain** → 起个名字（比如 `qsy-tennis`）→ 创建。
 
----
+它会变成：`qsy-tennis.ngrok-free.app`
 
-## 在手机上安装的步骤（iOS）
+### 3️⃣ 写到 `.tunnel.config`
 
-1. 在 Safari 里打开你的 `https://xxx.trycloudflare.com` URL
-2. 等页面完全加载（首次会下载字体 + Babel，约 2-3 秒）
-3. 点底部分享按钮 ⏏
-4. 找到 **Add to Home Screen**（添加到主屏幕）
-5. 名字默认是 "Baseline"，确认
-6. 退出 Safari，主屏幕上应该出现一个赭红色方块加米黄圆点的图标
+```bash
+cd /Users/qsy/Desktop/tennis
+cp .tunnel.config.example .tunnel.config
+```
 
-点开图标 = 全屏 App 模式，没有任何浏览器 chrome。
+用编辑器打开 `.tunnel.config`，填两行：
+
+```
+NGROK_AUTHTOKEN=2abc...XYZ
+NGROK_DOMAIN=qsy-tennis.ngrok-free.app
+```
+
+保存。这个文件是 gitignore 的，不会进仓库。
 
 ---
 
-## 在手机上安装的步骤（Android）
+## 启动
+
+```bash
+./start-public.sh
+```
+
+打印类似：
+
+```
+  Booting Baseline server on http://127.0.0.1:8765 ...
+  ✓ server up
+
+  Starting ngrok tunnel → https://qsy-tennis.ngrok-free.app ...
+
+  ┌──────────────────────────────────────────────────────────────┐
+  │  Public URL (永久):                                            │
+  │  https://qsy-tennis.ngrok-free.app                             │
+  ├──────────────────────────────────────────────────────────────┤
+  │  On your phone (first time):                                  │
+  │    1. Open the URL in Safari                                  │
+  │    2. Tap Share → Add to Home Screen                          │
+  │                                                                │
+  │  After that the URL never changes —                           │
+  │  just tap the home-screen icon.                               │
+  └──────────────────────────────────────────────────────────────┘
+```
+
+**Ctrl-C** 停止。
+
+---
+
+## 在手机上安装（iOS）
+
+1. Safari 打开 `https://qsy-tennis.ngrok-free.app`
+2. 等首次加载完（2-3 秒下载字体 + Babel）
+3. 底部分享按钮 ⏏ → **Add to Home Screen**
+4. 名字默认 "Baseline"，确认
+5. 退出 Safari → 主屏幕出现赭红方块 + 米黄圆点的图标
+6. 以后随时打开 ngrok / 球场 / 移动数据 / 任何网络 → 点图标 → 全屏 App
+
+**关键**：以后**只要电脑跑着 `./start-public.sh`**，手机就能用。
+URL 永远是 `qsy-tennis.ngrok-free.app`，**不用重新装**。
+
+---
+
+## Android Chrome
 
 1. Chrome 打开 URL
-2. Chrome 自动弹"安装应用"提示，或菜单 → "安装应用"
-3. 主屏幕图标 + Drawer 里都会出现
+2. 菜单 → "安装应用" / "添加到主屏幕"
+3. 主屏幕图标，全屏体验
 
 ---
 
 ## 关键提醒
 
-### 隧道 URL 每次重启都会变
+### ✅ URL 永久不变
 
-Cloudflare 免费 Quick Tunnel 是**临时的**——你停掉 `cloudflared`、
-重新跑 `./start-public.sh`，URL 会变。
+这是 ngrok vs Cloudflare Quick Tunnel 的最大区别。手机一次安装，永远能用。
 
-**这意味着**：手机上的"Baseline" App 还在主屏幕，但**点开会 404**
-（因为它指向旧 URL）。
-
-**解法 A · 跑长期 tunnel（推荐）**：让脚本一直跑着不停。
-开机后第一件事 `./start-public.sh`，后台跑一整天。
-
-**解法 B · 命名 tunnel（一劳永逸）**：
-1. 注册免费 Cloudflare 账号
-2. 加一个域名（或用 `*.cloudflareaccess.com` 子域）
-3. `cloudflared tunnel create baseline`
-4. 配置 `~/.cloudflared/config.yml` 指向你的固定子域
-5. URL 永久不变
-
-如果你**只是自己用、电脑大部分时间开着**，解法 A 完全够用。
-
-### 上传大视频要等
-
-Cloudflare 免费隧道的 ssl handshake 偶尔慢 2-3 秒。看到"Uploading..."
-不动别紧张，30 秒内会动起来。
-
-### 你的电脑必须开机 + 不睡眠
+### ⚠️ 你的电脑必须开机 + 不睡眠
 
 公网访问 = 你的电脑就是服务器。它睡眠 / 关机，App 就连不上。
 
-### 隧道随时可关
+打开 **System Settings → Battery → 高级 → 防止你的 Mac 在屏幕关闭时睡眠**，
+方便长时间挂着。
 
-```
-按 Ctrl-C 停止 ./start-public.sh
+### ⚠️ 免费档限制
+
+- **1 GB / 月** 入站带宽 → 大约能传 200 个 5MB 视频
+- **1 个静态域名** → 你只用 1 个，没问题
+- **同时 1 个 endpoint** → 你只起 1 个，没问题
+
+平时自己用绰绰有余。如果某月真的传爆了 1GB，也只是临时的——下个月自动重置。
+
+### ⚠️ 别把 `.tunnel.config` 提交到 git
+
+里面有你的 authtoken。已经默认 gitignore 了，但**别手动 force-add**。
+
+---
+
+## 切换 / 退出
+
+### 切回 Cloudflare Quick Tunnel（临时 URL）
+
+```bash
+mv .tunnel.config .tunnel.config.bak
+./start-public.sh
 ```
 
-服务器和隧道都会停。需要再用就再跑一次。
+它会回退到 cloudflared 模式（你之前装好的）。
+
+### 重置 ngrok 配置
+
+直接编辑 `.tunnel.config` 改两个值即可。
+
+### 仅本地用，不公网
+
+```bash
+./start.sh
+```
+
+只在 0.0.0.0:8765 监听，同 WiFi 可访问，不开公网。
 
 ---
 
 ## 验证清单
 
-跑完 `./start-public.sh` 后，逐项确认：
+跑完 `./start-public.sh` 后，在另一个终端：
 
 ```bash
-# 1. 拿到 URL（复制 trycloudflare.com 这一行）
-echo $URL
+# 1. 健康检查
+curl https://qsy-tennis.ngrok-free.app/api/health
+# → {"status":"ok",...}
 
-# 2. 健康检查
-curl $URL/api/health
+# 2. PWA 资源
+curl -I https://qsy-tennis.ngrok-free.app/manifest.webmanifest
+# → 200, content-type: application/manifest+json
 
-# 3. PWA 检查
-curl -I $URL/manifest.webmanifest    # 必须 200，content-type: application/manifest+json
-curl -I $URL/sw.js                   # 必须 200，content-type: text/javascript
-curl -I $URL/icon-192.png            # 必须 200，image/png
+# 3. 主页
+open https://qsy-tennis.ngrok-free.app/
+# → 浏览器打开 Baseline App
 ```
-
-全过 → 手机可以装。
-
----
-
-## 仅本地用，不要公网
-
-```bash
-./start.sh                 # 同一 WiFi 可访问，不开公网
-```
-
-这条命令保留着不动。`start-public.sh` 只是它的"加上隧道"版本。
 
 ---
 
@@ -150,18 +193,35 @@ curl -I $URL/icon-192.png            # 必须 200，image/png
 
 | 现象 | 原因 | 解法 |
 |---|---|---|
-| `cloudflared not installed` | 没装 | `brew install cloudflared` |
-| 公网 URL 拿到了但访问 502 | tunnel 还在握手 | 等 5-10 秒再试 |
-| 手机能装但点开白屏 | 旧 cache | 设置→Safari→清除缓存，再装 |
-| 启动报"端口被占用" | 8765 被旧进程占 | `pkill -f uvicorn` 然后再跑 |
-| 视频上传到 50% 卡住 | 网络抖动 | Cloudflare 自动重连，等 30s |
+| `ngrok not installed but .tunnel.config has ngrok values` | brew 没装 | 直接装：`curl -sSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-darwin-arm64.zip -o /tmp/n.zip && unzip /tmp/n.zip -d /opt/homebrew/bin/ && chmod +x /opt/homebrew/bin/ngrok` |
+| `ERR_NGROK_3200` 域名被占 | 你 dashboard 上没真正预留这个域名 | 回 dashboard → Domains 重新创建 |
+| 401 unauthorized | authtoken 错 / 复制时多了空格 | 重新从 dashboard 复制 |
+| 手机能装但点开白屏 | 旧 cache | 设置 → Safari → 清除缓存，再装 |
+| 上传到 50% 卡住 | 网络抖动 | ngrok 会重连，等 30s |
 
 ---
 
-## 下一步可能的演进
+## 下次要使用，三步
 
-1. **永久 tunnel**：绑一个免费 cloudflareaccess.com 子域 → URL 不变
-2. **真正云部署**：把后端搬到 Fly.io / Railway → 不依赖你电脑
-3. **App Store 上架**：包成 iOS 真原生 App（用 Capacitor 把 PWA 包一层）
+```bash
+# 你的 Mac 上
+cd /Users/qsy/Desktop/tennis
+./start-public.sh
 
-但**目前这套对个人使用已经完美**——投入 0 元，5 分钟搞定。
+# 等看到 Public URL 之后，手机上点主屏 Baseline 图标
+# 完成
+```
+
+URL 不变，所以这是稳定的日常用法。
+
+---
+
+## 补充：Cloudflare Quick Tunnel（无配置兜底）
+
+如果你**不想配 ngrok**，直接 `./start-public.sh`，它会自动降级到 Cloudflare quick tunnel：
+
+- ✅ 不用注册任何账号
+- ❌ URL 每次重启都变 → 手机上每次要重新装
+- 仅用于一次性演示 / 临时给朋友看
+
+平时建议**还是配上 ngrok**——稳定永久 URL 才是主屏 App 的灵魂。
