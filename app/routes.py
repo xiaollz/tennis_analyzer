@@ -12,7 +12,7 @@ import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 
 from app import jobs, services, storage
@@ -31,15 +31,26 @@ def health() -> Dict[str, Any]:
 # ── Video upload + segmentation ─────────────────────────────────────
 
 @router.post("/videos")
-async def upload_video(file: UploadFile = File(...)) -> Dict[str, Any]:
+async def upload_video(
+    file: UploadFile = File(...),
+    stroke: str = Form("forehand"),
+) -> Dict[str, Any]:
     """Accept a video upload, persist it, and kick off segmentation.
 
+    Parameters (multipart form):
+      file:   video file (mp4/mov/m4v/mkv)
+      stroke: "forehand" | "backhand" | "auto"  (default forehand —
+              the auto classifier is unreliable on short clips)
+
     Returns:
-      {video_id, job_id}
+      {video_id, job_id, stroke}
     """
     ext = Path(file.filename or "video.mp4").suffix.lower() or ".mp4"
     if ext not in (".mp4", ".mov", ".m4v", ".mkv"):
         raise HTTPException(status_code=400, detail=f"unsupported extension: {ext}")
+
+    if stroke not in services.VALID_STROKES:
+        stroke = "forehand"
 
     video_id = uuid.uuid4().hex[:12]
     storage.ensure_storage()
@@ -55,6 +66,7 @@ async def upload_video(file: UploadFile = File(...)) -> Dict[str, Any]:
         "filename": file.filename,
         "original_path": str(original),
         "uploaded_at": time.time(),
+        "stroke": stroke,
     }
     storage.write_json(storage.video_meta_path(video_id), meta)
 
@@ -64,7 +76,7 @@ async def upload_video(file: UploadFile = File(...)) -> Dict[str, Any]:
         payload={"video_id": video_id, "video_path": str(original)},
     )
 
-    return {"video_id": video_id, "job_id": job.job_id}
+    return {"video_id": video_id, "job_id": job.job_id, "stroke": stroke}
 
 
 @router.get("/videos")
@@ -158,19 +170,35 @@ def get_clip_thumbnail(clip_id: str):
 
 
 @router.post("/clips/{clip_id}/diagnose")
-def start_diagnose(clip_id: str) -> Dict[str, Any]:
+def start_diagnose(clip_id: str, stroke: str | None = None) -> Dict[str, Any]:
+    """Start diagnosis on a clip.
+
+    Query param:
+      stroke: "forehand" | "backhand" | "auto"
+        Falls back to the parent video's saved preference (set at upload),
+        which itself defaults to "forehand".
+    """
     info = storage.find_clip(clip_id)
     if not info:
         raise HTTPException(status_code=404, detail="clip not found")
+
+    # Resolve stroke: query → video meta → default
+    if stroke not in services.VALID_STROKES:
+        video_meta = info.get("video_meta") or {}
+        stroke = video_meta.get("stroke", "forehand")
+        if stroke not in services.VALID_STROKES:
+            stroke = "forehand"
+
     # If already done, return idempotently
     if storage.diagnosis_result_path(clip_id).exists():
-        return {"clip_id": clip_id, "job_id": None, "status": "already_done"}
+        return {"clip_id": clip_id, "job_id": None, "status": "already_done", "stroke": stroke}
+
     job = jobs.submit(
         kind="diagnose",
         fn=services.run_diagnosis,
-        payload={"clip_id": clip_id},
+        payload={"clip_id": clip_id, "stroke": stroke},
     )
-    return {"clip_id": clip_id, "job_id": job.job_id, "status": "queued"}
+    return {"clip_id": clip_id, "job_id": job.job_id, "status": "queued", "stroke": stroke}
 
 
 @router.get("/clips/{clip_id}/annotated")

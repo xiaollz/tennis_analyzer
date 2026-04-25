@@ -268,12 +268,17 @@ const api = {
   listVideos: () => fetch(`${API}/videos`).then(r => r.json()),
   getVideo: id => fetch(`${API}/videos/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
   deleteVideo: id => fetch(`${API}/videos/${id}`, { method: 'DELETE' }),
-  uploadVideo: file => {
-    const fd = new FormData(); fd.append('file', file);
+  uploadVideo: (file, stroke = 'forehand') => {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('stroke', stroke);
     return fetch(`${API}/videos`, { method: 'POST', body: fd }).then(r => r.json());
   },
   getJob: id => fetch(`${API}/jobs/${id}`).then(r => r.json()),
-  startDiagnose: clipId => fetch(`${API}/clips/${clipId}/diagnose`, { method: 'POST' }).then(r => r.json()),
+  startDiagnose: (clipId, stroke) => {
+    const url = stroke ? `${API}/clips/${clipId}/diagnose?stroke=${stroke}` : `${API}/clips/${clipId}/diagnose`;
+    return fetch(url, { method: 'POST' }).then(r => r.json());
+  },
   getDiagnosis: clipId => fetch(`${API}/diagnoses/${clipId}`).then(r => r.ok ? r.json() : Promise.reject('no diagnosis')),
   getClip: id => fetch(`${API}/clips/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
 };
@@ -381,7 +386,7 @@ function Onboarding({ onStart }) {
 // Screen 2: Home (sparkline + sessions)
 // ═══════════════════════════════════════════════════════════════════════
 
-function Home({ onPickVideo, onUpload, reloadKey }) {
+function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange }) {
   const [videos, setVideos] = useState(null);
 
   useEffect(() => {
@@ -432,6 +437,39 @@ function Home({ onPickVideo, onUpload, reloadKey }) {
                Tap any clip to see your biomechanics.
              </>}
           </Sans>
+        </div>
+
+        {/* Stroke selector — applies to next upload */}
+        <div style={{ padding: '6px 20px 0' }}>
+          <div style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '12px 14px',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+              <Sans size={11} upper weight={500} color={T.ink3}>Stroke focus · next upload</Sans>
+              <Sans size={11} color={T.ink3}>auto-detect is unreliable</Sans>
+            </div>
+            <div style={{
+              display: 'flex', gap: 4, padding: 3,
+              background: T.paperAlt, borderRadius: 10,
+            }}>
+              {[
+                { id: 'forehand', label: 'Forehand' },
+                { id: 'backhand', label: 'Backhand' },
+                { id: 'auto',     label: 'Auto' },
+              ].map(opt => (
+                <button key={opt.id} onClick={() => onStrokeChange(opt.id)} style={{
+                  flex: 1, padding: '7px 8px', borderRadius: 7,
+                  background: stroke === opt.id ? T.paper : 'transparent',
+                  boxShadow: stroke === opt.id ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+                  border: 'none', cursor: 'pointer',
+                  fontFamily: T.sans, fontSize: 12,
+                  fontWeight: stroke === opt.id ? 600 : 500,
+                  color: stroke === opt.id ? T.ink : T.ink3,
+                }}>{opt.label}</button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Form-index card */}
@@ -559,7 +597,7 @@ function SessionCard({ video, isNew, onClick }) {
 // Screen 3: Import (uploading + segmenting)
 // ═══════════════════════════════════════════════════════════════════════
 
-function Import({ file, onDone, onCancel }) {
+function Import({ file, stroke, onDone, onCancel }) {
   const [stage, setStage] = useState('upload');
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Uploading…');
@@ -575,7 +613,7 @@ function Import({ file, onDone, onCancel }) {
     (async () => {
       try {
         setMessage('Uploading video…');
-        const { video_id, job_id } = await api.uploadVideo(file);
+        const { video_id, job_id } = await api.uploadVideo(file, stroke);
         setStage('segment');
         setMessage('Listening for hits…');
         const job = await pollJob(job_id, j => {
@@ -1462,8 +1500,14 @@ function App() {
     try { return localStorage.getItem('baseline.onboarded') === '1' ? { name: 'home' } : { name: 'onboarding' }; }
     catch { return { name: 'home' }; }
   })();
+  const initialStroke = (() => {
+    try { return localStorage.getItem('baseline.stroke') || 'forehand'; }
+    catch { return 'forehand'; }
+  })();
   const [route, setRoute] = useState(initialRoute);
   const [uploadFile, setUploadFile] = useState(null);
+  const [stroke, _setStroke] = useState(initialStroke);
+  const setStroke = s => { _setStroke(s); try { localStorage.setItem('baseline.stroke', s); } catch {} };
   const [homeKey, setHomeKey] = useState(0);
   const fileRef = useRef();
 
@@ -1490,6 +1534,8 @@ function App() {
         {route.name === 'home' && (
           <Home
             reloadKey={homeKey}
+            stroke={stroke}
+            onStrokeChange={setStroke}
             onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
             onUpload={pickFile}
           />
@@ -1497,6 +1543,7 @@ function App() {
         {route.name === 'upload' && (
           <Import
             file={uploadFile}
+            stroke={stroke}
             onDone={videoId => setRoute({ name: 'clips', videoId })}
             onCancel={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
           />

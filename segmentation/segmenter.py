@@ -80,6 +80,15 @@ class SoundBasedSegmenter:
         单个片段内允许的最大击球数（默认 2）
     onset_threshold_std : float
         音频 onset 的标准差阈值倍数，越大越严格（默认 3.0）
+    dominance_window_s : float
+        簇内主导峰窗口：任意 N 秒窗口内，只保留最强 onset，其余视为
+        回声/噪声。N=0 关闭过滤（默认 0.7s）。
+    dominance_ratio : float
+        簇内非主导峰的强度上限比例：弱于主导峰 dominance_ratio 倍的
+        onset 被丢弃。默认 0.65（即 < 65% 主导强度的视为回声）。
+    short_video_force_single : float
+        若视频总时长 ≤ 该阈值，强制只产出 1 个片段（取最强 onset 为锚）。
+        防止用户拍的"单次击球"短视频被误切。默认 4.0s。
     """
 
     def __init__(
@@ -89,12 +98,18 @@ class SoundBasedSegmenter:
         group_gap_s: float = 1.2,
         max_hits_per_clip: int = 2,
         onset_threshold_std: float = 3.0,
+        dominance_window_s: float = 0.7,
+        dominance_ratio: float = 0.65,
+        short_video_force_single: float = 4.0,
     ):
         self.pre_s = pre_s
         self.post_s = post_s
         self.group_gap_s = group_gap_s
         self.max_hits_per_clip = max_hits_per_clip
         self.onset_threshold_std = onset_threshold_std
+        self.dominance_window_s = dominance_window_s
+        self.dominance_ratio = dominance_ratio
+        self.short_video_force_single = short_video_force_single
 
     # ── 主入口 ─────────────────────────────────────────────────
 
@@ -166,7 +181,16 @@ class SoundBasedSegmenter:
             for f in detector.onset_frames
         }
 
-        # 3) 按时间间隔分组 → 每组变成一个片段
+        # 3) 过滤"回声/噪声" onset（簇内主导峰过滤）
+        _progress(0.22, "过滤回声")
+        onset_times = self._filter_ghost_onsets(onset_times, strengths)
+
+        # 4) 短视频特例：≤ 阈值时强制只产出 1 个片段
+        if duration_s <= self.short_video_force_single and onset_times:
+            anchor = max(onset_times, key=lambda t: strengths.get(t, 0.0))
+            onset_times = [anchor]
+
+        # 5) 按时间间隔分组 → 每组变成一个片段
         _progress(0.30, "合并相邻击球")
         groups: List[List[float]] = []
         current: List[float] = []
@@ -233,6 +257,39 @@ class SoundBasedSegmenter:
         )
 
     # ── 内部工具 ────────────────────────────────────────────────
+
+    def _filter_ghost_onsets(
+        self,
+        onset_times: List[float],
+        strengths: Dict[float, float],
+    ) -> List[float]:
+        """簇内主导峰过滤：任意 dominance_window_s 内只保留最强 onset。
+
+        球拍击球后常有 50-300ms 的回声 / 球落地 / 网响等次级声峰，
+        这些 onset 会被检测器同样捕获。此函数在每个 onset 周围划一个
+        窗口，若有更强的 onset 存在，且当前 onset 的强度 < 主导峰 ×
+        dominance_ratio，则丢弃。
+        """
+        if self.dominance_window_s <= 0 or len(onset_times) <= 1:
+            return list(onset_times)
+
+        kept: List[float] = []
+        for t in onset_times:
+            s = strengths.get(t, 0.0)
+            # 找窗口内的主导强度
+            dominant_strength = s
+            for t2 in onset_times:
+                if t2 == t:
+                    continue
+                if abs(t2 - t) <= self.dominance_window_s:
+                    s2 = strengths.get(t2, 0.0)
+                    if s2 > dominant_strength:
+                        dominant_strength = s2
+            # 若自身强度低于主导峰 × ratio，认为是回声
+            if dominant_strength > 0 and s < dominant_strength * self.dominance_ratio:
+                continue
+            kept.append(t)
+        return kept
 
     def _probe_video(self, video_path: str) -> tuple[float, int, float]:
         """返回 (fps, total_frames, duration_s)。失败返回 (0,0,0)。"""

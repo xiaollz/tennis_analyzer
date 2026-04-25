@@ -27,6 +27,9 @@ frame
 *.mov
 *.mkv
 
+# Tracked test fixture (small, used by scripts/smoke_test_app.py)
+!videos/test_user_clip.mp4
+
 # ===== 数据分析缓存（可重新生成） =====
 data/metadata/
 

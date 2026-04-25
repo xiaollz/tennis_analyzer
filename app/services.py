@@ -28,6 +28,9 @@ from segmentation import SoundBasedSegmenter
 
 # ── Segmentation ─────────────────────────────────────────────────────
 
+VALID_STROKES = ("forehand", "backhand", "auto")
+
+
 def run_segmentation(
     *,
     progress_cb: Callable[[float, str], None],
@@ -74,8 +77,16 @@ def run_diagnosis(
     *,
     progress_cb: Callable[[float, str], None],
     clip_id: str,
+    stroke: str = "forehand",
 ) -> Dict[str, Any]:
     """Run the full tennis analysis pipeline on a single clip.
+
+    Parameters
+    ----------
+    stroke : "forehand" | "backhand" | "auto"
+        Force evaluator path. "auto" lets the stroke classifier decide,
+        but it's unreliable on short / side-angle clips, so the default
+        is "forehand" (the user's primary focus).
 
     Persists:
       - storage/diagnoses/{clip_id}/result.json   (frontend-ready JSON)
@@ -86,6 +97,9 @@ def run_diagnosis(
 
     Returns a summary dict.
     """
+    if stroke not in VALID_STROKES:
+        stroke = "forehand"
+
     info = storage.find_clip(clip_id)
     if not info:
         raise RuntimeError(f"clip not found: {clip_id}")
@@ -100,6 +114,7 @@ def run_diagnosis(
         "clip_id": clip_id,
         "status": "running",
         "started_at": time.time(),
+        "stroke": stroke,
     })
 
     # Import pipeline lazily (heavy import: torch, YOLO, etc.)
@@ -107,7 +122,7 @@ def run_diagnosis(
     from main import TennisAnalysisPipeline
 
     pipeline = TennisAnalysisPipeline(
-        stroke_mode="auto",
+        stroke_mode=stroke,
         output_dir=str(diag_dir / "_pipeline_out"),
     )
 
