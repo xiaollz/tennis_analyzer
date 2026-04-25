@@ -19,7 +19,7 @@ import argparse
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, List, Dict, Tuple
+from typing import Optional, List, Dict, Tuple, Any
 
 import cv2
 import numpy as np
@@ -423,15 +423,7 @@ class TennisAnalysisPipeline:
                 # 诊断引擎：VLM 视觉输出 + 量化数据交叉验证
                 try:
                     from evaluation.diagnosis_engine import diagnose
-                    diag_metrics = {
-                        "arm_torso_synchrony": supp_metrics.get("arm_torso_synchrony") if supp_metrics else None,
-                        "scooping_depth": supp_metrics.get("scooping_depth") if supp_metrics else None,
-                        "scooping_detected": supp_metrics.get("scooping_detected", False) if supp_metrics else False,
-                        "forward_extension": supp_metrics.get("forward_extension") if supp_metrics else None,
-                        "shoulder_rotation": supp_metrics.get("shoulder_rotation") if supp_metrics else None,
-                        "swing_arc_ratio": supp_metrics.get("swing_arc_ratio") if supp_metrics else None,
-                        "min_knee_angle": supp_metrics.get("min_knee_angle") if supp_metrics else None,
-                    }
+                    diag_metrics = self._build_diag_metrics(supp_metrics)
                     vlm_result = diagnose(vlm_result, diag_metrics)
                     contradictions = vlm_result.get("contradictions", [])
                     if contradictions:
@@ -446,11 +438,76 @@ class TennisAnalysisPipeline:
                 round_info = f"（{len(rounds)}轮迭代）" if rounds else ""
                 print(f"[VLM] 第 {ev.swing_index + 1} 次击球分析完成，发现 {issue_count} 个问题{round_info}")
             else:
-                print(f"[VLM] 第 {ev.swing_index + 1} 次击球 VLM 分析未返回结果")
+                # Fallback: VLM unavailable (timeout / quota / network). Still
+                # produce a structured result so the user gets the algorithm-
+                # level diagnosis instead of a blank Coach tab.
+                print(f"[VLM] 第 {ev.swing_index + 1} 次击球 VLM 不可用，回退到算法路径")
+                vlm_result = self._fallback_diagnosis_from_metrics(
+                    swing_eval=ev, supp_metrics=supp_metrics, grid_path=grid_path,
+                )
             results.append(vlm_result)
 
         print(f"[VLM] 总计: {sum(1 for r in results if r is not None)}/{len(results)} 次击球获得 VLM 分析")
         return results
+
+    @staticmethod
+    def _build_diag_metrics(supp_metrics: Optional[Dict]) -> Dict[str, Any]:
+        """Pick out the metric subset the diagnosis engine consumes.
+
+        Used by both the VLM-available and VLM-fallback paths so the engine
+        sees the same shape regardless of which path produced the result.
+        """
+        m = supp_metrics or {}
+        return {
+            "arm_torso_synchrony": m.get("arm_torso_synchrony"),
+            "scooping_depth":      m.get("scooping_depth"),
+            "scooping_detected":   m.get("scooping_detected", False),
+            "forward_extension":   m.get("forward_extension"),
+            "shoulder_rotation":   m.get("shoulder_rotation"),
+            "swing_arc_ratio":     m.get("swing_arc_ratio"),
+            "min_knee_angle":      m.get("min_knee_angle"),
+        }
+
+    def _fallback_diagnosis_from_metrics(
+        self,
+        swing_eval,
+        supp_metrics: Optional[Dict],
+        grid_path: Optional[str] = None,
+    ) -> Dict:
+        """Build a minimal diagnosis result when the VLM is unavailable.
+
+        Skips the VLM observation step entirely. Feeds an empty observation
+        list into diagnose() — the engine still derives root cause + drill
+        from the KPI / metric signals via the arbitration + injection path.
+        """
+        from evaluation.diagnosis_engine import diagnose
+
+        stub_vlm: Dict[str, Any] = {
+            "observations": [],
+            "raw_answers": {},
+            "issues": [],
+            "vlm_unavailable": True,
+        }
+        if grid_path:
+            stub_vlm["keyframe_grid_path"] = grid_path
+        if supp_metrics:
+            stub_vlm["supplementary_metrics"] = supp_metrics
+
+        diag_metrics = self._build_diag_metrics(supp_metrics)
+        try:
+            return diagnose(stub_vlm, diag_metrics)
+        except Exception as exc:
+            print(f"[诊断引擎 fallback 失败] {exc}")
+            # As a last resort, return a minimal narrative built from KPIs
+            score = getattr(swing_eval, "overall_score", None)
+            stub_vlm["narrative"] = (
+                f"VLM 不可用，仅基于姿态算法的初步评估。"
+                f"整体得分 {score:.0f}/100。" if score is not None else
+                "VLM 不可用，仅基于姿态算法的初步评估。"
+                "建议在网络稳定后重新分析以获得完整的视觉解读。"
+            )
+            stub_vlm["fallback"] = True
+            return stub_vlm
 
     # ── 辅助方法 ─────────────────────────────────────────────────────
 

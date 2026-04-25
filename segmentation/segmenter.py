@@ -11,7 +11,7 @@ from __future__ import annotations
 import os
 import json
 import subprocess
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
 from typing import List, Optional, Dict, Any, Tuple
@@ -213,53 +213,74 @@ class SoundBasedSegmenter:
         total = len(groups)
         _progress(0.32, f"准备导出 {total} 个片段")
 
-        def _build_clip_spec(i: int, impacts: List[float]) -> Optional[ClipSpec]:
+        # Pre-compute clip plans so the ffmpeg pool only does export work.
+        # Thumbnails are extracted afterwards via a single shared VideoCapture
+        # (opening cv2.VideoCapture per-clip is ~150-300ms; for 8 clips the
+        # combined open/close overhead dominated the post-export tail).
+        clip_plans: List[Tuple[int, List[float], float, float, str, str]] = []
+        for i, impacts in enumerate(groups):
             start_s = max(0.0, impacts[0] - self.pre_s)
             end_s = min(duration_s, impacts[-1] + self.post_s)
             if (end_s - start_s) < 1.2:
                 end_s = min(duration_s, start_s + 1.2)
-
             clip_id = f"{video_id}_c{i:03d}"
             clip_path = clips_dir / f"{clip_id}.mp4"
             thumb_path = clips_dir / f"{clip_id}.jpg"
-
-            if not self._export_clip(video_path, str(clip_path), start_s, end_s):
-                return None
-            impact_frame = int(impacts[0] * fps)
-            self._extract_thumbnail(video_path, str(thumb_path), impact_frame, fps)
-
-            avg_strength = float(np.mean([strengths.get(t, 0.0) for t in impacts]))
-            return ClipSpec(
-                clip_id=clip_id, video_id=video_id, index=i,
-                start_s=round(start_s, 3), end_s=round(end_s, 3),
-                impact_times_s=[round(t, 3) for t in impacts],
-                onset_strength=round(avg_strength, 4),
-                clip_path=str(clip_path), thumbnail_path=str(thumb_path),
-                duration_s=round(end_s - start_s, 3),
+            clip_plans.append(
+                (i, impacts, start_s, end_s, str(clip_path), str(thumb_path))
             )
+
+        def _export_only(plan):
+            i, impacts, start_s, end_s, clip_path, _thumb = plan
+            ok = self._export_clip(video_path, clip_path, start_s, end_s)
+            return i, ok
 
         # Up to 4 concurrent ffmpeg jobs — clip export is mostly disk IO.
         # On a typical Mac this turns 8 clips × 100ms serial → 8 × 100ms / 4
         # ≈ 200ms total wall-clock.
         max_workers = min(4, max(1, total))
-        clips: List[ClipSpec] = []
+        export_ok: Dict[int, bool] = {}
         if total == 1:
-            spec = _build_clip_spec(0, groups[0])
-            if spec:
-                clips.append(spec)
+            i, ok = _export_only(clip_plans[0])
+            export_ok[i] = ok
+            _progress(0.80, f"导出片段 1/1")
         else:
             with ThreadPoolExecutor(max_workers=max_workers) as ex:
-                futures = {ex.submit(_build_clip_spec, i, impacts): i
-                           for i, impacts in enumerate(groups)}
+                futures = [ex.submit(_export_only, plan) for plan in clip_plans]
                 done_count = 0
-                for fut in futures:
-                    spec = fut.result()
+                for fut in as_completed(futures):
+                    i, ok = fut.result()
+                    export_ok[i] = ok
                     done_count += 1
-                    pct = 0.32 + 0.65 * (done_count / total)
+                    pct = 0.32 + 0.55 * (done_count / total)
                     _progress(pct, f"导出片段 {done_count}/{total}")
-                    if spec:
-                        clips.append(spec)
-            clips.sort(key=lambda c: c.index)
+
+        # Single shared VideoCapture for all thumbnails (vs N opens before).
+        _progress(0.88, "提取缩略图")
+        clips: List[ClipSpec] = []
+        cap = cv2.VideoCapture(video_path)
+        try:
+            cap_ok = cap.isOpened()
+            for i, impacts, start_s, end_s, clip_path, thumb_path in clip_plans:
+                if not export_ok.get(i):
+                    continue
+                impact_frame = int(impacts[0] * fps)
+                if cap_ok:
+                    self._extract_thumbnail_with_cap(cap, thumb_path, impact_frame)
+                else:
+                    self._extract_thumbnail(video_path, thumb_path, impact_frame, fps)
+                avg_strength = float(np.mean([strengths.get(t, 0.0) for t in impacts]))
+                clips.append(ClipSpec(
+                    clip_id=f"{video_id}_c{i:03d}", video_id=video_id, index=i,
+                    start_s=round(start_s, 3), end_s=round(end_s, 3),
+                    impact_times_s=[round(t, 3) for t in impacts],
+                    onset_strength=round(avg_strength, 4),
+                    clip_path=clip_path, thumbnail_path=thumb_path,
+                    duration_s=round(end_s - start_s, 3),
+                ))
+        finally:
+            cap.release()
+        clips.sort(key=lambda c: c.index)
 
         _progress(1.0, f"完成，共 {len(clips)} 个片段")
 
@@ -374,17 +395,32 @@ class SoundBasedSegmenter:
     def _extract_thumbnail(
         self, src: str, dst: str, frame_idx: int, fps: float
     ) -> bool:
-        """在指定帧附近截取一张缩略图。"""
+        """在指定帧附近截取一张缩略图（每次新开 VideoCapture，回退用）。"""
         try:
             cap = cv2.VideoCapture(src)
             if not cap.isOpened():
                 return False
+            try:
+                return self._extract_thumbnail_with_cap(cap, dst, frame_idx)
+            finally:
+                cap.release()
+        except Exception:
+            return False
+
+    @staticmethod
+    def _extract_thumbnail_with_cap(
+        cap: "cv2.VideoCapture", dst: str, frame_idx: int
+    ) -> bool:
+        """在已有的 VideoCapture 上 seek + 写缩略图。
+
+        多次调用同一个 cap 而不是每次重新打开（每个 open 在 macOS 上要
+        150-300ms，N 个片段时累计开销可观）。
+        """
+        try:
             cap.set(cv2.CAP_PROP_POS_FRAMES, max(0, frame_idx))
             ok, frame = cap.read()
-            cap.release()
             if not ok:
                 return False
-            # 缩放到长边不超过 720
             h, w = frame.shape[:2]
             scale = 720.0 / max(h, w) if max(h, w) > 720 else 1.0
             if scale < 1.0:

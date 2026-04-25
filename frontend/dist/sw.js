@@ -12,7 +12,7 @@
 // Bump this when shipping shell changes — old PWAs will pick up the new
 // version on their next page load (browser checks the SW script byte-for-byte
 // every load, and a different cache name triggers a fresh shell fetch).
-const CACHE = 'baseline-shell-v5';
+const CACHE = 'baseline-shell-v6';
 const SHELL = [
   '/',
   '/index.html',

@@ -455,6 +455,11 @@ function kpiHelpText(kpi) {
   return 'Tap the label to learn more, or open the report for the full breakdown.';
 }
 
+// Clip IDs are formed as `{video_id}_c{NNN}`. Splitting on `_c` keeps
+// these helpers in one place so route handlers don't repeat the convention.
+const videoIdFromClipId = (clipId) => String(clipId || '').split('_c')[0];
+const clipShortId       = (clipId) => String(clipId || '').split('_c')[1] || '';
+
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 1: Onboarding
 // ═══════════════════════════════════════════════════════════════════════
@@ -522,11 +527,44 @@ function Onboarding({ onStart }) {
 // Screen 2: Home (sparkline + sessions)
 // ═══════════════════════════════════════════════════════════════════════
 
-function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange, onLibrary }) {
+function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onStrokeChange, onLibrary }) {
   const [videos, setVideos] = useState(null);
+  const [pendingJob, setPendingJob] = useState(null); // {clipId, jobId, status}
 
   useEffect(() => {
     api.listVideos().then(r => setVideos(r.videos || [])).catch(() => setVideos([]));
+  }, [reloadKey]);
+
+  // Check for any analysis job that was running when the user closed
+  // the app. If still running on the server, surface a banner so they
+  // can jump back in.
+  useEffect(() => {
+    const all = loadActiveJobs();
+    const entries = Object.entries(all);
+    if (entries.length === 0) { setPendingJob(null); return; }
+    let cancelled = false;
+    (async () => {
+      for (const [clipId, info] of entries) {
+        try {
+          const j = await api.getJob(info.jobId);
+          if (cancelled) return;
+          if (j && j.status === 'running') {
+            setPendingJob({ clipId, jobId: info.jobId, progress: j.progress, message: j.message });
+            return;
+          }
+          if (j && j.status === 'done') {
+            // Already finished while user was away
+            clearActiveJob(clipId);
+          }
+          if (j && j.status === 'error') {
+            clearActiveJob(clipId);
+          }
+        } catch {
+          clearActiveJob(clipId);
+        }
+      }
+    })();
+    return () => { cancelled = true; };
   }, [reloadKey]);
 
   // Compute synthetic form-index sparkline from videos (clip count proxy)
@@ -579,6 +617,35 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange, onLibr
              </>}
           </Sans>
         </div>
+
+        {/* Resume-analysis banner */}
+        {pendingJob && (
+          <div style={{ padding: '4px 20px 0' }}>
+            <button onClick={() => onResumeAnalysis(pendingJob.clipId)} style={{
+              width: '100%', padding: '12px 14px', borderRadius: 14,
+              background: T.ink, color: '#fff', border: 'none', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', gap: 12, textAlign: 'left',
+              fontFamily: T.sans,
+            }}>
+              <div style={{
+                width: 20, height: 20, borderRadius: 999,
+                border: `2px solid ${T.amber}`, borderTopColor: 'transparent',
+                animation: 'spin 0.9s linear infinite', flexShrink: 0,
+              }}/>
+              <div style={{ flex: 1 }}>
+                <Sans size={11} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>
+                  Analysis still running
+                </Sans>
+                <Sans size={12} style={{ color: '#fff', marginTop: 2 }}>
+                  Tap to resume · {pendingJob.progress
+                    ? `${Math.round(pendingJob.progress * 100)}% done`
+                    : 'in progress'}
+                </Sans>
+              </div>
+              <Icon name="chevR" size={16} color="rgba(255,255,255,0.6)"/>
+            </button>
+          </div>
+        )}
 
         {/* Stroke selector — applies to next upload */}
         <div style={{ padding: '6px 20px 0' }}>
@@ -1196,6 +1263,28 @@ const ClipCard = React.memo(function ClipCard({ clip, onTap, onLongPress, select
 // Screen 5: Loading (analysis in progress)
 // ═══════════════════════════════════════════════════════════════════════
 
+// localStorage helpers for persisting active analysis jobs across
+// app close / phone lock so users don't lose their place.
+const ACTIVE_JOBS_KEY = 'baseline.activeJobs';
+function loadActiveJobs() {
+  try { return JSON.parse(localStorage.getItem(ACTIVE_JOBS_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveActiveJob(clipId, jobId) {
+  try {
+    const all = loadActiveJobs();
+    all[clipId] = { jobId, startedAt: Date.now() };
+    localStorage.setItem(ACTIVE_JOBS_KEY, JSON.stringify(all));
+  } catch {}
+}
+function clearActiveJob(clipId) {
+  try {
+    const all = loadActiveJobs();
+    delete all[clipId];
+    localStorage.setItem(ACTIVE_JOBS_KEY, JSON.stringify(all));
+  } catch {}
+}
+
 function Loading({ clipId, onDone, onBack }) {
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Queued…');
@@ -1212,24 +1301,58 @@ function Loading({ clipId, onDone, onBack }) {
   }, [progress, error]);
 
   useEffect(() => {
+    let cancelled = false;
     (async () => {
       try {
-        const { job_id, status } = await api.startDiagnose(clipId);
-        if (status === 'already_done') { onDone(clipId); return; }
-        const job = await pollJob(job_id, j => {
-          // Take the max so backend updates can never go backwards (drift
-          // sometimes pushes us slightly past the backend's reported value).
+        // First check: is there already a diagnosis result on disk?
+        // (User may have come back to a job that finished while away.)
+        try {
+          const existing = await api.getDiagnosis(clipId);
+          if (existing && existing.ready) { onDone(clipId); return; }
+        } catch { /* not done yet, fall through */ }
+
+        // Second: do we have a job_id from a previous session?
+        const stored = loadActiveJobs()[clipId];
+        let jobId, status;
+        if (stored && stored.jobId) {
+          // Try to resume polling on the existing job
+          try {
+            const j = await api.getJob(stored.jobId);
+            if (j && j.status && j.status !== 'error') {
+              jobId = stored.jobId;
+              status = j.status === 'done' ? 'already_done' : 'queued';
+            }
+          } catch { /* job id stale, start fresh */ }
+        }
+        if (!jobId) {
+          const r = await api.startDiagnose(clipId);
+          jobId = r.job_id; status = r.status;
+        }
+
+        if (status === 'already_done') {
+          clearActiveJob(clipId);
+          onDone(clipId); return;
+        }
+
+        saveActiveJob(clipId, jobId);
+        const job = await pollJob(jobId, j => {
+          if (cancelled) return;
           setProgress(p => Math.max(p, j.progress || 0));
           if (j.message) setMessage(j.message);
         }, 1500);
+        if (cancelled) return;
+        clearActiveJob(clipId);
         if (job.status === 'done') {
           setProgress(1);
-          setTimeout(() => onDone(clipId), 400);
+          setTimeout(() => { if (!cancelled) onDone(clipId); }, 400);
         } else {
           setError(job.error || 'Diagnosis failed');
         }
-      } catch (e) { setError(String(e.message || e)); }
+      } catch (e) {
+        if (!cancelled) setError(String(e.message || e));
+      }
     })();
+    return () => { cancelled = true; };
   }, [clipId]);
 
   // Claude-Code-style task list: each task has a label, threshold, and a
@@ -1996,7 +2119,7 @@ function MultiAnalyzing({ clipIds, onDone, onBack }) {
                   </div>
                   <Sans size={12} weight={600} style={{ flex: 1 }}>
                     Clip {String(i + 1).padStart(2, '0')}
-                    <Mono size={11} color={T.ink3} style={{ marginLeft: 8 }}>{id.split('_c')[1]}</Mono>
+                    <Mono size={11} color={T.ink3} style={{ marginLeft: 8 }}>{clipShortId(id)}</Mono>
                   </Sans>
                   <Mono size={10} color={T.ink3}>{((st.progress || 0) * 100).toFixed(0)}%</Mono>
                 </div>
@@ -2663,12 +2786,37 @@ function Library({ onBack, onPickVideo }) {
   const [usage, setUsage] = useState(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState(null);
+  const [selectMode, setSelectMode] = useState(false);
+  const [selectedIds, setSelectedIds] = useState(new Set());
 
   const refresh = useCallback(() => {
     api.getStorage().then(setUsage).catch(e => setErr(String(e)));
   }, []);
 
   useEffect(() => { refresh(); }, []);
+
+  const toggleSel = (id) => {
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  };
+
+  const onBulkDelete = async () => {
+    const ids = Array.from(selectedIds);
+    if (ids.length === 0) return;
+    if (!confirm(`Delete ${ids.length} video${ids.length === 1 ? '' : 's'} and all their clips + analyses?\n\nThis cannot be undone.`)) return;
+    setBusy(true);
+    try {
+      // Run deletes in parallel — they're independent
+      await Promise.all(ids.map(id => api.deleteVideo(id)));
+      setSelectedIds(new Set());
+      setSelectMode(false);
+      refresh();
+    } catch (e) { setErr(String(e)); }
+    setBusy(false);
+  };
 
   const onDelete = async (vid, keepClips) => {
     const confirmText = keepClips
@@ -2705,8 +2853,14 @@ function Library({ onBack, onPickVideo }) {
     <Screen bg={T.bg}>
       <NavBar
         left={<NavBtn icon="chevL" onClick={onBack}/>}
-        right={<NavBtn label="Refresh" onClick={refresh}/>}
-        eyebrow="Library · Storage"
+        right={
+          selectMode ? (
+            <NavBtn label="Done" onClick={() => { setSelectMode(false); setSelectedIds(new Set()); }}/>
+          ) : (
+            <NavBtn label="Select" onClick={() => setSelectMode(true)}/>
+          )
+        }
+        eyebrow={selectMode ? `${selectedIds.size} selected` : 'Library · Storage'}
       />
 
       <div className="scroll" style={{ flex: 1 }}>
@@ -2775,34 +2929,52 @@ function Library({ onBack, onPickVideo }) {
                 By video · {usage.by_video.length}
               </Sans>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {usage.by_video.map(v => (
-                  <div key={v.video_id} style={{
-                    background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-                    padding: '14px 16px',
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
-                      <Sans size={13} weight={600} style={{
-                        flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                      }}>{videoTitle(v)}</Sans>
-                      <Mono size={12} color={T.ink2}>{v.human}</Mono>
-                    </div>
-                    <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-                      <Mono size={10} color={T.ink3}>{v.clip_count} clips</Mono>
-                      <Mono size={10} color={T.ink3}>{v.diagnosis_count} diag</Mono>
-                      {!v.has_original && <Tag tone="amber" style={{ fontSize: 10 }}>original deleted</Tag>}
-                    </div>
-                    <div style={{ display: 'flex', gap: 8 }}>
-                      <button onClick={() => onPickVideo(v.video_id)}
-                        style={miniBtnStyle('ghost')}>Open</button>
-                      {v.has_original && (
-                        <button onClick={() => onDelete(v.video_id, true)} disabled={busy}
-                          style={miniBtnStyle('ghost')}>Free space</button>
+                {usage.by_video.map(v => {
+                  const sel = selectedIds.has(v.video_id);
+                  return (
+                    <div key={v.video_id} onClick={() => selectMode && toggleSel(v.video_id)} style={{
+                      background: T.paper, border: `${sel ? 1.5 : 0.5}px solid ${sel ? T.clay : T.line}`,
+                      borderRadius: 14, padding: '14px 16px',
+                      cursor: selectMode ? 'pointer' : 'default',
+                      transition: 'border-color 0.15s',
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
+                        {selectMode && (
+                          <div style={{
+                            width: 18, height: 18, borderRadius: 5,
+                            border: `1.2px solid ${sel ? T.clay : T.line}`,
+                            background: sel ? T.clay : 'transparent',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            flexShrink: 0,
+                          }}>
+                            {sel && <Icon name="check" size={11} color="#fff" stroke={2.5}/>}
+                          </div>
+                        )}
+                        <Sans size={13} weight={600} style={{
+                          flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                        }}>{videoTitle(v)}</Sans>
+                        <Mono size={12} color={T.ink2}>{v.human}</Mono>
+                      </div>
+                      <div style={{ display: 'flex', gap: 10, marginBottom: selectMode ? 0 : 10 }}>
+                        <Mono size={10} color={T.ink3}>{v.clip_count} clips</Mono>
+                        <Mono size={10} color={T.ink3}>{v.diagnosis_count} diag</Mono>
+                        {!v.has_original && <Tag tone="amber" style={{ fontSize: 10 }}>original deleted</Tag>}
+                      </div>
+                      {!selectMode && (
+                        <div style={{ display: 'flex', gap: 8 }}>
+                          <button onClick={() => onPickVideo(v.video_id)}
+                            style={miniBtnStyle('ghost')}>Open</button>
+                          {v.has_original && (
+                            <button onClick={() => onDelete(v.video_id, true)} disabled={busy}
+                              style={miniBtnStyle('ghost')}>Free space</button>
+                          )}
+                          <button onClick={() => onDelete(v.video_id, false)} disabled={busy}
+                            style={miniBtnStyle('clay')}>Delete</button>
+                        </div>
                       )}
-                      <button onClick={() => onDelete(v.video_id, false)} disabled={busy}
-                        style={miniBtnStyle('clay')}>Delete</button>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </>
@@ -2814,6 +2986,20 @@ function Library({ onBack, onPickVideo }) {
           </div>
         )}
       </div>
+      {selectMode && selectedIds.size > 0 && (
+        <div style={{
+          padding: '12px 16px 16px', background: T.paper,
+          borderTop: `0.5px solid ${T.line}`, display: 'flex', gap: 10,
+        }}>
+          <button onClick={() => setSelectedIds(new Set())} disabled={busy}
+            style={miniBtnStyle('ghost')}>Clear</button>
+          <button onClick={onBulkDelete} disabled={busy}
+            style={{ ...miniBtnStyle('clay'), flex: 2, fontSize: 13 }}>
+            Delete {selectedIds.size}
+          </button>
+        </div>
+      )}
+
       <TabBar active="library" onSelect={id => {
         if (id === 'home') onBack();
       }}/>
@@ -2943,6 +3129,7 @@ function App() {
             onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
             onUpload={pickFile}
             onLibrary={() => setRoute({ name: 'library' })}
+            onResumeAnalysis={(clipId) => setRoute({ name: 'analyze', clipId })}
           />
         )}
         {route.name === 'library' && (
@@ -3009,20 +3196,20 @@ function App() {
           <Loading
             clipId={route.clipId}
             onDone={clipId => setRoute({ name: 'result', clipId })}
-            onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+            onBack={() => setRoute({ name: 'clips', videoId: videoIdFromClipId(route.clipId) })}
           />
         )}
         {route.name === 'multi-analyze' && (
           <MultiAnalyzing
             clipIds={route.clipIds}
             onDone={clipId => setRoute({ name: 'result', clipId })}
-            onBack={() => setRoute({ name: 'clips', videoId: route.clipIds[0].split('_c')[0] })}
+            onBack={() => setRoute({ name: 'clips', videoId: videoIdFromClipId(route.clipIds[0]) })}
           />
         )}
         {route.name === 'result' && (
           <Results
             clipId={route.clipId}
-            onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+            onBack={() => setRoute({ name: 'clips', videoId: videoIdFromClipId(route.clipId) })}
           />
         )}
       </div>

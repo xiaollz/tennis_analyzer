@@ -44,10 +44,16 @@ class JobState:
 _executor = ThreadPoolExecutor(max_workers=2, thread_name_prefix="baseline-job")
 _jobs: Dict[str, JobState] = {}
 _lock = threading.Lock()
+# Throttle disk writes: progress-only updates flush at most every PERSIST_MIN_S.
+# Status / message / error / result changes ALWAYS flush immediately so the
+# poller never observes stale terminal state.
+_last_persist_ts: Dict[str, float] = {}
+PERSIST_MIN_S = 0.4
 
 
 def _persist(job: JobState) -> None:
     storage.write_json(storage.job_path(job.job_id), job.to_dict())
+    _last_persist_ts[job.job_id] = time.time()
 
 
 def _update(job_id: str, **fields) -> None:
@@ -55,9 +61,20 @@ def _update(job_id: str, **fields) -> None:
         job = _jobs.get(job_id)
         if not job:
             return
+        # Detect "important" changes that must flush to disk immediately.
+        force_persist = False
         for k, v in fields.items():
+            if k in ("status", "error", "result", "started_at", "ended_at"):
+                if getattr(job, k, None) != v:
+                    force_persist = True
             setattr(job, k, v)
-        _persist(job)
+        if force_persist:
+            _persist(job)
+            return
+        # Otherwise (progress/message tick), throttle.
+        last = _last_persist_ts.get(job_id, 0.0)
+        if (time.time() - last) >= PERSIST_MIN_S or job.progress >= 1.0:
+            _persist(job)
 
 
 def create_job(kind: str, payload: Dict[str, Any]) -> JobState:

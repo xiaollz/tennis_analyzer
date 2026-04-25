@@ -15,6 +15,7 @@ the background with progress reporting.
 
 from __future__ import annotations
 
+import threading
 import time
 import shutil
 import traceback
@@ -24,6 +25,32 @@ from typing import Any, Callable, Dict, List, Optional
 
 from app import storage
 from segmentation import SoundBasedSegmenter
+
+
+# ── Pipeline cache ────────────────────────────────────────────────────
+# YOLO model load is ~3s on a cold start. The pipeline itself is stateless
+# across runs (output_dir is overwritten per-call, stroke_mode is set per-call),
+# so we cache one instance at module scope behind a lock.
+#
+# The Tennis pipeline's ThreadPoolExecutor (jobs.py) is max_workers=2, but
+# diagnoses run sequentially in practice — only one heavy run() at a time.
+# We still serialize access here so two concurrent diagnoses can't trample
+# each other's `output_dir`/`stroke_mode` mid-run.
+_pipeline_lock = threading.Lock()
+_pipeline_singleton = None  # type: ignore[var-annotated]
+_pipeline_run_lock = threading.Lock()
+
+
+def _get_pipeline():
+    """Lazy, thread-safe singleton for TennisAnalysisPipeline."""
+    global _pipeline_singleton
+    if _pipeline_singleton is not None:
+        return _pipeline_singleton
+    with _pipeline_lock:
+        if _pipeline_singleton is None:
+            from main import TennisAnalysisPipeline  # heavy import (torch, YOLO)
+            _pipeline_singleton = TennisAnalysisPipeline()
+        return _pipeline_singleton
 
 
 # ── Segmentation ─────────────────────────────────────────────────────
@@ -117,22 +144,23 @@ def run_diagnosis(
         "stroke": stroke,
     })
 
-    # Import pipeline lazily (heavy import: torch, YOLO, etc.)
+    # Reuse the cached pipeline (saves ~3s YOLO load on every call after the
+    # first). Reconfiguring its mutable state must happen under run_lock so
+    # concurrent diagnoses don't race on output_dir / stroke_mode.
     progress_cb(0.02, "加载模型")
-    from main import TennisAnalysisPipeline
-
-    pipeline = TennisAnalysisPipeline(
-        stroke_mode=stroke,
-        output_dir=str(diag_dir / "_pipeline_out"),
-    )
+    pipeline = _get_pipeline()
 
     def _inner_progress(current: int, total: int, message: str):
         # pipeline reports stage progress as (current, total, message)
         frac = 0.05 + 0.85 * (current / max(total, 1))
         progress_cb(min(frac, 0.9), message)
 
-    progress_cb(0.05, "开始分析")
-    result = pipeline.run(clip_path, progress_callback=_inner_progress)
+    with _pipeline_run_lock:
+        pipeline.stroke_mode = stroke
+        pipeline.output_dir = Path(diag_dir / "_pipeline_out")
+        pipeline.output_dir.mkdir(parents=True, exist_ok=True)
+        progress_cb(0.05, "开始分析")
+        result = pipeline.run(clip_path, progress_callback=_inner_progress)
 
     # ── serialize into frontend JSON ──────────────────────────────
     progress_cb(0.92, "生成结果 JSON")

@@ -2167,6 +2167,45 @@ def _compute_score(
     return engine_score
 
 
+def _clean_narrative(text: str) -> str:
+    """Strip stray markdown / format markers from a coach narrative.
+
+    The narrative is meant to read like a coach talking. AI generators
+    sometimes leak format characters (** for bold, [brackets], duplicate
+    spaces, mixed CN/EN punctuation, redundant emoji). This pass tames
+    them without changing the meaning.
+    """
+    import re as _re
+    if not text:
+        return text
+    s = text
+
+    # Remove markdown bold/italic markers but keep the text inside
+    s = _re.sub(r"\*\*([^*\n]+)\*\*", r"\1", s)
+    s = _re.sub(r"(?<!\*)\*([^*\n]+)\*(?!\*)", r"\1", s)
+    s = _re.sub(r"__([^_\n]+)__", r"\1", s)
+    s = _re.sub(r"`([^`]+)`", r"\1", s)
+
+    # Drop bracketed source markers like [VLM], [DATA] but keep content
+    s = _re.sub(r"\[(?:VLM|DATA|REASONING|FRAME\s*\d+)\]\s*", "", s, flags=_re.IGNORECASE)
+
+    # Normalize Chinese / English punctuation in mixed sentences
+    s = s.replace("，，", "，").replace("。。", "。").replace("、、", "、")
+    s = s.replace(" ，", "，").replace(" 。", "。").replace(" ：", "：")
+
+    # Collapse runs of 3+ identical newlines / spaces
+    s = _re.sub(r"\n{3,}", "\n\n", s)
+    s = _re.sub(r"[ \t]{2,}", " ", s)
+
+    # Strip a leading bullet/heading marker that was meant for markdown
+    s = _re.sub(r"^\s*#+\s*", "", s, flags=_re.MULTILINE)
+    s = _re.sub(r"^\s*[-•]\s+", "", s, flags=_re.MULTILINE)
+
+    # Final tidy
+    s = s.strip()
+    return s
+
+
 def _generate_narrative(
     matched_concepts: List[Dict],
     causal_chain: List[Dict[str, str]],
@@ -2300,7 +2339,7 @@ def _generate_narrative(
 
     parts.append(para3)
 
-    return "\n\n".join(parts)
+    return _clean_narrative("\n\n".join(parts))
 
 
 # ══════════════════════════════════════════════════════════════════════
