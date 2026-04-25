@@ -2,8 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
 <title>Baseline — Tennis Swing Analysis</title>
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.webmanifest"/>
+<meta name="theme-color" content="#C8553D"/>
+<meta name="application-name" content="Baseline"/>
+<meta name="description" content="See your swing the way a coach does. Audio-cut every stroke, measure your body, get drills."/>
+
+<!-- iOS home-screen App -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Baseline"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+<!-- Browser tab -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -31,8 +48,19 @@
       border-radius: 0; border: none; box-shadow: none; margin: 0;
     }
   }
+  /* PWA standalone mode (added to home screen) — kill the residual chrome */
+  @media (display-mode: standalone), (display-mode: fullscreen) {
+    body { background: #F7F3EC; }
+    .frame {
+      width: 100vw; height: 100vh;
+      height: 100dvh;          /* dynamic viewport — accounts for iOS bars */
+      border-radius: 0; border: none; box-shadow: none; margin: 0;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
   .frame-inner { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
-  .scroll { overflow-y: auto; overflow-x: hidden; flex: 1; }
+  .scroll { overflow-y: auto; overflow-x: hidden; flex: 1; -webkit-overflow-scrolling: touch; }
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
@@ -2009,6 +2037,17 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+
+<script>
+  // PWA service worker — register only on https or localhost (browser security rule)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(err => {
+        console.warn('SW register failed:', err);
+      });
+    });
+  }
 </script>
 </body>
 </html>

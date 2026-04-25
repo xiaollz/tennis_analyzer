@@ -7,15 +7,27 @@
 
 ## 一、运行方式（快速启动）
 
-**最简单**：
+### 本地用（同一 WiFi）
 
 ```bash
 ./start.sh
 ```
 
-会自动装依赖 + 启动服务，输出几个关键 URL。
+监听 `0.0.0.0:8765`，**手机和电脑在同一 WiFi** 时可以打开。
 
-**手动**：
+### 公网用 + 装到手机主屏幕（PWA）⭐
+
+```bash
+./start-public.sh
+```
+
+启动 FastAPI + Cloudflare Tunnel。打印一个 `https://*.trycloudflare.com`
+URL，**任意网络**都能访问。在手机 Safari 打开 → 分享 → 添加到主屏幕，
+就能像原生 App 一样使用。
+
+详见 `PWA_QUICKSTART.md`。
+
+### 手动启动
 
 ```bash
 pip install fastapi uvicorn python-multipart

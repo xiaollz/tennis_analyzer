@@ -1,0 +1,33 @@
+{
+  "name": "Baseline — Tennis Swing Analysis",
+  "short_name": "Baseline",
+  "description": "See your swing the way a coach does. Audio-cut every stroke, measure your body, get drills.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F3EC",
+  "theme_color": "#C8553D",
+  "categories": ["sports", "health", "fitness"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}
