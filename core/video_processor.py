@@ -46,7 +46,10 @@ def get_video_rotation(video_path: str) -> int:
 def detect_rotation_from_pose(keypoints: np.ndarray, confidence: np.ndarray) -> int:
     """通过姿态关键点检测视频是否需要旋转。
 
-    站立的人应该头在上、脚在下。如果头在脚的左/右侧，说明视频需要旋转。
+    站立的人应该头在上、脚在下。**只有当人体明显躺平或倒立时**才建议
+    旋转——单挥拍时身体倾斜不应触发。
+
+    阈值收紧：要求 |dx| > |dy| * 3.0 才认为是侧躺（极端情况）。
 
     Returns:
         建议旋转角度: 0, 90, -90, 或 180
@@ -71,10 +74,20 @@ def detect_rotation_from_pose(keypoints: np.ndarray, confidence: np.ndarray) -> 
     dx = head[0] - feet[0]
     dy = head[1] - feet[1]
 
-    if abs(dx) > abs(dy) * 1.5:
-        return 90 if dx > 0 else -90
-    elif dy > 0:
+    # 注意：图像坐标 y 向下增长，正常站立 → head_y < feet_y → dy < 0。
+    # 倒立 → head_y > feet_y → dy > 0。
+    head_above = dy < 0
+    body_h = abs(dy) if abs(dy) > 1 else 1
+
+    # 倒立检测（dy > 0 且体高合理）：只有非常明显才认为倒立
+    if dy > 0 and abs(dy) > abs(dx) * 1.5 and abs(dy) > 80:
         return 180
+
+    # 侧躺检测：要求 |dx| > |dy| * 3.0 且 |dx| 足够大
+    # 之前的 1.5 阈值过于敏感，挥拍时身体倾斜就会被误判
+    if not head_above and abs(dx) > abs(dy) * 3.0 and abs(dx) > 80:
+        return 90 if dx > 0 else -90
+
     return 0
 
 
@@ -178,7 +191,9 @@ class VideoProcessor:
         if votes:
             from collections import Counter
             most_common = Counter(votes).most_common(1)[0]
-            if most_common[1] >= 2:  # 至少2帧同意
+            # 至少需要 6 帧（采样 10 帧的 60%）一致才旋转——避免挥拍中
+            # 偶发的大幅躯干倾斜被当成"视频需要旋转"
+            if most_common[1] >= 6:
                 return most_common[0]
         return 0
 

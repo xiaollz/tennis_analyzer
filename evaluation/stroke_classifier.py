@@ -148,50 +148,87 @@ class StrokeClassifier:
             keypoints_series, confidence_series, impact_pos
         )
 
-        # ── 综合判断 ──────────────────────────────────────────
-        # 判断正手 vs 反手
-        is_backhand = False
+        # ── 特征 4：手腕轨迹横向位移（最稳的特征）────────────────
+        # 整段挥拍里手腕 x 的总位移：
+        #   右手正手：从右后方挥到左前方 → dx_total < 0（向左）
+        #   右手反手：从左后方挥到右前方 → dx_total > 0（向右）
+        # 这个特征对相机角度依赖较小，是最稳定的判别。
+        wrist_path_dir = self._wrist_path_direction(
+            keypoints_series, confidence_series, prep_pos, impact_pos
+        )
+
+        # ── 投票式综合判断（多特征加权，避免单一特征强制定性）──
+        forehand_votes = 0.0
+        backhand_votes = 0.0
         reasons = []
 
-        # 手腕穿越身体中线 > 40% 的时间 → 反手
-        if wrist_cross_ratio > 0.40:
-            is_backhand = True
-            reasons.append(f"准备阶段手腕穿越身体中线比例={wrist_cross_ratio:.0%}")
+        # 特征 1：准备阶段手腕穿越身体中线比例
+        # 提高阈值到 0.60；0.40-0.60 视为模糊区，不投票（避免"侧拍角度"
+        # 让正手的瞬时穿越被误判为反手）
+        if wrist_cross_ratio >= 0.60:
+            backhand_votes += 2.0
+            reasons.append(f"穿越中线比例={wrist_cross_ratio:.0%}(高)")
+        elif wrist_cross_ratio <= 0.30:
+            forehand_votes += 2.0
+            reasons.append(f"穿越中线比例={wrist_cross_ratio:.0%}(低)")
+        # 0.30-0.60 → 模糊，不投票
 
-        # 挥拍方向：正手从外向内，反手从内向外
+        # 特征 2：击球时手腕水平运动方向
         if swing_direction == "to_dom_side":
-            is_backhand = True
-            reasons.append("挥拍方向朝持拍侧")
+            backhand_votes += 1.0
+            reasons.append("挥拍朝持拍侧")
         elif swing_direction == "to_non_dom_side":
-            is_backhand = False
-            if wrist_cross_ratio <= 0.40:
-                reasons.append("挥拍方向朝非持拍侧")
+            forehand_votes += 1.0
+            reasons.append("挥拍朝非持拍侧")
 
-        # 肩部旋转方向
+        # 特征 3：手腕全段轨迹方向（最稳）
+        if wrist_path_dir == "to_non_dom":
+            forehand_votes += 2.0
+            reasons.append("整段轨迹朝非持拍侧(强)")
+        elif wrist_path_dir == "to_dom":
+            backhand_votes += 2.0
+            reasons.append("整段轨迹朝持拍侧(强)")
+
+        # 特征 4：双手距离（仅用于区分 1H/2H 反手，不用于正反判定）
+        # 正手时双手自然分开，所以 hands_distance > 0.5 不是反手证据
+        # 不参与正反投票
+
+        # 决策：差距 ≥ 1.5 票才下结论；否则模糊 → 默认正手
+        margin = abs(forehand_votes - backhand_votes)
+        if backhand_votes > forehand_votes and margin >= 1.5:
+            is_backhand = True
+        elif forehand_votes > backhand_votes and margin >= 1.5:
+            is_backhand = False
+        else:
+            # 模糊区：默认正手（用户主练正手 + auto 模式不可靠时的安全回退）
+            is_backhand = False
+            reasons.append("特征不充分→默认正手")
+
+        # 肩部旋转方向（只用于诊断信息，不参与投票）
         shoulder_dir = self._shoulder_rotation_direction(
             keypoints_series, confidence_series, prep_pos, impact_pos
         )
 
         if is_backhand:
-            # 区分单反 vs 双反
-            if hands_distance_norm is not None and hands_distance_norm > 0.5:
+            if hands_distance_norm is not None and hands_distance_norm > 0.55:
                 stroke_type = StrokeType.ONE_HANDED_BACKHAND
-                reasons.append(f"击球时双手距离={hands_distance_norm:.2f}（远离→单反）")
-            elif hands_distance_norm is not None and hands_distance_norm <= 0.3:
+                reasons.append(f"双手距离={hands_distance_norm:.2f}→单反")
+            elif hands_distance_norm is not None and hands_distance_norm <= 0.30:
                 stroke_type = StrokeType.TWO_HANDED_BACKHAND
-                reasons.append(f"击球时双手距离={hands_distance_norm:.2f}（靠近→双反）")
+                reasons.append(f"双手距离={hands_distance_norm:.2f}→双反")
             else:
-                # 默认假设单反（因为用户说要学单反）
                 stroke_type = StrokeType.ONE_HANDED_BACKHAND
-                reasons.append("反手类型无法确定，默认单反")
+                reasons.append("反手亚型不明→默认单反")
         else:
             stroke_type = StrokeType.FOREHAND
-            reasons.append("正手击球模式")
+            reasons.append("正手")
 
-        # 计算置信度
-        confidence = self._compute_confidence(
-            wrist_cross_ratio, swing_direction, hands_distance_norm, is_backhand
-        )
+        # 置信度：基于 vote margin
+        total_votes = forehand_votes + backhand_votes
+        if total_votes > 0:
+            confidence = min(1.0, 0.5 + 0.5 * (margin / max(total_votes, 1.0)))
+        else:
+            confidence = 0.4  # 没有任何特征命中
 
         return StrokeClassification(
             stroke_type=stroke_type,
@@ -304,6 +341,45 @@ class StrokeClassifier:
                 distances.append(hand_dist / shoulder_width)
 
         return float(np.mean(distances)) if distances else None
+
+    def _wrist_path_direction(
+        self,
+        kp_series: List[np.ndarray],
+        conf_series: List[np.ndarray],
+        prep_pos: int,
+        impact_pos: int,
+    ) -> str:
+        """从准备阶段开始到击球后短随挥，持拍手腕 x 的总位移方向。
+
+        相机角度可能让"瞬间方向"反转，但**整段挥拍的总位移**仍然
+        指向击球目标的同一侧 → 这是最稳的判别特征。
+
+        Returns "to_dom" / "to_non_dom" / "unknown"。
+        """
+        end_pos = min(impact_pos + 4, len(kp_series) - 1)
+        start_xs = []
+        end_xs = []
+
+        for i in range(prep_pos, min(prep_pos + 5, len(kp_series))):
+            if conf_series[i][self.dom_wrist] >= self.min_conf:
+                start_xs.append(float(kp_series[i][self.dom_wrist][0]))
+        for i in range(max(impact_pos, end_pos - 4), end_pos + 1):
+            if conf_series[i][self.dom_wrist] >= self.min_conf:
+                end_xs.append(float(kp_series[i][self.dom_wrist][0]))
+
+        if not start_xs or not end_xs:
+            return "unknown"
+
+        dx = float(np.mean(end_xs) - np.mean(start_xs))
+
+        # 阈值要稍大才有意义（小位移可能是噪声）
+        if abs(dx) < 30:
+            return "unknown"
+
+        if self.is_right_handed:
+            return "to_dom" if dx > 0 else "to_non_dom"
+        else:
+            return "to_dom" if dx < 0 else "to_non_dom"
 
     def _shoulder_rotation_direction(
         self,

@@ -93,9 +93,9 @@ class SoundBasedSegmenter:
 
     def __init__(
         self,
-        pre_s: float = 0.8,
-        post_s: float = 1.2,
-        group_gap_s: float = 1.2,
+        pre_s: float = 1.5,
+        post_s: float = 1.8,
+        group_gap_s: float = 1.5,
         max_hits_per_clip: int = 2,
         onset_threshold_std: float = 3.0,
         dominance_window_s: float = 0.7,

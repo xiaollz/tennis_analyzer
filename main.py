@@ -537,7 +537,16 @@ class TennisAnalysisPipeline:
         for cluster in clusters:
             audio_confirmed = [ev for ev, _ in cluster if ev.audio_confirmed]
             candidates = audio_confirmed if audio_confirmed else [ev for ev, _ in cluster]
-            best = max(candidates, key=lambda ev: ev.peak_speed_px_s)
+            # Prefer the EARLIEST impact in the cluster — when audio confirms
+            # multiple peaks (echo / ball-bounce), the first one is the true
+            # racquet-ball contact. Wrist speed peaks in followthrough, NOT
+            # at contact, so picking by speed selects the wrong frame and
+            # corrupts downstream stroke classification.
+            if audio_confirmed:
+                best = min(candidates, key=lambda ev: ev.impact_frame_idx)
+            else:
+                # No audio info — fall back to peak wrist speed
+                best = max(candidates, key=lambda ev: ev.peak_speed_px_s)
             deduped.append(best)
 
         return sorted(deduped, key=lambda item: item.impact_frame_idx)

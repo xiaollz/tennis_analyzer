@@ -100,18 +100,43 @@ def get_video(video_id: str) -> Dict[str, Any]:
 
 
 @router.delete("/videos/{video_id}")
-def delete_video(video_id: str) -> Dict[str, Any]:
-    vdir = storage.video_dir(video_id)
-    if not vdir.exists():
-        raise HTTPException(status_code=404, detail="video not found")
-    # Also remove diagnoses tied to its clips
-    manifest = storage.read_json(storage.video_manifest_path(video_id)) or {}
-    for c in manifest.get("clips", []):
-        ddir = storage.diagnosis_dir(c["clip_id"])
-        if ddir.exists():
-            shutil.rmtree(ddir, ignore_errors=True)
-    shutil.rmtree(vdir, ignore_errors=True)
-    return {"deleted": video_id}
+def delete_video(video_id: str, keep_clips: bool = False) -> Dict[str, Any]:
+    """Physically remove video files from disk.
+
+    Query params:
+      keep_clips: if true, only delete the original.mp4 (saves space but
+                  keeps the segmented clips + diagnoses). Default false.
+    """
+    result = storage.delete_video_artifacts(video_id, keep_clips=keep_clips)
+    if not result.get("deleted"):
+        raise HTTPException(status_code=404, detail=result.get("reason", "delete failed"))
+    return {
+        "deleted": video_id,
+        "kept_clips": result.get("kept_clips", False),
+        "bytes_freed": result.get("bytes_freed", 0),
+        "items": result.get("items", []),
+    }
+
+
+# ── Storage management ─────────────────────────────────────────────
+
+@router.get("/storage")
+def get_storage_usage() -> Dict[str, Any]:
+    """Return disk usage breakdown so the UI can render a storage panel."""
+    return storage.storage_usage()
+
+
+@router.delete("/storage")
+def cleanup_storage(older_than_days: float = 7.0) -> Dict[str, Any]:
+    """Cleanup stale jobs files older than N days."""
+    n = storage.cleanup_jobs(older_than_days=older_than_days)
+    return {"jobs_cleaned": n}
+
+
+@router.post("/storage/wipe")
+def wipe_storage() -> Dict[str, Any]:
+    """Nuclear: wipe ALL videos / clips / diagnoses / jobs. Returns bytes freed."""
+    return storage.cleanup_all()
 
 
 # ── Jobs ────────────────────────────────────────────────────────────

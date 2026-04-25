@@ -267,7 +267,7 @@ const api = {
   health: () => fetch(`${API}/health`).then(r => r.json()),
   listVideos: () => fetch(`${API}/videos`).then(r => r.json()),
   getVideo: id => fetch(`${API}/videos/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
-  deleteVideo: id => fetch(`${API}/videos/${id}`, { method: 'DELETE' }),
+  deleteVideo: id => fetch(`${API}/videos/${id}`, { method: 'DELETE' }).then(r => r.json()),
   uploadVideo: (file, stroke = 'forehand') => {
     const fd = new FormData();
     fd.append('file', file);
@@ -281,6 +281,10 @@ const api = {
   },
   getDiagnosis: clipId => fetch(`${API}/diagnoses/${clipId}`).then(r => r.ok ? r.json() : Promise.reject('no diagnosis')),
   getClip: id => fetch(`${API}/clips/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
+  getStorage: () => fetch(`${API}/storage`).then(r => r.json()),
+  cleanupJobs: (days = 7) => fetch(`${API}/storage?older_than_days=${days}`, { method: 'DELETE' }).then(r => r.json()),
+  wipeAll: () => fetch(`${API}/storage/wipe`, { method: 'POST' }).then(r => r.json()),
+  freeOriginal: id => fetch(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }).then(r => r.json()),
 };
 
 async function pollJob(jobId, onProgress, intervalMs = 800) {
@@ -386,7 +390,7 @@ function Onboarding({ onStart }) {
 // Screen 2: Home (sparkline + sessions)
 // ═══════════════════════════════════════════════════════════════════════
 
-function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange }) {
+function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange, onLibrary }) {
   const [videos, setVideos] = useState(null);
 
   useEffect(() => {
@@ -446,8 +450,8 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange }) {
             padding: '12px 14px',
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
-              <Sans size={11} upper weight={500} color={T.ink3}>Stroke focus · next upload</Sans>
-              <Sans size={11} color={T.ink3}>auto-detect is unreliable</Sans>
+              <Sans size={11} upper weight={500} color={T.ink3}>Stroke type · next upload</Sans>
+              <Sans size={10} color={T.ink3}>2D pose can't auto-detect reliably</Sans>
             </div>
             <div style={{
               display: 'flex', gap: 4, padding: 3,
@@ -456,18 +460,29 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange }) {
               {[
                 { id: 'forehand', label: 'Forehand' },
                 { id: 'backhand', label: 'Backhand' },
-                { id: 'auto',     label: 'Auto' },
               ].map(opt => (
                 <button key={opt.id} onClick={() => onStrokeChange(opt.id)} style={{
-                  flex: 1, padding: '7px 8px', borderRadius: 7,
+                  flex: 1, padding: '8px 8px', borderRadius: 7,
                   background: stroke === opt.id ? T.paper : 'transparent',
                   boxShadow: stroke === opt.id ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
                   border: 'none', cursor: 'pointer',
-                  fontFamily: T.sans, fontSize: 12,
+                  fontFamily: T.sans, fontSize: 13,
                   fontWeight: stroke === opt.id ? 600 : 500,
                   color: stroke === opt.id ? T.ink : T.ink3,
                 }}>{opt.label}</button>
               ))}
+            </div>
+            <div style={{ marginTop: 8 }}>
+              <button onClick={() => onStrokeChange('auto')} style={{
+                background: 'transparent', border: 'none', cursor: 'pointer',
+                fontFamily: T.sans, fontSize: 11,
+                color: stroke === 'auto' ? T.clay : T.ink3,
+                fontWeight: stroke === 'auto' ? 600 : 400,
+                padding: 0, textDecoration: stroke === 'auto' ? 'none' : 'underline',
+                textDecorationColor: T.line, textUnderlineOffset: 3,
+              }}>
+                {stroke === 'auto' ? '✓ Auto-detect (experimental)' : 'Try auto-detect (experimental)'}
+              </button>
             </div>
           </div>
         </div>
@@ -550,7 +565,10 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange }) {
           <div style={{ height: 24 }}/>
         </div>
       </div>
-      <TabBar active="home" onSelect={id => { if (id === 'capture') onUpload(); }}/>
+      <TabBar active="home" onSelect={id => {
+        if (id === 'capture') onUpload();
+        else if (id === 'library') onLibrary && onLibrary();
+      }}/>
     </Screen>
   );
 }
@@ -716,9 +734,10 @@ function Import({ file, stroke, onDone, onCancel }) {
 // Screen 4: Clip Grid
 // ═══════════════════════════════════════════════════════════════════════
 
-function ClipGrid({ videoId, onBack, onPickClip }) {
+function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
+  const [selected, setSelected] = useState(new Set());
 
   useEffect(() => {
     api.getVideo(videoId).then(setData).catch(e => setErr(String(e)));
@@ -738,25 +757,62 @@ function ClipGrid({ videoId, onBack, onPickClip }) {
   );
 
   const clips = data.clips || [];
+  const selectMode = selected.size > 0;
+
+  const toggleSelect = id => {
+    const next = new Set(selected);
+    if (next.has(id)) next.delete(id); else next.add(id);
+    setSelected(next);
+  };
+
+  const handleClipTap = id => {
+    if (selectMode) {
+      toggleSelect(id);
+    } else {
+      onPickClip(id);
+    }
+  };
+
+  const handleClipLongPress = id => {
+    if (!selectMode) toggleSelect(id);
+  };
+
+  const analyzeSelected = () => {
+    const ids = Array.from(selected);
+    setSelected(new Set());
+    onMultiAnalyze(ids);
+  };
 
   return (
     <Screen bg={T.bg}>
       <NavBar
         left={<NavBtn icon="chevL" onClick={onBack}/>}
-        right={<NavBtn icon="dots"/>}
-        eyebrow={`Step 2 · ${clips.length} clips`}
+        right={
+          selectMode
+            ? <NavBtn label="Cancel" onClick={() => setSelected(new Set())}/>
+            : <NavBtn label="Select" onClick={() => clips[0] && toggleSelect(clips[0].clip_id)}/>
+        }
+        eyebrow={selectMode ? `${selected.size} selected` : `Step 2 · ${clips.length} clips`}
       />
 
       <div style={{ padding: '6px 20px 16px' }}>
         <Serif size={28} weight={400} style={{ marginBottom: 6 }}>
-          Pick your clip
+          {selectMode ? `Analyze ${selected.size} clips` : 'Pick your clip'}
         </Serif>
         <Sans size={13} color={T.ink2} style={{ maxWidth: 320 }}>
-          Detected{' '}
-          <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans>{' '}
-          across{' '}
-          <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta?.duration_s?.toFixed(1)}s</Sans>.
-          Tap any to analyze.
+          {selectMode ? (
+            <>
+              They'll analyze in parallel. Cancel selection to tap a single clip.
+            </>
+          ) : (
+            <>
+              Detected{' '}
+              <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans>{' '}
+              across{' '}
+              <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta?.duration_s?.toFixed(1)}s</Sans>.
+              Tap any to analyze, or long-press to multi-select.
+            </>
+          )}
         </Sans>
       </div>
 
@@ -781,7 +837,10 @@ function ClipGrid({ videoId, onBack, onPickClip }) {
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8,
           }}>
             {clips.map(c => (
-              <ClipCard key={c.clip_id} clip={c} onClick={() => onPickClip(c.clip_id)}/>
+              <ClipCard key={c.clip_id} clip={c}
+                selected={selected.has(c.clip_id)}
+                onTap={() => handleClipTap(c.clip_id)}
+                onLongPress={() => handleClipLongPress(c.clip_id)}/>
             ))}
           </div>
         )}
@@ -794,31 +853,65 @@ function ClipGrid({ videoId, onBack, onPickClip }) {
           flexShrink: 0,
         }}>
           <div style={{ flex: 1 }}>
-            <Mono size={10} color={T.ink3}>TOTAL</Mono>
+            <Mono size={10} color={T.ink3}>{selectMode ? 'SELECTED' : 'TOTAL'}</Mono>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-              <Serif size={22} weight={400}>{clips.length}</Serif>
+              <Serif size={22} weight={400}>{selectMode ? selected.size : clips.length}</Serif>
               <Sans size={12} color={T.ink3}>
-                clips · {clips.reduce((s, c) => s + (c.duration_s || 0), 0).toFixed(1)}s
+                {selectMode ? 'clips · parallel run' :
+                  `clips · ${clips.reduce((s, c) => s + (c.duration_s || 0), 0).toFixed(1)}s`}
               </Sans>
             </div>
           </div>
-          <Sans size={12} color={T.ink3}>Tap any clip →</Sans>
+          {selectMode ? (
+            <CTA tone="clay" icon="sparkle" onClick={analyzeSelected}>
+              Analyze {selected.size}
+            </CTA>
+          ) : (
+            <Sans size={12} color={T.ink3}>Tap any clip →</Sans>
+          )}
         </div>
       )}
     </Screen>
   );
 }
 
-function ClipCard({ clip, onClick }) {
+function ClipCard({ clip, onTap, onLongPress, selected }) {
   const [imgOk, setImgOk] = useState(true);
   const duration = (clip.end_s - clip.start_s).toFixed(1);
+  const lpTimer = useRef(null);
+
+  const onPointerDown = () => {
+    lpTimer.current = setTimeout(() => {
+      lpTimer.current = null;
+      onLongPress && onLongPress();
+    }, 450);
+  };
+  const onPointerUp = () => {
+    if (lpTimer.current) {
+      clearTimeout(lpTimer.current);
+      lpTimer.current = null;
+      onTap && onTap();
+    }
+  };
+  const onPointerLeave = () => {
+    if (lpTimer.current) {
+      clearTimeout(lpTimer.current);
+      lpTimer.current = null;
+    }
+  };
+
   return (
-    <div onClick={onClick} style={{
-      position: 'relative', aspectRatio: '3/4',
-      borderRadius: 12, overflow: 'hidden',
-      border: `0.5px solid ${T.line}`,
-      background: T.paperAlt, cursor: 'pointer',
-    }}>
+    <div
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerLeave={onPointerLeave}
+      style={{
+        position: 'relative', aspectRatio: '3/4',
+        borderRadius: 12, overflow: 'hidden',
+        border: `${selected ? 2 : 0.5}px solid ${selected ? T.clay : T.line}`,
+        background: T.paperAlt, cursor: 'pointer',
+        userSelect: 'none', touchAction: 'none',
+      }}>
       {imgOk ? (
         <img src={`${API}/clips/${clip.clip_id}/thumbnail`} alt=""
           onError={() => setImgOk(false)}
@@ -835,6 +928,16 @@ function ClipCard({ clip, onClick }) {
         background: 'rgba(42,41,37,0.85)', color: T.bg,
         fontFamily: T.mono, fontSize: 9, fontWeight: 500, letterSpacing: 0.5,
       }}>{clip.impact_times_s.length}× HIT</div>
+      {selected && (
+        <div style={{
+          position: 'absolute', top: 6, right: 6,
+          width: 20, height: 20, borderRadius: 999, background: T.clay,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
+        }}>
+          <Icon name="check" size={12} color="#fff" stroke={2.5}/>
+        </div>
+      )}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0,
         padding: '18px 8px 6px',
@@ -1007,6 +1110,142 @@ function Loading({ clipId, onDone, onBack }) {
             border: `0.5px solid rgba(168,67,47,0.2)`,
           }}>
             <Sans size={12} color={T.clayDeep}>{error}</Sans>
+          </div>
+        )}
+      </div>
+    </Screen>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 5b: Multi-clip parallel analyzer
+// ═══════════════════════════════════════════════════════════════════════
+
+function MultiAnalyzing({ clipIds, onDone, onBack }) {
+  const [statuses, setStatuses] = useState(() => {
+    const m = {}; clipIds.forEach(id => { m[id] = { progress: 0, status: 'queued', message: '' }; });
+    return m;
+  });
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const promises = clipIds.map(async (clipId) => {
+        try {
+          const r = await api.startDiagnose(clipId);
+          if (r.status === 'already_done') {
+            if (!cancelled) setStatuses(s => ({ ...s, [clipId]: { progress: 1, status: 'done', message: 'cached' } }));
+            return;
+          }
+          await pollJob(r.job_id, j => {
+            if (cancelled) return;
+            setStatuses(s => ({ ...s, [clipId]: { progress: j.progress || 0, status: j.status, message: j.message || '' } }));
+          }, 1500);
+        } catch (e) {
+          if (!cancelled) setStatuses(s => ({ ...s, [clipId]: { progress: 0, status: 'error', message: String(e) } }));
+        }
+      });
+      await Promise.all(promises);
+      if (!cancelled) {
+        // Pick the first successful clip to view
+        const firstDone = clipIds.find(id => statuses[id]?.status === 'done') || clipIds[0];
+        setTimeout(() => onDone(firstDone), 600);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const allDone = clipIds.every(id => ['done', 'error'].includes(statuses[id]?.status));
+  const overall = clipIds.reduce((s, id) => s + (statuses[id]?.progress || 0), 0) / clipIds.length;
+
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onBack}/>}
+        eyebrow={`Analyzing · ${clipIds.length} clips`}
+      />
+      <div className="scroll" style={{ flex: 1, padding: '0 20px 24px' }}>
+        <Sans size={11} weight={500} upper color={T.clay} style={{ marginBottom: 8 }}>
+          Parallel analysis
+        </Sans>
+        <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.1, marginBottom: 22 }}>
+          {clipIds.length} clips at once<br/>
+          <Serif as="span" size={28} italic weight={380} style={{ color: T.clayDeep }}>
+            running in parallel.
+          </Serif>
+        </Serif>
+
+        <div style={{ marginBottom: 22 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+            <Mono size={11} color={T.ink2}>OVERALL</Mono>
+            <div>
+              <Serif size={20} weight={400} as="span">{(overall * 100).toFixed(0)}</Serif>
+              <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
+            </div>
+          </div>
+          <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden' }}>
+            <div style={{
+              height: '100%', width: `${Math.max(2, overall * 100)}%`,
+              background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+              transition: 'width 0.5s',
+            }}/>
+          </div>
+        </div>
+
+        <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>Per clip</Sans>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {clipIds.map((id, i) => {
+            const st = statuses[id] || {};
+            const done = st.status === 'done';
+            const err = st.status === 'error';
+            return (
+              <div key={id} style={{
+                background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
+                padding: '12px 14px',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                  <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
+                    {done ? (
+                      <div style={{
+                        width: 18, height: 18, borderRadius: 999, background: T.ink,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}><Icon name="check" size={11} color={T.bg} stroke={2.5}/></div>
+                    ) : err ? (
+                      <Icon name="alert" size={16} color={T.clay}/>
+                    ) : (
+                      <div style={{
+                        width: 14, height: 14, borderRadius: 999,
+                        border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
+                        animation: 'spin 0.9s linear infinite',
+                      }}/>
+                    )}
+                  </div>
+                  <Sans size={12} weight={600} style={{ flex: 1 }}>
+                    Clip {String(i + 1).padStart(2, '0')}
+                    <Mono size={11} color={T.ink3} style={{ marginLeft: 8 }}>{id.split('_c')[1]}</Mono>
+                  </Sans>
+                  <Mono size={10} color={T.ink3}>{((st.progress || 0) * 100).toFixed(0)}%</Mono>
+                </div>
+                <div style={{ height: 2, background: T.paperAlt, borderRadius: 1, overflow: 'hidden' }}>
+                  <div style={{
+                    height: '100%', width: `${Math.max(0, (st.progress || 0) * 100)}%`,
+                    background: err ? T.clay : (done ? T.court : T.clay),
+                  }}/>
+                </div>
+                {st.message && (
+                  <Sans size={10} color={T.ink3} style={{ marginTop: 6 }}>{st.message}</Sans>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {allDone && (
+          <div style={{ marginTop: 18 }}>
+            <Sans size={12} color={T.ink3} style={{ textAlign: 'center' }}>
+              Tap a clip to view its results, or go back to the grid.
+            </Sans>
           </div>
         )}
       </div>
@@ -1492,6 +1731,187 @@ function TabCoach({ diag }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
+// Screen 7: Library / Storage
+// ═══════════════════════════════════════════════════════════════════════
+
+function Library({ onBack, onPickVideo }) {
+  const [usage, setUsage] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState(null);
+
+  const refresh = useCallback(() => {
+    api.getStorage().then(setUsage).catch(e => setErr(String(e)));
+  }, []);
+
+  useEffect(() => { refresh(); }, []);
+
+  const onDelete = async (vid, keepClips) => {
+    const confirmText = keepClips
+      ? `Free up space from this video?\n\nThe original video file will be deleted, but clips and analysis results stay.`
+      : `Delete this video and ALL its clips + analyses?\n\nThis cannot be undone.`;
+    if (!confirm(confirmText)) return;
+    setBusy(true);
+    try {
+      if (keepClips) await api.freeOriginal(vid);
+      else await api.deleteVideo(vid);
+      refresh();
+    } catch (e) { setErr(String(e)); }
+    setBusy(false);
+  };
+
+  const onCleanupJobs = async () => {
+    if (!confirm('Remove job records older than 7 days?')) return;
+    setBusy(true);
+    try { await api.cleanupJobs(7); refresh(); }
+    catch (e) { setErr(String(e)); }
+    setBusy(false);
+  };
+
+  const onWipeAll = async () => {
+    if (!confirm('Wipe EVERYTHING?\n\nAll videos, clips, and analyses will be permanently deleted.')) return;
+    if (!confirm('Are you absolutely sure? This is irreversible.')) return;
+    setBusy(true);
+    try { await api.wipeAll(); refresh(); }
+    catch (e) { setErr(String(e)); }
+    setBusy(false);
+  };
+
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onBack}/>}
+        right={<NavBtn label="Refresh" onClick={refresh}/>}
+        eyebrow="Library · Storage"
+      />
+
+      <div className="scroll" style={{ flex: 1 }}>
+        <div style={{ padding: '6px 20px 10px' }}>
+          <Serif size={28} weight={400} style={{ marginBottom: 6 }}>Library</Serif>
+          <Sans size={13} color={T.ink2}>
+            Everything Baseline stored on your device. Free up space here.
+          </Sans>
+        </div>
+
+        {usage && (
+          <>
+            <div style={{ padding: '6px 20px 0' }}>
+              <div style={{
+                background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+                padding: '18px',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 14 }}>
+                  <Serif size={36} weight={380}>{usage.total_human}</Serif>
+                  <Sans size={12} color={T.ink3}>used</Sans>
+                </div>
+                {/* Stacked breakdown bar */}
+                {usage.total_bytes > 0 && (
+                  <div style={{ display: 'flex', height: 8, borderRadius: 4, overflow: 'hidden', background: T.paperAlt, marginBottom: 12 }}>
+                    {[
+                      { k: 'videos',    color: T.clay,  v: usage.videos.bytes },
+                      { k: 'clips',     color: T.amber, v: usage.clips.bytes },
+                      { k: 'diagnoses', color: T.court, v: usage.diagnoses.bytes },
+                      { k: 'jobs',      color: T.ink3,  v: usage.jobs.bytes },
+                    ].map(seg => seg.v > 0 && (
+                      <div key={seg.k} style={{ width: `${seg.v / usage.total_bytes * 100}%`, background: seg.color }}/>
+                    ))}
+                  </div>
+                )}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10 }}>
+                  {[
+                    { l: 'Videos',    h: usage.videos.human,    c: usage.videos.count,    color: T.clay },
+                    { l: 'Clips',     h: usage.clips.human,     c: usage.clips.count,     color: T.amber },
+                    { l: 'Diagnoses', h: usage.diagnoses.human, c: usage.diagnoses.count, color: T.court },
+                    { l: 'Jobs',      h: usage.jobs.human,      c: usage.jobs.count,      color: T.ink3  },
+                  ].map(r => (
+                    <div key={r.l} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <div style={{ width: 8, height: 8, borderRadius: 999, background: r.color }}/>
+                      <Sans size={11} color={T.ink2} style={{ flex: 1 }}>{r.l}</Sans>
+                      <Mono size={11} color={T.ink2}>{r.h}</Mono>
+                      <Mono size={10} color={T.ink3} style={{ width: 24, textAlign: 'right' }}>{r.c}</Mono>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ padding: '14px 20px' }}>
+              <div style={{ display: 'flex', gap: 8 }}>
+                <button onClick={onCleanupJobs} disabled={busy} style={miniBtnStyle()}>
+                  Clean old jobs
+                </button>
+                <button onClick={onWipeAll} disabled={busy} style={miniBtnStyle('clay')}>
+                  Wipe everything
+                </button>
+              </div>
+            </div>
+
+            <div style={{ padding: '10px 20px 24px' }}>
+              <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
+                By video · {usage.by_video.length}
+              </Sans>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {usage.by_video.map(v => (
+                  <div key={v.video_id} style={{
+                    background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+                    padding: '14px 16px',
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
+                      <Sans size={13} weight={600} style={{
+                        flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                      }}>{v.filename || v.video_id}</Sans>
+                      <Mono size={12} color={T.ink2}>{v.human}</Mono>
+                    </div>
+                    <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
+                      <Mono size={10} color={T.ink3}>{v.clip_count} clips</Mono>
+                      <Mono size={10} color={T.ink3}>{v.diagnosis_count} diag</Mono>
+                      {!v.has_original && <Tag tone="amber" style={{ fontSize: 10 }}>original deleted</Tag>}
+                    </div>
+                    <div style={{ display: 'flex', gap: 8 }}>
+                      <button onClick={() => onPickVideo(v.video_id)}
+                        style={miniBtnStyle('ghost')}>Open</button>
+                      {v.has_original && (
+                        <button onClick={() => onDelete(v.video_id, true)} disabled={busy}
+                          style={miniBtnStyle('ghost')}>Free space</button>
+                      )}
+                      <button onClick={() => onDelete(v.video_id, false)} disabled={busy}
+                        style={miniBtnStyle('clay')}>Delete</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {err && (
+          <div style={{ margin: '0 20px 16px', padding: 12, borderRadius: 10, background: '#F6E4DC' }}>
+            <Sans size={12} color={T.clayDeep}>{err}</Sans>
+          </div>
+        )}
+      </div>
+      <TabBar active="library" onSelect={id => {
+        if (id === 'home') onBack();
+      }}/>
+    </Screen>
+  );
+}
+
+function miniBtnStyle(tone = 'ink') {
+  const tones = {
+    ink:   { bg: T.ink, fg: T.bg, bd: T.ink },
+    ghost: { bg: 'transparent', fg: T.ink, bd: T.line },
+    clay:  { bg: T.clay, fg: '#fff', bd: T.clay },
+  }[tone];
+  return {
+    flex: 1, height: 36, borderRadius: 10,
+    background: tones.bg, color: tones.fg,
+    border: `0.5px solid ${tones.bd}`,
+    fontFamily: T.sans, fontSize: 12, fontWeight: 600,
+    cursor: 'pointer',
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════════════
 // App state machine
 // ═══════════════════════════════════════════════════════════════════════
 
@@ -1538,6 +1958,13 @@ function App() {
             onStrokeChange={setStroke}
             onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
             onUpload={pickFile}
+            onLibrary={() => setRoute({ name: 'library' })}
+          />
+        )}
+        {route.name === 'library' && (
+          <Library
+            onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
+            onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
           />
         )}
         {route.name === 'upload' && (
@@ -1553,6 +1980,7 @@ function App() {
             videoId={route.videoId}
             onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
             onPickClip={clipId => setRoute({ name: 'analyze', clipId })}
+            onMultiAnalyze={ids => setRoute({ name: 'multi-analyze', clipIds: ids })}
           />
         )}
         {route.name === 'analyze' && (
@@ -1560,6 +1988,13 @@ function App() {
             clipId={route.clipId}
             onDone={clipId => setRoute({ name: 'result', clipId })}
             onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+          />
+        )}
+        {route.name === 'multi-analyze' && (
+          <MultiAnalyzing
+            clipIds={route.clipIds}
+            onDone={clipId => setRoute({ name: 'result', clipId })}
+            onBack={() => setRoute({ name: 'clips', videoId: route.clipIds[0].split('_c')[0] })}
           />
         )}
         {route.name === 'result' && (
