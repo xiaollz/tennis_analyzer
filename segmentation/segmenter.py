@@ -147,7 +147,7 @@ class SoundBasedSegmenter:
                     pass
 
         # 1) 读取视频元信息
-        _progress(0.05, "读取视频元信息")
+        _progress(0.04, "读取视频元信息")
         fps, total_frames, duration_s = self._probe_video(video_path)
         if fps <= 0 or duration_s <= 0:
             return SegmentationResult(
@@ -158,9 +158,10 @@ class SoundBasedSegmenter:
                 total_onsets=0,
                 error="无法读取视频元信息",
             )
+        _progress(0.10, "提取音频")
 
         # 2) 音频 onset 检测
-        _progress(0.15, "检测击球声")
+        _progress(0.14, "检测击球声")
         detector = AudioOnsetDetector(
             video_path=video_path,
             fps=fps,

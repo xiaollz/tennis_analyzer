@@ -30,7 +30,14 @@
   ::-webkit-scrollbar { width: 0; height: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(200,85,61,0.30); } 50% { box-shadow: 0 0 0 6px rgba(200,85,61,0); } }
+  @keyframes slideInLeft { from { transform: translateX(-12px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes slideInRight { from { transform: translateX(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes checkPop { 0% { transform: scale(0.4); opacity: 0; } 60% { transform: scale(1.15); opacity: 1; } 100% { transform: scale(1); } }
+  @keyframes flyLeft { to { transform: translate(-150%, -10%) rotate(-18deg); opacity: 0; } }
+  @keyframes flyRight { to { transform: translate(150%, -10%) rotate(18deg); opacity: 0; } }
   .fadein { animation: fadein 0.25s ease-out; }
+  .check-pop { animation: checkPop 0.34s cubic-bezier(0.34, 1.56, 0.64, 1); }
   button { font-family: inherit; }
   /* Mobile frame on desktop, full-bleed on phone */
   .frame {
@@ -305,6 +312,67 @@ const api = {
   freeOriginal: id => fetch(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }).then(r => r.json()),
 };
 
+// Hook: smooth a discrete progress value with a tween so the UI moves
+// continuously instead of jumping in steps. Returns the smoothed value.
+function useSmoothProgress(target, durationMs = 600) {
+  const [value, setValue] = useState(target);
+  const fromRef = useRef(target);
+  const startRef = useRef(performance.now());
+
+  useEffect(() => {
+    fromRef.current = value;
+    startRef.current = performance.now();
+    let raf;
+    const tick = () => {
+      const t = Math.min(1, (performance.now() - startRef.current) / durationMs);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      const v = fromRef.current + (target - fromRef.current) * eased;
+      setValue(v);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, durationMs]);
+  return value;
+}
+
+// Hook: detect swipes on a ref'd element (touch + pointer).
+function useSwipe(ref, { onLeft, onRight, onUp, onDown, threshold = 60 } = {}) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let sx = 0, sy = 0, dragging = false, ts = 0;
+
+    const start = (e) => {
+      const t = e.touches ? e.touches[0] : e;
+      sx = t.clientX; sy = t.clientY; ts = performance.now(); dragging = true;
+    };
+    const end = (e) => {
+      if (!dragging) return;
+      dragging = false;
+      const t = e.changedTouches ? e.changedTouches[0] : e;
+      const dx = t.clientX - sx;
+      const dy = t.clientY - sy;
+      const dt = performance.now() - ts;
+      if (dt > 800) return;  // too slow, ignore
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > threshold && onRight) onRight();
+        else if (dx < -threshold && onLeft) onLeft();
+      } else {
+        if (dy > threshold && onDown) onDown();
+        else if (dy < -threshold && onUp) onUp();
+      }
+    };
+    el.addEventListener('touchstart', start, { passive: true });
+    el.addEventListener('touchend', end, { passive: true });
+    return () => {
+      el.removeEventListener('touchstart', start);
+      el.removeEventListener('touchend', end);
+    };
+  }, [ref, onLeft, onRight, onUp, onDown, threshold]);
+}
+
 async function pollJob(jobId, onProgress, intervalMs = 1500) {
   let lastProgress = -1, lastStatus = '', lastMessage = '';
   while (true) {
@@ -340,15 +408,52 @@ const fmtClock = ts => {
   return d.toLocaleTimeString('en', { hour: 'numeric', minute: '2-digit' });
 };
 const fmtValue = v => {
-  if (v == null) return '—';
+  if (v == null || Number.isNaN(v)) return '—';
   if (typeof v === 'number') {
+    if (!Number.isFinite(v)) return '—';
     const abs = Math.abs(v);
     if (abs >= 100) return v.toFixed(0);
     if (abs >= 10) return v.toFixed(1);
     return v.toFixed(2);
   }
+  if (typeof v === 'boolean') return v ? 'Yes' : 'No';
   return String(v);
 };
+
+// Phone uploads usually have hex / random filenames. If the original
+// filename looks like a hash (no extension, mostly alphanumeric), fall
+// back to "Apr 26 · 5:30 PM"-style timestamp so users can find the
+// session by when they recorded.
+function videoTitle(video) {
+  const name = video?.filename || '';
+  const looksRandom = /^[a-f0-9]{20,}\b/i.test(name) || !name;
+  if (looksRandom && video?.uploaded_at) {
+    const d = new Date(video.uploaded_at * 1000);
+    const dateStr = d.toLocaleString('en', { month: 'short', day: 'numeric' });
+    const timeStr = d.toLocaleTimeString('en', { hour: 'numeric', minute: '2-digit' });
+    return `${dateStr} · ${timeStr}`;
+  }
+  return name || `Session ${(video?.video_id || '').slice(0, 6)}`;
+}
+
+// Plain-language KPI explanations. Indexed by KPI name, falls back to
+// label match if name isn't found.
+const KPI_HELP = {
+  shoulder_rotation: 'How far you turned your upper body away from the net before the swing. More turn = more uncoiling power.',
+  hip_rotation:      'How much your hips opened up by contact. Hips lead the swing — too little and the arm tries to do everything.',
+  elbow_angle_at_contact: 'Elbow bend at the moment you hit the ball. ~120-150° is the modern double-bend; very straight or very bent both leak power.',
+  contact_point:     'Where you struck the ball relative to your front hip. In front + waist-high is the goal — late contact (behind hip) = short balls.',
+  forward_extension: 'How far the racquet pushed forward through contact. More extension = more depth and topspin.',
+  outside_extension: 'How far the racquet went OUT (away from your body) before coming back in. Modern forehands swing OUT first, then around.',
+  knee_bend:         'How much you loaded your legs. Bent legs are the gas tank for ground reaction force.',
+  spine_consistency: 'Whether your spine stayed at the same angle through contact. Spine collapse = power leak + back pain.',
+  head_stability_at_contact: 'How still your head was when you hit. Eyes glued to contact = cleaner strike. Pulling off the ball = mishits.',
+};
+function kpiHelpText(kpi) {
+  if (kpi.name && KPI_HELP[kpi.name]) return KPI_HELP[kpi.name];
+  if (kpi.description && kpi.description.length > 6) return kpi.description;
+  return 'Tap the label to learn more, or open the report for the full breakdown.';
+}
 
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 1: Onboarding
@@ -626,7 +731,6 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange, onLibr
 }
 
 const SessionCard = React.memo(function SessionCard({ video, isNew, onClick }) {
-  const score = video.clip_count > 0 ? Math.min(95, 55 + video.clip_count * 6) : null;
   return (
     <div onClick={onClick} style={{
       background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
@@ -648,17 +752,14 @@ const SessionCard = React.memo(function SessionCard({ video, isNew, onClick }) {
           {isNew && <Tag tone="ink" style={{ background: T.ink, color: T.bg, border: 'none' }}>New</Tag>}
         </div>
         <Sans size={14} weight={600} style={{ marginBottom: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          {video.filename || `Session ${video.video_id.slice(0, 6)}`}
+          {videoTitle(video)}
         </Sans>
         <Sans size={11} color={T.ink3}>
           <Mono size={11} color={T.ink3}>{video.total_onsets || 0}</Mono> hits ·{' '}
           <Mono size={11} color={T.ink3}>{video.duration_s ? video.duration_s.toFixed(1) : '—'}</Mono>s
         </Sans>
       </div>
-      <div style={{ textAlign: 'right' }}>
-        <Serif size={22} weight={400}>{score != null ? score : '—'}</Serif>
-        <Mono size={10} color={T.ink3} style={{ display: 'block' }}>form</Mono>
-      </div>
+      <Icon name="chevR" size={16} color={T.ink3}/>
     </div>
   );
 });
@@ -673,6 +774,7 @@ function Import({ file, stroke, onDone, onCancel }) {
   const [message, setMessage] = useState('Uploading…');
   const [error, setError] = useState(null);
   const [videoUrl, setVideoUrl] = useState(null);
+  const smoothProgress = useSmoothProgress(progress, 700);
 
   useEffect(() => {
     if (file) setVideoUrl(URL.createObjectURL(file));
@@ -680,22 +782,56 @@ function Import({ file, stroke, onDone, onCancel }) {
   }, [file]);
 
   useEffect(() => {
+    let aborted = false;
+    let driftTimer = null;
+
+    // While we wait between job polls, slowly drift progress toward the
+    // next stage threshold so the bar always feels alive instead of frozen.
+    const startDrift = (currentTarget) => {
+      stopDrift();
+      driftTimer = setInterval(() => {
+        if (aborted) return;
+        setProgress(p => {
+          const ceiling = Math.max(p + 0.005, currentTarget - 0.02);
+          return Math.min(p + 0.004, ceiling);
+        });
+      }, 200);
+    };
+    const stopDrift = () => { if (driftTimer) { clearInterval(driftTimer); driftTimer = null; } };
+
     (async () => {
       try {
         setMessage('Uploading video…');
+        setProgress(0.05); startDrift(0.18);
         const { video_id, job_id } = await api.uploadVideo(file, stroke);
+        if (aborted) return;
+        stopDrift();
         setStage('segment');
+        setProgress(0.20);
         setMessage('Listening for hits…');
+        startDrift(0.30);
+
         const job = await pollJob(job_id, j => {
-          setProgress(j.progress || 0);
-          setMessage(j.message || '');
+          stopDrift();
+          // Map backend's 0-1 to our 0.20-1.00 (segmentation phase)
+          const mapped = 0.20 + 0.80 * (j.progress || 0);
+          setProgress(mapped);
+          if (j.message) setMessage(j.message);
+          if (j.status === 'running') startDrift(Math.min(1, mapped + 0.06));
         });
-        if (job.status === 'done') onDone(video_id);
-        else setError(job.error || 'Segmentation failed');
+        stopDrift();
+        if (job.status === 'done') {
+          setProgress(1);
+          setTimeout(() => { if (!aborted) onDone(video_id); }, 350);
+        } else {
+          setError(job.error || 'Segmentation failed');
+        }
       } catch (e) {
-        setError(String(e.message || e));
+        stopDrift();
+        if (!aborted) setError(String(e.message || e));
       }
     })();
+    return () => { aborted = true; stopDrift(); };
   }, []);
 
   return (
@@ -756,15 +892,16 @@ function Import({ file, stroke, onDone, onCancel }) {
           <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.15, marginBottom: 16 }}>
             {message}
           </Serif>
-          <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden' }}>
+          <div style={{ height: 6, borderRadius: 3, background: T.paperAlt, overflow: 'hidden', position: 'relative' }}>
             <div style={{
-              height: '100%', width: `${Math.max(2, progress * 100)}%`,
+              height: '100%', width: `${Math.max(2, smoothProgress * 100)}%`,
               background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
-              transition: 'width 0.3s',
+              borderRadius: 3,
+              boxShadow: '0 0 8px rgba(232,176,75,0.4)',
             }}/>
           </div>
           <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
-            {(progress * 100).toFixed(0)}%
+            {(smoothProgress * 100).toFixed(0)}%
           </Sans>
 
           {error && (
@@ -792,9 +929,10 @@ function ClipGridContainer(props) {
   return <ClipGrid {...props}/>;
 }
 
-function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, selected, onToggleSelect, onClearSelection, onCacheClips }) {
+function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, onTriage, selected, kept, rejected, onToggleSelect, onClearSelection, onCacheClips, onResetTriage }) {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
+  const [filter, setFilter] = useState('all'); // 'all' | 'kept' | 'rejected'
 
   useEffect(() => {
     api.getVideo(videoId).then(d => {
@@ -816,8 +954,16 @@ function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, selected, onTogg
     </Screen>
   );
 
-  const clips = data.clips || [];
+  const allClips = data.clips || [];
   const hasSelection = selected.size > 0;
+  const triageActive = (kept && kept.size > 0) || (rejected && rejected.size > 0);
+
+  // Apply triage filter
+  const clips = (() => {
+    if (filter === 'kept' && kept) return allClips.filter(c => kept.has(c.clip_id));
+    if (filter === 'rejected' && rejected) return allClips.filter(c => rejected.has(c.clip_id));
+    return allClips;
+  })();
 
   return (
     <Screen bg={T.bg}>
@@ -828,10 +974,10 @@ function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, selected, onTogg
             ? <NavBtn label="Clear" onClick={onClearSelection}/>
             : null
         }
-        eyebrow={hasSelection ? `${selected.size} selected` : `Step 2 · ${clips.length} clips`}
+        eyebrow={hasSelection ? `${selected.size} selected` : `Step 2 · ${allClips.length} clips`}
       />
 
-      <div style={{ padding: '6px 20px 16px' }}>
+      <div style={{ padding: '6px 20px 12px' }}>
         <Serif size={28} weight={400} style={{ marginBottom: 6 }}>
           Pick clips to analyze
         </Serif>
@@ -853,6 +999,52 @@ function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, selected, onTogg
           )}
         </Sans>
       </div>
+
+      {/* Triage entry + filter chips */}
+      {allClips.length > 1 && (
+        <div style={{ padding: '0 20px 12px', display: 'flex', gap: 8, alignItems: 'center', overflowX: 'auto' }}>
+          {!triageActive ? (
+            <button onClick={onTriage} style={{
+              flexShrink: 0, padding: '8px 14px', borderRadius: 999,
+              background: T.ink, color: T.bg,
+              border: 'none', cursor: 'pointer',
+              fontFamily: T.sans, fontSize: 12, fontWeight: 600,
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+            }}>
+              <Icon name="sparkle" size={13} color={T.bg}/>
+              Triage swipe
+            </button>
+          ) : (
+            <>
+              {[
+                { id: 'all',      label: `All · ${allClips.length}` },
+                { id: 'kept',     label: `Kept · ${kept.size}`,     color: T.court },
+                { id: 'rejected', label: `Dropped · ${rejected.size}`, color: T.clay },
+              ].map(c => (
+                <button key={c.id} onClick={() => setFilter(c.id)} style={{
+                  flexShrink: 0, padding: '6px 12px', borderRadius: 999,
+                  background: filter === c.id ? T.ink : T.paper,
+                  color: filter === c.id ? T.bg : (c.color || T.ink2),
+                  border: `0.5px solid ${filter === c.id ? T.ink : T.line}`,
+                  cursor: 'pointer', fontFamily: T.sans, fontSize: 12, fontWeight: 500,
+                }}>{c.label}</button>
+              ))}
+              <button onClick={onTriage} style={{
+                flexShrink: 0, padding: '6px 10px', borderRadius: 999,
+                background: 'transparent', color: T.ink2,
+                border: `0.5px solid ${T.line}`, cursor: 'pointer',
+                fontFamily: T.sans, fontSize: 12, fontWeight: 500,
+              }}>Resume triage</button>
+              <button onClick={onResetTriage} style={{
+                flexShrink: 0, padding: '6px 10px', borderRadius: 999,
+                background: 'transparent', color: T.ink3,
+                border: 'none', cursor: 'pointer',
+                fontFamily: T.sans, fontSize: 11,
+              }}>Reset</button>
+            </>
+          )}
+        </div>
+      )}
 
       {data.error && (
         <div style={{ margin: '0 20px 14px', padding: 14, borderRadius: 12, background: '#FBEDCE' }}>
@@ -1008,6 +1200,16 @@ function Loading({ clipId, onDone, onBack }) {
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Queued…');
   const [error, setError] = useState(null);
+  const smoothProgress = useSmoothProgress(progress, 700);
+
+  // Drift pump — keep the bar moving while we wait between polls
+  useEffect(() => {
+    if (progress >= 1 || error) return;
+    const id = setInterval(() => {
+      setProgress(p => Math.min(p + 0.003, 0.97));
+    }, 250);
+    return () => clearInterval(id);
+  }, [progress, error]);
 
   useEffect(() => {
     (async () => {
@@ -1015,22 +1217,37 @@ function Loading({ clipId, onDone, onBack }) {
         const { job_id, status } = await api.startDiagnose(clipId);
         if (status === 'already_done') { onDone(clipId); return; }
         const job = await pollJob(job_id, j => {
-          setProgress(j.progress || 0);
-          setMessage(j.message || '');
+          // Take the max so backend updates can never go backwards (drift
+          // sometimes pushes us slightly past the backend's reported value).
+          setProgress(p => Math.max(p, j.progress || 0));
+          if (j.message) setMessage(j.message);
         }, 1500);
-        if (job.status === 'done') onDone(clipId);
-        else setError(job.error || 'Diagnosis failed');
+        if (job.status === 'done') {
+          setProgress(1);
+          setTimeout(() => onDone(clipId), 400);
+        } else {
+          setError(job.error || 'Diagnosis failed');
+        }
       } catch (e) { setError(String(e.message || e)); }
     })();
   }, [clipId]);
 
-  const stages = [
-    { t: 'Pose estimation',       threshold: 0.20 },
-    { t: 'Impact detection',      threshold: 0.40 },
-    { t: 'Biomechanics features', threshold: 0.65 },
-    { t: 'Gemini visual reading', threshold: 0.88 },
-    { t: 'Knowledge inference',   threshold: 1.00 },
+  // Claude-Code-style task list: each task has a label, threshold, and a
+  // detail caption that lights up when the task becomes active.
+  const tasks = [
+    { id: 'pose',     t: 'Tracking 17 body keypoints',         threshold: 0.20, hint: 'YOLO 11m-pose' },
+    { id: 'impact',   t: 'Locating racquet–ball contact',      threshold: 0.42, hint: 'Audio + wrist velocity' },
+    { id: 'kpi',      t: 'Measuring biomechanics',             threshold: 0.62, hint: 'Phase scoring' },
+    { id: 'vlm',      t: 'Reading swing visually',             threshold: 0.86, hint: 'Gemini VLM' },
+    { id: 'reason',   t: 'Diagnosing root cause',              threshold: 0.99, hint: 'Knowledge graph' },
   ];
+
+  // Compute task states
+  const states = tasks.map((task, i) => {
+    if (smoothProgress >= task.threshold) return 'done';
+    const prevDone = i === 0 || smoothProgress >= tasks[i - 1].threshold;
+    return prevDone ? 'active' : 'pending';
+  });
 
   return (
     <Screen bg={T.bg}>
@@ -1040,7 +1257,7 @@ function Loading({ clipId, onDone, onBack }) {
         eyebrow="Analyzing"
       />
 
-      <div className="scroll" style={{ flex: 1 }}>
+      <div className="scroll" style={{ flex: 1, paddingBottom: 8 }}>
         <div style={{ padding: '4px 20px 0' }}>
           <div style={{
             borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
@@ -1070,14 +1287,14 @@ function Loading({ clipId, onDone, onBack }) {
             </svg>
             <div style={{
               position: 'absolute', top: 0, bottom: 0,
-              left: `${Math.max(8, progress * 92)}%`, width: 1,
+              left: `${Math.max(8, smoothProgress * 92)}%`, width: 1,
               background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
-              boxShadow: `0 0 10px ${T.amber}`, transition: 'left 0.5s',
+              boxShadow: `0 0 10px ${T.amber}`,
             }}/>
           </div>
         </div>
 
-        <div style={{ padding: '22px 24px 0' }}>
+        <div style={{ padding: '20px 24px 0' }}>
           <Sans size={11} weight={500} upper color={T.clay} style={{ marginBottom: 8 }}>
             {message || 'Reading your swing'}
           </Sans>
@@ -1089,73 +1306,51 @@ function Loading({ clipId, onDone, onBack }) {
           </Serif>
         </div>
 
-        <div style={{ padding: '22px 24px 0' }}>
+        <div style={{ padding: '20px 24px 0' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
             <Mono size={11} color={T.ink2}>OVERALL</Mono>
             <div>
-              <Serif size={20} weight={400} as="span">{(progress * 100).toFixed(0)}</Serif>
+              <Serif size={20} weight={400} as="span">{(smoothProgress * 100).toFixed(0)}</Serif>
               <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
             </div>
           </div>
-          <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden' }}>
+          <div style={{ height: 6, borderRadius: 3, background: T.paperAlt, overflow: 'hidden', position: 'relative' }}>
             <div style={{
-              height: '100%', width: `${Math.max(2, progress * 100)}%`,
+              height: '100%', width: `${Math.max(2, smoothProgress * 100)}%`,
               background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
-              transition: 'width 0.5s',
+              borderRadius: 3,
+              boxShadow: '0 0 6px rgba(232,176,75,0.4)',
             }}/>
           </div>
         </div>
+      </div>
 
-        <div style={{ padding: '22px 24px 0' }}>
-          {stages.map((st, i) => {
-            const done = progress >= st.threshold;
-            const active = !done && (i === 0 || progress >= stages[i - 1].threshold);
-            return (
-              <div key={i} style={{
-                display: 'flex', alignItems: 'center', gap: 12,
-                padding: '12px 0',
-                borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
-              }}>
-                <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
-                  {done ? (
-                    <div style={{
-                      width: 18, height: 18, borderRadius: 999, background: T.ink,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}><Icon name="check" size={11} color={T.bg} stroke={2.5}/></div>
-                  ) : active ? (
-                    <div style={{
-                      width: 18, height: 18, borderRadius: 999,
-                      border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
-                      animation: 'spin 0.9s linear infinite',
-                    }}/>
-                  ) : (
-                    <div style={{ width: 8, height: 8, borderRadius: 999, background: T.line }}/>
-                  )}
-                </div>
-                <Sans size={14} weight={active ? 600 : 500}
-                      color={done || active ? T.ink : T.ink3}>{st.t}</Sans>
-              </div>
-            );
-          })}
+      {/* Claude-Code-style task list — bottom panel, sticky */}
+      <div style={{
+        margin: '12px 16px 16px', padding: '14px 16px 12px',
+        background: T.paper, border: `0.5px solid ${T.line}`,
+        borderRadius: 18, flexShrink: 0,
+        boxShadow: '0 6px 20px rgba(42,41,37,0.05)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+          <Sans size={11} upper weight={600} color={T.ink2} style={{ letterSpacing: 1.2 }}>
+            Tasks · {states.filter(s => s === 'done').length} / {tasks.length}
+          </Sans>
+          <Mono size={11} color={T.ink3}>
+            {states.includes('active') ? '⏱ running' : 'idle'}
+          </Mono>
         </div>
 
-        <div style={{
-          margin: '14px 16px 22px', padding: '14px 14px',
-          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-          display: 'flex', gap: 10, alignItems: 'flex-start',
-        }}>
-          <Icon name="sparkle" size={16} color={T.clay}/>
-          <div style={{ flex: 1 }}>
-            <Sans size={12} weight={600} style={{ marginBottom: 2 }}>Did you know</Sans>
-            <Sans size={12} color={T.ink2} style={{ lineHeight: 1.5 }}>
-              Pro forehands average 92°–110° of hip rotation from load to contact. We'll show yours next.
-            </Sans>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {tasks.map((task, i) => {
+            const state = states[i];
+            return <TaskRow key={task.id} task={task} state={state} isLast={i === tasks.length - 1}/>;
+          })}
         </div>
 
         {error && (
           <div style={{
-            margin: '0 20px 22px', padding: 14, borderRadius: 12, background: '#F6E4DC',
+            marginTop: 10, padding: 10, borderRadius: 10, background: '#F6E4DC',
             border: `0.5px solid rgba(168,67,47,0.2)`,
           }}>
             <Sans size={12} color={T.clayDeep}>{error}</Sans>
@@ -1166,23 +1361,386 @@ function Loading({ clipId, onDone, onBack }) {
   );
 }
 
+const TaskRow = React.memo(function TaskRow({ task, state, isLast }) {
+  const isDone = state === 'done';
+  const isActive = state === 'active';
+
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'flex-start', gap: 10,
+      padding: '8px 0', position: 'relative',
+    }}>
+      {/* Connector line for the timeline feel */}
+      {!isLast && (
+        <div style={{
+          position: 'absolute', left: 11, top: 26, bottom: 0, width: 1,
+          background: isDone ? T.ink : T.line,
+          transition: 'background 0.4s',
+        }}/>
+      )}
+
+      {/* Status indicator — animated check pop on done */}
+      <div style={{
+        width: 22, height: 22, borderRadius: 999,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        flexShrink: 0, position: 'relative', zIndex: 1,
+        background: isDone ? T.ink : (isActive ? 'transparent' : T.paperAlt),
+        border: isActive ? `2px solid ${T.clay}` : 'none',
+        borderTopColor: isActive ? 'transparent' : undefined,
+        animation: isActive ? 'spin 0.9s linear infinite, pulseGlow 2s ease-in-out infinite' : 'none',
+      }}>
+        {isDone && (
+          <span className="check-pop">
+            <Icon name="check" size={12} color={T.bg} stroke={2.6}/>
+          </span>
+        )}
+      </div>
+
+      <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+        <Sans size={13} weight={isActive ? 600 : (isDone ? 500 : 500)}
+              color={isDone ? T.ink : (isActive ? T.ink : T.ink3)}
+              style={{ transition: 'color 0.3s' }}>
+          {task.t}
+        </Sans>
+        <Mono size={10}
+              color={isActive ? T.clay : (isDone ? T.ink3 : 'rgba(138,130,118,0.6)')}
+              style={{ marginTop: 2, transition: 'color 0.3s' }}>
+          {task.hint}
+        </Mono>
+      </div>
+
+      {isDone && (
+        <Mono size={10} color={T.court} style={{ paddingTop: 4 }}>✓ done</Mono>
+      )}
+      {isActive && (
+        <Mono size={10} color={T.clay} style={{ paddingTop: 4 }}>active</Mono>
+      )}
+    </div>
+  );
+});
+
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 4c: ClipTriage — Tinder-style filter (swipe left = drop, right = keep)
+// ═══════════════════════════════════════════════════════════════════════
+
+function ClipTriage({ allClips, kept, rejected, onMark, onUndo, onDone, onCancel }) {
+  // Find the first clip that hasn't been triaged yet
+  const undecidedIdx = allClips.findIndex(c => !kept.has(c.clip_id) && !rejected.has(c.clip_id));
+  const total = allClips.length;
+  const decidedCount = kept.size + rejected.size;
+  const allTriaged = undecidedIdx === -1;
+
+  // Animation state for the current card
+  const [exiting, setExiting] = useState(null); // 'left' | 'right' | null
+  const [dragOffset, setDragOffset] = useState(0); // for live drag feedback
+  const cardRef = useRef(null);
+  const startRef = useRef({ x: 0, y: 0, t: 0 });
+
+  const currentIdx = exiting !== null && undecidedIdx === -1 ? allClips.length - 1 : undecidedIdx;
+  const clip = currentIdx >= 0 ? allClips[currentIdx] : null;
+
+  const commit = useCallback((direction) => {
+    if (!clip || exiting) return;
+    setExiting(direction);
+    setTimeout(() => {
+      onMark(clip.clip_id, direction === 'right' ? 'keep' : 'reject');
+      setExiting(null);
+      setDragOffset(0);
+    }, 280);
+  }, [clip, exiting, onMark]);
+
+  // Touch gesture handlers
+  const onTouchStart = (e) => {
+    const t = e.touches[0];
+    startRef.current = { x: t.clientX, y: t.clientY, t: performance.now() };
+  };
+  const onTouchMove = (e) => {
+    if (exiting) return;
+    const t = e.touches[0];
+    setDragOffset(t.clientX - startRef.current.x);
+  };
+  const onTouchEnd = (e) => {
+    if (exiting) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startRef.current.x;
+    const dy = t.clientY - startRef.current.y;
+    if (Math.abs(dx) > 80 && Math.abs(dx) > Math.abs(dy)) {
+      commit(dx > 0 ? 'right' : 'left');
+    } else {
+      // Snap back
+      setDragOffset(0);
+    }
+  };
+
+  if (allTriaged) {
+    return (
+      <Screen bg={T.bg}>
+        <NavBar
+          left={<NavBtn icon="chevL" onClick={onCancel}/>}
+          eyebrow={`Triage · ${kept.size} kept · ${rejected.size} dropped`}
+        />
+        <div style={{ padding: '40px 24px 24px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Serif size={32} weight={400} opsz={72} style={{ lineHeight: 1.1, marginBottom: 14 }}>
+            Done triaging.<br/>
+            <Serif as="span" size={32} italic weight={380} style={{ color: T.clayDeep }}>
+              {kept.size} kept.
+            </Serif>
+          </Serif>
+          <Sans size={14} color={T.ink2} style={{ lineHeight: 1.5, marginBottom: 32 }}>
+            {kept.size === 0 ? 'You dropped them all. You can start over or cancel.' :
+              kept.size === 1 ? '1 clip ready to analyze, or run another round.' :
+              `${kept.size} clips made the cut. Run another round to narrow further, or analyze them all.`}
+          </Sans>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <CTA tone="ghost" onClick={onUndo}>Undo last</CTA>
+            <CTA tone="clay" icon="check" full onClick={onDone}>
+              Use {kept.size} clip{kept.size === 1 ? '' : 's'}
+            </CTA>
+          </div>
+        </div>
+      </Screen>
+    );
+  }
+
+  if (!clip) return null;
+
+  // Card visual transform
+  const exitTransform =
+    exiting === 'left' ? 'translate(-150%, -10%) rotate(-18deg)' :
+    exiting === 'right' ? 'translate(150%, -10%) rotate(18deg)' :
+    `translate(${dragOffset}px, 0) rotate(${dragOffset * 0.04}deg)`;
+  const exitOpacity = exiting ? 0 : 1;
+
+  // Hint overlays (red/green tint as user drags)
+  const dragRatio = Math.max(-1, Math.min(1, dragOffset / 120));
+  const keepHintOpacity = dragRatio > 0 ? Math.min(1, dragRatio) : 0;
+  const dropHintOpacity = dragRatio < 0 ? Math.min(1, -dragRatio) : 0;
+
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onCancel}/>}
+        right={<NavBtn label="Done" onClick={onDone}/>}
+        eyebrow={`Triage · ${decidedCount} / ${total}`}
+      />
+
+      <div style={{ padding: '6px 20px 8px' }}>
+        <Serif size={24} weight={400} style={{ marginBottom: 4 }}>
+          Keep or drop?
+        </Serif>
+        <Sans size={12} color={T.ink2}>
+          Swipe right to keep · swipe left to drop · or tap the buttons.
+        </Sans>
+      </div>
+
+      {/* Progress bar */}
+      <div style={{ padding: '6px 20px 0' }}>
+        <div style={{ height: 4, background: T.paperAlt, borderRadius: 2, overflow: 'hidden' }}>
+          <div style={{
+            height: '100%', width: `${(decidedCount / total) * 100}%`,
+            background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+            transition: 'width 0.4s ease-out',
+          }}/>
+        </div>
+      </div>
+
+      {/* The card — center stage */}
+      <div style={{
+        flex: 1, padding: '12px 24px 0', position: 'relative',
+        display: 'flex', alignItems: 'stretch', justifyContent: 'center',
+      }}>
+        {/* Stack hint: show next card slightly behind */}
+        {currentIdx + 1 < allClips.length && (
+          <div style={{
+            position: 'absolute', inset: '20px 32px 0', borderRadius: 18,
+            background: T.paperAlt, border: `0.5px solid ${T.line}`,
+            transform: 'scale(0.96) translateY(8px)', opacity: 0.4,
+            zIndex: 0,
+          }}/>
+        )}
+        <div
+          ref={cardRef}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          style={{
+            position: 'relative', zIndex: 1,
+            width: '100%', borderRadius: 18, overflow: 'hidden',
+            background: '#000', border: `0.5px solid ${T.line}`,
+            transform: exitTransform,
+            opacity: exitOpacity,
+            transition: exiting
+              ? 'transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s'
+              : (dragOffset === 0 ? 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'),
+            touchAction: 'pan-y',
+          }}>
+          <video
+            key={clip.clip_id}
+            src={`${API}/clips/${clip.clip_id}/video`}
+            autoPlay loop muted playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', maxHeight: '100%' }}
+          />
+
+          {/* Bottom info chip */}
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            padding: '40px 16px 14px',
+            background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%)',
+            color: '#fff',
+          }}>
+            <Sans size={12} weight={500} color="rgba(255,255,255,0.85)">
+              Clip {currentIdx + 1} of {total}
+            </Sans>
+            <Mono size={11} color="rgba(255,255,255,0.55)" style={{ marginTop: 2 }}>
+              {fmtTime(clip.start_s)} · {(clip.end_s - clip.start_s).toFixed(1)}s · {clip.impact_times_s.length}× hit
+            </Mono>
+          </div>
+
+          {/* Drag-overlay tint */}
+          {keepHintOpacity > 0 && (
+            <div style={{
+              position: 'absolute', inset: 0, pointerEvents: 'none',
+              background: `rgba(154, 174, 96, ${0.35 * keepHintOpacity})`,
+              display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
+              padding: 18,
+            }}>
+              <div style={{
+                padding: '8px 14px', borderRadius: 10, transform: 'rotate(-12deg)',
+                background: T.court, color: '#fff',
+                fontFamily: T.sans, fontSize: 18, fontWeight: 700,
+                letterSpacing: 1.5, opacity: keepHintOpacity,
+                border: '2px solid #fff',
+              }}>KEEP</div>
+            </div>
+          )}
+          {dropHintOpacity > 0 && (
+            <div style={{
+              position: 'absolute', inset: 0, pointerEvents: 'none',
+              background: `rgba(200, 85, 61, ${0.35 * dropHintOpacity})`,
+              display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+              padding: 18,
+            }}>
+              <div style={{
+                padding: '8px 14px', borderRadius: 10, transform: 'rotate(12deg)',
+                background: T.clay, color: '#fff',
+                fontFamily: T.sans, fontSize: 18, fontWeight: 700,
+                letterSpacing: 1.5, opacity: dropHintOpacity,
+                border: '2px solid #fff',
+              }}>DROP</div>
+            </div>
+          )}
+        </div>
+
+        {/* Preload next card */}
+        {currentIdx + 1 < allClips.length && (
+          <video src={`${API}/clips/${allClips[currentIdx + 1].clip_id}/video`}
+            preload="auto" muted playsInline
+            style={{ position: 'absolute', width: 0, height: 0, opacity: 0, pointerEvents: 'none' }}/>
+        )}
+      </div>
+
+      {/* Bottom action buttons */}
+      <div style={{
+        padding: '14px 24px 28px', flexShrink: 0,
+        display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center',
+      }}>
+        <button onClick={() => commit('left')} aria-label="Drop" style={{
+          width: 64, height: 64, borderRadius: 999,
+          background: T.paper, border: `1.5px solid ${T.clay}`,
+          color: T.clay, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 4px 12px rgba(168,67,47,0.15)',
+        }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 6l12 12M18 6L6 18" stroke={T.clay} strokeWidth="2.4" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        <button onClick={onUndo} disabled={decidedCount === 0} style={{
+          width: 50, height: 50, borderRadius: 999,
+          background: T.paperAlt, border: `0.5px solid ${T.line}`,
+          color: decidedCount === 0 ? T.ink3 : T.ink2,
+          cursor: decidedCount === 0 ? 'not-allowed' : 'pointer',
+          opacity: decidedCount === 0 ? 0.4 : 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" strokeWidth="1.8"
+              strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M3 4v5h5" stroke="currentColor" strokeWidth="1.8"
+              strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        <button onClick={() => commit('right')} aria-label="Keep" style={{
+          width: 64, height: 64, borderRadius: 999,
+          background: T.court, border: 'none',
+          color: '#fff', cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 4px 12px rgba(154,174,96,0.30)',
+        }}>
+          <Icon name="check" size={28} color="#fff" stroke={2.5}/>
+        </button>
+      </div>
+    </Screen>
+  );
+}
+
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 4b: Clip Preview — watch before deciding to analyze
 // ═══════════════════════════════════════════════════════════════════════
 
-function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, onAnalyzeNow, onAnalyzeSelection }) {
+function ClipPreview({ clipId, allClips, selectedSet, onBack, onNavigate, onToggleSelect, onAnalyzeNow, onAnalyzeSelection }) {
   const idx = allClips.findIndex(c => c.clip_id === clipId);
   const clip = allClips[idx];
-  if (!clip) return null;
-
-  const selected = selectedSet.has(clipId);
   const total = allClips.length;
-  const prevId = idx > 0 ? allClips[idx - 1].clip_id : null;
-  const nextId = idx < total - 1 ? allClips[idx + 1].clip_id : null;
+  const prevClip = idx > 0 ? allClips[idx - 1] : null;
+  const nextClip = idx < total - 1 ? allClips[idx + 1] : null;
+
+  // Per-video rotation, persisted in localStorage so user only rotates once
+  const videoId = clip ? clip.video_id : '';
+  const rotKey = `baseline.rot.${videoId}`;
+  const [rotation, setRotation] = useState(() => {
+    try { return parseInt(localStorage.getItem(rotKey) || '0', 10) % 360; }
+    catch { return 0; }
+  });
+  useEffect(() => {
+    try {
+      const v = parseInt(localStorage.getItem(rotKey) || '0', 10) % 360;
+      setRotation(v);
+    } catch {}
+  }, [videoId, rotKey]);
+
+  const cycleRotation = () => {
+    const next = (rotation + 90) % 360;
+    setRotation(next);
+    try { localStorage.setItem(rotKey, String(next)); } catch {}
+  };
+
+  const swipeRef = useRef(null);
+  useSwipe(swipeRef, {
+    onUp: () => prevClip && onNavigate(prevClip.clip_id),
+    onDown: () => nextClip && onNavigate(nextClip.clip_id),
+  });
+
+  if (!clip) return null;
+  const selected = selectedSet.has(clipId);
+
+  // CSS to apply rotation. When rotated 90/270, swap aspect.
+  const rotated = rotation === 90 || rotation === 270;
+  const videoStyle = {
+    width: rotated ? 'auto' : '100%',
+    height: rotated ? '100%' : 'auto',
+    maxWidth: '100%', maxHeight: '100%',
+    display: 'block', objectFit: 'contain',
+    transform: `rotate(${rotation}deg)`,
+    transformOrigin: 'center center',
+    transition: 'transform 0.3s ease',
+  };
 
   return (
     <Screen bg={T.ink} style={{ paddingTop: 0 }}>
-      {/* Top bar — dark over the video */}
+      {/* Top bar */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10,
         padding: '54px 14px 10px',
@@ -1191,25 +1749,63 @@ function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, on
       }}>
         <NavBtn icon="chevL" onDark onClick={onBack}/>
         <Sans size={11} upper weight={500} color="rgba(255,255,255,0.75)">
-          Clip {idx + 1} / {total}
+          {idx + 1} / {total}
         </Sans>
-        <NavBtn icon="dots" onDark/>
+        <button onClick={cycleRotation} aria-label="Rotate" style={{
+          height: 34, padding: '0 12px',
+          borderRadius: 999, border: '0.5px solid rgba(255,255,255,0.2)',
+          background: 'rgba(255,255,255,0.08)', color: '#fff',
+          display: 'inline-flex', alignItems: 'center', gap: 6,
+          fontFamily: T.sans, fontSize: 13, fontWeight: 500, cursor: 'pointer',
+        }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12a9 9 0 1 0 4-7.5" stroke="#fff" strokeWidth="1.6"
+              strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M3 4v5h5" stroke="#fff" strokeWidth="1.6"
+              strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          {rotation > 0 ? `${rotation}°` : 'Rotate'}
+        </button>
       </div>
 
-      {/* Video — fills available height */}
-      <div style={{
+      {/* Swipe / video area */}
+      <div ref={swipeRef} style={{
         flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-        background: '#000', minHeight: 0,
+        background: '#000', minHeight: 0, overflow: 'hidden', position: 'relative',
       }}>
         <video
           key={clipId}
           src={`${API}/clips/${clipId}/video`}
           controls autoPlay loop playsInline
-          style={{ width: '100%', maxHeight: '100%', display: 'block', objectFit: 'contain' }}
+          style={videoStyle}
         />
+
+        {/* Hidden preloads for prev / next so navigation is instant */}
+        {prevClip && (
+          <video src={`${API}/clips/${prevClip.clip_id}/video`}
+            preload="auto" muted playsInline
+            style={{ position: 'absolute', width: 0, height: 0, opacity: 0, pointerEvents: 'none' }}/>
+        )}
+        {nextClip && (
+          <video src={`${API}/clips/${nextClip.clip_id}/video`}
+            preload="auto" muted playsInline
+            style={{ position: 'absolute', width: 0, height: 0, opacity: 0, pointerEvents: 'none' }}/>
+        )}
+
+        {/* Swipe hint — fades out after first interaction */}
+        {total > 1 && idx === 0 && (
+          <div style={{
+            position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
+            color: 'rgba(255,255,255,0.5)', fontSize: 10, fontFamily: T.mono,
+            writingMode: 'vertical-rl', letterSpacing: 1.5,
+            pointerEvents: 'none',
+          }}>
+            ↓ SWIPE FOR NEXT
+          </div>
+        )}
       </div>
 
-      {/* Prev / Next thumbnail strip */}
+      {/* Thumbnail strip */}
       {total > 1 && (
         <div style={{
           padding: '10px 14px',
@@ -1221,7 +1817,7 @@ function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, on
             const isSel = selectedSet.has(c.clip_id);
             return (
               <button key={c.clip_id} onClick={() => {
-                if (c.clip_id !== clipId) onBack(c.clip_id);
+                if (c.clip_id !== clipId) onNavigate(c.clip_id);
               }} style={{
                 width: 44, height: 56, flexShrink: 0,
                 borderRadius: 6, overflow: 'hidden', position: 'relative',
@@ -1230,6 +1826,7 @@ function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, on
                 cursor: 'pointer', padding: 0,
               }}>
                 <img src={`${API}/clips/${c.clip_id}/thumbnail`}
+                  loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: isCurr ? 1 : 0.55 }}
                   onError={e => { e.target.style.display = 'none'; }}/>
                 {isSel && (
@@ -1270,6 +1867,7 @@ function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, on
             border: `0.5px solid ${selected ? T.clay : T.line}`,
             fontFamily: T.sans, fontSize: 14, fontWeight: 600, cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+            transition: 'background 0.18s, color 0.18s',
           }}>
             {selected ? (
               <><Icon name="check" size={16} color="#fff" stroke={2.5}/> Selected</>
@@ -1435,7 +2033,7 @@ function MultiAnalyzing({ clipIds, onDone, onBack }) {
 function Results({ clipId, onBack }) {
   const [diag, setDiag] = useState(null);
   const [err, setErr] = useState(null);
-  const [tab, setTab] = useState('data');
+  const [tab, setTab] = useState('coach');
   const [video, setVideo] = useState(null);
 
   useEffect(() => {
@@ -1467,44 +2065,15 @@ function Results({ clipId, onBack }) {
         eyebrow={`Session · ${fmtClock(diag.created_at)}`}
       />
 
-      {/* Stroke scrubber */}
-      {video && video.clips && (
-        <div style={{ padding: '0 20px 14px' }}>
-          <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 2 }}>
-            {video.clips.map((c, i) => {
-              const sel = c.clip_id === clipId;
-              return (
-                <div key={c.clip_id} style={{
-                  minWidth: 52, height: 60,
-                  borderRadius: 8, position: 'relative',
-                  border: `${sel ? 2 : 0.5}px solid ${sel ? T.clay : T.line}`,
-                  background: '#F6E4DC',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  overflow: 'hidden', flexShrink: 0,
-                }}>
-                  <Mono size={9} color={T.ink} style={{ position: 'absolute', top: 4, left: 5 }}>
-                    {String(i + 1).padStart(2, '0')}
-                  </Mono>
-                  <Sans size={11} weight={700} color={T.clayDeep}>
-                    {c.impact_times_s.length}H
-                  </Sans>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* Tab header */}
+      {/* Tab header — now 2 tabs (VLM merged into Coach) */}
       <div style={{
-        margin: '0 20px', padding: 3,
+        margin: '8px 20px 0', padding: 3,
         background: T.paperAlt, borderRadius: 12,
         display: 'flex', gap: 2, flexShrink: 0,
       }}>
         {[
-          { id: 'data',  label: 'Biomechanics' },
-          { id: 'vlm',   label: 'Observations' },
           { id: 'coach', label: 'Coach' },
+          { id: 'data',  label: 'Biomechanics' },
         ].map(t => (
           <button key={t.id} onClick={() => setTab(t.id)} style={{
             flex: 1, padding: '9px 8px', borderRadius: 9,
@@ -1519,9 +2088,8 @@ function Results({ clipId, onBack }) {
       </div>
 
       <div className="scroll fadein" key={tab} style={{ flex: 1, padding: '16px 20px 24px' }}>
-        {tab === 'data'  && <TabData  diag={diag}/>}
-        {tab === 'vlm'   && <TabVLM   diag={diag}/>}
         {tab === 'coach' && <TabCoach diag={diag}/>}
+        {tab === 'data'  && <TabData  diag={diag}/>}
       </div>
     </Screen>
   );
@@ -1540,13 +2108,14 @@ function TabData({ diag }) {
     ohb_extension: 'Extension', ohb_balance: 'Balance',
   };
   const metrics = (swing.kpi_results || []).slice(0, 4);
+  const [openHelp, setOpenHelp] = useState(null); // metric index whose tooltip is open
 
   return (
     <div>
       {/* Annotated video */}
       <div style={{ borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`, position: 'relative', background: '#2E2C28', marginBottom: 16 }}>
         <video src={`${API}/clips/${diag.clip_id}/annotated`}
-          controls playsInline
+          controls playsInline preload="metadata"
           style={{ width: '100%', display: 'block', maxHeight: 240 }}/>
       </div>
 
@@ -1555,32 +2124,67 @@ function TabData({ diag }) {
         <Sans size={11} color={T.ink3}>· Swing 1 of {swings.length}</Sans>
       </div>
 
-      {/* Big metrics */}
-      <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>Key metrics</Sans>
+      {/* Big metrics with in-place help tooltips */}
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
+        <Sans size={11} upper weight={500} color={T.ink3}>Key metrics</Sans>
+        <Sans size={10} color={T.ink3} style={{ marginLeft: 'auto' }}>
+          tap <span style={{ display: 'inline-block', width: 14, height: 14, borderRadius: 999, background: T.paperAlt, color: T.ink2, fontSize: 9, lineHeight: '14px', textAlign: 'center', verticalAlign: 'middle' }}>?</span> for help
+        </Sans>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 18 }}>
-        {metrics.map((m, i) => (
-          <div key={i} style={{
-            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-            padding: '14px 14px 12px',
-          }}>
-            <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 8 }}>
-              {m.label || m.name}
-            </Sans>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
-              <Serif size={26} weight={400} opsz={72}>{fmtValue(m.value)}</Serif>
-              {m.unit && <Sans size={11} color={T.ink3}>{m.unit}</Sans>}
+        {metrics.map((m, i) => {
+          const isOpen = openHelp === i;
+          return (
+            <div key={i} style={{
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+              padding: '14px 14px 12px', position: 'relative',
+              transition: 'border-color 0.2s, background 0.2s',
+              borderColor: isOpen ? T.clay : T.line,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6, marginBottom: 8 }}>
+                <Sans size={10} upper weight={500} color={T.ink3}
+                      style={{ letterSpacing: 1.1, flex: 1, lineHeight: 1.2 }}>
+                  {m.label || m.name}
+                </Sans>
+                <button onClick={(e) => {
+                  e.stopPropagation();
+                  setOpenHelp(isOpen ? null : i);
+                }} aria-label="What does this mean?" style={{
+                  width: 18, height: 18, borderRadius: 999,
+                  background: isOpen ? T.clay : T.paperAlt,
+                  color: isOpen ? '#fff' : T.ink2,
+                  border: 'none', cursor: 'pointer', flexShrink: 0,
+                  fontFamily: T.sans, fontSize: 11, fontWeight: 700,
+                  lineHeight: '18px', padding: 0,
+                  transition: 'background 0.2s, color 0.2s',
+                }}>?</button>
+              </div>
+
+              {!isOpen ? (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                    <Serif size={26} weight={400} opsz={72}>{fmtValue(m.value)}</Serif>
+                    {m.unit && <Sans size={11} color={T.ink3}>{m.unit}</Sans>}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 8 }}>
+                    <div style={{
+                      width: 6, height: 6, borderRadius: 999,
+                      background: (m.score ?? 0) > 70 ? T.court : (m.score ?? 0) > 50 ? T.amber : T.clay,
+                    }}/>
+                    <Sans size={10} color={T.ink3}>
+                      {m.level || (m.score != null ? `score ${Math.round(m.score)}` : 'no score')}
+                    </Sans>
+                  </div>
+                </>
+              ) : (
+                <Sans size={11} color={T.ink2} style={{ lineHeight: 1.5, paddingTop: 2 }}
+                      className="fadein">
+                  {kpiHelpText(m)}
+                </Sans>
+              )}
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 8 }}>
-              <div style={{
-                width: 6, height: 6, borderRadius: 999,
-                background: m.score > 70 ? T.court : m.score > 50 ? T.amber : T.clay,
-              }}/>
-              <Sans size={10} color={T.ink3}>
-                {m.level || `score ${m.score != null ? Math.round(m.score) : '—'}`}
-              </Sans>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>By phase</Sans>
@@ -1747,24 +2351,80 @@ function TabVLM({ diag }) {
   );
 }
 
+// Build a plain-text summary of the analysis for sharing
+function buildShareText(diag) {
+  const d = diag.diagnosis || {};
+  const root = d.root_cause;
+  const drill = d.drill_recommendation;
+  const score = diag.overall_score != null ? Math.round(diag.overall_score) : '—';
+  const stroke = diag.stroke_type === 'forehand' ? 'Forehand' : 'Backhand';
+  const lines = [
+    `Tennis ${stroke} Analysis · Baseline`,
+    `Overall: ${score} / 100`,
+    '',
+  ];
+  if (d.narrative) {
+    lines.push("Coach's read:");
+    lines.push(typeof d.narrative === 'string' ? d.narrative : JSON.stringify(d.narrative));
+    lines.push('');
+  }
+  if (root) {
+    lines.push(`Root cause: ${root.label || root.name || root.concept}`);
+    if (root.description || root.explanation) lines.push(root.description || root.explanation);
+    lines.push('');
+  }
+  if (drill) {
+    lines.push(`Drill: ${drill.name || drill.title || drill.drill}`);
+    if (drill.description || drill.how) lines.push(drill.description || drill.how);
+    if (drill.cue) lines.push(`Cue: "${drill.cue}"`);
+  }
+  return lines.join('\n').trim();
+}
+
 function TabCoach({ diag }) {
   const d = diag.diagnosis || {};
   const root = d.root_cause;
   const drill = d.drill_recommendation;
   const issues = d.issues || [];
   const chain = d.causal_chain || [];
+  const vlm = diag.vlm || {};
+  const observations = vlm.observations || [];
+  const narrative = d.narrative || vlm.narrative;
+  const score = diag.overall_score != null ? Math.round(diag.overall_score) : null;
+  const [showAllObs, setShowAllObs] = useState(false);
+  const [shareStatus, setShareStatus] = useState(null); // 'copied' | 'sent' | null
 
-  if (!root && !drill && issues.length === 0) {
+  const onShare = async () => {
+    const text = buildShareText(diag);
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'Tennis Analysis · Baseline', text });
+        setShareStatus('sent');
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(text);
+        setShareStatus('copied');
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+        setShareStatus('copied');
+      }
+      setTimeout(() => setShareStatus(null), 2000);
+    } catch (e) { /* user canceled — silent */ }
+  };
+
+  if (!root && !drill && !narrative && observations.length === 0) {
     return (
       <div style={{ padding: 18, borderRadius: 14, background: T.paperAlt }}>
         <Icon name="alert" size={20} color={T.ink3}/>
         <Sans size={13} color={T.ink2} style={{ marginTop: 8 }}>
-          No diagnostic chain produced for this clip.
+          No diagnostic narrative produced for this clip.
         </Sans>
         <Sans size={11} color={T.ink3} style={{ marginTop: 4 }}>
           {diag.stroke_type === 'one_handed_backhand'
-            ? 'Single-handed backhand diagnosis is not yet enabled.'
-            : 'See Biomechanics tab for raw scores.'}
+            ? 'Single-handed backhand coach view is not yet enabled.'
+            : 'See Biomechanics tab for the raw scores.'}
         </Sans>
       </div>
     );
@@ -1772,79 +2432,153 @@ function TabCoach({ diag }) {
 
   return (
     <div>
-      {root && (
+      {/* Hero: score + coach narrative + share */}
+      <div style={{
+        background: T.ink, borderRadius: 18, padding: '20px 20px 18px',
+        color: '#fff', position: 'relative', overflow: 'hidden', marginBottom: 18,
+      }}>
         <div style={{
-          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
-          overflow: 'hidden', marginBottom: 20,
-        }}>
-          <div style={{ padding: '16px 18px 14px' }}>
-            <div style={{ display: 'flex', gap: 6, marginBottom: 12 }}>
-              <Tag tone="clay">Root cause</Tag>
-              <Sans size={11} color={T.ink3}>Priority 1</Sans>
-            </div>
-            <Serif size={22} weight={400} opsz={60} style={{ lineHeight: 1.25, marginBottom: 10 }}>
-              {root.label || root.name || root.concept || 'Root cause identified'}
-            </Serif>
-            <Sans size={13} color={T.ink2} style={{ lineHeight: 1.55 }}>
-              {root.description || root.explanation || root.why || ''}
+          position: 'absolute', right: -40, top: -40, width: 160, height: 160,
+          borderRadius: 999, background: T.clay, opacity: 0.3, filter: 'blur(24px)',
+        }}/>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 12 }}>
+          <Icon name="sparkle" size={14} color={T.amber}/>
+          <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.3, flex: 1 }}>
+            Coach's read
+          </Sans>
+          <button onClick={onShare} aria-label="Share" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            padding: '5px 10px', borderRadius: 999,
+            background: 'rgba(255,255,255,0.10)',
+            border: '0.5px solid rgba(255,255,255,0.2)',
+            color: '#fff', cursor: 'pointer',
+            fontFamily: T.sans, fontSize: 11, fontWeight: 500,
+          }}>
+            <Icon name="share" size={12} color="#fff"/>
+            {shareStatus === 'copied' ? 'Copied' : shareStatus === 'sent' ? 'Sent' : 'Share'}
+          </button>
+        </div>
+
+        {score != null && (
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 10 }}>
+            <Serif size={44} weight={380} opsz={72} style={{ color: '#fff' }}>{score}</Serif>
+            <Sans size={13} color="rgba(255,255,255,0.55)">/ 100</Sans>
+            <Sans size={11} color="rgba(255,255,255,0.55)" style={{ marginLeft: 'auto' }}>
+              {diag.stroke_type === 'forehand' ? 'Forehand' : 'Backhand'}
             </Sans>
           </div>
-          {chain.length > 0 && (
-            <div style={{ padding: '12px 18px 16px', background: T.paperAlt }}>
-              <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 10 }}>
-                How we know
-              </Sans>
-              {chain.map((c, i) => (
+        )}
+
+        {narrative && (
+          <Sans size={13} style={{ color: '#fff', lineHeight: 1.6, opacity: 0.92 }}>
+            {typeof narrative === 'string' ? narrative : JSON.stringify(narrative)}
+          </Sans>
+        )}
+      </div>
+
+      {/* Section 1 — what I checked (compact) */}
+      {observations.length > 0 && (
+        <div style={{ marginBottom: 18 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            What I looked at · {observations.length} cues
+          </Sans>
+          <div style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '4px 14px',
+          }}>
+            {(showAllObs ? observations : observations.slice(0, 3)).map((obs, i) => {
+              const tone = obs.severity === 'high' ? 'clay'
+                         : obs.severity === 'medium' ? 'amber'
+                         : 'court';
+              const dot = tone === 'clay' ? T.clay : tone === 'amber' ? T.amber : T.court;
+              return (
                 <div key={i} style={{
-                  display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0',
-                  borderTop: i > 0 ? `0.5px solid ${T.line}` : 'none',
+                  display: 'flex', alignItems: 'flex-start', gap: 10,
+                  padding: '10px 0', borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
                 }}>
                   <div style={{
-                    width: 22, height: 22, borderRadius: 6,
-                    background: T.clay, color: '#fff',
-                    fontFamily: T.mono, fontSize: 9, fontWeight: 700,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                  }}>{String(i + 1).padStart(2, '0')}</div>
-                  <Sans size={12} color={T.ink} style={{ flex: 1 }}>
-                    {typeof c === 'string' ? c : (c.label || c.concept || JSON.stringify(c))}
+                    width: 6, height: 6, borderRadius: 999, background: dot, flexShrink: 0,
+                    marginTop: 6,
+                  }}/>
+                  <Sans size={12} color={T.ink2} style={{ flex: 1, lineHeight: 1.5 }}>
+                    {obs.observation || obs.title || obs.summary}
                   </Sans>
                 </div>
-              ))}
-            </div>
-          )}
+              );
+            })}
+            {observations.length > 3 && (
+              <button onClick={() => setShowAllObs(!showAllObs)} style={{
+                width: '100%', padding: '8px 0',
+                background: 'transparent', border: 'none',
+                borderTop: `0.5px solid ${T.lineSoft}`,
+                color: T.clay, fontFamily: T.sans, fontSize: 11, fontWeight: 500,
+                cursor: 'pointer',
+              }}>
+                {showAllObs ? 'Hide' : `Show ${observations.length - 3} more`}
+              </button>
+            )}
+          </div>
         </div>
       )}
 
-      {issues.length > 0 && (
-        <div style={{ marginBottom: 20 }}>
-          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
-            Also worth working on
+      {/* Section 2 — the conclusion (root cause) */}
+      {root && (
+        <div style={{ marginBottom: 18 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            What I found
           </Sans>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {issues.slice(0, 5).map((iss, i) => (
+          <div style={{
+            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '16px 18px',
+          }}>
+            <Tag tone="clay" style={{ marginBottom: 10 }}>Root cause</Tag>
+            <Serif size={22} weight={400} opsz={60} style={{ lineHeight: 1.25, marginBottom: 10 }}>
+              {root.label || root.name || root.concept || 'Root cause identified'}
+            </Serif>
+            <Sans size={13} color={T.ink2} style={{ lineHeight: 1.6 }}>
+              {root.description || root.explanation || root.why || ''}
+            </Sans>
+          </div>
+        </div>
+      )}
+
+      {/* Section 3 — why this happens (causal chain) */}
+      {chain.length > 0 && (
+        <div style={{ marginBottom: 18 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            Why it happens
+          </Sans>
+          <div style={{
+            background: T.paperAlt, border: `0.5px solid ${T.line}`, borderRadius: 14,
+            padding: '12px 16px',
+          }}>
+            {chain.map((c, i) => (
               <div key={i} style={{
-                background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 12,
-                padding: '12px 14px', display: 'flex', gap: 12, alignItems: 'center',
+                display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 0',
+                borderTop: i > 0 ? `0.5px solid ${T.line}` : 'none',
               }}>
-                <Mono size={11} color={T.clay} weight={600}>
-                  {String(i + 2).padStart(2, '0')}
-                </Mono>
-                <Sans size={13} color={T.ink} style={{ flex: 1 }}>
-                  {typeof iss === 'string' ? iss : (iss.label || iss.name || iss.concept || JSON.stringify(iss))}
+                <div style={{
+                  width: 22, height: 22, borderRadius: 6, flexShrink: 0,
+                  background: T.clay, color: '#fff',
+                  fontFamily: T.mono, fontSize: 9, fontWeight: 700,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>{String(i + 1).padStart(2, '0')}</div>
+                <Sans size={12} color={T.ink} style={{ flex: 1, lineHeight: 1.5 }}>
+                  {typeof c === 'string' ? c : (c.label || c.concept || JSON.stringify(c))}
                 </Sans>
-                <Icon name="chevR" size={14} color={T.ink3}/>
               </div>
             ))}
           </div>
         </div>
       )}
 
+      {/* Section 4 — what to do (drill) */}
       {drill && (
-        <div>
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
-            <Sans size={11} upper weight={500} color={T.ink3}>Training plan</Sans>
-            <Sans size={11} weight={500} color={T.clay}>~ 15 min</Sans>
-          </div>
+        <div style={{ marginBottom: 18 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            What to do
+          </Sans>
           <div style={{
             background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
             padding: '14px 16px', display: 'flex', gap: 14,
@@ -1856,10 +2590,10 @@ function TabCoach({ diag }) {
               fontFamily: T.serif, fontSize: 22, fontWeight: 500,
             }}>A</div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <Sans size={13} weight={600} style={{ marginBottom: 4, lineHeight: 1.3 }}>
+              <Sans size={14} weight={600} style={{ marginBottom: 5, lineHeight: 1.3 }}>
                 {drill.name || drill.title || drill.drill || 'Recommended drill'}
               </Sans>
-              <Sans size={12} color={T.ink2} style={{ lineHeight: 1.55 }}>
+              <Sans size={12} color={T.ink2} style={{ lineHeight: 1.6 }}>
                 {drill.description || drill.how || drill.body || ''}
               </Sans>
               {drill.cue && (
@@ -1873,27 +2607,53 @@ function TabCoach({ diag }) {
         </div>
       )}
 
-      {/* Next session goal */}
-      {(root || drill) && (
-        <div style={{
-          marginTop: 18, background: T.ink, borderRadius: 16,
-          padding: '14px 16px', color: '#fff',
-          display: 'flex', gap: 12, alignItems: 'center',
-        }}>
-          <Icon name="target" size={22} color={T.amber}/>
-          <div style={{ flex: 1 }}>
-            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>
-              Next session goal
-            </Sans>
-            <Sans size={13} weight={500} style={{ color: '#fff', marginTop: 3, lineHeight: 1.4 }}>
-              Apply the drill above for at least 8 minutes; record one rep from the side and re-analyze.
-            </Sans>
+      {/* Other findings, compact */}
+      {issues.length > 0 && (
+        <div style={{ marginBottom: 18 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
+            Also worth working on
+          </Sans>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {issues.slice(0, 4).map((iss, i) => (
+              <div key={i} style={{
+                background: T.paperAlt, border: `0.5px solid ${T.line}`, borderRadius: 10,
+                padding: '10px 12px', display: 'flex', gap: 10, alignItems: 'center',
+              }}>
+                <Mono size={10} color={T.clay} weight={600}>
+                  {String(i + 2).padStart(2, '0')}
+                </Mono>
+                <Sans size={12} color={T.ink} style={{ flex: 1 }}>
+                  {typeof iss === 'string' ? iss : (iss.label || iss.name || iss.concept || JSON.stringify(iss))}
+                </Sans>
+              </div>
+            ))}
           </div>
         </div>
       )}
+
+      {/* Next session goal — sticky bottom feel */}
+      <div style={{
+        marginTop: 4, background: T.ink, borderRadius: 16,
+        padding: '14px 16px', color: '#fff',
+        display: 'flex', gap: 12, alignItems: 'center',
+      }}>
+        <Icon name="target" size={22} color={T.amber}/>
+        <div style={{ flex: 1 }}>
+          <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>
+            Next session
+          </Sans>
+          <Sans size={12} weight={500} style={{ color: '#fff', marginTop: 3, lineHeight: 1.4 }}>
+            Drill the cue above for ~8 minutes, record from the side, then re-analyze.
+          </Sans>
+        </div>
+      </div>
     </div>
   );
 }
+
+// TabVLM is no longer mounted (merged into Coach). Keep stub in case
+// someone deep-links to a vlm route; rendering it shows the same data.
+function TabVLM({ diag }) { return <TabCoach diag={diag}/>; }
 
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 7: Library / Storage
@@ -2023,7 +2783,7 @@ function Library({ onBack, onPickVideo }) {
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
                       <Sans size={13} weight={600} style={{
                         flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                      }}>{v.filename || v.video_id}</Sans>
+                      }}>{videoTitle(v)}</Sans>
                       <Mono size={12} color={T.ink2}>{v.human}</Mono>
                     </div>
                     <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
@@ -2097,9 +2857,15 @@ function App() {
   // Selection set lives at App level so it survives navigation between
   // ClipGrid ⟷ ClipPreview without resetting.
   const [selected, setSelected] = useState(new Set());
+  // Triage state — kept/rejected sets per video. Lives at App level so
+  // ClipGrid and ClipTriage share the same view of decisions.
+  const [kept, setKept] = useState(new Set());
+  const [rejected, setRejected] = useState(new Set());
+  const [triageHistory, setTriageHistory] = useState([]);  // [[clipId, decision], ...]
   // Cache the clips list for the active video so ClipPreview can do
   // prev/next navigation without refetching.
   const [activeClips, setActiveClips] = useState([]);
+  const [activeVideoId, setActiveVideoId] = useState(null);
   const fileRef = useRef();
 
   const toggleSelect = useCallback(id => {
@@ -2110,6 +2876,44 @@ function App() {
     });
   }, []);
   const clearSelection = useCallback(() => setSelected(new Set()), []);
+
+  const markTriage = useCallback((clipId, decision) => {
+    setTriageHistory(prev => [...prev, [clipId, decision]]);
+    if (decision === 'keep') {
+      setKept(prev => { const n = new Set(prev); n.add(clipId); return n; });
+      setRejected(prev => { const n = new Set(prev); n.delete(clipId); return n; });
+    } else {
+      setRejected(prev => { const n = new Set(prev); n.add(clipId); return n; });
+      setKept(prev => { const n = new Set(prev); n.delete(clipId); return n; });
+    }
+  }, []);
+
+  const undoTriage = useCallback(() => {
+    setTriageHistory(prev => {
+      if (prev.length === 0) return prev;
+      const [lastId, lastDecision] = prev[prev.length - 1];
+      if (lastDecision === 'keep') {
+        setKept(s => { const n = new Set(s); n.delete(lastId); return n; });
+      } else {
+        setRejected(s => { const n = new Set(s); n.delete(lastId); return n; });
+      }
+      return prev.slice(0, -1);
+    });
+  }, []);
+
+  const resetTriage = useCallback(() => {
+    setKept(new Set());
+    setRejected(new Set());
+    setTriageHistory([]);
+  }, []);
+
+  // Reset triage state when switching videos
+  useEffect(() => {
+    if (activeVideoId !== null) {
+      resetTriage();
+      clearSelection();
+    }
+  }, [activeVideoId]);
 
   const start = () => {
     try { localStorage.setItem('baseline.onboarded', '1'); } catch {}
@@ -2159,12 +2963,30 @@ function App() {
           <ClipGridContainer
             videoId={route.videoId}
             selected={selected}
-            onCacheClips={setActiveClips}
+            kept={kept}
+            rejected={rejected}
+            onCacheClips={(clips) => {
+              setActiveClips(clips);
+              setActiveVideoId(route.videoId);
+            }}
             onBack={() => { clearSelection(); setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
             onPreview={clipId => setRoute({ name: 'preview', clipId, videoId: route.videoId })}
             onMultiAnalyze={ids => { clearSelection(); setRoute({ name: 'multi-analyze', clipIds: ids }); }}
+            onTriage={() => setRoute({ name: 'triage', videoId: route.videoId })}
             onToggleSelect={toggleSelect}
             onClearSelection={clearSelection}
+            onResetTriage={resetTriage}
+          />
+        )}
+        {route.name === 'triage' && (
+          <ClipTriage
+            allClips={activeClips}
+            kept={kept}
+            rejected={rejected}
+            onMark={markTriage}
+            onUndo={undoTriage}
+            onDone={() => setRoute({ name: 'clips', videoId: route.videoId })}
+            onCancel={() => setRoute({ name: 'clips', videoId: route.videoId })}
           />
         )}
         {route.name === 'preview' && (
@@ -2172,13 +2994,8 @@ function App() {
             clipId={route.clipId}
             allClips={activeClips}
             selectedSet={selected}
-            onBack={(jumpTo) => {
-              if (jumpTo && typeof jumpTo === 'string') {
-                setRoute({ name: 'preview', clipId: jumpTo, videoId: route.videoId });
-              } else {
-                setRoute({ name: 'clips', videoId: route.videoId });
-              }
-            }}
+            onBack={() => setRoute({ name: 'clips', videoId: route.videoId })}
+            onNavigate={(toClipId) => setRoute({ name: 'preview', clipId: toClipId, videoId: route.videoId })}
             onToggleSelect={toggleSelect}
             onAnalyzeNow={(clipId) => { clearSelection(); setRoute({ name: 'analyze', clipId }); }}
             onAnalyzeSelection={() => {
