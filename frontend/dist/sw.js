@@ -9,7 +9,10 @@
 //   • Media (/api/clips/*/video, etc.) → network-only too — videos are
 //     too big to cache, and we want range requests to work.
 
-const CACHE = 'baseline-shell-v1';
+// Bump this when shipping shell changes — old PWAs will pick up the new
+// version on their next page load (browser checks the SW script byte-for-byte
+// every load, and a different cache name triggers a fresh shell fetch).
+const CACHE = 'baseline-shell-v3';
 const SHELL = [
   '/',
   '/index.html',
@@ -24,6 +27,13 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())
   );
+});
+
+// Allow the page to tell us "you're the new SW, take over now"
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener('activate', (event) => {

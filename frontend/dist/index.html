@@ -2192,11 +2192,36 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 
 <script>
   // PWA service worker — register only on https or localhost (browser security rule)
+  // updateViaCache: 'none' forces the browser to re-fetch sw.js every load
+  // instead of using the HTTP cache. Combined with the cache-busting version
+  // string in sw.js, this means the user sees the new shell within 1 page reload
+  // rather than having to nuke the PWA.
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(err => {
-        console.warn('SW register failed:', err);
-      });
+      navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+        .then(reg => {
+          // Auto-reload once when a new SW takes control — gets the user
+          // off the stale shell without a manual hard-refresh.
+          let reloaded = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!reloaded) {
+              reloaded = true;
+              window.location.reload();
+            }
+          });
+          // If a new SW is waiting, tell it to skip waiting and take over
+          if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+          reg.addEventListener('updatefound', () => {
+            const nw = reg.installing;
+            if (!nw) return;
+            nw.addEventListener('statechange', () => {
+              if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                nw.postMessage({ type: 'SKIP_WAITING' });
+              }
+            });
+          });
+        })
+        .catch(err => console.warn('SW register failed:', err));
     });
   }
 </script>

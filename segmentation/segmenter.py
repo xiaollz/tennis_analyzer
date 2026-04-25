@@ -11,9 +11,10 @@ from __future__ import annotations
 import os
 import json
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 
 import cv2
 import numpy as np
@@ -96,7 +97,8 @@ class SoundBasedSegmenter:
         pre_s: float = 1.5,
         post_s: float = 1.8,
         group_gap_s: float = 1.5,
-        max_hits_per_clip: int = 2,
+        max_hits_per_clip: int = 1,   # one ball per clip — user prefers
+                                      # to review each swing independently
         onset_threshold_std: float = 3.0,
         dominance_window_s: float = 0.7,
         dominance_ratio: float = 0.65,
@@ -206,16 +208,13 @@ class SoundBasedSegmenter:
         if current:
             groups.append(current)
 
-        # 4) 逐组导出片段
+        # 6) 并行导出片段 + 缩略图（每个 ffmpeg 进程独立，IO 是瓶颈）
         total = len(groups)
-        clips: List[ClipSpec] = []
-        for i, impacts in enumerate(groups):
-            pct = 0.30 + 0.60 * (i / max(total, 1))
-            _progress(pct, f"导出片段 {i+1}/{total}")
+        _progress(0.32, f"准备导出 {total} 个片段")
 
+        def _build_clip_spec(i: int, impacts: List[float]) -> Optional[ClipSpec]:
             start_s = max(0.0, impacts[0] - self.pre_s)
             end_s = min(duration_s, impacts[-1] + self.post_s)
-            # 避免片段过短（< 1.2s）
             if (end_s - start_s) < 1.2:
                 end_s = min(duration_s, start_s + 1.2)
 
@@ -223,27 +222,43 @@ class SoundBasedSegmenter:
             clip_path = clips_dir / f"{clip_id}.mp4"
             thumb_path = clips_dir / f"{clip_id}.jpg"
 
-            ok = self._export_clip(video_path, str(clip_path), start_s, end_s)
-            if not ok:
-                continue
-
-            # 缩略图：在第一个击球时刻附近取一帧
+            if not self._export_clip(video_path, str(clip_path), start_s, end_s):
+                return None
             impact_frame = int(impacts[0] * fps)
             self._extract_thumbnail(video_path, str(thumb_path), impact_frame, fps)
 
             avg_strength = float(np.mean([strengths.get(t, 0.0) for t in impacts]))
-            clips.append(ClipSpec(
-                clip_id=clip_id,
-                video_id=video_id,
-                index=i,
-                start_s=round(start_s, 3),
-                end_s=round(end_s, 3),
+            return ClipSpec(
+                clip_id=clip_id, video_id=video_id, index=i,
+                start_s=round(start_s, 3), end_s=round(end_s, 3),
                 impact_times_s=[round(t, 3) for t in impacts],
                 onset_strength=round(avg_strength, 4),
-                clip_path=str(clip_path),
-                thumbnail_path=str(thumb_path),
+                clip_path=str(clip_path), thumbnail_path=str(thumb_path),
                 duration_s=round(end_s - start_s, 3),
-            ))
+            )
+
+        # Up to 4 concurrent ffmpeg jobs — clip export is mostly disk IO.
+        # On a typical Mac this turns 8 clips × 100ms serial → 8 × 100ms / 4
+        # ≈ 200ms total wall-clock.
+        max_workers = min(4, max(1, total))
+        clips: List[ClipSpec] = []
+        if total == 1:
+            spec = _build_clip_spec(0, groups[0])
+            if spec:
+                clips.append(spec)
+        else:
+            with ThreadPoolExecutor(max_workers=max_workers) as ex:
+                futures = {ex.submit(_build_clip_spec, i, impacts): i
+                           for i, impacts in enumerate(groups)}
+                done_count = 0
+                for fut in futures:
+                    spec = fut.result()
+                    done_count += 1
+                    pct = 0.32 + 0.65 * (done_count / total)
+                    _progress(pct, f"导出片段 {done_count}/{total}")
+                    if spec:
+                        clips.append(spec)
+            clips.sort(key=lambda c: c.index)
 
         _progress(1.0, f"完成，共 {len(clips)} 个片段")
 
@@ -310,21 +325,48 @@ class SoundBasedSegmenter:
     def _export_clip(
         self, src: str, dst: str, start_s: float, end_s: float
     ) -> bool:
-        """用 ffmpeg 剪出一段视频（含音频）。"""
+        """用 ffmpeg 剪出一段视频（含音频），**stream-copy** 不重编码。
+
+        速度对比：
+          - libx264 + aac 重编码：每段 1080p 视频 1-3 秒
+          - -c copy 直接拷流：       每段 < 100ms（50-100x 提升）
+
+        代价：起点对齐到最近的关键帧（最多偏 1-2 秒，但对预览/分析够用）。
+        把 -ss 放在 -i 之前让 ffmpeg 用 demuxer 级 seek，跳到关键帧，**不解
+        码任何东西**——这是 ffmpeg 最快的剪辑姿势。
+        """
         duration = max(0.1, end_s - start_s)
         cmd = [
             "ffmpeg", "-y",
-            "-ss", f"{start_s:.3f}",
+            "-ss", f"{start_s:.3f}",      # before -i = fast keyframe seek
             "-i", src,
             "-t", f"{duration:.3f}",
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
-            "-c:a", "aac", "-b:a", "128k",
+            "-c", "copy",                  # stream copy, no re-encode
+            "-avoid_negative_ts", "make_zero",
             "-movflags", "+faststart",
+            "-loglevel", "error",
             dst,
         ]
         try:
-            r = subprocess.run(cmd, capture_output=True, timeout=60)
-            return r.returncode == 0 and os.path.exists(dst) and os.path.getsize(dst) > 1024
+            r = subprocess.run(cmd, capture_output=True, timeout=30)
+            ok = r.returncode == 0 and os.path.exists(dst) and os.path.getsize(dst) > 1024
+            if ok:
+                return True
+            # Fallback: if stream-copy failed (rare codec mismatch), fall
+            # back to a fast re-encode so we always produce a clip.
+            cmd2 = [
+                "ffmpeg", "-y",
+                "-ss", f"{start_s:.3f}",
+                "-i", src,
+                "-t", f"{duration:.3f}",
+                "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23",
+                "-c:a", "aac", "-b:a", "96k",
+                "-movflags", "+faststart",
+                "-loglevel", "error",
+                dst,
+            ]
+            r2 = subprocess.run(cmd2, capture_output=True, timeout=60)
+            return r2.returncode == 0 and os.path.exists(dst) and os.path.getsize(dst) > 1024
         except Exception:
             return False
 
