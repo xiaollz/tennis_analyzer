@@ -225,11 +225,10 @@ const NavBtn = ({ icon, label, onDark, filled, onClick }) => (
 );
 
 const TabBar = ({ active = 'home', onSelect }) => {
+  // Two tabs only — Capture removed (was duplicate of Home's upload tile)
   const tabs = [
     { id: 'home',    icon: 'home',    label: 'Sessions' },
-    { id: 'capture', icon: 'plus',    label: 'Capture' },
     { id: 'library', icon: 'history', label: 'Library' },
-    { id: 'profile', icon: 'user',    label: 'Profile' },
   ];
   return (
     <div style={{
@@ -245,16 +244,7 @@ const TabBar = ({ active = 'home', onSelect }) => {
           alignItems: 'center', gap: 3, padding: '6px 0',
           background: 'transparent', border: 'none', cursor: 'pointer',
         }}>
-          {t.id === 'capture' ? (
-            <div style={{
-              width: 34, height: 34, borderRadius: 999,
-              background: T.clay, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <Icon name="plus" size={18} color="#fff" stroke={2}/>
-            </div>
-          ) : (
-            <Icon name={t.icon} size={20} color={active === t.id ? T.ink : T.ink3} stroke={active === t.id ? 1.8 : 1.5}/>
-          )}
+          <Icon name={t.icon} size={20} color={active === t.id ? T.ink : T.ink3} stroke={active === t.id ? 1.8 : 1.5}/>
           <Sans size={10} weight={active === t.id ? 600 : 500}
                 color={active === t.id ? T.ink : T.ink3} style={{ letterSpacing: 0.1 }}>
             {t.label}
@@ -315,10 +305,19 @@ const api = {
   freeOriginal: id => fetch(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }).then(r => r.json()),
 };
 
-async function pollJob(jobId, onProgress, intervalMs = 800) {
+async function pollJob(jobId, onProgress, intervalMs = 1500) {
+  let lastProgress = -1, lastStatus = '', lastMessage = '';
   while (true) {
     const job = await api.getJob(jobId);
-    if (onProgress) onProgress(job);
+    // Only fire onProgress when something visibly changed — avoids
+    // gratuitous React re-renders while the job churns in the background.
+    if (onProgress) {
+      const p = Math.round((job.progress || 0) * 100);
+      if (p !== lastProgress || job.status !== lastStatus || job.message !== lastMessage) {
+        onProgress(job);
+        lastProgress = p; lastStatus = job.status; lastMessage = job.message;
+      }
+    }
     if (job.status === 'done' || job.status === 'error') return job;
     await new Promise(r => setTimeout(r, intervalMs));
   }
@@ -594,14 +593,13 @@ function Home({ onPickVideo, onUpload, reloadKey, stroke, onStrokeChange, onLibr
         </div>
       </div>
       <TabBar active="home" onSelect={id => {
-        if (id === 'capture') onUpload();
-        else if (id === 'library') onLibrary && onLibrary();
+        if (id === 'library') onLibrary && onLibrary();
       }}/>
     </Screen>
   );
 }
 
-function SessionCard({ video, isNew, onClick }) {
+const SessionCard = React.memo(function SessionCard({ video, isNew, onClick }) {
   const score = video.clip_count > 0 ? Math.min(95, 55 + video.clip_count * 6) : null;
   return (
     <div onClick={onClick} style={{
@@ -637,7 +635,7 @@ function SessionCard({ video, isNew, onClick }) {
       </div>
     </div>
   );
-}
+});
 
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 3: Import (uploading + segmenting)
@@ -762,13 +760,21 @@ function Import({ file, stroke, onDone, onCancel }) {
 // Screen 4: Clip Grid
 // ═══════════════════════════════════════════════════════════════════════
 
-function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
+function ClipGridContainer(props) {
+  // Thin wrapper that fetches video data and lifts the clips list up to
+  // the App so ClipPreview can do prev/next navigation without refetching.
+  return <ClipGrid {...props}/>;
+}
+
+function ClipGrid({ videoId, onBack, onPreview, onMultiAnalyze, selected, onToggleSelect, onClearSelection, onCacheClips }) {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
-  const [selected, setSelected] = useState(new Set());
 
   useEffect(() => {
-    api.getVideo(videoId).then(setData).catch(e => setErr(String(e)));
+    api.getVideo(videoId).then(d => {
+      setData(d);
+      if (onCacheClips) onCacheClips(d.clips || []);
+    }).catch(e => setErr(String(e)));
   }, [videoId]);
 
   if (err) return (
@@ -785,52 +791,29 @@ function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
   );
 
   const clips = data.clips || [];
-  const selectMode = selected.size > 0;
-
-  const toggleSelect = id => {
-    const next = new Set(selected);
-    if (next.has(id)) next.delete(id); else next.add(id);
-    setSelected(next);
-  };
-
-  const handleClipTap = id => {
-    if (selectMode) {
-      toggleSelect(id);
-    } else {
-      onPickClip(id);
-    }
-  };
-
-  const handleClipLongPress = id => {
-    if (!selectMode) toggleSelect(id);
-  };
-
-  const analyzeSelected = () => {
-    const ids = Array.from(selected);
-    setSelected(new Set());
-    onMultiAnalyze(ids);
-  };
+  const hasSelection = selected.size > 0;
 
   return (
     <Screen bg={T.bg}>
       <NavBar
         left={<NavBtn icon="chevL" onClick={onBack}/>}
         right={
-          selectMode
-            ? <NavBtn label="Cancel" onClick={() => setSelected(new Set())}/>
-            : <NavBtn label="Select" onClick={() => clips[0] && toggleSelect(clips[0].clip_id)}/>
+          hasSelection
+            ? <NavBtn label="Clear" onClick={onClearSelection}/>
+            : null
         }
-        eyebrow={selectMode ? `${selected.size} selected` : `Step 2 · ${clips.length} clips`}
+        eyebrow={hasSelection ? `${selected.size} selected` : `Step 2 · ${clips.length} clips`}
       />
 
       <div style={{ padding: '6px 20px 16px' }}>
         <Serif size={28} weight={400} style={{ marginBottom: 6 }}>
-          {selectMode ? `Analyze ${selected.size} clips` : 'Pick your clip'}
+          Pick clips to analyze
         </Serif>
         <Sans size={13} color={T.ink2} style={{ maxWidth: 320 }}>
-          {selectMode ? (
+          {hasSelection ? (
             <>
-              They'll analyze in parallel. Cancel selection to tap a single clip.
+              <Sans as="span" size={13} weight={600} color={T.ink}>{selected.size}</Sans>{' '}
+              clip{selected.size === 1 ? '' : 's'} ready to analyze. Tap more to add, or run now.
             </>
           ) : (
             <>
@@ -838,7 +821,8 @@ function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
               <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans>{' '}
               across{' '}
               <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta?.duration_s?.toFixed(1)}s</Sans>.
-              Tap any to analyze, or long-press to multi-select.
+              <br/>
+              <Sans as="span" size={12} color={T.ink3}>Tap to preview · long-press to select</Sans>
             </>
           )}
         </Sans>
@@ -867,8 +851,8 @@ function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
             {clips.map(c => (
               <ClipCard key={c.clip_id} clip={c}
                 selected={selected.has(c.clip_id)}
-                onTap={() => handleClipTap(c.clip_id)}
-                onLongPress={() => handleClipLongPress(c.clip_id)}/>
+                onTap={() => onPreview(c.clip_id)}
+                onLongPress={() => onToggleSelect(c.clip_id)}/>
             ))}
           </div>
         )}
@@ -881,21 +865,22 @@ function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
           flexShrink: 0,
         }}>
           <div style={{ flex: 1 }}>
-            <Mono size={10} color={T.ink3}>{selectMode ? 'SELECTED' : 'TOTAL'}</Mono>
+            <Mono size={10} color={T.ink3}>{hasSelection ? 'SELECTED' : 'TOTAL'}</Mono>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-              <Serif size={22} weight={400}>{selectMode ? selected.size : clips.length}</Serif>
+              <Serif size={22} weight={400}>{hasSelection ? selected.size : clips.length}</Serif>
               <Sans size={12} color={T.ink3}>
-                {selectMode ? 'clips · parallel run' :
+                {hasSelection ? `clip${selected.size === 1 ? '' : 's'} · ready` :
                   `clips · ${clips.reduce((s, c) => s + (c.duration_s || 0), 0).toFixed(1)}s`}
               </Sans>
             </div>
           </div>
-          {selectMode ? (
-            <CTA tone="clay" icon="sparkle" onClick={analyzeSelected}>
+          {hasSelection ? (
+            <CTA tone="clay" icon="sparkle"
+              onClick={() => onMultiAnalyze(Array.from(selected))}>
               Analyze {selected.size}
             </CTA>
           ) : (
-            <Sans size={12} color={T.ink3}>Tap any clip →</Sans>
+            <Sans size={12} color={T.ink3}>Tap to preview</Sans>
           )}
         </div>
       )}
@@ -903,30 +888,38 @@ function ClipGrid({ videoId, onBack, onPickClip, onMultiAnalyze }) {
   );
 }
 
-function ClipCard({ clip, onTap, onLongPress, selected }) {
+const ClipCard = React.memo(function ClipCard({ clip, onTap, onLongPress, selected }) {
   const [imgOk, setImgOk] = useState(true);
   const duration = (clip.end_s - clip.start_s).toFixed(1);
   const lpTimer = useRef(null);
+  const longPressedRef = useRef(false);
 
-  const onPointerDown = () => {
+  const onPointerDown = useCallback(() => {
+    longPressedRef.current = false;
     lpTimer.current = setTimeout(() => {
       lpTimer.current = null;
+      longPressedRef.current = true;
       onLongPress && onLongPress();
     }, 450);
-  };
-  const onPointerUp = () => {
+  }, [onLongPress]);
+
+  const onPointerUp = useCallback(() => {
     if (lpTimer.current) {
       clearTimeout(lpTimer.current);
       lpTimer.current = null;
-      onTap && onTap();
+      // Only fire tap if long-press didn't happen
+      if (!longPressedRef.current) {
+        onTap && onTap();
+      }
     }
-  };
-  const onPointerLeave = () => {
+  }, [onTap]);
+
+  const onPointerLeave = useCallback(() => {
     if (lpTimer.current) {
       clearTimeout(lpTimer.current);
       lpTimer.current = null;
     }
-  };
+  }, []);
 
   return (
     <div
@@ -939,9 +932,11 @@ function ClipCard({ clip, onTap, onLongPress, selected }) {
         border: `${selected ? 2 : 0.5}px solid ${selected ? T.clay : T.line}`,
         background: T.paperAlt, cursor: 'pointer',
         userSelect: 'none', touchAction: 'none',
+        contain: 'layout paint',
       }}>
       {imgOk ? (
         <img src={`${API}/clips/${clip.clip_id}/thumbnail`} alt=""
+          loading="lazy" decoding="async"
           onError={() => setImgOk(false)}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
       ) : (
@@ -977,7 +972,7 @@ function ClipCard({ clip, onTap, onLongPress, selected }) {
       </div>
     </div>
   );
-}
+});
 
 // ═══════════════════════════════════════════════════════════════════════
 // Screen 5: Loading (analysis in progress)
@@ -996,7 +991,7 @@ function Loading({ clipId, onDone, onBack }) {
         const job = await pollJob(job_id, j => {
           setProgress(j.progress || 0);
           setMessage(j.message || '');
-        }, 1000);
+        }, 1500);
         if (job.status === 'done') onDone(clipId);
         else setError(job.error || 'Diagnosis failed');
       } catch (e) { setError(String(e.message || e)); }
@@ -1140,6 +1135,132 @@ function Loading({ clipId, onDone, onBack }) {
             <Sans size={12} color={T.clayDeep}>{error}</Sans>
           </div>
         )}
+      </div>
+    </Screen>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 4b: Clip Preview — watch before deciding to analyze
+// ═══════════════════════════════════════════════════════════════════════
+
+function ClipPreview({ clipId, allClips, selectedSet, onBack, onToggleSelect, onAnalyzeNow, onAnalyzeSelection }) {
+  const idx = allClips.findIndex(c => c.clip_id === clipId);
+  const clip = allClips[idx];
+  if (!clip) return null;
+
+  const selected = selectedSet.has(clipId);
+  const total = allClips.length;
+  const prevId = idx > 0 ? allClips[idx - 1].clip_id : null;
+  const nextId = idx < total - 1 ? allClips[idx + 1].clip_id : null;
+
+  return (
+    <Screen bg={T.ink} style={{ paddingTop: 0 }}>
+      {/* Top bar — dark over the video */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10,
+        padding: '54px 14px 10px',
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
+        <NavBtn icon="chevL" onDark onClick={onBack}/>
+        <Sans size={11} upper weight={500} color="rgba(255,255,255,0.75)">
+          Clip {idx + 1} / {total}
+        </Sans>
+        <NavBtn icon="dots" onDark/>
+      </div>
+
+      {/* Video — fills available height */}
+      <div style={{
+        flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: '#000', minHeight: 0,
+      }}>
+        <video
+          key={clipId}
+          src={`${API}/clips/${clipId}/video`}
+          controls autoPlay loop playsInline
+          style={{ width: '100%', maxHeight: '100%', display: 'block', objectFit: 'contain' }}
+        />
+      </div>
+
+      {/* Prev / Next thumbnail strip */}
+      {total > 1 && (
+        <div style={{
+          padding: '10px 14px',
+          background: 'rgba(0,0,0,0.4)',
+          display: 'flex', gap: 6, overflowX: 'auto', flexShrink: 0,
+        }}>
+          {allClips.map((c, i) => {
+            const isCurr = c.clip_id === clipId;
+            const isSel = selectedSet.has(c.clip_id);
+            return (
+              <button key={c.clip_id} onClick={() => {
+                if (c.clip_id !== clipId) onBack(c.clip_id);
+              }} style={{
+                width: 44, height: 56, flexShrink: 0,
+                borderRadius: 6, overflow: 'hidden', position: 'relative',
+                border: `${isCurr ? 2 : 0.5}px solid ${isCurr ? T.amber : 'rgba(255,255,255,0.2)'}`,
+                background: T.paperAlt,
+                cursor: 'pointer', padding: 0,
+              }}>
+                <img src={`${API}/clips/${c.clip_id}/thumbnail`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: isCurr ? 1 : 0.55 }}
+                  onError={e => { e.target.style.display = 'none'; }}/>
+                {isSel && (
+                  <div style={{
+                    position: 'absolute', top: 2, right: 2,
+                    width: 12, height: 12, borderRadius: 999, background: T.clay,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}><Icon name="check" size={8} color="#fff" stroke={3}/></div>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Bottom action bar */}
+      <div style={{
+        padding: '14px 18px 28px', background: T.paper, color: T.ink,
+        flexShrink: 0, borderTop: `0.5px solid ${T.line}`,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 10 }}>
+          <Tag tone="ghost">
+            {clip.impact_times_s.length}× HIT · {(clip.end_s - clip.start_s).toFixed(1)}s
+          </Tag>
+          <Mono size={11} color={T.ink3}>{fmtTime(clip.start_s)}-{fmtTime(clip.end_s)}</Mono>
+          {selectedSet.size > 0 && (
+            <Sans size={11} color={T.ink3} style={{ marginLeft: 'auto' }}>
+              {selectedSet.size} selected
+            </Sans>
+          )}
+        </div>
+
+        <div style={{ display: 'flex', gap: 10 }}>
+          <button onClick={() => onToggleSelect(clipId)} style={{
+            flex: 1, height: 50, borderRadius: 14,
+            background: selected ? T.clay : T.paperAlt,
+            color: selected ? '#fff' : T.ink,
+            border: `0.5px solid ${selected ? T.clay : T.line}`,
+            fontFamily: T.sans, fontSize: 14, fontWeight: 600, cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+          }}>
+            {selected ? (
+              <><Icon name="check" size={16} color="#fff" stroke={2.5}/> Selected</>
+            ) : (
+              <>+ Add to selection</>
+            )}
+          </button>
+          {selectedSet.size > 0 ? (
+            <CTA tone="ink" icon="sparkle" onClick={() => onAnalyzeSelection()}>
+              Analyze {selectedSet.size}
+            </CTA>
+          ) : (
+            <CTA tone="clay" icon="sparkle" onClick={() => onAnalyzeNow(clipId)}>
+              Analyze
+            </CTA>
+          )}
+        </div>
       </div>
     </Screen>
   );
@@ -1456,16 +1577,6 @@ function TabData({ diag }) {
           </div>
         ))}
       </div>
-
-      {/* Keyframe grid */}
-      {diag.artifacts?.keyframe_grid && (
-        <div style={{ marginTop: 16 }}>
-          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>Keyframes</Sans>
-          <div style={{ borderRadius: 14, overflow: 'hidden', border: `0.5px solid ${T.line}`, background: T.paper }}>
-            <img src={diag.artifacts.keyframe_grid} alt="" style={{ width: '100%', display: 'block' }}/>
-          </div>
-        </div>
-      )}
 
       {/* Big score block at bottom */}
       <div style={{
@@ -1957,7 +2068,22 @@ function App() {
   const [stroke, _setStroke] = useState(initialStroke);
   const setStroke = s => { _setStroke(s); try { localStorage.setItem('baseline.stroke', s); } catch {} };
   const [homeKey, setHomeKey] = useState(0);
+  // Selection set lives at App level so it survives navigation between
+  // ClipGrid ⟷ ClipPreview without resetting.
+  const [selected, setSelected] = useState(new Set());
+  // Cache the clips list for the active video so ClipPreview can do
+  // prev/next navigation without refetching.
+  const [activeClips, setActiveClips] = useState([]);
   const fileRef = useRef();
+
+  const toggleSelect = useCallback(id => {
+    setSelected(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  }, []);
+  const clearSelection = useCallback(() => setSelected(new Set()), []);
 
   const start = () => {
     try { localStorage.setItem('baseline.onboarded', '1'); } catch {}
@@ -2004,11 +2130,36 @@ function App() {
           />
         )}
         {route.name === 'clips' && (
-          <ClipGrid
+          <ClipGridContainer
             videoId={route.videoId}
-            onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
-            onPickClip={clipId => setRoute({ name: 'analyze', clipId })}
-            onMultiAnalyze={ids => setRoute({ name: 'multi-analyze', clipIds: ids })}
+            selected={selected}
+            onCacheClips={setActiveClips}
+            onBack={() => { clearSelection(); setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
+            onPreview={clipId => setRoute({ name: 'preview', clipId, videoId: route.videoId })}
+            onMultiAnalyze={ids => { clearSelection(); setRoute({ name: 'multi-analyze', clipIds: ids }); }}
+            onToggleSelect={toggleSelect}
+            onClearSelection={clearSelection}
+          />
+        )}
+        {route.name === 'preview' && (
+          <ClipPreview
+            clipId={route.clipId}
+            allClips={activeClips}
+            selectedSet={selected}
+            onBack={(jumpTo) => {
+              if (jumpTo && typeof jumpTo === 'string') {
+                setRoute({ name: 'preview', clipId: jumpTo, videoId: route.videoId });
+              } else {
+                setRoute({ name: 'clips', videoId: route.videoId });
+              }
+            }}
+            onToggleSelect={toggleSelect}
+            onAnalyzeNow={(clipId) => { clearSelection(); setRoute({ name: 'analyze', clipId }); }}
+            onAnalyzeSelection={() => {
+              const ids = Array.from(selected);
+              clearSelection();
+              setRoute({ name: 'multi-analyze', clipIds: ids });
+            }}
           />
         )}
         {route.name === 'analyze' && (
