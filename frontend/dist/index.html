@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>Baseline — Tennis Swing Analysis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-  html, body { margin: 0; padding: 0; background: #F7F3EC; font-family: 'Inter', system-ui, sans-serif; color: #2A2925; }
-  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  html, body { margin: 0; padding: 0; background: #e8e4db; font-family: 'Inter', system-ui, sans-serif; color: #2A2925; min-height: 100vh; }
+  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
   ::-webkit-scrollbar { width: 0; height: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
   @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
   .fadein { animation: fadein 0.25s ease-out; }
   button { font-family: inherit; }
+  /* Mobile frame on desktop, full-bleed on phone */
+  .frame {
+    width: 390px; height: 844px;
+    background: #F7F3EC; overflow: hidden;
+    position: relative;
+    border-radius: 44px; border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.08);
+    margin: 32px auto;
+  }
+  @media (max-width: 480px) {
+    body { background: #F7F3EC; }
+    .frame {
+      width: 100vw; height: 100vh;
+      border-radius: 0; border: none; box-shadow: none; margin: 0;
+    }
+  }
+  .frame-inner { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+  .scroll { overflow-y: auto; overflow-x: hidden; flex: 1; }
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
@@ -25,9 +42,11 @@
 <div id="root"></div>
 
 <script type="text/babel" data-presets="react">
-const { useState, useEffect, useRef, useCallback } = React;
+const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 
-// ═══ Design tokens (from tennis/project/tokens.jsx) ═══
+// ═══════════════════════════════════════════════════════════════════════
+// Tokens (verbatim from tennis/project/tokens.jsx)
+// ═══════════════════════════════════════════════════════════════════════
 
 const T = {
   bg:        '#F7F3EC',
@@ -50,7 +69,9 @@ const T = {
 
 const API = '/api';
 
-// ═══ Icon set ═══
+// ═══════════════════════════════════════════════════════════════════════
+// Icon set
+// ═══════════════════════════════════════════════════════════════════════
 
 const Icon = ({ name, size = 20, color = T.ink2, stroke = 1.6 }) => {
   const p = { fill: 'none', stroke: color, strokeWidth: stroke, strokeLinecap: 'round', strokeLinejoin: 'round' };
@@ -60,23 +81,32 @@ const Icon = ({ name, size = 20, color = T.ink2, stroke = 1.6 }) => {
     upload:  <><path d="M12 16V4m0 0l-5 5m5-5l5 5" {...p}/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" {...p}/></>,
     play:    <><path d="M7 5l12 7-12 7V5z" fill={color} stroke="none"/></>,
     pause:   <><rect x="6" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill={color} stroke="none"/></>,
-    check:   <><path d="M4 12l5 5 11-12" {...p}/></>,
     chevR:   <><path d="M9 5l7 7-7 7" {...p}/></>,
     chevL:   <><path d="M15 5l-7 7 7 7" {...p}/></>,
+    chevD:   <><path d="M5 9l7 7 7-7" {...p}/></>,
+    check:   <><path d="M4 12l5 5 11-12" {...p}/></>,
     sparkle: <><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" {...p}/></>,
     arrowR:  <><path d="M5 12h14M13 6l6 6-6 6" {...p}/></>,
-    racquet: <><ellipse cx="10" cy="10" rx="6" ry="7" {...p}/><path d="M14.2 14.8L20 20.5" {...p}/></>,
+    history: <><path d="M3 12a9 9 0 1 0 3-6.7" {...p}/><path d="M3 4v4.5h4.5" {...p}/><path d="M12 7.5V12l3 2" {...p}/></>,
+    user:    <><circle cx="12" cy="8" r="4" {...p}/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" {...p}/></>,
     target:  <><circle cx="12" cy="12" r="9" {...p}/><circle cx="12" cy="12" r="5" {...p}/><circle cx="12" cy="12" r="1.5" fill={color} stroke="none"/></>,
     alert:   <><circle cx="12" cy="12" r="9" {...p}/><path d="M12 7v6M12 16.5v.5" {...p}/></>,
-    trash:   <><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" {...p}/></>,
     film:    <><rect x="3" y="5" width="18" height="14" rx="2" {...p}/><path d="M3 9h18M3 15h18M8 5v14M16 5v14" {...p}/></>,
     book:    <><path d="M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4V4z" {...p}/><path d="M20 4h-7a3 3 0 00-3 3v13a2 2 0 012-2h8V4z" {...p}/></>,
     wave:    <><path d="M3 12c2-4 3-4 5 0s3 4 5 0 3-4 5 0 3 4 5 0" {...p}/></>,
+    search:  <><circle cx="11" cy="11" r="6" {...p}/><path d="M16 16l4 4" {...p}/></>,
+    share:   <><circle cx="6" cy="12" r="2.5" {...p}/><circle cx="18" cy="6" r="2.5" {...p}/><circle cx="18" cy="18" r="2.5" {...p}/><path d="M8 11l8-4M8 13l8 4" {...p}/></>,
+    dots:    <><circle cx="5" cy="12" r="1.5" fill={color} stroke="none"/><circle cx="12" cy="12" r="1.5" fill={color} stroke="none"/><circle cx="19" cy="12" r="1.5" fill={color} stroke="none"/></>,
+    trash:   <><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" {...p}/></>,
+    hand:    <><path d="M8 11V5a1.5 1.5 0 013 0v6M11 11V4a1.5 1.5 0 013 0v7M14 11V6a1.5 1.5 0 013 0v8M17 9a1.5 1.5 0 013 0v6a6 6 0 01-6 6h-2a6 6 0 01-6-6v-3" {...p}/></>,
+    scissors:<><circle cx="6" cy="6" r="3" {...p}/><circle cx="6" cy="18" r="3" {...p}/><path d="M20 4L9 15M14 10l6 10M9 9l4 4" {...p}/></>,
   };
   return <svg width={size} height={size} viewBox="0 0 24 24">{paths[name]}</svg>;
 };
 
-// ═══ Typography primitives ═══
+// ═══════════════════════════════════════════════════════════════════════
+// Typography primitives
+// ═══════════════════════════════════════════════════════════════════════
 
 const Serif = ({ children, size = 28, weight = 400, style = {}, as: As = 'div', italic = false, opsz }) => (
   <As style={{
@@ -105,11 +135,11 @@ const Mono = ({ children, size = 12, weight = 500, color = T.ink2, style = {} })
 
 const Tag = ({ children, tone = 'ink', style = {} }) => {
   const tones = {
-    ink:    { bg: T.paperAlt, fg: T.ink2, bd: T.line },
-    clay:   { bg: '#F6E4DC', fg: T.clayDeep, bd: 'rgba(168,67,47,0.18)' },
-    amber:  { bg: '#FBEDCE', fg: '#8A6820', bd: 'rgba(138,104,32,0.2)' },
-    court:  { bg: '#E7EDD4', fg: '#5D6F33', bd: 'rgba(93,111,51,0.2)' },
-    ghost:  { bg: 'transparent', fg: T.ink3, bd: T.line },
+    ink:   { bg: T.paperAlt, fg: T.ink2, bd: T.line },
+    clay:  { bg: '#F6E4DC', fg: T.clayDeep, bd: 'rgba(168,67,47,0.18)' },
+    amber: { bg: '#FBEDCE', fg: '#8A6820', bd: 'rgba(138,104,32,0.2)' },
+    court: { bg: '#E7EDD4', fg: '#5D6F33', bd: 'rgba(93,111,51,0.2)' },
+    ghost: { bg: 'transparent', fg: T.ink3, bd: T.line },
   }[tone];
   return (
     <span style={{
@@ -124,11 +154,94 @@ const Tag = ({ children, tone = 'ink', style = {} }) => {
   );
 };
 
+const Screen = ({ children, bg = T.bg, style = {} }) => (
+  <div style={{
+    width: '100%', height: '100%', background: bg,
+    fontFamily: T.sans, color: T.ink, overflow: 'hidden',
+    display: 'flex', flexDirection: 'column',
+    paddingTop: 54, ...style,
+  }}>
+    {children}
+  </div>
+);
+
+const NavBar = ({ left, right, eyebrow, onBg }) => (
+  <div style={{
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    padding: '10px 18px 6px', minHeight: 44, position: 'relative',
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 40 }}>{left}</div>
+    {eyebrow && (
+      <Sans size={11} upper weight={500} color={onBg ? 'rgba(255,255,255,0.75)' : T.ink3}
+            style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+        {eyebrow}
+      </Sans>
+    )}
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 40, justifyContent: 'flex-end' }}>{right}</div>
+  </div>
+);
+
+const NavBtn = ({ icon, label, onDark, filled, onClick }) => (
+  <button onClick={onClick} style={{
+    display: 'inline-flex', alignItems: 'center', gap: 6,
+    height: 34, padding: label ? '0 12px 0 10px' : '0', width: label ? 'auto' : 34,
+    borderRadius: 999, border: `0.5px solid ${onDark ? 'rgba(255,255,255,0.2)' : T.line}`,
+    background: filled ? T.ink : (onDark ? 'rgba(255,255,255,0.08)' : T.paper),
+    color: filled ? T.bg : (onDark ? '#fff' : T.ink),
+    fontFamily: T.sans, fontSize: 13, fontWeight: 500, cursor: 'pointer',
+    justifyContent: 'center',
+  }}>
+    {icon && <Icon name={icon} size={16} color={filled ? T.bg : (onDark ? '#fff' : T.ink)}/>}
+    {label}
+  </button>
+);
+
+const TabBar = ({ active = 'home', onSelect }) => {
+  const tabs = [
+    { id: 'home',    icon: 'home',    label: 'Sessions' },
+    { id: 'capture', icon: 'plus',    label: 'Capture' },
+    { id: 'library', icon: 'history', label: 'Library' },
+    { id: 'profile', icon: 'user',    label: 'Profile' },
+  ];
+  return (
+    <div style={{
+      padding: '6px 12px 22px',
+      borderTop: `0.5px solid ${T.line}`,
+      background: T.paper,
+      display: 'flex', justifyContent: 'space-around',
+      flexShrink: 0,
+    }}>
+      {tabs.map(t => (
+        <button key={t.id} onClick={() => onSelect && onSelect(t.id)} style={{
+          flex: 1, display: 'flex', flexDirection: 'column',
+          alignItems: 'center', gap: 3, padding: '6px 0',
+          background: 'transparent', border: 'none', cursor: 'pointer',
+        }}>
+          {t.id === 'capture' ? (
+            <div style={{
+              width: 34, height: 34, borderRadius: 999,
+              background: T.clay, display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <Icon name="plus" size={18} color="#fff" stroke={2}/>
+            </div>
+          ) : (
+            <Icon name={t.icon} size={20} color={active === t.id ? T.ink : T.ink3} stroke={active === t.id ? 1.8 : 1.5}/>
+          )}
+          <Sans size={10} weight={active === t.id ? 600 : 500}
+                color={active === t.id ? T.ink : T.ink3} style={{ letterSpacing: 0.1 }}>
+            {t.label}
+          </Sans>
+        </button>
+      ))}
+    </div>
+  );
+};
+
 const CTA = ({ children, tone = 'clay', onClick, full, icon, disabled, style = {} }) => {
   const tones = {
-    clay: { bg: T.clay, fg: '#fff' },
-    ink:  { bg: T.ink, fg: T.bg },
-    ghost:{ bg: 'transparent', fg: T.ink, bd: T.line },
+    clay:  { bg: T.clay, fg: '#fff' },
+    ink:   { bg: T.ink, fg: T.bg },
+    ghost: { bg: 'transparent', fg: T.ink, bd: T.line },
   }[tone];
   return (
     <button onClick={onClick} disabled={disabled} style={{
@@ -136,11 +249,9 @@ const CTA = ({ children, tone = 'clay', onClick, full, icon, disabled, style = {
       height: 52, padding: '0 22px', borderRadius: 14,
       border: tones.bd ? `0.5px solid ${tones.bd}` : 'none',
       background: tones.bg, color: tones.fg,
-      fontSize: 15, fontWeight: 560, letterSpacing: -0.1,
-      cursor: disabled ? 'not-allowed' : 'pointer',
-      opacity: disabled ? 0.4 : 1,
-      width: full ? '100%' : 'auto',
-      ...style,
+      fontFamily: T.sans, fontSize: 15, fontWeight: 560, letterSpacing: -0.1,
+      cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.5 : 1,
+      width: full ? '100%' : 'auto', ...style,
     }}>
       {icon && <Icon name={icon} size={18} color={tones.fg}/>}
       {children}
@@ -148,80 +259,25 @@ const CTA = ({ children, tone = 'clay', onClick, full, icon, disabled, style = {
   );
 };
 
-// ═══ Layout shell ═══
-
-const AppShell = ({ title, eyebrow, onBack, children, footer }) => (
-  <div style={{
-    minHeight: '100vh', maxWidth: 640, margin: '0 auto', background: T.bg,
-    display: 'flex', flexDirection: 'column',
-  }}>
-    <div style={{
-      padding: '22px 22px 14px', display: 'flex',
-      alignItems: 'center', gap: 14, position: 'sticky', top: 0,
-      background: T.bg, zIndex: 10, borderBottom: `0.5px solid ${T.lineSoft}`,
-    }}>
-      {onBack && (
-        <button onClick={onBack} style={{
-          width: 36, height: 36, borderRadius: 999, border: `0.5px solid ${T.line}`,
-          background: T.paper, display: 'flex', alignItems: 'center', justifyContent: 'center',
-          cursor: 'pointer',
-        }}><Icon name="chevL" size={16}/></button>
-      )}
-      <div style={{ flex: 1 }}>
-        {eyebrow && <Sans size={11} upper weight={500} color={T.ink3}>{eyebrow}</Sans>}
-        {title && <Serif size={20} weight={400} style={{ marginTop: eyebrow ? 2 : 0 }}>{title}</Serif>}
-      </div>
-    </div>
-    <div style={{ flex: 1, padding: '8px 22px 28px', width: '100%' }}>
-      {children}
-    </div>
-    {footer && (
-      <div style={{
-        position: 'sticky', bottom: 0, padding: '14px 22px 24px',
-        background: T.paper, borderTop: `0.5px solid ${T.line}`,
-      }}>{footer}</div>
-    )}
-  </div>
-);
-
-// ═══ API client ═══
+// ═══════════════════════════════════════════════════════════════════════
+// API client
+// ═══════════════════════════════════════════════════════════════════════
 
 const api = {
-  async listVideos() {
-    const r = await fetch(`${API}/videos`);
-    return r.json();
+  health: () => fetch(`${API}/health`).then(r => r.json()),
+  listVideos: () => fetch(`${API}/videos`).then(r => r.json()),
+  getVideo: id => fetch(`${API}/videos/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
+  deleteVideo: id => fetch(`${API}/videos/${id}`, { method: 'DELETE' }),
+  uploadVideo: file => {
+    const fd = new FormData(); fd.append('file', file);
+    return fetch(`${API}/videos`, { method: 'POST', body: fd }).then(r => r.json());
   },
-  async getVideo(id) {
-    const r = await fetch(`${API}/videos/${id}`);
-    if (!r.ok) throw new Error('not found');
-    return r.json();
-  },
-  async deleteVideo(id) {
-    return fetch(`${API}/videos/${id}`, { method: 'DELETE' });
-  },
-  async uploadVideo(file) {
-    const fd = new FormData();
-    fd.append('file', file);
-    const r = await fetch(`${API}/videos`, { method: 'POST', body: fd });
-    if (!r.ok) throw new Error('upload failed');
-    return r.json();
-  },
-  async getJob(id) {
-    const r = await fetch(`${API}/jobs/${id}`);
-    return r.json();
-  },
-  async startDiagnose(clipId) {
-    const r = await fetch(`${API}/clips/${clipId}/diagnose`, { method: 'POST' });
-    return r.json();
-  },
-  async getDiagnosis(clipId) {
-    const r = await fetch(`${API}/diagnoses/${clipId}`);
-    if (!r.ok) throw new Error('no diagnosis');
-    return r.json();
-  },
+  getJob: id => fetch(`${API}/jobs/${id}`).then(r => r.json()),
+  startDiagnose: clipId => fetch(`${API}/clips/${clipId}/diagnose`, { method: 'POST' }).then(r => r.json()),
+  getDiagnosis: clipId => fetch(`${API}/diagnoses/${clipId}`).then(r => r.ok ? r.json() : Promise.reject('no diagnosis')),
+  getClip: id => fetch(`${API}/clips/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
 };
 
-// Poll a job until it reaches terminal state
 async function pollJob(jobId, onProgress, intervalMs = 800) {
   while (true) {
     const job = await api.getJob(jobId);
@@ -231,113 +287,297 @@ async function pollJob(jobId, onProgress, intervalMs = 800) {
   }
 }
 
-// ═══ Screens ═══
+const fmtTime = s => { const m = Math.floor(s/60), sec = Math.floor(s%60); return `${m}:${sec.toString().padStart(2,'0')}`; };
+const fmtDateShort = ts => {
+  if (!ts) return '—';
+  const d = new Date(ts * 1000);
+  const today = new Date();
+  if (d.toDateString() === today.toDateString()) return 'Today';
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const diff = Math.floor((today - d) / (1000 * 60 * 60 * 24));
+  if (diff < 7) return days[d.getDay()];
+  return `${d.toLocaleString('en', { month: 'short' })} ${d.getDate()}`;
+};
+const fmtClock = ts => {
+  if (!ts) return '';
+  const d = new Date(ts * 1000);
+  return d.toLocaleTimeString('en', { hour: 'numeric', minute: '2-digit' });
+};
+const fmtValue = v => {
+  if (v == null) return '—';
+  if (typeof v === 'number') {
+    const abs = Math.abs(v);
+    if (abs >= 100) return v.toFixed(0);
+    if (abs >= 10) return v.toFixed(1);
+    return v.toFixed(2);
+  }
+  return String(v);
+};
 
-// ── Home ─────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 1: Onboarding
+// ═══════════════════════════════════════════════════════════════════════
 
-function Home({ onPick, onUpload, reloadKey }) {
+function Onboarding({ onStart }) {
+  return (
+    <Screen bg={T.bg} style={{ position: 'relative' }}>
+      <svg width="100%" height="320" viewBox="0 0 390 320" style={{ position: 'absolute', top: 60, left: 0 }}>
+        <defs>
+          <linearGradient id="arc-g" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor={T.amber} stopOpacity="0"/>
+            <stop offset="0.4" stopColor={T.amber} stopOpacity="0.8"/>
+            <stop offset="1" stopColor={T.clay} stopOpacity="0.9"/>
+          </linearGradient>
+        </defs>
+        <path d="M -30 240 Q 160 -40 430 200" stroke="url(#arc-g)" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+        <path d="M -30 260 Q 160 -20 430 220" stroke={T.amber} strokeOpacity="0.25" strokeWidth="1" fill="none" strokeDasharray="2 4"/>
+        <circle cx="340" cy="130" r="8" fill={T.amber}/>
+        <path d="M 333 128 Q 340 132 347 128" stroke="#fff" strokeOpacity="0.6" strokeWidth="0.8" fill="none"/>
+        <path d="M 333 134 Q 340 130 347 134" stroke="#fff" strokeOpacity="0.6" strokeWidth="0.8" fill="none"/>
+      </svg>
+      <div style={{ padding: '18px 24px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ width: 22, height: 22, borderRadius: 4, background: T.clay, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: 8, height: 8, background: T.amber, borderRadius: 999 }}/>
+        </div>
+        <Sans size={13} weight={600} style={{ letterSpacing: 1.5, textTransform: 'uppercase' }}>Baseline</Sans>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 24px 24px' }}>
+        <Sans size={11} weight={500} color={T.clay} upper style={{ marginBottom: 14 }}>
+          ⋅ Computer Vision · Motion Science
+        </Sans>
+        <Serif size={42} weight={380} opsz={80} style={{ lineHeight: 1.02, marginBottom: 14 }}>
+          See your swing<br/>
+          <Serif as="span" size={42} weight={380} italic style={{ color: T.clayDeep }}>the way a coach does.</Serif>
+        </Serif>
+        <Sans size={14} color={T.ink2} style={{ maxWidth: 300, marginBottom: 24, lineHeight: 1.5 }}>
+          Record a rally. Baseline finds every stroke, measures your body, and explains what to fix — in plain language.
+        </Sans>
+        <div style={{
+          display: 'flex', gap: 0, marginBottom: 24,
+          border: `0.5px solid ${T.line}`, borderRadius: 14, background: T.paper, overflow: 'hidden',
+        }}>
+          {[
+            { n: '01', t: 'Import', s: 'Your rally video' },
+            { n: '02', t: 'Detect', s: 'Each stroke, auto-cut' },
+            { n: '03', t: 'Coach',  s: 'Insights + drills' },
+          ].map((s, i) => (
+            <div key={s.n} style={{
+              flex: 1, padding: '14px 12px',
+              borderLeft: i > 0 ? `0.5px solid ${T.line}` : 'none',
+            }}>
+              <Mono size={10} color={T.clay}>{s.n}</Mono>
+              <Sans size={13} weight={600} style={{ marginTop: 4 }}>{s.t}</Sans>
+              <Sans size={10} color={T.ink3} style={{ marginTop: 2 }}>{s.s}</Sans>
+            </div>
+          ))}
+        </div>
+        <CTA tone="clay" icon="arrowR" full onClick={onStart}>Start a session</CTA>
+      </div>
+    </Screen>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 2: Home (sparkline + sessions)
+// ═══════════════════════════════════════════════════════════════════════
+
+function Home({ onPickVideo, onUpload, reloadKey }) {
   const [videos, setVideos] = useState(null);
+
   useEffect(() => {
     api.listVideos().then(r => setVideos(r.videos || [])).catch(() => setVideos([]));
   }, [reloadKey]);
 
-  return (
-    <AppShell eyebrow="Baseline" title="Your sessions">
-      <div style={{ marginBottom: 20 }}>
-        <Sans size={14} color={T.ink2}>
-          Upload a practice video. Baseline will cut it into clips by the sound of each hit,
-          then run pose, visual and diagnostic analysis on whichever clip you pick.
-        </Sans>
-      </div>
+  // Compute synthetic form-index sparkline from videos (clip count proxy)
+  const spark = useMemo(() => {
+    if (!videos || videos.length === 0) return Array(8).fill(50);
+    const recent = videos.slice(0, 8).reverse();
+    return Array(8).fill(0).map((_, i) => {
+      const v = recent[i];
+      if (!v) return 50;
+      return Math.min(95, 55 + (v.clip_count || 0) * 6);
+    });
+  }, [videos]);
 
-      <div
-        onClick={onUpload}
-        style={{
-          padding: 20, borderRadius: 18,
-          background: T.paper,
-          border: `1.5px dashed rgba(200,85,61,0.35)`,
-          display: 'flex', alignItems: 'center', gap: 14,
-          cursor: 'pointer', marginBottom: 24,
-        }}
-      >
-        <div style={{
-          width: 48, height: 48, borderRadius: 14, background: T.clay,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}>
-          <Icon name="upload" size={22} color="#fff"/>
-        </div>
-        <div style={{ flex: 1 }}>
-          <Sans size={15} weight={600}>Upload a new session</Sans>
-          <Sans size={12} color={T.ink2} style={{ marginTop: 2 }}>
-            MP4 / MOV, any length. Ideally 60 fps from the side.
+  const formIndex = videos && videos.length > 0
+    ? Math.round(spark.reduce((a, b) => a + b, 0) / spark.length)
+    : 0;
+
+  return (
+    <Screen bg={T.bg}>
+      <div className="scroll" style={{ flex: 1 }}>
+        {/* Header */}
+        <div style={{ padding: '14px 20px 8px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+            <Sans size={12} weight={600} upper style={{ letterSpacing: 1.4 }}>Baseline</Sans>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <NavBtn icon="search"/>
+              <div style={{
+                width: 34, height: 34, borderRadius: 999, background: T.amberSoft,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: `0.5px solid ${T.line}`,
+                fontFamily: T.serif, fontSize: 14, fontWeight: 500, color: T.clayDeep,
+              }}>L</div>
+            </div>
+          </div>
+          <Serif size={32} weight={380} opsz={72} style={{ letterSpacing: -0.6 }}>
+            Good {(() => { const h = new Date().getHours(); return h < 12 ? 'morning' : h < 18 ? 'afternoon' : 'evening'; })()},<br/>
+            <Serif as="span" size={32} italic weight={380} style={{ color: T.clayDeep }}>player.</Serif>
+          </Serif>
+          <Sans size={14} color={T.ink2} style={{ marginTop: 10 }}>
+            {videos === null ? 'Loading sessions…' :
+             videos.length === 0 ? 'No sessions yet — upload a rally to begin.' :
+             <>
+               <Sans as="span" size={14} weight={600} color={T.ink}>{videos.length}</Sans> session{videos.length === 1 ? '' : 's'} saved.
+               Tap any clip to see your biomechanics.
+             </>}
           </Sans>
         </div>
-        <Icon name="chevR" size={18} color={T.ink3}/>
-      </div>
 
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
-        <Sans size={11} upper weight={500} color={T.ink3}>
-          Recent · {videos === null ? '…' : videos.length}
-        </Sans>
-      </div>
-
-      {videos === null && <Sans size={13} color={T.ink3}>Loading…</Sans>}
-      {videos && videos.length === 0 && (
-        <div style={{
-          padding: 18, borderRadius: 14, background: T.paperAlt,
-          border: `0.5px solid ${T.line}`, textAlign: 'center',
-        }}>
-          <Sans size={13} color={T.ink2}>No sessions yet. Upload one to get started.</Sans>
-        </div>
-      )}
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {videos && videos.map(v => (
-          <div key={v.video_id} style={{
-            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-            padding: 14, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
-          }} onClick={() => onPick(v.video_id)}>
+        {/* Form-index card */}
+        {videos && videos.length > 0 && (
+          <div style={{ padding: '18px 20px 0' }}>
             <div style={{
-              width: 44, height: 44, borderRadius: 11, background: T.paperAlt,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}><Icon name="film" size={20} color={T.ink2}/></div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <Sans size={13} weight={600} style={{ marginBottom: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {v.filename || v.video_id}
-              </Sans>
-              <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-                <Mono size={10} color={T.ink3}>
-                  {v.duration_s ? `${v.duration_s.toFixed(1)}s` : '—'}
-                </Mono>
-                <Sans size={11} color={T.ink3}>·</Sans>
-                <Sans size={11} color={T.ink3}>
-                  {v.has_segments ? `${v.clip_count} clips` : 'pending…'}
-                </Sans>
+              background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
+              padding: '16px 18px',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                <Sans size={11} weight={500} color={T.ink3} upper>This week</Sans>
+                <Sans size={11} weight={500} color={T.clay}>View trends →</Sans>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 6 }}>
+                <Serif size={36} weight={380}>{formIndex}</Serif>
+                <Sans size={12} color={T.ink3}>/100 form index</Sans>
+              </div>
+              <svg width="100%" height="54" viewBox="0 0 300 54" style={{ marginTop: 10, display: 'block' }}>
+                <defs>
+                  <linearGradient id="sp-g" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor={T.clay} stopOpacity="0.18"/>
+                    <stop offset="1" stopColor={T.clay} stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                {(() => {
+                  const max = Math.max(...spark);
+                  const min = Math.min(...spark);
+                  const range = Math.max(1, max - min);
+                  const pts = spark.map((v, i) => [i * 43, 46 - ((v - min) / range) * 36]);
+                  const d = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0]} ${p[1]}`).join(' ');
+                  return (
+                    <Fragment>
+                      <path d={`${d} L300 54 L0 54 Z`} fill="url(#sp-g)"/>
+                      <path d={d} stroke={T.clay} strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                      {pts.map((p, i) => (
+                        <circle key={i} cx={p[0]} cy={p[1]} r={i === pts.length - 1 ? 3 : 1.5} fill={i === pts.length - 1 ? T.clay : T.amber}/>
+                      ))}
+                    </Fragment>
+                  );
+                })()}
+              </svg>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
+                {['M','T','W','T','F','S','S','·'].map((d, i) => (
+                  <Mono key={i} size={10} color={i === 7 ? T.clay : T.ink3}>{d}</Mono>
+                ))}
               </div>
             </div>
-            <Icon name="chevR" size={16} color={T.ink3}/>
           </div>
-        ))}
+        )}
+
+        {/* Sessions list */}
+        <div style={{ padding: '22px 20px 0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
+            <Sans size={11} weight={500} upper color={T.ink3}>Recent sessions</Sans>
+            <Sans size={11} weight={500} color={T.ink2}>{videos === null ? '…' : `${videos.length} total`}</Sans>
+          </div>
+
+          {videos === null && <Sans size={13} color={T.ink3}>Loading…</Sans>}
+
+          {videos && videos.length === 0 && (
+            <div onClick={onUpload} style={{
+              padding: 22, borderRadius: 16, background: T.paper,
+              border: `1.5px dashed rgba(200,85,61,0.35)`,
+              cursor: 'pointer', textAlign: 'center',
+            }}>
+              <Icon name="upload" size={26} color={T.clay}/>
+              <Sans size={14} weight={600} color={T.ink} style={{ marginTop: 8 }}>Upload your first rally</Sans>
+              <Sans size={12} color={T.ink2} style={{ marginTop: 4 }}>MP4 or MOV from any phone or camera</Sans>
+            </div>
+          )}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {videos && videos.map((v, i) => (
+              <SessionCard key={v.video_id} video={v} isNew={i === 0 && Date.now()/1000 - v.uploaded_at < 60*60*24}
+                onClick={() => onPickVideo(v.video_id)}/>
+            ))}
+          </div>
+          <div style={{ height: 24 }}/>
+        </div>
       </div>
-    </AppShell>
+      <TabBar active="home" onSelect={id => { if (id === 'capture') onUpload(); }}/>
+    </Screen>
   );
 }
 
-// ── Upload / segmenting ──────────────────────────────────────────
+function SessionCard({ video, isNew, onClick }) {
+  const score = video.clip_count > 0 ? Math.min(95, 55 + video.clip_count * 6) : null;
+  return (
+    <div onClick={onClick} style={{
+      background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+      padding: '14px 16px', display: 'flex', gap: 12, alignItems: 'center',
+      cursor: 'pointer',
+    }}>
+      <div style={{
+        width: 52, flexShrink: 0, textAlign: 'center',
+        borderRight: `0.5px solid ${T.line}`, paddingRight: 12,
+      }}>
+        <Serif size={20} weight={400}>{fmtDateShort(video.uploaded_at)}</Serif>
+        <Mono size={9} color={T.ink3} style={{ display: 'block', marginTop: 2 }}>{fmtClock(video.uploaded_at)}</Mono>
+      </div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', gap: 6, marginBottom: 4, alignItems: 'center' }}>
+          <Tag tone={video.has_segments ? 'clay' : 'ghost'}>
+            {video.has_segments ? `${video.clip_count} clip${video.clip_count === 1 ? '' : 's'}` : 'pending'}
+          </Tag>
+          {isNew && <Tag tone="ink" style={{ background: T.ink, color: T.bg, border: 'none' }}>New</Tag>}
+        </div>
+        <Sans size={14} weight={600} style={{ marginBottom: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {video.filename || `Session ${video.video_id.slice(0, 6)}`}
+        </Sans>
+        <Sans size={11} color={T.ink3}>
+          <Mono size={11} color={T.ink3}>{video.total_onsets || 0}</Mono> hits ·{' '}
+          <Mono size={11} color={T.ink3}>{video.duration_s ? video.duration_s.toFixed(1) : '—'}</Mono>s
+        </Sans>
+      </div>
+      <div style={{ textAlign: 'right' }}>
+        <Serif size={22} weight={400}>{score != null ? score : '—'}</Serif>
+        <Mono size={10} color={T.ink3} style={{ display: 'block' }}>form</Mono>
+      </div>
+    </div>
+  );
+}
 
-function Uploading({ file, onDone, onCancel }) {
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 3: Import (uploading + segmenting)
+// ═══════════════════════════════════════════════════════════════════════
+
+function Import({ file, onDone, onCancel }) {
   const [stage, setStage] = useState('upload');
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Uploading…');
   const [error, setError] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  useEffect(() => {
+    if (file) setVideoUrl(URL.createObjectURL(file));
+    return () => { if (videoUrl) URL.revokeObjectURL(videoUrl); };
+  }, [file]);
 
   useEffect(() => {
     (async () => {
       try {
-        setMessage('Uploading…');
+        setMessage('Uploading video…');
         const { video_id, job_id } = await api.uploadVideo(file);
         setStage('segment');
-        setMessage('Detecting hits…');
+        setMessage('Listening for hits…');
         const job = await pollJob(job_id, j => {
           setProgress(j.progress || 0);
           setMessage(j.message || '');
@@ -351,45 +591,92 @@ function Uploading({ file, onDone, onCancel }) {
   }, []);
 
   return (
-    <AppShell eyebrow="Step 1 · Import" title={stage === 'upload' ? 'Uploading' : 'Listening for hits'} onBack={onCancel}>
-      <div style={{
-        borderRadius: 18, background: T.paper, border: `0.5px solid ${T.line}`,
-        padding: 24, marginBottom: 16,
-      }}>
-        <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
-          {stage === 'upload' ? 'Preparing video' : 'Audio · auto-cuts'}
-        </Sans>
-        <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.15, marginBottom: 16 }}>
-          {message}
-        </Serif>
-        <div style={{
-          height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden',
-        }}>
-          <div style={{
-            height: '100%', width: `${Math.max(2, progress * 100)}%`,
-            background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
-            transition: 'width 0.3s',
-          }}/>
-        </div>
-        <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
-          {(progress * 100).toFixed(0)}%
-        </Sans>
-      </div>
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onCancel}/>}
+        right={<NavBtn label="Cancel" onClick={onCancel}/>}
+        eyebrow="Step 1 · Import"
+      />
 
-      {error && (
-        <div style={{
-          padding: 14, borderRadius: 12, background: '#F6E4DC',
-          border: `0.5px solid rgba(168,67,47,0.2)`, display: 'flex', gap: 10,
-        }}>
-          <Icon name="alert" size={18} color={T.clayDeep}/>
-          <Sans size={12} color={T.clayDeep}>{error}</Sans>
+      <div className="scroll" style={{ flex: 1 }}>
+        <div style={{ padding: '4px 20px 0' }}>
+          <div style={{ borderRadius: 18, overflow: 'hidden', position: 'relative', border: `0.5px solid ${T.line}`, background: '#2E2C28' }}>
+            {videoUrl ? (
+              <video src={videoUrl} muted autoPlay loop playsInline
+                style={{ width: '100%', height: 200, objectFit: 'cover', display: 'block' }}/>
+            ) : (
+              <div style={{ height: 200, background: 'repeating-linear-gradient(135deg, #3A3833 0 8px, #2E2C28 8px 16px)' }}/>
+            )}
+            <div style={{
+              position: 'absolute', top: 10, left: 10, display: 'flex', gap: 6,
+            }}>
+              <Tag tone="ink" style={{ background: 'rgba(0,0,0,0.55)', color: '#fff', border: 'none', backdropFilter: 'blur(8px)' }}>
+                {file?.name?.slice(0, 24) || 'video'}
+              </Tag>
+            </div>
+          </div>
+
+          {/* Audio detection card */}
+          <div style={{ marginTop: 14, background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14, padding: '14px 16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+              <Sans size={11} weight={500} color={T.ink3} upper>Audio · auto-cuts</Sans>
+              <Sans size={11} weight={500} color={T.clay}>
+                {stage === 'upload' ? 'Uploading' : 'Detecting'}
+              </Sans>
+            </div>
+            {/* Animated waveform */}
+            <svg width="100%" height="44" viewBox="0 0 340 44" style={{ display: 'block' }}>
+              {Array.from({ length: 100 }).map((_, i) => {
+                const h = 4 + Math.abs(Math.sin(i * 0.8) * 14) + Math.abs(Math.cos(i * 0.3) * 6);
+                const cutoff = progress * 100;
+                const isActive = i <= cutoff;
+                const isHit = isActive && [6, 13, 22, 31, 41, 52, 62, 72, 85].includes(i);
+                return (
+                  <rect key={i} x={i * 3.4} y={22 - h/2} width={2} height={h} rx={1}
+                        fill={isHit ? T.clay : isActive ? T.ink2 : 'rgba(42,41,37,0.18)'}/>
+                );
+              })}
+              <line x1={progress * 340} y1={0} x2={progress * 340} y2={44} stroke={T.amber} strokeWidth="1.5"/>
+            </svg>
+          </div>
         </div>
-      )}
-    </AppShell>
+
+        <div style={{ padding: '22px 20px' }}>
+          <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
+            {stage === 'upload' ? 'Preparing video' : 'Audio · auto-cuts'}
+          </Sans>
+          <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.15, marginBottom: 16 }}>
+            {message}
+          </Serif>
+          <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden' }}>
+            <div style={{
+              height: '100%', width: `${Math.max(2, progress * 100)}%`,
+              background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+              transition: 'width 0.3s',
+            }}/>
+          </div>
+          <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
+            {(progress * 100).toFixed(0)}%
+          </Sans>
+
+          {error && (
+            <div style={{
+              marginTop: 16, padding: 14, borderRadius: 12, background: '#F6E4DC',
+              border: `0.5px solid rgba(168,67,47,0.2)`, display: 'flex', gap: 10,
+            }}>
+              <Icon name="alert" size={18} color={T.clayDeep}/>
+              <Sans size={12} color={T.clayDeep}>{error}</Sans>
+            </div>
+          )}
+        </div>
+      </div>
+    </Screen>
   );
 }
 
-// ── Clip grid ────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 4: Clip Grid
+// ═══════════════════════════════════════════════════════════════════════
 
 function ClipGrid({ videoId, onBack, onPickClip }) {
   const [data, setData] = useState(null);
@@ -400,61 +687,93 @@ function ClipGrid({ videoId, onBack, onPickClip }) {
   }, [videoId]);
 
   if (err) return (
-    <AppShell eyebrow="Not found" onBack={onBack}>
-      <Sans color={T.clayDeep}>{err}</Sans>
-    </AppShell>
+    <Screen bg={T.bg}>
+      <NavBar left={<NavBtn icon="chevL" onClick={onBack}/>} eyebrow="Not found"/>
+      <div style={{ padding: 22 }}><Sans color={T.clayDeep}>{err}</Sans></div>
+    </Screen>
   );
   if (!data) return (
-    <AppShell eyebrow="Loading" onBack={onBack}>
-      <Sans color={T.ink3}>Loading…</Sans>
-    </AppShell>
+    <Screen bg={T.bg}>
+      <NavBar left={<NavBtn icon="chevL" onClick={onBack}/>} eyebrow="Loading"/>
+      <div style={{ padding: 22 }}><Sans color={T.ink3}>Loading…</Sans></div>
+    </Screen>
   );
 
   const clips = data.clips || [];
 
   return (
-    <AppShell
-      eyebrow={`Step 2 · Choose · ${clips.length} clips`}
-      title="Pick your clip"
-      onBack={onBack}
-    >
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onBack}/>}
+        right={<NavBtn icon="dots"/>}
+        eyebrow={`Step 2 · ${clips.length} clips`}
+      />
+
+      <div style={{ padding: '6px 20px 16px' }}>
+        <Serif size={28} weight={400} style={{ marginBottom: 6 }}>
+          Pick your clip
+        </Serif>
+        <Sans size={13} color={T.ink2} style={{ maxWidth: 320 }}>
+          Detected{' '}
+          <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans>{' '}
+          across{' '}
+          <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta?.duration_s?.toFixed(1)}s</Sans>.
+          Tap any to analyze.
+        </Sans>
+      </div>
+
       {data.error && (
-        <div style={{ padding: 14, borderRadius: 12, background: '#FBEDCE', marginBottom: 14 }}>
+        <div style={{ margin: '0 20px 14px', padding: 14, borderRadius: 12, background: '#FBEDCE' }}>
           <Sans size={12} color="#8A6820">{data.error}</Sans>
         </div>
       )}
 
-      <Sans size={13} color={T.ink2} style={{ marginBottom: 18 }}>
-        Baseline detected <Sans as="span" size={13} weight={600} color={T.ink}>{data.total_onsets} hits</Sans> across{' '}
-        <Sans as="span" size={13} weight={600} color={T.ink}>{data.meta.duration_s?.toFixed(1)}s</Sans>.
-        Tap a clip to run pose, visual and diagnostic analysis on it.
-      </Sans>
-
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10,
-      }}>
-        {clips.map(c => (
-          <ClipCard key={c.clip_id} clip={c} onClick={() => onPickClip(c.clip_id)}/>
-        ))}
+      <div className="scroll" style={{ flex: 1, padding: '0 16px 16px' }}>
+        {clips.length === 0 ? (
+          <div style={{
+            margin: '0 4px', padding: 24, borderRadius: 14, background: T.paperAlt,
+            border: `0.5px solid ${T.line}`, textAlign: 'center',
+          }}>
+            <Sans size={13} color={T.ink2}>
+              No hits detected. Try a louder or closer-mic'd video.
+            </Sans>
+          </div>
+        ) : (
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8,
+          }}>
+            {clips.map(c => (
+              <ClipCard key={c.clip_id} clip={c} onClick={() => onPickClip(c.clip_id)}/>
+            ))}
+          </div>
+        )}
       </div>
 
-      {clips.length === 0 && (
+      {clips.length > 0 && (
         <div style={{
-          padding: 24, borderRadius: 14, background: T.paperAlt,
-          border: `0.5px solid ${T.line}`, textAlign: 'center',
+          padding: '14px 20px 22px', borderTop: `0.5px solid ${T.line}`,
+          background: T.paper, display: 'flex', gap: 12, alignItems: 'center',
+          flexShrink: 0,
         }}>
-          <Sans size={13} color={T.ink2}>
-            No hits detected. Try a louder or closer-mic'd video.
-          </Sans>
+          <div style={{ flex: 1 }}>
+            <Mono size={10} color={T.ink3}>TOTAL</Mono>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+              <Serif size={22} weight={400}>{clips.length}</Serif>
+              <Sans size={12} color={T.ink3}>
+                clips · {clips.reduce((s, c) => s + (c.duration_s || 0), 0).toFixed(1)}s
+              </Sans>
+            </div>
+          </div>
+          <Sans size={12} color={T.ink3}>Tap any clip →</Sans>
         </div>
       )}
-    </AppShell>
+    </Screen>
   );
 }
 
 function ClipCard({ clip, onClick }) {
+  const [imgOk, setImgOk] = useState(true);
   const duration = (clip.end_s - clip.start_s).toFixed(1);
-  const startTime = fmtTime(clip.start_s);
   return (
     <div onClick={onClick} style={{
       position: 'relative', aspectRatio: '3/4',
@@ -462,42 +781,40 @@ function ClipCard({ clip, onClick }) {
       border: `0.5px solid ${T.line}`,
       background: T.paperAlt, cursor: 'pointer',
     }}>
-      <img
-        src={`${API}/clips/${clip.clip_id}/thumbnail`}
-        alt=""
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-        onError={e => { e.target.style.display = 'none'; }}
-      />
-      {/* type + hit count badge */}
+      {imgOk ? (
+        <img src={`${API}/clips/${clip.clip_id}/thumbnail`} alt=""
+          onError={() => setImgOk(false)}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+      ) : (
+        <div style={{
+          width: '100%', height: '100%',
+          background: `repeating-linear-gradient(135deg, #E8D4C8 0 6px, rgba(0,0,0,0.04) 6px 12px)`,
+        }}/>
+      )}
       <div style={{
         position: 'absolute', top: 6, left: 6,
         padding: '2px 6px', borderRadius: 4,
         background: 'rgba(42,41,37,0.85)', color: T.bg,
         fontFamily: T.mono, fontSize: 9, fontWeight: 500, letterSpacing: 0.5,
       }}>{clip.impact_times_s.length}× HIT</div>
-      {/* time/dur strip */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0,
         padding: '18px 8px 6px',
         background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%)',
         display: 'flex', justifyContent: 'space-between',
       }}>
-        <Mono size={9} color="#fff">{startTime}</Mono>
+        <Mono size={9} color="#fff">{fmtTime(clip.start_s)}</Mono>
         <Mono size={9} color="rgba(255,255,255,0.75)">{duration}s</Mono>
       </div>
     </div>
   );
 }
 
-function fmtTime(s) {
-  const m = Math.floor(s / 60);
-  const sec = Math.floor(s % 60);
-  return `${m}:${sec.toString().padStart(2, '0')}`;
-}
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 5: Loading (analysis in progress)
+// ═══════════════════════════════════════════════════════════════════════
 
-// ── Loading / analyzing ──────────────────────────────────────────
-
-function Analyzing({ clipId, onDone, onBack }) {
+function Loading({ clipId, onDone, onBack }) {
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Queued…');
   const [error, setError] = useState(null);
@@ -506,195 +823,255 @@ function Analyzing({ clipId, onDone, onBack }) {
     (async () => {
       try {
         const { job_id, status } = await api.startDiagnose(clipId);
-        if (status === 'already_done') {
-          onDone(clipId);
-          return;
-        }
+        if (status === 'already_done') { onDone(clipId); return; }
         const job = await pollJob(job_id, j => {
           setProgress(j.progress || 0);
           setMessage(j.message || '');
         }, 1000);
         if (job.status === 'done') onDone(clipId);
         else setError(job.error || 'Diagnosis failed');
-      } catch (e) {
-        setError(String(e.message || e));
-      }
+      } catch (e) { setError(String(e.message || e)); }
     })();
   }, [clipId]);
 
   const stages = [
-    { t: 'Pose estimation',      threshold: 0.2 },
-    { t: 'Impact detection',     threshold: 0.4 },
-    { t: 'Biomechanics KPIs',    threshold: 0.6 },
-    { t: 'Gemini visual reading', threshold: 0.85 },
-    { t: 'Knowledge inference',  threshold: 1.0 },
+    { t: 'Pose estimation',       threshold: 0.20 },
+    { t: 'Impact detection',      threshold: 0.40 },
+    { t: 'Biomechanics features', threshold: 0.65 },
+    { t: 'Gemini visual reading', threshold: 0.88 },
+    { t: 'Knowledge inference',   threshold: 1.00 },
   ];
 
   return (
-    <AppShell eyebrow="Analyzing" title="Reading your swing" onBack={onBack}>
-      {/* Hero placeholder */}
-      <div style={{
-        borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
-        position: 'relative', marginBottom: 20, background: '#2E2C28', height: 220,
-      }}>
-        <video
-          src={`${API}/clips/${clipId}/video`}
-          autoPlay muted loop playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
-        />
-        <div style={{
-          position: 'absolute', top: 0, bottom: 0, left: `${Math.max(10, progress * 90)}%`, width: 1,
-          background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
-          boxShadow: `0 0 10px ${T.amber}`, transition: 'left 0.5s',
-        }}/>
-      </div>
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onBack}/>}
+        right={<NavBtn label="Background"/>}
+        eyebrow="Analyzing"
+      />
 
-      <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
-        {message || 'Working'}
-      </Sans>
-      <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.1, marginBottom: 22 }}>
-        Tracing keypoints<br/>
-        <Serif as="span" size={28} italic weight={380} style={{ color: T.clayDeep }}>
-          across this clip.
-        </Serif>
-      </Serif>
-
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
-        <Mono size={11} color={T.ink2}>OVERALL</Mono>
-        <div>
-          <Serif size={20} weight={400} as="span">{(progress * 100).toFixed(0)}</Serif>
-          <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
+      <div className="scroll" style={{ flex: 1 }}>
+        <div style={{ padding: '4px 20px 0' }}>
+          <div style={{
+            borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
+            position: 'relative', background: '#2E2C28', height: 220,
+          }}>
+            <video
+              src={`${API}/clips/${clipId}/video`}
+              autoPlay muted loop playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.55 }}
+            />
+            <svg viewBox="0 0 200 220" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+              <g stroke={T.amber} strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.85">
+                <line x1="100" y1="50" x2="98" y2="110"/>
+                <line x1="98" y1="110" x2="78" y2="160"/>
+                <line x1="98" y1="110" x2="118" y2="160"/>
+                <line x1="78" y1="160" x2="72" y2="210"/>
+                <line x1="118" y1="160" x2="126" y2="210"/>
+                <line x1="100" y1="80" x2="135" y2="70"/>
+                <line x1="100" y1="80" x2="68" y2="90"/>
+                <line x1="135" y1="70" x2="165" y2="45"/>
+              </g>
+              <g fill={T.clay}>
+                {[[100,50],[100,80],[98,110],[78,160],[118,160],[72,210],[126,210],[135,70],[68,90],[165,45]].map((p,i)=>(
+                  <circle key={i} cx={p[0]} cy={p[1]} r="3.2" stroke="#fff" strokeWidth="1"/>
+                ))}
+              </g>
+            </svg>
+            <div style={{
+              position: 'absolute', top: 0, bottom: 0,
+              left: `${Math.max(8, progress * 92)}%`, width: 1,
+              background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
+              boxShadow: `0 0 10px ${T.amber}`, transition: 'left 0.5s',
+            }}/>
+          </div>
         </div>
-      </div>
-      <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden', marginBottom: 22 }}>
-        <div style={{
-          height: '100%', width: `${Math.max(2, progress * 100)}%`,
-          background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
-          transition: 'width 0.5s',
-        }}/>
-      </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {stages.map((st, i) => {
-          const done = progress >= st.threshold;
-          const active = !done && (i === 0 || progress >= stages[i - 1].threshold);
-          return (
-            <div key={i} style={{
-              display: 'flex', alignItems: 'center', gap: 12,
-              padding: '10px 0',
-              borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
-            }}>
-              <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
-                {done ? (
-                  <div style={{
-                    width: 18, height: 18, borderRadius: 999, background: T.ink,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}><Icon name="check" size={11} color={T.bg} stroke={2.5}/></div>
-                ) : active ? (
-                  <div style={{
-                    width: 18, height: 18, borderRadius: 999,
-                    border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
-                    animation: 'spin 0.9s linear infinite',
-                  }}/>
-                ) : (
-                  <div style={{ width: 8, height: 8, borderRadius: 999, background: T.line }}/>
-                )}
-              </div>
-              <Sans size={14} weight={active ? 600 : 500} color={done ? T.ink : active ? T.ink : T.ink3}>{st.t}</Sans>
+        <div style={{ padding: '22px 24px 0' }}>
+          <Sans size={11} weight={500} upper color={T.clay} style={{ marginBottom: 8 }}>
+            {message || 'Reading your swing'}
+          </Sans>
+          <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.1 }}>
+            Tracing keypoints<br/>
+            <Serif as="span" size={28} italic weight={380} style={{ color: T.clayDeep }}>
+              across this clip.
+            </Serif>
+          </Serif>
+        </div>
+
+        <div style={{ padding: '22px 24px 0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+            <Mono size={11} color={T.ink2}>OVERALL</Mono>
+            <div>
+              <Serif size={20} weight={400} as="span">{(progress * 100).toFixed(0)}</Serif>
+              <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
             </div>
-          );
-        })}
-      </div>
-
-      {error && (
-        <div style={{
-          marginTop: 20, padding: 14, borderRadius: 12, background: '#F6E4DC',
-          border: `0.5px solid rgba(168,67,47,0.2)`,
-        }}>
-          <Sans size={12} color={T.clayDeep}>{error}</Sans>
+          </div>
+          <div style={{ height: 4, borderRadius: 2, background: T.paperAlt, overflow: 'hidden' }}>
+            <div style={{
+              height: '100%', width: `${Math.max(2, progress * 100)}%`,
+              background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+              transition: 'width 0.5s',
+            }}/>
+          </div>
         </div>
-      )}
-    </AppShell>
+
+        <div style={{ padding: '22px 24px 0' }}>
+          {stages.map((st, i) => {
+            const done = progress >= st.threshold;
+            const active = !done && (i === 0 || progress >= stages[i - 1].threshold);
+            return (
+              <div key={i} style={{
+                display: 'flex', alignItems: 'center', gap: 12,
+                padding: '12px 0',
+                borderTop: i > 0 ? `0.5px solid ${T.lineSoft}` : 'none',
+              }}>
+                <div style={{ width: 22, display: 'flex', justifyContent: 'center' }}>
+                  {done ? (
+                    <div style={{
+                      width: 18, height: 18, borderRadius: 999, background: T.ink,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}><Icon name="check" size={11} color={T.bg} stroke={2.5}/></div>
+                  ) : active ? (
+                    <div style={{
+                      width: 18, height: 18, borderRadius: 999,
+                      border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
+                      animation: 'spin 0.9s linear infinite',
+                    }}/>
+                  ) : (
+                    <div style={{ width: 8, height: 8, borderRadius: 999, background: T.line }}/>
+                  )}
+                </div>
+                <Sans size={14} weight={active ? 600 : 500}
+                      color={done || active ? T.ink : T.ink3}>{st.t}</Sans>
+              </div>
+            );
+          })}
+        </div>
+
+        <div style={{
+          margin: '14px 16px 22px', padding: '14px 14px',
+          background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+          display: 'flex', gap: 10, alignItems: 'flex-start',
+        }}>
+          <Icon name="sparkle" size={16} color={T.clay}/>
+          <div style={{ flex: 1 }}>
+            <Sans size={12} weight={600} style={{ marginBottom: 2 }}>Did you know</Sans>
+            <Sans size={12} color={T.ink2} style={{ lineHeight: 1.5 }}>
+              Pro forehands average 92°–110° of hip rotation from load to contact. We'll show yours next.
+            </Sans>
+          </div>
+        </div>
+
+        {error && (
+          <div style={{
+            margin: '0 20px 22px', padding: 14, borderRadius: 12, background: '#F6E4DC',
+            border: `0.5px solid rgba(168,67,47,0.2)`,
+          }}>
+            <Sans size={12} color={T.clayDeep}>{error}</Sans>
+          </div>
+        )}
+      </div>
+    </Screen>
   );
 }
 
-// ── Results (tabbed shell) ────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════
+// Screen 6: Results (3 tabs sharing header)
+// ═══════════════════════════════════════════════════════════════════════
 
 function Results({ clipId, onBack }) {
   const [diag, setDiag] = useState(null);
   const [err, setErr] = useState(null);
   const [tab, setTab] = useState('data');
+  const [video, setVideo] = useState(null);
 
   useEffect(() => {
     api.getDiagnosis(clipId).then(r => setDiag(r.result || r)).catch(e => setErr(String(e)));
   }, [clipId]);
 
+  useEffect(() => {
+    if (diag) api.getVideo(diag.video_id).then(setVideo).catch(() => {});
+  }, [diag]);
+
   if (err) return (
-    <AppShell eyebrow="Not found" onBack={onBack}>
-      <Sans color={T.clayDeep}>{err}</Sans>
-    </AppShell>
+    <Screen bg={T.bg}>
+      <NavBar left={<NavBtn icon="chevL" onClick={onBack}/>} eyebrow="Not found"/>
+      <div style={{ padding: 22 }}><Sans color={T.clayDeep}>{err}</Sans></div>
+    </Screen>
   );
   if (!diag) return (
-    <AppShell eyebrow="Loading" onBack={onBack}>
-      <Sans color={T.ink3}>Loading…</Sans>
-    </AppShell>
+    <Screen bg={T.bg}>
+      <NavBar left={<NavBtn icon="chevL" onClick={onBack}/>} eyebrow="Loading"/>
+      <div style={{ padding: 22 }}><Sans color={T.ink3}>Loading results…</Sans></div>
+    </Screen>
   );
 
-  const overallScore = diag.overall_score;
-
   return (
-    <AppShell onBack={onBack}>
-      {/* Top: clip + score */}
-      <div style={{
-        borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`,
-        marginBottom: 12, background: '#2E2C28',
-      }}>
-        <video
-          src={diag.artifacts?.annotated_video ? `${diag.artifacts.annotated_video}?` : `${API}/clips/${clipId}/video`}
-          controls playsInline
-          style={{ width: '100%', display: 'block', maxHeight: 300 }}
-        />
-      </div>
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onBack}/>}
+        right={<><NavBtn icon="share"/><NavBtn icon="dots"/></>}
+        eyebrow={`Session · ${fmtClock(diag.created_at)}`}
+      />
 
-      <div style={{ marginBottom: 18, display: 'flex', alignItems: 'baseline', gap: 12 }}>
-        <div style={{ flex: 1 }}>
-          <Sans size={11} upper weight={500} color={T.ink3}>Overall score</Sans>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 4 }}>
-            <Serif size={48} weight={400} opsz={72}>{overallScore != null ? Number(overallScore).toFixed(0) : '—'}</Serif>
-            <Sans size={12} color={T.ink3}>/ 100</Sans>
-            <Tag tone="clay" style={{ marginLeft: 8 }}>{diag.stroke_type === 'forehand' ? 'Forehand' : 'Backhand'}</Tag>
+      {/* Stroke scrubber */}
+      {video && video.clips && (
+        <div style={{ padding: '0 20px 14px' }}>
+          <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 2 }}>
+            {video.clips.map((c, i) => {
+              const sel = c.clip_id === clipId;
+              return (
+                <div key={c.clip_id} style={{
+                  minWidth: 52, height: 60,
+                  borderRadius: 8, position: 'relative',
+                  border: `${sel ? 2 : 0.5}px solid ${sel ? T.clay : T.line}`,
+                  background: '#F6E4DC',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  overflow: 'hidden', flexShrink: 0,
+                }}>
+                  <Mono size={9} color={T.ink} style={{ position: 'absolute', top: 4, left: 5 }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </Mono>
+                  <Sans size={11} weight={700} color={T.clayDeep}>
+                    {c.impact_times_s.length}H
+                  </Sans>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Tabs */}
+      {/* Tab header */}
       <div style={{
-        display: 'flex', gap: 8, marginBottom: 16,
-        background: T.paperAlt, padding: 4, borderRadius: 12,
-        border: `0.5px solid ${T.line}`,
+        margin: '0 20px', padding: 3,
+        background: T.paperAlt, borderRadius: 12,
+        display: 'flex', gap: 2, flexShrink: 0,
       }}>
         {[
-          { id: 'data', label: 'Biomechanics' },
-          { id: 'vlm',  label: 'Observations' },
-          { id: 'coach',label: 'Coach' },
+          { id: 'data',  label: 'Biomechanics' },
+          { id: 'vlm',   label: 'Observations' },
+          { id: 'coach', label: 'Coach' },
         ].map(t => (
           <button key={t.id} onClick={() => setTab(t.id)} style={{
-            flex: 1, border: 'none', cursor: 'pointer',
-            padding: '10px 8px', borderRadius: 9,
+            flex: 1, padding: '9px 8px', borderRadius: 9,
             background: tab === t.id ? T.paper : 'transparent',
-            boxShadow: tab === t.id ? '0 1px 4px rgba(0,0,0,0.04)' : 'none',
-            fontFamily: T.sans, fontSize: 13, fontWeight: tab === t.id ? 600 : 500,
+            boxShadow: tab === t.id ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+            border: 'none', cursor: 'pointer',
+            fontFamily: T.sans, fontSize: 13,
+            fontWeight: tab === t.id ? 600 : 500,
             color: tab === t.id ? T.ink : T.ink3,
           }}>{t.label}</button>
         ))}
       </div>
 
-      <div className="fadein" key={tab}>
+      <div className="scroll fadein" key={tab} style={{ flex: 1, padding: '16px 20px 24px' }}>
         {tab === 'data'  && <TabData  diag={diag}/>}
         {tab === 'vlm'   && <TabVLM   diag={diag}/>}
         {tab === 'coach' && <TabCoach diag={diag}/>}
       </div>
-    </AppShell>
+    </Screen>
   );
 }
 
@@ -704,32 +1081,31 @@ function TabData({ diag }) {
   const swing = swings[0];
   const phases = swing.phase_scores || {};
   const phaseLabels = {
-    unit_turn: 'Unit Turn',
-    chain:     'Kinetic Chain',
-    contact:   'Contact',
-    through:   'Follow-Through',
-    stability: 'Stability',
+    unit_turn: 'Unit Turn', chain: 'Kinetic Chain', contact: 'Contact',
+    through: 'Follow-Through', stability: 'Stability',
+    ohb_preparation: 'Preparation', ohb_backswing: 'Backswing',
+    ohb_kinetic_chain: 'Kinetic Chain', ohb_contact: 'Contact',
+    ohb_extension: 'Extension', ohb_balance: 'Balance',
   };
-
-  // Key metrics grid — pick the 4 most informative
   const metrics = (swing.kpi_results || []).slice(0, 4);
 
   return (
     <div>
-      {diag.artifacts?.keyframe_grid && (
-        <div style={{
-          borderRadius: 14, overflow: 'hidden', border: `0.5px solid ${T.line}`,
-          marginBottom: 16, background: T.paper,
-        }}>
-          <img src={diag.artifacts.keyframe_grid} alt="" style={{ width: '100%', display: 'block' }}/>
-          <div style={{ padding: '8px 12px', background: T.paperAlt }}>
-            <Mono size={10} color={T.ink3}>Keyframe grid · VLM input</Mono>
-          </div>
-        </div>
-      )}
+      {/* Annotated video */}
+      <div style={{ borderRadius: 18, overflow: 'hidden', border: `0.5px solid ${T.line}`, position: 'relative', background: '#2E2C28', marginBottom: 16 }}>
+        <video src={`${API}/clips/${diag.clip_id}/annotated`}
+          controls playsInline
+          style={{ width: '100%', display: 'block', maxHeight: 240 }}/>
+      </div>
 
+      <div style={{ marginBottom: 14, display: 'flex', alignItems: 'baseline', gap: 6 }}>
+        <Tag tone="clay">{diag.stroke_type === 'forehand' ? 'Forehand' : 'Backhand'}</Tag>
+        <Sans size={11} color={T.ink3}>· Swing 1 of {swings.length}</Sans>
+      </div>
+
+      {/* Big metrics */}
       <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>Key metrics</Sans>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 18 }}>
         {metrics.map((m, i) => (
           <div key={i} style={{
             background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
@@ -775,27 +1151,59 @@ function TabData({ diag }) {
           </div>
         ))}
       </div>
+
+      {/* Keyframe grid */}
+      {diag.artifacts?.keyframe_grid && (
+        <div style={{ marginTop: 16 }}>
+          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>Keyframes</Sans>
+          <div style={{ borderRadius: 14, overflow: 'hidden', border: `0.5px solid ${T.line}`, background: T.paper }}>
+            <img src={diag.artifacts.keyframe_grid} alt="" style={{ width: '100%', display: 'block' }}/>
+          </div>
+        </div>
+      )}
+
+      {/* Big score block at bottom */}
+      <div style={{
+        marginTop: 18, padding: '16px 18px',
+        background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
+        display: 'flex', alignItems: 'center', gap: 12,
+      }}>
+        <div style={{ flex: 1 }}>
+          <Sans size={11} upper weight={500} color={T.ink3}>Overall</Sans>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <Serif size={36} weight={380} opsz={72}>
+              {diag.overall_score != null ? Number(diag.overall_score).toFixed(0) : '—'}
+            </Serif>
+            <Sans size={12} color={T.ink3}>/ 100</Sans>
+          </div>
+        </div>
+        <Icon name="target" size={28} color={T.clay}/>
+      </div>
     </div>
   );
 }
 
-function fmtValue(v) {
-  if (v == null) return '—';
-  if (typeof v === 'number') {
-    const abs = Math.abs(v);
-    if (abs >= 100) return v.toFixed(0);
-    if (abs >= 10) return v.toFixed(1);
-    return v.toFixed(2);
-  }
-  return String(v);
-}
-
 function TabVLM({ diag }) {
   const vlm = diag.vlm;
-  if (!vlm) return <Sans color={T.ink3}>No visual observations produced (VLM unavailable for this clip).</Sans>;
+  const narrative = diag.diagnosis?.narrative || vlm?.narrative;
+
+  if (!vlm) {
+    return (
+      <div style={{ padding: 18, borderRadius: 14, background: T.paperAlt }}>
+        <Icon name="alert" size={20} color={T.ink3}/>
+        <Sans size={13} color={T.ink2} style={{ marginTop: 8 }}>
+          No visual reading available for this clip.
+        </Sans>
+        <Sans size={11} color={T.ink3} style={{ marginTop: 4 }}>
+          {diag.stroke_type === 'one_handed_backhand'
+            ? 'Single-handed backhand VLM analysis is not yet enabled.'
+            : 'VLM analysis was skipped or returned no observations.'}
+        </Sans>
+      </div>
+    );
+  }
 
   const observations = vlm.observations || [];
-  const narrative = diag.diagnosis?.narrative || vlm.narrative;
 
   return (
     <div>
@@ -820,39 +1228,66 @@ function TabVLM({ diag }) {
         </div>
       )}
 
-      <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
-        Observations · {observations.length}
-      </Sans>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {observations.map((obs, i) => (
-          <div key={i} style={{
-            background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-            padding: '12px 14px',
-          }}>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-              {obs.phase && <Tag tone="ghost">{obs.phase}</Tag>}
-              {obs.severity && <Tag tone={obs.severity === 'high' ? 'clay' : obs.severity === 'medium' ? 'amber' : 'court'}>
-                {obs.severity}
-              </Tag>}
-            </div>
-            <Sans size={13} weight={600} style={{ marginBottom: 4, lineHeight: 1.35 }}>
-              {obs.observation || obs.title || obs.summary}
-            </Sans>
-            {obs.evidence && (
-              <Sans size={11} color={T.ink3} style={{ lineHeight: 1.5 }}>
-                <Icon name="wave" size={11} color={T.ink3}/> {typeof obs.evidence === 'string' ? obs.evidence : JSON.stringify(obs.evidence)}
-              </Sans>
-            )}
-          </div>
-        ))}
-        {observations.length === 0 && <Sans color={T.ink3}>No observations.</Sans>}
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+        <Sans size={11} upper weight={500} color={T.ink3}>
+          Timeline · {observations.length} observations
+        </Sans>
       </div>
+
+      {observations.length === 0 ? (
+        <Sans color={T.ink3}>No observations to show.</Sans>
+      ) : (
+        <div style={{ position: 'relative', paddingLeft: 22 }}>
+          <div style={{ position: 'absolute', left: 7, top: 8, bottom: 8, width: 1, background: T.line }}/>
+          {observations.map((obs, i) => {
+            const tone = obs.severity === 'high' ? 'clay'
+                       : obs.severity === 'medium' ? 'amber'
+                       : 'court';
+            const dot = tone === 'clay' ? T.clay : tone === 'amber' ? T.amber : T.court;
+            return (
+              <div key={i} style={{ position: 'relative', marginBottom: 12 }}>
+                <div style={{
+                  position: 'absolute', left: -22, top: 14,
+                  width: 14, height: 14, borderRadius: 999,
+                  background: dot, border: '2px solid ' + T.bg,
+                  boxShadow: `0 0 0 1px ${dot}40`,
+                }}/>
+                <div style={{
+                  background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
+                  padding: '12px 14px',
+                }}>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
+                    {obs.phase && <Tag tone="ghost">{obs.phase}</Tag>}
+                    <Tag tone={tone} style={{ marginLeft: 'auto' }}>
+                      {obs.severity || 'note'}
+                    </Tag>
+                  </div>
+                  <Sans size={13} weight={600} style={{ marginBottom: 5, lineHeight: 1.35 }}>
+                    {obs.observation || obs.title || obs.summary}
+                  </Sans>
+                  {obs.evidence && (
+                    <div style={{
+                      marginTop: 8, paddingTop: 6,
+                      borderTop: `0.5px dashed ${T.line}`,
+                      display: 'flex', alignItems: 'center', gap: 6,
+                    }}>
+                      <Icon name="wave" size={12} color={T.ink3}/>
+                      <Mono size={10} color={T.ink3}>
+                        {typeof obs.evidence === 'string' ? obs.evidence : JSON.stringify(obs.evidence)}
+                      </Mono>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {diag.diagnosis?.arbitration && diag.diagnosis.arbitration.length > 0 && (
         <div style={{ marginTop: 22 }}>
           <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
-            Cross-checks · VLM vs metrics
+            Cross-checks · VLM ↔ metrics
           </Sans>
           {diag.diagnosis.arbitration.map((a, i) => (
             <div key={i} style={{
@@ -877,15 +1312,34 @@ function TabCoach({ diag }) {
   const issues = d.issues || [];
   const chain = d.causal_chain || [];
 
+  if (!root && !drill && issues.length === 0) {
+    return (
+      <div style={{ padding: 18, borderRadius: 14, background: T.paperAlt }}>
+        <Icon name="alert" size={20} color={T.ink3}/>
+        <Sans size={13} color={T.ink2} style={{ marginTop: 8 }}>
+          No diagnostic chain produced for this clip.
+        </Sans>
+        <Sans size={11} color={T.ink3} style={{ marginTop: 4 }}>
+          {diag.stroke_type === 'one_handed_backhand'
+            ? 'Single-handed backhand diagnosis is not yet enabled.'
+            : 'See Biomechanics tab for raw scores.'}
+        </Sans>
+      </div>
+    );
+  }
+
   return (
     <div>
-      {root ? (
+      {root && (
         <div style={{
           background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 18,
           overflow: 'hidden', marginBottom: 20,
         }}>
           <div style={{ padding: '16px 18px 14px' }}>
-            <Tag tone="clay" style={{ marginBottom: 12 }}>Root cause</Tag>
+            <div style={{ display: 'flex', gap: 6, marginBottom: 12 }}>
+              <Tag tone="clay">Root cause</Tag>
+              <Sans size={11} color={T.ink3}>Priority 1</Sans>
+            </div>
             <Serif size={22} weight={400} opsz={60} style={{ lineHeight: 1.25, marginBottom: 10 }}>
               {root.label || root.name || root.concept || 'Root cause identified'}
             </Serif>
@@ -896,14 +1350,20 @@ function TabCoach({ diag }) {
           {chain.length > 0 && (
             <div style={{ padding: '12px 18px 16px', background: T.paperAlt }}>
               <Sans size={10} upper weight={500} color={T.ink3} style={{ letterSpacing: 1.1, marginBottom: 10 }}>
-                Causal chain
+                How we know
               </Sans>
               {chain.map((c, i) => (
                 <div key={i} style={{
-                  display: 'flex', alignItems: 'center', gap: 10, padding: '6px 0',
+                  display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0',
+                  borderTop: i > 0 ? `0.5px solid ${T.line}` : 'none',
                 }}>
-                  <Mono size={11} color={T.ink3}>{String(i + 1).padStart(2, '0')}</Mono>
-                  <Sans size={12} color={T.ink}>
+                  <div style={{
+                    width: 22, height: 22, borderRadius: 6,
+                    background: T.clay, color: '#fff',
+                    fontFamily: T.mono, fontSize: 9, fontWeight: 700,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  }}>{String(i + 1).padStart(2, '0')}</div>
+                  <Sans size={12} color={T.ink} style={{ flex: 1 }}>
                     {typeof c === 'string' ? c : (c.label || c.concept || JSON.stringify(c))}
                   </Sans>
                 </div>
@@ -911,16 +1371,12 @@ function TabCoach({ diag }) {
             </div>
           )}
         </div>
-      ) : (
-        <div style={{ padding: 16, borderRadius: 14, background: T.paperAlt, marginBottom: 20 }}>
-          <Sans color={T.ink2}>No root cause identified for this swing.</Sans>
-        </div>
       )}
 
       {issues.length > 0 && (
         <div style={{ marginBottom: 20 }}>
           <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
-            Also worth working on · {issues.length}
+            Also worth working on
           </Sans>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {issues.slice(0, 5).map((iss, i) => (
@@ -934,6 +1390,7 @@ function TabCoach({ diag }) {
                 <Sans size={13} color={T.ink} style={{ flex: 1 }}>
                   {typeof iss === 'string' ? iss : (iss.label || iss.name || iss.concept || JSON.stringify(iss))}
                 </Sans>
+                <Icon name="chevR" size={14} color={T.ink3}/>
               </div>
             ))}
           </div>
@@ -942,9 +1399,10 @@ function TabCoach({ diag }) {
 
       {drill && (
         <div>
-          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 10 }}>
-            Training plan
-          </Sans>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+            <Sans size={11} upper weight={500} color={T.ink3}>Training plan</Sans>
+            <Sans size={11} weight={500} color={T.clay}>~ 15 min</Sans>
+          </div>
           <div style={{
             background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 16,
             padding: '14px 16px', display: 'flex', gap: 14,
@@ -972,18 +1430,47 @@ function TabCoach({ diag }) {
           </div>
         </div>
       )}
+
+      {/* Next session goal */}
+      {(root || drill) && (
+        <div style={{
+          marginTop: 18, background: T.ink, borderRadius: 16,
+          padding: '14px 16px', color: '#fff',
+          display: 'flex', gap: 12, alignItems: 'center',
+        }}>
+          <Icon name="target" size={22} color={T.amber}/>
+          <div style={{ flex: 1 }}>
+            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.1 }}>
+              Next session goal
+            </Sans>
+            <Sans size={13} weight={500} style={{ color: '#fff', marginTop: 3, lineHeight: 1.4 }}>
+              Apply the drill above for at least 8 minutes; record one rep from the side and re-analyze.
+            </Sans>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-// ═══ App state machine ═══
+// ═══════════════════════════════════════════════════════════════════════
+// App state machine
+// ═══════════════════════════════════════════════════════════════════════
 
 function App() {
-  const [route, setRoute] = useState({ name: 'home' });
+  const initialRoute = (() => {
+    try { return localStorage.getItem('baseline.onboarded') === '1' ? { name: 'home' } : { name: 'onboarding' }; }
+    catch { return { name: 'home' }; }
+  })();
+  const [route, setRoute] = useState(initialRoute);
   const [uploadFile, setUploadFile] = useState(null);
   const [homeKey, setHomeKey] = useState(0);
   const fileRef = useRef();
 
+  const start = () => {
+    try { localStorage.setItem('baseline.onboarded', '1'); } catch {}
+    fileRef.current?.click();
+  };
   const pickFile = () => fileRef.current?.click();
   const onFileChosen = e => {
     const f = e.target.files?.[0];
@@ -995,44 +1482,47 @@ function App() {
   };
 
   return (
-    <>
-      <input ref={fileRef} type="file" accept="video/*" style={{ display: 'none' }} onChange={onFileChosen}/>
+    <div className="frame">
+      <div className="frame-inner">
+        <input ref={fileRef} type="file" accept="video/*" style={{ display: 'none' }} onChange={onFileChosen}/>
 
-      {route.name === 'home' && (
-        <Home
-          reloadKey={homeKey}
-          onPick={id => setRoute({ name: 'clips', videoId: id })}
-          onUpload={pickFile}
-        />
-      )}
-      {route.name === 'upload' && (
-        <Uploading
-          file={uploadFile}
-          onDone={videoId => setRoute({ name: 'clips', videoId })}
-          onCancel={() => { setRoute({ name: 'home' }); setHomeKey(k => k+1); }}
-        />
-      )}
-      {route.name === 'clips' && (
-        <ClipGrid
-          videoId={route.videoId}
-          onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k+1); }}
-          onPickClip={clipId => setRoute({ name: 'analyze', clipId })}
-        />
-      )}
-      {route.name === 'analyze' && (
-        <Analyzing
-          clipId={route.clipId}
-          onDone={clipId => setRoute({ name: 'result', clipId })}
-          onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
-        />
-      )}
-      {route.name === 'result' && (
-        <Results
-          clipId={route.clipId}
-          onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
-        />
-      )}
-    </>
+        {route.name === 'onboarding' && <Onboarding onStart={start}/>}
+        {route.name === 'home' && (
+          <Home
+            reloadKey={homeKey}
+            onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
+            onUpload={pickFile}
+          />
+        )}
+        {route.name === 'upload' && (
+          <Import
+            file={uploadFile}
+            onDone={videoId => setRoute({ name: 'clips', videoId })}
+            onCancel={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
+          />
+        )}
+        {route.name === 'clips' && (
+          <ClipGrid
+            videoId={route.videoId}
+            onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
+            onPickClip={clipId => setRoute({ name: 'analyze', clipId })}
+          />
+        )}
+        {route.name === 'analyze' && (
+          <Loading
+            clipId={route.clipId}
+            onDone={clipId => setRoute({ name: 'result', clipId })}
+            onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+          />
+        )}
+        {route.name === 'result' && (
+          <Results
+            clipId={route.clipId}
+            onBack={() => setRoute({ name: 'clips', videoId: route.clipId.split('_c')[0] })}
+          />
+        )}
+      </div>
+    </div>
   );
 }
 

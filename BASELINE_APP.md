@@ -7,18 +7,25 @@
 
 ## 一、运行方式（快速启动）
 
+**最简单**：
+
 ```bash
-# 1. 确保依赖已装
-pip install fastapi uvicorn python-multipart
-
-# 2. 启动 API + 前端（同一进程）
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8765
-
-# 3. 浏览器打开
-#    http://127.0.0.1:8765/           — 功能原型（可实际跑完整流程）
-#    http://127.0.0.1:8765/design.html — Claude Desktop 出的设计稿 canvas
-#    http://127.0.0.1:8765/docs        — FastAPI 自动生成的 API 文档
+./start.sh
 ```
+
+会自动装依赖 + 启动服务，输出几个关键 URL。
+
+**手动**：
+
+```bash
+pip install fastapi uvicorn python-multipart
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8765
+```
+
+**入口**：
+- http://localhost:8765/             — Baseline App（手机风格，Claude Desktop 设计稿的功能化版）
+- http://localhost:8765/design.html  — Claude Desktop 设计稿原 canvas（9 屏并列）
+- http://localhost:8765/docs         — FastAPI 自动 API 文档（可直接调试）
 
 ---
 
