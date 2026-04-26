@@ -1,21 +1,20 @@
-// Baseline service worker — minimal "always online with graceful fallback"
+// Baseline service worker — network-first for the shell.
 //
-// Strategy:
-//   • App shell (/, /index.html, manifest, icons) → cache-first, falls
-//     back to network. This makes opening the App fast even on flaky
-//     mobile data.
-//   • API calls (/api/**)              → network-only (don't cache, the
-//     data is always fresh and the server is the source of truth).
-//   • Media (/api/clips/*/video, etc.) → network-only too — videos are
-//     too big to cache, and we want range requests to work.
+// Strategy change after a stuck-on-stale-shell incident:
+//   • HTML / navigation requests → ALWAYS try network first, fall back
+//     to cache only if truly offline. The app is tunnel-served, so
+//     "online" is the normal state. Caching the shell aggressively
+//     was leaving users on old code after deploys, even with
+//     CACHE-name bumps.
+//   • API calls (/api/**) → never cached (data is fresh per request).
+//   • Static assets (icons, manifest) → cache-first for installability,
+//     but tolerate misses.
+//
+// This means the cache name barely matters anymore — the new HTML always
+// wins on the next page load.
 
-// Bump this when shipping shell changes — old PWAs will pick up the new
-// version on their next page load (browser checks the SW script byte-for-byte
-// every load, and a different cache name triggers a fresh shell fetch).
-const CACHE = 'baseline-shell-v7';
-const SHELL = [
-  '/',
-  '/index.html',
+const CACHE = 'baseline-shell-v8';
+const STATIC_ASSETS = [
   '/manifest.webmanifest',
   '/icon-192.png',
   '/icon-512.png',
@@ -25,47 +24,63 @@ const SHELL = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then((c) => c.addAll(STATIC_ASSETS).catch(() => {}))
+      .then(() => self.skipWaiting())
   );
-});
-
-// Allow the page to tell us "you're the new SW, take over now"
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
 });
 
 self.addEventListener('activate', (event) => {
+  // Nuke ALL old caches — even ones we don't recognize. Free-tier hosts
+  // sometimes leave orphan caches that pin stale assets.
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(
-      keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))
-    )).then(() => self.clients.claim())
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
 });
 
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
+});
+
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
 
-  // Never cache API or media — always go to network.
-  if (url.pathname.startsWith('/api/')) {
-    return; // let browser handle it directly
+  // API: bypass entirely
+  if (url.pathname.startsWith('/api/')) return;
+
+  // HTML / navigation: network first, cache as last-resort
+  const isDoc =
+    event.request.mode === 'navigate' ||
+    event.request.destination === 'document' ||
+    url.pathname === '/' ||
+    url.pathname.endsWith('.html');
+
+  if (isDoc) {
+    event.respondWith(
+      fetch(event.request)
+        .then((resp) => {
+          // Don't cache HTML — let the browser always fetch the latest.
+          return resp;
+        })
+        .catch(() => caches.match(event.request).then((c) => c || caches.match('/')))
+    );
+    return;
   }
 
-  // App shell: cache-first
-  if (event.request.method === 'GET') {
-    event.respondWith(
-      caches.match(event.request).then((cached) => {
-        if (cached) return cached;
-        return fetch(event.request).then((resp) => {
-          // Opportunistic: cache successful shell-ish responses
-          if (resp && resp.status === 200 && resp.type === 'basic') {
-            const copy = resp.clone();
-            caches.open(CACHE).then((c) => c.put(event.request, copy));
-          }
-          return resp;
-        }).catch(() => caches.match('/'));
-      })
-    );
-  }
+  // Static assets: cache first, network as fallback
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request).then((resp) => {
+        if (resp && resp.status === 200 && resp.type === 'basic') {
+          const copy = resp.clone();
+          caches.open(CACHE).then((c) => c.put(event.request, copy)).catch(() => {});
+        }
+        return resp;
+      });
+    })
+  );
 });

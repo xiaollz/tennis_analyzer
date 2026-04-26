@@ -83,6 +83,11 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Tokens (verbatim from tennis/project/tokens.jsx)
 // ═══════════════════════════════════════════════════════════════════════
 
+// Visible build tag — changes on every meaningful frontend deploy so we
+// can confirm at a glance what's actually running on the user's device.
+// (PWAs cache aggressively; this prints in the Home footer.)
+const BUILD_TAG = 'v8 · 2026-04-26';
+
 const T = {
   bg:        '#F7F3EC',
   paper:     '#FDFBF6',
@@ -838,6 +843,10 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
             ))}
           </div>
           <div style={{ height: 24 }}/>
+          {/* Build tag — confirms which version is running */}
+          <div style={{ textAlign: 'center', padding: '4px 0 12px' }}>
+            <Mono size={9} color={T.ink3} style={{ opacity: 0.45 }}>Baseline · {BUILD_TAG}</Mono>
+          </div>
         </div>
       </div>
       <TabBar active="home" onSelect={id => {
