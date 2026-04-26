@@ -288,28 +288,58 @@ const CTA = ({ children, tone = 'clay', onClick, full, icon, disabled, style = {
 // API client
 // ═══════════════════════════════════════════════════════════════════════
 
+// Centralized fetch wrapper. Adds the ngrok skip-browser-warning header
+// (ngrok's free tier shows an HTML interstitial page otherwise, which
+// makes r.json() blow up with "The string did not match the expected
+// pattern" on iOS Safari and silently kills the polling loop). Also
+// promotes non-OK responses to thrown Errors so callers can catch.
+async function apiFetch(url, opts = {}) {
+  const headers = {
+    'ngrok-skip-browser-warning': 'true',
+    ...(opts.headers || {}),
+  };
+  const res = await fetch(url, { ...opts, headers });
+  if (!res.ok) {
+    const txt = await res.text().catch(() => '');
+    throw new Error(`HTTP ${res.status}: ${txt.slice(0, 120) || res.statusText}`);
+  }
+  return res;
+}
+
+async function apiFetchJson(url, opts = {}) {
+  const res = await apiFetch(url, opts);
+  // Read as text first, then JSON.parse manually — gives a useful error
+  // message when the body is HTML / not JSON (the iOS-Safari trap).
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    throw new Error(`Invalid JSON from ${url} (got "${text.slice(0, 60)}…")`);
+  }
+}
+
 const api = {
-  health: () => fetch(`${API}/health`).then(r => r.json()),
-  listVideos: () => fetch(`${API}/videos`).then(r => r.json()),
-  getVideo: id => fetch(`${API}/videos/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
-  deleteVideo: id => fetch(`${API}/videos/${id}`, { method: 'DELETE' }).then(r => r.json()),
-  uploadVideo: (file, stroke = 'forehand') => {
+  health:        () => apiFetchJson(`${API}/health`),
+  listVideos:    () => apiFetchJson(`${API}/videos`),
+  getVideo:      id => apiFetchJson(`${API}/videos/${id}`),
+  deleteVideo:   id => apiFetchJson(`${API}/videos/${id}`, { method: 'DELETE' }),
+  uploadVideo:   (file, stroke = 'forehand') => {
     const fd = new FormData();
     fd.append('file', file);
     fd.append('stroke', stroke);
-    return fetch(`${API}/videos`, { method: 'POST', body: fd }).then(r => r.json());
+    return apiFetchJson(`${API}/videos`, { method: 'POST', body: fd });
   },
-  getJob: id => fetch(`${API}/jobs/${id}`).then(r => r.json()),
+  getJob:        id => apiFetchJson(`${API}/jobs/${id}`),
   startDiagnose: (clipId, stroke) => {
     const url = stroke ? `${API}/clips/${clipId}/diagnose?stroke=${stroke}` : `${API}/clips/${clipId}/diagnose`;
-    return fetch(url, { method: 'POST' }).then(r => r.json());
+    return apiFetchJson(url, { method: 'POST' });
   },
-  getDiagnosis: clipId => fetch(`${API}/diagnoses/${clipId}`).then(r => r.ok ? r.json() : Promise.reject('no diagnosis')),
-  getClip: id => fetch(`${API}/clips/${id}`).then(r => r.ok ? r.json() : Promise.reject('not found')),
-  getStorage: () => fetch(`${API}/storage`).then(r => r.json()),
-  cleanupJobs: (days = 7) => fetch(`${API}/storage?older_than_days=${days}`, { method: 'DELETE' }).then(r => r.json()),
-  wipeAll: () => fetch(`${API}/storage/wipe`, { method: 'POST' }).then(r => r.json()),
-  freeOriginal: id => fetch(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }).then(r => r.json()),
+  getDiagnosis:  clipId => apiFetchJson(`${API}/diagnoses/${clipId}`),
+  getClip:       id => apiFetchJson(`${API}/clips/${id}`),
+  getStorage:    () => apiFetchJson(`${API}/storage`),
+  cleanupJobs:   (days = 7) => apiFetchJson(`${API}/storage?older_than_days=${days}`, { method: 'DELETE' }),
+  wipeAll:       () => apiFetchJson(`${API}/storage/wipe`, { method: 'POST' }),
+  freeOriginal:  id => apiFetchJson(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }),
 };
 
 // Hook: smooth a discrete progress value with a tween so the UI moves
@@ -375,8 +405,28 @@ function useSwipe(ref, { onLeft, onRight, onUp, onDown, threshold = 60 } = {}) {
 
 async function pollJob(jobId, onProgress, intervalMs = 1500) {
   let lastProgress = -1, lastStatus = '', lastMessage = '';
+  let consecutiveErrors = 0;
+  const MAX_CONSEC_ERRORS = 6;        // ~9 seconds of trying at default interval
+  const RETRY_BACKOFF_MS = [600, 1200, 2400, 3600, 5000, 8000];
+
   while (true) {
-    const job = await api.getJob(jobId);
+    let job;
+    try {
+      job = await api.getJob(jobId);
+      consecutiveErrors = 0;            // reset on success
+    } catch (err) {
+      // Transient: ngrok hiccup, network drop, browser bg throttle, etc.
+      // Don't kill the entire flow — back off and retry. Only surface a
+      // hard failure after several attempts in a row.
+      consecutiveErrors += 1;
+      if (consecutiveErrors >= MAX_CONSEC_ERRORS) {
+        throw new Error(`Job poll failed ${consecutiveErrors}× in a row: ${err.message || err}`);
+      }
+      const backoff = RETRY_BACKOFF_MS[Math.min(consecutiveErrors - 1, RETRY_BACKOFF_MS.length - 1)];
+      await new Promise(r => setTimeout(r, backoff));
+      continue;
+    }
+
     // Only fire onProgress when something visibly changed — avoids
     // gratuitous React re-renders while the job churns in the background.
     if (onProgress) {
@@ -974,10 +1024,25 @@ function Import({ file, stroke, onDone, onCancel }) {
           {error && (
             <div style={{
               marginTop: 16, padding: 14, borderRadius: 12, background: '#F6E4DC',
-              border: `0.5px solid rgba(168,67,47,0.2)`, display: 'flex', gap: 10,
+              border: `0.5px solid rgba(168,67,47,0.2)`,
             }}>
-              <Icon name="alert" size={18} color={T.clayDeep}/>
-              <Sans size={12} color={T.clayDeep}>{error}</Sans>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
+                <Icon name="alert" size={18} color={T.clayDeep}/>
+                <Sans size={12} color={T.clayDeep} style={{ flex: 1, lineHeight: 1.5 }}>{error}</Sans>
+              </div>
+              <div style={{ display: 'flex', gap: 8 }}>
+                <button onClick={() => window.location.reload()} style={{
+                  flex: 1, height: 36, borderRadius: 10,
+                  background: T.clay, color: '#fff', border: 'none', cursor: 'pointer',
+                  fontFamily: T.sans, fontSize: 12, fontWeight: 600,
+                }}>Retry</button>
+                <button onClick={onCancel} style={{
+                  flex: 1, height: 36, borderRadius: 10,
+                  background: 'transparent', color: T.ink2,
+                  border: `0.5px solid ${T.line}`, cursor: 'pointer',
+                  fontFamily: T.sans, fontSize: 12, fontWeight: 500,
+                }}>Cancel</button>
+              </div>
             </div>
           )}
         </div>
