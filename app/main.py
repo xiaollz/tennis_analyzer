@@ -102,42 +102,83 @@ def create_app() -> FastAPI:
     # treats it as a new resource and goes to the network.
     @app.get("/reset", response_class=HTMLResponse)
     def reset_pwa() -> HTMLResponse:
+        # No automatic redirect — auto-redirects can leave the user on a
+        # blank screen if the next page hits ngrok's interstitial or a
+        # network blip. Show explicit status + a big manual link instead.
         html = """<!doctype html>
 <html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Resetting Baseline…</title>
+<title>Reset Baseline</title>
 <style>
+  *{box-sizing:border-box}
   body{font-family:-apple-system,system-ui,sans-serif;background:#F7F3EC;color:#2A2925;
-       margin:0;padding:48px 24px;text-align:center;line-height:1.5}
-  h1{font-size:18px;font-weight:600;margin:0 0 12px}
-  p{font-size:14px;color:#6F6B66;margin:0 0 8px}
-  code{background:#EAE4D9;padding:2px 6px;border-radius:4px;font-size:12px}
-  .ok{color:#3F6E3F}
+       margin:0;padding:32px 20px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:420px;margin:0 auto}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:-0.2px}
+  .step{padding:10px 0;border-bottom:0.5px solid rgba(0,0,0,0.08);font-size:14px;
+        display:flex;justify-content:space-between;align-items:center}
+  .label{color:#2A2925}
+  .state{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6F6B66}
+  .state.ok{color:#3F6E3F;font-weight:600}
+  .state.err{color:#A8432F;font-weight:600}
+  .cta{display:block;margin-top:24px;padding:16px;background:#A8432F;color:#fff;
+       text-align:center;text-decoration:none;border-radius:12px;font-weight:600;
+       font-size:15px;letter-spacing:0.2px}
+  .cta:active{opacity:0.85}
+  .hint{font-size:12px;color:#6F6B66;text-align:center;margin-top:14px}
 </style>
 </head><body>
-<h1>Resetting Baseline…</h1>
-<p id="msg">Clearing service worker and caches…</p>
-<p><code id="log"></code></p>
+<div class="wrap">
+  <h1>Reset Baseline</h1>
+  <div class="step"><span class="label">Service workers</span><span class="state" id="sw-state">checking…</span></div>
+  <div class="step"><span class="label">Caches</span><span class="state" id="cache-state">checking…</span></div>
+  <div class="step"><span class="label">Server build</span><span class="state" id="ver-state">checking…</span></div>
+  <a class="cta" id="continue" href="/">Open Baseline</a>
+  <p class="hint">After tap → Home 屏底部应显示当前版本号</p>
+</div>
 <script>
 (async () => {
-  const log = (m) => { document.getElementById('log').textContent = m; };
+  const set = (id, txt, cls) => {
+    const el = document.getElementById(id);
+    el.textContent = txt;
+    el.className = 'state' + (cls ? ' ' + cls : '');
+  };
+  // Build a unique URL for the continue button so it always bypasses
+  // the browser HTTP cache for '/'.
+  const cta = document.getElementById('continue');
+  cta.href = '/?fresh=' + Date.now();
+
+  // Step 1: unregister service workers
   try {
     if ('serviceWorker' in navigator) {
       const regs = await navigator.serviceWorker.getRegistrations();
-      log('found ' + regs.length + ' SW; unregistering…');
       await Promise.all(regs.map(r => r.unregister()));
+      set('sw-state', regs.length + ' removed', 'ok');
+    } else {
+      set('sw-state', 'unsupported', 'ok');
     }
+  } catch (e) { set('sw-state', 'error: ' + e.message, 'err'); }
+
+  // Step 2: delete caches
+  try {
     if ('caches' in window) {
       const keys = await caches.keys();
-      log('found ' + keys.length + ' caches; deleting…');
       await Promise.all(keys.map(k => caches.delete(k)));
+      set('cache-state', keys.length + ' deleted', 'ok');
+    } else {
+      set('cache-state', 'unsupported', 'ok');
     }
-    document.getElementById('msg').innerHTML =
-      '<span class="ok">Reset complete.</span> Loading fresh app in 1s…';
-    setTimeout(() => { location.replace('/?fresh=' + Date.now()); }, 1000);
-  } catch (e) {
-    document.getElementById('msg').textContent = 'Reset error: ' + e.message;
-  }
+  } catch (e) { set('cache-state', 'error: ' + e.message, 'err'); }
+
+  // Step 3: ask server what version it's serving
+  try {
+    const r = await fetch('/version', {
+      headers: { 'ngrok-skip-browser-warning': 'true' },
+      cache: 'no-store',
+    });
+    const j = await r.json();
+    set('ver-state', j.build_tag || 'unknown', 'ok');
+  } catch (e) { set('ver-state', 'error: ' + e.message, 'err'); }
 })();
 </script>
 </body></html>"""
