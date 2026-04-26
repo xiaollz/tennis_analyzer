@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v8 · 2026-04-26';
+const BUILD_TAG = 'v9 · 2026-04-26';
 
 const T = {
   bg:        '#F7F3EC',
@@ -328,12 +328,40 @@ const api = {
   listVideos:    () => apiFetchJson(`${API}/videos`),
   getVideo:      id => apiFetchJson(`${API}/videos/${id}`),
   deleteVideo:   id => apiFetchJson(`${API}/videos/${id}`, { method: 'DELETE' }),
-  uploadVideo:   (file, stroke = 'forehand') => {
+  // XHR (not fetch) so we get real upload byte-progress via upload.onprogress.
+  // fetch() has no upload progress on Safari/iOS — that's why the old version
+  // had to fake it with a drift timer.
+  // onProgress(fraction 0..1) is called as bytes go up the wire.
+  uploadVideo:   (file, stroke = 'forehand', onProgress) => new Promise((resolve, reject) => {
     const fd = new FormData();
     fd.append('file', file);
     fd.append('stroke', stroke);
-    return apiFetchJson(`${API}/videos`, { method: 'POST', body: fd });
-  },
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `${API}/videos`);
+    xhr.setRequestHeader('ngrok-skip-browser-warning', 'true');
+    xhr.timeout = 10 * 60 * 1000;   // 10 min — large videos over slow networks
+    if (onProgress) {
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) {
+          const frac = Math.max(0, Math.min(1, e.loaded / e.total));
+          onProgress(frac, e.loaded, e.total);
+        }
+      };
+    }
+    xhr.onload = () => {
+      const text = xhr.responseText || '';
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try { resolve(JSON.parse(text)); }
+        catch { reject(new Error(`Invalid JSON from upload (got "${text.slice(0,60)}…")`)); }
+      } else {
+        reject(new Error(`Upload failed: HTTP ${xhr.status} — ${text.slice(0,120)}`));
+      }
+    };
+    xhr.onerror = () => reject(new Error('Upload network error'));
+    xhr.ontimeout = () => reject(new Error('Upload timed out'));
+    xhr.onabort = () => reject(new Error('Upload aborted'));
+    xhr.send(fd);
+  }),
   getJob:        id => apiFetchJson(`${API}/jobs/${id}`),
   startDiagnose: (clipId, stroke) => {
     const url = stroke ? `${API}/clips/${clipId}/diagnose?stroke=${stroke}` : `${API}/clips/${clipId}/diagnose`;
@@ -895,12 +923,18 @@ const SessionCard = React.memo(function SessionCard({ video, isNew, onClick }) {
 // ═══════════════════════════════════════════════════════════════════════
 
 function Import({ file, stroke, onDone, onCancel }) {
-  const [stage, setStage] = useState('upload');
-  const [progress, setProgress] = useState(0);
-  const [message, setMessage] = useState('Uploading…');
+  const [stage, setStage] = useState('upload');     // 'upload' | 'segment'
+  const [progress, setProgress] = useState(0);      // unified 0..1 across both stages
+  const [message, setMessage] = useState('准备上传…');
   const [error, setError] = useState(null);
   const [videoUrl, setVideoUrl] = useState(null);
-  const smoothProgress = useSmoothProgress(progress, 700);
+  const smoothProgress = useSmoothProgress(progress, 400);
+
+  // Weight split: upload occupies first half of the bar, segmentation the
+  // second half. Both halves come from REAL signals — no drift, no fake.
+  // (Upload bytes are usually the slow part on cellular, segmentation is
+  // fast on the server. 50/50 is a coarse but honest visual split.)
+  const UPLOAD_WEIGHT = 0.5;
 
   useEffect(() => {
     if (file) setVideoUrl(URL.createObjectURL(file));
@@ -909,55 +943,56 @@ function Import({ file, stroke, onDone, onCancel }) {
 
   useEffect(() => {
     let aborted = false;
-    let driftTimer = null;
-
-    // While we wait between job polls, slowly drift progress toward the
-    // next stage threshold so the bar always feels alive instead of frozen.
-    const startDrift = (currentTarget) => {
-      stopDrift();
-      driftTimer = setInterval(() => {
-        if (aborted) return;
-        setProgress(p => {
-          const ceiling = Math.max(p + 0.005, currentTarget - 0.02);
-          return Math.min(p + 0.004, ceiling);
-        });
-      }, 200);
-    };
-    const stopDrift = () => { if (driftTimer) { clearInterval(driftTimer); driftTimer = null; } };
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const fmtMB = bytes => (bytes / (1024 * 1024)).toFixed(1);
 
     (async () => {
       try {
-        setMessage('Uploading video…');
-        setProgress(0.05); startDrift(0.18);
-        const { video_id, job_id } = await api.uploadVideo(file, stroke);
+        // ── Phase 1: Upload (real byte progress via XHR) ──────────────
+        setStage('upload');
+        setMessage('上传中…');
+        setProgress(0);
+
+        const { video_id, job_id } = await api.uploadVideo(
+          file, stroke,
+          (frac, loaded, total) => {
+            if (aborted) return;
+            setProgress(clamp(frac * UPLOAD_WEIGHT));
+            setMessage(`上传中 · ${fmtMB(loaded)} / ${fmtMB(total)} MB`);
+          }
+        );
         if (aborted) return;
-        stopDrift();
+
+        // Lock to exactly the upload boundary so the next phase doesn't
+        // create a visual jump backwards.
+        setProgress(UPLOAD_WEIGHT);
+
+        // ── Phase 2: Segmentation (real progress from backend) ────────
         setStage('segment');
-        setProgress(0.20);
-        setMessage('Listening for hits…');
-        startDrift(0.30);
+        setMessage('检测击球声…');
 
         const job = await pollJob(job_id, j => {
-          stopDrift();
-          // Map backend's 0-1 to our 0.20-1.00 (segmentation phase)
-          const mapped = 0.20 + 0.80 * (j.progress || 0);
-          setProgress(mapped);
+          if (aborted) return;
+          const segFrac = clamp(j.progress || 0);
+          // Map backend 0..1 → second half of the bar. monotonic: never
+          // go backwards from where the bar already is.
+          const mapped = UPLOAD_WEIGHT + (1 - UPLOAD_WEIGHT) * segFrac;
+          setProgress(prev => Math.max(prev, mapped));
           if (j.message) setMessage(j.message);
-          if (j.status === 'running') startDrift(Math.min(1, mapped + 0.06));
         });
-        stopDrift();
+
+        if (aborted) return;
         if (job.status === 'done') {
           setProgress(1);
-          setTimeout(() => { if (!aborted) onDone(video_id); }, 350);
+          setTimeout(() => { if (!aborted) onDone(video_id); }, 250);
         } else {
-          setError(job.error || 'Segmentation failed');
+          setError(job.error || '分段失败');
         }
       } catch (e) {
-        stopDrift();
         if (!aborted) setError(String(e.message || e));
       }
     })();
-    return () => { aborted = true; stopDrift(); };
+    return () => { aborted = true; };
   }, []);
 
   return (
@@ -1027,7 +1062,7 @@ function Import({ file, stroke, onDone, onCancel }) {
             }}/>
           </div>
           <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
-            {(smoothProgress * 100).toFixed(0)}%
+            {Math.min(100, Math.max(0, smoothProgress * 100)).toFixed(0)}%
           </Sans>
 
           {error && (
