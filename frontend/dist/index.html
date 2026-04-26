@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v12 · 2026-04-26';
+const BUILD_TAG = 'v13 · 2026-04-26';
 
 const T = {
   bg:        '#F7F3EC',
@@ -332,6 +332,37 @@ const api = {
   // fetch() has no upload progress on Safari/iOS — that's why the old version
   // had to fake it with a drift timer.
   // onProgress(fraction 0..1) is called as bytes go up the wire.
+  // Upload a pre-cut clip directly. The user has already trimmed the
+  // video in another app — this skips segmentation entirely and registers
+  // the upload as a single clip ready for diagnose.
+  uploadClip: (file, stroke = 'forehand', onProgress) => new Promise((resolve, reject) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('stroke', stroke);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `${API}/clips/upload`);
+    xhr.setRequestHeader('ngrok-skip-browser-warning', 'true');
+    xhr.timeout = 5 * 60 * 1000;
+    if (onProgress) {
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) onProgress(e.loaded / e.total, e.loaded, e.total);
+      };
+    }
+    xhr.onload = () => {
+      const text = xhr.responseText || '';
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try { resolve(JSON.parse(text)); }
+        catch { reject(new Error(`Invalid JSON from upload (got "${text.slice(0,60)}…")`)); }
+      } else {
+        reject(new Error(`Upload failed: HTTP ${xhr.status} — ${text.slice(0,120)}`));
+      }
+    };
+    xhr.onerror   = () => reject(new Error('Upload network error'));
+    xhr.ontimeout = () => reject(new Error('Upload timed out'));
+    xhr.onabort   = () => reject(new Error('Upload aborted'));
+    xhr.send(fd);
+  }),
+
   uploadVideo:   (file, stroke = 'forehand', onProgress) => new Promise((resolve, reject) => {
     const fd = new FormData();
     fd.append('file', file);
@@ -794,7 +825,7 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
             <Sans size={12} weight={600} upper style={{ letterSpacing: 1.4 }}>Baseline</Sans>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               {/* Permanent upload button — top-right primary action */}
-              <button onClick={onUpload} aria-label="Upload video" style={{
+              <button onClick={onUpload} aria-label="Analyze a clip" style={{
                 height: 36, padding: '0 14px 0 12px', borderRadius: 999,
                 background: T.clay, color: '#fff', border: 'none',
                 display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -803,7 +834,7 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
                 boxShadow: '0 1px 3px rgba(168,67,47,0.25)',
               }}>
                 <Icon name="plus" size={16} color="#fff" stroke={2.4}/>
-                Upload
+                Analyze
               </button>
             </div>
           </div>
@@ -958,31 +989,13 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
               cursor: 'pointer', textAlign: 'center',
             }}>
               <Icon name="upload" size={26} color={T.clay}/>
-              <Sans size={14} weight={600} color={T.ink} style={{ marginTop: 8 }}>Upload your first rally</Sans>
-              <Sans size={12} color={T.ink2} style={{ marginTop: 4 }}>MP4 or MOV from any phone or camera</Sans>
+              <Sans size={14} weight={600} color={T.ink} style={{ marginTop: 8 }}>Analyze your first clip</Sans>
+              <Sans size={12} color={T.ink2} style={{ marginTop: 4 }}>Pre-cut a 2-4s clip in any iPhone editor, then tap here</Sans>
             </div>
           )}
 
-          {videos && videos.length > 0 && (
-            <button onClick={onUpload} style={{
-              width: '100%', padding: '14px 16px', borderRadius: 14,
-              background: T.paper, border: `1px dashed rgba(200,85,61,0.30)`,
-              display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
-              marginBottom: 10, textAlign: 'left',
-              fontFamily: T.sans,
-            }}>
-              <div style={{
-                width: 36, height: 36, borderRadius: 11, background: T.clay,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexShrink: 0,
-              }}><Icon name="plus" size={18} color="#fff" stroke={2.4}/></div>
-              <div style={{ flex: 1 }}>
-                <Sans size={13} weight={600} color={T.ink}>Upload new session</Sans>
-                <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>MP4 / MOV from any camera</Sans>
-              </div>
-              <Icon name="chevR" size={16} color={T.ink3}/>
-            </button>
-          )}
+          {/* Removed: redundant "Upload new session" tile.
+              The top-right Analyze pill is the single entry point. */}
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {videos && videos.map((v, i) => (
@@ -1041,7 +1054,133 @@ const SessionCard = React.memo(function SessionCard({ video, isNew, onClick }) {
 });
 
 // ═══════════════════════════════════════════════════════════════════════
-// Screen 3: Import (uploading + segmenting)
+// Screen 3: UploadDirect (new flow — clip pre-cut on-device, single upload)
+// ═══════════════════════════════════════════════════════════════════════
+//
+// Replaces the old Import → ClipGrid → Triage flow. The user trims the
+// video in another iOS app (Photos / Trimmer), so we just upload that
+// small clip and hand it straight to diagnose.
+//
+// Wire-time = bytes / bandwidth. For a typical 3-second clip (~1 MB)
+// that's 1-2s on cellular vs 30-60s for the full 80MB raw video the
+// old flow uploaded.
+
+function UploadDirect({ file, stroke, onDone, onCancel }) {
+  const [progress, setProgress] = useState(0);
+  const [message, setMessage] = useState('准备上传…');
+  const [error, setError] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+  const smoothProgress = useSmoothProgress(progress, 250);
+
+  useEffect(() => {
+    if (file) setVideoUrl(URL.createObjectURL(file));
+    return () => { if (videoUrl) URL.revokeObjectURL(videoUrl); };
+  }, [file]);
+
+  useEffect(() => {
+    let aborted = false;
+    const fmtMB = b => (b / (1024 * 1024)).toFixed(1);
+
+    (async () => {
+      try {
+        setMessage('上传中…');
+        const { clip_id } = await api.uploadClip(file, stroke,
+          (frac, loaded, total) => {
+            if (aborted) return;
+            setProgress(Math.max(0, Math.min(1, frac)));
+            setMessage(`上传中 · ${fmtMB(loaded)} / ${fmtMB(total)} MB`);
+          }
+        );
+        if (aborted) return;
+        setProgress(1);
+        setMessage('上传完成');
+        setTimeout(() => { if (!aborted) onDone(clip_id); }, 200);
+      } catch (e) {
+        if (!aborted) setError(String(e.message || e));
+      }
+    })();
+    return () => { aborted = true; };
+  }, []);
+
+  return (
+    <Screen bg={T.bg}>
+      <NavBar
+        left={<NavBtn icon="chevL" onClick={onCancel}/>}
+        right={<NavBtn label="Cancel" onClick={onCancel}/>}
+        eyebrow="Step 1 · Upload"
+      />
+      <div className="scroll" style={{ flex: 1 }}>
+        <div style={{ padding: '4px 20px 0' }}>
+          <div style={{
+            borderRadius: 18, overflow: 'hidden', position: 'relative',
+            border: `0.5px solid ${T.line}`, background: '#2E2C28',
+          }}>
+            {videoUrl ? (
+              <video src={videoUrl} muted autoPlay loop playsInline
+                     style={{ width: '100%', height: 220, objectFit: 'cover', display: 'block' }}/>
+            ) : (
+              <div style={{ height: 220, background: 'repeating-linear-gradient(135deg, #3A3833 0 8px, #2E2C28 8px 16px)' }}/>
+            )}
+            <div style={{ position: 'absolute', top: 10, left: 10 }}>
+              <Tag tone="ink" style={{ background: 'rgba(0,0,0,0.55)', color: '#fff',
+                                       border: 'none', backdropFilter: 'blur(8px)' }}>
+                {file?.name?.slice(0, 28) || 'clip'}
+              </Tag>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ padding: '24px 20px' }}>
+          <Sans size={11} upper weight={500} color={T.clay} style={{ marginBottom: 8 }}>
+            Uploading your clip
+          </Sans>
+          <Serif size={28} weight={400} opsz={72} style={{ lineHeight: 1.15, marginBottom: 18 }}>
+            {message}
+          </Serif>
+          <div style={{ height: 6, borderRadius: 3, background: T.paperAlt, overflow: 'hidden' }}>
+            <div style={{
+              height: '100%', width: `${Math.max(2, pct(smoothProgress))}%`,
+              background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
+              borderRadius: 3, boxShadow: '0 0 8px rgba(232,176,75,0.4)',
+            }}/>
+          </div>
+          <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
+            {pct(smoothProgress).toFixed(0)}%
+          </Sans>
+
+          {error && (
+            <div style={{
+              marginTop: 16, padding: 14, borderRadius: 12, background: '#F6E4DC',
+              border: `0.5px solid rgba(168,67,47,0.2)`,
+            }}>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
+                <Icon name="alert" size={18} color={T.clayDeep}/>
+                <Sans size={12} color={T.clayDeep} style={{ flex: 1, lineHeight: 1.5 }}>{error}</Sans>
+              </div>
+              <div style={{ display: 'flex', gap: 8 }}>
+                <button onClick={() => window.location.reload()} style={{
+                  flex: 1, height: 36, borderRadius: 10,
+                  background: T.clay, color: '#fff', border: 'none',
+                  fontFamily: T.sans, fontSize: 12, fontWeight: 600,
+                }}>Retry</button>
+                <button onClick={onCancel} style={{
+                  flex: 1, height: 36, borderRadius: 10,
+                  background: 'transparent', color: T.ink2,
+                  border: `0.5px solid ${T.line}`,
+                  fontFamily: T.sans, fontSize: 12, fontWeight: 500,
+                }}>Cancel</button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </Screen>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// [Legacy] Screen 3: Import (full-video upload + server segmentation)
+// ═══════════════════════════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════════════════
 
 function Import({ file, stroke, onDone, onCancel }) {
@@ -3328,10 +3467,10 @@ function App() {
           />
         )}
         {route.name === 'upload' && (
-          <Import
+          <UploadDirect
             file={uploadFile}
             stroke={stroke}
-            onDone={videoId => setRoute({ name: 'clips', videoId })}
+            onDone={clipId => setRoute({ name: 'analyze', clipId })}
             onCancel={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
           />
         )}

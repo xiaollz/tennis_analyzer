@@ -30,11 +30,118 @@ def health() -> Dict[str, Any]:
 
 # ── Video upload + segmentation ─────────────────────────────────────
 
+@router.post("/clips/upload")
+async def upload_clip(
+    file: UploadFile = File(...),
+    stroke: str = Form("forehand"),
+) -> Dict[str, Any]:
+    """Accept a pre-cut clip and register it directly — no segmentation.
+
+    User cuts the clip in another app (e.g. Photos / a dedicated trimmer),
+    then uploads only the small piece they want analyzed. We treat the
+    uploaded file as both the 'video' (for storage layout compatibility)
+    and the only clip in that video.
+
+    Returns:
+      {clip_id, video_id, stroke}
+
+    The frontend then calls POST /api/clips/{clip_id}/diagnose to run pose
+    + VLM. We don't kick that off automatically — the frontend's Loading
+    screen owns the diagnose lifecycle (resume across app restart, etc.)
+    so we keep the same contract as the legacy flow.
+    """
+    import cv2
+
+    ext = Path(file.filename or "clip.mp4").suffix.lower() or ".mp4"
+    if ext not in (".mp4", ".mov", ".m4v", ".mkv"):
+        raise HTTPException(status_code=400, detail=f"unsupported extension: {ext}")
+    if stroke not in services.VALID_STROKES:
+        stroke = "forehand"
+
+    video_id = uuid.uuid4().hex[:12]
+    clip_id = f"{video_id}_c000"
+    storage.ensure_storage()
+    vdir = storage.video_dir(video_id)
+    vdir.mkdir(parents=True, exist_ok=True)
+    clips_dir = storage.video_clips_dir(video_id)
+    clips_dir.mkdir(parents=True, exist_ok=True)
+
+    # Save upload as both the original AND the clip — they're the same
+    # file. clip_path points at original.mp4 so we don't double the disk.
+    original = storage.video_original_path(video_id)
+    with open(original, "wb") as out:
+        shutil.copyfileobj(file.file, out)
+
+    # Probe duration / fps via cv2
+    cap = cv2.VideoCapture(str(original))
+    fps = float(cap.get(cv2.CAP_PROP_FPS) or 30.0)
+    if fps <= 0:
+        fps = 30.0
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
+    duration_s = total_frames / fps if total_frames > 0 else 0.0
+
+    # Thumbnail at midpoint — pose pipeline will detect real impact later
+    thumb_path = clips_dir / f"{clip_id}.jpg"
+    if total_frames > 0:
+        cap.set(cv2.CAP_PROP_POS_FRAMES, max(0, total_frames // 2))
+        ok, frame = cap.read()
+        if ok:
+            h, w = frame.shape[:2]
+            scale = 720.0 / max(h, w) if max(h, w) > 720 else 1.0
+            if scale < 1.0:
+                frame = cv2.resize(
+                    frame, (int(w * scale), int(h * scale)),
+                    interpolation=cv2.INTER_AREA,
+                )
+            cv2.imwrite(str(thumb_path), frame, [int(cv2.IMWRITE_JPEG_QUALITY), 88])
+    cap.release()
+
+    midpoint = duration_s / 2 if duration_s > 0 else 0.0
+    storage.write_json(storage.video_meta_path(video_id), {
+        "video_id": video_id,
+        "filename": file.filename,
+        "original_path": str(original),
+        "uploaded_at": time.time(),
+        "stroke": stroke,
+        "duration_s": duration_s,
+        "fps": fps,
+        "clip_count": 1,
+        "segmented_at": time.time(),
+        "direct_upload": True,                     # marks the new flow
+    })
+    storage.write_json(storage.video_manifest_path(video_id), {
+        "video_id": video_id,
+        "video_path": str(original),
+        "fps": fps,
+        "duration_s": duration_s,
+        "total_onsets": 1,
+        "clips": [{
+            "clip_id": clip_id,
+            "video_id": video_id,
+            "index": 0,
+            "start_s": 0.0,
+            "end_s": duration_s,
+            "impact_times_s": [midpoint],          # placeholder — pose finds real impact
+            "onset_strength": 1.0,
+            "clip_path": str(original),
+            "thumbnail_path": str(thumb_path),
+            "duration_s": duration_s,
+        }],
+    })
+
+    return {"clip_id": clip_id, "video_id": video_id, "stroke": stroke}
+
+
 @router.post("/videos")
 async def upload_video(
     file: UploadFile = File(...),
     stroke: str = Form("forehand"),
 ) -> Dict[str, Any]:
+    """[Legacy] Accept a video upload and run audio segmentation.
+
+    Kept for backward compat with previously uploaded videos. New uploads
+    should use POST /clips/upload and pre-cut on-device.
+    """
     """Accept a video upload, persist it, and kick off segmentation.
 
     Parameters (multipart form):

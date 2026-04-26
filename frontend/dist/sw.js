@@ -13,7 +13,7 @@
 // This means the cache name barely matters anymore — the new HTML always
 // wins on the next page load.
 
-const CACHE = 'baseline-shell-v12';
+const CACHE = 'baseline-shell-v13';
 const STATIC_ASSETS = [
   '/manifest.webmanifest',
   '/icon-192.png',
