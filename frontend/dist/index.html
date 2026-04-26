@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v9 · 2026-04-26';
+const BUILD_TAG = 'v10 · 2026-04-26';
 
 const T = {
   bg:        '#F7F3EC',
@@ -374,6 +374,12 @@ const api = {
   wipeAll:       () => apiFetchJson(`${API}/storage/wipe`, { method: 'POST' }),
   freeOriginal:  id => apiFetchJson(`${API}/videos/${id}?keep_clips=true`, { method: 'DELETE' }),
 };
+
+// Hard clamp a 0..1 progress to a percent string. Defensive — every
+// progress display in the app should pass through this so a runaway
+// state value (e.g. >1) can never visually leak as ">100%". The bug
+// where the bar showed 120%/130% was caused by *not* doing this.
+const pct = v => Math.max(0, Math.min(100, (Number(v) || 0) * 100));
 
 // Hook: smooth a discrete progress value with a tween so the UI moves
 // continuously instead of jumping in steps. Returns the smoothed value.
@@ -721,7 +727,7 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
                 </Sans>
                 <Sans size={12} style={{ color: '#fff', marginTop: 2 }}>
                   Tap to resume · {pendingJob.progress
-                    ? `${Math.round(pendingJob.progress * 100)}% done`
+                    ? `${pct(pendingJob.progress).toFixed(0)}% done`
                     : 'in progress'}
                 </Sans>
               </div>
@@ -1055,14 +1061,14 @@ function Import({ file, stroke, onDone, onCancel }) {
           </Serif>
           <div style={{ height: 6, borderRadius: 3, background: T.paperAlt, overflow: 'hidden', position: 'relative' }}>
             <div style={{
-              height: '100%', width: `${Math.max(2, smoothProgress * 100)}%`,
+              height: '100%', width: `${Math.max(2, pct(smoothProgress))}%`,
               background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
               borderRadius: 3,
               boxShadow: '0 0 8px rgba(232,176,75,0.4)',
             }}/>
           </div>
           <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
-            {Math.min(100, Math.max(0, smoothProgress * 100)).toFixed(0)}%
+            {pct(smoothProgress).toFixed(0)}%
           </Sans>
 
           {error && (
@@ -1398,19 +1404,16 @@ function Loading({ clipId, onDone, onBack }) {
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState('Queued…');
   const [error, setError] = useState(null);
-  const smoothProgress = useSmoothProgress(progress, 700);
+  const smoothProgress = useSmoothProgress(progress, 400);
 
-  // Drift pump — keep the bar moving while we wait between polls
-  useEffect(() => {
-    if (progress >= 1 || error) return;
-    const id = setInterval(() => {
-      setProgress(p => Math.min(p + 0.003, 0.97));
-    }, 250);
-    return () => clearInterval(id);
-  }, [progress, error]);
+  // No drift pump. The bar moves only when the backend reports real
+  // progress. If polls go quiet for a few seconds the bar pauses —
+  // that's honest. (Old version drifted 0.003/250ms regardless of
+  // server state; "效率为王" = no fake animation.)
 
   useEffect(() => {
     let cancelled = false;
+    const clamp = v => Math.max(0, Math.min(1, v));
     (async () => {
       try {
         // First check: is there already a diagnosis result on disk?
@@ -1446,7 +1449,8 @@ function Loading({ clipId, onDone, onBack }) {
         saveActiveJob(clipId, jobId);
         const job = await pollJob(jobId, j => {
           if (cancelled) return;
-          setProgress(p => Math.max(p, j.progress || 0));
+          const next = clamp(j.progress || 0);
+          setProgress(p => Math.max(p, next));
           if (j.message) setMessage(j.message);
         }, 1500);
         if (cancelled) return;
@@ -1519,7 +1523,7 @@ function Loading({ clipId, onDone, onBack }) {
             </svg>
             <div style={{
               position: 'absolute', top: 0, bottom: 0,
-              left: `${Math.max(8, smoothProgress * 92)}%`, width: 1,
+              left: `${Math.max(8, Math.min(92, smoothProgress * 92))}%`, width: 1,
               background: `linear-gradient(180deg, transparent 0%, ${T.amber} 50%, transparent 100%)`,
               boxShadow: `0 0 10px ${T.amber}`,
             }}/>
@@ -1542,13 +1546,13 @@ function Loading({ clipId, onDone, onBack }) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
             <Mono size={11} color={T.ink2}>OVERALL</Mono>
             <div>
-              <Serif size={20} weight={400} as="span">{(smoothProgress * 100).toFixed(0)}</Serif>
+              <Serif size={20} weight={400} as="span">{pct(smoothProgress).toFixed(0)}</Serif>
               <Sans size={11} color={T.ink3} as="span" style={{ marginLeft: 4 }}>%</Sans>
             </div>
           </div>
           <div style={{ height: 6, borderRadius: 3, background: T.paperAlt, overflow: 'hidden', position: 'relative' }}>
             <div style={{
-              height: '100%', width: `${Math.max(2, smoothProgress * 100)}%`,
+              height: '100%', width: `${Math.max(2, pct(smoothProgress))}%`,
               background: `linear-gradient(90deg, ${T.clay}, ${T.amber})`,
               borderRadius: 3,
               boxShadow: '0 0 6px rgba(232,176,75,0.4)',
@@ -2230,11 +2234,11 @@ function MultiAnalyzing({ clipIds, onDone, onBack }) {
                     Clip {String(i + 1).padStart(2, '0')}
                     <Mono size={11} color={T.ink3} style={{ marginLeft: 8 }}>{clipShortId(id)}</Mono>
                   </Sans>
-                  <Mono size={10} color={T.ink3}>{((st.progress || 0) * 100).toFixed(0)}%</Mono>
+                  <Mono size={10} color={T.ink3}>{pct(st.progress).toFixed(0)}%</Mono>
                 </div>
                 <div style={{ height: 2, background: T.paperAlt, borderRadius: 1, overflow: 'hidden' }}>
                   <div style={{
-                    height: '100%', width: `${Math.max(0, (st.progress || 0) * 100)}%`,
+                    height: '100%', width: `${pct(st.progress)}%`,
                     background: err ? T.clay : (done ? T.court : T.clay),
                   }}/>
                 </div>
