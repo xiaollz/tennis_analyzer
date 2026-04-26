@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v11 · 2026-04-26';
+const BUILD_TAG = 'v12 · 2026-04-26';
 
 const T = {
   bg:        '#F7F3EC',
@@ -404,6 +404,120 @@ function useSmoothProgress(target, durationMs = 600) {
     return () => cancelAnimationFrame(raf);
   }, [target, durationMs]);
   return value;
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// Local audio analysis — run in the browser, in parallel with upload.
+// Lets the user see "detected 8 hits" within ~2-3s of picking the file,
+// even if uploading the full video over the wire still takes 30+s.
+//
+// Algorithm mirrors the server's AudioOnsetDetector (energy-based with
+// z-score peak picking). We downsample to 8kHz first because percussive
+// tennis hits are wide-band events — full sample rate adds nothing for
+// onset detection but eats memory and CPU.
+//
+// Returns array of { time, strength } sorted by time.
+// Throws on failure (caller should fall back to server-side detection).
+// ─────────────────────────────────────────────────────────────────────
+async function analyzeAudioLocal(file, onProgress) {
+  onProgress && onProgress(0.05);
+  const arrayBuf = await file.arrayBuffer();      // load full file into memory
+
+  onProgress && onProgress(0.25);
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) throw new Error('Web Audio API unsupported');
+  const ctx = new Ctx();
+  let audio;
+  try {
+    // Note: decodeAudioData detaches the ArrayBuffer it consumes.
+    audio = await ctx.decodeAudioData(arrayBuf);
+  } catch (e) {
+    try { ctx.close(); } catch {}
+    throw new Error('Could not decode audio: ' + (e.message || e));
+  }
+
+  onProgress && onProgress(0.55);
+  // Mix to mono if needed
+  const ch = audio.numberOfChannels;
+  const len = audio.length;
+  const sr = audio.sampleRate;
+  let mono;
+  if (ch === 1) {
+    mono = audio.getChannelData(0);
+  } else {
+    mono = new Float32Array(len);
+    for (let c = 0; c < ch; c++) {
+      const data = audio.getChannelData(c);
+      for (let i = 0; i < len; i++) mono[i] += data[i] / ch;
+    }
+  }
+
+  // Downsample to ~8kHz with simple decimation. Anti-aliasing isn't
+  // critical for energy-envelope onset detection.
+  const targetSr = 8000;
+  const factor = Math.max(1, Math.floor(sr / targetSr));
+  const dsLen = Math.floor(mono.length / factor);
+  const ds = new Float32Array(dsLen);
+  for (let i = 0; i < dsLen; i++) ds[i] = mono[i * factor];
+  const dsSr = sr / factor;
+
+  onProgress && onProgress(0.80);
+  const onsets = detectOnsets(ds, dsSr);
+
+  try { ctx.close(); } catch {}
+  onProgress && onProgress(1.0);
+  return onsets;
+}
+
+// Energy-based onset detection with local z-score peak picking.
+// Returns [{ time: seconds, strength: z-score }, ...]
+function detectOnsets(samples, sr) {
+  const FRAME_MS = 25;
+  const HOP_MS = 10;
+  const Z_THRESHOLD = 3.0;
+  const MIN_GAP_S = 0.5;          // hits closer than 500ms are echo
+  const LOCAL_WINDOW_FRAMES = 50; // ~500ms of context for stats
+
+  const frame = Math.max(1, Math.floor(sr * FRAME_MS / 1000));
+  const hop   = Math.max(1, Math.floor(sr * HOP_MS / 1000));
+  if (samples.length < frame + LOCAL_WINDOW_FRAMES * hop) return [];
+
+  // Energy per frame (RMS)
+  const numFrames = Math.floor((samples.length - frame) / hop);
+  const energies = new Float32Array(numFrames);
+  for (let i = 0; i < numFrames; i++) {
+    let sum = 0;
+    const start = i * hop;
+    for (let j = 0; j < frame; j++) {
+      const s = samples[start + j];
+      sum += s * s;
+    }
+    energies[i] = Math.sqrt(sum / frame);
+  }
+
+  // Peak picking: z-score against trailing window
+  const minGapFrames = Math.max(1, Math.floor((MIN_GAP_S * sr) / hop));
+  const onsets = [];
+  let lastIdx = -minGapFrames;
+
+  for (let i = LOCAL_WINDOW_FRAMES; i < numFrames - 1; i++) {
+    let m = 0, ss = 0;
+    for (let j = i - LOCAL_WINDOW_FRAMES; j < i; j++) {
+      m  += energies[j];
+      ss += energies[j] * energies[j];
+    }
+    m /= LOCAL_WINDOW_FRAMES;
+    const variance = (ss / LOCAL_WINDOW_FRAMES) - (m * m);
+    const std = Math.sqrt(Math.max(0, variance)) || 1e-6;
+    const z = (energies[i] - m) / std;
+
+    const isPeak = energies[i] > energies[i - 1] && energies[i] >= energies[i + 1];
+    if (z > Z_THRESHOLD && isPeak && (i - lastIdx) >= minGapFrames) {
+      onsets.push({ time: (i * hop) / sr, strength: z });
+      lastIdx = i;
+    }
+  }
+  return onsets;
 }
 
 // Hook: detect swipes on a ref'd element (touch + pointer).
@@ -938,10 +1052,17 @@ function Import({ file, stroke, onDone, onCancel }) {
   const [videoUrl, setVideoUrl] = useState(null);
   const smoothProgress = useSmoothProgress(progress, 400);
 
+  // Local audio analysis — runs in parallel with upload, gives the user
+  // a "detected N hits" signal in ~2-3s instead of waiting for the full
+  // upload. Doesn't replace server segmentation, just front-runs it for
+  // perceived speed.
+  const [localState, setLocalState] = useState('idle'); // idle|analyzing|done|failed
+  const [localProgress, setLocalProgress] = useState(0);
+  const [localHits, setLocalHits] = useState(0);
+  const [localElapsed, setLocalElapsed] = useState(0);
+
   // Weight split: upload occupies first half of the bar, segmentation the
   // second half. Both halves come from REAL signals — no drift, no fake.
-  // (Upload bytes are usually the slow part on cellular, segmentation is
-  // fast on the server. 50/50 is a coarse but honest visual split.)
   const UPLOAD_WEIGHT = 0.5;
 
   useEffect(() => {
@@ -954,9 +1075,30 @@ function Import({ file, stroke, onDone, onCancel }) {
     const clamp = v => Math.max(0, Math.min(1, v));
     const fmtMB = bytes => (bytes / (1024 * 1024)).toFixed(1);
 
+    // ── TRACK A: local audio analysis (fast, ~2-3s) ────────────────
+    (async () => {
+      const t0 = performance.now();
+      setLocalState('analyzing');
+      try {
+        const onsets = await analyzeAudioLocal(file, (frac) => {
+          if (!aborted) setLocalProgress(frac);
+        });
+        if (aborted) return;
+        setLocalHits(onsets.length);
+        setLocalElapsed((performance.now() - t0) / 1000);
+        setLocalState('done');
+      } catch (e) {
+        if (aborted) return;
+        // Local analysis failure is non-fatal. Server still does its
+        // own onset detection — user will just have to wait for upload.
+        console.warn('[local audio] failed:', e);
+        setLocalState('failed');
+      }
+    })();
+
+    // ── TRACK B: upload + server segmentation (existing flow) ──────
     (async () => {
       try {
-        // ── Phase 1: Upload (real byte progress via XHR) ──────────────
         setStage('upload');
         setMessage('上传中…');
         setProgress(0);
@@ -971,19 +1113,13 @@ function Import({ file, stroke, onDone, onCancel }) {
         );
         if (aborted) return;
 
-        // Lock to exactly the upload boundary so the next phase doesn't
-        // create a visual jump backwards.
         setProgress(UPLOAD_WEIGHT);
-
-        // ── Phase 2: Segmentation (real progress from backend) ────────
         setStage('segment');
         setMessage('检测击球声…');
 
         const job = await pollJob(job_id, j => {
           if (aborted) return;
           const segFrac = clamp(j.progress || 0);
-          // Map backend 0..1 → second half of the bar. monotonic: never
-          // go backwards from where the bar already is.
           const mapped = UPLOAD_WEIGHT + (1 - UPLOAD_WEIGHT) * segFrac;
           setProgress(prev => Math.max(prev, mapped));
           if (j.message) setMessage(j.message);
@@ -1072,6 +1208,66 @@ function Import({ file, stroke, onDone, onCancel }) {
           <Sans size={11} color={T.ink3} style={{ marginTop: 8 }}>
             {pct(smoothProgress).toFixed(0)}%
           </Sans>
+
+          {/* Local audio analysis status — runs in parallel with the
+              upload above. Tells the user "8 hits detected" within
+              seconds even when the upload is still going. */}
+          <div style={{
+            marginTop: 16, padding: '12px 14px', background: T.paper,
+            border: `0.5px solid ${T.line}`, borderRadius: 12,
+            display: 'flex', alignItems: 'center', gap: 12,
+          }}>
+            <div style={{ width: 22, height: 22, display: 'flex',
+                          alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              {localState === 'analyzing' && (
+                <div style={{
+                  width: 16, height: 16, borderRadius: 999,
+                  border: `2px solid ${T.clay}`, borderTopColor: 'transparent',
+                  animation: 'spin 0.9s linear infinite',
+                }}/>
+              )}
+              {localState === 'done' && (
+                <div style={{
+                  width: 18, height: 18, borderRadius: 999, background: T.court,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}><Icon name="check" size={11} color="#fff" stroke={2.5}/></div>
+              )}
+              {localState === 'failed' && (
+                <Icon name="alert" size={16} color={T.ink3}/>
+              )}
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              {localState === 'idle' && (
+                <Sans size={12} color={T.ink3}>等待文件…</Sans>
+              )}
+              {localState === 'analyzing' && (
+                <>
+                  <Sans size={12} weight={500} color={T.ink}>本地音频分析中…</Sans>
+                  <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>
+                    {(localProgress * 100).toFixed(0)}% · 与上传同时进行
+                  </Sans>
+                </>
+              )}
+              {localState === 'done' && (
+                <>
+                  <Sans size={12} weight={600} color={T.ink}>
+                    检测到 {localHits} 次击球
+                  </Sans>
+                  <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>
+                    本地分析用时 {localElapsed.toFixed(1)}s · 等上传完成即可看片
+                  </Sans>
+                </>
+              )}
+              {localState === 'failed' && (
+                <>
+                  <Sans size={12} weight={500} color={T.ink}>本地分析未启用</Sans>
+                  <Sans size={11} color={T.ink3} style={{ marginTop: 2 }}>
+                    没关系，等服务器分段就好
+                  </Sans>
+                </>
+              )}
+            </div>
+          </div>
 
           {error && (
             <div style={{
