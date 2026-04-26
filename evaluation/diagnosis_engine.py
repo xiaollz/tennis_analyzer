@@ -136,6 +136,74 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
      "severity": 0.6, "label": "手主动引拍"},
 
     # ══════════════════════════════════════════════════════════════════
+    #  Layer 1 — 几何/空间（击球点 + 站位）⭐ 最底层根因
+    #  Added 2026-04-27 after the contact-point blind spot retrospective.
+    #  These signals trump L6 mechanics — if any of them fires, the
+    #  upper-body work won't matter until contact-point geometry is fixed.
+    #  Source: docs/research/FOREHAND_COMPLETE_TAXONOMY.md
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["击球点偏低", "球低于腰", "contact too low", "low contact",
+                   "击球高度低", "膝高击球", "大腿高度击球", "thigh height"],
+     "concept": "L1_contact_low", "frame_range": [4],
+     "severity": 0.85, "label": "击球点偏低（应在腰-胸高度）"},
+    {"keywords": ["击球点贴身", "贴近身体", "球离身体太近", "cramped contact",
+                   "横距太近", "lateral too close", "球挤到身体", "贴胸打"],
+     "concept": "L1_contact_too_close", "frame_range": [4],
+     "severity": 0.85, "label": "击球点横距太近（应 40-60cm）"},
+    {"keywords": ["击球点偏后", "击球点在身体侧", "late contact", "behind hip",
+                   "纵深偏后", "球在身体侧方", "前胯侧方"],
+     "concept": "L1_contact_behind", "frame_range": [4],
+     "severity": 0.9, "label": "击球点偏后（应在前胯前方 30-50cm）"},
+    {"keywords": ["角度太小", "击球角度窄", "angle too narrow", "30度以下",
+                   "小于45度", "less than 45"],
+     "concept": "L1_contact_angle_narrow", "frame_range": [4],
+     "severity": 0.7, "label": "击球角度太窄（应 45°）"},
+    {"keywords": ["站太近", "离球太近", "standing too close", "stance too close",
+                   "球员站位近"],
+     "concept": "L1_spacing_too_close", "frame_range": [1, 2],
+     "severity": 0.85, "label": "站位距离太近（应留拍长 + 一臂）"},
+    {"keywords": ["站太远", "够不到球", "reaching for ball", "too far from ball"],
+     "concept": "L1_spacing_too_far", "frame_range": [1, 2],
+     "severity": 0.7, "label": "站位距离太远（球够不到）"},
+    {"keywords": ["完全偏离", "击球点全错", "all four off", "整个攻击区错位"],
+     "concept": "L1_attack_zone_misaligned", "frame_range": [4],
+     "severity": 0.95, "label": "整个攻击区位置不对（多坐标偏离）"},
+    # 正确的击球点几何
+    {"keywords": ["击球点理想", "前胯外45度", "腰胸高度", "ideal contact",
+                   "perfect contact zone"],
+     "concept": "L1_contact_ideal", "frame_range": [4],
+     "severity": 0.0, "label": "击球点位于理想区域（前胯外/腰胸高/45°）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  Layer 2 — 时间/时序（Unit Turn timing, Bounce-Hit）
+    #  Source: docs/research/FOREHAND_COMPLETE_TAXONOMY.md
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["bounce时还没转", "unit turn 太晚", "球弹起后才转身",
+                   "rotation after bounce", "delayed unit turn",
+                   "球落地时肩还在原位"],
+     "concept": "L2_late_unit_turn_at_bounce", "frame_range": [1, 2],
+     "severity": 0.9, "label": "球弹起时 Unit Turn 还未完成 90°"},
+    {"keywords": ["加速太早", "early acceleration", "引拍顶点就发力",
+                   "拍头到顶就甩"],
+     "concept": "L2_early_acceleration", "frame_range": [3],
+     "severity": 0.7, "label": "拍头加速太早（应在触球前 50ms）"},
+    {"keywords": ["bounce-hit 节奏不对", "不合拍", "rushed timing", "no rhythm"],
+     "concept": "L2_broken_bounce_hit_rhythm", "frame_range": None,
+     "severity": 0.7, "label": "Bounce-Hit 节奏不对"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  Layer 8 — 视觉 / 注意力
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["头部跟随挥拍", "头转走了", "head moves", "looking up early",
+                   "击球瞬间头不稳"],
+     "concept": "L8_head_unstable_at_contact", "frame_range": [4],
+     "severity": 0.7, "label": "击球瞬间头部失稳（应固定看触球点）"},
+    {"keywords": ["反应式打球", "等球来才动", "reactive hitting",
+                   "no anticipation", "没有主动找位"],
+     "concept": "L8_reactive_only", "frame_range": None,
+     "severity": 0.6, "label": "反应式打球（应主动预设攻击区）"},
+
+    # ══════════════════════════════════════════════════════════════════
     #  Preparation phase / Footwork concepts (L4-L5)
     #  Source: docs/research/coach_analysis/*.md
     # ══════════════════════════════════════════════════════════════════
@@ -251,12 +319,27 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "prep31_cramped_swing_no_extension": "L1",
     "prep32_forced_rush_contact_behind": "L1",
     "shoulder_tilt": "L1",
+    # L1 contact-point geometry — added 2026-04-27
+    "L1_contact_low": "L1",
+    "L1_contact_too_close": "L1",
+    "L1_contact_behind": "L1",
+    "L1_contact_angle_narrow": "L1",
+    "L1_spacing_too_close": "L1",
+    "L1_spacing_too_far": "L1",
+    "L1_attack_zone_misaligned": "L1",
     # L2 — Rhythm / Timing
     "problem_p08": "L2",  # 击球太急
     "problem_p12": "L2",  # separation 缺失
     "prep16_stop_start_syndrome": "L2",
     "prep17_prep_not_done_by_bounce": "L2",
     "prep18_no_wait_after_prep": "L2",
+    # L2 timing — added 2026-04-27
+    "L2_late_unit_turn_at_bounce": "L2",
+    "L2_early_acceleration": "L2",
+    "L2_broken_bounce_hit_rhythm": "L2",
+    # L8 — Vision / Attention — added 2026-04-27
+    "L8_head_unstable_at_contact": "L8",
+    "L8_reactive_only": "L8",
     # L3 — Kinetic Chain
     "problem_p01": "L3",  # 拍头过度下坠
     "problem_p02": "L3",  # V形 Scooping

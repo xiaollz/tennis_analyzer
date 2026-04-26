@@ -137,6 +137,30 @@ tennis/
 | **v4.1** | 肌肉激活 + 用户历史整合 | 诊断不够个性化 |
 | **v4.2** | 5 层 Top-down + 准备/步伐扩展 + KPI 注入 | 只看击球瞬间，看不到准备阶段 |
 | **v4.3** | VLM-算法仲裁层 | VLM 视觉误判（如 V 形 scooping）污染诊断 |
+| **v4.4** | 10 层正手分类框架（强制 checklist）+ L1 几何/L2 时序/L8 视觉概念补全 | 诊断引擎过度聚焦 L6 上半身机制；击球点几何（L1）盲点导致根因被漏掉 |
+
+### v4.4 新增（2026-04-27）
+
+**起因**：用户回顾发现整周的诊断都聚焦在"胸部参与 / 锁大臂 / 撑"等
+L6（上半身机制）维度，**完全没有讨论击球点几何位置**。当击球点本身
+偏离时，所有 L6 修正都是空话——位置不对，胸推到了也救不回。
+
+**修复**：
+1. 新增 `docs/research/FOREHAND_COMPLETE_TAXONOMY.md` —— 10 层正手维度
+   清单（L1 几何 → L10 输出控制），作为后续诊断的强制 checklist。
+2. VLM prompt（`evaluation/vlm_analyzer.py::_FTT_SYSTEM_PROMPT`）开头加
+   "强制 10 层 Checklist" 段落 + L1 击球点 4 坐标专项说明。JSON 输出
+   结构扩充：`contact_point` / `spacing` / `timing` / `vision_attention`
+   四个新顶层字段。
+3. `evaluation/diagnosis_engine.py::OBSERVATION_TO_CONCEPT` 新增 13 条
+   L1 / L2 / L8 概念条目（击球点高度/横距/纵深/角度、站位距离、Unit
+   Turn 时机、加速时机、Bounce-Hit 节奏、击球瞬间头部稳定性、反应式
+   打球）。
+4. `_CONCEPT_LAYER` 同步映射，让 top-down 推理能正确识别 L1 信号优先
+   于 L6 信号。
+
+**验证**：诊断引擎模块 import 通过；OBSERVATION_TO_CONCEPT 共 73 条
+（v4.3 是 60 条），_CONCEPT_LAYER 共 69 条覆盖。
 
 ### v4.2 扩展细节
 - 知识图谱：+39 个准备/步伐概念（带 L1-L5 层级）
