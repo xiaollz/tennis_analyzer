@@ -877,9 +877,11 @@ function Home({ onPickVideo, onUpload, onResumeAnalysis, reloadKey, stroke, onSt
             ))}
           </div>
           <div style={{ height: 24 }}/>
-          {/* Build tag — confirms which version is running */}
+          {/* Build tag — confirms which version is running. Kept prominent
+              so the user can verify a hard refresh actually took effect
+              (iOS PWAs love to pin stale shells). */}
           <div style={{ textAlign: 'center', padding: '4px 0 12px' }}>
-            <Mono size={9} color={T.ink3} style={{ opacity: 0.45 }}>Baseline · {BUILD_TAG}</Mono>
+            <Mono size={11} color={T.clay}>Baseline · {BUILD_TAG}</Mono>
           </div>
         </div>
       </div>
