@@ -174,6 +174,27 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
      "concept": "L1_contact_ideal", "frame_range": [4],
      "severity": 0.0, "label": "击球点位于理想区域（前胯外/腰胸高/45°）"},
 
+    # ── 轴心稳定性（Axis Stability）—— Sky Kim 框架，2026-04-27 加 ──
+    # 来源：https://www.youtube.com/watch?v=aiwUqHQl-Ec
+    # 这是"被球挤到"的真正机制：左脚提前踩死 → 重心轴前移 → 击球
+    # 空间被身体自己吃掉。属于 L4（站姿/站位），但直接表现为 L1 击球点错位。
+    {"keywords": ["左脚踩太早", "front foot land early", "重心提前转移",
+                   "轴心前移", "axis shifted forward", "weight transfer too early"],
+     "concept": "L4_axis_collapsed_early_landing", "frame_range": [3, 4],
+     "severity": 0.9, "label": "前脚提前落地导致轴心前移（吃掉击球空间）"},
+    {"keywords": ["双脚同时承重", "both feet weighted", "重心平移加旋转",
+                   "axis translating not pivoting"],
+     "concept": "L4_axis_translates_no_pivot", "frame_range": [4],
+     "severity": 0.7, "label": "击球时双脚同时承重（轴心平移而非纯旋转）"},
+    {"keywords": ["屁股后撅", "butt sticking out", "伸手够球",
+                   "reaching for ball with arm"],
+     "concept": "L4_collapsed_axis_reaching", "frame_range": [4],
+     "severity": 0.85, "label": "轴心已塌，在伸手够球（典型 spacing 失败）"},
+    {"keywords": ["单脚击球", "one foot pivot", "前脚悬浮", "front foot floating",
+                   "land after hitting", "击球后落地"],
+     "concept": "L4_one_foot_pivot_clean", "frame_range": [4],
+     "severity": 0.0, "label": "单脚枢轴击球（轴心稳定，正确）"},
+
     # ══════════════════════════════════════════════════════════════════
     #  Layer 2 — 时间/时序（Unit Turn timing, Bounce-Hit）
     #  Source: docs/research/FOREHAND_COMPLETE_TAXONOMY.md
@@ -327,6 +348,11 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "L1_spacing_too_close": "L1",
     "L1_spacing_too_far": "L1",
     "L1_attack_zone_misaligned": "L1",
+    # L4 axis stability (Sky Kim framework) — 2026-04-27
+    "L4_axis_collapsed_early_landing": "L4",
+    "L4_axis_translates_no_pivot": "L4",
+    "L4_collapsed_axis_reaching": "L4",
+    "L4_one_foot_pivot_clean": "L4",
     # L2 — Rhythm / Timing
     "problem_p08": "L2",  # 击球太急
     "problem_p12": "L2",  # separation 缺失
