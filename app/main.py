@@ -15,6 +15,7 @@ import mimetypes
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 
@@ -88,6 +89,86 @@ def create_app() -> FastAPI:
 
     storage.ensure_storage()
     app.include_router(routes.router)
+
+    # /reset — kill switch for stale PWA installs. iOS Safari + PWA is
+    # notorious for pinning a stale shell when the original response had
+    # no Cache-Control (the previous bug). Even after fixing the headers,
+    # already-cached entries can persist for hours. Visiting this route
+    # serves a tiny HTML page that:
+    #   1. unregisters every service worker on this origin
+    #   2. deletes every Cache API store
+    #   3. redirects to / with a fresh timestamp query string
+    # The redirect URL is unique each time, so the browser's HTTP cache
+    # treats it as a new resource and goes to the network.
+    @app.get("/reset", response_class=HTMLResponse)
+    def reset_pwa() -> HTMLResponse:
+        html = """<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resetting Baseline…</title>
+<style>
+  body{font-family:-apple-system,system-ui,sans-serif;background:#F7F3EC;color:#2A2925;
+       margin:0;padding:48px 24px;text-align:center;line-height:1.5}
+  h1{font-size:18px;font-weight:600;margin:0 0 12px}
+  p{font-size:14px;color:#6F6B66;margin:0 0 8px}
+  code{background:#EAE4D9;padding:2px 6px;border-radius:4px;font-size:12px}
+  .ok{color:#3F6E3F}
+</style>
+</head><body>
+<h1>Resetting Baseline…</h1>
+<p id="msg">Clearing service worker and caches…</p>
+<p><code id="log"></code></p>
+<script>
+(async () => {
+  const log = (m) => { document.getElementById('log').textContent = m; };
+  try {
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      log('found ' + regs.length + ' SW; unregistering…');
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      log('found ' + keys.length + ' caches; deleting…');
+      await Promise.all(keys.map(k => caches.delete(k)));
+    }
+    document.getElementById('msg').innerHTML =
+      '<span class="ok">Reset complete.</span> Loading fresh app in 1s…';
+    setTimeout(() => { location.replace('/?fresh=' + Date.now()); }, 1000);
+  } catch (e) {
+    document.getElementById('msg').textContent = 'Reset error: ' + e.message;
+  }
+})();
+</script>
+</body></html>"""
+        return HTMLResponse(
+            content=html,
+            headers={
+                "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+                "Pragma": "no-cache",
+                "Expires": "0",
+            },
+        )
+
+    # /version — quick verifier for what the SERVER is currently shipping.
+    # Reads BUILD_TAG out of frontend/dist/index.html so we can prove the
+    # server is on the latest code without depending on the browser cache.
+    @app.get("/version")
+    def version() -> JSONResponse:
+        index_path = PROJECT_ROOT / "frontend" / "dist" / "index.html"
+        tag = "unknown"
+        try:
+            text = index_path.read_text(encoding="utf-8", errors="replace")
+            import re
+            m = re.search(r"BUILD_TAG\s*=\s*'([^']+)'", text)
+            if m:
+                tag = m.group(1)
+        except Exception:
+            pass
+        return JSONResponse(
+            {"build_tag": tag},
+            headers={"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"},
+        )
 
     # Optional static frontend — if a `frontend/dist/` exists, serve it at /
     static_root = PROJECT_ROOT / "frontend" / "dist"
