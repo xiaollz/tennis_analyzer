@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v10 · 2026-04-26';
+const BUILD_TAG = 'v11 · 2026-04-26';
 
 const T = {
   bg:        '#F7F3EC',
@@ -2463,128 +2463,6 @@ function TabData({ diag }) {
         </div>
         <Icon name="target" size={28} color={T.clay}/>
       </div>
-    </div>
-  );
-}
-
-function TabVLM({ diag }) {
-  const vlm = diag.vlm;
-  const narrative = diag.diagnosis?.narrative || vlm?.narrative;
-
-  if (!vlm) {
-    return (
-      <div style={{ padding: 18, borderRadius: 14, background: T.paperAlt }}>
-        <Icon name="alert" size={20} color={T.ink3}/>
-        <Sans size={13} color={T.ink2} style={{ marginTop: 8 }}>
-          No visual reading available for this clip.
-        </Sans>
-        <Sans size={11} color={T.ink3} style={{ marginTop: 4 }}>
-          {diag.stroke_type === 'one_handed_backhand'
-            ? 'Single-handed backhand VLM analysis is not yet enabled.'
-            : 'VLM analysis was skipped or returned no observations.'}
-        </Sans>
-      </div>
-    );
-  }
-
-  const observations = vlm.observations || [];
-
-  return (
-    <div>
-      {narrative && (
-        <div style={{
-          background: T.ink, borderRadius: 18, padding: '18px 18px 16px',
-          color: '#fff', marginBottom: 20, position: 'relative', overflow: 'hidden',
-        }}>
-          <div style={{
-            position: 'absolute', right: -30, top: -30, width: 140, height: 140,
-            borderRadius: 999, background: T.clay, opacity: 0.3, filter: 'blur(20px)',
-          }}/>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
-            <Icon name="sparkle" size={14} color={T.amber}/>
-            <Sans size={10} upper weight={600} color={T.amber} style={{ letterSpacing: 1.3 }}>
-              Gemini · visual reading
-            </Sans>
-          </div>
-          <Sans size={13} style={{ color: '#fff', lineHeight: 1.55, whiteSpace: 'pre-wrap' }}>
-            {typeof narrative === 'string' ? narrative : JSON.stringify(narrative)}
-          </Sans>
-        </div>
-      )}
-
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
-        <Sans size={11} upper weight={500} color={T.ink3}>
-          Timeline · {observations.length} observations
-        </Sans>
-      </div>
-
-      {observations.length === 0 ? (
-        <Sans color={T.ink3}>No observations to show.</Sans>
-      ) : (
-        <div style={{ position: 'relative', paddingLeft: 22 }}>
-          <div style={{ position: 'absolute', left: 7, top: 8, bottom: 8, width: 1, background: T.line }}/>
-          {observations.map((obs, i) => {
-            const tone = obs.severity === 'high' ? 'clay'
-                       : obs.severity === 'medium' ? 'amber'
-                       : 'court';
-            const dot = tone === 'clay' ? T.clay : tone === 'amber' ? T.amber : T.court;
-            return (
-              <div key={i} style={{ position: 'relative', marginBottom: 12 }}>
-                <div style={{
-                  position: 'absolute', left: -22, top: 14,
-                  width: 14, height: 14, borderRadius: 999,
-                  background: dot, border: '2px solid ' + T.bg,
-                  boxShadow: `0 0 0 1px ${dot}40`,
-                }}/>
-                <div style={{
-                  background: T.paper, border: `0.5px solid ${T.line}`, borderRadius: 14,
-                  padding: '12px 14px',
-                }}>
-                  <div style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                    {obs.phase && <Tag tone="ghost">{obs.phase}</Tag>}
-                    <Tag tone={tone} style={{ marginLeft: 'auto' }}>
-                      {obs.severity || 'note'}
-                    </Tag>
-                  </div>
-                  <Sans size={13} weight={600} style={{ marginBottom: 5, lineHeight: 1.35 }}>
-                    {obs.observation || obs.title || obs.summary}
-                  </Sans>
-                  {obs.evidence && (
-                    <div style={{
-                      marginTop: 8, paddingTop: 6,
-                      borderTop: `0.5px dashed ${T.line}`,
-                      display: 'flex', alignItems: 'center', gap: 6,
-                    }}>
-                      <Icon name="wave" size={12} color={T.ink3}/>
-                      <Mono size={10} color={T.ink3}>
-                        {typeof obs.evidence === 'string' ? obs.evidence : JSON.stringify(obs.evidence)}
-                      </Mono>
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {diag.diagnosis?.arbitration && diag.diagnosis.arbitration.length > 0 && (
-        <div style={{ marginTop: 22 }}>
-          <Sans size={11} upper weight={500} color={T.ink3} style={{ marginBottom: 8 }}>
-            Cross-checks · VLM ↔ metrics
-          </Sans>
-          {diag.diagnosis.arbitration.map((a, i) => (
-            <div key={i} style={{
-              background: T.paperAlt, border: `0.5px solid ${T.line}`, borderRadius: 12,
-              padding: '10px 12px', marginBottom: 6,
-            }}>
-              <Sans size={12} color={T.ink2} style={{ lineHeight: 1.5 }}>
-                {typeof a === 'string' ? a : (a.resolution_text || JSON.stringify(a))}
-              </Sans>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
