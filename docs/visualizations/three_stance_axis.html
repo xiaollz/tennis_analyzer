@@ -454,29 +454,46 @@ function drawScene(svgId, stance, t) {
   }));
 
   // ── Ball trajectory ────────────────────────────────────────
-  let ballX, ballY, ballOpacity = 1.0;
-  const contactX = PANEL_CENTER.x + 30;
-  const contactY = 285;
+  // Single impact instant at IMPACT_T — ball arrives exactly when
+  // racket reaches contact zone, then flies off immediately.
+  // No "sitting around" between approach and departure.
+  const IMPACT_T = 0.67;
+  const IMPACT_X = PANEL_CENTER.x + 50;
+  const IMPACT_Y = 270;
 
-  if (t < 0.5) {
-    // Approaching from net
-    const p = t / 0.5;
-    ballX = PANEL_CENTER.x + 60 - 30 * p;  // arc inward
-    ballY = 60 + p * 220;                  // descend toward contact
-  } else if (t < 0.62) {
-    const p = (t - 0.5) / 0.12;
-    ballX = contactX;
-    ballY = 280 + p * 5;
-  } else if (t < 0.72) {
-    // At contact zone
-    ballX = contactX + 5;
-    ballY = contactY;
+  let ballX, ballY, ballOpacity = 1.0;
+
+  if (t < IMPACT_T) {
+    // Approach from upper-right (incoming ball over net)
+    const p = t / IMPACT_T;
+    // Slight ease-in: ball seems to accelerate as it falls
+    const eased = Math.pow(p, 1.4);
+    const startX = PANEL_CENTER.x + 95;
+    const startY = 38;
+    ballX = startX + (IMPACT_X - startX) * eased;
+    ballY = startY + (IMPACT_Y - startY) * eased;
   } else {
-    // Leaving toward net
-    const p = (t - 0.72) / 0.28;
-    ballX = contactX + 5 - p * 80;
-    ballY = contactY - p * 270;
-    ballOpacity = 1 - p * 0.3;
+    // Depart toward upper-left immediately on impact (cross-court)
+    const p = (t - IMPACT_T) / (1 - IMPACT_T);
+    // Ease-out: very fast initial departure, then slows
+    const eased = 1 - Math.pow(1 - p, 0.5);
+    const endX = PANEL_CENTER.x - 95;
+    const endY = 18;
+    ballX = IMPACT_X + (endX - IMPACT_X) * eased;
+    ballY = IMPACT_Y + (endY - IMPACT_Y) * eased;
+    ballOpacity = 1 - p * 0.25;
+  }
+
+  // Impact flash — brief yellow ring at the contact moment
+  if (Math.abs(t - IMPACT_T) < 0.05) {
+    const flashIntensity = 1 - Math.abs(t - IMPACT_T) / 0.05;
+    svg.appendChild(svgEl('circle', {
+      cx: IMPACT_X, cy: IMPACT_Y,
+      r: 9 + 8 * flashIntensity,
+      fill: 'none', stroke: '#ffeb3b',
+      'stroke-width': 2 + 1.5 * flashIntensity,
+      opacity: flashIntensity * 0.85
+    }));
   }
 
   svg.appendChild(svgEl('circle', {
