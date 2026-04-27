@@ -86,7 +86,7 @@ const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 // Visible build tag — changes on every meaningful frontend deploy so we
 // can confirm at a glance what's actually running on the user's device.
 // (PWAs cache aggressively; this prints in the Home footer.)
-const BUILD_TAG = 'v13 · 2026-04-26';
+const BUILD_TAG = 'v14 · 2026-04-27';
 
 const T = {
   bg:        '#F7F3EC',
@@ -3434,6 +3434,39 @@ function App() {
     fileRef.current?.click();
   };
   const pickFile = () => fileRef.current?.click();
+
+  // Open a saved session. The new architecture is one-clip-per-upload
+  // (user pre-cuts elsewhere, uploads only what they want analyzed), so
+  // for those videos we skip the ClipGrid intermediary entirely and jump
+  // straight to the single clip's result. Legacy multi-clip videos
+  // (segmentation flow) still use ClipGrid.
+  const openSavedVideo = useCallback(async (videoId) => {
+    try {
+      const v = await api.getVideo(videoId);
+      const clips = v.clips || [];
+      const direct = !!v.meta?.direct_upload;
+      if (direct || clips.length === 1) {
+        const clipId = clips[0]?.clip_id;
+        if (clipId) {
+          // If a diagnosis already exists, go to result; else run analysis.
+          try {
+            const d = await api.getDiagnosis(clipId);
+            if (d && d.ready) {
+              setRoute({ name: 'result', clipId });
+              return;
+            }
+          } catch { /* not ready, fall through */ }
+          setRoute({ name: 'analyze', clipId });
+          return;
+        }
+      }
+      // Legacy multi-clip path
+      setRoute({ name: 'clips', videoId });
+    } catch {
+      // On any error fall back to the legacy view so the user isn't stranded
+      setRoute({ name: 'clips', videoId });
+    }
+  }, []);
   const onFileChosen = e => {
     const f = e.target.files?.[0];
     if (f) {
@@ -3454,7 +3487,7 @@ function App() {
             reloadKey={homeKey}
             stroke={stroke}
             onStrokeChange={setStroke}
-            onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
+            onPickVideo={openSavedVideo}
             onUpload={pickFile}
             onLibrary={() => setRoute({ name: 'library' })}
             onResumeAnalysis={(clipId) => setRoute({ name: 'analyze', clipId })}
@@ -3463,7 +3496,7 @@ function App() {
         {route.name === 'library' && (
           <Library
             onBack={() => { setRoute({ name: 'home' }); setHomeKey(k => k + 1); }}
-            onPickVideo={id => setRoute({ name: 'clips', videoId: id })}
+            onPickVideo={openSavedVideo}
           />
         )}
         {route.name === 'upload' && (
