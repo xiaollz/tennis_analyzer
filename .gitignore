@@ -79,7 +79,11 @@ output/
 !knowledge/output/
 
 # ===== 文档（保留学习笔记和研究资料，排除其他个人文档） =====
-docs/
+# Use file-level patterns instead of directory exclusion: git won't
+# descend into a gitignored directory, so '!docs/research/**' under
+# 'docs/' silently fails to re-include new files. Listing the files
+# directly works.
+docs/*
 !docs/learn_ytb/
 !docs/learn_ytb/**
 !docs/research/
