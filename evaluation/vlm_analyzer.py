@@ -19,6 +19,7 @@ import cv2
 import numpy as np
 
 from evaluation.event_detector import SwingEvent
+from evaluation.coach_style import COACH_OUTPUT_PRINCIPLES
 
 # Optional knowledge-graph imports (graceful degradation when unavailable)
 try:
@@ -718,7 +719,7 @@ _FTT_SYSTEM_PROMPT = """\
 - 60-74：框架初步成型，存在2-3个明显问题（如scooping、缺Out），容错性一般
 - 40-59：多个核心问题，手臂主导明显，容错性差
 - 0-39：基本动作框架缺失，需要从零建立
-"""
+""" + COACH_OUTPUT_PRINCIPLES
 
 _USER_PROMPT = "请逐帧分析这次正手挥拍。"
 
