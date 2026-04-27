@@ -85,11 +85,15 @@
 | 维度 | 含义 |
 |---|---|
 | **分腿垫步**（Split Step）| 对手击球时的弹跳准备 |
-| **第一步方向** | 哪个脚先动、向哪个方向 |
+| **第一步方向** | 哪个脚先动、向哪个方向（必须同侧脚先动 → 锁髋 45°，via Im2JyVN8Rn0）|
 | **调整步**（Adjustment Steps）| 接近球时的小步调整 |
 | **加载脚位置**（Loading Foot）| 上步还是后撤步 |
 | **前脚落点** | 前脚相对于来球落点的位置 |
 | **回位**（Recovery）| 击球后的位移恢复 |
+| **Heel-to-Toe 落地**（前脚滚动）| 必须脚跟先着地 → 滚到前掌；前掌着地 = 踩刹车切断动量（via ZM7DYfi17no）|
+| **后腿先弯**（Back Knee Bend First）| 处理短/低球时由后腿先蹲，不要弯腰前倾（via ZM7DYfi17no / LVtxz0fba18）|
+| **Carioca Step + 后腿后踢** | 浅球随球上网时维持闭合肩线的步法组合（via XFdjh_EROwM）|
+| **Foot Speed 等级**（1-10）| 必须 ≥ 挥速等级 + 1，否则扭矩链断（via dCRj8MSNOUg）|
 
 ### 失败模式
 
@@ -126,6 +130,21 @@
 
 > 来源：Sky Kim "Too close? Too Far? Spacing fix" (Road to Pro Tennis)
 > URL: https://www.youtube.com/watch?v=aiwUqHQl-Ec
+
+### ⭐ 站姿动态切换（Stance Branching）—— 半开放是母板
+
+> 来源：RTP 综合（via QNksnW6cq-4 / 8LsLG8ZOa1g）
+
+半开放站姿不是静态选择，而是**保留击球前 0.1 秒切换到开放/关闭的选择权**：
+- 快球 → "Lifting and Pivoting"（左脚虚起、右脚轴转）= 开放式
+- 慢/低球 → "Kick the right foot back"（左脚上步同时右脚后踢补偿）= 关闭式
+- 默认必须 Semi-Open；过早死锁站姿是大忌。
+
+### ⭐ 同侧第一步（Same-Side First Step）—— Unit Turn 的物理触发器
+
+> 来源：Sky Kim "First Step After Split" (via Im2JyVN8Rn0)
+
+分腿垫步落地后，**靠近来球方向那只脚必须先动**（正手时右脚先动）。这一步不是为跑而是为"锁髋 45°"，否则后续 Unit Turn 会变成全身一起转的"旋转"而非分离的"扭矩"。失败模式：先动远端脚做交叉步 → 髋直接转 90° → 引拍过大 → 击球点必偏后。
 
 **核心命题**：
 > 你"被球挤到"的力学根因不是手的问题，是**重心轴在击球瞬间发生了非法位移**。
@@ -212,6 +231,11 @@
 | **前锯肌包裹**（Wrap）| 肩胛骨贴近 |
 | **左臂后压**（Off-Arm Pull）| 非持拍手向后/向身体方向反作用 |
 | **送肘**（Elbow Lead）| 肘部领先于手 |
+| **Hip Locking**（右胯反向锁定）| 引拍时右胯不跟肩转，做投石机底座（via 9ihq4WFCWy0）|
+| **Hide the Elbow**（藏肘视觉标准）| 引拍合格 = 对手视角看不到右肘（via va005XuoBEU）|
+| **Midline Rule**（中线原则）| 拍头跨过身体中线之前不许向后倒（via _pB-WTQGSp4）|
+| **L-shape Neck Hold**（L 型托拍颈）| 左手虎口托拍颈而非抓拍柄，强制 Unit Turn 充分（via CZhncV-DYUw）|
+| **Lat-Trap Antagonism**（背阔肌主动 / 斜方肌放松）| 用背阔肌下拉强制沉肩，对抗紧张耸肩（via enu0Cl7boJ0）|
 
 ### 知识库当前覆盖
 
@@ -232,6 +256,10 @@
 | **肘部位置**（触球时）| 在身体前方 vs 在身体侧方 |
 | **拍面角度** | 闭合 / 中性 / 开放 |
 | **拍头滞后**（Wrist Lag）| 拍头落后手腕的角度 |
+| **握拍微观角度**（Grip Angle）| 斜跨（Djokovic 式 → 必须 Double-Bend）vs 锤式（Nadal 式 → 必须 Straight-Arm）（via 6TdUOe5nswI / 8oXhd48MSCs）|
+| **食指扳机指间距**（Pistol vs Hammer）| 食指张开成钩（Pistol，释放 pronation）vs 四指并拢（Hammer，锁死手腕）（via 2fZmWDOVoRA / IaCikOeS0oQ）|
+| **Lag 时拍面方向** | 安全：手腕 Extension（后仰，掌心向前）/ 危险：Ulnar Deviation（侧折，拍面扣地）（via dzAIDEiFBv4）|
+| **拍面闭合方式**（高短球时）| 安全：Vertical Closing（靠击球点前移）/ 危险：Parallel Closing（靠手腕翻面盖球）（via HWM4clOrylA）|
 
 ### 知识库当前覆盖
 
@@ -300,6 +328,13 @@
 | **方向**（Lateral）| 拍面闭合时机 + 转身停止时机 |
 | **深度**（Depth）| 击球点高度 + 拍面角度 + 力度 |
 | **弧度**（Arc）| Up 向量比例 |
+| **Power/Spin Equation 比例**（量化 Out vs Up）| 总能量恒定，按场景分配：90/10 暴力，60/40 中庸，30/70 高弧（via U3Saz3bCPPo / x-z05u-kfXE）|
+| **跳跃击球时的垂直对冲**（Vertical Energy Hedge）| 身体跳起已提供 vertical 分量 → 手必须切回 forward，避免 Up AND Up（via CrVoJL9E69Y）|
+
+### 失败模式（输出层）
+
+- 求稳时降低脚频和挥速 → 击球点错位 → 失误反而增多（应改为只增加 Spin 比例，via x-z05u-kfXE）
+- Wiper 动作没有前置 Plow-through → 球短而无威胁（业余通病，via DDZSXrNZAgU）
 
 ### 知识库当前覆盖
 
