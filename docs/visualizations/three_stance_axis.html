@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三种站姿旋转轴对比</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px;
+  background: #1a1a1a; color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', sans-serif;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+h1 {
+  text-align: center; font-weight: 400;
+  font-size: 26px; margin: 0 0 4px;
+}
+.subtitle {
+  text-align: center; color: #888;
+  margin-bottom: 24px; font-size: 14px;
+}
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px; margin-bottom: 20px;
+}
+@media (max-width: 1000px) {
+  .panels { grid-template-columns: 1fr; }
+}
+.panel {
+  background: #232323; border-radius: 12px;
+  padding: 16px; border: 1px solid #333;
+}
+.panel-title {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 2px;
+}
+.panel-subtitle {
+  font-size: 12px; color: #888;
+  margin-bottom: 12px;
+}
+svg.viz {
+  width: 100%; height: auto;
+  background: #2a4d3a; border-radius: 8px;
+  display: block; aspect-ratio: 3 / 4;
+}
+.controls {
+  background: #232323; padding: 16px 22px;
+  border-radius: 12px;
+  display: flex; align-items: center;
+  gap: 18px; flex-wrap: wrap;
+}
+button {
+  background: #c25450; color: #fff; border: none;
+  padding: 10px 24px; border-radius: 6px;
+  cursor: pointer; font-size: 14px; font-weight: 500;
+  font-family: inherit;
+}
+button:hover { background: #d96560; }
+button:active { background: #a04540; }
+.scrubber-wrap { flex: 1; min-width: 200px; }
+input[type="range"] {
+  width: 100%; height: 6px;
+  background: #444; border-radius: 3px;
+  outline: none;
+}
+.phase-label {
+  font-size: 13px; color: #aaa;
+  min-width: 160px; text-align: center;
+}
+.phase-name { color: #f0c060; font-weight: 600; font-size: 15px; }
+.legend {
+  display: flex; justify-content: center;
+  gap: 22px; margin-top: 14px;
+  flex-wrap: wrap; font-size: 12px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.annotation {
+  margin-top: 10px; font-size: 12px;
+  color: #aaa; line-height: 1.5;
+}
+.annotation b { color: #f0c060; }
+.note {
+  background: #2a2a2a; padding: 16px 20px;
+  border-radius: 8px; margin-top: 24px;
+  font-size: 13px; color: #bbb;
+  line-height: 1.7;
+  border-left: 3px solid #c25450;
+}
+.note b { color: #f0c060; }
+.speed-controls {
+  display: flex; gap: 6px;
+}
+.speed-btn {
+  padding: 6px 12px; font-size: 12px;
+  background: #444; color: #ccc;
+}
+.speed-btn.active { background: #c25450; color: #fff; }
+.speed-btn:hover { background: #555; }
+.speed-btn.active:hover { background: #d96560; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>三种站姿旋转轴对比 · Top-Down View</h1>
+  <div class="subtitle">同一次正手击球，三种站姿，看红色"轴"在哪里 / 怎么动</div>
+
+  <div class="panels">
+    <div class="panel">
+      <div class="panel-title">开放式 Open</div>
+      <div class="panel-subtitle">轴 = 右脚的固定点（陀螺）</div>
+      <svg class="viz" id="svg-open" viewBox="0 0 300 400"></svg>
+      <div class="annotation">
+        红点 = 旋转轴。<b>固定在右脚</b>。整个挥拍身体绕这个点像陀螺转。
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">半开放 Semi-Open</div>
+      <div class="panel-subtitle">你的主用站姿 · 轻微飘移</div>
+      <svg class="viz" id="svg-semi" viewBox="0 0 300 400"></svg>
+      <div class="annotation">
+        <b>触球前基本在右脚</b>。触球后才微微偏向左脚。介于陀螺和滑动之间。
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">封闭式 Closed</div>
+      <div class="panel-subtitle">轴 = 滑动的线段（冰球）</div>
+      <svg class="viz" id="svg-closed" viewBox="0 0 300 400"></svg>
+      <div class="annotation">
+        红线 = 轴的轨迹。<b>从右脚滑向左脚</b>。触球瞬间正在过程中。
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="play-btn">▶ 播放</button>
+    <div class="scrubber-wrap">
+      <input type="range" id="scrubber" min="0" max="1000" value="0">
+    </div>
+    <div class="phase-label">阶段：<span id="phase-name" class="phase-name">Setup</span></div>
+    <div class="speed-controls">
+      <button class="speed-btn" data-speed="0.5">0.5×</button>
+      <button class="speed-btn active" data-speed="1">1×</button>
+      <button class="speed-btn" data-speed="2">2×</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:#ff5050"></span>旋转轴</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#f0c060"></span>肩 / 髋</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#fff"></span>球拍 / 手臂</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#ffeb3b"></span>球</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#888"></span>双脚（亮度=承重）</div>
+  </div>
+
+  <div class="note">
+    <b>怎么看</b>：从空中往下看球员（top-down 视角）。球员在画面下方，球网在画面上方。<br><br>
+    <b>关键观察</b>：触球瞬间（"Contact" 阶段，红色阶段名变成红色），看红色轴在哪里——
+    开放式仍在右脚，封闭式正在中间，半开放仍偏向右脚。<br><br>
+    红色轨迹拖在身后是封闭式特有——它不是一个固定点，是一根<b>正在地上滑动的线</b>。
+    开放式那一边几乎看不到拖尾，因为它就是个不动的点。<br><br>
+    左下角和右下角的 <b>"右 X% / 左 X%"</b> 是双脚承重比例。看这个数字在触球瞬间是多少——
+    开放式仍接近 100/0，封闭式大约 30/70 偏左。
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// Phase definitions
+// ─────────────────────────────────────────────────────────────
+const PHASES = [
+  { name: 'Setup',          range: [0.00, 0.10], color: '#888' },
+  { name: 'Unit Turn',      range: [0.10, 0.40], color: '#aaa' },
+  { name: 'Forward Swing',  range: [0.40, 0.62], color: '#f0c060' },
+  { name: 'Contact',        range: [0.62, 0.72], color: '#ff5050' },
+  { name: 'Follow-Through', range: [0.72, 1.00], color: '#888' }
+];
+
+const PANEL_CENTER = { x: 150, y: 280 };
+
+// Foot positions (relative to panel center, in top-down coords)
+// Right-handed player. Player at bottom of frame, net at top.
+// Positive x = player's right (right in screen)
+// Positive y = back (down in screen, away from net)
+const STANCES = {
+  open:   { right: { x:  28, y: 22 }, left: { x: -25, y: 16 } },
+  semi:   { right: { x:  22, y: 32 }, left: { x: -22, y:  6 } },
+  closed: { right: { x:  12, y: 50 }, left: { x:  -8, y: -25 } }
+};
+
+// ─────────────────────────────────────────────────────────────
+// Body kinematics
+// ─────────────────────────────────────────────────────────────
+
+// Body rotation in degrees as function of t (0..1)
+// 0 = facing net, negative = sideways (prep), positive = past contact (follow)
+function getBodyRotation(t) {
+  if (t < 0.10) {
+    return -30 * (t / 0.10);                       // 0 to -30
+  } else if (t < 0.40) {
+    const p = (t - 0.10) / 0.30;
+    return -30 - 60 * p;                           // -30 to -90
+  } else if (t < 0.62) {
+    const p = (t - 0.40) / 0.22;
+    return -90 + 80 * p;                           // -90 to -10
+  } else if (t < 0.72) {
+    const p = (t - 0.62) / 0.10;
+    return -10 + 30 * p;                           // -10 to +20 (across contact)
+  } else {
+    const p = (t - 0.72) / 0.28;
+    return 20 + 30 * p;                            // +20 to +50
+  }
+}
+
+// Weight distribution: 0 = all right foot, 1 = all left foot
+function getWeight(t, stance) {
+  if (stance === 'open') {
+    // Stays right almost the whole time, transfers only late
+    if (t < 0.72) return 0.05;
+    return Math.min(0.45, 0.05 + (t - 0.72) / 0.28 * 0.40);
+  } else if (stance === 'semi') {
+    // Slight drift but stays mostly right through contact
+    if (t < 0.62) return 0.10;
+    if (t < 0.72) return 0.10 + (t - 0.62) / 0.10 * 0.15;  // 0.10 → 0.25 across contact
+    return 0.25 + (t - 0.72) / 0.28 * 0.50;                 // → 0.75
+  } else {
+    // Closed: weight transfers DURING forward swing & contact
+    if (t < 0.40) return 0.10;
+    if (t < 0.62) {
+      const p = (t - 0.40) / 0.22;
+      return 0.10 + p * 0.40;                      // 0.10 → 0.50 by contact start
+    }
+    if (t < 0.72) {
+      const p = (t - 0.62) / 0.10;
+      return 0.50 + p * 0.20;                      // 0.50 → 0.70 across contact
+    }
+    const p = (t - 0.72) / 0.28;
+    return 0.70 + p * 0.20;                        // 0.70 → 0.90
+  }
+}
+
+// Right arm angle (in degrees, relative to body's "facing-net" axis)
+// 0 = arm extends toward net (forward)
+// 90 = arm extends to player's right
+// -90 = arm crosses to player's left
+function getArmAngle(t) {
+  if (t < 0.10) return 60;                                  // arm starts in front-right
+  if (t < 0.40) {
+    const p = (t - 0.10) / 0.30;
+    return 60 + 90 * p;                            // 60 → 150 (sweeps back to behind)
+  }
+  if (t < 0.62) {
+    const p = (t - 0.40) / 0.22;
+    return 150 - 80 * p;                           // 150 → 70 (sweeping forward)
+  }
+  if (t < 0.72) {
+    const p = (t - 0.62) / 0.10;
+    return 70 - 60 * p;                            // 70 → 10 (across contact)
+  }
+  const p = (t - 0.72) / 0.28;
+  return 10 - 70 * p;                              // 10 → -60 (crosses body)
+}
+
+// ─────────────────────────────────────────────────────────────
+// Math helpers
+// ─────────────────────────────────────────────────────────────
+
+// Rotate (x, y) by deg degrees CCW in screen coords (positive = visual CCW)
+function rotate(x, y, deg) {
+  const r = -deg * Math.PI / 180;  // negate because SVG y is flipped
+  const c = Math.cos(r), s = Math.sin(r);
+  return { x: x * c - y * s, y: x * s + y * c };
+}
+
+function getPhase(t) {
+  for (const p of PHASES) {
+    if (t >= p.range[0] && t <= p.range[1] + 0.001) return p;
+  }
+  return PHASES[PHASES.length - 1];
+}
+
+function svgEl(tag, attrs = {}) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
+}
+
+// Get full body state at time t for a stance
+function getBodyState(t, stance) {
+  const rotation = getBodyRotation(t);
+  const weight = getWeight(t, stance);
+  const feet = STANCES[stance];
+  // Body center = weighted blend of foot positions (where the axis sits)
+  const cx = feet.right.x + (feet.left.x - feet.right.x) * weight;
+  const cy = feet.right.y + (feet.left.y - feet.right.y) * weight;
+  return { rotation, weight, cx, cy, feet };
+}
+
+// ─────────────────────────────────────────────────────────────
+// Drawing
+// ─────────────────────────────────────────────────────────────
+
+function drawScene(svgId, stance, t) {
+  const svg = document.getElementById(svgId);
+  svg.innerHTML = '';
+
+  const state = getBodyState(t, stance);
+  const phase = getPhase(t);
+
+  // ── Court markings ────────────────────────────────────────
+  // Net at top (dashed white line)
+  svg.appendChild(svgEl('line', {
+    x1: 0, y1: 35, x2: 300, y2: 35,
+    stroke: '#fff', 'stroke-width': 2,
+    'stroke-dasharray': '6,4', opacity: 0.25
+  }));
+  const netLabel = svgEl('text', {
+    x: 150, y: 26, 'text-anchor': 'middle',
+    fill: '#fff', 'font-size': 11, opacity: 0.4
+  });
+  netLabel.textContent = '↑ 球网方向';
+  svg.appendChild(netLabel);
+
+  // Phase indicator (top left)
+  const phaseEl = svgEl('text', {
+    x: 10, y: 22, fill: phase.color,
+    'font-size': 11, 'font-weight': 'bold'
+  });
+  phaseEl.textContent = phase.name;
+  svg.appendChild(phaseEl);
+
+  // ── Axis trail (the "圣经" element) ────────────────────────
+  // Show traced line of axis position from t=0 to current t
+  if (t > 0.01) {
+    const samples = 30;
+    const points = [];
+    for (let i = 0; i <= samples; i++) {
+      const ti = (i / samples) * t;
+      const s = getBodyState(ti, stance);
+      points.push(`${(PANEL_CENTER.x + s.cx).toFixed(1)},${(PANEL_CENTER.y + s.cy).toFixed(1)}`);
+    }
+    svg.appendChild(svgEl('polyline', {
+      points: points.join(' '),
+      fill: 'none', stroke: '#ff5050',
+      'stroke-width': 3, opacity: 0.4,
+      'stroke-linecap': 'round', 'stroke-linejoin': 'round'
+    }));
+  }
+
+  // ── Feet ───────────────────────────────────────────────────
+  const rightWeight = 1 - state.weight;
+  const leftWeight = state.weight;
+
+  function drawFoot(foot, weight, label) {
+    const px = PANEL_CENTER.x + foot.x;
+    const py = PANEL_CENTER.y + foot.y;
+    const opacity = 0.3 + weight * 0.7;
+    const size = 7 + weight * 4;
+
+    // Foot circle
+    svg.appendChild(svgEl('circle', {
+      cx: px, cy: py, r: size,
+      fill: '#fff', opacity: opacity * 0.5
+    }));
+    svg.appendChild(svgEl('circle', {
+      cx: px, cy: py, r: size,
+      fill: 'none', stroke: '#fff',
+      'stroke-width': 1.5, opacity
+    }));
+
+    // Foot label
+    const labelEl = svgEl('text', {
+      x: px, y: py + 24, 'text-anchor': 'middle',
+      fill: '#fff', 'font-size': 10,
+      opacity: 0.5 + weight * 0.5
+    });
+    labelEl.textContent = `${label} ${(weight * 100).toFixed(0)}%`;
+    svg.appendChild(labelEl);
+  }
+  drawFoot(state.feet.right, rightWeight, '右');
+  drawFoot(state.feet.left, leftWeight, '左');
+
+  // ── Body (hip line + shoulder line + arm + racket) ─────────
+  const bcx = PANEL_CENTER.x + state.cx;
+  const bcy = PANEL_CENTER.y + state.cy;
+
+  // Hip line (lower, narrower)
+  const hipHalf = 13;
+  const hipR = rotate(hipHalf, 0, state.rotation);
+  const hipL = rotate(-hipHalf, 0, state.rotation);
+  svg.appendChild(svgEl('line', {
+    x1: bcx + hipL.x, y1: bcy + hipL.y,
+    x2: bcx + hipR.x, y2: bcy + hipR.y,
+    stroke: '#aa8530', 'stroke-width': 5,
+    'stroke-linecap': 'round', opacity: 0.85
+  }));
+
+  // Shoulder line (slightly forward of hips, wider)
+  // X-factor: shoulders rotate MORE than hips during prep → handled via rotation function
+  // For simplicity, shoulders rotate same as hips here, but offset toward "front" by small amount
+  const shOffset = -10;  // shift toward "net-side" (front)
+  const shoulderHalf = 17;
+  const shCenter = rotate(0, shOffset, state.rotation);
+  const shR = rotate(shoulderHalf, shOffset, state.rotation);
+  const shL = rotate(-shoulderHalf, shOffset, state.rotation);
+
+  svg.appendChild(svgEl('line', {
+    x1: bcx + shL.x, y1: bcy + shL.y,
+    x2: bcx + shR.x, y2: bcy + shR.y,
+    stroke: '#f0c060', 'stroke-width': 6,
+    'stroke-linecap': 'round'
+  }));
+
+  // Connect hip to shoulder (spine) — small line for visual continuity
+  svg.appendChild(svgEl('line', {
+    x1: bcx, y1: bcy,
+    x2: bcx + shCenter.x, y2: bcy + shCenter.y,
+    stroke: '#aa8530', 'stroke-width': 3, opacity: 0.6
+  }));
+
+  // Right shoulder position (where arm originates)
+  const rsX = bcx + shR.x;
+  const rsY = bcy + shR.y;
+
+  // Right arm: extends from right shoulder
+  // Arm angle relative to body's "facing-net" forward direction
+  const armAngle = getArmAngle(t);
+  // Arm direction in world: rotate (0, -1) (which points forward/net) by armAngle
+  // Wait, simpler: arm extends in direction (sin(armAngle), -cos(armAngle)) when body faces net
+  // Then apply body rotation
+  const armBodyX = Math.sin(armAngle * Math.PI / 180);
+  const armBodyY = -Math.cos(armAngle * Math.PI / 180);
+  const armWorld = rotate(armBodyX, armBodyY, state.rotation);
+  const armLength = 28;
+  const handX = rsX + armWorld.x * armLength;
+  const handY = rsY + armWorld.y * armLength;
+
+  // Arm line
+  svg.appendChild(svgEl('line', {
+    x1: rsX, y1: rsY, x2: handX, y2: handY,
+    stroke: '#fff', 'stroke-width': 3.5,
+    'stroke-linecap': 'round'
+  }));
+
+  // Racket at end of arm — small ellipse oriented perpendicular to arm
+  const racketAngleDeg = Math.atan2(armWorld.y, armWorld.x) * 180 / Math.PI + 90;
+  svg.appendChild(svgEl('ellipse', {
+    cx: handX, cy: handY, rx: 8, ry: 4,
+    fill: '#fff', opacity: 0.95,
+    stroke: '#000', 'stroke-width': 0.5,
+    transform: `rotate(${racketAngleDeg} ${handX} ${handY})`
+  }));
+
+  // ── Ball trajectory ────────────────────────────────────────
+  let ballX, ballY, ballOpacity = 1.0;
+  const contactX = PANEL_CENTER.x + 30;
+  const contactY = 285;
+
+  if (t < 0.5) {
+    // Approaching from net
+    const p = t / 0.5;
+    ballX = PANEL_CENTER.x + 60 - 30 * p;  // arc inward
+    ballY = 60 + p * 220;                  // descend toward contact
+  } else if (t < 0.62) {
+    const p = (t - 0.5) / 0.12;
+    ballX = contactX;
+    ballY = 280 + p * 5;
+  } else if (t < 0.72) {
+    // At contact zone
+    ballX = contactX + 5;
+    ballY = contactY;
+  } else {
+    // Leaving toward net
+    const p = (t - 0.72) / 0.28;
+    ballX = contactX + 5 - p * 80;
+    ballY = contactY - p * 270;
+    ballOpacity = 1 - p * 0.3;
+  }
+
+  svg.appendChild(svgEl('circle', {
+    cx: ballX, cy: ballY, r: 5,
+    fill: '#ffeb3b', opacity: ballOpacity,
+    stroke: '#aa8800', 'stroke-width': 1
+  }));
+
+  // ── Axis indicator (THE star of the show) ─────────────────
+  // Outer pulse ring
+  svg.appendChild(svgEl('circle', {
+    cx: bcx, cy: bcy, r: 13,
+    fill: 'none', stroke: '#ff5050',
+    'stroke-width': 2, opacity: 0.4
+  }));
+  // Inner solid circle
+  svg.appendChild(svgEl('circle', {
+    cx: bcx, cy: bcy, r: 6,
+    fill: '#ff5050', opacity: 0.95
+  }));
+
+  // Axis label on first frame
+  if (t < 0.04) {
+    const lbl = svgEl('text', {
+      x: bcx + 18, y: bcy - 8,
+      fill: '#ff5050', 'font-size': 11,
+      'font-weight': 'bold'
+    });
+    lbl.textContent = '← 旋转轴';
+    svg.appendChild(lbl);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Animation control
+// ─────────────────────────────────────────────────────────────
+let currentT = 0;
+let isPlaying = false;
+let lastFrameTime = 0;
+let DURATION_MS = 4000;
+let speedMultiplier = 1.0;
+
+function update(t) {
+  drawScene('svg-open', 'open', t);
+  drawScene('svg-semi', 'semi', t);
+  drawScene('svg-closed', 'closed', t);
+
+  const phase = getPhase(t);
+  const phaseNameEl = document.getElementById('phase-name');
+  phaseNameEl.textContent = phase.name;
+  phaseNameEl.style.color = phase.color;
+
+  document.getElementById('scrubber').value = Math.round(t * 1000);
+}
+
+function tick(now) {
+  if (!isPlaying) return;
+  if (lastFrameTime === 0) lastFrameTime = now;
+  const dt = ((now - lastFrameTime) / DURATION_MS) * speedMultiplier;
+  lastFrameTime = now;
+
+  currentT += dt;
+  if (currentT >= 1) {
+    currentT = 0;
+    // Brief pause at end before looping (could add)
+  }
+  update(currentT);
+  requestAnimationFrame(tick);
+}
+
+document.getElementById('play-btn').addEventListener('click', () => {
+  isPlaying = !isPlaying;
+  document.getElementById('play-btn').textContent = isPlaying ? '⏸ 暂停' : '▶ 播放';
+  if (isPlaying) {
+    lastFrameTime = 0;
+    requestAnimationFrame(tick);
+  }
+});
+
+document.getElementById('scrubber').addEventListener('input', (e) => {
+  isPlaying = false;
+  document.getElementById('play-btn').textContent = '▶ 播放';
+  currentT = parseInt(e.target.value, 10) / 1000;
+  update(currentT);
+});
+
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    speedMultiplier = parseFloat(btn.dataset.speed);
+  });
+});
+
+// Initial draw
+update(0);
+</script>
+</body>
+</html>
