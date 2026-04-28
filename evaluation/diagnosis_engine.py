@@ -22,6 +22,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -2104,7 +2105,7 @@ _CONCEPT_TO_MUSCLE: Dict[str, Dict[str, str]] = {
         "phase": "Unit Turn",
         "feel": "左侧腹斜肌被拉开、背部张力上升、右大腿后侧绷紧",
         "absence": "如果只感觉肩膀在转但腹部没有拉伸感，说明转开幅度不够，核心弹性势能没建立",
-        "science": "muscle_activation_guide preparation: 腹外斜肌+背阔肌通过离心收缩储能形成的肩髋分离角，是后续蹬地转髋能爆发出力量的物理前提",
+        "science": "腹外斜肌+背阔肌通过离心收缩储能形成的肩髋分离角，是后续蹬地转髋能爆发出力量的物理前提",
     },
     "straight_legs": {
         "muscle": "股四头肌 + 臀大肌",
@@ -2138,7 +2139,7 @@ _CONCEPT_TO_MUSCLE: Dict[str, Dict[str, str]] = {
         "phase": "对手contact瞬间（split落地）",
         "feel": "落地时小腿像踩到弹簧，跟腱被快速拉伸再立刻反弹",
         "absence": "如果落地是脚跟先着地或全脚掌'砸'下去，说明小腿储能没发生，下一步会慢半拍",
-        "science": "muscle_activation_guide preparation phase: 腓肠肌+比目鱼肌做离心收缩储存蹬地能量，是反应启动的第一个肌肉环节",
+        "science": "腓肠肌+比目鱼肌做离心收缩储存蹬地能量，是反应启动的第一个肌肉环节",
     },
     "prep04_no_pivot": {
         "muscle": "髋外旋肌群 + 臀中肌",
@@ -2146,7 +2147,7 @@ _CONCEPT_TO_MUSCLE: Dict[str, Dict[str, str]] = {
         "phase": "split落地后第一帧",
         "feel": "右脚臀部外侧有发力感，右脚后跟轻微离地",
         "absence": "如果只感觉脚掌在拖地、臀部无感觉，说明髋外旋肌没参与，pivot变成了横向滑步",
-        "science": "muscle_activation_guide: pivot由髋外旋肌驱动右脚旋转，臀中肌稳定骨盆，是unit turn的物理起点",
+        "science": "pivot由髋外旋肌驱动右脚旋转，臀中肌稳定骨盆，是unit turn的物理起点",
     },
     "prep08_late_unit_turn": {
         "muscle": "背阔肌 + 腹外斜肌",
@@ -2315,6 +2316,76 @@ def _clean_narrative(text: str) -> str:
     return s
 
 
+def _humanize_narrative(raw: str) -> Optional[str]:
+    """LLM 后处理：把模板组装的 narrative 重写得像教练讲话。
+
+    思路（来自 docs/research/_meta/vlm_coach_audit.md 第 3.3 节）：
+    模板拼字符串永远不可能讲人话。让 LLM 二次润色，输入是事实数据齐全的
+    草稿 + COACH_OUTPUT_PRINCIPLES，输出是保留所有事实、去掉 AI 腔的版本。
+
+    用便宜模型（如 Gemini Flash）。失败时返回 None，调用方会回退到原文。
+
+    通过 COACH_HUMANIZE=1 env var 启用，默认关闭以避免开发阶段产生意外
+    LLM 调用。
+    """
+    if not raw or not raw.strip():
+        return None
+
+    try:
+        from evaluation.coach_style import COACH_OUTPUT_PRINCIPLES
+    except Exception:
+        return None
+
+    # Lazy import + endpoint reuse from vlm_analyzer (already configured)
+    try:
+        from google import genai
+        from google.genai import types
+        from pathlib import Path
+
+        cfg_path = Path(__file__).parent.parent / "config" / "youtube_api_config.json"
+        if not cfg_path.exists():
+            return None
+        cfg = json.loads(cfg_path.read_text())
+        api_key = cfg.get("api_key") or cfg.get("_备用_api_key")
+        base_url = cfg.get("base_url") or cfg.get("_备用_base_url")
+        model = cfg.get("model") or cfg.get("_备用_model_override") or "gemini-3-flash-preview"
+
+        kwargs = {"api_key": api_key}
+        if base_url:
+            kwargs["http_options"] = types.HttpOptions(
+                api_version="v1beta", base_url=base_url, timeout=30000,
+            )
+        client = genai.Client(**kwargs)
+    except Exception:
+        return None
+
+    system_prompt = (
+        f"{COACH_OUTPUT_PRINCIPLES}\n\n"
+        "你的任务：把下面这段诊断草稿重写得像真人教练讲话。\n\n"
+        "**严格保留**：所有数字、概念名（如 Unit Turn、压、藏、飘）、drill 名称、"
+        "因果关系。**只重写句式**，不改事实。\n\n"
+        "**严禁**：增加新事实、删除关键数据、用 AI 黑名单词汇（此外/凸显/"
+        "至关重要/格局/不仅是 X 而是 Y/值得注意的是）、用三段式套路。\n\n"
+        "输出**纯文本**，不带 markdown 标题、emoji、bullet。"
+    )
+
+    try:
+        resp = client.models.generate_content(
+            model=model,
+            contents=[
+                types.Content(role="user", parts=[
+                    types.Part(text=f"{system_prompt}\n\n---\n\n草稿：\n{raw}"),
+                ]),
+            ],
+        )
+        text = (resp.text or "").strip()
+        if len(text) < 30:  # too short = likely failed
+            return None
+        return text
+    except Exception:
+        return None
+
+
 def _generate_narrative(
     matched_concepts: List[Dict],
     causal_chain: List[Dict[str, str]],
@@ -2335,35 +2406,31 @@ def _generate_narrative(
     parts: List[str] = []
 
     # ── Paragraph 1: What was observed ──
+    # 用教练讲话的方式，不用"从视频中观察到"这种播报员开场。
+    # 仲裁日志移出 user-facing narrative（保留在 result["arbitration_log"] 给开发者）。
     problem_concepts = [m for m in matched_concepts if m["severity"] > 0]
     if problem_concepts:
-        obs_lines = []
-        for m in problem_concepts[:4]:  # Top 4 issues
-            frame_info = f"（图{m['frame']}）" if m["frame"] else ""
-            obs_lines.append(f"{m['label']}{frame_info}")
-        para1 = f"从视频中观察到以下问题：{'、'.join(obs_lines)}。"
+        # 直接把 top 1-2 个问题作为开场，命令式而非描述式
+        top_label = problem_concepts[0]["label"]
+        para1 = f"这一拍最让我担心的是{top_label}。"
 
-        # Add quant evidence naturally
+        # 把次要问题（top 2-4）合并成一句，不再单独罗列
+        if len(problem_concepts) > 1:
+            other_labels = [m["label"] for m in problem_concepts[1:3]]
+            para1 += f"另外还有{'、'.join(other_labels)}——但这些大概率是上面那条的下游表现。"
+
+        # Add quant evidence naturally — 但用相对差不用绝对值（coach_style 第 12 条）
         confirmed = quant_validation.get("confirmed", [])
         if confirmed:
-            para1 += f"量化数据佐证：{'；'.join(confirmed[:2])}。"
+            para1 += f"数据上：{confirmed[0]}。"
         contradicted = quant_validation.get("contradicted", [])
         if contradicted:
-            para1 += f"但需要注意：{'；'.join(contradicted[:2])}。"
+            para1 += f"但 {contradicted[0]}。"
     else:
-        para1 = "从视频中未观察到明显的技术问题，各项指标表现尚可。"
+        para1 = "这一拍各项指标表现都还行，没看到明显问题。"
 
-    # v4.3: 仲裁日志 —— 被量化数据撤销的 VLM 观察（医生视角展示）
-    if arbitration_log:
-        arb_notes = []
-        for item in arbitration_log:
-            arb_notes.append(f"• {item['short_note']}")
-        para1 += (
-            f"\n\n🔬 **VLM-算法仲裁**（共 {len(arbitration_log)} 条 VLM 观察被量化数据撤销）：\n"
-            + "\n".join(arb_notes)
-        )
-
-    # Add raw metric numbers if available
+    # Add raw metric numbers — 如果有上下文数字（如肩转 26° vs 标准 60°），就嵌入；
+    # 没有上下文的裸数字（如同步性 0.71）放进括号一行带过即可。
     metric_notes = []
     sync = metrics.get("arm_torso_synchrony")
     if sync is not None:
@@ -2376,29 +2443,32 @@ def _generate_narrative(
         metric_notes.append(f"穿透值{ext:.2f}")
     rot = metrics.get("shoulder_rotation")
     if rot is not None:
-        metric_notes.append(f"转体{rot:.0f}°")
+        # 转体角度有标准（≥60°），嵌入相对差让数字活起来
+        gap = 60 - rot
+        if gap > 5:
+            metric_notes.append(f"肩只转开{rot:.0f}°（标准要 60°，差了 {gap:.0f}°）")
+        else:
+            metric_notes.append(f"转体{rot:.0f}°（够了）")
     if metric_notes:
-        para1 += f"（关键数值：{'、'.join(metric_notes)}）"
+        para1 += f"（{'，'.join(metric_notes)}）"
 
     parts.append(para1)
 
     # ── Paragraph 2: Why it happens (causal chain + muscle insight) ──
+    # 因果链不要复读三遍——一句话讲清楚根子在哪。
+    # 注意：去重，root_name 已经是 top_label 时不要把它也列在症状里
     if causal_chain:
         root_name = _get_node_name_zh(root_cause_id) if root_cause_id else "未知"
-        chain_desc = []
-        for link in causal_chain:
-            chain_desc.append(f"「{link['from_name']}」导致「{link['to_name']}」")
-        para2 = f"根因分析：这些问题的最上游根因是「{root_name}」。"
-        para2 += f"因果链路：{'→'.join(chain_desc)}。"
-        para2 += "也就是说，你看到的表面症状（" + "、".join(
-            m["label"] for m in problem_concepts[:2]
-        ) + "）其实是上游问题的下游表现。"
+        para2 = f"根子在{root_name}。"
+        # 列下游症状时排除掉跟根因同名的
+        downstream = [m["label"] for m in problem_concepts[:3] if m["label"] != root_name]
+        if downstream:
+            para2 += f"你看到的{'、'.join(downstream[:2])}，源头都是这个。"
     elif problem_concepts:
-        # No causal chain found but have problems
         root_name = _get_node_name_zh(problem_concepts[0]["mapped_concept"])
-        para2 = f"根据知识体系分析，核心问题是「{root_name}」。"
+        para2 = f"核心问题是{root_name}。"
         if len(problem_concepts) > 1:
-            para2 += "其余问题可能是这个核心问题的下游表现。"
+            para2 += "其余的大概都是这一条带出来的。"
     else:
         para2 = ""
 
@@ -2428,27 +2498,51 @@ def _generate_narrative(
         if muscle_parts:
             para2 += "\n\n" + "\n\n".join(muscle_parts)
 
+    # 训练历史用一句话扫过，不展开（coach_style 第 16 条）
+    # 完整历史保留在 diagnosis result 里给开发者参考，narrative 只承认+翻篇
     if user_history:
-        para2 += f"\n\n⚠ 训练历史提醒：{user_history}"
+        # 取第一句的核心意思：哪个问题、当前状态。
+        first_issue = user_history.split("|")[0].strip()
+        # 简化：只保留"X 这次又出现了 / X 上次已修好"的判断
+        if "已解决" in first_issue:
+            short = first_issue.split("」")[0].split("「")[-1] if "「" in first_issue else first_issue[:40]
+            para2 += f"\n\n（{short}那个之前修好过，留意别回退。）"
+        elif "未解决" in first_issue:
+            short = first_issue.split("」")[0].split("「")[-1] if "「" in first_issue else first_issue[:40]
+            para2 += f"\n\n（{short}还没拿下，今天接着练。）"
 
     if para2:
         parts.append(para2)
 
     # ── Paragraph 3: How to fix ──
+    # 收尾给一件事，命令式开头（coach_style 第 7、第 10 条 imperative）
     if fix and fix.get("drill"):
-        para3 = f"推荐练习：{fix['drill']}。"
+        para3 = f"下次训练只练这一个：{fix['drill']}。"
         if fix.get("method"):
-            para3 += f"做法：{fix['method']}"
+            para3 += f"{fix['method']}"
         if fix.get("why"):
-            para3 += f"原理：{fix['why']}"
+            para3 += f"为什么有用：{fix['why']}"
         if fix.get("muscle_cue"):
-            para3 += f"\n肌肉感知检验：{fix['muscle_cue']}"
+            para3 += f"\n做对的标志：{fix['muscle_cue']}"
     else:
-        para3 = "当前未找到针对性的训练建议，建议继续录制视频观察。"
+        para3 = "暂时没有特别针对性的训练建议，继续录视频观察。"
 
     parts.append(para3)
 
-    return _clean_narrative("\n\n".join(parts))
+    raw_narrative = _clean_narrative("\n\n".join(parts))
+
+    # 可选：LLM 后处理润色（COACH_HUMANIZE=1 启用）
+    # 输入: 模板组装好的 narrative + COACH_OUTPUT_PRINCIPLES
+    # 输出: 重写版，保留所有事实数据，去掉 AI 腔
+    if os.environ.get("COACH_HUMANIZE") == "1":
+        try:
+            humanized = _humanize_narrative(raw_narrative)
+            if humanized:
+                return humanized
+        except Exception:
+            pass  # 失败时回退到模板版本
+
+    return raw_narrative
 
 
 # ══════════════════════════════════════════════════════════════════════

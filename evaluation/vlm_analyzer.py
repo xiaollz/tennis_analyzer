@@ -19,7 +19,9 @@ import cv2
 import numpy as np
 
 from evaluation.event_detector import SwingEvent
-from evaluation.coach_style import COACH_OUTPUT_PRINCIPLES
+# COACH_OUTPUT_PRINCIPLES is no longer imported here — see comment near
+# end of _FTT_SYSTEM_PROMPT for why. Now used only by
+# diagnosis_engine._humanize_narrative.
 
 # Optional knowledge-graph imports (graceful degradation when unavailable)
 try:
@@ -719,7 +721,12 @@ _FTT_SYSTEM_PROMPT = """\
 - 60-74：框架初步成型，存在2-3个明显问题（如scooping、缺Out），容错性一般
 - 40-59：多个核心问题，手臂主导明显，容错性差
 - 0-39：基本动作框架缺失，需要从零建立
-""" + COACH_OUTPUT_PRINCIPLES
+"""
+# Note: COACH_OUTPUT_PRINCIPLES used to be appended here, but VLM outputs
+# structured JSON (38-Q schema), not free-form prose — so coach voice rules
+# had zero effect at this layer. The principles now live where they actually
+# work: in the post-processing humanizer call inside diagnosis_engine._humanize_narrative
+# (gated by COACH_HUMANIZE=1 env var).
 
 _USER_PROMPT = "请逐帧分析这次正手挥拍。"
 
