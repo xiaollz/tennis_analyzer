@@ -94,6 +94,7 @@
 | **后腿先弯**（Back Knee Bend First）| 处理短/低球时由后腿先蹲，不要弯腰前倾（via ZM7DYfi17no / LVtxz0fba18）|
 | **Carioca Step + 后腿后踢** | 浅球随球上网时维持闭合肩线的步法组合（via XFdjh_EROwM）|
 | **Foot Speed 等级**（1-10）| 必须 ≥ 挥速等级 + 1，否则扭矩链断（via dCRj8MSNOUg）|
+| **三种步序模式**（RHL / RLH / R-R）| 球高 → R-Hit-L（左脚击球后才落地）；球低 → R-L-Hit（左脚先踩降重心）；极端被动 → R-to-R（同侧脚为轴跳起）。**球高度直接决定步序选哪一支**（via e-KdPNRv9Ls / ftyfZXr3Zcw）|
 
 ### 失败模式
 
@@ -145,6 +146,15 @@
 > 来源：Sky Kim "First Step After Split" (via Im2JyVN8Rn0)
 
 分腿垫步落地后，**靠近来球方向那只脚必须先动**（正手时右脚先动）。这一步不是为跑而是为"锁髋 45°"，否则后续 Unit Turn 会变成全身一起转的"旋转"而非分离的"扭矩"。失败模式：先动远端脚做交叉步 → 髋直接转 90° → 引拍过大 → 击球点必偏后。
+
+### ⭐ Pivot, Don't Jump —— 旋转是脚跟外旋出来的
+
+> 来源：TPA Tom Allsopp "Forehand Rotation - Pivot, Don't Jump" (via ooEX4wIA8l4)
+
+旋转的物理引擎不是"主动跳起来腾空"，而是**右脚脚尖钉地、脚跟外旋（Pivot）**。
+跳是结果，不是手段——当 Pivot 产生的扭矩 + 推力大到地面摩擦力抓不住身体时，腾空才会作为副产品发生。
+失败模式：业余球员为了"用上身体"主动蹬跳，离地瞬间地面反作用力消失 → 旋转动能反而下降。
+检查指标：随挥结束时回看右鞋底——应该有圆弧形旋转痕迹，**不是**向上的蹬踏痕迹。
 
 **核心命题**：
 > 你"被球挤到"的力学根因不是手的问题，是**重心轴在击球瞬间发生了非法位移**。
@@ -236,6 +246,11 @@
 | **Midline Rule**（中线原则）| 拍头跨过身体中线之前不许向后倒（via _pB-WTQGSp4）|
 | **L-shape Neck Hold**（L 型托拍颈）| 左手虎口托拍颈而非抓拍柄，强制 Unit Turn 充分（via CZhncV-DYUw）|
 | **Lat-Trap Antagonism**（背阔肌主动 / 斜方肌放松）| 用背阔肌下拉强制沉肩，对抗紧张耸肩（via enu0Cl7boJ0）|
+| **Shoulder Freeze / 躯干减速**（Slow down to accelerate）| 击球瞬间近端关节（肩/躯干）必须出现明显的减速制动 → 远端拍头才能完成"超车"加速。匀速旋转的躯干 = 拍头无加速度。（via 1fyiKRioGR0 / A8XXmrdIdbc）|
+| **Right Shoulder in Front 检验**（右肩超前）| 击球瞬间右肩转到左肩前方（相对于底线） = 旋转充分释放的视觉验证。半西方握拍下，胸口不正对球网就根本拿不到正确击球点（via LU9yamZPOnw / ahlffa-Am9U / muxc0h0YAJg）|
+| **Hand-Elbow-Shoulder Layering**（手肘肩阶梯）| 击球瞬间空间纵深递进：手在肘前 + 肘在肩前。任何一级倒挂 → 拍面失去支撑 → 手腕被迫代偿。这是"撑"字诀的工程版定义（via OBjVdy1MS44 / muxc0h0YAJg / ahlffa-Am9U）|
+| **Elbow Forward Action 同步 Supination**（肘前移与旋后同步）| Racket Drop（旋后）发生时肘部必须**已经在向前走**——否则就是"假 Lag"，肘部留在身后会让击球点必然偏后（via ygbZ8aONhRI / hiujcyG1Bkk）|
+| **Co-contraction 解锁**（拮抗肌互锁）| 为模仿 Double-Bend 形态而锁死肘角度 → 二头/三头肌同时收缩 = 同时踩油门和刹车 → 力量内耗。"Double-Bend 是动态切片，不是静态目标"（via UVrZoQ70wxU）|
 
 ### 知识库当前覆盖
 
@@ -260,6 +275,10 @@
 | **食指扳机指间距**（Pistol vs Hammer）| 食指张开成钩（Pistol，释放 pronation）vs 四指并拢（Hammer，锁死手腕）（via 2fZmWDOVoRA / IaCikOeS0oQ）|
 | **Lag 时拍面方向** | 安全：手腕 Extension（后仰，掌心向前）/ 危险：Ulnar Deviation（侧折，拍面扣地）（via dzAIDEiFBv4）|
 | **拍面闭合方式**（高短球时）| 安全：Vertical Closing（靠击球点前移）/ 危险：Parallel Closing（靠手腕翻面盖球）（via HWM4clOrylA）|
+| **Lag 来源**（Supination vs Wrist Extension）| 真 Lag = 旋转启动后**前臂被动旋后**带出的动态张力 / 假 Lag = 引拍时手腕主动后撇 → 手臂提前 frozen-out → 击球瞬间拍面晃动（via M1umUwuPe0w / ubFJi2M3AMM / wWWDqBKwO3U / hiujcyG1Bkk）|
+| **Snap-Snap 双响**（Lag-Pronation 双脉冲）| 完整动力链 = 触球前一响（被动 Supination 进入 Slot）+ 触球瞬间一响（主动 Pronation 释放）。两响之间的时间差决定爆发力。只有第一响而 Hold 住手腕往前推 = 减速伞（via O1i9y5NSoig / tGA__q2qLco / 1fyiKRioGR0）|
+| **手部刚性 vs 手臂松弛**（"Loose with arm, not with hand"）| 握拍像握锤子（食指扳机指钩稳）+ 大臂/前臂关节是松的。把"放松"和"放手"分开：放松的是肌肉，不是握力（via ubFJi2M3AMM）|
+| **空间-高度补偿律**（Spacing scales with ball height）| 球越高，站位距离必须**指数级**拉远（高于腰部时约 3 倍）。低球贴身没事，高球贴身必 Jammed——因为高球无法靠重力让手臂自然下垂伸展（via A7a8Ibci9MM）|
 
 ### 知识库当前覆盖
 
