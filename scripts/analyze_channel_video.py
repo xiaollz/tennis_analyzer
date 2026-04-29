@@ -53,40 +53,43 @@ def get_metadata(video_id: str) -> dict:
                 "channel": "Unknown", "length_sec": 0}
 
 
+def _build_client(api_key, base_url):
+    kwargs = {"api_key": api_key}
+    if base_url:
+        kwargs["http_options"] = types.HttpOptions(
+            api_version="v1beta", base_url=base_url, timeout=600000,
+        )
+    return genai.Client(**kwargs)
+
+
+# Module-level: store both primary and backup so analyze_one can fail over
+# at runtime (probe-time check is not enough — packy_api can probe-OK but
+# return 'model_not_found' on actual generate_content if a specific group
+# loses the model channel).
+_ENDPOINTS: list[tuple] = []  # [(client, model_name, label)]
+
+
 def make_client() -> tuple[genai.Client, str]:
+    """Build endpoint list, return primary. Backups available via _ENDPOINTS."""
+    global _ENDPOINTS
+    if _ENDPOINTS:
+        return _ENDPOINTS[0][0], _ENDPOINTS[0][1]
+
     raw = json.loads(CONFIG_PATH.read_text())
     cfg = {k: v for k, v in raw.items() if not k.startswith("_")}
-    backup = {
-        "api_key":  raw.get("_备用_api_key"),
-        "base_url": raw.get("_备用_base_url"),
-        "model":    raw.get("_备用_model_override", "gemini-3.1-pro-preview"),
-    }
 
-    def try_endpoint(api_key, base_url, model):
-        kwargs = {"api_key": api_key}
-        if base_url:
-            kwargs["http_options"] = types.HttpOptions(
-                api_version="v1beta", base_url=base_url, timeout=600000,
-            )
-        client = genai.Client(**kwargs)
-        try:
-            list(client.models.list())
-            return client
-        except Exception as e:
-            print(f"[probe] endpoint {base_url} failed: {e}", file=sys.stderr)
-            return None
+    primary_client = _build_client(cfg["api_key"], cfg.get("base_url"))
+    primary_model = cfg.get("model", "gemini-3-flash-preview")
+    _ENDPOINTS.append((primary_client, primary_model, "primary"))
 
-    primary = try_endpoint(cfg["api_key"], cfg.get("base_url"),
-                          cfg.get("model", "gemini-3-flash-preview"))
-    if primary is not None:
-        return primary, cfg.get("model", "gemini-3-flash-preview")
+    bk_key = raw.get("_备用_api_key")
+    bk_url = raw.get("_备用_base_url")
+    bk_model = raw.get("_备用_model_override", "gemini-3.1-pro-preview")
+    if bk_key and bk_url:
+        bk_client = _build_client(bk_key, bk_url)
+        _ENDPOINTS.append((bk_client, bk_model, "backup"))
 
-    if backup["api_key"] and backup["base_url"]:
-        bk = try_endpoint(backup["api_key"], backup["base_url"], backup["model"])
-        if bk is not None:
-            return bk, backup["model"]
-
-    raise RuntimeError("No reachable Gemini endpoint")
+    return _ENDPOINTS[0][0], _ENDPOINTS[0][1]
 
 
 def build_prompt(channel_name: str) -> str:
@@ -210,25 +213,45 @@ def analyze_one(client: genai.Client, model: str, video_id: str,
         )),
     ])]
 
+    # Try each endpoint (primary, then backup) with retry-with-backoff inside.
+    # Endpoint failover triggers on: model_not_found, 503, 502, 504, 429.
+    # PERMISSION/AUTH errors fail fast (no retry, no failover).
+    text = None
     last_err = None
-    for attempt in range(max_retries):
-        try:
-            resp = client.models.generate_content(model=model, contents=contents)
-            text = resp.text or ""
-            if not text.strip():
-                raise RuntimeError("empty response")
+    for ep_idx, (ep_client, ep_model, ep_label) in enumerate(_ENDPOINTS):
+        for attempt in range(max_retries):
+            try:
+                resp = ep_client.models.generate_content(model=ep_model, contents=contents)
+                got = resp.text or ""
+                if not got.strip():
+                    raise RuntimeError("empty response")
+                text = got
+                if ep_idx > 0:
+                    print(f"[ok] {video_id}: succeeded on {ep_label}")
+                break
+            except Exception as e:
+                msg = str(e)
+                last_err = e
+                # Auth-style errors: fail fast on this endpoint, try next
+                auth_fatal = any(k in msg for k in ("401", "403", "PERMISSION_DENIED"))
+                # Endpoint-level failure: switch to next endpoint
+                ep_failed = any(k in msg for k in (
+                    "model_not_found", "503", "502", "504", "无可用渠道",
+                ))
+                if auth_fatal or ep_failed:
+                    print(f"[fail] {video_id} on {ep_label}: {msg[:120]}")
+                    break  # try next endpoint
+                if attempt == max_retries - 1:
+                    print(f"[exhausted-retries] {video_id} on {ep_label}: {msg[:120]}")
+                    break
+                wait = 2 ** attempt
+                print(f"[retry] {video_id} {ep_label} attempt {attempt+1}/{max_retries} after {wait}s: {msg[:80]}")
+                import time; time.sleep(wait)
+        if text is not None:
             break
-        except Exception as e:
-            msg = str(e)
-            fatal = any(k in msg for k in ("401", "403", "model_not_found", "PERMISSION_DENIED"))
-            if fatal or attempt == max_retries - 1:
-                raise
-            wait = 2 ** attempt
-            print(f"[retry] {video_id} attempt {attempt+1}/{max_retries} after {wait}s: {msg[:100]}")
-            import time; time.sleep(wait)
-            last_err = e
-    else:
-        raise last_err
+
+    if text is None:
+        raise last_err if last_err else RuntimeError(f"All endpoints failed for {video_id}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
