@@ -115,3 +115,24 @@ L2/L6 拍头过早倒 → 张力丢失 → 击球虚软
 所以诊断引擎检测到两条链同时触发时，应该**优先报 L4**（first chain），让学员先把"飘"练扎实，再练"藏"。
 
 **一个礼拜只修一条链。** 用户确认 L4 ≥ 70% 再开始 L2/L6。
+
+---
+
+## Sources（追加 - via Bourne 2023）
+
+Stephen Bourne《One Minute Tennis Forehand Solution》对本链的直接印证：
+
+**p.18b（Five Fundamental Commonalities 之一）—— 手始终在右侧**：
+> *"The fundamental is that the hand is always on the right side of the body, irrespective of the grip."*
+
+解读：
+- 这是 Bourne 列出的"所有职业球员共有特征"之一（commonality #1）
+- "手始终在身体右侧"是不论握拍方式（东方、半西、西方）都必须满足的硬约束
+- **违反它就是 midline violation**——拍头跨过中线左侧的瞬间，手已经离开了"右侧"区，整条链路（Hide the Elbow / Hip Lock / 张力加载）都崩
+- 这条 commonality 把本链从"WTA vs ATP 风格选择"升级为"职业球员共同性硬约束"——业余男选手没有"风格选择权"，违反了就是错
+
+**检测 cue（追加到 §4 验证方法）**：
+- Unit Turn 末端**拍头是否过中线左侧** = 一秒判定
+- 这与既有"拍头是否还在身体中线之前"的判据一致，但 Bourne 把它锚定在"hand on right side"这个共同性原则上——**判据从风格偏好升级为生理学约束**
+
+**置信度**：⭐⭐⭐⭐（强支持）。Bourne 没有专门讲 midline rule，但 commonality #1 是 midline rule 的更底层版——本链只是它的具体可观测形式。

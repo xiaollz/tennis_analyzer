@@ -102,3 +102,31 @@ VLM 描述里出现以下任一表述时，触发对应概念：
 - 不要列 10 个 drill。给 1 个最小可执行的。
 - 不要给抽象口令（"放松""感受身体"）。给具体动作（"左脚飘"）。
 - 不要让学员同时改多个变量。一个礼拜只修一条链。
+
+---
+
+## Sources（追加 - via Bourne 2023）
+
+Stephen Bourne《One Minute Tennis Forehand Solution》对本链的字面级印证：
+
+**p.18（Five Fundamental Commonalities 头条）—— 重量必须落右脚**：
+> *"The fundamental commonality is that the player loads the weight into the right foot and the right side of the body!"*
+
+解读：
+- 这是 Bourne 全书 5 条共同性的**头条**（不是之一，是 #1）
+- "重量必须落到右脚 / 身体右侧" = 所有职业球员（不论站姿、不论握拍、不论年代）都共有
+- **前脚提前落地 = 重量过早离开右脚 = 违反这条共同性**
+- 这把本链从"业余技术问题"升级为"违反职业共同性硬约束"——没人能绕过这一条
+
+**与用户 4/27 圣经"右脚为轴"的字面级对接**：
+- 用户的 Top 1 顿悟："右脚为轴 = 一切，11 字系统都服务于这一件事"
+- Bourne p.18 commonality #1：字面级一致
+- **本链是用户圣经的"反向诊断版"**——圣经讲"对了什么样"，本链讲"错了怎么发现"
+
+**Cue 联动 —— "Hold onto the ball"（抱球意象）自动满足这条**：
+- Bourne Take-Back 章核心 mantra
+- 物理机制：**抱球转身时，重心反射性地落到右脚**——你抱不住球如果重心还在左脚（人体力学原理）
+- 这意味着"抱球"意象不只管引拍几何，**还自动管 L4 站姿层**——一个意象同时满足 commonality #1（重量到右脚）+ RP1（肘先）+ RP3（左臂平行网）
+- 与本链既有口令"飘"互补：飘管"左脚不踩死"（避免错误），抱球管"右脚自动承重"（建立正确）
+
+**置信度**：⭐⭐⭐⭐⭐（字面级命中）。Bourne 把"右脚承重"列为 5 共同性之首——在 8 体系（FTT/RTP/TPA/Brian Gordon/RacquetFlex/Intuitive/OTI/Bourne）中，这是第 7 家明确表态"右脚为轴是地基"的，与用户 4/27 圣经形成多体系合流证据。

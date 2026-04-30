@@ -325,6 +325,55 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
     {"keywords": ["匆忙击球", "击球点偏后被迫", "rushed contact"],
      "concept": "prep32_forced_rush_contact_behind", "frame_range": None,
      "severity": 0.85, "label": "被迫匆忙击球点偏后"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  Bourne 2023 — The Fault Tolerant Forehand 观察映射
+    #  Source: docs/research/diagnostic_chains/*.md (Bourne-derived chains)
+    # ══════════════════════════════════════════════════════════════════
+    # via Bourne 2023, p.20 (RP1: elbow leads racket — 健康反向证据)
+    {"keywords": ["肘先于拍头后撤", "肘领拍", "elbow leads racket", "elbow before racket head",
+                   "肘部先动拍头跟", "elbow-first takeback"],
+     "concept": "arming_the_shot_false_lag", "frame_range": [1, 2],
+     "severity": 0.0, "label": "引拍时肘领先于拍头（健康 RP1 信号）"},
+    # via Bourne 2023, p.20 (RP1: weaker lateral side begins the upswing)
+    {"keywords": ["拍头先于肘后撤", "拍头领拍", "racket leads elbow", "racket head before elbow",
+                   "弱侧拉拍", "weak side initiates", "拍先动肘后跟"],
+     "concept": "arming_the_shot_false_lag", "frame_range": [1, 2],
+     "severity": 0.7, "label": "引拍时拍头先于肘后撤（弱侧拉拍）"},
+    # via Bourne 2023, p.18b (hand always on right side of body)
+    {"keywords": ["手跨过中线", "手到左侧", "hand crosses midline", "hand left of body",
+                   "击球手越过身体中线", "racket hand crosses centerline"],
+     "concept": "wta_takeback_midline_violation", "frame_range": [1, 2],
+     "severity": 0.8, "label": "Unit Turn 末端击球手跨过身体中线到左侧"},
+    # via Bourne 2023, p.38 (there is no wrist snap)
+    {"keywords": ["主动wrist snap", "腕部主动甩动", "active wrist snap", "wrist flick at contact",
+                   "腕角剧变", "wrist angle flip", "contact 前后腕角剧烈变化"],
+     "concept": "shoulder_flexion_instead_of_isr", "frame_range": [4, 5],
+     "severity": 0.65, "label": "击球前后主动 wrist snap（腕角剧烈变化）"},
+    # via Bourne 2023, p.50 (tight feeling restricts range of motion)
+    {"keywords": ["握拍发白", "指节发白", "white knuckles", "前臂肌肉束粗显",
+                   "forearm tension visible", "拍柄无微动", "no grip micro-movement",
+                   "death grip", "握拍过紧"],
+     "concept": "tight_grip_under_pressure", "frame_range": [1, 2, 3],
+     "severity": 0.65, "label": "引拍中握拍过紧（指节发白/前臂束粗）"},
+    # via 2026-04-30 user breakthrough — driver-side healthy signal (胸推肘 → 肘领 → 小臂被动甩出)
+    {"keywords": ["elbow lead with passive forearm", "肘领小臂被动", "肘先于拍头前移",
+                   "elbow leads racket head forward", "胸推肘小臂被动甩出",
+                   "passive forearm whip", "前挥肘领"],
+     "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
+     "severity": 0.0, "label": "前挥肘领+小臂被动甩出（驱动侧健康信号）"},
+    # via 2026-04-30 user breakthrough — driver-side pathology (拍头先于肘 = arming)
+    {"keywords": ["racket head leads elbow during forward swing", "前挥拍头先于肘",
+                   "拍头领肘", "racket-head-first forward swing",
+                   "前挥中拍头早于肘前移"],
+     "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
+     "severity": 0.75, "label": "前挥时拍头先于肘前移（arming 驱动侧）"},
+    # via 2026-04-30 user breakthrough — constraint-side healthy dual (4/29 大臂住肩窝的对偶)
+    {"keywords": ["upper arm stays in scapular plane during forward swing",
+                   "大臂住肩窝", "大臂相对躯干无旋转", "前挥大臂随躯干同步",
+                   "upper arm welded to torso", "shoulder socket locked"],
+     "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
+     "severity": 0.0, "label": "前挥中大臂住肩窝随躯干同步（约束侧健康信号）"},
 ]
 
 

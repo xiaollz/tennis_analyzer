@@ -172,3 +172,80 @@ TPA 49 个视频里至少有 5 个反复在讲同一件事（`hiujcyG1Bkk`、`ub
 （RTP 的 `9ihq4WFCWy0` 讲 Hip Locking 接近但不重叠），FTT 用
 "Quiet Wrist / Relaxation"一笔带过，没拆到 Co-contraction 这一层。
 **这是 TPA 对正手知识体系最具独占性的贡献，必须以诊断链形式固化。**
+
+---
+
+## Sources（追加 - via Bourne 2023）
+
+Stephen Bourne《One Minute Tennis Forehand Solution》对本链的直接印证：
+
+**p.20 RP1（Reference Point 1）—— 肘先 vs 拍头先的力学定义**：
+> *"The racket must be taken back with the elbow first. Not the racket first. If the racket leads then the weaker, lateral side of the arm is going to begin the upswing to the ball."*
+
+解读：
+- 肘先 = 用强侧手臂内侧（biceps + 胸肌侧）带拍 = Connected Move
+- 拍头先 = 用弱侧手臂外侧（前三角肌 + 外旋肌）拉拍 = arming 的力学定义
+- Bourne 在 RP1 给的是**arming 的肌肉学根因**：拍头领先的瞬间，发力肌群已经从大肌群切到了小肌群——后续无论怎么练 Lag，都是在错的肌群上加张力 = Co-contraction 必然出现
+
+**Cue 修正 —— "Hold onto the ball"（抱球意象）**：
+- Bourne 全书 Take-Back 章的核心 mantra
+- 物理强制条件：抱住怀里那个想象的大球，**拍头先动球必掉**
+- 这是 arming 修正的"自检意象"——你做不出错误版（拍头先），因为球会掉
+- 与本链 drill "三段式默念（右-胯-甩）"互补：三段式管时序，抱球管入口几何
+
+**置信度**：⭐⭐⭐⭐⭐（直接命中）。Bourne 用业余球员能听懂的话翻译了 TPA `hiujcyG1Bkk` 的 D1 动力链分析——前者给意象，后者给数据，两者站在同一边。
+
+---
+
+## 7. 健康对偶 — 用户 4/30 体感落地
+
+前面六节全在拆"病"：拍头先动、二头肌锁死、肘卡身后、Co-contraction。
+但学员练修正时一直困在一个反直觉里——"不主动挥小臂，那靠什么把球打出去？"
+于是手臂越想越僵，drill 通过率上不去。
+
+**4/30 的体感解锁了反例**：arming 的反义不是"控制小臂别乱动"，
+是**找到一个胸-肘的主动入口，让小臂被动**。
+主动入口换了个肌群，小臂就自然失业——不是"不让它动"，是"它没活干了"。
+这跟 4/29 "大臂住肩窝"是同一逻辑的上下衔接：
+4/29 解决了**大臂从哪来的稳定**（卡进肩窝、胸打开），
+4/30 解决了**力从哪传到拍**（胸推肘、肘带臂、臂甩拍）。
+两条对偶在用户身上接成了一条完整的健康发力链。
+
+### 对照表
+
+| 维度 | arming 病理模式 | 健康模式（4/30 落地） |
+|---|---|---|
+| **主动入口** | 小臂（前臂屈肌 + 三角肌前束）主动挥 | 胸大肌主动推肘往前 |
+| **肘的角色** | 被拍头的惯性向后拽，被动跟随 | 主动前推，作为发力中转站 |
+| **小臂状态** | 硬挥（屈肌持续收紧维持形状） | 被甩（屈肌松弛，靠惯性出去） |
+| **拍头时序** | 领先于躯干、领先于肘 | 滞后于肘、滞后于胸推（真 lag） |
+| **二头肌张力** | 持续高张力（Co-contraction） | 引拍到 drop 段松弛，仅在末端瞬间收紧 |
+| **击球点感觉** | 在身侧 / 偏后，肘还在身后 | 在身前，肘已经离开肋骨向前 1 拳 |
+| **体感反馈位置** | 肘酸（拮抗肌内耗）/ 前臂泵感 | 胸感（胸大肌发力）+ 末端"啪"的释放 |
+| **球质** | 软、不沉、上旋虚 | 沉、有重量、上旋实 |
+
+### VLM 检测信号（候选新增）
+
+现有第 3 节都是病理信号。健康模式需要新加正向观察项，让 VLM 能识别"做对了"
+而不是只能报"做错了"：
+
+| VLM 关键词 | 概念 ID | severity |
+|---|---|---|
+| `chest visibly drives elbow forward before racket lag` / `pec activation precedes wrist release` / `elbow translates forward while forearm stays passive` | `L7_chest_drives_elbow_healthy` | 0.0（正向） |
+| `forearm appears whip-like / passive at contact` / `wrist relaxed through impact then snaps late` / `racket head trails elbow until last frame` | `L7_forearm_passive_whip_healthy` | 0.0（正向） |
+
+这两个信号成对出现 = arming 的反面被观测到。
+单独出现 `forearm passive` 但没有 `chest drives elbow` = 可能只是手臂死，不是健康——
+要靠胸推作为前置条件来确认。诊断引擎检测到这对组合时，
+不报错，反而要在反馈里**显式表扬**——用户当前最缺的就是"做对了"的确认信号。
+
+### 来源
+
+- 用户 2026-04-30 训练记录：`docs/record/learning.md` 当日 entry。
+  关键句："胸大肌发力推肘往前，小臂自然被甩出去，肘不再是被拽的那个。"
+- 配对体感：4/29 "大臂住肩窝"突破（同 learning.md），
+  解决了胸打开 + 肩胛后缩 + 大臂卡位的几何前置条件。
+  没有 4/29 的肩窝，4/30 的胸推会变成耸肩 + 含胸的代偿。
+- 对偶逻辑：arming 链原本只描述病理，没给"健康长什么样"的具象参照。
+  用户的体感补上了这块——而且补的方式不是抽象的"放松"，
+  是一个**可主动执行的肌群切换指令**（小臂→胸大肌）。这是诊断链最缺的一环。

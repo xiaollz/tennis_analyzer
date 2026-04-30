@@ -495,6 +495,57 @@ _FTT_SYSTEM_PROMPT = """\
 - 身体保持平衡？重心前倾（正向平衡）？
 - 后脚状态：脚尖点地（正确，完成了Pivot）？还是仍然平踩或腾空？
 
+【附加观察清单 —— 共同性 / 反传统检测】
+
+以下 3 个观察项跨越多帧，需要在对应阶段单独检查并写进 issues（如阳性）。
+
+■ 观察项 X1：Hand on right side of body during takeback（手在身体右侧）
+- 观察阶段：图1-图2（Unit Turn 完成 → 前挥启动前）
+- 观察什么：unit turn 完成时，击球手（右手）是否仍在身体右侧
+- 阳性信号（病理）：拍头跨过身体中线到左侧，或手臂被拽到躯干左侧
+- 诊断指向：`wta_takeback_midline_violation`
+- 健康参考：所有职业球员引拍时手始终保持在身体右侧（hand stays on right side of body）
+- 来源标注：(via Bourne 2023, p.18b)
+
+■ 观察项 X2：Active hand drop below ball level（手主动压低于球——反模式）
+- 观察阶段：图2-图3（drop / 弹性释放阶段）
+- 观察什么：drop 阶段手是否被刻意压到明显低于球的水平
+- 阳性信号（病理）：手腕、前臂主动下沉超过球水平面 6 英寸（约 15cm）以上
+- 背景注释：反对"主动 low-to-high"传统教法。手最多比球低几英寸，下沉是手臂从肩关节外旋的副产品，不是主动 cue。从 outside backswing 位置最佳做法是直接把手往前拉（pulling the hand forward），其余 drop / lag 自动发生
+- 诊断指向：可能是 `arming_the_shot_false_lag` 的诱因（主动制造 lag → 小臂压拍头下去 → 只能用小臂拉上来）
+- 来源标注：(via Bourne 2023, p.32-33)
+
+■ 观察项 X3：Wrist angle constancy through forward swing（腕角恒定）
+- 观察阶段：图3-图5（forward swing 启动 → contact → follow-through 早段）
+- 观察什么：从 forward swing 启动到 contact 再到 follow-through 早段，腕部弯曲角度变化幅度
+- 阳性信号（健康）：腕角变化 < 15°（Nadal 式恒定，pronation 是肩+前臂旋转的副产品）
+- 阴性信号（病理）：腕角在 contact 前后剧烈变化（主动 wrist snap）
+- 诊断指向：变化大 → `shoulder_flexion_instead_of_isr` 或新链 `tight_grip_under_pressure`
+- 健康参考：Nadal 在整个 forward swing 中腕角接近恒定，extreme pronation 来自 extreme upward + outward 路径，不是腕鞭
+- 来源标注：(via Bourne 2023, p.38)
+
+■ 观察项 X4：Elbow lead vs racket-head lead at forward swing initiation（前挥起步：肘领 vs 拍头领）
+- 观察阶段：图3 → 图4 早段（forward swing 启动到 lag 阶段）
+- 观察什么：前挥启动瞬间，肘部相对躯干是否有清晰的"前移领先"（elbow lead），还是拍头先于肘部移动
+- 几何判读（基于躯干坐标系，Δt = 前挥启动后约 60-100ms 内）：
+  · 肘的 X 位移（向击球方向）应明显早于、且大于拍头的 X 位移
+  · 阳性信号（健康）：Δx_elbow > Δx_racket_head 且时间上肘先动 → "胸部发力把肘往前推，小臂被动甩出"的生物力学体感
+  · 阴性信号（病理）：Δx_racket_head ≥ Δx_elbow，或拍头时间上先于肘移动 → arming 信号（小臂主动驱动）
+- 诊断指向：拍头领 → `arming_the_shot_false_lag`（驱动侧故障）
+- 健康参考：胸推肘 → 肘领 → 小臂在 lag 中被惯性甩出（前臂是被动传递者，不是发动机）
+- 来源标注：(via 2026-04-30 user breakthrough + arming_the_shot_false_lag)
+
+■ 观察项 X5：Upper arm rotation relative to torso during forward swing（前挥中大臂相对躯干位移）
+- 观察阶段：图3 → 图4（forward swing 启动 → contact 前）
+- 观察什么：大臂（肩-肘段）相对于躯干（肩线）的相对旋转角度
+- 几何判读：
+  · 阳性信号（健康）：大臂相对躯干旋转 < 15°，几乎"住"在肩窝里随躯干同步前移（4/29 约束侧健康）
+  · 阴性信号（病理）：大臂相对躯干旋转 > 25° → arming 信号（大臂从躯干"脱开"独立挥动）
+  · 中间区（15-25°）：标记为 borderline，需结合 X4 综合判读
+- 诊断指向：大臂相对位移大 → `arming_the_shot_false_lag`（约束侧故障，肩窝未住）
+- 健康参考：大臂应被胸肌"焊接"在躯干上，整个前挥中大臂的世界坐标位移 ≈ 躯干旋转带来的位移；任何额外的相对旋转都是 arming
+- 来源标注：(via 2026-04-30 user breakthrough + arming_the_shot_false_lag)
+
 【核心原则】
 1. 正手是旋转驱动的鞭打系统。手臂是传递者，不是发动机。
 2. 网球基本定理：拍面-前臂90-135° + 前方击球。
