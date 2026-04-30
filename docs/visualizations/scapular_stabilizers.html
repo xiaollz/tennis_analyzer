@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肩胛稳定肌群 · 你看不见的引擎</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px;
+  background: #1a1a1a; color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', sans-serif;
+}
+.container { max-width: 1500px; margin: 0 auto; }
+h1 {
+  text-align: center; font-weight: 400;
+  font-size: 28px; margin: 0 0 6px;
+}
+.subtitle {
+  text-align: center; color: #888;
+  margin-bottom: 24px; font-size: 14px;
+}
+.subtitle b { color: #f0c060; }
+
+.tabs {
+  display: flex; gap: 8px; justify-content: center;
+  margin-bottom: 18px;
+}
+.tab {
+  background: #2a2a2a; color: #aaa; border: 1px solid #333;
+  padding: 10px 20px; border-radius: 8px;
+  cursor: pointer; font-size: 14px; font-family: inherit;
+}
+.tab.active {
+  background: #c25450; color: #fff; border-color: #c25450;
+}
+.tab:hover:not(.active) { background: #333; color: #fff; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 380px;
+  gap: 16px;
+}
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: #232323; border-radius: 12px;
+  padding: 16px; border: 1px solid #333;
+}
+.panel-title {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 2px;
+}
+.panel-subtitle {
+  font-size: 12px; color: #888;
+  margin-bottom: 12px;
+}
+svg.body {
+  width: 100%; height: auto;
+  background: #2a2a2a; border-radius: 8px;
+  display: block; aspect-ratio: 2 / 3;
+  cursor: crosshair;
+}
+
+/* muscle styling */
+.muscle {
+  fill: #444;
+  stroke: #2a2a2a;
+  stroke-width: 0.4;
+  opacity: 0.35;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.muscle.visible {
+  opacity: 1;
+}
+.muscle.serratus.visible { fill: #4ec9b0; }
+.muscle.lower-trap.visible { fill: #569cd6; }
+.muscle.rhomboid.visible { fill: #c586c0; }
+.muscle.pec.visible { fill: #f0c060; }
+.muscle.deltoid.visible { fill: #c25450; }
+.muscle.upper-trap.visible { fill: #e07b5b; }
+.muscle.lat.visible { fill: #87a96b; }
+.muscle:hover {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+.muscle.selected {
+  stroke: #fff;
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* body outline */
+.body-outline {
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.5;
+}
+.bone {
+  fill: none;
+  stroke: #777;
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  opacity: 0.4;
+}
+.label {
+  font-family: inherit;
+  font-size: 9px;
+  fill: #ccc;
+  pointer-events: none;
+}
+
+/* control panel */
+.muscle-list {
+  display: flex; flex-direction: column;
+  gap: 8px;
+}
+.muscle-toggle {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.muscle-toggle:hover { background: #333; border-color: #555; }
+.muscle-toggle.active { background: #303030; }
+.color-chip {
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.muscle-name {
+  flex: 1;
+  font-size: 13px;
+  color: #ddd;
+}
+.muscle-name .en {
+  font-size: 11px; color: #888; margin-left: 4px;
+}
+.muscle-tag {
+  font-size: 10px; padding: 2px 7px;
+  border-radius: 10px; font-weight: 600;
+}
+.tag-good { background: #2a4d3a; color: #87d96b; }
+.tag-bad { background: #4d2a2a; color: #ff8a7a; }
+.tag-helper { background: #2a3a4d; color: #6bb6ff; }
+
+.detail {
+  margin-top: 14px;
+  padding: 14px;
+  background: #1c2229;
+  border-radius: 8px;
+  border-left: 3px solid #569cd6;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 200px;
+}
+.detail h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #f0c060;
+}
+.detail .desc-row {
+  margin: 6px 0;
+}
+.detail .desc-row b {
+  color: #4ec9b0;
+}
+.detail .feel {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #232323;
+  border-radius: 5px;
+  border-left: 2px solid #f0c060;
+}
+.detail .feel b { color: #f0c060; }
+
+.controls-bar {
+  display: flex; gap: 10px; margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  background: #c25450; color: #fff; border: none;
+  padding: 9px 18px; border-radius: 6px;
+  cursor: pointer; font-size: 13px; font-weight: 500;
+  font-family: inherit;
+}
+.btn:hover { background: #d96560; }
+.btn.alt { background: #2a4d3a; }
+.btn.alt:hover { background: #366d4d; }
+.btn.gray { background: #444; }
+.btn.gray:hover { background: #555; }
+
+/* state comparison */
+.state-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.state-panel {
+  background: #232323; border-radius: 12px;
+  padding: 16px; border: 1px solid #333;
+}
+.state-panel.bad { border-top: 4px solid #c25450; }
+.state-panel.good { border-top: 4px solid #4ec9b0; }
+.state-title {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 4px;
+}
+.state-bad-color { color: #ff8a7a; }
+.state-good-color { color: #87d96b; }
+.state-desc {
+  font-size: 12px; color: #888;
+  margin-bottom: 14px; line-height: 1.6;
+}
+.state-svg {
+  width: 100%; height: auto;
+  background: #2a2a2a; border-radius: 8px;
+  display: block; aspect-ratio: 4 / 3;
+}
+.state-feel {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  font-size: 12px; line-height: 1.6;
+  color: #ccc;
+}
+.state-feel b { color: #f0c060; }
+
+.note {
+  background: #1c2229; padding: 16px 20px;
+  border-radius: 8px; margin-top: 24px;
+  font-size: 13px; color: #bbb;
+  line-height: 1.8;
+  border-left: 3px solid #569cd6;
+}
+.note h3 { margin: 0 0 10px; color: #f0c060; font-size: 15px; }
+.note b { color: #f0c060; }
+.note ol { margin: 8px 0; padding-left: 22px; }
+.note li { margin: 4px 0; }
+
+/* arrow / annotation overlay on body */
+.callout {
+  font-family: inherit;
+  font-size: 10px;
+  fill: #fff;
+  font-weight: 600;
+  pointer-events: none;
+  text-shadow: 0 0 4px #000;
+}
+.callout-line {
+  stroke: #fff;
+  stroke-width: 0.8;
+  fill: none;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* anim */
+@keyframes pulseGood {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+@keyframes pulseBad {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+.anim-good {
+  animation: pulseGood 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.anim-bad {
+  animation: pulseBad 0.8s ease-in-out infinite;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>肩胛稳定肌群 · 你看不见的引擎</h1>
+  <div class="subtitle">
+    点击右侧肌肉名查看位置 + 体感方法。<b>绿色 / 蓝色 / 紫色</b> = 你需要激活的；<b>红色</b> = 抢戏的代偿肌；<b>金色</b> = 主动力（要靠稳定肌帮忙才能发力）
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="anatomy">解剖图（点击肌肉看详情）</button>
+    <button class="tab" data-tab="comparison">State 1 vs State 2 对比</button>
+    <button class="tab" data-tab="dose">这块肌肉怎么练（drill）</button>
+  </div>
+
+  <!-- TAB 1: ANATOMY -->
+  <div id="tab-anatomy" class="tab-content active">
+    <div class="controls-bar">
+      <button class="btn alt" onclick="showAll()">显示全部肌肉</button>
+      <button class="btn gray" onclick="hideAll()">隐藏全部</button>
+      <button class="btn" onclick="showCriticalOnly()">只看关键 3 块（前锯肌 + 下斜方 + 菱形肌）</button>
+    </div>
+
+    <div class="layout">
+      <!-- Front view -->
+      <div class="panel">
+        <div class="panel-title">正面 · Front View</div>
+        <div class="panel-subtitle">看胸大肌、三角肌、前锯肌的肋侧锯齿</div>
+        <svg class="body" id="svg-front" viewBox="0 0 200 300"></svg>
+      </div>
+
+      <!-- Back view -->
+      <div class="panel">
+        <div class="panel-title">背面 · Back View</div>
+        <div class="panel-subtitle">看下斜方、菱形肌、肩胛骨位置</div>
+        <svg class="body" id="svg-back" viewBox="0 0 200 300"></svg>
+      </div>
+
+      <!-- Control + Detail -->
+      <div class="panel">
+        <div class="panel-title">肌肉清单</div>
+        <div class="panel-subtitle">点击切换显示 / 查看详情</div>
+        <div class="muscle-list" id="muscle-list"></div>
+        <div class="detail" id="detail">
+          <h3>👈 点击左侧任一肌肉查看</h3>
+          <div class="desc-row">每块肌肉会告诉你：</div>
+          <div class="desc-row">· <b>位置</b>：精确在身体哪儿</div>
+          <div class="desc-row">· <b>作用</b>：网球里干什么用</div>
+          <div class="desc-row">· <b>体感</b>：怎么用手摸到 / 怎么主动收缩</div>
+          <div class="desc-row">· <b>好坏</b>：是要练还是要静默</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: STATE COMPARISON -->
+  <div id="tab-comparison" class="tab-content">
+    <div class="state-grid">
+      <div class="state-panel bad">
+        <div class="state-title state-bad-color">State 2 · 大臂自由飘动（默认状态）</div>
+        <div class="state-desc">
+          肩胛骨没锚定 → 三角肌 + 上斜方肌主导 → 大臂被肩胛骨拽走 → 胸推肘失败
+        </div>
+        <svg class="state-svg" id="svg-state2" viewBox="0 0 280 220"></svg>
+        <div class="state-feel">
+          <b>体感</b>：肩头紧、脖子绷、胸软、大臂"飘"。胸推肘"找不到点"。
+          <br><b>力学</b>：肩胛骨上抬 + 前移，胸大肌起点 - 止点之间没有刚性桥，发力被"漏走"去拉肩胛骨。
+        </div>
+      </div>
+
+      <div class="state-panel good">
+        <div class="state-title state-good-color">State 1 → 4/30 突破态</div>
+        <div class="state-desc">
+          前锯肌 + 下斜方 + 菱形肌钉住肩胛骨 → 胸大肌有 fixed point → 胸推肘清晰 → 大臂被被动甩出
+        </div>
+        <svg class="state-svg" id="svg-state1" viewBox="0 0 280 220"></svg>
+        <div class="state-feel">
+          <b>体感</b>：肩头松、脖子松、肩胛"贴在肋骨上滑"、胸有挤压感、大臂跟身体"焊死"。
+          <br><b>力学</b>：肩胛骨锁定 → R_scap 高 → 胸大肌的力 100% 拉肱骨 → 肘被推出去 → 小臂被甩。
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <h3>关键力学方程（agent 给的精确表达）</h3>
+      <div style="font-family: monospace; background: #2a2a2a; padding: 10px; border-radius: 5px; margin: 10px 0; text-align: center; font-size: 14px; color: #f0c060;">
+        F_pull_humerus / F_pull_scap = R_scap / R_humerus
+      </div>
+      胸大肌发力时，力会按"刚性"分配。肩胛骨松（R_scap 低）→ 力被分散到肩胛 → 拉不动手臂。肩胛骨锁（R_scap 高）→ 力全部用于拉肱骨 → 胸推肘清晰可感。
+      <br><br>
+      <b>这就是为什么"想着大臂不动"反而做不到</b>：意识把"大臂不动"翻译成"三角肌夹紧"，三角肌一夹就把肩胛骨往上抬，更飘了。
+      正确的指令不是给大臂，是给前锯肌——"把肩胛骨贴肋骨上"。
+    </div>
+  </div>
+
+  <!-- TAB 3: DRILLS -->
+  <div id="tab-dose" class="tab-content">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div class="panel">
+        <div class="panel-title" style="color: #4ec9b0;">前锯肌激活 · Serratus Anterior</div>
+        <svg class="state-svg" id="drill-serratus" viewBox="0 0 280 220"></svg>
+        <div class="state-feel" style="margin-top: 12px;">
+          <b>Drill 1 · Wall Push-up Plus（墙面推拉）</b><br>
+          1. 双手撑墙，距离一臂<br>
+          2. 手肘伸直不动，<b>用肩胛骨"推墙"再"收回"</b><br>
+          3. 推出去时肩胛远离脊柱（外展），收回时贴回脊柱<br>
+          4. 每组 12 次，3 组<br><br>
+          <b>做对的体感</b>：肋侧（腋下偏前）有酸/紧的发力感<br>
+          <b>做错</b>：肩头耸起、感觉只有手臂在推
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title" style="color: #569cd6;">下斜方肌激活 · Lower Trapezius</div>
+        <svg class="state-svg" id="drill-lowtrap" viewBox="0 0 280 220"></svg>
+        <div class="state-feel" style="margin-top: 12px;">
+          <b>Drill 2 · Y Raise（俯身 Y 字举）</b><br>
+          1. 俯身 45°（或趴在斜板上）<br>
+          2. 双臂伸直向斜上 45° 举起，呈 Y 字<br>
+          3. <b>感觉肩胛骨"下沉 + 内收"</b>（不是耸肩）<br>
+          4. 顶峰停 2 秒，每组 10 次，3 组<br><br>
+          <b>做对的体感</b>：肩胛骨下角附近有发力<br>
+          <b>做错</b>：上斜方耸起（脖子两侧紧）
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title" style="color: #c586c0;">菱形肌激活 · Rhomboids</div>
+        <svg class="state-svg" id="drill-rhomboid" viewBox="0 0 280 220"></svg>
+        <div class="state-feel" style="margin-top: 12px;">
+          <b>Drill 3 · Scapular Pull（肩胛收缩）</b><br>
+          1. 直立，双手向前伸直<br>
+          2. 仅用<b>肩胛骨向脊柱方向收缩</b>（手臂保持位置）<br>
+          3. 感觉两块肩胛骨"互相靠近"<br>
+          4. 收紧 2 秒，每组 15 次，3 组<br><br>
+          <b>做对的体感</b>：两肩胛骨之间（脊柱上段）有挤压感<br>
+          <b>做错</b>：胸前挺出、含胸不变
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title" style="color: #c25450;">三角肌静默 · Deltoid Silence</div>
+        <svg class="state-svg" id="drill-deltoid" viewBox="0 0 280 220"></svg>
+        <div class="state-feel" style="margin-top: 12px;">
+          <b>Drill 4 · Hand-on-Shoulder Test（自检）</b><br>
+          1. 左手摸右肩头（三角肌）<br>
+          2. 慢动作做 unit turn + 引拍<br>
+          3. <b>感觉三角肌应该是"软"的</b>，不应有发力收缩<br>
+          4. 如果三角肌一直紧 → 失败<br>
+          5. 重做，意念放到前锯肌（肋侧）而不是肩头<br><br>
+          <b>做对的体感</b>：三角肌一直松，肋侧前锯肌主动出力<br>
+          <b>做错</b>：三角肌一直绷紧
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <h3>训练顺序（按这个走）</h3>
+      <ol>
+        <li><b>Week 1-2（场下）</b>：每天 5-10 分钟做 Drill 1-3，让大脑认识这 3 块肌肉的位置和发力感</li>
+        <li><b>Week 3-4（场上空挥）</b>：做 unit turn 之前先做 1 次 Drill 1（墙面 push-up plus），把前锯肌"打开"，再去打球</li>
+        <li><b>Week 5+（实战）</b>：每球之间 3 秒 reset：左手摸右肩胛骨（确认没飘）+ 一次浅呼吸（让上斜方放松）</li>
+      </ol>
+      完整 6 周协议见 <code>docs/training/arm_body_connection_protocol_6week.md</code>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============== MUSCLE DATA ==============
+const muscles = [
+  {
+    id: 'serratus',
+    name: '前锯肌',
+    en: 'Serratus Anterior',
+    color: '#4ec9b0',
+    role: 'good',
+    tag: '★ 关键稳定肌 #1',
+    location: '肋骨外侧（腋下偏前），从第 1-9 肋斜插到肩胛骨内侧缘',
+    function: '把肩胛骨"贴"在胸廓上不让它翼状凸起。**胸大肌发力的 fixed point 提供者**。',
+    feel: '抬手向前推墙，腋下偏前的肋侧有酸感 = 前锯肌在发力',
+    why: '它失活 → 肩胛骨翼状凸起 → 胸大肌没有刚性支点 → 胸推肘失败。这是你 State 2 的物理根源。',
+    nickname: '"拳击手肌"——拳击手出拳时这块肌肉最明显'
+  },
+  {
+    id: 'lower-trap',
+    name: '下斜方肌',
+    en: 'Lower Trapezius',
+    color: '#569cd6',
+    role: 'good',
+    tag: '★ 关键稳定肌 #2',
+    location: '上背中段，从胸椎 6-12 斜向上汇到肩胛骨下角',
+    function: '把肩胛骨往**下、内**拉，对抗上斜方肌"耸肩"的趋势。',
+    feel: '俯身 Y raise 顶点，感觉肩胛下角附近"被往下拽"',
+    why: '它弱 → 肩胛骨被上斜方拉得耸高 → 大臂跟着抬 → 你感觉"大臂往后往高飘"',
+    nickname: '现代人 #1 沉默肌——电脑/手机族 100% 失活'
+  },
+  {
+    id: 'rhomboid',
+    name: '菱形肌',
+    en: 'Rhomboids',
+    color: '#c586c0',
+    role: 'good',
+    tag: '★ 关键稳定肌 #3',
+    location: '两块肩胛骨之间，连接脊柱（C7-T5）和肩胛骨内缘',
+    function: '把肩胛骨往**脊柱方向**收。与前锯肌形成对抗肌对。',
+    feel: '挺胸时两肩胛骨之间挤压感',
+    why: '它和前锯肌一起"夹住"肩胛骨。两个力都到位才算锁住。',
+    nickname: '协助稳定肌——单独练它意义不大，要和前锯肌一起练'
+  },
+  {
+    id: 'pec',
+    name: '胸大肌',
+    en: 'Pectoralis Major',
+    color: '#f0c060',
+    role: 'helper',
+    tag: '主动力源（不是要练，是要让它能发力）',
+    location: '胸部表层，从胸骨/锁骨连到肱骨大结节',
+    function: '正手前挥的**第一发力肌**。把肘往前推让小臂被甩。',
+    feel: 'State 1 时胸大肌右侧（持拍侧）有挤压感',
+    why: '它发力的前提是肩胛骨稳。肩胛飘 → 胸大肌的力被分散去拉肩胛 → 拉不动手臂。',
+    nickname: '4/30 你找到的"胸推肘"就是这块——但它不是问题，问题是稳定肌没就位'
+  },
+  {
+    id: 'deltoid',
+    name: '三角肌',
+    en: 'Deltoid',
+    color: '#c25450',
+    role: 'bad',
+    tag: '✗ 抢戏代偿肌 #1',
+    location: '肩头（肩峰下方覆盖整个肩关节），分前束/中束/后束',
+    function: '抬起手臂（肩屈/外展）。但在正手里**不应该**用它。',
+    feel: '左手摸右肩头，做引拍。如果摸到的肌肉硬了 = 三角肌在抢戏',
+    why: '它是"易激活肌"——大脑下"动手臂"指令时第一个响应。它一发力就把肱骨头拉向肩峰，带动肩胛骨上抬，整条链就断了。',
+    nickname: '"懒惰大脑的默认选择"——不练它，要训练让它"安静"'
+  },
+  {
+    id: 'upper-trap',
+    name: '上斜方肌',
+    en: 'Upper Trapezius',
+    color: '#e07b5b',
+    role: 'bad',
+    tag: '✗ 抢戏代偿肌 #2',
+    location: '颈侧到肩头（脖子两侧厚厚一块）',
+    function: '耸肩、把肩胛骨往上抬。日常压力大就会紧的那块。',
+    feel: '摸自己肩颈交界，紧的一块就是它',
+    why: '它紧 + 下斜方弱 = 肩胛骨永远耸着、永远飘。和三角肌一起组成"肩胛飘动二人组"。',
+    nickname: '现代人最紧的肌肉之一——白领 100% 紧张'
+  },
+  {
+    id: 'lat',
+    name: '背阔肌',
+    en: 'Latissimus Dorsi',
+    color: '#87a96b',
+    role: 'helper',
+    tag: '辅助连接肌',
+    location: '背部下半部，覆盖中下背一大片',
+    function: '把肱骨往下、往内拉，是"大臂连接躯干"的另一条路径',
+    feel: '引拍时背部两侧有拉伸感',
+    why: 'FTT 把它叫"手臂连接身体的胶水"。它和前锯肌一起把大臂"焊"在躯干上。',
+    nickname: '4/29 你找到的"住肩窝"体感主要靠它和前锯肌联合'
+  }
+];
+
+// ============== SVG MUSCLE PATHS ==============
+// Coordinate system: 200×300 viewBox, body roughly 70-130 wide, 30-280 tall
+
+// FRONT VIEW PATHS
+const frontPaths = {
+  outline: 'M 100 28 Q 88 28 84 38 Q 78 50 80 60 Q 64 65 60 78 L 56 100 Q 52 130 56 160 L 60 200 Q 60 215 65 230 L 70 270 Q 72 282 78 285 L 85 285 Q 90 280 88 270 L 86 240 L 88 220 Q 92 215 100 215 Q 108 215 112 220 L 114 240 L 112 270 Q 110 280 115 285 L 122 285 Q 128 282 130 270 L 135 230 Q 140 215 140 200 L 144 160 Q 148 130 144 100 L 140 78 Q 136 65 120 60 Q 122 50 116 38 Q 112 28 100 28 Z',
+  // head
+  head: 'M 100 14 Q 90 14 88 24 Q 88 32 100 36 Q 112 32 112 24 Q 110 14 100 14 Z',
+  // pec major (two halves)
+  pecLeft: 'M 88 56 Q 76 60 70 78 Q 66 92 70 102 Q 80 105 95 102 L 100 90 L 100 56 Q 94 54 88 56 Z',
+  pecRight: 'M 112 56 Q 124 60 130 78 Q 134 92 130 102 Q 120 105 105 102 L 100 90 L 100 56 Q 106 54 112 56 Z',
+  // deltoid (front portion - shoulder cap)
+  deltoidLeft: 'M 78 50 Q 64 55 58 76 L 56 100 Q 60 105 70 102 Q 76 84 82 70 Q 82 58 78 50 Z',
+  deltoidRight: 'M 122 50 Q 136 55 142 76 L 144 100 Q 140 105 130 102 Q 124 84 118 70 Q 118 58 122 50 Z',
+  // serratus anterior (visible on side - sawtooth pattern)
+  serratusLeft: 'M 64 100 Q 62 110 64 120 L 70 122 L 67 128 L 73 130 L 70 138 L 76 140 L 73 148 L 79 150 L 78 158 L 84 158 L 84 144 Q 80 130 78 115 Q 74 105 64 100 Z',
+  serratusRight: 'M 136 100 Q 138 110 136 120 L 130 122 L 133 128 L 127 130 L 130 138 L 124 140 L 127 148 L 121 150 L 122 158 L 116 158 L 116 144 Q 120 130 122 115 Q 126 105 136 100 Z',
+  // upper trap (visible from front near neck)
+  upperTrapLeft: 'M 84 38 Q 78 40 75 46 L 73 56 Q 78 56 88 56 Q 90 48 88 40 Q 86 36 84 38 Z',
+  upperTrapRight: 'M 116 38 Q 122 40 125 46 L 127 56 Q 122 56 112 56 Q 110 48 112 40 Q 114 36 116 38 Z',
+};
+
+// BACK VIEW PATHS
+const backPaths = {
+  outline: 'M 100 28 Q 88 28 84 38 Q 78 50 80 60 Q 64 65 60 78 L 56 100 Q 52 130 56 160 L 60 200 Q 60 215 65 230 L 70 270 Q 72 282 78 285 L 85 285 Q 90 280 88 270 L 86 240 L 88 220 Q 92 215 100 215 Q 108 215 112 220 L 114 240 L 112 270 Q 110 280 115 285 L 122 285 Q 128 282 130 270 L 135 230 Q 140 215 140 200 L 144 160 Q 148 130 144 100 L 140 78 Q 136 65 120 60 Q 122 50 116 38 Q 112 28 100 28 Z',
+  head: 'M 100 14 Q 90 14 88 24 Q 88 32 100 36 Q 112 32 112 24 Q 110 14 100 14 Z',
+  // spine (dashed)
+  spine: 'M 100 38 L 100 200',
+  // shoulder blades (scapulae - dashed bone outlines)
+  scapulaLeft: 'M 86 70 L 70 80 L 68 110 L 84 105 Z',
+  scapulaRight: 'M 114 70 L 130 80 L 132 110 L 116 105 Z',
+  // upper trap (large diamond from neck to mid-back)
+  upperTrap: 'M 88 36 L 100 40 L 112 36 Q 122 50 130 60 L 132 75 Q 116 78 100 78 Q 84 78 68 75 L 70 60 Q 78 50 88 36 Z',
+  // rhomboid (between scapulae)
+  rhomboidLeft: 'M 88 70 L 100 70 L 100 110 L 86 108 Z',
+  rhomboidRight: 'M 100 70 L 112 70 L 114 108 L 100 110 Z',
+  // lower trap (V shape pointing down)
+  lowerTrapLeft: 'M 86 110 L 100 110 L 100 140 L 70 145 Q 76 125 86 110 Z',
+  lowerTrapRight: 'M 100 110 L 114 110 L 130 145 Q 124 125 114 110 L 100 140 Z',
+  // lat (broad lower back)
+  latLeft: 'M 60 110 Q 58 130 60 160 L 80 200 L 100 195 L 100 145 L 70 145 Q 64 130 60 110 Z',
+  latRight: 'M 140 110 Q 142 130 140 160 L 120 200 L 100 195 L 100 145 L 130 145 Q 136 130 140 110 Z',
+  // deltoid (back portion)
+  deltoidLeft: 'M 78 50 Q 64 55 58 76 L 56 100 Q 60 105 70 102 Q 70 90 72 80 Q 78 70 80 56 Q 82 50 78 50 Z',
+  deltoidRight: 'M 122 50 Q 136 55 142 76 L 144 100 Q 140 105 130 102 Q 130 90 128 80 Q 122 70 120 56 Q 118 50 122 50 Z',
+};
+
+// ============== RENDER FUNCTIONS ==============
+function renderFront() {
+  const svg = document.getElementById('svg-front');
+  svg.innerHTML = `
+    <!-- body outline -->
+    <path class="body-outline" d="${frontPaths.outline}"/>
+    <path class="body-outline" d="${frontPaths.head}"/>
+
+    <!-- muscles (order matters - back to front) -->
+    <path class="muscle serratus" data-id="serratus" d="${frontPaths.serratusLeft}"/>
+    <path class="muscle serratus" data-id="serratus" d="${frontPaths.serratusRight}"/>
+    <path class="muscle deltoid" data-id="deltoid" d="${frontPaths.deltoidLeft}"/>
+    <path class="muscle deltoid" data-id="deltoid" d="${frontPaths.deltoidRight}"/>
+    <path class="muscle pec" data-id="pec" d="${frontPaths.pecLeft}"/>
+    <path class="muscle pec" data-id="pec" d="${frontPaths.pecRight}"/>
+    <path class="muscle upper-trap" data-id="upper-trap" d="${frontPaths.upperTrapLeft}"/>
+    <path class="muscle upper-trap" data-id="upper-trap" d="${frontPaths.upperTrapRight}"/>
+
+    <!-- labels (only show on hover via JS) -->
+    <text class="label" x="100" y="295" text-anchor="middle">正面 / Anterior</text>
+  `;
+
+  // attach click handlers
+  svg.querySelectorAll('.muscle').forEach(el => {
+    el.addEventListener('click', () => selectMuscle(el.dataset.id));
+  });
+}
+
+function renderBack() {
+  const svg = document.getElementById('svg-back');
+  svg.innerHTML = `
+    <path class="body-outline" d="${backPaths.outline}"/>
+    <path class="body-outline" d="${backPaths.head}"/>
+    <path class="bone" d="${backPaths.spine}"/>
+    <path class="bone" d="${backPaths.scapulaLeft}"/>
+    <path class="bone" d="${backPaths.scapulaRight}"/>
+
+    <!-- muscles (back to front) -->
+    <path class="muscle lat" data-id="lat" d="${backPaths.latLeft}"/>
+    <path class="muscle lat" data-id="lat" d="${backPaths.latRight}"/>
+    <path class="muscle lower-trap" data-id="lower-trap" d="${backPaths.lowerTrapLeft}"/>
+    <path class="muscle lower-trap" data-id="lower-trap" d="${backPaths.lowerTrapRight}"/>
+    <path class="muscle rhomboid" data-id="rhomboid" d="${backPaths.rhomboidLeft}"/>
+    <path class="muscle rhomboid" data-id="rhomboid" d="${backPaths.rhomboidRight}"/>
+    <path class="muscle deltoid" data-id="deltoid" d="${backPaths.deltoidLeft}"/>
+    <path class="muscle deltoid" data-id="deltoid" d="${backPaths.deltoidRight}"/>
+    <path class="muscle upper-trap" data-id="upper-trap" d="${backPaths.upperTrap}"/>
+
+    <text class="label" x="100" y="295" text-anchor="middle">背面 / Posterior</text>
+    <text class="label" x="76" y="92" text-anchor="middle" style="font-size: 7px;">肩胛骨</text>
+    <text class="label" x="124" y="92" text-anchor="middle" style="font-size: 7px;">肩胛骨</text>
+    <text class="label" x="100" y="50" text-anchor="middle" style="font-size: 7px;">脊柱</text>
+  `;
+
+  svg.querySelectorAll('.muscle').forEach(el => {
+    el.addEventListener('click', () => selectMuscle(el.dataset.id));
+  });
+}
+
+function renderMuscleList() {
+  const list = document.getElementById('muscle-list');
+  list.innerHTML = muscles.map(m => `
+    <div class="muscle-toggle" data-id="${m.id}">
+      <div class="color-chip" style="background: ${m.color}"></div>
+      <div class="muscle-name">${m.name} <span class="en">${m.en}</span></div>
+      <div class="muscle-tag tag-${m.role === 'good' ? 'good' : m.role === 'bad' ? 'bad' : 'helper'}">${m.tag}</div>
+    </div>
+  `).join('');
+
+  list.querySelectorAll('.muscle-toggle').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.id;
+      toggleMuscle(id);
+      selectMuscle(id);
+    });
+  });
+}
+
+let visibleMuscles = new Set();
+let selectedMuscle = null;
+
+function toggleMuscle(id) {
+  if (visibleMuscles.has(id)) {
+    visibleMuscles.delete(id);
+  } else {
+    visibleMuscles.add(id);
+  }
+  applyVisibility();
+}
+
+function applyVisibility() {
+  document.querySelectorAll('.muscle').forEach(el => {
+    if (visibleMuscles.has(el.dataset.id)) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+    if (el.dataset.id === selectedMuscle) {
+      el.classList.add('selected');
+    } else {
+      el.classList.remove('selected');
+    }
+  });
+  document.querySelectorAll('.muscle-toggle').forEach(el => {
+    if (visibleMuscles.has(el.dataset.id)) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  });
+}
+
+function selectMuscle(id) {
+  selectedMuscle = id;
+  if (!visibleMuscles.has(id)) visibleMuscles.add(id);
+  applyVisibility();
+
+  const m = muscles.find(x => x.id === id);
+  if (!m) return;
+  document.getElementById('detail').innerHTML = `
+    <h3 style="color: ${m.color}">${m.name} · ${m.en}</h3>
+    <div class="desc-row"><b>位置</b>：${m.location}</div>
+    <div class="desc-row"><b>作用</b>：${m.function}</div>
+    <div class="desc-row"><b>为什么重要</b>：${m.why}</div>
+    <div class="feel">
+      <b>怎么感觉到它</b>：${m.feel}
+    </div>
+    <div class="desc-row" style="margin-top: 8px; color: #888; font-size: 11px;">
+      ${m.nickname}
+    </div>
+  `;
+}
+
+function showAll() {
+  visibleMuscles = new Set(muscles.map(m => m.id));
+  applyVisibility();
+}
+function hideAll() {
+  visibleMuscles.clear();
+  selectedMuscle = null;
+  applyVisibility();
+}
+function showCriticalOnly() {
+  visibleMuscles = new Set(['serratus', 'lower-trap', 'rhomboid']);
+  selectedMuscle = 'serratus';
+  applyVisibility();
+  selectMuscle('serratus');
+}
+
+// ============== STATE COMPARISON SVGs ==============
+function renderStateComparison() {
+  // State 2 - bad
+  const svg2 = document.getElementById('svg-state2');
+  svg2.innerHTML = `
+    <!-- side view body, hand-drawn cartoon -->
+    <!-- torso -->
+    <ellipse cx="120" cy="115" rx="38" ry="55" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- head -->
+    <circle cx="120" cy="50" r="18" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- scapula floating up - winged -->
+    <path d="M 90 75 L 78 90 L 76 115 L 88 110 Z" fill="#c25450" stroke="#fff" stroke-width="0.8" class="anim-bad"/>
+    <text x="60" y="100" class="callout" style="font-size: 11px;">肩胛飘起</text>
+    <path class="callout-line" d="M 78 100 L 90 105"/>
+    <!-- arm dangling -->
+    <line x1="88" y1="105" x2="60" y2="160" stroke="#888" stroke-width="9" stroke-linecap="round"/>
+    <line x1="60" y1="160" x2="35" y2="195" stroke="#888" stroke-width="7" stroke-linecap="round"/>
+    <!-- gap arrow showing pec losing fixed point -->
+    <path d="M 110 105 L 90 105" stroke="#ff5050" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+    <text x="100" y="135" class="callout" style="font-size: 10px; fill: #ff8a7a;">胸大肌的力被"漏走"</text>
+    <!-- upper trap shown tense -->
+    <path d="M 105 60 Q 110 70 120 75" fill="none" stroke="#e07b5b" stroke-width="3" class="anim-bad"/>
+    <text x="220" y="55" class="callout" style="font-size: 10px;">上斜方肌</text>
+    <text x="220" y="68" class="callout" style="font-size: 10px;">+ 三角肌</text>
+    <text x="220" y="81" class="callout" style="font-size: 10px;">主导</text>
+    <!-- arrow -->
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#ff5050"/>
+      </marker>
+    </defs>
+  `;
+
+  // State 1 - good
+  const svg1 = document.getElementById('svg-state1');
+  svg1.innerHTML = `
+    <!-- torso -->
+    <ellipse cx="120" cy="115" rx="38" ry="55" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- head -->
+    <circle cx="120" cy="50" r="18" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- scapula glued to ribcage -->
+    <path d="M 90 75 L 92 110 L 105 105 L 102 78 Z" fill="#4ec9b0" stroke="#fff" stroke-width="0.8" class="anim-good"/>
+    <text x="50" y="80" class="callout" style="font-size: 10px;">肩胛锁定</text>
+    <path class="callout-line" d="M 75 80 L 90 85"/>
+    <!-- pec engaged - golden -->
+    <path d="M 132 90 Q 145 100 150 115 Q 152 125 145 130" fill="none" stroke="#f0c060" stroke-width="4" class="anim-good"/>
+    <text x="170" y="100" class="callout" style="font-size: 10px; fill: #f0c060;">胸推肘</text>
+    <text x="170" y="113" class="callout" style="font-size: 10px; fill: #f0c060;">力 100% 拉肱骨</text>
+    <!-- arm bent and forward -->
+    <line x1="92" y1="100" x2="115" y2="140" stroke="#888" stroke-width="9" stroke-linecap="round"/>
+    <line x1="115" y1="140" x2="155" y2="155" stroke="#888" stroke-width="7" stroke-linecap="round"/>
+    <!-- elbow forward arrow -->
+    <path d="M 120 145 L 145 150" stroke="#4ec9b0" stroke-width="2" marker-end="url(#arr2)"/>
+    <text x="135" y="170" class="callout" style="font-size: 10px; fill: #87d96b;">肘前推</text>
+    <!-- serratus working - lateral -->
+    <text x="60" y="155" class="callout" style="font-size: 10px;">前锯肌</text>
+    <text x="60" y="168" class="callout" style="font-size: 10px;">+ 下斜方</text>
+    <text x="60" y="181" class="callout" style="font-size: 10px;">钉住肩胛</text>
+    <defs>
+      <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4ec9b0"/>
+      </marker>
+    </defs>
+  `;
+}
+
+// ============== DRILL ILLUSTRATIONS ==============
+function renderDrillIllustrations() {
+  // Drill 1 - Wall Push-up Plus
+  document.getElementById('drill-serratus').innerHTML = `
+    <!-- wall -->
+    <line x1="40" y1="20" x2="40" y2="200" stroke="#666" stroke-width="3"/>
+    <text x="50" y="35" class="callout" style="font-size: 9px;">墙</text>
+    <!-- body side view -->
+    <circle cx="180" cy="60" r="14" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <ellipse cx="180" cy="120" rx="22" ry="50" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- arm extended to wall -->
+    <line x1="170" y1="90" x2="55" y2="95" stroke="#888" stroke-width="8" stroke-linecap="round"/>
+    <!-- hand on wall -->
+    <circle cx="50" cy="95" r="6" fill="#888"/>
+    <!-- legs -->
+    <line x1="180" y1="170" x2="170" y2="210" stroke="#666" stroke-width="6"/>
+    <line x1="180" y1="170" x2="190" y2="210" stroke="#666" stroke-width="6"/>
+    <!-- scapula highlight -->
+    <ellipse cx="170" cy="100" rx="6" ry="14" fill="#4ec9b0" class="anim-good" opacity="0.85"/>
+    <text x="100" y="65" class="callout" style="font-size: 10px; fill: #4ec9b0;">肩胛骨"推"出去</text>
+    <path class="callout-line" d="M 145 70 L 170 95"/>
+    <text x="100" y="160" class="callout" style="font-size: 10px;">手肘 ⊥ 直，不弯</text>
+  `;
+
+  // Drill 2 - Y Raise
+  document.getElementById('drill-lowtrap').innerHTML = `
+    <!-- bent over body -->
+    <ellipse cx="140" cy="125" rx="50" ry="22" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <circle cx="190" cy="110" r="14" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- legs -->
+    <line x1="120" y1="145" x2="115" y2="200" stroke="#666" stroke-width="7"/>
+    <line x1="160" y1="145" x2="165" y2="200" stroke="#666" stroke-width="7"/>
+    <!-- arms in Y -->
+    <line x1="100" y1="125" x2="40" y2="50" stroke="#888" stroke-width="8" stroke-linecap="round"/>
+    <line x1="180" y1="125" x2="240" y2="50" stroke="#888" stroke-width="8" stroke-linecap="round"/>
+    <!-- lower trap highlight -->
+    <ellipse cx="140" cy="135" rx="25" ry="6" fill="#569cd6" class="anim-good" opacity="0.85"/>
+    <text x="80" y="180" class="callout" style="font-size: 10px; fill: #569cd6;">下斜方下沉收紧</text>
+    <text x="60" y="40" class="callout" style="font-size: 10px;">Y 字型</text>
+  `;
+
+  // Drill 3 - Scapular Pull
+  document.getElementById('drill-rhomboid').innerHTML = `
+    <!-- body back view -->
+    <ellipse cx="140" cy="115" rx="40" ry="55" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <circle cx="140" cy="50" r="16" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- scapulae -->
+    <path d="M 115 75 L 100 90 L 105 115 L 122 110 Z" fill="#c586c0" class="anim-good" opacity="0.85"/>
+    <path d="M 165 75 L 180 90 L 175 115 L 158 110 Z" fill="#c586c0" class="anim-good" opacity="0.85"/>
+    <!-- arrows pointing inward -->
+    <path d="M 90 95 L 110 95" stroke="#fff" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <path d="M 190 95 L 170 95" stroke="#fff" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <!-- legs -->
+    <line x1="125" y1="170" x2="120" y2="210" stroke="#666" stroke-width="7"/>
+    <line x1="155" y1="170" x2="160" y2="210" stroke="#666" stroke-width="7"/>
+    <text x="140" y="200" class="callout" style="font-size: 10px; fill: #c586c0;">肩胛向脊柱收</text>
+    <defs>
+      <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#fff"/>
+      </marker>
+    </defs>
+  `;
+
+  // Drill 4 - Deltoid Silence
+  document.getElementById('drill-deltoid').innerHTML = `
+    <!-- body front view -->
+    <ellipse cx="140" cy="115" rx="40" ry="55" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <circle cx="140" cy="50" r="16" fill="#3a3a3a" stroke="#555" stroke-width="1"/>
+    <!-- right shoulder deltoid - shown muted -->
+    <ellipse cx="178" cy="80" rx="14" ry="12" fill="#666" stroke="#c25450" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="200" y="80" class="callout" style="font-size: 10px;">应保持松软</text>
+    <!-- right arm -->
+    <line x1="178" y1="92" x2="200" y2="160" stroke="#888" stroke-width="7" stroke-linecap="round"/>
+    <!-- left hand on right shoulder -->
+    <line x1="105" y1="120" x2="170" y2="80" stroke="#888" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="172" cy="80" r="5" fill="#f0c060"/>
+    <text x="50" y="90" class="callout" style="font-size: 10px; fill: #f0c060;">左手摸右肩头</text>
+    <text x="40" y="160" class="callout" style="font-size: 10px;">摸到硬 = 三角肌抢戏</text>
+    <text x="40" y="175" class="callout" style="font-size: 10px;">松软 = 对了</text>
+    <!-- legs -->
+    <line x1="125" y1="170" x2="120" y2="210" stroke="#666" stroke-width="7"/>
+    <line x1="155" y1="170" x2="160" y2="210" stroke="#666" stroke-width="7"/>
+  `;
+}
+
+// ============== TABS ==============
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+    document.getElementById('tab-' + t.dataset.tab).classList.add('active');
+  });
+});
+
+// ============== INIT ==============
+renderFront();
+renderBack();
+renderMuscleList();
+renderStateComparison();
+renderDrillIllustrations();
+
+// Auto-show critical 3 muscles on load + select serratus
+showCriticalOnly();
+
+</script>
+</body>
+</html>
