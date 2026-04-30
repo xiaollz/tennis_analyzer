@@ -250,7 +250,14 @@ class ReportGenerator:
         lines.append(f"**视频**: {video_name} | **日期**: {datetime.now().strftime('%Y-%m-%d %H:%M')} | **击球数**: {report.total_swings}")
         lines.append("")
 
+        # ── 地基检查（Foundation Layer）— 强制第一段 ────────────────
+        # 不论 VLM 成功/失败、不论后续分析完整与否，地基状态必须最先显示。
+        # 这对应 FTT 视频开篇即讲架拍的优先级。
+        if not is_backhand:
+            lines.extend(self._foundation_section(_vlm, report))
+
         # ── 核心问题（多球时生成，自然段叙述）────────────────────────
+        # 仅在地基通过的球上做上层分析（地基失败的球不混入）。
         if report.total_swings > 1 and any(v for v in _vlm if v):
             lines.extend(self._multi_swing_summary(_vlm, report))
 
@@ -284,6 +291,153 @@ class ReportGenerator:
         report_path = self.output_dir / f"{type_tag}_{video_name}.md"
         report_path.write_text("\n".join(lines), encoding="utf-8")
         return str(report_path)
+
+    # ── 地基检查（强制第一段）────────────────────────────────────────
+
+    # 6 个地基的固定顺序（与 evaluation/foundation_layer.FOUNDATIONS 对齐）
+    _FOUNDATION_ORDER = [
+        ("F1_hold_up",         "F1 架拍 (Hold Up)"),
+        ("F2_place_pull",      "F2 Place, Pull Forward"),
+        ("F3_back_glue",       "F3 背部胶水"),
+        ("F4_unit_action",     "F4 Unit Action"),
+        ("F5_right_foot_axis", "F5 右脚为轴"),
+        ("F6_scapular_slot",   "F6 肩胛骨槽"),
+    ]
+
+    @staticmethod
+    def _foundation_section(
+        vlm_results: List[Optional[Dict]],
+        report: MultiSwingReport,
+    ) -> List[str]:
+        """报告第一段：地基检查状态。
+
+        无论 VLM 成功/失败/缺数据，都强制展示。
+        - 多球：先聚合通过率表，再列每球详情
+        - 任何一球 P0 失败 → 红字提示"不进行上层分析"
+        - VLM 失败 → uncertain 状态明确标记
+        """
+        lines: List[str] = []
+        n_swings = report.total_swings
+
+        # 收集每球的 foundation_layer
+        per_swing: List[Optional[Dict]] = []
+        for i in range(n_swings):
+            v = vlm_results[i] if i < len(vlm_results) else None
+            fl = v.get("foundation_layer") if isinstance(v, dict) else None
+            per_swing.append(fl)
+
+        # 完全没有任何球有 foundation_layer → 跳过该段（向后兼容）
+        if not any(per_swing):
+            return lines
+
+        lines.append("## 🏛️ 地基检查 (Foundation Layer)")
+        lines.append("")
+        lines.append(
+            "FTT 体系把架拍 / Place-Pull / 背部胶水 / Unit Action 列为最高优先级地基。"
+            "地基没通过的球，上层一切讨论无意义。本段在 VLM 是否成功之前就强制检查。"
+        )
+        lines.append("")
+
+        # ── 聚合通过率表 ──────────────────────────────────────────
+        agg_pass: Dict[str, int] = {fid: 0 for fid, _ in ReportGenerator._FOUNDATION_ORDER}
+        agg_fail: Dict[str, int] = {fid: 0 for fid, _ in ReportGenerator._FOUNDATION_ORDER}
+        agg_uncertain: Dict[str, int] = {fid: 0 for fid, _ in ReportGenerator._FOUNDATION_ORDER}
+
+        all_pass_count = 0          # 完全 P0 全过的球数
+        any_p0_fail_count = 0        # 至少有一个 P0 失败的球数
+        any_uncertain_count = 0      # 至少有一个 uncertain 的球数
+        vlm_unavail_swings: List[int] = []
+
+        for i, fl in enumerate(per_swing):
+            if not fl:
+                continue
+            statuses = fl.get("statuses") or []
+            for s in statuses:
+                fid = s.get("id")
+                status = s.get("status")
+                if fid not in agg_pass:
+                    continue
+                if status == "pass":
+                    agg_pass[fid] += 1
+                elif status == "fail":
+                    agg_fail[fid] += 1
+                else:
+                    agg_uncertain[fid] += 1
+            if fl.get("all_pass"):
+                all_pass_count += 1
+            if fl.get("p0_failures"):
+                any_p0_fail_count += 1
+            uncertain_in_swing = sum(
+                1 for s in statuses if s.get("status") == "uncertain"
+            )
+            if uncertain_in_swing > 0:
+                any_uncertain_count += 1
+            # VLM 是否失败：通过 vlm_result 的 fallback / vlm_unavailable 标记
+            v = vlm_results[i] if i < len(vlm_results) else None
+            if isinstance(v, dict) and (v.get("vlm_unavailable") or v.get("fallback")):
+                vlm_unavail_swings.append(i + 1)
+
+        # 聚合表（所有击球的通过率）
+        if n_swings > 1:
+            lines.append(f"**总体地基状态**：{n_swings} 球中，{all_pass_count} 球全部 P0 地基通过。")
+            lines.append("")
+            lines.append("| 项 | 通过 | 失败 | 不确定 |")
+            lines.append("|---|---|---|---|")
+            for fid, label in ReportGenerator._FOUNDATION_ORDER:
+                lines.append(
+                    f"| {label} | {agg_pass[fid]} / {n_swings} | "
+                    f"{agg_fail[fid]} | {agg_uncertain[fid]} |"
+                )
+            lines.append("")
+
+        # VLM 失败警告
+        if vlm_unavail_swings:
+            ids = "、".join(str(s) for s in vlm_unavail_swings)
+            lines.append(
+                f"⚠️ **第 {ids} 球：VLM 数据不全（API 失败 / 数据缺失），"
+                f"foundation 检查多项 uncertain。此球评分不可信，建议忽略。**"
+            )
+            lines.append("")
+
+        # ── 每球地基详情 ───────────────────────────────────────────
+        if n_swings > 1:
+            lines.append("**每球地基详情**：")
+            lines.append("")
+        for i, fl in enumerate(per_swing):
+            if not fl:
+                continue
+            if n_swings > 1:
+                lines.append(f"### 第 {i + 1} 球")
+                lines.append("")
+            summary_md = fl.get("summary_md") or ""
+            if summary_md:
+                # 把 foundation_layer 自带的 "## 地基检查（Foundation Layer）" 标题降一级
+                # （因为我们已经在外层加了 ## 标题）
+                summary_md = summary_md.replace(
+                    "## 地基检查（Foundation Layer）",
+                    "**地基状态明细**",
+                )
+                lines.append(summary_md)
+            lines.append("")
+
+        # ── 总结论 ─────────────────────────────────────────────────
+        if any_p0_fail_count > 0:
+            lines.append(
+                f"**结论**：⛔ {any_p0_fail_count} / {n_swings} 球的 P0 地基失败。"
+                f"**地基没通过的球不进行上层分析**——先把地基修好，"
+                f"unit turn 度数 / 胸推肘 / 肩胛槽等讨论都先放一边。"
+            )
+        elif any_uncertain_count > 0:
+            lines.append(
+                f"**结论**：⚠️ {any_uncertain_count} / {n_swings} 球地基状态部分不确定（多为 VLM 数据问题）。"
+                "已通过的部分可进入上层分析；不确定项建议补素材重测。"
+            )
+        else:
+            lines.append("**结论**：✅ 全部地基通过，进入上层分析。")
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+        return lines
 
     # ── 多球总结 + 重点球选择 ────────────────────────────────────────
 
@@ -436,6 +590,40 @@ class ReportGenerator:
         else:
             lines.append("## 击球分析")
         lines.append("")
+
+        # ── 每球开头先重复地基状态（一行摘要）─────────────────────
+        if isinstance(vlm_result, dict):
+            fl = vlm_result.get("foundation_layer")
+            if isinstance(fl, dict) and fl.get("statuses"):
+                p0_failures = fl.get("p0_failures") or []
+                statuses = fl.get("statuses") or []
+                p0_total = sum(1 for s in statuses if s.get("priority") == 0)
+                p0_pass = sum(
+                    1 for s in statuses
+                    if s.get("priority") == 0 and s.get("status") == "pass"
+                )
+                if p0_failures:
+                    fail_names = []
+                    for s in statuses:
+                        if s.get("id") in p0_failures:
+                            fail_names.append(s.get("name", s.get("id", "?")))
+                    lines.append(
+                        f"⛔ **地基**: P0 {p0_pass}/{p0_total} 通过，"
+                        f"失败：{ '、'.join(fail_names) }。下方上层分析仅供参考。"
+                    )
+                elif fl.get("all_pass"):
+                    lines.append(f"✅ **地基**: P0 {p0_pass}/{p0_total} 全部通过。")
+                else:
+                    uncertain_count = sum(
+                        1 for s in statuses if s.get("status") == "uncertain"
+                    )
+                    lines.append(
+                        f"⚠️ **地基**: P0 {p0_pass}/{p0_total} 通过，"
+                        f"{uncertain_count} 项不确定。"
+                    )
+                if vlm_result.get("vlm_unavailable") or vlm_result.get("fallback"):
+                    lines.append("⚠️ **VLM 数据不全（API 失败/缺数据）—— 此球评分不可信，建议忽略。**")
+                lines.append("")
 
         # ── Compact mode: one line ──
         if compact and vlm_result:
@@ -850,10 +1038,54 @@ class ReportGenerator:
         is_backhand: bool = False,
         vlm_results: Optional[List[Optional[Dict]]] = None,
     ) -> List[str]:
-        """简短叮嘱：下次练什么，一句话。"""
+        """简短叮嘱：下次练什么，一句话。
+
+        优先级：地基失败 > 上层根因。地基有失败时，强制只练地基。
+        """
         lines = []
         _vlm = vlm_results or []
 
+        # ── Step 1: 收集所有球里的地基失败，按优先级排序 ──
+        # priority=0 (FTT 4 项) 优于 priority=1 (个人圣经)
+        # 多球都失败同一项 → 频次更高的优先
+        if not is_backhand:
+            fail_counter: Dict[str, Dict] = {}  # id -> {info, count}
+            for v in _vlm:
+                if not isinstance(v, dict):
+                    continue
+                fl = v.get("foundation_layer")
+                if not isinstance(fl, dict):
+                    continue
+                for s in fl.get("statuses") or []:
+                    if s.get("status") != "fail":
+                        continue
+                    fid = s.get("id")
+                    if not fid:
+                        continue
+                    entry = fail_counter.setdefault(fid, {"info": s, "count": 0})
+                    entry["count"] += 1
+
+            if fail_counter:
+                # 排序：先按 priority（0 在前），再按 count 降序
+                sorted_fails = sorted(
+                    fail_counter.values(),
+                    key=lambda e: (e["info"].get("priority", 1), -e["count"]),
+                )
+                top = sorted_fails[0]["info"]
+                top_count = sorted_fails[0]["count"]
+                fname = top.get("name", top.get("id", "?"))
+                fdrill = top.get("drill") or "对应 drill"
+                lines.append(
+                    f"下次训练**只做一件事**：修 {fname}（{top_count}/{report.total_swings} 球失败），"
+                    f"drill：{fdrill}。"
+                )
+                lines.append(
+                    "其余 unit turn 度数 / 胸推肘 / 肩胛槽 等都先放一边，"
+                    "地基没修好，上层练再多都会被同一根因拉回来。"
+                )
+                return lines
+
+        # ── Step 2: 地基全部通过 → 按上层根因给出叮嘱（旧逻辑）──
         primary_fix = ""
         primary_root = ""
         for v in _vlm:

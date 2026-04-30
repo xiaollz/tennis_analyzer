@@ -2595,17 +2595,129 @@ def _generate_narrative(
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  Foundation Layer 辅助：提取原始 Q&A、normalize metrics
+# ══════════════════════════════════════════════════════════════════════
+
+# Q 编号 ↔ 字段名映射表（用于从已 normalize 的 vlm_result 中反向提取）
+_FIELD_TO_Q_MAPPING: Dict[str, str] = {
+    'arm_body_sync': 'Q1',
+    'asymmetry_origin': 'Q2',
+    'arm_chest_gap': 'Q3',
+    'shoulder_alignment': 'Q4',
+    'shoulder_turn_degree': 'Q5',
+    'trunk_lean': 'Q6',
+    'over_rotation': 'Q7',
+    'hand_drop': 'Q8',
+    'trajectory_shape': 'Q9',
+    'racket_face': 'Q10',
+    'arm_direction_after': 'Q11',
+    'left_hand_position': 'Q12',
+    'left_hand_after': 'Q13',
+    'knee_bend': 'Q14',
+    'weight_transfer': 'Q15',
+    'pivot': 'Q16',
+    'movement_sequence': 'Q17',
+    'rhythm': 'Q18',
+    'mid_swing_pause': 'Q19',
+    'finish_stability': 'Q20',
+    'unit_turn_start_vs_ball': 'Q21',
+    'unit_turn_finish_vs_ball': 'Q22',
+    'left_shoulder_leads': 'Q23',
+    'racket_hold_up': 'Q24',
+    'scapular_glide_jersey': 'Q25',
+    'place_then_pull': 'Q26',
+    'split_step': 'Q27',
+    'first_foot_movement': 'Q28',
+    'first_foot_to_move': 'Q29',
+    'pivot_external': 'Q30',
+    'stance': 'Q31',
+    'recovery_steps': 'Q32',
+    'spine_angle': 'Q33',
+    'idle_bounce': 'Q34',
+    'air_phase': 'Q35',
+    'grip_detail': 'Q36',
+    'racket_intercept': 'Q37',
+    'prep_speed_match': 'Q38',
+    'hip_shoulder_diff': 'Q5b',
+}
+
+
+def _extract_raw_qa_answers(vlm_result: Dict[str, Any]) -> Dict[str, str]:
+    """从 vlm_result 中提取 Q1-Q38 + Q5b 的原始答案。
+
+    优先级：
+      1) 直接读取 vlm_result['raw_qa'] 或 vlm_result['qa_answers']（原始 Q->A dict）
+      2) 兜底：递归遍历嵌套结构，按 field-name → Q-id 反向映射收集
+    """
+    if not isinstance(vlm_result, dict):
+        return {}
+
+    # 优先直接读取（按可能的 key 名）
+    for key in ("raw_qa", "qa_answers", "raw_answers"):
+        candidate = vlm_result.get(key)
+        if isinstance(candidate, dict) and candidate:
+            return {k: str(v) for k, v in candidate.items() if v is not None}
+
+    # Fallback: 递归提取
+    answers: Dict[str, str] = {}
+
+    def walk(obj: Any) -> None:
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                if k in _FIELD_TO_Q_MAPPING and isinstance(v, str) and v.strip():
+                    q_id = _FIELD_TO_Q_MAPPING[k]
+                    # 不覆盖已存在的（外层优先）
+                    if q_id not in answers:
+                        answers[q_id] = v
+                walk(v)
+        elif isinstance(obj, list):
+            for item in obj:
+                walk(item)
+
+    walk(vlm_result)
+    return answers
+
+
+def _normalize_metrics_for_foundation(metrics: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """转换 metrics dict 的 key 名，让 foundation_layer 能直接使用。"""
+    normalized: Dict[str, Any] = dict(metrics) if metrics else {}
+    aliases = {
+        '手腕高度模式': 'wrist_height_pattern',
+        '肩部转开幅度': 'shoulder_turn_degree',
+        '手臂-躯干同步性': 'arm_body_sync_score',
+        '同步性': 'arm_body_sync_score',
+        'arm_body_sync': 'arm_body_sync_score',
+        'arm_torso_synchrony': 'arm_body_sync_score',
+        'shoulder_hip_differential': 'shoulder_hip_differential_deg',
+    }
+    for src, dst in aliases.items():
+        if src in normalized and dst not in normalized:
+            normalized[dst] = normalized[src]
+    return normalized
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  主入口
 # ══════════════════════════════════════════════════════════════════════
 
 def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, Any]:
     """主入口：VLM 输出 + 量化数据 → 完整因果推理诊断。
 
+    诊断流程（按优先级）：
+      STEP 0: Foundation Layer（地基）— 6 项检查必通过才进入上层
+              · Priority 0 失败 → 立即 block 上层分析，只返回地基修复建议
+              · Priority 1 失败 → 警告但继续上层分析
+      STEP 1: VLM 关键词匹配（observation → concept）
+      STEP 2: 量化指标交叉验证（VLM ↔ metrics 仲裁）
+      STEP 3: 训练历史关联（user_history）
+      STEP 4: 最终诊断 + drill 推荐
+
     保持与旧接口完全兼容：
     - 接收 (vlm_result, metrics) 两个 dict
     - 返回增强后的 vlm_result dict
     - 保留 issues, root_cause_tree 等旧字段
-    - 新增 evidence_chain, causal_chain, narrative 等字段
+    - 新增 foundation_layer, evidence_chain, causal_chain, narrative 等字段
+    - 当 P0 地基失败时，返回 dict 包含 foundation_layer + upstream_blocked=True
 
     Parameters
     ----------
@@ -2617,14 +2729,59 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
     Returns
     -------
     dict
-        增强后的诊断结果
+        增强后的诊断结果。最高级字段：
+          - foundation_layer: 地基检查结果
+          - upstream_blocked / upstream_reason / recommended_drills: P0 失败时存在
     """
     if not vlm_result:
-        return vlm_result or {}
+        vlm_result = {}
     if not metrics:
         metrics = {}
 
-    result = dict(vlm_result)
+    result = dict(vlm_result) if vlm_result else {}
+
+    # ══════════════════════════════════════════════════════════════════
+    # STEP 0: Foundation Layer Check（最高优先级）
+    # 在所有上层诊断之前，强制检查 6 个地基项。
+    # ══════════════════════════════════════════════════════════════════
+    from evaluation.foundation_layer import (
+        check_foundations,
+        format_foundation_summary,
+    )
+
+    vlm_answers = _extract_raw_qa_answers(vlm_result)
+    foundation_metrics = _normalize_metrics_for_foundation(metrics)
+    foundation_statuses = check_foundations(vlm_answers, foundation_metrics)
+    foundation_summary_md = format_foundation_summary(foundation_statuses)
+
+    p0_failures = [
+        s for s in foundation_statuses if s.get("should_block_downstream")
+    ]
+    p0_items = [s for s in foundation_statuses if s.get("priority", 1) == 0]
+    all_p0_pass = (
+        len(p0_failures) == 0
+        and all(s["status"] == "pass" for s in p0_items)
+    )
+
+    result["foundation_layer"] = {
+        "statuses": foundation_statuses,
+        "summary_md": foundation_summary_md,
+        "all_pass": all_p0_pass,
+        "p0_failures": [s["id"] for s in p0_failures],
+        "blocks_downstream": len(p0_failures) > 0,
+    }
+
+    if len(p0_failures) > 0:
+        # P0 地基失败 → 不跑上层诊断，只返回地基 summary + 修复建议
+        result["upstream_blocked"] = True
+        result["upstream_reason"] = (
+            f"Priority 0 地基失败：{', '.join(s['name'] for s in p0_failures)}。"
+            "先修地基再分析上层。"
+        )
+        result["recommended_drills"] = [
+            s.get("drill") for s in p0_failures if s.get("drill")
+        ]
+        return result
 
     # ── Step 1: 提取 VLM 观察并映射到概念 ──
     # 优先使用 Q 编号直接映射（更精确），然后用关键词匹配补充
