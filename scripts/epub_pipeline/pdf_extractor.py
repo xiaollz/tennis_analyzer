@@ -462,9 +462,16 @@ def extract_all(pdf_path: str, output_dir: str, chapters: list = None) -> dict:
     decoration_xrefs = _scan_decoration_xrefs(doc, max_pages=5)
     print(f"Found {len(decoration_xrefs)} decoration xrefs to skip")
 
+    # Capture PDF metadata (title/author) for downstream cover/EPUB metadata
+    meta = doc.metadata or {}
     structured = {
         "source": os.path.basename(pdf_path),
         "total_pages": len(doc),
+        "meta": {
+            "title": (meta.get("title") or "").strip(),
+            "author": (meta.get("author") or "").strip(),
+            "subject": (meta.get("subject") or "").strip(),
+        },
         "chapters": [],
     }
 

@@ -23,11 +23,16 @@ def build_epub(
 
     book = epub.EpubBook()
 
-    # -- Metadata --
-    book.set_identifier("ftt-bilingual-v1")
-    book.set_title("The Fault Tolerant Forehand 容错型正手")
+    # -- Metadata (read from structured_data.meta if available) --
+    meta = structured_data.get("meta", {}) or {}
+    pdf_title = meta.get("title") or "The Fault Tolerant Forehand"
+    pdf_author = meta.get("author") or "John Kumpf"
+    # Sanitize identifier from title
+    safe_id = "".join(c if c.isalnum() else "_" for c in pdf_title.lower())[:40]
+    book.set_identifier(f"{safe_id}-bilingual-v1")
+    book.set_title(f"{pdf_title} 中英对照")
     book.set_language("en")
-    book.add_author("John Kumpf")
+    book.add_author(pdf_author)
 
     # -- CSS --
     css_item = epub.EpubItem(
@@ -59,7 +64,13 @@ def build_epub(
 
         # Cover chapter gets special formatting
         if ch_id == "cover":
-            chapter_html = _build_cover_html()
+            # Find first image element (the actual book cover)
+            cover_img = None
+            for el in chapter.get("elements", []):
+                if el.get("type") == "img":
+                    cover_img = el.get("src") or el.get("path") or el.get("filename")
+                    break
+            chapter_html = _build_cover_html(meta, cover_img)
         else:
             chapter_html = _build_chapter_html(chapter, translations)
 
@@ -214,17 +225,34 @@ def _safe(text: str) -> str:
     return escaped
 
 
-def _build_cover_html() -> str:
-    return (
-        '<div class="cover-title">The Fault Tolerant Forehand</div>\n'
-        '<div class="cover-title" style="font-size:1.5em; color:#555;">'
-        "容错型正手</div>\n"
-        '<div class="cover-subtitle">Succeed Under Imperfect Conditions</div>\n'
-        '<div class="cover-subtitle" style="font-style:normal; color:#888;">'
-        "在不完美的条件下取得成功</div>\n"
-        '<div class="cover-author">John Kumpf</div>\n'
-        '<div class="cover-edition">中英双语版 Bilingual Edition · 2026</div>'
-    )
+def _build_cover_html(meta: dict | None = None, cover_image: str | None = None) -> str:
+    """Build the cover page. Reads title/author from PDF metadata if provided.
+
+    Falls back to FTT defaults for backward compatibility.
+    """
+    meta = meta or {}
+    title = meta.get("title") or "The Fault Tolerant Forehand"
+    author = meta.get("author") or "John Kumpf"
+    subject = meta.get("subject") or ""
+
+    parts = []
+    if cover_image:
+        # Normalize: cover_image may be like "images/fig_001_00.jpg" or just "fig_001_00.jpg"
+        import os as _os
+        img_basename = _os.path.basename(cover_image)
+        parts.append(
+            f'<div style="text-align:center; margin-bottom:2em;">'
+            f'<img src="images/{img_basename}" alt="cover" '
+            f'style="max-width:80%; max-height:600px;"/></div>\n'
+        )
+    parts.append(f'<div class="cover-title">{html.escape(title)}</div>\n')
+    if subject:
+        parts.append(
+            f'<div class="cover-subtitle">{html.escape(subject)}</div>\n'
+        )
+    parts.append(f'<div class="cover-author">{html.escape(author)}</div>\n')
+    parts.append('<div class="cover-edition">中英双语对照版 · Bilingual Edition</div>')
+    return "".join(parts)
 
 
 def _build_toc(
