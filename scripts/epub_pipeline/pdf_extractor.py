@@ -384,14 +384,78 @@ def _associate_captions(elements: list[dict]) -> list[dict]:
 # Main extraction
 # ---------------------------------------------------------------------------
 
-def extract_all(pdf_path: str, output_dir: str) -> dict:
+def _slugify(title: str, idx: int) -> str:
+    """Make a chapter id from a title (TOC entry)."""
+    import re as _re
+    s = title.lower()
+    s = _re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+    return s[:40] or f"chapter_{idx:02d}"
+
+
+def _detect_chapters_from_toc(doc) -> list:
+    """Detect chapter ranges from PDF TOC.
+
+    Returns list of {id, title, pages: (start, end)} dicts using 1-based page numbers,
+    or None if no usable TOC.
     """
-    Extract structured content from the FTT book PDF.
+    toc = doc.get_toc()  # [[level, title, page], ...]
+    if not toc:
+        return None
+    # Use level-1 entries only
+    flat = [(t[1].strip(), t[2]) for t in toc if t[0] == 1]
+    if len(flat) < 2:
+        return None
+    chapters = []
+    total = doc.page_count
+    used_ids = set()
+    for i, (title, start) in enumerate(flat):
+        end = (flat[i + 1][1] - 1) if i + 1 < len(flat) else total
+        slug = _slugify(title, i)
+        # Avoid id collision
+        cid = slug
+        suffix = 2
+        while cid in used_ids:
+            cid = f"{slug}_{suffix}"
+            suffix += 1
+        used_ids.add(cid)
+        chapters.append({
+            "id": cid,
+            "title": title,
+            "title_zh": "",
+            "pages": (start, end),
+        })
+    # Insert synthetic cover/toc placeholders so EPUB builder doesn't break
+    if chapters[0]["pages"][0] > 1:
+        chapters.insert(0, {
+            "id": "cover",
+            "title": "Cover",
+            "title_zh": "封面",
+            "pages": (1, chapters[0]["pages"][0] - 1),
+            "skip_translate": True,
+        })
+    return chapters
+
+
+def extract_all(pdf_path: str, output_dir: str, chapters: list = None) -> dict:
+    """
+    Extract structured content from any PDF.
+
+    If `chapters` arg is None, auto-detect from PDF TOC; falls back to FTT-hardcoded CHAPTERS.
 
     Returns structured data dict and saves to {output_dir}/structured.json.
     """
     os.makedirs(output_dir, exist_ok=True)
     doc = fitz.open(pdf_path)
+
+    if chapters is None:
+        auto = _detect_chapters_from_toc(doc)
+        if auto:
+            chapters = auto
+            print(f"[chapters] Auto-detected {len(chapters)} chapters from PDF TOC")
+        else:
+            chapters = CHAPTERS
+            print(f"[chapters] No TOC; using FTT-hardcoded {len(chapters)} chapters")
+    chapter_list = chapters
 
     # Pre-scan to identify decoration images (appear on many pages)
     print("Scanning for decoration images...")
@@ -404,7 +468,7 @@ def extract_all(pdf_path: str, output_dir: str) -> dict:
         "chapters": [],
     }
 
-    for chapter in CHAPTERS:
+    for chapter in chapter_list:
         ch_id = chapter["id"]
         start_page, end_page = chapter["pages"]
 
