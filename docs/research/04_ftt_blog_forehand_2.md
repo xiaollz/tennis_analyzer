@@ -1,5 +1,8 @@
 # Fault Tolerant Tennis 正手技术博客文章精要
 
+> ⚙️ **HSA 框架统一标注**（2026-05-04 加入）：
+> 本文档涉及的 press slot / chest engagement / pec drive / 胸推肘 等概念在 5/3 突破后统一识别为 **HSA (Horizontal Shoulder Adduction)** 的不同视角。回答相关问题前请先读 `docs/research/hsa_master_index.md`。
+
 > 来源: faulttoleranttennis.com
 > 整理日期: 2026-03-14
 > 共 25 篇核心正手技术文章

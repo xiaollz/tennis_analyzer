@@ -1,5 +1,13 @@
 # FTT "Chest Engagement Makes Controlling the Racket Face Easy" — 胸肌参与
 
+> ⚙️ **HSA 框架统一标注**（2026-05-04 加入）：
+> 本文档讲的"chest engagement / press slot / 胸推肘"全部是 **HSA (Horizontal Shoulder Adduction，水平肩内收)** 的不同视角描述。HSA = 大臂与胸腔之间夹角的主动闭合，胸大肌驱动，正手单一关节最大力量贡献（45-48% 前向 RHS）。
+>
+> 主索引：`docs/research/hsa_master_index.md`
+> 训练 drill 表：`docs/research/hsa_training_drills_master.md`
+> 检测代码：`evaluation/hsa_detector.py`
+> Foundation：F7 in `evaluation/foundation_layer.py`
+
 > 视频标题：Chest Engagement Makes Controlling the Racket Face Easy
 > 频道：Fault Tolerant Tennis (FTT)
 > URL：https://www.youtube.com/watch?v=hNVbbPEob3g

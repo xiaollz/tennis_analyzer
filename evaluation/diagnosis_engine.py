@@ -374,6 +374,35 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "upper arm welded to torso", "shoulder socket locked"],
      "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
      "severity": 0.0, "label": "前挥中大臂住肩窝随躯干同步（约束侧健康信号）"},
+
+    # ── HSA (Horizontal Shoulder Adduction) — 5/3 突破后加入 ──
+    # 来源：docs/research/hsa_master_index.md + evaluation/hsa_detector.py
+    # HSA = 大臂与胸腔之间夹角的主动闭合，胸大肌驱动，正手单一关节最大力量贡献（45-48% 前向 RHS）
+    {"keywords": ["hsa no closure", "no_closure", "大臂保持外展", "纯靠转体扫", "胸肱角未关闭",
+                   "大臂没跨过胸前", "no horizontal adduction", "无水平内收"],
+     "concept": "hsa_no_closure", "frame_range": [4, 5],
+     "severity": 0.95, "label": "HSA 无闭合：胸大肌完全没 fire，纯靠转体扫球"},
+    {"keywords": ["hsa late closure", "late_closure", "接触后才闭合", "球离拍后才感觉胸",
+                   "随挥才完成 HSA", "post-contact closure dominant"],
+     "concept": "hsa_late_closure", "frame_range": [4, 5, 6],
+     "severity": 0.85, "label": "HSA 闭合过晚：主体在接触后，没驱动球"},
+    {"keywords": ["hsa early closure", "early_closure", "肘已贴身", "纯推球",
+                   "premature adduction", "接触瞬间角度过小"],
+     "concept": "hsa_early_closure", "frame_range": [3, 4],
+     "severity": 0.80, "label": "HSA 闭合过早：肘卡身侧，纯推球"},
+    {"keywords": ["hsa static", "static closure", "整段角度几乎不变",
+                   "靠手臂扫球", "no angle change during swing"],
+     "concept": "hsa_static", "frame_range": [3, 4, 5],
+     "severity": 0.90, "label": "HSA 静态：整个 swing 角度变化 < 10°"},
+    {"keywords": ["hsa insufficient cross body", "insufficient_cross_body",
+                   "拍头停在右侧", "随挥未越过左肩", "随挥停在身体右侧",
+                   "no cross-body finish", "拍头止于正前方"],
+     "concept": "hsa_insufficient_cross_body", "frame_range": [5, 6],
+     "severity": 0.75, "label": "HSA 跨胸不足：闭合 OK 但随挥未越过非持拍肩"},
+    {"keywords": ["hsa healthy", "胸肌充血", "胸大肌主动收缩", "胸肱角完美闭合",
+                   "horizontal adduction healthy", "HSA 模式健康"],
+     "concept": "hsa_healthy", "frame_range": [3, 4, 5],
+     "severity": 0.0, "label": "HSA 健康（控制信号，不报警）"},
 ]
 
 
@@ -467,6 +496,13 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "v2_late_split_recognition": "L5",   # split airborne pre-recognition
     "v2_pivot_at_butt_cap": "L4",        # grip / preparation structural
     "v2_chasing_not_intercepting": "L1", # contact-point geometry
+    # ── HSA failure modes — 5/3 突破后加入。L3 因为 HSA 是 kinetic chain primary engine ──
+    "hsa_no_closure": "L3",
+    "hsa_late_closure": "L3",
+    "hsa_early_closure": "L3",
+    "hsa_static": "L3",
+    "hsa_insufficient_cross_body": "L3",
+    "hsa_healthy": "L3",  # control signal
 }
 
 # Layer order: earliest = highest priority as root cause
@@ -928,6 +964,48 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "method": "Tomaz Feel Tennis 口令：'拍头和球相向而去'。教练从背后抛球，强迫你主动上前拦截而不是退着等。20球。",
         "why": "拍头追着球走 = 击球点偏后 = 失去掌控。Tomaz: 'Don't respond to speed with speed'，主动拦截才是正解。",
     },
+
+    # ══════════════════════════════════════════════════════════════════════
+    # HSA failure modes — 5/3 突破后加入
+    # 来源: docs/research/hsa_training_drills_master.md + FTT 视频 + Brian Gordon
+    # 每个 fix 含: drill (drill 名 + 阶段) / method (做法) / why (机制) / muscle_cue (体感)
+    # ══════════════════════════════════════════════════════════════════════
+    "hsa_no_closure": {
+        "drill": "阶段 0-A 手按胸大肌横拉空挥（不持拍）",
+        "method": "左手按住右胸大肌（锁骨头 + 胸肋头交界处）→ 右手做横拉空挥 → 直到能触摸到胸肌主动收缩。每天 5 min × 3-5 组 × 10 次。来源 FTT Am8j1Zw5KrE [00:00-00:30]。",
+        "why": "no_closure 模式（接触瞬间 HSA 角 > 85°）= 胸大肌完全没 fire，球员在用纯转体扫球。最深的体感缺失 → 必须从徒手不持拍开始重建胸肌入口。",
+        "muscle_cue": "做对时手能触摸到胸大肌（锁骨头 + 胸肋头）主动 contract、'充血'。如果手按下去没感觉，HSA 没启动。先解决这个，其他 drill 都是空架子。",
+    },
+    "hsa_late_closure": {
+        "drill": "阶段 2-A 药球侧砸墙（2-3 kg）",
+        "method": "站墙 1m，开放站位，2-3kg 药球举胸前 → 转身蓄力 → **爆发砸墙** → 接反弹。4-6 次 × 3-4 组，组间 30-60 秒。",
+        "why": "late_closure（接触后才完成 HSA）= 胸大肌 fire 时机错了 + trunk slowdown 没触发 arm 爆发。药球太重 → 强迫胸-肩-背在 trunk slowdown 瞬间爆发 → 训练 SSC 时序。",
+        "muscle_cue": "做对时砸墙瞬间感觉胸大肌瞬间收紧 + 球被甩出去（不是被推出去）。如果是慢慢推球出去，时序还没到位。",
+    },
+    "hsa_early_closure": {
+        "drill": "阶段 1-C 半场短挥",
+        "method": "半场距离击球，引拍极短 + 必须用胸把球推出去（不能伸大臂）。3 组 × 20 球。来源 TTT Modern Forehand 5 Drills。",
+        "why": "early_closure（接触瞬间 HSA 角 < 45°）= 肘已贴身 + 纯靠手臂推球。半场短挥逼出 HSA 因为没空间用大臂；只能用胸推。",
+        "muscle_cue": "做对时感觉到大臂作为 unit 跟着躯干转动 + 胸大肌主导发力。如果还是大臂自己发力推球，距离还要再缩短。",
+    },
+    "hsa_static": {
+        "drill": "阶段 1-A 静态无转体击球（最关键的 drill）",
+        "method": "站稳双脚不动 + 不转体 + 纯用 HSA 击球。30-50 球/次。目标：没转体也能打出 decent ball。来源 FTT 5KdScDKxVSI [03:40]。",
+        "why": "static（HSA 角度变化 < 10°）= 球员在用躯干转动伪装 HSA。隔离掉转体后，HSA 体感能否独立调用就暴露了。",
+        "muscle_cue": "做对时感觉胸大肌主动闭合大臂 + 胸肌酸（不是手臂酸）。如果不转体就完全打不出球，说明从来没有过 HSA 体感，只在借助转体的离心力。",
+    },
+    "hsa_insufficient_cross_body": {
+        "drill": "阶段 3-C Off-Arm Pull 整合",
+        "method": "Unit Turn 时左手主动后拉 + 同时右手 HSA 释放 + 让随挥自然延伸到左肩外侧。喂球 30 球 × 3 组。来源 FTT 通用 + 用户已验证 cue。",
+        "why": "insufficient_cross_body（HSA 闭合 OK 但拍头停在右侧）= 闭合了但没让动量自然延续。Off-arm pull 给躯干提供反向力矩，让 HSA 完整跨胸。",
+        "muscle_cue": "做对时拍头自然延伸到左肩外侧 / 左耳上方（取决于来球高度）。如果拍头停在身体正前方，左手没真的拉。",
+    },
+    "hsa_healthy": {
+        "drill": "阶段 4-A 发球机分速段（保持 HSA 体感）",
+        "method": "60mph → 70mph → 80mph 各打 30 球，每球后自检胸肌酸不酸。3 × 3 组。检验：球速越快越倾向用大臂代偿。",
+        "why": "healthy 不是终点 — 是要在不同球速下都能保持。球速增加是 HSA 退化的常见时机，必须主动维护。",
+        "muscle_cue": "保持时胸肌每天酸（不是手臂酸）+ 球质改善（速度 + 穿透）。如果某天胸肌不酸了，HSA 已经悄悄消失。",
+    },
 }
 
 
@@ -1309,6 +1387,26 @@ Q_DIRECT_MAPPING: Dict[str, Dict[str, Any]] = {
         "positive_concept": "matched_takeback_tempo",
         "negative_concept": "v2_takeback_speed_mismatch",
         "severity": 0.8,
+    },
+    # ── HSA F7 — 5/3 突破后加入 ──
+    # Q39 测三帧角度 + 总闭合幅度；Q40 分类 + 跨胸验证
+    # 注：Q39/Q40 是多模式问答（不只是 binary），实际分类由 hsa_detector.py 量化指标 + 关键词复检
+    "Q39": {  # HSA 三帧角度测量
+        "positive_signals": ["healthy", "总闭合 ≥ 25", "闭合 30°", "闭合 35°", "闭合 40", "闭合 45",
+                              "闭合 50", "胸大肌主动收缩", "HSA 健康"],
+        "negative_signals": ["no_closure", "static", "early_closure", "late_closure",
+                              "总闭合 < 15", "总闭合 < 10", "无闭合", "纯靠转体"],
+        "positive_concept": "hsa_healthy",
+        "negative_concept": "hsa_no_closure",  # default fallback; specific mode set by Q40 keyword
+        "severity": 0.95,
+    },
+    "Q40": {  # HSA 模式分类 + 跨胸
+        "positive_signals": ["越过左肩", "拍头到左侧", "高过左肩", "完整跨胸", "healthy"],
+        "negative_signals": ["右腰侧", "停在正前方", "未越过", "insufficient_cross_body",
+                              "no_closure", "static", "early_closure", "late_closure"],
+        "positive_concept": "hsa_healthy",
+        "negative_concept": "hsa_insufficient_cross_body",
+        "severity": 0.85,
     },
 }
 

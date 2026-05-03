@@ -1,5 +1,7 @@
 # 个人 Foundation 完整报告 · 2026-05-02
 
+> ⚙️ **5/3 突破回溯标注**（2026-05-04 加入）：本报告 4/30 上午 "胸推肘" 突破在 5/3 晚被识别为 **HSA (Horizontal Shoulder Adduction)** 的下游表现。本报告中所有 "胸推肘 / chest fire / press slot" 概念现在统一到 HSA 框架。新检测层为 `evaluation/foundation_layer.py` F7。详见 `docs/research/hsa_master_index.md`。
+
 > 基于：FTT "Build This Foundation" 视频 + 你 3 个月训练史 + 5 个并行 agent 跨体系调研。
 > 目标：把 FTT 没讲透的部分补完，给你一份**可执行**的 Foundation 攻坚地图。
 

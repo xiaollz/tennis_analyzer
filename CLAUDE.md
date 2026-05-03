@@ -21,3 +21,34 @@
 ## 用户训练记录
 用户会持续更新 `docs/record/learning.md`，记录每次训练的问题和发现。
 回答问题时应参考这些记录，了解用户当前的技术状态和突破点。
+
+## learning.md 时间轴同步规则（强制）
+
+**learning.md 顶部维护一个时间轴**（mermaid 图 + 阶段表 + 关键 entry 索引）。
+
+**强制规则**：
+1. 每次新增 learning.md entry 后，**必须同步更新顶部时间轴**（mermaid 图的对应阶段 + 阶段表 + 关键 entry 索引）
+2. 如果新 entry 是 ⭐（重大突破）或 🏆（轴心圣经）或 ⚙️（驱动级），**必须**在"关键 entry 索引"中加链接 + 行号
+3. 如果新 entry 跨越了已有 5 大阶段的边界，新建阶段并在 mermaid 图里加 section
+4. commit message 必须显式提及时间轴更新（如 "learning.md: 5/4 entry + 时间轴同步"）
+5. 例外：纯 typo / 格式修复不要求更新时间轴
+
+**违反规则的后果**：时间轴失同步会让未来 Claude session 无法快速找到关键突破，知识体系碎片化。
+
+**当前 5 大阶段**（截至 2026-05-04）：
+1. 基础修正（2/27-3/29）
+2. 动力链建立（3/30-4/19）
+3. 实战验证（4/20-4/26）
+4. 轴心体系建立（4/27-4/30）
+5. HSA 统一（5/2-now）
+
+## HSA 框架优先（5/3 之后）
+
+5/3 突破后，**HSA（Horizontal Shoulder Adduction，水平肩内收）** 是整套发力体系的物理本体。所有相关概念（press slot / chest fire / 胸推肘 / 撕 / 横拉 / windshield wiper / lasso / scapular slot 等）都是 HSA 的不同视角描述。
+
+**回答任何正手力量 / chest fire / ISR / press slot / 胸推肘 / 大臂飘 / 后倒 / 动力源脱节 / 球软 / 节奏感缺失问题前**，第一句必须问：**"HSA 体感今天到位没？"**
+
+主索引：`docs/research/hsa_master_index.md`
+代码：`evaluation/hsa_detector.py` + `evaluation/foundation_layer.py` F7
+训练表：`docs/research/hsa_training_drills_master.md`
+记忆：`~/.claude/projects/-Users-qsy-Desktop-tennis/memory/project_hsa_engine.md`
