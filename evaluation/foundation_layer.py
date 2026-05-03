@@ -1,7 +1,7 @@
 """
 Foundation Layer — 网球分析系统的"地基检查层"
 
-这个模块 hard-wire 了 6 个 foundation 检查项，确保 runtime 视频分析时
+这个模块 hard-wire 了 7 个 foundation 检查项，确保 runtime 视频分析时
 按"地基优先"原则做。priority=0 的 foundation（FTT Foundation 4 项）失败时，
 应阻断上层分析，先修地基。priority=1 的 foundation（个人圣经 2 项）次之。
 
@@ -15,6 +15,7 @@ Foundation Layer — 网球分析系统的"地基检查层"
 - FTT Foundation 4 项: docs/research/18_ftt_build_foundation.md
 - 4/27 圣经: memory/project_right_foot_axis_bible.md
 - 4/30 圣经: memory/project_scapular_slot_bible.md + docs/research/scapular_stabilization_root_cause.md
+- 5/3 HSA: docs/research/hsa_master_index.md + memory/project_hsa_engine.md
 """
 
 import re
@@ -216,6 +217,64 @@ FOUNDATIONS: List[Dict[str, Any]] = [
         "explanation": "4/30 晚新圣经：肩胛骨槽是胸大肌发力的固定点（fixed point），"
                        "槽稳=胸推肘可行；槽脱=4/29 + 4/30 突破全部失守。",
     },
+    # -------------------------------------------------------------------------
+    # Priority 1 — 5/3 HSA 突破（驱动引擎，非地基）
+    # -------------------------------------------------------------------------
+    {
+        "id": "F7_hsa",
+        "name": "肩水平内收",
+        "english": "Horizontal Shoulder Adduction (HSA)",
+        "source": "docs/research/hsa_master_index.md + memory/project_hsa_engine.md "
+                  "+ evaluation/hsa_detector.py",
+        "priority": 1,
+        "vlm_question_ids": ["Q39", "Q40"],  # hsa_closure_visible + cross_body_finish_visible
+        "metric_keys": [
+            "hsa_total_closure_deg",
+            "hsa_angle_at_contact",
+            "hsa_closure_pattern",
+            "cross_body_finish",
+            "hsa_health_score",
+        ],
+        "pass_criteria": [
+            "总闭合幅度 ≥ 25° (peak → contact)",
+            "接触瞬间 HSA 角在 45°-80° 健康区间",
+            "cross_body_finish == True (右腕越过左肩)",
+            "hsa_closure_pattern == 'healthy'",
+            "hsa_health_score ≥ 60",
+        ],
+        "fail_evidence_keywords": [
+            "大臂没有跨过胸前", "胸肌未参与", "右臂保持外展",
+            "随挥往侧方", "随挥未越过身体", "拍头未交叉",
+            "无内收", "肘卡身侧", "推球", "推送",
+            "纯靠手腕翻拍", "纯靠转体", "胸肱角未关闭",
+            "随挥停在右侧", "随挥指向侧面",
+        ],
+        "fail_metric_thresholds": {
+            "hsa_total_closure_deg": {"lt": 15.0},
+            "hsa_angle_at_contact": {"gt": 90.0},
+            "hsa_closure_pattern": {"equals": "no_closure"},
+            "cross_body_finish": {"equals": "False"},
+            "hsa_health_score": {"lt": 40.0},
+        },
+        "downstream_cascade": [
+            "胸大肌未发力（chest 未 fire）",
+            "ISR 无上游驱动 → 自动消失",
+            "Pronation 孤立 → 球软无穿透",
+            "辛纳式肘前推无下游释放",
+            "RHS 损失 25-48%（HSA 是单一关节最大贡献者）",
+        ],
+        "drill": "1) 手按胸大肌徒手横拉空挥（FTT Am8j1Zw5KrE 视频开头）"
+                 " 2) 静态无转体击球（FTT 5KdScDKxVSI [03:40]）"
+                 " 3) 反向工程握拍（FTT 5KdScDKxVSI [01:05]）",
+        "drill_source": "docs/research/hsa_youtube_survey.md Tier S 视频 + "
+                        "docs/research/hsa_biomechanics_deep_dive.md §7 训练协议",
+        "explanation": "5/3 突破：HSA 是 chest fire 的物理本体——'关闭胸肱角' 是真正"
+                       "的发力动作，press slot / chest engagement / 胸推肘 / 撕 等概念"
+                       "都是 HSA 的不同视角描述。Sasaki 2022 IMU 实测 HSA 贡献 45-48% "
+                       "前向 RHS（单一关节最大），Kovacs 综述 HSA+ISR 合占 65% 接触速度。"
+                       "F7 不是地基，是驱动引擎；它依赖 F5（右脚轴 = 能量入口）+ "
+                       "F6（肩胛槽 = 发射台）作为支撑。",
+    },
 ]
 
 
@@ -336,7 +395,7 @@ def check_foundations(
     metrics: Optional[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     """
-    检查 6 个 foundation 的状态。
+    检查 7 个 foundation 的状态。
 
     判断逻辑：
     1. 优先量化指标（数据硬）：metric 超阈值 → fail

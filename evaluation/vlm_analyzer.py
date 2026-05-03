@@ -441,6 +441,15 @@ _FTT_SYSTEM_PROMPT = """\
    Q25：非持拍侧背部球衣有没有拉伸褶皱？（褶皱 = scapula 激活 / 无褶皱 = 槽未进入）
    Q3：大臂内侧与胸侧间距（"贴近" = pass / "一个拳头以上" = fail）
 
+【F7 · HSA 肩水平内收 / 驱动引擎】← Q39 + Q40 必查（5/3 突破，**真正的发力本体**）
+   Q39 必须比较引拍顶点与随挥末端两帧，估算大臂-躯干夹角的闭合幅度：
+       (a) 引拍顶点角度（典型 90-100° = 外展位）
+       (b) 随挥末端角度（健康 < 50° = 已跨胸）
+       (c) 闭合幅度 ≥ 25° = pass / < 15° = fail
+   Q40：拍头终点位置（右腰侧 = fail / 越过左肩 = pass）
+   F7 不是地基，是**驱动引擎**——它依赖 F5 + F6 作为支撑
+   F7 失败的下游：胸大肌没 fire / ISR 无驱动 / 球软 / RHS 损失 25-48%
+
 【输出要求】
 - 每个 Q 答案必须先给一句**判定标签**（如 "F1 PASS" 或 "F1 FAIL"），再给**具体证据**
 - 证据必须包含可观察的几何（角度 / 距离 / 时间），不要笼统形容词
@@ -773,6 +782,8 @@ _FTT_SYSTEM_PROMPT = """\
 - Q16（back_foot pivot）：给 F5 辅助判定
 - Q31（stance_at_contact）：给 F5 辅助判定
 - Q5b（hip_follow_shoulder）：必须给具体角度差；给 F4 量化辅助
+- Q39（hsa_closure_visible）：必须报告引拍 vs 随挥两帧的大臂-躯干角度估算 + 闭合幅度；给 F7 PASS/FAIL
+- Q40（cross_body_finish_visible）：必须报告拍头终点位置（右侧/正前方/越过左肩）；给 F7 跨胸 PASS/FAIL
 
 注意：
 - 标签格式严格为 "F1 PASS" / "F1 FAIL" / "F1 UNCERTAIN: [原因]"，大小写敏感（机器解析）
@@ -2015,7 +2026,7 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
                 "stance_at_contact": answers.get("Q31", ""),
                 "steps_and_recovery": answers.get("Q32", ""),
             },
-            # Extra observations (Q33-Q38) — wave-2 video-watching insights
+            # Extra observations (Q33-Q40) — wave-2 video-watching insights + 5/3 HSA
             "extra_observations": {
                 "spine_side_bend_at_contact": answers.get("Q33", ""),
                 "active_feet_during_wait": answers.get("Q34", ""),
@@ -2023,6 +2034,9 @@ def _parse_observation_response(text: str) -> Optional[Dict]:
                 "grip_pivot_point": answers.get("Q36", ""),
                 "intercept_vs_chase": answers.get("Q37", ""),
                 "takeback_speed_match": answers.get("Q38", ""),
+                # F7 HSA additions (5/3 breakthrough)
+                "hsa_closure_visible": answers.get("Q39", ""),
+                "cross_body_finish_visible": answers.get("Q40", ""),
             },
         }
         overall = {
