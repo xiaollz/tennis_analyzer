@@ -39,7 +39,8 @@ timeline
       5/2  : ⭐ "撕"字 + ISR 命名
       5/3 早 : 辛纳发力模型 + ISR 不主动做
       5/3 晚 : ⚙️ HSA 命名 = 整套体系物理本体
-      5/4  : Gordon USPTA + Macci × Gordon 视频 + Holland Osteopathy + drill 统一规划 + KB 工程化
+      5/4 早 : Gordon USPTA + Macci × Gordon 视频 + Holland Osteopathy + drill 统一规划 + KB 工程化
+      5/4 晚 : 📚 Tennis Science (Elliott/Reid/Crespo 2015) 全书 8 章整合 = 学术权威加持
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -50,12 +51,15 @@ timeline
 | **2. 动力链建立** | 3/30 - 4/19 | 正确发力路径建立 | 4/1 钢架模型 + 4/18 FTT 负重三阶段固化 |
 | **3. 实战验证** | 4/20 - 4/26 | 镜前 vs 球场差距 | 4/22 两系统并行 + 4/26 镜前完美球场消失诊断 |
 | **4. 轴心体系建立** | 4/27 - 4/30 | 下肢轴心 + 上身轴心 + 驱动入口 | 🏆 4/27 右脚轴 + 🏆 4/30 上身槽 |
-| **5. HSA 统一** | 5/2 - 5/4 | 整套体系收敛到物理本体 | ⚙️ 5/3 HSA 命名 + 5/4 工程化（detector + drill 表 + 调研）|
+| **5. HSA 统一** | 5/2 - 5/4 | 整套体系收敛到物理本体 | ⚙️ 5/3 HSA 命名 + 5/4 工程化（detector + drill 表 + 调研）+ 📚 Tennis Science 全书整合 |
 
 ### 关键 entry 索引（按重要性排序）
 
 🏆🏆🏆 **终极驱动**：
 - [5/3 晚 HSA 终极统一](#-2026-05-03-晚--终极圣经--hsa肩水平内收-整套体系的物理本体)（line 5204+）
+
+📚 **学术权威加持**：
+- [5/4 Tennis Science 全书整合](docs/research/tennis_science_book/MASTER_INTEGRATION.md) — ITF/UWA/Tennis Australia 三方权威的 peer-reviewed 教科书。8 章节 KB 文档 + master integration + diagnosis_engine 加 2 个新概念 + VLM Q41/Q42 + drill master §9-§13 扩展
 
 🏆🏆 **轴心圣经**：
 - [4/30 晚 肩胛骨槽（上身轴心）](#-2026-04-30-晚--新圣经--肩胛骨槽上身轴心)（line 4808+）
@@ -5465,3 +5469,87 @@ HSA 圣经 = 描述"如何主动让对的状态发生"（驱动引擎）
 - 2-3 个月：实战球能稳定调用 HSA
 
 回答任何正手问题，**第一句话必须是**：HSA 体感今天到位没？
+
+---
+
+## 📚 2026-05-04 · Tennis Science 全书整合 — 学术权威加持
+
+### 触发事件
+用户购买并下载 *Tennis Science: How Player and Racket Work Together* (Elliott/Reid/Crespo 2015, University of Chicago Press) 的 PDF（193 页 8 章）。指令：彻底吃透并集成到系统。
+
+### 整合方法
+1. PDF → 8 章 layout text 提取（pdftotext）
+2. 4 个 agent 并行深读 → 8 章节 KB 文档
+3. 合成 master integration document
+4. Tier 1 系统改造（VLM + 诊断引擎 + drill master）
+
+### 章节文档（已写盘）
+全部在 `docs/research/tennis_science_book/`：
+- `MASTER_INTEGRATION.md` — 主索引（最先读）
+- `ch1_learning_the_game.md` — 技能习得（Reid/Crespo/Farrow）
+- `ch2_technique.md` — **生物力学 / 最关键章**（Elliott/Reid）
+- `ch3_performance_analysis.md` — 比赛分析
+- `ch4_mental_edge.md` — 心理学
+- `ch5_physical_development.md` — Kovacs 体能
+- `ch6_nutrition_recovery.md` — 营养与恢复
+- `ch7_staying_healthy.md` — **Kibler 动力链 / 伤病预防**
+- `ch8_equipment_technology.md` — Knudson 装备物理
+
+### 给现有 KB 带来的关键确认（Confirmations）
+1. FTT "kinetic chain" — 实测 ISR ~40% RHS（Ch2 p.34）
+2. 4/27 右脚轴 — 蹬地 GRF 业余 1.7×BW vs 高水平 2.1×BW（Ch2 p.44）
+3. 4/30 上身槽 — Kibler 原话"shoulder is funnel for energy flow"（Ch7 p.152）
+4. 5/3 HSA = 物理本体 — 整章 + Ch7 网球肘 = HSA 失败的临床表现
+5. "压+飘" SSC 模型 — pre-stretch 加 10-20% speed（Ch2 p.34）
+6. "撕" = ISR 不主动做 — 主动用腕导致 ECRB 过载（Ch7 p.142）
+7. FTT 反 big loop — 1秒停顿 -50%、4秒 -100%（Ch2 p.34）
+8. 4/26 镜前完美 vs 球场消失 — 学术原话"players get in the zone more in training than in competition"（Ch4 p.88）
+
+### 给现有 KB 带来的关键扩展（Extensions）
+KB 之前没有的量化数据：
+- ISR 角速度男 2520°/s vs 女 1370°/s（Ch2 p.42）
+- 躯干分离角 20-30°（Ch2 p.35）
+- 后髋垂直速度 2.3 m/s vs 前髋 1.9 m/s（Ch2 p.44）
+- ISR **青春期后才发育**（Ch2 p.50）
+- ATP Top 100 平均年龄每 10 年涨 0.90 岁（Ch3 p.60）
+- HIIT > RSA 6 周 VO2max 显著（Ch5 p.105）
+- **周期化强制规则**：每 3-4 周 1 周 download week（Ch5 p.107）
+- ACWR 风险阈值 > 1.5 = 高伤病风险（Ch5）
+- 出汗率 0.5-2.0 L/h，目标 < 2% BM 损失（Ch6）
+- 黏土比硬地少 6-13° 膝屈（Ch8 p.165）
+
+### 系统改造（Tier 1 完成）
+
+#### a) VLM prompt 新增 Q41 + Q42
+- Q41 backswing pause detection（来源 Ch2 p.34: 1s = -50% SSC）
+- Q42 leg drive visibility（来源 Ch2 p.44: 1.7-2.1×BW）
+
+#### b) diagnosis_engine 新增 2 个概念
+- `no_leg_drive` (L5) — kinetic chain 起点缺失
+- `excessive_backswing_pause` (L4) — F2 失败精确量化版
+
+每个都配 drill / method / why / muscle_cue 完整结构。
+
+#### c) hsa_training_drills_master.md 新增 §9-§13
+- §9 能量系统协议（HIIT vs RSA）
+- §10 周期化规则（强制 download week）
+- §11 工作负荷监控（ACWR）
+- §12 营养与恢复（出汗率、碳水时序、CWI）
+- §13 整合后的训练周模板（含 RPE）
+
+### CLAUDE.md 升级
+新增"引用权威排序"小节：Tennis Science > HSA 框架 > FTT > Brian Gordon > Kibler/Ellenbecker > 教练社区 > 用户自身。这把项目从"教练经验体系"升级到"peer-reviewed 学术驱动体系"。
+
+### 等级判定
+
+📚 **学术权威加持级**——这不是新的圣经（圣经是 5/3 HSA），而是给现有圣经体系**加上 ITF/UWA/Tennis Australia 三方权威的 peer-reviewed 数据背书**。
+
+意义：
+- 之前回答问题以 FTT + Brian Gordon + 用户体感为主
+- 之后回答问题**必须先引用 Tennis Science 实测数据**
+- 项目从"个人精通的教练系统"升级到"全球前 1% 学术驱动的网球分析系统"
+
+### 下一步
+- 实测 Q41/Q42 + no_leg_drive 在新视频上的输出质量
+- 短期（5 月内）整合下一本书：*Attention and Motor Skill Learning* (Wulf)
+- 中期：建立 ACWR + 睡眠监控的 wellness_check.py

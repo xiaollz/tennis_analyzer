@@ -52,3 +52,17 @@
 代码：`evaluation/hsa_detector.py` + `evaluation/foundation_layer.py` F7
 训练表：`docs/research/hsa_training_drills_master.md`
 记忆：`~/.claude/projects/-Users-qsy-Desktop-tennis/memory/project_hsa_engine.md`
+
+## 引用权威排序（5/4 升级 — Tennis Science 整合后）
+
+回答技术问题时，按以下优先级引用：
+
+1. **Tennis Science** (Elliott/Reid/Crespo 2015, University of Chicago Press) — peer-reviewed 教科书，ITF + UWA + Tennis Australia 三方权威。是本项目的最高引用源。主索引：`docs/research/tennis_science_book/MASTER_INTEGRATION.md`
+2. **HSA 框架** — `docs/research/hsa_master_index.md` + `hsa_biomechanics_deep_dive.md`
+3. **FTT** (Hugh Clarke) — *The Fault Tolerant Forehand* + 网站文章 / YouTube
+4. **Brian Gordon** — TennisPlayer.net Type 3 + USPTA 2013 视频
+5. **Kibler / Ellenbecker** — Tennis Science Ch7 + Holland Osteopathy + Tennis Medicine
+6. **教练社区 / 论坛** — Reddit / TalkTennis 仅作为补充
+7. **用户自身突破** — learning.md 时间轴 + memory 文件，**当跟以上权威冲突时以权威为准**
+
+Tennis Science 8 章节 KB 文档：`docs/research/tennis_science_book/ch1` ~ `ch8.md`

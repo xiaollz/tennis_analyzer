@@ -215,3 +215,146 @@ HSA (F7) 不能脱离 F1-F6 单独练。整合方法：
 **当前推荐**（基于 5/3 晚突破）：从**阶段 0-A**（手按胸肌横拉空挥）开始，建立体感稳定后进入阶段 1-A（静态无转体击球）。
 
 不要跳阶段。每个阶段升级信号达到了再升。
+
+---
+
+## 9. 能量系统协议（来自 Tennis Science Ch5 / Kovacs）
+
+来源：Tennis Science 2015 第 5 章（Mark Kovacs / Rob Duffield / Aaron Kellett）
+
+### 9.1 比赛实测能量系统数据
+- 比赛时长：2-5 小时
+- 移动距离：5-8 km
+- 每球移动：2.5-4 m
+- 每点最多变向：15 次
+- **每点持续 5-10 秒**，间歇 15-25 秒（85-90% 时间是间歇）→ 主要靠**无氧 alactic + 磷酸原系统**
+
+### 9.2 HIIT vs RSA 对比（Kovacs 6 周经验数据 p.105）
+
+| 指标 | HIIT 组改善 | RSA 组改善 |
+|---|---|---|
+| VO₂max | 显著 | 较小 |
+| 乳酸阈 | 显著 | 较小 |
+| CMJ 跳高 | 显著 | 较小 |
+
+**结论**：**HIIT > RSA 用于网球能量系统训练**。
+
+### 9.3 推荐协议
+- **每周 2 次 HIIT**（30s on / 30s off × 8 组，2-3 组之间）
+- **每周 1 次 RSA**（10s 全力短跑 + 50s 慢走 × 10 次）
+- 加在喂球训练**之外**，不占用技术训练日
+
+---
+
+## 10. 周期化规则（来自 Tennis Science Ch5）
+
+来源：Tennis Science 2015 p.107 + Kovacs 通用周期化原则
+
+### 10.1 强制规则
+**每 3-4 周训练 → 1 周 download week（强制下载周）**
+
+不可跳过。Kovacs 明确说：周期化没有下载周 = 必然过度训练 + 伤病。
+
+### 10.2 Download week 怎么做
+- 训练量降 50%（从每天 90 min → 45 min）
+- 强度降一档（高速喂球 → 中速喂球）
+- 重点放在体感 / 镜前 drill / mobility / recovery
+- **不是完全休息**，是低强度神经维护
+
+### 10.3 用户当前状态适配
+你 4/30-5/4 连续 5 天高强度突破期 + 大量视频分析——**应该在 5/5 或 5/6 安排 download week**。
+
+---
+
+## 11. 工作负荷监控（来自 Tennis Science Ch5）
+
+来源：Kovacs ITF 标准 + ACWR 文献
+
+### 11.1 RPE × 分钟（每次训练后填写）
+公式：`load = RPE (1-10) × duration_min`
+
+例：90 min 训练 RPE 7 → 630 load units
+
+### 11.2 ACWR（Acute:Chronic Workload Ratio）
+- Acute：过去 7 天总 load
+- Chronic：过去 28 天平均 7-day load
+- ACWR = Acute / Chronic
+
+### 11.3 风险阈值
+| ACWR | 风险等级 | 建议 |
+|---|---|---|
+| < 0.8 | 训练不足 | 增加 load |
+| 0.8 - 1.3 | **健康区** | 维持 |
+| 1.3 - 1.5 | 警告 | 不再增加 load |
+| > 1.5 | **高伤病风险** | 立即降 load 或休息 |
+
+### 11.4 实操
+在 learning.md 每次 entry 加字段：
+```markdown
+**训练参数**：日期 | RPE (1-10) | 时长 (min) | 睡眠 (h) | ACWR
+```
+
+未来 `evaluation/wellness_check.py` 模块自动从 learning.md 读取并计算。
+
+---
+
+## 12. 营养与恢复（来自 Tennis Science Ch6 / Halson, Burke）
+
+精选最实用部分：
+
+### 12.1 训练日补水
+- 出汗率 0.5-2.0 L/h（个体差异大）
+- 训练前测体重 → 训练后再测 → 差值 × 1.25-1.5 = 训练后应补水量（mL）
+- 目标：训练后体重损失 < 2%
+
+### 12.2 训练日碳水时序
+- **训练前 24h**：5-7 g/kg/day（~70kg → 350-500g）
+- **训练前 1-4h**：1-4 g/kg
+- **训练中**：30-60 g/h（运动饮料 / 香蕉 / 能量胶）
+- **训练后 4h**：1 g/kg/h（恢复窗口）
+
+### 12.3 关键 hack：carb mouth rinse
+长时间训练**末段**累，10s 漱口含糖饮料**不咽**也有效——通过口腔甜味受体激活神经系统。Halson 的实验数据。
+
+### 12.4 冷水浸泡（CWI）
+- 高强度训练后立即做
+- 10-15℃ 冷水
+- 14-15 min
+- 站立浸到肩
+- 配合压缩袜 + 至少 60 min 休息 + 当晚优质睡眠 = 最强恢复证据组合
+
+### 12.5 睡眠
+- 推荐 8 h
+- 实测运动员平均 6.8 h（普遍不够）
+- < 6h × 4 晚 → 显著表现退化
+- 训练日**比赛日**晚的话，需要赛前白天 90 min 小睡补偿
+
+---
+
+## 13. 整合后的训练周模板（更新版）
+
+| 天 | 时长 | 内容 | RPE | 备注 |
+|---|---|---|---|---|
+| 周一 | 60-90 min | HSA drill 50% + 喂球 50% | 6-7 | 主训日 |
+| 周二 | 30-45 min | HSA 0-A + 阶段 2 力量 + HIIT | 7-8 | 力量 + 能量 |
+| 周三 | 30 min | mobility + 后关节囊 / 胸肌拉伸 + 镜前 0-A | 3-4 | 恢复 |
+| 周四 | 60-90 min | 喂球 70% + HSA drill 30% | 7-8 | 高强度 |
+| 周五 | 30 min | 镜前 + Flip Drill + Shadow Swing | 4-5 | 神经维护 |
+| 周六 | 90 min | 完整训练 + 药球 + 喂球 + 发球机 + RSA 1 次 | 8 | 周巅峰 |
+| 周日 | 0 | **完全休息** + 视频复盘 | 0 | recovery |
+
+每 4 周一次的**周日 → 下周一-周六**为 download week（全周 RPE 不超过 5）。
+
+---
+
+## 14. 数据源补全
+
+新增（Tennis Science 整合）：
+- Tennis Science (Elliott/Reid/Crespo 2015), University of Chicago Press
+- 章节 KB: `docs/research/tennis_science_book/ch1` ~ `ch8.md`
+- Master integration: `docs/research/tennis_science_book/MASTER_INTEGRATION.md`
+
+代码集成：
+- 诊断引擎新概念：`no_leg_drive` (L5) + `excessive_backswing_pause` (L4)
+- VLM Q41 (backswing pause) + Q42 (leg drive) 已加 prompt
+- 待建模块：`evaluation/wellness_check.py`（ACWR + sleep tracking）

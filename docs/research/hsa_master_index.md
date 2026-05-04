@@ -12,6 +12,20 @@
 
 ---
 
+## 0.5 学术权威加持（5/4 加入）
+
+**Tennis Science** (Elliott/Reid/Crespo 2015, University of Chicago Press) 8 章 deep read 完成，整合到本项目 KB。HSA 框架在本书中得到 ITF/UWA/Tennis Australia 三方权威的 peer-reviewed 数据确认：
+- Ch2 p.34: ISR ≈ 40% 接触瞬间 RHS（serve）
+- Ch2 p.34: pre-stretch SSC = +10-20% speed
+- Ch2 p.44: 蹬地 GRF 业余 1.7×BW vs 高水平 2.1×BW
+- Ch2 p.34: 引拍顶点停顿 1s = -50% SSC 弹性能量
+- Ch7 p.152 Kibler: "shoulder is funnel for energy flow from legs/trunk to racket arm"
+- Ch7 p.142 Kibler: 网球肘 = 太多腕旋前 + 击球点过后 + 弱肩肌（HSA 失败的精确临床描述）
+
+主索引：[`tennis_science_book/MASTER_INTEGRATION.md`](./tennis_science_book/MASTER_INTEGRATION.md)
+
+---
+
 ## 1. 起源与时间线
 
 | 日期 | 事件 | 文件 |

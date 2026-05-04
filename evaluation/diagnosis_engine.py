@@ -403,6 +403,22 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "horizontal adduction healthy", "HSA 模式健康"],
      "concept": "hsa_healthy", "frame_range": [3, 4, 5],
      "severity": 0.0, "label": "HSA 健康（控制信号，不报警）"},
+
+    # ── Tennis Science 2015 (Ch2 p.44) — leg drive 量化 ──
+    # 业余 1.7×BW vs 高水平 2.1×BW；后髋垂直速度 2.3 m/s
+    # 蹬地缺失 → kinetic chain 没起点 → F5 / F6 / F7 全部塌陷
+    {"keywords": ["no leg drive", "后腿不动", "脚没动", "weight stays back",
+                   "重心后留", "后脚平地", "后髋未上抬", "脚跟未离地"],
+     "concept": "no_leg_drive", "frame_range": [3, 4],
+     "severity": 0.85, "label": "后腿无蹬地（kinetic chain 起点缺失）"},
+
+    # ── Tennis Science 2015 (Ch2 p.34) — backswing pause 量化 ──
+    # 1 秒停顿 = -50% SSC 弹性能量；4 秒 = -100%
+    # 这是 F2 (Place Pull Forward) 失败的精确版本
+    {"keywords": ["backswing pause", "高位停顿", "顶点停顿", "引拍后停顿",
+                   "stop-start", "停顿 1 秒", "停顿超过 1", "高位等待"],
+     "concept": "excessive_backswing_pause", "frame_range": [2, 3],
+     "severity": 0.80, "label": "引拍顶点停顿 > 1s（SSC 弹性能量流失）"},
 ]
 
 
@@ -503,6 +519,9 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "hsa_static": "L3",
     "hsa_insufficient_cross_body": "L3",
     "hsa_healthy": "L3",  # control signal
+    # ── Tennis Science 2015 — 5/4 加入 ──
+    "no_leg_drive": "L5",                  # Footwork — kinetic chain 起点
+    "excessive_backswing_pause": "L4",     # Preparation — F2 失败精确版
 }
 
 # Layer order: earliest = highest priority as root cause
@@ -1005,6 +1024,23 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "method": "60mph → 70mph → 80mph 各打 30 球，每球后自检胸肌酸不酸。3 × 3 组。检验：球速越快越倾向用大臂代偿。",
         "why": "healthy 不是终点 — 是要在不同球速下都能保持。球速增加是 HSA 退化的常见时机，必须主动维护。",
         "muscle_cue": "保持时胸肌每天酸（不是手臂酸）+ 球质改善（速度 + 穿透）。如果某天胸肌不酸了，HSA 已经悄悄消失。",
+    },
+
+    # ══════════════════════════════════════════════════════════════════════
+    # Tennis Science 2015 — Tier 1 加入（5/4）
+    # ══════════════════════════════════════════════════════════════════════
+    "no_leg_drive": {
+        "drill": "Medicine ball wall throw + Jump squat 两段练习",
+        "method": "(a) 站墙 1m，2-3kg 药球举胸前，开放站位 → 转身蓄力 → 后腿蹬地砸墙 → 接反弹。4-6 次 × 3-4 组。 "
+                 "(b) Jump squat 强度感受蹬地力量 = 2× 体重，3 × 8。来源 Tennis Science Ch5 (Kovacs) + Ch2 p.44 1.7×BW vs 2.1×BW 数据。",
+        "why": "Tennis Science Ch2 p.44 实测：业余 1.7×BW 蹬地 vs 高水平 2.1×BW 蹬地；高水平后髋垂直速度 2.3 m/s。蹬地缺失 → kinetic chain 没起点 → F6 槽 / F7 HSA 全部塌陷。这是最底层根因。",
+        "muscle_cue": "做对时蹬地瞬间感觉到大腿前侧（股四头）+ 臀大肌共同瞬间收紧 + 后髋被往上抬。如果后腿全程不动、感觉不到蹬地反作用力，蹬地缺失。",
+    },
+    "excessive_backswing_pause": {
+        "drill": "Place, Pull Forward 一气呵成口令 + 节奏录音同步",
+        "method": "Unit Turn 后**禁止**任何停顿，一气呵成进入 forward swing。配合节奏口令'弹...打'（球落地 = 弹，击球 = 打），中间没有第三个音节。每天 30 球喂球训练。",
+        "why": "Tennis Science Ch2 p.34 量化：引拍顶点停顿 1 秒 = -50% SSC 弹性能量；4 秒 = -100%（弹簧完全松了）。这是 F2 'Place Pull Forward' 的精确量化版本。",
+        "muscle_cue": "做对时胸大肌从 Unit Turn 顶点到 contact 是一条**连续上升**的张力曲线。如果中间感觉到张力'断了一下'，就是 SSC 已经流失。"
     },
 }
 
