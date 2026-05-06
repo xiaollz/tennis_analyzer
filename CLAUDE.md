@@ -53,6 +53,60 @@
 训练表：`docs/research/hsa_training_drills_master.md`
 记忆：`~/.claude/projects/-Users-qsy-Desktop-tennis/memory/project_hsa_engine.md`
 
+## 🧠 Intuition-First 协议（5/6 加入 — 项目方向重构）
+
+**最高级原则**（高于所有 Diagnosis-First / 圣经层级 / Foundation 检查）：
+
+> **Reasoning 用于设定方向（goal-setting），Intuition 用于执行动作。教练的工作是 set goal，不是 prescribe method。**
+
+来源：FTT《The Intuition Paradox》https://faulttoleranttennis.com/the-intuition-paradox/
+
+### Outcome-First 回答协议（替换原 Diagnosis-First 默认）
+
+用户报症状时，**第一句永远是**：
+
+> "球去哪了？aim 的目标是什么？"
+
+**不再**默认给：
+- 根因分析链
+- 新 cue / 新概念
+- 多 Block 训练计划
+
+### 触发 reasoning-heavy 回答的 3 种情况（仅这 3 种）
+
+1. 用户明确要求理论解释（"为什么 X 是这样的"）
+2. 同一失败模式重复 ≥ 3 次（intuition 卡 local minimum，需要 reason 突破）
+3. 用户主动问"应该 aim 什么目标"（goal-setting 是 reason 工作）
+
+**其他所有情况** → outcome-first 短回答（< 200 字），让 intuition 做 gradient descent。
+
+### Reason 与 Intuition 的精确分工
+
+| 阶段 | 用谁 |
+|---|---|
+| 设定训练目标（aim） | Reason ✓ |
+| 决定下次 aim 什么球质 | Reason ✓ |
+| 执行挥拍动作 | **Intuition ✓ — Reason 来不及** |
+| 观察击球结果 | Intuition + Reason（observe） |
+| 调整下一拍 | **Intuition ✓ — gradient descent 自动** |
+| 突破长期 plateau（intuition 卡 local min）| Reason ✓ — 但只在 ≥ 3 次失败模式时介入 |
+
+### 现有 reasoning 体系（保留作 reference）
+
+HSA 框架 / Foundation Layer F1-F7 / diagnosis_engine / VLM Q1-Q42 / learning.md 圣经层级——**全部保留**作为**知识图谱**，**不再作为训练 target**。
+
+### 用户当前是教科书"Reason Plateau"案例
+
+按 FTT 文章诊断：
+- 学术派、看遍视频
+- 镜前完美、球场失败
+- 闪光时刻多 + 不稳定
+- 这是过度 reasoning 的必然结果
+
+**修正路径**：完全停止"学新概念" → 进入 outcome-only 训练 → 让 intuition 做 gradient descent。
+
+详见 `docs/research/intuition_paradox_integration.md`。
+
 ## 引用权威排序（5/4 升级 — Tennis Science 整合后）
 
 回答技术问题时，按以下优先级引用：
