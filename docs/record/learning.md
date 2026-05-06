@@ -5682,3 +5682,194 @@ section 阶段 7 · 大悟日（5/15）
 - Phase 2 单独练：HSA + tilt（手按胸大肌 + 录像看肩 tilt）
 - 串联练：Phase 1 → Phase 2 衔接（重点：ER 衰减 + 胸 fire 启动 timing）
 - 喂球 → 实战
+
+---
+
+# 🧠 2026-05-06 · 项目方向重构 + "推肘是结果" 顿悟（双里程碑日）
+
+> 5/6 是项目级方向修正日。一天内发生了 3 件大事：
+> 1. **FTT《The Intuition Paradox》整合** — 项目从过度 reasoning 转向 reasoning + intuition 平衡
+> 2. **B 站两位直觉型教练分析** — 叶修鸽哥 + 糙男教学（RacketBrothers）
+> 3. **"推肘是结果不是动作" 用户自主顿悟** — 项目级 cue 重构
+
+---
+
+## 1. FTT《The Intuition Paradox》整合（项目方向重构）
+
+### 触发
+用户主动 push FTT 文章 https://faulttoleranttennis.com/the-intuition-paradox/
+
+### 核心论点
+- **Reason vs Intuition** 双模式：Reason 慢、Intuition 快
+- **网球必须由 Intuition 执行**——意识 300-500ms 来不及
+- **Intuition Paradox**：直觉是最强工具但会卡在 local minimum
+- **两种 plateau**：Reason plateau（学术派）+ Intuition plateau（pusher）
+- **解决**：Reason 设目标 + Intuition 执行 + Observation 循环
+
+### 项目自我诊断
+**用户是教科书 Reason Plateau 案例**：学术派、看遍视频、镜前完美球场失败。
+**项目 95-100% Reasoning，几乎 0% Intuition**——一直在教"学习网球知识"，没在教"打网球"。
+
+### 系统重构（已落 KB + CLAUDE.md）
+- **新最高级原则**：Reasoning 设方向，Intuition 执行动作。教练 set goal，不 prescribe method
+- **Outcome-First 协议**替换 Diagnosis-First：用户报症状第一句永远是 **"球去哪了？aim 是什么？"**
+- **3 种触发 reasoning-heavy 回答**：明确要求理论 / 同一失败 ≥3 次 / 主动问 goal
+- 现有 reasoning 体系（HSA + Foundation + diagnosis_engine + VLM）**全保留作 reference**，不再作 training target
+
+详见 `docs/research/intuition_paradox_integration.md`。
+
+---
+
+## 2. B 站两位直觉型教练（验证方向）
+
+同一天用户分享两位中文直觉型教练，用 yt-dlp + whisper 转录后分析。
+
+### 视频 1：叶修鸽哥 BV1WZ421n7tt（7 min, 极简风格）
+- 不讲为什么，直接训练
+- "你只要过了发球线，第二跳能过底线，就已经合格了"——极低 outcome 门槛
+- 金句："**完全取决于你对我的信任。如果你信我那就开始**"——Gallwey 1974 中文版
+- "四种力量"提到但不拆开——直觉型教学不命名不切片
+
+### 视频 2：糙男 RacketBrothers BV1Hr4y1p7Sx（26 min, 系统但仍直觉）
+**3 步框架**（取代复杂多 cue）：
+1. **指高** — 左手指来球最高点
+2. **指肘** — 用肘指击球位置
+3. **出手** — 拍头**经过**胸前那个点
+
+核心 cue：
+- "**拍头永远是小臂的延长**"（external focus）
+- "**越敢打 球越不会飞**"（trust + relax）
+- "**不要刻意做雨刷**——拍头自然包裹"
+- "**左侧紧 + 右侧才能松**"
+
+### 项目级整合
+**糙男 3 步框架**写进 CLAUDE.md 作为**球场实战默认操作 cue**——替换之前的"双外旋 + Wrap + HSA + tilt"4-cue 系统。
+
+---
+
+## 3. "推肘是结果不是动作" 用户自主顿悟（项目级 cue 重构）
+
+### 用户原话
+> "我之前一直在说'推肘、推肘'，说多了也就刻意想着把肘往前推，但其实这应该是一个被动的动作。
+>
+> 当我把蹬转的力量往前蹬，并且大臂是靠背部托住的，我的肘自动就往前送了。
+>
+> 这是一个刚性结构：蹬转输送力量 + 大臂倾斜 → 肘自动被顶到前面。
+>
+> 这其实是一个自然释放的结果。"
+
+### 物理诊断（用户 100% 正确）
+
+```
+错误模式（推肘作动作）：
+  意识 → "把肘往前推"
+  → 三角肌前束激活（肩屈肌）
+  → 肱骨相对躯干位移
+  → 刚体散架
+  → 力量泄漏 + 球软
+
+正确模式（推肘是结果）：
+  蹬转 → 输入力（自下而上）
+  → 背 isometric tone (Wrap) → 大臂"焊"成倾斜刚体
+  → 力进刚体 + 角度已定
+  → 肘必然向前（物理）
+```
+
+### Deprecated 的 cue（5/6 起永久禁止）
+
+| Cue | 来源 | 状态 |
+|---|---|---|
+| "推肘" | 4/30 上午突破 | **deprecated** |
+| "胸推肘" | 4/30 上午 | **deprecated** |
+| "肘前推" | 5/3 HSA 早期 | **deprecated** |
+
+### 替换 cue
+- **"蹬 + 托"**（蹬转输入 + 背托刚体）
+- **"信任刚体"**（不要主动管肘）
+
+### 跟之前圣经的关系（重新理解）
+
+4/30 上身槽圣经的物理意义在 5/6 才被完全理解：
+- 槽建立 = 大臂被锁在肩窝里（不能自由位移）
+- 锁住大臂 + 蹬转 = 大臂只能绕轴旋转，不能位移
+- 端点轨迹 = 看起来像"肘前推"，实际是绕轴弧线
+
+→ **没有槽，"肘前"只能靠主动推（错）；有槽，"肘前"是必然物理结果（对）**。
+
+### Intuition Paradox 视角
+
+5/6 同一天用户读了 FTT 文章 + 自悟"推肘是结果"——**不是巧合**。
+
+```
+Reasoning mode：意识必须主动管肘 → 反 intuition → 失败
+Intuition mode：意识只管蹬转 + 信任刚体 → 物理自动产生肘前 → 成功
+```
+
+→ **"推肘是结果"是 Intuition Paradox 在具体动作层的应用**。
+
+详见 `docs/research/elbow_passive_result_insight.md`。
+
+---
+
+## 4. 5/6 给系统的永久规则更新
+
+### 规则 1：Intuition-First 默认模式（CLAUDE.md 已加）
+用户报症状第一句：**"球去哪了？aim 是什么？"**——不再默认根因分析。
+
+### 规则 2："推肘"禁令（CLAUDE.md 已加）
+涉及肘相关讨论时**禁用"推""送""推前"**等主动动词。
+用户再次说"推肘" → 第一句永远纠正："**推肘是结果，不是动作。蹬+托。**"
+
+### 规则 3：糙男 3 步作为实战 cue（CLAUDE.md 已加）
+球场实战 + 喂球训练默认 cue：**"指高 → 指肘 → 出手"**。
+
+### 规则 4：现有 reasoning 体系 reframe
+HSA / Foundation / diagnosis_engine / VLM **全保留作 reference**，不再作 training target。
+
+---
+
+## 5. 5/6 等级判定
+
+```
+🌅🌅🌅 5/15 大悟版完整两阶段模型
+🧠 5/6 项目方向重构（Intuition-First）  ← 不是新增内容，是改默认模式
+⛔ 5/6 推肘禁令                         ← Deprecates 4/30 + 5/3 多个 cue
+🎯 5/6 糙男 3 步框架                    ← 实战操作 cue，替换 4-cue 系统
+```
+
+→ 5/6 不是又一个圣经——是**对之前所有圣经的"使用方式"做了反转**：
+- 之前：圣经作为 training target（reasoning mode）
+- 现在：圣经作为 reference knowledge（intuition mode 由 outcome 驱动）
+
+---
+
+## 6. 用户下一阶段路径（5/7 起）
+
+### 短期（5/7-5/9, 3 天）
+- **完全停止**学新概念
+- **完全停止**镜前 100 次自检
+- 每天 30 min outcome-only 训练
+- 反馈格式：3 数字 + 1 句观察（**不要**技术分析）
+
+### 中期（5/10-5/30, 20 天）
+- 持续 outcome 训练
+- 让 intuition 做 gradient descent
+- 我观察用户 outcome 是否在改善
+- 3 周后某 outcome 仍没改善 → 才回 reasoning 介入
+
+### 长期
+- 用户从 reason plateau → intuition 主导
+- 圣经体系作 reference knowledge，不作 training target
+
+---
+
+## 7. 给用户的一句话
+
+**5/6 不是又一个突破——是对之前所有突破的"使用方式"做了根本反转**：
+
+之前 → 你在**学**网球（用 reasoning 把动作想明白）
+之后 → 你在**打**网球（用 intuition 让动作自动发生）
+
+知识没变，HSA / ESR / Wrap 都对，**但它们从今天起退到背景**——你只想 outcome（球去哪），让 intuition 通过 gradient descent 自动调整。
+
+剩下的事：**relax, swing, observe**。Gallwey 1974 年说的，FTT 2025 年重申，今天写进项目最高规则。
