@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>正手准备阶段 — 肌肉激活动画</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0e1726;
+    color: #e8eef7;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+  }
+  h1 {
+    grid-column: 1 / -1;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f0f6ff;
+  }
+  .subtitle {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    color: #7a8aa3;
+    margin-bottom: 16px;
+  }
+  .stage {
+    background: #131e34;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #1f2d4a;
+  }
+  .panel {
+    background: #131e34;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #1f2d4a;
+  }
+  .figure-svg {
+    width: 100%;
+    height: 520px;
+    display: block;
+  }
+  .controls {
+    grid-column: 1 / -1;
+    background: #131e34;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid #1f2d4a;
+  }
+  .timeline {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    overflow-x: auto;
+  }
+  .phase-btn {
+    background: #1a2742;
+    border: 1px solid #2a3958;
+    color: #c5d0e3;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .phase-btn:hover { background: #243558; border-color: #3a4f78; }
+  .phase-btn.active {
+    background: #4a7eff;
+    border-color: #5e91ff;
+    color: #fff;
+    font-weight: 600;
+  }
+  .scrubber {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #1a2742;
+    border-radius: 3px;
+    outline: none;
+  }
+  .scrubber::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #4a7eff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .play-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .play-btn {
+    background: #4a7eff;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 600;
+  }
+  .play-btn:hover { background: #5e91ff; }
+  .speed-select {
+    background: #1a2742;
+    color: #c5d0e3;
+    border: 1px solid #2a3958;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-family: inherit;
+  }
+  .info-block { margin-bottom: 18px; }
+  .info-block h3 {
+    font-size: 14px;
+    color: #a0b3d0;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .phase-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6ee7c0;
+    margin-bottom: 4px;
+  }
+  .phase-time {
+    font-size: 12px;
+    color: #7a8aa3;
+    margin-bottom: 14px;
+  }
+  .cue-active {
+    background: #1f3a30;
+    border-left: 3px solid #6ee7c0;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .cue-passive {
+    background: #2a2f3f;
+    border-left: 3px solid #7a8aa3;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .cue-forbidden {
+    background: #3a1e1e;
+    border-left: 3px solid #ff6b6b;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .muscle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .muscle-tag {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .m-active { background: #1f3a30; color: #6ee7c0; border: 1px solid #2a5a48; }
+  .m-isometric { background: #2c2d4d; color: #a0b3ff; border: 1px solid #3d4070; }
+  .m-passive { background: #2a2f3f; color: #7a8aa3; border: 1px solid #3a4055; }
+  .m-forbidden { background: #3a1e1e; color: #ff8e8e; border: 1px solid #5a2a2a; }
+  .legend {
+    grid-column: 1 / -1;
+    background: #131e34;
+    border-radius: 12px;
+    padding: 14px 20px;
+    border: 1px solid #1f2d4a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  .text-muted { color: #7a8aa3; font-size: 12px; }
+  .description {
+    color: #c5d0e3;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  /* SVG specific */
+  .keypoint { fill: #6ee7c0; stroke: #2a5a48; stroke-width: 1.5; transition: all 0.4s ease; }
+  .bone { stroke: #a0b3d0; stroke-width: 4; stroke-linecap: round; transition: all 0.4s ease; }
+  .head { fill: #c5d0e3; stroke: #1f2d4a; stroke-width: 1.5; transition: all 0.4s ease; }
+  .racket-handle { stroke: #d4a574; stroke-width: 4; stroke-linecap: round; transition: all 0.4s ease; }
+  .racket-head { stroke: #d4a574; stroke-width: 3; fill: none; transition: all 0.4s ease; }
+  .ground { stroke: #2a3958; stroke-width: 2; stroke-dasharray: 6 4; }
+
+  .muscle-overlay {
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+  .muscle-overlay.active {
+    opacity: 0.85;
+  }
+  .muscle-active-fill { fill: #6ee7c0; }
+  .muscle-isometric-fill { fill: #a0b3ff; }
+  .muscle-passive-fill { fill: #4a5570; }
+  .muscle-forbidden-fill { fill: #ff6b6b; }
+
+  .muscle-label {
+    font-size: 11px;
+    fill: #e8eef7;
+    font-weight: 600;
+    text-anchor: middle;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .muscle-label.show { opacity: 1; }
+  .annotation-line { stroke: #f0f6ff; stroke-width: 1; stroke-dasharray: 2 2; opacity: 0; transition: opacity 0.4s; }
+  .annotation-line.show { opacity: 0.6; }
+
+  @media (max-width: 1000px) {
+    .container { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>正手准备阶段 — 肌肉激活动画</h1>
+  <div class="subtitle">基于 FTT + Brian Gordon + TPA + Tennis Science + 用户 5/15 大悟模型综合 · 右手球员视角 · 侧面机位</div>
+
+  <div class="stage">
+    <svg class="figure-svg" viewBox="0 0 600 520" id="figure">
+      <!-- Ground line -->
+      <line class="ground" x1="50" y1="490" x2="550" y2="490" />
+
+      <!-- Muscle overlays (drawn first, behind skeleton) -->
+      <g id="muscles">
+        <!-- Right back/scapula area (infraspinatus + teres minor) -->
+        <ellipse class="muscle-overlay muscle-active-fill" id="m-infra" cx="320" cy="200" rx="22" ry="32" />
+        <!-- Left scapula area (mirror, less prominent) -->
+
+        <!-- Right deltoid (front + middle) -->
+        <ellipse class="muscle-overlay muscle-active-fill" id="m-delt-front" cx="312" cy="190" rx="14" ry="20" />
+
+        <!-- Serratus anterior (right side ribs) -->
+        <ellipse class="muscle-overlay muscle-isometric-fill" id="m-serratus" cx="304" cy="240" rx="14" ry="26" />
+
+        <!-- Lat dorsi (right back) -->
+        <ellipse class="muscle-overlay muscle-isometric-fill" id="m-lat" cx="335" cy="260" rx="22" ry="40" />
+
+        <!-- Pec major (right chest) -->
+        <ellipse class="muscle-overlay muscle-passive-fill" id="m-pec" cx="278" cy="220" rx="24" ry="32" />
+
+        <!-- Core / obliques -->
+        <ellipse class="muscle-overlay muscle-isometric-fill" id="m-core" cx="295" cy="290" rx="32" ry="22" />
+
+        <!-- Right glutes / quads (loading) -->
+        <ellipse class="muscle-overlay muscle-active-fill" id="m-rglute" cx="338" cy="370" rx="20" ry="28" />
+
+        <!-- Right hip rotators -->
+        <ellipse class="muscle-overlay muscle-active-fill" id="m-rhip" cx="328" cy="330" rx="14" ry="14" />
+
+        <!-- Anterior delt (forbidden when active early) -->
+        <ellipse class="muscle-overlay muscle-forbidden-fill" id="m-adelt-bad" cx="270" cy="190" rx="12" ry="14" />
+
+        <!-- Pronator teres (forbidden when active in prep) -->
+        <ellipse class="muscle-overlay muscle-forbidden-fill" id="m-pronator-bad" cx="430" cy="240" rx="10" ry="14" />
+
+        <!-- Biceps (forbidden if used as lifter) -->
+        <ellipse class="muscle-overlay muscle-forbidden-fill" id="m-biceps-bad" cx="370" cy="240" rx="10" ry="18" />
+      </g>
+
+      <!-- Annotation lines (muscle labels lead lines) -->
+      <g id="annotations"></g>
+
+      <!-- Skeleton (drawn on top) -->
+      <g id="skeleton">
+        <!-- Head -->
+        <circle class="head" id="kp-head" cx="300" cy="120" r="22" />
+
+        <!-- Torso center -->
+        <line class="bone" id="bone-spine" x1="300" y1="142" x2="300" y2="280" />
+
+        <!-- Shoulders -->
+        <line class="bone" id="bone-shoulder" x1="270" y1="170" x2="330" y2="170" />
+
+        <!-- Hips -->
+        <line class="bone" id="bone-hip" x1="278" y1="280" x2="322" y2="280" />
+
+        <!-- Right arm -->
+        <line class="bone" id="bone-r-upper-arm" x1="330" y1="170" x2="380" y2="220" />
+        <line class="bone" id="bone-r-forearm" x1="380" y1="220" x2="430" y2="200" />
+
+        <!-- Left arm -->
+        <line class="bone" id="bone-l-upper-arm" x1="270" y1="170" x2="240" y2="220" />
+        <line class="bone" id="bone-l-forearm" x1="240" y1="220" x2="220" y2="270" />
+
+        <!-- Right leg -->
+        <line class="bone" id="bone-r-thigh" x1="322" y1="280" x2="340" y2="380" />
+        <line class="bone" id="bone-r-shin" x1="340" y1="380" x2="350" y2="480" />
+
+        <!-- Left leg -->
+        <line class="bone" id="bone-l-thigh" x1="278" y1="280" x2="270" y2="380" />
+        <line class="bone" id="bone-l-shin" x1="270" y1="380" x2="265" y2="480" />
+
+        <!-- Racket -->
+        <line class="racket-handle" id="racket-handle" x1="430" y1="200" x2="470" y2="170" />
+        <ellipse class="racket-head" id="racket-head" cx="480" cy="160" rx="14" ry="22" transform="rotate(-30 480 160)" />
+
+        <!-- Keypoints (drawn on top of bones) -->
+        <circle class="keypoint" id="kp-r-shoulder" cx="330" cy="170" r="5" />
+        <circle class="keypoint" id="kp-l-shoulder" cx="270" cy="170" r="5" />
+        <circle class="keypoint" id="kp-r-elbow" cx="380" cy="220" r="5" />
+        <circle class="keypoint" id="kp-l-elbow" cx="240" cy="220" r="5" />
+        <circle class="keypoint" id="kp-r-wrist" cx="430" cy="200" r="5" />
+        <circle class="keypoint" id="kp-l-wrist" cx="220" cy="270" r="5" />
+        <circle class="keypoint" id="kp-r-hip" cx="322" cy="280" r="5" />
+        <circle class="keypoint" id="kp-l-hip" cx="278" cy="280" r="5" />
+        <circle class="keypoint" id="kp-r-knee" cx="340" cy="380" r="5" />
+        <circle class="keypoint" id="kp-l-knee" cx="270" cy="380" r="5" />
+        <circle class="keypoint" id="kp-r-ankle" cx="350" cy="480" r="5" />
+        <circle class="keypoint" id="kp-l-ankle" cx="265" cy="480" r="5" />
+      </g>
+
+      <!-- Muscle labels (text) -->
+      <g id="labels">
+        <text class="muscle-label" id="lbl-infra" x="370" y="195">冈下肌+小圆肌</text>
+        <text class="muscle-label" id="lbl-delt" x="265" y="155">三角肌前束</text>
+        <text class="muscle-label" id="lbl-serratus" x="245" y="248">前锯肌</text>
+        <text class="muscle-label" id="lbl-lat" x="385" y="265">背阔肌</text>
+        <text class="muscle-label" id="lbl-pec" x="220" y="220">胸大肌（拉伸中）</text>
+        <text class="muscle-label" id="lbl-core" x="295" y="320">核心刚体</text>
+        <text class="muscle-label" id="lbl-rglute" x="395" y="372">右臀+右髋</text>
+        <text class="muscle-label" id="lbl-adelt-bad" x="220" y="180" style="fill:#ff8e8e">三角肌前束（禁）</text>
+        <text class="muscle-label" id="lbl-pronator-bad" x="475" y="245" style="fill:#ff8e8e">旋前圆肌（禁）</text>
+        <text class="muscle-label" id="lbl-biceps-bad" x="395" y="270" style="fill:#ff8e8e">二头肌（禁）</text>
+      </g>
+    </svg>
+  </div>
+
+  <aside class="panel" id="info-panel">
+    <div class="phase-name" id="phase-name">Ready Position</div>
+    <div class="phase-time" id="phase-time">T = 0 ms · 准备站位</div>
+
+    <div class="info-block">
+      <h3>状态描述</h3>
+      <p class="description" id="phase-desc">双脚平行底线，膝微屈，双手扶拍在身前。重心 50/50。等待对手击球瞬间触发 split step。</p>
+    </div>
+
+    <div class="info-block">
+      <h3>主动动作（必须做）</h3>
+      <div id="active-cues"></div>
+    </div>
+
+    <div class="info-block">
+      <h3>被动 / 等长（不主动管）</h3>
+      <div id="passive-cues"></div>
+    </div>
+
+    <div class="info-block">
+      <h3>禁止动作</h3>
+      <div id="forbidden-cues"></div>
+    </div>
+
+    <div class="info-block">
+      <h3>活跃肌肉</h3>
+      <div class="muscle-list" id="muscle-list"></div>
+    </div>
+  </aside>
+
+  <div class="controls">
+    <div class="timeline" id="timeline"></div>
+    <input type="range" class="scrubber" id="scrubber" min="0" max="7" value="0" step="1">
+    <div class="play-row">
+      <button class="play-btn" id="play-btn">▶ 播放</button>
+      <select class="speed-select" id="speed-select">
+        <option value="1500">慢速 (1.5s/段)</option>
+        <option value="900" selected>正常 (0.9s/段)</option>
+        <option value="500">快速 (0.5s/段)</option>
+      </select>
+      <span class="text-muted" id="phase-counter">阶段 1 / 8</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <span class="legend-dot" style="background:#6ee7c0"></span>主动发力
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot" style="background:#a0b3ff"></span>等长 / Isometric
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot" style="background:#4a5570"></span>被动 / 拉伸蓄力
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot" style="background:#ff6b6b"></span>禁止激活
+    </div>
+    <div class="legend-item text-muted">
+      数据源：FTT · Brian Gordon · TPA · Tennis Science · 5/15 大悟模型
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// Phase data (8 phases of preparation)
+// ============================================================
+const phases = [
+  {
+    name: "T=0 · Ready Position",
+    time: "T = 0 ms · 准备站位",
+    desc: "双脚平行底线，膝微屈（130-140°），双手扶拍在身前。重心 50/50 在前掌。眼睛盯对手击球瞬间。",
+    skeleton: {
+      head: [300, 120],
+      r_shoulder: [330, 170], l_shoulder: [270, 170],
+      r_elbow: [355, 220], l_elbow: [245, 220],
+      r_wrist: [380, 250], l_wrist: [270, 240],
+      r_hip: [322, 280], l_hip: [278, 280],
+      r_knee: [325, 380], l_knee: [275, 380],
+      r_ankle: [320, 480], l_ankle: [280, 480],
+      racket_tip: [395, 195]
+    },
+    activeCues: [],
+    passiveCues: ["全身放松，等待 trigger"],
+    forbiddenCues: [],
+    muscles: { core: "isometric" }
+  },
+  {
+    name: "T=200ms · Split Step Landing",
+    time: "T = 200 ms · 分腿垫步落地",
+    desc: "对手击球瞬间起跳分腿垫步，落地时双脚平行，膝盖弯曲到 130°，重心沉下。识别球到正手侧。",
+    skeleton: {
+      head: [300, 130],
+      r_shoulder: [330, 175], l_shoulder: [270, 175],
+      r_elbow: [350, 225], l_elbow: [250, 225],
+      r_wrist: [375, 255], l_wrist: [275, 245],
+      r_hip: [322, 290], l_hip: [278, 290],
+      r_knee: [325, 385], l_knee: [275, 385],
+      r_ankle: [320, 480], l_ankle: [280, 480],
+      racket_tip: [395, 200]
+    },
+    activeCues: ["腿弹簧压缩 - 准备爆发"],
+    passiveCues: ["眼睛识别球路 - 自动反应"],
+    forbiddenCues: [],
+    muscles: { core: "isometric", rglute: "active", rhip: "active" }
+  },
+  {
+    name: "T=300ms · Right Foot Pivot",
+    time: "T = 300 ms · 右脚拧转 + Unit Turn 启动",
+    desc: "右脚跟为轴外旋 30-45°，重心 50/50 → 70/30（移向右脚）。这是 4/27 圣经 - 右脚为轴的精确动作。",
+    skeleton: {
+      head: [302, 130],
+      r_shoulder: [332, 173], l_shoulder: [272, 175],
+      r_elbow: [355, 222], l_elbow: [248, 225],
+      r_wrist: [378, 252], l_wrist: [272, 245],
+      r_hip: [325, 290], l_hip: [275, 290],
+      r_knee: [328, 385], l_knee: [272, 385],
+      r_ankle: [325, 480], l_ankle: [280, 480],
+      racket_tip: [395, 200]
+    },
+    activeCues: ["右脚跟为轴拧 30-45°", "重心移到右脚 70%"],
+    passiveCues: ["双手仍扶拍 - 不主动拉"],
+    forbiddenCues: ["禁止左脚迈出 - 这会变成中性站姿"],
+    muscles: { core: "isometric", rglute: "active", rhip: "active" }
+  },
+  {
+    name: "T=500ms · Left Hand Pulls",
+    time: "T = 500 ms · 左手主动牵引",
+    desc: "Tomaz 'Backswing Illusion' 核心 - 不是右手往后，是左肩 / 左手主动向前推 / 牵引。胸椎被左侧主导旋转。",
+    skeleton: {
+      head: [305, 130],
+      r_shoulder: [340, 175], l_shoulder: [262, 168],
+      r_elbow: [355, 220], l_elbow: [240, 215],
+      r_wrist: [378, 250], l_wrist: [260, 240],
+      r_hip: [330, 290], l_hip: [270, 290],
+      r_knee: [332, 385], l_knee: [268, 385],
+      r_ankle: [330, 480], l_ankle: [275, 480],
+      racket_tip: [395, 195]
+    },
+    activeCues: ["左肩主动向前推 - Tomaz 'Forward!' cue", "左手扶拍颈牵引"],
+    passiveCues: ["右臂跟随左手 - 不主动后拉", "胸椎被左侧带着转"],
+    forbiddenCues: ["禁止右手主动后拉 (伪 Unit Turn)", "禁止用腰转 (用胸椎)"],
+    muscles: { core: "isometric", rglute: "active" }
+  },
+  {
+    name: "T=700ms · Hip Rotation + Shoulder ER Begins",
+    time: "T = 700 ms · 髋转 45° + 肩外旋启动",
+    desc: "髋转 30-45° (骨盆作为刚体)。同时冈下肌 + 小圆肌开始发力 - 肱骨在肩窝里外旋。三角肌前束设定肘高度（嘴-胸口高度）。",
+    skeleton: {
+      head: [310, 132],
+      r_shoulder: [348, 175], l_shoulder: [255, 165],
+      r_elbow: [375, 195], l_elbow: [225, 218],
+      r_wrist: [400, 175], l_wrist: [240, 250],
+      r_hip: [335, 290], l_hip: [268, 285],
+      r_knee: [335, 385], l_knee: [265, 385],
+      r_ankle: [330, 480], l_ankle: [275, 480],
+      racket_tip: [430, 130]
+    },
+    activeCues: ["冈下肌+小圆肌 - 肱骨外旋", "三角肌前束 - 设肘高度（嘴位）", "髋转 30-45° (骨盆作为刚体)"],
+    passiveCues: ["前臂松 - 不主动旋转", "胸大肌被拉长 - 蓄力中", "上背 isometric (Wrap)"],
+    forbiddenCues: ["禁止三角肌后束抬肘 (= 主动后摆)", "禁止前臂旋前 (旋前圆肌 → 内上髁炎)", "禁止用背抬小臂 (二头肌 isometric → 肘心疼)"],
+    muscles: { infra: "active", deltFront: "active", core: "isometric", lat: "isometric", serratus: "isometric", pec: "passive", rhip: "active", rglute: "active" }
+  },
+  {
+    name: "T=850ms · Loaded Slot (Pat the Dog)",
+    time: "T = 850 ms · 蓄力极限位 - Pat the Dog",
+    desc: "肩外旋达到极限 (~110°)。前臂自然旋后/中立。手腕后伸 (laid back)。胸大肌+背阔+肩胛下肌被拉满 - 弹簧装载完成。等待 trunk 减速触发释放。",
+    skeleton: {
+      head: [315, 134],
+      r_shoulder: [355, 175], l_shoulder: [252, 162],
+      r_elbow: [385, 175], l_elbow: [218, 218],
+      r_wrist: [420, 158], l_wrist: [232, 252],
+      r_hip: [340, 292], l_hip: [265, 285],
+      r_knee: [340, 385], l_knee: [262, 385],
+      r_ankle: [332, 480], l_ankle: [275, 480],
+      racket_tip: [445, 100]
+    },
+    activeCues: ["冈下肌+小圆肌 - 维持外旋", "上背 isometric (scapula+lat+serratus 三链 Wrap)", "核心刚体锁腰椎"],
+    passiveCues: ["胸大肌+肩胛下肌 - 被拉到满载", "前臂松 - 等被甩", "Attached 状态：胸大肌张力但不发力"],
+    forbiddenCues: ["禁止主动 'press elbow forward' - 推肘是结果", "禁止主动 HSA - 等 trunk 减速", "禁止前臂旋前抢跑"],
+    muscles: { infra: "active", deltFront: "active", core: "isometric", lat: "isometric", serratus: "isometric", pec: "passive", rhip: "active", rglute: "active" }
+  },
+  {
+    name: "T=950ms · Trunk Slowdown",
+    time: "T = 950 ms · 躯干减速触发",
+    desc: "髋转到位后开始减速。SSC 触发窗口开启 - 接下来 50-100ms 内胸大肌将被迫向心收缩 (HSA fire)。这是 prep → forward swing 的临界点。",
+    skeleton: {
+      head: [315, 135],
+      r_shoulder: [355, 175], l_shoulder: [255, 162],
+      r_elbow: [385, 178], l_elbow: [220, 218],
+      r_wrist: [422, 162], l_wrist: [235, 252],
+      r_hip: [340, 292], l_hip: [265, 285],
+      r_knee: [340, 385], l_knee: [262, 385],
+      r_ankle: [332, 480], l_ankle: [275, 480],
+      racket_tip: [445, 105]
+    },
+    activeCues: ["维持双外旋锁定", "感受胸大肌张力 - 即将 fire"],
+    passiveCues: ["躯干减速 - 自然不主动慢下来", "弹簧满载 - 等释放"],
+    forbiddenCues: ["禁止主动加速大臂 (= 抢跑)", "禁止主动管前臂", "禁止意识层启动 forward swing - 让 SSC 自动触发"],
+    muscles: { infra: "active", core: "isometric", lat: "isometric", serratus: "isometric", pec: "passive" }
+  },
+  {
+    name: "T=1000ms · Prep Complete → Forward Swing",
+    time: "T = 1000 ms · 准备结束 - 进入前挥",
+    desc: "Preparation 阶段完成。胸大肌即将向心 fire (HSA)。从这一刻起 prep 结束 - 后续是 forward swing 的事 (本动画范围外)。",
+    skeleton: {
+      head: [315, 135],
+      r_shoulder: [355, 175], l_shoulder: [255, 162],
+      r_elbow: [385, 180], l_elbow: [222, 218],
+      r_wrist: [422, 165], l_wrist: [235, 252],
+      r_hip: [340, 292], l_hip: [265, 285],
+      r_knee: [340, 385], l_knee: [262, 385],
+      r_ankle: [332, 480], l_ankle: [275, 480],
+      racket_tip: [445, 110]
+    },
+    activeCues: ["Prep 结束 - 信任刚体", "意识只想 outcome (球去哪)"],
+    passiveCues: ["让胸大肌 fire 自动发生 - 不主动管", "让 ISR 自动跟随 - 不主动做"],
+    forbiddenCues: ["禁止再做任何主动 prep 动作"],
+    muscles: { infra: "active", pec: "passive" }
+  }
+];
+
+// ============================================================
+// DOM references
+// ============================================================
+const figure = document.getElementById('figure');
+const phaseName = document.getElementById('phase-name');
+const phaseTime = document.getElementById('phase-time');
+const phaseDesc = document.getElementById('phase-desc');
+const activeCuesEl = document.getElementById('active-cues');
+const passiveCuesEl = document.getElementById('passive-cues');
+const forbiddenCuesEl = document.getElementById('forbidden-cues');
+const muscleListEl = document.getElementById('muscle-list');
+const timelineEl = document.getElementById('timeline');
+const scrubber = document.getElementById('scrubber');
+const playBtn = document.getElementById('play-btn');
+const speedSelect = document.getElementById('speed-select');
+const phaseCounter = document.getElementById('phase-counter');
+
+// Build timeline buttons
+phases.forEach((p, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'phase-btn';
+  btn.textContent = `${i+1}. ${p.time.split(' · ')[0]}`;
+  btn.onclick = () => setPhase(i);
+  timelineEl.appendChild(btn);
+});
+
+const phaseBtns = document.querySelectorAll('.phase-btn');
+
+// Helper: update keypoint positions
+function setKp(id, pos) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.setAttribute('cx', pos[0]);
+  el.setAttribute('cy', pos[1]);
+}
+
+function setBone(id, p1, p2) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.setAttribute('x1', p1[0]); el.setAttribute('y1', p1[1]);
+  el.setAttribute('x2', p2[0]); el.setAttribute('y2', p2[1]);
+}
+
+function updateSkeleton(s) {
+  setKp('kp-head', [s.head[0], s.head[1]]);
+  document.getElementById('kp-head').setAttribute('cx', s.head[0]);
+  document.getElementById('kp-head').setAttribute('cy', s.head[1]);
+  setKp('kp-r-shoulder', s.r_shoulder);
+  setKp('kp-l-shoulder', s.l_shoulder);
+  setKp('kp-r-elbow', s.r_elbow);
+  setKp('kp-l-elbow', s.l_elbow);
+  setKp('kp-r-wrist', s.r_wrist);
+  setKp('kp-l-wrist', s.l_wrist);
+  setKp('kp-r-hip', s.r_hip);
+  setKp('kp-l-hip', s.l_hip);
+  setKp('kp-r-knee', s.r_knee);
+  setKp('kp-l-knee', s.l_knee);
+  setKp('kp-r-ankle', s.r_ankle);
+  setKp('kp-l-ankle', s.l_ankle);
+
+  // Bones
+  const headBottom = [s.head[0], s.head[1] + 22];
+  const shoulderMid = [(s.r_shoulder[0] + s.l_shoulder[0])/2, (s.r_shoulder[1] + s.l_shoulder[1])/2];
+  const hipMid = [(s.r_hip[0] + s.l_hip[0])/2, (s.r_hip[1] + s.l_hip[1])/2];
+  setBone('bone-spine', headBottom, hipMid);
+  setBone('bone-shoulder', s.l_shoulder, s.r_shoulder);
+  setBone('bone-hip', s.l_hip, s.r_hip);
+  setBone('bone-r-upper-arm', s.r_shoulder, s.r_elbow);
+  setBone('bone-r-forearm', s.r_elbow, s.r_wrist);
+  setBone('bone-l-upper-arm', s.l_shoulder, s.l_elbow);
+  setBone('bone-l-forearm', s.l_elbow, s.l_wrist);
+  setBone('bone-r-thigh', s.r_hip, s.r_knee);
+  setBone('bone-r-shin', s.r_knee, s.r_ankle);
+  setBone('bone-l-thigh', s.l_hip, s.l_knee);
+  setBone('bone-l-shin', s.l_knee, s.l_ankle);
+
+  // Racket
+  const racketHandle = document.getElementById('racket-handle');
+  racketHandle.setAttribute('x1', s.r_wrist[0]);
+  racketHandle.setAttribute('y1', s.r_wrist[1]);
+  racketHandle.setAttribute('x2', s.racket_tip[0]);
+  racketHandle.setAttribute('y2', s.racket_tip[1]);
+
+  const racketHead = document.getElementById('racket-head');
+  racketHead.setAttribute('cx', s.racket_tip[0]);
+  racketHead.setAttribute('cy', s.racket_tip[1] - 8);
+  // angle: from wrist to tip
+  const dx = s.racket_tip[0] - s.r_wrist[0];
+  const dy = s.racket_tip[1] - s.r_wrist[1];
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+  racketHead.setAttribute('transform', `rotate(${angle - 90} ${s.racket_tip[0]} ${s.racket_tip[1] - 8})`);
+
+  // Update muscle overlay positions to follow skeleton
+  // Right scapula (infra) - just behind right shoulder
+  document.getElementById('m-infra').setAttribute('cx', s.r_shoulder[0] - 8);
+  document.getElementById('m-infra').setAttribute('cy', (s.r_shoulder[1] + s.r_hip[1])/2 - 30);
+  document.getElementById('lbl-infra').setAttribute('x', s.r_shoulder[0] + 50);
+  document.getElementById('lbl-infra').setAttribute('y', s.r_shoulder[1] + 5);
+
+  // Right deltoid front
+  document.getElementById('m-delt-front').setAttribute('cx', s.r_shoulder[0] - 18);
+  document.getElementById('m-delt-front').setAttribute('cy', s.r_shoulder[1] + 20);
+  document.getElementById('lbl-delt').setAttribute('x', s.r_shoulder[0] - 60);
+  document.getElementById('lbl-delt').setAttribute('y', s.r_shoulder[1] - 15);
+
+  // Serratus
+  document.getElementById('m-serratus').setAttribute('cx', s.r_shoulder[0] - 26);
+  document.getElementById('m-serratus').setAttribute('cy', (s.r_shoulder[1] + s.r_hip[1])/2 + 10);
+
+  // Lat
+  document.getElementById('m-lat').setAttribute('cx', s.r_shoulder[0] + 5);
+  document.getElementById('m-lat').setAttribute('cy', (s.r_shoulder[1] + s.r_hip[1])/2 + 30);
+
+  // Pec major (left side from viewer = right chest)
+  document.getElementById('m-pec').setAttribute('cx', (s.r_shoulder[0] + s.l_shoulder[0])/2 - 22);
+  document.getElementById('m-pec').setAttribute('cy', s.r_shoulder[1] + 30);
+
+  // Core
+  document.getElementById('m-core').setAttribute('cx', (s.r_hip[0] + s.l_hip[0])/2);
+  document.getElementById('m-core').setAttribute('cy', (s.r_shoulder[1] + s.r_hip[1])/2 + 20);
+
+  // R glute
+  document.getElementById('m-rglute').setAttribute('cx', s.r_hip[0] + 16);
+  document.getElementById('m-rglute').setAttribute('cy', s.r_hip[1] + 50);
+
+  // R hip rotators
+  document.getElementById('m-rhip').setAttribute('cx', s.r_hip[0] + 6);
+  document.getElementById('m-rhip').setAttribute('cy', s.r_hip[1] + 25);
+
+  // Forbidden muscle positions
+  document.getElementById('m-adelt-bad').setAttribute('cx', s.r_shoulder[0] - 30);
+  document.getElementById('m-adelt-bad').setAttribute('cy', s.r_shoulder[1] + 12);
+
+  document.getElementById('m-pronator-bad').setAttribute('cx', s.r_elbow[0] + 30);
+  document.getElementById('m-pronator-bad').setAttribute('cy', s.r_elbow[1] + 15);
+
+  document.getElementById('m-biceps-bad').setAttribute('cx', s.r_elbow[0] - 8);
+  document.getElementById('m-biceps-bad').setAttribute('cy', s.r_elbow[1] + 20);
+}
+
+function updateMuscles(muscles) {
+  // Reset all
+  ['m-infra', 'm-delt-front', 'm-serratus', 'm-lat', 'm-pec', 'm-core', 'm-rglute', 'm-rhip',
+   'm-adelt-bad', 'm-pronator-bad', 'm-biceps-bad'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('active', 'muscle-active-fill', 'muscle-isometric-fill', 'muscle-passive-fill', 'muscle-forbidden-fill');
+  });
+  ['lbl-infra', 'lbl-delt', 'lbl-serratus', 'lbl-lat', 'lbl-pec', 'lbl-core', 'lbl-rglute',
+   'lbl-adelt-bad', 'lbl-pronator-bad', 'lbl-biceps-bad'].forEach(id => {
+    document.getElementById(id).classList.remove('show');
+  });
+
+  const map = {
+    infra: { el: 'm-infra', lbl: 'lbl-infra' },
+    deltFront: { el: 'm-delt-front', lbl: 'lbl-delt' },
+    serratus: { el: 'm-serratus', lbl: 'lbl-serratus' },
+    lat: { el: 'm-lat', lbl: 'lbl-lat' },
+    pec: { el: 'm-pec', lbl: 'lbl-pec' },
+    core: { el: 'm-core', lbl: 'lbl-core' },
+    rglute: { el: 'm-rglute', lbl: 'lbl-rglute' },
+    rhip: { el: 'm-rhip', lbl: 'lbl-rglute' }
+  };
+
+  Object.keys(muscles).forEach(key => {
+    const state = muscles[key];
+    const m = map[key];
+    if (!m) return;
+    const el = document.getElementById(m.el);
+    el.classList.add('active');
+    el.classList.add(`muscle-${state}-fill`);
+    document.getElementById(m.lbl).classList.add('show');
+  });
+}
+
+function renderCues(container, items, cls) {
+  container.innerHTML = '';
+  if (!items || items.length === 0) {
+    container.innerHTML = `<div class="text-muted">无</div>`;
+    return;
+  }
+  items.forEach(t => {
+    const div = document.createElement('div');
+    div.className = `cue-${cls}`;
+    div.textContent = t;
+    container.appendChild(div);
+  });
+}
+
+function renderMuscleTags(muscles) {
+  muscleListEl.innerHTML = '';
+  const labels = {
+    infra: '冈下肌+小圆肌',
+    deltFront: '三角肌前束',
+    serratus: '前锯肌',
+    lat: '背阔肌',
+    pec: '胸大肌',
+    core: '核心',
+    rglute: '右臀',
+    rhip: '右髋旋肌'
+  };
+  Object.keys(muscles).forEach(k => {
+    const span = document.createElement('span');
+    span.className = `muscle-tag m-${muscles[k]}`;
+    const stateText = { active: '主动', isometric: '等长', passive: '被动/拉伸', forbidden: '禁' }[muscles[k]];
+    span.textContent = `${labels[k] || k} · ${stateText}`;
+    muscleListEl.appendChild(span);
+  });
+}
+
+let currentPhase = 0;
+function setPhase(i) {
+  currentPhase = i;
+  const p = phases[i];
+
+  phaseName.textContent = p.name;
+  phaseTime.textContent = p.time;
+  phaseDesc.textContent = p.desc;
+
+  renderCues(activeCuesEl, p.activeCues, 'active');
+  renderCues(passiveCuesEl, p.passiveCues, 'passive');
+  renderCues(forbiddenCuesEl, p.forbiddenCues, 'forbidden');
+
+  updateSkeleton(p.skeleton);
+  updateMuscles(p.muscles || {});
+  renderMuscleTags(p.muscles || {});
+
+  phaseBtns.forEach((b, idx) => {
+    b.classList.toggle('active', idx === i);
+  });
+
+  scrubber.value = i;
+  phaseCounter.textContent = `阶段 ${i+1} / ${phases.length}`;
+}
+
+scrubber.oninput = (e) => setPhase(parseInt(e.target.value));
+
+// Play / pause
+let playInterval = null;
+playBtn.onclick = () => {
+  if (playInterval) {
+    clearInterval(playInterval);
+    playInterval = null;
+    playBtn.textContent = '▶ 播放';
+    return;
+  }
+  playBtn.textContent = '⏸ 暂停';
+  const speed = parseInt(speedSelect.value);
+  playInterval = setInterval(() => {
+    if (currentPhase >= phases.length - 1) {
+      clearInterval(playInterval);
+      playInterval = null;
+      playBtn.textContent = '▶ 播放';
+      return;
+    }
+    setPhase(currentPhase + 1);
+  }, speed);
+};
+
+speedSelect.onchange = () => {
+  if (playInterval) {
+    clearInterval(playInterval);
+    const speed = parseInt(speedSelect.value);
+    playInterval = setInterval(() => {
+      if (currentPhase >= phases.length - 1) {
+        clearInterval(playInterval);
+        playInterval = null;
+        playBtn.textContent = '▶ 播放';
+        return;
+      }
+      setPhase(currentPhase + 1);
+    }, speed);
+  }
+};
+
+// Init
+setPhase(0);
+</script>
+</body>
+</html>
