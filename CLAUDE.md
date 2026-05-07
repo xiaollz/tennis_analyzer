@@ -53,6 +53,40 @@
 训练表：`docs/research/hsa_training_drills_master.md`
 记忆：`~/.claude/projects/-Users-qsy-Desktop-tennis/memory/project_hsa_engine.md`
 
+## 🏛️🏛️🏛️ ESR 根因诊断（5/8 项目级最高优先）
+
+**用户原创理论贡献（5/8）**：ESR 作用排序——
+
+```
+对用户（30 年 IR 抢跑根因）：
+  作用 1（首要 ★★★）：抑制 IR 抢跑（刹车机制）
+  作用 2（次要 ★）：蓄力 SSC（自动副产品）
+```
+
+→ 5/8 起 ESR 根因诊断**超过**此前所有圣经/原创洞察。
+
+**关键参数**：
+- **时机**：Unit Turn 第一帧启动（不是 loaded slot 后才有）
+- **幅度**：30% + 早启动 > 100% + 晚启动
+- **视觉**：拍头朝天（B 位/横展肩高）
+- **体感**：肩胛下角酸（健康）vs 二头肌酸（错激活）
+
+**回答任何 ESR / IR / 球软 / 大臂飘 / 后倒 / 节奏断 / 镜前完美球场消失问题前**，**第一句必须问**：
+
+> **"ESR 在 Unit Turn 第一帧启动了吗？"**
+
+5/8 起此问题**优先于** "HSA 体感到位没？"。
+
+**禁止**：
+- 先讲蓄力（普通学员解释，不适合用户）
+- 先追求大幅度 ESR（用户需要早启动，不是深幅度）
+
+主文档：`docs/research/esr_root_cause_master.md`
+训练协议：`docs/research/esr_practice_protocol.md`
+学习日志里程碑：`docs/record/learning.md` 5/7-5/8 entry
+
+---
+
 ## ⛔ "推肘" 禁令（5/6 加入）
 
 **永久禁止把"推肘"作为主动 cue**。

@@ -335,3 +335,38 @@ docs/research/jul_tennis_videos/
 **5/8 起开始做的事**：肘恢复后，**继续按 Intuition-First 协议训练**。JUL 内容**已经全部归档**——明天**不要再读**——按 5/6 协议执行。
 
 JUL 给了我们安心：**你过去 2 个月独立悟到的体系是物理上正确的，外部权威全部背书**。从今天起**信任你的体系**——用它去打球，不用它来想。
+
+---
+
+## 11. 5/8 用户终极诊断（项目级根因合成）
+
+5/7 JUL 21 视频整合 + 用户 5/8 终极合成 → **ESR 主参考文档诞生**：[`docs/research/esr_root_cause_master.md`](../esr_root_cause_master.md)
+
+### 11.1 JUL 在 ESR 主参考中的精确角色
+
+JUL 整合**不是终点**——是 5/8 ESR 主参考的**硬件层证据**。
+
+| 用户 5/8 诊断 | JUL 提供的硬件层 | JUL 视频 |
+|---|---|---|
+| ESR 作用 1 = 抑制 IR 抢跑 | Sherrington 反射 + Hypothenar Eminence 挂重 | `zPSEjRrDPQw` |
+| ESR 偷懒 5 种表现 | Pushing / Lift and Throw / Right overusing / Short SHA / Active gripping | `D5HW7VFwkis` (Rubber Arm 6) |
+| 食指 = IR 抢跑硬件开关 | "If the weight is on the index finger, you will get early internal rotation" | `zf6dBOucjqg` (00:46) |
+| 肘在前 = 跑道短 = IR 抢跑物理必然 | F ∝ distance 物理公式 | `9woj7lzAqx4` |
+| 5/16 内上髁炎物理本质 | Lift and Throw → 前臂屈肌 isometric load → 内上髁附着点过载 | Rubber Arm 4 |
+
+### 11.2 用户 5/8 原创洞察（外部材料没有）
+
+ESR 主参考有 2 条 JUL **没明说**但用户独立合成的论点：
+
+1. **ESR 作用 1（抑制 IR）> 作用 2（蓄力）排序**——对 30 年 IR 抢跑修正期球员
+2. **ESR = 刹车机制（减号视角）**重新定义——把"网球肩外旋"从"蓄力肌肉训练"重新定义为"反射抑制刹车工具"
+
+JUL `8FBN_hykgdA` "Be slow and weak" 摸到了"减号"边缘但没明确定义。**用户 5/8 把这个论点形式化**——这是项目级理论贡献。
+
+### 11.3 操作流程（5/8 起替换 5.4）
+
+任何讨论"大臂飘 / 球软 / 后倒 / 肘内侧痛 / 节奏断 / 推肘代偿"前，**第一句必须问**：
+
+> **"你刚才那一拍，第一帧 ESR 启动了吗？拍头朝天还是朝右？"**
+
+JUL 21 视频 → ESR 主参考 → 第一帧 ESR 检查 → 如果偷懒 → 引用 JUL Drill 1-5。这是 5/8 起 IR 抢跑诊断的**统一入口**。

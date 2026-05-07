@@ -429,6 +429,21 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "Suppress IR instinct"],
      "concept": "ir_premature_firing", "frame_range": [2, 3, 4],
      "severity": 0.85, "label": "IR 抢跑（内旋肌群过早激活，用户 30 年根因）"},
+
+    # ── ESR 偷懒（5/8 加入）— 项目级根因，IR 抢跑的对偶 ──
+    # ESR 在用户身上两个作用（按重要性）：
+    #   作用 1（首要）：抑制 IR 抢跑——主动 ESR → 内旋肌反射性关闭 → 物理上阻止"胳膊往高/往后"
+    #   作用 2（次要）：蓄力——拉伸内旋肌储存弹性势能
+    # 关键参数：Unit Turn 第一帧就启动；30% 幅度 + 早 > 100% 幅度 + 晚
+    # 视觉：拍头朝向变化（朝天）+ 大臂位置不变（绕长轴自转）
+    # 体感：肩胛下角酸（冈下肌）；不应有二头肌酸（错激活）
+    {"keywords": ["lazy ESR", "late ESR", "外旋偷懒", "外旋启动晚",
+                   "ESR 不足", "Unit Turn 没外旋", "引拍无外旋",
+                   "前臂朝向不变", "拍头未朝天", "preparation no external rotation",
+                   "external rotation late", "shoulder external rotation insufficient",
+                   "末段突变 ESR", "被动反射 ESR"],
+     "concept": "lazy_esr_initiation", "frame_range": [1, 2, 3],
+     "severity": 0.85, "label": "ESR 偷懒（外旋启动晚 / 幅度不足 — IR 抢跑对偶根因）"},
 ]
 
 
@@ -534,6 +549,8 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "excessive_backswing_pause": "L4",     # Preparation — F2 失败精确版
     # ── JUL Tennis & Golf — 5/7 加入 ──
     "ir_premature_firing": "L4",           # Preparation — IR 抢跑（用户 30 年根因）
+    # ── ESR 偷懒 — 5/8 加入（IR 抢跑对偶；项目级根因） ──
+    "lazy_esr_initiation": "L4",           # Preparation — ESR 启动晚 / 幅度不足
 }
 
 # Layer order: earliest = highest priority as root cause
@@ -1070,6 +1087,30 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
               "Hypothenar Eminence 是 5/15 双外旋锁定的硬件实现层——把体感降到操作层。",
         "muscle_cue": "做对时：握拍时拇指/食指几乎不参与发力，整条手臂感觉像'挂着'球拍。"
                      "做错时：食指根用力 + 二头肌酸 + 前臂酸 = IR 抢跑征兆。"
+    },
+
+    # ══════════════════════════════════════════════════════════════════════
+    # ESR 偷懒 (5/8) — IR 抢跑的对偶根因
+    # ESR 作用 1（首要）：主动外旋 → 内旋肌反射性关闭 → 物理上阻止 IR 抢跑
+    # ESR 作用 2（次要）：拉伸内旋肌储存弹性势能（蓄力）
+    # ══════════════════════════════════════════════════════════════════════
+    "lazy_esr_initiation": {
+        "drill": "Unit Turn 第一帧主动外旋（冈下肌发力）+ 镜前 50 次 + Hypothenar 校准",
+        "method": "(a) **Unit Turn 启动即外旋**：转身的第一帧就同时启动右肩外旋——拍头朝向"
+                 "从朝前→朝天的过程必须在 Unit Turn 早期完成，不要等到 loaded slot 才出现。 "
+                 "(b) **30% 幅度优先**：不需要 deep ESR——30% 幅度 + 早启动 >> 100% 幅度 + 晚启动。"
+                 "镜前 50 次空挥确认拍头早期朝天。 "
+                 "(c) **大臂位置锁定**：ESR 是大臂绕长轴自转，大臂相对躯干位置不应改变（视觉只见拍头朝向变）。 "
+                 "(d) 配合 Hypothenar Eminence 握拍校准 — ESR 主动 → 食指自然松 → IR 抢跑被关闭。 "
+                 "来源：JUL Tennis & Golf 5 种偷懒模式 + 5/15 双外旋锁定 + 5/16 IR 抢跑诊断。",
+        "why": "ESR 在用户身上首要作用是**抑制 IR 抢跑**——主动 ESR 通过交互抑制神经反射"
+              "关闭内旋肌群，**物理上阻止**'胳膊往高 / 往后'的 IR 抢跑动作。次要作用才是"
+              "蓄力（拉伸内旋肌储存弹性势能）。早 ESR + 30% 幅度 > 晚 ESR + 100% 幅度，"
+              "因为时机决定能否抑制 IR 抢跑，幅度只决定蓄力量。"
+              "ESR 偷懒 = IR 抢跑的另一面——两者是同一个根因的两种描述视角。",
+        "muscle_cue": "做对时：肩胛下角（冈下肌区域）酸 + 拍头从 Unit Turn 第一帧就开始转向朝天。"
+                     "做错时：二头肌酸 = 错激活；前臂朝向直到 loaded slot 才突变 = 被动反射 ESR（已是 IR 抢跑表现）。"
+                     "5 种偷懒表现：Pushing / Lift and Throw / Right side overusing / Short SHA duration / Active gripping。"
     },
 }
 

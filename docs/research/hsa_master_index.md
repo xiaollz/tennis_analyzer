@@ -303,3 +303,27 @@ JUL 频道（21 支视频深度扫描）= **HSA 体系的外部权威背书 + �
 > ❌ 不要因为 JUL 表述去改造现有 cue（同构 ≠ 冲突）
 
 最有用的应用：**球场卡住时看 5 秒慢动作**（Sinner / Djokovic）—— 视觉锚定，不进 reasoning。
+
+---
+
+## 13. ESR 根因主参考（5/8 加入）
+
+5/8 用户终极诊断：**ESR (External Shoulder Rotation) 不在 Unit Turn 第一帧主动启动 = 项目级根因 #2，是 IR 抢跑根因 #1 的对偶面**。
+
+ESR 是 HSA 框架的**物理上游**：
+- HSA = Phase 2 主动驱动（胸大肌闭合）
+- **ESR = Phase 1 主动 trigger**（抑制 IR 群 + 储 SSC）
+
+5/8 用户原创洞察：**ESR 作用 1（抑制 IR 抢跑）> 作用 2（蓄力）**——把 ESR 从"蓄力机制"重新定义为"刹车机制"。这是项目级理论贡献。
+
+完整文档：[`docs/research/esr_root_cause_master.md`](./esr_root_cause_master.md)（5000-7000 字主参考 + 11 章节 + 5 附录）
+
+回答任何 ESR / IR 抢跑 / 大臂飘 / 球软 / 后倒 / 推肘代偿 / 节奏断 / 内上髁炎相关问题前，**第一句必须问**：
+
+> **"你刚才那一拍，第一帧 ESR 启动了吗？拍头朝天还是朝右？"**
+
+跟本 HSA 索引的精确边界：
+- HSA 是末端释放（Phase 2 末 10%）
+- ESR 是前置 trigger（Phase 1 第一帧）
+- 没有 ESR → HSA 等于"主动推肘"（5/6 禁令场景）
+- ESR 到位 → HSA 自动发生（被动闭合）

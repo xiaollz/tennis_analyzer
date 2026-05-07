@@ -227,13 +227,16 @@ FOUNDATIONS: List[Dict[str, Any]] = [
         "source": "docs/research/hsa_master_index.md + memory/project_hsa_engine.md "
                   "+ evaluation/hsa_detector.py",
         "priority": 1,
-        "vlm_question_ids": ["Q39", "Q40"],  # hsa_closure_visible + cross_body_finish_visible
+        # Q43/Q44 (5/8 加入) — ESR 早启动检测，是 HSA 的物理前置条件
+        "vlm_question_ids": ["Q39", "Q40", "Q43", "Q44"],
         "metric_keys": [
             "hsa_total_closure_deg",
             "hsa_angle_at_contact",
             "hsa_closure_pattern",
             "cross_body_finish",
             "hsa_health_score",
+            # 5/8 加入 — ESR 启动质量（HSA 物理前置条件）
+            "esr_quality",  # one of: "early_progressive" / "late_burst" / "absent" / "uncertain"
         ],
         "pass_criteria": [
             "总闭合幅度 ≥ 25° (peak → contact)",
@@ -241,6 +244,8 @@ FOUNDATIONS: List[Dict[str, Any]] = [
             "cross_body_finish == True (右腕越过左肩)",
             "hsa_closure_pattern == 'healthy'",
             "hsa_health_score ≥ 60",
+            # ESR 前置条件（5/8）
+            "esr_quality == 'early_progressive'（Unit Turn 第一帧即启动 + 早期渐进）",
         ],
         "fail_evidence_keywords": [
             "大臂没有跨过胸前", "胸肌未参与", "右臂保持外展",
@@ -248,6 +253,9 @@ FOUNDATIONS: List[Dict[str, Any]] = [
             "无内收", "肘卡身侧", "推球", "推送",
             "纯靠手腕翻拍", "纯靠转体", "胸肱角未关闭",
             "随挥停在右侧", "随挥指向侧面",
+            # ESR 偷懒证据（5/8）
+            "前臂朝向不变", "拍头未朝天", "末段突变 ESR",
+            "ESR 启动晚", "Unit Turn 没外旋", "外旋偷懒",
         ],
         "fail_metric_thresholds": {
             "hsa_total_closure_deg": {"lt": 15.0},
@@ -255,6 +263,8 @@ FOUNDATIONS: List[Dict[str, Any]] = [
             "hsa_closure_pattern": {"equals": "no_closure"},
             "cross_body_finish": {"equals": "False"},
             "hsa_health_score": {"lt": 40.0},
+            # ESR 失败阈值（5/8）— 末段突变 / 缺失都判 FAIL
+            "esr_quality": {"equals": "late_burst"},
         },
         "downstream_cascade": [
             "胸大肌未发力（chest 未 fire）",
@@ -262,10 +272,13 @@ FOUNDATIONS: List[Dict[str, Any]] = [
             "Pronation 孤立 → 球软无穿透",
             "辛纳式肘前推无下游释放",
             "RHS 损失 25-48%（HSA 是单一关节最大贡献者）",
+            # ESR 偷懒下游（5/8）
+            "ESR 偷懒 → IR 抢跑（食指吃力 / 大臂上抬）→ HSA 闭合时大臂位置已错",
         ],
         "drill": "1) 手按胸大肌徒手横拉空挥（FTT Am8j1Zw5KrE 视频开头）"
                  " 2) 静态无转体击球（FTT 5KdScDKxVSI [03:40]）"
-                 " 3) 反向工程握拍（FTT 5KdScDKxVSI [01:05]）",
+                 " 3) 反向工程握拍（FTT 5KdScDKxVSI [01:05]）"
+                 " 4) [ESR 前置] Unit Turn 第一帧主动外旋（冈下肌发力）+ 镜前 50 次",
         "drill_source": "docs/research/hsa_youtube_survey.md Tier S 视频 + "
                         "docs/research/hsa_biomechanics_deep_dive.md §7 训练协议",
         "explanation": "5/3 突破：HSA 是 chest fire 的物理本体——'关闭胸肱角' 是真正"
@@ -273,7 +286,10 @@ FOUNDATIONS: List[Dict[str, Any]] = [
                        "都是 HSA 的不同视角描述。Sasaki 2022 IMU 实测 HSA 贡献 45-48% "
                        "前向 RHS（单一关节最大），Kovacs 综述 HSA+ISR 合占 65% 接触速度。"
                        "F7 不是地基，是驱动引擎；它依赖 F5（右脚轴 = 能量入口）+ "
-                       "F6（肩胛槽 = 发射台）作为支撑。",
+                       "F6（肩胛槽 = 发射台）作为支撑。"
+                       " 5/8 增强：ESR 早启动是 HSA 的物理前置条件——Unit Turn 第一帧"
+                       "主动外旋抑制 IR 抢跑，HSA 才有正确的初始大臂角度可以闭合。"
+                       "ESR 偷懒（末段突变）= IR 抢跑表现，作为 F7 的子检测。",
     },
 ]
 
