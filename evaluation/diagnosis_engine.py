@@ -419,6 +419,16 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "stop-start", "停顿 1 秒", "停顿超过 1", "高位等待"],
      "concept": "excessive_backswing_pause", "frame_range": [2, 3],
      "severity": 0.80, "label": "引拍顶点停顿 > 1s（SSC 弹性能量流失）"},
+
+    # ── JUL Tennis & Golf 整合 (5/7) — IR 抢跑硬件层 ──
+    # 食指吃力 → 神经反射激活 IR → 大臂抢跑
+    # 用户 30 年正手根因的硬件解释（JUL zf6dBOucjqg [00:46] + zPSEjRrDPQw）
+    {"keywords": ["IR 抢跑", "internal rotation premature", "大臂抢跑", "肩抢跑",
+                   "食指压力大", "食指根吃力", "握拍食指", "index finger weight",
+                   "pushing 模式", "lift and throw", "right side overusing",
+                   "Suppress IR instinct"],
+     "concept": "ir_premature_firing", "frame_range": [2, 3, 4],
+     "severity": 0.85, "label": "IR 抢跑（内旋肌群过早激活，用户 30 年根因）"},
 ]
 
 
@@ -522,6 +532,8 @@ _CONCEPT_LAYER: Dict[str, str] = {
     # ── Tennis Science 2015 — 5/4 加入 ──
     "no_leg_drive": "L5",                  # Footwork — kinetic chain 起点
     "excessive_backswing_pause": "L4",     # Preparation — F2 失败精确版
+    # ── JUL Tennis & Golf — 5/7 加入 ──
+    "ir_premature_firing": "L4",           # Preparation — IR 抢跑（用户 30 年根因）
 }
 
 # Layer order: earliest = highest priority as root cause
@@ -1041,6 +1053,23 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "method": "Unit Turn 后**禁止**任何停顿，一气呵成进入 forward swing。配合节奏口令'弹...打'（球落地 = 弹，击球 = 打），中间没有第三个音节。每天 30 球喂球训练。",
         "why": "Tennis Science Ch2 p.34 量化：引拍顶点停顿 1 秒 = -50% SSC 弹性能量；4 秒 = -100%（弹簧完全松了）。这是 F2 'Place Pull Forward' 的精确量化版本。",
         "muscle_cue": "做对时胸大肌从 Unit Turn 顶点到 contact 是一条**连续上升**的张力曲线。如果中间感觉到张力'断了一下'，就是 SSC 已经流失。"
+    },
+
+    # ══════════════════════════════════════════════════════════════════════
+    # JUL Tennis & Golf 整合 (5/7) — IR 抢跑硬件层
+    # ══════════════════════════════════════════════════════════════════════
+    "ir_premature_firing": {
+        "drill": "Hypothenar Eminence 握拍校准 + 三指虚握死手挥",
+        "method": "(a) **重新校准握拍**：球拍重量挂在**小指鱼际丘**（手掌小指侧肉垫），不是食指根。"
+                 "镜前持拍 5 min，闭眼感受重量分布——应在小指侧。 "
+                 "(b) **三指虚握死手挥**：拇指/中指/无名指虚握，食指仅作引导。 "
+                 "蹬转让球拍因惯性'拽'手——20×3 组/天。 "
+                 "来源：JUL Tennis & Golf zf6dBOucjqg + zPSEjRrDPQw + Rubber Arm 系列。",
+        "why": "JUL [00:46] 实测：'If the weight is on the index finger, you will get early internal rotation.' "
+              "食指吃力 = 神经反射性激活 IR 防御性内旋 = 大臂主动后摆/上抬 = 用户 30 年根因。 "
+              "Hypothenar Eminence 是 5/15 双外旋锁定的硬件实现层——把体感降到操作层。",
+        "muscle_cue": "做对时：握拍时拇指/食指几乎不参与发力，整条手臂感觉像'挂着'球拍。"
+                     "做错时：食指根用力 + 二头肌酸 + 前臂酸 = IR 抢跑征兆。"
     },
 }
 

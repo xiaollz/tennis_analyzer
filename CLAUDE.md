@@ -147,16 +147,19 @@ HSA 框架 / Foundation Layer F1-F7 / diagnosis_engine / VLM Q1-Q42 / learning.m
 
 详见 `docs/research/intuition_paradox_integration.md`。
 
-## 引用权威排序（5/4 升级 — Tennis Science 整合后）
+## 引用权威排序（5/7 升级 — JUL 整合后）
 
 回答技术问题时，按以下优先级引用：
 
 1. **Tennis Science** (Elliott/Reid/Crespo 2015, University of Chicago Press) — peer-reviewed 教科书，ITF + UWA + Tennis Australia 三方权威。是本项目的最高引用源。主索引：`docs/research/tennis_science_book/MASTER_INTEGRATION.md`
 2. **HSA 框架** — `docs/research/hsa_master_index.md` + `hsa_biomechanics_deep_dive.md`
-3. **FTT** (Hugh Clarke) — *The Fault Tolerant Forehand* + 网站文章 / YouTube
-4. **Brian Gordon** — TennisPlayer.net Type 3 + USPTA 2013 视频
-5. **Kibler / Ellenbecker** — Tennis Science Ch7 + Holland Osteopathy + Tennis Medicine
-6. **教练社区 / 论坛** — Reddit / TalkTennis 仅作为补充
-7. **用户自身突破** — learning.md 时间轴 + memory 文件，**当跟以上权威冲突时以权威为准**
+3. **JUL Tennis & Golf**（5/7 加入）— **物理硬件层补完**。21 支视频扫描 + 4 个核心新概念（Hypothenar Eminence / Index Finger 开关 / Three-Layer Classification / Ruler Test）。主索引：`docs/research/jul_tennis_videos/MASTER_SYNTHESIS.md`。**注意**：JUL 是 reasoning reference + 5 秒视觉重启工具，**不是新 cue 来源**——遵守 Intuition-First 协议，不要加进训练 list
+4. **FTT** (Hugh Clarke) — *The Fault Tolerant Forehand* + 网站文章 / YouTube
+5. **Brian Gordon** — TennisPlayer.net Type 3 + USPTA 2013 视频
+6. **Bourne** (One Minute Tennis) — 用户已购买 PDF + 同名 YouTube 频道
+7. **Kibler / Ellenbecker** — Tennis Science Ch7 + Holland Osteopathy + Tennis Medicine
+8. **教练社区 / 论坛** — Reddit / TalkTennis 仅作为补充
+9. **用户自身突破** — learning.md 时间轴 + memory 文件，**当跟以上权威冲突时以权威为准**
 
 Tennis Science 8 章节 KB 文档：`docs/research/tennis_science_book/ch1` ~ `ch8.md`
+JUL 4 份合成报告：`docs/research/jul_tennis_videos/{federer,rubber_arm,djokovic_nadal_concepts,deep_mechanism}_*.md`

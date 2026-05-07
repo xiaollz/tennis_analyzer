@@ -240,3 +240,66 @@ ISR + pronation （HSA 的物理副产品，不需独立训练）
 - **VLM**: `knowledge/templates/vlm/system_prompt.md.j2` Q39/Q40, `evaluation/vlm_analyzer.py` F7 prompt block
 - **memory**: `~/.claude/projects/-Users-qsy-Desktop-tennis/memory/project_hsa_engine.md`
 - **学习日志**: `docs/record/learning.md §2026-05-03 晚`
+
+---
+
+## 12. JUL Tennis & Golf 频道整合（5/7 加入）
+
+JUL 频道（21 支视频深度扫描）= **HSA 体系的外部权威背书 + 物理硬件层补完**。
+
+### 12.1 物理硬件层补完（4 个核心新概念）
+
+#### a) Hypothenar Eminence（小指鱼际丘）—— 双外旋锁定的硬件实现
+- 位置：手掌靠小指那一侧的肉垫
+- 机制：**球拍重量挂在这里 → 神经允许 deep ER 不触发防御性 IR**
+- 来源：JUL `zPSEjRrDPQw`
+- 跟用户体系：5/15 "双外旋锁定" 的硬件层
+
+#### b) Index Finger 是 IR 抢跑的硬件开关
+- 来源：JUL `zf6dBOucjqg` [00:46]
+- 原话：*"If the weight is on the index finger, you will get early internal rotation."*
+- 修正：握拍重心从食指根 → 移到小指鱼际丘
+- 跟用户体系：5/16 IR 抢跑根因的**末端硬件解释**
+
+#### c) Three-Layer Classification（三层分类）
+- 轴心层：Spine Axis / Leg Axis / 伪 Unit Turn
+- 驱动层：Pitching / Batting
+- 结构层：Whole Body Swing / Hip Turn Swing
+- 来源：JUL Djokovic + Nadal 系列
+- 用途：业余 → 精英升级路线图
+
+#### d) Ruler Test（直尺测试）—— 真假 Unit Turn 硬指标
+- 来源：JUL Nadal 2 [3:33]
+- 原话：*"arm line behind or on the shoulder-to-shoulder line until a little bit before the ball impact"*
+- 用途：**可量化的 Unit Turn 检测标准**
+
+### 12.2 概念映射表（JUL ↔ 用户体系）
+
+| 用户体系 | JUL 等价 |
+|---|---|
+| 5/3 HSA（胸大肌闭合） | shoulder horizontal abduction |
+| 5/6 推肘禁令 | F ∝ distance（HSA 是空间不是动作） |
+| 5/15 双外旋锁定 | **Chinook Pose** + Hypothenar Eminence |
+| 5/15 上身 Wrap | One Mass + Bio-rope |
+| 5/16 IR 抢跑诊断 | Suppress IR instinct（5 种等价描述）|
+| 4/13 左手拉离 | Seesaw mechanism |
+| 4/27 右脚轴 | Spine axis |
+| 4/30 上身槽 | Pull back upper arms（Chinook Pose Step 2）|
+
+### 12.3 文档位置
+
+`docs/research/jul_tennis_videos/`
+- `MASTER_SYNTHESIS.md`（必先读）
+- `federer_series_synthesis.md`
+- `rubber_arm_series_synthesis.md`
+- `djokovic_nadal_concepts_synthesis.md`
+- `deep_mechanism_synthesis.md`
+- 21 支独立视频分析
+
+### 12.4 使用规则（重要——遵守 5/6 Intuition-First 协议）
+
+> ✅ JUL 是 reasoning reference / 5 秒视觉重启工具
+> ❌ JUL 不是新 cue 来源——不要加进训练 list
+> ❌ 不要因为 JUL 表述去改造现有 cue（同构 ≠ 冲突）
+
+最有用的应用：**球场卡住时看 5 秒慢动作**（Sinner / Djokovic）—— 视觉锚定，不进 reasoning。
