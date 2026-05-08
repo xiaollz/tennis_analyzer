@@ -789,6 +789,9 @@ ESR 主文档不是外部材料的简单整合——有 2 条**用户原创**论
 | Dynamic Position | FTT 用语 | ESR 的 outcome 描述（避开 reasoning cue）|
 | 双外旋锁定 | 用户 5/15 命名 | 肩 ESR + 前臂稳定 = ESR 在用户身上的项目级名 |
 | 反射抑制 | Sherrington Law | ESR 抑制 IR 群的神经机制 |
+| **Vertical component** | FTT 二维分解（视频 `dZadhzVEsds`，5/8 整合）| ESR 启动 + 槽进入 + 拍头自然下垂的 **outcome 描述**——FTT 外部聚焦语言版 |
+| **Horizontal component** | FTT 二维分解（into-out rotational）| HSA 的 **outcome 描述**——本体是胸-肱角主动闭合 |
+| **Be patient** | FTT 时序命令 | "ESR 第一帧启动 + 等垂直建立" 的外部聚焦版本——见 `ftt_vertical_horizontal_decomposition.md` |
 
 ---
 

@@ -360,6 +360,8 @@
 
 **频道**: Fault Tolerant Tennis
 
+> **🔗 5/8 深度整合**：本视频"vertical / horizontal component"二维分解概念已升级为 ESR 根因诊断的**外部聚焦语言版**。详见 [`ftt_vertical_horizontal_decomposition.md`](ftt_vertical_horizontal_decomposition.md)。
+
 
 这个视频来自 **Fault Tolerant Tennis** 频道，深入探讨了如何在增加击球力量的同时，通过改善挥拍轨迹和动力链同步来确保球不会出底线。以下是对视频技术内容的详尽分析：
 

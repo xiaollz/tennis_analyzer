@@ -6162,3 +6162,54 @@ timeline
 - 进入 Phase 1 体感固化
 - 慢速喂球检验
 - 视频自检 5 帧（agent 提供 checklist）
+
+---
+
+## 📺 5/8 补强 · FTT 二维分解视频（reasoning reference）
+
+> **触发**：用户 5/8 主动 push FTT 视频 *How to Hit Hard Without Missing Long*（`dZadhzVEsds`），实测有效。
+> **性质**：reasoning reference + 外部聚焦语言**——不是新 cue**。详见 `docs/research/ftt_vertical_horizontal_decomposition.md`。
+
+### 视频核心 message
+
+每次挥拍 = **vertical component（垂直分量，钟摆下落到球下）+ horizontal component（水平分量，into-out 旋转加速）**叠加。**Be patient**：等垂直分量建立再水平释放。
+
+### 用户原话（实测体感）
+
+> "如果过早发力的话，感觉只是手腕在动，而不是身体在动。当这两个分量真正叠加到一起时，发力会非常轻松且强大。"
+
+→ 这就是 IR 抢跑的 outcome 表现。"只手腕动" = 大脑 emergency override，因为身体的旋转能量没传到球上。
+
+### 跟 5/8 ESR 根因的双胞胎关系
+
+| FTT 二维语言（外部聚焦）| ESR 根因语言（内部解剖）|
+|---|---|
+| Be patient（等垂直建立）| ESR 在 Unit Turn 第一帧启动 |
+| Vertical component | ESR + 槽 + lag 的 outcome 描述 |
+| Horizontal component | HSA（into-out rotation）|
+| 在高位让手发力 | IR 群提前激活（IR 抢跑）|
+| 末端用手腕挑球 | 前臂屈肌补偿（内上髁炎根因）|
+| 球拍最大速度朝地面 | IR 抢跑的物理结果 |
+
+**两套语言诊断同一物理事实**——内部解剖告诉你"做什么"，外部 outcome 告诉你"等什么"。
+
+### 永久规则补强（5/8 加入）
+
+回答用户"过早发力 / 只手腕动 / 球软 / 大臂飘"问题时：
+1. 第一句仍按 ESR 协议："ESR 在 Unit Turn 第一帧启动了吗？"
+2. 第二句**可补 FTT 二维语言**："换 FTT 的话——你那球的**垂直分量**建立了吗？拍头降到球下了吗？"
+3. **禁止**：把 "练 vertical component" 加进训练 list（违反 Intuition-First 协议）。FTT 的 two-finger / catching drill 仅作 reference，不推荐用户做（且肘伤未愈）。
+
+### 视频 drill 清单（reasoning reference，不进训练 list）
+
+| Drill | 时间戳 | 作用 | 项目对应 |
+|---|---|---|---|
+| Two-finger swing | [02:26] | 感受拍柄从掌心脱出的 lag | JUL Drill 5 / Hypothenar 挂重的极限版 |
+| Catching drill | [12:38] | 训练晚加速感 | 少见的 outcome-based drill |
+| Shoulder slant | [08:45] | 自然产生向上分量 | HSA Phase 2 末端 tilt |
+
+### 等级判定
+
+- 🔧 **概念升级**：FTT 二维语言 = ESR 根因诊断的**外部聚焦版本**
+- 不是新里程碑——是 5/8 ESR 根因诊断的**语言桥**
+- 项目时间轴**不增加新阶段**，仍归属"阶段 9 · ESR 根因诊断（5/7-5/8）"
