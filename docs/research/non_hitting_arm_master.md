@@ -279,10 +279,16 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
 |---|---|---|---|
 | `gyZxjDlmp2I` | Non-Dominant Arm Position Explained (**Part 1 理论**) | ✅ 5/9 已分析 | 为什么用非持拍手 + 主流模型 |
 | `0a7s64RgJOs` | 6 Drills For Non-Hitting Arm (**Part 2 实操**) | ✅ 5/9 已分析 | 6 个 drill |
-| `EJEWsypByQg` | FOREHAND Preparation - Work Of Non-Dominant Arm | ⏳ 5/9 重试中 | Preparation 阶段细节 |
-| `v83PS5n77dA` | Forehand Drill For Better Engagement | ⏳ 5/9 重试中 | 单一 drill |
+| `EJEWsypByQg` | FOREHAND Preparation - Work Of Non-Dominant Arm | ⛔ **会员专属**（Feel Tennis Fan tier）— 按用户 5/9 指示跳过 | Preparation 阶段细节（无法访问）|
+| `v83PS5n77dA` | Forehand Drill For Better Engagement | ⛔ **会员专属**（Feel Tennis Fan tier）— 按用户 5/9 指示跳过 | 单一 drill（无法访问）|
 
 详细分析：`docs/research/feel_tennis_video_analyses/{video_id}.md`
+
+**会员专属视频处理说明**：
+- yt-dlp 直接报错确认：`"This video is available to this channel's members on level: Feel Tennis Fan (or any higher level)"`
+- Gemini API 也无法访问（403 PERMISSION_DENIED）
+- 用户 5/9 原话："请把 Thomas 的视频（**除了会员专属以外的所有免费视频**）全部重扫一遍"
+- → 按用户指示**永久跳过**这 2 个视频。如果未来用户订阅会员，可手动转录后整合
 
 ---
 
@@ -318,9 +324,14 @@ v1.0 (2026-05-09)
   - 跟 ESR 根因（5/8）整合机制
   - 教练使用协议 + 4 阶段时序模型 + Drill 全集
 
-待补充（v1.1+）：
-  - EJEWsypByQg + v83PS5n77dA 视频分析（5/9 重试中）
-  - Feel Tennis Score 4-5 其他相关视频（NJvL5WtleNA 肩转 + VLoTdbA_l5o 连接肩 + 8b96lTo4zKA 重力转移）
+v1.1 (2026-05-09 同日)
+  - 确认 EJEWsypByQg + v83PS5n77dA 是 Feel Tennis 会员专属视频
+    （yt-dlp 报错：available to channel's members on level: Feel Tennis Fan）
+  - 按用户 5/9 原话指示（"除了会员专属以外的所有免费视频"）永久跳过
+  - 所有免费 non-hitting arm 视频整合完成
+
+待补充（v1.2+）：
+  - Feel Tennis Score 4-5 其他相关视频（NJvL5WtleNA 肩转 + VLoTdbA_l5o 连接肩 + 8b96lTo4zKA 重力转移）— 待用户确认是否扫
   - 跟 Tennis Science Ch2/Ch3 trunk rotation 对接
   - 用户实战检验后的体感稳定性数据（5/15+ 起）
 ```
