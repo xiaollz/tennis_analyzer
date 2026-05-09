@@ -315,7 +315,145 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
 
 ---
 
-## §11 版本
+## §11 跨频道交叉验证（6 频道 / 5/9 整合）
+
+> **触发**：用户 5/9 二次 push："除了咱们自己的 channel 以外的 YouTube 大量调研"——避开 FTT / Feel Tennis / TPA / Brian Gordon / JUL / Bourne / 糙男 / 叶修鸽哥，找其他主流频道。
+>
+> **整合范围**：6 个新频道 × 1-2 个 non-dominant arm 专题视频 = 6 视频，总长约 31 分钟。详细分析：`docs/research/cross_channel_non_dominant_arm/{video_id}.md`
+
+### §11.1 6 个新教练立场速查
+
+| 视频 ID | 教练 | 频道 | 时长 | 核心立场 | 独特贡献 |
+|---|---|---|---|---|---|
+| `n-uyAHIKZvI` | Nikola Aracic | Intuitive Tennis | 7m | **主动协调** + 疲劳管理 | "侧手翻效应" + "给击球手放假"全 strokes 覆盖 |
+| `ukNZF2Q9ki0` | Florian Meier | Online Tennis Instruction | 3m | **被动结果**（异类）| "向上阶梯"比喻防过度旋转 |
+| `MNu852rePGo` | Florian Meier | OTI | 4m | **同步协作** | **绳索 drill**（物理约束工具）|
+| `I49dzh3LjwQ` | Meike Babel | Meike Babel Tennis | 6m | **主动贯穿** | "死鱼"反例 + "走钢丝者"平衡 |
+| `W32rv_YQJkM` | Patrik Broddfelt | Patrik Broddfelt | 8m | **主动 + 制动器** | **标志碟 drill** + "向观众挥手" + "测量击球点" |
+| `eglMaotbVXk` | Nathan Bolling | PlayYourCourt | 3m | **驱动源** | **"Tee up the ball"**（高尔夫球托）+ 药球抛掷 |
+
+### §11.2 跨频道共识（5/6 教练同意）
+
+跨 6 个独立频道达成的共识——这些是**金标**，不是单一教练的偏见：
+
+1. **Unit Turn 阶段非持拍手必须扶拍喉**（Nikola / Meike / Patrik / Nathan / Tomaz 都讲，OTI Florian 强调"双手平行底线"是这个的变体）
+2. **击球瞬间非持拍手必须在高位**（Tomaz / Florian / Meike / Patrik 都明确警告"下垂"）
+3. **接拍 drill 是基础**（Tomaz #6 + Nikola + Florian + Meike + Patrik 都推荐）
+4. **持拍臂的运动是非持拍手 + 躯干的结果**（Nathan: "用左手带着球拍往后撤就不可能开肩击球"；Florian: "持拍手会跟随非持拍手"；Patrik: "双手一起"）
+5. **常见错误：左手过早下垂或收到腰部**（5 个教练都点名）
+
+→ **共识层 = 5/8 ESR 根因 + 5/9 Off-Arm Pull 双根因协议的物理证据**。6 个独立教练在 6 个独立频道上殊途同归。
+
+### §11.3 关键分歧（项目重点关注）
+
+**最大分歧：非持拍手是"主动动作"还是"被动结果"？**
+
+| 立场 | 教练 | 表述 |
+|---|---|---|
+| **主动驱动** | Nikola / Meike / Patrik / Nathan | "非持拍手是 Unit Turn 的原因/驱动源" |
+| **稳定性结果** | Tomaz Mencinger | "非持拍手是上半身稳定性的 consequence" |
+| **被动结果**（异类）| Florian Meier (OTI) | "Uncoiling 自然把非持拍手带离击球路径，不是主动甩开" |
+
+**调和**：3 个立场其实描述**不同阶段** ——
+
+| 阶段 | 非持拍手 | 教练立场对应 |
+|---|---|---|
+| Ready → Unit Turn | **主动驱动**（扶拍喉，转动）| Nikola/Meike/Patrik/Nathan |
+| Backswing | **主动伸展**（指来球 / 测量空间）| Patrik / Meike |
+| Forward swing 启动 | **主动释放 + 主动收回**（左手拉离 = 角动量加速）| FTT / Tomaz Drill #3 / 用户 4/9 自验 |
+| Contact | **稳定性表现**（高位安静）| Tomaz / Florian |
+| Follow-through | **被动结果**（躯干转把它带过去）| Florian "uncoiling" |
+
+→ **这 5 个阶段必须分开思考**——Florian 的"被动结果"立场专指**Forward swing 之后**（已经启动，剩下被动）；其他人的"主动"立场专指**Forward swing 之前**（启动 trigger）。**两者不矛盾**。
+
+### §11.4 项目此前缺失的独特概念（按价值排序）
+
+按 Intuition-First 协议（5/6 起）——下列概念**仅作 reasoning reference**，**不直接进训练 list**。但其中物理反馈工具（绳索 / 标志碟）值得肘伤好后考虑。
+
+#### 🔥 高价值（强烈推荐保留）
+
+1. **"Tee up the ball"（高尔夫球托）— Nathan Bolling**
+   - 非持拍手 = 视觉定位/测距工具（不只是动力学工具）
+   - **解决用户已知问题**：5/8 早晨"对镜完美对墙崩溃" + 5/9 早"肘距飘"
+   - 在球速 50-90 mph 下，视觉参照是精准击球的前提
+   - **跟项目 5/8 ESR 根因的对接**：ESR 启动 trigger（解剖）+ Tee up 视觉锚（行为）= 两路对接
+
+2. **"死鱼" + "走钢丝者" 双比喻 — Meike Babel**
+   - "死鱼"：左手垂下 = 阻碍躯干旋转 → 视觉记忆 cue
+   - "走钢丝者"：左手是平衡杆，没了它身体散架
+   - **强烈实战适用**：用户报"不知道左手该往哪放"时直接用这两个比喻
+
+3. **"向观众挥手"（Waving to the public）— Patrik Broddfelt**
+   - 击球瞬间左手姿态 = 手掌向外，掌心朝观众
+   - 是 Tomaz "calm down the arm" 的具象化
+   - **跟项目"鞭打效应"对接**：左手停胸前作锚点的精确视觉版
+
+4. **"测量击球点"（Measuring the contact point）— Patrik Broddfelt**
+   - 左手前伸 = 空间量尺
+   - **解决用户已知问题**：4/30 用户"被挤到"问题 + 击球点过近问题
+   - 这是 5/9 早"对墙距离飘"的另一面——左手如果没伸出测量空间，距离永远不稳
+
+#### ⭐ 中价值（reasoning reference）
+
+5. **"侧手翻效应"（Cartwheel effect）— Nikola Aracic**
+   - 发球 + 高压球场景：非持拍肩高于持拍肩，再轮换翻转
+   - 跟正手关系不大，但解释了 Tomaz 的 "shoulder slant" 跨场景版
+
+6. **"向上阶梯"（Flight of stairs）— Florian Meier**
+   - 双手朝目标向上走，不横向甩开
+   - 防 over-rotation 的方向 cue
+   - 跟 5/8 FTT 二维分解的"vertical component"是同一事物的两种语言
+
+7. **"Stop, Drop, and Roll" 反例 — Nathan Bolling**
+   - 左手过早收到腰/腹 = "翻滚出击球"
+   - 用户 4/30 "胸推肘"前的状态命中
+
+#### 🛠️ 物理反馈工具（5/9 不立刻用，肘伤好后考虑）
+
+8. **绳索 drill（Rope/String drill）— Florian Meier**
+   - 双手腕用绳子（弹性带）拴住，强制双手同步
+   - **物理约束** > 口头提醒
+   - **明确命中防 backswing**："prevent me from taking the racquet back too far"
+   - 但要持拍——肘伤期禁止
+
+9. **标志碟 drill（Cone drill）— Patrik Broddfelt**
+   - 带孔标志碟套在左手食指
+   - 左手下垂 = 标志碟掉
+   - 立刻视觉反馈
+   - 比口头 cue 强 10 倍
+
+10. **药球抛掷（Medicine ball）— Nathan Bolling**
+    - 想象双手抱重药球做转身
+    - 强迫双肩 + 髋部作为一个整体
+
+### §11.5 跟用户已验证体感的对接
+
+| 用户体感 | 对接的跨频道概念 |
+|---|---|
+| 4/9 "想左手忘右手" | Patrik "双手一起" + Nathan "用左手带球拍" + Meike "扶拍喉" |
+| 4/4 "左侧拉是方向盘，蹬地是引擎" | Nikola "起动击球时序的释放" + Patrik "蓄能-制动" |
+| 5/8 早 "对镜完美对墙崩溃" | Nathan "Tee up the ball"（视觉锚）+ Patrik "测量击球点"（空间量尺）|
+| 5/9 早 "肘距身体飘" | Patrik "测量击球点" + Meike "走钢丝者"（左手是平衡杆）|
+
+→ **用户 4/4 + 4/9 自验早就摸到了 6 个频道的共识**——只是没合成成主索引。**5/9 整合后，用户的体感 = 6 个独立教练的金标**，验证强度极高。
+
+### §11.6 教练（Claude）使用本节协议补强
+
+回答用户问题时新增的诊断语言（仅在用户提问场景明确时）：
+
+| 用户报症状 | 第三句可补的跨频道语言 |
+|---|---|
+| "肘距飘 / 击球点不稳" | Patrik "测量击球点" + Meike "走钢丝者" |
+| "对墙崩溃 / 没视觉参照不行" | Nathan "Tee up the ball"（视觉锚） |
+| "左手不知道放哪 / 左手垂下" | Meike "死鱼" 反例 + Patrik "向观众挥手" |
+| "肩膀过早打开 / 横扫" | Florian "向上阶梯" + Nathan "Stop, Drop, Roll" 反例 |
+| 已验证 4/9 口令但偶尔漏 | Nikola "释放 = 启动击球时序"（让 4/9 cue 升级到时序触发器）|
+
+**禁止**：把 §11.4 的 10 个概念全部塞进训练 list。**只在用户具体报症状时拿出来对应那一个**。
+
+---
+
+## §12 版本
 
 ```
 v1.0 (2026-05-09)
@@ -330,15 +468,28 @@ v1.1 (2026-05-09 同日)
   - 按用户 5/9 原话指示（"除了会员专属以外的所有免费视频"）永久跳过
   - 所有免费 non-hitting arm 视频整合完成
 
-待补充（v1.2+）：
+v1.2 (2026-05-09 同日)
+  - 跨频道大调研：6 个新频道 × non-dominant arm 专题视频
+    * Intuitive Tennis (Nikola Aracic) - 主动协调 + 疲劳管理
+    * Online Tennis Instruction (Florian Meier) ×2 - 同步协作 + "向上阶梯"
+    * Meike Babel Tennis - "死鱼" + "走钢丝者" 双比喻
+    * Patrik Broddfelt - 标志碟 drill + "向观众挥手" + "测量击球点"
+    * PlayYourCourt (Nathan Bolling) - "Tee up the ball" 高尔夫球托
+  - 6/6 视频全部成功分析（packyapi gemini-3-flash-preview）
+  - 详见 docs/research/cross_channel_non_dominant_arm/{vid}.md
+  - 新增 §11 跨频道交叉验证章节（共识 5 项 / 关键分歧 / 10 独特概念）
+  - 调和 3 立场分歧（主动驱动 vs 稳定性结果 vs 被动结果 = 不同阶段）
+
+待补充（v1.3+）：
   - Feel Tennis Score 4-5 其他相关视频（NJvL5WtleNA 肩转 + VLoTdbA_l5o 连接肩 + 8b96lTo4zKA 重力转移）— 待用户确认是否扫
   - 跟 Tennis Science Ch2/Ch3 trunk rotation 对接
   - 用户实战检验后的体感稳定性数据（5/15+ 起）
+  - Mouratoglou y9TiZuTFYv8 + Tennis Evolution / Connect Tennis 高阶视频补充
 ```
 
 ---
 
-## §12 失职元教训（给系统的）
+## §13 失职元教训（给系统的）
 
 > **检索 ≠ 合成**。KB 完整答案散落在 7+ 文件里几个月，但没人合成主索引——直到用户自己撞到 Feel Tennis 视频才发现。
 >
