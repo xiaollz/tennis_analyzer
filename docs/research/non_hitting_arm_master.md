@@ -192,11 +192,16 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
 | `forward_swing_body_mechanics.md:284-334` | 左手停胸前作锚点 | 鞭打效应训练 |
 | `21_ftt_chest_engagement.md` | 双手胸前合十感受 Attached | 胸肌锚定体感 |
 
-### §5.3 用户 5/9 当前能做的（**肘伤未愈，禁持拍**）
+### §5.3 推荐起步顺序
 
-只能做 §5.1 中的 #1（"8"字）+ #4（合掌推挤）+ §5.2 的双手合十 Attached 体感。
+按训练能力递进，建议从体感入口开始：
+- **入口**：0-H Weighted Ball（不持拍，"left active right passive" 体感终极版）
+- **协同**：0-G 合掌推挤 + 0-E 侧向 8 字
+- **持拍整合**：1-D Half-Half 正手 + 0-F 双手挤压拍
+- **物理反馈**：2-H WearBands + 2-G Weighted Ball 持拍版
+- **实战调用**：3-C Off-Arm Pull 整合
 
-⛔ 禁止：#3（半对半，要持拍）+ #5（负重球，加载肘）+ #6（弹力带，张力可能传到肘）
+详见 [`hsa_training_drills_master.md`](hsa_training_drills_master.md) §1 + §0.4 触发协议。
 
 ---
 
@@ -277,7 +282,7 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
 
 - ❌ 把"主动控制肘距离 / 推肘 / 控制大臂角度"作为答案（违反 5/6 推肘禁令）
 - ❌ 只给 ESR 不给 Off-Arm（违反 5/9 整合协议）
-- ❌ 推荐持拍 drill（用户肘伤未愈期）
+- ❌ 一次推荐 10 个 drill（违反 Intuition-First — 一次只给 3-5 个匹配状态的）
 
 ---
 
@@ -376,7 +381,7 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
 
 ### §11.4 项目此前缺失的独特概念（按价值排序）
 
-按 Intuition-First 协议（5/6 起）——下列概念**仅作 reasoning reference**，**不直接进训练 list**。但其中物理反馈工具（绳索 / 标志碟）值得肘伤好后考虑。
+按 Intuition-First 协议（5/6 起）——下列概念**仅作 reasoning reference**，**不直接进训练 list**。但其中物理反馈工具（绳索 / 标志碟）在 Stage B/C 阶段可考虑引入。
 
 #### 🔥 高价值（强烈推荐保留）
 
@@ -416,13 +421,13 @@ L = I × ω（角动量 = 转动惯量 × 角速度）
    - 左手过早收到腰/腹 = "翻滚出击球"
    - 用户 4/30 "胸推肘"前的状态命中
 
-#### 🛠️ 物理反馈工具（5/9 不立刻用，肘伤好后考虑）
+#### 🛠️ 物理反馈工具（Stage B/C 阶段引入）
 
 8. **绳索 drill（Rope/String drill）— Florian Meier**
    - 双手腕用绳子（弹性带）拴住，强制双手同步
    - **物理约束** > 口头提醒
    - **明确命中防 backswing**："prevent me from taking the racquet back too far"
-   - 但要持拍——肘伤期禁止
+   - 持拍 drill，归 Stage B/C
 
 9. **标志碟 drill（Cone drill）— Patrik Broddfelt**
    - 带孔标志碟套在左手食指
