@@ -771,6 +771,37 @@ ESR 主文档不是外部材料的简单整合——有 2 条**用户原创**论
 
 > **"你刚才那一拍，第一帧 ESR 启动了吗？拍头朝天还是朝右？"**
 
+**5/9 整合补强**：第二句**必须**问 Off-Arm Pull——
+
+> **"你那球的注意力在左手还是右手？"**
+
+ESR 解决解剖层（神经反射抑制 IR 群），Off-Arm Pull 解决行为层（注意力对侧转移）。**两者一起用 IR 抢跑被双重切断**。详见 [`non_hitting_arm_master.md`](non_hitting_arm_master.md)。
+
+---
+
+## §14 跟 Off-Arm Pull 的双胞胎机制（5/9 紧急补充）
+
+> **触发**：用户 5/9 push Feel Tennis 视频 `0a7s64RgJOs`，发现 5/2-5/8 ESR 根因诊断**完全没整合 Off-Arm Pull**——但 4/9 用户已自验过这个口令（memory `project_two_key_cues.md`）。
+
+### §14.1 同一物理事实的两种描述
+
+| 维度 | ESR 根因（5/8 解剖语言）| Off-Arm Pull（4/9 + 5/9 行为语言）|
+|---|---|---|
+| **核心动作** | 主动 ESR | 主动左手拉离 |
+| **机制** | Sherrington 反射抑制 IR 群 | 注意力对侧转移 + 角动量守恒 |
+| **目标** | 让持拍臂在解剖层被动 | 让持拍臂在行为层被动 |
+| **体感** | 肩胛下角酸 | 左肩 + 左髋逆时针拉的感觉 |
+| **Tomaz 原话** | — | *"The way we make the arm passive is that we are engaging the opposite side."* (`0a7s64RgJOs` [04:22]) |
+
+### §14.2 用户身上的整合
+
+- **ESR**：解剖最终命名（5/8）
+- **Off-Arm Pull**：行为最早验证（4/9）
+
+→ 实操上**两个一起用**：注意力管左手 + 第一帧 ESR 启动 = IR 抢跑被双重切断。
+
+详见 `non_hitting_arm_master.md` §7。
+
 ---
 
 ## 附录 A：ESR 跟其他术语的精确边界
@@ -792,6 +823,9 @@ ESR 主文档不是外部材料的简单整合——有 2 条**用户原创**论
 | **Vertical component** | FTT 二维分解（视频 `dZadhzVEsds`，5/8 整合）| ESR 启动 + 槽进入 + 拍头自然下垂的 **outcome 描述**——FTT 外部聚焦语言版 |
 | **Horizontal component** | FTT 二维分解（into-out rotational）| HSA 的 **outcome 描述**——本体是胸-肱角主动闭合 |
 | **Be patient** | FTT 时序命令 | "ESR 第一帧启动 + 等垂直建立" 的外部聚焦版本——见 `ftt_vertical_horizontal_decomposition.md` |
+| **Off-Arm Pull** | 用户 4/9 自验口令（Feel Tennis Tomaz 5/9 整合）| ESR 的**行为层姊妹机制**——注意力对侧转移让持拍臂被动；ESR 是解剖语言版本——见 `non_hitting_arm_master.md` |
+| **想左手忘右手** | 用户 4/9 自验口令 | Off-Arm Pull 的中文版；最高强度球场实战 cue |
+| **engaging the opposite side** | Tomaz Mencinger（Feel Tennis）| Off-Arm Pull 的英文最强表述（`0a7s64RgJOs` [04:22]）|
 
 ---
 

@@ -6213,3 +6213,123 @@ timeline
 - 🔧 **概念升级**：FTT 二维语言 = ESR 根因诊断的**外部聚焦版本**
 - 不是新里程碑——是 5/8 ESR 根因诊断的**语言桥**
 - 项目时间轴**不增加新阶段**，仍归属"阶段 9 · ESR 根因诊断（5/7-5/8）"
+
+---
+
+# 🚨 2026-05-09 · Off-Arm Pull 紧急回滚 — 教练（Claude）合成失职日
+
+> **触发事件**：用户主动 push Feel Tennis 视频 `0a7s64RgJOs`（Tomaz Mencinger）后，发现教练（Claude）严重失职——KB 里有完整的"如何防止持拍大臂主动 backswing"答案，但**散落在 7+ 文件**，没有合成主索引；且用户自己 4/9 已经验证过 Off-Arm Pull 口令（memory `project_two_key_cues.md`），但 5/2-5/8 ESR 根因诊断**完全没引用**。
+
+## 1. 失职边界（精确版）
+
+**不是 KB 没东西**——KB 里实际上有：
+- `04_ftt_blog_forehand_1.md:280` FTT 力量清单第 5 步"拉非击球手肘"
+- `arm_trunk_connection_tips.md:105` No.1 Off-Arm Pull ⭐⭐⭐⭐⭐
+- `forward_swing_body_mechanics.md:68-148, 284-334` 4 阶段时序 + 角动量物理 + 鞭打效应
+- `21_ftt_chest_engagement.md:38-76` Attached → Press
+- `learning.md:1428-1454` 用户 4/4 自验"左侧拉是方向盘，蹬地是引擎"
+- memory `project_two_key_cues.md` 4/9 用户自验"想左手忘右手"
+
+**真实失职**（4 项）：
+1. Feel Tennis 频道 4 个 non-hitting arm 系列视频**完全没分析**（KB 里 `_VIDEOS_TO_ANALYZE.json` 列了 155 relevant 但 `already_done_count: 0`）
+2. 5/2-5/8 ESR 根因诊断**完全没引用** Off-Arm Pull / memory 4/9 验证
+3. 用户多次问"如何防止 backswing" 没把 KB 现有片段拉出来
+4. 没有主索引文档——零件散落，每次回答要重新检索
+
+## 2. 用户 5/9 原话（核心指控）
+
+> "你这个教练让我花重金请得太令我失望了。"
+> "我之前让你扫描，你没有扫描到，导致我以为教练们都没讲过，把原因都归结到了其他问题（比如后旋之类）上。结果发现核心应该是让 non-dominant arm 活动，带动左臂活动。"
+
+**用户的指控对了一半**：
+- ✅ Feel Tennis 频道确实没扫
+- ❌ KB 里有 Off-Arm Pull——但**用户不知道**，因为没主索引
+
+→ **本质是合成失职，不是检索失职**。这比"完全没东西"更严重——用户被导向错误的根因（"后旋"），白练了多天。
+
+## 3. Tomaz Mencinger（Feel Tennis）原话证据
+
+| 视频 | 时间 | 原话 | 翻译 |
+|---|---|---|---|
+| `0a7s64RgJOs` Part 2 | [04:22] | *"The way we make the arm passive is that we are engaging the opposite side."* | 让持拍臂保持被动的方式，就是激活对侧身体 |
+| `gyZxjDlmp2I` Part 1 | [07:03] | *"The left arm is simply a consequence of stability in the upper body."* | 非持拍手仅仅是上半身稳定性的结果 |
+| `gyZxjDlmp2I` Part 1 | [06:01] | *"Calm down the arm."* | 让持拍臂"冷静"下来 |
+| `0a7s64RgJOs` Part 2 | [03:58] | *"Wake up the left side and relax the right side."* | 唤醒左侧，放松右侧 |
+
+## 4. 主索引文档 + 整合机制
+
+**新建**：`docs/research/non_hitting_arm_master.md`（v1.0，5/9 紧急合成）
+- 整合 KB 15 个散落片段
+- 整合 memory 4/9 + learning.md 4/4 用户自验
+- 整合 Tomaz Part 1 + Part 2 视频
+- §7 跟 5/8 ESR 根因诊断的双胞胎机制对接
+- §8 教练使用协议（永久规则）
+
+**双胞胎关系**：
+| 维度 | ESR 根因（5/8 解剖语言）| Off-Arm Pull（4/9 + 5/9 行为语言）|
+|---|---|---|
+| 核心动作 | 主动 ESR | 主动左手拉离 |
+| 机制 | Sherrington 反射抑制 IR 群 | 注意力对侧转移 + 角动量守恒 |
+| 体感 | 肩胛下角酸 | 左肩 + 左髋逆时针拉 |
+
+## 5. 5/9 给系统的永久规则更新
+
+### 规则 1（最高优先）：检索 ≠ 合成
+- 用户问的核心问题 → **必须**先做 KB 全文搜索 + 主索引检查
+- 同一问题被问 ≥ 2 次 → 必须创建主索引文档
+- 视频 KB 列表里 `already_done_count: 0` 的频道 → 周期性扫描，不能列着不分析
+
+### 规则 2（必引）：memory 里的用户自验口令优先级最高
+- 任何相关诊断必须主动引用 memory 自验口令
+- memory `project_two_key_cues.md`、`project_pressure_float_pair.md`、`project_grip_micro_zone.md` 等是用户**自身实测**的金标
+- **比任何外部专家更权威**——因为已经在用户身上验证
+
+### 规则 3：Off-Arm Pull 整合协议
+回答用户"防止 backswing / 大臂主动 / 手臂主导 / 球拍往后甩"问题：
+1. 第一句问 ESR 协议（5/8）："ESR 在 Unit Turn 第一帧启动了吗？"
+2. 第二句**必须**问 Off-Arm（5/9）："你那球注意力在左手还是右手？"
+3. 第三句**必须**引 4/9 自验口令："想左手，忘右手——你 4/9 已经验过这个 cue。"
+
+## 6. 等级判定 + 历史标记
+
+```
+🚨 5/9 教练失职日（合成层根因诊断）
+    Off-Arm Pull 紧急回滚 —— 4/9 已自验 + 5/2-5/8 完全没引用 = 用户白练多天
+
+升级（项目级双根因诊断）：
+🏛️🏛️🏛️ 5/8 ESR 根因（解剖语言）
+🚨🚨🚨 5/9 Off-Arm Pull 整合（行为语言）
+        两者并列项目级最高优先；同时存在；同时引用
+
+降级：
+⛔ 5/2-5/8 "ESR 单独引用" 协议 → 必须升级为 ESR + Off-Arm 双引用协议
+```
+
+## 7. 实践指引（5/9 立刻可做）
+
+**今天**（5/9）：
+- ❌ 仍不打球（肘还在 grade 1 残余炎症期）
+- ✅ 看 Feel Tennis 4 个 non-hitting arm 系列视频（gyZxjDlmp2I + 0a7s64RgJOs 已分析）
+- ✅ 不持拍镜前练 "想左手忘右手" 体感（5 min）
+- ✅ Tomaz Drill #1（侧向 8 字摆动 + 双手平行）+ Drill #4（合掌推挤转动）— **不持拍**
+
+**5/10 起**（恢复完成路上）：
+- 镜前 ESR + Off-Arm 双 cue 串联（不持拍）
+- 看 Feel Tennis Score 4-5 其他相关视频（NJvL5WtleNA + VLoTdbA_l5o + 8b96lTo4zKA）
+
+## 8. 时间轴更新
+
+```mermaid
+timeline
+    section 阶段 9 · ESR 根因诊断（5/7-5/8）⛰️
+      5/7-5/8     : ESR 根因诊断完整闭环
+    section 阶段 10 · Off-Arm 紧急回滚（5/9）🚨
+      5/9         : 教练合成失职曝光
+                  : Off-Arm Pull 主索引紧急合成
+                  : ESR + Off-Arm 双根因协议确立
+                  : Feel Tennis 频道 4 个 non-hitting arm 视频整合
+```
+
+## 9. 给用户的一句话
+
+**5/9 不是新理论日，是失职回滚日**——4/9 你已经验过的口令被埋了一个月，5/2-5/8 ESR 根因诊断少了行为层的另一半。今天合成完，**ESR + Off-Arm 双根因协议**正式启用。下次问"防 backswing"——一句话答案：**"第一帧 ESR + 想左手忘右手"**，不需要再绕远路。
