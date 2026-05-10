@@ -94,6 +94,10 @@ docs/*
 !docs/visualizations/**
 !docs/training/
 !docs/training/**
+!docs/hermes_context_export/
+!docs/hermes_context_export/**
+!docs/hermes_context_export_*.tar.gz
+!docs/hermes_context_export_*.zip
 
 # ===== MCP 服务端相关（独立项目） =====
 scripts/mcp-server-youtube-transcript/
