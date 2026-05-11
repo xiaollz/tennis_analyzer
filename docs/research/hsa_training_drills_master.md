@@ -113,6 +113,7 @@ HSA 不是孤立的肌肉训练。它是 HSA + 上下游链条 + 时序 + 体感
 | 3-B | **Flip Drill** | 拍头被动加速转换 | 引拍末端故意停 → 启动髋 → 拍头自动 drop + 翻转 → HSA 爆发 | 30 次 × 2 组 | **不主动用腕**。Macci: "Wrist flip is a source of injury" | Macci `zac_u3TxxDo` [11:10] |
 | 3-C | **Off-Arm Pull 整合** | 左手主动拉离 → 强迫躯干旋转 | Unit Turn 时左手主动后拉 + 同时 HSA 释放 | 喂球 30 球 × 3 组 | 左手是 Unit Turn 的真正引擎 | FTT 通用 + 用户 Memory `project_two_key_cues.md` |
 | 3-D | **慢速完整挥（带哑铃）** | 把整条链统合到一个慢动作 | 1 kg 哑铃，慢速跑完整套挥拍（脚 → 髋 → 躯干 → 肩 → 拍） | 10 次 × 3 组 | 重点：每段先停才有下段爆发 | 本地 + FTT |
+| **3-E** ⭐⭐⭐ | **Fence Push（推围栏制造 tension）** | 击球瞬间拍头加速 + 自然 pronation（**不主动**）| ① 靠近围栏做正常引拍 ② 把球拍**推向围栏**，制造 tension ③ 在 push 中启动挥拍 → 球拍从围栏弹开 → follow-through ④ 离开围栏，**recreate** 那种"推墙感"做正常挥拍 | 5 次贴墙 + 10 次离墙 × 3 组 | 释放 tension 瞬间 = 拍头加速时机；**唯一直接命中"拍头加速过晚"问题的 drill** | Bourne Power Solution p136-137 |
 
 ### 阶段 4：实战调用
 

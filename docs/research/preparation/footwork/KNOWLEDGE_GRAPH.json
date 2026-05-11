@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "version": "1.0",
+    "date": "2026-04-15",
+    "priority_source": "FTT",
+    "sources": ["FTT", "TPA", "Feel_Tennis"],
+    "user_context": {
+      "handedness": "right",
+      "preferred_stance": "semi-open",
+      "current_kpi_gaps": {
+        "shoulder_rotation": "18-25° vs 90° target",
+        "min_knee_angle": "153-164° vs 140° target"
+      }
+    }
+  },
+  "nodes": [
+    {"id": "look_ball", "layer": "L1_perception", "name_zh": "看球（读对手）", "source": ["FTT", "TPA", "Feel_Tennis"], "note": "启动整个时序链的信号；Tomaz 的 flight data 概念"},
+    {"id": "split_step", "layer": "L2_trigger", "name_zh": "分步（Split Step）", "source": ["FTT", "Feel_Tennis"], "note": "对手触球前后窗口起跳，落地前识别方向"},
+    {"id": "landing_in_motion", "layer": "L2_trigger", "name_zh": "落地即启动", "source": ["FTT"], "note": "FTT 原创表达；落地不停顿"},
+    {"id": "multi_split_step", "layer": "L2_trigger", "name_zh": "Multi-Split-Step", "source": ["FTT"], "note": "球机训练必须连续小跳；FTT 独家"},
+    {"id": "forward_split_step", "layer": "L2_trigger", "name_zh": "前冲式分腿垫步", "source": ["FTT"], "note": "随球上网专用，向前跳不原地跳"},
+    {"id": "bounce_feeling", "layer": "L2_trigger", "name_zh": "弹起感（Tomaz）", "source": ["Feel_Tennis"], "note": "触地一瞬，自动弹起，不是主动推"},
+    {"id": "pivot_heel_axis", "layer": "L3_foot", "name_zh": "启动 Pivot（脚跟轴）", "source": ["TPA"], "note": "T2 阶段脚跟为轴，脚尖向外划弧 45°"},
+    {"id": "pivot_ball_axis", "layer": "L3_foot", "name_zh": "蹬地 Pivot（前脚掌轴）", "source": ["FTT", "TPA"], "note": "T5 阶段前脚掌为轴，脚跟向内拧"},
+    {"id": "pivot_45_toe_end", "layer": "L3_foot", "name_zh": "脚尖 45° 点地结束", "source": ["FTT"], "note": "右脚最终朝击球侧前方 45°，脚尖点地不离地"},
+    {"id": "backwards_pivot", "layer": "L3_foot", "name_zh": "后向 Pivot（深球处理）", "source": ["TPA"], "note": "pAFDt_e5rQI"},
+    {"id": "foot_under_hip", "layer": "L3_foot", "name_zh": "脚在髋下方", "source": ["TPA"], "note": "所有关键节点脚落点必须在髋正下方"},
+    {"id": "r_l_r_adjustment", "layer": "L3_foot", "name_zh": "R-L-R 调整步", "source": ["TPA"], "note": "同一击球动作内脚的三个位置"},
+    {"id": "two_step_pattern", "layer": "L3_foot", "name_zh": "两步击球模式", "source": ["TPA"], "note": "split→明确第一步→停下击球"},
+    {"id": "unit_turn_trunk_first", "layer": "L4_trunk", "name_zh": "躯干先转（Tomaz 启动顺序）", "source": ["Feel_Tennis"], "note": "核心→躯干→肩→脚；与 TPA pivot-first 冲突"},
+    {"id": "pivot_first", "layer": "L4_trunk", "name_zh": "脚先转（TPA 启动顺序）", "source": ["TPA"], "note": "Pivot 触发 body turn"},
+    {"id": "simultaneous_start", "layer": "L4_trunk", "name_zh": "同时启动（FTT 立场）", "source": ["FTT"], "note": "脚髋同时启动但意图在髋"},
+    {"id": "unit_turn_90", "layer": "L4_trunk", "name_zh": "Unit Turn 肩转 90°", "source": ["FTT", "Feel_Tennis"], "note": "腰以上刚体转约 90°"},
+    {"id": "off_arm_pull", "layer": "L4_trunk", "name_zh": "左手拉离（Off-Arm Pull）", "source": ["FTT"], "note": "非持拍臂主动前推到前方"},
+    {"id": "core_initiation", "layer": "L4_trunk", "name_zh": "核心启动（肚脐转）", "source": ["Feel_Tennis"], "note": "8b96lTo4zKA"},
+    {"id": "hip_separation", "layer": "L4_trunk", "name_zh": "肩髋分离", "source": ["FTT"], "note": "X Stretch 的物理结果"},
+    {"id": "x_stretch", "layer": "L4_trunk", "name_zh": "X 字伸展", "source": ["FTT"], "note": "左肩-右髋对角线拉开；wFIrPMutzRo"},
+    {"id": "left_shoulder_forward", "layer": "L4_trunk", "name_zh": "左肩前推", "source": ["Feel_Tennis"], "note": "Tomaz 强调的 unit turn 意图"},
+    {"id": "triple_bend", "layer": "L5_load", "name_zh": "Triple Bend（踝膝髋同时屈）", "source": ["FTT"], "note": "动力链加载的基石"},
+    {"id": "ankle_flex", "layer": "L5_load", "name_zh": "踝屈曲", "source": ["FTT"], "note": "小腿作为弹簧；前脚掌触地"},
+    {"id": "knee_flex", "layer": "L5_load", "name_zh": "膝屈曲", "source": ["FTT", "TPA"], "note": "股四头肌募集；目标 140° 膝角"},
+    {"id": "hip_hinge", "layer": "L5_load", "name_zh": "髋折叠", "source": ["FTT"], "note": "下背+臀大肌+腘绳肌；关键安全"},
+    {"id": "knee_without_hip_hinge", "layer": "L5_error", "name_zh": "只屈膝不屈髋（伤膝根因）", "source": ["FTT"], "note": "前向膝关节剪切力"},
+    {"id": "wait_on_back_leg", "layer": "L5_load", "name_zh": "在右腿上等", "source": ["Feel_Tennis"], "note": "load 的本质是持续时间不是发力强度"},
+    {"id": "load_80_20", "layer": "L5_load", "name_zh": "80/20 重量分布", "source": ["TPA"], "note": "右脚 80% + 左脚 20% 方向锚点"},
+    {"id": "press_wall_test", "layer": "L5_load", "name_zh": "推墙测试", "source": ["FTT"], "note": "推不动说明结构不对"},
+    {"id": "stance_semi_open", "layer": "L6_stance", "name_zh": "半开放站位", "source": ["FTT", "TPA"], "note": "三家都推荐的默认"},
+    {"id": "stance_open", "layer": "L6_stance", "name_zh": "开放站位", "source": ["Feel_Tennis"], "note": "Tomaz: Open first 默认"},
+    {"id": "stance_neutral", "layer": "L6_stance", "name_zh": "中立站位", "source": ["TPA"], "note": "短球+慢球切换"},
+    {"id": "stance_closed", "layer": "L6_stance", "name_zh": "封闭站位", "source": ["TPA"], "note": "FTT 不推荐；低球+近底线时 TPA 允许"},
+    {"id": "stance_width_shoulder", "layer": "L6_stance", "name_zh": "站姿宽于肩", "source": ["FTT"], "note": "几何阈值；杠杆效应"},
+    {"id": "distance_penalty", "layer": "L6_stance", "name_zh": "Distance Penalty", "source": ["Feel_Tennis"], "note": "提前切 neutral 吃掉反应时间"},
+    {"id": "weight_pass_through", "layer": "L7_transfer", "name_zh": "重心穿过球", "source": ["Feel_Tennis"], "note": "Hitting with weight"},
+    {"id": "right_foot_drive_first", "layer": "L7_transfer", "name_zh": "右脚发力早于重心到左", "source": ["FTT"], "note": "FTT 开放式时序定义"},
+    {"id": "rotation_not_translation", "layer": "L7_transfer", "name_zh": "旋转不是横向位移", "source": ["TPA"], "note": "绕脊柱的旋转动作"},
+    {"id": "positive_balance", "layer": "L7_transfer", "name_zh": "正向平衡", "source": ["FTT"], "note": "重心结束在起点前方"},
+    {"id": "neutral_balance", "layer": "L7_transfer", "name_zh": "中性平衡", "source": ["FTT"], "note": "横向移动时激活"},
+    {"id": "negative_balance", "layer": "L7_transfer", "name_zh": "负向平衡", "source": ["FTT"], "note": "被迫后退时；旋转仍是引擎"},
+    {"id": "glute_explosive", "layer": "L8_fire", "name_zh": "臀肌爆发性收缩", "source": ["FTT"], "note": "击球瞬间快速爆发不是持续用力"},
+    {"id": "contact", "layer": "L8_fire", "name_zh": "触球", "source": ["FTT", "TPA", "Feel_Tennis"], "note": "T6 时刻"},
+    {"id": "fire_back_foot_through", "layer": "L9_recovery", "name_zh": "后脚主动蹬出", "source": ["FTT"], "note": "Recovery 的第一步主动不被动"},
+    {"id": "recovery_cone", "layer": "L9_recovery", "name_zh": "圆锥区域防守位", "source": ["FTT"], "note": "回到对手回球角度平分线"},
+    {"id": "land_and_ready", "layer": "L9_recovery", "name_zh": "落地即准备", "source": ["FTT"], "note": "每次落地重建 Triple Bend"},
+    {"id": "end_of_shot_begin_recovery", "layer": "L9_recovery", "name_zh": "击球结束即回位开始", "source": ["TPA"], "note": "Tom 口诀"},
+    {"id": "left_cue", "layer": "L10_cue", "name_zh": "'Left!' 口令", "source": ["Feel_Tennis"], "note": "声音触发左肩前推"},
+    {"id": "push_shoulder_test", "layer": "L10_cue", "name_zh": "推肩测试", "source": ["Feel_Tennis"], "note": "vcWAEcF6klU 下背绷紧检验"},
+    {"id": "flight_data", "layer": "L10_cue", "name_zh": "Flight Data 心智模型", "source": ["Feel_Tennis"], "note": "读球像采集飞行数据"},
+    {"id": "no_backward", "layer": "L10_cue", "name_zh": "身体里没有向后", "source": ["Feel_Tennis"], "note": "vcWAEcF6klU 心理意象"},
+    {"id": "err_feet_planted", "layer": "L11_error", "name_zh": "双脚踩死", "source": ["FTT", "TPA", "Feel_Tennis"], "note": "三家共指，最严重"},
+    {"id": "err_narrow_stance", "layer": "L11_error", "name_zh": "窄站姿", "source": ["FTT", "TPA"], "note": "比赛紧张下退化"},
+    {"id": "err_land_then_start", "layer": "L11_error", "name_zh": "落地后停顿再启动", "source": ["FTT"], "note": "错过 landing in motion 窗口"},
+    {"id": "err_right_foot_jump", "layer": "L11_error", "name_zh": "右脚腾空代偿", "source": ["FTT", "TPA"], "note": "用跳跃补偿髋转不足"},
+    {"id": "err_closed_stance_habit", "layer": "L11_error", "name_zh": "习惯性封闭站位", "source": ["FTT", "TPA", "Feel_Tennis"], "note": "髋无法转到正对目标"},
+    {"id": "err_stutter_steps", "layer": "L11_error", "name_zh": "碎步", "source": ["TPA", "Feel_Tennis"], "note": "4+ 次小调整"},
+    {"id": "err_brain_triggered_step", "layer": "L11_error", "name_zh": "大脑触发的补救步", "source": ["Feel_Tennis"], "note": "重心过早失衡"},
+    {"id": "err_arm_only_swing", "layer": "L11_error", "name_zh": "纯手臂挥拍", "source": ["FTT"], "note": "shoulder rotation 不足的下游"},
+    {"id": "err_knee_shear", "layer": "L11_error", "name_zh": "膝关节剪切力", "source": ["FTT"], "note": "长期膝伤根因"}
+  ],
+  "edges": [
+    {"source": "look_ball", "target": "split_step", "relation": "triggers", "strength": "strong"},
+    {"source": "split_step", "target": "landing_in_motion", "relation": "enables", "strength": "strong"},
+    {"source": "landing_in_motion", "target": "pivot_heel_axis", "relation": "triggers", "strength": "strong"},
+    {"source": "bounce_feeling", "target": "split_step", "relation": "describes", "strength": "medium"},
+    {"source": "pivot_heel_axis", "target": "pivot_ball_axis", "relation": "transitions_to", "strength": "strong"},
+    {"source": "pivot_ball_axis", "target": "pivot_45_toe_end", "relation": "ends_at", "strength": "strong"},
+    {"source": "pivot_heel_axis", "target": "unit_turn_90", "relation": "coupled_with", "strength": "strong"},
+    {"source": "unit_turn_trunk_first", "target": "pivot_heel_axis", "relation": "drives", "strength": "strong"},
+    {"source": "pivot_first", "target": "unit_turn_trunk_first", "relation": "conflicts_with", "strength": "strong"},
+    {"source": "simultaneous_start", "target": "unit_turn_trunk_first", "relation": "partially_agrees", "strength": "medium"},
+    {"source": "simultaneous_start", "target": "pivot_first", "relation": "partially_agrees", "strength": "medium"},
+    {"source": "core_initiation", "target": "unit_turn_trunk_first", "relation": "enables", "strength": "strong"},
+    {"source": "off_arm_pull", "target": "unit_turn_90", "relation": "enables", "strength": "strong"},
+    {"source": "left_shoulder_forward", "target": "unit_turn_90", "relation": "enables", "strength": "strong"},
+    {"source": "unit_turn_90", "target": "hip_separation", "relation": "creates", "strength": "strong"},
+    {"source": "hip_separation", "target": "x_stretch", "relation": "visible_as", "strength": "strong"},
+    {"source": "x_stretch", "target": "triple_bend", "relation": "coexists_with", "strength": "medium"},
+    {"source": "triple_bend", "target": "ankle_flex", "relation": "requires", "strength": "strong"},
+    {"source": "triple_bend", "target": "knee_flex", "relation": "requires", "strength": "strong"},
+    {"source": "triple_bend", "target": "hip_hinge", "relation": "requires", "strength": "strong"},
+    {"source": "knee_without_hip_hinge", "target": "err_knee_shear", "relation": "causes", "strength": "strong"},
+    {"source": "knee_without_hip_hinge", "target": "triple_bend", "relation": "violates", "strength": "strong"},
+    {"source": "wait_on_back_leg", "target": "load_80_20", "relation": "corresponds_to", "strength": "strong"},
+    {"source": "load_80_20", "target": "right_foot_drive_first", "relation": "prepares", "strength": "strong"},
+    {"source": "press_wall_test", "target": "triple_bend", "relation": "verifies", "strength": "medium"},
+    {"source": "stance_semi_open", "target": "unit_turn_90", "relation": "enables", "strength": "strong"},
+    {"source": "stance_width_shoulder", "target": "positive_balance", "relation": "enables", "strength": "medium"},
+    {"source": "stance_closed", "target": "err_closed_stance_habit", "relation": "can_become", "strength": "medium"},
+    {"source": "err_closed_stance_habit", "target": "unit_turn_90", "relation": "blocks", "strength": "strong"},
+    {"source": "distance_penalty", "target": "stance_open", "relation": "justifies", "strength": "medium"},
+    {"source": "right_foot_drive_first", "target": "contact", "relation": "precedes", "strength": "strong"},
+    {"source": "glute_explosive", "target": "contact", "relation": "fires_at", "strength": "strong"},
+    {"source": "weight_pass_through", "target": "contact", "relation": "describes", "strength": "strong"},
+    {"source": "rotation_not_translation", "target": "weight_pass_through", "relation": "clarifies", "strength": "medium"},
+    {"source": "contact", "target": "fire_back_foot_through", "relation": "triggers", "strength": "strong"},
+    {"source": "fire_back_foot_through", "target": "recovery_cone", "relation": "moves_toward", "strength": "strong"},
+    {"source": "fire_back_foot_through", "target": "land_and_ready", "relation": "leads_to", "strength": "strong"},
+    {"source": "land_and_ready", "target": "split_step", "relation": "resets_to", "strength": "strong"},
+    {"source": "end_of_shot_begin_recovery", "target": "fire_back_foot_through", "relation": "corresponds_to", "strength": "strong"},
+    {"source": "left_cue", "target": "unit_turn_trunk_first", "relation": "triggers", "strength": "strong"},
+    {"source": "push_shoulder_test", "target": "unit_turn_90", "relation": "verifies", "strength": "medium"},
+    {"source": "flight_data", "target": "wait_on_back_leg", "relation": "justifies", "strength": "medium"},
+    {"source": "no_backward", "target": "unit_turn_trunk_first", "relation": "reinforces", "strength": "medium"},
+    {"source": "err_feet_planted", "target": "unit_turn_90", "relation": "blocks", "strength": "strong"},
+    {"source": "err_narrow_stance", "target": "positive_balance", "relation": "undermines", "strength": "strong"},
+    {"source": "err_land_then_start", "target": "landing_in_motion", "relation": "violates", "strength": "strong"},
+    {"source": "err_right_foot_jump", "target": "pivot_45_toe_end", "relation": "violates", "strength": "strong"},
+    {"source": "err_stutter_steps", "target": "two_step_pattern", "relation": "violates", "strength": "medium"},
+    {"source": "err_brain_triggered_step", "target": "weight_pass_through", "relation": "symptom_of_early", "strength": "medium"},
+    {"source": "err_arm_only_swing", "target": "unit_turn_90", "relation": "downstream_of_shallow", "strength": "strong"},
+    {"source": "multi_split_step", "target": "split_step", "relation": "specializes", "strength": "medium"},
+    {"source": "forward_split_step", "target": "split_step", "relation": "specializes", "strength": "medium"},
+    {"source": "r_l_r_adjustment", "target": "foot_under_hip", "relation": "ends_with", "strength": "strong"},
+    {"source": "two_step_pattern", "target": "r_l_r_adjustment", "relation": "generalizes", "strength": "medium"},
+    {"source": "backwards_pivot", "target": "negative_balance", "relation": "enables", "strength": "medium"},
+    {"source": "positive_balance", "target": "weight_pass_through", "relation": "ideal_form_of", "strength": "strong"}
+  ],
+  "conflicts": [
+    {
+      "topic": "启动顺序（T2 相位）",
+      "positions": {
+        "TPA": "脚先：Pivot 触发 body turn，动力链从脚开始可量化",
+        "Feel_Tennis": "躯干先：核心→躯干→脚，脚是副产品；先动脚是根本错误",
+        "FTT": "同时启动：脚和髋同时，但意图在髋；髋转解放脚而非脚带髋"
+      },
+      "evidence": [
+        {"source": "TPA", "claim": "R-L-R 时序严格可数（bIVKPlOMRn0）"},
+        {"source": "Feel_Tennis", "claim": "推肩测试证明下背扎稳才有脚下稳（vcWAEcF6klU）"},
+        {"source": "FTT", "claim": "书 line 301: A full hip rotation is impossible if both feet are firmly planted"}
+      ],
+      "resolution": "对当前用户（肩转 18-25° 严重不足），采用 Tomaz 的躯干先作为启动意图修正当前病因；同时保留 FTT 的同时启动作为稳定态目标。不采用 TPA 的脚先——会放大用户当前错误方向。",
+      "user_action": "日常训练用 Tomaz 的 'Left!' 口令 + 躯干先转作为触发，视频复盘用 TPA 的几何量化作为标尺。"
+    },
+    {
+      "topic": "默认站位",
+      "positions": {
+        "TPA": "Semi-Open 推荐，但 Neutral 可作教学起点",
+        "Feel_Tennis": "Open First：第一步始终开放，只有短慢球才切 Neutral",
+        "FTT": "Semi-Open 最推荐，Closed 不推荐"
+      },
+      "evidence": [
+        {"source": "Feel_Tennis", "claim": "Distance Penalty——迈步切 Neutral 吃掉反应时间"},
+        {"source": "FTT", "claim": "书 line 226-243：Semi-Open 最推荐"}
+      ],
+      "resolution": "用户已偏好半开放，三家都支持，无实质冲突。忽略 Tomaz 的 Open First 教条——那是针对初学者而非用户。",
+      "user_action": "保持半开放为默认，不主动切换。"
+    },
+    {
+      "topic": "重心转移的本质",
+      "positions": {
+        "TPA": "不是横向位移，是绕脊柱的旋转动作",
+        "Feel_Tennis": "重心穿过球（Hitting with weight）——整体感觉而非机械",
+        "FTT": "右脚发力 → 击球 → 重心才到左脚（时序性定义）"
+      },
+      "evidence": [
+        {"source": "TPA", "claim": "左脚在击球瞬间应能轻松抬起"},
+        {"source": "Feel_Tennis", "claim": "blue block 意象，方块整体走进球"},
+        {"source": "FTT", "claim": "1-g1OD8gh-I: 右脚发力在重心转移到左脚之前击球"}
+      ],
+      "resolution": "三家说同一件事的不同层面：TPA 机械描述、Tomaz 感觉描述、FTT 时序描述。没有实质冲突。",
+      "user_action": "训练时用 Tomaz 的感觉（重心穿过球），复盘视频时用 FTT 的时序（左脚承重晚于击球瞬间）。"
+    }
+  ],
+  "drills": [
+    {"id": "drill_static_pivot", "name": "Static Pivot（FTT）", "targets_nodes": ["pivot_ball_axis", "pivot_45_toe_end"], "source": "FTT", "video": "1-g1OD8gh-I", "description": "不带球。加载右腿（左脚尖着地），旋转身体时将重心换到左脚，右脚脚尖点地结束。"},
+    {"id": "drill_trunk_only_turn", "name": "不动手原地转身（Tomaz）", "targets_nodes": ["unit_turn_trunk_first", "unit_turn_90"], "source": "Feel_Tennis", "description": "双手贴身体两侧，只用躯干转 90°，体会 unit 的感觉。修意图问题。"},
+    {"id": "drill_left_cue", "name": "'Left!' 口令（Tomaz）", "targets_nodes": ["left_cue", "unit_turn_trunk_first"], "source": "Feel_Tennis", "description": "每次接球前大声喊 'Left!'，用声音强制大脑先关注左肩前推。"},
+    {"id": "drill_push_wall", "name": "推墙测试（FTT）", "targets_nodes": ["press_wall_test", "triple_bend"], "source": "FTT", "video": "wVa4XQPcaqs", "description": "脚踩地推墙，如果推不动说明结构不对。验证 loading 结构。"},
+    {"id": "drill_wait_back_leg", "name": "Wait on Back Leg（Tomaz）", "targets_nodes": ["wait_on_back_leg", "load_80_20"], "source": "Feel_Tennis", "video": "Auem1-8t3rE", "description": "接球前刻意在右腿上多停 0.2 秒。修边跑边打问题。"},
+    {"id": "drill_x_stretch_mirror", "name": "X Stretch 镜子自检（FTT）", "targets_nodes": ["x_stretch", "hip_separation"], "source": "FTT", "video": "wFIrPMutzRo", "description": "准备完成时用镜子看左肩-右髋对角线有没有拉开。"},
+    {"id": "drill_r_l_r", "name": "R-L-R 调整步（TPA）", "targets_nodes": ["r_l_r_adjustment", "foot_under_hip"], "source": "TPA", "video": "FtGqOcmlWLY", "description": "Right-load → Left-transition → Right-finish；每步终点必须在髋下"},
+    {"id": "drill_multi_split", "name": "Multi-Split-Step（FTT）", "targets_nodes": ["multi_split_step", "split_step"], "source": "FTT", "video": "BbGzWTp5pCM", "description": "球机训练保持连续小跳：左-右-双脚，神经兴奋不降"},
+    {"id": "drill_closed_eye_coil", "name": "闭眼拧紧松开（Tomaz）", "targets_nodes": ["core_initiation", "unit_turn_trunk_first"], "source": "Feel_Tennis", "video": "EWrlCzQV4Hk", "description": "闭眼感受核心肌肉拉伸感变化。剥离运动输出暴露感觉通道。"},
+    {"id": "drill_push_shoulder", "name": "推肩测试（Tomaz）", "targets_nodes": ["push_shoulder_test", "unit_turn_90"], "source": "Feel_Tennis", "video": "vcWAEcF6klU", "description": "训练伙伴在引拍时推肩膀，若晃动说明下背未绷紧。"}
+  ],
+  "user_recommendations": {
+    "p0_unit_turn": {
+      "gap": "shoulder_rotation 18-25° → target 90°",
+      "root_cause_node": "unit_turn_trunk_first",
+      "primary_drills": ["drill_trunk_only_turn", "drill_left_cue", "drill_x_stretch_mirror"],
+      "cue": "Left hand 先到前面（整合 FTT Off-Arm Pull + Tomaz Left!）",
+      "avoid": "pivot_first — 放大当前错误方向"
+    },
+    "p1_triple_bend": {
+      "gap": "min_knee_angle 153-164° → target 140°",
+      "root_cause_node": "triple_bend",
+      "primary_drills": ["drill_push_wall", "drill_wait_back_leg"],
+      "cue": "髋折进去（不说'蹲下去'——蹲会只屈膝不屈髋）",
+      "avoid": "knee_without_hip_hinge — 长期伤膝"
+    },
+    "p2_stance_refinement": {
+      "gap": "maintenance",
+      "root_cause_node": "stance_semi_open",
+      "primary_drills": ["drill_r_l_r"],
+      "cue": "站姿宽于肩，右脚外旋 45°，左脚不承重",
+      "avoid": "stance_closed — FTT 不推荐"
+    }
+  }
+}

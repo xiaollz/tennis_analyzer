@@ -99,6 +99,45 @@ docs/*
 !docs/hermes_context_export_*.tar.gz
 !docs/hermes_context_export_*.zip
 
+# ===== 2026-05-11 整理后 docs/research/ 新子目录显式白名单 =====
+# 虽然 !docs/research/** 已经覆盖，下面是 defense-in-depth + 文档化新结构
+!docs/research/ftt/
+!docs/research/ftt/**
+!docs/research/tpa/
+!docs/research/tpa/**
+!docs/research/tennis_science/
+!docs/research/tennis_science/**
+!docs/research/hsa/
+!docs/research/hsa/**
+!docs/research/esr/
+!docs/research/esr/**
+!docs/research/foundation/
+!docs/research/foundation/**
+!docs/research/preparation/
+!docs/research/preparation/**
+!docs/research/forward_swing/
+!docs/research/forward_swing/**
+!docs/research/throwing_kinetic_chain/
+!docs/research/throwing_kinetic_chain/**
+!docs/research/arm_body/
+!docs/research/arm_body/**
+!docs/research/misc_concepts/
+!docs/research/misc_concepts/**
+!docs/research/bourne_one_minute/
+!docs/research/bourne_one_minute/**
+!docs/research/feel_tennis/
+!docs/research/feel_tennis/**
+!docs/research/jul_tennis/
+!docs/research/jul_tennis/**
+!docs/research/cross_channel/
+!docs/research/cross_channel/**
+!docs/research/coaches/
+!docs/research/coaches/**
+
+# ===== 2026-05-11 books/ 整体白名单（用户合法购买/学术获取） =====
+!books/
+!books/**
+
 # ===== MCP 服务端相关（独立项目） =====
 scripts/mcp-server-youtube-transcript/
 .tunnel.config
