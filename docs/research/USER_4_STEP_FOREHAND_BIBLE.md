@@ -325,11 +325,143 @@ Step 4: Show the Shoulder
 v1.0 (2026-05-11 晚)
   - 触发: 用户 5/11 视频 mTQ-RNo6chs 后独立整合 4-step 序列
   - 整合 Bourne 双口令 + 5/3 HSA + Reid 2013 35% + Wulf 范式
-  - 跟 5/6 推肘禁令做明确边界（"肘驱动"不是"推肘"）
-  - 给 Hermes Export v2 升级清单
 
-待补充 (v2.0):
-  - 接收 Power Solution 后深化每个 step 的精确参数
-  - Hermes Export v2 全面升级到 4-step 协议
-  - 实战检验 4-step 序列稳定性（5/15+ 起）
+v2.0 (2026-05-11 v3.0 高尔夫套利同步)
+  - 加入 3 个高尔夫套利改动（详见 §11）
+  - 加入 Cheetham 2014 paper 学术加成（详见 §12）
+  - 4 step 每步加量化锚点
 ```
+
+---
+
+## §11 v2.0 三大改动（5/11 高尔夫套利同步）
+
+按 5/11 v3.0 高尔夫 40 视频套利分析，挑出 3 个用户当前阶段最高 ROI 的改动：
+
+### ⭐⭐⭐ 改动 1：Step 3 ISR 精确化 — 手腕 3 段释放序列
+
+**之前（v1.0）**：Step 3 = "撕"（outcome 描述）
+
+**v2.0 精确化（TPI Pro vs HHC 实测）**：
+ISR 实际 = **Wrist Flexion → Ulnar Deviation → Forearm Twist** 3 段序列
+
+| 阶段 | 动作 | 时机 |
+|---|---|---|
+| 1 | **Wrist Flexion**（屈腕成弓形）| 下挥开始 |
+| 2 | **Ulnar Deviation**（尺骨偏转）| 拍头下落 |
+| 3 | **Forearm Twist**（前臂旋转）| 击球瞬间 |
+
+**自检（球软时）**：
+- ✅ 对：身体做 1+2，手腕只做 3
+- ❌ 错：手腕做了 1+2+3 = "只手腕动"（用户多次报的问题根因）
+
+**来源**：TPI Dr. Greg Rose 视频 `VsZ8yhrolbw` Pro vs HHC 3D 实测对比
+
+---
+
+### ⭐⭐ 改动 2：训练前等长激活替代拉伸（神经唤醒）
+
+**之前**：项目没明确训练前协议
+
+**v2.0**：训练前**不要做静态拉伸**——做 **"克服性等长激活"**：
+- 推墙 5-10 秒 80% 最大力 × 3-5 次
+- TRX 拉至张力极限保持 5 秒 × 3-5 次
+- 双手互推（祈祷状）× 3-5 次
+
+**原理**（神经科学）：
+- 拉伸 → 肌肉柔顺但**Type 2B 快肌纤维未唤醒**
+- 等长激活 → 大脑感知关节稳定 → **解除神经安全阀** → 给球速"绿灯"
+
+**用户报"明明使劲打但球软"的根因**：
+- 不是肌肉无力
+- 是**大脑限速器**触发（不安全 → 自动降速保护）
+- 等长激活解锁
+
+**来源**：AMG `oNk2XNa_J4Y` Dr. LaCaze + 项目 5/10 Wulf 范式深化
+
+---
+
+### ⭐⭐ 改动 3：Block → Random Practice 切换协议
+
+**之前**：用户当前训练 = 全 block（发球机最低速重复同一动作）
+
+**v2.0 训练协议升级**：
+- ✅ 球场上感觉到"对错差异"那一刻 → **立即切换 random**
+  - 不同球速：60 → 70 → 80 mph 切换
+  - 不同方向：左 / 中 / 右随机喂
+  - 不同节奏：快慢交替
+- ✅ 比赛前 1 小时：block 热身 OK
+- ❌ **日常训练禁全 block** —— 半年后 plateau 风险
+
+**反馈阈值数据**（TPI 引用）：
+- 新手：30-40 次 block 才能"感觉到对错"
+- 职业：2 次
+
+→ 用户当前阶段约 30-40 次 block 后应主动切换。
+
+**来源**：TPI `nUpsR1wETrg` Block vs Random Practice 科学
+
+---
+
+## §12 Cheetham 2014 paper 学术加成
+
+**完整引用**：Cheetham, P. (2014). *Basic Biomechanics for Golf — Selected Topics*. AMM Inc.
+
+### 关键公式（直接应用 4-Step）
+
+| 公式 | 4-Step 应用 |
+|---|---|
+| **F = m × a**（Newton II）| Step 3 末段球拍加速 = 拍重 × 加速度 |
+| **T = F × r**（Torque = Force × Moment Arm）| Step 2 HSA "肘驱动" 力臂 |
+| **H = I × ω**（角动量 = 转动惯量 × 角速度）| Step 1-2 ESR 蓄能 → Step 3 释放 |
+| **H = ∑(mr²) × ω**（转动惯量分布）| 拍头质心距离决定惯性 |
+| **KE ∝ v²**（动能 ∝ 速度²）| 拍头速度增 10% → 动能增 21% |
+
+### 量化时序锚点（Cheetham 男 PGA 数据）
+
+| 阶段 | 时间 | 对应 4-Step |
+|---|---|---|
+| **Transition**（pelvis → club 序列）| **0.05 秒** | Step 1 → Step 2 切换窗口 |
+| **Downswing 总时间** | **0.25 秒** | Step 2 → Step 3 → Step 4 总时长 |
+| **Follow through** | **0.7 秒** | Step 4 完整时长 |
+
+→ **4 Step 不再只是 cue 序列——是有精确时间窗口的动力学过程**。
+
+### Kinematic Sequence 严谨版
+
+Cheetham 原话（p15）：
+> "Each segment **decelerates rapidly** before the next peak — only club continues accelerating to impact."
+
+**这是项目 4-Step 的物理基础**：
+- Step 1（pelvis 类比）→ 减速触发 Step 2 加速
+- Step 2（thorax 类比）→ 减速触发 Step 3
+- Step 3（arm 类比）→ 减速触发 Step 4
+- **只有拍头一路加速到 impact**
+
+**新洞察**：用户报"动作快但球不飞" = **没有减速触发加速机制** → 全身一起加速到底 → 末段没爆发空间。修法：每个 Step 之间必须有"停顿感"。
+
+---
+
+## §13 v2.0 完整 4-Step 升级版
+
+| Step | v1.0 cue | v2.0 加精确化 |
+|---|---|---|
+| Step 1 | ESR + 藏肘 | + **必须减速触发 Step 2** + 关节牵引可即时增 20-30° |
+| Step 2 | HSA（肘驱动）| + **T = F × r 力臂工程** + 压缩空间 10"→4" |
+| Step 3 | ISR（撕）| + **手腕 3 段序列 Flex → Ulnar → Twist** ⭐⭐⭐ |
+| Step 4 | 显肩 | + 击球瞬间骨盆 ~0°（不再前倾）+ GRF 4 力时序 |
+
+**总成本**：v1.0 4 个 cue → v2.0 仍是 4 个 cue + 3 个 "如果 X 则做 Y" 触发协议 + 5 个 reasoning reference 数字锚点
+
+**遵守 Intuition-First**：cue 数量没增加，每个 cue 精度提升。
+
+---
+
+## §14 给用户 v2.0 总结
+
+> v1.0 解决了**做什么** 4 个 cue。v2.0 解决了**何时做 + 多深做 + 怎么练**。
+>
+> 加入 3 个高尔夫套利改动（手腕 3 段释放 / 等长激活 / Block-Random 切换）+ Cheetham paper 学术骨架。
+>
+> **4-Step 现在是 v2.0 精确化版本**——但你**练习不需要记新东西**。按原 4 step 训练，碰到具体问题时拿 v2.0 协议对应。
+
