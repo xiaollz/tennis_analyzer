@@ -26,6 +26,7 @@
 | 8 | [08_RECENT_PROGRESS_5_8_to_5_10.md](08_RECENT_PROGRESS_5_8_to_5_10.md) | ⭐ | 5/8-5/10 最近进展 |
 | 9 | [09_EQUIPMENT_GUIDE.md](09_EQUIPMENT_GUIDE.md) | 📚 | 装备问题（穿线/拍/会员）|
 | 10 | [10_FILESYSTEM_MAP.md](10_FILESYSTEM_MAP.md) | 📚 | 想去原 KB 查时用 |
+| 11 | [11_GOLF_ARBITRAGE_KB.md](11_GOLF_ARBITRAGE_KB.md) | 🏌️ **新** | **5/11 v4.0** — 65 高尔夫视频套利浓缩版 + 3 改动 + 15 原则 |
 
 ---
 
