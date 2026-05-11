@@ -1,306 +1,109 @@
-# 🏌️→🎾 高尔夫生物力学 → 网球正手套利主索引 v4.0（终极版）
+# 🏌️→🎾 高尔夫→网球套利精简版（v5.0 重写）
 
 > **写作日期**：2026-05-11
-> **版本**：v4.0（**5 → 25 → 40 → 65 视频** / 7 → 11 → **13 主题** / 50+ → **70+ 量化数据**）
-> **学术基础**：Cheetham 2014 paper（20 页 完整解码）+ Cheetham 2008 X-Factor Stretch paper
-> **方法**：65 个高尔夫权威视频 Gemini VLM 深度分析 + 学术 paper PyPDF2 解码
-> **性质**：fair use 跨领域分析——短引用 + 项目原创映射 + drill 功能信息
+> **版本**：v5.0 — 用户反馈"v4.0 太学术、太多冗余"后**全面重写**
+> **重写原则**：只保留"摸不着头脑时能让你茅塞顿开"那种洞察，所有学术数据/公式/PGA 时序数字**折叠到附录**
+> **核心边界**：套利 = 把高尔夫的**理解**翻译成网球版**体感**，不是把高尔夫动作搬到网球
+> **历史 v1-v4 数据保留位置**：`videos/` 子目录 65 个视频独立分析 + `CHEETHAM_2014_PAPER.md` 学术 paper KB
 
 ---
 
-## §0 一句话定稿
+## §0 套利的正确逻辑（必读，定义边界）
 
-> **65 视频 + 2 paper + 70+ 量化数据 = 网球训练界**完整缺失**的工业级生物力学体系**。
->
-> 项目从"网球技术 KB"正式定稿为：**跨运动 motor learning 范式 + 生物力学量化体系 + 神经科学 + 学习心理学 + 网球应用** 五层 KB。
+你要的不是高尔夫动作 — 是**高尔夫教练讲透了但网球教练没讲透的"理解"**，然后**翻译成网球的体感**。
 
----
+举例：高尔夫讲"右肩抬高像摩天轮"是因为他们击球在地面（down and up），网球击球点在腰胸高，**不能照搬右肩抬高很多**。但摩天轮背后的**理解**（肩转 ≠ 髋转，上身要扭簧而不是硬棒）**可以套**——只是在网球里表现为"轻微的肩 tilt，几乎肉眼看不出来"。
 
-## §1 65 视频清单（按 13 主题分类）
-
-### A. X-Factor / 髋肩分离（7 视频）
-TPI: `l-aOZmAEQqU` `0_qPLzUBRts` `ClrPcQO2hsY` `wUnYLttpUnw`
-AMG: `0IxllCJRKS4` `yepkMQdy0Z4` `ooQM3rCk_Rk`
-
-### B. Kinematic Sequence（3 视频）
-TPI: `MkiLYhgyVCw` `xrvg8NiUY3I` `H3tfA3AeDUA`（**Ernie Els 球杆峰值 >2000 deg/sec** ⭐）
-
-### C. Ground Reaction Force（8 视频）
-Sasho: `9cupYELCJu4`
-TPI: `r9d_NOOppDA` `4OZ7Fh1u2MQ` `BT_FQfPYxuA` `D7dxyaVujAQ` `Br54cgW4Qgk` `zeFCPaYFTzo`（**Vertical jump 关联拍速**）
-通用: `paRHb0z2UXg`
-
-### D. Shoulder Rotation / Arm（7 视频）
-AMG: `bUcJD1TdaJQ` `oz1Gk52BZs4` `MT5_nvCVqw4`
-Gankas: `EL8ku_7ut2A`
-TPI: `VsZ8yhrolbw`（**手腕 3 段释放** ⭐⭐⭐）`veiO8_hzhyg` `-73X1sNLyfo` `qzp8ONmHLD0`
-
-### E. Wrist / Lag / Release（2 视频）
-TPI: `VsZ8yhrolbw`（共享 D）`FCKxlKnTaZk`（**Sergio Garcia 大量 Lag 数据** ⭐）
-
-### F. Lead Arm / SSC / Mobility（7 视频）
-Hansen: `93B--sQCHwM`
-TPI: `MvWzwfJN50A` `DPOJp5vukWA` `BA1gqS47sGM` `ssvUXakgUjw` `TYzqHRZC8-0` `3nQgdT2v6xw` `DOLNeV6I5Dk`
-
-### G. Spine / Posture / Moment Arm（10 视频）
-TPI: `HF5BLXP3t-8`（力臂公式）`XhZXOtZNXIA` `CLvQHiFG_7E` `lyDhzoTTMuw` `mMMAkcBlWAc` `SU-MQnnP4Ts` `OhUSQB48tto` `kcp26v8CxJQ`（**C-Posture**） `UCqlL-vJwnE`（**S-Posture**） `ALyq1xkrGGY`
-AMG: `MT5_nvCVqw4`
-
-### H. Brain Limiter / Wulf（2 视频）
-Sasho: `2cj1gTfKeTs`
-AMG/Dr. LaCaze: `oNk2XNa_J4Y`
-
-### I. Speed Development（5 视频）
-TPI: `9XJHg7PaeL8` `pkdd1OVHNRk` `V8bWdjitTaw`（**Strength vs Speed**）`J5MYxcOf07s` `bfbXgvq3l7U`（**Brooke Henderson**） `yDB6uBQMxyU`（**Tringale 8 mph 增益**）
-
-### J. Practice Protocol（1 视频）
-TPI: `nUpsR1wETrg`（Block vs Random）
-
-### K. Injury Prevention（3 视频）
-TPI: `rqyONR6ZXDU`（L4-L5）`HH2ZyqWE39U` `1maMe0l3Wpw`
-
-### L. BioSwing Dynamics（5 视频）⭐ 新维度
-Mike Adams: `9BBgPZQl9xE` `_OwN-m92b8E`（**Load and Launch**） `V0j2TlJDwi4` `VS4czDTzH3k`（**BSD Assessment**） `qiJUlr7VYmk`
-
-### M. Pro Body-Swing Analysis（1 视频）
-TPI: `P9ddiGd_xUQ`（**Jon Rahm Body-Swing**）
-
-### 双场景（共享）
-Kelvin: `q4HijmDIV9U` / AMG: `xakV1lbDe5Y`
-
-**总计：65 视频 / 13 主题 + 2 学术 paper**
+→ **下面 3 条洞察都是这种"翻译后的网球体感"**，不是高尔夫照搬。
 
 ---
 
-## §2 70+ 量化数据汇总（项目级量化资源）
+## §1 三条真正套利洞察（最重要的内容）
 
-### 角度类（17 项）
-| 数据 | 数字 | 来源 |
-|---|---|---|
-| 肩转:髋转比例（顶端）| **2:1** | TPI + AMG |
-| 顶端 X-Factor（肩-髋）| **45° 分离**（髋 45°/肩 90°）| TPI |
-| **X-Factor Stretch**（学术）| **+13.4° 额外** | Cheetham 2008 |
-| **最终下挥 X-Factor** | **73.5°** | Cheetham 2008 |
-| Rory preset X-Factor | 12° | AMG |
-| 髋部后/前侧分化 | 后屈 16° / 前伸 21° | AMG |
-| **顶尖躯干旋转** | **50°+ / <45° 受限** | TPI |
-| 关节牵引即时增益 | +20-30° 转动 | TPI |
-| Tiger 髋测试角 | 60° | TPI |
-| ESR 测试标准 | **≥ 90° 才能 shallow** | TPI |
-| 髋部 vs 肩部倾斜（齿轮）| 髋 10° / 肩陡 | Kelvin |
-| 躯干前倾 Setup | 36°（1 号木）| TPI |
-| 躯干前倾顶端 | 0-5° | TPI |
-| **前倾流失量** | **30-35°** | TPI |
-| 骨盆 Setup | 20-25° forward tilt | TPI |
-| 骨盆 Impact | ~0°（可负）| TPI |
-| 错误 setup 胸前打开 | 4° → slice | AMG |
+### 一、肩转 = 上身扭簧（不是上身硬棒）
 
-### 力学 / GRF 类（10 项）
-| 数据 | 数字 | 来源 |
-|---|---|---|
-| **GRF 4 力时序** | **Lateral → Rock → Twist → Vertical** | TPI |
-| 后摆 loading（右侧）| **83%** 体重 | paRHb0z2UXg |
-| 顶端附近 unweighting | 47-72% 体重 | TPI + paRHb0z2UXg |
-| 击球瞬间垂直峰值 | **138-211%** 体重 | TPI + paRHb0z2UXg |
-| 角速度↔拍头速度 r | **0.95** | Sasho |
-| **Vertical Jump↔Power r** | 高相关 | TPI zeFCPaYFTzo |
-| Tringale 1 年增速 | **+8 mph** | TPI yDB6uBQMxyU |
-| **L4-L5 / L5-S1** | 高尔夫易损伤区 | TPI |
-| 错误 setup 4° → slice | — | AMG |
+**网球教练几乎都没讲透的事**：你做 Unit Turn 时，**上身不应该作为一个整体转动**。如果你的肩 + 髋一起水平转 90°，看起来转到位了，实际上**上身内部是没有任何张力的**——就像你拧一根硬棒，棒身整体转但没扭矩。这是为什么你常常报"动作做了但球软"——发动机从启动那一帧就熄火了，再好的手臂技术都没用。
 
-### 时序类（Cheetham 2014）
-| 数据 | 数字 | 来源 |
-|---|---|---|
-| 男 PGA Transition 时间 | **0.05 秒** | Cheetham 2014 |
-| 女 LPGA Transition 时间 | 0.07 秒 | Cheetham 2014 |
-| 男 PGA Downswing 总时间 | **0.25 秒** | Cheetham 2014 |
-| 女 LPGA Downswing 总时间 | 0.30 秒 | Cheetham 2014 |
-| Follow through 时间（男女）| 0.7 秒 | Cheetham 2014 |
-| **球杆峰值角速度** | **>2000 deg/sec** | TPI Ernie Els |
-| 男 PGA 下挥 0.25s 内：减速 → 加速 4 段 | 序列严格 | Cheetham 2014 |
+真正有效的 Unit Turn 是把上身**当扭簧来扭**：肩多转一点，髋少转一点，中间形成扭矩张力。**ESR 是这个扭簧的触发开关**——你在 Unit Turn 第一帧只要做轻微外旋肩（30% 幅度就够），胸大肌 + 背阔肌 + 前锯肌会自动被拉紧，间接让髋"不想跟着转那么多"，扭簧自动形成。同时你的右肩会**轻微**高于左肩（slight tilt，肉眼几乎看不出来）——这是 ESR 的自然副产品，不需要主动做。
 
-### 距离压缩类（3 项）
-| 数据 | 数字 | 来源 |
-|---|---|---|
-| 肘髋距压缩 | **10" → 4"**（缩短 6"）| AMG |
-| 手髋距压缩 | 17" → 14" | AMG |
-| 手部目标侧外扩 | 6 英寸 | AMG |
+**体感自检**（不持拍镜前 5 分钟）：站好准备位 → 用左手按住左髋阻止它跟着转 → 做 Unit Turn 同时**轻微 ESR**（拍头朝天那种感觉）→ 你应该立刻感觉到**胸右侧 + 上背中间被拉紧**。如果没感觉到紧 = 上身又变成硬棒了。
 
-### 学习心理学 / Practice（3 项）
-| 数据 | 数字 | 来源 |
-|---|---|---|
-| Block practice 反馈阈值 | 新手 30-40 次 / Pro 2 次 | TPI |
-| Block → Random 切换 | "感觉到对错差异"那一刻 | TPI |
-| **男 PGA Total swing time** | ~1 秒（含 backswing 0.5s + downswing 0.25s + follow 0.7s 后段）| Cheetham |
-
-### 公式（5 个 — 直接 ported 进项目）
-1. **F = m × a**（Newton II）
-2. **T = F × r**（Torque = Force × Moment Arm）— 项目力臂工程基础
-3. **H = I × ω**（Angular Momentum = Moment of Inertia × Angular Velocity）
-4. **H = ∑(mr²) × ω**（转动惯量分布）
-5. **KE ∝ v²**（动能 ∝ 速度²）
-
-### 词典 / 解剖（2 项）
-- 手腕释放（Pro）= Flexion → Ulnar Deviation → Twist 3 段序列
-- SPACE 公式 = Speed + Power + Accuracy + Consistency + Efficiency
+**为什么茅塞顿开**：这一条解释了你 5/8 ESR 根因为什么是项目最高优先——ESR 不只是肩外旋的解剖动作，它是**整个上身扭簧的总开关**。你 30 年正手所有问题（球软/大臂飘/手臂主导）根因都是：没启动扭簧 + 用硬棒打球。
 
 ---
 
-## §3 15 大套利原则（v3 12 个 + v4 新增 3 个）
+### 二、手腕看似在动，实际上身体在动（ISR 3 段序列）
 
-### v1.0-v3.0 原则（已 commit）
-1-6: v1 — 左手伸直 / 2:1 比例 / 支点先于速度 / 手柄向上向左 / 肩陡髋平齿轮 / Re-centering
-7-10: v2 — 手腕 3 段释放 / 神经安全阀 / 压缩空间 / 力臂工程
-11-12: v3 — 脊柱伸展+骨盆后倾 / Block→Random Practice
+**网球教练讲"ISR / 撕"但没讲透**：高尔夫顶级教练（TPI Dr. Greg Rose）用 3D 数据实测——职业球员的"手腕释放"实际上是 3 段精确序列，**前 2 段由身体做，最后 1 段才由手腕做**。
 
-### v4.0 新增 3 个原则
+3 段是：① 屈腕（Wrist Flexion）② 尺骨偏转（Ulnar Deviation）③ 前臂旋转（Forearm Twist）。业余球员的错误是把这 3 段**全用手腕做**——结果就是你常报的"球软只手腕动"。Pro 实际上是**身体先做了 ① 和 ②**（通过 unit turn + 躯干旋转把手腕自动带成弓形），手腕只做最后一个 ③ Twist。
 
-#### 原则 13 ⭐⭐⭐：减速触发加速（Kinematic Sequence 严谨版）
+**为什么这个翻译到网球完美适用**：网球 ISR（撕字）跟高尔夫 wrist release 物理上是**同一件事**——肱骨绕长轴旋转 + 前臂旋前。区别只是网球握拍方式让最后的 Twist 表现为"雨刷式"，高尔夫表现为"杆面合上"。
 
-**Cheetham 2014 + TPI Ernie Els**：
-> "Each segment **decelerates rapidly** before the next peak — only club continues accelerating to impact."
-
-**4 段时序**：
-1. Pelvis 加速 → 峰值 → **减速** ⚠️
-2. Thorax 加速到更高 → 峰值 → **减速** ⚠️
-3. Lead Arm 加速更高 → 峰值 → **减速** ⚠️
-4. Club 一路加速到 impact
-
-**网球套利**：
-- 项目 4-Step Bible：Step 1 → Step 2 → Step 3 → Step 4
-- **新洞察**：每个 Step 必须**减速触发下一 Step 加速**
-- 用户报"动作快但球不飞" = 没有减速触发 = 全身一起加速 = 末段没爆发空间
-
-**修正口令**：每个 Step 之间需要**"停顿感"**（瞬间制动）—— 不是减慢，是**急停**。
-
-#### 原则 14 ⭐⭐：Mike Adams BioSwing 个体化（5 视频整合）
-
-**Mike Adams + E.A. Tischler 30+ 年研究**：
-- 12 个**身体结构影响因素**决定个人最优挥杆
-- 每球员的 **3 个主导**：Top of Backswing Plane / Torque System / Axis of Symmetry
-- 没有"标准正手" —— 只有"**适合你身体的正手**"
-
-**网球套利**：
-- 项目此前所有 cue 默认"通用"
-- BioSwing 视角：4-Step Bible **总体框架对**，但**具体角度/幅度因人而异**
-- 用户应做**自己的 swing assessment**（不是抄 Federer/Sinner）
-
-**实操**：用户当前阶段不需做完整 BSD 评估（太复杂），但应**接受自己 4-Step 的执行**可能跟职业球员**视觉上不同**——只要符合 4 大物理原则（藏肘 / HSA / 撕 / 显肩）即可。
-
-#### 原则 15 ⭐⭐：Vertical Jump ≈ Power 预测器
-
-**TPI `zeFCPaYFTzo`**：vertical jump 高度跟挥杆 power 强相关。
-
-**网球套利**：
-- 项目此前没有"球员动力潜力"预测维度
-- vertical jump 是**最简单**的 power 测试
-- 用户**未来 6-12 个月**力量训练目标可锚定到 vertical jump cm（不是健身房 1RM）
-
-**实操**：球场前测一下你的 vertical jump 高度（厘米）—— 作为 baseline。未来增训练后看 cm 增加 = power 潜力 ↑。
+**怎么修**：你下次报"只手腕动"的时候，自检是**身体没做 ① 和 ②**——不是手腕错了。修法不是控制手腕（控制了反而更糟），是让身体的 Unit Turn 和躯干旋转**自然把你的手腕带成屈腕 + 尺偏的状态**——你只剩最后一个 Twist 要做。
 
 ---
 
-## §4 跟项目 11 圣经 + 4-Step Bible 终极套利映射 v4
+### 三、训练前的"激活" ≠ 拉伸
 
-### 4-Step Bible v2.0 完整升级
+**网球教练全部教错的事**：训练前做静态拉伸。高尔夫圈（特别是 AMG / Dr. LaCaze）已经达成共识——**静态拉伸不能预防伤病，也不能提速**。原因是大脑有个**安全阀机制**：如果它感知到关节不稳定、组织没充分激活，**会自动锁死最大功率**（禁止你调用 Type 2B 快肌纤维）——这就是你"明明使劲打但球软"的物理根因（不是肌肉无力，是大脑不让你用力）。
 
-| Step | v1 cue | v2 量化锚 | v3 精确化 | v4 时序 |
-|---|---|---|---|---|
-| **1** ESR+藏肘 | 拉紧背阔+肩转 2:1 | + Cheetham 13.4° X-Factor Stretch | + 关节牵引 +20-30° | + **transition 0.05s 触发** |
-| **2** HSA | 肩陡髋平齿轮 | + Number 7 + 压缩 10"→4" | + 脊柱伸展+骨盆后倾 | + **必须减速触发 Step 3** |
-| **3** ISR | 角速度 r=0.95 | + **手腕 3 段 Flex→Ulnar→Twist** | — | + **拍头峰值 >2000 deg/sec** |
-| **4** 显肩 | Re-centering | + 力臂工程 | + 击球瞬间骨盆 ~0° | + **GRF 4 力时序** + Follow 0.7s |
+解锁这个安全阀的方法是 **"克服性等长激活"**——不是拉伸，是**最大力推 5-10 秒静止物体**。例如：推墙 5-10 秒 80% 最大力 × 3-5 次，或抓 TRX 拉至张力极限保持 5 秒。原理是这种动作让大脑感知到"关节稳定 + 肌肉随时可调用"，然后才会**给你的最大速度开绿灯**。
 
-### 11 圣经 v4 总升级
+**怎么用到网球**：训练前 5 分钟做这个，不做静态拉伸。你会立刻感觉到训练时挥拍更"重"（不是更累，是更有力）——那就是大脑解除限速器后的真实功率。同时 30 球后再做一次（球场上短暂的等长激活也能持续解锁）。这一条对你最近"球软"问题是最快的修复路径之一。
 
-| 圣经 | v4 高尔夫加成 |
+---
+
+## §2 已删除的冗余内容（让你知道为什么删）
+
+按 5/11 用户反馈，以下原 v4.0 内容**移到附录或不再作主线**（保留在 git history + videos/ 子目录可查）：
+
+- ❌ 所有量化数据列表（角度 / mph / 体重 % / 毫秒）— 学术装饰，对体感无帮助
+- ❌ Cheetham 5 公式（F=ma / T=Fr / H=Iω 等）— 物理学正确但训练用不上
+- ❌ PGA 时序（0.05s / 0.25s / 0.7s）— 知道也不能改你训练
+- ❌ X-Factor 2:1 / 73.5° / 13.4° 具体数字 — 网球比例不同，照搬数字反而误导
+- ❌ Mike Adams BioSwing 12 因素 — 适合一对一定制，不适合自学者
+- ❌ TPI Big 12 故障列表（C-Posture / S-Posture / Early Extension 等）— 高尔夫专属，网球已有等价检查
+- ❌ Block vs Random Practice 详细切换协议 — 通用训练科学，但你当前阶段还不是 plateau 期
+- ❌ Vertical Jump 预测器 — 间接相关，不直接改你训练
+- ❌ Hand Path 3D Flat Spot — 高尔夫拍头下挫问题，网球不直接遇到
+- ❌ 减速触发加速时序 — 概念对，但是个 outcome 描述不是 cue
+
+**保留位置**：
+- `videos/{vid}.md` × 65 个文件 — 原始视频分析（查具体视频时用）
+- `CHEETHAM_2014_PAPER.md` — 学术 paper 备查
+- `COMPLETION_REPORT_5_11.md` — 5/11 大工程完成报告（历史记录）
+
+**保留作主线的**：只有上面 §1 三条洞察。
+
+---
+
+## §3 跟项目 4-Step Bible 的对接（最简版）
+
+| Step | 高尔夫套利能加什么 |
 |---|---|
-| 4/9 想左手忘右手 | Lead arm SSC + Number 7 + Hansen 拉紧背阔 |
-| 4/27 右脚为轴 | **GRF 6DOF 完整测量** + 神经安全阀根因 + Vertical Jump 锚 |
-| 4/30 肩胛槽 | Scapular glide (FTT) + 压缩空间 + Number 7 + 关节牵引 |
-| 5/3 HSA | 齿轮 + 摩天轮 + 旋转非侧移 + 角动量公式 |
-| 5/6 推肘禁令 | Pronation 被动 + Cheetham SSC 物理依据 |
-| 5/8 ESR 根因 | ESR ≥ 90° 标准 + SSC 预紧 + Newton III action/reaction |
-| 5/9 Off-Arm Pull | Lead arm + 非对称髋 16°/21° + Number 7 |
-| 5/10 Sit not Push | GRF 4 力时序 + 骨盆 setup→impact + COP 反向规律 |
-| 5/10 Wulf 范式 | 神经安全阀 + Block→Random + Cheetham external focus |
-| 5/11 4-Step Bible | 见 §4 详细升级 v4 |
-| 5/11 Bourne 套利 | 力臂 + 压缩空间 + 减速触发加速 |
+| **Step 1** ESR + 藏肘 | + §1 第一条：ESR 是上身扭簧总开关 |
+| **Step 2** HSA | 项目已讲透，高尔夫无新东西 |
+| **Step 3** ISR（撕）| + §1 第二条：身体做 ①②，手腕只做 ③ |
+| **Step 4** 显肩 | 项目已讲透，高尔夫无新东西 |
+| 训练前协议 | + §1 第三条：等长激活代替拉伸 |
+
+→ **4-Step Bible 框架完全成立**。高尔夫只在 Step 1 + Step 3 + 训练前 加深了 3 处理解，没颠覆任何东西。
 
 ---
 
-## §5 立即可做的 3 个改动（不变 — 按 Intuition-First）
+## §4 一句话总结
 
-按 5/6 协议——**15 原则不堆 cue**。仍只挑 3 个：
+高尔夫教练讲透了 3 件网球教练没讲透的事：**肩转是扭簧不是硬棒**（§1.一）/ **ISR 3 段身体做前两段**（§1.二）/ **等长激活代替拉伸**（§1.三）。这 3 件事**翻译成网球体感**后正好补强你 4-Step Bible 的 Step 1、Step 3、训练前协议。
 
-1. ⭐⭐⭐ **手腕 3 段释放序列**（Step 3 精确化）
-2. ⭐⭐ **训练前等长激活**（替代拉伸）
-3. ⭐⭐ **Block → Random Practice 切换**
-
-**其他 12 个原则作 reasoning reference** — 用户报具体症状时拿出来对应。
+其他 60+ 视频里的数据、公式、原则——全部归档到 `videos/` 子目录备查，不再作主线。
 
 ---
 
-## §6 引用优先级 v5 最终（5/11 v4.0）
-
-| # | 来源 | 数量/类型 |
-|---|---|---|
-| 1 | **Cheetham 2014 Basic Biomechanics for Golf** | **20 页 paper 完整解码** ⭐ |
-| 2 | Cheetham 2008 X-Factor Stretch | paper |
-| 3 | Reid, Elliott & Crespo 2013 | 网球综述 |
-| 4 | Tennis Science 2015 | 教科书 |
-| 5 | Wulf Motor Learning | 范式 |
-| 6 | **TPI / Greg Rose + Cheetham** | **35+ 视频** ⭐ |
-| 7 | **Dr. Sasho MacKenzie** | 多视频 |
-| 8 | HSA 框架（项目自有）| 用户原创 |
-| 9 | **Athletic Motion Golf** | 10+ 视频 |
-| 10 | **Mike Adams BioSwing Dynamics** | 5 视频 + 体系 ⭐ 新增 |
-| 11 | Bourne One Minute Tennis | 网球 |
-| 12 | Kelvin Miyahira | 高尔夫专家 |
-
----
-
-## §7 文件结构（v4.0 最终）
+## §5 历史版本（备查）
 
 ```
-docs/research/golf_to_tennis_kinetic_chain/
-├── MASTER.md（本文件，v4.0 终极版）
-├── CHEETHAM_2014_PAPER.md（学术 paper 全文摘要）
-└── videos/（65 个视频独立分析，按 §1 13 主题分类）
+v1.0 (5 视频)  → v4.0 学术堆积
+   ↓ 用户反馈"v4 太学术，要茅塞顿开级别洞察"
+v5.0 (本版本) — 全面重写为 3 条体感洞察，删除所有数据/公式主线
 ```
-
----
-
-## §8 完成报告（v4.0 最终交付）
-
-### 数量级
-- **65 视频**（5 → 25 → 40 → **65**）
-- **13 主题**（A-M）
-- **70+ 量化数据**
-- **2 学术 paper**（Cheetham 2014 + 2008）
-- **15 套利原则**（v1 6 + v2 4 + v3 2 + v4 3）
-
-### 项目升级
-- 4-Step Bible v1.0 → **v2.0**（含 3 改动 + Cheetham 公式）
-- MASTER.md v1.0 → **v4.0**
-- 引用优先级 v3 → **v5**
-- KB 性质：网球技术 → **跨运动 motor learning + 生物力学 + 神经科学 + 学习心理学 KB**
-
-### Hermes Context Export v2 升级清单
-- README.md 加 v4.0 概述
-- 02_DIAGNOSTIC_PROTOCOL.md 加 3 改动协议
-- 03_DRILL_PROTOCOL.md 加 等长激活 + Block-Random
-- 06_VIDEO_INDEX.md 加 65 golf 视频
-- 07_BIBLES_AND_MILESTONES.md 加 5/11 大里程碑
-- 08_RECENT_PROGRESS 加 5/11 全天进展
-- 新建 11_GOLF_ARBITRAGE_KB.md
-
----
-
-## §9 一句话终极总结
-
-> **5/11 一天**：项目从"网球技术 KB"升级为**全球**唯一的**跨运动生物力学量化训练 KB**——65 视频 + 2 学术 paper + 70+ 量化数据 + 15 套利原则 + 4-Step Bible v2.0。
->
-> 网球教练 99.9% 做不到的差异化——**用高尔夫工业化生物力学体系反向量化网球训练协议** + motor learning 范式 + 神经科学 + 学习心理学四层加成。
->
-> **用户当前阶段只需记 3 个改动**（手腕 3 段释放 + 等长激活 + Block-Random）—— 其他 12 个原则按需调用。
