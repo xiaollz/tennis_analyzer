@@ -112,6 +112,7 @@ timeline
       7/14 : ⭐ 背部承力 = 肩锁链上游开关（谁承力谁先发力）+ 刻意拧脚跟腱警告
       7/16 : ⭐ 药球"先降再送"实测 = 谁承力谁先发力的第一次实验验证（家庭可练）
       7/17 : 🧩 滑冰对比查证 = 躯干指挥、腿部倍增（非"先转髋"；拧脚跟腱疼理论解释补全）
+      7/17 晚 : ⭐ FTT coil 查证 = unit 不含髋 / 反拧上弦 / 臀被动 pop + 单脚药球 drill
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -124,7 +125,7 @@ timeline
 | **4. 轴心体系建立** | 4/27 - 4/30 | 下肢轴心 + 上身轴心 + 驱动入口 | 🏆 4/27 右脚轴 + 🏆 4/30 上身槽 |
 | **5. HSA 统一** | 5/2 - 5/4 | 整套体系收敛到物理本体 | ⚙️ 5/3 HSA 命名 + 5/4 工程化（detector + drill 表 + 调研）+ 📚 Tennis Science 全书整合 |
 | **6. ESR 根因 + 终极圣经** | 5/6 - 5/12 | 项目最高优先级里程碑 + 5/11 顶层圣经形成 + 物理因果显化 | 🏛️ 5/8 ESR 根因诊断闭环 + 🏆 5/11 终极圣经实战落地 + 📌 5/12 上午 外部语言学验证 + ⭐⭐ 5/12 下午 左锁右轨机制深化 |
-| **7. 几何根因 + External Focus 重建** | 5/13 - now | 项目级因果反转 + 5/13 之前所有体感顿悟降级为 Internal Focus + 神经科学统一框架 | ⚡⚡⚡⚡ 5/13 几何根因 + 📊 5/14 工具调研 + 🏋️ 5/15 药球协议 + 🧠⚙️ 5/16 GMP 框架 + ⚠️ 5/16 胸部发力陷阱 + 📹 5/17 TPA 拉动陷阱 + Feel Tennis 动态比例归档 + 🏟️ 5/18 Split Step/Through 场上主观有效 + 🧩 5/21 左右手同步节奏入口 + 📹 5/23 TPA Slap Into the Slot 动态 drop 机制 + 🧩 5/24 No Backswing Illusion 澄清 + 🧠 5/25 Interception 注意力重构 + 🧩 5/25 右肩头连接 cue + 🧭 5/31 训练方法论重整 + 🧩 6/2 拍头下降 / Separation 缺失澄清（Gemini clip VLM 支持） + 🧩 6/3 虎口对肚脐 / 拍面对身体约束 + 📌 6/4 Feel Tennis 正手作弊机制复习 + 🧩 6/4 TPA 早期 supination / slot 复习 + ⭐ 6/5 V-shape / Pivot Point 降拍头突破 + 🧩 6/7 180° 球拍环游路径 + 📌 6/7 Feel Tennis 每球四底线 + 🧩 6/8 腋下空间 / 肘架开校正 + 🧩 6/10 V 区触点 contact 端补全（拍底轴→腕刷 slip；V 区轴→身体推过去） + ⭐ 6/10 晚 手动放置式 drop 录像根因（串行模式证实，重力从未被释放） + ⭐ 6/10 晚二 刷/扶/slap 统一因果链 + 手环游世界确认解决右臂后拉 + 📹 6/11 FTT 发球机协议（组内直觉/组间思考/动觉干预三明治） + ⭐ 6/12 TPA × FTT 直接 supination/slap 优先（先练释放，再逐步加入更低 drop） + ⭐ 6/12 晚 重叠模式首次球场录像证实（7s clip 6/6 穿透；刷/过转 = 串行上下游；随挥终点判别 左肩 vs 头顶） + ⭐ 6/20 L 型稳定结构（肘高防掉肘 + 背部托住 slap 通路；6/19 视频支持） + 🏆 6/20 晚 Intuitive Tennis 肘轴引拍（手肘为圆心/为轴的 Unit Takeback 圣经） + 🏆 6/20 夜 背部支撑（FTT Foundation 第一块砖；托住肘轴后小臂自然 drop） + ⭐ 6/23 Web Tennis Classic / 尾崎里紗（日式肘部形状 + 背托肘 + 拍面微闭 + 右侧释放拼图） + ⭐ 7/12 空挥/实击控制权切换（主动肘形状与右臂送球同根；有球触发手臂接管） + ⭐ 7/14 背部承力 = 肩部锁链上游开关（谁承力谁先发力；刻意拧脚跟腱警告） + ⭐ 7/16 药球"先降再送"实测（重力抢走球重逼出蹬转；5/15 协议验证生效；家庭可练） + 🧩 7/17 滑冰对比查证 = 躯干指挥/腿部倍增，非"先转髋"（C23/M08；拧脚跟腱疼理论解释补全） |
+| **7. 几何根因 + External Focus 重建** | 5/13 - now | 项目级因果反转 + 5/13 之前所有体感顿悟降级为 Internal Focus + 神经科学统一框架 | ⚡⚡⚡⚡ 5/13 几何根因 + 📊 5/14 工具调研 + 🏋️ 5/15 药球协议 + 🧠⚙️ 5/16 GMP 框架 + ⚠️ 5/16 胸部发力陷阱 + 📹 5/17 TPA 拉动陷阱 + Feel Tennis 动态比例归档 + 🏟️ 5/18 Split Step/Through 场上主观有效 + 🧩 5/21 左右手同步节奏入口 + 📹 5/23 TPA Slap Into the Slot 动态 drop 机制 + 🧩 5/24 No Backswing Illusion 澄清 + 🧠 5/25 Interception 注意力重构 + 🧩 5/25 右肩头连接 cue + 🧭 5/31 训练方法论重整 + 🧩 6/2 拍头下降 / Separation 缺失澄清（Gemini clip VLM 支持） + 🧩 6/3 虎口对肚脐 / 拍面对身体约束 + 📌 6/4 Feel Tennis 正手作弊机制复习 + 🧩 6/4 TPA 早期 supination / slot 复习 + ⭐ 6/5 V-shape / Pivot Point 降拍头突破 + 🧩 6/7 180° 球拍环游路径 + 📌 6/7 Feel Tennis 每球四底线 + 🧩 6/8 腋下空间 / 肘架开校正 + 🧩 6/10 V 区触点 contact 端补全（拍底轴→腕刷 slip；V 区轴→身体推过去） + ⭐ 6/10 晚 手动放置式 drop 录像根因（串行模式证实，重力从未被释放） + ⭐ 6/10 晚二 刷/扶/slap 统一因果链 + 手环游世界确认解决右臂后拉 + 📹 6/11 FTT 发球机协议（组内直觉/组间思考/动觉干预三明治） + ⭐ 6/12 TPA × FTT 直接 supination/slap 优先（先练释放，再逐步加入更低 drop） + ⭐ 6/12 晚 重叠模式首次球场录像证实（7s clip 6/6 穿透；刷/过转 = 串行上下游；随挥终点判别 左肩 vs 头顶） + ⭐ 6/20 L 型稳定结构（肘高防掉肘 + 背部托住 slap 通路；6/19 视频支持） + 🏆 6/20 晚 Intuitive Tennis 肘轴引拍（手肘为圆心/为轴的 Unit Takeback 圣经） + 🏆 6/20 夜 背部支撑（FTT Foundation 第一块砖；托住肘轴后小臂自然 drop） + ⭐ 6/23 Web Tennis Classic / 尾崎里紗（日式肘部形状 + 背托肘 + 拍面微闭 + 右侧释放拼图） + ⭐ 7/12 空挥/实击控制权切换（主动肘形状与右臂送球同根；有球触发手臂接管） + ⭐ 7/14 背部承力 = 肩部锁链上游开关（谁承力谁先发力；刻意拧脚跟腱警告） + ⭐ 7/16 药球"先降再送"实测（重力抢走球重逼出蹬转；5/15 协议验证生效；家庭可练） + 🧩 7/17 滑冰对比查证 = 躯干指挥/腿部倍增，非"先转髋"（C23/M08；拧脚跟腱疼理论解释补全） + ⭐ 7/17 晚 FTT coil-into-hip 查证（unit 不含髋；骨盆前顶锚 + 胸廓反拧上弦；臀被动 pop；球变长 = 生效信号；单脚药球 drill 家庭层） |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -154,6 +155,7 @@ timeline
 - [5/12 下午 右臂稳定根因 = 左侧锁定 → 右侧轨道](#--2026-05-12-下午--右臂稳定根因发现左侧锁定--右侧轨道511-圣经机制深化)（文末）
 
 ⭐ **关键突破**：
+- [7/17 晚 FTT coil-into-hip 查证：unit 不含髋，反拧上弦，臀被动 pop](#-2026-07-17-晚--ftt-coil-into-hip-查证unit-不含髋反拧上弦臀被动-pop下压进右臀假设修正)（文末）— "存能量进右臀"方向对、"下压"机制错：骨盆前顶当锚、胸廓反拧上弦；臀 pop 是结果不是动作；球变长 = coil 生效信号；单脚药球 drill 新增家庭层
 - [7/16 药球"先降再送"实测：谁承力谁先发力的第一次实验验证](#-2026-07-16--药球先降再送实测714谁承力谁先发力的第一次实验验证)（文末）— 先降让重力接管球重、手臂卸载，蹬转成为唯一发起者；5/15 药球协议验证生效；在家托住不扔也有效
 - [7/14 背部承力 = 肩部锁链的上游开关：谁承力，谁先发力](#-2026-07-14--背部承力--肩部锁链的上游开关谁承力谁先发力--刻意拧脚的跟腱警告)（文末，line 10083+）— 6/20 夜背部支撑圣经的球场体感版 + 7/12 控制权切换的上游解释；附刻意拧脚跟腱疼警告
 - [7/12 空挥 vs 实击控制权切换：主动肘形状与右臂送球外形不同、根因相同](#-2026-07-12--空挥-vs-实击控制权切换主动肘形状与右臂送球外形不同根因相同)（文末）— 纠正“空挥已经由胸带动”的体感误判；有球训练转向 External Focus
@@ -10201,3 +10203,59 @@ FTT `Build This Foundation` 里反复强调：
 ### 一句话结论
 
 记忆方向是准的（先转身体、腿后加入），但结论要修正：不是"先转髋"，是**躯干是方向盘、腿是氮气**——刻意先蹬/先拧髋恰好是视频点名的误区，也正是跟腱疼的来源。
+
+## ⭐ 2026-07-17 晚 — FTT coil-into-hip 查证：unit 不含髋，反拧上弦，臀被动 pop（"下压进右臀"假设修正）
+
+### 起因
+
+上午滑冰查证后提出第二个假设：unit turn 时我之前只是下蹲、把重心移到右腿上，是不是应该把重心**压进右臀**（多一个下压过程），用臀部发力，前挥时蹬转力量就能直接传到手臂。指定看 FTT《The Pros "Rotate" Differently Than You》（ui-RFRdQKRk），尤其药球 coil drill。
+
+### 查证结果：方向对了一半，机制要换
+
+（视频分析建档：`docs/research/ftt/video_analyses/ui-RFRdQKRk.md`。⚠️ Micu 原生 file_data 双模型两轮均 500，本条基于官方字幕全文 + FTT 官网文章交叉验证，非 VLM 观看。）
+
+**对的一半：能量确实存进右臀，且"重心到右腿 ≠ 上弦"说中了。**
+
+> [00:07] "Here I am not coiled, I'm just turned sideways. Here I'm actually **coiled into this hip**."
+> [01:03] "**My back glute is loaded.**"
+
+FTT 明确演示：只是转成侧身、重心在右腿，能打出"functional shot"，但那不是 coil——这正是我一直在做的版本。
+
+**错的一半：加载机制不是"下压"，是"反拧"。**
+
+> [00:35] "**The unit doesn't include your hips.** If I go backwards with my hips as well, then I create no tension, which can then unwind through the swing."
+> "Take your hitting hip, **rotate it out, drive this point forward**, and then perform your unit turn."
+
+- Unit turn 转的只是胸廓整体（肘/肩/胸/双手/拍）。**髋不在 unit 里。**
+- 装载 = 骨盆向前顶（击球侧髋外旋顶出）当**地锚**，胸廓向它反方向拧 → 后臀像弹簧上弦。是**水平面对拧**，不是垂直方向蹲深一点。
+- 我之前的版本（下蹲 + 重心到右腿 + 髋跟着肩一起转）恰好是视频里的反面教材：hips and shoulders "back together, forward together" = 零张力，只能靠往上挥补偿 → 球软。
+- 所以"下压"体感要重定向：不是往下坐得更深，而是右髋往**前**顶出去、上身往**后**拧——拧完那种"臀被撑满"的感觉才是 loaded。
+
+**"用臀部发力"必须加一条边界：释放是被动的。**
+
+> [01:03] "The second I **stop** driving my shoulders back, **it pops and unwinds me**."
+
+臀不是发力开关，是被拧上弦的弹簧——停止向后拧的那一瞬间它自己 pop。跟 5/6 推肘禁令同构：**臀 pop 是结果，不是动作**。主动"用臀发力/先转髋"会走回 7/14 拧脚的老路（主动执行下肢 → 时序混乱 → 代偿）。
+
+FTT 官网文章《The Hip-Shoulder Separation Catastrophe》补刀：职业前挥骨盆先于躯干仅 ~25ms（不可感知）；"能感觉到髋先动的挥拍几乎必然是坏的"；臀肌体感出现在旋转**中段**（硬拉 sticking point 类比）——与上午 TopCourt 查证（髋部脉冲窗口在中段）完全互锁。
+
+### 副作用预告（重要，防误判）
+
+> [03:00] "Once you start actually getting power from your trunk, you're going to have to throw the racket **more overhand** to keep the ball [in]... if I use that underhand swing with the coiled version, goes 100 ft out."
+
+Coil 真上弦后球会突然变长/出界。**球变长不是退步，是 coil 生效的信号**——解法是更 overhand/更向下打，不是把 coil 退回去。
+
+### 药球 coil drill（本次指定重点；家/健身房层新增第二轴）
+
+FTT 版本与 7/16 "先降再送"不同轴、互补：
+
+- **单脚站**（4 种模式：正手前脚/后脚、反手前脚/后脚），准备时髋向前送、扔时髋向后收（equal and opposite / corkscrew）。
+- 拧-拧-松手：**手不参与扔**（"We're NOT trying to throw the med ball, we're not trying to use our hands... just an underhand release"），加速的是**击球侧肩**。
+- 计分只有一个：**不落脚能连做几次**。稳了再逐步加转速。
+- 单脚 = 物理约束自组织（"your brain's going to want to discover the counter-rotational pattern"）：站不稳就自动学会反拧，不靠口令——与 7/16 药球太重演不动、One Minute 左手限制同一逻辑。
+
+家庭层排布：**7/16 先降再送**练垂直轴（重力接管、蹬转发起）+ **本条单脚反拧**练水平轴（对拧上弦、臀 pop）。球场协议不变：组间仍加重棒阴影挥拍，组内 cue 仍只有"转着拦截"。
+
+### 一句话结论
+
+"存能量进右臀"方向正确，但充电方式不是往下压，是**骨盆前顶当锚、胸廓反向拧**（unit 不含髋）；臀的释放是停止拧的瞬间自动 pop——上弦是你的活，放箭是物理的活。
