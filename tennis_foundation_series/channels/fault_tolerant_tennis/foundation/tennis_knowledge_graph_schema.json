@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fault-tolerant-tennis.foundation/schema/tennis-knowledge-graph-v1.json",
+  "title": "Tennis First-Principles Knowledge Graph v1",
+  "description": "用于将视频证据、第一性原理、条件化动作知识、训练任务与VLM观测分层保存的图谱交换格式。",
+  "type": "object",
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "graph_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    },
+    "edges": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/edge"}
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "events": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/vlmEvent"}
+    }
+  },
+  "required": ["schema_version", "graph_id", "created_at", "nodes", "edges", "evidence", "events"],
+  "additionalProperties": false,
+  "$defs": {
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z][A-Za-z0-9_.-]+$"},
+        "node_type": {"enum": ["principle", "condition", "mechanism", "action", "cue", "outcome", "drill", "metric", "error_pattern", "technical_template", "tactical_pattern", "safety_guardrail"]},
+        "label": {"type": "string"},
+        "definition": {"type": "string"},
+        "domains": {"type": "array", "items": {"type": "string"}},
+        "conditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["high", "medium", "low", "unknown"]},
+        "status": {"enum": ["channel_teaching_claim", "cross_video_synthesis", "externally_validated", "hypothesis", "deprecated"]},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "version": {"type": "string"}
+      },
+      "required": ["id", "node_type", "label", "definition", "domains", "conditions", "evidence_ids", "confidence", "status", "limitations", "version"],
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "source_id": {"type": "string"},
+        "target_id": {"type": "string"},
+        "relation": {"enum": ["requires", "enables", "constrains", "causes", "increases_likelihood_of", "reduces_likelihood_of", "measured_by", "trained_by", "corrected_by", "contradicts", "specializes", "precedes", "supports"]},
+        "conditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["high", "medium", "low", "unknown"]},
+        "note": {"type": "string"}
+      },
+      "required": ["id", "source_id", "target_id", "relation", "conditions", "evidence_ids", "confidence", "note"],
+      "additionalProperties": false
+    },
+    "condition": {
+      "type": "object",
+      "properties": {
+        "field": {"enum": ["shot_family", "incoming_pace", "incoming_spin", "bounce_height", "court_position", "time_available", "stance", "task_goal", "player_handedness", "skill_level", "pain_or_injury_flag", "camera_view", "measurement_quality"]},
+        "operator": {"enum": ["eq", "neq", "in", "gt", "gte", "lt", "lte", "known", "unknown"]},
+        "value": {"type": ["string", "number", "boolean", "array", "null"]},
+        "rationale": {"type": "string"}
+      },
+      "required": ["field", "operator", "value", "rationale"],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "source_type": {"enum": ["youtube_video", "video_analysis", "coach_annotation", "research_paper", "sensor_recording", "user_report"]},
+        "source_url": {"type": "string", "format": "uri"},
+        "video_id": {"type": "string"},
+        "timestamp_start_sec": {"type": ["number", "null"], "minimum": 0},
+        "timestamp_end_sec": {"type": ["number", "null"], "minimum": 0},
+        "excerpt_or_observation": {"type": "string"},
+        "evidence_type": {"enum": ["video_explicit", "visual_inference", "synthesis", "external_validation_needed"]},
+        "analyst": {"type": "string"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "license_or_access_note": {"type": "string"}
+      },
+      "required": ["id", "source_type", "source_url", "video_id", "timestamp_start_sec", "timestamp_end_sec", "excerpt_or_observation", "evidence_type", "analyst", "captured_at", "license_or_access_note"],
+      "additionalProperties": false
+    },
+    "vlmEvent": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "event_type": {"enum": ["forehand_contact", "backhand_contact", "serve_contact", "return_contact", "volley_contact", "overhead_contact", "movement_transition", "tactical_rally"]},
+        "video_asset_id": {"type": "string"},
+        "frame_range": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 2, "maxItems": 2},
+        "observation_quality": {"enum": ["sufficient", "limited", "insufficient"]},
+        "camera_metadata": {"$ref": "#/$defs/camera"},
+        "context": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+        "observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}},
+        "hypothesis_node_ids": {"type": "array", "items": {"type": "string"}},
+        "alternative_explanations": {"type": "array", "items": {"type": "string"}},
+        "next_best_evidence": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["id", "event_type", "video_asset_id", "frame_range", "observation_quality", "camera_metadata", "context", "observations", "hypothesis_node_ids", "alternative_explanations", "next_best_evidence"],
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "view": {"enum": ["side", "rear", "front", "rear_45", "front_45", "overhead", "unknown"]},
+        "fps": {"type": ["number", "null"]},
+        "calibrated": {"type": "boolean"},
+        "occlusion_notes": {"type": "string"}
+      },
+      "required": ["view", "fps", "calibrated", "occlusion_notes"],
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "metric": {"type": "string"},
+        "value": {"type": ["number", "string", "boolean", "null"]},
+        "unit": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "method": {"type": "string"},
+        "is_direct_observation": {"type": "boolean"}
+      },
+      "required": ["metric", "value", "unit", "confidence", "method", "is_direct_observation"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.1.0",
+  "series_id": "tennis-youtube-channel-foundation-series",
+  "updated_at": "2026-08-16",
+  "language": "zh-CN",
+  "purpose": "按频道保留来源、按证据等级检索的网球知识库，用于教学与 VLM 诊断交叉验证。",
+  "canonical_indexes": {
+    "videos": "unified/all_videos.jsonl",
+    "knowledge_items": "unified/all_knowledge_items.jsonl",
+    "channel_registry": "unified/channel_registry.json",
+    "domain_crosswalk": "unified/canonical_domain_crosswalk.json",
+    "cross_channel_network": "unified/cross_channel_knowledge_network.json",
+    "schema": "unified/universal_series_schema.json"
+  },
+  "channels": [
+    {
+      "channel_id": "fault_tolerant_tennis",
+      "channel_name": "Fault Tolerant Tennis",
+      "runtime_eligible": true,
+      "video_count": 93,
+      "deep_analysis_count": 93,
+      "knowledge_tree": "channels/fault_tolerant_tennis/foundation/first_principles_knowledge_tree.md",
+      "seed": "channels/fault_tolerant_tennis/foundation/tennis_knowledge_graph_seed.json",
+      "raw_analysis_root": "channels/fault_tolerant_tennis/raw/video_analyses"
+    },
+    {
+      "channel_id": "tom_allsopp_tennis",
+      "channel_name": "TPA tennis / Tom Allsopp",
+      "runtime_eligible": true,
+      "video_count": 428,
+      "deep_analysis_count": 124,
+      "metadata_only_count": 304,
+      "knowledge_tree": "channels/tom_allsopp_tennis/foundation/first_principles_knowledge_tree.md",
+      "seed": "channels/tom_allsopp_tennis/foundation/tennis_knowledge_graph_seed.json",
+      "raw_analysis_root": "channels/tom_allsopp_tennis/raw/video_analyses"
+    },
+    {
+      "channel_id": "road_to_pro_tennis",
+      "channel_name": "Road to Pro Tennis",
+      "runtime_eligible": false,
+      "video_count": 151,
+      "knowledge_tree": "channels/road_to_pro_tennis/foundation/title_level_training_knowledge_tree.md"
+    },
+    {
+      "channel_id": "one_minute_tennis",
+      "channel_name": "One Minute Tennis",
+      "runtime_eligible": false,
+      "video_count": 935,
+      "knowledge_tree": "channels/one_minute_tennis/foundation/drill_cue_mechanism_knowledge_tree.md"
+    },
+    {
+      "channel_id": "feel_tennis",
+      "channel_name": "Feel Tennis Instruction",
+      "runtime_eligible": false,
+      "video_count": 705,
+      "knowledge_tree": "channels/feel_tennis/foundation/feel_based_training_knowledge_tree.md"
+    }
+  ],
+  "global_totals": {
+    "channels": 5,
+    "video_resources": 2312,
+    "knowledge_items": 10003,
+    "deep_video_analyses": 217,
+    "cross_channel_network_nodes": 34,
+    "cross_channel_network_edges": 76
+  },
+  "load_order": [
+    "README.md",
+    "docs/FOUNDATION_MODEL_INGESTION_GUIDE.md",
+    "unified/series_manifest.json",
+    "unified/channel_registry.json",
+    "unified/canonical_domain_crosswalk.json",
+    "unified/cross_channel_knowledge_network.json",
+    "unified/all_videos.jsonl",
+    "unified/all_knowledge_items.jsonl",
+    "channels/<channel_id>/foundation/",
+    "channels/<runtime_eligible_channel_id>/raw/video_analyses/"
+  ],
+  "evidence_policy": "元数据候选不得升级为视频明确主张；只有视频内容分析或人工审阅证据可以影响诊断。"
+}

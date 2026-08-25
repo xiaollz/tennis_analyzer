@@ -97,18 +97,18 @@ FOUNDATIONS: List[Dict[str, Any]] = [
         "source": "docs/research/18_ftt_build_foundation.md §2.1 + docs/research/22_ftt_scapular_glide.md",
         "priority": 0,
         "vlm_question_ids": ["Q1"],  # arm_body_sync
-        "metric_keys": ["arm_body_sync_score"],
+        # Zero-lag shoulder/wrist correlation is not a valid pass/fail metric here:
+        # healthy proximal-to-distal transfer can lower or invert that correlation.
+        "metric_keys": [],
         "pass_criteria": [
-            "手臂-躯干同步性指标 ≥ 0.5",
-            "Q1 答案不出现脱节关键词",
+            "Q1 的连续视频观察明确给出 F3 PASS",
+            "未见手臂在躯干传力前独立抢跑",
         ],
         "fail_evidence_keywords": [
             "不同步", "独立", "脱节", "先于身体", "手臂先动", "手臂单独",
             "和身体分离", "手臂提前", "身体没跟上", "arming",
         ],
-        "fail_metric_thresholds": {
-            "arm_body_sync_score": {"lt": 0.4},
-        },
+        "fail_metric_thresholds": {},
         "downstream_cascade": [
             "手臂独立动作",
             "arming（小臂代偿）",
@@ -367,6 +367,22 @@ def _check_keyword_hits(text: str, keywords: List[str]) -> List[str]:
     return hits
 
 
+def _extract_foundation_label(text: str, foundation_id: str) -> Optional[str]:
+    """Extract an explicit `F<n> PASS/FAIL/UNCERTAIN` judgment."""
+    code = foundation_id.split("_", 1)[0]
+    labels = {
+        match.upper()
+        for match in re.findall(
+            rf"(?<![A-Z0-9]){re.escape(code)}\s*[:：-]?\s*(PASS|FAIL|UNCERTAIN)\b",
+            text,
+            flags=re.IGNORECASE,
+        )
+    }
+    if len(labels) == 1:
+        return labels.pop().lower()
+    return None
+
+
 def _check_metric_threshold(metric_value: Any, threshold: Dict[str, Any]) -> bool:
     """检查 metric 是否超过失败阈值。返回 True 表示失败。"""
     if metric_value is None:
@@ -414,10 +430,11 @@ def check_foundations(
     检查 7 个 foundation 的状态。
 
     判断逻辑：
-    1. 优先量化指标（数据硬）：metric 超阈值 → fail
-    2. 其次 VLM 关键词：fail_evidence_keywords 命中任一 → fail
-    3. 证据不足（VLM 答"看不清" 且无量化指标）→ uncertain
-    4. priority == 0 失败 → should_block_downstream = True
+    1. 检查适用的量化阈值；F3 不使用零时差相关系数作硬判据
+    2. VLM 明确给出对应 `F<n> PASS/FAIL/UNCERTAIN` 时优先采用该标签
+    3. 没有明确标签时，才用 fail_evidence_keywords
+    4. 证据不足（VLM 答"看不清" 且无量化指标）→ uncertain
+    5. priority == 0 失败 → should_block_downstream = True
 
     参数:
         vlm_answers: VLM 答案 dict，key 为 Q1/Q9/Q23 等，value 为答案文本
@@ -446,7 +463,8 @@ def check_foundations(
                         f"指标 {metric_key} = {metrics[metric_key]} 触发阈值 {threshold}"
                     )
 
-        # 2) VLM 关键词检查
+        # 2) VLM 检查。明确的 foundation 标签优先于通用关键词，避免
+        # `F4 PASS：非右肩独立拉拍` 被“拉拍”二字反向误判。
         for q_id in foundation["vlm_question_ids"]:
             answer = _safe_get_text(vlm_answers, q_id)
             if not answer:
@@ -454,7 +472,20 @@ def check_foundations(
             if _is_uncertain_answer(answer):
                 # 该 VLM 答案无效，但不计入 has_signal
                 continue
+
+            explicit_label = _extract_foundation_label(answer, foundation["id"])
+            if explicit_label == "uncertain":
+                continue
+
             has_signal = True
+            if explicit_label == "fail":
+                fail = True
+                evidence.append(f"{q_id} 明确标记 {foundation['id'].split('_', 1)[0]} FAIL")
+                continue
+            if explicit_label == "pass":
+                evidence.append(f"{q_id} 明确标记 {foundation['id'].split('_', 1)[0]} PASS")
+                continue
+
             hits = _check_keyword_hits(answer, foundation["fail_evidence_keywords"])
             if hits:
                 fail = True

@@ -4,6 +4,7 @@
 > 频道：Fault Tolerant Tennis (FTT)
 > URL：https://www.youtube.com/watch?v=pWzyP-xfLfU
 > 分析日期：2026-03-28（Gemini file_data 真正看视频）
+> 2026-06-05 Gemini file_data 复核：`/Users/qsy/.gemini/transcripts/2026-06-05_pWzyP-xfLfU_youtube_gemini.txt`
 
 ---
 
@@ -97,7 +98,7 @@
 - 不是命令它去哪
 
 ### 5.3 与 Pronation 的关系
-- 旋转轴在手掌上部时 → 球拍自然产生 Lag → 击球瞬间通过前臂内旋（Pronation）释放
+- 旋转轴在手掌上部时 → 球拍自然产生 Lag → 击球瞬间通过前臂旋前（Pronation，桡尺关节）释放
 - 旋转轴在底部时 → 前臂被锁定 → 无法完成流畅的 Pronation
 - **两指技术 = 解锁前臂旋转的钥匙**
 
@@ -151,3 +152,67 @@
 ---
 
 > **核心一句话：** 你和职业选手的区别不在于挥拍速度或力量，而在于球拍在你手中绕哪个点旋转。把旋转轴从拍底移到食指-中指区域，Lag、Pronation、拍头速度全部自动产生。
+
+---
+
+## 2026-06-05 用户球场验证：V-shape 让降拍头自然发生
+
+用户在发球机训练后确认，本视频的 pivot point 理论直接解释了近期“降拍头 / slot / Sinner 式后方拍面”问题。
+
+### 用户验证到的错误模式
+
+```text
+习惯握在拍底 / 掌根当轴
+  -> 降拍头时球拍产生向后的阻力
+  -> 身体感觉卡住、不舒服
+  -> 需要手腕额外补一下
+  -> 真实击球中来不及
+  -> 录像表现为不等 drop 就直接往前拉
+```
+
+### V-shape 修复后的模式
+
+```text
+用 V-shape / 手掌上部感知球拍
+  -> 旋转轴上移
+  -> 拍头下降自然发生
+  -> 早期 supination / slot 进入更顺
+  -> 向上提、向上甩顺理成章
+  -> Sinner 式球拍正对后方的 drop 变得可做到
+```
+
+### 项目解释
+
+这次验证把 2026-06-02 的“separation 缺失 / 前挥后急坠”、2026-06-03 的“虎口对肚脐 / 拍面对身体”和 2026-06-04 的“TPA 早期 supination”统一到了手-拍接口层：
+
+```text
+拍底轴心 = drop 有阻力，前臂被锁，需要手腕救拍
+V 型区轴心 = drop / lag / supination 是球拍惯性结果
+```
+
+边界：V 型区是触觉轴心，不是食指硬拧；JUL 的 hypothenar 仍然成立，承重应落在尺侧 / 小指鱼际，避免食指压力触发 IR 抢跑。
+
+### `fjpr9PS02tM` 复核补丁：seating + 触觉耦合
+
+2026-06-05 通过 Gemini file_data 复核 FTT `fjpr9PS02tM`（99% of Tennis Grips Don't Work）。该视频补充的是同一硬件层的另一半：
+
+```text
+pWzyP-xfLfU = 旋转轴在哪里
+fjpr9PS02tM = 球拍如何被左手重新 seating 到右手，形成稳定触觉耦合
+```
+
+正确组合：
+
+```text
+左手把拍柄塞进 V 区 / 手掌上部
+  -> 右手先微松再包裹
+  -> 皮肤接触面积最大化
+  -> 肌肉张力最小化
+  -> 球拍既不乱滑，也不被前臂锁死
+  -> drop / lag / early supination 有空间自然发生
+```
+
+这解释了用户 6/5 的球场体感：问题不是单纯“握得太松”或“握得太紧”，而是此前缺少稳定的 V 区 seating。拍底轴心让 drop 有反向阻力；V 区 seating 后，球拍绕正确接口转，身体才会允许它自然下降。
+
+本地分析文件：`docs/research/ftt/video_analyses/fjpr9PS02tM.md`
+Gemini 复核文件：`/Users/qsy/.gemini/transcripts/2026-06-05_fjpr9PS02tM_youtube_gemini.txt`

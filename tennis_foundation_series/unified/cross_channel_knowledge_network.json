@@ -1,0 +1,716 @@
+{
+  "schema_version": "1.0.0",
+  "network_id": "cross-channel-tennis-knowledge-network",
+  "description": "跨频道发现图；边权为视频资源数。具体教学内容、关键点和训练原子应经 global_video_id / knowledge_item_id 回溯。",
+  "nodes": [
+    {
+      "id": "channel:fault_tolerant_tennis",
+      "type": "source_channel",
+      "channel_id": "fault_tolerant_tennis"
+    },
+    {
+      "id": "channel:feel_tennis",
+      "type": "source_channel",
+      "channel_id": "feel_tennis"
+    },
+    {
+      "id": "channel:one_minute_tennis",
+      "type": "source_channel",
+      "channel_id": "one_minute_tennis"
+    },
+    {
+      "id": "channel:road_to_pro_tennis",
+      "type": "source_channel",
+      "channel_id": "road_to_pro_tennis"
+    },
+    {
+      "id": "channel:tom_allsopp_tennis",
+      "type": "source_channel",
+      "channel_id": "tom_allsopp_tennis"
+    },
+    {
+      "id": "domain:backhand",
+      "type": "canonical_domain",
+      "domain_id": "backhand"
+    },
+    {
+      "id": "domain:biomechanics_kinetic_chain",
+      "type": "canonical_domain",
+      "domain_id": "biomechanics_kinetic_chain"
+    },
+    {
+      "id": "domain:drills_exercises",
+      "type": "canonical_domain",
+      "domain_id": "drills_exercises"
+    },
+    {
+      "id": "domain:equipment",
+      "type": "canonical_domain",
+      "domain_id": "equipment"
+    },
+    {
+      "id": "domain:fitness_physical",
+      "type": "canonical_domain",
+      "domain_id": "fitness_physical"
+    },
+    {
+      "id": "domain:forehand",
+      "type": "canonical_domain",
+      "domain_id": "forehand"
+    },
+    {
+      "id": "domain:general_principles",
+      "type": "canonical_domain",
+      "domain_id": "general_principles"
+    },
+    {
+      "id": "domain:injury_load_management",
+      "type": "canonical_domain",
+      "domain_id": "injury_load_management"
+    },
+    {
+      "id": "domain:injury_risk",
+      "type": "canonical_domain",
+      "domain_id": "injury_risk"
+    },
+    {
+      "id": "domain:mental_performance",
+      "type": "canonical_domain",
+      "domain_id": "mental_performance"
+    },
+    {
+      "id": "domain:movement_footwork",
+      "type": "canonical_domain",
+      "domain_id": "movement_footwork"
+    },
+    {
+      "id": "domain:movement_spacing",
+      "type": "canonical_domain",
+      "domain_id": "movement_spacing"
+    },
+    {
+      "id": "domain:player_coach_development",
+      "type": "canonical_domain",
+      "domain_id": "player_coach_development"
+    },
+    {
+      "id": "domain:racket_ball_interface",
+      "type": "canonical_domain",
+      "domain_id": "racket_ball_interface"
+    },
+    {
+      "id": "domain:return",
+      "type": "canonical_domain",
+      "domain_id": "return"
+    },
+    {
+      "id": "domain:serve",
+      "type": "canonical_domain",
+      "domain_id": "serve"
+    },
+    {
+      "id": "domain:slice_drop_lob",
+      "type": "canonical_domain",
+      "domain_id": "slice_drop_lob"
+    },
+    {
+      "id": "domain:tactics_decision",
+      "type": "canonical_domain",
+      "domain_id": "tactics_decision"
+    },
+    {
+      "id": "domain:tactics_matchplay",
+      "type": "canonical_domain",
+      "domain_id": "tactics_matchplay"
+    },
+    {
+      "id": "domain:training_skill_acquisition",
+      "type": "canonical_domain",
+      "domain_id": "training_skill_acquisition"
+    },
+    {
+      "id": "domain:two_handed_backhand",
+      "type": "canonical_domain",
+      "domain_id": "two_handed_backhand"
+    },
+    {
+      "id": "domain:video_analysis",
+      "type": "canonical_domain",
+      "domain_id": "video_analysis"
+    },
+    {
+      "id": "domain:vision_perception",
+      "type": "canonical_domain",
+      "domain_id": "vision_perception"
+    },
+    {
+      "id": "domain:volley_overhead",
+      "type": "canonical_domain",
+      "domain_id": "volley_overhead"
+    },
+    {
+      "id": "evidence:excluded_non_instructional_metadata",
+      "type": "evidence_status",
+      "evidence_status": "excluded_non_instructional_metadata"
+    },
+    {
+      "id": "evidence:metadata_title_and_playlist_only",
+      "type": "evidence_status",
+      "evidence_status": "metadata_title_and_playlist_only"
+    },
+    {
+      "id": "evidence:metadata_title_only",
+      "type": "evidence_status",
+      "evidence_status": "metadata_title_only"
+    },
+    {
+      "id": "evidence:mixed_deep_and_metadata",
+      "type": "evidence_status",
+      "evidence_status": "mixed_deep_and_metadata"
+    },
+    {
+      "id": "evidence:video_content_analysis",
+      "type": "evidence_status",
+      "evidence_status": "video_content_analysis"
+    }
+  ],
+  "edges": [
+    {
+      "id": "fault_tolerant_tennis--covers--backhand",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:backhand",
+      "resource_count": 23
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--biomechanics_kinetic_chain",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:biomechanics_kinetic_chain",
+      "resource_count": 93
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--forehand",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:forehand",
+      "resource_count": 59
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--general_principles",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:general_principles",
+      "resource_count": 87
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--injury_risk",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:injury_risk",
+      "resource_count": 15
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--mental_performance",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:mental_performance",
+      "resource_count": 27
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--movement_spacing",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:movement_spacing",
+      "resource_count": 76
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--racket_ball_interface",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:racket_ball_interface",
+      "resource_count": 61
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--return",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:return",
+      "resource_count": 12
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--serve",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:serve",
+      "resource_count": 37
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--slice_drop_lob",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:slice_drop_lob",
+      "resource_count": 13
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--tactics_decision",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:tactics_decision",
+      "resource_count": 26
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--training_skill_acquisition",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:training_skill_acquisition",
+      "resource_count": 93
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--two_handed_backhand",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:two_handed_backhand",
+      "resource_count": 7
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--vision_perception",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:vision_perception",
+      "resource_count": 37
+    },
+    {
+      "id": "fault_tolerant_tennis--covers--volley_overhead",
+      "type": "covers_domain",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "domain:volley_overhead",
+      "resource_count": 24
+    },
+    {
+      "id": "feel_tennis--covers--backhand",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:backhand",
+      "resource_count": 79
+    },
+    {
+      "id": "feel_tennis--covers--drills_exercises",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:drills_exercises",
+      "resource_count": 123
+    },
+    {
+      "id": "feel_tennis--covers--equipment",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:equipment",
+      "resource_count": 25
+    },
+    {
+      "id": "feel_tennis--covers--forehand",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:forehand",
+      "resource_count": 136
+    },
+    {
+      "id": "feel_tennis--covers--general_principles",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:general_principles",
+      "resource_count": 125
+    },
+    {
+      "id": "feel_tennis--covers--mental_performance",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:mental_performance",
+      "resource_count": 90
+    },
+    {
+      "id": "feel_tennis--covers--movement_spacing",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:movement_spacing",
+      "resource_count": 69
+    },
+    {
+      "id": "feel_tennis--covers--racket_ball_interface",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:racket_ball_interface",
+      "resource_count": 92
+    },
+    {
+      "id": "feel_tennis--covers--return",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:return",
+      "resource_count": 12
+    },
+    {
+      "id": "feel_tennis--covers--serve",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:serve",
+      "resource_count": 128
+    },
+    {
+      "id": "feel_tennis--covers--slice_drop_lob",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:slice_drop_lob",
+      "resource_count": 40
+    },
+    {
+      "id": "feel_tennis--covers--tactics_decision",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:tactics_decision",
+      "resource_count": 72
+    },
+    {
+      "id": "feel_tennis--covers--video_analysis",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:video_analysis",
+      "resource_count": 33
+    },
+    {
+      "id": "feel_tennis--covers--volley_overhead",
+      "type": "covers_domain",
+      "source": "channel:feel_tennis",
+      "target": "domain:volley_overhead",
+      "resource_count": 53
+    },
+    {
+      "id": "one_minute_tennis--covers--backhand",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:backhand",
+      "resource_count": 106
+    },
+    {
+      "id": "one_minute_tennis--covers--fitness_physical",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:fitness_physical",
+      "resource_count": 250
+    },
+    {
+      "id": "one_minute_tennis--covers--forehand",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:forehand",
+      "resource_count": 410
+    },
+    {
+      "id": "one_minute_tennis--covers--general_principles",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:general_principles",
+      "resource_count": 38
+    },
+    {
+      "id": "one_minute_tennis--covers--mental_performance",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:mental_performance",
+      "resource_count": 46
+    },
+    {
+      "id": "one_minute_tennis--covers--movement_spacing",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:movement_spacing",
+      "resource_count": 65
+    },
+    {
+      "id": "one_minute_tennis--covers--racket_ball_interface",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:racket_ball_interface",
+      "resource_count": 192
+    },
+    {
+      "id": "one_minute_tennis--covers--return",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:return",
+      "resource_count": 12
+    },
+    {
+      "id": "one_minute_tennis--covers--serve",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:serve",
+      "resource_count": 215
+    },
+    {
+      "id": "one_minute_tennis--covers--slice_drop_lob",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:slice_drop_lob",
+      "resource_count": 38
+    },
+    {
+      "id": "one_minute_tennis--covers--tactics_matchplay",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:tactics_matchplay",
+      "resource_count": 8
+    },
+    {
+      "id": "one_minute_tennis--covers--video_analysis",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:video_analysis",
+      "resource_count": 23
+    },
+    {
+      "id": "one_minute_tennis--covers--volley_overhead",
+      "type": "covers_domain",
+      "source": "channel:one_minute_tennis",
+      "target": "domain:volley_overhead",
+      "resource_count": 39
+    },
+    {
+      "id": "road_to_pro_tennis--covers--backhand",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:backhand",
+      "resource_count": 18
+    },
+    {
+      "id": "road_to_pro_tennis--covers--equipment",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:equipment",
+      "resource_count": 12
+    },
+    {
+      "id": "road_to_pro_tennis--covers--forehand",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:forehand",
+      "resource_count": 28
+    },
+    {
+      "id": "road_to_pro_tennis--covers--general_principles",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:general_principles",
+      "resource_count": 13
+    },
+    {
+      "id": "road_to_pro_tennis--covers--injury_load_management",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:injury_load_management",
+      "resource_count": 6
+    },
+    {
+      "id": "road_to_pro_tennis--covers--mental_performance",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:mental_performance",
+      "resource_count": 15
+    },
+    {
+      "id": "road_to_pro_tennis--covers--movement_spacing",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:movement_spacing",
+      "resource_count": 16
+    },
+    {
+      "id": "road_to_pro_tennis--covers--player_coach_development",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:player_coach_development",
+      "resource_count": 37
+    },
+    {
+      "id": "road_to_pro_tennis--covers--return",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:return",
+      "resource_count": 2
+    },
+    {
+      "id": "road_to_pro_tennis--covers--serve",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:serve",
+      "resource_count": 39
+    },
+    {
+      "id": "road_to_pro_tennis--covers--slice_drop_lob",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:slice_drop_lob",
+      "resource_count": 7
+    },
+    {
+      "id": "road_to_pro_tennis--covers--tactics_decision",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:tactics_decision",
+      "resource_count": 11
+    },
+    {
+      "id": "road_to_pro_tennis--covers--training_skill_acquisition",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:training_skill_acquisition",
+      "resource_count": 51
+    },
+    {
+      "id": "road_to_pro_tennis--covers--volley_overhead",
+      "type": "covers_domain",
+      "source": "channel:road_to_pro_tennis",
+      "target": "domain:volley_overhead",
+      "resource_count": 17
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--backhand",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:backhand",
+      "resource_count": 47
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--equipment",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:equipment",
+      "resource_count": 79
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--forehand",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:forehand",
+      "resource_count": 174
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--general_principles",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:general_principles",
+      "resource_count": 199
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--mental_performance",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:mental_performance",
+      "resource_count": 23
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--movement_footwork",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:movement_footwork",
+      "resource_count": 67
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--serve",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:serve",
+      "resource_count": 154
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--slice_drop_lob",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:slice_drop_lob",
+      "resource_count": 21
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--tactics_decision",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:tactics_decision",
+      "resource_count": 33
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--training_skill_acquisition",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:training_skill_acquisition",
+      "resource_count": 53
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--two_handed_backhand",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:two_handed_backhand",
+      "resource_count": 7
+    },
+    {
+      "id": "tom_allsopp_tennis--covers--volley_overhead",
+      "type": "covers_domain",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "domain:volley_overhead",
+      "resource_count": 39
+    },
+    {
+      "id": "fault_tolerant_tennis--has--video_content_analysis",
+      "type": "has_evidence_status",
+      "source": "channel:fault_tolerant_tennis",
+      "target": "evidence:video_content_analysis",
+      "resource_count": 93
+    },
+    {
+      "id": "feel_tennis--has--metadata_title_and_playlist_only",
+      "type": "has_evidence_status",
+      "source": "channel:feel_tennis",
+      "target": "evidence:metadata_title_and_playlist_only",
+      "resource_count": 705
+    },
+    {
+      "id": "one_minute_tennis--has--metadata_title_and_playlist_only",
+      "type": "has_evidence_status",
+      "source": "channel:one_minute_tennis",
+      "target": "evidence:metadata_title_and_playlist_only",
+      "resource_count": 935
+    },
+    {
+      "id": "road_to_pro_tennis--has--excluded_non_instructional_metadata",
+      "type": "has_evidence_status",
+      "source": "channel:road_to_pro_tennis",
+      "target": "evidence:excluded_non_instructional_metadata",
+      "resource_count": 10
+    },
+    {
+      "id": "road_to_pro_tennis--has--metadata_title_only",
+      "type": "has_evidence_status",
+      "source": "channel:road_to_pro_tennis",
+      "target": "evidence:metadata_title_only",
+      "resource_count": 141
+    },
+    {
+      "id": "tom_allsopp_tennis--has--mixed_deep_and_metadata",
+      "type": "has_evidence_status",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "evidence:mixed_deep_and_metadata",
+      "resource_count": 304
+    },
+    {
+      "id": "tom_allsopp_tennis--has--video_content_analysis",
+      "type": "has_evidence_status",
+      "source": "channel:tom_allsopp_tennis",
+      "target": "evidence:video_content_analysis",
+      "resource_count": 124
+    }
+  ],
+  "provenance": {
+    "video_index": "unified/all_videos.jsonl",
+    "channel_registry": "unified/channel_registry.json",
+    "canonical_domain_crosswalk": "unified/canonical_domain_crosswalk.json"
+  }
+}

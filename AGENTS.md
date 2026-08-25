@@ -4,7 +4,7 @@
 This folder is the user's tennis modern-forehand knowledge base and analysis system.
 Hermes should use this project whenever the user says `网球：...`, asks about forehand technique, asks for tennis training advice, or asks to interpret pose/KPI/VLM detection results.
 
-Project path: `/Users/qsy/Desktop/tennis`
+Project path: `/Users/qsy/tennis`
 
 ## First files to read
 1. `CLAUDE.md` — canonical project protocol and current coaching rules. Treat it as authoritative unless this file says otherwise.
@@ -31,6 +31,7 @@ Use ball counts, block structure, and verification points. Do not assume match v
 
 ## Answer protocol for tennis questions
 - Prefer Chinese unless the user asks otherwise.
+- Treat likely speech-recognition corruptions contextually: normalize an unknown near-homophone to the established tennis term when the surrounding discussion makes it clear. In particular, `Shallow Swim` means `shadow swing / 影子挥拍`; do not invent a separate drill. Ask only when multiple interpretations remain equally plausible.
 - Training-court answers should be short, actionable, and outcome-first.
 - Do not dump theory or add new cues unless one of these is true:
   1. User explicitly asks for theory/why.
@@ -39,7 +40,14 @@ Use ball counts, block structure, and verification points. Do not assume match v
 - For symptom reports, first clarify/result-check around outcome: ball direction, depth, height, spin, and intended aim.
 - For ESR / IR / weak ball / arm floating / racket drop / rhythm break / mirror-good-court-bad issues, follow `CLAUDE.md` ESR priority before HSA.
 - For HSA / chest fire / press slot / power-chain issues, follow the HSA protocol in `CLAUDE.md`.
+- After every completed local training-video analysis, write the immediate delivery summary as one coherent Chinese paragraph in this order: overall change, primary problem and evidence, cause analysis, relevant FTT/TPA knowledge-base video and review point, then the next ball-count training block and success check. This applies only to that first post-analysis summary and does not replace Pose/KPI, native VLM, slow-motion/manual review, or report generation. Follow-up technique dialogue requires a fresh targeted knowledge-base search and may use normal structured sections and lists; follow the full protocol in `CLAUDE.md`.
 - Respect the permanent ban in `CLAUDE.md`: do not present “推肘” as an active cue.
+
+## YouTube / video protocol
+- When the user sends a YouTube URL and asks to watch, analyze, compare, or learn from it, use the local `youtube-gemini` workflow with Gemini native YouTube `file_data`.
+- Do not substitute transcript-only summaries, YouTube metadata, web search snippets, or old local notes for video understanding.
+- Fetch real YouTube title/channel metadata first, then save Gemini output under `/Users/qsy/.gemini/transcripts/`.
+- If the Gemini call fails, report the exact tool/config failure and fix path instead of giving a transcript-only answer as if the video was watched.
 
 ## Key canonical files
 - `docs/record/learning.md` — user training log and timeline.

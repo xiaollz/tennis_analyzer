@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/rtp-training-knowledge-v1.json",
+  "title": "Road to Pro Tennis Training Knowledge Schema",
+  "type": "object",
+  "required": ["schema_version", "source_channel", "videos", "topic_nodes", "evidence_policy"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "source_channel": {"type": "object", "required": ["name", "url"], "properties": {"name": {"type": "string"}, "url": {"type": "string", "format": "uri"}}},
+    "evidence_policy": {"type": "object", "required": ["statuses"], "properties": {"statuses": {"type": "array", "items": {"type": "string", "enum": ["metadata_title_only", "video_explicit", "visual_inference", "cross_video_synthesis", "human_reviewed", "excluded_non_instructional_metadata"]}}}},
+    "videos": {"type": "array", "items": {"$ref": "#/$defs/video"}},
+    "topic_nodes": {"type": "array", "items": {"$ref": "#/$defs/topic"}},
+    "training_units": {"type": "array", "items": {"$ref": "#/$defs/training_unit"}},
+    "vlm_observation_slots": {"type": "array", "items": {"$ref": "#/$defs/vlm_slot"}}
+  },
+  "$defs": {
+    "video": {"type": "object", "required": ["video_id", "title", "url", "instruction_scope", "evidence_status"], "properties": {"video_id": {"type": "string"}, "title": {"type": "string"}, "url": {"type": "string", "format": "uri"}, "content_type": {"type": "string", "enum": ["long", "short"]}, "duration_seconds": {"type": ["integer", "null"]}, "instruction_scope": {"type": "string"}, "domain_tags": {"type": "array", "items": {"type": "string"}}, "evidence_status": {"type": "string"}, "source_notes": {"type": "string"}}},
+    "topic": {"type": "object", "required": ["id", "label", "parent_id", "evidence_status"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "parent_id": {"type": ["string", "null"]}, "description": {"type": "string"}, "candidate_video_ids": {"type": "array", "items": {"type": "string"}}, "evidence_status": {"type": "string"}, "content_boundary": {"type": "string"}}},
+    "training_unit": {"type": "object", "required": ["id", "video_id", "status"], "properties": {"id": {"type": "string"}, "video_id": {"type": "string"}, "status": {"type": "string", "enum": ["pending_content_evidence", "draft", "human_reviewed"]}, "teaching_problem": {"type": ["string", "null"]}, "conditions": {"type": "array", "items": {"type": "object"}}, "mechanism_claims": {"type": "array", "items": {"type": "object"}}, "action_cues": {"type": "array", "items": {"type": "object"}}, "drills": {"type": "array", "items": {"type": "object"}}, "evidence": {"type": "array", "items": {"type": "object"}}}},
+    "vlm_slot": {"type": "object", "required": ["id", "topic_id", "event_type", "directly_observable", "limits"], "properties": {"id": {"type": "string"}, "topic_id": {"type": "string"}, "event_type": {"type": "string"}, "directly_observable": {"type": "array", "items": {"type": "string"}}, "recommended_views": {"type": "array", "items": {"type": "string"}}, "limits": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

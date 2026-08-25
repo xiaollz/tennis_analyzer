@@ -280,9 +280,6 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
     {"keywords": ["球落地准备没完成", "球弹起还在引拍", "racket back late"],
      "concept": "prep17_prep_not_done_by_bounce", "frame_range": None,
      "severity": 0.9, "label": "球落地时准备未完成"},
-    {"keywords": ["没有等待", "没有暂停", "一气呵成", "no wait", "no pause"],
-     "concept": "prep18_no_wait_after_prep", "frame_range": None,
-     "severity": 0.7, "label": "准备完未等待"},
     {"keywords": ["站姿窄", "narrow stance", "双脚太近"],
      "concept": "prep19_narrow_stance", "frame_range": None,
      "severity": 0.7, "label": "站姿过窄"},
@@ -340,6 +337,15 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "弱侧拉拍", "weak side initiates", "拍先动肘后跟"],
      "concept": "arming_the_shot_false_lag", "frame_range": [1, 2],
      "severity": 0.7, "label": "引拍时拍头先于肘后撤（弱侧拉拍）"},
+    # via 2026-06-02 user video review — racket drop separation missing.
+    # The issue is not simply "racket head low"; it is upright lowering without the right-rear-down transition,
+    # followed by a late collapse and forearm/wrist rescue.
+    {"keywords": ["upright_lowering_no_separation", "late_racket_head_collapse",
+                   "立拍后只是小臂整体放低", "小臂整体放低", "缺少右后下",
+                   "缺少separation", "缺少 separation", "没有右后下亮相",
+                   "前挥启动后急坠", "拍头向右后方急坠", "late racket head collapse"],
+     "concept": "prep11b_no_racket_drop_separation", "frame_range": [1, 2, 3],
+     "severity": 0.82, "label": "立拍后缺少 separation/右后下亮相，前挥后拍头急坠"},
     # via Bourne 2023, p.18b (hand always on right side of body)
     {"keywords": ["手跨过中线", "手到左侧", "hand crosses midline", "hand left of body",
                    "击球手越过身体中线", "racket hand crosses centerline"],
@@ -356,9 +362,9 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "death grip", "握拍过紧"],
      "concept": "tight_grip_under_pressure", "frame_range": [1, 2, 3],
      "severity": 0.65, "label": "引拍中握拍过紧（指节发白/前臂束粗）"},
-    # via 2026-04-30 user breakthrough — driver-side healthy signal (胸推肘 → 肘领 → 小臂被动甩出)
+    # via 2026-04-30 user breakthrough — driver-side healthy signal (HSA interface -> elbow lead -> passive forearm whip)
     {"keywords": ["elbow lead with passive forearm", "肘领小臂被动", "肘先于拍头前移",
-                   "elbow leads racket head forward", "胸推肘小臂被动甩出",
+                   "elbow leads racket head forward", "HSA接口小臂被动甩出",
                    "passive forearm whip", "前挥肘领"],
      "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
      "severity": 0.0, "label": "前挥肘领+小臂被动甩出（驱动侧健康信号）"},
@@ -374,6 +380,21 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "upper arm welded to torso", "shoulder socket locked"],
      "concept": "arming_the_shot_false_lag", "frame_range": [3, 4],
      "severity": 0.0, "label": "前挥中大臂住肩窝随躯干同步（约束侧健康信号）"},
+    # via 2026-05-24 user insight — No Backswing Illusion.
+    # "No backswing" prohibits the upper arm pulling backward relative to the torso;
+    # it does not prohibit forearm/elbow extension or the racket appearing behind in world coordinates.
+    {"keywords": ["upper_arm_independent_backswing", "右大臂相对躯干独立后拉",
+                   "大臂独立后拉", "右大臂主动往后拉", "大臂脱离躯干",
+                   "肘被单独拽到身后", "upper arm pulls back independently",
+                   "humerus pulls back independently", "No Backswing Illusion FAIL"],
+     "concept": "upper_arm_independent_backswing", "frame_range": [1, 2],
+     "severity": 0.90, "label": "右大臂相对躯干独立后拉（No Backswing Illusion 失败）"},
+    {"keywords": ["upper_arm_connected_no_backswing", "右大臂随躯干整体转",
+                   "大臂随躯干整体转", "大臂相对躯干稳定", "大臂跟身体",
+                   "小臂可延伸", "forearm elbow extension within connected structure",
+                   "No Backswing Illusion PASS"],
+     "concept": "upper_arm_connected_no_backswing", "frame_range": [1, 2],
+     "severity": 0.0, "label": "No Backswing Illusion 健康：大臂随躯干整体转，小臂可延伸"},
 
     # ── HSA (Horizontal Shoulder Adduction) — 5/3 突破后加入 ──
     # 来源：docs/research/hsa_master_index.md + evaluation/hsa_detector.py
@@ -444,6 +465,118 @@ OBSERVATION_TO_CONCEPT: List[Dict[str, Any]] = [
                    "末段突变 ESR", "被动反射 ESR"],
      "concept": "lazy_esr_initiation", "frame_range": [1, 2, 3],
      "severity": 0.85, "label": "ESR 偷懒（外旋启动晚 / 幅度不足 — IR 抢跑对偶根因）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  F8 · Off-Arm Pull 完整协议（5/9 项目最高优先级 #2）
+    #  用户 4/9 自验"想左手忘右手"；Tomaz 原话 "engaging the opposite side
+    #  makes the arm passive"。详见 docs/research/non_hitting_arm_master.md
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["左手被动", "左手悬挂", "左手垂落", "off-arm passive",
+                   "left hand passive", "左手没主动", "左手不指方向",
+                   "non-hitting hand hanging", "左手漂浮", "F8 FAIL",
+                   "左手在身侧", "没主动指", "左手没动", "左手不动",
+                   "left hand idle", "Off-Arm 失败", "左手未参与发力"],
+     "concept": "off_arm_passive_5_9", "frame_range": [1, 2, 3, 4],
+     "severity": 0.90, "label": "Off-Arm Pull 失败：左手全程被动悬挂（5/9 项目最高优先级 #2）"},
+    {"keywords": ["左手主动拉离", "左手主动指", "off-arm active pull",
+                   "left hand pulling away", "左手发力主体", "想左手忘右手",
+                   "F8 PASS", "Off-Arm Pull 健康"],
+     "concept": "off_arm_active_5_9", "frame_range": [1, 2, 3, 4],
+     "severity": 0.0, "label": "Off-Arm Pull 健康：左手 4 帧都主动（5/9 控制信号）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  F9 · 5/11 圣经步骤 1 — 左侧张力网（紧撑）
+    #  用户 5/11 原话："让上背 + 上胸感知到紧撑力量"
+    #  5/12 下午机制深化：左侧紧撑 = 张力网形成 = 上身锁成刚体
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["左侧无张力", "左侧背部平", "左肩松垮", "左肩上耸",
+                   "左大臂松垮悬挂", "no left tension net", "无张力网",
+                   "5/11 圣经左侧 FAIL", "F9 FAIL"],
+     "concept": "terminal_bible_no_left_tension_5_11", "frame_range": [1, 2, 3, 4],
+     "severity": 0.95, "label": "5/11 圣经步骤 1 失败：左侧无张力网（项目顶层圣经根因）"},
+    {"keywords": ["左侧张力网完整", "左侧背部褶皱明显", "左肩胛后压",
+                   "left tension net healthy", "F9 PASS", "5/11 圣经左侧 PASS"],
+     "concept": "terminal_bible_left_tension_healthy_5_11", "frame_range": [1, 2, 3, 4],
+     "severity": 0.0, "label": "5/11 圣经步骤 1 健康：左侧张力网持续存在（控制信号）"},
+    {"keywords": ["左侧张力昙花一现", "left tension flash only",
+                   "仅在引拍顶点有张力", "intermittent left tension"],
+     "concept": "terminal_bible_left_tension_flash_5_11", "frame_range": [2],
+     "severity": 0.75, "label": "5/11 圣经左侧张力网昙花一现（部分失败）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  F10 · 5/11 圣经步骤 2 — 右侧被动释放 + TTT Simon 三词链
+    #  用户 5/11 原话："右手臂彻底放松，把力释放出来"
+    #  TTT Simon 5/12 上午："Loosen up + Attach to chest + Twist off hips"
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["右手臂主动", "右前臂主动屈伸", "右大臂主动驱动",
+                   "right arm active driving", "右手臂没放松", "F10 FAIL",
+                   "5/11 圣经右侧 FAIL", "loose up failed"],
+     "concept": "terminal_bible_no_right_relax_5_11", "frame_range": [2, 3, 4],
+     "severity": 0.90, "label": "5/11 圣经步骤 2 失败：右手臂主动驱动（应被动）"},
+    {"keywords": ["右手臂彻底放松", "右臂如鞭子末端", "right arm whip end",
+                   "loose up passive", "F10 PASS", "5/11 圣经右侧 PASS",
+                   "右手臂被动悬挂", "right arm passive hanging"],
+     "concept": "terminal_bible_right_relax_healthy_5_11", "frame_range": [2, 3, 4],
+     "severity": 0.0, "label": "5/11 圣经步骤 2 健康：右手臂被动释放（控制信号）"},
+    {"keywords": ["大臂外飘", "大臂偏离胸壁", "arm flying away",
+                   "no attach to chest", "Attach to chest 失败"],
+     "concept": "no_attach_to_chest_5_12am", "frame_range": [3, 4],
+     "severity": 0.85, "label": "Attach to chest 失败：大臂相对胸壁角度大幅变化"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  5/12 上午 · 胸部发力陷阱（永久禁令检测）
+    #  来源：TTT Simon 视频整合 — 胸是传力接口，不是发动机
+    #  风险：5/16 内上髁炎复发
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["胸大肌主动鼓起", "chest active contraction", "胸主动收缩",
+                   "胸推手", "胸部发力", "chest pushing arm", "胸先动髋后动",
+                   "chest before hips", "胸部主导", "chest active trap",
+                   "胸发力", "胸推", "胸肌主动", "胸大肌收缩", "胸主导",
+                   "用胸发力", "胸大肌明显收缩", "胸先于髋", "胸-肱角主动推",
+                   "active chest contraction", "pec pushing"],
+     "concept": "chest_active_trap_5_12", "frame_range": [2, 3, 4],
+     "severity": 0.95, "label": "⛔ 胸部发力陷阱（5/12 永久禁令 — 5/16 内上髁炎复发风险）"},
+    {"keywords": ["髋先动", "hips first", "髋启动早于胸", "twist off hips healthy",
+                   "髋部主导旋转", "胸保持中性", "chest neutral hips drive"],
+     "concept": "twist_off_hips_healthy_5_12am", "frame_range": [2, 3],
+     "severity": 0.0, "label": "Twist off hips 健康：髋先动 + 胸保持中性（控制信号）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  F11 · 5/12 下午 — 左侧锁定 → 右侧轨道（火车滑轨）
+    #  用户 5/12 下午原话："右边像在固定死的轨道上运行 — 火车沿着滑轨"
+    #  机制：左侧张力网 → 上身锁成刚体 → 右臂被锁进轨道
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["右肘乱动", "右肘前后左右乱动", "right elbow chaotic",
+                   "no track lock", "无火车滑轨", "右肘距胸壁距离大幅波动",
+                   "elbow distance variance high", "F11 FAIL",
+                   "右肘距胸壁峰谷差大", "elbow trajectory broken"],
+     "concept": "no_track_lock_5_12pm", "frame_range": [1, 2, 3, 4],
+     "severity": 0.85, "label": "F11 失败：火车滑轨断裂，右肘乱动无轨道感（5/12 下午机制深化）"},
+    {"keywords": ["火车滑轨", "右肘清晰弧线", "track lock healthy",
+                   "elbow arc clean", "right elbow arc consistent",
+                   "F11 PASS", "5/12 圣经机制深化 PASS"],
+     "concept": "track_lock_healthy_5_12pm", "frame_range": [1, 2, 3, 4],
+     "severity": 0.0, "label": "F11 健康：火车滑轨稳定，右肘走一条清晰弧线（控制信号）"},
+    {"keywords": ["右肘折线", "elbow trajectory zigzag",
+                   "右肘运动有明显拐点", "broken arc"],
+     "concept": "elbow_trajectory_zigzag_5_12pm", "frame_range": [2, 3, 4],
+     "severity": 0.80, "label": "右肘轨迹折线（火车滑轨断裂的一种）"},
+    {"keywords": ["右肘直线", "elbow trajectory linear",
+                   "推球模式", "pushing not rotating", "几乎不曲"],
+     "concept": "elbow_trajectory_linear_5_12pm", "frame_range": [2, 3, 4],
+     "severity": 0.85, "label": "右肘直线轨迹 = 推球模式（非旋转挥拍）"},
+
+    # ══════════════════════════════════════════════════════════════════
+    #  5/11 圣经 上身刚体锁定（5/12 下午机制深化补充）
+    # ══════════════════════════════════════════════════════════════════
+    {"keywords": ["上身刚体", "torso rigid body", "上身锁成一体",
+                   "rigid body rotation healthy", "整体转动", "刚体旋转"],
+     "concept": "torso_rigid_body_healthy_5_12pm", "frame_range": [3, 4],
+     "severity": 0.0, "label": "上身刚体锁定健康（5/12 下午机制深化控制信号）"},
+    {"keywords": ["上身一截一截", "torso segmented motion",
+                   "上身分段转", "no rigid body lock", "上身散架"],
+     "concept": "torso_no_rigid_body_5_12pm", "frame_range": [3, 4],
+     "severity": 0.90, "label": "上身一截一截转（无刚体锁定 — F11 上游原因）"},
 ]
 
 
@@ -514,6 +647,8 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "prep27_no_x_stretch": "L4",
     "prep28_grip_not_innervated": "L4",
     "prep30_late_preparation_general": "L4",
+    "upper_arm_independent_backswing": "L4",
+    "upper_arm_connected_no_backswing": "L4",
     # L5 — Footwork (最底层根因)
     "problem_p09": "L5",  # 重心错脚
     "straight_legs": "L5",
@@ -551,6 +686,28 @@ _CONCEPT_LAYER: Dict[str, str] = {
     "ir_premature_firing": "L4",           # Preparation — IR 抢跑（用户 30 年根因）
     # ── ESR 偷懒 — 5/8 加入（IR 抢跑对偶；项目级根因） ──
     "lazy_esr_initiation": "L4",           # Preparation — ESR 启动晚 / 幅度不足
+    # ── F8 Off-Arm Pull — 5/9 项目最高优先级 #2 ──
+    "off_arm_passive_5_9": "L4",           # Preparation — 左手被动悬挂
+    "off_arm_active_5_9": "L4",            # control signal
+    # ── F9 5/11 圣经步骤 1 — 左侧张力网（紧撑） ──
+    "terminal_bible_no_left_tension_5_11": "L4",          # Preparation — 左侧无张力网（项目顶层圣经根因）
+    "terminal_bible_left_tension_healthy_5_11": "L4",     # control signal
+    "terminal_bible_left_tension_flash_5_11": "L4",       # 部分失败
+    # ── F10 5/11 圣经步骤 2 + TTT Simon 三词链 — 右侧被动释放 ──
+    "terminal_bible_no_right_relax_5_11": "L3",           # KineticChain — 右手臂主动驱动
+    "terminal_bible_right_relax_healthy_5_11": "L3",      # control signal
+    "no_attach_to_chest_5_12am": "L3",                    # KineticChain — Attach to chest 失败
+    # ── 5/12 上午 胸部发力陷阱（永久禁令） ──
+    "chest_active_trap_5_12": "L3",                       # KineticChain — 胸主动收缩（5/16 内上髁炎风险）
+    "twist_off_hips_healthy_5_12am": "L3",                # control signal
+    # ── F11 5/12 下午 — 左侧锁定 → 右侧轨道（火车滑轨） ──
+    "no_track_lock_5_12pm": "L3",                         # KineticChain — 火车滑轨断裂
+    "track_lock_healthy_5_12pm": "L3",                    # control signal
+    "elbow_trajectory_zigzag_5_12pm": "L3",               # 折线
+    "elbow_trajectory_linear_5_12pm": "L3",               # 直线（推球模式）
+    # ── 5/11 圣经 上身刚体锁定（5/12 下午机制深化补充） ──
+    "torso_rigid_body_healthy_5_12pm": "L3",              # control signal
+    "torso_no_rigid_body_5_12pm": "L3",                   # F11 上游原因
 }
 
 # Layer order: earliest = highest priority as root cause
@@ -651,11 +808,6 @@ _METRIC_THRESHOLDS = {
 # ══════════════════════════════════════════════════════════════════════
 
 _CONCEPT_TO_METRIC_VALIDATION: Dict[str, List[Dict[str, Any]]] = {
-    "problem_p03": [  # 小臂代偿
-        {"metric": "arm_torso_synchrony", "check": lambda v: v is not None and v < 0.4,
-         "confirm_text": "同步性{val:.2f}证实手臂独立于身体运动",
-         "contradict_text": "同步性{val:.2f}显示手臂与身体仍有跟随，视觉判断的手臂独立可能被放大"},
-    ],
     "problem_p02": [  # V形 Scooping
         {"metric": "scooping_depth", "check": lambda v: v is not None and v > 0.3,
          "confirm_text": "Scooping深度{val:.2f}证实V形下坠",
@@ -868,6 +1020,11 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
         "drill": "Hold it Up shadow",
         "method": "Unit turn结束后，拍头必须停在比手腕高的位置3秒。然后才允许前挥。10次。",
         "why": "FTT口令: 'Hold it up'。拍头主动下垂=press slot错位+前挥距离过长。",
+    },
+    "prep11b_no_racket_drop_separation": {
+        "drill": "右后下亮相-等落拍 shadow",
+        "method": "慢速做：左手锁拍颈→Unit Turn立拍→手和拍向右后下约45°亮相→等拍头自然落入slot→身体带出去。每次只做半速，10次一组。",
+        "why": "2026-06-02关键帧复核：用户常见模式不是单纯没drop，而是立拍后缺少separation过渡，前挥启动后拍头急坠，再由小臂/手腕拉上来。",
     },
     "prep12_left_hand_dropped_in_unit_turn": {
         "drill": "Left hand on the throat",
@@ -1112,6 +1269,12 @@ _CONCEPT_TO_FIX: Dict[str, Dict[str, str]] = {
                      "做错时：二头肌酸 = 错激活；前臂朝向直到 loaded slot 才突变 = 被动反射 ESR（已是 IR 抢跑表现）。"
                      "5 种偷懒表现：Pushing / Lift and Throw / Right side overusing / Short SHA duration / Active gripping。"
     },
+    "upper_arm_independent_backswing": {
+        "drill": "左手锁，高位转；大臂跟身体，小臂可延伸",
+        "method": "镜前 20 次 + Topspin Pro 慢速 20 次。左手留在拍颈到 Unit Turn 成型，再让左手离开；观察右肩到右肘这一段是否只随胸腔整体到侧后方。允许小臂/elbow extension 让手和拍子在后方，但不要让右大臂相对胸壁再单独往后拉。",
+        "why": "No backswing 的核心不是手/拍不能在后方，而是大臂不能脱离躯干。大臂独立后拉会打断 Unit Turn 同步，让右臂接管，后续容易出现假掉拍、小臂补偿和 through 变成手臂递过去。",
+        "muscle_cue": "做对时感觉右大臂跟胸壁一起转，右肩到右肘这一段没有自己往后找空间；真正延伸来自小臂，不来自大臂后拉。"
+    },
 }
 
 
@@ -1127,6 +1290,44 @@ _USER_HISTORY_PATH = Path(__file__).parent.parent / "knowledge" / "extracted" / 
 _cached_graph_data: Optional[Dict] = None
 _cached_chains: Optional[List[Dict]] = None
 _cached_user_history: Optional[Dict] = None
+
+
+def _retrieve_external_foundation(
+    query_parts: List[str],
+    concept_ids: Optional[List[str]] = None,
+    limit: int = 8,
+) -> Dict[str, Any]:
+    """Retrieve supplementary channel evidence without affecting core diagnosis."""
+    try:
+        from knowledge.external_foundation import (
+            get_external_foundation_library,
+            items_to_dicts,
+        )
+
+        library = get_external_foundation_library()
+        items = library.retrieve(
+            " ".join(part for part in query_parts if part),
+            identifiers=concept_ids or [],
+            categories={
+                "mechanism", "principle", "technical_template", "condition",
+                "outcome", "correction", "drill", "feel", "observation",
+            },
+            limit=limit,
+        )
+        return {
+            "source": "tennis_foundation_series",
+            "role": "supplementary",
+            "canonical_project_rules_override": True,
+            "items": items_to_dicts(items),
+        }
+    except Exception as exc:
+        return {
+            "source": "tennis_foundation_series",
+            "role": "supplementary",
+            "canonical_project_rules_override": True,
+            "items": [],
+            "load_error": str(exc),
+        }
 
 
 def _load_graph_data() -> Dict:
@@ -1242,6 +1443,41 @@ def _extract_observations_text(vlm_result: Dict) -> List[Dict[str, Any]]:
             observations.append({"text": val.strip(), "frame": None, "field": key})
 
     return observations
+
+
+_NEGATION_MARKERS = (
+    "无明显", "没有明显", "未观察到", "没观察到", "未出现", "未见",
+    "没有", "并非", "不是", "不能", "无", "非", "不",
+    "not ", "no ", "without ",
+)
+_NEGATION_BREAKERS = ("但", "却", "然而", "不过", "but ", "however ")
+
+
+def _contains_nonnegated_keyword(text: str, keyword: str) -> bool:
+    """Return True when at least one keyword occurrence is not negated nearby."""
+    if not text or not keyword:
+        return False
+    haystack = text.lower()
+    needle = keyword.lower()
+    start = 0
+    while True:
+        index = haystack.find(needle, start)
+        if index < 0:
+            return False
+        prefix = haystack[max(0, index - 96):index]
+        # Negation from a previous clause must not leak across punctuation or contrast.
+        boundary = max(prefix.rfind(char) for char in "。；，,;:\n")
+        local_prefix = prefix[boundary + 1:]
+        for breaker in _NEGATION_BREAKERS:
+            breaker_index = local_prefix.rfind(breaker)
+            if breaker_index >= 0:
+                local_prefix = local_prefix[breaker_index + len(breaker):]
+        # Keep the whole local clause so coordinated negation such as
+        # “未见 A 或 B” applies to both A and B.
+        negation_window = local_prefix
+        if not any(marker in negation_window for marker in _NEGATION_MARKERS):
+            return True
+        start = index + len(needle)
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -1380,10 +1616,10 @@ Q_DIRECT_MAPPING: Dict[str, Dict[str, Any]] = {
         "severity": 0.8,
     },
     "Q24": {  # 引拍最高点拍头
-        "positive_signals": ["高于手腕", "拍头高", "举着", "与头部齐平", "比手腕高"],
-        "negative_signals": ["拍头下垂", "低于手腕", "已经下垂", "拍头掉"],
+        "positive_signals": ["高于手腕", "拍头高", "举着", "与头部齐平", "比手腕高", "自然落入 slot", "右后下", "亮相"],
+        "negative_signals": ["拍头下垂", "低于手腕", "已经下垂", "拍头掉", "upright_lowering_no_separation", "late_racket_head_collapse", "小臂整体放低", "缺少separation", "缺少 separation", "急坠"],
         "positive_concept": "racket_held_up",
-        "negative_concept": "prep11_racket_head_dropped_early",
+        "negative_concept": "prep11b_no_racket_drop_separation",
         "severity": 0.75,
     },
     "Q25": {  # 背部褶皱 / 肩胛滑动
@@ -1514,6 +1750,16 @@ Q_DIRECT_MAPPING: Dict[str, Dict[str, Any]] = {
         "negative_concept": "hsa_insufficient_cross_body",
         "severity": 0.85,
     },
+    "Q51": {  # No Backswing Illusion — 大臂相对躯干独立后拉
+        "positive_signals": ["upper_arm_connected_no_backswing", "大臂随躯干", "大臂相对躯干稳定",
+                             "大臂跟身体", "小臂可延伸", "随躯干整体转"],
+        "negative_signals": ["upper_arm_independent_backswing", "大臂独立后拉",
+                             "右大臂主动往后拉", "大臂脱离躯干", "肘被单独拽到身后",
+                             "相对躯干主动后拉"],
+        "positive_concept": "upper_arm_connected_no_backswing",
+        "negative_concept": "upper_arm_independent_backswing",
+        "severity": 0.90,
+    },
 }
 
 
@@ -1533,11 +1779,16 @@ def _map_via_q_direct(vlm_result: Dict) -> List[Dict[str, Any]]:
         if not answer or answer == "看不清":
             continue
 
-        answer_lower = answer.lower()
-
-        # Check negative signals (problem detected)
-        is_negative = any(sig in answer_lower for sig in mapping["negative_signals"])
-        is_positive = any(sig in answer_lower for sig in mapping["positive_signals"])
+        # Check signals with local negation handling. For example, “未见手臂独立”
+        # must not trigger the negative signal “独立”.
+        is_negative = any(
+            _contains_nonnegated_keyword(answer, sig)
+            for sig in mapping["negative_signals"]
+        )
+        is_positive = any(
+            _contains_nonnegated_keyword(answer, sig)
+            for sig in mapping["positive_signals"]
+        )
 
         if is_negative and not is_positive:
             # Use the actual VLM answer as the observation, not "Q1检测到问题"
@@ -1621,7 +1872,7 @@ def _map_observations_to_concepts(
 
         for rule in OBSERVATION_TO_CONCEPT:
             for kw in rule["keywords"]:
-                if kw.lower() in text.lower():
+                if _contains_nonnegated_keyword(text, kw):
                     concept_id = rule["concept"]
                     if rule["frame_range"] is not None and frame is not None:
                         if frame not in rule["frame_range"]:
@@ -1961,10 +2212,6 @@ def _validate_with_metrics(
 
     # Also check for issues detected by metrics but not by VLM
     matched_ids = {m["mapped_concept"] for m in matched_concepts}
-
-    sync = metrics.get("arm_torso_synchrony")
-    if sync is not None and sync < 0.4 and "problem_p03" not in matched_ids:
-        confirmed.append(f"量化数据额外发现：同步性{sync:.2f}，手臂独立于身体（VLM未明确提及）")
 
     rot = metrics.get("shoulder_rotation")
     if rot is not None and rot < 30 and "unit_turn" not in matched_ids:
@@ -2687,7 +2934,7 @@ def _generate_narrative(
     metric_notes = []
     sync = metrics.get("arm_torso_synchrony")
     if sync is not None:
-        metric_notes.append(f"同步性{sync:.2f}")
+        metric_notes.append(f"肩-腕零时差相关{sync:.2f}（仅作时序复核）")
     scoop = metrics.get("scooping_depth")
     if scoop is not None:
         metric_notes.append(f"scooping深度{scoop:.2f}")
@@ -2985,6 +3232,11 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
         result["recommended_drills"] = [
             s.get("drill") for s in p0_failures if s.get("drill")
         ]
+        result["external_foundation"] = _retrieve_external_foundation(
+            [s.get("name", "") for s in p0_failures],
+            [s.get("id", "") for s in p0_failures],
+            limit=6,
+        )
         return result
 
     # ── Step 1: 提取 VLM 观察并映射到概念 ──
@@ -3085,6 +3337,19 @@ def diagnose(vlm_result: Dict[str, Any], metrics: Dict[str, Any]) -> Dict[str, A
 
     result["fix"] = fix
 
+    external_query_parts = [root_cause_name, root_cause_id or ""]
+    external_query_parts.extend(
+        m.get("label", "") for m in matched_concepts if m.get("severity", 0) > 0
+    )
+    external_concept_ids = [
+        m.get("mapped_concept", "") for m in matched_concepts if m.get("severity", 0) > 0
+    ]
+    if root_cause_id:
+        external_concept_ids.insert(0, root_cause_id)
+    result["external_foundation"] = _retrieve_external_foundation(
+        external_query_parts, external_concept_ids,
+    )
+
     result["narrative"] = narrative
 
     result["score"] = score
@@ -3156,13 +3421,6 @@ def _build_quant_evidence(metrics: Dict) -> List[str]:
     """从量化数据中提取关键佐证文本。"""
     parts = []
 
-    sync = metrics.get("arm_torso_synchrony")
-    if sync is not None:
-        if sync < 0.4:
-            parts.append(f"手臂-躯干同步性只有 {sync:.2f}，手臂几乎完全独立于身体运动。")
-        elif sync < 0.7:
-            parts.append(f"手臂-躯干同步性 {sync:.2f}，手臂部分跟随身体但还不够紧密。")
-
     scoop = metrics.get("scooping_depth")
     if scoop is not None and scoop > 0.3:
         parts.append(f"Scooping 深度 {scoop:.2f}，手腕轨迹出现明显的 V 形下坠。")
@@ -3189,10 +3447,6 @@ def _build_quant_evidence(metrics: Dict) -> List[str]:
 def _build_quant_summary(metrics: Dict) -> str:
     """一句话总结关键量化发现。"""
     issues = []
-
-    sync = metrics.get("arm_torso_synchrony")
-    if sync is not None and sync < 0.4:
-        issues.append("手臂独立")
 
     scoop = metrics.get("scooping_depth")
     if scoop is not None and scoop > 0.3:

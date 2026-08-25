@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/feel-tennis-atomic-training-v1.json",
+  "title": "Feel Tennis Atomic Training Knowledge Schema",
+  "type": "object",
+  "required": ["schema_version", "source_channel", "videos", "cue_taxonomy", "evidence_policy"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "source_channel": {"type": "object", "required": ["name", "url"], "properties": {"name": {"type": "string"}, "url": {"type": "string", "format": "uri"}}},
+    "evidence_policy": {"type": "object", "required": ["statuses"], "properties": {"statuses": {"type": "array", "items": {"type": "string", "enum": ["metadata_title_and_playlist_only", "video_explicit", "visual_inference", "cross_video_synthesis", "human_reviewed"]}}}},
+    "videos": {"type": "array", "items": {"$ref": "#/$defs/video"}},
+    "cue_taxonomy": {"type": "array", "items": {"$ref": "#/$defs/taxonomy"}},
+    "training_atoms": {"type": "array", "items": {"$ref": "#/$defs/atom"}},
+    "vlm_slots": {"type": "array", "items": {"$ref": "#/$defs/vlm_slot"}}
+  },
+  "$defs": {
+    "video": {"type": "object", "required": ["video_id", "title", "url", "evidence_status"], "properties": {"video_id": {"type": "string"}, "title": {"type": "string"}, "url": {"type": "string", "format": "uri"}, "content_type": {"type": "string", "enum": ["long", "short"]}, "duration_seconds": {"type": ["integer", "null"]}, "playlist_memberships": {"type": "array", "items": {"type": "string"}}, "domains": {"type": "array", "items": {"type": "string"}}, "atom_candidates": {"type": "array", "items": {"type": "string"}}, "cue_subtype_candidates": {"type": "array", "items": {"type": "string"}}, "evidence_tier": {"type": "string"}, "evidence_status": {"type": "string"}, "knowledge_boundary": {"type": "string"}}},
+    "taxonomy": {"type": "object", "required": ["id", "label", "parent_id", "evidence_status"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "parent_id": {"type": ["string", "null"]}, "description": {"type": "string"}, "evidence_status": {"type": "string"}}},
+    "atom": {"type": "object", "required": ["id", "video_id", "atom_type", "status"], "properties": {"id": {"type": "string"}, "video_id": {"type": "string"}, "atom_type": {"type": "string", "enum": ["drill", "cue", "mechanism", "error_correction", "tactical_decision"]}, "cue_subtype": {"type": ["string", "null"]}, "status": {"type": "string", "enum": ["candidate_from_metadata", "evidence_extracted", "human_reviewed"]}, "problem": {"type": ["string", "null"]}, "conditions": {"type": "array", "items": {"type": "object"}}, "cue_text_or_imagery": {"type": ["string", "null"]}, "visible_action_proxy": {"type": ["string", "null"]}, "mechanism": {"type": ["string", "null"]}, "drill_steps": {"type": "array", "items": {"type": "string"}}, "success_criterion": {"type": ["string", "null"]}, "misuse_or_boundary": {"type": ["string", "null"]}, "evidence": {"type": "array", "items": {"type": "object"}}}},
+    "vlm_slot": {"type": "object", "required": ["id", "domain", "event_type", "direct_observables", "limits"], "properties": {"id": {"type": "string"}, "domain": {"type": "string"}, "event_type": {"type": "string"}, "direct_observables": {"type": "array", "items": {"type": "string"}}, "recommended_views": {"type": "array", "items": {"type": "string"}}, "limits": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

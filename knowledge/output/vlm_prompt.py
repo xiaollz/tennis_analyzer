@@ -22,6 +22,11 @@ import jinja2
 from knowledge.graph import KnowledgeGraph
 from knowledge.schemas import DiagnosticChain
 
+try:
+    from knowledge.external_foundation import get_external_foundation_library
+except ImportError:  # Optional external package integration.
+    get_external_foundation_library = None
+
 if TYPE_CHECKING:
     from knowledge.schemas import DiagnosticSession, Hypothesis, Observation
     from knowledge.user_profile import UserProfile
@@ -60,10 +65,17 @@ class VLMPromptCompiler:
         graph: KnowledgeGraph,
         chains: list[DiagnosticChain],
         user_profile: "UserProfile | None" = None,
+        external_library=None,
     ) -> None:
         self.graph = graph
         self.chains = chains
         self.user_profile = user_profile
+        if external_library is not None:
+            self.external_library = external_library
+        elif get_external_foundation_library is not None:
+            self.external_library = get_external_foundation_library()
+        else:
+            self.external_library = None
         self.chain_map: dict[str, DiagnosticChain] = {c.id: c for c in chains}
         self.env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(str(_TEMPLATE_DIR)),
@@ -177,9 +189,14 @@ class VLMPromptCompiler:
             for cid in detected_chain_ids
             if cid in self.chain_map
         ]
+        external_items = self._retrieve_external_items(matched_chains, limit=7)
 
         template = self.env.get_template("diagnostic_deep.j2")
-        dynamic = template.render(subgraph=subgraph, chains=matched_chains)
+        dynamic = template.render(
+            subgraph=subgraph,
+            chains=matched_chains,
+            external_items=external_items,
+        )
 
         # Budget enforcement: diagnostics get remaining budget after user context.
         diag_budget = _DYNAMIC_BUDGET - len(user_ctx)
@@ -218,12 +235,21 @@ class VLMPromptCompiler:
         ]
 
         directives = self._generate_directives(session, active_hypotheses)
+        active_chains = [
+            self.chain_map[h.chain_id]
+            for h in active_hypotheses
+            if h.chain_id in self.chain_map
+        ]
+        external_observables = self._retrieve_external_items(
+            active_chains, categories={"observation"}, limit=4,
+        )
 
         template = self.env.get_template("observation_directive.j2")
         rendered = template.render(
             round_number=round_number,
             active_hypotheses=active_hypotheses,
             directives=directives,
+            external_observables=external_observables,
         )
 
         if len(rendered) > _DIRECTIVE_BUDGET:
@@ -315,6 +341,25 @@ class VLMPromptCompiler:
                 unique_edges.append(edge)
 
         return {"nodes": all_nodes, "edges": unique_edges}
+
+    def _retrieve_external_items(
+        self,
+        chains: list[DiagnosticChain],
+        *,
+        categories: set[str] | None = None,
+        limit: int = 7,
+    ) -> list[dict]:
+        """Retrieve bounded, source-attributed supplementary channel evidence."""
+        if not chains or self.external_library is None:
+            return []
+        try:
+            items = self.external_library.retrieve_for_chains(
+                chains, categories=categories, limit=limit,
+            )
+            return [item.to_dict() for item in items]
+        except Exception:
+            # External knowledge must never make the canonical diagnosis path fail.
+            return []
 
     @staticmethod
     def _truncate_by_confidence(

@@ -367,7 +367,7 @@ class TestTwoPassVLMIntegration:
         """When graph+chains provided, analyze_swing makes 2 VLM calls."""
         call_log = []
 
-        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None, video_b64=None):
             call_log.append({"user_text": user_text, "system_prompt": system_prompt})
             if len(call_log) == 1:
                 # Pass 1: return symptom numbers
@@ -398,7 +398,7 @@ class TestTwoPassVLMIntegration:
         """When no graph is provided, falls back to single-pass with _FTT_SYSTEM_PROMPT."""
         call_log = []
 
-        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None, video_b64=None):
             call_log.append({"system_prompt": system_prompt})
             return json.dumps({
                 "issues": [],
@@ -414,6 +414,25 @@ class TestTwoPassVLMIntegration:
         result = analyzer_no_compiler.analyze_swing(dummy_image)
         assert len(call_log) == 1, "Single-pass should make exactly 1 VLM call"
         assert result is not None
+
+    def test_model_fallback_uses_next_micu_model(self, analyzer_no_compiler, monkeypatch):
+        from evaluation import vlm_analyzer
+
+        analyzer_no_compiler.fallback_models = ["gemini-3.1-pro-preview"]
+        attempted_models = []
+
+        def fake_openai_call(api_key, base_url, model, *args, **kwargs):
+            attempted_models.append(model)
+            if model == "test-model":
+                raise RuntimeError("primary unavailable")
+            return '{"issues": []}'
+
+        monkeypatch.setattr(vlm_analyzer, "_call_openai_compatible", fake_openai_call)
+
+        result = analyzer_no_compiler._call_vlm("image", "prompt")
+
+        assert result == '{"issues": []}'
+        assert attempted_models == ["test-model", "gemini-3.1-pro-preview"]
 
     def test_pass1_parsing_numeric(self, analyzer_with_compiler):
         """_parse_symptom_response extracts numbers and maps to chain IDs."""
@@ -452,7 +471,7 @@ class TestTwoPassVLMIntegration:
         analyzer = VLMForehandAnalyzer(config=cfg, graph=graph, chains=chains)
         call_log = []
 
-        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None, video_b64=None):
             call_log.append({"system_prompt": system_prompt})
             return json.dumps({
                 "issues": [],
@@ -487,7 +506,7 @@ class TestTwoPassVLMIntegration:
         """If pass1 VLM call returns None, falls back to single-pass."""
         call_log = []
 
-        def mock_call_vlm(self, image_b64, user_text, system_prompt=None):
+        def mock_call_vlm(self, image_b64, user_text, system_prompt=None, video_b64=None):
             call_log.append(True)
             if len(call_log) == 1:
                 return None  # Pass 1 fails

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/tennis-foundation-series-v1.json",
+  "title": "Tennis Channel Foundation Series Universal Contract",
+  "type": "object",
+  "description": "The series is file-oriented: series_manifest references channel-local original files and unified JSONL indexes.",
+  "required": [
+    "series_manifest",
+    "channel_registry",
+    "all_videos",
+    "all_knowledge_items"
+  ],
+  "properties": {
+    "series_manifest": {
+      "type": "object"
+    },
+    "channel_registry": {
+      "type": "array"
+    },
+    "all_videos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/video_resource"
+      }
+    },
+    "all_knowledge_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/knowledge_item"
+      }
+    }
+  },
+  "$defs": {
+    "video_resource": {
+      "type": "object",
+      "required": [
+        "global_video_id",
+        "source_channel_id",
+        "source_video_id",
+        "title",
+        "url",
+        "evidence_status"
+      ],
+      "properties": {
+        "global_video_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+:.+$"
+        },
+        "source_channel_id": {
+          "type": "string"
+        },
+        "source_video_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "domains_canonical": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_status": {
+          "type": "string"
+        },
+        "source_record": {
+          "type": "string"
+        }
+      }
+    },
+    "knowledge_item": {
+      "type": "object",
+      "required": [
+        "knowledge_item_id",
+        "record_type",
+        "source_channel_id",
+        "atomic_type",
+        "evidence_status"
+      ],
+      "properties": {
+        "knowledge_item_id": {
+          "type": "string"
+        },
+        "record_type": {
+          "type": "string",
+          "enum": [
+            "source_keypoint",
+            "vlm_observable",
+            "title_learning_target",
+            "training_atom",
+            "training_atom_candidate"
+          ]
+        },
+        "source_channel_id": {
+          "type": "string"
+        },
+        "global_video_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "atomic_type": {
+          "type": "string"
+        },
+        "content": {},
+        "evidence_status": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "knowledge_boundary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

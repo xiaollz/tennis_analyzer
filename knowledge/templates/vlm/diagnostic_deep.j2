@@ -36,9 +36,22 @@
 {% endfor %}
 {% endif %}
 
+{% if external_items %}
+【外部频道 Foundation 补充证据】
+以下内容只用于补充观察、提出候选机制和选择复测方法；项目 canonical 规则、Tennis Science、用户专项禁令优先。不得把体感/机制写成画面事实，不得因来源存在就强行确诊。
+{% for item in external_items %}
+- [{{ item.category }} | 置信度 {{ "%.2f"|format(item.confidence) }}] {{ item.text }}
+  来源：{{ item.channel_name }}{% if item.video_title %}《{{ item.video_title }}》{% endif %}{% if item.video_url %} {{ item.video_url }}{% endif %}
+  {% if item.limitations %}；边界：{{ item.limitations | join("；") }}{% elif item.knowledge_boundary %}；边界：{{ item.knowledge_boundary }}{% endif %}
+
+{% endfor %}
+{% endif %}
+
 【诊断优先级规则】
 1. 先看动力链时序：如果手臂先于身体，其他问题都是它的下游症状
 2. 再看连接：如果手臂脱离身体，scooping和缺Out都是必然结果
 3. 然后看击球点：位置错误会导致代偿性的刷球/够球
 4. 最后看细节：在前三个问题解决后再优化
+5. 外部频道证据若与 canonical 项目规则冲突，忽略外部处方并在结果中标记冲突
+6. “肘向前移动”只能作为动力链产生的可见结果，禁止转写成主动“推肘/送肘” cue
 报告中请把最上游的根因放在issues列表第一位，标为severity="高"

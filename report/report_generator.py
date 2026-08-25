@@ -733,8 +733,10 @@ class ReportGenerator:
         evidence_chain = vlm_result.get("evidence_chain", [])
         causal_chain = vlm_result.get("causal_chain", [])
         quant_validation = vlm_result.get("quant_validation", {})
+        external = vlm_result.get("external_foundation", {})
+        external_items = external.get("items", []) if isinstance(external, dict) else []
 
-        if evidence_chain or causal_chain or quant_validation:
+        if evidence_chain or causal_chain or quant_validation or external_items:
             lines.append("<details>")
             lines.append("<summary>诊断推理过程（点击展开）</summary>")
             lines.append("")
@@ -753,6 +755,33 @@ class ReportGenerator:
                 lines.append("**知识图谱因果链：**")
                 for c in causal_chain:
                     lines.append(f"- {c.get('from_name', '')} → 导致 → {c.get('to_name', '')}")
+                lines.append("")
+
+            # Source-attributed supplementary evidence from the external
+            # channel foundation series.  Keep this inside the expandable
+            # reasoning section so it informs review without becoming a new
+            # on-court cue list.
+            if external_items:
+                lines.append("**外部频道 Foundation 参考：**")
+                seen_urls = set()
+                shown = 0
+                for item in external_items:
+                    if not isinstance(item, dict):
+                        continue
+                    url = item.get("video_url", "")
+                    if url and url in seen_urls:
+                        continue
+                    channel = item.get("channel_name", "外部频道")
+                    title = item.get("video_title", "")
+                    text = item.get("text", "")[:100]
+                    source = f"[{title}]({url})" if title and url else (url or title)
+                    suffix = f"；{text}" if text else ""
+                    lines.append(f"- {channel} {source}{suffix}".rstrip())
+                    if url:
+                        seen_urls.add(url)
+                    shown += 1
+                    if shown >= 3:
+                        break
                 lines.append("")
 
             # 量化验证

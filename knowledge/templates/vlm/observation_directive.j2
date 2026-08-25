@@ -15,6 +15,14 @@
    关联假设: {{ directive.hypothesis_id }}
 {% endfor %}
 
+{% if external_observables %}
+【外部频道补充观察线索】
+这些线索只能帮助决定“看哪里”，不能直接证明内部发力、肌肉激活或因果。
+{% for item in external_observables %}
+- {{ item.text }}（{{ item.channel_name }}{% if item.video_url %}，{{ item.video_url }}{% endif %}）
+{% endfor %}
+{% endif %}
+
 【回答格式】
 严格JSON，不要添加任何其他文字：
 {

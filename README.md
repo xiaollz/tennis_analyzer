@@ -52,6 +52,12 @@ tennis/
 └── docs/
 ```
 
+## 知识库入口
+
+- `docs/START_HERE.md`：网球知识库阅读入口。
+- `docs/record/learning.md`：个人训练时间轴、训练发现与复盘主记录。
+- `docs/record/session_*.md`：按 session 归档的完整对话记录。
+
 ## License
 
 MIT

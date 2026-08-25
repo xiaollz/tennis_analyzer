@@ -1,0 +1,87 @@
+[
+  {
+    "channel_id": "fault_tolerant_tennis",
+    "channel_name": "Fault Tolerant Tennis",
+    "channel_url": "https://www.youtube.com/@FaultTolerantTennis",
+    "knowledge_style": "deep_video_analysis",
+    "runtime_eligible": true,
+    "package_root": "channels/fault_tolerant_tennis",
+    "knowledge_tree": "channels/fault_tolerant_tennis/foundation/first_principles_knowledge_tree.md",
+    "schema": "channels/fault_tolerant_tennis/foundation/tennis_knowledge_graph_schema.json",
+    "seed": "channels/fault_tolerant_tennis/foundation/tennis_knowledge_graph_seed.json",
+    "raw_analysis_root": "channels/fault_tolerant_tennis/raw/video_analyses",
+    "video_count": 93,
+    "source_keypoint_count": 3158,
+    "vlm_observable_count": 850,
+    "evidence_status_counts": {
+      "video_content_analysis": 93
+    }
+  },
+  {
+    "channel_id": "tom_allsopp_tennis",
+    "channel_name": "TPA tennis / Tom Allsopp",
+    "channel_url": "https://www.youtube.com/@TomAllsopp",
+    "knowledge_style": "mixed_deep_and_metadata",
+    "runtime_eligible": true,
+    "package_root": "channels/tom_allsopp_tennis",
+    "knowledge_tree": "channels/tom_allsopp_tennis/foundation/first_principles_knowledge_tree.md",
+    "schema": "channels/tom_allsopp_tennis/foundation/tennis_knowledge_graph_schema.json",
+    "seed": "channels/tom_allsopp_tennis/foundation/tennis_knowledge_graph_seed.json",
+    "raw_analysis_root": "channels/tom_allsopp_tennis/raw/video_analyses",
+    "video_count": 428,
+    "source_keypoint_count": 3490,
+    "vlm_observable_count": 904,
+    "evidence_status_counts": {
+      "video_content_analysis": 124,
+      "mixed_deep_and_metadata": 304
+    }
+  },
+  {
+    "channel_id": "road_to_pro_tennis",
+    "channel_name": "Road to Pro Tennis",
+    "channel_url": "https://www.youtube.com/@RoadtoPro10is",
+    "knowledge_style": "metadata_title_level",
+    "runtime_eligible": false,
+    "package_root": "channels/road_to_pro_tennis",
+    "knowledge_tree": "channels/road_to_pro_tennis/foundation/title_level_training_knowledge_tree.md",
+    "schema": "channels/road_to_pro_tennis/foundation/training_knowledge_schema.json",
+    "enrichment_protocol": "channels/road_to_pro_tennis/foundation/application_and_enrichment_blueprint.md",
+    "video_count": 151,
+    "evidence_status_counts": {
+      "metadata_title_only": 141,
+      "excluded_non_instructional_metadata": 10
+    }
+  },
+  {
+    "channel_id": "one_minute_tennis",
+    "channel_name": "One Minute Tennis",
+    "channel_url": "https://www.youtube.com/@oneminutetennis",
+    "knowledge_style": "metadata_and_playlist_atomic_candidates",
+    "runtime_eligible": false,
+    "package_root": "channels/one_minute_tennis",
+    "knowledge_tree": "channels/one_minute_tennis/foundation/drill_cue_mechanism_knowledge_tree.md",
+    "schema": "channels/one_minute_tennis/foundation/atomic_training_knowledge_schema.json",
+    "enrichment_protocol": "channels/one_minute_tennis/foundation/atom_enrichment_protocol.md",
+    "video_count": 935,
+    "training_atom_count": 603,
+    "evidence_status_counts": {
+      "metadata_title_and_playlist_only": 935
+    }
+  },
+  {
+    "channel_id": "feel_tennis",
+    "channel_name": "Feel Tennis Instruction",
+    "channel_url": "https://www.youtube.com/@feeltennis",
+    "knowledge_style": "metadata_and_playlist_atomic_candidates",
+    "runtime_eligible": false,
+    "package_root": "channels/feel_tennis",
+    "knowledge_tree": "channels/feel_tennis/foundation/feel_based_training_knowledge_tree.md",
+    "schema": "channels/feel_tennis/foundation/feel_atomic_training_schema.json",
+    "enrichment_protocol": "channels/feel_tennis/foundation/feel_content_enrichment_protocol.md",
+    "video_count": 705,
+    "training_atom_count": 755,
+    "evidence_status_counts": {
+      "metadata_title_and_playlist_only": 705
+    }
+  }
+]
