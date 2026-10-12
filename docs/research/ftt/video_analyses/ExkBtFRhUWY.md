@@ -4,8 +4,8 @@
 
 ### 第一部分：元数据
 
-- **视频标题**：Probing the Ball on One Foot (单脚探测球位训练)
-- **频道名**：TopCourt
+- **视频标题**：The Magic of Single-Foot Forehand Training（9/24 yt-dlp 核实更正；原 VLM 元数据误为 Probing the Ball on One Foot）
+- **频道名**：Fault Tolerant Tennis（9/24 核实更正；原误为 TopCourt）
 - **时长**：01:07
 - **语言**：英语
 - **教练/讲者姓名**：Alexa Glatch (职业球员) & 教练
