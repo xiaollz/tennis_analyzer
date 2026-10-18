@@ -13,7 +13,8 @@ Rules
   O7  NEW-OBS candidates: >= 2 values, non-empty description; every candidate is in exactly one cluster; cluster rep is one of its members.
   O8  prompts + catalog contain no user conclusions / knowledge-base concepts (forbidden-term scan).
   O9  tree v2 observables == catalog (id, question, values, layer, camera); catalog has exactly the OBS-*.md files.
-  O10 aggregation is reproducible: required == conditions required in ALL runs; supporting == other conditions of any run.
+  O10 aggregation is reproducible: required == conditions required in ALL runs (minus any observable listed with 2+ different values, which
+      cannot all hold and is demoted to supporting); supporting == the demoted + other conditions of any run.
   O11 tree v2 node signatures are traceable: every condition comes from a binding item of one of the node's source nodes;
       symptom.obs_ref equals the rule in build_tree_v2 (V2-5).
 """
@@ -91,7 +92,12 @@ def check(bind, t1, t2, cat_doc=None, prompts_dir=None, obs_dir=None):
         runs = it.get("runs", [])
         if runs:
             exp_req = [c for c in runs[0]["required"] if all(c in r["required"] for r in runs)]
-            exp_sup = []
+            cnt = {}
+            for c in exp_req:
+                cnt.setdefault(c["obs"], set()).add(c["value"])
+            dem = [c for c in exp_req if len(cnt[c["obs"]]) > 1]  # two values of one observable cannot both hold -> supporting (obs_bind.agg)
+            exp_req = [c for c in exp_req if len(cnt[c["obs"]]) <= 1]
+            exp_sup = list(dem)
             for r in runs:
                 for c in r["required"] + r["supporting"]:
                     if c not in exp_req and c not in exp_sup:

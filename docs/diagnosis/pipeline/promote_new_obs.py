@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Promote NEW-OBS candidates to catalog observables (OBS-19...). Model only groups; selection + writing are script rules.
 
-usage: promote_new_obs.py group   # 2 model runs: group the NEW-OBS cluster representatives into observable 'families' (prompts/obs_newcluster_v1.md)
+usage: promote_new_obs.py approve --pick <binding.json>:<candidate cid> [...] --note TEXT   # user-approved single-episode promotion (no cross-episode rule)
+       promote_new_obs.py group   # 2 model runs: group the NEW-OBS cluster representatives into observable 'families' (prompts/obs_newcluster_v1.md)
        promote_new_obs.py apply   # select by rule, append to obs_catalog.json, write observables/OBS-NN_*.md, write ftt_tree/new_obs_promotion.json
 Input: ftt_tree/obs_binding.json (v2 binding; its NEW-OBS clusters). Family = two clusters grouped together by BOTH runs (partition intersection).
 Selection rule (fixed here, recorded in new_obs_promotion.json):
@@ -150,11 +151,64 @@ def cmd_apply():
     return 0
 
 
+def cmd_approve(picks, note, date):
+    """Promote specific candidates the USER approved by hand (the >= 2 episodes rule is NOT changed; these are recorded as exceptions).
+    Question/values/layer/camera are copied verbatim from the named model-written candidate; nothing is edited or invented."""
+    cat = load_json(CAT)
+    ids = [int(o["id"].split("-")[1]) for o in cat["observables"]]
+    exist_q = {o["question"].strip().lower() for o in cat["observables"]}
+    doc = load_json(OUT)
+    done = []
+    nxt = max(ids) + 1
+    for pk in picks:
+        fpath, cid = pk.rsplit(":", 1)
+        fp = Path(fpath) if Path(fpath).is_absolute() else DIAG_DIR / fpath
+        b = load_json(fp)
+        cand = {c["cid"]: c for c in b["new_obs_candidates"]}
+        x = cand[cid]
+        cluster = next(c["id"] for c in b["new_obs_clusters"] if cid in c["members"])
+        h = forbidden_hit(x["description"] + " " + " ".join(x["values"]))
+        if h:
+            raise SystemExit(f"{cid}: forbidden term {h!r}")
+        if x["description"].strip().lower() in exist_q:
+            raise SystemExit(f"{cid}: duplicate of an existing observable")
+        if x["layer"] not in ("A", "B") or x["camera"] not in ("S", "B", "any"):
+            raise SystemExit(f"{cid}: layer/camera not usable")
+        oid = f"OBS-{nxt:02d}"
+        nxt += 1
+        fname = f"{oid}_{slug(x['description'])}.md"
+        ep = b["items"][x["item"]]["episode"]
+        entry = {"id": oid, "src": fname, "layer": x["layer"], "camera": x["camera"], "reliability": "untested", "question": x["description"], "values": x["values"],
+                 "origin": {"approved_by_user": date, "single_episode_exception": True, "source": str(fp.relative_to(DIAG_DIR)), "candidate": cid, "cluster": cluster,
+                            "episodes": [ep], "promoted_by": "pipeline/promote_new_obs.py approve"}}
+        cat["observables"].append(entry)
+        cam = {"S": "S（正侧面）", "B": "B（正后方）", "any": "任意机位"}[x["camera"]]
+        who = "A 层：普通手机视频里模型可答，人工抽帧复核" if x["layer"] == "A" else "B 层：需指定机位 + Pose / 人工抽帧；模型只作参考"
+        md = [f"# {oid} {x['description']}", "",
+              f"- **定义**：{x['description']} 取值：{' / '.join(x['values'])}（看不清则记 unclear）。",
+              "- **看哪一帧**：题目里写明的时刻 / 阶段。", f"- **哪个机位**：{cam}。", f"- **谁来测**：{who}。",
+              "- **可靠度**：**未测**（尚未对任何视频跑过事实抽取）。", "",
+              f"来源：NEW-OBS 候选（{fp.name} 簇 {cluster} / 候选 {cid}；仅 1 期：{ep}）。**用户 {date} 人工批准升级**（单期例外，跨期规则本身未改）：{note}。题目与取值逐字取自候选原文。不挂接任何故障、不含处方。", ""]
+        (OBS_DIR / fname).write_text("\n".join(md), encoding="utf-8")
+        done.append({"obs": oid, "file": f"observables/{fname}", "approved_by_user": date, "reason": note, "source": str(fp.relative_to(DIAG_DIR)), "candidate": cid,
+                     "cluster": cluster, "episodes": [ep], "description": x["description"], "values": x["values"], "layer": x["layer"], "camera": x["camera"]})
+    CAT.write_text(json.dumps(cat, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    doc.setdefault("user_approved_single_episode_exceptions", []).extend(done)
+    OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    for d in done:
+        print(d["obs"], d["layer"], d["camera"], d["episodes"], "|", d["description"], d["values"])
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["group", "apply"])
+    ap.add_argument("cmd", choices=["group", "apply", "approve"])
+    ap.add_argument("--pick", action="append", default=[])
+    ap.add_argument("--note", default="")
+    ap.add_argument("--date", default="2026-10-18")
     a = ap.parse_args()
     if a.cmd == "group":
         cmd_group()
-    else:
+    elif a.cmd == "apply":
         sys.exit(cmd_apply())
+    else:
+        cmd_approve(a.pick, a.note, a.date)

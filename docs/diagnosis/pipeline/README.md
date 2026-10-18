@@ -53,3 +53,10 @@ python3 verify_all.py --episodes ../episodes --tree ../ftt_tree/tree.json \
 | `promote_new_obs.py` | NEW-OBS 簇 → 家族（模型分组，两次一致）→ 按规则选 5–8 个升级为 OBS-19…，写 catalog + observables/*.md + `ftt_tree/new_obs_promotion.json` |
 | `compose_tree_v3_report.py` | 合成 `loop/reports/verify_*_tree_v3.json`（v2→v3 前后对比） |
 | 环境变量 `TV_WORK` `TV_BIND_OUT` `TV_MERGE_OUT` | 重跑绑定/合并时改工作目录与输出文件（默认仍是 v2 路径） |
+
+### tree v4 追加（2026-10-18）
+| 文件 | 作用 |
+|---|---|
+| `promote_new_obs.py approve --pick <binding.json>:<candidate cid> --note ...` | 用户人工批准的**单期例外**升级（OBS-26…29）：题目/取值逐字取自模型候选，写 catalog + observables + `new_obs_promotion.json` 的 `user_approved_single_episode_exceptions`；跨期规则本身未改 |
+| `obs_bind.py` agg 变更 | 两次都 required 的同一 OBS 若列了 ≥2 个不同取值（模型的本意是「任一」），不可能同时成立 → 降为 supporting；`check_obs_binding` O10 同步复算（更严，不放宽） |
+| `compose_tree_v4_report.py` | 合成 `loop/reports/verify_*_tree_v4.json`（v3→v4 前后对比，含三个 T08 复核组） |

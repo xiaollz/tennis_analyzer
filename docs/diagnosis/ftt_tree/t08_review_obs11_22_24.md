@@ -169,3 +169,13 @@ T08 规则回顾：两个非 style 节点的 `signature.required` 完全相同�
 **本轮未做：** 改树、跑合并、编鉴别项、改 check_tree、下载视频、重跑盲测。  
 **消 T08 的合法路径（需你下一步批准）：** 补 OBS 后重跑绑定；或批准 B↔C 合并；或批准改 T05/T08 与 stroke/鉴别的关系（那是规则变更，另议）。
 
+
+---
+
+## 后续（2026-10-18 晚）：用户拍板与补 OBS 结果
+
+用户拍板：OBS-11、OBS-24 两组**不合并、补 OBS**；OBS-22 里 `N-C_UJPUDUX0JIA_C01` 与 `N-C_WFIRPMUTZRO_C02` **分开、补躯干侧弯 OBS**。已按建议人工批准登记 OBS-26…29（单期例外，见 `new_obs_promotion.json` → `user_approved_single_episode_exceptions`），重跑绑定/合并并建 `tree_v4.json`。结果见 `loop/reports/verify_2026-10-18_tree_v4.json`：
+
+- OBS-11 组：`5-Ia7c4XzfU:C02`（required 换成 OBS-26 出射角）与 FxDm 两节点的 2 对已解开；**FxDm C01–C03（同一期）仍撞**，且 FxDm 的 problem 节点新增与 C01/C03 两对（三者 required 同为 OBS-11）。
+- OBS-24 组：3 对 → 1 对（`lwS7:C02`–`pQ79:C01` 仍撞；NEpD C01 因 OBS-27+OBS-24 两条 required 已区分）。
+- OBS-22 组：3 对 → 1 对（`lwS7:C03` 两对已解开）；**UJPU C01–WFIR C02 仍撞**：模型只把 OBS-29（侧弯）列为 WFIR C02 的 supporting，没有两次一致写成 required，所以没有拆开。按规则如实保留 FAIL，未人工指定 required。

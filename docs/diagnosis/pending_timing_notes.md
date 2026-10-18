@@ -19,7 +19,7 @@
 
 | 期 | 标题 | 约时间 | 内容 | 在本库的状态 |
 |---|---|---|---|---|
-| `PwkGLkRm73o` | The Pros Swing Differently Than You | 0:44–1:10（`supinate` 在 1:05） | 手臂不必往上走；投掷中前臂 supinate/pronate，拍头自己 low-to-high | 无卡片（未入 episodes/）；字幕在 `/workspace/ftt_subs/`；holdout 与否以 manifest 为准，未核对 |
+| `PwkGLkRm73o` | The Pros Swing Differently Than You | 0:44–1:10（`supinate` 在 1:05） | 手臂不必往上走；投掷中前臂 supinate/pronate，拍头自己 low-to-high | 无卡片（manifest：`subs_ready`，非 holdout，尚未做 stage1 抽取）；字幕在 `/workspace/ftt_subs/` |
 | `2Nn9tyMECZU` | Why Pros Swing Around, not Low-to-High | 0:13–0:25 | 肩在背稳定下装载外旋，再飞过变内旋；往上是绕出来的 | 卡片 `stage1_verified`，已在 tree v1/v2/v3 |
 | `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 2:36–4:20 | 触球在肩开始向前滚的起点，大部分滚动在触球后 | 卡片 `stage1_verified` 但**低置信**，build_tree 已排除；**需用户核字幕** |
 | `LoSrMj-Qxkc` | Their Mothers are Sisters, Their Forehands AREN'T | 约 1:10–1:35 | 肩外旋 layback → 内旋 windshield wiper | 无卡片 |
@@ -53,5 +53,5 @@
 1. **Tom Alsop 那一期**：用户提供链接 / 标题 → 取字幕 → 逐字摘录（≤40 词）+ 时间戳 → 判断他说的是「rotation 与 supination 一起」还是「supination 因 rotation 出现」。
 2. **`JIMgI3jiVns` 字幕**：用户对着视频核 2:36–4:20（低置信卡片）。
 3. 是否把候选 A 升级为 OBS（需用户明确批准，因为只有用户转述 + 单期间接证据）。
-4. `PwkGLkRm73o` 是否值得做 stage1 卡（目前无卡片；需确认 holdout 状态后再决定）。
+4. `PwkGLkRm73o` 是否做 stage1 卡（manifest 状态 `subs_ready`、非 holdout、尚无卡片；它是 FTT 唯一明说 supinate 的一期，建议优先）。
 5. 在以上核实前，**不得**把本要点写入任何 `next_one_thing`、练习或节点原文。

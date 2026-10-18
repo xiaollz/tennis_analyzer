@@ -1754,5 +1754,85 @@
   "thoughtsTokenCount": 13156,
   "totalTokenCount": 20184,
   "calls": 2
- }
+ },
+ "user_approved_single_episode_exceptions": [
+  {
+   "obs": "OBS-26",
+   "file": "observables/OBS-26_vertical_launch_angle_ball_off.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "T08 复核（t08_review_obs11_22_24.md）后用户拍板：补出射角、拍杆—前臂夹角、拍面朝向、躯干侧弯四项以区分 OBS-11/24/22 撞车组",
+   "source": "ftt_tree/obs_binding_v3.json",
+   "candidate": "NC005",
+   "cluster": "NEW-OBS-28",
+   "episodes": [
+    "5-Ia7c4XzfU"
+   ],
+   "description": "Vertical launch angle of the ball off the racket face at contact",
+   "values": [
+    "steep_upward_angle",
+    "shallow_angle",
+    "flat_or_downward"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "obs": "OBS-27",
+   "file": "observables/OBS-27_contact_angle_between_racket_shaft.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "T08 复核（t08_review_obs11_22_24.md）后用户拍板：补出射角、拍杆—前臂夹角、拍面朝向、躯干侧弯四项以区分 OBS-11/24/22 撞车组",
+   "source": "ftt_tree/obs_binding.json",
+   "candidate": "NC020",
+   "cluster": "NEW-OBS-15",
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "description": "At contact, does the angle between the racket shaft and forearm remain fixed or break downward?",
+   "values": [
+    "fixed_angle",
+    "wrist_flexes_or_chops"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "obs": "OBS-28",
+   "file": "observables/OBS-28_contact_frame_angle_racket_face.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "T08 复核（t08_review_obs11_22_24.md）后用户拍板：补出射角、拍杆—前臂夹角、拍面朝向、躯干侧弯四项以区分 OBS-11/24/22 撞车组",
+   "source": "ftt_tree/obs_binding.json",
+   "candidate": "NC068",
+   "cluster": "NEW-OBS-29",
+   "episodes": [
+    "Qszz0N4fRb4"
+   ],
+   "description": "At the contact frame, angle of the racket face relative to the vertical plane",
+   "values": [
+    "tilted_open",
+    "perpendicular_vertical",
+    "tilted_closed"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "obs": "OBS-29",
+   "file": "observables/OBS-29_forward_swing_into_contact_spine.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "T08 复核（t08_review_obs11_22_24.md）后用户拍板：补出射角、拍杆—前臂夹角、拍面朝向、躯干侧弯四项以区分 OBS-11/24/22 撞车组",
+   "source": "ftt_tree/obs_binding_v3.json",
+   "candidate": "NC076",
+   "cluster": "NEW-OBS-24",
+   "episodes": [
+    "wFIrPMutzRo"
+   ],
+   "description": "During the forward swing into contact, does the spine display lateral side-bending with the hitting shoulder dipping lower than the non-hitting shoulder?",
+   "values": [
+    "lateral_bend_present",
+    "no_lateral_bend"
+   ],
+   "layer": "B",
+   "camera": "B"
+  }
+ ]
 }

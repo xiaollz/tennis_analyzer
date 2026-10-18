@@ -124,7 +124,15 @@ def agg(runs):
     if not rs:
         return {"visible": None, "required": [], "supporting": [], "new_obs": [], "reason": "", "agreement": "no_valid_run", "runs": []}
     req = [c for c in rs[0]["required"] if all(c in r["required"] for r in rs)] if len(rs) == len(runs) else []
-    anyc = []
+    # 'required' means ALL listed conditions hold together; two different values of one OBS can never both hold (the model meant "any of").
+    # Such a set cannot be expressed as required -> demote the conflicting conditions to supporting (stricter, never adds a required).
+    seen = {}
+    for c in req:
+        seen.setdefault(c["obs"], set()).add(c["value"])
+    conflict = {o for o, v in seen.items() if len(v) > 1}
+    demoted = [c for c in req if c["obs"] in conflict]
+    req = [c for c in req if c["obs"] not in conflict]
+    anyc = list(demoted)
     for r in rs:
         for c in r["required"] + r["supporting"]:
             if c not in anyc and c not in req:
@@ -137,6 +145,7 @@ def agg(runs):
     return {"visible": visible, "required": req, "supporting": anyc, "new_obs": new, "reason": rs[0]["reason"],
             "agreement": f"required {len(req)}/{len({json.dumps(c, sort_keys=True) for r in rs for c in r['required']})} agreed; runs={len(rs)}/{len(runs)}",
             "required_any_run": [c for r in rs for c in r["required"]],
+            **({"demoted_conflicting_required": demoted} if demoted else {}),
             "runs": [{"visible": r["visible"], "required": r["required"], "supporting": r["supporting"], "new_obs": r["new_obs"]} for r in rs]}
 
 

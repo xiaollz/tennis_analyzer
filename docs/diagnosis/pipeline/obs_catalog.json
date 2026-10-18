@@ -393,6 +393,100 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py"
       }
+    },
+    {
+      "id": "OBS-26",
+      "src": "OBS-26_vertical_launch_angle_ball_off.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Vertical launch angle of the ball off the racket face at contact",
+      "values": [
+        "steep_upward_angle",
+        "shallow_angle",
+        "flat_or_downward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v3.json",
+        "candidate": "NC005",
+        "cluster": "NEW-OBS-28",
+        "episodes": [
+          "5-Ia7c4XzfU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-27",
+      "src": "OBS-27_contact_angle_between_racket_shaft.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At contact, does the angle between the racket shaft and forearm remain fixed or break downward?",
+      "values": [
+        "fixed_angle",
+        "wrist_flexes_or_chops"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding.json",
+        "candidate": "NC020",
+        "cluster": "NEW-OBS-15",
+        "episodes": [
+          "NEpD7fIM7HI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-28",
+      "src": "OBS-28_contact_frame_angle_racket_face.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At the contact frame, angle of the racket face relative to the vertical plane",
+      "values": [
+        "tilted_open",
+        "perpendicular_vertical",
+        "tilted_closed"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding.json",
+        "candidate": "NC068",
+        "cluster": "NEW-OBS-29",
+        "episodes": [
+          "Qszz0N4fRb4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-29",
+      "src": "OBS-29_forward_swing_into_contact_spine.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing into contact, does the spine display lateral side-bending with the hitting shoulder dipping lower than the non-hitting shoulder?",
+      "values": [
+        "lateral_bend_present",
+        "no_lateral_bend"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v3.json",
+        "candidate": "NC076",
+        "cluster": "NEW-OBS-24",
+        "episodes": [
+          "wFIrPMutzRo"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }
