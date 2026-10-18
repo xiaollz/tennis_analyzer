@@ -1,0 +1,1333 @@
+{
+ "config": "ref",
+ "tree": "tree.json (v1)",
+ "retrieval_prompt": "prompts/tree_retrieve_v2.md",
+ "menu": "plain (v1)",
+ "answer_key": "v1 key reused (same tree)",
+ "metrics": {
+  "cases_scored": 18,
+  "positives": 18,
+  "negatives": 0,
+  "episodes": 18,
+  "excluded": [
+   {
+    "episode": "97vo-kFis6c",
+    "why": "no gold (no transcript)"
+   },
+   {
+    "episode": "Cwc4YcKFZrU",
+    "why": "no gold (no transcript)"
+   }
+  ],
+  "ambiguous_gold": [],
+  "coverage_problem": 0.05555555555555555,
+  "coverage_cause_any": 0.16666666666666666,
+  "coverage_any": 0.16666666666666666,
+  "p_hit3": 0.05555555555555555,
+  "p_hit1": 0.05555555555555555,
+  "c_hit3_strict": 0.16666666666666666,
+  "c_hit3_with_upstream": 0.16666666666666666,
+  "c_hit1": 0.16666666666666666,
+  "case_hit3 (problem OR cause-with-upstream)": 0.16666666666666666,
+  "case_hit1 (problem OR cause top-1)": 0.16666666666666666,
+  "gold_cause_recall_with_upstream": 0.04365079365079365,
+  "conditional_on_tree_coverage": {
+   "n": 3,
+   "case_hit3": 1.0,
+   "p_hit3": 0.3333333333333333
+  },
+  "uncovered_positives_abstain_rate": 0.6222222222222222,
+  "negative_high_conf_fp": null,
+  "top1_problem_stable_ge_2of3": 1.0,
+  "lexical_gold_cause_cos_ge_0.40_any_tree_node": 0.0
+ },
+ "gate_reference": {
+  "reference_only_note": "G1 numbers applied to the TEXT replay for reference; the official V5 (muted clips) was not run",
+  "cases >= 10": true,
+  "episodes >= 5": true,
+  "recall@3 >= 0.6": false,
+  "negatives > 0 and FP <= 0.2": false
+ },
+ "gemini_usage": {
+  "promptTokenCount": 500048,
+  "candidatesTokenCount": 3525,
+  "totalTokenCount": 607233,
+  "thoughtsTokenCount": 103660,
+  "calls": 58
+ },
+ "model": "gemini-3.8-flash",
+ "retrieve_calls": 54,
+ "judge_calls": 0,
+ "holdout_without_transcript": [
+  "97vo-kFis6c",
+  "Cwc4YcKFZrU"
+ ],
+ "rows": [
+  {
+   "episode": "-ZmnDrRFfjc",
+   "title": "3 Brilliant Alcaraz Tactics ANYONE Can Use",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How can you use Carlos Alcaraz's tactical patterns to win more singles points?"
+   ],
+   "gold_causes": 6,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.227,
+    0.319,
+    0.113,
+    0.16,
+    0.173,
+    0.16
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "2J8q7sn4JLc",
+   "title": "Why Your Forehand Sprays, and How to Fix It",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why does your forehand spray, and how can you fix it?"
+   ],
+   "gold_causes": 7,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.085,
+    0.137,
+    0.218,
+    0.205,
+    0.104,
+    0.252,
+    0.123
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C02"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C02"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C02"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "5KdScDKxVSI",
+   "title": "Shoulder Adduction Will Transform Your Forehand Contact",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How should you create reliable forehand contact through horizontal shoulder adduction?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.349,
+    0.171,
+    0.216,
+    0.187,
+    0.27,
+    0.162,
+    0.134,
+    0.226
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [
+      "N-C_QSZZ0N4FRB4_C02"
+     ],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "5jHCDc44SQM",
+   "title": "The Abdominal Corkscrew ft. Carson Branstine",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How can players generate effortless power with a compact swing using the abdominal corkscrew?"
+   ],
+   "gold_causes": 7,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.149,
+    0.142,
+    0.339,
+    0.235,
+    0.144,
+    0.216,
+    0.309
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WFIRPMUTZRO_C01"
+     ],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_WFIRPMUTZRO"
+     ],
+     "causes": [
+      "N-C_WFIRPMUTZRO_C01"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_WFIRPMUTZRO"
+     ],
+     "causes": [
+      "N-C_WFIRPMUTZRO_C01"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 0.6666666666666666
+  },
+  {
+   "episode": "97vo-kFis6c",
+   "title": "",
+   "gold_source": null,
+   "excluded": "no gold (no transcript)"
+  },
+  {
+   "episode": "Am8j1Zw5KrE",
+   "title": "Shoulder Adduction Unlocks the Tennis Forehand",
+   "gold_source": "verified_card",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How does shoulder adduction unlock the tennis forehand and contact consistency?"
+   ],
+   "gold_causes": 5,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.339,
+    0.24,
+    0.144,
+    0.2,
+    0.291
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "BbGzWTp5pCM",
+   "title": "Practicing in Slow Motion is Killing Your Match Play",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why does practicing in slow motion kill your match play performance?"
+   ],
+   "gold_causes": 7,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.221,
+    0.176,
+    0.176,
+    0.253,
+    0.138,
+    0.087,
+    0.225
+   ],
+   "runs": [
+    {
+     "problems": [
+      "N-P_JZCA_KU7YHK"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_JZCA_KU7YHK"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_JZCA_KU7YHK"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "Bhzd6cM-oFU",
+   "title": "How to Hit Crazy Slice Like Carlos Alcaraz",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How do you hit heavy crazy slice on an overhead or serve like Carlos Alcaraz?"
+   ],
+   "gold_causes": 9,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.162,
+    0.265,
+    0.118,
+    0.191,
+    0.236,
+    0.203,
+    0.127,
+    0.18,
+    0.196
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "Cwc4YcKFZrU",
+   "title": "",
+   "gold_source": null,
+   "excluded": "no gold (no transcript)"
+  },
+  {
+   "episode": "EkzzGZkqCgc",
+   "title": "Why Your Racket Doesn't Flip",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why Doesn't Your Tennis Racket Flip Effortlessly on the Forehand?"
+   ],
+   "gold_causes": 7,
+   "key_problem": [
+    "N-P_WZLMV4ASG9S"
+   ],
+   "key_cause_items_covered": 2,
+   "lex_best_cos": [
+    0.298,
+    0.187,
+    0.288,
+    0.385,
+    0.213,
+    0.135,
+    0.162
+   ],
+   "runs": [
+    {
+     "problems": [
+      "N-P_WZLMV4ASG9S"
+     ],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C01",
+      "N-C_2NN9TYMECZU_C03"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": true,
+     "p_hit1": true,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.2857142857142857
+    },
+    {
+     "problems": [
+      "N-P_WZLMV4ASG9S"
+     ],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C01"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": true,
+     "p_hit1": true,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.2857142857142857
+    },
+    {
+     "problems": [
+      "N-P_WZLMV4ASG9S"
+     ],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C01"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": true,
+     "p_hit1": true,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.2857142857142857
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": true,
+   "cause_covered": true,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "Fu6DkHvZlGY",
+   "title": "The Pure-Dextral Pinpoint | Serve Like Jakob Mensik",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why and how should right-handed, right-eye dominant players use the pure-dextral pinpoint serve stance?"
+   ],
+   "gold_causes": 7,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.194,
+    0.296,
+    0.225,
+    0.196,
+    0.197,
+    0.232,
+    0.135
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "MWjBfarwNlA",
+   "title": "Alcaraz's Secret Weapon | Backhand Line RALLY Ball",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How does Alcaraz break out of an unfavorable backhand-to-backhand rally pattern?"
+   ],
+   "gold_causes": 2,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.138,
+    0.159
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "XjJHA91HDbU",
+   "title": "Don't Swing AT the Ball on the Overhead",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why should you not swing directly at the ball or target on an overhead?"
+   ],
+   "gold_causes": 6,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.188,
+    0.196,
+    0.135,
+    0.222,
+    0.171,
+    0.21
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "agtIR3PuNsw",
+   "title": "Why Alfie Hewett Hits Harder Than You",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why does wheelchair tennis star Alfie Hewett hit harder than amateur players?"
+   ],
+   "gold_causes": 6,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.158,
+    0.204,
+    0.135,
+    0.136,
+    0.156,
+    0.141
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "emZxTmSVSa8",
+   "title": "Master Pronation in 2 Minutes at Home",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How can you master serve pronation at home in two minutes?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.159,
+    0.137,
+    0.285,
+    0.154,
+    0.162,
+    0.207,
+    0.165,
+    0.167
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "gehRK0Y6AdQ",
+   "title": "The Pros \"Brush\" Differently From You",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "How do pro tennis players brush the ball differently to produce heavy topspin with penetration?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 2,
+   "lex_best_cos": [
+    0.236,
+    0.37,
+    0.134,
+    0.278,
+    0.244,
+    0.19,
+    0.15,
+    0.261
+   ],
+   "runs": [
+    {
+     "problems": [
+      "N-P_FXDMVI3EFNE"
+     ],
+     "causes": [
+      "N-C_FXDMVI3EFNE_C02",
+      "N-C_FXDMVI3EFNE_C01",
+      "N-C_TZGAWR3QGV0_C02"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    },
+    {
+     "problems": [
+      "N-P_FXDMVI3EFNE"
+     ],
+     "causes": [
+      "N-C_FXDMVI3EFNE_C02",
+      "N-C_FXDMVI3EFNE_C01",
+      "N-C_TZGAWR3QGV0_C03"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    },
+    {
+     "problems": [
+      "N-P_FXDMVI3EFNE"
+     ],
+     "causes": [
+      "N-C_FXDMVI3EFNE_C02",
+      "N-C_FXDMVI3EFNE_C01",
+      "N-C_FXDMVI3EFNE_C03"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": true,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "hqganBxzQNM",
+   "title": "Why I Give Every Student a Weight to Swing (and why it works)",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why should players swing a weight, and how does it unlock forehand power?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 5,
+   "lex_best_cos": [
+    0.257,
+    0.297,
+    0.129,
+    0.171,
+    0.236,
+    0.161,
+    0.133,
+    0.198
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C05"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C05"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_WZLMV4ASG9S_C05"
+     ],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": true,
+     "c_hit3_exp": true,
+     "c_hit1": true,
+     "gold_cause_recall": 0.25
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": true,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "mOFtt9PllI0",
+   "title": "The Geometry of Measured Aggression",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why do players fail to execute measured aggression and spray errors when trying to attack?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.17,
+    0.148,
+    0.141,
+    0.079,
+    0.096,
+    0.194,
+    0.151,
+    0.104
+   ],
+   "runs": [
+    {
+     "problems": [
+      "N-P_8R09TLIP_AK"
+     ],
+     "causes": [
+      "N-C_8R09TLIP_AK_C03",
+      "N-C_8R09TLIP_AK_C04"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [],
+     "none_match": false,
+     "high": false,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 0.6666666666666666
+  },
+  {
+   "episode": "q6LrQYDvxmY",
+   "title": "Why Pros Hit So Far Away",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why do advanced players hit the forehand so far away from their body?"
+   ],
+   "gold_causes": 8,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.145,
+    0.288,
+    0.322,
+    0.175,
+    0.193,
+    0.227,
+    0.261,
+    0.217
+   ],
+   "runs": [
+    {
+     "problems": [],
+     "causes": [
+      "N-C_UJPUDUX0JIA_C06",
+      "N-C_2NN9TYMECZU_C03",
+      "N-C_WZLMV4ASG9S_C01"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_UJPUDUX0JIA_C06",
+      "N-C_2NN9TYMECZU_C03",
+      "N-C_QSZZ0N4FRB4_C03"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [],
+     "causes": [
+      "N-C_2NN9TYMECZU_C03",
+      "N-C_UJPUDUX0JIA_C06"
+     ],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  },
+  {
+   "episode": "ui-RFRdQKRk",
+   "title": "The Pros \"Rotate\" Differently Than You",
+   "gold_source": "stage1_raw_2runs",
+   "excluded": null,
+   "is_teaching": "teaching",
+   "gold_problem": [
+    "Why do amateur players rotate differently and generate less effortless power than pros?"
+   ],
+   "gold_causes": 6,
+   "key_problem": [],
+   "key_cause_items_covered": 0,
+   "lex_best_cos": [
+    0.194,
+    0.228,
+    0.258,
+    0.223,
+    0.151,
+    0.189
+   ],
+   "runs": [
+    {
+     "problems": [
+      "N-P_WFIRPMUTZRO",
+      "N-P_XLS469ZVMPU"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_WFIRPMUTZRO"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    },
+    {
+     "problems": [
+      "N-P_WFIRPMUTZRO",
+      "N-P_XLS469ZVMPU"
+     ],
+     "causes": [],
+     "none_match": false,
+     "high": true,
+     "p_hit3": false,
+     "p_hit1": false,
+     "c_hit3_strict": false,
+     "c_hit3_exp": false,
+     "c_hit1": false,
+     "gold_cause_recall": 0.0
+    }
+   ],
+   "valid_runs": 3,
+   "problem_covered": false,
+   "cause_covered": false,
+   "negative": false,
+   "top1_problem_stable": 1.0
+  }
+ ]
+}

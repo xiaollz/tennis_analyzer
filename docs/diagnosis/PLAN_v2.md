@@ -281,3 +281,4 @@ manifest 里所有视频都是 `merged`、`non_teaching` 或 `blocked`（有理�
 
 - 2026-10-18 v2：新建。初始阈值见 `pipeline/config.json`；脚本未运行（待第 0 步）。
 - 2026-10-18 tree_v1：新增 `pipeline/build_tree.py`、`textsim.py`、`blind_replay_text.py`、`compose_tree_report.py`；`tree.schema.json` 增加**可选**字段（symptoms / solutions / angles / video_layer / quote_sources / build、node.layer）；`check_tree.py` 增加 T13（只加严，不放宽）+ 3 个变异样例（自检 33 个）。`config.json` 阈值未改。
+- 2026-10-18 tree_v2：新增 `pipeline/obs_catalog.json`（OBS-01…18 中立英文题）、`obs_bind.py`（症状/问题/根因 → OBS 绑定，2 次运行 + 补问）、`mech_merge.py`（同击球类型语义机制合并，2 次运行取交集）、`build_tree_v2.py`、`check_obs_binding.py`（O1–O11）、`check_mech_merge.py`（M01–M09）、`blind_replay_text_v2.py`（根因独立检索变体）；`verify_all.py` 只加严：新增可选参数 `--tree-v1/--binding/--merge` 与 24 个变异样例（自检共 57 个）。`config.json` 阈值、`build_tree.py` 的 0.40 词面合并阈值、check_tree 规则均未改；T05 仍对无 required 的 must_fix 节点报 FAIL（未用改 must_fix 绕过）。`ftt_tree/tree.json` 保持为 v1 基线，v2 为 `ftt_tree/tree_v2.json`（未覆盖）。

@@ -35,3 +35,14 @@ python3 verify_all.py --episodes ../episodes --tree ../ftt_tree/tree.json \
 ```
 
 **状态（2026-10-18）**：脚本写完后只做了逐行人工核对；**还没有实际运行过**（本会话执行 Python 需要授权）。执行者第一件事就是跑 `--selftest`，失败先修脚本，再开始循环。
+
+### tree v2 追加（2026-10-18）
+| 文件 | 作用 |
+|---|---|
+| `obs_catalog.json` | OBS-01…18 的中立英文题 + 取值 + 层级 + 机位（由 observables/*.md 转写） |
+| `obs_bind.py` / `prompts/obs_bind_v1.md` `obs_gapfill_v1.md` `obs_newcluster_v1.md` | 模型绑定 OBS（2 次运行，两次都列为必需才算 required）→ `ftt_tree/obs_binding.json`；NEW-OBS 候选聚类 |
+| `mech_merge.py` / `prompts/mech_group_v1.md` | 同击球类型机制分组（2 次运行取交集，只分组不改写）→ `ftt_tree/mech_merge.json` |
+| `build_tree_v2.py` | 确定性：v1 树 + 绑定 + 合并 → `ftt_tree/tree_v2.json` |
+| `check_obs_binding.py` / `check_mech_merge.py` | O1–O11 / M01–M09，已接入 verify_all（`--tree-v1 --binding --merge`） |
+| `blind_replay_text_v2.py` / `prompts/tree_retrieve_v2.md` | 文本盲测新变体（根因独立检索，无整体弃权）；旧脚本与旧结果不动 |
+| `compose_tree_v2_report.py` | 合成 `loop/reports/verify_*_tree_v2.json` 与 `ftt_tree/mech_merge_review.md` |
