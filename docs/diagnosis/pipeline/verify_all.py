@@ -138,6 +138,34 @@ def _add_cycle(t):
     t["edges"].append({"from": "N-JAMMED", "to": "N-NO_ADJUST_STEPS", "strength": "single_episode", "evidence": ["SYNTHETIC01:Q02"]})
 
 
+
+def _qsrc(t, wrong=False):
+    cards = _card()
+    qs = {}
+    for r in [r for n in t["nodes"] for r in n["evidence"]] + [r for e in t["edges"] for r in e["evidence"]]:
+        if not r.startswith("BOOK:"):
+            ep, q = r.split(":")
+            cq = next(x for x in cards["quotes"] if x["id"] == q)
+            qs[r] = {"video_id": ep, "start": cq["start"], "about": cq["about"], "text": cq["text"]}
+    if wrong:
+        k = sorted(qs)[0]
+        qs[k]["text"] = qs[k]["text"] + " (reworded)"
+    t["quote_sources"] = qs
+
+
+def _t13_missing(t):
+    _qsrc(t)
+    t["quote_sources"].pop(sorted(t["quote_sources"])[0])
+
+
+def _t13_unknown_link(t):
+    _qsrc(t)
+    n0 = t["nodes"][0]
+    t["solutions"] = [{"id": "SOL_X_D01", "episode": "SYNTHETIC01", "problem": "N-NOPE", "kind": "drill", "summary": "x",
+                       "targets_causes": [], "targets_symptoms": [], "ban_conflict": False, "usable_as_prescription": True,
+                       "evidence": [n0["evidence"][0]]}]
+
+
 MUTATIONS = [
     ("fabricated quote", "Q04", card_mut(lambda c: c["quotes"][0].update(text="players should rotate the shoulders before the hips every single time"))),
     ("shifted timestamp", "Q03", card_mut(lambda c: c["quotes"][1].update(start=51))),
@@ -157,6 +185,9 @@ MUTATIONS = [
     ("core edge from one episode", "T10", tree_mut(lambda t: t["edges"][0].update(strength="core"))),
     ("cycle", "T11", tree_mut(_add_cycle)),
     ("tree cites unverified card", "T03", tree_mut_draft),
+    ("cited quote has no quote_sources entry", "T13", tree_mut(_t13_missing)),
+    ("quote_sources text differs from card", "T13", tree_mut(lambda t: _qsrc(t, wrong=True))),
+    ("solution links unknown node", "T13", tree_mut(_t13_unknown_link)),
     ("unmuted blind clip", "B02", replay_mut(edit_facts=lambda f: f.update(audio_stripped=False))),
     ("label not about demonstrator", "B01", replay_mut(edit_case=_general_label)),
     ("project term in fact prompt", "N01", neutrality_mut),

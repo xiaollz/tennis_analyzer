@@ -1,0 +1,1913 @@
+{
+ "date": "2026-10-18",
+ "base_commit": "6bcf4c8",
+ "branch": "cursor/diagnosis-phase1",
+ "verdict": "FAIL",
+ "tree": {
+  "file": "docs/diagnosis/ftt_tree/tree.json",
+  "builder": "pipeline/build_tree.py",
+  "merge_cosine": 0.4,
+  "problem_nodes": 22,
+  "cause_nodes": 97,
+  "solution_items": 97,
+  "angle_items": 114,
+  "symptom_items": 83,
+  "edges": 103,
+  "edge_strength": {
+   "single_episode": 101,
+   "inferred": 2
+  },
+  "cards_attached": 22,
+  "episodes_used": [
+   "2Nn9tyMECZU",
+   "5-Ia7c4XzfU",
+   "8r09TliP-Ak",
+   "FOmz8Wjv3DQ",
+   "FxDmVi3EFnE",
+   "JzcA_ku7Yhk",
+   "NEpD7fIM7HI",
+   "PUN6qIIYU-4",
+   "Psidjei5BnI",
+   "Qszz0N4fRb4",
+   "UB6SbA_KX9E",
+   "V-QkILd4V-w",
+   "XXlndjnrA4E",
+   "aPcKJDadzek",
+   "dDYKuNZtdyU",
+   "lwS7Xxqrrdw",
+   "pQ793MBQE50",
+   "tzgAWr3QGv0",
+   "uJpuDUx0jIA",
+   "wFIrPMutzRo",
+   "wzLMv4ASg9s",
+   "xLs469ZVMPU"
+  ],
+  "skipped": [
+   {
+    "episode": "0m3BMfDDShI",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   },
+   {
+    "episode": "Am8j1Zw5KrE",
+    "reason": "holdout",
+    "status": "stage1_verified"
+   },
+   {
+    "episode": "E_zmENJIj4g",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   },
+   {
+    "episode": "ExkBtFRhUWY",
+    "reason": "low_confidence",
+    "status": "stage1_verified"
+   },
+   {
+    "episode": "FjjvhNbk3q4",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   },
+   {
+    "episode": "JIMgI3jiVns",
+    "reason": "low_confidence",
+    "status": "stage1_verified"
+   },
+   {
+    "episode": "KU7FHy1qQOI",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   },
+   {
+    "episode": "w1FakobNq1Q",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   },
+   {
+    "episode": "wd4YRQW3TOc",
+    "reason": "status stage1_draft",
+    "status": "stage1_draft"
+   }
+  ],
+  "cause_items_before_merge": 99,
+  "merged_clusters": [
+   {
+    "node": "N-C_APCKJDADZEK_C03",
+    "members": [
+     "aPcKJDadzek:C03",
+     "uJpuDUx0jIA:C03"
+    ],
+    "cosines": [
+     0.415
+    ],
+    "statements": [
+     "The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch.",
+     "Loading weight onto the inside heel / over-pronated flat foot rather than loading the arch and ball of the foot."
+    ]
+   },
+   {
+    "node": "N-C_DDYKUNZTDYU_C01",
+    "members": [
+     "dDYKuNZtdyU:C01",
+     "pQ793MBQE50:C05"
+    ],
+    "cosines": [
+     0.457
+    ],
+    "statements": [
+     "Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together.",
+     "Failing to drive the racket forward using upper back scapular retraction (rhomboids and traps pulling shoulder blades together)."
+    ]
+   }
+  ],
+  "dropped_edges": [],
+  "observables": 0,
+  "cause_layers": {
+   "B": 68,
+   "C": 10,
+   "A": 19
+  },
+  "solutions_usable_as_prescription": 97,
+  "symptom_obs_ref": {
+   "NEW-OBS": 66,
+   "NONE": 17
+  },
+  "holdout_episodes": [
+   "-ZmnDrRFfjc",
+   "2J8q7sn4JLc",
+   "5KdScDKxVSI",
+   "5jHCDc44SQM",
+   "97vo-kFis6c",
+   "Am8j1Zw5KrE",
+   "BbGzWTp5pCM",
+   "Bhzd6cM-oFU",
+   "Cwc4YcKFZrU",
+   "EkzzGZkqCgc",
+   "Fu6DkHvZlGY",
+   "MWjBfarwNlA",
+   "XjJHA91HDbU",
+   "agtIR3PuNsw",
+   "emZxTmSVSa8",
+   "gehRK0Y6AdQ",
+   "hqganBxzQNM",
+   "mOFtt9PllI0",
+   "q6LrQYDvxmY",
+   "ui-RFRdQKRk"
+  ],
+  "video_layer_items": 0
+ },
+ "verify_all_full": {
+  "pass": false,
+  "selftest_pass": true,
+  "mutations": 33,
+  "checks": {
+   "validate_cards": {
+    "fail": 0,
+    "warn": 2
+   },
+   "check_quotes": {
+    "fail": 0,
+    "warn": 0
+   },
+   "check_tree": {
+    "fail": 119,
+    "warn": 4
+   },
+   "check_manifest": {
+    "fail": 0,
+    "warn": 0
+   },
+   "check_neutrality": {
+    "fail": 0,
+    "warn": 0
+   },
+   "blind_replay": {
+    "fail": 4,
+    "warn": 0
+   }
+  },
+  "fail_rule_breakdown": {
+   "validate_cards": {},
+   "check_quotes": {},
+   "check_tree": {
+    "T05": 119
+   },
+   "check_manifest": {},
+   "check_neutrality": {},
+   "blind_replay": {
+    "other": 4
+   }
+  },
+  "warns": {
+   "validate_cards": [
+    "[WARN] ../episodes/2Nn9tyMECZU.card.json: R07 top-depth root C04 rests on an inferred link",
+    "[WARN] ../episodes/wzLMv4ASg9s.card.json: R07 top-depth root C06 rests on an inferred link"
+   ],
+   "check_tree": [
+    "[WARN] ../ftt_tree/tree.json: T10 edge N-C_2NN9TYMECZU_C04->N-P_2NN9TYMECZU marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree.json: T10 edge N-C_WZLMV4ASG9S_C06->N-P_WZLMV4ASG9S marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree.json: T12 ExkBtFRhUWY verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree.json: T12 JIMgI3jiVns verified but problem not mapped to a node"
+   ]
+  },
+  "replay_metrics_official_V5": {
+   "cases": 0,
+   "positives": 0,
+   "negatives": 0,
+   "episodes": 0,
+   "recall_at_3": 0.0,
+   "top1": 0.0,
+   "abstain_rate": 0.0,
+   "negative_high_conf": 0.0,
+   "rerun_top1_stable": null
+  },
+  "raw": {
+   "time": "2026-10-18T18:32:49",
+   "selftest": {
+    "good": {
+     "validate_cards": [],
+     "check_quotes": [],
+     "check_tree": [],
+     "check_manifest": [],
+     "check_rerun": [],
+     "check_neutrality": [],
+     "blind_replay": []
+    },
+    "mutations": [
+     {
+      "name": "fabricated quote",
+      "expect": "Q04",
+      "caught": true
+     },
+     {
+      "name": "shifted timestamp",
+      "expect": "Q03",
+      "caught": true
+     },
+     {
+      "name": "transcript changed",
+      "expect": "Q01",
+      "caught": true
+     },
+     {
+      "name": "cause without subtitle quote",
+      "expect": "R06",
+      "caught": true
+     },
+     {
+      "name": "dangling evidence",
+      "expect": "R04",
+      "caught": true
+     },
+     {
+      "name": "depth not decreasing",
+      "expect": "R07",
+      "caught": true
+     },
+     {
+      "name": "feel labelled visible layer",
+      "expect": "R08",
+      "caught": true
+     },
+     {
+      "name": "banned cue unflagged",
+      "expect": "R09",
+      "caught": true
+     },
+     {
+      "name": "user context leaked",
+      "expect": "not in [False]",
+      "caught": true
+     },
+     {
+      "name": "video item before stage 2",
+      "expect": "R11",
+      "caught": true
+     },
+     {
+      "name": "tree cites holdout",
+      "expect": "T02",
+      "caught": true
+     },
+     {
+      "name": "feel as required obs",
+      "expect": "T04",
+      "caught": true
+     },
+     {
+      "name": "unconstrained must_fix node",
+      "expect": "T05",
+      "caught": true
+     },
+     {
+      "name": "banned next_one_thing",
+      "expect": "T06",
+      "caught": true
+     },
+     {
+      "name": "indistinguishable nodes",
+      "expect": "T08",
+      "caught": true
+     },
+     {
+      "name": "core edge from one episode",
+      "expect": "T10",
+      "caught": true
+     },
+     {
+      "name": "cycle",
+      "expect": "T11",
+      "caught": true
+     },
+     {
+      "name": "tree cites unverified card",
+      "expect": "T03",
+      "caught": true
+     },
+     {
+      "name": "cited quote has no quote_sources entry",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "quote_sources text differs from card",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "solution links unknown node",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "unmuted blind clip",
+      "expect": "B02",
+      "caught": true
+     },
+     {
+      "name": "label not about demonstrator",
+      "expect": "B01",
+      "caught": true
+     },
+     {
+      "name": "project term in fact prompt",
+      "expect": "N01",
+      "caught": true
+     },
+     {
+      "name": "rerun anchors disagree",
+      "expect": "Jaccard",
+      "caught": true
+     },
+     {
+      "name": "manifest duplicate entry",
+      "expect": "M01",
+      "caught": true
+     },
+     {
+      "name": "manifest unknown state",
+      "expect": "M02",
+      "caught": true
+     },
+     {
+      "name": "non_teaching without reason",
+      "expect": "M03",
+      "caught": true
+     },
+     {
+      "name": "state claims transcript that is missing",
+      "expect": "M04",
+      "caught": true
+     },
+     {
+      "name": "merged claimed but card only stage1_verified",
+      "expect": "M05",
+      "caught": true
+     },
+     {
+      "name": "stage1_verified claimed but card missing",
+      "expect": "M05",
+      "caught": true
+     },
+     {
+      "name": "merged but no tree node cites it",
+      "expect": "M06",
+      "caught": true
+     },
+     {
+      "name": "card exists but episode not in manifest",
+      "expect": "M07",
+      "caught": true
+     }
+    ],
+    "pass": true
+   },
+   "checks": {
+    "validate_cards": {
+     "fail": [],
+     "warn": [
+      "[WARN] ../episodes/2Nn9tyMECZU.card.json: R07 top-depth root C04 rests on an inferred link",
+      "[WARN] ../episodes/wzLMv4ASg9s.card.json: R07 top-depth root C06 rests on an inferred link"
+     ]
+    },
+    "check_quotes": {
+     "fail": [],
+     "warn": []
+    },
+    "check_tree": {
+     "fail": [
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_2NN9TYMECZU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_5_IA7C4XZFU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_8R09TLIP_AK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_APCKJDADZEK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_DDYKUNZTDYU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_FOMZ8WJV3DQ must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_FXDMVI3EFNE must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_JZCA_KU7YHK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_LWS7XXQRRDW must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_NEPD7FIM7HI must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_PQ793MBQE50 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_PSIDJEI5BNI must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_PUN6QIIYU_4 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_QSZZ0N4FRB4 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_TZGAWR3QGV0 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_UB6SBA_KX9E must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_UJPUDUX0JIA must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_V_QKILD4V_W must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_WFIRPMUTZRO must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_WZLMV4ASG9S must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_XLS469ZVMPU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-P_XXLNDJNRA4E must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_2NN9TYMECZU_C06 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_5_IA7C4XZFU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_5_IA7C4XZFU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_5_IA7C4XZFU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_8R09TLIP_AK_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_8R09TLIP_AK_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_8R09TLIP_AK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_8R09TLIP_AK_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_APCKJDADZEK_C06 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_DDYKUNZTDYU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_DDYKUNZTDYU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_DDYKUNZTDYU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_DDYKUNZTDYU_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FOMZ8WJV3DQ_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FOMZ8WJV3DQ_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FOMZ8WJV3DQ_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FOMZ8WJV3DQ_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FXDMVI3EFNE_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FXDMVI3EFNE_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FXDMVI3EFNE_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_FXDMVI3EFNE_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_JZCA_KU7YHK_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_JZCA_KU7YHK_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_JZCA_KU7YHK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_JZCA_KU7YHK_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_LWS7XXQRRDW_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_LWS7XXQRRDW_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_LWS7XXQRRDW_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_LWS7XXQRRDW_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_NEPD7FIM7HI_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_NEPD7FIM7HI_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_NEPD7FIM7HI_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_NEPD7FIM7HI_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_NEPD7FIM7HI_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PQ793MBQE50_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PQ793MBQE50_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PQ793MBQE50_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PQ793MBQE50_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PSIDJEI5BNI_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PSIDJEI5BNI_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PSIDJEI5BNI_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PSIDJEI5BNI_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PSIDJEI5BNI_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PUN6QIIYU_4_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PUN6QIIYU_4_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PUN6QIIYU_4_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_PUN6QIIYU_4_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_QSZZ0N4FRB4_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_QSZZ0N4FRB4_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_QSZZ0N4FRB4_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_QSZZ0N4FRB4_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_TZGAWR3QGV0_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_TZGAWR3QGV0_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_TZGAWR3QGV0_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_TZGAWR3QGV0_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UB6SBA_KX9E_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UB6SBA_KX9E_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UB6SBA_KX9E_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UB6SBA_KX9E_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C06 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_UJPUDUX0JIA_C07 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_V_QKILD4V_W_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_V_QKILD4V_W_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_V_QKILD4V_W_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_V_QKILD4V_W_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WFIRPMUTZRO_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WFIRPMUTZRO_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WFIRPMUTZRO_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WFIRPMUTZRO_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C06 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_WZLMV4ASG9S_C07 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XLS469ZVMPU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XLS469ZVMPU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XLS469ZVMPU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XLS469ZVMPU_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XXLNDJNRA4E_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XXLNDJNRA4E_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree.json: T05 N-C_XXLNDJNRA4E_C03 must_fix node has no required observable: it can never be confirmed from video"
+     ],
+     "warn": [
+      "[WARN] ../ftt_tree/tree.json: T10 edge N-C_2NN9TYMECZU_C04->N-P_2NN9TYMECZU marked inferred but cites episode evidence; use single_episode/core",
+      "[WARN] ../ftt_tree/tree.json: T10 edge N-C_WZLMV4ASG9S_C06->N-P_WZLMV4ASG9S marked inferred but cites episode evidence; use single_episode/core",
+      "[WARN] ../ftt_tree/tree.json: T12 ExkBtFRhUWY verified but problem not mapped to a node",
+      "[WARN] ../ftt_tree/tree.json: T12 JIMgI3jiVns verified but problem not mapped to a node"
+     ]
+    },
+    "check_manifest": {
+     "fail": [],
+     "warn": []
+    },
+    "check_neutrality": {
+     "fail": [],
+     "warn": []
+    },
+    "blind_replay": {
+     "fail": [
+      "[FAIL] gate G1: cases 0 >= 10",
+      "[FAIL] gate G1: episodes 0 >= 5",
+      "[FAIL] gate G1: recall@3 0.00 >= 0.6",
+      "[FAIL] gate G1: negatives 0 > 0 and high-conf FP 0.00 <= 0.2"
+     ],
+     "warn": []
+    }
+   },
+   "replay_metrics": {
+    "cases": 0,
+    "positives": 0,
+    "negatives": 0,
+    "episodes": 0,
+    "recall_at_3": 0.0,
+    "top1": 0.0,
+    "abstain_rate": 0.0,
+    "negative_high_conf": 0.0,
+    "rerun_top1_stable": null
+   },
+   "inputs": {
+    "cards": 31,
+    "tree_sha256": "7439d41f2f394a79e46f8b95523b48c737d28e1d5caad2e8cd9540b178d63def"
+   },
+   "pass": false
+  }
+ },
+ "official_V5_muted_clip_replay": {
+  "run": true,
+  "cases": 0,
+  "result": "FAIL (G1: 0 cases) - no replay/cases or audio-stripped clips exist; needs user decision on per-segment yt-dlp download (PLAN_v2 §9.2)"
+ },
+ "text_blind_replay": {
+  "note": "supplementary, NOT the PLAN V5 muted-clip replay; gold = verified card (Am8j1Zw5KrE) or 2 raw Stage-1 runs passing validate_cards+check_quotes; answer key by temperature-0 Gemini judge; hits by script",
+  "metrics": {
+   "cases_scored": 18,
+   "positives": 18,
+   "negatives": 0,
+   "episodes": 18,
+   "excluded": [
+    {
+     "episode": "97vo-kFis6c",
+     "why": "no gold (no transcript)"
+    },
+    {
+     "episode": "Cwc4YcKFZrU",
+     "why": "no gold (no transcript)"
+    }
+   ],
+   "ambiguous_gold": [],
+   "coverage_problem": 0.05555555555555555,
+   "coverage_cause_any": 0.16666666666666666,
+   "coverage_any": 0.16666666666666666,
+   "p_hit3": 0.05555555555555555,
+   "p_hit1": 0.05555555555555555,
+   "c_hit3_strict": 0.1111111111111111,
+   "c_hit3_with_upstream": 0.1111111111111111,
+   "c_hit1": 0.1111111111111111,
+   "case_hit3 (problem OR cause-with-upstream)": 0.1111111111111111,
+   "case_hit1 (problem OR cause top-1)": 0.1111111111111111,
+   "gold_cause_recall_with_upstream": 0.02976190476190476,
+   "conditional_on_tree_coverage": {
+    "n": 3,
+    "case_hit3": 0.6666666666666666,
+    "p_hit3": 0.3333333333333333
+   },
+   "uncovered_positives_abstain_rate": 0.888888888888889,
+   "negative_high_conf_fp": null,
+   "top1_problem_stable_ge_2of3": 1.0,
+   "lexical_gold_cause_cos_ge_0.40_any_tree_node": 0.0
+  },
+  "gate_reference": {
+   "reference_only_note": "G1 numbers applied to the TEXT replay for reference; the official V5 (muted clips) was not run",
+   "cases >= 10": true,
+   "episodes >= 5": true,
+   "recall@3 >= 0.6": false,
+   "negatives > 0 and FP <= 0.2": false
+  },
+  "failure_class_per_case": {
+   "-ZmnDrRFfjc": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "2J8q7sn4JLc": "tree_gap + false_retrieval (no matching node in tree; Gemini still returned nodes)",
+   "5KdScDKxVSI": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "5jHCDc44SQM": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "97vo-kFis6c": "excluded: no gold (no transcript)",
+   "Am8j1Zw5KrE": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "BbGzWTp5pCM": "tree_gap + false_retrieval (no matching node in tree; Gemini still returned nodes)",
+   "Bhzd6cM-oFU": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "Cwc4YcKFZrU": "excluded: no gold (no transcript)",
+   "EkzzGZkqCgc": "hit",
+   "Fu6DkHvZlGY": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "MWjBfarwNlA": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "XjJHA91HDbU": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "agtIR3PuNsw": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "emZxTmSVSa8": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "gehRK0Y6AdQ": "hit",
+   "hqganBxzQNM": "retrieval_miss (tree has a matching node; Gemini returned none or the wrong node)",
+   "mOFtt9PllI0": "tree_gap + false_retrieval (no matching node in tree; Gemini still returned nodes)",
+   "q6LrQYDvxmY": "tree_gap (no matching node in tree; Gemini correctly abstained)",
+   "ui-RFRdQKRk": "tree_gap (no matching node in tree; Gemini correctly abstained)"
+  },
+  "gold_causes_total": 123,
+  "gold_causes_with_a_tree_match": 9,
+  "distinct_tree_nodes_in_any_answer_key": 6,
+  "holdout_without_transcript": [
+   "97vo-kFis6c",
+   "Cwc4YcKFZrU"
+  ],
+  "rows": [
+   {
+    "episode": "-ZmnDrRFfjc",
+    "title": "3 Brilliant Alcaraz Tactics ANYONE Can Use",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How can you use Carlos Alcaraz's tactical patterns to win more singles points?"
+    ],
+    "gold_causes": 6,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.227,
+     0.319,
+     0.113,
+     0.16,
+     0.173,
+     0.16
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "2J8q7sn4JLc",
+    "title": "Why Your Forehand Sprays, and How to Fix It",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why does your forehand spray, and how can you fix it?"
+    ],
+    "gold_causes": 7,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.085,
+     0.137,
+     0.218,
+     0.205,
+     0.104,
+     0.252,
+     0.123
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [
+       "N-C_WZLMV4ASG9S_C02"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [
+       "N-C_WZLMV4ASG9S_C02"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "5KdScDKxVSI",
+    "title": "Shoulder Adduction Will Transform Your Forehand Contact",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How should you create reliable forehand contact through horizontal shoulder adduction?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.349,
+     0.171,
+     0.216,
+     0.187,
+     0.27,
+     0.162,
+     0.134,
+     0.226
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "5jHCDc44SQM",
+    "title": "The Abdominal Corkscrew ft. Carson Branstine",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How can players generate effortless power with a compact swing using the abdominal corkscrew?"
+    ],
+    "gold_causes": 7,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.149,
+     0.142,
+     0.339,
+     0.235,
+     0.144,
+     0.216,
+     0.309
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "97vo-kFis6c",
+    "title": "",
+    "gold_source": null,
+    "excluded": "no gold (no transcript)"
+   },
+   {
+    "episode": "Am8j1Zw5KrE",
+    "title": "Shoulder Adduction Unlocks the Tennis Forehand",
+    "gold_source": "verified_card",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How does shoulder adduction unlock the tennis forehand and contact consistency?"
+    ],
+    "gold_causes": 5,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.339,
+     0.24,
+     0.144,
+     0.2,
+     0.291
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "BbGzWTp5pCM",
+    "title": "Practicing in Slow Motion is Killing Your Match Play",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why does practicing in slow motion kill your match play performance?"
+    ],
+    "gold_causes": 7,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.221,
+     0.176,
+     0.176,
+     0.253,
+     0.138,
+     0.087,
+     0.225
+    ],
+    "runs": [
+     {
+      "problems": [
+       "N-P_JZCA_KU7YHK"
+      ],
+      "causes": [],
+      "none_match": false,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [
+       "N-P_JZCA_KU7YHK"
+      ],
+      "causes": [],
+      "none_match": false,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 0.6666666666666666
+   },
+   {
+    "episode": "Bhzd6cM-oFU",
+    "title": "How to Hit Crazy Slice Like Carlos Alcaraz",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How do you hit heavy crazy slice on an overhead or serve like Carlos Alcaraz?"
+    ],
+    "gold_causes": 9,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.162,
+     0.265,
+     0.118,
+     0.191,
+     0.236,
+     0.203,
+     0.127,
+     0.18,
+     0.196
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "Cwc4YcKFZrU",
+    "title": "",
+    "gold_source": null,
+    "excluded": "no gold (no transcript)"
+   },
+   {
+    "episode": "EkzzGZkqCgc",
+    "title": "Why Your Racket Doesn't Flip",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why Doesn't Your Tennis Racket Flip Effortlessly on the Forehand?"
+    ],
+    "gold_causes": 7,
+    "key_problem": [
+     "N-P_WZLMV4ASG9S"
+    ],
+    "key_cause_items_covered": 2,
+    "lex_best_cos": [
+     0.298,
+     0.187,
+     0.288,
+     0.385,
+     0.213,
+     0.135,
+     0.162
+    ],
+    "runs": [
+     {
+      "problems": [
+       "N-P_WZLMV4ASG9S"
+      ],
+      "causes": [
+       "N-C_WZLMV4ASG9S_C01"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": true,
+      "p_hit1": true,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.2857142857142857
+     },
+     {
+      "problems": [
+       "N-P_WZLMV4ASG9S"
+      ],
+      "causes": [
+       "N-C_WZLMV4ASG9S_C01"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": true,
+      "p_hit1": true,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.2857142857142857
+     },
+     {
+      "problems": [
+       "N-P_WZLMV4ASG9S"
+      ],
+      "causes": [
+       "N-C_WZLMV4ASG9S_C01"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": true,
+      "p_hit1": true,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.2857142857142857
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": true,
+    "cause_covered": true,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "Fu6DkHvZlGY",
+    "title": "The Pure-Dextral Pinpoint | Serve Like Jakob Mensik",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why and how should right-handed, right-eye dominant players use the pure-dextral pinpoint serve stance?"
+    ],
+    "gold_causes": 7,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.194,
+     0.296,
+     0.225,
+     0.196,
+     0.197,
+     0.232,
+     0.135
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "MWjBfarwNlA",
+    "title": "Alcaraz's Secret Weapon | Backhand Line RALLY Ball",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How does Alcaraz break out of an unfavorable backhand-to-backhand rally pattern?"
+    ],
+    "gold_causes": 2,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.138,
+     0.159
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "XjJHA91HDbU",
+    "title": "Don't Swing AT the Ball on the Overhead",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why should you not swing directly at the ball or target on an overhead?"
+    ],
+    "gold_causes": 6,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.188,
+     0.196,
+     0.135,
+     0.222,
+     0.171,
+     0.21
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "agtIR3PuNsw",
+    "title": "Why Alfie Hewett Hits Harder Than You",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why does wheelchair tennis star Alfie Hewett hit harder than amateur players?"
+    ],
+    "gold_causes": 6,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.158,
+     0.204,
+     0.135,
+     0.136,
+     0.156,
+     0.141
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "emZxTmSVSa8",
+    "title": "Master Pronation in 2 Minutes at Home",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How can you master serve pronation at home in two minutes?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.159,
+     0.137,
+     0.285,
+     0.154,
+     0.162,
+     0.207,
+     0.165,
+     0.167
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "gehRK0Y6AdQ",
+    "title": "The Pros \"Brush\" Differently From You",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "How do pro tennis players brush the ball differently to produce heavy topspin with penetration?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 2,
+    "lex_best_cos": [
+     0.236,
+     0.37,
+     0.134,
+     0.278,
+     0.244,
+     0.19,
+     0.15,
+     0.261
+    ],
+    "runs": [
+     {
+      "problems": [
+       "N-P_FXDMVI3EFNE"
+      ],
+      "causes": [
+       "N-C_FXDMVI3EFNE_C02",
+       "N-C_FXDMVI3EFNE_C01",
+       "N-C_FXDMVI3EFNE_C03"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.25
+     },
+     {
+      "problems": [
+       "N-P_FXDMVI3EFNE"
+      ],
+      "causes": [
+       "N-C_FXDMVI3EFNE_C02",
+       "N-C_FXDMVI3EFNE_C01",
+       "N-C_FXDMVI3EFNE_C03"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.25
+     },
+     {
+      "problems": [
+       "N-P_FXDMVI3EFNE"
+      ],
+      "causes": [
+       "N-C_FXDMVI3EFNE_C02",
+       "N-C_FXDMVI3EFNE_C01",
+       "N-C_FXDMVI3EFNE_C03"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": true,
+      "c_hit3_exp": true,
+      "c_hit1": true,
+      "gold_cause_recall": 0.25
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": true,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "hqganBxzQNM",
+    "title": "Why I Give Every Student a Weight to Swing (and why it works)",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why should players swing a weight, and how does it unlock forehand power?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 5,
+    "lex_best_cos": [
+     0.257,
+     0.297,
+     0.129,
+     0.171,
+     0.236,
+     0.161,
+     0.133,
+     0.198
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": true,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "mOFtt9PllI0",
+    "title": "The Geometry of Measured Aggression",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why do players fail to execute measured aggression and spray errors when trying to attack?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.17,
+     0.148,
+     0.141,
+     0.079,
+     0.096,
+     0.194,
+     0.151,
+     0.104
+    ],
+    "runs": [
+     {
+      "problems": [
+       "N-P_8R09TLIP_AK"
+      ],
+      "causes": [
+       "N-C_8R09TLIP_AK_C03",
+       "N-C_8R09TLIP_AK_C02",
+       "N-C_8R09TLIP_AK_C04"
+      ],
+      "none_match": false,
+      "high": true,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 0.6666666666666666
+   },
+   {
+    "episode": "q6LrQYDvxmY",
+    "title": "Why Pros Hit So Far Away",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why do advanced players hit the forehand so far away from their body?"
+    ],
+    "gold_causes": 8,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.145,
+     0.288,
+     0.322,
+     0.175,
+     0.193,
+     0.227,
+     0.261,
+     0.217
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   },
+   {
+    "episode": "ui-RFRdQKRk",
+    "title": "The Pros \"Rotate\" Differently Than You",
+    "gold_source": "stage1_raw_2runs",
+    "excluded": null,
+    "is_teaching": "teaching",
+    "gold_problem": [
+     "Why do amateur players rotate differently and generate less effortless power than pros?"
+    ],
+    "gold_causes": 6,
+    "key_problem": [],
+    "key_cause_items_covered": 0,
+    "lex_best_cos": [
+     0.194,
+     0.228,
+     0.258,
+     0.223,
+     0.151,
+     0.189
+    ],
+    "runs": [
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     },
+     {
+      "problems": [],
+      "causes": [],
+      "none_match": true,
+      "high": false,
+      "p_hit3": false,
+      "p_hit1": false,
+      "c_hit3_strict": false,
+      "c_hit3_exp": false,
+      "c_hit1": false,
+      "gold_cause_recall": 0.0
+     }
+    ],
+    "valid_runs": 3,
+    "problem_covered": false,
+    "cause_covered": false,
+    "negative": false,
+    "top1_problem_stable": 1.0
+   }
+  ]
+ },
+ "gemini_usage": {
+  "model": "gemini-3.8-flash",
+  "base": "micuapi.ai",
+  "total_text_replay_incl_gold": {
+   "promptTokenCount": 895812,
+   "candidatesTokenCount": 147874,
+   "totalTokenCount": 1392067,
+   "thoughtsTokenCount": 348381,
+   "calls": 107
+  },
+  "gold_stage_first_pass": {
+   "promptTokenCount": 309266,
+   "candidatesTokenCount": 143323,
+   "totalTokenCount": 627629,
+   "thoughtsTokenCount": 175040,
+   "calls": 35
+  },
+  "retrieve_calls": 54,
+  "judge_calls": 18,
+  "tree_build_calls": 0,
+  "note": "build_tree.py / verify_all.py make no model calls"
+ },
+ "no_secrets": true
+}

@@ -280,3 +280,4 @@ manifest 里所有视频都是 `merged`、`non_teaching` 或 `blocked`（有理�
 ## 10. 变更记录
 
 - 2026-10-18 v2：新建。初始阈值见 `pipeline/config.json`；脚本未运行（待第 0 步）。
+- 2026-10-18 tree_v1：新增 `pipeline/build_tree.py`、`textsim.py`、`blind_replay_text.py`、`compose_tree_report.py`；`tree.schema.json` 增加**可选**字段（symptoms / solutions / angles / video_layer / quote_sources / build、node.layer）；`check_tree.py` 增加 T13（只加严，不放宽）+ 3 个变异样例（自检 33 个）。`config.json` 阈值未改。

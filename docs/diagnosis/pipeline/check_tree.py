@@ -132,6 +132,35 @@ def check(tree, ep_dir, where="tree"):
             cited = any(r.startswith(ep + ":") for r in nodes[nid]["evidence"])
             if not cited:
                 F("T12", f"{ep} maps to {nid} but the node does not cite it", "WARN")
+    # T13 optional skeleton layers (symptoms / solutions / angles / quote_sources): refs resolve to verified,
+    # non-holdout cards; node links exist; every cited ref has a verbatim quote_sources entry that matches the card.
+    all_refs = set()
+    for kind in ("symptoms", "solutions", "angles"):
+        for it in tree.get(kind, []):
+            ctx = f"{kind[:-1]} {it['id']}"
+            for r in it["evidence"]:
+                resolve(r, ctx)
+                all_refs.add(r)
+            for nid in [it["problem"]] + it.get("caused_by", []) + it.get("targets_causes", []):
+                if nid not in nodes:
+                    F("T13", f"{ctx} links unknown node {nid}")
+    for n in tree["nodes"]:
+        all_refs |= {r for r in n["evidence"] if not r.startswith("BOOK:")}
+    for e in tree["edges"]:
+        all_refs |= {r for r in e["evidence"] if not r.startswith("BOOK:")}
+    if "quote_sources" in tree or any(tree.get(k) for k in ("symptoms", "solutions", "angles")):
+        qsrc = tree.get("quote_sources", {})
+        for r in sorted(all_refs):
+            if not r.split(":")[1].startswith("Q"):
+                continue
+            ep, q = r.split(":")
+            card = cards.get(ep)
+            cq = next((x for x in card["quotes"] if x["id"] == q), None) if card else None
+            src = qsrc.get(r)
+            if not src:
+                F("T13", f"{r} cited but has no quote_sources entry")
+            elif cq and (src.get("text") != cq["text"] or src.get("start") != cq["start"] or src.get("video_id") != ep):
+                F("T13", f"{r} quote_sources entry differs from the card quote (text/start/video)")
     return out
 
 

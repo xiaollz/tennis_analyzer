@@ -1,0 +1,115 @@
+{
+ "builder": "build_tree_v1",
+ "merge_cosine": 0.4,
+ "episodes_used": [
+  "2Nn9tyMECZU",
+  "5-Ia7c4XzfU",
+  "8r09TliP-Ak",
+  "FOmz8Wjv3DQ",
+  "FxDmVi3EFnE",
+  "JzcA_ku7Yhk",
+  "NEpD7fIM7HI",
+  "PUN6qIIYU-4",
+  "Psidjei5BnI",
+  "Qszz0N4fRb4",
+  "UB6SbA_KX9E",
+  "V-QkILd4V-w",
+  "XXlndjnrA4E",
+  "aPcKJDadzek",
+  "dDYKuNZtdyU",
+  "lwS7Xxqrrdw",
+  "pQ793MBQE50",
+  "tzgAWr3QGv0",
+  "uJpuDUx0jIA",
+  "wFIrPMutzRo",
+  "wzLMv4ASg9s",
+  "xLs469ZVMPU"
+ ],
+ "skipped": [
+  {
+   "episode": "0m3BMfDDShI",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "Am8j1Zw5KrE",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "E_zmENJIj4g",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "ExkBtFRhUWY",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "FjjvhNbk3q4",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "JIMgI3jiVns",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "KU7FHy1qQOI",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "w1FakobNq1Q",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "wd4YRQW3TOc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  }
+ ],
+ "counts": {
+  "problem_nodes": 22,
+  "cause_nodes": 97,
+  "cause_items_before_merge": 99,
+  "symptoms": 83,
+  "solutions": 97,
+  "angles": 114,
+  "edges": 103
+ },
+ "merged_clusters": [
+  {
+   "node": "N-C_APCKJDADZEK_C03",
+   "members": [
+    "aPcKJDadzek:C03",
+    "uJpuDUx0jIA:C03"
+   ],
+   "cosines": [
+    0.415
+   ],
+   "statements": [
+    "The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch.",
+    "Loading weight onto the inside heel / over-pronated flat foot rather than loading the arch and ball of the foot."
+   ]
+  },
+  {
+   "node": "N-C_DDYKUNZTDYU_C01",
+   "members": [
+    "dDYKuNZtdyU:C01",
+    "pQ793MBQE50:C05"
+   ],
+   "cosines": [
+    0.457
+   ],
+   "statements": [
+    "Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together.",
+    "Failing to drive the racket forward using upper back scapular retraction (rhomboids and traps pulling shoulder blades together)."
+   ]
+  }
+ ],
+ "dropped_edges": []
+}
