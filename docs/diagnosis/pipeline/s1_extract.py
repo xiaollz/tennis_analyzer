@@ -2,11 +2,11 @@
 """Stage-1 (subtitle layer) extraction runner + deterministic normalizer.  stdlib only.
 
 usage:
-  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt = S1_PROMPT env, default ep_s1_v5), save raw run card + log
+  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt = S1_PROMPT env, default ep_s1_v6), save raw run card + log
   s1_extract.py final <VIDEO_ID>           # pick passing run pair via check_rerun, write final card
   s1_extract.py consensus <VIDEO_ID>       # only when 3 runs exist and no raw pair passes: 3-run majority adjudication
 Key comes ONLY from env MICU_GEMINI_KEY (never written/printed). Rendered prompts and raw
-model responses go to /workspace/s1_work/<S1_WORK, default round5> (outside the repo; transcripts are not committed).
+model responses go to /workspace/s1_work/<S1_WORK, default round6> (outside the repo; transcripts are not committed).
 
 Normalization is deterministic and never rewrites content: it maps field aliases, pads ids,
 snaps quotes to the verbatim subtitle excerpt, drops items without surviving evidence, and
@@ -25,10 +25,10 @@ from common import CONFIG, ban_hits, load_json, load_transcript, locate_quote, s
 ROOT = HERE.parent.parent.parent
 SUBS = Path("/workspace/ftt_subs")
 EP = ROOT / "docs/diagnosis/episodes"
-WORK = Path("/workspace/s1_work") / os.environ.get("S1_WORK", "round5")
+WORK = Path("/workspace/s1_work") / os.environ.get("S1_WORK", "round6")
 MODEL = "gemini-3.8-flash"
 BASE = "https://www.micuapi.ai"
-PROMPT_VERSION = os.environ.get("S1_PROMPT", "ep_s1_v5")
+PROMPT_VERSION = os.environ.get("S1_PROMPT", "ep_s1_v6")
 TEMPS = {1: 0.25, 2: 0.45, 3: 0.35}
 BANS = ("推肘", "降拍", "旋后", "伸肘")
 
@@ -173,7 +173,7 @@ def split_ids(ev_list, ev, ctx):
 def snap_quote(text, start, segs, ev, qid):
     """Return (text, start) that check_quotes will accept, or None."""
     need, tol, maxw = CONFIG["quote_match_min"]["auto"], CONFIG["timestamp_tolerance_s"], CONFIG["quote_max_words"]
-    words = len(re.findall(r"\S+", text))
+    words = max(len(re.findall(r"\S+", text)), len(tokens(text)))  # round6: validate_cards R05 counts tokens() (hyphen/em-dash split), not whitespace words
     score, t = locate_quote(text, segs, around=start, search_window=CONFIG["quote_search_window_s"])
     if score >= need and t is not None and abs(t - start) <= tol and words <= maxw and len(text) <= 320:
         return text, start
@@ -194,6 +194,8 @@ def snap_quote(text, start, segs, ev, qid):
             break
     snapped = " ".join(" ".join(pieces).split()[:maxw])
     while len(snapped) > 320:
+        snapped = snapped.rsplit(" ", 1)[0]
+    while len(tokens(snapped)) > maxw and " " in snapped:  # round6: keep a verbatim prefix that also satisfies R05's token count
         snapped = snapped.rsplit(" ", 1)[0]
     s_score, s_t = locate_quote(snapped, segs, around=segs[idx][0], search_window=CONFIG["quote_search_window_s"])
     if len(tokens(snapped)) < 3 or s_score < need or abs(s_t - segs[idx][0]) > tol:

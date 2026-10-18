@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round5",
+  "round": "round6",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -344,9 +344,11 @@
       "id": "lwS7Xxqrrdw",
       "title": "The Simple Foundation of the 2-Handed Backhand",
       "duration_s": 781.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs; causes 0.80 / solutions 0.83); 4 causes / 6 solutions",
+      "round": "round6"
     },
     {
       "id": "lbdQpIHvXYA",
@@ -362,7 +364,9 @@
       "duration_s": 890.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (solutions Jaccard 0.33-0.45; causes 0.33-0.60); kept stage1_draft, must not enter the tree",
+      "round": "round6"
     },
     {
       "id": "KU7FHy1qQOI",
@@ -370,7 +374,9 @@
       "duration_s": 1088.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (causes Jaccard 0.33-0.40 on every pair); kept stage1_draft, must not enter the tree",
+      "round": "round6"
     },
     {
       "id": "FBJnFBtZozE",
@@ -392,9 +398,11 @@
       "id": "tzgAWr3QGv0",
       "title": "7 Steps for a Sinner-Like Forehand | #5: Tilt!",
       "duration_s": 1132.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6 verified via raw pair 2-3 (3 runs; causes 0.80 / solutions 0.71); 4 causes / 5 solutions",
+      "round": "round6"
     },
     {
       "id": "FjjvhNbk3q4",
@@ -402,7 +410,9 @@
       "duration_s": 1262.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (solutions Jaccard <0.5 on 1-2; run3 causes 0.29); kept stage1_draft, must not enter the tree",
+      "round": "round6"
     },
     {
       "id": "97vo-kFis6c",
@@ -424,9 +434,11 @@
       "id": "XXlndjnrA4E",
       "title": "Peripheral Vision Lets You Volley Like the Pros",
       "duration_s": 499.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "note": "ep_s1_v6 verified via raw pair 1-3 (3 runs; causes 1.00 / solutions 0.60); 3 causes / 4 solutions",
+      "round": "round6"
     },
     {
       "id": "hNVbbPEob3g",
@@ -926,6 +938,47 @@
       ],
       "stage1_draft_rerun_fail": [
         "w1FakobNq1Q"
+      ]
+    },
+    "low_confidence_verified": []
+  },
+  "round6_selection": {
+    "rule": "manifest.tsv type_guess=教学长视频 + .en.vtt present + no card in episodes/ before round6 + holdout=False + duration>=400s (round3-5 drafts wd4YRQW3TOc, E_zmENJIj4g, w1FakobNq1Q already have cards, excluded). Priority 1 = technique: title does NOT match the tactics/psychology/match-commentary keyword list (case-insensitive whole-word regex on title: \\b(match(es)?|strategy|tactic\\w*|psycholog\\w*|choke\\w*|loose|patient|ruthless|mental|tiebreak\\w*|beatdowns?|win|winnable|mindset|pressure|broke down)\\b); those titles are sorted after all technique titles. Within each priority group upload_date ascending (old to new). Selected = first 6 in that order. Deterministic, title/metadata only; no content judgement.",
+    "tactics_psychology_deprioritized_ids_ge400s": [
+      "PjvOQkqH9DA",
+      "FBJnFBtZozE",
+      "Vg8lbXOhM3E",
+      "omsLx7F2Wdc"
+    ],
+    "candidates_after_filters": {
+      "type_guess_teaching_long_no_card_non_holdout": 41,
+      "duration_ge_400s": 28
+    },
+    "ids": [
+      "XXlndjnrA4E",
+      "FjjvhNbk3q4",
+      "tzgAWr3QGv0",
+      "KU7FHy1qQOI",
+      "0m3BMfDDShI",
+      "lwS7Xxqrrdw"
+    ],
+    "prompt_version": "ep_s1_v6",
+    "reextract_with_v6": [],
+    "skipped_drafts": [
+      "wd4YRQW3TOc",
+      "E_zmENJIj4g",
+      "w1FakobNq1Q"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "XXlndjnrA4E",
+        "tzgAWr3QGv0",
+        "lwS7Xxqrrdw"
+      ],
+      "stage1_draft_rerun_fail": [
+        "FjjvhNbk3q4",
+        "KU7FHy1qQOI",
+        "0m3BMfDDShI"
       ]
     },
     "low_confidence_verified": []

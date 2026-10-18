@@ -1,0 +1,498 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "0m3BMfDDShI",
+    "url": "https://www.youtube.com/watch?v=0m3BMfDDShI",
+    "title": "Build This Foundation - The Rest Will Follow",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 890.0,
+    "upload_date": "2025-07-25",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides actionable drills and cues, such as using a weight to feel posterior muscle engagement, the table visualization cue, and a rapid net feeding drill under time pressure."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/0m3BMfDDShI.en.vtt",
+    "kind": "auto",
+    "sha256": "2ceb1bbe191861d564a50f6e81fe87a5591fc0763d3d1821f500b4e3f6b327f9",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_0m3BMf",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you build the simplest possible effective forehand foundation?",
+    "definition": "Developing a compact, highly fault-tolerant forehand foundation by stabilizing the racket with posterior shoulder muscles, maintaining elbow space, and moving the upper body as a synchronized unit.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic forehand preparation and unit turn ability"
+    ],
+    "target_player": "Players struggling with inconsistent racket trajectory, timing breakdown, or lack of control under pressure",
+    "evidence": [
+      "Q01",
+      "Q05"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "So this elbow space is very critical for making the simplest effective forehand work.",
+      "start": 44.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, one thing I want you to notice is that this elbow space gets mostly maintained throughout the simple swing.",
+      "start": 53.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And the reason is that these muscles back here. So, the lats, the upper part of the shoulder, everything behind the arm, they hold the racket up and connect it to the body.",
+      "start": 60.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And what I want you to do is just totally relax everything back here as you come through contact.",
+      "start": 74.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the swing is still doable, but all of the sudden the fault tolerance and the control is greatly reduced.",
+      "start": 85.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "So, one of the things we like to do is use like a two and a half pound weight instead.",
+      "start": 138.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "she's going to be able to feel the fact that those muscles have to engage to hold the arm up.",
+      "start": 153.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "One of them is you place your hand out and just pull the racket forward.",
+      "start": 173.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "For a lot of you, I see this kind of elbow dropping way in even on these higher balls, and it makes the whole swing a lot more difficult to control.",
+      "start": 247.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "try to imagine a table here and hold your arm up and send the racket along the table.",
+      "start": 266.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "practicing more like chest height is going to help you find that feeling.",
+      "start": 286.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "what we forget is that there is also a unit swing where everything comes back forward together.",
+      "start": 307.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Now you see the difference the the lack of synchronization between the left and the right side of her body and her trunk.",
+      "start": 337.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And so all of a sudden when we just think about the entire upper body as one piece, we can get very very simple.",
+      "start": 366.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Number one, the shoulder slant here. So, now the hitting shoulder is below the non-hitting shoulder.",
+      "start": 506.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "A lot of you guys might end up in a swing that looks like this, which kind of destroys the fall tolerance, destroys the timing, destroys the rhythm.",
+      "start": 550.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So this these muscles holding the racket up, stabilizing the racket, they're not going to totally relax.",
+      "start": 605.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And you see how see how wristy this is? How the racket kind of like it whips around early. It's difficult to control there, right?",
+      "start": 623.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "if I didn't hold the racket up while I come forward... the racket is still stabilized and the trunk is still moving roughly as a unit.",
+      "start": 705.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "It's very hard to control the racket angle because you just have no control over how it's coming through space.",
+      "start": 731.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "when you're rallying mini tennis, the way you want to think of the drill is that it's exactly the same as your forehand, but it is the simplest possible version of your forehand.",
+      "start": 741.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "is because you don't have a great understanding of your simplest forehand, which is the only one that's going to work under time pressure.",
+      "start": 833.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "I'm standing very close to the net, and Alexa is going to feed me balls, but I have to swing. Now, I don't have to take a full swing, but I have to use my top spin stroke.",
+      "start": 840.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "Feel that stabilization in your prep and learn your simplest effective forehand.",
+      "start": 881.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The forward swing becomes wristy, causing the racket head to whip around early and lose spatial control.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Fault tolerance is heavily reduced, leading to shanking and inability to control the racket face angle through contact.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05",
+        "Q20"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The hitting elbow drops drastically into the body and the left and right sides of the upper body lose synchronization.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q09",
+        "Q13"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Relaxing the posterior shoulder and lat muscles during the swing disconnects the arm and racket from trunk stability.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Actively and excessively dropping the elbow and racket head collapses elbow space and ruins timing.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Failing to execute a unit swing creates a desynchronization between the hitting arm, non-hitting side, and trunk.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The lats and upper shoulder muscles behind the arm must maintain engagement to hold the racket up and connect it to trunk rotation.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "Demonstrating that completely relaxing posterior shoulder tension causes uncontrolled early wrist whipping, while maintaining stability restores clean control.",
+      "evidence": [
+        "Q05",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "Visualizing an elevated table surface at chest height to guide the racket forward along the table rather than dropping it down.",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Using shoulder slant with the hitting shoulder below the non-hitting shoulder produces a natural low-to-high path without dropping the elbow.",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Swing with a 2.5-pound weight instead of a racket to heighten tactile awareness of the posterior shoulder muscles holding the arm up.",
+      "external_goal": "Hold and swing the 2.5-pound weight with active posterior shoulder muscles.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Think of placing the hand out into position and pulling the racket forward instead of intentionally taking it backward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Imagine a table at chest height, keep the arm held up, and press the racket forward along the surface without dropping it.",
+      "external_goal": "Keep the swing path pressing forward along an imaginary chest-high table surface.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Think of the entire upper body moving as one single unit: unit turn back together, unit swing forward together.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Rally in mini tennis focusing strictly on your simplest effective stroke with stabilized posterior tension and no wrist flicking.",
+      "external_goal": "Rally consistently in the service boxes using only the simplest effective stroke foundation.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Stand close to the net and execute a compact topspin stroke against rapid feeds to train the simple foundation under severe time pressure.",
+      "external_goal": "Return rapid feeds from a feeder while maintaining the compact topspin stroke structure.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

@@ -1,0 +1,574 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "KU7FHy1qQOI",
+    "url": "https://www.youtube.com/watch?v=KU7FHy1qQOI",
+    "title": "The Physics, Geometry, and Biomechanics of Power Development",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1088.0,
+    "upload_date": "2025-07-18",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "讲者提供了挥舞配重感知击球点空间位置、弹力带抗阻练习、非持拍手拉动躯干转体以及控制转体脉冲等多项明确的可执行练习与动作口令。"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/KU7FHy1qQOI.en.vtt",
+    "kind": "auto",
+    "sha256": "a4b508a1c657bee6c374a5b2184fefb1e071c9fd7ab6165575f26156b834ae08",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_KU7FHy",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should players coordinate physics, court geometry, and biomechanics to maximize groundstroke power?",
+    "definition": "Players often try to generate pace by violently rotating their bodies, but lose power and control due to off-center stringbed impact, poor court geometry, and uncoiled body preparation.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic topspin groundstroke mechanics"
+    ],
+    "target_player": "Intermediate to advanced players looking to generate effortless pace and take time away from opponents",
+    "evidence": [
+      "Q01",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "hitting the ball in the center of the string bed. So you know, as you coordinate your kinetic chain better and better, you might get 10 20 30 40% more power.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "there's a way you can get 20% 30% 40% more power overnight and it's hitting the ball here instead of here.",
+      "start": 28.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "on my racket, the energy return looks to be about half. So, this is going to vary with your strings.",
+      "start": 53.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "generally speaking, the energy return of here compared to here is going to be around 50% less, maybe 30%, maybe 70% with some setups... but you're always going to hit much, much slower",
+      "start": 63.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And then if you hit here instead of here, you've just undone everything that you just did and you probably hit the ball at the same speed",
+      "start": 93.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "because if you don't hit the ball at the center, you pay around a 50% power tax right off the bat.",
+      "start": 116.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "The most important parts of your body for hitting hard are your eyes and your feet. And then in order to use them effectively, you need to know where your swing ends up in space.",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Now, a tool I really like for this is the weight. For me and for a lot of the the players that I've worked with, when you use something heavier than the racket, it really lets you feel",
+      "start": 155.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "like this height, this distance, I just feel so much strength through here. And I can feel, oh, out there is not as good. In there is not as good.",
+      "start": 181.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "I had a visual memory, a movie that plays in my mind. And it it's trained on things like this.",
+      "start": 241.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Now, the key here is intent. As the ball comes in, you must have intent for what you want to do.",
+      "start": 295.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "huh, I felt really jammed and restricted there. That's a sensation that I now you kind of map to that visual experience",
+      "start": 323.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "without intent, it doesn't happen. So, a lot of times I see this where it's like all I really kind of did there was vaguely watch the ball and then just kind of vaguely try to hit it",
+      "start": 336.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "We call this probing. And probing is the act of setting up the shot that you want using your feet and your eyes.",
+      "start": 386.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Now, do a couple where your feet get stuck where you're not really paying attention. You don't really split step and all of a sudden a slow ball like this, you can't hit it hard.",
+      "start": 415.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Now the second thing about this is ball height. It is much more difficult to pick the ball up at your knees than not.",
+      "start": 440.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Now, don't attack the ball. Just wait for it. And you're going to see these shots all of a sudden, these same exact feeds.",
+      "start": 476.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "All you have to do on this feed is just sprint up to it. And all of a sudden, the degree of difficulty goes way down.",
+      "start": 492.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "And now it's like I have plenty of time to get over there because her ball has to travel so much more distance.",
+      "start": 556.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "One of the most important ways is leaning through the court, positive balance, getting your weight through the court, which recruits all the strong musculature in your legs into your shot.",
+      "start": 652.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "what Alexa's got rigged up to her here, it's an elastic band attached to the back fence here. So, what this is going to do is any motion she does, whether it's twisting, whether it's driving forward",
+      "start": 664.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Now, the hip line here is going to be where you're going to get the best kinesthetic feedback... when you put it like kind of sit it on the crease of your hips right here",
+      "start": 679.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "the problem is if you don't turn sideways to prepare, but then you rotate forward through your shot, you just over rotate. You either hit it wide or you shank it.",
+      "start": 802.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "Feel that left arm pull the trunk against the hips if you want to twist into your swing.",
+      "start": 883.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "trunks angular velocity coordinates very very tightly to the racket's angular velocity. In other words, the faster you can twist, the faster you can swing",
+      "start": 942.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "to find efficiency so that that five six out of 10 effort level where you still have kind of full awareness of where all your limbs are ending up works.",
+      "start": 1023.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q27",
+      "text": "If you want to dial your shots up and down, rotate more or less hard. One more time. Again, same exact fundamentals, but I just don't really rotate versus a quick a rotational pulse.",
+      "start": 1072.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Ball comes off the string bed with unexpectedly low pace despite full muscular effort.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player feels jammed, restricted, and unable to swing freely through contact.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Ball sprays wide or shanks when attempting to attack shorter balls.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q23"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Opponent has ample time to react and retrieve deep shots that were struck from low knee height.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "B",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Missing the center of the string bed reduces energy return by roughly 50%, completely negating kinetic chain energy.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Approaching the ball without specific kinesthetic intent and probing footwork causes players to get jammed outside their optimal strike zone.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Waiting back and letting the ball drop to knee level increases execution difficulty and gives opponents significantly more time to react.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Attempting to rotate aggressively into the stroke without coiling the upper body sideways first leads directly to over-rotation and shanks.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q23"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "Players wrongly prioritize bodily rotation when sweet-spot contact and court geometry actually dictate the vast majority of pace and effectiveness.",
+      "evidence": [
+        "Q01",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Swinging a 2.5 lb weight provides clear kinesthetic feedback on the exact spatial height and distance where the body feels effortless strength.",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "Holding a brief kinesthetic and visual mental movie of the desired shot allows the subconscious brain to immediately detect and correct errors.",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "Comparing sprinting forward to take feeds high versus waiting back for low knee-level balls highlights how geometry alters difficulty and opponent reaction time.",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Trunk angular velocity coordinates tightly with racket angular velocity, allowing rapid acceleration in a very small window of distance and time.",
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C01"
+      ],
+      "summary": "Swing a 2.5 lb weight through shadow strokes while looking forward to explore and locate the effortless contact zone in space.",
+      "external_goal": "Swing the 2.5 lb weight forward smoothly through the air while looking ahead.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Sprint forward aggressively to strike short balls at net tape height rather than waiting for them to fall to your knees.",
+      "external_goal": "Intercept the ball at the highest possible point near net tape level.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Perform drop feeds while tethered to an elastic band at the hip crease to feel resisted forward momentum and leg recruitment, then release the band.",
+      "external_goal": "Drive hips and body weight forward against the band resistance toward the net.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Feel the non-dominant arm pull the trunk sideways against the hips to coil preparation before initiating the forward twist.",
+      "external_goal": "Point the non-dominant arm across the body to wind the upper trunk sideways.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q24"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Modulate groundstroke pace with a quick, simple trunk rotational pulse at a controlled 5–6 out of 10 effort rather than over-swinging.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q27"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
