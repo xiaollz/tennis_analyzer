@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round2",
+  "round": "round3",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -584,7 +584,7 @@
       "id": "wFIrPMutzRo",
       "title": "2 Secrets to Rotational Power | Side Bending + The Abdominal X",
       "duration_s": 765.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
       "holdout": false
     },
@@ -592,7 +592,7 @@
       "id": "NEpD7fIM7HI",
       "title": "Learning from Federer's Slice | 4 Tips + 3 Drills",
       "duration_s": 1051.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
       "holdout": false
     },
@@ -616,7 +616,7 @@
       "id": "V-QkILd4V-w",
       "title": "8 Visual Return Strategies Tested by a WTA Pro",
       "duration_s": 1021.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
       "holdout": false
     },
@@ -754,7 +754,7 @@
       "id": "ExkBtFRhUWY",
       "title": "The Magic of Single-Foot Forehand Training",
       "duration_s": 497.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
       "holdout": false,
       "round": "round2",
@@ -773,7 +773,7 @@
       "id": "Am8j1Zw5KrE",
       "title": "Shoulder Adduction Unlocks the Tennis Forehand",
       "duration_s": 556.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
       "holdout": true,
       "round": "round2",
@@ -798,5 +798,33 @@
       "dDYKuNZtdyU"
     ],
     "prompt_version": "ep_s1_v2"
+  },
+  "round3_selection": {
+    "rule": "manifest.tsv type_guess=教学长视频 + .en.vtt present + no card in episodes/ before round3; upload_date ascending; exclude duration<300s; prefer >=400s (skipped in favour of the next >=400s videos: 5KdScDKxVSI 357s, QXAtdSEUkfY/wVa4XQPcaqs/XjJHA91HDbU/YbLit9png2U <300s, GsHkML2mVEI 350s)",
+    "ids": [
+      "xLs469ZVMPU",
+      "V-QkILd4V-w",
+      "wd4YRQW3TOc",
+      "NEpD7fIM7HI",
+      "wFIrPMutzRo"
+    ],
+    "prompt_version": "ep_s1_v3",
+    "reextract_with_v3": [
+      "Am8j1Zw5KrE",
+      "ExkBtFRhUWY"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "Am8j1Zw5KrE",
+        "ExkBtFRhUWY",
+        "V-QkILd4V-w",
+        "NEpD7fIM7HI",
+        "wFIrPMutzRo"
+      ],
+      "stage1_draft_rerun_fail": [
+        "xLs469ZVMPU",
+        "wd4YRQW3TOc"
+      ]
+    }
   }
 }

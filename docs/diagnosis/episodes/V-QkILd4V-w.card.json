@@ -1,0 +1,541 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "V-QkILd4V-w",
+    "url": "https://www.youtube.com/watch?v=V-QkILd4V-w",
+    "title": "8 Visual Return Strategies Tested by a WTA Pro",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1021.0,
+    "upload_date": "2025-01-21",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "other",
+    "format": "demo_with_player",
+    "reason": "The coach and a WTA professional player systematically test eight visual tracking strategies on the serve return to determine which strategy best supports split step timing and clean contact."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/V-QkILd4V-w.en.vtt",
+    "kind": "auto",
+    "sha256": "9ee66c481052784955750dbde7bde8e27cb4ff665258fd7c8ce569a170638cf4",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v3",
+    "stage1_run_ids": [
+      "s1_r1_V-QkIL",
+      "s1_r2_V-QkIL",
+      "s1_r3_V-QkIL"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Which visual tracking strategy allows a player to see the serve best and time the return effectively?",
+    "definition": "Returners often struggle with late reaction, stuck feet, mistimed split steps, and off-center hits because they fail to pick up early visual information from the server's toss and contact.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic serve return technique",
+      "Understanding of split step timing"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "today we are going to test eight different visual serve return strategies to try to figure out which one is the best which one lets you see the ball the best have confidence on the return",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "in the Box it's extremely critical to see the ball hit the ground and to be observing it during that bounce during that change of Direction I've written a full article about that but early",
+      "start": 53.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "we are actually returning with our eyes closed and we're listening for when the opponent contacts the toss and that's when we can open our eyes",
+      "start": 108.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "a lot of this slow First Step can't get your weight through the ball can't hit the center of the Racket and it might be balance or something like that but often those issues are visual",
+      "start": 163.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "and you have to make sure your student really is seeing the ball early before coaching them on things like footwork patterns or things like balance transfer",
+      "start": 173.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "was much more difficult okay um I felt like I just didn't have time to react to get to the ball and your feet were getting stuck feet were getting stuck I had a real problem cuz normally I use",
+      "start": 203.04,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "and you time it visually I didn't know when to split step yeah yeah which really threw me off",
+      "start": 216.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "which means that so much of that explosive movement is related to your tracking through this part of the serve",
+      "start": 240.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "I'm late on everything I'm late on the takeback I'm late on the split step I'm just late to react in general which I can imagine is how some players",
+      "start": 268.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "and when you don't see the moment of contact it becomes very difficult to actually sync up your split step and your return Rhythm",
+      "start": 318.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "and when that's out of sync you just don't get that early first step and so it becomes similar to the other ones where if the ball right at you it's maybe fine",
+      "start": 324.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "I feel like it was almost more work for my eyes to keep moving them to different spots inste just following track",
+      "start": 374.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "because the ball is moving up and down it's much more natural to find your opponent's contact using the toss as a reference rather than just trying to guess it",
+      "start": 433.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "human eyes are drawn to movement so if you just kind of vaguely hold your gaze in the area where contact's going to happen your eyes will naturally jump to the contact and see it",
+      "start": 476.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "this soft gaze is totally fine as long as you're looking in the general area typically your eyes will be drawn to that motion of the toss and your eyes will end up in that right spot",
+      "start": 500.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "because I like to time my my rhythm and my split step with the server motion the speed of their motion so when I can watch them then I can then time my whole right split step with theirs",
+      "start": 580.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "it was hard to time the exact split step because you don't like totally know when the contact's coming whereas when your eyes are up here you really know when the contact's coming so you can work your feet in",
+      "start": 602.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "they swing yes I think it was just too hard to you pick up the ball too late and then your reaction is too late plus if your point isn't exactly right it's not you're not even you're not even",
+      "start": 641.24,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "that's really the conclusion for this video is that watching the toss and the soft gaze which really manifest as watching the toss are really the best strategies for picking up the serve early in your return process",
+      "start": 745.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "the racket's going too fast it's moving too fast through contact to even be able to see the racket just see the contact to see the face",
+      "start": 768.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "and even though I was trying to watch the elbow or watch the hand yeah they would drift back to the toss I had to almost force them to stay on that other fixed Point",
+      "start": 810.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "because it's such a habit for me to watch the toss and that's what my eyes naturally want to do right to time my whole return to serve",
+      "start": 820.0,
+      "speaker": "player",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "that pretty much sums it up as far as visual strategies go watch the toss your return is going to be better",
+      "start": 909.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "if you can sync up your split step with the contact of the server you're going to be in a lot better position to make good contact right otherwise your timing is not going to be there",
+      "start": 933.0,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "to be there right and and the toss is very predictable up gravity down whereas when you try to follow somebody's motion you know you can look at it with peripheral vision while you watch the toss but when you",
+      "start": 943.319,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "like you need to move before the ball crosses the net in order to return a serve that's not right to you yeah if you can't split step you can't react yeah you have nowhere to push from",
+      "start": 976.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q27",
+      "text": "you're seeing the ball early and if you can't react quickly it could be because you're not seeing the ball early yes your feet there's a very visual component to how you're setting up your your return feet Rhythm",
+      "start": 1004.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The returner's feet get stuck to the court, the split step is late or omitted, and the initial reaction is visibly delayed.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "ready",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The returner cannot transfer weight into the ball and gets aced cleanly on serves directed away from the body.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04",
+        "Q26"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player feels rushed on both the split step and the backswing, lacking sufficient time to react to the incoming serve.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q06",
+        "Q07",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "The returner repeatedly hits off-center or whiffs the ball even on standard serves.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The returner cannot synchronize the timing of their split step and return rhythm with the server's contact.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The returner fails to see the ball early during the initial phase of the serve to accurately detect when contact will occur.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Fixating on the server's racket face or body parts fails because the racket moves too rapidly through contact to provide readable visual cues.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Human serve motions vary significantly between players and speeds, unlike the ball toss which follows a predictable gravitational trajectory.",
+      "depth": 4,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q25"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "contrast_demo",
+      "summary": "The coach and pro player deliberately return serves with eyes closed until hearing contact sound to establish the baseline sensation of having zero early visual information.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Coaches frequently misdiagnose poor return footwork patterns or poor balance transfer when the root cause is actually the player failing to see the ball early.",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Explosive movement and split step timing on the return fundamentally depend on visually capturing the server's contact moment to establish proper rhythm.",
+      "evidence": [
+        "Q08",
+        "Q10",
+        "Q24"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "visual_model",
+      "summary": "Soft focus in the general contact area works effectively because human eyes are naturally drawn to movement and will automatically lock onto the toss.",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "contrast_demo",
+      "summary": "Tracking server body parts or racket face fails because the racket moves too fast and bodily motions vary, whereas the toss follows predictable gravitational physics.",
+      "evidence": [
+        "Q20",
+        "Q25"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Execute returns with eyes closed until hearing the sound of the opponent contacting the toss, opening eyes immediately at contact to calibrate the feel of delayed visual intake.",
+      "external_goal": "open eyes upon hearing the server make contact",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Hold a soft gaze vaguely in the general contact area before the serve so your eyes can naturally jump to the moving toss and track into contact.",
+      "external_goal": "the area where contact is going to happen",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C03",
+        "C04",
+        "PROBLEM"
+      ],
+      "summary": "Watch the opponent's ball toss directly throughout its trajectory to predict contact timing and synchronize your split step.",
+      "external_goal": "the opponent's ball toss",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q23"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "PROBLEM"
+      ],
+      "summary": "Assess whether your feet can react immediately with a wide base out of the split step; if you are stuck or reacting late, check if you are picking up the ball early.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q27"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

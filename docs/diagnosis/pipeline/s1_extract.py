@@ -2,11 +2,11 @@
 """Stage-1 (subtitle layer) extraction runner + deterministic normalizer.  stdlib only.
 
 usage:
-  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt ep_s1_v2), save raw run card + log
+  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt = S1_PROMPT env, default ep_s1_v3), save raw run card + log
   s1_extract.py final <VIDEO_ID>           # pick passing run pair via check_rerun, write final card
   s1_extract.py consensus <VIDEO_ID>       # only when 3 runs exist and no raw pair passes: 3-run majority adjudication
 Key comes ONLY from env MICU_GEMINI_KEY (never written/printed). Rendered prompts and raw
-model responses go to /workspace/s1_work/round2 (outside the repo; transcripts are not committed).
+model responses go to /workspace/s1_work/<S1_WORK, default round3> (outside the repo; transcripts are not committed).
 
 Normalization is deterministic and never rewrites content: it maps field aliases, pads ids,
 snaps quotes to the verbatim subtitle excerpt, drops items without surviving evidence, and
@@ -25,10 +25,10 @@ from common import CONFIG, ban_hits, load_json, load_transcript, locate_quote, s
 ROOT = HERE.parent.parent.parent
 SUBS = Path("/workspace/ftt_subs")
 EP = ROOT / "docs/diagnosis/episodes"
-WORK = Path("/workspace/s1_work/round2")
+WORK = Path("/workspace/s1_work") / os.environ.get("S1_WORK", "round3")
 MODEL = "gemini-3.8-flash"
 BASE = "https://www.micuapi.ai"
-PROMPT_VERSION = "ep_s1_v2"
+PROMPT_VERSION = os.environ.get("S1_PROMPT", "ep_s1_v3")
 TEMPS = {1: 0.25, 2: 0.45, 3: 0.35}
 BANS = ("推肘", "降拍", "旋后", "伸肘")
 
@@ -203,6 +203,31 @@ def snap_quote(text, start, segs, ev, qid):
     return snapped, float(segs[idx][0])
 
 
+def _anchor_stats(anchors, prefix, idmap, evid_by_new, quotes, ev, label):
+    """v3 diagnostics only: does each item's evidence sit in its declared 30 s anchor bucket? Never edits the card."""
+    qs = {q["id"]: q["start"] for q in quotes}
+    anchors = anchors if isinstance(anchors, list) else []
+    if not anchors:
+        ev.add(f"{label}_anchors_missing"); return
+    for a in anchors:
+        if not isinstance(a, dict):
+            continue
+        new = idmap.get(norm_id(a.get("id"), prefix))
+        try:
+            ab = int(float(a.get("anchor_s")) // check_rerun.BUCKET)
+        except (TypeError, ValueError):
+            ev.add(f"{label}_anchor_bad", str(a)); continue
+        if new is None or new not in evid_by_new:
+            continue
+        bks = {int(qs[e] // check_rerun.BUCKET) for e in evid_by_new[new] if e in qs}
+        if bks == {ab}:
+            ev.add(f"{label}_anchor_exact")
+        elif ab in bks:
+            ev.add(f"{label}_anchor_evidence_spills", f"{new} anchor_bucket={ab} evidence_buckets={sorted(bks)}")
+        else:
+            ev.add(f"{label}_anchor_miss", f"{new} anchor_bucket={ab} evidence_buckets={sorted(bks)}")
+
+
 def normalize_card(raw, vid, run_ids, ev):
     raw = raw if isinstance(raw, dict) else {}
     meta = meta_for(vid)
@@ -335,6 +360,7 @@ def normalize_card(raw, vid, run_ids, ev):
                        "depth": depth, "layer": layer, "node_id": "PENDING", "active_or_passive": aop, "evidence": evid})
     depth_of = {c["id"]: c["depth"] for c in causes}
     cev = {c["id"]: c["evidence"] for c in causes}
+    _anchor_stats(raw.get("cause_anchors"), "C", cmap, {c["id"]: c["evidence"] for c in causes}, quotes, ev, "cause")
 
     def end_id(x):
         if str(x).strip().upper() == "PROBLEM":
@@ -381,7 +407,7 @@ def normalize_card(raw, vid, run_ids, ev):
                        "summary": str(pick(a, "summary", ["statement", "description", "text"], ev, "angles", "")), "evidence": evid})
 
     # ---- solutions
-    sols = []
+    sols, dmap = [], {}
     for i, d in enumerate(as_list(raw.get("solutions"), ev, "solutions"), 1):
         if not isinstance(d, dict):
             continue
@@ -417,10 +443,13 @@ def normalize_card(raw, vid, run_ids, ev):
             ev.add("intuition_first_forced_false", f"solutions.{i} ban-flagged"); ifok = False
         if ifok and not goal:
             ev.add("intuition_first_forced_false", f"solutions.{i} no external_goal"); ifok = False
+        dmap[norm_id(d.get("id", f"D{i}"), "D") or f"D{i:02d}"] = f"D{len(sols) + 1:02d}"
         sols.append({"id": f"D{len(sols) + 1:02d}", "kind": kind, "targets": targets, "summary": summary, "external_goal": goal,
                      "scenario_fit": sc, "ban_conflict": {"flag": flag, "terms": terms, "note": str(bc.get("note") or "")},
                      "intuition_first_ok": ifok, "evidence": evid})
 
+    _anchor_stats(raw.get("solution_anchors"), "D", dmap,
+                  {d["id"]: d["evidence"] for d in sols}, quotes, ev, "solution")
     pev = ev_map(pr.get("evidence"), "problem")
     if not pev and quotes:
         ev.add("problem_evidence_fallback_Q01"); pev = [quotes[0]["id"]]

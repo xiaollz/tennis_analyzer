@@ -1,10 +1,19 @@
 {
   "counts": {
-    "quote_snapped": 1,
-    "intuition_first_forced_false": 1
+    "quote_snapped": 5,
+    "cause_anchor_exact": 1,
+    "cause_anchor_evidence_spills": 4,
+    "solution_anchor_exact": 5
   },
   "detail": [
-    "quote_snapped: Q24 score=1.00",
-    "intuition_first_forced_false: solutions.1 no external_goal"
+    "quote_snapped: Q02 score=1.00",
+    "quote_snapped: Q03 score=1.00",
+    "quote_snapped: Q13 score=1.00",
+    "quote_snapped: Q14 score=1.00",
+    "quote_snapped: Q22 score=1.00",
+    "cause_anchor_evidence_spills: C02 anchor_bucket=1 evidence_buckets=[1, 2]",
+    "cause_anchor_evidence_spills: C03 anchor_bucket=4 evidence_buckets=[4, 5]",
+    "cause_anchor_evidence_spills: C04 anchor_bucket=6 evidence_buckets=[6, 7]",
+    "cause_anchor_evidence_spills: C05 anchor_bucket=7 evidence_buckets=[7, 8]"
   ]
 }

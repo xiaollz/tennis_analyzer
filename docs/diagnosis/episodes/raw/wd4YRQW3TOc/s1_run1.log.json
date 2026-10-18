@@ -1,0 +1,36 @@
+{
+  "id": "wd4YRQW3TOc",
+  "run": 1,
+  "model": "gemini-3.8-flash",
+  "prompt_version": "ep_s1_v3",
+  "temperature": 0.25,
+  "ts": "2026-10-18 15:53:27 +0800",
+  "calls": 1,
+  "attempts": [
+    {
+      "status": "ok",
+      "elapsed_s": 31.3,
+      "usage": {
+        "promptTokenCount": 12136,
+        "candidatesTokenCount": 5215,
+        "totalTokenCount": 17351,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 12136
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "response_chars": 16673
+    }
+  ],
+  "usage_total": {
+    "promptTokenCount": 12136,
+    "candidatesTokenCount": 5215,
+    "totalTokenCount": 17351,
+    "thoughtsTokenCount": 0,
+    "cachedContentTokenCount": 0
+  },
+  "ok": true
+}

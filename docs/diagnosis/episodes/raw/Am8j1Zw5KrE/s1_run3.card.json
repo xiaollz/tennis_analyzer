@@ -13,7 +13,7 @@
     "is_teaching": "teaching",
     "stroke": "forehand",
     "format": "lecture",
-    "reason": "The coach explains the mechanics of shoulder adduction as the final link in the forehand, demonstrates how to establish a consistent contact zone, and shows posture adjustments for varied ball positions."
+    "reason": "The coach explains how shoulder adduction serves as the final link in the forehand kinetic chain, how to set up the contact zone, and how to adjust body positioning."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/Am8j1Zw5KrE.en.vtt",
@@ -23,7 +23,7 @@
   },
   "extraction": {
     "stage1_model": "gemini-3.8-flash",
-    "stage1_prompt_version": "ep_s1_v2",
+    "stage1_prompt_version": "ep_s1_v3",
     "stage1_run_ids": [
       "s1_r3_Am8j1Z",
       "s1_pair_pending"
@@ -31,17 +31,18 @@
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How should shoulder adduction be harnessed in the forehand to create a consistent contact zone?",
-    "definition": "Shoulder adduction naturally pulls across the body and turns the hand inward, which can send the ball sideways or downward unless the player positions the body and contact zone so that the pull drives back to front toward the target.",
+    "title_as_question": "How does shoulder adduction work in the tennis forehand and how do you harness it?",
+    "definition": "Shoulder adduction naturally pulls the arm across the body and closes the face sideways, so players must position their body and contact zone such that adduction drives back-to-front toward the target with a stable string angle.",
     "node_id": "PENDING",
     "prerequisites": [
-      "Basic forehand grip and swing motion"
+      "Basic forehand stroke mechanics",
+      "Understanding contact point positioning"
     ],
-    "target_player": "Players from 2.5 to 4.5 who want to stop framing and missing consistently",
+    "target_player": "3.0, 2.5, 3.5, or even 4.0/4.5 players who want to make clean and consistent contact without missing or framing",
     "evidence": [
       "Q01",
       "Q02",
-      "Q18"
+      "Q15"
     ]
   },
   "quotes": [
@@ -63,15 +64,15 @@
     },
     {
       "id": "Q03",
-      "text": "very important not to push this way you have to pull across your body you have to use this to pull across your body",
-      "start": 20.0,
+      "text": "now very important not to push this way you have to pull across your body you have to use this to pull across your body",
+      "start": 17.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q04",
-      "text": "you need to set up your swing such that you have an instant for most people it's right around here in this orientation where that pull across the body goes back to front",
+      "text": "so you need to set up your swing such that you have an instant for most people it's right around here in this orientation where that pull across the body goes back to front",
       "start": 28.0,
       "speaker": "coach",
       "about": "general",
@@ -90,19 +91,27 @@
       "text": "the pure naive version of this is this so the racket turns completely over and we hit the ball sideways and down and so the whole point of the forehand swing is this is a very strong motion",
       "start": 76.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "demonstrator_induced",
       "source": "subtitle"
     },
     {
       "id": "Q07",
       "text": "what I need to do is adjust my body and probe the ball into the right spot such that this final motion here sends the ball diagonally up with a reasonable string angle",
-      "start": 91.0,
+      "start": 93.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q08",
+      "text": "I'm going to feel what it feels like to have this final motion here and I'll do it while holding my racket at some point and I'll check my string angle when I get to here",
+      "start": 112.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
       "text": "I'll Orient my hand and my grip such that the racket strings are on a slight downward angle so that I can use this in order to hit the ball",
       "start": 124.0,
       "speaker": "coach",
@@ -110,111 +119,79 @@
       "source": "subtitle"
     },
     {
-      "id": "Q09",
-      "text": "let's say the ball's back here instead of out here okay if I I can't I can't really add up my shoulder yet so I can't use this",
-      "start": 135.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
       "id": "Q10",
-      "text": "let's say the ball's too far again I can't add my shoulder it's already fully adducted if I adduct it any more all I can do is hit sideways",
-      "start": 147.0,
+      "text": "let's say the ball's too far again I can't add my shoulder it's already fully adduct it if I adct it any more all I can do is hit sideways so that's why we have to probe the ball into",
+      "start": 147.319,
       "speaker": "coach",
-      "about": "general",
+      "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
       "id": "Q11",
-      "text": "that's why we have to probe the ball into the right spot so we can actually harness this last link in the kinetic chain here",
-      "start": 153.0,
+      "text": "so my contact Zone starts here and ends here it's this distance right here anywhere in here is where I can use this final link to drive through the ball",
+      "start": 168.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
       "id": "Q12",
-      "text": "elbow coming past the plane of the hips right here the reason is if the elbow's stuck back here again I adduct my shoulder I I don't I don't get a swing",
-      "start": 192.0,
+      "text": "in order for this to work we have to swing forward until the elbow has passed the plane of the hips and now we're free to use that final Link in the chain",
+      "start": 208.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q13",
-      "text": "in order for this to work we have to swing forward until the elbow has passed the plane of the hips and now we're free to use that final Link in the chain",
-      "start": 210.0,
+      "text": "almost every forehand the hitting shoulder is going to come in front of the non- hitting shoulder now certain players do this to to various degrees",
+      "start": 224.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q14",
-      "text": "almost every forehand the hitting shoulder is going to come in front of the non-hitting shoulder",
-      "start": 226.0,
+      "text": "if the string angle is completely closing the swing is going to be a mess so the string angle can slightly close and that's fine",
+      "start": 303.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q15",
-      "text": "if the string angle is completely closing the swing is going to be a mess so the string angle can slightly close and that's fine",
-      "start": 301.0,
+      "text": "if you can Master this then you can hit shots over the net consistently without framing the ball even if the rest of it a bit of a mess",
+      "start": 397.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q16",
-      "text": "it has to be mostly changing you know through the contact Zone here changing you know 10° maybe if it's changing 100° through the contact Zone... you're turning the racket over the ball",
-      "start": 312.0,
+      "text": "figure out where in front of me does the ball have to be for this to work right okay let's just do a couple here okay the ball's too low and I don't adjust with my torso",
+      "start": 433.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
       "id": "Q17",
-      "text": "you only need the last link in the chain to make clean contact you don't need the previous links if you're not trying to generate velocity",
-      "start": 347.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q18",
-      "text": "if you can Master this then you can hit shots over the net consistently without framing the ball even if the rest of it a bit of a mess",
-      "start": 391.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q19",
-      "text": "if the ball's low how do I probe it in I turn I til my hips and now you'll notice I'm in roughly that same spot and I add my shoulder",
+      "text": "if the ball's low how do I probe it in I turn I til my my hips and now you'll notice I'm in roughly that same spot and I add my shoulder and look at that back to front motion",
       "start": 445.0,
       "speaker": "coach",
       "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
-      "id": "Q20",
-      "text": "if I try to swing normally I just frame the ball off the outside of the frame so I'm looking at the ball I know I have to add it my shoulder I swing like that",
-      "start": 480.0,
+      "id": "Q18",
+      "text": "if the ball is too far away but if I try to swing normally I just frame the ball off the outside of the frame",
+      "start": 479.0,
       "speaker": "coach",
       "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
-      "id": "Q21",
-      "text": "you'll see this on bad bounces on the torque where guys will set up here and they'll swing like that and the reason you swing like that is because you know you have to do this",
-      "start": 487.0,
-      "speaker": "coach",
-      "about": "pro_footage",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q22",
+      "id": "Q19",
       "text": "balls too close if I adduct it here I'm going to go sideways so what do I do I go above my head so now I can get some adduction here",
       "start": 512.0,
       "speaker": "coach",
@@ -222,17 +199,9 @@
       "source": "subtitle"
     },
     {
-      "id": "Q23",
-      "text": "first you need to develop a feeling what does it feel like to go through contact here with a string angle that's consistent",
-      "start": 533.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q24",
-      "text": "you're looking in front of you and you're trying to set the ball up so it looks like it's supposed to look it's there and when it's there I know that my arm can hit it with this natural Adu",
-      "start": 544.12,
+      "id": "Q20",
+      "text": "need to be do is you need to have first you need to develop a feeling what does it feel like to go through contact here with a string angle that's consistent and then once you have that feeling you're",
+      "start": 533.12,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -241,7 +210,7 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "The ball is struck sideways and downwards into the net or off court.",
+      "description": "The ball flies sideways or down when swinging across the body.",
       "kind": "ball_outcome",
       "layer": "A",
       "camera": "any",
@@ -254,151 +223,102 @@
     },
     {
       "id": "S02",
-      "description": "The ball shanks or frames off the outside edge of the racket.",
+      "description": "The racket face closes completely or turns over excessively (e.g. 100 degrees) through contact.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q14"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Shanking or framing the ball off the frame when the ball spacing is misjudged.",
       "kind": "ball_outcome",
       "layer": "A",
       "camera": "any",
       "phase": "contact",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q18",
-        "Q20"
-      ]
-    },
-    {
-      "id": "S03",
-      "description": "The racket face closes excessively through the contact zone, rotating up to 100 degrees.",
-      "kind": "visible",
-      "layer": "B",
-      "camera": "S",
-      "phase": "contact",
-      "obs_ref": "NEW-OBS",
-      "evidence": [
-        "Q06",
         "Q15",
-        "Q16"
-      ]
-    },
-    {
-      "id": "S04",
-      "description": "The hitting elbow remains trapped behind the plane of the hips during the forward swing.",
-      "kind": "visible",
-      "layer": "B",
-      "camera": "S",
-      "phase": "forward_swing",
-      "obs_ref": "NEW-OBS",
-      "evidence": [
-        "Q12",
-        "Q13"
+        "Q18"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "The player executes shoulder adduction without orienting the swing so the cross-body pull drives back to front toward the target.",
+      "statement": "Natural shoulder adduction pulls the arm horizontally across the body rather than straight back-to-front unless aligned into a proper orientation.",
       "depth": 1,
       "layer": "B",
       "node_id": "PENDING",
-      "active_or_passive": "active",
+      "active_or_passive": "passive",
       "evidence": [
         "Q01",
-        "Q02",
-        "Q04"
+        "Q03"
       ]
     },
     {
       "id": "C02",
-      "statement": "The player allows active or excessive internal shoulder rotation, drastically rolling the racket face over through contact.",
-      "depth": 1,
+      "statement": "Shoulder adduction naturally couples with internal shoulder rotation, causing the hand and racket face to turn over completely.",
+      "depth": 2,
       "layer": "B",
       "node_id": "PENDING",
-      "active_or_passive": "active",
+      "active_or_passive": "passive",
       "evidence": [
-        "Q06",
-        "Q15",
-        "Q16"
+        "Q05",
+        "Q06"
       ]
     },
     {
       "id": "C03",
-      "statement": "The hitting elbow fails to travel past the plane of the hips before shoulder adduction is engaged.",
+      "statement": "The player fails to probe and position the body relative to the ball, leaving the ball too far, too close, or too behind the contact zone.",
       "depth": 2,
-      "layer": "B",
+      "layer": "A",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q12",
-        "Q13"
+        "Q10"
       ]
     },
     {
       "id": "C04",
-      "statement": "The player fails to probe and position the body relative to the ball to place it in the usable shoulder adduction window.",
-      "depth": 2,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "active",
-      "evidence": [
-        "Q07",
-        "Q09",
-        "Q10",
-        "Q11",
-        "Q19"
-      ]
-    },
-    {
-      "id": "C05",
-      "statement": "The hitting shoulder does not rotate forward in front of the non-hitting shoulder on standard groundstrokes.",
+      "statement": "The hitting elbow remains trapped behind the plane of the hips instead of swinging forward past the hips before adduction fires.",
       "depth": 3,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q14"
-      ]
-    },
-    {
-      "id": "C06",
-      "statement": "The player attempts to generate speed via torso uncoiling before establishing spatial awareness and feel for the final arm link.",
-      "depth": 3,
-      "layer": "C",
-      "node_id": "PENDING",
-      "active_or_passive": "active",
-      "evidence": [
-        "Q17",
-        "Q18",
-        "Q23",
-        "Q24"
+        "Q12"
       ]
     }
   ],
   "chain": [
     {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
       "from": "C03",
       "to": "C01",
       "strength": "coach_stated",
       "evidence": [
-        "Q12",
-        "Q13"
+        "Q10"
       ]
     },
     {
-      "from": "C04",
-      "to": "C01",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q09",
-        "Q10",
-        "Q11"
-      ]
-    },
-    {
-      "from": "C04",
+      "from": "C02",
       "to": "S02",
       "strength": "coach_stated",
       "evidence": [
-        "Q20"
+        "Q06"
       ]
     },
     {
@@ -406,37 +326,15 @@
       "to": "S01",
       "strength": "coach_stated",
       "evidence": [
-        "Q01",
-        "Q06"
+        "Q01"
       ]
     },
     {
-      "from": "C02",
+      "from": "C03",
       "to": "S03",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q15",
-        "Q16"
-      ]
-    },
-    {
-      "from": "C05",
-      "to": "C03",
       "strength": "coach_implied",
       "evidence": [
-        "Q13",
-        "Q14"
-      ]
-    },
-    {
-      "from": "C06",
-      "to": "C04",
-      "strength": "coach_implied",
-      "evidence": [
-        "Q17",
-        "Q18",
-        "Q23",
-        "Q24"
+        "Q18"
       ]
     }
   ],
@@ -444,57 +342,49 @@
     {
       "id": "A01",
       "type": "mechanics",
-      "summary": "Shoulder adduction naturally pulls across the torso and internally rotates the arm, requiring the elbow to pass the hip plane so that cross-body pulling acts back-to-front toward the target.",
+      "summary": "Shoulder adduction is the final link in the kinetic chain and naturally couples with internal shoulder rotation.",
       "evidence": [
-        "Q03",
         "Q05",
-        "Q13"
+        "Q12"
       ]
     },
     {
       "id": "A02",
-      "type": "feel",
-      "summary": "Players should isolate and feel what it is like to swing through contact with a stable string angle that changes by only around 10 degrees.",
+      "type": "misconception",
+      "summary": "Players should not push straight forward into the shot; they must pull across the body but orient the swing so the pull moves back to front at contact.",
       "evidence": [
-        "Q16",
-        "Q23"
+        "Q03",
+        "Q04"
       ]
     },
     {
       "id": "A03",
-      "type": "misconception",
-      "summary": "Players believe clean contact requires engaging the full kinetic chain and torso rotation, but clean ball striking only requires mastering the final arm link.",
+      "type": "visual_model",
+      "summary": "A fault-tolerant contact zone defines the window from where the elbow clears the hips to where the shoulder is fully adducted.",
       "evidence": [
-        "Q17",
-        "Q18"
+        "Q11",
+        "Q12"
       ]
     },
     {
       "id": "A04",
-      "type": "pro_example",
-      "summary": "Professional players dealing with bad bounces adapt their swing path to still utilize shoulder adduction without shanking.",
-      "evidence": [
-        "Q21"
-      ]
-    },
-    {
-      "id": "A05",
       "type": "contrast_demo",
-      "summary": "On low balls, tilting the hips preserves the proper arm-to-torso alignment for shoulder adduction rather than simply dropping the arm downward.",
+      "summary": "Adjusting hip tilt and torso posture on low and high balls allows the player to maintain the exact same shoulder adduction path.",
       "evidence": [
-        "Q19"
+        "Q16",
+        "Q17"
       ]
     }
   ],
   "solutions": [
     {
       "id": "D01",
-      "kind": "check",
+      "kind": "cue",
       "targets": [
-        "C03"
+        "C01"
       ],
-      "summary": "Verify that the hitting elbow travels forward past the plane of the hips before initiating shoulder adduction through the ball.",
-      "external_goal": "The hitting elbow moves past the plane of the hips toward the net.",
+      "summary": "Pull across your body rather than pushing forward, setting up the swing so the cross-body pull travels back to front through contact.",
+      "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -503,8 +393,8 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q12",
-        "Q13"
+        "Q03",
+        "Q04"
       ]
     },
     {
@@ -513,8 +403,8 @@
       "targets": [
         "C02"
       ],
-      "summary": "Check that the racket face is set on a slight downward angle and changes by no more than about 10 degrees across the contact zone rather than completely closing.",
-      "external_goal": "Racket strings maintain a slight downward angle across the contact zone.",
+      "summary": "Hold the racket and freeze at the contact window to check that strings remain at a stable, slight downward angle rather than completely turning over.",
+      "external_goal": "Check racket strings on a slight downward angle",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -524,18 +414,16 @@
       "intuition_first_ok": false,
       "evidence": [
         "Q08",
-        "Q15",
-        "Q16"
+        "Q09"
       ]
     },
     {
       "id": "D03",
-      "kind": "drill",
+      "kind": "check",
       "targets": [
-        "C01",
         "C04"
       ],
-      "summary": "Perform comfortable shadow swings focusing solely on the final arm motion to build the feeling of adduction driving back to front into a designated contact zone.",
+      "summary": "Ensure the hitting elbow passes forward past the plane of the hips before initiating the final cross-body shoulder adduction.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -545,19 +433,16 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q07",
-        "Q08",
-        "Q23",
-        "Q24"
+        "Q12"
       ]
     },
     {
       "id": "D04",
-      "kind": "cue",
+      "kind": "drill",
       "targets": [
-        "C01"
+        "C03"
       ],
-      "summary": "Pull across your body rather than pushing forward so that the natural adduction trajectory aligns straight through toward the target.",
+      "summary": "Probe low balls by tilting the hips and torso rather than dropping the isolated arm, keeping the shoulder adduction slot constant.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -567,19 +452,19 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q03",
-        "Q04"
+        "Q17"
       ]
     },
     {
       "id": "D05",
       "kind": "progression",
       "targets": [
-        "C04"
+        "C01",
+        "C03"
       ],
-      "summary": "Practice adjusting body tilt for varied ball heights (e.g., tilting hips on low balls) so the shoulder adduction movement consistently hits back to front.",
-      "external_goal": "Tilt hips to align the torso and arm in the standard contact orientation relative to the incoming ball height.",
-      "scenario_fit": "shadow",
+      "summary": "Once you feel the consistent string angle through adduction in shadow swings, look in front and adjust footwork to position the incoming ball into that exact hitting slot.",
+      "external_goal": "Set the ball up in the visual hitting slot",
+      "scenario_fit": "mini_tennis",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -587,8 +472,7 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q19",
-        "Q22"
+        "Q20"
       ]
     }
   ],
