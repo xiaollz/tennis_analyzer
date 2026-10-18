@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-19",
+  "pre_commit": "9ba16e4",
+  "branch": "cursor/diagnosis-phase1",
+  "verdict": "FAIL",
+  "tree_v9": {
+    "file": "docs/diagnosis/ftt_tree/tree_v9.json",
+    "observables": 37,
+    "problem_nodes": 54,
+    "cause_nodes": 187,
+    "nodes_with_required": 62,
+    "must_fix": 241,
+    "new_obs": [
+      "OBS-37 already in v8; no new OBS in v9"
+    ],
+    "mechanism_groups": 13,
+    "from_review_reapplied": "4/5 (DDYK↔PQ79 already taken by fresh merge)",
+    "differentials_applied": 1,
+    "skeleton": "tree_base_v9.json (54 eps after round9 Shorts)"
+  },
+  "before_after": {
+    "T05_fail": {
+      "v7": 178,
+      "v8": 172,
+      "v9": 179
+    },
+    "T08_fail": {
+      "v7": 30,
+      "v8": 42,
+      "v9": 28
+    },
+    "note": "round9 +3 verified Shorts → more must_fix; T08 dropped vs v8 as merges/diffs settled; T05 rose with new problem/cause nodes still lacking required"
+  },
+  "verify_all_full": {
+    "pass": false,
+    "selftest_pass": true,
+    "mutations": 57,
+    "checks": {
+      "validate_cards": {
+        "fail": 12,
+        "warn": 3
+      },
+      "check_quotes": {
+        "fail": 0,
+        "warn": 0
+      },
+      "check_tree": {
+        "fail": 207,
+        "warn": 86
+      },
+      "check_obs_binding": {
+        "fail": 0,
+        "warn": 1
+      },
+      "check_mech_merge": {
+        "fail": 0,
+        "warn": 0
+      },
+      "check_manifest": {
+        "fail": 0,
+        "warn": 0
+      },
+      "check_neutrality": {
+        "fail": 0,
+        "warn": 0
+      },
+      "blind_replay": {
+        "fail": 4,
+        "warn": 0
+      }
+    },
+    "fail_rule_breakdown": {
+      "T05": 179,
+      "T08": 28
+    },
+    "blind_replay_V5_muted_clips": 0,
+    "raw_path": "/workspace/s1_work/tree_v9/verify_raw.json",
+    "check_tree_fail": 207,
+    "check_tree_warn": 86,
+    "validate_cards_fail": 12,
+    "mech_merge_fail": 0
+  },
+  "text_blind_replay": {
+    "rerun": false,
+    "why": "no new holdout coverage from round8/9 non-holdout teaching/Shorts"
+  },
+  "gemini_usage": {
+    "model": "gemini-3.8-flash (Micu)",
+    "note": "bind+gapfill+merge for v9; no new CC this step"
+  },
+  "t05_breakdown": "docs/diagnosis/loop/t05_breakdown_v7.md",
+  "remaining_extract": {
+    "non_holdout_teaching_with_subs_no_card": 0,
+    "shorts_done": true,
+    "leftover_non_teaching": [
+      "OYf48k-cfNI type_guess=疑非教学 skipped"
+    ]
+  },
+  "no_secrets": true,
+  "check_tree_fails_sample": [
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_1W1ROPE5L0K must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_42BFBKSTGB4 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_5_IA7C4XZFU must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_7_JPQHG4G64 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_8R09TLIP_AK must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_9NIRSL59AN0 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_APCKJDADZEK must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_APPDZQXH_2K must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_BOMJDZUFHM4 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_CIIEYN42O4G must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_DDYKUNZTDYU must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_FBJNFBTZOZE must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_FJPR9PS02TM must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_FOMZ8WJV3DQ must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_GSHKML2MVEI must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_HNVBBPEOB3G must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_JZCA_KU7YHK must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_LBDQPIHVXYA must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_LCKDP2GKR_Y must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_LOSRMJ_QXKC must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_LWS7XXQRRDW must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_MCCB_RFYD0W must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_NEPD7FIM7HI must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_P41GGC_Y5XK must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_PFDQNFF_VYA must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_PJVOQKQH9DA must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_PQ793MBQE50 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_PSIDJEI5BNI must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_PUN6QIIYU_4 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_QSZZ0N4FRB4 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_QXATDSEUKFY must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_RVFMDK_IEWO must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_T5MEVWBOKR4 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_TOARB3WKJCS must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_TZGAWR3QGV0 must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_UB6SBA_KX9E must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_UJPUDUX0JIA must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_UQCOBI2OTSS must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_VG8LBXOHM3E must_fix node has no required observable: it can never be confirmed from video",
+    "[FAIL] ftt_tree/tree_v9.json: T05 N-P_V_QKILD4V_W must_fix node has no required observable: it can never be confirmed from video"
+  ]
+}
