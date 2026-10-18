@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "elapsed_s": 25.7,
+  "usage": {
+    "promptTokenCount": 9472,
+    "candidatesTokenCount": 3467,
+    "totalTokenCount": 13562,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 9472
+      }
+    ],
+    "thoughtsTokenCount": 623,
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.8-flash",
+  "id": "2Nn9tyMECZU",
+  "run": 1,
+  "prompt_version": "ep_s1_v1",
+  "temperature": 0.25,
+  "ts": "2026-10-18 14:47:52 +0800",
+  "prompt_chars": 24087,
+  "response_chars": 11493
+}

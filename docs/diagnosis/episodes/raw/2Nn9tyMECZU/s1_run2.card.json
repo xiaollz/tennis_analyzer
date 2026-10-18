@@ -1,0 +1,599 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "2Nn9tyMECZU",
+    "url": "https://www.youtube.com/watch?v=2Nn9tyMECZU",
+    "title": "Why Pros Swing Around, not Low-to-High",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1067.0,
+    "upload_date": "2026-09-14",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "FTT teaching episode from subtitle extraction"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/2Nn9tyMECZU.en.vtt",
+    "kind": "auto",
+    "sha256": "bd5635e445013b7adc1b325c73b1d541e3441b59013271483bf305ce1b32bc96",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v1",
+    "stage1_run_ids": [
+      "s1_r1_2Nn9ty",
+      "s1_r2_2Nn9ty"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do pros swing around rather than low-to-high?",
+    "definition": "Players attempt to create topspin by lifting or swinging upward (low-to-high), which breaks the shoulder's natural rotational loading and release, leading to linear pushing or isolated forearm rolling instead of an effortless whole-arm drive.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Player attempting to hit topspin forehands with modern racket and string equipment"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q12",
+      "Q07"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "In order to get this elbow up, racket down finish to happen, your shoulder needs to load into external rotation with the scap serratus, the back stabilized here, and then fly through into protraction and internal rotation.",
+      "start": 13.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "your shoulder needs to load into external rotation with the scap serratus, the back stabilized here, and then fly through into protraction and internal rotation.",
+      "start": 18.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "to start with when your brain is focused on lifting or swinging up and how that ends up breaking this shoulder action.",
+      "start": 57.04,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "When your brain like really is really focused on up, the rolling action is around. Around becomes up right here, but it it's not really up itself. And",
+      "start": 64.239,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "that's good. But notice that her racket is never rolling around down past her hand, and the reason is she is thinking of the swing right now as up rather than around as the spin action. All right, so",
+      "start": 81.6,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the load. If you've never felt this before, this is going to feel like hitting down, it's going to feel like hitting into the ground because, you know, your brain thinks that you have to take the whole racket system",
+      "start": 185.4,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Players will roll, but it's just the forearm, not the whole arm, and so it doesn't work very well. So, when we play tennis on all of our shots, we want to use our entire arm from the shoulder.",
+      "start": 219.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "we want to use our entire arm from the shoulder. The forearm is a follower, not the leader. So, we will pronate on serve. We'll pronate here, but that's a follower. If you just use your forearm",
+      "start": 226.239,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "if you are getting forearm down, but not elbow up, that's where you are stuck in a linear swing where only your forearm is rolling. So, your entire arm isn't",
+      "start": 241.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "entire arm and that elbow up. When you find yourself elbow up, it means your entire arm rolled. When you find yourself elbow down, means that only this outer part of the forearm rolled.",
+      "start": 274.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "arm out this way. If I take my elbow and I linearly drag it across my body, notice I have to just roll my forearm from here. The shoulder doesn't want to roll. So, this",
+      "start": 320.12,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "feel right. So, in order to get the entire arm to roll and not just the forearm, we have to get out of the linear swing and into the rotational swing where I press the racket the direction I'm facing",
+      "start": 350.44,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": ">> Now, there is a spacing that makes this work, too, and it's probably farther to your right than you think. So, for the version where your shoulder rolls, the ball needs to be more out here. If I",
+      "start": 436.64,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "here. If I feed the ball here, Alexa would kind of have to like push the shoulder through, and it's not going to roll the way we not You're not going to end up with that elbow down or elbow",
+      "start": 445.04,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "This is the spacing that is better for that linear pushing swing and this is probably the spacing that you're habituating cuz it's like what you're used to swinging.",
+      "start": 489.88,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "feel this is to make sure that your the bottom of your hand is around your butt cap. So, if you are choked up farther than that, choke down on the racket until the butt cap is in your palm",
+      "start": 515.36,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "choke down on the racket until the butt cap is in your palm and your pinky finger is on the flare of the butt cap. That is about the most choked up that you want to be if you want",
+      "start": 522.64,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "The way your trunk works, when your trunk starts to slow down, your shoulder is going to crack off. What this means is you don't want to explosively rotate all the way to where you're aiming. So,",
+      "start": 659.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "your goal is like if visualizing that target, I'm trying to accelerate my trunk short of the target and then let my arm shoulder action finish to the target. So,",
+      "start": 691.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "target, I'm trying to accelerate my trunk short of the target and then let my arm shoulder action finish to the",
+      "start": 693.92,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "because then I miss off to my left. If you're able to coil, so keep that hip open and generate force through the ground, you're going to be able to",
+      "start": 745.88,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "motion with the twist. So, if I try to hit harder by turning my trunk farther, that's where I've now lost my left to right control. The arm is not finishing where I think it's going to finish",
+      "start": 784.88,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "But notice the arm only goes up a little. Almost all of the lift and spin is created by rotation. And see how his shoulder and forearm have rolled over just like everybody else's. Now, the arm has to",
+      "start": 941.56,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "See the path of the elbow. See how the elbow is is is only going up a little bit, maybe 6 in of net upward elbow movement through the swing, and that's it. But then the racket is rotating like",
+      "start": 970.32,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Racket does not roll around down past the hand during finish; swing finishes without the elbow up racket down posture",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05",
+        "Q16"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Forearm rotates down while elbow stays down, indicating forearm-only roll without entire arm shoulder roll",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player feels like they are hitting down or hitting into the ground when first releasing the shoulder rotationally",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q06",
+        "Q14"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Ball sprays off to the left or unintentionally crosscourt when attempting to hit harder",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q22",
+        "Q21"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Brain is consciously focused on swinging upward or lifting the entire racket system for height rather than swinging around",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01",
+        "Q05",
+        "Q10"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Dragging the elbow linearly across the body rather than initiating a rotational arm press, forcing forearm-only rotation",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05",
+        "Q10",
+        "Q14"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Spacing too close to the body, which requires a linear push and inhibits shoulder external/internal rotation",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q10",
+        "Q14",
+        "Q19"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Hand choked up too far on the handle rather than resting pinky on the flare of the butt cap, restricting topspin leverage",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14",
+        "Q19",
+        "Q24"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Accelerating trunk rotation all the way through to the target instead of decelerating short of the target to release the shoulder",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q19",
+        "Q24",
+        "Q01"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q24",
+        "Q01",
+        "Q05"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "C05",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q24"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "PROBLEM",
+      "strength": "inferred",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "mechanism",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "feel",
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "visual_model",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "analogy",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "contrast_demonstration",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "mechanics",
+      "summary": "misconception",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A07",
+      "type": "mechanics",
+      "summary": "pro_example",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "S02"
+      ],
+      "summary": "Press the racket in the direction you are facing at the start of the swing to load the shoulder rotationally rather than dragging the elbow linearly across the body.",
+      "external_goal": "Press racket toward the direction you are facing at setup.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Space farther to the right by getting weight over the hitting foot and lunging/leaning, pushing the ball away to clear room for shoulder rotation.",
+      "external_goal": "Push contact point farther out to your right.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Choke down until the butt cap is seated in the palm and the pinky sits on the butt cap flare to establish a long topspin lever.",
+      "external_goal": "Keep pinky finger on the flare of the racket butt cap.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C05",
+        "S04"
+      ],
+      "summary": "Accelerate trunk rotation in a small pulse short of the target and let the trunk decelerate so the shoulder and arm release toward the target.",
+      "external_goal": "Stop trunk acceleration short of the aiming target.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C06"
+      ],
+      "summary": "Keep the hip open and drive pelvis forward while keeping shoulders back to create a quick rotational pulse in a small range of motion without over-spinning.",
+      "external_goal": "Drive pelvis forward and shoulders back against an open hip.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
