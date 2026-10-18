@@ -20,12 +20,14 @@ from pathlib import Path
 
 import blind_replay
 import check_manifest
+import check_mech_merge
+import check_obs_binding
 import check_neutrality
 import check_quotes
 import check_rerun
 import check_tree
 import validate_cards
-from common import HERE, fails, load_json, sha256_file
+from common import DIAG_DIR, HERE, fails, load_json, sha256_file
 from diagnose import diagnose
 
 FX = HERE / "fixtures"
@@ -203,6 +205,192 @@ MUTATIONS = [
 ]
 
 
+# ---- tree v2 artifacts (OBS binding + mechanism merge): mutations run on in-memory copies of the committed files
+V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v2.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding.json",
+      "mm": DIAG_DIR / "ftt_tree" / "mech_merge.json", "eps": DIAG_DIR / "episodes"}
+
+
+def v2_available():
+    return all(V2[k].exists() for k in ("t1", "t2", "bind", "mm"))
+
+
+def _v2():
+    return {k: load_json(V2[k]) for k in ("t1", "t2", "bind", "mm")}
+
+
+def ob_mut(fn, prompt_edit=None):
+    def run():
+        d = _v2()
+        fn(d)
+        pdir = None
+        if prompt_edit:
+            pdir = Path(tempfile.mkdtemp())
+            for p in (HERE / "prompts").glob("*.md"):
+                (pdir / p.name).write_text(p.read_text(encoding="utf-8"))
+            prompt_edit(pdir)
+        return check_obs_binding.check(d["bind"], d["t1"], d["t2"], prompts_dir=pdir)
+    return run
+
+
+def mm_mut(fn):
+    def run():
+        d = _v2()
+        fn(d)
+        return check_mech_merge.check(d["mm"], d["t1"], d["t2"], V2["eps"])
+    return run
+
+
+def _first(d, pred):
+    return next(k for k, v in d["bind"]["items"].items() if pred(v))
+
+
+def _m_unknown_obs(d):
+    k = _first(d, lambda v: v["supporting"])
+    d["bind"]["items"][k]["supporting"][0]["obs"] = "OBS-99"
+
+
+def _m_bad_value(d):
+    k = _first(d, lambda v: v["required"])
+    d["bind"]["items"][k]["required"][0]["value"] = "not_a_value"
+
+
+def _m_four_required(d):
+    k = _first(d, lambda v: v["required"])
+    d["bind"]["items"][k]["required"] = [{"obs": "OBS-01", "value": "clearly_bent"}, {"obs": "OBS-04", "value": "no_pause"}, {"obs": "OBS-05", "value": "no_steps_stands_still"}, {"obs": "OBS-06", "value": "open"}]
+
+
+def _m_contradict(d):
+    k = _first(d, lambda v: v["required"])
+    d["bind"]["items"][k]["required"] = [{"obs": "OBS-18", "value": "arm_first"}, {"obs": "OBS-18", "value": "hips_first_then_trunk_and_arm"}]
+
+
+def _m_silent_empty(d):
+    k = _first(d, lambda v: v["kind"] == "cause" and v["visible"] and v["required"])
+    it = d["bind"]["items"][k]
+    it.update(required=[], supporting=[], new_obs=[], runs=[])
+
+
+def _m_silent_must_fix(d):
+    nid = next(n["id"] for n in d["t2"]["nodes"] if n["signature"]["required"] and n["kind"] == "cause")
+    n2 = next(n for n in d["t2"]["nodes"] if n["id"] == nid)
+    n2["signature"]["required"] = []
+    for it in d["bind"]["items"].values():
+        if it["kind"] == "cause" and d["t2"]["build"]["mechanism_merge"]["node_map_v1_to_v2"].get(it["node"], it["node"]) == nid:
+            it.update(visible=True, new_obs=[])
+
+
+def _m_orphan_candidate(d):
+    d["bind"]["new_obs_clusters"][0]["members"] = d["bind"]["new_obs_clusters"][0]["members"][1:] or ["NC999"]
+    d["bind"]["new_obs_clusters"][0]["rep"] = d["bind"]["new_obs_clusters"][0]["members"][0]
+
+
+def _m_untraced_required(d):
+    n = next(n for n in d["t2"]["nodes"] if n["kind"] == "cause" and n["signature"]["required"])
+    n["signature"]["required"].append({"obs": "OBS-17", "value": "pointing_up"})
+
+
+def _m_agg_wrong(d):
+    k = _first(d, lambda v: v["required"] and v["runs"])
+    d["bind"]["items"][k]["required"] = []
+
+
+def _m_missing_item(d):
+    d["bind"]["items"].pop(next(k for k, v in d["bind"]["items"].items() if v["kind"] == "symptom"))
+
+
+def _m_catalog_drift(d):
+    d["t2"]["observables"][0]["values"] = ["x", "y"]
+
+
+def _p_leak(pdir):
+    p = pdir / "obs_bind_v1.md"
+    p.write_text(p.read_text(encoding="utf-8").replace("RULES_PLACEHOLDER", "") + "\nNote: the user's latest conclusion is that the elbow must not be pushed.\n", encoding="utf-8")
+
+
+def _p_leak2(pdir):
+    p = pdir / "mech_group_v1.md"
+    p.write_text(p.read_text(encoding="utf-8") + "\nAccording to FLT-01 and HSA, group these.\n", encoding="utf-8")
+
+
+def _g_other_stroke(d):
+    m = d["mm"]["groups"][0]["members"][0]
+    m["node"], m["card_causes"], m["episodes"] = "N-C_LWS7XXQRRDW_C03", ["lwS7Xxqrrdw:C03"], ["lwS7Xxqrrdw"]
+
+
+def _g_same_video(d):
+    g = d["mm"]["groups"][0]
+    g["members"].append(dict(g["members"][0], node="N-C_2NN9TYMECZU_C01", card_causes=["2Nn9tyMECZU:C01"]))
+
+
+def _g_text_rewrite(d):
+    d["mm"]["groups"][0]["members"][0]["text"] += " (rewritten)"
+
+
+def _g_v2_name(d):
+    g = d["mm"]["groups"][0]
+    next(n for n in d["t2"]["nodes"] if n["id"] == g["rep"])["name"] = "A reworded statement."
+
+
+def _g_lose_evidence(d):
+    g = d["mm"]["groups"][0]
+    n = next(n for n in d["t2"]["nodes"] if n["id"] == g["rep"])
+    n["evidence"] = n["evidence"][:1]
+
+
+def _g_lose_edge(d):
+    d["t2"]["edges"].pop(0)
+
+
+def _g_cycle(d):
+    e = d["t2"]["edges"][0]
+    d["t2"]["edges"].append({"from": e["to"], "to": e["from"], "strength": "single_episode", "evidence": e["evidence"]})
+
+
+def _g_beyond_runs(d):
+    g = d["mm"]["groups"][0]
+    d["mm"]["runs_cleaned_partitions"][g["stroke"]]["run1"] = []
+
+
+def _g_two_groups(d):
+    d["mm"]["groups"][1]["members"].append(dict(d["mm"]["groups"][0]["members"][0]))
+
+
+def _g_bad_rep(d):
+    d["mm"]["groups"][0]["rep"] = "N-C_NOT_A_MEMBER"
+
+
+def _g_count(d):
+    d["mm"]["cause_nodes_after"] += 1
+
+
+V2_MUTATIONS = [
+    ("binding: unknown OBS id", "O2", ob_mut(_m_unknown_obs)),
+    ("binding: value outside the observable's list", "O2", ob_mut(_m_bad_value)),
+    ("binding: 4 required conditions", "O5", ob_mut(_m_four_required)),
+    ("binding: contradictory required values", "O3", ob_mut(_m_contradict)),
+    ("binding: silently empty signature", "O4", ob_mut(_m_silent_empty)),
+    ("binding: must_fix node with no required and no account", "O6", ob_mut(_m_silent_must_fix)),
+    ("binding: NEW-OBS candidate in no cluster", "O7", ob_mut(_m_orphan_candidate)),
+    ("binding: tree required condition not from any binding item", "O11", ob_mut(_m_untraced_required)),
+    ("binding: aggregated signature differs from its runs", "O10", ob_mut(_m_agg_wrong)),
+    ("binding: symptom without binding item", "O1", ob_mut(_m_missing_item)),
+    ("binding: tree observables drift from catalog", "O9", ob_mut(_m_catalog_drift)),
+    ("binding: user conclusion in a prompt", "O8", ob_mut(lambda d: None, _p_leak)),
+    ("binding: knowledge-base term in a prompt", "O8", ob_mut(lambda d: None, _p_leak2)),
+    ("merge: members of different stroke types", "M02", mm_mut(_g_other_stroke)),
+    ("merge: two members from one video", "M02", mm_mut(_g_same_video)),
+    ("merge: member text rewritten", "M03", mm_mut(_g_text_rewrite)),
+    ("merge: merged node name rewritten", "M03", mm_mut(_g_v2_name)),
+    ("merge: evidence lost in merged node", "M05", mm_mut(_g_lose_evidence)),
+    ("merge: v1 edge lost", "M06", mm_mut(_g_lose_edge)),
+    ("merge: cycle in v2 edges", "M07", mm_mut(_g_cycle)),
+    ("merge: group goes beyond what both runs said", "M08", mm_mut(_g_beyond_runs)),
+    ("merge: node in two groups", "M01", mm_mut(_g_two_groups)),
+    ("merge: rep not a member", "M01", mm_mut(_g_bad_rep)),
+    ("merge: node counts disagree", "M04", mm_mut(_g_count)),
+]
+
+
 def selftest():
     report = {"good": {}, "mutations": []}
     ok = True
@@ -233,13 +421,24 @@ def selftest():
     if "OBS-20" not in {x["obs"] for x in d1["dropped_facts"]}:
         ok = False
         print("SELFTEST diagnose used a C-layer fact")
-    for name, code, fn in MUTATIONS:
+    muts = list(MUTATIONS)
+    if v2_available():
+        d = _v2()
+        gb = check_obs_binding.check(d["bind"], d["t1"], d["t2"]) + check_mech_merge.check(d["mm"], d["t1"], d["t2"], V2["eps"])
+        report["good"]["tree_v2_artifacts"] = [str(x) for x in fails(gb)]
+        if fails(gb):
+            ok = False
+            print("SELFTEST committed tree v2 artifacts FAILED their own checkers:", *fails(gb), sep="\n  ")
+        muts += V2_MUTATIONS
+    else:
+        print("selftest: tree v2 artifacts not present; skipping v2 mutations")
+    for name, code, fn in muts:
         caught = [str(f) for f in fails(fn()) if code in f.msg]
         report["mutations"].append({"name": name, "expect": code, "caught": bool(caught)})
         if not caught:
             ok = False
             print(f"SELFTEST mutation NOT caught: {name} (expected {code})")
-    print(f"selftest: good fixtures + {len(MUTATIONS)} mutations -> {'PASS' if ok else 'FAIL'}")
+    print(f"selftest: good fixtures + {len(muts)} mutations -> {'PASS' if ok else 'FAIL'}")
     report["pass"] = ok
     return ok, report
 
@@ -250,6 +449,7 @@ def main(argv):
     ap.add_argument("--episodes"); ap.add_argument("--tree"); ap.add_argument("--manifest")
     ap.add_argument("--cases"); ap.add_argument("--prompts", nargs="*", default=[])
     ap.add_argument("--transcript-root"); ap.add_argument("--gate"); ap.add_argument("--report")
+    ap.add_argument("--tree-v1"); ap.add_argument("--binding"); ap.add_argument("--merge")
     a = ap.parse_args(argv)
     st_ok, st = selftest()
     report = {"time": datetime.datetime.now().isoformat(timespec="seconds"), "selftest": st, "checks": {}}
@@ -263,6 +463,10 @@ def main(argv):
             res["check_quotes"] += check_quotes.check_card(c, str(p), a.transcript_root)[0]
         tree = load_json(a.tree)
         res["check_tree"] = check_tree.check(tree, a.episodes, a.tree)
+        if a.binding and a.merge and a.tree_v1:
+            t1 = load_json(a.tree_v1)
+            res["check_obs_binding"] = check_obs_binding.check(load_json(a.binding), t1, tree)
+            res["check_mech_merge"] = check_mech_merge.check(load_json(a.merge), t1, tree, a.episodes)
         res["check_manifest"] = check_manifest.check(load_json(a.manifest), a.episodes, tree, a.transcript_root)
         res["check_neutrality"] = [f for p in a.prompts for f in check_neutrality.check(p)]
         if a.cases:

@@ -1,0 +1,260 @@
+{
+ "version": "mech_group_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/mech_group_v1.md",
+ "runs": 2,
+ "rule": "final group = both runs group the nodes together (partition intersection); rep = run1 rep if inside the final group, else run2 rep, else first id; no text rewritten",
+ "lexical_layer_unchanged": {
+  "merge_cosine": 0.4,
+  "note": "build_tree.py cosine merge is not touched; this is an extra layer applied to its 97 cause nodes"
+ },
+ "cause_nodes_before": 97,
+ "cause_nodes_after": 93,
+ "strokes_run": {
+  "forehand": 52,
+  "general": 13,
+  "backhand": 21
+ },
+ "groups": [
+  {
+   "stroke": "forehand",
+   "rep": "N-C_WZLMV4ASG9S_C07",
+   "members": [
+    {
+     "node": "N-C_2NN9TYMECZU_C05",
+     "episodes": [
+      "2Nn9tyMECZU"
+     ],
+     "card_causes": [
+      "2Nn9tyMECZU:C05"
+     ],
+     "layer": "B",
+     "text": "Accelerating trunk rotation all the way through to the target instead of decelerating short of the target to release the shoulder",
+     "also_worded": [],
+     "evidence": [
+      "2Nn9tyMECZU:Q01",
+      "2Nn9tyMECZU:Q19",
+      "2Nn9tyMECZU:Q24"
+     ]
+    },
+    {
+     "node": "N-C_WZLMV4ASG9S_C07",
+     "episodes": [
+      "wzLMv4ASg9s"
+     ],
+     "card_causes": [
+      "wzLMv4ASg9s:C07"
+     ],
+     "layer": "B",
+     "text": "Trunk spins continuously without an anchor to decelerate, preventing momentum transfer to the arm and racket.",
+     "also_worded": [],
+     "evidence": [
+      "wzLMv4ASg9s:Q01",
+      "wzLMv4ASg9s:Q05",
+      "wzLMv4ASg9s:Q10"
+     ]
+    },
+    {
+     "node": "N-C_XLS469ZVMPU_C01",
+     "episodes": [
+      "xLs469ZVMPU"
+     ],
+     "card_causes": [
+      "xLs469ZVMPU:C01"
+     ],
+     "layer": "B",
+     "text": "The player twists continuously through contact instead of allowing hip rotation to be transient and brake to create a whip effect.",
+     "also_worded": [],
+     "evidence": [
+      "xLs469ZVMPU:Q03"
+     ]
+    }
+   ],
+   "why_run1": "Continuously rotating the trunk or hips instead of braking rotation to transfer momentum into the arm and racket.",
+   "why_run2": "Spinning the trunk continuously through contact instead of decelerating to transfer momentum to the arm.",
+   "rep_run1": "N-C_WZLMV4ASG9S_C07",
+   "rep_run2": "N-C_WZLMV4ASG9S_C07",
+   "lexical_cos_pairs": {
+    "N-C_2NN9TYMECZU_C05|N-C_WZLMV4ASG9S_C07": 0.046,
+    "N-C_2NN9TYMECZU_C05|N-C_XLS469ZVMPU_C01": 0.051,
+    "N-C_WZLMV4ASG9S_C07|N-C_XLS469ZVMPU_C01": 0.098
+   },
+   "group_id": "MG01"
+  },
+  {
+   "stroke": "backhand",
+   "rep": "N-C_PQ793MBQE50_C03",
+   "members": [
+    {
+     "node": "N-C_DDYKUNZTDYU_C04",
+     "episodes": [
+      "dDYKuNZtdyU"
+     ],
+     "card_causes": [
+      "dDYKuNZtdyU:C04"
+     ],
+     "layer": "B",
+     "text": "Pulling too close to the body or relying excessively on rotational body mechanics rather than pulling well out in front.",
+     "also_worded": [],
+     "evidence": [
+      "dDYKuNZtdyU:Q14",
+      "dDYKuNZtdyU:Q15",
+      "dDYKuNZtdyU:Q16"
+     ]
+    },
+    {
+     "node": "N-C_PQ793MBQE50_C03",
+     "episodes": [
+      "pQ793MBQE50"
+     ],
+     "card_causes": [
+      "pQ793MBQE50:C03"
+     ],
+     "layer": "B",
+     "text": "Catching the ball too late with the pull slot set too close to the stomach rather than out in front.",
+     "also_worded": [],
+     "evidence": [
+      "pQ793MBQE50:Q03",
+      "pQ793MBQE50:Q04",
+      "pQ793MBQE50:Q26"
+     ]
+    }
+   ],
+   "why_run1": "Setting the pull slot and contact point too close to the body rather than out in front.",
+   "why_run2": "Setting the pull slot or pulling too close to the body rather than well out in front.",
+   "rep_run1": "N-C_PQ793MBQE50_C03",
+   "rep_run2": "N-C_PQ793MBQE50_C03",
+   "lexical_cos_pairs": {
+    "N-C_DDYKUNZTDYU_C04|N-C_PQ793MBQE50_C03": 0.315
+   },
+   "group_id": "MG02"
+  },
+  {
+   "stroke": "forehand",
+   "rep": "N-C_UJPUDUX0JIA_C01",
+   "members": [
+    {
+     "node": "N-C_APCKJDADZEK_C06",
+     "episodes": [
+      "aPcKJDadzek"
+     ],
+     "card_causes": [
+      "aPcKJDadzek:C06"
+     ],
+     "layer": "B",
+     "text": "The player lets the hips drift forward and slides the knee forward over the toes instead of hinging at the hips and keeping the hips behind.",
+     "also_worded": [],
+     "evidence": [
+      "aPcKJDadzek:Q01",
+      "aPcKJDadzek:Q05",
+      "aPcKJDadzek:Q23"
+     ]
+    },
+    {
+     "node": "N-C_UJPUDUX0JIA_C01",
+     "episodes": [
+      "uJpuDUx0jIA"
+     ],
+     "card_causes": [
+      "uJpuDUx0jIA:C01"
+     ],
+     "layer": "B",
+     "text": "Hips extending forward in front of the shoulders with knees forward and chest up (quad dominant posture) rather than maintaining a hip hinge.",
+     "also_worded": [],
+     "evidence": [
+      "uJpuDUx0jIA:Q01",
+      "uJpuDUx0jIA:Q05",
+      "uJpuDUx0jIA:Q09"
+     ]
+    }
+   ],
+   "why_run1": "Allowing the hips to extend forward and knees drift over the toes instead of maintaining a hip hinge.",
+   "why_run2": "Allowing hips and knees to drift forward instead of maintaining a hip hinge.",
+   "rep_run1": "N-C_UJPUDUX0JIA_C01",
+   "rep_run2": "N-C_APCKJDADZEK_C06",
+   "lexical_cos_pairs": {
+    "N-C_APCKJDADZEK_C06|N-C_UJPUDUX0JIA_C01": 0.313
+   },
+   "group_id": "MG03"
+  }
+ ],
+ "runs_cleaned_partitions": {
+  "backhand": {
+   "run1": [
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_DDYKUNZTDYU_C03",
+     "N-C_PQ793MBQE50_C04"
+    ],
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ]
+   ]
+  },
+  "forehand": {
+   "run1": [
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ],
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    [
+     "N-C_UJPUDUX0JIA_C05",
+     "N-C_WZLMV4ASG9S_C05"
+    ]
+   ]
+  },
+  "general": {
+   "run1": [],
+   "run2": []
+  }
+ },
+ "pairs_grouped_by_only_one_run": [
+  {
+   "stroke": "backhand",
+   "pair": [
+    "N-C_DDYKUNZTDYU_C03",
+    "N-C_PQ793MBQE50_C04"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "forehand",
+   "pair": [
+    "N-C_UJPUDUX0JIA_C05",
+    "N-C_WZLMV4ASG9S_C05"
+   ],
+   "in_run": 2
+  }
+ ],
+ "repair_log": [],
+ "usage": {
+  "promptTokenCount": 10970,
+  "candidatesTokenCount": 842,
+  "totalTokenCount": 30317,
+  "thoughtsTokenCount": 18505,
+  "calls": 6
+ },
+ "calls": 6
+}
