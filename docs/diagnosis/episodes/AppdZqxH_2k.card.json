@@ -1,0 +1,494 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "AppdZqxH_2k",
+    "url": "https://www.youtube.com/watch?v=AppdZqxH_2k",
+    "title": "How to Master Tennis's Most Important Skill",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 467.0,
+    "upload_date": "2026-04-20",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "lecture",
+    "reason": "The coach demonstrates concrete progressive drills including catching the ball in a cup to get three in a row, tapping the ball against a wall target at eye level, and using peripheral vision to aim."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/AppdZqxH_2k.en.vtt",
+    "kind": "auto",
+    "sha256": "177e17a28acdd50e9669bdb5cb0ec1734f4c696caf41055cd7e2610f9cbfcca7",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_AppdZq",
+      "s1_r2_AppdZq"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How to Master Tennis's Most Important Skill?",
+    "definition": "Visual tracking and attention pattern form the top hierarchy in tennis, but players often disconnect from the ball late into contact by overthinking verbal cues, over-focusing on swing mechanics or the hand, or anchoring their gaze onto the target.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic racket handling",
+      "fundamental visual attention"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There is a hierarchy of skills and tasks, and your eyes and your attention are at the top.",
+      "start": 8.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "if they then detract from your visual tracking and attention pattern, then they actually cause more harm than good.",
+      "start": 21.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "We're trying to integrate those things with that feeling of following the ball with your eyes, being connected to the ball with your eyes and feet",
+      "start": 29.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "instead of watching the ball you're thinking the words watch the ball. That's not really what we want. We want to practice that activity.",
+      "start": 52.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And this is a great drill. The easiest way is close on one hop. So, that's like this.",
+      "start": 58.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And your goal is always to get three in a row cuz that's going to add a little bit of that pressure element that happens in matches.",
+      "start": 65.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "you are going to have most success when you are catching the ball close to eye level.",
+      "start": 80.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, if I'm trying to catch this very far away from eye level... now it's much much more difficult to judge the depth and the timing",
+      "start": 87.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Now, you want to make it harder for yourself, you can catch it out of the air. This is significantly harder.",
+      "start": 112.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "if you find yourself on the match court and you're spraying balls and like you're like, \"What what's going on? Like why am I so disengaged?\"",
+      "start": 137.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "we can isolate the most important part of tennis which is the eyes and the brain with a drill like this.",
+      "start": 158.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Next on the hierarchy is your hand. And the reason is your hand is what connects the racket to your nervous system.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "I have an X on the wall here. You know, I am trying to have the same receiving pattern into my string bed that I just did with the three-ball drill, but now I'm connecting to my hand",
+      "start": 211.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "if I play these at eye level, I'm going to do a lot better than if I try to scoop them up from way far away from my eyes.",
+      "start": 237.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "One is over focusing on the hand... you was focusing on my handle so much, I kind of forgot the attention pattern.",
+      "start": 254.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "As you're doing this, you can always regress. Hold on, let me do something with the cup again. Or just kind of tell yourself, \"Hold on. Get in that mode... connected to this with my eyes\"",
+      "start": 273.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Now, you can also do this with a partner uh on court instead of hitting it to the red X, you can hit it back to them.",
+      "start": 294.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "you want to watch here and then see the target in peripheral vision.",
+      "start": 336.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "it can be very easy to like kind of be too your attention like too anchored on the red X... and so like the moment of contact I'm not really processing.",
+      "start": 342.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "So, I'm aiming at the red X and I can see the red X in my field of vision. It's just not in focus. It's in peripheral vision.",
+      "start": 368.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "So, the point of this drill is I want to get three in a row in the thing. That's it and that's going to train you for that eye level late tracking pattern",
+      "start": 395.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Last thing I want to say is you do want to go to your forehand grip at some point instead of continental because you will need to be able to fully control the racket with your forehand grip as well.",
+      "start": 432.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "So, do it a little bit farther away when you do it with your forehand grip that it's cuz obviously it's hard to not hit at all.",
+      "start": 460.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Player sprays balls inconsistently on the match court and feels mentally disengaged from the ball.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player misses the ball or loses timing when attempting to receive or hit far below eye level.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08",
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Over-focusing on swing mechanics or silently verbalizing 'watch the ball' detracts from actual visual tracking and attention.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Catching or striking the ball far away from eye level makes it much harder to judge depth and timing.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Over-focusing attention on the hand and handle mechanics causes the player to drop the late visual attention pattern.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Visual attention becomes overly anchored on the target, leaving the player unable to process the ball at the moment of contact.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Eyes and attention sit at the top of the skill hierarchy, followed by the hand which connects the racket to the nervous system.",
+      "evidence": [
+        "Q01",
+        "Q12"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Telling yourself verbally to watch the ball is counterproductive because thinking the words replaces actual visual tracking activity.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "Keep visual focus sharp on contact while keeping the target visible but out of focus in peripheral vision.",
+      "evidence": [
+        "Q18",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Catch the incoming ball on one hop in a cup close to eye level, aiming for three catches in a row to simulate match pressure.",
+      "external_goal": "Get three catches in a row in the cup close to eye level.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Catch the ball directly out of the air at eye level instead of letting it bounce once.",
+      "external_goal": "Catch the ball out of the air in the cup at eye level.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Tap the ball against a high-contrast wall target at eye level using the racket string bed while maintaining the same tracking pattern.",
+      "external_goal": "Tap the ball as close to the red X on the wall as possible.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Whenever over-focusing on the racket handle, regress to the cup or cue yourself to get back into the eye-connected mode.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Watch the ball into contact while holding the target in peripheral vision rather than staring directly at the target.",
+      "external_goal": "See the red X target in peripheral vision while focusing visually on ball contact.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "progression",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Switch from continental grip to forehand grip and step a little farther back from the wall to control the ball with normal racket mechanics.",
+      "external_goal": "Control taps on the target from slightly farther away using the forehand grip.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q22",
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

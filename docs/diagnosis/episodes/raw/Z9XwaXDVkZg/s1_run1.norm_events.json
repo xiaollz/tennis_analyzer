@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "quote_snapped": 10,
+    "cause_anchor_evidence_spills": 1,
+    "cause_anchor_miss": 1,
+    "cause_anchor_exact": 3,
+    "solution_anchor_evidence_spills": 1,
+    "solution_anchor_exact": 3,
+    "solution_anchor_miss": 2
+  },
+  "detail": [
+    "quote_snapped: Q01 score=1.00",
+    "quote_snapped: Q02 score=1.00",
+    "quote_snapped: Q03 score=1.00",
+    "quote_snapped: Q07 score=1.00",
+    "quote_snapped: Q08 score=1.00",
+    "quote_snapped: Q10 score=1.00",
+    "quote_snapped: Q12 score=0.96",
+    "quote_snapped: Q14 score=1.00",
+    "quote_snapped: Q15 score=1.00",
+    "quote_snapped: Q17 score=0.65",
+    "cause_anchor_evidence_spills: C01 anchor_bucket=2 evidence_buckets=[2, 3]",
+    "cause_anchor_miss: C02 anchor_bucket=9 evidence_buckets=[8]",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=2 evidence_buckets=[2, 3]",
+    "solution_anchor_miss: D05 anchor_bucket=18 evidence_buckets=[17]",
+    "solution_anchor_miss: D06 anchor_bucket=28 evidence_buckets=[29]"
+  ]
+}

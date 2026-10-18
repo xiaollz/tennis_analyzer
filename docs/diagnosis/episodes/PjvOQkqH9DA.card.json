@@ -1,0 +1,438 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "PjvOQkqH9DA",
+    "url": "https://www.youtube.com/watch?v=PjvOQkqH9DA",
+    "title": "Never Lose Another Winnable Match | The Tactical and Psychological Makeup of Beatdowns",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 564.0,
+    "upload_date": "2025-07-12",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach provides explicit actionable tactical instructions and cues on shot selection, recovery transition, and when to pull the trigger: 'Instead of overplaying... You want to underplay. You want to hit safer shots to bigger targets. Trust your movement.'"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/PjvOQkqH9DA.en.vtt",
+    "kind": "auto",
+    "sha256": "54cd7fc2625399fc10f578aadaf2931bb367ca389acb74eab564109d626873d1",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_PjvOQk",
+      "s1_r2_PjvOQk",
+      "s1_r3_PjvOQk"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do players struggle to dominate and close out matches against opponents they are better than?",
+    "definition": "Players often fail to convert a clear skill advantage into dominant victories or blowouts because they overplay, attempt overly aggressive low-percentage shots when pushed, and let serve focus linger instead of immediately transitioning into receiving mode.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Player possesses a higher fundamental skill level than the opponent"
+    ],
+    "target_player": "Players who feel superior to their opponent but fail to put dominant match scorelines together",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "there are a lot of you out there who struggle to find this level of dominance, even when you're hitting better than your opponent.",
+      "start": 13.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "you feel like you're so much better than this guy or so much better than this girl, and yet you can't actually put matches like these together like EGA can.",
+      "start": 21.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "A lot of times what I see players, they're here and they think they have to do something crazy. They think they have to hit some knifing slice like Roger Federer.",
+      "start": 79.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "You you have to make your opponent beat you. And the more the the bigger the level gap between you and your opponent, the more you need to make your opponent beat you.",
+      "start": 92.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And this is the thing is you want to trade quality for consistency when you are the stronger player. Make your opponent earn this.",
+      "start": 119.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "she could try to hit down the line within a foot from the line... but instead she just hits it hard over the center of the net.",
+      "start": 183.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "there's no reason to aim for anything more aggressive than this target. She is never going to miss this passing shot. This is a rally backhand.",
+      "start": 220.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Instead of overplaying like, 'Oh, I should be hitting a 100 winners past them.' You want to underplay. You want to hit safer shots to bigger targets.",
+      "start": 250.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Trust your movement. Trust your ball striking. Trust your vision.",
+      "start": 258.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "you're probably taking shots like this where you're on defense and not accepting the fact that your opponent hit a good shot because you feel like you're so much better than them",
+      "start": 293.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "it's almost like I'm better than this person. Like, how dare they like smack this forehand on my return. It's like, oh, this is something's wrong.",
+      "start": 337.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "just because you're better than your opponent doesn't mean your opponent's not good. Doesn't mean they don't have skills that they can use to hurt you.",
+      "start": 346.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So that serve is off her racket now. Her head is already up. Her serve hasn't even landed yet. Her head's already up following what is doing.",
+      "start": 371.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "A lot of you guys that are working on your serve, the the work on the serve and the mental focus on the serve leaks into the point and then it messes up your first ball.",
+      "start": 389.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "I don't see this a lot of times when I watch match footage. I don't see this from you guys. I don't see the land land and immediately ready.",
+      "start": 399.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "there's no more thought of her serve in her mind right now. She's purely focused on receiving the next ball.",
+      "start": 494.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Look at EG's targeting here. Center of the court. Center of the court. Again, look at her depth. She's barely even hitting the ball deep. She's taking a full swing.",
+      "start": 508.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "This is the epitome of you can't beat me tennis. And then she just hits a winner because she feels like it at the end.",
+      "start": 519.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "push. When you have a shot, like for EGA, it's off backhand that you love, that you win so many of your points with. When you see it in front of you, when that ball kind of lights up and",
+      "start": 534.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "when the ball lights up, when you have that instinct that you just want to hit your shot, don't override that.",
+      "start": 557.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Failing to blow out an inferior opponent and making unnecessary unforced errors while ahead or on defense.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Taking excessively low-margin shots toward tiny targets when put under pressure or on defense.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Failing to immediately land, look up, and execute an explosive ready position/split step after serving, causing a compromised first ball.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players believe they must execute miraculous, razor-thin knifing or driving shots under pressure instead of making their opponent beat them.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players' egos prevent them from accepting that an inferior opponent hit a good shot, provoking premature counter-attacks on defense.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players become emotionally perturbed and distracted when an opponent attacks their weaker shot, falsely assuming superior players cannot be threatened.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Mental evaluation and technical focus on the serve leak into the rally, preventing immediate transition into receiving mode.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Iga Swiatek hands out double bagels by underplaying defensively and hitting rally balls through big center targets rather than aiming near lines.",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Players wrongly think having a higher level means hitting 100 winners past opponents rather than trading quality for consistency.",
+      "evidence": [
+        "Q05",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Elite server transition requires eyes up and balanced landing before the ball bounces so the split step and first pivot merge into one explosive motion.",
+      "evidence": [
+        "Q13",
+        "Q16"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Underplay instead of overplaying: take full swings to big safe targets in the center and trust your movement and striking.",
+      "external_goal": "Big target over center of net",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Ensure complete mental release of your serve upon contact, checking that your head is up and feet land ready to receive before the ball bounces.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "When your favorite kill shot presents itself and the ball lights up, do not override your attacking instinct—just go for it.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_PjvOQk",
+        "s1_r2_PjvOQk",
+        "s1_r3_PjvOQk"
+      ],
+      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_verified"
+}

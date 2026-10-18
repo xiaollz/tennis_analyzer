@@ -1,0 +1,469 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "toArb3WkJcs",
+    "url": "https://www.youtube.com/watch?v=toArb3WkJcs",
+    "title": "The Most Common Ball-Machine Mistake and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 554.0,
+    "upload_date": "2026-06-10",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "demo_with_player",
+    "reason": "The coach instructs viewers to practice at rally tempo with sets of 10-15 balls using one cue, intersperse ball machine sets with kinesthetic exercises, and run a 4-cone volley progression."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/toArb3WkJcs.en.vtt",
+    "kind": "auto",
+    "sha256": "61aad6e2506c8fb8f451026cf6197381777de30b9187876305016671f7ac7952",
+    "coverage_ratio": 0.9917
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_toArb3",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "What is the most common ball machine mistake and how do you fix it?",
+    "definition": "Practicing with a ball machine feed tempo that is too slow, leaving excessive time between shots for rational overthinking and causing the player's feet to constantly stop.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "using a ball machine for practice",
+      "basic stroke mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Sometimes when I see ball machine practices, the tempo looks like this. And the reason we don't want to practice like this is there's too much time for rational thinking between shots.",
+      "start": 3.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, we've got a shot. And then 1 2 3 4 like four full seconds to think about each rep. And when you are thinking about your tennis, you want to think and then hit a bunch of shots.",
+      "start": 17.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "The other issue here is the feet. Now, you know, you can try to kind of hop and kind of fast feet kind of between shots when you're playing this slow, but the truth is it's unnatural.",
+      "start": 34.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And so, more of a rally pace is going to make your practice a lot more engaged physically as well as mentally because you're not going to have time to rationally think between shots.",
+      "start": 45.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So, here is a much better tempo to practice at. Now, this is slightly faster than rally speed.",
+      "start": 63.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "This is intuition playing the shots. So, you're not going to have time to think verbal thoughts while the balls are coming. So, what you're going to do is you're going to play 10-15 balls with maybe one cue",
+      "start": 77.2,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And then you can pause, and then you can think, \"Okay, I'm going to press this time.\" Or like, \"I'm going to get wider this time.\" Or like, \"I'm going to watch the ball all the way in this time.\"",
+      "start": 90.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "The correct test for that is not one stroke. The correct test for that is a set of strokes at rally tempo or slightly faster.",
+      "start": 98.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Okay, the other thing you're noticing is, you know, Alex's feet never stop moving now. Whereas before, the feet constantly stopped moving.",
+      "start": 119.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "in a tennis point. So, you really want to practice staying moving and connecting the landing of one shot into the start of the next shot, and you just can't really do that if you're practicing at a tempo where",
+      "start": 130.96,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Now, this is also one of the best way to train kinesthetic interventions. So, you have a drill that you want to do that's going to help you feel the swing. We're going to start with the medicine ball.",
+      "start": 143.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "we're going to do those high tempo sets of 15, and in between, I'm going to work on feeling my trunk on the medicine ball.",
+      "start": 153.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And then, I'm going to go I'm going to do a set of 15, and then we're going to intermix this and other kinesthetic tools in between our ball machine sets.",
+      "start": 178.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "So, another great kinesthetic exercise is the weighted shadow swing. So, you take a weight much heavier than your racket, swing that around your horizontal semicircle.",
+      "start": 223.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "It's going to help you feel the activation and stability for your backside and chest, which are very strong muscles, much stronger. You couldn't flick the racket without them",
+      "start": 234.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "So, another great one here is an isometric hold that's going to help us engage the back of our rotator cuff in our side here. This band is pulling my elbow back and in.",
+      "start": 272.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Those need to support the racket and fling it off my body rather than what can happen as you turn, if all this is relaxed, is you turn and the racket kind of flops flops around and gets stuck back",
+      "start": 310.76,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Now, volley practice on the ball machine works really well. What you want to do for yourself is put down four cones. These are really the four volley targets",
+      "start": 354.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Right now, we're doing threes. So, you hit the one cone for three targets, then you move to another cone for three, then you move to another cone for three.",
+      "start": 367.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Now, you can start with threes, then you go with twos, and eventually you want to go with ones. Because in a match you're going to be doing you're going to have to hit the cone without warming up that",
+      "start": 400.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "So, right now Alexis is aiming at a different cone each shot of the drill. And that's always how you want to finish your practice, because that is the closest to a match",
+      "start": 410.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "So, I would recommend not putting together too many high variety custom drills that need to be shots on different tempos.",
+      "start": 514.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player pauses and has about four full seconds of idle rational thinking between each shot.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player's feet repeatedly come to a complete stop between ball machine feeds.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q09"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The ball machine feed interval is too long, giving the brain several seconds of downtime to engage in rational overthinking between shots.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "An overly slow ball machine cadence makes dynamic footwork unnatural and trains the feet to stop between shots instead of linking recovery to the next preparation.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The back of the rotator cuff and supporting torso muscles are relaxed during rotation, causing the racket to flop around and get stuck behind the player.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "inferred",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "contrast_demo",
+      "summary": "The coach contrasts slow ball machine feeds where feet stop and verbal thoughts intervene with rally-speed sets where feet move continuously and intuition hits the ball.",
+      "evidence": [
+        "Q01",
+        "Q05",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Kinesthetic tools such as medicine balls, heavy weights, and resistance bands are used between sets to awaken trunk, chest, and rotator cuff sensations before hitting.",
+      "evidence": [
+        "Q11",
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Testing a technical change on a single isolated stroke is misleading; valid testing requires a high-tempo set of 10 to 15 continuous rally balls.",
+      "evidence": [
+        "Q08"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02",
+        "S01",
+        "S02"
+      ],
+      "summary": "Feed sets of 10 to 15 balls at rally speed or slightly faster with at most one mental cue, keeping feet continuously moving, and evaluate only during pauses between sets.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Perform medicine ball trunk rotation exercises during the pause between 15-ball machine sets to establish kinesthetic torso engagement.",
+      "external_goal": "medicine ball",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Perform shadow swings with a weighted implement along the horizontal semicircle between ball machine sets to cue backside and chest muscle activation.",
+      "external_goal": "heavy weight implement",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Perform a resistance band isometric hold pulling the elbow inward and rotating outward without spinal twisting to engage the posterior rotator cuff.",
+      "external_goal": "resistance band anchored to fence",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Set up four target cones for volley practice on the ball machine, aiming at each cone for three consecutive volleys before moving to the next cone.",
+      "external_goal": "four target cones on the opposite court",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Progress the 4-cone volley drill from three shots per cone, down to two, and finally to switching to a different target cone on every single incoming feed.",
+      "external_goal": "hit a different target cone on each shot without calibration reps",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

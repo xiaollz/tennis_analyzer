@@ -1,0 +1,511 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "RVfmDk-iEwo",
+    "url": "https://www.youtube.com/watch?v=RVfmDk-iEwo",
+    "title": "Find Your Hand Slot, and Everything Gets Easier",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1302.0,
+    "upload_date": "2025-11-28",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides several actionable drills, including a downward ground-strike drill and hitting flat balls at shoulder height to find the hand slot spring."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/RVfmDk-iEwo.en.vtt",
+    "kind": "auto",
+    "sha256": "948a6dfbff5e201f8841e19e2ae76c8df02d4971454385cf93cab71b3766d885",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_RVfmDk",
+      "s1_r2_RVfmDk"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can players find their hand slot so that contact feels effortless, solid, and controllable?",
+    "definition": "Players often miss their hand slot by using active slow-twitch wrist and forearm contractions, which causes weak, erratic contact and fatigue, or by failing to time the body to meet the slot.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic forehand or backhand stroke production"
+    ],
+    "target_player": "Players experiencing wrist fatigue, instability, or lack of effortless pop on their groundstrokes",
+    "evidence": [
+      "Q01"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There is a slot with your hand where your forehand contact is going to feel powerful, effortless, and solid and controllable. And if you are in front of that slot, it's going to feel very unstable",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "This is like the moment before the wrist's energy starts to release. And so this is what I'm learning to feel. And then I am sending it behind the ball, flinging it, dragging it behind the ball.",
+      "start": 38.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "the hit really has power. And the reason is like active slow twitch use of the forearm and wrist to hit the ball like this versus more relaxed passive stretch and hit the ball with the reaction",
+      "start": 76.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Alexa holds her racket and I stretch her forearm back now, she's not going to swing. This is just the automatic contraction of the forearm to resist the stretch. See how the racket goes back to there.",
+      "start": 104.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And that's where players start going like this actively with a slow twitch contraction from the wrist and hand in order to hit it.",
+      "start": 133.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Instead, I want to get a spring here and I want to bring my spring onto the butt cap.",
+      "start": 168.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "try [snorts] to stop thinking about your racket head and think about your hand. Because if she puts it down there, if I use active contraction of my wrist, I can hit it with my racket head.",
+      "start": 208.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "the first thing is is you want the racket kind of out of phase with the hand. So, like here's like forward together, back together. Here is the racket out of phase with the hand.",
+      "start": 246.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Place the ball flat on the ground, and you are trying to deliver one strike and get as much energy into it as you can.",
+      "start": 270.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "my hands already starting to fatigue this is already starting to fatigue versus there and so this is this is even though this is the downwards plane instead of the sidewards plane it's the same idea",
+      "start": 299.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Now I have found that the best way to feel this is shoulder height totally flat and the reason is you don't end up getting confused with the rolling sensations with the hitting sensations.",
+      "start": 352.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And if we can keep the racket mostly horizontal, then it's really obvious, boom, that I'm just feeling that little spring. And then I'm holding on to that spring feeling.",
+      "start": 385.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "like I can feel there's a spring here when I go it like this. I'm just dragging a spring behind the ball and then I'm letting the spring hit through the ball.",
+      "start": 427.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "As opposed to with these contractions with the muscles, they're just too small. The racket is just too too heavy to like really control precisely with slow twitch contraction here.",
+      "start": 463.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "my wrist I'm holding it at roughly 90°. It's nice and it's nice and relaxed. It's like a three to a five out of 10 grip tension. And I am just pushing the racket head through the ball.",
+      "start": 503.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "if you're one of the people who's stuck in this active contraction, you can almost stabilize to behind your hand slot for a couple, you know, sessions or even like for a week or two weeks",
+      "start": 549.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Now, with respect to the timing of your hand slot, you need to observe the ball visually and put your hand slot through the ball.",
+      "start": 595.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "critically, you need to either wait until the ball is in your slot or use your legs and your trunk to attack the contact point. If you do neither, then it looks like this.",
+      "start": 645.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "instead of wait, wait, wait for the ball into the slot. The ball is slow, take the slot forward to the ball.",
+      "start": 713.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "when you're watching the ball in, you are anchored to that little green sphere and there is a feeling of that slot that you're putting through that little green sphere.",
+      "start": 756.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "Last thing with the hand slot, it is the slot where your strings can easily roll like this without changing the angle and causing shanks. So, if you are not in the slot... don't try to add toss",
+      "start": 818.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Now stay totally sideways, barely even rotate. This is a great progression if you are stuck on your back end. You see how much pop she can get barely even activating the hips.",
+      "start": 940.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "And the reason is that she doesn't have the spring through here. So, she doesn't have the slot that she was hitting in.",
+      "start": 984.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "either she has to wait for the ball into the slot or attack the ball to get the slot to it.",
+      "start": 1024.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "And the weighted shadow swing, the one-handed weighted shadow swing can actually really help queue you into this feeling. So you're going to stay sideways and just pull from the side from the upper back.",
+      "start": 1097.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "And I would recommend actually as a beginner staying behind the slot and just pulling through is actually not a bad way to learn the one-handed backhand",
+      "start": 1222.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Contact feels unstable, weak, and uncontrollable with rapid wrist and forearm muscular fatigue.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q01",
+        "Q10"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Frequent mis-hits, higher miss rate, and shanking when attempting to generate topspin.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18",
+        "Q21"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players hit the ball using active slow-twitch muscular contraction in the forearm and wrist rather than relying on an elastic stretch reflex.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players focus mentally on manipulating the racket head rather than feeling and directing the elastic power vector originating in the hand.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The racket moves in phase with the hand rather than out of phase, preventing swing inertia from loading an elastic stretch in the forearm.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players fail to coordinate timing by neither waiting patiently for the ball to arrive in the hand slot nor using legs and trunk to attack the contact point.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The hand slot is the moment right before wrist energy releases, where inertia automatically stretches forearm muscles to resist stretch and produce recoil speed.",
+      "evidence": [
+        "Q02",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "The hand and wrist mechanism acts like an elastic spring that is dragged behind the ball and allowed to spring through contact.",
+      "evidence": [
+        "Q06",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Hitting behind the hand slot with a locked wrist angle provides stable control for beginners without power, whereas hitting in front with active flexion causes instability.",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "visual_model",
+      "summary": "Perception and motor action must be tightly coupled by visually anchoring to the incoming ball and delivering the hand slot through it.",
+      "evidence": [
+        "Q17",
+        "Q20"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "misconception",
+      "summary": "Adding topspin rolling must only occur from inside an established hand slot; attempting to roll without the slot alters string angle and produces shanks.",
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Place a ball flat on the ground and strike it downward with a relaxed wrist to practice delivering elastic stretch energy rather than active forearm flexion.",
+      "external_goal": "Deliver maximum energy into the ball resting flat on the ground with a single downward strike.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Hit feeds at shoulder height along a totally flat horizontal plane to isolate the feeling of the hitting spring without distraction from topspin rolling.",
+      "external_goal": "Keep the racket path mostly horizontal through contact at shoulder level.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Stabilize behind the hand slot with a relaxed ~90-degree wrist angle and push through contact for several sessions to build intuition for placing the hand behind the ball before adding elastic spring.",
+      "external_goal": "Hold a relaxed 3 to 5 out of 10 grip tension and push the racket head solidly through the ball.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Hit two-handed backhands while staying fully sideways with minimal hip rotation to isolate the effortless pop produced by the hand slot spring.",
+      "external_goal": "Stay sideways throughout the hit while producing pop solely through the hand spring.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q22"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Perform a one-handed weighted shadow swing pulling from the upper back and side while remaining sideways to feel the driving extension that brings the slot through the court.",
+      "external_goal": "Pull the weighted racket through the hitting zone using the upper back while maintaining a sideways stance.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

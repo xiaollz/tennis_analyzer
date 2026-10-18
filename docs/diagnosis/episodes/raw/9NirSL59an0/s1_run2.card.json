@@ -1,0 +1,497 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "9NirSL59an0",
+    "url": "https://www.youtube.com/watch?v=9NirSL59an0",
+    "title": "The Paradoxical Nature of Modern Topspin",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 620.0,
+    "upload_date": "2025-11-14",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as hitting down into the court with a loose whipping release and practicing a pressing action with a weight while staying sideways."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/9NirSL59an0.en.vtt",
+    "kind": "auto",
+    "sha256": "728381bf5cb65debe426ced94b153aca230dd316c8cecbc6b22776de797c20ed",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_9NirSL",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does trying to generate topspin cause forehand tightness, and how can pressing mechanics solve it?",
+    "definition": "Trying to consciously hit the ball up causes tension and racket face instability, preventing players from transferring effortless whip and loose acceleration into topspin contact.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic topspin forehand swing"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q02",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "you are going to be able to feel this level of effortless velocity and whip and relaxation.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "often the act of trying to hit the ball up causes your brain to change the orientation and you'll get tight.",
+      "start": 24.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "So, the first swing we're going to use is we're just going to try to move this fast slot out in front of us where I could use it to hit the ball down into the ground.",
+      "start": 31.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "just follow-through. You try to strike the ball past about here. See how my wrist is back to neutral so we're in lag and then wrist is back to neutral around here. You try to strike the ball past",
+      "start": 114.72,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And the secret here is when you take the arm and you press it forward. And we use the weight for this because it's heavy and so it forces you to feel this.",
+      "start": 175.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "This action makes your shoulder want to roll back and it'll get your hand in the position where the spin works.",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "here. This elbow space is pretty necessary for the leverage to actually press through. So, if Alexa relaxes her whole upper back complex here and relaxes the elbow down in, now, relax and now try to press it forward. It",
+      "start": 197.8,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, this is a two-part in front with the pecs driving and back here holding it up so you actually have the leverage to drive.",
+      "start": 216.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And now, we're just going to try to connect our hand, what we were feeling through here, onto the end of that pressing action.",
+      "start": 257.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Now, there's another great progression for this, which is to stay sideways. And the reason is if you over-rotate on this, I I I can't press anymore. If I were to press, I'm just going to shank the ball",
+      "start": 292.84000000000003,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Do one or two with the weight. Staying sideways and pressing truly pressing across the body.",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Now, if the shadow swing doesn't quite feel right, there's an even simpler, more fundamental exercise we could do, which is just the two-armed fly.",
+      "start": 356.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "All of this muscle back here in the round of scapula and the side here, maintain just enough elbow space holding it up, and that is what gives you the leverage to press the weight forward.",
+      "start": 380.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "even when your swing is going slightly low to high, the bottom edge of the racket is not leaking under the swing. So, even if the swing path is here, the top edge is leading.",
+      "start": 456.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "paradoxically, if your if your brain goes, \"Oh, I got to get it over the net. I got to open the racket face,\" you'll end up leading with the bottom edge.",
+      "start": 491.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "And the reason is my brain isn't trusting my arm to roll back, and so it's leading with the bottom edge here.",
+      "start": 508.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So, let's not worry about hitting it to the net and let's just hit down. Just hit down.",
+      "start": 517.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Oops, I just leaked here. So, just feel just got to get on top of it a little bit more.",
+      "start": 556.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "We're trying to use tension through the big upstream muscles so that this can get in the right place on the right vector and then not need tension through there.",
+      "start": 603.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The forearm and hand tighten up when trying to hit up over the net.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Contact feels unstable and lacks crispness because the racket head is rolled past neutral follow-through.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The bottom edge of the racket leaks under the swing instead of the top edge leading.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Trying to lift the ball up causes the brain to alter swing orientation and trigger muscular tightness.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Attempting to contact the ball late in the follow-through rolling phase leaves the wrist past neutral and the string angle unstable.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Losing elbow space and relaxing the upper back complex eliminates the structural leverage needed for the pecs to press forward.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Over-rotating the torso cuts off the arm's pressing slot and forces a shank off to the side.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "A lack of brain trust in the shoulder's natural backward roll causes the player to open the face and lead with the bottom edge.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "The rolling feeling of topspin is part of the follow-through rather than the actual strike point.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Upstream tension in the scapula and pectorals stabilizes the arm slot and enables a relaxed forearm whip.",
+      "evidence": [
+        "Q08",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "An optimal topspin forehand feels like hitting down into the court even while the path rises.",
+      "evidence": [
+        "Q14",
+        "Q17"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Top forehands like Nadal, Federer, and Alcaraz achieve a shared forward pressing slot regardless of backswing shape.",
+      "evidence": [
+        "Q06"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "S01"
+      ],
+      "summary": "Practice releasing the wrist and hitting balls down into the court to feel complete looseness without the tension of lifting over the net.",
+      "external_goal": "Hit the ball down into the court in front of you.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Press a handheld weight forward across various vectors to force the shoulder to roll back while maintaining elbow space.",
+      "external_goal": "Drive the weight forward along low-to-high, straight, and downward vectors.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Sync the loose hand release onto the end of the forward pressing action.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Stay completely sideways while pressing across the body with the weight and racket before reintroducing rotation.",
+      "external_goal": "Press across the body while staying fully sideways.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Perform a two-armed fly with weights to engage the scapular complex and feel retraction into protraction with elevated elbows.",
+      "external_goal": "Glide the scapulae back into retraction and forward into protraction.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "cue",
+      "targets": [
+        "C05",
+        "S03"
+      ],
+      "summary": "Tell yourself to just hit down with the hand and forearm instead of trying to steer the ball up over the net.",
+      "external_goal": "Hit down and bury the ball.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

@@ -1,0 +1,433 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "PwkGLkRm73o",
+    "url": "https://www.youtube.com/watch?v=PwkGLkRm73o",
+    "title": "The Pros Swing Differently Than You (with lesson transformation)",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 859.0,
+    "upload_date": "2026-05-16",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as doing heavy hopper swings with a stabilized elbow and using feet to align contact with the throwing slot."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/PwkGLkRm73o.en.vtt",
+    "kind": "auto",
+    "sha256": "88e018955a2b3a9eec57cf3da0f2ffd2003bd4a9da3c4bd8c041305bae8962c9",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_PwkGLk",
+      "s1_r2_PwkGLk",
+      "s1_r3_PwkGLk"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why are recreational players unable to drive high balls or harness body rotation on the forehand?",
+    "definition": "Players swing the arm underhand in a low-to-high path to create net clearance, which prevents rotational energy from passing through the shoulder throwing chain and makes driving high balls biomechanically impossible.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand contact kinesthesia",
+      "semi-western or eastern forehand grip"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "One of the biggest unlocks for your forehand is developing the sensation of throwing the racket overhand rather than throwing the racket underhand.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "the main missing link that can make this forehand fundamentally better is that we aren't harnessing rotation. And we can't harness rotation because that energy isn't passing through the shoulder in a throwing chain.",
+      "start": 21.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "even if your arm and hand are not moving low to high, your racket tip can still move low to high. And the the the nature of the throw is that your forearm is going to supinate and pronate.",
+      "start": 49.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "my racket dropped because my forearm rolled back and was actually just swinging back to front even though my throw was overhand.",
+      "start": 95.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So, we're going to start with the situation where they are most rewarded and where not having them is very, very punishing. And that is high ball close to the net, inside the service box",
+      "start": 135.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "So, if I'm my elbow's here and I'm dropping it in underhand and now somehow I have to create this contact with the ball flat. Biomechanically impossible, and I see a lot of players get stuck on these high balls",
+      "start": 159.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "it's not possible, so they kind of pull their elbow in and kind of chicken wing it because like and then you kind of hit it like this and it's you're like, \"Man, I can't like get the racket through",
+      "start": 178.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "but a spot somewhere in the air where I can feel that that racket head is taking over the hand and that's my hitting slot. And then, it's just a matter of, \"Okay, so I feel for that spot. Okay,",
+      "start": 213.72,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "I have a piece of red tape on the net here because I need to make sure that when I'm working on my throw, I'm not losing my my sense of where the racket is in space.",
+      "start": 242.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Now, because the hopper is so heavy, it's like swinging a million swing weight racket or whatever. It really cues you into having to use your throwing chain.",
+      "start": 296.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "See how my elbow is up and stable. My elbow's not dropping in here. It's up and stabilized. This apparatus, your side, your back, rotator cuff, scap, lats, and even your chest, all of this is stabilizing the elbow",
+      "start": 328.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Notice how I'm finishing in my back pocket here. Most of the time, because players are coming from that underhand swing, they end up here.",
+      "start": 409.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "When you're watching Federer or Sinner hit, your brain sees the racket cuz it's big and colorful, and then your brain's matching your arm's motion to it, but but that's not that's not how we play tennis.",
+      "start": 448.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "that stable feeling where the elbow is able to stay up and I'm able to stay here. Okay, now we go back to the racket.",
+      "start": 530.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And so, then, the next step, which you're seeing here, is we we toss the ball, and you have to use your feet to find the right spot in the air.",
+      "start": 622.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "the energy flows from the hips through the shoulder into the hand and then into the racket. And if it's not flowing through the shoulder, your intuition understands that rotating doesn't do anything for you.",
+      "start": 670.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "When you get back here, your brain's like, ah, I got to go up to create uh height, but you don't. Your forearm will roll so you can just throw overhand the same exact way.",
+      "start": 743.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "the baseline and like to start I just want you to try to drill the top of the tape cuz what's going to happen is you're going to try to drill the top of the net. You're going to swing",
+      "start": 814.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The elbow pulls in close to the torso and chicken-wings on high balls, making it feel impossible to drive the racket through.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The swing finish ends up high over the shoulder instead of low around the back pocket or hip.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player feels that rotating the hips or body does not help power or stabilize the swing, staying sideways instead.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Rotational energy is not harnessed because energy cannot pass through the shoulder into an overhand throwing chain.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The brain fears hitting into the ground and forces the arm to swing underhand and low-to-high, not understanding forearm pronation produces lift.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The elbow drops in toward the body because the back, rotator cuff, scapula, and chest fail to stabilize it up in a throwing posture.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The brain matches arm movement to the large, visible low-to-high motion of the pro's racket rather than the actual high-to-low throwing arm action.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "inferred",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Forearm supination and pronation cause the racket head to move low-to-high and square up even when the arm and elbow throw level or high-to-low.",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Players copy the low-to-high arc of the racket seen on pro footage instead of copying the pro arm's overhand throwing mechanics.",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates an underhand swing ending high over the shoulder versus an overhand throwing swing ending down at the back pocket.",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Perform shadow overhand throwing swings at home while maintaining haptic racket face awareness aligned to a piece of tape on a net or wall.",
+      "external_goal": "Align the throwing path and racket face to a piece of red tape on the net or wall.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Perform overhand swings with a heavy ball hopper or weight to force the elbow to stay up and stabilized by the shoulder, lat, and back muscles.",
+      "external_goal": "Swing a heavy ball hopper while keeping the elbow raised and stable.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Have a partner toss high balls and use active footwork steps to position the body so the ball meets the pre-felt throwing contact slot.",
+      "external_goal": "Use footwork to position the high ball directly into the contact hitting slot.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "From the baseline, deliberately aim to drill the top tape of the net with an overhand throw, trusting forearm roll to send the ball 3 feet over.",
+      "external_goal": "Try to drill the top of the net tape.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_PwkGLk",
+        "s1_r2_PwkGLk",
+        "s1_r3_PwkGLk"
+      ],
+      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_verified"
+}

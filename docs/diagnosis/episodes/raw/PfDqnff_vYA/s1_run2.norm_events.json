@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "quote_snapped": 8,
+    "cause_anchor_exact": 3,
+    "cause_anchor_evidence_spills": 1,
+    "solution_anchor_miss": 1,
+    "solution_anchor_exact": 3
+  },
+  "detail": [
+    "quote_snapped: Q02 score=1.00",
+    "quote_snapped: Q04 score=1.00",
+    "quote_snapped: Q06 score=1.00",
+    "quote_snapped: Q08 score=1.00",
+    "quote_snapped: Q11 score=1.00",
+    "quote_snapped: Q15 score=1.00",
+    "quote_snapped: Q16 score=1.00",
+    "quote_snapped: Q17 score=1.00",
+    "cause_anchor_evidence_spills: C03 anchor_bucket=6 evidence_buckets=[6, 8]",
+    "solution_anchor_miss: D01 anchor_bucket=1 evidence_buckets=[0]"
+  ]
+}

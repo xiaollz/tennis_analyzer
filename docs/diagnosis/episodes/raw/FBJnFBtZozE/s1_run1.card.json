@@ -1,0 +1,480 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "FBJnFBtZozE",
+    "url": "https://www.youtube.com/watch?v=FBJnFBtZozE",
+    "title": "How Sinner Choke-Proofed His Game",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 604.0,
+    "upload_date": "2025-07-15",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach explicitly instructs players who get tight in big moments to swing harder and swing faster to channel anxiety into a fight response."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/FBJnFBtZozE.en.vtt",
+    "kind": "auto",
+    "sha256": "aff2a475a6c5eb3bb48a615ebe4e12135783696e31f77b343413d453db021e9d",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_FBJnFB",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can players prevent choking and freezing up during high-pressure moments in tennis?",
+    "definition": "Nerves and anxiety in big moments often trigger a freeze response, causing upper body tension, tentative swings, and passive footwork that lead to unforced errors and lost control.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic baseline rallying and approach game"
+    ],
+    "target_player": "players who get tight or tentative in big moments",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q05"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "When human beings experience anxiety, it usually manifests as one of three behaviors. Freeze, fight or flight.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Little bit of extra tension through the forearms, a little bit of extra tension through the upper body, makes the racket come around a little bit slower and a little bit more open than he's expecting",
+      "start": 23.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "In the big moments, he elected to hit really, really hard, forcibly overriding that freeze response and replacing it by fiat with a fight response.",
+      "start": 52.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "We're going to show you how he modified his targeting so he could hit a lot harder without spraying the ball with errors.",
+      "start": 64.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And I'm going to recommend if you're the kind of person who gets tight in big moments. I want you to copy that. Swing harder and swing faster because it's going to help guide you into that fight response",
+      "start": 91.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "instead of aiming close to the line at the speed that he would rather use... he's just going to hit it down the absolute center of that side of the court, but at like 100 miles an hour.",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "See how he recovers towards the baseline. And then watch his split step. His split step is also forward into the court.",
+      "start": 148.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "If you're nervous here, let's say you do somehow manage to hit a good shot here. Probably you're recovering straight to the side. Adopting a a mental state that's like, I just want to survive",
+      "start": 172.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Look how early he takes that like right at the apex. That's pretty much optimal. Versus more of a freeze or a flight where you're kind of nervous, feet aren't quite explosive",
+      "start": 200.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "He is walloping the ball, recovering forward, splitting forward, and then sprinting up to the ball to take it at its highest point.",
+      "start": 244.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Sprint up the ball, hit it. No hesitation coming forward. You see the way he fires the back foot through, immediately lands, and springs to net.",
+      "start": 254.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So, it's the same mental process as hitting harder is just sprint forward and fully commit and fully commit.",
+      "start": 282.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "He might have hit three, four, five more very high quality shots in order to win this point because Alcar's defensive shot is so high quality if he's at the baseline.",
+      "start": 336.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "because not only when you're at net is the ball easier because you're right next to the net, but also your opponent gets multiple, you know, probably two, maybe three... less seconds to get back to the center",
+      "start": 365.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "takes this on the rise and a fight response. It manifests as no hesitation. But obviously, if you hit this ball at 100 miles an hour, when it's this low, it's not going to work.",
+      "start": 414.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Immediate sprint to net. He says, \"I know you're athletic. I know you're getting to that ball. You will not get an easy shot. You've got to hit a miracle.\"",
+      "start": 440.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Hits that shot and look he's fully ready for the next ball. He's totally locked in. There's no relaxation because the point should be over",
+      "start": 524.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "That is the reaction you need, the mental state you need in order to not choke... It is outcome independence.",
+      "start": 543.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "paradoxically, the fact that he's already accepted that he might lose if Center plays well enough is the reason that he can make it so unbelievably difficult for S to win.",
+      "start": 579.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Racket swings slower and face stays open, spraying the ball long on big points",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Footwork recovers passively sideways or backs away into survival mode instead of moving forward",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Hesitation before moving to the net after hitting an aggressive shot",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Anxiety triggers a physical freeze response with excess forearm and upper body tension, slowing the swing and leaving the racket face open.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Aiming fine margins close to lines creates a dilemma where swinging hard increases errors, encouraging tentative slowing of the arm.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "A psychological flight response leads to sideways recovery and waiting passively on the baseline instead of pressing forward.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Remaining at the baseline allows athletic opponents time to recover and counter, requiring multiple consecutive high-quality baseline shots to win points.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Fixation on match outcome rather than acceptance creates anxiety that blocks aggressive commitment.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C05",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Forearm tension slows the swing and opens the racket face, resulting in long errors on big points.",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Jannik Sinner increased his average forehand speed from 82 mph to 88 mph in the final games to forcibly engage his fight response.",
+      "evidence": [
+        "Q03",
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "Aiming down the center of an open half-court allows a player to swing at maximum speed without spraying the lines.",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Outcome independence allows an athlete to accept possible defeat and commit 100 percent to aggressive movement without tension.",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Intentionally swing harder and swing faster when feeling tight to forcibly trigger the fight response.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Shift target to the center of the open side of the court rather than aiming near the lines when ripping the ball.",
+      "external_goal": "center of that side of the court",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Practice recovering closer to the baseline and split-stepping forward into the court to take the ball early at its apex.",
+      "external_goal": "baseline and court space inside baseline",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q07",
+        "Q09"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Commit to sprinting forward to the net immediately after hitting an aggressive approach with zero hesitation.",
+      "external_goal": "the net",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C05"
+      ],
+      "summary": "Adopt complete outcome independence by accepting that the opponent might play too well, freeing yourself to fight fully on every shot.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

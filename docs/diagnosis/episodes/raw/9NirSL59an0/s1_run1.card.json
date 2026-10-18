@@ -1,0 +1,501 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "9NirSL59an0",
+    "url": "https://www.youtube.com/watch?v=9NirSL59an0",
+    "title": "The Paradoxical Nature of Modern Topspin",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 620.0,
+    "upload_date": "2025-11-14",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and progressions using weights, hitting down into the court, and staying sideways to develop effortless topspin mechanics."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/9NirSL59an0.en.vtt",
+    "kind": "auto",
+    "sha256": "728381bf5cb65debe426ced94b153aca230dd316c8cecbc6b22776de797c20ed",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_9NirSL",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does trying to generate topspin cause forehand tightness and instability?",
+    "definition": "Players often tighten up or manipulate their wrist when trying to lift the ball for topspin, failing to achieve loose whipping action and solid contact.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic forehand swing path",
+      "Understanding topspin contact"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q03",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "you are going to be able to feel this level of effortless velocity and whip and relaxation.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "right there in the swing is an effortless whipping action, but you're going to be able to put it through your forehand with topspin contact.",
+      "start": 11.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "the reason that it's easier to stay loose swinging down is that often the act of trying to hit the ball up causes your brain to change the orientation and you'll get tight.",
+      "start": 20.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "the first swing we're going to use is we're just going to try to move this fast slot out in front of us where I could use it to hit the ball down into the ground.",
+      "start": 31.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And then we're going to hit the ball down into the court first and then use some creative adjustments so you can feel just as loose as you feel here, but hitting a forehand up over the net.",
+      "start": 51.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "You try to strike the ball past here, you're going to always feel unstable and the racket's going to be changing constantly. You're never going to have crisp contact.",
+      "start": 125.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "This is where you get that real thick hitting feeling. And this is the real thick hitting feeling we're going to move from down into the ground to out in front of us.",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "every great forehand reaches a position like this because now when it rolls forward, it rolls through topspin.",
+      "start": 168.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And the secret here is when you take the arm and you press it forward. And we use the weight for this because it's heavy and so it forces you to feel this.",
+      "start": 175.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "This elbow space is pretty necessary for the leverage to actually press through. So, if Alexa relaxes her whole upper back complex here and relaxes the elbow down in... It doesn't really work.",
+      "start": 197.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And now, we're just going to try to connect our hand, what we were feeling through here, onto the end of that pressing action.",
+      "start": 257.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "there's another great progression for this, which is to stay sideways. And the reason is if you over-rotate on this, I can't press anymore.",
+      "start": 293.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Staying sideways and pressing truly pressing across the body. You're not going to hit your full forehands like this, but feeling this, feeling that pressing action.",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Now, if the shadow swing doesn't quite feel right, there's an even simpler, more fundamental exercise we could do, which is just the two-armed fly.",
+      "start": 356.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "All of this muscle back here in the round of scapula and the side here, maintain just enough elbow space holding it up, and that is what gives you the leverage to press the weight forward.",
+      "start": 380.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "So, see that entire thing glides back into retraction and that entire thing glides forward into protraction, and that is going to give you the most force and the most comfort.",
+      "start": 411.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "even when your swing is going slightly low to high, the bottom edge of the racket is not leaking under the swing. So, even if the swing path is here, the top edge is leading.",
+      "start": 456.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And so, paradoxically, if your brain goes, 'Oh, I got to get it over the net. I got to open the racket face,' you'll end up leading with the bottom edge.",
+      "start": 491.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "So, let's not worry about hitting it to the net and let's just hit down. Just hit down.",
+      "start": 517.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Oops, I just leaked here. So, just feel just got to get on top of it a little bit more.",
+      "start": 556.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "We're trying to use tension through the big upstream muscles so that this can get in the right place on the right vector and then not need tension through there.",
+      "start": 603.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Arm and wrist tense up when trying to lift the ball up over the net.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Unstable contact and constantly changing string angle when contacting past neutral wrist release.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Bottom edge of the racket leaks forward under the swing path instead of the top edge leading.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Trying to consciously hit the ball upward over the net causes the brain to alter racket orientation and tense the arm.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Striking the ball too late past the neutral wrist release position causes racket face instability.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Collapsing the upper back and dropping the elbow eliminates the structural leverage needed to press the arm forward.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Premature torso over-rotation destroys the forward pressing channel across the body.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The hit occurs during forearm spring load and slap before follow-through roll, maintaining top edge leading.",
+      "evidence": [
+        "Q06",
+        "Q17"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Proper topspin feels thick and like hitting down into the court because the brain does not realize the shoulder has retracted.",
+      "evidence": [
+        "Q07",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "analogy",
+      "summary": "Using heavy weights forces engagement of big upstream muscles in the back and chest to create leverage.",
+      "evidence": [
+        "Q09",
+        "Q21"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Rolling the racket over the ball during follow-through is mistaken for the active hitting action.",
+      "evidence": [
+        "Q06"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice releasing the wrist to hit balls down directly into the ground to experience loose effortless whip.",
+      "external_goal": "Hit the ball down into the court in front of you.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Hold a hand weight and press the arm forward across different vectors while maintaining elbow spacing.",
+      "external_goal": "Press the weight forward along low-to-high and straight vectors.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Connect the loose wrist release onto the end of the forward pressing action.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "progression",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Stay completely sideways while pressing across the body with minimal torso rotation to prevent over-rotating.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Perform a two-armed fly with weights focusing on scapular retraction and protraction while maintaining elbow space.",
+      "external_goal": "Glide scapulae back and forward holding weights up.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Tell yourself to hit down and get on top of the ball without worrying about hitting over the net.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

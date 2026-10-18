@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "quote_snapped": 1,
+    "cause_anchor_exact": 2,
+    "cause_anchor_evidence_spills": 2,
+    "chain_added_missing_cause_inferred": 2,
+    "intuition_first_forced_false": 2,
+    "solution_anchor_exact": 2,
+    "solution_anchor_evidence_spills": 1
+  },
+  "detail": [
+    "quote_snapped: Q12 score=1.00",
+    "cause_anchor_evidence_spills: C02 anchor_bucket=3 evidence_buckets=[3, 4]",
+    "cause_anchor_evidence_spills: C04 anchor_bucket=9 evidence_buckets=[9, 10]",
+    "chain_added_missing_cause_inferred: C03",
+    "chain_added_missing_cause_inferred: C04",
+    "intuition_first_forced_false: solutions.1 no external_goal",
+    "intuition_first_forced_false: solutions.3 no external_goal",
+    "solution_anchor_evidence_spills: D02 anchor_bucket=17 evidence_buckets=[17, 18]"
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "dZadhzVEsds",
+    "url": "https://www.youtube.com/watch?v=dZadhzVEsds",
+    "title": "How to Hit Hard Without Missing Long",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1259.0,
+    "upload_date": "2025-12-28",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as swinging holding the racket with only the thumb and index finger, dropping a ball to catch it late with the forehand swing, and slanting the off shoulder upward during rotation."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/dZadhzVEsds.en.vtt",
+    "kind": "auto",
+    "sha256": "04c7e396d020b67bc6695183cd6f50b98163fb27d114d47d9f70165b4260471f",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_dZadhz",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can you hit hard forehands without missing long or spraying the ball?",
+    "definition": "When players try to swing fast with elastic wrist lag, they often spray the ball long or hit the net because their forward rotational acceleration fires too early from too high a position rather than below the ball.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Relaxed wrist capable of elastic loading"
+    ],
+    "target_player": "Players who have developed elastic wrist lag but spray the ball when swinging with high racket speed",
+    "evidence": [
+      "Q03",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Every swing has a intoout rotational component and this loads the kind of backtofront power into your hand and it has a a vertical component which is either a pendulum like this or it can kind of just be a",
+      "start": 0.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "now we have to be patient. If I load the hand up here, the racket's max velocity is going to be down into the ground. And then you're going to either spray the ball or have to try to wrist",
+      "start": 38.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "diagonal. And so what this looks like with velocity development is that a lot of players start tight and the first thing we have to do is get them to relax in the back swing so they can elastically load",
+      "start": 73.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "elastically load the wrist. But once they get that, their brain doesn't always hold on to it because they'll spray like this. But this was a great elastic load of the wrist. It's just that the timing with the vertical",
+      "start": 80.64,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So that she is injecting most of her power on that gentle upper diagonal, which gives you control, which will then let your brain trust that you can swing hard without spraying it all over the place.",
+      "start": 105.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Now, a great tool for this is the two finger swing, index finger and thumb only, because now I can't fight the racket's momentum. And now I just am forced to work with it.",
+      "start": 145.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "When you start, you're probably going to accidentally whack some of these into the ground. But don't tighten up with your two fingers. Just work with the momentum of the racket.",
+      "start": 172.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "One of the challenging parts for people here is letting go mentally of this part of the swing. If you don't let go mentally, if you want signals, you're going to grab for tension so you can feel it.",
+      "start": 246.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And I want you to watch on a on a rep like this. So, watch how much nice, easy, crisp margin we have. That's working with the racket's momentum, not against it.",
+      "start": 281.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "And now, see how she's right at or just below anticipated contact. And now, if we watch the hitting shoulder, it comes around.",
+      "start": 301.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "See how the shoulder is now starting its acceleration right here well above contact... So now the hand is loaded here. And now it's really awkward because the hand's not going to comfortably get to the ball",
+      "start": 405.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "into the swing, if you take your off shoulder and swing it higher than your hitting shoulder, in other words, instead of rotating just in this flat plane of rotation parallel to the cork, you rotate on like a 10,",
+      "start": 536.16,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So, by slanting like this and by swinging your hitting shoulder higher than this, right? By rotating in this plane of rotation, you are cheating a little, you're using some of your core rotational engine to generate height and spin",
+      "start": 587.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "A lot of people understand bending your knees, but you can also hinge at the hips. And this does two things. Number one, his whole hitting apparatus is lower.",
+      "start": 702.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "The second thing is this like primes the hips, primes the glutes and makes it really easy to rotate into this position on that plane we talked about.",
+      "start": 729.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "acceleration. So, this is another great drill you can do, which is just toss a ball up and try to catch it with kind of a version of your forehand swing or a slightly abbreviated version of your forehand swing",
+      "start": 757.92,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "What we want to do is either try to catch the back of the ball, or can we even catch the bottom of the ball?",
+      "start": 778.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Look, look, look the trunk, the knees. Look how low everything gets. And now she's rotating from here. And again, the stroke is fault tolerant.",
+      "start": 1126.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "You've got to work on both because even once you get your elastic mechanics, if it's from the wrong slot, your brain is not going to trust that it's going to go up and down.",
+      "start": 1237.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The ball sprays long or wildly out of control when swinging fast.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q04"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Racket max velocity vectors downwards into the ground instead of on a gentle upward diagonal.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player tightens up the wrist or tries to wrist the ball up slowly at the very end to save the shot.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q02",
+        "Q11"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Rotational acceleration begins too early while the racket is still high rather than being patient until it drops below contact height.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player seeks sensory feedback and mental control, grabbing tension instead of yielding to racket momentum.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The trunk rotates in a flat plane parallel to the court instead of tilting the off-shoulder up to slant the rotational axis.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player fails to hinge at the hips with a straight back, leaving the entire hitting apparatus too high.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Every forehand has an into-out rotational component for power and a vertical component for height, which must be synchronized so max velocity peaks on an upward diagonal.",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Elena Rybakina demonstrates swinging with the rhythm that injects peak rotational drive from below the ball onto a gentle upward diagonal.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Carlos Alcaraz tilts his non-hitting shoulder higher than his hitting shoulder during forward rotation to produce built-in net clearance and topspin.",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Jannik Sinner hinges deeply at the hips with a flat back to lower his entire hitting slot 6 to 12 inches effortlessly and prime hip rotation.",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "misconception",
+      "summary": "Spraying the ball is not caused by having loose elastic wrist lag, but by mistiming when that elastic lag is released relative to vertical racket height.",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Execute forehand swings and wall rallies holding the racket with only the thumb and index finger to learn to work with racket momentum rather than fighting it.",
+      "external_goal": "Work with the momentum of the racket using only two fingers without tightening up",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Swing your off-shoulder higher than your hitting shoulder to rotate on an upward 10 to 20 degree slant rather than a flat plane.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Hinge at the hips with chest pointed toward the ground and back straight to lower the hitting apparatus below the ball.",
+      "external_goal": "Point chest toward the ground with a straight back",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Drop a tennis ball and catch it on the back or bottom using a late-accelerating forehand swing path.",
+      "external_goal": "Catch the back or bottom of a self-dropped ball with the hand on a gentle upward diagonal",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16",
+        "Q17"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

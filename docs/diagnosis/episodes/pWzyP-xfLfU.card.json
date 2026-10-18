@@ -1,0 +1,511 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "pWzyP-xfLfU",
+    "url": "https://www.youtube.com/watch?v=pWzyP-xfLfU",
+    "title": "The Pros Grip Differently From You (with lesson examples)",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1262.0,
+    "upload_date": "2026-03-27",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lesson_review",
+    "reason": "The coach provides executable drills and cues, such as swinging with only the top two fingers to establish proper racket pivoting."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/pWzyP-xfLfU.en.vtt",
+    "kind": "auto",
+    "sha256": "3cc06558ff089b364bdbbd28e2ad4dde4b1894d7529afcd34e8b600b9c122e2b",
+    "coverage_ratio": 0.9954
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_pWzyP-",
+      "s1_r2_pWzyP-",
+      "s1_r3_pWzyP-"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do recreational players pivot the racket from the butt cap instead of the top of the hand?",
+    "definition": "Players often pivot their racket around the bottom butt cap, losing lag, hitting slot perception, and effortless spin-power control because their top haptic hand references are unmapped.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic racket swing mechanics",
+      "mini tennis hitting capability"
+    ],
+    "target_player": "Players who push the ball or fling their wrist from the bottom of the handle to generate power",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "And if you pivot the racket at the bottom of your hand, you will never uncover that effortless velocity control hitting slot feeling.",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "But with the pivot at the top of the V, the V of your hand, the palm right here, now when I swing the tip of the racket back, the butt of the racket actually goes forward and out.",
+      "start": 47.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "It's going to fix your lag, you're going to be able to perceive your lag, and it's going to give you a feeling of a hitting slot",
+      "start": 83.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "all of these players are going to go from this more kind of pushing style to a real hit with the racket head",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Now, our first and and most powerful tool for this is to take the bottom fingers off of the racket.",
+      "start": 176.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And players who pivot off the bottom a lot of times have these top references, these top haptic references disengage.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "by forcing you to play with only two fingers, I am removing all of your haptic information down here and now I am forcing you to pivot here",
+      "start": 217.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "A lot of times you're going to hit the ball into the ground. That's okay. Work with it. Learn to feel this hitting action where the pivot in your hand here",
+      "start": 244.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And if your if your racket-hand interface isn't properly mapped, you can't perceive what's happening.",
+      "start": 300.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "often players' scapula mechanics improve just by virtue of mastering their hand-racket interface because they stop swinging like this because this pivots the racket around the butt cap",
+      "start": 350.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "If I don't have a haptic sensation through the hand here, then everything I do up here isn't really connected anything.",
+      "start": 409.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Start with this. This is the most important for control, for perceiving momentum, and then as we put our hand back on... we're trying to innervate either the bottom of the palm here or the front two fingers",
+      "start": 460.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "when I use my bottom fingers, I can cheat the momentum of my racket head.",
+      "start": 549.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "cheat anymore. So, I have to perceive the racket's momentum, perceive how the racket head wants to move and then use my proximal links, my chest, my my my abs, my my hips, and my kind of rotation to kind",
+      "start": 570.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "the wrist needs to be relaxed enough to bend backwards. Because if I have tension here, now I go here, and now the racket doesn't keep its momentum",
+      "start": 673.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "However, another great cue is just a feel for the same haptic signal that you got with the two finger.",
+      "start": 701.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "mess up the swing. So, let's say I'm here and now I'm going to squeeze with the bottom two fingers and uh and now I'm I'm not using my momentum handoff and elastic energy anymore. Now, I'm like actively hitting",
+      "start": 728.84,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "But you you want to passively let that happen just with a desire not to drop the racket. So, it's very paradoxical because people say relax... relax in this and then allow the tension to build.",
+      "start": 771.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "I'm not trying to like take my hand and like use my fingers to hit the ball. I'm trying to use my fingers as sensory organs that let me use proximal mechanics to perceive the racket's momentum",
+      "start": 813.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "and you can watch Sam Querrey before every forehand he goes here and then he wraps his hands around.",
+      "start": 894.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "And so, the very first step of any forehand is to innervate the top haptic reference, which is why you see Sinner, Alcaraz, Federer often starting here and then wrapping their fingers around",
+      "start": 948.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "If you try to get velocity by by by hitting harder from here, that is going to break your signaling and it can even get you hurt.",
+      "start": 1023.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "if you are struggling with velocity, often your brain will move your reference down the handle for more leverage... And what I'm doing now is I am now swinging the racket from the bottom of the handle.",
+      "start": 1038.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "which means if we want more velocity, we don't go to leverage here to get more velocity. Instead, we go to proximal mechanics.",
+      "start": 1087.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "If you learn the game the right way where you can perceive the racket in your hand, you can use it to hit the ball, it gets a really, really fun, really, really fast.",
+      "start": 1155.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "You know, that one is a miss, but he he's got a signal through his hand, so he's immediately going to be able to correct for it on the next ball.",
+      "start": 1249.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Pushing the ball forward across the net rather than crisply hitting through the ball with the racket head.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Inability to perceive racket lag and lack of effortless hitting slot sensation during the swing.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q01",
+        "Q03"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Ball hitting directly into the ground when the bottom fingers are not allowed to cheat or manipulate the racket face.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Pivoting the racket around the butt cap rather than the top of the hand deprives the swing of natural flip, lag, and hitting slot control.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Disengagement of the top haptic references causes the hand to become loose and flings the racket primarily from the bottom fingers.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Prematurely squeezing the bottom fingers and tensing the wrist introduces active slow-twitch wrist flexion that destroys passive elastic momentum handoff.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Pivoting around the top of the hand drives the butt of the racket forward and out as the tip goes back, generating an equal and opposite flip.",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "The fingers should act as sensory organs and proximal links should act as the humble guide of racket momentum rather than forcing the stroke with the hand.",
+      "evidence": [
+        "Q14",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Squeezing bottom fingers early to force velocity substitutes slow-twitch wrist flexion for passive elastic energy transfer.",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Elite players like Federer, Alcaraz, Sinner, and Querrey first nestle the racket into the top haptic reference before wrapping their fingers.",
+      "evidence": [
+        "Q20",
+        "Q21"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Take the bottom fingers completely off the racket handle and hit balls using only the top two fingers to force the pivot to the top of the hand.",
+      "external_goal": "Keep the bottom fingers completely separated from the handle while rallying",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "progression",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "After establishing top reference control, gradually place the rest of the hand back on to innervate the bottom palm or front fingers one spot at a time.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "During full-hand swings, keep the wrist relaxed to bend backwards by consciously searching for the same haptic signal felt during the two-finger drill.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Relax the grip early in the swing and allow bottom finger tension to build passively during acceleration solely from the desire not to drop the racket.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": true,
+        "terms": [
+          "降拍"
+        ],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Initiate forehand preparation by first innervating the top haptic reference nestled into the palm or V before wrapping the bottom fingers around the handle.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_pWzyP-",
+        "s1_r2_pWzyP-",
+        "s1_r3_pWzyP-"
+      ],
+      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_draft"
+}

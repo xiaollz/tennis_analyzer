@@ -1,0 +1,389 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "fjpr9PS02tM",
+    "url": "https://www.youtube.com/watch?v=fjpr9PS02tM",
+    "title": "Why 99% Of Grips Don't Work",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 617.0,
+    "upload_date": "2026-06-01",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach gives specific, actionable instructions on how to seat the racket into the V/palm with the off-hand and drag the fingers around the handle before swinging."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/fjpr9PS02tM.en.vtt",
+    "kind": "auto",
+    "sha256": "53c2bde7f1ea1a297fe0b8d79a269e70067b20a1c422d9e1290a1418c0a79ba4",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_fjpr9P",
+      "s1_r2_fjpr9P"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why don't 99% of tennis grips work?",
+    "definition": "Players fail to achieve one-to-one haptic coupling between the hand and the handle while keeping the wrist loose, causing them to lack fine-grained perception of the racket face or sacrifice racket head velocity.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "holding a tennis racket",
+      "hitting groundstrokes"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q09",
+      "Q10"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There is a haptic feedback crisis in modern tennis. And what I mean by haptic feedback is the signals that the racket sends to your hand both while you swing it and when you hit the ball",
+      "start": 11.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And that top connection with the index finger, the thumb, the top of the palm, that stays on the handle most of the time.",
+      "start": 64.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Now another thing most players do which Alexa does as well is they use the left hand to seat the racket in the grip. So the left hand pushes that racket back deeper into the palm",
+      "start": 89.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And there's a good chance you're missing this haptic connection. That's why your swings never self-organize into their best version no matter how much you practice.",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "It's coupling the handle to the hand, and you see we have the same fingers out coupling into the palm.",
+      "start": 159.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "There is not going to be a single motion of the racket or handle that is not also a motion of his hand.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "But, you wouldn't be able to feel what's happening because you can't feel the racket, you can only feel what your hand's doing, and the racket would just kind of be feel like it's moving a little in your hand.",
+      "start": 251.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "We have to reseat the racket in the V or the palm, again, depending on how eastern you are. Reseat the racket all the way into the hand, coupling it together",
+      "start": 271.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And I think this grip seating issue is why so many players have either racket head speed but no racket control, or they have racket control but no racket head speed. And this is why 99% of grips don't work.",
+      "start": 356.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "It's because if you death grip the racket, it's extremely easy to control and perceive where the racket face is... but it's very hard to access velocity.",
+      "start": 371.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And if you hold the racket super loosely, like it's wiggling in my hand, there's tons of space, fingers are barely around, well, now I mean, velocity is trivially trivially easy... However, I have very little fine-grained perception",
+      "start": 387.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "We need to thread that needle of a grip with full connection that still can be held loose enough to allow the wrist to hinge.",
+      "start": 478.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Take the racket, press it into the V of your hand, and then kind of drag the skin of your fingers all the way all the way around your handle.",
+      "start": 488.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "are the basic steps. And your goal is, okay, when something goes wrong. So, that one hit dead on the red. That one hit dead on the red. Oh, little down into the left. How aware am I of how",
+      "start": 506.72,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "good player seats it is you take your left hand and you pull the racket in to your hitting hand. Now, as you do this, it's going to want to go like this. And so, you are going to prevent",
+      "start": 538.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "And when you do that, this space is fully used up. So, as the racket starts to lag like this, you're going to get really great perception through here and through here of exactly what's happening",
+      "start": 572.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "The only way you can get those kind of millisecond order high-velocity timings through the ball every time is if your hand is connected to the handle in a way where you can perceive them, but without having to",
+      "start": 600.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Players either have high racket head speed with poor control, or high racket control with no racket speed.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The racket shifts or wiggles inside the hand during acceleration, leaving the player unable to feel racket orientation.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q07",
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player lacks awareness of what went wrong after an off-center contact and cannot self-correct on the next shot.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04",
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players do not use the off-hand to seat the racket back into the palm or V before each swing, preventing complete haptic coupling.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The racket moves independently inside the hand rather than moving as a coupled unit, so the hand cannot perceive the racket face during acceleration.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players fall into the false binary of either death-gripping the handle (locking the wrist hinge) or holding too loosely with empty space (losing haptic perception).",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Full one-to-one coupling of the hand and handle allows the player to perceive the racket face while still keeping the wrist loose enough to hinge.",
+      "evidence": [
+        "Q06",
+        "Q12"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "Achieving both complete handle connection and a loose wrist hinge is described as 'threading the needle'.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Pro players like Sinner, Federer, and Alcaraz use the off-hand to seat the racket into the V/palm before closing the fingers prior to every shot.",
+      "evidence": [
+        "Q05",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "The belief that control requires a tight death grip or that loose grip for speed requires wiggling space between the fingers and handle is incorrect.",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Press the racket into the V of the hitting hand with the off-hand, then drag the skin of the fingers all the way around the handle to establish full surface connection without death-gripping.",
+      "external_goal": "Press racket into V and drag fingers around the handle",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "check",
+      "targets": [
+        "C02"
+      ],
+      "summary": "After an off-center contact, check whether you are aware of exactly how to adjust the racket face on the next stroke; lack of awareness indicates lost perception of the racket face.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "On the one-handed backhand, pull the racket in with the non-dominant hand while preventing twisting using the bottom two fingers to eliminate dead space and set wrist extension.",
+      "external_goal": "Pull racket into hitting hand with off-hand",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15",
+        "Q16"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

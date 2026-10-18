@@ -1,0 +1,438 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "PfDqnff_vYA",
+    "url": "https://www.youtube.com/watch?v=PfDqnff_vYA",
+    "title": "Why Your Serve is So Slow",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 533.0,
+    "upload_date": "2026-02-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as nestling the racket into the V of the hand, throwing the racket out to the hitting side, and using the clock drill progression."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/PfDqnff_vYA.en.vtt",
+    "kind": "auto",
+    "sha256": "09524928de4532ad2bb8fa53e6908368c46177702487f33ff92a4ba426f785ee",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_PfDqnf",
+      "s1_r2_PfDqnf",
+      "s1_r3_PfDqnf"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why is your overhead and serve so slow and weak?",
+    "definition": "Players struggle to generate speed on overheads and serves because their mental model focuses on throwing the racket up at the ball or hitting over the net, rather than throwing the racket out to the side with proper palm connection.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Continental grip ability",
+      "Basic overhead swing motion"
+    ],
+    "target_player": "Players who get stuck in the back scratch, flex their wrist over the top, or lack explosive racket speed on overheads and serves",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Before today, Amelia could barely hit an overhead like 80 miles an hour. I mean, the stroke was terrible. She'd whiff it a lot of the time.",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "to show you how to do that. The fundamental mental remapping is that when you get here, you are not throwing your racket up at the ball, and you are certainly not throwing your racket down and up at the",
+      "start": 19.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Now, okay, the racket has to hit the ball forward. Yes, that is going to happen because of the way your arm and forearm and racket are going to stretch when you throw it out to the right.",
+      "start": 38.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Now, what I am doing here is I'm throwing the balls right into Amelia's contact zone. But I'm throwing them into a contact zone that is much lower than a serve toss. This is not a serve. This is an",
+      "start": 54.32,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So, see the orientation she's in here? This is almost like a baseball pitcher.",
+      "start": 72.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "zone. Her brain now isn't like anchored and stuck on having to hit the ball up over the net, and it's willing to just throw the racket through and see what happens. And this is how you fundamentally unlock that",
+      "start": 88.03999999999999,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "instead of like getting slow, stuck in the back scratch, and like flexing her wrist over the top, look, we've got, you know, the external shoulder rotation we've got. We've got the elbow penetrating through like we want.",
+      "start": 107.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "stretching out back here. We've got pronation and internal rotation through the swing. Look, we've even got that follow-through that you see from a lot of the best servers because this is just the way that the hand naturally",
+      "start": 117.88,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "she's actually leaning her trunk to create enough space to throw the racket out when she doesn't have it right away.",
+      "start": 165.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Nestle the racket into the V of your hand and into the palm around your index finger. Really nestle it in back there. And you can even pull the bottom fingers off of the handle as you're preparing.",
+      "start": 201.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Nestling the racket back into the V of the hand like this is the secret to using these explosive swings where you have to be relaxed at the beginning but still being able to both perceive and control the racket",
+      "start": 246.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Taylor Fritz does this at some point before almost every serve. You know, Cinner Federer they do it on their forehands.",
+      "start": 240.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So what she's talking about there that wraps this all in the bow is that the forehand and the overhead are the exact same stroke. It is just a different plane of rotation but it's the exact same thing",
+      "start": 295.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "We have this drill in our member program. It's called the clock drill and I am just creating that same swing at each of the hands on the clock.",
+      "start": 333.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "to kneel down. And so, okay, here's the forehand. I'm just throwing the racket out, feeling it nestle into my palm, so I actually know where the racket head is even though I'm relaxed. As I'm getting higher here, I'm",
+      "start": 375.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "the same exact stroke. It's like the way that you throw the racket out and like flip it and release it down here, you just work up from there doing the exact same thing. Don't Don't think about hitting up.",
+      "start": 418.72,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "my contact. The same exact thing here, because it's nestled in, cuz I have a sense of the racket, I can feel when the racket wants to go like this. So, I flip it nice and loose, but I can",
+      "start": 461.36,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "work your whole clock with the racket flips, and as you get higher, switch over to continental, then, you know, everything becomes uniform, everything cross-pollinates to everything else.",
+      "start": 499.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Very low ball velocity on overheads or serves, around 80 mph or lower, with frequent mishits or whiffs.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Racket speed stalls as the player gets slow and stuck in the back scratch position.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player flexes the wrist over the top of the ball instead of naturally pronating and externally/internally rotating.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player attempts to throw the racket up or down-and-up directly at the ball rather than throwing it out to the hitting side.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The brain is psychologically anchored on clearing the net, preventing a committed and free outward release.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The racket is not nestled deep into the V of the hand and index palm, preventing relaxed control and inertia perception of the racket face.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player fails to recognize that the overhead/serve uses the exact same outward release and flip mechanics as the forehand along a different plane.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "Thinking the racket must be swung upward toward the ball is incorrect; the racket naturally stretches forward and up by being thrown out to the hitting side.",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "The body orientation and outward throwing motion near the net mimic the biomechanics of a baseball pitcher.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Top players like Taylor Fritz on serves, and Sinner, Federer, and Alcaraz on forehands, reset their grip deep into the V of the palm before swinging.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "visual_model",
+      "summary": "The clock drill conceptualizes swings at different heights as points along the hands of a clock sharing the same core release motion.",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Cue yourself to throw the racket out to your hitting side (right for righties, left for lefties) rather than up at the ball.",
+      "external_goal": "Throw racket out to the hitting side",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Stand right next to the net and hit fed overheads from a low contact zone, throwing the racket outward like a baseball pitcher without worrying about clearing the net.",
+      "external_goal": "Throw the racket through the contact zone right at the net",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Nestle the racket handle deep into the V of the hand and index palm, pulling the bottom fingers off the handle during preparation to calibrate feel.",
+      "external_goal": "Nestle racket into hand V with bottom fingers peeling off",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "progression",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Practice the clock drill: start with low forehands throwing the racket out, progress higher along the clock face, and switch to a continental grip as contact goes overhead while keeping the same flip feel.",
+      "external_goal": "Swing outward at every hour mark along the clock continuum",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

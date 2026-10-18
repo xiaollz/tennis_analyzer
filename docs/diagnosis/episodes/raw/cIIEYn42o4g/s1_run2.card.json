@@ -1,0 +1,509 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "cIIEYn42o4g",
+    "url": "https://www.youtube.com/watch?v=cIIEYn42o4g",
+    "title": "The #1 Backscratch Mistake — and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 504.0,
+    "upload_date": "2025-11-19",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "lecture",
+    "reason": "The coach provides executable drills and cues, including an isolated forearm rotation drill in front of the body, overhead dry swings, and a self-toss bopping drill directly above the head."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/cIIEYn42o4g.en.vtt",
+    "kind": "auto",
+    "sha256": "340f0ab1a60da1e2b6a926cd9fb0a4a2bc78d0b9f64805464ab762828b8b7dc1",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_cIIEYn",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "What is the #1 mistake players make in the backscratch position on the serve, and how can it be fixed?",
+    "definition": "Players mistake the backscratch position for the maximum power position and jackknife the racket straight up toward the ball, skipping the critical outward forearm supination stretch that powers pronation.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Continental grip",
+      "Basic serve motion"
+    ],
+    "target_player": "Players who get stuck in the backscratch position or lack explosive power on their serve",
+    "evidence": [
+      "Q01",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "This is not the max power position on your serve. This is and between these positions from here in the backstretch position to the actual max power position on your serve.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "That racket doesn't go up towards striking the ball. It continues flicking out out out until around here. And now it starts flicking in and up.",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "you don't hit the ball with your shoulder. You hit the ball on the serve with your forearm with a motion called pronation.",
+      "start": 33.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "The shoulder absolutely stretches and fires energy into your form. It's a link in the kinetic chain, but it's not the last link.",
+      "start": 46.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the reason I think a lot of players get stuck here is because they don't have a sense of the fact that they're hitting with their forearm.",
+      "start": 66.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And so in from here, they just kind of jack knife the racket up to the ball.",
+      "start": 74.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "you're naturally going to throw your arm back and out like this, because you're going to kind of feel all that power here and get that real whack with the forearm",
+      "start": 81.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "forearm, not the shoulder. And notice that it's one continuous roll out until around here where it starts to snap over. So there is the back scratch position with respect to the shoulder might be important, but with respect to",
+      "start": 99.759,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "this is max stretch of the forearm. And of course, because the forearm has been stretched into supernation like this, now we get that really explosive pronation through the top of the serve.",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "The the way that Vic Braden used to say this is don't scratch your own back, scratch your partner's back. And so if you imagine a second person standing right here, Alcarez is scratching their back at max stretch of",
+      "start": 148.4,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Awareness of how your forearm is smacking the racket through the ball. That's what allows you to have your forearm roll through this whole thing into supernation rather than getting stuck here in the back scratch.",
+      "start": 181.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "a server like Sampas. This is something you see in a lot of weaker servers is that there is a lot less of that stretch on the forearm and a lot more of what beginners tend to do and what",
+      "start": 201.36,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "We are going to see the racket travel out like a Pete Sampas into that really supenated stretch position and then in like a blink of an eye even on slow-mo it is going to explode through that pronation.",
+      "start": 247.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "even as the shoulder starts to rotate forward, that forearm is still in stretch. And because you hit the serve with your forearm, you really want to be perceiving this forearm action here",
+      "start": 286.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Now, you'll notice when you start exploring this, just explore it out in front of you. Don't go over your head. Don't confuse yourself. Don't get your shoulder involved.",
+      "start": 328.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Once you're comfortable with that, you take the racket above your head. And this is the exact same, very minimal shoulder, pretty much all forearm. And I am visualizing this into out bop above my head.",
+      "start": 345.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "your brain if it's stuck in the back scratch glitch thinks that you have to hit a ball a different way than you actually do. So you need to first retrain your brain without the ball tricking it",
+      "start": 362.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Fire. Stretch. Fire. Stretch. Fire. So once you're ready, toss a ball. Toss it so that it would land on your head. If you toss it into the court, it's going to feel awkward for just bopping. So toss it",
+      "start": 377.919,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Stretch the forearm out and in. And just bop with the forearm. Again, look, I'm basically just holding my arm up. My shoulder is very minimally rolling.",
+      "start": 394.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "So I want you to imagine the racket's horizontal. That's probably not what's going to actually happen, right? Like here it's not horizontal. It's like 45 degrees up, but the tip on the inside of your hand.",
+      "start": 421.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "just bop these, you know, to the baseline. Don't try to bop them down into the box yet. We're just training the brain that this bopping action boom boom hits the ball.",
+      "start": 432.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "So from here, I'm not back scratching. I want my forearm to roll out. And you see how the back scratch is just a random position halfway before that happens.",
+      "start": 450.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "you learn to feel that, your serve is going to stop getting stuck right here. Show you this in fast motion real quick so you can see the bop in fast motion. Bop.",
+      "start": 476.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "But this boopping action strikes the ball and you've got to understand",
+      "start": 500.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The racket travels straight up toward the ball from the backscratch position rather than continuing to flick outward.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The forearm fails to stretch outward into full supination, remaining truncated at the backscratch position.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "R",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q09",
+        "Q12"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Serve lacks explosive power and snap despite the shoulder reaching maximum stretch.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q12"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "The server feels stuck in the backscratch position or feels like the shoulder is driving the strike instead of the forearm.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q05",
+        "Q23"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players jackknife the racket straight up toward the ball from the backscratch position rather than throwing it back and out.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The racket does not continue flicking outward into maximum forearm supination stretch before moving up toward the strike.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players focus on shoulder stretch as the hitting action rather than recognizing forearm pronation as the final link in the kinetic chain.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The shoulder stretch passes energy into the arm, but forearm pronation is the final link in the kinetic chain that actually hits the ball.",
+      "evidence": [
+        "Q04",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "Vic Braden's cue: do not scratch your own back (shoulder stretch); scratch your partner's back (full forearm supination stretch).",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Medvedev's serve moves mostly straight over the top from backscratch with minimal stretch, contrasting with Sampras, Alcaraz, and Lisicki who flick out into deep supination.",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "The backscratch position is not the max power position of the serve, but merely an arbitrary dynamic transit point for the forearm.",
+      "evidence": [
+        "Q01",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "visual_model",
+      "summary": "Visualize the racket oriented horizontally with the racket tip positioned inside your hand prior to the into-out bopping action.",
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Explore forearm pronation and supination directly in front of your chest without raising the racket overhead or involving the shoulder.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": true,
+        "terms": [
+          "旋后"
+        ],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "progression",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Take the isolated forearm rotation overhead and practice dry into-out bopping swings with minimal shoulder movement.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Toss the ball directly above your head so it would land on your head or hat, and bop it with isolated forearm pronation toward the baseline.",
+      "external_goal": "Bop the ball toward the baseline rather than down into the service box",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Imagine the racket is horizontal with the tip resting well on the inside of your hand before releasing the bopping action.",
+      "external_goal": "Racket tip positioned on the inside of the hand",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20",
+        "Q21"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "When moving past the backscratch position, tell yourself to let the forearm roll out rather than trying to back scratch.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
