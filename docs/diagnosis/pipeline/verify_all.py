@@ -207,8 +207,8 @@ MUTATIONS = [
 
 # ---- tree v2 artifacts (OBS binding + mechanism merge): mutations run on in-memory copies of the committed files
 # selftest data = the CURRENT artifacts (v4, built against the current obs_catalog.json). v2 artifacts (18-observable catalog) stay in the repo as history.
-V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v5.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v6.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v6.json",
-      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v6.json", "eps": DIAG_DIR / "episodes"}
+V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v7.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v7.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v7.json",
+      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v7.json", "eps": DIAG_DIR / "episodes"}
 
 
 def v2_available():
@@ -314,8 +314,28 @@ def _p_leak2(pdir):
 
 
 def _g_other_stroke(d):
+    """Swap first member of group 0 to an existing backhand cause node of t1 (M02: mixed strokes).
+
+    Picks any t1 cause whose source card is classified backhand. Hard-coding a node id broke when that
+    cause was lexically merged out of a later skeleton (e.g. LWS7:C03 into DX8A:C02 in tree_base_v7).
+    """
     m = d["mm"]["groups"][0]["members"][0]
-    m["node"], m["card_causes"], m["episodes"] = "N-C_LWS7XXQRRDW_C03", ["lwS7Xxqrrdw:C03"], ["lwS7Xxqrrdw"]
+    back = None
+    for n in d["t1"]["nodes"]:
+        if n["kind"] != "cause":
+            continue
+        ep = n["evidence"][0].split(":")[0]
+        card = load_json(DIAG_DIR / "episodes" / f"{ep}.card.json")
+        if card["classification"]["stroke"] != "backhand":
+            continue
+        cid = next((x["id"] for x in card["causes"] if x["statement"] == n["name"]), None)
+        if cid:
+            back = (n["id"], ep, cid)
+            break
+    if back is None:
+        raise RuntimeError("no backhand cause node in t1 for M02 mutation")
+    nid, ep, cid = back
+    m["node"], m["card_causes"], m["episodes"] = nid, [f"{ep}:{cid}"], [ep]
 
 
 def _g_same_video(d):

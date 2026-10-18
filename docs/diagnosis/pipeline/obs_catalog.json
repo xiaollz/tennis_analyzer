@@ -669,6 +669,31 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py from_review"
       }
+    },
+    {
+      "id": "OBS-37",
+      "src": "OBS-37_backswing_hands_drop_down_come.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the backswing, do the hands drop down and come back up in a loop before the forward swing, or stay at about the same height?",
+      "values": [
+        "drop_in_loop",
+        "stay_at_same_height"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v7.json",
+        "episodes": [
+          "GsHkML2mVEI",
+          "lwS7Xxqrrdw"
+        ],
+        "pairs": [
+          "N-C_GSHKML2MVEI_C01 | N-C_LWS7XXQRRDW_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
     }
   ]
 }

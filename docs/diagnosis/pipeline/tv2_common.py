@@ -37,7 +37,18 @@ def load_cards(episodes):
 def cause_item_map(tree, cards):
     """(ep, cause id) -> v1 node id, rebuilt from node id naming (N-C_<UP(ep)>_<Cnn> is the cluster representative) and
     the build log's merged clusters. Returns also node -> [(ep, cid)] members."""
-    log = load_json(DIAG_DIR / "ftt_tree" / "build_log.json")
+    # Prefer the build log that matches the skeleton (TV_BUILD_LOG / sibling of TREE_V1); fall back to v1 build_log.json.
+    import os
+    if os.environ.get("TV_BUILD_LOG"):
+        log_path = Path(os.environ["TV_BUILD_LOG"])
+    else:
+        # tree_base_vN.json -> build_log_base_vN.json; tree.json -> build_log.json
+        stem = TREE_V1.name
+        if stem.startswith("tree_base_") and stem.endswith(".json"):
+            log_path = TREE_V1.with_name("build_log_base_" + stem[len("tree_base_"):])
+        else:
+            log_path = DIAG_DIR / "ftt_tree" / "build_log.json"
+    log = load_json(log_path)
     members = {}
     for ep, c in cards.items():
         for x in c["causes"]:

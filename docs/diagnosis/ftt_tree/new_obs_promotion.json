@@ -1834,5 +1834,34 @@
    "layer": "B",
    "camera": "B"
   }
- ]
+ ],
+ "from_cc_review": [
+  {
+   "obs": "OBS-37",
+   "file": "observables/OBS-37_backswing_hands_drop_down_come.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "night loop E: second CC T08 review on tree_v7; promote proposals with >=2 episode subtitle citations",
+   "source_review": "ftt_tree/t08_cc_review_v7.json",
+   "description": "During the backswing, do the hands drop down and come back up in a loop before the forward swing, or stay at about the same height?",
+   "values": [
+    "drop_in_loop",
+    "stay_at_same_height"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "GsHkML2mVEI",
+    "lwS7Xxqrrdw"
+   ],
+   "pairs": [
+    "N-C_GSHKML2MVEI_C01 | N-C_LWS7XXQRRDW_C01"
+   ],
+   "quotes": [
+    "GsHkML2mVEI:Q06",
+    "lwS7Xxqrrdw:Q03",
+    "lwS7Xxqrrdw:Q04"
+   ]
+  }
+ ],
+ "from_cc_review_skipped": []
 }
