@@ -1,0 +1,398 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "YbLit9png2U",
+    "url": "https://www.youtube.com/watch?v=YbLit9png2U",
+    "title": "Fix Your Kick Serve by Throwing Sideways",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 202.0,
+    "upload_date": "2024-07-29",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable cues instructing players to recruit their throwing motion sideways with large orthogonality toward the umpire's chair rather than throwing straight at the box."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/YbLit9png2U.en.vtt",
+    "kind": "auto",
+    "sha256": "12e03f3a4db53c3c6e07eaadbe047a2b8e767a704696715339aa68f1b030f007",
+    "coverage_ratio": 0.9986
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_YbLit9",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should you direct your racket trajectory to hit an effective kick serve?",
+    "definition": "Players struggling with the kick serve fail to generate racket speed and heavy spin because they try to swing straight toward the target box rather than directing their throwing motion sideways.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "overhead throwing motion",
+      "continental grip"
+    ],
+    "target_player": "players struggling to generate racket motion and spin on the kick serve",
+    "evidence": [
+      "Q05",
+      "Q07"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "all right check this out this is going to transform your understanding of the kick serve let's watch it",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "it's a great serve he lost the racket on the way they still won the point",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Dominic team is hitting a kick serve and because he actually releases the racket here we can see the exact Vector he throwing the racket along",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "release and it goes basically sideways look at that it doesn't even get to the net",
+      "start": 34.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "and this is something I think so many people who are struggling with the kick serve... but just fundamentally can't create the racket motion don't understand",
+      "start": 40.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "motion don't understand look at where that racket ended up look at that trajectory angle that is the angle that a player like Dominic team who has one of the best kickers in the world that's the angle that he",
+      "start": 49.92,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "if you're trying to use your your flat surve throw trajectory or even worse throw straight at the box it's never going to work",
+      "start": 65.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "he's basically throwing towards the umpire's chair not even the Net post the umpire's chair",
+      "start": 73.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "that's how like lateral and not across to the other side of the Court this particular throwing motion is",
+      "start": 77.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "and if you're not throwing like this if you're trying to throw kind of straight on to where you're aiming you're just never going to be able to generate the racket motion that creates the kind of spin you want",
+      "start": 85.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "the kind of spin you see players like Dominic team hitting so effortlessly",
+      "start": 94.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "we're going to watch yanx center next to get a sense of what it looks like what the vector looks like when you're trying to hit just a regular overhead",
+      "start": 100.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "and again I've written all about this all about the serving throw vectors you can read all about it if you want but for now let's watch this clip",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "okay so we're going to be a lot straighter on here now not totally straight on Center's right-handed so he's still throwing to the right of where the ball ultimately goes",
+      "start": 130.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "look at this trajectory it goes kind of straight into the deide service box maybe a little bit to the right and the ball goes down the middle of the court",
+      "start": 138.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "so there's still that orthogonality there but it's not nearly as large as the kicker",
+      "start": 143.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "and I think these two rack throw Clips where the racket is literally thrown it's literally released are just so instructive so we can actually see the literal Vector",
+      "start": 149.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "if you can get this you are going to be swinging like your favorite players and I promise you if you can learn to feel this",
+      "start": 163.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "if you can learn to recruit your throwing motion with this slight orthogonality or for the kick surve a much bigger orthogonality",
+      "start": 169.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "if you can learn to use your throwing motion like that your serve is going to feel so good",
+      "start": 178.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "and a lot of your issues might be because you're trying to throw straight on in a way that is just never going to work",
+      "start": 182.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The serve fails to produce the desired kick spin and racket acceleration.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "B",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The racket swing path directs straight forward toward the target box rather than out to the side.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players fundamentally fail to create proper kick serve racket motion because they do not understand how sideways the trajectory vector must be.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players attempt to use a flat serve throwing trajectory or actively throw straight forward at the service box where they are aiming.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players do not utilize the high degree of orthogonality required between the arm's throwing vector and the ball's final flight line.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Dominic Thiem accidentally releases his racket during a kick serve, revealing an almost entirely sideways launch angle that does not even reach the net.",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "The kick serve requires a highly lateral throwing path rather than an across-the-court path to generate proper brushing spin.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Trying to throw the racket straight at the service box or reusing a flat serve trajectory prevents generating kick spin.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "Sinner's accidental overhead throw shows a relatively forward vector into the deuce box, contrasting sharply with the much larger lateral orthogonality of a kick serve.",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "visual_model",
+      "summary": "Accidental racket release clips provide literal visualization of the true throwing vectors used on different overhead swings.",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C01"
+      ],
+      "summary": "Direct the throwing motion laterally toward the umpire's chair instead of toward the net post or the target service box.",
+      "external_goal": "Throw the racket trajectory towards the umpire's chair.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Recruit your throwing motion with much bigger orthogonality relative to the final intended flight of the ball.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

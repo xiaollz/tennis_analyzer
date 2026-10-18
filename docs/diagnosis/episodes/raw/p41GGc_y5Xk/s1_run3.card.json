@@ -1,0 +1,442 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "p41GGc_y5Xk",
+    "url": "https://www.youtube.com/watch?v=p41GGc_y5Xk",
+    "title": "How Your Hand Controls Every Shot",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 384.0,
+    "upload_date": "2025-10-04",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable cues and practice methods, instructing the viewer to look at the target, feel hand sensations, and hit balls to build intuitive control."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/p41GGc_y5Xk.en.vtt",
+    "kind": "auto",
+    "sha256": "e37999dfbca45c5253d0f83d6883908f629b229841ae89e7813300129ea61e96",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_p41GGc",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does your hand control every shot without getting tight or injured?",
+    "definition": "Players often try to actively force the racket or generate power from the hand and wrist, causing a loss of control, tension, and potential injury instead of using hand sensations purely for directional control.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand groundstroke technique",
+      "relaxed wrist during early load phase"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q06",
+      "Q07"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There are sensations in your hand, which we're going to go over in this video, that can help you control the ball and manipulate what you want to do with the ball.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "That can make your striking intention a reality very consistently, but not in a way that's going to make you feel tight and get you hurt.",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "When your racket lags back a little with a nice relaxed wrist during that early load phase of the swing, you're going to feel the handle push back on your index finger.",
+      "start": 40.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And that sensation of the pressure on the back of the index finger is really going to help you release the energy stored in your wrist in the direction that you want to release it.",
+      "start": 54.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "These muscles in your hand, that's the way they work. They guide how you release stretch stored energy that you put in beforehand.",
+      "start": 98.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And now I want to stress that these feelings in your hand, they are feelings that help you sense the orientation of the racket head for the purpose of control. When we try to generate power, if you try to",
+      "start": 122.719,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "A lot of the conscious adjustments with the forearm and the hand are for directional control. They are not for generating force.",
+      "start": 140.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Now, the semi-western grip, it's a little bit different. The most vivid sensation is the strong fingers and the bottom of your hand in the front of your racket handle.",
+      "start": 166.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "The bottom of your hand is so stable and gives you such great control with all these fingers in front of your contact of exactly how your swing is coming through the air.",
+      "start": 179.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "And so all I'm doing here, I look at the target, feel that sensation in the hand, and I let my intuition figure out how to use it to get the ball closer and closer to the target.",
+      "start": 193.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "These sensations in the hand are not meant for creating power. They are meant for directing the energy that you already created where you want that energy to go.",
+      "start": 220.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Because on lower balls, if you don't know what your racket head is doing, if you don't feel like you can manipulate the ball, you just can't really do anything.",
+      "start": 240.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Now, this is a drill that, you know, Alexa probably did 10,000 times while she's developing her own forehand and just building that intuitive sense of what the hand feels like",
+      "start": 250.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Critically, use the hand for control and release of energy, not to try to create energy with it by itself.",
+      "start": 265.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Start with this. Let your intuition work on those sensations in your hand, and you can get here with practice.",
+      "start": 281.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "To work this into your full game, you are connecting your feet and your butt and your trunk to that striking intention with your hand.",
+      "start": 292.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Your sensors in your hand are what tell you where the racket head is. So both of those mental processes work.",
+      "start": 304.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "You can't be like thinking, \"Oh, I'm going to move my fingers like this and the racket.\" No, no, no. You feel it. You hit a thousand balls while feeling it, and your brain learns how your hand works.",
+      "start": 336.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "All that's happening here is that Alexa knows, she has a sense for how she wants to strike the ball with the hand with the racket head. And so she does it.",
+      "start": 354.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "It looks really complicated, but it is anchored by that desire to strike the ball in the certain way. Anchor to sensations through the hand with what exactly the racket head is going to do.",
+      "start": 372.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Feeling tight in the hand and wrist during the swing, with risk of injury.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Loss of directional ball control and inconsistent striking intention.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Inability to manipulate the ball effectively on lower balls.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players attempt to generate power and force actively from the hand rather than using it purely for directional control.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players fail to sense racket head orientation through hand pressure sensors, leaving them unable to manipulate the ball on demanding shots like low balls.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players attempt to consciously micromanage individual finger mechanics instead of hitting repetitions to build intuitive hand-racket coordination.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q06",
+        "Q12"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Hand and forearm muscles function according to kinematic data as directional control guides to release stored elastic wrist energy, not as primary force generators.",
+      "evidence": [
+        "Q05",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "With an eastern grip, pressure pushes back on the index finger during lag; with semi-western, stability is felt through the strong fingers and bottom of the hand in front of the handle.",
+      "evidence": [
+        "Q03",
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "The coach warns against actively creating energy from the hand at rest or consciously overthinking finger movements.",
+      "evidence": [
+        "Q05",
+        "Q18"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Look at your target, feel the sensation in your hand, and allow intuition to guide the ball closer to that target.",
+      "external_goal": "Get the ball closer and closer to the target",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Practice hitting lower balls repeatedly to develop the intuitive hand sensation needed to manipulate the racket head and release stored energy.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Integrate the hand sensation into full groundstrokes by connecting feet, butt, and trunk upstream to support the hand's striking intention.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Hit a high volume of balls while focusing purely on hand sensations rather than analyzing finger mechanics, letting the brain intuitively learn.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

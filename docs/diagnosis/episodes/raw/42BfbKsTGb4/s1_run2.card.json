@@ -1,0 +1,469 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "42BfbKsTGb4",
+    "url": "https://www.youtube.com/watch?v=42BfbKsTGb4",
+    "title": "You Aren't Practicing Half of Tennis | RECEIVING Will Transform Your Game",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 337.0,
+    "upload_date": "2025-04-18",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "demo_with_player",
+    "reason": "The coach provides actionable isolation drills and progressions to practice receiving the ball with lower-body footwork and balance."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/42BfbKsTGb4.en.vtt",
+    "kind": "auto",
+    "sha256": "a30a783a33ad9093636c252be26aa0a375d40407f93d5bf32b4abdc38130fdb6",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_42BfbK",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why can't players use their good practice swing to win matches?",
+    "definition": "Players often develop mechanically sound swings in practice but fail in match play because they only practice sending the ball and neglect receiving the incoming ball into their ideal contact spot.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Able to hit clean groundstrokes in controlled practice or on a ball machine"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "And you do have a good forehand, but no, you can't win matches with a good forehand alone because that is only half of the equation in tennis.",
+      "start": 11.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "That is the sending piece of the equation. But we need to master the receiving piece of the equation.",
+      "start": 20.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "All of these misses you're seeing have really nothing to do with the swing. Literally half the game of tennis is the act of receiving the ball from your opponent into the spot where you want it.",
+      "start": 27.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And so many people are so hyperfocused on the sending aspect that they end up with great swings, but they can't use them because they can't receive the ball into those swings.",
+      "start": 39.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Imagine if a baseball player only ever practiced throwing to first and never actually practiced getting the ground ball into their glove.",
+      "start": 47.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "But the most difficult part of this play was getting that glove on the exact spot of the baseball in the first place.",
+      "start": 60.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Normally, when you're moving, you use your arms to balance. But in tennis, I want to be able to do 100% of my balance with my legs so that my arms can swing however I have to.",
+      "start": 78.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, in order to practice and force myself to balance and receive the ball with my legs, I can restrict myself. So, I can put this arm back here. I can attach the racket to my hip.",
+      "start": 93.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "So, this level, this level of adjustment where there is one specific spot and I have to use my lower body to find the ball in that one specific spot.",
+      "start": 116.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "This is really how precise your lower body footwork should be in matches.",
+      "start": 130.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Now, if I go like this, I barely have to move to hit the ball on the strings because I can just make my adjustment with my upper body. But that's not what we want.",
+      "start": 137.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "What we want is to get the ball in exactly the right spot even when I free myself up. And if you receive with that level of intensity, then the the swing can be almost the same every single time.",
+      "start": 157.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "That way, you save your adjustment for when you really need it instead of not receiving the ball and having to hit an awkward shot every time.",
+      "start": 177.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "In tennis, the first critical step to receiving the ball is knowing where to receive it into. You have to develop a sense over your contact point that's just as good as the sense you have over your hand.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And the reason she's not going to miss is she has a perfect kinesthetic sense of how her hand is moving in space.",
+      "start": 213.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "You need to learn exactly where for your body and your swing that comfortable motion is coming through space. and then practice actively receiving the ball into that spot.",
+      "start": 226.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "This drill isolates the receiving aspect from the sending aspect. The sending aspect is just tossing the ball back. And by pinning your elbow to your side, you restrict the spot where you have to receive the ball into.",
+      "start": 257.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And so almost all of my receiving here needs to be done with my legs, with my hips, and with my trunk.",
+      "start": 273.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "I've pinned my left arm behind my back to force myself to balance using my lower body. So that when I play tennis, my left arm is totally free to use for leverage at the trunk",
+      "start": 280.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "My only goal here is to tap the ball back to Alexa. In order to do this, I need to actively receive the ball onto my string bed every time.",
+      "start": 298.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "This improves your racket eye coordination, and it's a nice test of your peripheral vision.",
+      "start": 306.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "On the shot in question here, you can see the issue is the spot that I set myself up in. And given this ridiculous spot, honestly, the swing itself is not that bad.",
+      "start": 325.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Hitting frequent misses or awkward shots during matches despite having a solid swing in practice.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q03",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player barely moves feet and compensates by reaching or adjusting with the upper body to make contact.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player feels comfortable during stationary feeds but feels out of position and unable to use their swing in rallies.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players hyperfocus on the sending stroke and neglect training the skill of receiving the ball into their hitting zone.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players rely on their arms to maintain balance while moving rather than doing all balancing with their legs.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players compensate for lazy footwork by reaching and making swing adjustments with their upper body.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players lack a precise kinesthetic awareness of where the racket contact point comfortably sits in space.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "inferred",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "analogy",
+      "summary": "Compares tennis receiving to an infielder fielding a baseball cleanly into the glove before throwing to first base.",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Balancing 100% with the legs leaves the arms and trunk free to execute the forward swing and create leverage.",
+      "evidence": [
+        "Q07",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Contrasts reaching with the upper body to hit a ball versus moving the lower body with intense footwork to hit a fixed contact spot.",
+      "evidence": [
+        "Q09",
+        "Q11"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "analogy",
+      "summary": "Compares the kinesthetic spatial awareness needed for the racket contact point to the effortless precision of giving a high five.",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Practice receiving by pinning the non-dominant arm behind the back and fixing the racket against the hip, moving only with the legs to meet the ball.",
+      "external_goal": "Meet the incoming ball directly on the strings with the racket pinned to the hip.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Free up the arms to swing naturally while maintaining the same high level of footwork precision and intensity to deliver the ball to the exact contact spot.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "summary": "Isolate receiving from sending by pinning the dominant elbow to the side and the non-dominant arm behind the back, moving the lower body and trunk to catch and toss the ball back.",
+      "external_goal": "Catch incoming tossed balls with minimal forearm movement and toss them back.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Execute a touch tap-back rally with the racket, focusing entirely on receiving the ball squarely on the string bed and gently tapping it back to the partner.",
+      "external_goal": "Gently tap the ball back to the partner onto their racket using the string bed.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

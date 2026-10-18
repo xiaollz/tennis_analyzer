@@ -205,9 +205,86 @@ def cmd_approve(picks, note, date):
         print(d["obs"], d["layer"], d["camera"], d["episodes"], "|", d["description"], d["values"])
 
 
+
+def cmd_from_review(review_path, note, date):
+    """Promote new-obs proposals from a gated Claude Code T08 review (ftt_tree/t08_cc_review_*.json).
+
+    Selection (cross-episode rule, unchanged): distinct proposals whose cited quotes span >= 2 episodes,
+    that appear in at least one gate_pass new_obs_needed entry, layer treated as B, camera S or B,
+    no forbidden term, not a duplicate of an existing catalog question. Question + values copied verbatim
+    from the proposal. Recorded under new_obs_promotion.json -> from_cc_review (not the single-episode
+    exception list). Does NOT invent discriminators.
+    """
+    rev = load_json(Path(review_path) if Path(review_path).is_absolute() else DIAG_DIR / review_path)
+    # group by question; keep only gate_pass new_obs_needed entries
+    by_q = {}
+    for e in rev["entries"]:
+        if e["verdict"] != "new_obs_needed" or not e.get("gate_pass"):
+            continue
+        q = e["new_question"]
+        g = by_q.setdefault(q, {"values": e["new_values"], "camera": e["camera"], "pairs": [], "episodes": set(), "quotes": []})
+        g["pairs"].append(e["pair"])
+        g["quotes"] += e["quotes_A"] + e["quotes_B"]
+        g["episodes"] |= {r.split(":")[0] for r in e["quotes_A"] + e["quotes_B"]}
+    cat = load_json(CAT)
+    exist_q = {o["question"].strip().lower() for o in cat["observables"]}
+    nxt = max(int(o["id"].split("-")[1]) for o in cat["observables"]) + 1
+    OBS_DIR.mkdir(parents=True, exist_ok=True)
+    done, skipped = [], []
+    for q, g in sorted(by_q.items(), key=lambda kv: (-len(kv[1]["episodes"]), kv[0])):
+        cam_raw = str(g["camera"] or "")
+        cam = "S" if cam_raw.upper().startswith("S") or "side" in cam_raw.lower() else ("B" if cam_raw.upper().startswith("B") or "back" in cam_raw.lower() else None)
+        why = []
+        if len(g["episodes"]) < 2:
+            why.append("fewer than 2 source episodes")
+        if cam not in ("S", "B"):
+            why.append("camera not S/B")
+        if not (2 <= len(g["values"]) <= 3):
+            why.append("values not 2-3")
+        h = forbidden_hit(q + " " + " ".join(g["values"]))
+        if h:
+            why.append(f"forbidden term {h!r}")
+        if q.strip().lower() in exist_q:
+            why.append("duplicate of existing observable")
+        if why:
+            skipped.append({"question": q, "episodes": sorted(g["episodes"]), "why": why})
+            continue
+        oid = f"OBS-{nxt:02d}"; nxt += 1
+        fname = f"{oid}_{slug(q)}.md"
+        entry = {"id": oid, "src": fname, "layer": "B", "camera": cam, "reliability": "untested",
+                 "question": q, "values": g["values"],
+                 "origin": {"from_cc_review": True, "approved_by_user": date, "source_review": str(Path(review_path)),
+                            "episodes": sorted(g["episodes"]), "pairs": g["pairs"], "promoted_by": "pipeline/promote_new_obs.py from_review"}}
+        cat["observables"].append(entry)
+        cam_cn = {"S": "S（正侧面）", "B": "B（正后方）"}[cam]
+        md = [f"# {oid} {q}", "",
+              f"- **定义**：{q} 取值：{' / '.join(g['values'])}（看不清则记 unclear）。",
+              "- **看哪一帧**：题目里写明的时刻 / 阶段。", f"- **哪个机位**：{cam_cn}。",
+              "- **谁来测**：B 层：需指定机位 + Pose / 人工抽帧；模型只作参考。",
+              "- **可靠度**：**未测**（尚未对任何视频跑过事实抽取）。", "",
+              f"来源：Claude Code T08 评审提案（跨期 ≥2；涉及 {len(g['episodes'])} 期：{', '.join(sorted(g['episodes']))}）。"
+              f"题目与取值逐字取自提案；升级见 `pipeline/promote_new_obs.py from_review`。不挂接任何故障、不含处方。", ""]
+        (OBS_DIR / fname).write_text("\n".join(md), encoding="utf-8")
+        done.append({"obs": oid, "file": f"observables/{fname}", "approved_by_user": date, "reason": note,
+                     "source_review": str(Path(review_path)), "description": q, "values": g["values"],
+                     "layer": "B", "camera": cam, "episodes": sorted(g["episodes"]), "pairs": g["pairs"],
+                     "quotes": sorted(set(g["quotes"]))})
+        exist_q.add(q.strip().lower())
+    CAT.write_text(json.dumps(cat, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    doc = load_json(OUT) if OUT.exists() else {}
+    doc.setdefault("from_cc_review", []).extend(done)
+    doc.setdefault("from_cc_review_skipped", []).extend(skipped)
+    OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    for p in done:
+        print(p["obs"], p["layer"], p["camera"], len(p["episodes"]), p["episodes"], "|", p["description"], p["values"])
+    for s in skipped:
+        print("SKIP", s)
+    return 0 if done else 1
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["group", "apply", "approve"])
+    ap.add_argument("cmd", choices=["group", "apply", "approve", "from_review"])
+    ap.add_argument("--review", default="")
     ap.add_argument("--dry", action="store_true", help="apply: only list eligible families")
     ap.add_argument("--pick", action="append", default=[])
     ap.add_argument("--note", default="")
@@ -217,5 +294,9 @@ if __name__ == "__main__":
         cmd_group()
     elif a.cmd == "apply":
         sys.exit(cmd_apply(a.dry))
+    elif a.cmd == "from_review":
+        if not a.review or not a.note:
+            print("from_review needs --review PATH --note TEXT [--date YYYY-MM-DD]"); sys.exit(2)
+        sys.exit(cmd_from_review(a.review, a.note, a.date))
     else:
         cmd_approve(a.pick, a.note, a.date)

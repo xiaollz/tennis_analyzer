@@ -1,0 +1,449 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "lCKDP2gKR_Y",
+    "url": "https://www.youtube.com/watch?v=lCKDP2gKR_Y",
+    "title": "Why Your Wrist Hurts, and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 286.0,
+    "upload_date": "2026-04-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "Coach provides actionable execution cues instructing players to hit during the early stretch-release phase and maintain an elastic support role without actively flexing the wrist."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/lCKDP2gKR_Y.en.vtt",
+    "kind": "auto",
+    "sha256": "61a094704a0fde372049823013cba7637c140059df236d7d565089d509414d3c",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_lCKDP2",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does your wrist hurt when hitting a forehand, and how can you fix it?",
+    "definition": "Players develop wrist pain when attempting to generate topspin because they mistake fast post-contact rotational racket speed for forward driving speed, causing them to contact late and actively flex the wrist.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "modern forehand swing mechanics",
+      "wrist lag and elastic release"
+    ],
+    "target_player": "tennis players experiencing wrist pain or fatigue on their forehand",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "where I see players you know in service to trying to get spin and you know trying to hit well hurt their wrists.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And the real key here is that the hitting slot is probably earlier in this stretch release throwing kind of elastic feeling than you think.",
+      "start": 25.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Contact one frame after contact, two frames after contact. Here's the problem that I see with so many players.",
+      "start": 34.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "all the way to here, the racket is moving really really quickly. So you have a lot of racket head speed during ready one two during those two frames of the follow through.",
+      "start": 46.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "You have a ton of racket head speed. It is rolling rotational racket head speed. It's mostly pronation and internal rotation.",
+      "start": 59.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "The problem is that if you try to hit with that part of the swing the ball's not going to go anywhere because the back to front so this is rolling racket head speed the back to front hitting driving",
+      "start": 67.36,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "and releases there and now it's pretty much gone.",
+      "start": 84.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "much gone. So what I see is that players are feeling all of this rolling racket head speed and their brain is going well I'm trying to hit the ball fast so I'm going to use the part of the",
+      "start": 86.96000000000001,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "preparation this is like max lag right? This is kind of that that slot feeling right where the hand is like this is kind of the max tension spot where you know everything is about to release and hinge through",
+      "start": 106.32,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "and that's it. We're at contact. So your back to front racket head speed maxes out between here and here and now the hand is already slowing down in the back to front direction.",
+      "start": 118.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "All of your racket head speed here is rolling and right to left which can't actually be used to hit the ball this way.",
+      "start": 128.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "It's like a split second after that that you're hitting. You're not hitting here in this you know this is why I've rarely coached the windshield wiper because 90% of the windshield wiper is right here after you've actually hit",
+      "start": 141.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And so if your brain is trying to is trying to anchor on that windshield wiper feeling look at this. See that see that beautiful windshield wiper? Well guess what? You are hitting the windshield wiper hasn't started yet.",
+      "start": 155.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Here you are hitting with like the first 5% of the windshield wiper and then the rest of the windshield wiper is follow through.",
+      "start": 167.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "stuck because this is so fast your brain perceives this part of the follow through as your hitting action cuz you feel the speed not realizing that the speed is only in the rolling direction and you don't have your",
+      "start": 193.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "because from here to here really it's just a stretch in your wrist releasing and momentum transferring from your big strong muscles into your hand and racket. That's all it is.",
+      "start": 215.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "The wrist itself the small muscles in the hand are really just playing a support and release you know elastic energy role. They're not actively flexing to drive the 12 13 oz racket through the ball.",
+      "start": 226.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And that's really important cuz they're not strong enough to do that.",
+      "start": 237.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "flexion. If you need to hit the ball from this place back to front you are going to have to actively drive through the ball with your hand and that is why if you hit too late in your swing",
+      "start": 246.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "fatigue and fatigue and eventually start to hurt.",
+      "start": 258.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "You have to hit with this early stretch release part and not with this later part even though the racket is still moving very fast it is no longer moving fast in this direction unless you force it.",
+      "start": 264.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Okay we're just going to watch it in full speed one more time now that you have all that context.",
+      "start": 275.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Wrist and hand muscles fatigue repeatedly and eventually develop pain.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q01",
+        "Q20"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Ball lacks penetration and does not go anywhere when attempting to hit during the fast-feeling follow-through.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Contact occurs late in the swing during the windshield wiper roll rather than right after the lag slot.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12",
+        "Q19"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Small muscles of the wrist and hand are forced into active flexion to drive the heavy racket instead of acting as an elastic stretch-and-release conduit.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16",
+        "Q17"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players make contact too late in the swing after the back-to-front forward momentum has already dissipated.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player's brain perceives high rotational racket head speed during the follow-through and mistakes it for the hitting zone.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Forward driving racket head speed peaks and finishes early at release, while subsequent swing speed is purely rotational roll from pronation and internal rotation.",
+      "depth": 4,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Coach breaks down slow-motion frames of Roger Federer to show the precise timing of wrist lag, contact, and follow-through roll.",
+      "evidence": [
+        "Q03",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Back-to-front driving speed maxes out between lag and contact, whereas follow-through speed is purely rotational pronation and internal rotation.",
+      "evidence": [
+        "Q05",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Players wrongly think the windshield wiper is the hitting action, ignoring that 90% of the wiper happens after contact as a follow-through.",
+      "evidence": [
+        "Q12",
+        "Q14"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "The hitting slot feels like an early elastic stretch-and-release throw rather than an active wrist flex through the ball.",
+      "evidence": [
+        "Q02",
+        "Q09"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Cue yourself that the true hitting slot is earlier in the stretch-release elastic feeling than it intuitively seems.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Keep the wrist and hand muscles purely in an elastic support-and-release role, transferring momentum from large muscles without actively flexing.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Focus on hitting solely during the early stretch-release phase and never try to drive the ball during the late rolling follow-through phase.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

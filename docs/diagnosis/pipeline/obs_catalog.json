@@ -558,6 +558,117 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py"
       }
+    },
+    {
+      "id": "OBS-33",
+      "src": "OBS-33_contact_frame_far_ball_from.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+      "values": [
+        "within_about_one_forearm_length",
+        "more_than_one_forearm_length"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "2Nn9tyMECZU",
+          "9NirSL59an0",
+          "PwkGLkRm73o",
+          "T5meVwBOKR4"
+        ],
+        "pairs": [
+          "N-C_2NN9TYMECZU_C03 | N-C_9NIRSL59AN0_C03",
+          "N-C_2NN9TYMECZU_C03 | N-C_PWKGLKRM73O_C03",
+          "N-C_9NIRSL59AN0_C03 | N-C_T5MEVWBOKR4_C03",
+          "N-C_PWKGLKRM73O_C03 | N-C_T5MEVWBOKR4_C03"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-34",
+      "src": "OBS-34_forward_swing_before_contact_front.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+      "values": [
+        "moves_inward",
+        "stays_above_front_foot"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "T5meVwBOKR4",
+          "aPcKJDadzek",
+          "xLs469ZVMPU"
+        ],
+        "pairs": [
+          "N-P_XLS469ZVMPU | N-C_APCKJDADZEK_C01",
+          "N-C_APCKJDADZEK_C01 | N-C_T5MEVWBOKR4_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-35",
+      "src": "OBS-35_start_forward_swing_far_racket.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+      "values": [
+        "far_behind_hand",
+        "slightly_behind_hand",
+        "level_with_or_ahead_of_hand"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "FxDmVi3EFnE",
+          "LoSrMj-Qxkc"
+        ],
+        "pairs": [
+          "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-36",
+      "src": "OBS-36_between_start_forward_swing_contact.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Between the start of the forward swing and contact, does the hitting hand first move outward away from the body, or directly toward the ball?",
+      "values": [
+        "outward_first",
+        "directly_toward_ball"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "2Nn9tyMECZU",
+          "wzLMv4ASg9s"
+        ],
+        "pairs": [
+          "N-C_2NN9TYMECZU_C02 | N-C_WZLMV4ASG9S_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
     }
   ]
 }

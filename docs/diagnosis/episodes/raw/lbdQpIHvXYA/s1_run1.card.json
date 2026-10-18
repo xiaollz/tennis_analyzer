@@ -1,0 +1,443 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "lbdQpIHvXYA",
+    "url": "https://www.youtube.com/watch?v=lbdQpIHvXYA",
+    "title": "The Stabilization Secret in Khachanov's Forehand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 346.0,
+    "upload_date": "2025-08-07",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable instructions such as probing vertical spacing based on ball height, dropping the hand early when the ball is low, and spacing closer horizontally for vertical low-to-high shots."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/lbdQpIHvXYA.en.vtt",
+    "kind": "auto",
+    "sha256": "45b528b769af35fa8179071826ae4ed51f93f8c177df056069480138874c1cda",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_lbdQpI",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you consistently execute a low, running forehand pickup shot?",
+    "definition": "Executing a running, low pickup forehand requires stabilizing the hitting arm against the trunk during the sprint and adjusting both vertical and horizontal spacing to the low ball.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "running forehand movement",
+      "basic forehand unit turn"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "And without this kind of a preparation, not only is it not trivial, but you're going to miss like pretty much every single time.",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "As he sprints right here, he is engaging the muscles behind the shoulder in the back around the scapula, the lats, these muscles in the upper back to hold the arm here.",
+      "start": 29.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Watch this elbow. Watch how stable his forehand apparatus is.",
+      "start": 46.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "even his left arm is moving, you know, to help counterbalance him while he's running, but this the right arm, the hitting system, what he's ultimately going to use to hit the ball is now stabilized right here.",
+      "start": 56.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "This is another thing is he's attaching that racket to his upper back well before he actually has to hit.",
+      "start": 78.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "What I see from a lot of you guys is you do so much running and you try to prep and swing right next to it. That makes it very difficult.",
+      "start": 85.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Now, because it's been attached this whole time, he gets to the ball and he has extreme control over that little flicking action.",
+      "start": 102.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, when you're practicing this stabilization, it's actually a lot easier to just hit straight through the ball than it is to kind of pick the ball up like this.",
+      "start": 117.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "That doesn't mean he's rounding his back to bend over, but he's engaging his hips to bend over like this. Again, chest is almost pointing at the ground.",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "And so now when he rotates, we've got this shoulder slant here and a very similar kind of rotation to the one that he would use flat. Sends the ball more low to high.",
+      "start": 138.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Another thing I see from some of you guys is you prepare your hand up here as if you're hitting from the baseline when you have to pick the ball up off your shoestrings.",
+      "start": 170.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "He preps it, you know, right around his chest, but during this early part of the swing before the forward swing, it's already down to his hip.",
+      "start": 180.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "If he didn't get the hand down here, this would be a disaster. The racket would have to go so low and then so high and it'd be very difficult to make clean contact.",
+      "start": 188.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "So, probe your vertical spacing based on the height of the ball.",
+      "start": 196.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "It's not totally clear, but if you feel like you can't get enough spin on the ball, you can throw the racket back on purpose, it's going to make the swing a little bit harder to control, but it is",
+      "start": 217.76,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "The more vertically you are forced to swing, the more the arm's going to be in and the closer you want to get to the ball.",
+      "start": 237.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "The last thing I see from a lot of players is no matter where the ball is heightwise, they space the horizontal spacing the same.",
+      "start": 247.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "because he has to drop everything so low before he starts his swing, that naturally is going to make the contact closer to the trunk as opposed to out here.",
+      "start": 270.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Probe the ball closer to you because you know you have to hit it up and have a nice loose wrist in preparation.",
+      "start": 313.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Missing or shanking low running forehands nearly every single time.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Running to the ball and attempting to prepare the racket and swing at the very last moment right next to contact.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Keeping the hand prepared high near chest level when having to pick up a ball off the shoe strings.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Maintaining identical horizontal spacing away from the body regardless of ball height.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players fail to engage upper back and scapular muscles to lock and stabilize the hitting arm against the trunk during the sprint.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players focus purely on running and delay attaching the racket, attempting to prepare and swing simultaneously right at the ball.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players keep their preparation hand high near the chest on low balls, forcing the racket to travel excessively down and up.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11",
+        "Q13"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players use standard wide horizontal spacing for low balls rather than moving the body closer to accommodate a vertical swing path.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Karen Khachanov stabilizes his hitting arm using his scapula and lats during a full sprint to effortlessly flick a low ball.",
+      "evidence": [
+        "Q02",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Bending over from the hips rather than rounding the back slants the chest and shoulders toward the ground to produce an upward swing path through normal body rotation.",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Players wrongly maintain the exact same horizontal spacing from the ball regardless of whether the incoming ball is high or at shoestring level.",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice hitting flat straight through the ball first to master upper back hitting-arm stabilization before trying to pick low balls up.",
+      "external_goal": "Hit straight through the ball flat",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Probe your vertical spacing early based on ball height by getting the hand down to hip height before starting the forward swing.",
+      "external_goal": "Drop hand to hip height before forward swing",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12",
+        "Q14"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01"
+      ],
+      "summary": "If you lack spin on steep low balls, volitionally throw the racket back on purpose to generate extra whip through contact.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Position your knees, hips, and body closer to the low ball horizontally when forced to swing vertically.",
+      "external_goal": "Bring body and knees closer to the ball",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
