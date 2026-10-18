@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "replay_case.schema.json",
+  "title": "Blind replay case: a clip with a known (coach-labelled) problem, plus its neutral fact sheet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "episode", "segment", "label_source", "expected", "facts_path"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "episode": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"},
+    "segment": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0}},
+    "label_source": {"type": "string", "description": "<episode>:Qxx — the coach quote that labels the demonstrator; must be verified"},
+    "label_kind": {"type": "string", "enum": ["demonstrator_natural", "demonstrator_induced", "correct_demo", "user_clip_coach_label"]},
+    "expected": {"type": "array", "items": {"type": "string", "pattern": "^(N-[A-Z0-9_]+|NONE)$"}, "description": "Expected node ids; ['NONE'] for negative controls (correct demo)"},
+    "facts_path": {"type": "string", "description": "Path to facts JSON produced from the MUTED clip"}
+  }
+}

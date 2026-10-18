@@ -1,0 +1,45 @@
+{
+ "schema_version": "2.0",
+ "video": {"id": "SYNTHETIC01", "url": "https://www.youtube.com/watch?v=SYNTHETIC01", "title": "Synthetic: Why You Get Crowded (self-test fixture, not a real episode)", "channel": "Fault Tolerant Tennis", "duration_s": 70, "upload_date": "2026-10-18", "metadata_source": "yt-dlp"},
+ "classification": {"is_teaching": "teaching", "stroke": "forehand", "format": "demo_with_player", "reason": "synthetic lecture plus demonstrator"},
+ "transcript": {"path": "/workspace/ftt_subs/SYNTHETIC01.en.vtt", "kind": "auto", "sha256": "69a1a64115d6c2bb63cd39604d69f1f620eaeba79f4e1d17e47a0743030794dc", "coverage_ratio": 1.0},
+ "extraction": {"stage1_model": "fixture", "stage1_prompt_version": "ep_s1_v1", "stage1_run_ids": ["fx1", "fx2"], "user_context_in_prompt": false},
+ "problem": {"title_as_question": "Why do I get crowded at contact?", "definition": "The ball ends up too close to the body at contact.", "node_id": "N-JAMMED", "prerequisites": ["basic rally swing"], "target_player": "club player", "evidence": ["Q01"]},
+ "quotes": [
+  {"id": "Q01", "text": "a lot of players set up with the ball far too close to their right hip", "start": 5, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q02", "text": "the arm folds up and the elbow ends up stuck against the ribs", "start": 11, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q03", "text": "they walk straight at the ball instead of leaving space off to the side", "start": 17, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q04", "text": "watch Sam here, his feet stop moving early and he ends up crowded at contact", "start": 24, "speaker": "coach", "about": "demonstrator_natural", "source": "subtitle"},
+  {"id": "Q05", "text": "ask him to stand right on top of the ball on purpose", "start": 31, "speaker": "coach", "about": "demonstrator_induced", "source": "subtitle"},
+  {"id": "Q06", "text": "the ball is almost uncomfortably far away to your right", "start": 38, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q07", "text": "put a cone half a step outside your contact point and try to hit the ball outside the cone", "start": 46, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q08", "text": "if the ball keeps landing short and you feel crowded you are still too close", "start": 54, "speaker": "coach", "about": "general", "source": "subtitle"},
+  {"id": "Q09", "text": "here is Sam doing it well, plenty of space and a long smooth swing", "start": 62, "speaker": "coach", "about": "demonstrator_natural", "source": "subtitle"}
+ ],
+ "symptoms": [
+  {"id": "S01", "description": "elbow stuck against the ribs at contact", "kind": "visible", "layer": "B", "camera": "B", "phase": "contact", "obs_ref": "OBS-02", "evidence": ["Q02"]},
+  {"id": "S02", "description": "ball lands short, player feels crowded", "kind": "ball_outcome", "layer": "A", "camera": "none", "phase": "contact", "obs_ref": "OBS-16", "evidence": ["Q08"]},
+  {"id": "S03", "description": "feet stop moving early", "kind": "visible", "layer": "A", "camera": "any", "phase": "ready", "obs_ref": "OBS-05", "evidence": ["Q04"]},
+  {"id": "S04", "description": "feels crowded", "kind": "feel", "layer": "C", "camera": "none", "phase": "contact", "obs_ref": "NONE", "evidence": ["Q08"]}
+ ],
+ "causes": [
+  {"id": "C01", "statement": "ball set up too close to the right hip", "depth": 1, "layer": "B", "node_id": "N-JAMMED", "active_or_passive": "unclear", "evidence": ["Q01"]},
+  {"id": "C02", "statement": "walking straight at the ball, no space left to the side", "depth": 2, "layer": "A", "node_id": "N-NO_ADJUST_STEPS", "active_or_passive": "active", "evidence": ["Q03", "Q04"]}
+ ],
+ "chain": [
+  {"from": "C02", "to": "C01", "strength": "coach_stated", "evidence": ["Q03"]},
+  {"from": "C01", "to": "S01", "strength": "coach_stated", "evidence": ["Q02"]},
+  {"from": "C01", "to": "PROBLEM", "strength": "coach_stated", "evidence": ["Q01"]}
+ ],
+ "angles": [
+  {"id": "A01", "type": "feel", "summary": "correct spacing feels uncomfortably far", "evidence": ["Q06"]},
+  {"id": "A02", "type": "contrast_demo", "summary": "induced crowding demo", "evidence": ["Q05"]}
+ ],
+ "solutions": [
+  {"id": "D01", "kind": "drill", "targets": ["C01"], "summary": "cone half a step outside contact", "external_goal": "让球在锥桶外侧被击中", "scenario_fit": "machine_low", "ban_conflict": {"flag": false, "terms": [], "note": ""}, "intuition_first_ok": true, "evidence": ["Q07"]},
+  {"id": "D02", "kind": "check", "targets": ["S02"], "summary": "short balls plus crowded feel means still too close", "external_goal": "", "scenario_fit": "machine_low", "ban_conflict": {"flag": false, "terms": [], "note": ""}, "intuition_first_ok": false, "evidence": ["Q08"]}
+ ],
+ "video_layer": [],
+ "conflicts": [],
+ "status": "stage1_verified"
+}

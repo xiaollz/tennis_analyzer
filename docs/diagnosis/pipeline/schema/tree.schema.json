@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tree.schema.json",
+  "title": "FTT diagnosis tree v1 (machine-readable; generated views replace hand indexes)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "holdout_episodes", "observables", "nodes", "edges"],
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["2.0"]},
+    "holdout_episodes": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"}, "description": "Episodes reserved for blind replay; nodes/edges must not cite them."},
+    "observables": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "question", "values", "layer", "camera"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^OBS-\\d{2}$"},
+          "question": {"type": "string", "description": "Neutral wording, no FTT / project terms"},
+          "values": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+          "layer": {"type": "string", "enum": ["A", "B", "C"]},
+          "camera": {"type": "string", "enum": ["S", "B", "R", "any", "none"]},
+          "reliability": {"type": "string", "pattern": "^(\\d+/\\d+|untested)$"}
+        }
+      }
+    },
+    "nodes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "name", "kind", "phase", "must_fix", "signature", "differentials", "evidence", "flt_ref"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^N-[A-Z0-9_]+$"},
+          "name": {"type": "string"},
+          "kind": {"type": "string", "enum": ["problem", "cause", "style"]},
+          "phase": {"type": "string", "enum": ["ready", "unit_turn", "placement", "forward_swing", "contact", "follow_through", "recovery", "whole"]},
+          "must_fix": {"type": "boolean"},
+          "flt_ref": {"type": "string", "pattern": "^(FLT-\\d{2}|NONE)$"},
+          "signature": {
+            "type": "object", "additionalProperties": false,
+            "required": ["required", "supporting", "excluding"],
+            "properties": {
+              "required": {"type": "array", "items": {"$ref": "#/definitions/cond"}},
+              "supporting": {"type": "array", "items": {"$ref": "#/definitions/cond"}},
+              "excluding": {"type": "array", "items": {"$ref": "#/definitions/cond"}}
+            }
+          },
+          "differentials": {
+            "type": "array",
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["vs", "discriminator"],
+              "properties": {"vs": {"type": "string", "pattern": "^N-[A-Z0-9_]+$"}, "discriminator": {"type": "string", "description": "OBS-xx=value or a 10-ball test description"}}
+            }
+          },
+          "test10": {"type": "string", "description": "10-ball confirm/exclude test (machine_low)"},
+          "next_one_thing": {"type": "string", "description": "One external-focus goal; must pass ban scan"},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"}}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["from", "to", "evidence", "strength"],
+        "properties": {
+          "from": {"type": "string", "pattern": "^N-[A-Z0-9_]+$"},
+          "to": {"type": "string", "pattern": "^N-[A-Z0-9_]+$"},
+          "strength": {"type": "string", "enum": ["core", "single_episode", "inferred"]},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"}}
+        }
+      }
+    }
+  },
+  "definitions": {
+    "cond": {
+      "type": "object", "additionalProperties": false,
+      "required": ["obs", "value"],
+      "properties": {"obs": {"type": "string", "pattern": "^OBS-\\d{2}$"}, "value": {"type": "string"}}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+ "schema_version": "2.0",
+ "holdout_episodes": ["SYNTHETIC02"],
+ "observables": [
+  {"id": "OBS-02", "question": "At contact, is the hitting upper arm touching the side of the body, or is there a visible gap?", "values": ["touching", "gap"], "layer": "B", "camera": "B", "reliability": "untested"},
+  {"id": "OBS-05", "question": "Between the ball leaving the machine and contact, does the player take small adjusting steps?", "values": ["none_or_one", "several"], "layer": "A", "camera": "any", "reliability": "untested"},
+  {"id": "OBS-16", "question": "Player's spoken one-word result after the shot", "values": ["good", "net", "long", "crowded"], "layer": "A", "camera": "any", "reliability": "untested"},
+  {"id": "OBS-20", "question": "Grip pressure self-rating", "values": ["low", "high"], "layer": "C", "camera": "none", "reliability": "untested"},
+  {"id": "OBS-21", "question": "At contact, is the hitting elbow clearly bent or nearly straight?", "values": ["bent", "straight"], "layer": "A", "camera": "any", "reliability": "untested"}
+ ],
+ "nodes": [
+  {"id": "N-JAMMED", "name": "contact too close to the body", "kind": "problem", "phase": "contact", "must_fix": true, "flt_ref": "FLT-01",
+   "signature": {"required": [{"obs": "OBS-02", "value": "touching"}], "supporting": [{"obs": "OBS-16", "value": "crowded"}, {"obs": "OBS-05", "value": "none_or_one"}], "excluding": []},
+   "differentials": [{"vs": "N-NO_ADJUST_STEPS", "discriminator": "OBS-05=several but still touching -> spacing set-up, not footwork"}],
+   "test10": "5 balls normal + 5 balls starting half a step wider; count 'crowded' callouts",
+   "next_one_thing": "让球在锥桶外侧被击中",
+   "evidence": ["SYNTHETIC01:Q01", "SYNTHETIC01:Q02"]},
+  {"id": "N-NO_ADJUST_STEPS", "name": "no adjusting steps, walks straight at the ball", "kind": "cause", "phase": "ready", "must_fix": true, "flt_ref": "NONE",
+   "signature": {"required": [{"obs": "OBS-05", "value": "none_or_one"}], "supporting": [{"obs": "OBS-02", "value": "touching"}], "excluding": []},
+   "differentials": [{"vs": "N-JAMMED", "discriminator": "OBS-02=gap -> footwork alone is not causing crowding"}],
+   "test10": "10 balls with two small steps after the machine fires; compare callouts",
+   "next_one_thing": "球出机后先让脚动两下再挥",
+   "evidence": ["SYNTHETIC01:Q03", "SYNTHETIC01:Q04"]},
+  {"id": "N-ELBOW_STYLE", "name": "elbow bend amount (style)", "kind": "style", "phase": "contact", "must_fix": false, "flt_ref": "NONE",
+   "signature": {"required": [{"obs": "OBS-21", "value": "bent"}], "supporting": [], "excluding": []},
+   "differentials": [], "evidence": ["BOOK:p66"]}
+ ],
+ "edges": [
+  {"from": "N-NO_ADJUST_STEPS", "to": "N-JAMMED", "strength": "single_episode", "evidence": ["SYNTHETIC01:Q03"]}
+ ]
+}

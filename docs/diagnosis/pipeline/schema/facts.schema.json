@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "facts.schema.json",
+  "title": "Neutral fact sheet for one clip (output of fact extraction + pose; input of diagnose.py)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["clip_id", "camera", "runs", "facts"],
+  "properties": {
+    "clip_id": {"type": "string"},
+    "camera": {"type": "string", "enum": ["S", "B", "R", "other"]},
+    "audio_stripped": {"type": "boolean"},
+    "prompt_version": {"type": "string"},
+    "model": {"type": "string"},
+    "runs": {"type": "integer", "minimum": 1},
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["obs", "value", "agree", "source"],
+        "properties": {
+          "obs": {"type": "string", "pattern": "^OBS-\\d{2}$"},
+          "value": {"type": "string", "description": "One of the observable's values, or 'unclear'"},
+          "agree": {"type": "string", "pattern": "^\\d+/\\d+$", "description": "runs agreeing on this value / runs"},
+          "source": {"type": "string", "enum": ["model", "pose", "manual", "callout"]},
+          "strokes": {"type": "string", "pattern": "^\\d+/\\d+$", "description": "strokes showing it / strokes in clip"}
+        }
+      }
+    }
+  }
+}
