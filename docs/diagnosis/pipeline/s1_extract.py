@@ -2,11 +2,11 @@
 """Stage-1 (subtitle layer) extraction runner + deterministic normalizer.  stdlib only.
 
 usage:
-  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt = S1_PROMPT env, default ep_s1_v4), save raw run card + log
+  s1_extract.py run   <VIDEO_ID> <RUN_N>   # call Gemini once (prompt = S1_PROMPT env, default ep_s1_v5), save raw run card + log
   s1_extract.py final <VIDEO_ID>           # pick passing run pair via check_rerun, write final card
   s1_extract.py consensus <VIDEO_ID>       # only when 3 runs exist and no raw pair passes: 3-run majority adjudication
 Key comes ONLY from env MICU_GEMINI_KEY (never written/printed). Rendered prompts and raw
-model responses go to /workspace/s1_work/<S1_WORK, default round4> (outside the repo; transcripts are not committed).
+model responses go to /workspace/s1_work/<S1_WORK, default round5> (outside the repo; transcripts are not committed).
 
 Normalization is deterministic and never rewrites content: it maps field aliases, pads ids,
 snaps quotes to the verbatim subtitle excerpt, drops items without surviving evidence, and
@@ -25,10 +25,10 @@ from common import CONFIG, ban_hits, load_json, load_transcript, locate_quote, s
 ROOT = HERE.parent.parent.parent
 SUBS = Path("/workspace/ftt_subs")
 EP = ROOT / "docs/diagnosis/episodes"
-WORK = Path("/workspace/s1_work") / os.environ.get("S1_WORK", "round4")
+WORK = Path("/workspace/s1_work") / os.environ.get("S1_WORK", "round5")
 MODEL = "gemini-3.8-flash"
 BASE = "https://www.micuapi.ai"
-PROMPT_VERSION = os.environ.get("S1_PROMPT", "ep_s1_v4")
+PROMPT_VERSION = os.environ.get("S1_PROMPT", "ep_s1_v5")
 TEMPS = {1: 0.25, 2: 0.45, 3: 0.35}
 BANS = ("推肘", "降拍", "旋后", "伸肘")
 

@@ -1,0 +1,468 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "8r09TliP-Ak",
+    "url": "https://www.youtube.com/watch?v=8r09TliP-Ak",
+    "title": "I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow)",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 684.0,
+    "upload_date": "2025-06-01",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach analyzes pro match footage of Jack Draper, Joao Fonseca, and Rafael Nadal to teach three high-margin singles patterns for viewers to practice."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/8r09TliP-Ak.en.vtt",
+    "kind": "auto",
+    "sha256": "b0033b1711127fdb58e4c668d21523166efc404750648ae9ad1d26523ac2dbc6",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v5",
+    "stage1_run_ids": [
+      "s1_r1_8r09Tl",
+      "s1_r2_8r09Tl",
+      "s1_r3_8r09Tl"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do players take high risks without getting rewards, and what patterns create high-margin dominance?",
+    "definition": "Players frequently hit high-risk, flat shots that yield minimal tactical reward, or conversely slow down their swing when trying to play safe, creating poor risk-reward ratios.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "full groundstroke swing",
+      "basic singles rally play"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "So, in this video, what we're going to do is we're going to talk about Jack Draper's game, what makes him so strong. We're going to show points from this match to illustrate that",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Draper doesn't and it's hitting these balls too hard and getting nothing out of them.",
+      "start": 39.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Sometimes they interpret that as slow down, but no, that's actually counterproductive.",
+      "start": 72.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "I want you to take full swings and not hesitate. I just want you to visualize different goals as you do it.",
+      "start": 78.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "he uses his racket head speed to go high over the middle of the net. So, even though he's hitting high, he's still hitting over the lowest part of the net.",
+      "start": 86.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "He's not trying to win this point in one shot. He's just trying to hit the ball deep enough that it's not trivial to attack.",
+      "start": 100.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "There is a riskreward problem with this shot because it is very high risk and very high degree of difficulty to hit this flat slapshot forehand at 100 miles an hour... there wasn't a whole lot of reward.",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, he's in the exact same state of the point as he was before he took all this risk. And this is what you will never see from Rafael Nadal or Jack Draper.",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Now, the theme with this point from Rafa is going to be that risk always leads to reward. And where there's not that much reward, there's minimal risk.",
+      "start": 184.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "We play it with height and spin to a big target down the line. Now, this is minimal risk.",
+      "start": 199.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And so that's what you're seeing with Rafa is the riskreward ratios are just always tilted in his favor.",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "It's high enough over the net that even though it's a slight missit, he doesn't miss. And that's a big target.",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Puts it high, puts it over the middle, puts it in the court, make the other guy earn it, and the and FCO goes for the drop shot, and it's not quite good enough.",
+      "start": 307.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And doing stuff like this instead of just outright missing, going for crazy defensive shots, puts so much more pressure on your opponent in the long term.",
+      "start": 318.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "In this point, we see Draper making all the same decisions, hitting all the same high margin, moving the ball around, but not missing that he's been doing the whole match.",
+      "start": 349.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "everything that Feka does is difficult and everything Draper does is easy.",
+      "start": 384.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "the offensive shots are high degree of difficulty with insufficient reward for the level of risk.",
+      "start": 402.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "he gets so much out of that attacking ball without a high level of risk.",
+      "start": 469.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "despite the fact that those forehands are hard, deep, and heavy, Draper manages to reset roughly to neutral.",
+      "start": 524.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Number one, return targeting high, middle, full swing. Don't aim for the baseline, just deep enough your opponent can't attack you.",
+      "start": 633.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "pay attention to your riskreward as you play. If you find yourself hitting shots that are difficult and you're not getting rewarded for it, throw those shots away.",
+      "start": 640.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "When you play high, you can go over the higher part of the net into a big target. Give yourself a chance to get lucky and get your opponent on the run",
+      "start": 654.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "we can help you generate at least some of that effortless racket head speed that makes this kind of tennis possible.",
+      "start": 671.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Hitting extremely hard, flat groundstrokes that slow down on court and leave the rally in the exact same state despite high risk taken.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Decelerating the racket and hesitating on swings when attempting to play safe or patient.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Committing unforced errors by attempting overly aggressive low-percentage shots when pushed on defense.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q14",
+        "Q16"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players hit the ball excessively hard and flat without extracting any meaningful tactical advantage or winner from the effort.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players misinterpret playing with margin and patience as an instruction to slow down their swing speed.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Shot selection suffers from poor risk-to-reward ratios, opting for high-difficulty flat shots where the potential reward does not justify the risk.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players grant opponents too much respect on defense and attempt wild bailout shots rather than hitting high, safe balls back into court.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Using racket head speed to hit high over the middle and lowest part of the net creates massive margin for error without sacrificing depth.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Clarifying that playing with margin does not mean slowing down the swing; swinging fully without hesitation is necessary to generate spin.",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Rafael Nadal demonstrates that offensive play should rely on height and heavy spin to big targets rather than risky flat slapshots.",
+      "evidence": [
+        "Q09",
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "Contrasting Fonseca's high-difficulty, low-reward offensive shots against Jack Draper's effortless, high-margin pattern that consistently forces errors.",
+      "evidence": [
+        "Q16",
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Commit to a full swing without hesitation, directing racket head speed upward over the lowest part of the net rather than slowing down.",
+      "external_goal": "hit high over the middle of the net",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "When stretched on defense, lift the ball high over the middle into the court to reset the point and make the opponent earn every winner.",
+      "external_goal": "high over the middle of the net into the court",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Track your risk-reward ratio during play, and immediately discard difficult shots that do not yield significant advantages.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_8r09Tl",
+        "s1_r2_8r09Tl",
+        "s1_r3_8r09Tl"
+      ],
+      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_verified"
+}

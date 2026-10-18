@@ -418,7 +418,7 @@
         "s1_r2_JIMgI3",
         "s1_r3_JIMgI3"
       ],
-      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json.",
+      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json. LOW CONFIDENCE (round5 annotation, no content changed): thin 3-run consensus card (2 causes / 2 solutions; passes check_rerun against run2 only, fails against run3); the user must check it against the subtitles before it enters the tree.",
       "resolution": "open_user_decides"
     }
   ],

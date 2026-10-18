@@ -1,0 +1,21 @@
+{
+  "id": "UB6SbA_KX9E",
+  "runs": [
+    1,
+    2
+  ],
+  "pairs": {
+    "1-2": {
+      "pass": true,
+      "findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.60 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.60 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.75 (min 0.5)"
+      ]
+    }
+  },
+  "chosen_pair": [
+    1,
+    2
+  ]
+}

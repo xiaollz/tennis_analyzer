@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round4",
+  "round": "round5",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -440,9 +440,11 @@
       "id": "UB6SbA_KX9E",
       "title": "Proper Trunk Sequencing will Transform Your Tennis",
       "duration_s": 714.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round5",
+      "note": "ep_s1_v5 verified via raw pair 1-2 (2 runs; causes/roots 0.60)"
     },
     {
       "id": "MWjBfarwNlA",
@@ -466,23 +468,29 @@
       "duration_s": 684.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round5",
+      "note": "ep_s1_v5: all raw pairs and 3-run consensus fail check_rerun (is_teaching teaching/partial flips between runs); kept stage1_draft, must not enter the tree"
     },
     {
       "id": "FOmz8Wjv3DQ",
       "title": "Deeper Than Just \"Footwork\" | Tennis Movement Fundamentals Explained",
       "duration_s": 1066.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round5",
+      "note": "ep_s1_v5 verified via raw pair 1-3 (3 runs; causes 0.60 = threshold)"
     },
     {
       "id": "8r09TliP-Ak",
       "title": "I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow)",
       "duration_s": 684.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round5",
+      "note": "ep_s1_v5 verified via 3-run deterministic consensus (base run2; dropped solution D02; passes vs run1; run3 differs on is_teaching=partial). 4 causes / 3 solutions, not thin"
     },
     {
       "id": "_Qu1LOwklAw",
@@ -496,9 +504,11 @@
       "id": "Qszz0N4fRb4",
       "title": "Why You Get Tight, and How to Fix It | Learning From Sinner's 6-0 6-1 Masterclass",
       "duration_s": 707.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round5",
+      "note": "ep_s1_v5 verified via raw pair 1-3 (3 runs)"
     },
     {
       "id": "Psidjei5BnI",
@@ -538,7 +548,7 @@
       "round": "round4",
       "confidence": "low",
       "needs_user_subtitle_check": true,
-      "note": "LOW CONFIDENCE: verified only by 3-run consensus (base run1; dropped cause C01 -> 2 causes / 2 solutions; passes vs run2, fails vs run3). User should check against subtitles before it enters the tree."
+      "note": "LOW CONFIDENCE: verified only by 3-run consensus (base run1; dropped cause C01 -> 2 causes / 2 solutions; passes vs run2, fails vs run3). User should check against subtitles before it enters the tree. Also annotated in the card conflicts[X01].description (round5)."
     },
     {
       "id": "42BfbKsTGb4",
@@ -889,7 +899,35 @@
       "confidence": "low",
       "reason": "thin 3-run consensus card (2 causes / 2 solutions; passes check_rerun vs run2 only)",
       "action": "user must check subtitles before the card enters the tree",
-      "card_annotation": "manifest only"
+      "card_annotation": "episodes/JIMgI3jiVns.card.json conflicts[X01].description (round5)"
     }
-  ]
+  ],
+  "round5_selection": {
+    "rule": "manifest.tsv type_guess=教学长视频 + .en.vtt present + no card in episodes/ before round5; holdout=False; upload_date ascending; exclude duration<300s; prefer >=400s (skipped as <400s: _Qu1LOwklAw 394s); wd4YRQW3TOc and E_zmENJIj4g (round4 drafts) are not re-extracted. Selected = the 5 oldest qualifying; selection is mechanical (type_guess), and three of them (Qszz0N4fRb4 mental game, 8r09TliP-Ak and w1FakobNq1Q match/tactics analysis) are less pure technique-teaching than earlier rounds.",
+    "ids": [
+      "Qszz0N4fRb4",
+      "8r09TliP-Ak",
+      "FOmz8Wjv3DQ",
+      "w1FakobNq1Q",
+      "UB6SbA_KX9E"
+    ],
+    "prompt_version": "ep_s1_v5",
+    "reextract_with_v5": [],
+    "skipped_round4_drafts": [
+      "wd4YRQW3TOc",
+      "E_zmENJIj4g"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "Qszz0N4fRb4",
+        "8r09TliP-Ak",
+        "FOmz8Wjv3DQ",
+        "UB6SbA_KX9E"
+      ],
+      "stage1_draft_rerun_fail": [
+        "w1FakobNq1Q"
+      ]
+    },
+    "low_confidence_verified": []
+  }
 }
