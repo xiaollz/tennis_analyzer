@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "uQcObi2oTSs",
+    "url": "https://www.youtube.com/watch?v=uQcObi2oTSs",
+    "title": "The Low-to-High Forehand is Mostly a Myth",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 10.0,
+    "upload_date": "2024-06-20",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "forehand",
+    "format": "short",
+    "reason": "The speaker explains the mechanics of the swing path on high balls and near the net, but does not provide any actionable drill, cue, or instruction."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/uQcObi2oTSs.en.vtt",
+    "kind": "auto",
+    "sha256": "ba1469fe003567e024b4c9f38adc7bd8353e8f2360e358ecb94f8ed25dd5a09a",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_uQcObi",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Is the low-to-high forehand swing mostly a myth?",
+    "definition": "The traditional concept of a low-to-high forehand swing is largely inaccurate, especially on high balls or near the net where the swing moves almost entirely back to front.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "forehand swing path basics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "the low to high forehand is mostly a myth",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "especially when you're close to the net or the ball is high",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "you're swinging basically back to front",
+      "start": 3.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "the elevation gain is so minimal you might not even notice it",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The racket swings almost purely back to front with minimal vertical elevation gain.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Being close to the net or encountering a high ball requires swinging primarily back to front rather than upward.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "Debunks the common dogma that forehands must always follow a low-to-high trajectory.",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Explains that elevation gain is virtually unnoticeable on high balls or near the net as the swing is mostly back to front.",
+      "evidence": [
+        "Q02",
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

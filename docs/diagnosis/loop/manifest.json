@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round8",
+  "round": "round9",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -84,7 +84,9 @@
       "duration_s": 44.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6: card demoted to stage1_draft after validate_cards FAIL (3 findings); must not enter the tree"
     },
     {
       "id": "toArb3WkJcs",
@@ -524,9 +526,11 @@
       "id": "boMJDzuFhM4",
       "title": "Alcaraz's Anxiety Secret | Mental Mastery in Tennis",
       "duration_s": 50.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs); 1 causes / 0 solutions"
     },
     {
       "id": "w1FakobNq1Q",
@@ -790,9 +794,11 @@
       "id": "wFOy0RKWBTg",
       "title": "Swing OUT on the Forehand",
       "duration_s": 31.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs); 1 causes / 1 solutions"
     },
     {
       "id": "QrRYuVjVibU",
@@ -800,7 +806,9 @@
       "duration_s": 16.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6: card demoted to stage1_draft after validate_cards FAIL (1 findings); must not enter the tree"
     },
     {
       "id": "Ibkq-yBteGc",
@@ -808,7 +816,9 @@
       "duration_s": 9.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6: card demoted to stage1_draft after validate_cards FAIL (1 findings); must not enter the tree"
     },
     {
       "id": "5KdScDKxVSI",
@@ -822,9 +832,11 @@
       "id": "uQcObi2oTSs",
       "title": "The Low-to-High Forehand is Mostly a Myth",
       "duration_s": 10.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round9",
+      "note": "ep_s1_v6 verified via raw pair 2-3 (3 runs); 1 causes / 1 solutions"
     },
     {
       "id": "Cwc4YcKFZrU",
@@ -1142,6 +1154,29 @@
         "7_JPqhG4G64",
         "lCKDP2gKR_Y",
         "_Qu1LOwklAw"
+      ],
+      "stage1_draft_rerun_fail": []
+    }
+  },
+  "round9_selection": {
+    "rule": "same as round6 (type_guess=教学长视频 + .en.vtt + no card + holdout=False + duration>=400s; technique titles first, tactics/psychology after; upload_date ascending); PwkGLkRm73o first by user request; holdout episodes are never extracted",
+    "prompt_version": "ep_s1_v6",
+    "ids": [
+      "jDBg4Fpf0tQ",
+      "boMJDzuFhM4",
+      "wFOy0RKWBTg",
+      "QrRYuVjVibU",
+      "Ibkq-yBteGc",
+      "uQcObi2oTSs"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "jDBg4Fpf0tQ",
+        "boMJDzuFhM4",
+        "wFOy0RKWBTg",
+        "QrRYuVjVibU",
+        "Ibkq-yBteGc",
+        "uQcObi2oTSs"
       ],
       "stage1_draft_rerun_fail": []
     }
