@@ -1,0 +1,600 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "pQ793MBQE50",
+    "url": "https://www.youtube.com/watch?v=pQ793MBQE50",
+    "title": "How Scap Retraction Powers the One-Handed Backhand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 988.0,
+    "upload_date": "2024-08-04",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "backhand",
+    "format": "lecture",
+    "reason": "The coach explains the biomechanics of scapular retraction, pull slot positioning, wrist stabilization, and grip alignment for the one-handed backhand."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/pQ793MBQE50.en.vtt",
+    "kind": "auto",
+    "sha256": "46101f79185f722eae7c3cdbcf4c7eb81f74e0fe6f34b08d8c428c6ea1d0282e",
+    "coverage_ratio": 0.9992
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v2",
+    "stage1_run_ids": [
+      "s1_r3_pQ793M",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does scapular retraction power the one-handed backhand?",
+    "definition": "Players struggle to hit a powerful and fault-tolerant one-handed backhand when they fail to pull with their upper back from the proper slot, let their wrist break through contact, or hold the racket with a slanted grip.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "one-handed backhand stroke"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q12",
+      "Q18"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "the essential contact motion on the one-handed backand is something we call scapular retraction or scap retraction for sure it is this motion",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "so what this motion is is the big strong muscles of the upper back Romo the traps pulling the shoulder blades together this a very strong motion",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "and if you're in the wrong spot you're not going to be able to pull so where is the pulse slot not here and this is a big issue I see on the one-handed backand",
+      "start": 49.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "from this body position you really can't pull the pull slot on the one hander is out here now that's the start of The Hitting Zone",
+      "start": 63.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "because you can't really pull with your upper back from here so you have two options one is to pull with the weaker muscles on the side of your arm here the triceps maybe the shoulder the deltoid",
+      "start": 141.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "because if you try to hit the ball hard from here you're going to hurt yourself and the shots not going to be good",
+      "start": 162.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "if we pull too late just like on the forehand we pull too late that pull is going to go sideways and if we pull too early we're not really going to be able to pull",
+      "start": 209.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "you set up where you think your pulse slot is and you start pulling and you see can I generate force from that position and if I can that's the middle of my contact Zone",
+      "start": 229.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "the pull works best as a two-handed motion so just like on the forehand we're we don't want to swing like this every swing we use our torso and our off hand to attack the ball",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "you don't want to pull with one hand again just like on the forehand this is just a much less efficient swing and you're very likely going to rotate farther than you want and shank the ball",
+      "start": 296.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "so on the one hander we can't allow our wrist to just freely break the way it wants to now on the forehand we can",
+      "start": 362.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "if I fully relax my hand and I let my wrist just naively break as I pull it wants to break here and that is right through the Hitting Zone which is a problem",
+      "start": 403.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "if you allow your wrist to break like this through the hitting Zone you cannot hit a fault tolerant shot because there isn't that much time in this Hitting Zone where the racket has the correct strain angle",
+      "start": 417.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "through your Hitting Zone you are going to have to use at least a little bit of forearm tension to prevent this the only rotation we can have is rotation that doesn't drastically affect the string angle",
+      "start": 439.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "I recommend you actually don't start with the swings you see on the tour I recommend you start with this instead of preparing here you prepare here so prepare with the racket head down go to the pull slot pull",
+      "start": 520.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "what this swing will let you do is it'll let you learn what the contact orientation feels like and what it feels like to resist that",
+      "start": 550.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "and then as you start to get better you're going to slowly go looser in the preparation and you're going to rotate the racket head this way",
+      "start": 608.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "we need a right angle between the forearm and the handle and for most people most comfortable is going to be the knuckles right on top of the racket parallel to the racket",
+      "start": 666.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "if the knuckles are slanted offsite from the handle again look my wrist is not going to be able to do that rotation I just showed it's going to break out this way",
+      "start": 700.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "if you use a non-perpendicular angle you're GNA even if you're doing it right your wrist is going to break you're not going to be able to control it",
+      "start": 793.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "with the two handed pull also you're going to feel comfortable using your left hand to help the racket into the pul slot instead of just taking the left hand off coming to the pull slot and pulling",
+      "start": 863.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "rip it you just have to find the right pull slot if you have to pull from here you can't do anything I I would have to pull with these super weak muscles it's impossible but if I find the",
+      "start": 963.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Player initiates the pull too close to the body and stomach rather than out in front in the pull slot.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The wrist breaks freely and backward right through the hitting zone, causing string angle instability.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player rotates farther than intended with the torso and shanks the ball.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Player feels inability to generate pulling force and strains weaker arm muscles like deltoids and triceps.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q05",
+        "Q06",
+        "Q08"
+      ]
+    },
+    {
+      "id": "S05",
+      "description": "Player holds the racket with knuckles slanted at a 135-degree angle rather than perpendicular to the handle.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "ready",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The string angle does not stay consistent through the hitting zone because of erratic wrist movement.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player completely relaxes the hand and allows the wrist to freely break through contact.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q14"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The grip lacks a 90-degree orthogonal relationship between forearm and handle, causing the wrist to break sideways.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18",
+        "Q19",
+        "Q20"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player sets up the pull slot too late and close to the stomach, pulling sideways rather than back to front.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03",
+        "Q04",
+        "Q07",
+        "Q22"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "The upper back rhomboids and traps are not engaged in scapular retraction to drive the racket forward.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01",
+        "Q02",
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "The player pulls with only one hand instead of executing a two-handed guided pull into the slot.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09",
+        "Q10",
+        "Q21"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05",
+        "Q06",
+        "Q22"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Scapular retraction pulls the shoulder blades together using the rhomboids and trapezius to create back-to-front drive.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Testing static pulling force at the chosen pull slot against resistance confirms if the body position can generate power.",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Unlike the forehand where wrist break naturally happens after contact, the backhand wrist will break through contact if left completely loose.",
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Forearm rotation around the long axis that keeps string angle stable is required, while wrist breaking perpendicular to contact must be resisted.",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "The grip must maintain a 90-degree orthogonal angle between the forearm and handle to enable proper forearm whip without wrist break.",
+      "evidence": [
+        "Q18",
+        "Q19",
+        "Q20"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "pro_example",
+      "summary": "Good players use a compact, non-whippy block swing with fixed wrist angle on difficult shots like serve returns.",
+      "evidence": [
+        "Q15",
+        "Q21"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C05"
+      ],
+      "summary": "Pull the shoulder blades together using the rhomboids and trapezius muscles to drive through the shot from back to front.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "check",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Set up at the pull slot against a wall or in space and test whether you can generate pulling force from your upper back.",
+      "external_goal": "The wall or pull slot position",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08",
+        "Q22"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C06"
+      ],
+      "summary": "Keep the non-dominant hand on the racket throat to guide the racket into the pull slot before releasing into the pull.",
+      "external_goal": "Guide racket throat with non-dominant hand into pull slot",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q09",
+        "Q21"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "progression",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Prepare with the racket head pointed down, pull through contact with fixed wrist angle, and only add dynamic racket preparation as comfort grows.",
+      "external_goal": "Prepare with racket head pointed down",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15",
+        "Q16",
+        "Q17"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "check",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Verify that the racket handle forms a strict 90-degree orthogonal angle with the forearm and knuckles align parallel along the handle.",
+      "external_goal": "Racket handle forming a 90-degree angle with forearm",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18",
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

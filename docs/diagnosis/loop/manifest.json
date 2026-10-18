@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round1",
+  "round": "round2",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -632,17 +632,19 @@
       "id": "dDYKuNZtdyU",
       "title": "Find Your One-Handed Backhand \"Pull Slot\"",
       "duration_s": 666.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round2"
     },
     {
       "id": "pQ793MBQE50",
       "title": "How Scap Retraction Powers the One-Handed Backhand",
       "duration_s": 988.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round2"
     },
     {
       "id": "YbLit9png2U",
@@ -754,15 +756,18 @@
       "duration_s": 497.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round2",
+      "note": "stage1_draft card exists but check_rerun FAILED after 3 runs + consensus; not verified"
     },
     {
       "id": "PUN6qIIYU-4",
       "title": "4 Tips for the Two-Handed Backhand",
       "duration_s": 886.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round2"
     },
     {
       "id": "Am8j1Zw5KrE",
@@ -770,7 +775,9 @@
       "duration_s": 556.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": true
+      "holdout": true,
+      "round": "round2",
+      "note": "stage1_draft card exists but check_rerun FAILED after 3 runs + consensus; not verified"
     },
     {
       "id": "OYf48k-cfNI",
@@ -780,5 +787,16 @@
       "updated": "2026-10-18",
       "holdout": false
     }
-  ]
+  ],
+  "round2_selection": {
+    "rule": "manifest.tsv type_guess=教学长视频 + .en.vtt present + no card in episodes/ before round2; upload_date ascending; exclude duration<300s; prefer >=400s (5KdScDKxVSI 357s skipped in favour of the next >=400s videos; shorter ones QXAtdSEUkfY/wVa4XQPcaqs/XjJHA91HDbU/YbLit9png2U <300s excluded)",
+    "ids": [
+      "Am8j1Zw5KrE",
+      "PUN6qIIYU-4",
+      "ExkBtFRhUWY",
+      "pQ793MBQE50",
+      "dDYKuNZtdyU"
+    ],
+    "prompt_version": "ep_s1_v2"
+  }
 }
