@@ -9,6 +9,7 @@ its first group; two nodes sharing a source video are never kept together (the l
 This is an extra layer on top of build_tree.py's lexical merge (TF-IDF cosine >= 0.40, unchanged).
 """
 import argparse
+from pathlib import Path
 import itertools
 import json
 from collections import Counter, defaultdict
@@ -19,7 +20,8 @@ from common import DIAG_DIR, load_json
 from textsim import Sim
 from tv2_common import PIPE, RUN_TEMPS, TREE_V1, WORK, cause_item_map, load_cards
 
-OUT = DIAG_DIR / "ftt_tree" / "mech_merge.json"
+import os
+OUT = Path(os.environ["TV_MERGE_OUT"]) if os.environ.get("TV_MERGE_OUT") else DIAG_DIR / "ftt_tree" / "mech_merge.json"
 MW = WORK / "merge"
 
 

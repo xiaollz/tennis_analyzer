@@ -19,7 +19,8 @@ import blind_replay_text as brt
 from common import DIAG_DIR, load_json
 from tv2_common import PIPE, RUN_TEMPS, TREE_V1, WORK, cause_item_map, load_cards, load_catalog, sha256_file
 
-OUT = DIAG_DIR / "ftt_tree" / "obs_binding.json"
+import os
+OUT = Path(os.environ["TV_BIND_OUT"]) if os.environ.get("TV_BIND_OUT") else DIAG_DIR / "ftt_tree" / "obs_binding.json"
 BW = WORK / "bind"
 
 
@@ -263,7 +264,7 @@ def partition(groups, ids):
     return lab
 
 
-def cmd_build():
+def cmd_build(draft=False):
     tree, cat = load_json(TREE_V1), load_catalog()
     cards = load_cards(tree["build"]["episodes_used"])
     node_of, members = cause_item_map(tree, cards)
@@ -292,7 +293,7 @@ def cmd_build():
         for i, n in enumerate(it["new_obs"]):
             cands.append({"cid": f"NC{len(cands) + 1:03d}", "item": key, **n})
     clusters, cl_usage = [], {}
-    if cands:
+    if cands and not draft:
         parts, cl_usage = cluster_new_obs(cands)
         ids = [c["cid"] for c in cands]
         labs = [partition(((p["out"] or {}).get("groups") if isinstance(p["out"], dict) else []), ids) for p in parts]
@@ -328,5 +329,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["run", "build", "gapfill"])
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--draft", action="store_true", help="build: aggregate round-1 only, no NEW-OBS clustering call (input for gapfill)")
     a = ap.parse_args()
-    {"run": lambda: cmd_run(a.workers), "build": cmd_build, "gapfill": cmd_gapfill}[a.cmd]()
+    {"run": lambda: cmd_run(a.workers), "build": lambda: cmd_build(a.draft), "gapfill": cmd_gapfill}[a.cmd]()

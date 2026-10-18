@@ -46,3 +46,10 @@ python3 verify_all.py --episodes ../episodes --tree ../ftt_tree/tree.json \
 | `check_obs_binding.py` / `check_mech_merge.py` | O1–O11 / M01–M09，已接入 verify_all（`--tree-v1 --binding --merge`） |
 | `blind_replay_text_v2.py` / `prompts/tree_retrieve_v2.md` | 文本盲测新变体（根因独立检索，无整体弃权）；旧脚本与旧结果不动 |
 | `compose_tree_v2_report.py` | 合成 `loop/reports/verify_*_tree_v2.json` 与 `ftt_tree/mech_merge_review.md` |
+
+### tree v3 追加
+| 文件 | 作用 |
+|---|---|
+| `promote_new_obs.py` | NEW-OBS 簇 → 家族（模型分组，两次一致）→ 按规则选 5–8 个升级为 OBS-19…，写 catalog + observables/*.md + `ftt_tree/new_obs_promotion.json` |
+| `compose_tree_v3_report.py` | 合成 `loop/reports/verify_*_tree_v3.json`（v2→v3 前后对比） |
+| 环境变量 `TV_WORK` `TV_BIND_OUT` `TV_MERGE_OUT` | 重跑绑定/合并时改工作目录与输出文件（默认仍是 v2 路径） |
