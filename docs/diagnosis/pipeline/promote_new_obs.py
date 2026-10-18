@@ -24,11 +24,12 @@ from common import CONFIG, DIAG_DIR, load_json
 from obs_bind import partition
 from tv2_common import PIPE, RUN_TEMPS, WORK
 
-BIND = DIAG_DIR / "ftt_tree" / "obs_binding.json"
-OUT = DIAG_DIR / "ftt_tree" / "new_obs_promotion.json"
+import os
+BIND = Path(os.environ["TV_BIND_OUT"]) if os.environ.get("TV_BIND_OUT") else DIAG_DIR / "ftt_tree" / "obs_binding.json"  # binding whose NEW-OBS clusters are read
+OUT = Path(os.environ["TV_PROMO_OUT"]) if os.environ.get("TV_PROMO_OUT") else DIAG_DIR / "ftt_tree" / "new_obs_promotion.json"
 CAT = PIPE / "obs_catalog.json"
 OBS_DIR = DIAG_DIR / "observables"
-MAX_PROMOTE, MIN_PROMOTE = 8, 5
+MAX_PROMOTE, MIN_PROMOTE = 8, int(os.environ.get("TV_MIN_PROMOTE", "5"))
 FW = WORK / "families"
 
 
@@ -74,7 +75,7 @@ def forbidden_hit(text):
     return None
 
 
-def cmd_apply():
+def cmd_apply(dry=False):
     b = load_json(BIND)
     cl = clusters_view(b)
     runs = [load_json(FW / f"run{n}.json") for n in (1, 2)]
@@ -116,12 +117,17 @@ def cmd_apply():
                      "episodes": eps, "items": its, "eligible": not why, "ineligible_because": why})
     elig = sorted([r for r in rows if r["eligible"]], key=lambda r: (-len(r["episodes"]), -len(r["items"]), r["rep_cluster"]))
     picked = elig[:MAX_PROMOTE]
+    if dry:
+        for r in elig:
+            print(("PICK " if r in picked else "elig "), len(r["episodes"]), r["episodes"], "|", r["description"], r["values"], r["layer"], r["camera"])
+        print("families", len(rows), "eligible", len(elig))
+        return 0
     if len(picked) < MIN_PROMOTE:
         print(f"only {len(picked)} eligible families (< {MIN_PROMOTE}); nothing written")
         return 1
-    if any(o["id"] == "OBS-19" for o in cat["observables"]):
-        raise SystemExit("OBS-19 already in catalog (apply is not idempotent on purpose)")
-    nxt = 19
+    if OUT.exists():
+        raise SystemExit(f"{OUT} already exists (apply is not idempotent on purpose; set TV_PROMO_OUT for a new round)")
+    nxt = max(int(o["id"].split("-")[1]) for o in cat["observables"]) + 1
     promoted = []
     for r in picked:
         oid = f"OBS-{nxt:02d}"
@@ -202,6 +208,7 @@ def cmd_approve(picks, note, date):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["group", "apply", "approve"])
+    ap.add_argument("--dry", action="store_true", help="apply: only list eligible families")
     ap.add_argument("--pick", action="append", default=[])
     ap.add_argument("--note", default="")
     ap.add_argument("--date", default="2026-10-18")
@@ -209,6 +216,6 @@ if __name__ == "__main__":
     if a.cmd == "group":
         cmd_group()
     elif a.cmd == "apply":
-        sys.exit(cmd_apply())
+        sys.exit(cmd_apply(a.dry))
     else:
         cmd_approve(a.pick, a.note, a.date)

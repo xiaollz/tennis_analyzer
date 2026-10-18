@@ -207,8 +207,8 @@ MUTATIONS = [
 
 # ---- tree v2 artifacts (OBS binding + mechanism merge): mutations run on in-memory copies of the committed files
 # selftest data = the CURRENT artifacts (v4, built against the current obs_catalog.json). v2 artifacts (18-observable catalog) stay in the repo as history.
-V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v4.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v4.json",
-      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v4.json", "eps": DIAG_DIR / "episodes"}
+V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v5.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v5.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v5.json",
+      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v5.json", "eps": DIAG_DIR / "episodes"}
 
 
 def v2_available():

@@ -487,6 +487,77 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py approve"
       }
+    },
+    {
+      "id": "OBS-30",
+      "src": "OBS-30_depth_ball_bounce_opponent_court.md",
+      "layer": "A",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Depth of ball bounce in the opponent court",
+      "values": [
+        "short_near_service_line",
+        "deep_near_baseline",
+        "past_baseline"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-04"
+        ],
+        "episodes": [
+          "5-Ia7c4XzfU",
+          "LoSrMj-Qxkc",
+          "T5meVwBOKR4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-31",
+      "src": "OBS-31_angle_racket_trajectory_relative_horizontal.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Angle of racket trajectory relative to horizontal through the contact zone",
+      "values": [
+        "steeply_upward",
+        "forward_and_upward",
+        "horizontal"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-05",
+          "NEW-OBS-28"
+        ],
+        "episodes": [
+          "FxDmVi3EFnE",
+          "dZadhzVEsds"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-32",
+      "src": "OBS-32_forward_swing_hitting_elbow_pull.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing, does the hitting elbow pull linearly across the torso before arm extension?",
+      "values": [
+        "elbow_drags_linearly",
+        "rotational_drive"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-07",
+          "NEW-OBS-43"
+        ],
+        "episodes": [
+          "2Nn9tyMECZU",
+          "wzLMv4ASg9s"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
     }
   ]
 }

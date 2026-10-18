@@ -12,7 +12,7 @@ from common import DIAG_DIR, load_json
 
 import os
 WORK = Path(os.environ.get("TV_WORK", "/workspace/s1_work/tree_v2"))  # default = v2 work dir; v3 uses TV_WORK=/workspace/s1_work/tree_v3
-TREE_V1 = DIAG_DIR / "ftt_tree" / "tree.json"
+TREE_V1 = Path(os.environ["TV_TREE_V1"]) if os.environ.get("TV_TREE_V1") else DIAG_DIR / "ftt_tree" / "tree.json"  # skeleton the binding/merge run on (v5: tree_base_v5.json)
 EP_DIR = DIAG_DIR / "episodes"
 PIPE = Path(__file__).resolve().parent
 RUN_TEMPS = {1: 0.2, 2: 0.4}  # two independent runs per task; only what both runs agree on is used as 'required'/'grouped'

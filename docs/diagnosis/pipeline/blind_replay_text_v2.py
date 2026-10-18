@@ -15,6 +15,7 @@ Key only from env MICU_GEMINI_KEY (never written). Raw prompts/responses -> /wor
 """
 import argparse
 import json
+import os
 import shutil
 import sys
 from collections import Counter
@@ -25,10 +26,12 @@ import blind_replay_text as brt
 from common import DIAG_DIR, load_json
 
 W1 = brt.WORK  # tree_blind_v1 (gold + v1 answer keys live here)
-W2 = Path("/workspace/s1_work/tree_blind_v2")
+W2 = Path(os.environ.get("BT_W2", "/workspace/s1_work/tree_blind_v2"))  # v5: BT_W2=/workspace/s1_work/tree_blind_v5
 HERE = Path(__file__).resolve().parent
 OUTDIR = DIAG_DIR / "replay" / "text_blind"
-V2_TREE = DIAG_DIR / "ftt_tree" / "tree_v2.json"
+V2_TREE = Path(os.environ["BT_TREE"]) if os.environ.get("BT_TREE") else DIAG_DIR / "ftt_tree" / "tree_v2.json"
+MM_FILE = Path(os.environ["BT_MM"]) if os.environ.get("BT_MM") else DIAG_DIR / "ftt_tree" / "mech_merge.json"
+TAG = os.environ.get("BT_TAG", "v2_indep")
 V1_TREE = DIAG_DIR / "ftt_tree" / "tree.json"
 
 
@@ -103,7 +106,7 @@ def judge(args):
 
 
 def run_cfg(cfg, workers):
-    mm = load_json(DIAG_DIR / "ftt_tree" / "mech_merge.json")
+    mm = load_json(MM_FILE)
     tree = load_json(V2_TREE if cfg == "main" else V1_TREE)
     menu = menu_variants(tree, mm["groups"]) if cfg == "main" else menu_plain(tree)
     holdout = sorted(tree["holdout_episodes"])
@@ -121,7 +124,7 @@ def run_cfg(cfg, workers):
     usage = Counter()
     for r in list(rets.values()) + (list(keys.values()) if cfg == "main" else []):
         usage.update(r.get("usage") or {})
-    res = {"config": cfg, "tree": "tree_v2.json" if cfg == "main" else "tree.json (v1)", "retrieval_prompt": "prompts/tree_retrieve_v2.md",
+    res = {"config": cfg, "tree": V2_TREE.name if cfg == "main" else "tree.json (v1)", "retrieval_prompt": "prompts/tree_retrieve_v2.md",
            "menu": "variants (also worded)" if cfg == "main" else "plain (v1)",
            "answer_key": "tree_judge_v1 over the same menu, run now" if cfg == "main" else "v1 key reused (same tree)",
            "metrics": m, "gate_reference": gate, "gemini_usage": dict(usage), "model": brt.S1.MODEL,
@@ -130,14 +133,14 @@ def run_cfg(cfg, workers):
     s = json.dumps(res, ensure_ascii=False, indent=1)
     assert brt.key() not in s
     OUTDIR.mkdir(parents=True, exist_ok=True)
-    (OUTDIR / f"results_v2_indep_{cfg}.json").write_text(s + "\n", encoding="utf-8")
+    (OUTDIR / f"results_{TAG}_{cfg}.json").write_text(s + "\n", encoding="utf-8")
     # compact artifacts (retrieved ids per run) for review
     art = {}
     for v in usable:
         art[v] = {"title": golds[v].get("title"), "answer_key": keys.get(v, {}).get("matches", {}),
                   "retrieval": {f"run{n}": {"video_is_teaching": (rets[(v, n)]["out"] or {}).get("video_is_teaching"), "problems": (rets[(v, n)]["out"] or {}).get("problems"),
                                             "causes": (rets[(v, n)]["out"] or {}).get("causes")} for n in (1, 2, 3) if isinstance(rets[(v, n)]["out"], dict)}}
-    (OUTDIR / f"artifacts_v2_indep_{cfg}.json").write_text(json.dumps(art, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (OUTDIR / f"artifacts_{TAG}_{cfg}.json").write_text(json.dumps(art, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(cfg, json.dumps(m, ensure_ascii=False, indent=1))
     print("usage", dict(usage))
 

@@ -1,0 +1,161 @@
+{
+ "builder": "build_tree_v1",
+ "merge_cosine": 0.4,
+ "episodes_used": [
+  "1W1rope5l0k",
+  "2Nn9tyMECZU",
+  "5-Ia7c4XzfU",
+  "8r09TliP-Ak",
+  "9NirSL59an0",
+  "AppdZqxH_2k",
+  "FBJnFBtZozE",
+  "FOmz8Wjv3DQ",
+  "FxDmVi3EFnE",
+  "JzcA_ku7Yhk",
+  "LoSrMj-Qxkc",
+  "NEpD7fIM7HI",
+  "PUN6qIIYU-4",
+  "PfDqnff_vYA",
+  "PjvOQkqH9DA",
+  "Psidjei5BnI",
+  "PwkGLkRm73o",
+  "Qszz0N4fRb4",
+  "RVfmDk-iEwo",
+  "T5meVwBOKR4",
+  "UB6SbA_KX9E",
+  "V-QkILd4V-w",
+  "Vg8lbXOhM3E",
+  "WoVEWh7fFfc",
+  "XXlndjnrA4E",
+  "aPcKJDadzek",
+  "cIIEYn42o4g",
+  "dDYKuNZtdyU",
+  "dZadhzVEsds",
+  "fjpr9PS02tM",
+  "lwS7Xxqrrdw",
+  "pQ793MBQE50",
+  "toArb3WkJcs",
+  "tzgAWr3QGv0",
+  "uJpuDUx0jIA",
+  "wFIrPMutzRo",
+  "wzLMv4ASg9s",
+  "xLs469ZVMPU"
+ ],
+ "skipped": [
+  {
+   "episode": "0m3BMfDDShI",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "6ak4ZScH_gc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "Am8j1Zw5KrE",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "E_zmENJIj4g",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "ExkBtFRhUWY",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "FjjvhNbk3q4",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "JIMgI3jiVns",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "KU7FHy1qQOI",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "Z9XwaXDVkZg",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "m1NBdd3Bigg",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "omsLx7F2Wdc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "pWzyP-xfLfU",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "w1FakobNq1Q",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "wd4YRQW3TOc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "x_WIg59Wr9Y",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  }
+ ],
+ "counts": {
+  "problem_nodes": 38,
+  "cause_nodes": 158,
+  "cause_items_before_merge": 160,
+  "symptoms": 131,
+  "solutions": 170,
+  "angles": 178,
+  "edges": 168
+ },
+ "merged_clusters": [
+  {
+   "node": "N-C_APCKJDADZEK_C03",
+   "members": [
+    "aPcKJDadzek:C03",
+    "uJpuDUx0jIA:C03"
+   ],
+   "cosines": [
+    0.427
+   ],
+   "statements": [
+    "The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch.",
+    "Loading weight onto the inside heel / over-pronated flat foot rather than loading the arch and ball of the foot."
+   ]
+  },
+  {
+   "node": "N-C_DDYKUNZTDYU_C01",
+   "members": [
+    "dDYKuNZtdyU:C01",
+    "pQ793MBQE50:C05"
+   ],
+   "cosines": [
+    0.463
+   ],
+   "statements": [
+    "Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together.",
+    "Failing to drive the racket forward using upper back scapular retraction (rhomboids and traps pulling shoulder blades together)."
+   ]
+  }
+ ],
+ "dropped_edges": []
+}

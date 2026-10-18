@@ -60,3 +60,15 @@ python3 verify_all.py --episodes ../episodes --tree ../ftt_tree/tree.json \
 | `promote_new_obs.py approve --pick <binding.json>:<candidate cid> --note ...` | 用户人工批准的**单期例外**升级（OBS-26…29）：题目/取值逐字取自模型候选，写 catalog + observables + `new_obs_promotion.json` 的 `user_approved_single_episode_exceptions`；跨期规则本身未改 |
 | `obs_bind.py` agg 变更 | 两次都 required 的同一 OBS 若列了 ≥2 个不同取值（模型的本意是「任一」），不可能同时成立 → 降为 supporting；`check_obs_binding` O10 同步复算（更严，不放宽） |
 | `compose_tree_v4_report.py` | 合成 `loop/reports/verify_*_tree_v4.json`（v3→v4 前后对比，含三个 T08 复核组） |
+
+### tree v5 追加（2026-10-18 夜）
+
+| 脚本 | 作用 |
+|---|---|
+| `s1_round.py` | 批量 Stage1（ep_s1_v6 原流程：2 次 → final → 第 3 次 → final → consensus；缺 `norm.tsv` 时由 `.en.vtt` 生成，字幕不入库） |
+| `s1_manifest.py` | 按卡与 `rerun_adjudication.json` 写回 `loop/manifest.json`（无判断） |
+| `video_probe.py` + `prompts/facts_video_v1.md` | 视频层：YouTube URL `fileData` + 起止偏移，不下载（结论见 `loop/video_layer_feasibility.md`） |
+| `gate_cc_t08.py` | 校验 Claude Code 对 T08 对的评审（提案不入树） |
+| `compose_tree_v5_report.py` | 合成 `loop/reports/verify_*_tree_v5.json` |
+
+环境变量：`TV_TREE_V1`（绑定 / 合并所用骨架）、`TV_PROMO_OUT`、`TV_MIN_PROMOTE`、`BT_TREE` / `BT_MM` / `BT_W2` / `BT_TAG`。
