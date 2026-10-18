@@ -1,0 +1,26 @@
+{
+ "id": "q6LrQYDvxmY",
+ "mode": "yt",
+ "model": "gemini-3.8-flash",
+ "prompt_version": "v1",
+ "status": "ok",
+ "elapsed_s": 62.1,
+ "usage": {
+  "promptTokenCount": 94548,
+  "candidatesTokenCount": 2628,
+  "totalTokenCount": 99128,
+  "promptTokensDetails": [
+   {
+    "modality": "TEXT",
+    "tokenCount": 279
+   },
+   {
+    "modality": "VIDEO",
+    "tokenCount": 94269
+   }
+  ],
+  "thoughtsTokenCount": 1952,
+  "serviceTier": "standard"
+ },
+ "ts": "2026-10-18 10:47:22 +0800"
+}
