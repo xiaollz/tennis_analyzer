@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-18",
-  "round": "round3",
+  "round": "round4",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -504,17 +504,21 @@
       "id": "Psidjei5BnI",
       "title": "4 Tips For Consistently Crushing Slow Balls",
       "duration_s": 475.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "ep_s1_v4 verified via raw pair 2-3"
     },
     {
       "id": "FxDmVi3EFnE",
       "title": "The Truth About the Topspin Pro",
       "duration_s": 928.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "ep_s1_v4 verified via raw pair 1-2 (causes Jaccard 0.60 = threshold)"
     },
     {
       "id": "McCb-RfYd0w",
@@ -528,9 +532,13 @@
       "id": "JIMgI3jiVns",
       "title": "How Shoulder Rotation Syncs Your Contact",
       "duration_s": 448.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "confidence": "low",
+      "needs_user_subtitle_check": true,
+      "note": "LOW CONFIDENCE: verified only by 3-run consensus (base run1; dropped cause C01 -> 2 causes / 2 solutions; passes vs run2, fails vs run3). User should check against subtitles before it enters the tree."
     },
     {
       "id": "42BfbKsTGb4",
@@ -554,7 +562,9 @@
       "duration_s": 2624.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "ep_s1_v4: all pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "BbGzWTp5pCM",
@@ -568,9 +578,11 @@
       "id": "JzcA_ku7Yhk",
       "title": "The Misunderstanding LOSING You Matches",
       "duration_s": 430.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "ep_s1_v4 verified via raw pair 1-3"
     },
     {
       "id": "dx8aGSIo24w",
@@ -610,7 +622,9 @@
       "duration_s": 1338.0,
       "state": "subs_ready",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "ep_s1_v4: all pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "V-QkILd4V-w",
@@ -624,9 +638,11 @@
       "id": "xLs469ZVMPU",
       "title": "Fix Your Forehand Over-Rotation | 3 Counter-Rotational Balance Techniques",
       "duration_s": 734.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-18",
-      "holdout": false
+      "holdout": false,
+      "round": "round4",
+      "note": "round3 draft (v3) -> verified with ep_s1_v4 via raw pair 1-2 (2 runs)"
     },
     {
       "id": "dDYKuNZtdyU",
@@ -758,7 +774,9 @@
       "updated": "2026-10-18",
       "holdout": false,
       "round": "round2",
-      "note": "stage1_draft card exists but check_rerun FAILED after 3 runs + consensus; not verified"
+      "note": "LOW CONFIDENCE: round3 (ep_s1_v3) verified only by 3-run consensus (base run3; dropped cause C03 -> 2 causes / 4 solutions; passes vs run2, fails vs run1). Thin card: user must check against the subtitles before it enters the tree. Also annotated in the card conflicts[X01].description.",
+      "confidence": "low",
+      "needs_user_subtitle_check": true
     },
     {
       "id": "PUN6qIIYU-4",
@@ -777,7 +795,7 @@
       "updated": "2026-10-18",
       "holdout": true,
       "round": "round2",
-      "note": "stage1_draft card exists but check_rerun FAILED after 3 runs + consensus; not verified"
+      "note": "round3 (ep_s1_v3) verified via raw pair 2-3 (supersedes the round2 draft)"
     },
     {
       "id": "OYf48k-cfNI",
@@ -826,5 +844,52 @@
         "wd4YRQW3TOc"
       ]
     }
-  }
+  },
+  "round4_selection": {
+    "rule": "manifest.tsv type_guess=教学长视频 + .en.vtt present + no card in episodes/ before round4; holdout=False; upload_date ascending; exclude duration<300s; prefer >=400s (skipped: Fu6DkHvZlGY 435s and 5jHCDc44SQM 457s are holdout; 42BfbKsTGb4 337s, <400s ones, GsHkML2mVEI 350s, dx8aGSIo24w 283s, BbGzWTp5pCM 259s). Selected = the 5 oldest qualifying; matches the suggested candidates.",
+    "ids": [
+      "JzcA_ku7Yhk",
+      "E_zmENJIj4g",
+      "JIMgI3jiVns",
+      "FxDmVi3EFnE",
+      "Psidjei5BnI"
+    ],
+    "prompt_version": "ep_s1_v4",
+    "reextract_with_v4": [
+      "xLs469ZVMPU",
+      "wd4YRQW3TOc"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "xLs469ZVMPU",
+        "JzcA_ku7Yhk",
+        "JIMgI3jiVns",
+        "FxDmVi3EFnE",
+        "Psidjei5BnI"
+      ],
+      "stage1_draft_rerun_fail": [
+        "wd4YRQW3TOc",
+        "E_zmENJIj4g"
+      ]
+    },
+    "low_confidence_verified": [
+      "JIMgI3jiVns"
+    ]
+  },
+  "low_confidence_cards": [
+    {
+      "id": "ExkBtFRhUWY",
+      "confidence": "low",
+      "reason": "thin 3-run consensus card (2 causes / 4 solutions; passes check_rerun vs run2 only)",
+      "action": "user must check subtitles before the card enters the tree",
+      "card_annotation": "episodes/ExkBtFRhUWY.card.json conflicts[X01].description"
+    },
+    {
+      "id": "JIMgI3jiVns",
+      "confidence": "low",
+      "reason": "thin 3-run consensus card (2 causes / 2 solutions; passes check_rerun vs run2 only)",
+      "action": "user must check subtitles before the card enters the tree",
+      "card_annotation": "manifest only"
+    }
+  ]
 }

@@ -13,7 +13,7 @@
     "is_teaching": "teaching",
     "stroke": "forehand",
     "format": "lecture",
-    "reason": "The coach explains the biomechanics of counter-rotational braking on the forehand, demonstrates three variations, and details practice methods."
+    "reason": "The coach analyzes the mechanics of counter-rotational braking on the forehand and explains techniques and drills to prevent over-rotation."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/xLs469ZVMPU.en.vtt",
@@ -23,65 +23,63 @@
   },
   "extraction": {
     "stage1_model": "gemini-3.8-flash",
-    "stage1_prompt_version": "ep_s1_v3",
+    "stage1_prompt_version": "ep_s1_v4",
     "stage1_run_ids": [
       "s1_r1_xLs469",
-      "s1_r2_xLs469",
-      "s1_r3_xLs469"
+      "s1_r2_xLs469"
     ],
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How can you fix forehand over-rotation using counter-rotational balance techniques?",
-    "definition": "Players often continuously twist their hips through contact rather than using transient rotation and counter-rotational braking, leading to slower, less accurate shots and spinning out past the target.",
+    "title_as_question": "How can you fix forehand over-rotation and control your body through the hitting zone using counter-rotational balance techniques?",
+    "definition": "Forehand over-rotation occurs when a player twists continuously through contact without applying counter-rotational braking to transiently stop the hips, leading to loss of racket speed, off-target mishits, and poor balance.",
     "node_id": "PENDING",
     "prerequisites": [
-      "Basic forehand rotational mechanics",
-      "Hitting from open or semi-open stances"
+      "Unit turn and initial hip rotation into the forward swing"
     ],
     "target_player": "",
     "evidence": [
       "Q01",
-      "Q02"
+      "Q03"
     ]
   },
   "quotes": [
     {
       "id": "Q01",
-      "text": "and if you're not doing it right you're going to hit both slower and less accurately because of that",
-      "start": 21.0,
+      "text": "counter rotational breaking is a technique that allows you to better control your rotation through your Hitting Zone and if you're not doing it right you're going to hit both slower and less accurately",
+      "start": 16.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q02",
-      "text": "your hip rotation on the beforehand has to be transient which means it starts and stops you don't just twist all the way through contact",
-      "start": 59.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q03",
-      "text": "and then I want you to look at the counter rotational break which is this left leg coming up and forward which is a rotation in the opposite direction",
-      "start": 77.0,
+      "text": "Roger Federer is probably the most prolific counter rotational breaker we've ever seen on tour although Carlos alarz is right up there with him",
+      "start": 33.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q04",
-      "text": "that rotational break with the left foot rotates the other direction and that's what stops or at least slows It Through The Hitting Zone which creates that whip effect",
-      "start": 91.0,
+      "id": "Q03",
+      "text": "to power your forehand swing your hip rotation on the beforehand has to be transient which means it starts and stops you don't just twist all the way through contact",
+      "start": 57.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
+      "id": "Q04",
+      "text": "the first thing a right-handed player does is they fire that right hip into the shot and that creates the initial rotation and then I want you to look at the counter rotational break which is this left leg",
+      "start": 69.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
       "id": "Q05",
-      "text": "Federer is hitting the same Inside Out forehand using two different counter rotational breaking patterns to do basically the same thing one with his right leg and one with his left leg",
-      "start": 107.0,
+      "text": "that rotational break with the left foot rotates the other direction and that's what stops or at least slows It Through The Hitting Zone which creates that whip effect",
+      "start": 93.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
@@ -96,8 +94,8 @@
     },
     {
       "id": "Q07",
-      "text": "so she's not just spinning around through the ball there's a quick transient twist and then that's it and then the Torso goes through the ball by itself",
-      "start": 169.0,
+      "text": "the hips fire in but the right leg fires back so she's not just spinning around through the ball there's a quick transient twist and then that's it",
+      "start": 168.0,
       "speaker": "coach",
       "about": "demonstrator_natural",
       "source": "subtitle"
@@ -112,7 +110,7 @@
     },
     {
       "id": "Q09",
-      "text": "and your body is going to stay on a line through the shot instead of spinning out past it",
+      "text": "your body is going to stay on a line through the shot instead of spinning out past it",
       "start": 194.0,
       "speaker": "coach",
       "about": "general",
@@ -120,7 +118,7 @@
     },
     {
       "id": "Q10",
-      "text": "the left foot kicking up and sometimes kicking across the body which again is a counter rotation that slows or stops the right-handed player initial rotation",
+      "text": "the second kind of counter rotational break we're going to talk about is the left foot kicking up and sometimes kicking across the body which again is a counter rotation that slows or stops the right-handed player initial rotation",
       "start": 201.0,
       "speaker": "coach",
       "about": "general",
@@ -129,22 +127,22 @@
     {
       "id": "Q11",
       "text": "when you load up on your right foot it's very natural to send your left foot in different directions to control your swing because your left foot's so free",
-      "start": 223.0,
+      "start": 222.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q12",
-      "text": "what I want to stress is that the fundamental physics involved when they perform the movements versus when you perform the movements are the same",
+      "text": "the fundamental physics involved when they perform the movements versus when you perform the movements are the same",
       "start": 255.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q13",
-      "text": "the left foot up pattern is so useful because it's fault tolerant you don't have to be perfect you can be a little off-balance",
+      "text": "the left foot up pattern is so useful because it's fault tolerant you don't have to be perfect you can be a little off-balance or you can be a little jammed",
       "start": 277.0,
       "speaker": "coach",
       "about": "general",
@@ -152,8 +150,8 @@
     },
     {
       "id": "Q14",
-      "text": "in order to execute at this level it can't be something you're consciously thinking about you have to just see ball hit ball see ball hit",
-      "start": 325.0,
+      "text": "set points in order to execute at this level it can't be something you're consciously thinking about you have to just see ball hit ball see ball hit and the way to do this is to practice in such a",
+      "start": 322.8,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
@@ -168,7 +166,7 @@
     },
     {
       "id": "Q16",
-      "text": "our third one for this video is pressing through the front foot to prevent over rotating through it and this one's a little bit difficult to see because it's not Dynamic",
+      "text": "our third one for this video is pressing through the front foot to prevent over rotating through it and this one's a little bit difficult to see because it's not Dynamic it's not a movement it's just force production",
       "start": 444.0,
       "speaker": "coach",
       "about": "general",
@@ -176,31 +174,31 @@
     },
     {
       "id": "Q17",
-      "text": "and now look at that left knee it's rotating out and it stopped rotating out and we can even see in his follow through it rotates back in",
-      "start": 489.0,
+      "text": "we want to look at the behavior of that front leg as he comes through his release which is what's analogous to tennis contact",
+      "start": 478.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q18",
+      "text": "now look at that left knee it's rotating out and it stopped rotating out and we can even see in his follow through it rotates back in that's how much force he's using to resist the continuing outward rotation",
+      "start": 490.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
       "text": "it's still used a lot especially on Lower balls where staying on the ground is beneficial because the ball's low anyway",
-      "start": 522.0,
+      "start": 521.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q19",
-      "text": "if you're in a situation where you should be pushing back against that foot and you don't you let it twist out instead",
-      "start": 537.0,
-      "speaker": "coach",
-      "about": "demonstrator_induced",
-      "source": "subtitle"
-    },
-    {
       "id": "Q20",
-      "text": "and watch how that's coming up off the ground right here which shows you that I'm not pressing back through it otherwise it would stay on the ground",
+      "text": "watch how that's coming up off the ground right here which shows you that I'm not pressing back through it otherwise it would stay on the ground",
       "start": 545.0,
       "speaker": "coach",
       "about": "demonstrator_induced",
@@ -208,24 +206,40 @@
     },
     {
       "id": "Q21",
-      "text": "if I pause it right at contact you can see it on the left the one that I miss off wide that foot is no longer pushing back against the body here that heel is off the ground",
-      "start": 583.0,
+      "text": "if you watch the one where I hold the rotation longer that foot is attached to the ground there and I can feel the force that that left leg is generating to prevent the over rotation",
+      "start": 553.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "the one that I miss off wide that foot is no longer pushing back against the body here that heel is off the ground there's no more Force resisting rotation",
+      "start": 585.0,
       "speaker": "coach",
       "about": "demonstrator_induced",
       "source": "subtitle"
     },
     {
-      "id": "Q22",
-      "text": "I want you to notice that through contact that foot is planted on the ground and it comes up as part of the follow through",
+      "id": "Q23",
+      "text": "through contact that foot is planted on the ground and it comes up as part of the follow through",
       "start": 616.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q23",
-      "text": "that creates a whip effect and it gives you more control over the contact Zone you're more likely to stay on a line through your target rather than shanking the ball off wide",
-      "start": 642.0,
+      "id": "Q24",
+      "text": "using static Force into the ground twisting into that hip and having that hip naturally flex and prevent rotating farther than that that creates a whip effect and it gives you more control over the contact Zone",
+      "start": 635.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "you're more likely to stay on a line through your target rather than shanking the ball off wide or having the chest flare open",
+      "start": 647.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -234,7 +248,7 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "The player hits forehands both slower and less accurately due to failing to control rotation through the hitting zone.",
+      "description": "Hitting the forehand with reduced pace and compromised directional accuracy.",
       "kind": "ball_outcome",
       "layer": "B",
       "camera": "any",
@@ -246,63 +260,87 @@
     },
     {
       "id": "S02",
-      "description": "The player's body and torso spin out past the shot instead of staying on a linear path through the hitting zone.",
+      "description": "Body continuously spinning around past the shot instead of remaining on a linear path through the ball.",
       "kind": "visible",
       "layer": "A",
-      "camera": "B",
+      "camera": "S",
       "phase": "follow_through",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q09",
-        "Q23"
+        "Q07",
+        "Q09"
       ]
     },
     {
       "id": "S03",
-      "description": "The front foot heel lifts off the ground and twists out before or at contact, causing the shot to miss wide.",
+      "description": "Front foot and heel lifting off the court during contact rather than staying grounded to resist rotation.",
       "kind": "visible",
-      "layer": "A",
+      "layer": "B",
       "camera": "S",
       "phase": "contact",
       "obs_ref": "NEW-OBS",
       "evidence": [
         "Q20",
-        "Q21"
+        "Q22"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Shanking the ball wide or having the chest flare open excessively at contact.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q22",
+        "Q25"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "The player's hip rotation twists continuously all the way through contact rather than being transient and stopping.",
+      "statement": "The player twists continuously through contact instead of allowing hip rotation to be transient and brake to create a whip effect.",
       "depth": 1,
-      "layer": "A",
+      "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q02"
+        "Q03"
       ]
     },
     {
       "id": "C02",
-      "statement": "The player lacks a counter-rotational movement from the lower body in the opposite direction to slow or stop hip rotation through the hitting zone.",
-      "depth": 2,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "passive",
-      "evidence": [
-        "Q04"
-      ]
-    },
-    {
-      "id": "C03",
-      "statement": "The player allows the front foot to twist out and lift rather than pressing static force into the ground to resist continuing rotation.",
+      "statement": "The player fails to kick the hitting leg backward behind the body to arrest rotational momentum while driving weight forward.",
       "depth": 2,
       "layer": "A",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q19"
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player fails to let the free non-dominant foot kick upward or across the body to slow down or stop initial hip rotation.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player fails to produce static pressing force into the court through the lead foot, allowing the foot to lift or twist out early.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16"
       ]
     }
   ],
@@ -312,7 +350,7 @@
       "to": "C01",
       "strength": "coach_stated",
       "evidence": [
-        "Q04"
+        "Q03"
       ]
     },
     {
@@ -320,15 +358,47 @@
       "to": "C01",
       "strength": "coach_stated",
       "evidence": [
-        "Q19"
+        "Q03"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
       ]
     },
     {
       "from": "C01",
-      "to": "PROBLEM",
+      "to": "S01",
       "strength": "coach_stated",
       "evidence": [
-        "Q02"
+        "Q01"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S04",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q22"
       ]
     }
   ],
@@ -336,44 +406,53 @@
     {
       "id": "A01",
       "type": "mechanics",
-      "summary": "Forehand hip rotation must be transient (starts and stops) so that arresting the hips creates a whip effect that lets the torso flick through.",
-      "evidence": [
-        "Q02",
-        "Q04"
-      ]
-    },
-    {
-      "id": "A02",
-      "type": "pro_example",
-      "summary": "Roger Federer demonstrates both the right leg kicking back and the left leg lifting forward to execute counter-rotational braking on inside-out forehands.",
+      "summary": "Hip rotation must be transient by braking in the hitting zone so the hips stop and the torso whips through into contact.",
       "evidence": [
         "Q03",
         "Q05"
       ]
     },
     {
-      "id": "A03",
-      "type": "analogy",
-      "summary": "MLB pitchers like Jacob deGrom brace against their front leg at release to arrest rotational force and transfer it into linear momentum.",
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Elite players like Federer, Alcaraz, and Machac actively use lower-body counter-rotational breaks to stabilize their strokes under pressure.",
       "evidence": [
-        "Q17"
+        "Q02",
+        "Q14"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "MLB pitchers brace forcefully against their lead leg to stop outward rotation and convert momentum into forward linear release speed.",
+      "evidence": [
+        "Q17",
+        "Q18"
       ]
     },
     {
       "id": "A04",
-      "type": "contrast_demo",
-      "summary": "The coach contrasts letting the front foot lift and twist out (causing a miss wide) against keeping the front foot planted to resist over-rotation.",
+      "type": "feel",
+      "summary": "Static counter-rotational braking creates a distinct internal sensation of force generated in the lead leg to resist over-rotation.",
       "evidence": [
-        "Q20",
         "Q21"
       ]
     },
     {
       "id": "A05",
-      "type": "misconception",
-      "summary": "Players often mistakenly believe the front-foot hop happens at contact, whereas pros remain firmly planted through contact and only hop on the follow-through.",
+      "type": "contrast_demo",
+      "summary": "Demonstrating the difference between missing wide when the front heel lifts early versus staying on line when the foot stays planted through contact.",
       "evidence": [
+        "Q20",
         "Q22"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "misconception",
+      "summary": "Counter-rotational braking looks like superhuman athleticism on tour, but the fundamental physics apply equally to recreational players.",
+      "evidence": [
+        "Q12"
       ]
     }
   ],
@@ -384,7 +463,7 @@
       "targets": [
         "C02"
       ],
-      "summary": "Practice driving through the hitting hip such that the hitting leg kicks back behind the body while sending the entire body forward on a line.",
+      "summary": "Practice driving through the hitting hip in a way that sends the rear leg backward behind the body while propelling the body forward.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -401,9 +480,9 @@
       "id": "D02",
       "kind": "drill",
       "targets": [
-        "C02"
+        "C01"
       ],
-      "summary": "Practice early swing driving motions using a medicine ball to build force production and counter-rotational sequencing through heightened kinesthetic feedback.",
+      "summary": "Train the early swing driving and braking motions with a medicine ball to gain clear kinesthetic feedback on force production.",
       "external_goal": "medicine ball",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -420,9 +499,9 @@
       "id": "D03",
       "kind": "check",
       "targets": [
-        "C03"
+        "C04"
       ],
-      "summary": "Pause video right at contact to check whether the front foot remains firmly planted and pressing into the ground rather than having the heel lift off early.",
+      "summary": "Check that the lead foot stays planted on the court through contact rather than coming up or letting the heel leave the ground early.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -432,22 +511,11 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q21"
+        "Q20"
       ]
     }
   ],
   "video_layer": [],
-  "conflicts": [
-    {
-      "id": "X01",
-      "between": [
-        "s1_r1_xLs469",
-        "s1_r2_xLs469",
-        "s1_r3_xLs469"
-      ],
-      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
-      "resolution": "open_user_decides"
-    }
-  ],
-  "status": "stage1_draft"
+  "conflicts": [],
+  "status": "stage1_verified"
 }

@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "cause_anchor_exact": 2,
+    "cause_anchor_evidence_spills": 1,
+    "cause_anchor_miss": 1,
+    "chain_added_missing_cause_inferred": 1,
+    "solution_anchor_exact": 4,
+    "solution_anchor_evidence_spills": 2
+  },
+  "detail": [
+    "cause_anchor_evidence_spills: C02 anchor_bucket=15 evidence_buckets=[15, 16]",
+    "cause_anchor_miss: C03 anchor_bucket=29 evidence_buckets=[27]",
+    "chain_added_missing_cause_inferred: C02",
+    "solution_anchor_evidence_spills: D02 anchor_bucket=43 evidence_buckets=[40, 43]",
+    "solution_anchor_evidence_spills: D04 anchor_bucket=62 evidence_buckets=[62, 65]"
+  ]
+}

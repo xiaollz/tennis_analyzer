@@ -1,0 +1,791 @@
+{
+ "report_id": "verify_2026-10-18_round4",
+ "generated_at": "2026-10-18T16:44:59+08:00",
+ "timezone": "Asia/Shanghai",
+ "round": 4,
+ "scope": "(a) re-extract xLs469ZVMPU + wd4YRQW3TOc with ep_s1_v4; (b) 5 new FTT long teaching videos, oldest-first, >=400s preferred, holdout excluded; (c) annotate ExkBtFRhUWY as low confidence",
+ "branch": "cursor/diagnosis-phase1",
+ "base_commit": "2081465",
+ "model": "gemini-3.8-flash",
+ "endpoint": "https://www.micuapi.ai",
+ "prompt_version": "ep_s1_v4",
+ "prompt_upgraded_from": "ep_s1_v3",
+ "prompt_changes": [
+  "new rule 13 'cause granularity': causes 3-5; same mechanism in the same 30 s bucket merged into one cause; one thing is never split into two causes; every cause needs exactly one cause_anchor (counts equal, ids 1:1); self-check pass for merged/duplicated causes; where the subtitles cannot support 3 causes, rule 1 (no invention) wins",
+  "v3 rules 13/14 renumbered to 14/15; everything else identical to v3; no user/KB concepts (check_neutrality PASS)"
+ ],
+ "thresholds_changed": false,
+ "config_json_changed": false,
+ "check_rerun_changed": false,
+ "script_changes": "s1_extract.py: defaults only (S1_PROMPT ep_s1_v4, S1_WORK round4); consensus/final logic untouched",
+ "v3_archive": "episodes/raw/xLs469ZVMPU/v3/ and raw/wd4YRQW3TOc/v3/ (all v3 runs, adjudication, final draft card)",
+ "selftest": {
+  "verify_all_selftest": "PASS",
+  "mutations": 30,
+  "output_tail": [
+   "selftest: good fixtures + 30 mutations -> PASS",
+   "VERIFY: PASS"
+  ]
+ },
+ "episodes": [
+  {
+   "id": "xLs469ZVMPU",
+   "title": "Fix Your Forehand Over-Rotation | 3 Counter-Rotational Balance Techniques",
+   "duration_s": 734.0,
+   "upload_date": "2024-12-24",
+   "role": "reextract",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 25,
+   "n_symptoms": 4,
+   "n_causes": 4,
+   "n_solutions": 3,
+   "n_angles": 6,
+   "n_causes_per_raw_run": [
+    4,
+    4
+   ],
+   "solution_kinds": {
+    "cue": 0,
+    "drill": 2,
+    "check": 1,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-2",
+   "rerun_raw_pairs": {
+    "1-2": true
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.8,
+     "chain_roots": 1.0,
+     "solutions": 0.5
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": {
+    "1-2": {
+     "causes": 0.25,
+     "chain_roots": 0.25,
+     "solutions": 0.5
+    },
+    "1-3": {
+     "causes": 0.11,
+     "chain_roots": 0.12,
+     "solutions": 0.4
+    },
+    "2-3": {
+     "causes": 0.5,
+     "chain_roots": 0.67,
+     "solutions": 0.75
+    }
+   },
+   "rerun_consensus": null,
+   "runs_used": 2,
+   "gemini_usage": {
+    "calls": 2,
+    "promptTokenCount": 16395,
+    "candidatesTokenCount": 9121,
+    "thoughtsTokenCount": 9917,
+    "totalTokenCount": 35433,
+    "cachedContentTokenCount": 0
+   }
+  },
+  {
+   "id": "JzcA_ku7Yhk",
+   "title": "The Misunderstanding LOSING You Matches",
+   "duration_s": 430.0,
+   "upload_date": "2025-03-29",
+   "role": "new_round4",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "general",
+   "format": "pro_analysis",
+   "n_quotes": 26,
+   "n_symptoms": 3,
+   "n_causes": 4,
+   "n_solutions": 2,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    3
+   ],
+   "solution_kinds": {
+    "cue": 0,
+    "drill": 2,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": true
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.33
+    },
+    "1-3": {
+     "causes": 0.75,
+     "chain_roots": 0.75,
+     "solutions": 0.5
+    },
+    "2-3": {
+     "causes": 0.4,
+     "chain_roots": 0.4,
+     "solutions": 0.5
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": null,
+   "rerun_consensus": null,
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 20604,
+    "candidatesTokenCount": 12648,
+    "thoughtsTokenCount": 27261,
+    "totalTokenCount": 60513,
+    "cachedContentTokenCount": 0
+   }
+  },
+  {
+   "id": "wd4YRQW3TOc",
+   "title": "4 Tips For Effortless, Controllable Topspin",
+   "duration_s": 1338.0,
+   "upload_date": "2025-02-28",
+   "role": "reextract",
+   "status": "stage1_draft",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "pro_analysis",
+   "n_quotes": 20,
+   "n_symptoms": 3,
+   "n_causes": 3,
+   "n_solutions": 4,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    4
+   ],
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 2,
+    "check": 1,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "FAIL",
+   "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.29,
+     "chain_roots": 0.33,
+     "solutions": 0.33
+    },
+    "1-3": {
+     "causes": 0.5,
+     "chain_roots": 0.6,
+     "solutions": 0.0
+    },
+    "2-3": {
+     "causes": 0.33,
+     "chain_roots": 0.33,
+     "solutions": 0.14
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": {
+    "1-2": {
+     "causes": 0.33,
+     "chain_roots": 0.4,
+     "solutions": 0.0
+    },
+    "1-3": {
+     "causes": 0.25,
+     "chain_roots": 0.29,
+     "solutions": 0.2
+    },
+    "2-3": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.25
+    }
+   },
+   "rerun_consensus": {
+    "closeness": {
+     "1": 2.052,
+     "2": 1.762,
+     "3": 1.91
+    },
+    "base_run": 1,
+    "dropped_causes": [
+     "C02"
+    ],
+    "evidence_pruned": 3,
+    "dropped_solutions": [],
+    "kind_votes_changed": [
+     "D03:cue->drill"
+    ],
+    "pairs_vs_final": {
+     "final-r2": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.40 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.60 (min 0.5)"
+      ]
+     },
+     "final-r3": {
+      "pass": false,
+      "findings": [
+       "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.14 (min 0.5)"
+      ]
+     }
+    },
+    "pass": false
+   },
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 37614,
+    "candidatesTokenCount": 12882,
+    "thoughtsTokenCount": 17899,
+    "totalTokenCount": 68395,
+    "cachedContentTokenCount": 10504
+   }
+  },
+  {
+   "id": "E_zmENJIj4g",
+   "title": "Coiling | Spinal Motion | Eye Dominance | Arm Slot - 15 Serves Explained",
+   "duration_s": 2624.0,
+   "upload_date": "2025-04-16",
+   "role": "new_round4",
+   "status": "stage1_draft",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "serve",
+   "format": "pro_analysis",
+   "n_quotes": 24,
+   "n_symptoms": 3,
+   "n_causes": 3,
+   "n_solutions": 5,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    4
+   ],
+   "solution_kinds": {
+    "cue": 2,
+    "drill": 3,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "FAIL",
+   "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.12,
+     "chain_roots": 0.14,
+     "solutions": 0.3
+    },
+    "1-3": {
+     "causes": 0.33,
+     "chain_roots": 0.33,
+     "solutions": 0.0
+    },
+    "2-3": {
+     "causes": 0.29,
+     "chain_roots": 0.14,
+     "solutions": 0.44
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": null,
+   "rerun_consensus": {
+    "closeness": {
+     "1": 1.235,
+     "2": 1.441,
+     "3": 1.54
+    },
+    "base_run": 3,
+    "dropped_causes": [
+     "C03"
+    ],
+    "evidence_pruned": 1,
+    "dropped_solutions": [],
+    "kind_votes_changed": [
+     "D05:progression->drill"
+    ],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.40 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.11 (min 0.5)"
+      ]
+     },
+     "final-r2": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.33 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.17 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.62 (min 0.5)"
+      ]
+     }
+    },
+    "pass": false
+   },
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 68336,
+    "candidatesTokenCount": 13555,
+    "thoughtsTokenCount": 8360,
+    "totalTokenCount": 90251,
+    "cachedContentTokenCount": 0
+   }
+  },
+  {
+   "id": "JIMgI3jiVns",
+   "title": "How Shoulder Rotation Syncs Your Contact",
+   "duration_s": 448.0,
+   "upload_date": "2025-04-28",
+   "role": "new_round4",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 24,
+   "n_symptoms": 3,
+   "n_causes": 2,
+   "n_solutions": 2,
+   "n_angles": 5,
+   "n_causes_per_raw_run": [
+    3,
+    3,
+    3
+   ],
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 0,
+    "check": 1,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_by_3run_consensus(base_run1)",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.5,
+     "chain_roots": 0.5,
+     "solutions": 0.67
+    },
+    "1-3": {
+     "causes": 0.2,
+     "chain_roots": 0.2,
+     "solutions": 0.0
+    },
+    "2-3": {
+     "causes": 0.2,
+     "chain_roots": 0.2,
+     "solutions": 0.0
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": null,
+   "rerun_consensus": {
+    "closeness": {
+     "1": 2.067,
+     "2": 2.067,
+     "3": 0.8
+    },
+    "base_run": 1,
+    "dropped_causes": [
+     "C01"
+    ],
+    "evidence_pruned": 1,
+    "dropped_solutions": [],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r2": {
+      "pass": true,
+      "findings": [
+       "[PASS] rerun: causes transcript-anchor Jaccard 0.67 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.67 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.67 (min 0.5)"
+      ]
+     },
+     "final-r3": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.25 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.25 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.00 (min 0.5)"
+      ]
+     }
+    },
+    "pass": true
+   },
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 19724,
+    "candidatesTokenCount": 10977,
+    "thoughtsTokenCount": 15876,
+    "totalTokenCount": 46577,
+    "cachedContentTokenCount": 0
+   },
+   "confidence": "low",
+   "needs_user_subtitle_check": true
+  },
+  {
+   "id": "FxDmVi3EFnE",
+   "title": "The Truth About the Topspin Pro",
+   "duration_s": 928.0,
+   "upload_date": "2025-05-04",
+   "role": "new_round4",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 24,
+   "n_symptoms": 3,
+   "n_causes": 4,
+   "n_solutions": 2,
+   "n_angles": 8,
+   "n_causes_per_raw_run": [
+    4,
+    4
+   ],
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 1,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-2",
+   "rerun_raw_pairs": {
+    "1-2": true
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.5
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": null,
+   "rerun_consensus": null,
+   "runs_used": 2,
+   "gemini_usage": {
+    "calls": 2,
+    "promptTokenCount": 19832,
+    "candidatesTokenCount": 7538,
+    "thoughtsTokenCount": 9756,
+    "totalTokenCount": 37126,
+    "cachedContentTokenCount": 0
+   }
+  },
+  {
+   "id": "Psidjei5BnI",
+   "title": "4 Tips For Consistently Crushing Slow Balls",
+   "duration_s": 475.0,
+   "upload_date": "2025-05-14",
+   "role": "new_round4",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v4",
+   "is_teaching": "teaching",
+   "stroke": "general",
+   "format": "demo_with_player",
+   "n_quotes": 25,
+   "n_symptoms": 5,
+   "n_causes": 5,
+   "n_solutions": 5,
+   "n_angles": 6,
+   "n_causes_per_raw_run": [
+    5,
+    5,
+    4
+   ],
+   "solution_kinds": {
+    "cue": 4,
+    "drill": 1,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_2-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": true
+   },
+   "rerun_pair_jaccard_v4": {
+    "1-2": {
+     "causes": 0.67,
+     "chain_roots": 0.67,
+     "solutions": 0.38
+    },
+    "1-3": {
+     "causes": 0.5,
+     "chain_roots": 0.5,
+     "solutions": 0.43
+    },
+    "2-3": {
+     "causes": 0.8,
+     "chain_roots": 0.8,
+     "solutions": 0.5
+    }
+   },
+   "rerun_pair_jaccard_v3_baseline": null,
+   "rerun_consensus": null,
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 20574,
+    "candidatesTokenCount": 14379,
+    "thoughtsTokenCount": 21488,
+    "totalTokenCount": 56441,
+    "cachedContentTokenCount": 4837
+   }
+  }
+ ],
+ "v3_vs_v4_causes": {
+  "same_two_eps_xLs_wd4": {
+   "v3_all_pairs": {
+    "causes": 0.34,
+    "chain_roots": 0.388,
+    "solutions": 0.35,
+    "n_pairs": 6
+   },
+   "v4_all_pairs": {
+    "causes": 0.48,
+    "chain_roots": 0.565,
+    "solutions": 0.242,
+    "n_pairs": 4
+   },
+   "v3_pair_1_2": {
+    "causes": 0.29,
+    "chain_roots": 0.325,
+    "solutions": 0.25,
+    "n_pairs": 2
+   },
+   "v4_pair_1_2": {
+    "causes": 0.545,
+    "chain_roots": 0.665,
+    "solutions": 0.415,
+    "n_pairs": 2
+   }
+  },
+  "v3_am8_exk_two_eps_reference": {
+   "causes": 0.438,
+   "chain_roots": 0.528,
+   "solutions": 0.53,
+   "n_pairs": 6
+  },
+  "all_7_eps_raw_pairs": {
+   "v3": {
+    "causes": 0.5,
+    "chain_roots": 0.54,
+    "solutions": 0.487,
+    "n_pairs": 21
+   },
+   "v4": {
+    "causes": 0.464,
+    "chain_roots": 0.476,
+    "solutions": 0.325,
+    "n_pairs": 17
+   }
+  },
+  "all_7_eps_pair_1_2_only_apples_to_apples": {
+   "v3": {
+    "causes": 0.416,
+    "chain_roots": 0.459,
+    "solutions": 0.383,
+    "n_pairs": 7
+   },
+   "v4": {
+    "causes": 0.511,
+    "chain_roots": 0.549,
+    "solutions": 0.43,
+    "n_pairs": 7
+   }
+  },
+  "v4_new5": {
+   "all_pairs": {
+    "causes": 0.458,
+    "chain_roots": 0.448,
+    "solutions": 0.35,
+    "n_pairs": 13
+   },
+   "pair_1_2": {
+    "causes": 0.498,
+    "chain_roots": 0.502,
+    "solutions": 0.436,
+    "n_pairs": 5
+   }
+  },
+  "n_causes_per_raw_run": {
+   "v3_xLs_wd4": {
+    "2": 1,
+    "3": 2,
+    "4": 1,
+    "5": 1,
+    "7": 1
+   },
+   "v4_xLs_wd4": {
+    "4": 5
+   },
+   "v3_all7": {
+    "2": 1,
+    "3": 7,
+    "4": 4,
+    "5": 7,
+    "6": 1,
+    "7": 1
+   },
+   "v4_all7": {
+    "3": 4,
+    "4": 13,
+    "5": 2
+   },
+   "in_3to5_rate": {
+    "v3_xLs_wd4": 0.667,
+    "v4_xLs_wd4": 1.0,
+    "v3_all7": 0.857,
+    "v4_all7": 1.0
+   }
+  },
+  "reading": "Cause-count control worked: every raw v4 run has 3-5 causes (19/19 vs v3 18/21; the two v3 failure episodes had counts 2..7, v4 all 4). On the apples-to-apples pair 1-2 (same 7 episodes, 7 pairs each) cause Jaccard rose 0.42 -> 0.51, chain_roots 0.46 -> 0.55, solutions 0.38 -> 0.43. All-pairs means are not comparable (v4 all-pairs 0.46 vs v3 0.50) because only episodes that failed pair 1-2 get extra pairs, and v4 had 2 episodes pass on pair 1-2 versus 0 for v3. Small samples; direction positive but not proven; wd4YRQW3TOc and E_zmENJIj4g (both long, multi-section) are still unstable."
+ },
+ "anchor_compliance": {
+  "cause": {
+   "exact": 69,
+   "evidence_spills": 3,
+   "miss": 2
+  },
+  "solution": {
+   "exact": 57,
+   "evidence_spills": 4,
+   "miss": 1
+  }
+ },
+ "low_confidence": {
+  "ExkBtFRhUWY": "annotated in card conflicts[X01].description (schema has no notes/confidence field; X01 is an existing allowed field) + manifest confidence=low, needs_user_subtitle_check=true; no card content changed",
+  "JIMgI3jiVns": "new round4 consensus-verified thin card (2 causes / 2 solutions); flagged in manifest only (confidence=low, needs_user_subtitle_check=true); card untouched"
+ },
+ "aggregate": {
+  "episodes_attempted": 7,
+  "reextract_verified": [
+   "xLs469ZVMPU"
+  ],
+  "reextract_draft": [
+   "wd4YRQW3TOc"
+  ],
+  "new5_verified": [
+   "JzcA_ku7Yhk",
+   "JIMgI3jiVns",
+   "FxDmVi3EFnE",
+   "Psidjei5BnI"
+  ],
+  "new5_draft_rerun_fail": [
+   "E_zmENJIj4g"
+  ],
+  "total_cards_in_episodes_dir": 20,
+  "stage1_verified_total": 18,
+  "stage1_draft_total": 2,
+  "validate_cards": "PASS (20 cards, 0 FAIL)",
+  "check_quotes": "PASS (468 quotes, text_ok 468, ts_ok 468)",
+  "check_manifest": "PASS",
+  "check_neutrality": "PASS (6 prompts incl. ep_s1_v4)",
+  "verify_all_selftest": "PASS",
+  "stage2": "not_run",
+  "video_layer": "empty_on_all_cards",
+  "third_run_episodes": [
+   "wd4YRQW3TOc",
+   "JzcA_ku7Yhk",
+   "E_zmENJIj4g",
+   "JIMgI3jiVns",
+   "Psidjei5BnI"
+  ],
+  "normalizer_event_totals": {
+   "quote_snapped": 13,
+   "cause_anchor_exact": 69,
+   "cause_anchor_evidence_spills": 3,
+   "solution_anchor_exact": 57,
+   "solution_anchor_evidence_spills": 4,
+   "intuition_first_forced_false": 11,
+   "cause_anchor_miss": 2,
+   "chain_added_missing_cause_inferred": 1,
+   "evidence_dropped_unknown": 1,
+   "solution_anchor_miss": 1
+  }
+ },
+ "gemini_usage_total": {
+  "calls": 19,
+  "promptTokenCount": 203079,
+  "candidatesTokenCount": 81100,
+  "thoughtsTokenCount": 110557,
+  "totalTokenCount": 394736,
+  "cachedContentTokenCount": 15341
+ },
+ "notes": [
+  "xLs469ZVMPU: v3 draft (all 3 pairs + consensus failed) -> v4 raw pair 1-2 PASS with only 2 runs (causes 0.80, roots 1.00, solutions 0.50 = threshold; rule is val<min). Verified.",
+  "wd4YRQW3TOc: 3 runs, all raw pairs FAIL, consensus FAIL (final-r3 passes causes/roots but solutions 0.14); kept stage1_draft, no manual edits.",
+  "E_zmENJIj4g (2624 s, '15 serves explained', pro_analysis): 3 runs + consensus FAIL; kept stage1_draft; long multi-serve video, cause Jaccard 0.12-0.33.",
+  "JIMgI3jiVns verified only through the deterministic consensus (dropped C01 -> 2 causes, below the 3-5 target; passes vs run2, fails vs run3 with 0.25/0.00): treat as low confidence.",
+  "FxDmVi3EFnE verified at causes Jaccard exactly 0.60 (= threshold) on pair 1-2; Psidjei5BnI via pair 2-3; JzcA_ku7Yhk via pair 1-3 (solutions 0.50 = threshold).",
+  "Selection: manifest.tsv type_guess=教学长视频 + .en.vtt + no card, holdout=False, upload_date ascending, <300 s excluded, >=400 s preferred; same 5 as the suggested candidates (Fu6DkHvZlGY and 5jHCDc44SQM skipped: holdout).",
+  "Manifest: stale 'check_rerun FAILED' notes on Am8j1Zw5KrE/ExkBtFRhUWY corrected to match their verified cards (metadata only).",
+  "No MICU key is stored in the repo; raw responses and rendered prompts stay in /workspace/s1_work/round4 (outside repo)."
+ ],
+ "VERIFY": "PARTIAL"
+}
