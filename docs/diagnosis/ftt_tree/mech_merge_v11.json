@@ -1,0 +1,1111 @@
+{
+ "version": "mech_group_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/mech_group_v1.md",
+ "runs": 2,
+ "rule": "final group = both runs group the nodes together (partition intersection); rep = run1 rep if inside the final group, else run2 rep, else first id; no text rewritten",
+ "lexical_layer_unchanged": {
+  "merge_cosine": 0.4,
+  "note": "build_tree.py cosine merge is not touched; this is an extra layer applied to its 97 cause nodes"
+ },
+ "cause_nodes_before": 202,
+ "cause_nodes_after": 184,
+ "strokes_run": {
+  "serve": 13,
+  "forehand": 105,
+  "movement": 7,
+  "general": 43,
+  "backhand": 27
+ },
+ "groups": [
+  {
+   "stroke": "backhand",
+   "rep": "N-C_PQ793MBQE50_C03",
+   "members": [
+    {
+     "node": "N-C_DDYKUNZTDYU_C04",
+     "episodes": [
+      "dDYKuNZtdyU"
+     ],
+     "card_causes": [
+      "dDYKuNZtdyU:C04"
+     ],
+     "layer": "B",
+     "text": "Pulling too close to the body or relying excessively on rotational body mechanics rather than pulling well out in front.",
+     "also_worded": [],
+     "evidence": [
+      "dDYKuNZtdyU:Q14",
+      "dDYKuNZtdyU:Q15",
+      "dDYKuNZtdyU:Q16"
+     ]
+    },
+    {
+     "node": "N-C_PQ793MBQE50_C03",
+     "episodes": [
+      "pQ793MBQE50"
+     ],
+     "card_causes": [
+      "pQ793MBQE50:C03"
+     ],
+     "layer": "B",
+     "text": "Catching the ball too late with the pull slot set too close to the stomach rather than out in front.",
+     "also_worded": [],
+     "evidence": [
+      "pQ793MBQE50:Q03",
+      "pQ793MBQE50:Q04",
+      "pQ793MBQE50:Q26"
+     ]
+    }
+   ],
+   "why_run1": "Pulling or making contact too close to the body or stomach instead of out in front.",
+   "why_run2": "Setting the pull slot or pulling too close to the body rather than well out in front.",
+   "rep_run1": "N-C_PQ793MBQE50_C03",
+   "rep_run2": "N-C_PQ793MBQE50_C03",
+   "lexical_cos_pairs": {
+    "N-C_DDYKUNZTDYU_C04|N-C_PQ793MBQE50_C03": 0.345
+   },
+   "group_id": "MG02"
+  },
+  {
+   "stroke": "backhand",
+   "rep": "N-C_PQ793MBQE50_C04",
+   "members": [
+    {
+     "node": "N-C_DDYKUNZTDYU_C03",
+     "episodes": [
+      "dDYKuNZtdyU"
+     ],
+     "card_causes": [
+      "dDYKuNZtdyU:C03"
+     ],
+     "layer": "A",
+     "text": "Letting go of the racket with the non-dominant hand too early instead of supporting it deep into the forward swing.",
+     "also_worded": [],
+     "evidence": [
+      "dDYKuNZtdyU:Q11",
+      "dDYKuNZtdyU:Q12",
+      "dDYKuNZtdyU:Q20"
+     ]
+    },
+    {
+     "node": "N-C_PQ793MBQE50_C04",
+     "episodes": [
+      "pQ793MBQE50"
+     ],
+     "card_causes": [
+      "pQ793MBQE50:C04"
+     ],
+     "layer": "A",
+     "text": "Initiating the stroke solely with one hand instead of executing a two-handed forward movement into the pull slot.",
+     "also_worded": [],
+     "evidence": [
+      "pQ793MBQE50:Q09",
+      "pQ793MBQE50:Q10",
+      "pQ793MBQE50:Q24"
+     ]
+    }
+   ],
+   "why_run1": "Failing to use both hands together into the forward swing, letting go or using one hand too early.",
+   "why_run2": "Releasing the non-dominant hand too early instead of using both hands to guide the racket forward into the pull slot.",
+   "rep_run1": "N-C_PQ793MBQE50_C04",
+   "rep_run2": "N-C_DDYKUNZTDYU_C03",
+   "lexical_cos_pairs": {
+    "N-C_DDYKUNZTDYU_C03|N-C_PQ793MBQE50_C04": 0.142
+   },
+   "group_id": "MG03"
+  },
+  {
+   "stroke": "forehand",
+   "rep": "N-C_WZLMV4ASG9S_C01",
+   "members": [
+    {
+     "node": "N-C_WFOY0RKWBTG_C01",
+     "episodes": [
+      "wFOy0RKWBTg"
+     ],
+     "card_causes": [
+      "wFOy0RKWBTg:C01"
+     ],
+     "layer": "B",
+     "text": "Releasing the racket directly towards the ball instead of directing the first vector outward prevents the shoulder from adducting through contact to create velocity.",
+     "also_worded": [],
+     "evidence": [
+      "wFOy0RKWBTg:Q03",
+      "wFOy0RKWBTg:Q05"
+     ]
+    },
+    {
+     "node": "N-C_WZLMV4ASG9S_C01",
+     "episodes": [
+      "wzLMv4ASg9s"
+     ],
+     "card_causes": [
+      "wzLMv4ASg9s:C01"
+     ],
+     "layer": "B",
+     "text": "Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing.",
+     "also_worded": [],
+     "evidence": [
+      "wzLMv4ASg9s:Q01",
+      "wzLMv4ASg9s:Q05",
+      "wzLMv4ASg9s:Q10"
+     ]
+    }
+   ],
+   "why_run1": "Directing the arm or racket straight toward the ball rather than driving outward away from the body.",
+   "why_run2": "Directing the racket or elbow straight toward the ball rather than driving outward along the chest vector.",
+   "rep_run1": "N-C_WZLMV4ASG9S_C01",
+   "rep_run2": "N-C_WZLMV4ASG9S_C01",
+   "lexical_cos_pairs": {
+    "N-C_WFOY0RKWBTG_C01|N-C_WZLMV4ASG9S_C01": 0.304
+   },
+   "group_id": "MG05"
+  },
+  {
+   "stroke": "forehand",
+   "rep": "N-C_WZLMV4ASG9S_C04",
+   "members": [
+    {
+     "node": "N-C_LCKDP2GKR_Y_C04",
+     "episodes": [
+      "lCKDP2gKR_Y"
+     ],
+     "card_causes": [
+      "lCKDP2gKR_Y:C04"
+     ],
+     "layer": "C",
+     "text": "The player's brain misinterprets the fast rolling speed during the follow-through as the primary hitting acceleration zone.",
+     "also_worded": [],
+     "evidence": [
+      "lCKDP2gKR_Y:Q07"
+     ]
+    },
+    {
+     "node": "N-C_WZLMV4ASG9S_C04",
+     "episodes": [
+      "wzLMv4ASg9s"
+     ],
+     "card_causes": [
+      "wzLMv4ASg9s:C04"
+     ],
+     "layer": "B",
+     "text": "Confusing the rolling follow-through / windshield wiper action with the back-to-front flip and hit release.",
+     "also_worded": [],
+     "evidence": [
+      "wzLMv4ASg9s:Q14",
+      "wzLMv4ASg9s:Q19",
+      "wzLMv4ASg9s:Q24"
+     ]
+    }
+   ],
+   "why_run1": "Confusing or misinterpreting the rolling follow-through with the primary forward acceleration and release into the ball.",
+   "why_run2": "Mistaking the rolling follow-through or windshield-wiper action for the primary forward acceleration and release phase.",
+   "rep_run1": "N-C_WZLMV4ASG9S_C04",
+   "rep_run2": "N-C_WZLMV4ASG9S_C04",
+   "lexical_cos_pairs": {
+    "N-C_LCKDP2GKR_Y_C04|N-C_WZLMV4ASG9S_C04": 0.148
+   },
+   "group_id": "MG06"
+  },
+  {
+   "stroke": "general",
+   "rep": "N-C_7_JPQHG4G64_C01",
+   "members": [
+    {
+     "node": "N-C_7_JPQHG4G64_C01",
+     "episodes": [
+      "7_JPqhG4G64"
+     ],
+     "card_causes": [
+      "7_JPqhG4G64:C01"
+     ],
+     "layer": "C",
+     "text": "Players post-process their own shot and critique technique rather than locking into the opponent.",
+     "also_worded": [],
+     "evidence": [
+      "7_JPqhG4G64:Q04"
+     ]
+    },
+    {
+     "node": "N-C_PJVOQKQH9DA_C04",
+     "episodes": [
+      "PjvOQkqH9DA"
+     ],
+     "card_causes": [
+      "PjvOQkqH9DA:C04"
+     ],
+     "layer": "B",
+     "text": "Mental evaluation and technical focus on the serve leak into the rally, preventing immediate transition into receiving mode.",
+     "also_worded": [],
+     "evidence": [
+      "PjvOQkqH9DA:Q14",
+      "PjvOQkqH9DA:Q15"
+     ]
+    }
+   ],
+   "why_run1": "Evaluating and critiquing stroke mechanics after hitting instead of immediately engaging in the ongoing rally.",
+   "why_run2": "Mentally evaluating technique from the previous shot instead of shifting focus forward to the opponent and the incoming rally.",
+   "rep_run1": "N-C_7_JPQHG4G64_C01",
+   "rep_run2": "N-C_7_JPQHG4G64_C01",
+   "lexical_cos_pairs": {
+    "N-C_7_JPQHG4G64_C01|N-C_PJVOQKQH9DA_C04": 0.0
+   },
+   "group_id": "MG07"
+  },
+  {
+   "stroke": "general",
+   "rep": "N-C__QU1LOWKLAW_C02",
+   "members": [
+    {
+     "node": "N-C_BOMJDZUFHM4_C01",
+     "episodes": [
+      "boMJDzuFhM4"
+     ],
+     "card_causes": [
+      "boMJDzuFhM4:C01"
+     ],
+     "layer": "C",
+     "text": "Anxiety spikes to maximum levels rather than staying at an optimal midpoint (such as 7 or 8 out of 10), triggering maladaptive physical reactions.",
+     "also_worded": [],
+     "evidence": [
+      "boMJDzuFhM4:Q03",
+      "boMJDzuFhM4:Q04"
+     ]
+    },
+    {
+     "node": "N-C__QU1LOWKLAW_C02",
+     "episodes": [
+      "_Qu1LOwklAw"
+     ],
+     "card_causes": [
+      "_Qu1LOwklAw:C02"
+     ],
+     "layer": "C",
+     "text": "Players fail to calibrate anxiety properly, either over-hyping and blasting neutral balls or lacking alertness to attack short balls.",
+     "also_worded": [],
+     "evidence": [
+      "_Qu1LOwklAw:Q10",
+      "_Qu1LOwklAw:Q11"
+     ]
+    }
+   ],
+   "why_run1": "Failing to regulate anxiety at an optimal level, leading to maladaptive over-arousal and poor execution.",
+   "why_run2": "Failing to calibrate anxiety to an optimal level, resulting in maladaptive physical responses and poor shot execution.",
+   "rep_run1": "N-C__QU1LOWKLAW_C02",
+   "rep_run2": "N-C__QU1LOWKLAW_C02",
+   "lexical_cos_pairs": {
+    "N-C_BOMJDZUFHM4_C01|N-C__QU1LOWKLAW_C02": 0.074
+   },
+   "group_id": "MG08"
+  },
+  {
+   "stroke": "serve",
+   "rep": "N-C_PFDQNFF_VYA_C01",
+   "members": [
+    {
+     "node": "N-C_1W1ROPE5L0K_C03",
+     "episodes": [
+      "1W1rope5l0k"
+     ],
+     "card_causes": [
+      "1W1rope5l0k:C03"
+     ],
+     "layer": "C",
+     "text": "Conceiving the serve internally as a down-to-up or low-to-high vertical motion prevents the body from loading in the horizontal in-to-out plane.",
+     "also_worded": [],
+     "evidence": [
+      "1W1rope5l0k:Q01"
+     ]
+    },
+    {
+     "node": "N-C_PFDQNFF_VYA_C01",
+     "episodes": [
+      "PfDqnff_vYA",
+      "YbLit9png2U"
+     ],
+     "card_causes": [
+      "PfDqnff_vYA:C01",
+      "YbLit9png2U:C02"
+     ],
+     "layer": "B",
+     "text": "The player attempts to throw the racket up or down-and-up directly at the ball rather than throwing it out to the hitting side.",
+     "also_worded": [
+      "Players attempt to use a flat serve throwing trajectory or actively throw straight forward at the service box where they are aiming."
+     ],
+     "evidence": [
+      "PfDqnff_vYA:Q02",
+      "YbLit9png2U:Q07"
+     ]
+    }
+   ],
+   "why_run1": "Directing or conceiving the swing as a vertical upward path toward the ball instead of throwing the racket outward along an in-to-out path.",
+   "why_run2": "Swinging vertically up toward the ball instead of directing the racket outward in an in-to-out path.",
+   "rep_run1": "N-C_PFDQNFF_VYA_C01",
+   "rep_run2": "N-C_PFDQNFF_VYA_C01",
+   "lexical_cos_pairs": {
+    "N-C_1W1ROPE5L0K_C03|N-C_PFDQNFF_VYA_C01": 0.0
+   },
+   "group_id": "MG09"
+  },
+  {
+   "group_id": "MG10",
+   "rep": "N-C_2NN9TYMECZU_C03",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_2NN9TYMECZU_C03",
+     "text": "Spacing too close to the body, which requires a linear push and inhibits shoulder external/internal rotation",
+     "also_worded": [],
+     "evidence": [
+      "2Nn9tyMECZU:Q10",
+      "2Nn9tyMECZU:Q14",
+      "2Nn9tyMECZU:Q19"
+     ],
+     "episodes": [
+      "2Nn9tyMECZU"
+     ],
+     "card_causes": [
+      "2Nn9tyMECZU:C03"
+     ]
+    },
+    {
+     "node": "N-C_T5MEVWBOKR4_C03",
+     "text": "Swinging too close to the body crowds the contact point and prevents the hand from naturally tugging back on the handle to whip the racket.",
+     "also_worded": [],
+     "evidence": [
+      "T5meVwBOKR4:Q14"
+     ],
+     "episodes": [
+      "T5meVwBOKR4"
+     ],
+     "card_causes": [
+      "T5meVwBOKR4:C03"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG11",
+   "rep": "N-C_9NIRSL59AN0_C03",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_9NIRSL59AN0_C03",
+     "text": "Collapsing elbow space and relaxing the upper back removes the structural leverage required for the pecs and arm to press forward.",
+     "also_worded": [],
+     "evidence": [
+      "9NirSL59an0:Q09"
+     ],
+     "episodes": [
+      "9NirSL59an0"
+     ],
+     "card_causes": [
+      "9NirSL59an0:C03"
+     ]
+    },
+    {
+     "node": "N-C_PWKGLKRM73O_C03",
+     "text": "The elbow drops in toward the body because the back, rotator cuff, scapula, and chest fail to stabilize it up in a throwing posture.",
+     "also_worded": [],
+     "evidence": [
+      "PwkGLkRm73o:Q11"
+     ],
+     "episodes": [
+      "PwkGLkRm73o"
+     ],
+     "card_causes": [
+      "PwkGLkRm73o:C03"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG12",
+   "rep": "N-C_APCKJDADZEK_C02",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_APCKJDADZEK_C02",
+     "text": "The player steps forward with the foot but leaves their body weight and head behind rather than transferring them over the front hip.",
+     "also_worded": [],
+     "evidence": [
+      "aPcKJDadzek:Q05",
+      "aPcKJDadzek:Q09",
+      "aPcKJDadzek:Q14"
+     ],
+     "episodes": [
+      "aPcKJDadzek"
+     ],
+     "card_causes": [
+      "aPcKJDadzek:C02"
+     ]
+    },
+    {
+     "node": "N-C_UJPUDUX0JIA_C04",
+     "text": "Failing to transfer weight cleanly onto the front foot anchor at finish.",
+     "also_worded": [],
+     "evidence": [
+      "uJpuDUx0jIA:Q14",
+      "uJpuDUx0jIA:Q18",
+      "uJpuDUx0jIA:Q23"
+     ],
+     "episodes": [
+      "uJpuDUx0jIA"
+     ],
+     "card_causes": [
+      "uJpuDUx0jIA:C04"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG13",
+   "rep": "N-C_DZADHZVESDS_C03",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_DZADHZVESDS_C03",
+     "text": "The torso rotates on a flat horizontal plane parallel to the court instead of tilting on an upward slant with the off-shoulder rising.",
+     "also_worded": [],
+     "evidence": [
+      "dZadhzVEsds:Q12"
+     ],
+     "episodes": [
+      "dZadhzVEsds"
+     ],
+     "card_causes": [
+      "dZadhzVEsds:C03"
+     ]
+    },
+    {
+     "node": "N-C_TZGAWR3QGV0_C03",
+     "text": "Keeping shoulders level on low balls prevents spinal side bend, causing core tension to collapse and forcing the elbow to drop into an arm-dominant swing.",
+     "also_worded": [],
+     "evidence": [
+      "tzgAWr3QGv0:Q16"
+     ],
+     "episodes": [
+      "tzgAWr3QGv0"
+     ],
+     "card_causes": [
+      "tzgAWr3QGv0:C03"
+     ]
+    },
+    {
+     "node": "N-C_WFIRPMUTZRO_C03",
+     "text": "The player lacks spine side bending on the way forward into contact.",
+     "also_worded": [],
+     "evidence": [
+      "wFIrPMutzRo:Q12"
+     ],
+     "episodes": [
+      "wFIrPMutzRo"
+     ],
+     "card_causes": [
+      "wFIrPMutzRo:C03"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG14",
+   "rep": "N-C_APCKJDADZEK_C06",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_APCKJDADZEK_C06",
+     "episodes": [
+      "aPcKJDadzek"
+     ],
+     "card_causes": [
+      "aPcKJDadzek:C06"
+     ],
+     "layer": "B",
+     "text": "The player lets the hips drift forward and slides the knee forward over the toes instead of hinging at the hips and keeping the hips behind.",
+     "also_worded": [],
+     "evidence": [
+      "aPcKJDadzek:Q01",
+      "aPcKJDadzek:Q05",
+      "aPcKJDadzek:Q23"
+     ]
+    },
+    {
+     "node": "N-C_DZADHZVESDS_C04",
+     "text": "The player fails to hinge at the hips with a flat back, leaving the entire hitting apparatus positioned too high off the court.",
+     "also_worded": [],
+     "evidence": [
+      "dZadhzVEsds:Q15"
+     ],
+     "episodes": [
+      "dZadhzVEsds"
+     ],
+     "card_causes": [
+      "dZadhzVEsds:C04"
+     ]
+    },
+    {
+     "node": "N-C_UJPUDUX0JIA_C01",
+     "episodes": [
+      "uJpuDUx0jIA"
+     ],
+     "card_causes": [
+      "uJpuDUx0jIA:C01"
+     ],
+     "layer": "B",
+     "text": "Hips extending forward in front of the shoulders with knees forward and chest up (quad dominant posture) rather than maintaining a hip hinge.",
+     "also_worded": [],
+     "evidence": [
+      "uJpuDUx0jIA:Q01",
+      "uJpuDUx0jIA:Q05",
+      "uJpuDUx0jIA:Q09"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "extends": [
+    "MG04"
+   ],
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG15",
+   "rep": "N-C_T5MEVWBOKR4_C01",
+   "stroke": "forehand",
+   "members": [
+    {
+     "node": "N-C_2NN9TYMECZU_C05",
+     "episodes": [
+      "2Nn9tyMECZU"
+     ],
+     "card_causes": [
+      "2Nn9tyMECZU:C05"
+     ],
+     "layer": "B",
+     "text": "Accelerating trunk rotation all the way through to the target instead of decelerating short of the target to release the shoulder",
+     "also_worded": [],
+     "evidence": [
+      "2Nn9tyMECZU:Q01",
+      "2Nn9tyMECZU:Q19",
+      "2Nn9tyMECZU:Q24"
+     ]
+    },
+    {
+     "node": "N-C_T5MEVWBOKR4_C01",
+     "episodes": [
+      "T5meVwBOKR4"
+     ],
+     "card_causes": [
+      "T5meVwBOKR4:C01"
+     ],
+     "layer": "B",
+     "text": "The player fails to freeze or decelerate the trunk right before contact, leaking rotational momentum instead of transferring it into the arm.",
+     "also_worded": [],
+     "evidence": [
+      "T5meVwBOKR4:Q06"
+     ]
+    },
+    {
+     "node": "N-C_WZLMV4ASG9S_C07",
+     "episodes": [
+      "wzLMv4ASg9s"
+     ],
+     "card_causes": [
+      "wzLMv4ASg9s:C07"
+     ],
+     "layer": "B",
+     "text": "Trunk spins continuously without an anchor to decelerate, preventing momentum transfer to the arm and racket.",
+     "also_worded": [],
+     "evidence": [
+      "wzLMv4ASg9s:Q01",
+      "wzLMv4ASg9s:Q05",
+      "wzLMv4ASg9s:Q10"
+     ]
+    },
+    {
+     "node": "N-C_XLS469ZVMPU_C01",
+     "text": "The player twists continuously through contact instead of allowing hip rotation to be transient and brake to create a whip effect.",
+     "also_worded": [],
+     "evidence": [
+      "xLs469ZVMPU:Q03"
+     ],
+     "episodes": [
+      "xLs469ZVMPU"
+     ],
+     "card_causes": [
+      "xLs469ZVMPU:C01"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "extends": [
+    "MG01"
+   ],
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow extending existing merge groups / from_review (M08 exception)"
+  },
+  {
+   "group_id": "MG16",
+   "rep": "N-C_DX8AGSIO24W_C02",
+   "stroke": "backhand",
+   "members": [
+    {
+     "node": "N-C_DX8AGSIO24W_C02",
+     "text": "Players stand too upright on low balls without activating a double bend at both the knees and hips.",
+     "also_worded": [],
+     "evidence": [
+      "dx8aGSIo24w:Q09",
+      "dx8aGSIo24w:Q10",
+      "lwS7Xxqrrdw:Q11",
+      "lwS7Xxqrrdw:Q12"
+     ],
+     "episodes": [
+      "dx8aGSIo24w",
+      "lwS7Xxqrrdw"
+     ],
+     "card_causes": [
+      "dx8aGSIo24w:C02"
+     ]
+    },
+    {
+     "node": "N-C_QXATDSEUKFY_C02",
+     "text": "The torso is not tilted forward from a hip hinge with a straight back, preventing the swing path from naturally dropping low-to-high.",
+     "also_worded": [],
+     "evidence": [
+      "QXAtdSEUkfY:Q09"
+     ],
+     "episodes": [
+      "QXAtdSEUkfY"
+     ],
+     "card_causes": [
+      "QXAtdSEUkfY:C02"
+     ]
+    }
+   ],
+   "lexical_cos_pairs": [],
+   "why_run1": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "why_run2": "confirmed by mech_merge_from_review (CC same_mechanism + 2 Gemini yes)",
+   "source": "mech_merge_from_review",
+   "user_approved": true,
+   "user_approved_note": "user 2026-10-19「按你建议」: allow cross-period new merge group (M08 exception)"
+  }
+ ],
+ "runs_cleaned_partitions": {
+  "backhand": {
+   "run1": [
+    [
+     "N-C_DDYKUNZTDYU_C03",
+     "N-C_PQ793MBQE50_C04"
+    ],
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ],
+    [
+     "N-C_DX8AGSIO24W_C02",
+     "N-C_NEPD7FIM7HI_C02"
+    ],
+    [
+     "N-C_NEPD7FIM7HI_C03",
+     "N-C_QXATDSEUKFY_C02"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_DDYKUNZTDYU_C03",
+     "N-C_PQ793MBQE50_C04"
+    ],
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ],
+    [
+     "N-C_DX8AGSIO24W_C04",
+     "N-C_LWS7XXQRRDW_C01"
+    ]
+   ]
+  },
+  "forehand": {
+   "run1": [
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_T5MEVWBOKR4_C01",
+     "N-C_WZLMV4ASG9S_C07"
+    ],
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ],
+    [
+     "N-C_LCKDP2GKR_Y_C04",
+     "N-C_WZLMV4ASG9S_C04"
+    ],
+    [
+     "N-C_WFOY0RKWBTG_C01",
+     "N-C_WZLMV4ASG9S_C01"
+    ],
+    [
+     "N-C_2NN9TYMECZU_C03",
+     "N-C_T5MEVWBOKR4_C03"
+    ],
+    [
+     "N-C_9NIRSL59AN0_C03",
+     "N-C_PWKGLKRM73O_C03"
+    ],
+    [
+     "N-C_APCKJDADZEK_C02",
+     "N-C_UJPUDUX0JIA_C04"
+    ],
+    [
+     "N-C_DZADHZVESDS_C03",
+     "N-C_TZGAWR3QGV0_C03",
+     "N-C_WFIRPMUTZRO_C03"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_T5MEVWBOKR4_C01",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ],
+    [
+     "N-C_LCKDP2GKR_Y_C04",
+     "N-C_WZLMV4ASG9S_C04"
+    ],
+    [
+     "N-C_WFOY0RKWBTG_C01",
+     "N-C_WZLMV4ASG9S_C01"
+    ],
+    [
+     "N-C_2NN9TYMECZU_C03",
+     "N-C_T5MEVWBOKR4_C03"
+    ],
+    [
+     "N-C_9NIRSL59AN0_C03",
+     "N-C_PWKGLKRM73O_C03"
+    ],
+    [
+     "N-C_APCKJDADZEK_C02",
+     "N-C_UJPUDUX0JIA_C04"
+    ],
+    [
+     "N-C_DZADHZVESDS_C03",
+     "N-C_TZGAWR3QGV0_C03",
+     "N-C_WFIRPMUTZRO_C03"
+    ]
+   ]
+  },
+  "general": {
+   "run1": [
+    [
+     "N-C_7_JPQHG4G64_C01",
+     "N-C_PJVOQKQH9DA_C04"
+    ],
+    [
+     "N-C_8R09TLIP_AK_C03",
+     "N-C__QU1LOWKLAW_C03"
+    ],
+    [
+     "N-C_8R09TLIP_AK_C04",
+     "N-C_PJVOQKQH9DA_C01"
+    ],
+    [
+     "N-C_BOMJDZUFHM4_C01",
+     "N-C__QU1LOWKLAW_C02"
+    ],
+    [
+     "N-C_JZCA_KU7YHK_C03",
+     "N-C_VG8LBXOHM3E_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_7_JPQHG4G64_C01",
+     "N-C_PJVOQKQH9DA_C04"
+    ],
+    [
+     "N-C_BOMJDZUFHM4_C01",
+     "N-C__QU1LOWKLAW_C02"
+    ],
+    [
+     "N-C_JZCA_KU7YHK_C04",
+     "N-C_VG8LBXOHM3E_C03"
+    ],
+    [
+     "N-C_PJVOQKQH9DA_C02",
+     "N-C__QU1LOWKLAW_C01"
+    ]
+   ]
+  },
+  "movement": {
+   "run1": [],
+   "run2": []
+  },
+  "serve": {
+   "run1": [
+    [
+     "N-C_1W1ROPE5L0K_C03",
+     "N-C_PFDQNFF_VYA_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_1W1ROPE5L0K_C03",
+     "N-C_PFDQNFF_VYA_C01"
+    ]
+   ]
+  }
+ },
+ "pairs_grouped_by_only_one_run": [
+  {
+   "stroke": "backhand",
+   "pair": [
+    "N-C_DX8AGSIO24W_C02",
+    "N-C_NEPD7FIM7HI_C02"
+   ],
+   "in_run": 1
+  },
+  {
+   "stroke": "backhand",
+   "pair": [
+    "N-C_DX8AGSIO24W_C04",
+    "N-C_LWS7XXQRRDW_C01"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "backhand",
+   "pair": [
+    "N-C_NEPD7FIM7HI_C03",
+    "N-C_QXATDSEUKFY_C02"
+   ],
+   "in_run": 1
+  },
+  {
+   "stroke": "forehand",
+   "pair": [
+    "N-C_2NN9TYMECZU_C05",
+    "N-C_XLS469ZVMPU_C01"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "forehand",
+   "pair": [
+    "N-C_T5MEVWBOKR4_C01",
+    "N-C_XLS469ZVMPU_C01"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "forehand",
+   "pair": [
+    "N-C_WZLMV4ASG9S_C07",
+    "N-C_XLS469ZVMPU_C01"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "general",
+   "pair": [
+    "N-C_8R09TLIP_AK_C03",
+    "N-C__QU1LOWKLAW_C03"
+   ],
+   "in_run": 1
+  },
+  {
+   "stroke": "general",
+   "pair": [
+    "N-C_8R09TLIP_AK_C04",
+    "N-C_PJVOQKQH9DA_C01"
+   ],
+   "in_run": 1
+  },
+  {
+   "stroke": "general",
+   "pair": [
+    "N-C_JZCA_KU7YHK_C03",
+    "N-C_VG8LBXOHM3E_C01"
+   ],
+   "in_run": 1
+  },
+  {
+   "stroke": "general",
+   "pair": [
+    "N-C_JZCA_KU7YHK_C04",
+    "N-C_VG8LBXOHM3E_C03"
+   ],
+   "in_run": 2
+  },
+  {
+   "stroke": "general",
+   "pair": [
+    "N-C_PJVOQKQH9DA_C02",
+    "N-C__QU1LOWKLAW_C01"
+   ],
+   "in_run": 2
+  }
+ ],
+ "repair_log": [],
+ "usage": {
+  "promptTokenCount": 23772,
+  "candidatesTokenCount": 2636,
+  "totalTokenCount": 53607,
+  "thoughtsTokenCount": 27199,
+  "calls": 10
+ },
+ "calls": 10,
+ "from_review_v8_reapplied": [
+  "MG10",
+  "MG11",
+  "MG12",
+  "MG13"
+ ],
+ "from_review": {
+  "candidates": [
+   [
+    "N-C_APCKJDADZEK_C06",
+    "N-C_DZADHZVESDS_C04",
+    "N-C_UJPUDUX0JIA_C01"
+   ],
+   [
+    "N-C_2NN9TYMECZU_C05",
+    "N-C_T5MEVWBOKR4_C01",
+    "N-C_WZLMV4ASG9S_C07",
+    "N-C_XLS469ZVMPU_C01"
+   ]
+  ],
+  "kept": [
+   [
+    "N-C_APCKJDADZEK_C06",
+    "N-C_DZADHZVESDS_C04",
+    "N-C_UJPUDUX0JIA_C01"
+   ],
+   [
+    "N-C_2NN9TYMECZU_C05",
+    "N-C_T5MEVWBOKR4_C01",
+    "N-C_WZLMV4ASG9S_C07",
+    "N-C_XLS469ZVMPU_C01"
+   ]
+  ],
+  "skipped": [
+   {
+    "pair": "N-P_2NN9TYMECZU | N-P_FXDMVI3EFNE",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C01",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C02",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C01",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C02",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C03",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C02",
+    "why": "shared source video (M02)"
+   },
+   {
+    "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C03",
+    "why": "shared source video (M02)"
+   },
+   {
+    "pair": "N-C_FXDMVI3EFNE_C02 | N-C_FXDMVI3EFNE_C03",
+    "why": "shared source video (M02)"
+   },
+   {
+    "pair": "N-P_WFOY0RKWBTG | N-C_WZLMV4ASG9S_C01",
+    "why": "not cause-cause"
+   },
+   {
+    "pair": "N-C_9NIRSL59AN0_C02 | N-C_PQ793MBQE50_C01",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_APCKJDADZEK_C06 | N-C_DX8AGSIO24W_C02",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_APCKJDADZEK_C06 | N-C_VG8LBXOHM3E_C02",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_DX8AGSIO24W_C02 | N-C_DZADHZVESDS_C04",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_DX8AGSIO24W_C02 | N-C_VG8LBXOHM3E_C02",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_DZADHZVESDS_C04 | N-C_VG8LBXOHM3E_C02",
+    "why": "different stroke"
+   },
+   {
+    "pair": "N-C_DX8AGSIO24W_C04 | N-C_GSHKML2MVEI_C01",
+    "why": "different stroke"
+   }
+  ],
+  "blocked": [],
+  "new_groups": [
+   "MG14",
+   "MG15",
+   "MG16"
+  ],
+  "dx8a_qxat_kept": [
+   [
+    "N-C_DX8AGSIO24W_C02",
+    "N-C_QXATDSEUKFY_C02"
+   ]
+  ],
+  "user_approved_2026-10-19": true
+ },
+ "note": "mech_merge_v11 = v10 + user-approved extend (MG14/MG15) + DX8A|QXAT (MG16); M08 exception per user 2026-10-19"
+}

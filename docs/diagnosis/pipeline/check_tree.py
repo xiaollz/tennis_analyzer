@@ -59,6 +59,11 @@ def check(tree, ep_dir, where="tree"):
         """Path A: a problem is confirmable if at least one edge-linked cause has required."""
         return any(nodes[c]["signature"]["required"] for c in causes_of.get(pid, []) if c in nodes)
 
+    # T08 exemptions (user 2026-10-19): same-episode problem↔cause same_mechanism; self_feel_only pairs.
+    ex = tree.get("build", {}).get("t08_exemptions", {})
+    pc_exempt = {frozenset(x) for x in ex.get("same_mechanism_problem_cause", [])}
+    self_feel = {frozenset(x) for x in ex.get("self_feel_only_pairs", [])}
+
     # T04 signatures: obs exist, values legal, no C-layer in required, must_fix nodes are constrained
     sig_keys = {}
     for n in tree["nodes"]:
@@ -77,7 +82,9 @@ def check(tree, ep_dir, where="tree"):
         # T05: must_fix nodes need required — except kind=problem under path A, when an
         # edge-linked cause already has required (confirm problem ≡ confirm ≥1 root cause).
         if n["kind"] != "style" and n["must_fix"] and not req:
-            if n["kind"] == "problem" and problem_has_signed_cause(nid):
+            if n.get("diagnostic_layer") == "awareness":
+                pass  # awareness layer: body-feel / tactics / intent — not required-OBS scope (user 2026-10-19)
+            elif n["kind"] == "problem" and problem_has_signed_cause(nid):
                 pass
             else:
                 F("T05", f"{nid} must_fix node has no required observable: it can never be confirmed from video")
@@ -95,10 +102,19 @@ def check(tree, ep_dir, where="tree"):
     for key, ids in sig_keys.items():
         for i, a in enumerate(ids):
             for b in ids[i + 1:]:
+                pair = frozenset({a, b})
                 da = {d["vs"] for d in nodes[a]["differentials"]}
                 db = {d["vs"] for d in nodes[b]["differentials"]}
-                if b not in da and a not in db:
-                    F("T08", f"{a} and {b} have identical required signatures and no differential")
+                if b in da or a in db:
+                    continue
+                # same-episode problem↔cause judged same_mechanism (review ×2) — exempt (user 2026-10-19)
+                if pair in pc_exempt:
+                    continue
+                # not_visible / self_feel_only — report INFO, not FAIL (user 2026-10-19)
+                if pair in self_feel:
+                    F("T08", f"{a} and {b} have identical required signatures and no differential (self_feel_only)", "INFO")
+                    continue
+                F("T08", f"{a} and {b} have identical required signatures and no differential")
     # T09 nodes sharing a required condition should name each other as differentials
     by_cond = defaultdict(set)
     for n in tree["nodes"]:

@@ -209,8 +209,8 @@ MUTATIONS = [
 
 # ---- tree v2 artifacts (OBS binding + mechanism merge): mutations run on in-memory copies of the committed files
 # selftest data = the CURRENT artifacts (v4, built against the current obs_catalog.json). v2 artifacts (18-observable catalog) stay in the repo as history.
-V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v9.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v10.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v10.json",
-      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v10.json", "eps": DIAG_DIR / "episodes"}
+V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v9.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v11.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v11.json",
+      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v11.json", "eps": DIAG_DIR / "episodes"}
 
 
 def v2_available():
@@ -316,27 +316,29 @@ def _p_leak2(pdir):
 
 
 def _g_other_stroke(d):
-    """Swap first member of group 0 to an existing backhand cause node of t1 (M02: mixed strokes).
+    """Swap first member of group 0 to a t1 cause whose stroke DIFFERS from the group's stroke (M02).
 
-    Picks any t1 cause whose source card is classified backhand. Hard-coding a node id broke when that
-    cause was lexically merged out of a later skeleton (e.g. LWS7:C03 into DX8A:C02 in tree_base_v7).
+    Previously hard-coded 'backhand'; that no-ops when groups[0] is already backhand (e.g. MG02 in v11).
     """
-    m = d["mm"]["groups"][0]["members"][0]
-    back = None
+    g = d["mm"]["groups"][0]
+    m = g["members"][0]
+    want_diff_from = g.get("stroke")
+    picked = None
     for n in d["t1"]["nodes"]:
         if n["kind"] != "cause":
             continue
         ep = n["evidence"][0].split(":")[0]
         card = load_json(DIAG_DIR / "episodes" / f"{ep}.card.json")
-        if card["classification"]["stroke"] != "backhand":
+        st = card["classification"]["stroke"]
+        if want_diff_from and st == want_diff_from:
             continue
         cid = next((x["id"] for x in card["causes"] if x["statement"] == n["name"]), None)
         if cid:
-            back = (n["id"], ep, cid)
+            picked = (n["id"], ep, cid, st)
             break
-    if back is None:
-        raise RuntimeError("no backhand cause node in t1 for M02 mutation")
-    nid, ep, cid = back
+    if picked is None:
+        raise RuntimeError("no other-stroke cause node in t1 for M02 mutation")
+    nid, ep, cid, _st = picked
     m["node"], m["card_causes"], m["episodes"] = nid, [f"{ep}:{cid}"], [ep]
 
 
@@ -482,6 +484,10 @@ def main(argv):
         res = {"validate_cards": [], "check_quotes": []}
         for p in cards:
             c = load_json(p)
+            # Draft cards stay on disk / in manifest but do not enter validate_cards / check_quotes
+            # acceptance scan (user 2026-10-19). They still must not enter the tree (build_tree skips them).
+            if str(c.get("status", "")).endswith("_draft"):
+                continue
             res["validate_cards"] += validate_cards.check_card(c, str(p))
             res["check_quotes"] += check_quotes.check_card(c, str(p), a.transcript_root)[0]
         tree = load_json(a.tree)

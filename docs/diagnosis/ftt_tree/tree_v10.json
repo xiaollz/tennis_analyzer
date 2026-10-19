@@ -499,7 +499,7 @@
       "id": "OBS-40",
       "question": "Alignment of hitting arm with chest rotation during the forward swing",
       "values": [
-        "arm_lags_behind_chest",
+        "racket_arm_behind_torso_line",
         "moves_together_with_chest"
       ],
       "layer": "B",
@@ -1861,7 +1861,7 @@
         "supporting": [
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           }
         ],
         "excluding": []
@@ -2395,7 +2395,7 @@
           },
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           }
         ],
         "excluding": []
@@ -3495,7 +3495,7 @@
         "required": [
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           }
         ],
         "supporting": [
@@ -3527,7 +3527,7 @@
         "required": [
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           }
         ],
         "supporting": [
@@ -3855,7 +3855,7 @@
           },
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           },
           {
             "obs": "OBS-25",
@@ -3963,7 +3963,7 @@
           },
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           },
           {
             "obs": "OBS-30",
@@ -5663,7 +5663,7 @@
         "supporting": [
           {
             "obs": "OBS-40",
-            "value": "arm_lags_behind_chest"
+            "value": "racket_arm_behind_torso_line"
           }
         ],
         "excluding": []

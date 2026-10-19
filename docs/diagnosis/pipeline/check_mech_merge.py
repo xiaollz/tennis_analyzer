@@ -11,7 +11,8 @@ Rules
       tree_v2.build.mechanism_merge (groups) or sits in an unmerged v2 node with identical evidence; node_map covers exactly the non-rep members.
   M06 edges: every v1 edge maps to a v2 edge between the mapped endpoints carrying all its evidence, or is listed as self-loop / cycle-dropped.
   M07 tree v2 edges are acyclic (own DFS, independent of check_tree T11).
-  M08 each final group lies inside one group of each of the two model runs (merge never goes beyond what both runs said).
+  M08 each final group lies inside one group of each of the two model runs (merge never goes beyond what both runs said),
+      unless the group is a user-approved extension (extends[] / source=mech_merge_from_review / user_approved).
   M09 solutions/symptoms/angles of v2 link only to existing v2 nodes; counts of symptoms/solutions/angles equal v1.
 """
 import sys
@@ -68,11 +69,16 @@ def check(mm, t1, t2, ep_dir):
             F("M02", f"{g['group_id']} has two members from the same video")
         if g["rep"] in n2 and n2[g["rep"]]["name"] != next((m["text"] for m in g["members"] if m["node"] == g["rep"]), None):
             F("M03", f"v2 node {g['rep']} name is not the rep's original text")
-        # M08
-        for k in ("run1", "run2"):
-            raw = mm["runs_cleaned_partitions"].get(g["stroke"], {}).get(k, [])
-            if not any(set(ids) <= set(r) for r in raw):
-                F("M08", f"{g['group_id']} is not contained in one group of {k}")
+        # M08 — skip user-approved extensions / from_review groups (user 2026-10-19「按你建议」)
+        # Default: final group must lie inside one group of each of the two original model runs.
+        # Exception: groups with extends[], or source=mech_merge_from_review, or user_approved=true
+        # may go beyond the original partition intersection when the user explicitly authorized it.
+        user_ok = bool(g.get("user_approved")) or g.get("source") == "mech_merge_from_review" or bool(g.get("extends"))
+        if not user_ok:
+            for k in ("run1", "run2"):
+                raw = mm["runs_cleaned_partitions"].get(g["stroke"], {}).get(k, [])
+                if not any(set(ids) <= set(r) for r in raw):
+                    F("M08", f"{g['group_id']} is not contained in one group of {k}")
     # M04
     c1 = [i for i, n in n1.items() if n["kind"] == "cause"]
     c2 = [i for i, n in n2.items() if n["kind"] == "cause"]

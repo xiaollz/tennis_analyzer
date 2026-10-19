@@ -747,7 +747,7 @@
       "reliability": "untested",
       "question": "Alignment of hitting arm with chest rotation during the forward swing",
       "values": [
-        "arm_lags_behind_chest",
+        "racket_arm_behind_torso_line",
         "moves_together_with_chest"
       ],
       "origin": {
@@ -784,6 +784,132 @@
           "pQ793MBQE50"
         ],
         "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-42",
+      "src": "OBS-42_footwork_approach_arms_raised_flailed.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "During footwork approach, are the arms raised or flailed out to counterbalance trunk movement?",
+      "values": [
+        "arms_flailed_for_balance",
+        "arms_in_ready_unit_turn"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC007",
+        "cluster": "NEW-OBS-01",
+        "episodes": [
+          "42BfbKsTGb4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-43",
+      "src": "OBS-43_foot_activity_after_finishing_stroke.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Foot activity after finishing a stroke: dynamic recovery stepping or halting feet completely in place",
+      "values": [
+        "dynamic_recovery_stepping",
+        "halts_feet_in_place"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC153",
+        "cluster": "NEW-OBS-55",
+        "episodes": [
+          "toArb3WkJcs"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-44",
+      "src": "OBS-44_vertical_distance_between_ball_player.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Vertical distance between the ball and the player's eyes at contact",
+      "values": [
+        "near_eye_level",
+        "moderate_distance",
+        "far_below_eye_level"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC010",
+        "cluster": "NEW-OBS-02",
+        "episodes": [
+          "AppdZqxH_2k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-45",
+      "src": "OBS-45_serve_forward_swing_racket_head.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "On the serve forward swing, does the racket head approach the ball from inside-to-out or from outside/top?",
+      "values": [
+        "inside_to_out",
+        "outside_or_top"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC001",
+        "cluster": "NEW-OBS-08",
+        "episodes": [
+          "1W1rope5l0k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-46",
+      "src": "OBS-46_forward_swing_acceleration_racket_handle.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During forward swing acceleration, does the racket handle shift or rotate independently inside the player's grip?",
+      "values": [
+        "racket_shifts_in_grip",
+        "racket_firmly_coupled"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC146",
+        "cluster": "NEW-OBS-92",
+        "episodes": [
+          "fjpr9PS02tM"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
       }
     }
   ]

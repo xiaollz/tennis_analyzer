@@ -1,6 +1,6 @@
 # OBS-40 Alignment of hitting arm with chest rotation during the forward swing
 
-- **定义**：Alignment of hitting arm with chest rotation during the forward swing 取值：arm_lags_behind_chest / moves_together_with_chest（看不清则记 unclear）。
+- **定义**：Alignment of hitting arm with chest rotation during the forward swing 取值：racket_arm_behind_torso_line / moves_together_with_chest（看不清则记 unclear）。
 - **看哪一帧**：题目里写明的时刻 / 阶段。
 - **哪个机位**：B（正后方）。
 - **谁来测**：B 层：需指定机位 + Pose / 人工抽帧；模型只作参考。
