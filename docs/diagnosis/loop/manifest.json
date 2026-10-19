@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-20",
-  "round": "round13",
+  "round": "round14",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -213,8 +213,10 @@
       "title": "Master Pronation in 2 Minutes at Home",
       "duration_s": 379.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round14",
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "hqganBxzQNM",
@@ -532,9 +534,11 @@
       "id": "MWjBfarwNlA",
       "title": "Alcaraz's Secret Weapon | Backhand Line RALLY Ball",
       "duration_s": 34.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round14",
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs); 1 causes / 0 solutions"
     },
     {
       "id": "boMJDzuFhM4",
@@ -652,9 +656,11 @@
       "id": "Fu6DkHvZlGY",
       "title": "The Pure-Dextral Pinpoint | Serve Like Jakob Mensik",
       "duration_s": 435.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round14",
+      "note": "ep_s1_v6 verified via raw pair 1-3 (3 runs); 4 causes / 3 solutions"
     },
     {
       "id": "E_zmENJIj4g",
@@ -670,9 +676,11 @@
       "id": "BbGzWTp5pCM",
       "title": "Practicing in Slow Motion is Killing Your Match Play",
       "duration_s": 259.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round14",
+      "note": "ep_s1_v6 verified via raw pair 1-3 (3 runs); 4 causes / 2 solutions"
     },
     {
       "id": "JzcA_ku7Yhk",
@@ -780,9 +788,11 @@
       "id": "XjJHA91HDbU",
       "title": "Don't Swing AT the Ball on the Overhead",
       "duration_s": 212.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round14",
+      "note": "ep_s1_v6 verified via raw pair 1-3 (3 runs); 3 causes / 3 solutions"
     },
     {
       "id": "wVa4XQPcaqs",
@@ -1285,6 +1295,43 @@
         "gehRK0Y6AdQ",
         "q6LrQYDvxmY"
       ]
+    }
+  },
+  "round14_selection": {
+    "rule": "holdout short teaching knowledge: Fu6/emZx/BbGz/XjJ/MWjB; skip Jaccard-blocked NH retries; listed subs blocked IpBlocked/429",
+    "prompt_version": "ep_s1_v6",
+    "ids": [
+      "Fu6DkHvZlGY",
+      "emZxTmSVSa8",
+      "BbGzWTp5pCM",
+      "XjJHA91HDbU",
+      "MWjBfarwNlA"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "Fu6DkHvZlGY",
+        "BbGzWTp5pCM",
+        "XjJHA91HDbU",
+        "MWjBfarwNlA"
+      ],
+      "stage1_draft_rerun_fail": [
+        "emZxTmSVSa8"
+      ]
+    },
+    "listed_subs_attempt": {
+      "ids": [
+        "dYPv0QfFrsU",
+        "6j33LJfl46s",
+        "97vo-kFis6c",
+        "Cwc4YcKFZrU",
+        "risP4qTirj8",
+        "XF17hgRlccw",
+        "dnNOOornvek"
+      ],
+      "youtube_transcript_api": "IpBlocked (cloud IP)",
+      "yt_dlp": "HTTP 429 + bot sign-in required",
+      "listed_to_subs_ready": 0,
+      "log": "/workspace/ftt_subs/_listed_fetch/"
     }
   }
 }

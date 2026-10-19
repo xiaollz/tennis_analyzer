@@ -141,3 +141,36 @@ Z9XwaXDVkZg / FjjvhNbk3q4 / m1NBdd3Bigg / 2J8q7sn4JLc / 5KdScDKxVSI — consensu
 
 ### 阻塞共性
 长教学片 solutions 锚点不稳定 → 反复 draft。短片 / 主题单一片更容易 PASS。再开 round14 建议：**优先从未抽过的较短 holdout 正手**（Fu6 / emZx / BbGz 等）或补 listed 字幕；对 Z9X/Fjjv **不要无策略重试**。
+
+
+---
+
+## 10. 进度快照（2026-10-20，round14 后）— 建议停点拍板
+
+| 项 | 数 |
+|---|---:|
+| stage1_verified | 72 |
+| tree 最新 | **tree_v17**（无 tree_v18：本轮无非 holdout 新 verified） |
+| subs_ready | 18 |
+| 教学 NH 仍待/draft | 6 → m1NBdd3Bigg, Z9XwaXDVkZg, 0m3BMfDDShI, FjjvhNbk3q4, QrRYuVjVibU, Ibkq-yBteGc |
+| 教学 holdout 仍待/draft | 7 |
+| 降权战术等 | 5 |
+| listed（字幕未拿到） | 7（**0→subs_ready**） |
+
+### round14 结果
+- verified（**皆 holdout，不进树**）：`Fu6DkHvZlGY`（Pure-Dextral Pinpoint / coil）、`BbGzWTp5pCM`（Slow Motion）、`XjJHA91HDbU`（Overhead）、`MWjBfarwNlA`（BH line short）
+- draft：`emZxTmSVSa8`（pronation home）— consensus FAIL
+- validate+quotes：**0 FAIL**（知识卡可用）
+
+### listed 字幕尝试 — **全拦**
+| 通道 | 结果 |
+|---|---|
+| youtube-transcript-api | **IpBlocked**（云厂商 IP） |
+| yt-dlp `--skip-download` 自动字幕 | **HTTP 429** + bot sign-in / cookies 要求 |
+| 日志 | `/workspace/ftt_subs/_listed_fetch/` |
+
+### Jaccard 阻塞表（勿再无策略重试）
+`0m3` / `Z9X` / `Fjjv` / `m1NB` / `2J8q` / `5KdS` / `gehRK` / `q6Lr` / `emZx` — solutions/causes 锚点不稳定。
+
+### 给用户拍板
+**建议停在「NH 池枯竭 + 阻塞片 + listed 字幕 IP 封」**：再 loop 边际收益低。若要继续需：① 本机/带 cookies 补 listed 字幕；或 ② 放宽 rerun 规则（**需明确授权**）；或 ③ 人工拆 draft 卡。

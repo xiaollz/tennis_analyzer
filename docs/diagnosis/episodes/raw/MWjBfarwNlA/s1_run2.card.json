@@ -1,0 +1,168 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "MWjBfarwNlA",
+    "url": "https://www.youtube.com/watch?v=MWjBfarwNlA",
+    "title": "Alcaraz's Secret Weapon | Backhand Line RALLY Ball",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 34.0,
+    "upload_date": "2025-06-11",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "backhand",
+    "format": "pro_analysis",
+    "reason": "The speaker analyzes Alcaraz's tactical shot choice and mindset against Sinner without giving any actionable drill, cue, or practice instruction for the viewer."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/MWjBfarwNlA.en.vtt",
+    "kind": "auto",
+    "sha256": "7d46959af3e294950441ac62ce391afb944d6850f5a7c03b2b251b68a3305b79",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_MWjBfa",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "When and why should a player hit a backhand rally ball up the line?",
+    "definition": "Tactically changing an unfavorable crosscourt backhand exchange by redirecting a rally ball down the line instead of remaining stuck in the pattern.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "baseline backhand rally"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Now, remember earlier when I said Alcarez can't hit with center in the backhand to backhand pattern.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, what do you think he's going to do with this ball?",
+      "start": 4.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Going crosscourt would obviously be fine, but Allah Federer versus Rafa, he's going to hit a rally ball up the line just to change the pattern.",
+      "start": 5.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Now, this next one is hit very hard and very flat and very close to the line.",
+      "start": 18.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "But here's the thing. When you're feeling good, you can just do things.",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And hesitating is much much worse than making kind of a maybe questionable decision once in a",
+      "start": 26.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player is outmatched and unable to sustain an extended crosscourt backhand rally exchange.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The ball is redirected down the line flat, hard, and close to the sideline as a rally ball.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player is at a tactical disadvantage in a neutral backhand-to-backhand rally and cannot outhit the opponent crosscourt.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Alcaraz redirects a backhand rally ball up the line to disrupt Sinner's crosscourt rhythm, echoing Federer's tactic against Nadal.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Committing fully to a potentially questionable shot decision without hesitation yields far better outcomes than second-guessing.",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    }
+  ],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

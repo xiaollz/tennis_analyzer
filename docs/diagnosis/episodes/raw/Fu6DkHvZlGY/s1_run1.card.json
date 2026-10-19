@@ -1,0 +1,444 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "Fu6DkHvZlGY",
+    "url": "https://www.youtube.com/watch?v=Fu6DkHvZlGY",
+    "title": "The Pure-Dextral Pinpoint | Serve Like Jakob Mensik",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 435.0,
+    "upload_date": "2025-04-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "lecture",
+    "reason": "The coach explicitly instructs right-handed, right-eye dominant viewers to try the pure-dextral pinpoint foot placement and use the non-dominant arm across, up, and back to coil the trunk."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/Fu6DkHvZlGY.en.vtt",
+    "kind": "auto",
+    "sha256": "c3f5f12528590d591a394b30690d1253162319ac2da26f74b782a7db39dfa4d5",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_Fu6DkH",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can right-handed and right-eye dominant players coil their serve without losing sight of the court or hurting their back?",
+    "definition": "Right-handed, right-eye dominant players struggle to turn their shoulders fully on the serve because excessive rotation turns their rear dominant eye away from the court, sacrificing peripheral vision and coiling leverage.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "pinpoint serve preparation",
+      "right-handed serve"
+    ],
+    "target_player": "Right-handed and right-eye dominant tennis players",
+    "evidence": [
+      "Q03",
+      "Q07",
+      "Q08"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Watch where Yakob Mensic places his back foot during his pinpoint preparation. He places it on the hitting side of his off foot.",
+      "start": 8.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "I call this the pure dextral pinpoint because this is a common way that right-handed right eye dominant players serve.",
+      "start": 24.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Your accuracy is going to dramatically increase if you can see your target in peripheral vision.",
+      "start": 57.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "If you actually look down here with your fovial vision, your focus, you're almost certainly going to mishit your serve.",
+      "start": 74.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "For players like Yakabmen who are right-handed and right eye dominant, that dominant eye is in the back during this preparation part of the serve.",
+      "start": 101.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And so through this whole process, the back eye needs to be able to see at least out of the corner of the eye the other side of the court.",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Roger Federer's chest would probably be facing the camera, but Yakob Menick can't turn that far. He's only facing the side because that eye that's farther from the court needs that peripheral sight line.",
+      "start": 121.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "The first is rotation and it is the twisting action of the trunk. We call that rotation in the transverse plane.",
+      "start": 145.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "In order to get that twisting you need to stretch the off arm against the hitting hip.",
+      "start": 193.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "If this foot were all the way back here, then the hips are now more rotated. And in order to stretch the upper part of the trunk against the hips, you would now have to turn way farther",
+      "start": 239.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And now this eye in the back, your right eye, your dominant eye, is going to lose peripheral sight line of the court.",
+      "start": 249.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "by keeping your hips open, you can stretch your shoulders against them without losing the court with your back eye.",
+      "start": 257.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "the left arm exists for leverage. It gives you leverage over the trunk. So, you use it to prep the trunk during the prep phase of the serve.",
+      "start": 283.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "right now, the left arm is going to go up. It's going to go right and it's going to go back. You see that? So, we toss the ball and now this is not just momentum from the toss.",
+      "start": 292.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "This is active preparation of the trunk using the left arm as leverage up, right, and back.",
+      "start": 302.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "If you stretch the left arm this way, then it is naturally going to pull left, down, and forward when you serve, which is exactly where you want it to go.",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Try the purodexual pinpoint. It'll keep your hips more forward. It'll allow you to recruit this highly useful left arm across, back, and up stretch",
+      "start": 345.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "leaning back during your preparation really helps guide you into this highly extended position in the cocking phase, helps you load that spring",
+      "start": 377.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "when you pull that foot all the way under the hitting side in the purodextral pinpoint. You can feel like that lean doesn't really quite work.",
+      "start": 392.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "some people feel like it kind of hurts their back. And if that's you, I want you to understand you can use rotation, rotate your trunk to power your serve and use less of this spring",
+      "start": 406.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "you can use a motion that on most people's bodies is less stressful by using the purodexual pinpoint, yanking that left arm across your body, and using that transverse plane rotation to power your serve.",
+      "start": 422.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Right eye loses peripheral sight line of the target court during serve preparation if the server over-rotates.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "placement",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q06",
+        "Q11"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The server's chest faces to the side rather than turning all the way backwards toward the camera during preparation.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Lower back pain or strain caused by excessive spinal extension and backward leaning during serve loading.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "For right-handed, right-eye dominant players, the dominant eye is positioned in the back and must keep peripheral sight of the court, restricting how far the head and chest can turn back.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Rotational coiling in the transverse plane requires stretching the diagonal between the non-dominant shoulder blade and the hitting hip.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Placing the back foot far behind the front foot rotates the hips away from the net, requiring the upper body to rotate excessively to achieve stretch against the hips.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Over-relying on thoracic sagittal extension to power the serve rather than transverse rotation places high physical stress on the lower back.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06",
+        "Q11"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Coiling power comes from stretching the non-dominant shoulder diagonally against the hitting hip across the transverse plane.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "The tossing arm is not just for releasing the ball; its primary role is providing active leverage to prepare and coil the trunk.",
+      "evidence": [
+        "Q13",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Roger Federer can turn his chest away from the camera because of his visual profile, whereas Jakob Mensik, Watanuki, and Griekspoor bring their back foot to the hitting side to keep hips more forward.",
+      "evidence": [
+        "Q01",
+        "Q02",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Players who rely on leaning back for thoracic extension may find the pure-dextral pinpoint feeling less balanced for that specific backwards lean.",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Actively drive the tossing arm up, right, and back after ball release to create leverage and diagonally stretch the trunk.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Adopt the pure-dextral pinpoint by sliding the back foot onto the hitting side of the front foot during preparation to keep hips facing forward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Power the serve by yanking the non-dominant arm across the body to drive transverse spinal rotation instead of over-extending the spine backwards.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

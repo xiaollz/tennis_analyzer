@@ -1,0 +1,49 @@
+{
+  "id": "MWjBfarwNlA",
+  "run": 1,
+  "model": "gemini-3.8-flash",
+  "prompt_version": "ep_s1_v6",
+  "temperature": 0.25,
+  "ts": "2026-10-20 00:49:03 +0800",
+  "calls": 2,
+  "attempts": [
+    {
+      "status": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_s": 270.0,
+      "usage": null,
+      "response_chars": 0
+    },
+    {
+      "status": "ok",
+      "elapsed_s": 73.1,
+      "usage": {
+        "promptTokenCount": 5072,
+        "candidatesTokenCount": 1383,
+        "totalTokenCount": 12804,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 5072
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1383
+          }
+        ],
+        "thoughtsTokenCount": 6349
+      },
+      "response_chars": 4338
+    }
+  ],
+  "usage_total": {
+    "promptTokenCount": 5072,
+    "candidatesTokenCount": 1383,
+    "totalTokenCount": 12804,
+    "thoughtsTokenCount": 6349,
+    "cachedContentTokenCount": 0
+  },
+  "ok": true
+}
