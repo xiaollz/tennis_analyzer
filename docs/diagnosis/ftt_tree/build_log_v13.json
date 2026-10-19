@@ -1,0 +1,90 @@
+{
+ "builder": "v12 + promote_new_obs approve OBS-55..64 + patch required + awareness",
+ "problem_nodes": 54,
+ "cause_nodes": 183,
+ "edges": 219,
+ "observables": 64,
+ "nodes_with_required": 93,
+ "awareness_nodes": 104,
+ "patched_required": [
+  {
+   "obs": "OBS-55",
+   "item": "PUN6qIIYU-4:C01",
+   "node": "N-C_PUN6QIIYU_4_C01",
+   "value": "inside_baseline"
+  },
+  {
+   "obs": "OBS-56",
+   "item": "toArb3WkJcs:C03",
+   "node": "N-C_TOARB3WKJCS_C03",
+   "value": "interrupted_by_pause"
+  },
+  {
+   "obs": "OBS-57",
+   "item": "dZadhzVEsds:C01",
+   "node": "N-C_DZADHZVESDS_C01",
+   "value": "above_ball"
+  },
+  {
+   "obs": "OBS-58",
+   "item": "aPcKJDadzek:C05",
+   "node": "N-C_APCKJDADZEK_C05",
+   "value": "transfers_forward_early"
+  },
+  {
+   "obs": "OBS-59",
+   "item": "uJpuDUx0jIA:C03",
+   "node": "N-C_APCKJDADZEK_C03",
+   "value": "rolls_onto_inside_edge"
+  },
+  {
+   "obs": "OBS-60",
+   "item": "9NirSL59an0:C04",
+   "node": "N-C_9NIRSL59AN0_C04",
+   "value": "over_rotated_past_net"
+  },
+  {
+   "obs": "OBS-61",
+   "item": "pQ793MBQE50:C02",
+   "node": "N-C_PQ793MBQE50_C02",
+   "value": "slanted_near_135"
+  },
+  {
+   "obs": "OBS-62",
+   "item": "uJpuDUx0jIA:C05",
+   "node": "N-C_UJPUDUX0JIA_C05",
+   "value": "shrugged_upward"
+  },
+  {
+   "obs": "OBS-63",
+   "item": "xLs469ZVMPU:C04",
+   "node": "N-C_XLS469ZVMPU_C04",
+   "value": "spins_open"
+  },
+  {
+   "obs": "OBS-64",
+   "item": "xLs469ZVMPU:C03",
+   "node": "N-C_XLS469ZVMPU_C03",
+   "value": "remains_grounded"
+  }
+ ],
+ "awareness_added": [
+  {
+   "node": "N-C_FBJNFBTZOZE_C02",
+   "reason": "psychological flight / passive recovery — prefer awareness over OBS"
+  },
+  {
+   "node": "N-P_DDYKUNZTDYU",
+   "reason": "pull-slot problem: NEW-OBS has forbidden term slot; not camera-confirmable without inventing"
+  },
+  {
+   "node": "N-C_DDYKUNZTDYU_C02",
+   "reason": "pull-slot delivery cause: same forbidden-slot NEW-OBS; awareness"
+  },
+  {
+   "node": "N-C_WZLMV4ASG9S_C06",
+   "reason": "NEW-OBS description contains forbidden term slot; values are visible but cannot promote verbatim"
+  }
+ ],
+ "note": "tree_v13 = tree_v12 + OBS-55..64 + awareness FBJN/DDYK; tree.json v1 untouched; thresholds unchanged"
+}

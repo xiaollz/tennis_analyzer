@@ -209,8 +209,8 @@ MUTATIONS = [
 
 # ---- tree v2 artifacts (OBS binding + mechanism merge): mutations run on in-memory copies of the committed files
 # selftest data = the CURRENT artifacts (v4, built against the current obs_catalog.json). v2 artifacts (18-observable catalog) stay in the repo as history.
-V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v9.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v12.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v12.json",
-      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v12.json", "eps": DIAG_DIR / "episodes"}
+V2 = {"t1": DIAG_DIR / "ftt_tree" / "tree_base_v9.json", "t2": DIAG_DIR / "ftt_tree" / "tree_v13.json", "bind": DIAG_DIR / "ftt_tree" / "obs_binding_v13.json",
+      "mm": DIAG_DIR / "ftt_tree" / "mech_merge_v13.json", "eps": DIAG_DIR / "episodes"}
 
 
 def v2_available():
@@ -476,6 +476,9 @@ def main(argv):
     ap.add_argument("--transcript-root"); ap.add_argument("--gate"); ap.add_argument("--report")
     ap.add_argument("--tree-v1"); ap.add_argument("--binding"); ap.add_argument("--merge")
     a = ap.parse_args(argv)
+    # G1/G2 need a cases dir; default to muted_v6 so verify does not silently report cases=0
+    if a.gate and not a.cases:
+        a.cases = str(DIAG_DIR / "replay" / "muted_v7" / "cases")
     st_ok, st = selftest()
     report = {"time": datetime.datetime.now().isoformat(timespec="seconds"), "selftest": st, "checks": {}}
     ok = st_ok

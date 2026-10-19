@@ -14,7 +14,7 @@ flowchart TD
     A["① FTT 视频字幕<br/>【字幕：yt-dlp 抓取逐字稿】"]
     B["② 每期一张卡片：问题 → 根因 → 讲解 → 解法<br/>【Gemini 读字幕，独立抽 2~3 次】"]
     C["③ 合并同类 + 补「观察点」OBS<br/>【Gemini 两次一致才算；撞车的由 Claude Code 评审】"]
-    D["④ 诊断树 tree_v12<br/>54 期 · 237 节点 · 54 观察点<br/>【脚本确定性生成，AI 不改写】"]
+    D["④ 诊断树 tree_v13<br/>54 期 · 237 节点 · 64 观察点<br/>【脚本确定性生成，AI 不改写】"]
     A --> B --> C --> D
   end
   subgraph L2["第二部分：拿你的视频来诊断（能跑，但还不准）"]
@@ -86,20 +86,20 @@ flowchart TD
 
 ## 3. 现在做到哪一步了（真实数字）
 
-数据来源：`ftt_tree/tree_v12.json`；报告 `loop/reports/verify_2026-10-19_tree_v12.json`（v11 对照 `verify_2026-10-19_tree_v11.json`）。v12 继续啃 T08/T05（不放宽阈值）。
+数据来源：`ftt_tree/tree_v13.json`；报告 `loop/reports/verify_2026-10-19_tree_v13.json`（对照 v12 / v11）。继续啃 T05/V5（不放宽阈值）。
 
 | 环节 | 状态 | 真实数字 |
 |---|---|---|
 | ① 字幕 | **已通** | 频道清单 97 条：57 条已建卡并核对、33 条有字幕但还没抽、7 条只在清单里；20 条划为保留集 |
 | ② 卡片 | **已通** | 72 张卡里 57 张"字幕层已核对"，15 张是草稿（不入树）。引用的原话核对 0 处失败。**视频层（Stage 2）仍 0 张**。草稿卡已移出 validate 扫描 |
-| ③ 合并 + 观察点 | **基本通，仍有缺口** | **54** 个观察点（v11：46；v12 再升 OBS-47..54 单期例外；OBS-40 取值已中性化）；绑定/合并检查 0 失败；M08 允许用户批准的扩展/新建组合并组 |
-| ④ 诊断树 | **已生成，但验收没过** | **tree_v12**：54 期、54 问题 + **183** 根因、219 边；**83** 节点有必看项；**100** 节点标 `diagnostic_layer=awareness`（不进 T05）；观察点 **54** |
-| 检查 T05 | **FAIL：20**（v11：43 → **−23**） | 拆解见 `loop/t05_breakdown_v12.md`：问题节点 1（DDYK pull-slot 禁词未升）、单期候选 19（本轮已升 8 个最高价值） |
-| 检查 T08 | **FAIL：0**（v11：22 → **−22**） | 仅剩 6 对 self_feel_only INFO。见 `loop/t08_remaining_v12.md` |
+| ③ 合并 + 观察点 | **基本通，仍有缺口** | **64** 个观察点（v12：54；v13 再升 OBS-55..64）；绑定/合并 0 FAIL；M08 允许用户批准扩展/新建组合并组 |
+| ④ 诊断树 | **已生成，但验收没过** | **tree_v13**：54 期、54 问题 + **183** 根因、219 边；**93** 节点有必看项；**104** awareness；观察点 **64** |
+| 检查 T05 | **FAIL：6**（v12：20 → **−14**；v11：43） | 见 `loop/t05_breakdown_v13.md`：问题节点 0；剩 6 个单期 NEW-OBS（无跨期）→ 自动升 OBS 平台期 |
+| 检查 T08 | **FAIL：0**（6 INFO self_feel_only） | 见 `loop/t08_remaining_v13.md`；规则未放宽，节点未删 |
 | 检查 validate_cards | **0 FAIL**（v10：12） | 3 张草稿卡不参与扫描 |
 | 自检 selftest | **PASS** | 58 个坏样例全部抓住 |
 | ⑥⑦ 看视频 + 对照 | **能跑，不准** | 见下 |
-| V5 静音盲测 | **FAIL** | 第二轮（`v6_muted_blind_2026-10-19.md`）：10 个用例、7 期、4 个阴性对照；recall@3 仍 = 0。**verify 须显式 `--cases replay/muted_v6/cases`**，否则 cases=0 四门全 FAIL（非管线损坏） |
+| V5 静音盲测 | **FAIL** | 第三轮 `v7_muted_blind`：10/9 期、空挥拍 0、recall@3 仍 0。verify 在 `--gate` 时默认挂 muted_v6 cases（已修 cases=0）。瓶颈：取值≠故障 required + 斜拍门控 |
 | 文本盲测（参考） | 弱 | 对 tree_v5 的 18 个用例：答案进前三约 15%（只在树里已覆盖的 3 例里约 89%）——主要问题是树还没覆盖保留集的话题 |
 | ⑧ 对你真实视频出结论 | **还没真正做过** | 还没有用你按规范拍的视频走完整流程 |
 
@@ -137,7 +137,7 @@ flowchart TD
 
 | PLAN_v2 写的 | 实际仓库 |
 |---|---|
-| `ftt_tree/tree.json` 是唯一的树 | 现在是版本化的 `tree_v2 … tree_v12`；`tree.json`（v1）保留不动作基线 |
+| `ftt_tree/tree.json` 是唯一的树 | 现在是版本化的 `tree_v2 … tree_v13`；`tree.json`（v1）保留不动作基线 |
 | 自检"22 个变异" | 随规则加严已增至 **58 个**（README 与 PLAN §4.2 仍写 22/57，没同步） |
 | 每期要跑 Stage 2（Gemini 看画面补充）才算 stage2_verified | **从未跑过**；全部卡停在 stage1_verified。原因：直接用 YouTube 链接看视频无法去声、会泄露答案（`loop/video_layer_feasibility.md`），且结论只能当弱旁证 |
 | T05：必须纠正的节点必须有可见必看项（无例外） | **已加例外（路径 A，2026-10-19，用户批准）**：问题节点只要有一个相连的根因有必看项，就不报 T05。PLAN_v2 §10 变更记录没有记这条 |
@@ -151,12 +151,12 @@ flowchart TD
 
 ## 6. 现在卡在哪、接下来
 
-- 卡点 1（T05 **20**，v11 是 43）：又升 8 个单期 OBS + 11 个问题节点归觉察层；剩余 1 个问题（DDYK，候选含禁词 slot）+ 19 个单期候选根因（本轮额度用尽）。见 `loop/t05_breakdown_v12.md`。
-- 卡点 2（T08 **0** FAIL + 6 INFO，v11 是 22）：同卡 C↔C 豁免、鉴别项、跨笔画 stroke 鉴别、合并 UJPU→2NN9 已落地。平台期：仅 self_feel_only INFO。见 `loop/t08_remaining_v12.md`。
-- 卡点 3（V5 recall 0）：选片已改好（空片段 4→1、有了阴性对照），但召回仍是 0——真正的瓶颈是「能判定的节点太少」和「斜拍被相机门挡掉大半事实」，详见 `loop/reports/v6_muted_blind_2026-10-19.md`。
+- 卡点 1（T05 **6**，v12 是 20）：v13 再升 10 单期 + pull-slot/flight→awareness；剩 6 单期无跨期 → **自动升 OBS 平台期**。见 `t05_breakdown_v13.md`。
+- 卡点 2（T08 **0** FAIL + 6 INFO）：平台期（self_feel_only）。见 `t08_remaining_v13.md`。
+- 卡点 3（V5 recall 0）：v7 空挥拍已清零仍 0；瓶颈是「片段取值≠故障 required」+ 斜拍门控。见 `v7_muted_blind_2026-10-19.md`。
 - 最终目标（PLAN_v2 §5.3）：`verify_all` 总判 PASS + G2。目前 **没有达成**。
 
-> 更新记录：本文件第 3 节数字对应 tree_v12；之后若出新版本树，以 `loop/night_log_*.md` 与最新 `loop/reports/verify_*.json` 为准。
+> 更新记录：本文件第 3 节数字对应 tree_v13；以 `loop/night_log_*.md` 与最新 `loop/reports/verify_*.json` 为准。
 
 ---
 

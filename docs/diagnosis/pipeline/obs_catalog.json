@@ -1096,6 +1096,240 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py approve"
       }
+    },
+    {
+      "id": "OBS-55",
+      "src": "OBS-55_contact_frame_player_positioned_relative.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "At the contact frame, where is the player positioned relative to the baseline?",
+      "values": [
+        "inside_baseline",
+        "behind_baseline"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC024",
+        "cluster": "NEW-OBS-12",
+        "episodes": [
+          "PUN6qIIYU-4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-56",
+      "src": "OBS-56_transition_between_stroke_recovery_next.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Transition between stroke recovery and next stroke preparation: seamless continuous movement or interrupted by pause",
+      "values": [
+        "seamless_continuous_transition",
+        "interrupted_by_pause"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC155",
+        "cluster": "NEW-OBS-56",
+        "episodes": [
+          "toArb3WkJcs"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-57",
+      "src": "OBS-57_height_racket_head_relative_ball.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Height of racket head relative to the ball when forward body rotation begins",
+      "values": [
+        "above_ball",
+        "below_ball",
+        "level_with_ball"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC142",
+        "cluster": "NEW-OBS-50",
+        "episodes": [
+          "dZadhzVEsds"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-58",
+      "src": "OBS-58_backswing_preparation_body_weight_loaded.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During backswing preparation, is body weight loaded over the outside back leg before stepping forward?",
+      "values": [
+        "loaded_on_back_leg",
+        "transfers_forward_early"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC138",
+        "cluster": "NEW-OBS-90",
+        "episodes": [
+          "aPcKJDadzek"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-59",
+      "src": "OBS-59_backswing_loading_rear_foot_roll.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During backswing loading, does the rear foot roll excessively onto its inside edge or remain neutrally supported?",
+      "values": [
+        "rolls_onto_inside_edge",
+        "neutral_arch_support"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC157",
+        "cluster": "NEW-OBS-57",
+        "episodes": [
+          "uJpuDUx0jIA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-60",
+      "src": "OBS-60_degree_chest_rotation_relative_net.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Degree of chest rotation relative to net line at the start of forward arm acceleration",
+      "values": [
+        "over_rotated_past_net",
+        "square_to_net",
+        "side_on"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC009",
+        "cluster": "NEW-OBS-62",
+        "episodes": [
+          "9NirSL59an0"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-61",
+      "src": "OBS-61_angle_between_forearm_long_axis.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Angle between forearm long axis and racket handle during preparation",
+      "values": [
+        "orthogonal_near_90",
+        "slanted_near_135"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC151",
+        "cluster": "NEW-OBS-54",
+        "episodes": [
+          "pQ793MBQE50"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-62",
+      "src": "OBS-62_forward_swing_hitting_shoulder_visibly.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing, is the hitting shoulder visibly shrugged upward toward the ear?",
+      "values": [
+        "shrugged_upward",
+        "neutral_depressed"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC160",
+        "cluster": "NEW-OBS-58",
+        "episodes": [
+          "uJpuDUx0jIA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-63",
+      "src": "OBS-63_immediately_after_contact_front_foot.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At and immediately after contact, does the front foot pivot/spin open or maintain its placement?",
+      "values": [
+        "spins_open",
+        "lifts_off_court",
+        "remains_anchored"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC167",
+        "cluster": "NEW-OBS-61",
+        "episodes": [
+          "xLs469ZVMPU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-64",
+      "src": "OBS-64_follow_through_non_dominant_foot.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During follow-through, does the non-dominant foot kick across or upward behind the body?",
+      "values": [
+        "counter_kicking",
+        "remains_grounded",
+        "steps_forward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC165",
+        "cluster": "NEW-OBS-60",
+        "episodes": [
+          "xLs469ZVMPU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }
