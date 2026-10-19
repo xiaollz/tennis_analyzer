@@ -91,3 +91,53 @@
 
 - manifest：97；stage1_verified 57；subs_ready 33；listed 7
 - tree：`tree_v14`；verify_2026-10-19_tree_v14.json **pass=true**；T05/T08 已清零
+
+
+---
+
+## 8. 进度快照（2026-10-20 Asia/Shanghai，round11 后 / round12 前）
+
+| 项 | 数 |
+|---|---:|
+| stage1_verified | 65 |
+| subs_ready 合计 | 25 |
+| 其中教学·non-holdout（可进树） | ~6（含 0m3 draft 阻塞、2 Shorts draft、3 长视频 draft） |
+| 其中教学·holdout（可 Stage1 知识、不进树） | ~11 |
+| 降权 non_teaching / 战术等 | ~8 |
+
+### 0m3BMfDDShI 阻塞（跳过 round12）
+- 两轮（round10/11）三跑 consensus 皆 FAIL。
+- 主因：`solutions` transcript-anchor Jaccard 常 <0.5（pair 2-3 causes 已 PASS 但 solutions 0.30）。
+- **无新策略且不放宽阈值** → 本轮跳过；除非改 prompt 或人工拆卡（需另批）。
+
+### round12 拟选（≤5）
+1. `Z9XwaXDVkZg` — OHBH foundation（non-holdout，可进树）
+2. `FjjvhNbk3q4` — Effortless Serve（non-holdout；字幕含 twist/coil）
+3. `m1NBdd3Bigg` — Serve progressions（non-holdout）
+4. `2J8q7sn4JLc` — Why Your Forehand Sprays（holdout，正手）
+5. `5KdScDKxVSI` — Shoulder Adduction FH Contact（holdout，正手接触）
+
+
+---
+
+## 9. 进度快照（2026-10-20，round12/13 后）
+
+| 项 | 数 |
+|---|---:|
+| stage1_verified | 68 |
+| tree_v17 期数（非 holdout 挂树） | 61 |
+| subs_ready 合计 | 22 |
+| 教学·non-holdout 仍待抽/draft | 6（含 0m3/Z9X/Fjjv/m1NB 等 **rerun 阻塞**） |
+| 教学·holdout 仍待抽/draft | 9 |
+| 降权战术等 | 7 |
+| listed（无字幕） | 7 |
+
+### round12（全 draft）
+Z9XwaXDVkZg / FjjvhNbk3q4 / m1NBdd3Bigg / 2J8q7sn4JLc / 5KdScDKxVSI — consensus FAIL（多为 solutions Jaccard &lt;0.5；**未放宽**）。
+
+### round13
+- verified：**OYf48k-cfNI**（进树）、**hqganBxzQNM**、**EkzzGZkqCgc**（holdout 知识）
+- draft：gehRK0Y6AdQ、q6LrQYDvxmY
+
+### 阻塞共性
+长教学片 solutions 锚点不稳定 → 反复 draft。短片 / 主题单一片更容易 PASS。再开 round14 建议：**优先从未抽过的较短 holdout 正手**（Fu6 / emZx / BbGz 等）或补 listed 字幕；对 Z9X/Fjjv **不要无策略重试**。

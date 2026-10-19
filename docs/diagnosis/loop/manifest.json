@@ -2,15 +2,17 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-20",
-  "round": "round11",
+  "round": "round13",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
       "title": "Why Pros Hit So Far Away",
       "duration_s": 1036.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round13",
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "uJpuDUx0jIA",
@@ -155,8 +157,10 @@
       "title": "Why Your Forehand Sprays, and How to Fix It",
       "duration_s": 500.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round12",
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "pWzyP-xfLfU",
@@ -198,9 +202,11 @@
       "id": "EkzzGZkqCgc",
       "title": "Why Your Racket Doesn't Flip",
       "duration_s": 425.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round13",
+      "note": "ep_s1_v6 verified via raw pair 2-3 (3 runs); 4 causes / 4 solutions"
     },
     {
       "id": "emZxTmSVSa8",
@@ -214,9 +220,11 @@
       "id": "hqganBxzQNM",
       "title": "Why I Give Every Student a Weight to Swing (and why it works)",
       "duration_s": 403.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round13",
+      "note": "ep_s1_v6 verified via raw pair 1-3 (3 runs); 4 causes / 5 solutions"
     },
     {
       "id": "dZadhzVEsds",
@@ -303,8 +311,10 @@
       "title": "The Pros \"Brush\" Differently From You",
       "duration_s": 818.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round13",
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "LoSrMj-Qxkc",
@@ -375,9 +385,9 @@
       "title": "Simple Serve Progressions - From Beginner to Advanced | with Johnny & Alexa",
       "duration_s": 1013.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
+      "updated": "2026-10-20",
       "holdout": false,
-      "round": "round7",
+      "round": "round12",
       "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
@@ -385,9 +395,9 @@
       "title": "The Simple Foundation of the One-Handed Backhand",
       "duration_s": 1170.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
+      "updated": "2026-10-20",
       "holdout": false,
-      "round": "round7",
+      "round": "round12",
       "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
@@ -465,10 +475,10 @@
       "title": "7 Tips for an Effortless Serve ft. Giovanni Mpetshi-Perricard",
       "duration_s": 1262.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
+      "updated": "2026-10-20",
       "holdout": false,
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (solutions Jaccard <0.5 on 1-2; run3 causes 0.29); kept stage1_draft, must not enter the tree",
-      "round": "round6"
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree",
+      "round": "round12"
     },
     {
       "id": "97vo-kFis6c",
@@ -829,8 +839,10 @@
       "title": "Shoulder Adduction Will Transform Your Forehand Contact",
       "duration_s": 357.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round12",
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
     },
     {
       "id": "uQcObi2oTSs",
@@ -909,9 +921,11 @@
       "id": "OYf48k-cfNI",
       "title": "Fault Tolerance In Action",
       "duration_s": 232.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": false
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": false,
+      "round": "round13",
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs); 3 causes / 0 solutions"
     }
   ],
   "round2_selection": {
@@ -1226,6 +1240,50 @@
       ],
       "stage1_draft_rerun_fail": [
         "0m3BMfDDShI"
+      ]
+    }
+  },
+  "round12_selection": {
+    "rule": "twist_priority remaining teaching: Z9X/Fjjv/m1NB (NH drafts retry) + 2J8q/5KdS (holdout FH); 0m3 skipped (solutions Jaccard chronic)",
+    "prompt_version": "ep_s1_v6",
+    "ids": [
+      "Z9XwaXDVkZg",
+      "FjjvhNbk3q4",
+      "m1NBdd3Bigg",
+      "2J8q7sn4JLc",
+      "5KdScDKxVSI"
+    ],
+    "outcome": {
+      "stage1_verified": [],
+      "stage1_draft_rerun_fail": [
+        "Z9XwaXDVkZg",
+        "FjjvhNbk3q4",
+        "m1NBdd3Bigg",
+        "2J8q7sn4JLc",
+        "5KdScDKxVSI"
+      ]
+    },
+    "outcome_note": "ALL 5 draft after consensus FAIL (solutions and/or causes Jaccard); no threshold relaxation"
+  },
+  "round13_selection": {
+    "rule": "never-tried teaching: hqgan/gehRK/Ekzz/q6Lr (holdout FH/feel) + OYf48k-cfNI (NH short Fault Tolerance); after round12 all-draft",
+    "prompt_version": "ep_s1_v6",
+    "ids": [
+      "hqganBxzQNM",
+      "gehRK0Y6AdQ",
+      "EkzzGZkqCgc",
+      "q6LrQYDvxmY",
+      "OYf48k-cfNI"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "hqganBxzQNM",
+        "EkzzGZkqCgc",
+        "OYf48k-cfNI"
+      ],
+      "stage1_draft_rerun_fail": [
+        "gehRK0Y6AdQ",
+        "q6LrQYDvxmY"
       ]
     }
   }

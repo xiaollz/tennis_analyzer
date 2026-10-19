@@ -1,0 +1,455 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "EkzzGZkqCgc",
+    "url": "https://www.youtube.com/watch?v=EkzzGZkqCgc",
+    "title": "Why Your Racket Doesn't Flip",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 425.0,
+    "upload_date": "2026-02-16",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides a two-part actionable exercise to fix the racket flip: creating exaggerated lateral space from the ball and deliberately throwing the hand out to the side."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/EkzzGZkqCgc.en.vtt",
+    "kind": "auto",
+    "sha256": "9ff8d28d89e015aa1ac19b40863de461adb7b96d558e00954f01dda6edb219e0",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_EkzzGZ",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why Doesn't Your Racket Flip on the Forehand?",
+    "definition": "The forehand racket fails to flip or lag explosively because the forward swing is initiated straight toward the ball with the hand staying still, rather than pressing the hand outward to flip the racket around its center of mass.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand forward swing mechanics",
+      "semi-western or eastern forehand grip"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q04",
+      "Q05"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The reason your racket doesn't flip is because the the swing vector you're starting the swing with is towards the ball rather than off to your side.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So if we watch the hand here, all swings go in to out. Well, all really good swings.",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "See how outward the hand is pressed in order to get the racket to flip.",
+      "start": 30.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And this is the secret to the effortless racket flip is that we're not trying to take the racket and flip it back here while the hand stays still.",
+      "start": 36.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "We're trying to flip the head and the hand equal and opposite. What that does is it spins the racket closer to its center of mass and what effectively it makes it flip twice as fast.",
+      "start": 44.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "You have to throw your hand out on purpose.",
+      "start": 65.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "ball has to be here. If you probe the ball into here, your brain is not going to let you throw your hand out to the side like this. Because if the ball is here and you throw your hand",
+      "start": 68.96000000000001,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And that's why this is a two-part uh kind of exercise to fix this for yourself. Number one is create way more space in the left to right direction. Way more space in this direction than you think you",
+      "start": 82.479,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "See how the hand has come all the way to the right very, very quickly. The very beginning of the forward swing is way out to the right. So, you have to leave yourself enough space to do that.",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "And then your brain's going to be like, \"Okay, now I can throw it out to the right now that I have all this space.\"",
+      "start": 119.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So, because Yanx's entire body is moving this way, his hand is moving this way. So, even if he just flips the racket tip straight back, you're actually going to get some of that effect",
+      "start": 139.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "See how all you have to do is put the racket tip back because the hand's already moving this way because you're running. Just because of your your momentum and your gate cycle is going to push your hand out.",
+      "start": 158.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So now the hand's moving this way. So now the swing is really, really not going to work if you just take the racket strip back straight back. You must leave enough space.",
+      "start": 174.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And when your your whole body is moving this way, you really have to press that hand out because you're fighting against the hand's natural momentum.",
+      "start": 195.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "and then they come this way and the hand's moving to the left and the whole swing just dies and we have none of this racket flip, none of the effortless release.",
+      "start": 207.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "First, the spacing. See all of these steps to the left. That is because if you want to throw your hand out this way first, instead of throwing it straight out the ball, you must give yourself the lateral space.",
+      "start": 225.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "See that? see how much horizontal out to the right action is required to flip the frame. And that's the key there.",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "So the way the swing works, you throw the hand out to your right and then only like right through contact is the hand actually going this way towards the opponent.",
+      "start": 293.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Sock does something cool where he actually like presses the racket out like even earlier than these other guys.",
+      "start": 308.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "his intuition gives him this little kinesthetic cue, you know, to press it out early to make sure he doesn't forget to do it.",
+      "start": 316.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "What I'm trying to show you here though is that the way to create the wrist extension, you know, wrist wrist power is to swing the racket out to your right if if you're a right-handed player.",
+      "start": 342.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "You try to flip it around the butt cap instead of around the center.",
+      "start": 383.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "Racket flips around the hand here. The hand doesn't go out while the racket's going in. So it flips a lot slower and it's this kind of casual kind of, you know, yeah, he still uses his wrist",
+      "start": 403.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The racket does not flip or lags significantly slower into the slot at the start of the forward swing.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q15",
+        "Q23"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The forward swing feels tight, dead, and lacks effortless release or explosive wrist power.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q15",
+        "Q21"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Forehand quality degrades dramatically when standing stationary or moving inside-out compared to running wide.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player initiates the forward swing vector straight toward the ball instead of laterally out to their side.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player attempts to flip the racket tip back while holding the hand still or pivoting around the butt cap rather than moving hand and head in equal and opposite directions.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player sets up too close to the ball, so the brain inhibits throwing the hand outward because doing so would cause a complete miss.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Moving inside-out or to the left forces the player to fight against the body's momentum, collapsing the hand inward unless actively pressed out.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Pressing the hand outward while the racket head moves back spins the racket around its center of mass, doubling its flip speed.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Jannik Sinner, Roger Federer, and Jack Sock all display an aggressive outward hand path to the right before driving forward through contact.",
+      "evidence": [
+        "Q03",
+        "Q16",
+        "Q17",
+        "Q20"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Jack Sock's casual flick illustrates a slow flip pivoting only around the hand/butt cap without an outward hand press.",
+      "evidence": [
+        "Q22",
+        "Q23"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Set up with exaggerated lateral left-to-right space between your body and the incoming ball.",
+      "external_goal": "Leave way more space in the left to right direction than you think you need.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "At the start of the forward swing, deliberately throw your hitting hand out to the right before driving toward the opponent.",
+      "external_goal": "Throw the hand out to the right very quickly at the forward swing transition.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Use an early kinesthetic cue to press the racket and hand outward before the swing to ensure the outward path is not forgotten.",
+      "external_goal": "Press the racket and hand out early to the right side.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

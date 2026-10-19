@@ -13,7 +13,7 @@
     "is_teaching": "teaching",
     "stroke": "serve",
     "format": "pro_analysis",
-    "reason": "The coach provides actionable cues and drills throughout the video, such as holding or pressing the non-dominant arm across the stomach, exaggerating throwing vectors to shape slice versus flat serves, and adopting specific visual tracking cues on return."
+    "reason": "The coach provides specific biomechanical cues and instructions to coordinate the throwing motion, left-arm tuck, and stance for an effortless serve."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/FjjvhNbk3q4.en.vtt",
@@ -31,16 +31,15 @@
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How can you build an effortless, powerful, and accurate serve without elite height?",
-    "definition": "Recreational and non-giant players often struggle to generate effortless power and control because they misunderstand the serve as throwing directly toward the target or disconnect arm action from trunk and shoulder rotation.",
+    "title_as_question": "How can you adapt your throwing mechanics to develop an effortless tennis serve?",
+    "definition": "Recreational servers often lack effortless velocity and control because they attempt to throw their hand directly toward the target box and mistime the arm's drop relative to the body's upward explosion.",
     "node_id": "PENDING",
     "prerequisites": [
-      "basic continental grip",
-      "fundamental service motion"
+      "Basic ability to throw an object overhead",
+      "Continental grip"
     ],
     "target_player": "",
     "evidence": [
-      "Q01",
       "Q02",
       "Q03"
     ]
@@ -48,8 +47,8 @@
   "quotes": [
     {
       "id": "Q01",
-      "text": "In this video, we are going to go over seven things that Perkard does on his serve that you don't have to be 6'8 to copy.",
-      "start": 4.0,
+      "text": "seven things that Perkard does on his serve that you don't have to be 6'8 to copy.",
+      "start": 6.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
@@ -65,7 +64,7 @@
     {
       "id": "Q03",
       "text": "If you want your serve to feel effortless, the direction you want the ball to go does not match the direction that you throw your hand.",
-      "start": 59.0,
+      "start": 61.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -75,59 +74,91 @@
       "text": "Now, the reason for this offset is that we are recruiting that internal shoulder rotation whip that we saw Jacob Deg Grom recruiting in the pitch.",
       "start": 100.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q05",
-      "text": "And we have to feel this orthogonality in order to unlock those mechanics on the serve.",
-      "start": 209.0,
+      "text": "Because if you're aiming the serve here and you try to throw your racket to here, it's not going to work at all.",
+      "start": 138.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q06",
-      "text": "The serve is going to go down, but you're throwing your racket up. And the serve as a right-handed player is going to go to the left, but you're throwing your racket straight.",
-      "start": 252.0,
+      "text": "you want to throw your hand and your racket up and this way. And then at the top, the way the racket interacts with the ball is going to send it back this way.",
+      "start": 151.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q07",
-      "text": "See how he's throwing his racket at the net post? He's throwing his hand. He's throwing everything at the net post.",
-      "start": 339.0,
-      "speaker": "coach",
-      "about": "pro_footage",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q08",
-      "text": "So a lot of times what I see from clients is their arm is back here, but the knees are still bent, the hips are still bent, they haven't actually started throwing yet",
-      "start": 384.0,
+      "text": "So the other thing with the tennis serve, unlike the pitch, is this is an upward throwing motion.",
+      "start": 225.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
+      "id": "Q08",
+      "text": "See how he's throwing his racket at the net post? He's throwing his hand. He's throwing everything at the net post. He's still throwing up just like Paragard.",
+      "start": 341.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
       "id": "Q09",
-      "text": "The arm going back by itself unconnected to the throwing motion. That's where you start to lose a lot of velocity.",
-      "start": 498.0,
+      "text": "external shoulder rotation, that needs to be part of the forward upward explosion.",
+      "start": 378.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q10",
-      "text": "Pulls on the trunk to get that nice rotation early and then presses back across the stomach to help control that rotation late.",
+      "text": "their arm is back here, but the knees are still bent, the hips are still bent, they haven't actually started throwing yet, and that really discombobulates the swing.",
+      "start": 386.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "The arm floating behind the head is not a preparation step. That is part of what ultimately becomes the forward swing.",
+      "start": 432.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "synchronize pulling that left shoulder down and out with the right arm rolling back.",
+      "start": 472.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Now, number four is gonna help you get that actual whip on the end of your serve and be able to control it. Watch Paracart's left hand. It actually presses back across the body.",
+      "start": 506.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Watch the left arm. Pulls on the trunk to get that nice rotation early and then presses back across the stomach to help control that rotation late.",
       "start": 533.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q11",
+      "id": "Q15",
       "text": "Hold the left shoulder. Hold it under your stomach as you serve. Pull and hold. Hold hold hold the left arm.",
       "start": 599.0,
       "speaker": "coach",
@@ -135,65 +166,57 @@
       "source": "subtitle"
     },
     {
-      "id": "Q12",
-      "text": "If you are right eye dominant, you might actually be able to serve better overnight by adopting a more forward torso posture.",
-      "start": 638.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q13",
-      "text": "By keeping your hips more forward like this, by stepping on the hidden side of your body, he's still got that coil and that stretch.",
-      "start": 700.0,
+      "id": "Q16",
+      "text": "The reason for the difference is that because Paracard's dominant eye is the right eye, which is in the back on the serve, he loses more and more and more of the court as that torso gets farther around.",
+      "start": 658.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q14",
-      "text": "You just throw the hand back in a slightly different way so that when it gets to the top it cuts across the ball instead of slapping right through it.",
-      "start": 868.0,
+      "id": "Q17",
+      "text": "By keeping your hips more forward like this, by stepping on the hidden side of your body, he's still got that coil and that stretch.",
+      "start": 701.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "when all the stretches in the forearm unwind right here. So, here the forearm and the shoulder are stretched and loaded. That stretch unwinds through here. The way it unwinds through here",
+      "start": 818.8,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "exaggerate throwing it this way. and you'll you might slice it into the net, but exaggerate how much you throw it this way back here, and it'll cut across the ball when we get there.",
+      "start": 929.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q15",
-      "text": "Just figure out what happens here. Like exaggerate like whipping it around and slapping... and here, exaggerate throwing it this way.",
-      "start": 921.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q16",
-      "text": "Imagine an X in your trunk like this... connects one shoulder to the opposite hip... that stretches and contracts as you serve.",
+      "id": "Q20",
+      "text": "So, imagine an X in your trunk like this. Boom. Boom. It connects one shoulder to the opposite hip.",
       "start": 941.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q17",
-      "text": "In order to return really, really fast serves like this, watch the toss and watch your opponent's contact with a nice calm gaze.",
-      "start": 1030.0,
+      "id": "Q21",
+      "text": "in order to return really, really fast serves like this, watch the toss and watch your opponent's contact with a nice calm gaze.",
+      "start": 1033.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q18",
-      "text": "You'll see it crystal clearly hit the ground. That's how you know you're doing it right.",
-      "start": 1125.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q19",
-      "text": "For the onehander, attach your arm to your trunk using your upper back.",
-      "start": 1149.0,
+      "id": "Q22",
+      "text": "So that is your one-handed backhand tip, use your upper back, pull with your upper back right here as you drive forward. Do not let your arm get stuck behind you.",
+      "start": 1245.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -202,104 +225,95 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "The serving arm rolls into external rotation and drops behind the head while the knees and hips remain fully bent before the upward drive begins.",
-      "kind": "visible",
-      "layer": "A",
-      "camera": "S",
-      "phase": "placement",
-      "obs_ref": "NEW-OBS",
+      "description": "Serve feels forced and loses velocity because throwing mechanics are disconnected from the motion.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
       "evidence": [
-        "Q08"
+        "Q03",
+        "Q10"
       ]
     },
     {
       "id": "S02",
-      "description": "Serve velocity drops significantly and the swing feels discombobulated and disconnected from the body.",
-      "kind": "feel",
-      "layer": "C",
-      "camera": "none",
+      "description": "The hitting arm drops into external rotation behind the head while the knees and hips remain bent before explosive leg drive begins.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "R",
       "phase": "forward_swing",
-      "obs_ref": "NONE",
+      "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q08",
-        "Q09"
+        "Q10"
       ]
     },
     {
       "id": "S03",
-      "description": "Severe loss of serve directional accuracy when excessively coiling the torso away from the court.",
+      "description": "The torso coils excessively away from the court, causing a right-eye dominant server to lose sight of the target box.",
       "kind": "visible",
-      "layer": "B",
+      "layer": "A",
       "camera": "B",
-      "phase": "unit_turn",
+      "phase": "placement",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q12"
+        "Q16"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "The player attempts to throw the hand directly along the intended ball flight path rather than offset and upward to utilize internal shoulder rotation whip.",
+      "statement": "Trying to throw the hand directly toward the target prevents recruiting internal shoulder rotation whip, which requires an angular offset.",
       "depth": 1,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q03",
-        "Q04"
+        "Q03"
       ]
     },
     {
       "id": "C02",
-      "statement": "The hitting arm drops into external rotation behind the back statically before the lower body and trunk explosively initiate the upward throw.",
+      "statement": "Treating external shoulder rotation as a static preparation pose rather than dynamic timing during the explosive upward drive leaves the arm stuck behind.",
       "depth": 2,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
-      "evidence": [
-        "Q08"
-      ]
-    },
-    {
-      "id": "C03",
-      "statement": "The non-dominant arm fails to act as a counterbalance by pressing back across the stomach to brake trunk rotation late in the swing.",
-      "depth": 2,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "passive",
       "evidence": [
         "Q10"
       ]
     },
     {
+      "id": "C03",
+      "statement": "Failing to actively press the non-dominant arm across the stomach removes the rotational brake and counterbalancing needed to whip and control the hitting arm.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
       "id": "C04",
-      "statement": "A pure-dextral server coils the torso too far away from the net, losing peripheral sight of the court with the rear dominant eye.",
+      "statement": "Over-coiling the torso away from the net eliminates peripheral court vision for right-eye dominant players, degrading targeting accuracy.",
       "depth": 2,
       "layer": "A",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q12"
+        "Q16"
       ]
     }
   ],
   "chain": [
     {
       "from": "C02",
-      "to": "S01",
-      "strength": "coach_stated",
+      "to": "C01",
+      "strength": "coach_implied",
       "evidence": [
-        "Q08"
-      ]
-    },
-    {
-      "from": "C02",
-      "to": "S02",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q09"
+        "Q10"
       ]
     },
     {
@@ -307,8 +321,7 @@
       "to": "PROBLEM",
       "strength": "coach_stated",
       "evidence": [
-        "Q03",
-        "Q05"
+        "Q03"
       ]
     },
     {
@@ -316,42 +329,53 @@
       "to": "PROBLEM",
       "strength": "coach_stated",
       "evidence": [
-        "Q10"
+        "Q13"
       ]
     },
     {
       "from": "C04",
-      "to": "S03",
+      "to": "PROBLEM",
       "strength": "coach_stated",
       "evidence": [
-        "Q12"
+        "Q16"
       ]
     }
   ],
   "angles": [
     {
       "id": "A01",
-      "type": "mechanics",
-      "summary": "Internal shoulder rotation whip requires an angular offset between the hand throwing trajectory and the final ball flight line.",
+      "type": "analogy",
+      "summary": "Compares the serve to pitching down a mound and throwing a football Hail Mary, contrasting the upward vector of tennis against the downward baseball throw.",
       "evidence": [
         "Q04",
-        "Q05"
+        "Q07",
+        "Q08"
       ]
     },
     {
       "id": "A02",
       "type": "pro_example",
-      "summary": "Roger Federer demonstrates launching the arm toward the net post on the ad side to maximize internal rotation whip.",
+      "summary": "Analyzes Giovanni Mpetshi-Perricard and Roger Federer throwing at net posts to demonstrate the offset whip on both deuce and ad courts.",
       "evidence": [
-        "Q07"
+        "Q01",
+        "Q08",
+        "Q14"
       ]
     },
     {
       "id": "A03",
-      "type": "visual_model",
-      "summary": "The trunk acts as an abdominal X connecting each shoulder to the opposite hip that stretches during prep and contracts into contact.",
+      "type": "misconception",
+      "summary": "Refutes the idea that the racket drop behind the head is a preparation pose, clarifying that it is part of the explosive forward swing.",
       "evidence": [
-        "Q16"
+        "Q11"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "visual_model",
+      "summary": "Introduces the abdominal X model connecting opposite shoulder and hip to visualize diagonal fascial stretch and contraction.",
+      "evidence": [
+        "Q20"
       ]
     }
   ],
@@ -360,10 +384,10 @@
       "id": "D01",
       "kind": "cue",
       "targets": [
-        "C03"
+        "C01"
       ],
-      "summary": "Hold or actively press the left arm back across your stomach during the finish to control trunk rotation.",
-      "external_goal": "",
+      "summary": "Throw the hand and racket upward and offset toward the net post or outside box, allowing contact and internal rotation to direct the ball into court.",
+      "external_goal": "Throw hand and racket up toward the net post or outside service box.",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -372,16 +396,16 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q11"
+        "Q06"
       ]
     },
     {
       "id": "D02",
       "kind": "cue",
       "targets": [
-        "C04"
+        "C02"
       ],
-      "summary": "Keep the hips and chest more forward and step on the hitting side to preserve dominant eye sightlines while coiling.",
+      "summary": "Synchronize pulling the left shoulder down and out with the hitting arm rolling back into external rotation as the legs drive upward.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -391,18 +415,18 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q13"
+        "Q12"
       ]
     },
     {
       "id": "D03",
-      "kind": "drill",
+      "kind": "cue",
       "targets": [
-        "C01"
+        "C03"
       ],
-      "summary": "Exaggerate throwing the hand and racket either straight back for flat contact or outward behind the head for slice to feel the racket path differences.",
-      "external_goal": "Throw racket trajectory outward to the net post or behind the head",
-      "scenario_fit": "machine_low",
+      "summary": "Actively pull and hold the non-dominant arm tucked against the stomach to brake trunk rotation and release whip into the ball.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -411,6 +435,44 @@
       "intuition_first_ok": false,
       "evidence": [
         "Q15"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Keep the hips and torso more forward and step toward the hitting side to preserve dominant-eye peripheral vision while coiling.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Exaggerate throwing the racket out to the side behind your head early in the swing to feel how that release angle produces slice across the ball.",
+      "external_goal": "Exaggerate throwing the racket behind the head to the side.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
       ]
     }
   ],

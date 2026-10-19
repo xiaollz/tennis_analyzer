@@ -1,0 +1,612 @@
+{
+ "version": "obs_bind_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/obs_bind_v1.md",
+ "runs": 2,
+ "catalog_sha256": "0aadda95a85c859ad35e21a1a2ba53028f9e5bcd0555c315dee655c0297fa73c",
+ "source_tree": "docs/diagnosis/ftt_tree/tree.json (v1)",
+ "aggregation": "required = in both runs' required; supporting = any other condition either run named; invalid obs/values dropped",
+ "items": {
+  "N-P_OYF48K_CFNI": {
+   "kind": "problem",
+   "episode": "OYf48k-cfNI",
+   "local_id": "P",
+   "node": "N-P_OYF48K_CFNI",
+   "text": "What is fault tolerance in action and why is it essential?",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "A general question about fault tolerance is a theoretical concept rather than an observable action.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_OYF48K_CFNI_S01": {
+   "kind": "symptom",
+   "episode": "OYf48k-cfNI",
+   "local_id": "S01",
+   "node": null,
+   "text": "The player is forced into an awkward swing up above the head with restricted rotation.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-15",
+     "value": "a:finish_above_non_hitting_shoulder"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "above_chest"
+    }
+   ],
+   "new_obs": [],
+   "reason": "The player swings high over the shoulder while hip rotation remains blocked.",
+   "agreement": "required 2/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-15",
+     "value": "a:finish_above_non_hitting_shoulder"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    },
+    {
+     "obs": "OBS-15",
+     "value": "a:finish_above_non_hitting_shoulder"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-15",
+       "value": "a:finish_above_non_hitting_shoulder"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "still_clearly_sideways"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-09",
+       "value": "still_clearly_sideways"
+      },
+      {
+       "obs": "OBS-15",
+       "value": "a:finish_above_non_hitting_shoulder"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "above_chest"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_OYF48K_CFNI_S02": {
+   "kind": "symptom",
+   "episode": "OYf48k-cfNI",
+   "local_id": "S02",
+   "node": null,
+   "text": "The player shanks the ball into the stands or hits it into the bottom of the net when jammed.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-16",
+     "value": "frame_hit"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "net"
+    },
+    {
+     "obs": "OBS-72",
+     "value": "frame"
+    },
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    },
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    }
+   ],
+   "new_obs": [],
+   "reason": "The ball mis-hits off the racket frame or directly into the net due to cramped contact.",
+   "agreement": "required 0/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-16",
+     "value": "frame_hit"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-16",
+       "value": "frame_hit"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-16",
+       "value": "net"
+      },
+      {
+       "obs": "OBS-72",
+       "value": "frame"
+      },
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-16",
+       "value": "net"
+      },
+      {
+       "obs": "OBS-72",
+       "value": "frame"
+      },
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_OYF48K_CFNI_S03": {
+   "kind": "symptom",
+   "episode": "OYf48k-cfNI",
+   "local_id": "S03",
+   "node": null,
+   "text": "The player floats a passive ball back to the middle and resets to neutral instead of attacking.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-26",
+     "value": "steep_upward_angle"
+    },
+    {
+     "obs": "OBS-31",
+     "value": "forward_and_upward"
+    },
+    {
+     "obs": "OBS-43",
+     "value": "dynamic_recovery_stepping"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Lateral landing location of the returned ball across the opponent court width",
+     "values": [
+      "center_middle",
+      "wide_or_corners"
+     ],
+     "layer": "A",
+     "camera": "B"
+    }
+   ],
+   "reason": "The ball launches upward at a steep angle and the player recovers with dynamic stepping.",
+   "agreement": "required 0/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-26",
+     "value": "steep_upward_angle"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-26",
+       "value": "steep_upward_angle"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-31",
+       "value": "forward_and_upward"
+      },
+      {
+       "obs": "OBS-43",
+       "value": "dynamic_recovery_stepping"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-26",
+       "value": "steep_upward_angle"
+      },
+      {
+       "obs": "OBS-43",
+       "value": "dynamic_recovery_stepping"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Lateral landing location of the returned ball across the opponent court width",
+       "values": [
+        "center_middle",
+        "wide_or_corners"
+       ],
+       "layer": "A",
+       "camera": "B"
+      }
+     ]
+    }
+   ]
+  },
+  "OYf48k-cfNI:C01": {
+   "kind": "cause",
+   "episode": "OYf48k-cfNI",
+   "local_id": "C01",
+   "node": "N-C_OYF48K_CFNI_C01",
+   "text": "The player probes imperfectly with footwork and gets way too close to the ball.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-05",
+     "value": "few_adjust_steps"
+    },
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "cramped_contact"
+    },
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    }
+   ],
+   "new_obs": [],
+   "reason": "The player takes few adjusting steps and crowds too close to the ball laterally.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    },
+    {
+     "obs": "OBS-05",
+     "value": "few_adjust_steps"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      },
+      {
+       "obs": "OBS-05",
+       "value": "few_adjust_steps"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "cramped_contact"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-05",
+       "value": "few_adjust_steps"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "OYf48k-cfNI:C02": {
+   "kind": "cause",
+   "episode": "OYf48k-cfNI",
+   "local_id": "C02",
+   "node": "N-C_OYF48K_CFNI_C02",
+   "text": "The player's arm cannot properly extend and the hips are stuck due to crowded spacing.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    },
+    {
+     "obs": "OBS-15",
+     "value": "c:elbow_not_in_front_of_chest_at_end"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Crowded spacing keeps the hitting elbow bent and prevents the hips from rotating open.",
+   "agreement": "required 2/3 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    },
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "still_clearly_sideways"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "still_clearly_sideways"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "still_clearly_sideways"
+      },
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-15",
+       "value": "c:elbow_not_in_front_of_chest_at_end"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "OYf48k-cfNI:C03": {
+   "kind": "cause",
+   "episode": "OYf48k-cfNI",
+   "local_id": "C03",
+   "node": "N-C_OYF48K_CFNI_C03",
+   "text": "High-level opponent quality and deep incoming shots force the player to hit from an out-of-position state.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Opponent skill level and incoming shot quality cannot be observed directly from player video.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  }
+ },
+ "new_obs_candidates": [
+  {
+   "cid": "NC001",
+   "item": "SYM_OYF48K_CFNI_S03",
+   "description": "Lateral landing location of the returned ball across the opponent court width",
+   "values": [
+    "center_middle",
+    "wide_or_corners"
+   ],
+   "layer": "A",
+   "camera": "B"
+  }
+ ],
+ "new_obs_clusters": [
+  {
+   "id": "NEW-OBS-01",
+   "rep": "NC001",
+   "members": [
+    "NC001"
+   ]
+  }
+ ],
+ "stats": {
+  "gapfill": null,
+  "items": 7,
+  "invalid_dropped": 0,
+  "items_with_missing_run": [],
+  "usage": {
+   "promptTokenCount": 10220,
+   "candidatesTokenCount": 1860,
+   "totalTokenCount": 22512,
+   "thoughtsTokenCount": 10432,
+   "calls": 5
+  },
+  "bind_calls": 2,
+  "newobs_cluster_calls": 2
+ }
+}

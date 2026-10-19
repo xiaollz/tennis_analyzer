@@ -1,0 +1,382 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "OYf48k-cfNI",
+    "url": "https://www.youtube.com/watch?v=OYf48k-cfNI",
+    "title": "Fault Tolerance In Action",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 232.0,
+    "upload_date": "2024-05-30",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "整期视频纯粹在通过职业球员比赛录像分析容错机制（fault tolerance）与胜率关系，没有任何让观众去执行的动作、练习、口令或自测方法。"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/OYf48k-cfNI.en.vtt",
+    "kind": "auto",
+    "sha256": "45e754ac5c6994561a7dcbafe2bfe2255ca123729d8c4d3eb8919289e0b37c2c",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_OYf48k",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "What is fault tolerance in action and why is it essential to winning tennis matches?",
+    "definition": "Tennis players frequently get jammed or caught out of position against tough opponents, but winning matches requires maintaining contact in front to produce an acceptable shot rather than missing outright.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "inside-in forehand footwork and preparation"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q08",
+      "Q09",
+      "Q12"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "okay we've got a really great example of fault tolerance here let's watch the point first it's fault tolerance in action good execution to finish it",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "so let's see if you saw it it's right here on this inside in forehand right there",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "so this is something I think people don't notice enough which is what happened on this shot this is not I mean it's fine probing but it's not good probing",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "this is not perfect he's way too close to the ball",
+      "start": 28.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the arm can't really extend the hips are a little stuck he's doing a pretty good job adjusting with his body takes this kind of awkward swing up above his head",
+      "start": 30.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "but he hits basically the shot he's trying to hit not as clean as he wants it still gets camon on the defensive and executes good finish",
+      "start": 38.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "okay this is what happens when you play against good good players camor is an extremely good player and because of that that's an awesome Inside Out forehand and yet it comes back hard and deep",
+      "start": 49.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "so this is what happens when you play against really good players the the game is very difficult and because the game is very difficult you're going to be a little bit out of position",
+      "start": 63.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "and you're going to have to succeed when you're out of position and if we look at this he doesn't shank this ball into the stand he doesn't hit this ball into the bottom of the net",
+      "start": 70.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "that's what's important is it's it's fundamentally the same contact here so he sees it he recognizes it and he swings through the ball in front of him",
+      "start": 78.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "he swings through the ball that's in front of him and he creates a decent shot from a compromised position and that is fall tolerance right there this is exactly what we're trying to do",
+      "start": 86.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "and mathematically these are the points that you have to win these are the points you have to win in order to win tennis matches",
+      "start": 98.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "there's a couple different levels here one is you're jammed and you kind of float it back to the middle and reset to neutral that's fine it's much better than outright missing",
+      "start": 106.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "um but the really good players even out of a compromised condition can still hit a good shot and he still hits basically the shot he trying to hit from that compromised position",
+      "start": 114.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "what his Inside Out forehand is supposed to look like so here's one that he moves and probes perfectly and you can even hear the difference in the sound",
+      "start": 127.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "rips this ball much deeper much harder chori outright misses and so you know fair enough this is a better shot than the last one",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "what's important really is not this shot versus the last one what's important is that both of them are high quality shots and neither of them is an outright Miss",
+      "start": 148.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "so yeah this one maybe is 10 20 even 30% better than the last one probably 10 20% better than the last one that 10 20% isn't what wins and lose matches",
+      "start": 156.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "what wins and loses matches is that the other one was 80% as good as this one that's what wins and loses matches instead of being an outright miss or or resetting to neutral",
+      "start": 164.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "so see the difference in body position here perfect probing perfect extension perfect weight transfer perfect everything",
+      "start": 206.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "we can't have it like this every time either because tennis is difficult or just because your opponent is too good",
+      "start": 213.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "but being able to succeed when you don't prepare this well is a massive part of your win rate in tennis",
+      "start": 227.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player is positioned too close to the incoming ball, leaving the arm unable to extend fully and the hips restricted.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player finishes with an awkward swing above the head due to being cramped for space.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The ball is struck less cleanly than desired but still penetrates deep enough to keep the opponent defensive.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "When jammed, a compromised shot either misses outright or floats passively back to the middle.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q13",
+        "Q19"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Suboptimal probing footwork causes the player to position themselves too close to the incoming ball.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Being jammed too close to the ball restricts arm extension and prevents natural hip rotation.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Playing against high-level opponents who hit hard and deep inevitably forces players out of ideal position.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q08"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Analyzing Holger Rune hitting an inside-in forehand under pressure against Cameron Norrie to illustrate fault tolerance in live pro play.",
+      "evidence": [
+        "Q01",
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Even from an awkward body position with jammed hips, maintaining the same fundamental contact point in front allows an effective shot.",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Contrasting Rune's jammed forehand with his perfectly prepared inside-out forehand showing full extension and weight transfer.",
+      "evidence": [
+        "Q15",
+        "Q20"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Matches are not won by having 10-20% higher peak shot quality, but by making compromised shots 80% as good instead of missing outright.",
+      "evidence": [
+        "Q18",
+        "Q19",
+        "Q22"
+      ]
+    }
+  ],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

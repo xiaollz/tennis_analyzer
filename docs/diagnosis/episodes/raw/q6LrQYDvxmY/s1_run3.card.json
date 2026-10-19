@@ -1,0 +1,463 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "q6LrQYDvxmY",
+    "url": "https://www.youtube.com/watch?v=q6LrQYDvxmY",
+    "title": "Why Pros Hit So Far Away",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1036.0,
+    "upload_date": "2026-10-15",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as holding a cone or weight in the non-hitting hand and using a lunging restriction drill to calibrate lateral contact spacing."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/q6LrQYDvxmY.en.vtt",
+    "kind": "auto",
+    "sha256": "2e3cac02b440e52231147c0fc9271f41815f12c785068db7c370e3124bb0432c",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_q6LrQY",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do pros hit so far away from their body on the forehand?",
+    "definition": "Improving forehand mechanics requires pushing the contact point farther away laterally and in depth, but players habitually revert to a jammed contact lane that restricts the shoulder and trunk rotation.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic topspin forehand mechanics",
+      "closed or semi-open stance unit turn"
+    ],
+    "target_player": "intermediate players working on modern forehand mechanics who struggle with crowding the ball",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "you need to push the ball away from you farther out to your right. This hitting lane here is going to feel comically far away to your right compared to this hitting lane",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "very often, even if you're doing everything right, you're going to intuitively go back to your old jammed contact point, and that's going to make things break down",
+      "start": 50.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "First trick for finding the spacing is use your non-hitting arm. So, for Alexa, that's the left arm. And push it across your body in your preparation.",
+      "start": 66.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And this is like it it is a it is a balance cue and a spacing cue to keep that ball off to your right, where that better hitting slot is.",
+      "start": 82.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So now she's going to try to hit hard, but with that left arm kind of dangling in here instead of out and stabilizing her.",
+      "start": 121.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Just holding something will help you do it because the act of holding it, the act of kind of seeing it in your periphery, will all of a sudden make your brain kind of pay attention to that left hand",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And if you're feeling good with that, you can upgrade it to a weight. This is 2 and 1/2 lb.",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And because it's impossible to be jammed, it's actually not that hard. Now, this is probably more of the correct contact point.",
+      "start": 270.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And so, you want to either do this drill where you don't let yourself move and just lunge or like actually probe the ball comically far away.",
+      "start": 287.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "When you probe the ball comically far to the right, that is going to force you to shift your balance onto your whole foot or the ball of your foot when you load.",
+      "start": 348.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So, if the ball is probed here, you have to kind of underhand yank the elbow across your body. But because the ball is probed here, she's facing this direction, the elbow is driving that direction.",
+      "start": 380.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So, now we're going to do the lunge drill, and Alexa's going to try to take as little steps as possible, and just create as high-quality topspin contact as she can.",
+      "start": 419.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "We need that feeling of the hand being below the ball, being kind of flung by the trunk and the shoulder, and that feeling of the hand rolling on that gentle upward diagonal through the ball.",
+      "start": 554.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Versus if because that ball is so low if I just use a slightly more slanted plane of rotation see I didn't catch that perfectly with my hand but it still cleared the net.",
+      "start": 642.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "there, most of my height and spin isn't coming from probing, you know, so my racket's on that gentle upward plane. It's just coming from releasing the hand.",
+      "start": 758.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Now let's talk about depth spacing, because just like left-right, just like high low, if you get the back front spacing wrong, that can also kind of paralyze your shoulder, paralyze your natural hitting action.",
+      "start": 803.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So, see how now, you know, she's got either get the hitting arm way in like a chicken wing or it gets stuck behind the trunk or whatever.",
+      "start": 845.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "When she's here and leaning in, that is another, you know, 6 in of depth that you have to set up for.",
+      "start": 876.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "sometimes we see this where the the desire to be aggressive, you run into the ball and jam yourself like this.",
+      "start": 963.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "If you find yourself in the butt back, racket forward, be a little more patient.",
+      "start": 1030.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The hitting arm crunches in close to the torso like a chicken wing or gets pinned behind the rotating trunk.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player underhand yanks the elbow across the torso instead of driving it forward along the pressing vector.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Body balance falls off to the left onto the back heel during the follow-through instead of driving through the court.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players intuitively regress to an old, crowded contact lane developed from pushing mechanics instead of trusting lateral distance.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The non-hitting arm dangles loosely instead of extending across the body to calibrate spacing and stabilize trunk rotation.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "unclear",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Crowding the ball deprives the hitting arm apparatus of room, forcing the elbow to yank across the torso rather than pressing forward.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players fail to budget additional depth buffer in front when stepping or leaning forward, crashing into the ball.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "PROBLEM",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Pushing the ball far away laterally enables the pressing vector where the hitting elbow drives straight forward along the chest's facing orientation.",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "Demonstrating hits with a dangling left arm versus an extended left arm highlights loss of trunk coordination and velocity when the non-hitting side is loose.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Proper modern lateral spacing feels comically far to the outside compared to the familiar jammed recreational hitting lane.",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Vertical margin comes from tilting the entire trunk plane of rotation on low balls rather than independently lifting with the arm.",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C01"
+      ],
+      "summary": "Push the non-hitting arm across the body during preparation to serve as an active spacing marker and stabilizer.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Hold an object like a cone in the non-hitting hand during preparation so peripheral vision keeps the brain aware of that balance lever.",
+      "external_goal": "Hold a cone in the non-hitting hand",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Upgrade from holding a cone to holding a 2.5 lb weight in the non-hitting hand to add visceral load to the stabilizing side.",
+      "external_goal": "Hold a 2.5 lb weight in the non-hitting hand",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Execute the lunge drill by restricting adjustment footwork to a single lunge to force contact into a wide lateral slot and find optimal shoulder release.",
+      "external_goal": "Take as few steps as possible and lunge to reach the feed",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Stay patient and wait for the ball into the proper depth slot rather than overreaching forward with the racket and sticking the hips back.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

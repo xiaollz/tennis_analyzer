@@ -12,8 +12,8 @@
   "classification": {
     "is_teaching": "teaching",
     "stroke": "backhand",
-    "format": "lecture",
-    "reason": "The coach provides executable instructions and cues, such as engaging the upper back down and back, bending knees with chest to the ground on low balls, and practicing closer in with slower balls or a lighter racket."
+    "format": "demo_with_player",
+    "reason": "The coach provides actionable instructions and regressions, such as using a double bend on low balls and moving closer to the court with slower balls to build strength and stability."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/Z9XwaXDVkZg.en.vtt",
@@ -31,12 +31,12 @@
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How do you build a stable and controllable one-handed backhand foundation?",
-    "definition": "Players often lack control and stability on the one-handed backhand, spraying balls long or mishitting because they lack upper back engagement, collapse racket structure, and overcomplicate the swing with premature roll and timing demands.",
+    "title_as_question": "What is the simple foundation required to control and power a one-handed backhand?",
+    "definition": "Players struggle to control the racket head and squarely hit the ball on a one-handed backhand because they lack foundational upper back engagement and proper structural alignment.",
     "node_id": "PENDING",
     "prerequisites": [
-      "Eastern backhand grip (roughly 90 degrees)",
-      "Basic rally ability"
+      "one-handed backhand grip",
+      "basic contact timing"
     ],
     "target_player": "",
     "evidence": [
@@ -47,8 +47,8 @@
   "quotes": [
     {
       "id": "Q01",
-      "text": "The foundation though is this. So let me talk about a couple properties of this swing. First of all, see how I am not starting with the racket head above my hand.",
-      "start": 47.0,
+      "text": "What I am performing here is the simplest version of the one-handed backhand. Now, this doesn't look a whole lot like what Alexa was just doing from the baseline, but if you start from this swing, you're going to",
+      "start": 12.32,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -63,7 +63,7 @@
     },
     {
       "id": "Q03",
-      "text": "But you are using the muscles back here around the shoulder blade, not the traps. We're not pulling up here. We are down and back just a little bit.",
+      "text": "But you are using the muscles back here around the shoulder blade, not the traps. We're not pulling up here. We are down and back just a little bit. That's going to let me hold the racket very stably.",
       "start": 88.0,
       "speaker": "coach",
       "about": "general",
@@ -71,6 +71,14 @@
     },
     {
       "id": "Q04",
+      "text": "All you're trying to do is feel that little activation here, that little pull with the upper back and put it through the ball.",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
       "text": "Instead of preparing here, use your left hand and prepare here. And now gravity is going to make the racket go like this.",
       "start": 208.0,
       "speaker": "coach",
@@ -78,7 +86,7 @@
       "source": "subtitle"
     },
     {
-      "id": "Q05",
+      "id": "Q06",
       "text": "It is roughly 90° so that my forearm and arm can roll like this. If you have more of a continentalish grip with a slant here, this roll doesn't work for producing the stroke.",
       "start": 217.0,
       "speaker": "coach",
@@ -86,17 +94,9 @@
       "source": "subtitle"
     },
     {
-      "id": "Q06",
-      "text": "So, I cannot completely relax into this or I can't control the racket head at all. You you have to feel it kind of land on this.",
-      "start": 274.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
       "id": "Q07",
-      "text": "If you just drop it all the way down here, you can't hit.",
-      "start": 293.0,
+      "text": "Now, I do want to stress that if I completely relax during this gravity portion, the the the the stroke really doesn't work. So, I cannot completely relax into this or I can't control the racket head at all.",
+      "start": 264.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -106,12 +106,12 @@
       "text": "The difference between my ability to get this racket head squarely on ball every time versus not, is the engagement back here, both during prep and of course throughout the entire swing.",
       "start": 379.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "demonstrator_induced",
       "source": "subtitle"
     },
     {
       "id": "Q09",
-      "text": "The the solution is not to like drop the arm in here. then you're going to lose what we just talked about that's so valuable.",
+      "text": "The the solution is not to like drop the arm in here. then you're going to lose what we just talked about that's so valuable. So the solution like we always talk about chest to the ground",
       "start": 406.0,
       "speaker": "coach",
       "about": "general",
@@ -119,70 +119,62 @@
     },
     {
       "id": "Q10",
-      "text": "The solution like we always talk about chest to the ground and now this exact same swing goes low to high obviously as well the more I can get that double bend",
-      "start": 411.0,
+      "text": "so it's not just chest to the ground bend at the knees is very helpful as well and now that swing feels almost exactly the same as it feels up high",
+      "start": 423.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q11",
-      "text": "If you don't have that strength, then the the physical ability to produce this swing independent of what you know about technique is going to be compromised.",
-      "start": 483.0,
+      "text": "at a certain point with the one-hander in particular, the physical strength of this apparatus is extremely important. If you don't have that strength, then the the physical ability to produce this swing independent of what you know about",
+      "start": 476.319,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q12",
-      "text": "and you know, maybe try with a lighter racket or try from closer into the court where the balls are moving slower where you don't need as much strength to get it through the air",
-      "start": 504.0,
+      "text": "maybe try with a lighter racket or try from closer into the court where the balls are moving slower where you don't need as much strength to get it through the air and see if that helps.",
+      "start": 503.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q13",
-      "text": "The simplest effect of backhand if I just pull slightly harder is completely fine for making these balls.",
-      "start": 537.0,
+      "text": "Fundamentally, the feeling of ripping a one-hander with control is a feeling of attacking the ball with this part of your back.",
+      "start": 512.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q14",
-      "text": "this thing I'm doing now, it's much more harder to time this. And it's much more harder to time this with trunk than it is to time the simplest.",
-      "start": 596.0,
+      "text": "still. So, you know, I I if you if you try to lock this in and you pull your trap up, that's probably when you're going to get like, wait, coach, if I engage, I can't release the shoulder. If",
+      "start": 698.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q15",
-      "text": "If you pull it more down and back, that's where you're going to feel comfortable still releasing even though you're stable here.",
-      "start": 711.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q16",
-      "text": "She's not attacking the ball with this part of her body. Maybe she, you know, she's flicking it more or it's more wristy or there's a lot more releasing and see like it it you can't immediately tell",
-      "start": 723.0,
+      "text": "she doesn't quite have control over what's happening through the air the way she used to. And like, yeah, like it's okay, it's close, right? She's a little wide.",
+      "start": 737.0,
       "speaker": "coach",
       "about": "demonstrator_induced",
       "source": "subtitle"
     },
     {
-      "id": "Q17",
+      "id": "Q16",
       "text": "All of a sudden, they now actually connect with the ball in the air because that upper back lets you actually aim the entire kinetic chain into that ball in the air.",
-      "start": 762.0,
+      "start": 759.0,
       "speaker": "coach",
       "about": "demonstrator_natural",
       "source": "subtitle"
     },
     {
-      "id": "Q18",
+      "id": "Q17",
       "text": "you are going to feel a lot better on the one-hander if you use a two-handed pulling action.",
       "start": 860.0,
       "speaker": "coach",
@@ -190,32 +182,24 @@
       "source": "subtitle"
     },
     {
+      "id": "Q18",
+      "text": "The right side is what matters, but you get so much more balance and control over where the pulling action ends up if you use your entire back and both hands to pull",
+      "start": 913.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
       "id": "Q19",
-      "text": "It is a tool to help you aim the right side of your racket.",
-      "start": 882.0,
+      "text": "Always remember that the flatter the shot is, the more back to front you swing, the easier that ball is to time. The more roll you use, the more you risk mishitting your contact zone.",
+      "start": 1034.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q20",
-      "text": "The flatter the shot is, the more back to front you swing, the easier that ball is to time. The more roll you use, the more you risk mishitting your contact zone.",
-      "start": 1036.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q21",
-      "text": "giving it just like a nice quick little flat punch and following it in you're going to a lot more points like that",
-      "start": 1074.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q22",
-      "text": "So, connect here. Feel the racket head in the air as a first principle, and that will give you the tools to play.",
+      "text": "Connect here. Feel the racket head in the air as a first principle, and that will give you the tools to play.",
       "start": 1152.0,
       "speaker": "coach",
       "about": "general",
@@ -225,10 +209,22 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "Racket contact feels unstable, resulting in off-center hits on the strings or spraying balls several feet out.",
+      "description": "The ball flies wide or long due to lack of trajectory control.",
       "kind": "ball_outcome",
       "layer": "A",
       "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player fails to hit the center of the racket face cleanly on the ball.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
       "phase": "contact",
       "obs_ref": "NEW-OBS",
       "evidence": [
@@ -236,35 +232,23 @@
       ]
     },
     {
-      "id": "S02",
-      "description": "Player relies on excessive wrist flicking or uncontrolled arm release, struggling to control the path of the racket through the air.",
-      "kind": "visible",
-      "layer": "A",
-      "camera": "B",
-      "phase": "forward_swing",
-      "obs_ref": "NEW-OBS",
-      "evidence": [
-        "Q16"
-      ]
-    },
-    {
       "id": "S03",
-      "description": "Player feels inability to aim or maneuver the racket stably through space, especially on higher balls.",
+      "description": "The racket feels unstable and difficult to maneuver through the hitting zone.",
       "kind": "feel",
       "layer": "C",
       "camera": "none",
       "phase": "forward_swing",
       "obs_ref": "NONE",
       "evidence": [
-        "Q08",
-        "Q17"
+        "Q03",
+        "Q07"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "The player fails to engage the upper back muscles down and back around the shoulder blade, preventing the body from stably aiming the kinetic chain into the ball.",
+      "statement": "The upper back around the shoulder blade is not engaged down and back during preparation and swing.",
       "depth": 1,
       "layer": "B",
       "node_id": "PENDING",
@@ -276,19 +260,29 @@
     },
     {
       "id": "C02",
-      "statement": "The player completely relaxes during the gravity drop, letting the racket head fall all the way down instead of catching it on the forearm soft tissue complex.",
+      "statement": "The grip has too much of a continental slant rather than roughly 90 degrees, preventing forearm roll.",
       "depth": 2,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q06",
-        "Q07"
+        "Q06"
       ]
     },
     {
       "id": "C03",
-      "statement": "The player drops the hitting arm down to reach low balls instead of lowering the trunk and bending the knees, disconnecting the upper back foundation.",
+      "statement": "The arm completely relaxes into the gravity drop instead of keeping the racket landing on the soft tissue complex.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player stands straight and drops the arm instead of lowering the torso and bending the knees on low balls.",
       "depth": 2,
       "layer": "A",
       "node_id": "PENDING",
@@ -298,9 +292,9 @@
       ]
     },
     {
-      "id": "C04",
-      "statement": "The player lacks the physical strength in the shoulder and back apparatus (or uses a racket that is too heavy) to keep the racket stable through contact.",
-      "depth": 2,
+      "id": "C05",
+      "statement": "The physical muscular strength of the upper back and shoulder complex is insufficient to support and maneuver the racket weight.",
+      "depth": 3,
       "layer": "C",
       "node_id": "PENDING",
       "active_or_passive": "passive",
@@ -311,7 +305,7 @@
   ],
   "chain": [
     {
-      "from": "C04",
+      "from": "C05",
       "to": "C01",
       "strength": "coach_stated",
       "evidence": [
@@ -319,7 +313,31 @@
       ]
     },
     {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
       "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C04",
       "to": "C01",
       "strength": "coach_stated",
       "evidence": [
@@ -328,34 +346,10 @@
     },
     {
       "from": "C02",
-      "to": "C01",
-      "strength": "coach_implied",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
       "evidence": [
         "Q06"
-      ]
-    },
-    {
-      "from": "C01",
-      "to": "S01",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q08"
-      ]
-    },
-    {
-      "from": "C01",
-      "to": "S02",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q16"
-      ]
-    },
-    {
-      "from": "C01",
-      "to": "S03",
-      "strength": "coach_stated",
-      "evidence": [
-        "Q17"
       ]
     }
   ],
@@ -363,36 +357,36 @@
     {
       "id": "A01",
       "type": "mechanics",
-      "summary": "Holding a 90-degree Eastern backhand grip allows the arm and forearm to roll and release into topspin without breaking wrist alignment.",
+      "summary": "Stabilizing the shoulder blade down and back allows the entire kinetic chain to aim the racket face squarely at contact.",
       "evidence": [
-        "Q05"
+        "Q03",
+        "Q16"
       ]
     },
     {
       "id": "A02",
-      "type": "contrast_demo",
-      "summary": "Demonstrator shows that without upper back connection, strokes become flicky and miss wide, while re-engaging immediately stabilizes the contact zone.",
+      "type": "feel",
+      "summary": "Ripping a controlled one-hander feels like actively attacking the ball with the upper back rather than flicking with the arm.",
       "evidence": [
-        "Q16",
-        "Q17"
+        "Q13"
       ]
     },
     {
       "id": "A03",
-      "type": "misconception",
-      "summary": "Players believe engaging the back means pulling the trapezius muscles upward or squeezing like a pull-up, which prevents natural shoulder release.",
+      "type": "contrast_demo",
+      "summary": "The demonstrator shows that hitting without back engagement leads to spraying balls wide and losing racket head control.",
       "evidence": [
-        "Q03",
-        "Q15"
+        "Q15",
+        "Q16"
       ]
     },
     {
       "id": "A04",
-      "type": "feel",
-      "summary": "Ripping a controlled one-handed backhand feels like attacking the ball with the upper back and using both hands to pull through space.",
+      "type": "misconception",
+      "summary": "Engaging the back does not mean pulling the shoulder blades together like a pull-up or shrugging the traps up.",
       "evidence": [
-        "Q18",
-        "Q19"
+        "Q03",
+        "Q14"
       ]
     }
   ],
@@ -403,7 +397,7 @@
       "targets": [
         "C01"
       ],
-      "summary": "Engage the muscles around the shoulder blade down and back rather than lifting the traps during preparation and swing.",
+      "summary": "Engage the muscles around the shoulder blade down and back instead of pulling up with the traps to stabilize the racket.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -418,13 +412,14 @@
     },
     {
       "id": "D02",
-      "kind": "cue",
+      "kind": "drill",
       "targets": [
-        "C02"
+        "C02",
+        "C03"
       ],
-      "summary": "Use the non-dominant hand to prepare the racket tip up, allowing gravity to initiate the loop while maintaining tension on the forearm.",
+      "summary": "Use the left hand to prepare the racket head higher and allow gravity to initiate the racket drop into forearm roll.",
       "external_goal": "",
-      "scenario_fit": "shadow",
+      "scenario_fit": "mini_tennis",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -432,18 +427,18 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q04"
+        "Q05"
       ]
     },
     {
       "id": "D03",
       "kind": "cue",
       "targets": [
-        "C03"
+        "C04"
       ],
-      "summary": "Point the chest toward the ground and bend at the knees to lower contact height rather than dropping the hitting arm.",
-      "external_goal": "Point chest toward the ground",
-      "scenario_fit": "shadow",
+      "summary": "Execute a double bend by facing the chest toward the ground and bending the knees to hit low balls with the same swing sensation.",
+      "external_goal": "Point chest towards the ground while bending knees.",
+      "scenario_fit": "mini_tennis",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -456,13 +451,13 @@
     },
     {
       "id": "D04",
-      "kind": "drill",
+      "kind": "progression",
       "targets": [
-        "C04"
+        "C05"
       ],
-      "summary": "Practice hitting simpler, flatter strokes from closer into the court with slower incoming balls or a lighter racket to build apparatus strength.",
-      "external_goal": "",
-      "scenario_fit": "mini_tennis",
+      "summary": "Switch to a lighter racket or move closer inside the court on slower balls to build required upper back strength and control.",
+      "external_goal": "Hit slower balls closer to the net with a lighter racket.",
+      "scenario_fit": "machine_low",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -475,12 +470,12 @@
     },
     {
       "id": "D05",
-      "kind": "cue",
+      "kind": "drill",
       "targets": [
         "C01"
       ],
-      "summary": "On short or high balls inside the court, hit a quick flat punch straight back-to-front rather than rolling up on the ball.",
-      "external_goal": "Swing straight back-to-front into the court",
+      "summary": "Use both hands in a two-handed pulling action during preparation to balance and guide the pull through the hitting zone.",
+      "external_goal": "Keep non-dominant hand supporting racket throat into prep.",
       "scenario_fit": "mini_tennis",
       "ban_conflict": {
         "flag": false,
@@ -489,7 +484,7 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q21"
+        "Q17"
       ]
     }
   ],

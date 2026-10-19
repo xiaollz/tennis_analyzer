@@ -1,0 +1,486 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "2J8q7sn4JLc",
+    "url": "https://www.youtube.com/watch?v=2J8q7sn4JLc",
+    "title": "Why Your Forehand Sprays, and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 500.0,
+    "upload_date": "2026-04-05",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach provides executable drills such as nesting the handle into the V and hitting with an open palm, as well as a self-drop test to calibrate racket face feel."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/2J8q7sn4JLc.en.vtt",
+    "kind": "auto",
+    "sha256": "4209ec9072b6b93e7d5ba2f9576b12be0815ed57e14dec1fcb6cfabb8b04e2da",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_2J8q7s",
+      "s1_r2_2J8q7s",
+      "s1_r3_2J8q7s"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why Does Your Forehand Spray, and How Can You Fix It?",
+    "definition": "The forehand misses inconsistently because a broken sensory link between the hand contours and the racket handle prevents the brain from perceiving momentum and calibrating contact timing.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "semi-western or western forehand grip",
+      "fundamental swing mechanics in place"
+    ],
+    "target_player": "Players with sound biomechanics whose forehand sprays due to poor racket face feel or an oversized handle",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q20"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Because if it is, then you'll never truly be able to perceive this momentum during the loading and the hitting, and then you'll never truly be able to calibrate your contact.",
+      "start": 5.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "There is a broken link, not necessarily in your swing itself, but in the motor program.",
+      "start": 18.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "So, there's a broken sensory link where your intuition is not getting enough information about what's happening to self-organize into the proper timing.",
+      "start": 37.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "I made that adjustment because of haptic feedback here on the bottom fingers and a lot of haptic feedback here where it's flush against the handle.",
+      "start": 75.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "The motor program that my brain is running is getting such high-fidelity input from the way that I'm holding the handle. So, that's number one to check. Is that crashing in here?",
+      "start": 98.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "instead of the handle getting stuck here, it actually just like your these contours of your hand just caress the handle and all of a sudden you can feel what you're doing and now your brain just starts auto-correcting",
+      "start": 123.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "It's also what we're really talking about is the width of this top face. And that may need to be smaller so that your hand caresses it.",
+      "start": 155.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "caresses it. So what I'm going to do now is a demo where I disengage that top reference. So I'm creating that gap that I said kills your control. And this is as if the racket were too big to",
+      "start": 161.88,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "I just don't have great racket face control because that thing is is out of my hand. And so I can only really feel the racket on the bottom right now.",
+      "start": 173.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "but it's still just garbage. And the reason it's garbage is I can't perceive the pressure profile through here anymore. And if I can't perceive the pressure profile through here, then I have no idea number one, I have no",
+      "start": 193.16,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And then number two, I have no idea where the load is releasing.",
+      "start": 209.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "I'm going to nestle the skinny part, I'm going to nestle that skinny part into the V here. Make sure it's all the way around with full contact and hit with an open palm.",
+      "start": 247.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And so, by taking away all of your haptic information except that, I'm forcing you to perceive the racket's momentum through that.",
+      "start": 286.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "You're supposed to self-organize with a goal-oriented task into the mechanics that you want.",
+      "start": 325.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "where I'm just open palm here, at least a thousand of these kind of swings, where we take away the bottom reference and force your brain to innervate the top of that bracket, in order to actually learn how to",
+      "start": 367.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "on the continental grip, because the continental isn't here, the continental is here, the V of your hand is on the skinny part of the racket. So, on the continental feed, you're getting all of this contact telling you where",
+      "start": 394.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "See, on my forehand, I have this just as innervated as on the continental. And so, it's it's just trivial to feed with this, like this, the same way like this feels exactly the same as feeding with continental.",
+      "start": 435.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "that's a really, really good litmus test is your ability to just self-drop with your forehand.",
+      "start": 467.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "once you can do that, all you have to do is put the bottom of your hand back on without losing the same momentum pattern",
+      "start": 482.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "It's like already like the biomechanics are really, really good and the control system is really, really lacking.",
+      "start": 495.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player sprays balls inconsistently and fails to calibrate contact timing across consecutive hits.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player feels disconnected from the racket handle with no sense of whether the swing is properly loaded or where that load is releasing.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player struggles or fails to accurately feed or drop-feed balls out of hand using the forehand grip.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q16",
+        "Q18"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The racket handle is too large or wide at the top bevel to fit the contours of the hand, blocking physical nesting.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "A broken sensory feedback loop prevents the motor program from receiving enough high-fidelity haptic information to auto-correct timing.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Disengagement and gap creation at the top contact area isolates tactile sensation to the bottom fingers, blinding the player to the swing pressure profile.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03",
+        "Q10"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01",
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Full tactile contact along the upper bevel allows the hand to perceive the racket's momentum and pressure profile during loading and release.",
+      "evidence": [
+        "Q01",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "The coach deliberately separates the top of his hand from the grip to show how relying only on the bottom fingers ruins racket face accuracy.",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Using an Alcaraz-style grip naturally drives the swing into a larger loop to self-organize racket momentum toward the target.",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Spraying the forehand is often diagnosed as faulty swing mechanics when it is actually an un-innervated sensory feedback loop caused by poor handle fit.",
+      "evidence": [
+        "Q02",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Check whether the top edge of the handle crashes awkwardly into the fingers or whether the hand contours can smoothly caress the bevel.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Nestle the narrow edge of the handle snugly into the V of the hand and hit balls with an open palm to isolate momentum perception to that single haptic contact point.",
+      "external_goal": "Direct the ball onto the red target using only top-hand haptic feedback",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Accumulate around a thousand open-palm forehand swings over a month without using the bottom fingers to innervate the top contact area and calibrate the hitting slot.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Test whether you can easily self-drop and feed balls with your forehand grip with the same precision and confidence as with a continental grip.",
+      "external_goal": "Drop and feed the ball accurately into a target zone",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "progression",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Once you can successfully rally with an open palm, re-engage the bottom fingers on the handle while preserving the exact same momentum perception.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_2J8q7s",
+        "s1_r2_2J8q7s",
+        "s1_r3_2J8q7s"
+      ],
+      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_draft"
+}
