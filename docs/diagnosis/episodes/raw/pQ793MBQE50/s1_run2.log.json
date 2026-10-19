@@ -1,0 +1,37 @@
+{
+  "id": "pQ793MBQE50",
+  "run": 2,
+  "model": "gemini-3.8-flash",
+  "prompt_version": "ep_s1_v2",
+  "temperature": 0.45,
+  "ts": "2026-10-18 15:38:58 +0800",
+  "calls": 1,
+  "attempts": [
+    {
+      "status": "ok",
+      "elapsed_s": 78.7,
+      "usage": {
+        "promptTokenCount": 7802,
+        "candidatesTokenCount": 4996,
+        "totalTokenCount": 20396,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7802
+          }
+        ],
+        "thoughtsTokenCount": 7598,
+        "serviceTier": "standard"
+      },
+      "response_chars": 15978
+    }
+  ],
+  "usage_total": {
+    "promptTokenCount": 7802,
+    "candidatesTokenCount": 4996,
+    "totalTokenCount": 20396,
+    "thoughtsTokenCount": 7598,
+    "cachedContentTokenCount": 0
+  },
+  "ok": true
+}

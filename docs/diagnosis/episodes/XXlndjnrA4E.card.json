@@ -1,0 +1,488 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "XXlndjnrA4E",
+    "url": "https://www.youtube.com/watch?v=XXlndjnrA4E",
+    "title": "Peripheral Vision Lets You Volley Like the Pros",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 499.0,
+    "upload_date": "2025-06-29",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "volley",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable drills and cues, including a wall juggling drill with a fixed gaze, wall volleys tracking the bounce off the wall, and eliminating backswing."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/XXlndjnrA4E.en.vtt",
+    "kind": "auto",
+    "sha256": "57a682b5a508112f683ad981e24be0d9d30225dfe55bf185236ff96628115018",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_XXlndj",
+      "s1_r2_XXlndj",
+      "s1_r3_XXlndj"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can you use peripheral vision and proper mechanics to hit clean reaction volleys under time pressure?",
+    "definition": "Players struggle to hit crisp reaction volleys under time pressure because they try to follow the ball with foveal focus, take an unnecessary backswing, and contact the ball too far below eye level.",
+    "node_id": "N-P_XXLNDJNRA4E",
+    "prerequisites": [
+      "basic volley grip and posture",
+      "net positioning"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There is something that NovakJokovic is doing with his eyes that you can copy literally tomorrow to be able to hit crisp, clean reaction volleys like this under time pressure",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "If you watch his gaze during this volley, you'll notice that at contact here, it's not even directed at the ball.",
+      "start": 23.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "This is possible because humans can perceive motion really, really well in peripheral vision. You don't necessarily have to have the object in focus to see where it's going.",
+      "start": 33.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And in fact, your processing of motion in peripheral vision is actually much quicker and much more intuitive.",
+      "start": 41.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And so, if we watch Djokovic, what we're going to see is that there's really only two fixations in this entire receiving process.",
+      "start": 48.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Now as that ball starts to move, he's not immediately trying to follow it off her strings. And this is the real secret you can implement for these reaction volleys.",
+      "start": 63.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "The gaze that you use is calm. You watch your opponent's contact and your eyes kind of rest there.",
+      "start": 70.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "There's a processing mode your brain uses with peripheral vision you can learn to feel and recruit here which is actually much much faster than trying to follow the ball with your focus.",
+      "start": 83.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "This is exactly how highle juggling works. You'll notice there's only two fixations here both the apexes of the balls.",
+      "start": 93.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "All of these little adjustments, the hand adjustments, the balance adjustments, they're coming from an awareness, an observation of ball movement that is happening in the periphery.",
+      "start": 130.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So, as you develop this calm gaze, you'll have that first fixation on your opponent's contact, and your eyes will just naturally flick and find the ball one more time before you hit it.",
+      "start": 151.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "That nice still, calm gaze and then that one little adjustment in the middle of the swing and then the eyes rest there until the racket makes contact.",
+      "start": 173.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So, first we're going to talk about juggling, which is a great little isolation drill to drill your eyes.",
+      "start": 204.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "The reason I like this is this is best done where you pick one fixation on the wall and you stare at it while you toss the balls.",
+      "start": 224.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And volleys are actually one of the best things to practice on the wall because the wall practice is most similar to what actually happens in matches.",
+      "start": 244.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "To succeed here, see the ball hit the wall. I repeat, see the ball hit the wall. That is the most important fixation.",
+      "start": 252.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "The paradigm shift here is that calm gaze where you're looking forward. You are attentive to what's happening, whether that's the ball bouncing off the wall or whether it's your opponent striking it.",
+      "start": 278.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "The most important concept with the hands is that you are placing the racket behind the ball. You are not swinging at it. There is no back swing on a reaction or quick volley.",
+      "start": 315.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "watch Novak's hands. They do not go back. The hand is placed behind the ball. And then there is a tiny forward swing.",
+      "start": 333.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "You'll watch sometimes there's even like a brief pause where he waits for the ball... instead of bringing it farther back before that little punch forward.",
+      "start": 344.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "And what I see from a lot of you guys is you're in this reaction situation... You try to take a back swing, and that's when the shanks come in.",
+      "start": 361.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "The other thing I want you to notice is that both hands generally move together... that off hand generally stays with the hitting hand.",
+      "start": 374.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "So, we can see the triple bend athleticism. You see the bend at the knees, the slight bend at the hips, the balls of the feet.",
+      "start": 414.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "So, this is why you always see players like NovakJokovic on the low volleys bend the knees, bend the hips, and try to get the eye level at least a little down closer to the ball.",
+      "start": 439.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "The more you try to hit the ball below your eye level, the more shanks you're going to have and vice versa.",
+      "start": 448.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "if you want us to look at your videos and help you figure out if you might be missing something like peripheral vision in your game, email us",
+      "start": 483.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Shanking the volley off the frame when put under rapid time pressure.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q21",
+        "Q25"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Eyes frantically darting to follow the ball off the opponent's racket rather than staying rested and calm.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Taking a backswing with the racket hand instead of pausing behind the ball.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18",
+        "Q21"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players try to take a backswing on reaction volleys instead of hovering the hand behind the ball and waiting.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "N-C_XXLNDJNRA4E_C01",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players attempt to track the ball immediately off the strings with foveal focus rather than processing its motion through peripheral vision.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "N-C_XXLNDJNRA4E_C02",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players strike low volleys far below their eye level without bending their knees and hips to lower their perspective.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "N-C_XXLNDJNRA4E_C03",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Novak Djokovic executes reaction volleys using only two distinct gaze fixations and zero backswing.",
+      "evidence": [
+        "Q02",
+        "Q05",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "Juggling relies on fixating only at the apexes while peripheral vision calculates the rest of the trajectory.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Tracking ball motion with peripheral vision feels like a calm, intuitive awareness rather than a forced focal pursuit.",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "The hands place the racket behind the ball and move together with the trunk, eliminating the backswing entirely.",
+      "evidence": [
+        "Q18",
+        "Q22"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Triple-bend athleticism in the knees, hips, and balls of the feet lowers eye level closer to the ball height.",
+      "evidence": [
+        "Q23",
+        "Q24"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Practice juggling balls while keeping your gaze locked onto a single fixed point on the wall to train peripheral tracking.",
+      "external_goal": "pick one fixation on the wall and you stare at it while you toss the balls",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "When hitting volleys against a wall, hold your primary fixation on the point where the ball hits the wall.",
+      "external_goal": "see the ball hit the wall",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Place the racket directly behind the ball with zero backswing and wait for the ball rather than swinging at it.",
+      "external_goal": "placing the racket behind the ball",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "On low volleys, bend at your knees and hips to lower your eye level down closer to the height of the ball.",
+      "external_goal": "get the eye level at least a little down closer to the ball",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

@@ -1,0 +1,2180 @@
+{
+ "rule": "(fixed here, recorded in new_obs_promotion.json):\n  eligible = family with >= 2 distinct source episodes, representative layer in {A, B}, camera in {S, B} (or layer A with camera 'any'),\n             no config.neutral_prompt_forbidden term in question/values, not a duplicate of an existing catalog question;\n  rank     = distinct episodes desc, then distinct bound items desc, then cluster id; take the first MAX_PROMOTE (8); fewer than 5 -> stop and report.",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/obs_newcluster_v1.md (reused on cluster representatives)",
+ "families_total": 83,
+ "families_multi_cluster": 7,
+ "eligible": 3,
+ "promoted": [
+  {
+   "obs": "OBS-30",
+   "file": "observables/OBS-30_depth_ball_bounce_opponent_court.md",
+   "rep_cluster": "NEW-OBS-04",
+   "family": [
+    "NEW-OBS-04"
+   ],
+   "description": "Depth of ball bounce in the opponent court",
+   "values": [
+    "short_near_service_line",
+    "deep_near_baseline",
+    "past_baseline"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "5-Ia7c4XzfU",
+    "LoSrMj-Qxkc",
+    "T5meVwBOKR4"
+   ],
+   "items": [
+    "SYM_5_IA7C4XZFU_S02",
+    "SYM_LOSRMJ_QXKC_S02",
+    "SYM_T5MEVWBOKR4_S03"
+   ]
+  },
+  {
+   "obs": "OBS-31",
+   "file": "observables/OBS-31_angle_racket_trajectory_relative_horizontal.md",
+   "rep_cluster": "NEW-OBS-05",
+   "family": [
+    "NEW-OBS-05",
+    "NEW-OBS-28"
+   ],
+   "description": "Angle of racket trajectory relative to horizontal through the contact zone",
+   "values": [
+    "steeply_upward",
+    "forward_and_upward",
+    "horizontal"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FxDmVi3EFnE",
+    "dZadhzVEsds"
+   ],
+   "items": [
+    "FxDmVi3EFnE:C01",
+    "N-P_FXDMVI3EFNE",
+    "SYM_DZADHZVESDS_S02"
+   ]
+  },
+  {
+   "obs": "OBS-32",
+   "file": "observables/OBS-32_forward_swing_hitting_elbow_pull.md",
+   "rep_cluster": "NEW-OBS-07",
+   "family": [
+    "NEW-OBS-07",
+    "NEW-OBS-43"
+   ],
+   "description": "During the forward swing, does the hitting elbow pull linearly across the torso before arm extension?",
+   "values": [
+    "elbow_drags_linearly",
+    "rotational_drive"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "2Nn9tyMECZU",
+    "wzLMv4ASg9s"
+   ],
+   "items": [
+    "2Nn9tyMECZU:C02",
+    "SYM_WZLMV4ASG9S_S02"
+   ]
+  }
+ ],
+ "not_promoted_eligible": [],
+ "ineligible_summary": {
+  "camera not explicit": 2,
+  "fewer than 2 source episodes": 77,
+  "forbidden term 'lag'": 2,
+  "forbidden term 'pronation'": 5,
+  "forbidden term 'slot'": 1
+ },
+ "families": [
+  {
+   "family": [
+    "NEW-OBS-02",
+    "NEW-OBS-15"
+   ],
+   "rep_cluster": "NEW-OBS-02",
+   "description": "During the transition from backswing to forward swing, does the racket head lay back (flip) behind the wrist into lag before accelerating forward?",
+   "values": [
+    "racket_lays_back_into_lag",
+    "no_racket_lag_stiff_forward"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "RVfmDk-iEwo",
+    "WoVEWh7fFfc",
+    "wzLMv4ASg9s"
+   ],
+   "items": [
+    "N-P_WZLMV4ASG9S",
+    "RVfmDk-iEwo:C03",
+    "SYM_WOVEWH7FFFC_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "forbidden term 'lag'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-05",
+    "NEW-OBS-28"
+   ],
+   "rep_cluster": "NEW-OBS-05",
+   "description": "Angle of racket trajectory relative to horizontal through the contact zone",
+   "values": [
+    "steeply_upward",
+    "forward_and_upward",
+    "horizontal"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FxDmVi3EFnE",
+    "dZadhzVEsds"
+   ],
+   "items": [
+    "FxDmVi3EFnE:C01",
+    "N-P_FXDMVI3EFNE",
+    "SYM_DZADHZVESDS_S02"
+   ],
+   "eligible": true,
+   "ineligible_because": []
+  },
+  {
+   "family": [
+    "NEW-OBS-07",
+    "NEW-OBS-43"
+   ],
+   "rep_cluster": "NEW-OBS-07",
+   "description": "During the forward swing, does the hitting elbow pull linearly across the torso before arm extension?",
+   "values": [
+    "elbow_drags_linearly",
+    "rotational_drive"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "2Nn9tyMECZU",
+    "wzLMv4ASg9s"
+   ],
+   "items": [
+    "2Nn9tyMECZU:C02",
+    "SYM_WZLMV4ASG9S_S02"
+   ],
+   "eligible": true,
+   "ineligible_because": []
+  },
+  {
+   "family": [
+    "NEW-OBS-10",
+    "NEW-OBS-21"
+   ],
+   "rep_cluster": "NEW-OBS-10",
+   "description": "Racket head speed during the forward swing into contact",
+   "values": [
+    "accelerates_normally",
+    "slows_or_freezes"
+   ],
+   "layer": "B",
+   "camera": "any",
+   "episodes": [
+    "8r09TliP-Ak",
+    "FBJnFBtZozE"
+   ],
+   "items": [
+    "FBJnFBtZozE:C01",
+    "SYM_8R09TLIP_AK_S02",
+    "SYM_FBJNFBTZOZE_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "camera not explicit"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-29",
+    "NEW-OBS-61"
+   ],
+   "rep_cluster": "NEW-OBS-29",
+   "description": "Direction of recovery footwork immediately after contact",
+   "values": [
+    "forward_into_court",
+    "lateral_along_baseline",
+    "backward_away_from_baseline"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "FBJnFBtZozE"
+   ],
+   "items": [
+    "FBJnFBtZozE:C02",
+    "SYM_FBJNFBTZOZE_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-46",
+    "NEW-OBS-49"
+   ],
+   "rep_cluster": "NEW-OBS-46",
+   "description": "On a volley preparation, does the hitting hand move backward into a backswing behind the torso or stay out in front?",
+   "values": [
+    "backswing_taken",
+    "stays_in_front"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "episodes": [
+    "XXlndjnrA4E"
+   ],
+   "items": [
+    "SYM_XXLNDJNRA4E_S03",
+    "XXlndjnrA4E:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-85",
+    "NEW-OBS-90"
+   ],
+   "rep_cluster": "NEW-OBS-85",
+   "description": "Racket delivery into pull slot prior to forward pull: racket drops below ball with butt cap leading.",
+   "values": [
+    "drops_into_slot",
+    "bypasses_slot_or_stays_high"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "dDYKuNZtdyU",
+    "wzLMv4ASg9s"
+   ],
+   "items": [
+    "dDYKuNZtdyU:C02",
+    "wzLMv4ASg9s:C06"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "forbidden term 'slot'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-01"
+   ],
+   "rep_cluster": "NEW-OBS-01",
+   "description": "Pace of overhead or serve ball flight",
+   "values": [
+    "slow_weak",
+    "normal_fast"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "PfDqnff_vYA"
+   ],
+   "items": [
+    "N-P_PFDQNFF_VYA",
+    "SYM_PFDQNFF_VYA_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-03"
+   ],
+   "rep_cluster": "NEW-OBS-03",
+   "description": "Height of the hitting hand relative to the ball at the end of the backswing turn",
+   "values": [
+    "below_ball_level",
+    "level_with_ball",
+    "above_ball_level"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "Psidjei5BnI"
+   ],
+   "items": [
+    "Psidjei5BnI:C03",
+    "SYM_PSIDJEI5BNI_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-04"
+   ],
+   "rep_cluster": "NEW-OBS-04",
+   "description": "Depth of ball bounce in the opponent court",
+   "values": [
+    "short_near_service_line",
+    "deep_near_baseline",
+    "past_baseline"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "5-Ia7c4XzfU",
+    "LoSrMj-Qxkc",
+    "T5meVwBOKR4"
+   ],
+   "items": [
+    "SYM_5_IA7C4XZFU_S02",
+    "SYM_LOSRMJ_QXKC_S02",
+    "SYM_T5MEVWBOKR4_S03"
+   ],
+   "eligible": true,
+   "ineligible_because": []
+  },
+  {
+   "family": [
+    "NEW-OBS-06"
+   ],
+   "rep_cluster": "NEW-OBS-06",
+   "description": "During the upward path to the ball on serve, does the racket approach from inside the ball line or outside/over the top?",
+   "values": [
+    "approaches_from_inside",
+    "approaches_from_outside_or_top"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "1W1rope5l0k:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-08"
+   ],
+   "rep_cluster": "NEW-OBS-08",
+   "description": "Position of the player's hand along the racket handle relative to the butt cap flare",
+   "values": [
+    "choked_up",
+    "pinky_on_flare"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "items": [
+    "2Nn9tyMECZU:C04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-09"
+   ],
+   "rep_cluster": "NEW-OBS-09",
+   "description": "At the contact frame, vertical distance between the player's eye line and the ball",
+   "values": [
+    "close_to_eye_level",
+    "moderate_distance",
+    "far_below_eye_level"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "AppdZqxH_2k"
+   ],
+   "items": [
+    "AppdZqxH_2k:C02",
+    "SYM_APPDZQXH_2K_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-11"
+   ],
+   "rep_cluster": "NEW-OBS-11",
+   "description": "Width between feet during athletic setup and movement preparation.",
+   "values": [
+    "narrow",
+    "shoulder_width_or_wider"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "items": [
+    "FOmz8Wjv3DQ:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-12"
+   ],
+   "rep_cluster": "NEW-OBS-12",
+   "description": "Presence of joint flexion across hips, knees, and ankles (triple flexion) during stance preparation.",
+   "values": [
+    "flexed_triple_bend",
+    "extended_upright"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "items": [
+    "FOmz8Wjv3DQ:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-13"
+   ],
+   "rep_cluster": "NEW-OBS-13",
+   "description": "Curvature of the spine during preparation and contact: neutral flat back versus rounded/flexed back.",
+   "values": [
+    "neutral_spine",
+    "rounded_back"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "items": [
+    "NEpD7fIM7HI:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-14"
+   ],
+   "rep_cluster": "NEW-OBS-14",
+   "description": "Forward swing racket path on serve: directed outward to the hitting side versus straight at the ball",
+   "values": [
+    "outward_to_hitting_side",
+    "straight_at_ball"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "PfDqnff_vYA"
+   ],
+   "items": [
+    "PfDqnff_vYA:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-16"
+   ],
+   "rep_cluster": "NEW-OBS-16",
+   "description": "During the serve forward swing into contact, does the racket accelerate through forearm pronation or push forward uniformly?",
+   "values": [
+    "accelerates_with_pronation",
+    "pushes_forward_flat"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "SYM_1W1ROPE5L0K_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'pronation'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-17"
+   ],
+   "rep_cluster": "NEW-OBS-17",
+   "description": "During the serve upward swing, does the hitting shoulder externally rotate into the racket drop before rotating internally?",
+   "values": [
+    "external_then_internal_rotation",
+    "arm_reaches_up_without_rotation"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "SYM_1W1ROPE5L0K_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-18"
+   ],
+   "rep_cluster": "NEW-OBS-18",
+   "description": "At and immediately after serve contact, does the arm pull straight down toward the waist or follow through outward?",
+   "values": [
+    "pulls_downward_steeply",
+    "outward_with_pronation"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "SYM_1W1ROPE5L0K_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'pronation'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-19"
+   ],
+   "rep_cluster": "NEW-OBS-19",
+   "description": "At the finish of the swing, is the hitting elbow positioned above the racket head?",
+   "values": [
+    "elbow_above_racket",
+    "racket_above_elbow"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "items": [
+    "SYM_2NN9TYMECZU_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-20"
+   ],
+   "rep_cluster": "NEW-OBS-20",
+   "description": "During the follow-through, does the hitting elbow remain low near the ribs or elevate to shoulder height?",
+   "values": [
+    "elbow_stays_down",
+    "elbow_elevates"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "items": [
+    "SYM_2NN9TYMECZU_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-22"
+   ],
+   "rep_cluster": "NEW-OBS-22",
+   "description": "Leading edge of racket during forward swing towards contact",
+   "values": [
+    "top_edge_leads",
+    "bottom_edge_leads"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "9NirSL59an0"
+   ],
+   "items": [
+    "SYM_9NIRSL59AN0_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-23"
+   ],
+   "rep_cluster": "NEW-OBS-23",
+   "description": "During the forward swing, alignment of the front knee relative to the ankle and midline",
+   "values": [
+    "caves_inward",
+    "tracks_over_foot",
+    "drives_outward"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "items": [
+    "SYM_APCKJDADZEK_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-24"
+   ],
+   "rep_cluster": "NEW-OBS-24",
+   "description": "At the start of the forward swing, position of the front knee relative to the front toes",
+   "values": [
+    "knee_drifts_past_toes",
+    "knee_above_toes_or_behind"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "items": [
+    "SYM_APCKJDADZEK_S05"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-25"
+   ],
+   "rep_cluster": "NEW-OBS-25",
+   "description": "Path of the racket from the backscratch position toward contact on the serve",
+   "values": [
+    "straight_up_jackknife",
+    "loops_and_rolls_out"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "cIIEYn42o4g"
+   ],
+   "items": [
+    "SYM_CIIEYN42O4G_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-26"
+   ],
+   "rep_cluster": "NEW-OBS-26",
+   "description": "Lateral distance of racket head away from torso during the serve drop",
+   "values": [
+    "stretches_outward_away_from_body",
+    "stays_tight_behind_back"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "cIIEYn42o4g"
+   ],
+   "items": [
+    "SYM_CIIEYN42O4G_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-27"
+   ],
+   "rep_cluster": "NEW-OBS-27",
+   "description": "Movement of non-hitting hand relative to hitting hand during forward swing on one-handed backhand",
+   "values": [
+    "moves_backward_away",
+    "stays_close_or_follows_forward"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "items": [
+    "SYM_DDYKUNZTDYU_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-30"
+   ],
+   "rep_cluster": "NEW-OBS-30",
+   "description": "Forward court transition immediately after hitting an aggressive shot",
+   "values": [
+    "immediate_forward_movement",
+    "hesitates_before_moving",
+    "stays_at_baseline"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "FBJnFBtZozE"
+   ],
+   "items": [
+    "SYM_FBJNFBTZOZE_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-31"
+   ],
+   "rep_cluster": "NEW-OBS-31",
+   "description": "Distance between feet during recovery or ready stance relative to shoulder width.",
+   "values": [
+    "narrower_than_shoulders",
+    "shoulder_width",
+    "wider_than_shoulders"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "items": [
+    "SYM_FOMZ8WJV3DQ_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-32"
+   ],
+   "rep_cluster": "NEW-OBS-32",
+   "description": "Portion of the foot supporting weight during the ready/recovery phase.",
+   "values": [
+    "heels_weighted_flat",
+    "balls_of_feet_heels_up"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "items": [
+    "SYM_FOMZ8WJV3DQ_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-33"
+   ],
+   "rep_cluster": "NEW-OBS-33",
+   "description": "Part of foot making initial contact upon landing from the split step.",
+   "values": [
+    "balls_of_feet",
+    "flat_foot_or_heels"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "items": [
+    "SYM_FOMZ8WJV3DQ_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-34"
+   ],
+   "rep_cluster": "NEW-OBS-34",
+   "description": "After contact, does the player maintain balance, stumble, or brace against the ground with the racket?",
+   "values": [
+    "maintains_balance",
+    "stumbles_or_falls",
+    "braces_with_racket"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "JzcA_ku7Yhk"
+   ],
+   "items": [
+    "SYM_JZCA_KU7YHK_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-35"
+   ],
+   "rep_cluster": "NEW-OBS-35",
+   "description": "Degree of shoulder external rotation layback during the forward swing",
+   "values": [
+    "pronounced_layback",
+    "minimal_layback"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "SYM_LOSRMJ_QXKC_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-36"
+   ],
+   "rep_cluster": "NEW-OBS-36",
+   "description": "During the follow-through of a slice, does the angle between the racket shaft and forearm remain intact or straighten/invert?",
+   "values": [
+    "angle_maintained",
+    "straightens_or_inverts"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "items": [
+    "SYM_NEPD7FIM7HI_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-37"
+   ],
+   "rep_cluster": "NEW-OBS-37",
+   "description": "Racket motion through the back-scratch position during serve or overhead",
+   "values": [
+    "continuous_motion",
+    "stalls_or_pauses"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "PfDqnff_vYA"
+   ],
+   "items": [
+    "SYM_PFDQNFF_VYA_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-38"
+   ],
+   "rep_cluster": "NEW-OBS-38",
+   "description": "Forearm and wrist mechanics at serve contact: forearm pronation versus wrist flexion over the ball",
+   "values": [
+    "pronation",
+    "wrist_flexion"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "PfDqnff_vYA"
+   ],
+   "items": [
+    "SYM_PFDQNFF_VYA_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'pronation'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-39"
+   ],
+   "rep_cluster": "NEW-OBS-39",
+   "description": "Duration player remains stationary between consecutive ball machine feeds",
+   "values": [
+    "continuous_rhythm",
+    "paused_several_seconds"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "toArb3WkJcs"
+   ],
+   "items": [
+    "SYM_TOARB3WKJCS_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-40"
+   ],
+   "rep_cluster": "NEW-OBS-40",
+   "description": "Foot movement between the end of a stroke and the next incoming feed",
+   "values": [
+    "continuous_active_movement",
+    "feet_stop_completely"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "toArb3WkJcs"
+   ],
+   "items": [
+    "SYM_TOARB3WKJCS_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-41"
+   ],
+   "rep_cluster": "NEW-OBS-41",
+   "description": "At the start of the forward swing, width of the stance relative to shoulder width",
+   "values": [
+    "narrower_than_shoulders",
+    "shoulder_width_or_wider"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "Vg8lbXOhM3E"
+   ],
+   "items": [
+    "SYM_VG8LBXOHM3E_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-42"
+   ],
+   "rep_cluster": "NEW-OBS-42",
+   "description": "Outcome of the serve return attempt when no contact is made",
+   "values": [
+    "aced_cleanly_untouched",
+    "contact_made"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "V-QkILd4V-w"
+   ],
+   "items": [
+    "SYM_V_QKILD4V_W_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-44"
+   ],
+   "rep_cluster": "NEW-OBS-44",
+   "description": "At contact, does the lead (front) foot or heel lift off the court or remain grounded?",
+   "values": [
+    "lead_foot_lifts",
+    "lead_foot_grounded"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "items": [
+    "SYM_XLS469ZVMPU_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-45"
+   ],
+   "rep_cluster": "NEW-OBS-45",
+   "description": "At the contact frame, how far is the chest/shoulder line rotated relative to the net?",
+   "values": [
+    "square_or_over_rotated",
+    "angled_to_target",
+    "sideways"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "items": [
+    "SYM_XLS469ZVMPU_S04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-47"
+   ],
+   "rep_cluster": "NEW-OBS-47",
+   "description": "During backswing preparation, does the racket tip maintain continuous inward momentum into the drop?",
+   "values": [
+    "continuous_inward_momentum",
+    "lacks_inward_momentum"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "WoVEWh7fFfc"
+   ],
+   "items": [
+    "WoVEWh7fFfc:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-48"
+   ],
+   "rep_cluster": "NEW-OBS-48",
+   "description": "During the serve backswing, does the racket achieve a deep drop behind the back with elastic shoulder stretch?",
+   "values": [
+    "deep_stretch_drop",
+    "shallow_drop_insufficient_stretch"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "WoVEWh7fFfc"
+   ],
+   "items": [
+    "WoVEWh7fFfc:C04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-50"
+   ],
+   "rep_cluster": "NEW-OBS-50",
+   "description": "Height of racket head relative to the ball when forward rotation begins",
+   "values": [
+    "above_ball",
+    "level_with_ball",
+    "below_ball"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "dZadhzVEsds"
+   ],
+   "items": [
+    "dZadhzVEsds:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-51"
+   ],
+   "rep_cluster": "NEW-OBS-51",
+   "description": "During preparation, does the non-hitting hand seat or adjust the racket handle into the hitting palm?",
+   "values": [
+    "reseats_in_palm",
+    "no_reseating"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "fjpr9PS02tM"
+   ],
+   "items": [
+    "fjpr9PS02tM:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-52"
+   ],
+   "rep_cluster": "NEW-OBS-52",
+   "description": "During forward swing acceleration, does the racket handle shift or rotate independently inside the player's hand?",
+   "values": [
+    "shifts_inside_hand",
+    "stable_in_hand"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "fjpr9PS02tM"
+   ],
+   "items": [
+    "fjpr9PS02tM:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-53"
+   ],
+   "rep_cluster": "NEW-OBS-53",
+   "description": "Angle formed between the forearm and racket shaft during preparation",
+   "values": [
+    "perpendicular_90_degrees",
+    "obtuse_135_degrees"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "pQ793MBQE50"
+   ],
+   "items": [
+    "pQ793MBQE50:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-54"
+   ],
+   "rep_cluster": "NEW-OBS-54",
+   "description": "Transition between stroke recovery and the subsequent shot preparation",
+   "values": [
+    "fluid_connected_transition",
+    "separate_halted_reps"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "toArb3WkJcs"
+   ],
+   "items": [
+    "toArb3WkJcs:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-55"
+   ],
+   "rep_cluster": "NEW-OBS-55",
+   "description": "Peak height of the hitting hand during the backswing preparation loop",
+   "values": [
+    "at_or_above_shoulder",
+    "below_shoulder_near_contact"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "items": [
+    "tzgAWr3QGv0:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-56"
+   ],
+   "rep_cluster": "NEW-OBS-56",
+   "description": "At the start of the forward swing, does the hip line rotate ahead of the shoulder line creating trunk stretch?",
+   "values": [
+    "hips_lead_creating_stretch",
+    "hips_and_shoulders_move_together",
+    "shoulders_move_without_hip_lead"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "wFIrPMutzRo"
+   ],
+   "items": [
+    "wFIrPMutzRo:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-57"
+   ],
+   "rep_cluster": "NEW-OBS-57",
+   "description": "During follow-through, does the non-dominant leg kick backward/outward to counterbalance rotation?",
+   "values": [
+    "counter_kick_present",
+    "no_counter_kick"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "items": [
+    "xLs469ZVMPU:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-58"
+   ],
+   "rep_cluster": "NEW-OBS-58",
+   "description": "At contact, does the lead foot spin/pivot out or maintain firm ground contact?",
+   "values": [
+    "spins_or_lifts_early",
+    "remains_grounded_stable"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "items": [
+    "xLs469ZVMPU:C04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-59"
+   ],
+   "rep_cluster": "NEW-OBS-59",
+   "description": "During the serve preparation and loading, does the hitting shoulder roll back into horizontal abduction?",
+   "values": [
+    "shoulder_rolls_back",
+    "shoulder_remains_flat"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "1W1rope5l0k:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-60"
+   ],
+   "rep_cluster": "NEW-OBS-60",
+   "description": "During the serve preparation and racket drop, does the hitting shoulder roll back into external rotation?",
+   "values": [
+    "rolls_back",
+    "stays_stationary"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "1W1rope5l0k"
+   ],
+   "items": [
+    "1W1rope5l0k:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-62"
+   ],
+   "rep_cluster": "NEW-OBS-62",
+   "description": "Forward displacement of the racket head through the 20 cm around contact",
+   "values": [
+    "minimal_forward_travel",
+    "substantial_forward_travel"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FxDmVi3EFnE"
+   ],
+   "items": [
+    "FxDmVi3EFnE:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-63"
+   ],
+   "rep_cluster": "NEW-OBS-63",
+   "description": "Degree of forearm internal rotation through the hitting zone",
+   "values": [
+    "active_pronation",
+    "minimal_pronation"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FxDmVi3EFnE"
+   ],
+   "items": [
+    "FxDmVi3EFnE:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'pronation'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-64"
+   ],
+   "rep_cluster": "NEW-OBS-64",
+   "description": "Scapular retraction on the hitting side at the end of preparation",
+   "values": [
+    "retracted",
+    "neutral"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "LoSrMj-Qxkc:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-65"
+   ],
+   "rep_cluster": "NEW-OBS-65",
+   "description": "At the start of the forward swing, does the racket and forearm lag behind in deep external shoulder rotation?",
+   "values": [
+    "pronounced_lag",
+    "minimal_lag"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "LoSrMj-Qxkc:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'lag'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-66"
+   ],
+   "rep_cluster": "NEW-OBS-66",
+   "description": "Depth of racket handle placement in the hand V and index palm",
+   "values": [
+    "deep_in_palm_v",
+    "shallow_in_fingers"
+   ],
+   "layer": "B",
+   "camera": "any",
+   "episodes": [
+    "PfDqnff_vYA"
+   ],
+   "items": [
+    "PfDqnff_vYA:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "camera not explicit"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-67"
+   ],
+   "rep_cluster": "NEW-OBS-67",
+   "description": "Player court position relative to baseline when striking defensive shot",
+   "values": [
+    "inside_baseline",
+    "at_baseline",
+    "deep_behind_baseline"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "8r09TliP-Ak"
+   ],
+   "items": [
+    "SYM_8R09TLIP_AK_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-68"
+   ],
+   "rep_cluster": "NEW-OBS-68",
+   "description": "Shot depth and pace: ball lands short with slow pace or deep with penetrating pace.",
+   "values": [
+    "short_and_weak",
+    "deep_with_pace"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "items": [
+    "SYM_APCKJDADZEK_S06"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-69"
+   ],
+   "rep_cluster": "NEW-OBS-69",
+   "description": "Consistency of drive shots across repeated attempts: hitting target zone consistently or missing erratically.",
+   "values": [
+    "consistent_in_target",
+    "inconsistent_erratic"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "items": [
+    "SYM_DDYKUNZTDYU_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-70"
+   ],
+   "rep_cluster": "NEW-OBS-70",
+   "description": "Ball topspin rate or bounce trajectory off the court surface",
+   "values": [
+    "low_rpm_flat_bounce",
+    "heavy_topspin_high_kick"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "SYM_LOSRMJ_QXKC_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-71"
+   ],
+   "rep_cluster": "NEW-OBS-71",
+   "description": "Hitting elbow vertical height relative to shoulder during forward swing drop",
+   "values": [
+    "dropped_below_shoulder",
+    "level_with_shoulder"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "SYM_LOSRMJ_QXKC_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-72"
+   ],
+   "rep_cluster": "NEW-OBS-72",
+   "description": "During the forward swing before contact, does the hitting elbow drop down close to the waist?",
+   "values": [
+    "elbow_drops",
+    "elbow_stays_elevated"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "LoSrMj-Qxkc"
+   ],
+   "items": [
+    "SYM_LOSRMJ_QXKC_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-73"
+   ],
+   "rep_cluster": "NEW-OBS-73",
+   "description": "Height of ball clearance over the net cord on defensive shots",
+   "values": [
+    "inches_above_tape",
+    "one_to_three_feet",
+    "well_over_three_feet"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "episodes": [
+    "PjvOQkqH9DA"
+   ],
+   "items": [
+    "SYM_PJVOQKQH9DA_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-74"
+   ],
+   "rep_cluster": "NEW-OBS-74",
+   "description": "Clearance height of the ball over the net tape during flight",
+   "values": [
+    "skimming_tape",
+    "moderate_clearance",
+    "high_clearance"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "PjvOQkqH9DA"
+   ],
+   "items": [
+    "SYM_PJVOQKQH9DA_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-75"
+   ],
+   "rep_cluster": "NEW-OBS-75",
+   "description": "Completion of split step and ready position after serve before opponent hits return",
+   "values": [
+    "ready_before_return",
+    "split_step_late_or_absent"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "PjvOQkqH9DA"
+   ],
+   "items": [
+    "SYM_PJVOQKQH9DA_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-76"
+   ],
+   "rep_cluster": "NEW-OBS-76",
+   "description": "Direction of the forward pull path through hitting zone",
+   "values": [
+    "forward_toward_target",
+    "sideways_across_body"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "pQ793MBQE50"
+   ],
+   "items": [
+    "SYM_PQ793MBQE50_S04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-77"
+   ],
+   "rep_cluster": "NEW-OBS-77",
+   "description": "Position of the hitting arm relative to the rotating torso during the forward swing",
+   "values": [
+    "arm_lags_behind_torso",
+    "arm_moves_with_torso"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "items": [
+    "SYM_TZGAWR3QGV0_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-78"
+   ],
+   "rep_cluster": "NEW-OBS-78",
+   "description": "Position of the hitting elbow relative to the torso coronal plane during the forward swing.",
+   "values": [
+    "elbow_behind_torso",
+    "elbow_aligned_with_torso",
+    "elbow_in_front_of_torso"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "items": [
+    "SYM_TZGAWR3QGV0_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-79"
+   ],
+   "rep_cluster": "NEW-OBS-79",
+   "description": "Height of the hitting elbow relative to the wrist during contact on low balls",
+   "values": [
+    "elbow_leaks_below_wrist",
+    "elbow_above_wrist"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "items": [
+    "SYM_TZGAWR3QGV0_S02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-80"
+   ],
+   "rep_cluster": "NEW-OBS-80",
+   "description": "Whether the racket makes contact with the ball or misses entirely",
+   "values": [
+    "clean_miss_whiff",
+    "contact_made"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "V-QkILd4V-w"
+   ],
+   "items": [
+    "SYM_V_QKILD4V_W_S04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-81"
+   ],
+   "rep_cluster": "NEW-OBS-81",
+   "description": "Whether the swing misses the ball entirely on a return attempt",
+   "values": [
+    "complete_whiff",
+    "ball_contacted"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "V-QkILd4V-w"
+   ],
+   "items": [
+    "SYM_V_QKILD4V_W_S04"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-82"
+   ],
+   "rep_cluster": "NEW-OBS-82",
+   "description": "Fluidity and stiffness of trunk rotation during the forward swing",
+   "values": [
+    "fluid_and_athletic",
+    "stiff_and_robotic"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "episodes": [
+    "wFIrPMutzRo"
+   ],
+   "items": [
+    "SYM_WFIRPMUTZRO_S01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-83"
+   ],
+   "rep_cluster": "NEW-OBS-83",
+   "description": "On the serve around contact, does the trunk fold or jackknife forward aggressively?",
+   "values": [
+    "excessive_forward_jackknife",
+    "stable_upright_extension"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "episodes": [
+    "WoVEWh7fFfc"
+   ],
+   "items": [
+    "SYM_WOVEWH7FFFC_S03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-84"
+   ],
+   "rep_cluster": "NEW-OBS-84",
+   "description": "At contact, does the racket head overtake the wrist or trail behind it?",
+   "values": [
+    "racket_overtakes_wrist",
+    "wrist_leads_racket"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "T5meVwBOKR4"
+   ],
+   "items": [
+    "T5meVwBOKR4:C02"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-86"
+   ],
+   "rep_cluster": "NEW-OBS-86",
+   "description": "Release point of non-hitting hand from racket throat: during turn, at forward swing start, or deep in drop.",
+   "values": [
+    "before_turn_complete",
+    "at_forward_swing_start",
+    "deep_in_drop"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "items": [
+    "dDYKuNZtdyU:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-87"
+   ],
+   "rep_cluster": "NEW-OBS-87",
+   "description": "During the loading phase, does the back foot/ankle remain neutral or collapse inward into over-pronation?",
+   "values": [
+    "neutral_or_supinated",
+    "over_pronated_collapsed"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "uJpuDUx0jIA"
+   ],
+   "items": [
+    "uJpuDUx0jIA:C03"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes",
+    "forbidden term 'pronation'"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-88"
+   ],
+   "rep_cluster": "NEW-OBS-88",
+   "description": "During the forward swing into contact, does the hitting shoulder noticeably elevate or shrug upward toward the ear?",
+   "values": [
+    "shoulder_shrugged_upward",
+    "shoulder_level_or_depressed"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "uJpuDUx0jIA"
+   ],
+   "items": [
+    "uJpuDUx0jIA:C05"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  },
+  {
+   "family": [
+    "NEW-OBS-89"
+   ],
+   "rep_cluster": "NEW-OBS-89",
+   "description": "Direction the hitting elbow points and drives at the start of forward swing relative to chest orientation",
+   "values": [
+    "directed_at_ball",
+    "directed_with_chest_orientation"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "wzLMv4ASg9s"
+   ],
+   "items": [
+    "wzLMv4ASg9s:C01"
+   ],
+   "eligible": false,
+   "ineligible_because": [
+    "fewer than 2 source episodes"
+   ]
+  }
+ ],
+ "usage": {
+  "promptTokenCount": 7938,
+  "candidatesTokenCount": 1071,
+  "thoughtsTokenCount": 8332,
+  "totalTokenCount": 17341,
+  "calls": 2
+ },
+ "from_cc_review": [
+  {
+   "obs": "OBS-33",
+   "file": "observables/OBS-33_contact_frame_far_ball_from.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "user authorized continuous night loop: promote CC T08 proposals with >=2 episode subtitle citations (cross-episode rule); 1-episode proposals skipped",
+   "source_review": "ftt_tree/t08_cc_review_v5.json",
+   "description": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "2Nn9tyMECZU",
+    "9NirSL59an0",
+    "PwkGLkRm73o",
+    "T5meVwBOKR4"
+   ],
+   "pairs": [
+    "N-C_2NN9TYMECZU_C03 | N-C_9NIRSL59AN0_C03",
+    "N-C_2NN9TYMECZU_C03 | N-C_PWKGLKRM73O_C03",
+    "N-C_9NIRSL59AN0_C03 | N-C_T5MEVWBOKR4_C03",
+    "N-C_PWKGLKRM73O_C03 | N-C_T5MEVWBOKR4_C03"
+   ],
+   "quotes": [
+    "2Nn9tyMECZU:Q14",
+    "9NirSL59an0:Q09",
+    "PwkGLkRm73o:Q11",
+    "T5meVwBOKR4:Q14"
+   ]
+  },
+  {
+   "obs": "OBS-34",
+   "file": "observables/OBS-34_forward_swing_before_contact_front.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "user authorized continuous night loop: promote CC T08 proposals with >=2 episode subtitle citations (cross-episode rule); 1-episode proposals skipped",
+   "source_review": "ftt_tree/t08_cc_review_v5.json",
+   "description": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+   "values": [
+    "moves_inward",
+    "stays_above_front_foot"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "T5meVwBOKR4",
+    "aPcKJDadzek",
+    "xLs469ZVMPU"
+   ],
+   "pairs": [
+    "N-P_XLS469ZVMPU | N-C_APCKJDADZEK_C01",
+    "N-C_APCKJDADZEK_C01 | N-C_T5MEVWBOKR4_C01"
+   ],
+   "quotes": [
+    "T5meVwBOKR4:Q06",
+    "aPcKJDadzek:Q05",
+    "xLs469ZVMPU:Q03"
+   ]
+  },
+  {
+   "obs": "OBS-35",
+   "file": "observables/OBS-35_start_forward_swing_far_racket.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "user authorized continuous night loop: promote CC T08 proposals with >=2 episode subtitle citations (cross-episode rule); 1-episode proposals skipped",
+   "source_review": "ftt_tree/t08_cc_review_v5.json",
+   "description": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "episodes": [
+    "FxDmVi3EFnE",
+    "LoSrMj-Qxkc"
+   ],
+   "pairs": [
+    "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04"
+   ],
+   "quotes": [
+    "FxDmVi3EFnE:Q05",
+    "FxDmVi3EFnE:Q07",
+    "FxDmVi3EFnE:Q08",
+    "FxDmVi3EFnE:Q10",
+    "LoSrMj-Qxkc:Q18"
+   ]
+  },
+  {
+   "obs": "OBS-36",
+   "file": "observables/OBS-36_between_start_forward_swing_contact.md",
+   "approved_by_user": "2026-10-18",
+   "reason": "user authorized continuous night loop: promote CC T08 proposals with >=2 episode subtitle citations (cross-episode rule); 1-episode proposals skipped",
+   "source_review": "ftt_tree/t08_cc_review_v5.json",
+   "description": "Between the start of the forward swing and contact, does the hitting hand first move outward away from the body, or directly toward the ball?",
+   "values": [
+    "outward_first",
+    "directly_toward_ball"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "episodes": [
+    "2Nn9tyMECZU",
+    "wzLMv4ASg9s"
+   ],
+   "pairs": [
+    "N-C_2NN9TYMECZU_C02 | N-C_WZLMV4ASG9S_C01"
+   ],
+   "quotes": [
+    "2Nn9tyMECZU:Q14",
+    "wzLMv4ASg9s:Q01"
+   ]
+  }
+ ],
+ "from_cc_review_skipped": []
+}

@@ -1,0 +1,452 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "lCKDP2gKR_Y",
+    "url": "https://www.youtube.com/watch?v=lCKDP2gKR_Y",
+    "title": "Why Your Wrist Hurts, and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 286.0,
+    "upload_date": "2026-04-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable cues instructing players to make contact during the early stretch-release phase rather than driving with the late follow-through."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/lCKDP2gKR_Y.en.vtt",
+    "kind": "auto",
+    "sha256": "61a094704a0fde372049823013cba7637c140059df236d7d565089d509414d3c",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_lCKDP2",
+      "s1_r2_lCKDP2",
+      "s1_r3_lCKDP2"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does your wrist hurt on the forehand, and how can you fix it?",
+    "definition": "Players experience wrist fatigue and pain when attempting to generate spin and power by actively driving and flexing the wrist through the late follow-through rather than relying on early elastic release.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "hitting a topspin forehand"
+    ],
+    "target_player": "players experiencing wrist pain or trying to generate heavy topspin",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "where I see players you know in service to trying to get spin and you know trying to hit well hurt their wrists.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And the real key here is that the hitting slot is probably earlier in this stretch release throwing kind of elastic feeling than you think.",
+      "start": 25.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "From here through all the way to here, the racket is moving really really quickly. So you have a lot of racket head speed during ready one two during those two frames of the follow through.",
+      "start": 46.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "You have a ton of racket head speed. It is rolling rotational racket head speed. It's mostly pronation and internal rotation.",
+      "start": 59.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "The problem is that if you try to hit with that part of the swing the ball's not going to go anywhere because the back to front so this is rolling racket head speed",
+      "start": 67.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the back to front hitting driving racket head speed starts here and releases there and now it's pretty much gone.",
+      "start": 78.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "much gone. So what I see is that players are feeling all of this rolling racket head speed and their brain is going well I'm trying to hit the ball fast so I'm going to use the part of the",
+      "start": 86.96000000000001,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "well we'll just start here. So preparation this is like max lag right? This is kind of that that slot feeling right where the hand is like this is kind of the max tension spot where you know everything is",
+      "start": 105.44,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "and that's it. We're at contact. So your back to front racket head speed maxes out between here and here and now the hand is already slowing down in the back to front direction.",
+      "start": 118.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "All of your racket head speed here is rolling and right to left which can't actually be used to hit the ball this way.",
+      "start": 127.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "See how the wrist is fully fully loaded and then boom. It's like a split second after that that you're hitting. You're not hitting here",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "this is why I've rarely coached the windshield wiper because 90% of the windshield wiper is right here after you've actually hit the ball.",
+      "start": 147.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Here you are hitting with like the first 5% of the windshield wiper and then the rest of the windshield wiper is follow through.",
+      "start": 163.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Now this rolling arc that the racket traces out that is very important like the fact that you're hitting with the beginning of the windshield wiper is what gives the ball the trajectory to come down like this.",
+      "start": 174.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "What I see so often is that you get stuck because this is so fast your brain perceives this part of the follow through as your hitting action cuz you feel the speed not realizing that the speed is only",
+      "start": 190.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "You have to flex your wrist past this point and this is why it causes injuries is because from here to here really it's just a stretch in your wrist releasing and momentum transferring from your big strong muscles",
+      "start": 209.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "The wrist itself the small muscles in the hand are really just playing a support and release you know elastic energy role. They're not actively flexing to drive the 12 13 oz racket through the ball.",
+      "start": 225.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "flexion. If you need to hit the ball from this place back to front you are going to have to actively drive through the ball with your hand and that is why if you hit too late in your swing",
+      "start": 246.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "and fatigue and fatigue and eventually start to hurt.",
+      "start": 260.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "You have to hit with this early stretch release part and not with this later part even though the racket is still moving very fast it is no longer moving fast in this direction unless you force it.",
+      "start": 264.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The wrist and hand fatigue repeatedly and eventually develop pain.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "follow_through",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q01",
+        "Q19"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The ball lacks forward drive and penetration when struck with the late rolling portion of the swing.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The wrist visibly enters active flexion past the hitting slot to push the racket through.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q16",
+        "Q18"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Contacting the ball too late forces the player to actively push and flex the wrist through the ball to generate forward drive.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Small muscles in the wrist and hand are not strong enough to actively drive the heavy racket forward and are only built for passive elastic support.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Forward back-to-front racket head speed dissipates immediately after contact release, leaving only rolling rotational speed.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player's brain misinterprets the fast rolling speed during the follow-through as the primary hitting acceleration zone.",
+      "depth": 4,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Uses Federer's forehand sequence to demonstrate that maximum back-to-front acceleration occurs right at contact rather than in the follow-through.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Explains that high racket speed after contact consists of pronation and internal rotation rather than forward driving speed.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Explains that ninety percent of the windshield wiper movement happens after contact, so players should not anchor their hitting action on it.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Explains that players mistakenly perceive the high speed of the follow-through roll as their hitting action because of the sensation of speed.",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Points out that small wrist muscles are intended to transfer elastic energy from big muscles rather than actively flex to push racket weight.",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C04",
+        "C01"
+      ],
+      "summary": "Remind yourself to find the hitting slot earlier in the stretch-release elastic throwing sensation rather than delaying contact.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C04",
+        "C03"
+      ],
+      "summary": "Focus on striking the ball with only the first five percent of the windshield wiper motion and let the rest occur passively as follow-through.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Hit the ball during the early stretch-release phase and refrain from actively driving or forcing the wrist through during the later roll.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

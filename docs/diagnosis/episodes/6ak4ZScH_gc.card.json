@@ -1,0 +1,494 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "6ak4ZScH_gc",
+    "url": "https://www.youtube.com/watch?v=6ak4ZScH_gc",
+    "title": "You Can Feel This - Here's How",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 614.0,
+    "upload_date": "2026-07-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach gives explicit mental cues and internal checks, instructing the player to intend to pull the hip backwards while driving the shoulders forward to load the fascial chain."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/6ak4ZScH_gc.en.vtt",
+    "kind": "auto",
+    "sha256": "ef770a1227c8dbdf9681f72bf00140b0e744dc7ad371ed92f82861214f7daf01",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_6ak4ZS",
+      "s1_r2_6ak4ZS",
+      "s1_r3_6ak4ZS"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why should you intend to pull your pelvis backwards during the forehand when it physically rotates forward?",
+    "definition": "Players often attempt to actively drive their hitting hip forward through the forehand, which paradoxically destroys elastic stretch tension across the torso and prevents an effective kinetic energy handoff into the shoulders.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Unit turn coiling prior to forward swing",
+      "Basic rotational kinetic chain mechanics"
+    ],
+    "target_player": "Players struggling with rotational power transfer or over-rotating their hips and shoulders together",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "why the pelvis fires forward and why even though the pelvis fires forward, I am telling you to imagine a feeling of yanking your pelvis back and right around here, why the shoulders overtake the pelvis, the pelvis has stopped,",
+      "start": 10.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "What I want to do in this video is clarify exactly why, even though your pelvis is going to physically rotate forward, I think you should intend to take this side and fire it backwards.",
+      "start": 50.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "This kind of whole thing is connected. A lot of it is the external oblique which runs like this. And that stretches and unstretches as you coil yourself.",
+      "start": 74.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "I'm going to pretend this anchor is the hips and this anchor is the shoulders. And so, what I'm trying to do is go and fling my shoulders forward.",
+      "start": 99.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "when I go like this, what I am doing is I am yanking the pelvis forward and the shoulders back. So, I'm starting that tension there through this.",
+      "start": 110.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the same tension that flings your shoulder forward, flings your hip backwards. That's the same thing. So, this is the tension at this connection.",
+      "start": 156.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "It stretches by trying to twist the shoulders and the hips opposite, it unstretches, throwing the shoulders and the hips opposite. So, why do we send the pelvis forward then?",
+      "start": 182.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "What is the best way to get this boom, through? It's to go boom, like that. Boom, and pull boom on that front anchor just a little bit more before I let it fling forwards.",
+      "start": 204.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "I'm telling you drive your shoulders forward, hips back. And the reason is that your goal when you are in this like you're coiled and about to swing state is to create that tension.",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "It is a tension that is trying to pull your pelvis backwards. Do you see that? So, the desire to pull my shoulder forward, pelvis backwards, that desire causes me to rotate my pelvis forwards",
+      "start": 263.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "take this is my right hip. Let's say I told somebody bring this forward. What am I going to do? I'm going to do this. I'm going to do this. I'm not going to tension it because if my shoulder",
+      "start": 290.32,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "when I see most players, some players it works, but most players when I see them trying to send their right hip through the shot, they send back together, front together like this",
+      "start": 313.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "the reason that the pelvis fires is actually because if the pelvis fires, it creates more tension on the line of tissue that yanks the pelvis backwards.",
+      "start": 342.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "the moment that you can feel for is a moment where the pelvis is being yanked backwards and the shoulders are being yanked forward.",
+      "start": 356.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And so, if my desire is to rotate my hip backwards, what am I going to do? I'm going to do the same thing.",
+      "start": 397.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "If I want to create force pulling the hip backwards, I'm going to go forwards first to create the maximum amount of force that I can sending it backwards.",
+      "start": 404.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "in tennis is that initial pelvis move, you know, the pelvis does accelerate forward before the shoulders. So, that is true. Like I said, I think if you think about that, you're going to go like this",
+      "start": 450.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "So, you want to feel your pelvis under tension getting pulled backwards as you accelerate your shoulder, but it's not going to move backwards on most shots",
+      "start": 463.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "that's a lot of what is hard to see is that it is accelerating backwards because it is being pulled backwards by that stretched twisting fascial line. It's being pulled backwards, but it's not actually moving backwards",
+      "start": 487.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "if I tell you to send your pelvis forward, very often you will intentionally not stretch that line of tissue because your brain knows if I stretch this tissue, it's going to pull my pelvis back.",
+      "start": 528.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "the best way to stretch this is to start by throwing that pelvis forward to create more stretch before it swaps off.",
+      "start": 554.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "you're feeling that your pelvis is getting yanked back and your shoulders are getting yanked forward.",
+      "start": 580.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "we don't really perceive motion. We perceive tension and thereby acceleration. And so the acceleration of the hip as it connects to the goal of rotating the upper body through, the acceleration of the hip is backwards",
+      "start": 591.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The hips and shoulders rotate forward together in-phase without creating torso separation or elastic stretch.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Lack of an elastic loading feel where the pelvis is yanked backwards while the shoulder is pulled forward.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10",
+        "Q14"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Reduced forehand pace and lack of effortless rotational whip during the energy handoff.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Consciously trying to drive the hip forward through the shot makes the brain avoid stretching the connective tissue that would brake the pelvis, causing the hips and shoulders to turn together without stretch.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The oblique and fascial chain connecting the hip and shoulder generates equal and opposite tension, meaning any elastic force pulling the shoulder forward inherently pulls the hip backward.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The physical forward firing of the pelvis exists biomechanically to pre-stretch the fascial tissue to generate maximum backward-pulling force before the shoulders overtake it.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The backward acceleration applied to the pelvis decelerates its forward velocity rather than visibly reversing its direction, making the backward pulling force difficult to see on video.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The external oblique and fascial line connecting hip and shoulder stretch when hips and shoulders twist opposite, storing elastic energy that unstretches reciprocally.",
+      "evidence": [
+        "Q03",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Humans do not directly perceive spatial motion but rather perceive tension and acceleration, which feels like the hip being yanked backward as the shoulders fling forward.",
+      "evidence": [
+        "Q23"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "The coach uses a twisting corkscrew model with two anchors to illustrate how pulling shoulders forward physically pulls the hip anchor backward.",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Coaches often tell players to send the hip forward through the shot, but following this advice causes the body to deliberately avoid creating elastic torso stretch.",
+      "evidence": [
+        "Q11",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Intend to take the hitting hip side and fire it backwards as you begin to initiate rotation into the forehand.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Use the internal cue 'drive shoulders forward, hips back' from your coiled state to create full torso stretch tension.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Practice shifting the pelvis forward initially solely to prime and maximize the backward-pulling elastic force that fires through the hip.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Check that you distinctly feel your pelvis under elastic tension being yanked backwards as the shoulder accelerates forward, even if the hip still moves forward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_6ak4ZS",
+        "s1_r2_6ak4ZS",
+        "s1_r3_6ak4ZS"
+      ],
+      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_draft"
+}

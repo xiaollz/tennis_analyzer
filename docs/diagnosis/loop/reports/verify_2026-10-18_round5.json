@@ -1,0 +1,682 @@
+{
+ "report_id": "verify_2026-10-18_round5",
+ "generated_at": "2026-10-18T16:57:27+08:00",
+ "timezone": "Asia/Shanghai",
+ "round": 5,
+ "scope": "(a) ep_s1_v5 = v4 + solution granularity rule; (b) 5 new FTT long teaching videos, oldest-first, >=400s preferred, holdout excluded, round4 drafts wd4YRQW3TOc/E_zmENJIj4g not re-extracted; (c) annotate JIMgI3jiVns as low confidence in its card",
+ "branch": "cursor/diagnosis-phase1",
+ "base_commit": "cc77f4c",
+ "model": "gemini-3.8-flash",
+ "endpoint": "https://www.micuapi.ai",
+ "prompt_version": "ep_s1_v5",
+ "prompt_upgraded_from": "ep_s1_v4",
+ "prompt_changes": [
+  "new rule 14 'solution granularity': at most 1 solution per 30 s bucket; the same exercise/cue taught across adjacent buckets is merged into one solution (anchor = first utterance, evidence only from the anchor bucket); solutions 3 to 6; every solution targets at least one cause id (C...); solution_anchors 1:1 with solutions; self-check pass; where the subtitles cannot support 3, rule 1 (no invention) wins",
+  "v4 rules 14/15 renumbered to 15/16; everything else identical to v4; no user/KB concepts (check_neutrality PASS, 7 prompts, v1-v4 kept)"
+ ],
+ "thresholds_changed": false,
+ "config_json_changed": false,
+ "check_rerun_changed": false,
+ "script_changes": "s1_extract.py: defaults only (S1_PROMPT ep_s1_v5, S1_WORK round5); consensus/final logic untouched. Subtitle norm.tsv for w1FakobNq1Q and UB6SbA_KX9E generated from the .en.vtt with the same cue rule as the existing norm.tsv files (byte-identical on 2 existing files tested); lives in /workspace/ftt_subs (outside repo)",
+ "selftest": {
+  "verify_all_selftest": "PASS",
+  "mutations": 30
+ },
+ "episodes": [
+  {
+   "id": "Qszz0N4fRb4",
+   "title": "Why You Get Tight, and How to Fix It | Learning From Sinner's 6-0 6-1 Masterclass",
+   "duration_s": 707.0,
+   "upload_date": "2025-05-16",
+   "role": "new_round5",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v5",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "pro_analysis",
+   "n_quotes": 22,
+   "n_symptoms": 4,
+   "n_causes": 4,
+   "n_solutions": 5,
+   "n_angles": 5,
+   "n_causes_per_raw_run": [
+    4,
+    3,
+    4
+   ],
+   "n_solutions_per_raw_run": [
+    5,
+    3,
+    4
+   ],
+   "is_teaching_per_raw_run": [
+    "teaching",
+    "teaching",
+    "teaching"
+   ],
+   "solution_kinds": {
+    "cue": 3,
+    "drill": 1,
+    "check": 1,
+    "progression": 0
+   },
+   "solutions_all_target_a_cause": true,
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": true
+   },
+   "rerun_pair_jaccard_v5": {
+    "1-2": {
+     "causes": 0.4,
+     "chain_roots": 0.4,
+     "solutions": 0.33
+    },
+    "1-3": {
+     "causes": 1.0,
+     "chain_roots": 1.0,
+     "solutions": 0.8
+    },
+    "2-3": {
+     "causes": 0.4,
+     "chain_roots": 0.4,
+     "solutions": 0.4
+    }
+   },
+   "rerun_consensus": null,
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 26595,
+    "candidatesTokenCount": 13151,
+    "thoughtsTokenCount": 18815,
+    "totalTokenCount": 58561,
+    "cachedContentTokenCount": 6837
+   }
+  },
+  {
+   "id": "8r09TliP-Ak",
+   "title": "I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow)",
+   "duration_s": 684.0,
+   "upload_date": "2025-06-01",
+   "role": "new_round5",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v5",
+   "is_teaching": "teaching",
+   "stroke": "general",
+   "format": "pro_analysis",
+   "n_quotes": 23,
+   "n_symptoms": 3,
+   "n_causes": 4,
+   "n_solutions": 3,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    3
+   ],
+   "n_solutions_per_raw_run": [
+    3,
+    4,
+    4
+   ],
+   "is_teaching_per_raw_run": [
+    "teaching",
+    "teaching",
+    "partial"
+   ],
+   "solution_kinds": {
+    "cue": 2,
+    "drill": 0,
+    "check": 1,
+    "progression": 0
+   },
+   "solutions_all_target_a_cause": true,
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_by_3run_consensus(base_r2)",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v5": {
+    "1-2": {
+     "causes": 1.0,
+     "chain_roots": 1.0,
+     "solutions": 0.4
+    },
+    "1-3": {
+     "causes": 0.75,
+     "chain_roots": 0.75,
+     "solutions": 0.4
+    },
+    "2-3": {
+     "causes": 0.75,
+     "chain_roots": 0.75,
+     "solutions": 0.6
+    }
+   },
+   "rerun_consensus": {
+    "closeness": {
+     "1": 4.3,
+     "2": 4.5,
+     "3": 4.0
+    },
+    "base_run": 2,
+    "dropped_causes": [],
+    "evidence_pruned": 0,
+    "dropped_solutions": [
+     "D02"
+    ],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": true,
+      "findings": [
+       "[PASS] rerun: causes transcript-anchor Jaccard 1.00 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 1.00 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.50 (min 0.5)"
+      ]
+     },
+     "final-r3": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: is_teaching differs between runs",
+       "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.75 (min 0.5)"
+      ]
+     }
+    },
+    "pass": true
+   },
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 27498,
+    "candidatesTokenCount": 12380,
+    "thoughtsTokenCount": 16107,
+    "totalTokenCount": 55985,
+    "cachedContentTokenCount": 7137
+   }
+  },
+  {
+   "id": "FOmz8Wjv3DQ",
+   "title": "Deeper Than Just \"Footwork\" | Tennis Movement Fundamentals Explained",
+   "duration_s": 1066.0,
+   "upload_date": "2025-06-07",
+   "role": "new_round5",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v5",
+   "is_teaching": "teaching",
+   "stroke": "movement",
+   "format": "pro_analysis",
+   "n_quotes": 20,
+   "n_symptoms": 3,
+   "n_causes": 4,
+   "n_solutions": 5,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    4
+   ],
+   "n_solutions_per_raw_run": [
+    5,
+    5,
+    5
+   ],
+   "is_teaching_per_raw_run": [
+    "teaching",
+    "teaching",
+    "teaching"
+   ],
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 3,
+    "check": 0,
+    "progression": 1
+   },
+   "solutions_all_target_a_cause": true,
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": true
+   },
+   "rerun_pair_jaccard_v5": {
+    "1-2": {
+     "causes": 0.33,
+     "chain_roots": 0.33,
+     "solutions": 1.0
+    },
+    "1-3": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.67
+    },
+    "2-3": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.67
+    }
+   },
+   "rerun_consensus": null,
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 34374,
+    "candidatesTokenCount": 13325,
+    "thoughtsTokenCount": 2843,
+    "totalTokenCount": 50542,
+    "cachedContentTokenCount": 9425
+   }
+  },
+  {
+   "id": "w1FakobNq1Q",
+   "title": "Breaking Down the Greatest Tiebreak Ever Played",
+   "duration_s": 684.0,
+   "upload_date": "2025-06-09",
+   "role": "new_round5",
+   "status": "stage1_draft",
+   "prompt_version": "ep_s1_v5",
+   "is_teaching": "teaching",
+   "stroke": "general",
+   "format": "pro_analysis",
+   "n_quotes": 25,
+   "n_symptoms": 3,
+   "n_causes": 5,
+   "n_solutions": 4,
+   "n_angles": 4,
+   "n_causes_per_raw_run": [
+    4,
+    4,
+    5
+   ],
+   "n_solutions_per_raw_run": [
+    4,
+    4,
+    5
+   ],
+   "is_teaching_per_raw_run": [
+    "teaching",
+    "partial",
+    "teaching"
+   ],
+   "solution_kinds": {
+    "cue": 2,
+    "drill": 2,
+    "check": 0,
+    "progression": 0
+   },
+   "solutions_all_target_a_cause": true,
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "FAIL",
+   "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v5": {
+    "1-2": {
+     "causes": 0.33,
+     "chain_roots": 0.33,
+     "solutions": 0.33
+    },
+    "1-3": {
+     "causes": 0.5,
+     "chain_roots": 0.5,
+     "solutions": 0.5
+    },
+    "2-3": {
+     "causes": 0.8,
+     "chain_roots": 0.8,
+     "solutions": 0.29
+    }
+   },
+   "rerun_consensus": {
+    "closeness": {
+     "1": 2.5,
+     "2": 2.886,
+     "3": 3.386
+    },
+    "base_run": 3,
+    "dropped_causes": [],
+    "evidence_pruned": 0,
+    "dropped_solutions": [
+     "D05"
+    ],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.50 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.50 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.60 (min 0.5)"
+      ]
+     },
+     "final-r2": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: is_teaching differs between runs",
+       "[PASS] rerun: causes transcript-anchor Jaccard 0.80 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.80 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.33 (min 0.5)"
+      ]
+     }
+    },
+    "pass": false
+   },
+   "runs_used": 3,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 27366,
+    "candidatesTokenCount": 14406,
+    "thoughtsTokenCount": 28888,
+    "totalTokenCount": 70660,
+    "cachedContentTokenCount": 7094
+   }
+  },
+  {
+   "id": "UB6SbA_KX9E",
+   "title": "Proper Trunk Sequencing will Transform Your Tennis",
+   "duration_s": 714.0,
+   "upload_date": "2025-06-17",
+   "role": "new_round5",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v5",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 24,
+   "n_symptoms": 3,
+   "n_causes": 4,
+   "n_solutions": 4,
+   "n_angles": 6,
+   "n_causes_per_raw_run": [
+    4,
+    4
+   ],
+   "n_solutions_per_raw_run": [
+    4,
+    3
+   ],
+   "is_teaching_per_raw_run": [
+    "teaching",
+    "teaching"
+   ],
+   "solution_kinds": {
+    "cue": 4,
+    "drill": 0,
+    "check": 0,
+    "progression": 0
+   },
+   "solutions_all_target_a_cause": true,
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-2",
+   "rerun_raw_pairs": {
+    "1-2": true
+   },
+   "rerun_pair_jaccard_v5": {
+    "1-2": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.75
+    }
+   },
+   "rerun_consensus": null,
+   "runs_used": 2,
+   "gemini_usage": {
+    "calls": 2,
+    "promptTokenCount": 17374,
+    "candidatesTokenCount": 8264,
+    "thoughtsTokenCount": 10736,
+    "totalTokenCount": 36374,
+    "cachedContentTokenCount": 0
+   }
+  }
+ ],
+ "v4_vs_v5_solutions": {
+  "caveat": "v5 ran on 5 NEW episodes; v4 baseline is the 7 episodes of round4 (not the same episodes) -> episode difficulty is confounded; 5 pairs vs 7 pairs; direction only, not proof",
+  "pair_1_2_solutions_mean": {
+   "v4_all7": 0.43,
+   "v5_new5": 0.562,
+   "delta": 0.132,
+   "v4_own_new5_reference": 0.436
+  },
+  "pair_1_2_causes_mean": {
+   "v4_all7": 0.511,
+   "v5_new5": 0.532
+  },
+  "pair_1_2_chain_roots_mean": {
+   "v4_all7": 0.549,
+   "v5_new5": 0.532
+  },
+  "all_pairs_solutions_mean_not_comparable": {
+   "v4_all7": 0.325,
+   "v5_new5": 0.549,
+   "n_pairs": [
+    17,
+    13
+   ]
+  },
+  "pair_1_2_per_episode_v5": {
+   "Qszz0N4fRb4": {
+    "causes": 0.4,
+    "chain_roots": 0.4,
+    "solutions": 0.33
+   },
+   "8r09TliP-Ak": {
+    "causes": 1.0,
+    "chain_roots": 1.0,
+    "solutions": 0.4
+   },
+   "FOmz8Wjv3DQ": {
+    "causes": 0.33,
+    "chain_roots": 0.33,
+    "solutions": 1.0
+   },
+   "w1FakobNq1Q": {
+    "causes": 0.33,
+    "chain_roots": 0.33,
+    "solutions": 0.33
+   },
+   "UB6SbA_KX9E": {
+    "causes": 0.6,
+    "chain_roots": 0.6,
+    "solutions": 0.75
+   }
+  },
+  "pair_1_2_per_episode_v4": {
+   "xLs469ZVMPU": {
+    "causes": 0.8,
+    "chain_roots": 1.0,
+    "solutions": 0.5
+   },
+   "wd4YRQW3TOc": {
+    "causes": 0.29,
+    "chain_roots": 0.33,
+    "solutions": 0.33
+   },
+   "JzcA_ku7Yhk": {
+    "causes": 0.6,
+    "chain_roots": 0.6,
+    "solutions": 0.33
+   },
+   "E_zmENJIj4g": {
+    "causes": 0.12,
+    "chain_roots": 0.14,
+    "solutions": 0.3
+   },
+   "JIMgI3jiVns": {
+    "causes": 0.5,
+    "chain_roots": 0.5,
+    "solutions": 0.67
+   },
+   "FxDmVi3EFnE": {
+    "causes": 0.6,
+    "chain_roots": 0.6,
+    "solutions": 0.5
+   },
+   "Psidjei5BnI": {
+    "causes": 0.67,
+    "chain_roots": 0.67,
+    "solutions": 0.38
+   }
+  },
+  "raw_run_solution_granularity": {
+   "v4_all7": {
+    "runs": 19,
+    "n_solutions_dist": {
+     "1": 2,
+     "2": 5,
+     "3": 3,
+     "4": 5,
+     "5": 3,
+     "6": 1
+    },
+    "in_3to6_rate": 0.632,
+    "mean_n_solutions": 3.26,
+    "buckets_with_gt1_solution": 0,
+    "adjacent_bucket_solution_pairs": 7,
+    "solutions_total": 62,
+    "solutions_with_cause_target": 57
+   },
+   "v5_new5": {
+    "runs": 14,
+    "n_solutions_dist": {
+     "3": 3,
+     "4": 6,
+     "5": 5
+    },
+    "in_3to6_rate": 1.0,
+    "mean_n_solutions": 4.14,
+    "buckets_with_gt1_solution": 0,
+    "adjacent_bucket_solution_pairs": 7,
+    "solutions_total": 58,
+    "solutions_with_cause_target": 58
+   }
+  },
+  "n_causes_per_raw_run_v5": {
+   "4": 11,
+   "3": 2,
+   "5": 1
+  },
+  "reading": "Solution counts are now controlled: 14/14 raw v5 runs have 3-6 solutions (v4: 12/19 = 63%; v4 had runs with 1-2), and 58/58 v5 solutions target a cause id (v4 57/62). Pair 1-2 solutions Jaccard mean 0.56 vs 0.43 (+0.13); but per-episode values swing 0.33-1.00 and 4 of 5 episodes still failed raw pair 1-2 (3 on causes: 0.40/0.33/0.33; 1 on solutions: 0.40) - only UB6SbA_KX9E passed on 2 runs - so the cause side did not improve (0.53 vs 0.51, flat) and the 2-run pass rate is 1/5 (v4: 2/7). The bucket-uniqueness half of the rule was already satisfied in v4 (0 buckets with >1 solution in both). Adjacent-bucket solution pairs are unchanged (7 vs 7 in absolute terms; 7/58 vs 7/62 per solution): the 'merge same exercise across adjacent buckets' instruction did not visibly reduce adjacency."
+ },
+ "low_confidence": {
+  "JIMgI3jiVns": "annotated in card conflicts[X01].description (LOW CONFIDENCE round5 annotation, no content changed) + manifest confidence=low, needs_user_subtitle_check=true (already set in round4); ExkBtFRhUWY unchanged from round4 (card + manifest). No new thin cards this round (every new card has causes>=3 and solutions>=3)."
+ },
+ "aggregate": {
+  "episodes_attempted": 5,
+  "new5_verified": [
+   "Qszz0N4fRb4",
+   "8r09TliP-Ak",
+   "FOmz8Wjv3DQ",
+   "UB6SbA_KX9E"
+  ],
+  "new5_draft_rerun_fail": [
+   "w1FakobNq1Q"
+  ],
+  "third_run_episodes": [
+   "Qszz0N4fRb4",
+   "8r09TliP-Ak",
+   "FOmz8Wjv3DQ",
+   "w1FakobNq1Q"
+  ],
+  "consensus_episodes": [
+   "8r09TliP-Ak",
+   "w1FakobNq1Q"
+  ],
+  "total_cards_in_episodes_dir": 25,
+  "stage1_verified_total": 22,
+  "stage1_draft_total": 3,
+  "stage1_draft_ids": [
+   "wd4YRQW3TOc",
+   "E_zmENJIj4g",
+   "w1FakobNq1Q"
+  ],
+  "validate_cards": "PASS (25 cards, 0 FAIL; 2 pre-existing R07 WARN on 2Nn9tyMECZU/wzLMv4ASg9s)",
+  "check_quotes": "PASS (582 quotes, text_ok 582, ts_ok 582)",
+  "check_manifest": "PASS",
+  "check_neutrality": "PASS (7 prompts incl. ep_s1_v5)",
+  "verify_all_selftest": "PASS",
+  "stage2": "not_run",
+  "video_layer": "empty_on_all_cards",
+  "remaining_unextracted_teaching_videos": {
+   "definition": "type_guess=教学长视频, .en.vtt present, no card, holdout=False",
+   "total": 41,
+   ">=400s": 28,
+   "300-400s": 7,
+   "<300s": 6,
+   "next_5_by_rule": [
+    [
+     "XXlndjnrA4E",
+     "499",
+     "Peripheral Vision Lets You Volley Like the Pros"
+    ],
+    [
+     "FjjvhNbk3q4",
+     "1262",
+     "7 Tips for an Effortless Serve ft. Giovanni Mpetshi-Perricard"
+    ],
+    [
+     "tzgAWr3QGv0",
+     "1132",
+     "7 Steps for a Sinner-Like Forehand | #5: Tilt!"
+    ],
+    [
+     "PjvOQkqH9DA",
+     "564",
+     "Never Lose Another Winnable Match | The Tactical and Psychological Makeup of Beatdowns"
+    ],
+    [
+     "FBJnFBtZozE",
+     "604",
+     "How Sinner Choke-Proofed His Game"
+    ]
+   ]
+  },
+  "normalizer_event_totals": {
+   "quote_snapped": 22,
+   "cause_anchor_exact": 55,
+   "intuition_first_forced_false": 8,
+   "solution_anchor_exact": 58
+  }
+ },
+ "gemini_usage_total": {
+  "calls": 14,
+  "promptTokenCount": 133207,
+  "candidatesTokenCount": 61526,
+  "thoughtsTokenCount": 77389,
+  "totalTokenCount": 272122,
+  "cachedContentTokenCount": 30493
+ },
+ "notes": [
+  "Qszz0N4fRb4 verified via raw pair 1-3 (1.00/1.00/0.80); pair 1-2 failed (0.40/0.40/0.33); run2 had only 3 causes/3 solutions.",
+  "8r09TliP-Ak (Draper pick, match/tactics): raw pairs fail only on solutions (1-2) or is_teaching teaching vs partial (run3); verified through the deterministic consensus (base run2, dropped solution D02, passes vs run1). Not a thin card (4 causes / 3 solutions) so not flagged low confidence, but note run3 judged it 'partial'.",
+  "FOmz8Wjv3DQ verified via raw pair 1-3 at causes Jaccard exactly 0.60 (= threshold; rule is val<min); 5 solutions in all 3 runs.",
+  "w1FakobNq1Q (tiebreak breakdown): is_teaching flips teaching/partial between runs; all pairs and consensus FAIL; kept stage1_draft with no manual edits.",
+  "UB6SbA_KX9E verified via raw pair 1-2 at causes/roots 0.60 (= threshold) with only 2 runs.",
+  "Selection is mechanical on manifest.tsv type_guess; Qszz0N4fRb4 (mental game), 8r09TliP-Ak and w1FakobNq1Q (match/tactics analysis) are less pure technique teaching, which probably contributes to the is_teaching instability and lower cause agreement.",
+  "No MICU key is stored in the repo (grep of worktree for the key value: 0 hits); raw responses and rendered prompts stay in /workspace/s1_work/round5 (outside repo)."
+ ],
+ "VERIFY": "PARTIAL"
+}

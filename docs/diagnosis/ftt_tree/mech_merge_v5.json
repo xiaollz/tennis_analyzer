@@ -1,0 +1,368 @@
+{
+ "version": "mech_group_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/mech_group_v1.md",
+ "runs": 2,
+ "rule": "final group = both runs group the nodes together (partition intersection); rep = run1 rep if inside the final group, else run2 rep, else first id; no text rewritten",
+ "lexical_layer_unchanged": {
+  "merge_cosine": 0.4,
+  "note": "build_tree.py cosine merge is not touched; this is an extra layer applied to its 97 cause nodes"
+ },
+ "cause_nodes_before": 158,
+ "cause_nodes_after": 151,
+ "strokes_run": {
+  "serve": 11,
+  "forehand": 83,
+  "general": 32,
+  "backhand": 21
+ },
+ "groups": [
+  {
+   "stroke": "forehand",
+   "rep": "N-C_T5MEVWBOKR4_C01",
+   "members": [
+    {
+     "node": "N-C_2NN9TYMECZU_C05",
+     "episodes": [
+      "2Nn9tyMECZU"
+     ],
+     "card_causes": [
+      "2Nn9tyMECZU:C05"
+     ],
+     "layer": "B",
+     "text": "Accelerating trunk rotation all the way through to the target instead of decelerating short of the target to release the shoulder",
+     "also_worded": [],
+     "evidence": [
+      "2Nn9tyMECZU:Q01",
+      "2Nn9tyMECZU:Q19",
+      "2Nn9tyMECZU:Q24"
+     ]
+    },
+    {
+     "node": "N-C_T5MEVWBOKR4_C01",
+     "episodes": [
+      "T5meVwBOKR4"
+     ],
+     "card_causes": [
+      "T5meVwBOKR4:C01"
+     ],
+     "layer": "B",
+     "text": "The player fails to freeze or decelerate the trunk right before contact, leaking rotational momentum instead of transferring it into the arm.",
+     "also_worded": [],
+     "evidence": [
+      "T5meVwBOKR4:Q06"
+     ]
+    },
+    {
+     "node": "N-C_WZLMV4ASG9S_C07",
+     "episodes": [
+      "wzLMv4ASg9s"
+     ],
+     "card_causes": [
+      "wzLMv4ASg9s:C07"
+     ],
+     "layer": "B",
+     "text": "Trunk spins continuously without an anchor to decelerate, preventing momentum transfer to the arm and racket.",
+     "also_worded": [],
+     "evidence": [
+      "wzLMv4ASg9s:Q01",
+      "wzLMv4ASg9s:Q05",
+      "wzLMv4ASg9s:Q10"
+     ]
+    },
+    {
+     "node": "N-C_XLS469ZVMPU_C01",
+     "episodes": [
+      "xLs469ZVMPU"
+     ],
+     "card_causes": [
+      "xLs469ZVMPU:C01"
+     ],
+     "layer": "B",
+     "text": "The player twists continuously through contact instead of allowing hip rotation to be transient and brake to create a whip effect.",
+     "also_worded": [],
+     "evidence": [
+      "xLs469ZVMPU:Q03"
+     ]
+    }
+   ],
+   "why_run1": "Failing to decelerate or brake trunk rotation before contact, preventing rotational momentum from transferring into the arm and racket.",
+   "why_run2": "Failing to decelerate or brake trunk rotation before contact, preventing rotational momentum transfer into the arm and racket.",
+   "rep_run1": "N-C_T5MEVWBOKR4_C01",
+   "rep_run2": "N-C_WZLMV4ASG9S_C07",
+   "lexical_cos_pairs": {
+    "N-C_2NN9TYMECZU_C05|N-C_T5MEVWBOKR4_C01": 0.05,
+    "N-C_2NN9TYMECZU_C05|N-C_WZLMV4ASG9S_C07": 0.052,
+    "N-C_2NN9TYMECZU_C05|N-C_XLS469ZVMPU_C01": 0.058,
+    "N-C_T5MEVWBOKR4_C01|N-C_WZLMV4ASG9S_C07": 0.334,
+    "N-C_T5MEVWBOKR4_C01|N-C_XLS469ZVMPU_C01": 0.045,
+    "N-C_WZLMV4ASG9S_C07|N-C_XLS469ZVMPU_C01": 0.112
+   },
+   "group_id": "MG01"
+  },
+  {
+   "stroke": "backhand",
+   "rep": "N-C_DDYKUNZTDYU_C04",
+   "members": [
+    {
+     "node": "N-C_DDYKUNZTDYU_C04",
+     "episodes": [
+      "dDYKuNZtdyU"
+     ],
+     "card_causes": [
+      "dDYKuNZtdyU:C04"
+     ],
+     "layer": "B",
+     "text": "Pulling too close to the body or relying excessively on rotational body mechanics rather than pulling well out in front.",
+     "also_worded": [],
+     "evidence": [
+      "dDYKuNZtdyU:Q14",
+      "dDYKuNZtdyU:Q15",
+      "dDYKuNZtdyU:Q16"
+     ]
+    },
+    {
+     "node": "N-C_PQ793MBQE50_C03",
+     "episodes": [
+      "pQ793MBQE50"
+     ],
+     "card_causes": [
+      "pQ793MBQE50:C03"
+     ],
+     "layer": "B",
+     "text": "Catching the ball too late with the pull slot set too close to the stomach rather than out in front.",
+     "also_worded": [],
+     "evidence": [
+      "pQ793MBQE50:Q03",
+      "pQ793MBQE50:Q04",
+      "pQ793MBQE50:Q26"
+     ]
+    }
+   ],
+   "why_run1": "Pulling or making contact too close to the body rather than well out in front.",
+   "why_run2": "Setting the pull slot or contact point too close to the body instead of extending out in front.",
+   "rep_run1": "N-C_DDYKUNZTDYU_C04",
+   "rep_run2": "N-C_PQ793MBQE50_C03",
+   "lexical_cos_pairs": {
+    "N-C_DDYKUNZTDYU_C04|N-C_PQ793MBQE50_C03": 0.342
+   },
+   "group_id": "MG02"
+  },
+  {
+   "stroke": "forehand",
+   "rep": "N-C_UJPUDUX0JIA_C01",
+   "members": [
+    {
+     "node": "N-C_APCKJDADZEK_C06",
+     "episodes": [
+      "aPcKJDadzek"
+     ],
+     "card_causes": [
+      "aPcKJDadzek:C06"
+     ],
+     "layer": "B",
+     "text": "The player lets the hips drift forward and slides the knee forward over the toes instead of hinging at the hips and keeping the hips behind.",
+     "also_worded": [],
+     "evidence": [
+      "aPcKJDadzek:Q01",
+      "aPcKJDadzek:Q05",
+      "aPcKJDadzek:Q23"
+     ]
+    },
+    {
+     "node": "N-C_UJPUDUX0JIA_C01",
+     "episodes": [
+      "uJpuDUx0jIA"
+     ],
+     "card_causes": [
+      "uJpuDUx0jIA:C01"
+     ],
+     "layer": "B",
+     "text": "Hips extending forward in front of the shoulders with knees forward and chest up (quad dominant posture) rather than maintaining a hip hinge.",
+     "also_worded": [],
+     "evidence": [
+      "uJpuDUx0jIA:Q01",
+      "uJpuDUx0jIA:Q05",
+      "uJpuDUx0jIA:Q09"
+     ]
+    }
+   ],
+   "why_run1": "Allowing the hips and knees to push forward rather than hinging at the hips.",
+   "why_run2": "Drifting or extending the hips forward with knees advancing rather than maintaining a stable hip hinge.",
+   "rep_run1": "N-C_UJPUDUX0JIA_C01",
+   "rep_run2": "N-C_APCKJDADZEK_C06",
+   "lexical_cos_pairs": {
+    "N-C_APCKJDADZEK_C06|N-C_UJPUDUX0JIA_C01": 0.326
+   },
+   "group_id": "MG03"
+  },
+  {
+   "stroke": "general",
+   "rep": "N-C_PJVOQKQH9DA_C01",
+   "members": [
+    {
+     "node": "N-C_8R09TLIP_AK_C04",
+     "episodes": [
+      "8r09TliP-Ak"
+     ],
+     "card_causes": [
+      "8r09TliP-Ak:C04"
+     ],
+     "layer": "B",
+     "text": "Players grant opponents too much respect on defense and attempt wild bailout shots rather than hitting high, safe balls back into court.",
+     "also_worded": [],
+     "evidence": [
+      "8r09TliP-Ak:Q14"
+     ]
+    },
+    {
+     "node": "N-C_PJVOQKQH9DA_C01",
+     "episodes": [
+      "PjvOQkqH9DA"
+     ],
+     "card_causes": [
+      "PjvOQkqH9DA:C01"
+     ],
+     "layer": "B",
+     "text": "Players believe they must execute miraculous, razor-thin knifing or driving shots under pressure instead of making their opponent beat them.",
+     "also_worded": [],
+     "evidence": [
+      "PjvOQkqH9DA:Q03"
+     ]
+    }
+   ],
+   "why_run1": "Attempting low-percentage miraculous or bailout shots when under pressure instead of hitting safe, neutral balls to stay in the point.",
+   "why_run2": "Attempting low-percentage miraculous bailout shots under defensive pressure instead of resetting the point with high, safe balls.",
+   "rep_run1": "N-C_PJVOQKQH9DA_C01",
+   "rep_run2": "N-C_8R09TLIP_AK_C04",
+   "lexical_cos_pairs": {
+    "N-C_8R09TLIP_AK_C04|N-C_PJVOQKQH9DA_C01": 0.111
+   },
+   "group_id": "MG04"
+  },
+  {
+   "stroke": "serve",
+   "rep": "N-C_PFDQNFF_VYA_C01",
+   "members": [
+    {
+     "node": "N-C_1W1ROPE5L0K_C03",
+     "episodes": [
+      "1W1rope5l0k"
+     ],
+     "card_causes": [
+      "1W1rope5l0k:C03"
+     ],
+     "layer": "C",
+     "text": "Conceiving the serve internally as a down-to-up or low-to-high vertical motion prevents the body from loading in the horizontal in-to-out plane.",
+     "also_worded": [],
+     "evidence": [
+      "1W1rope5l0k:Q01"
+     ]
+    },
+    {
+     "node": "N-C_PFDQNFF_VYA_C01",
+     "episodes": [
+      "PfDqnff_vYA"
+     ],
+     "card_causes": [
+      "PfDqnff_vYA:C01"
+     ],
+     "layer": "B",
+     "text": "The player attempts to throw the racket up or down-and-up directly at the ball rather than throwing it out to the hitting side.",
+     "also_worded": [],
+     "evidence": [
+      "PfDqnff_vYA:Q02"
+     ]
+    }
+   ],
+   "why_run1": "Swinging or directing the racket vertically up directly at the ball rather than swinging outward along an in-to-out path.",
+   "why_run2": "Directing the swing path vertically (down-to-up) instead of swinging and releasing outward to the hitting side.",
+   "rep_run1": "N-C_PFDQNFF_VYA_C01",
+   "rep_run2": "N-C_PFDQNFF_VYA_C01",
+   "lexical_cos_pairs": {
+    "N-C_1W1ROPE5L0K_C03|N-C_PFDQNFF_VYA_C01": 0.0
+   },
+   "group_id": "MG05"
+  }
+ ],
+ "runs_cleaned_partitions": {
+  "backhand": {
+   "run1": [
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ]
+   ]
+  },
+  "forehand": {
+   "run1": [
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_T5MEVWBOKR4_C01",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_T5MEVWBOKR4_C01",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ]
+   ]
+  },
+  "general": {
+   "run1": [
+    [
+     "N-C_8R09TLIP_AK_C04",
+     "N-C_PJVOQKQH9DA_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_8R09TLIP_AK_C04",
+     "N-C_PJVOQKQH9DA_C01"
+    ]
+   ]
+  },
+  "serve": {
+   "run1": [
+    [
+     "N-C_1W1ROPE5L0K_C03",
+     "N-C_PFDQNFF_VYA_C01"
+    ]
+   ],
+   "run2": [
+    [
+     "N-C_1W1ROPE5L0K_C03",
+     "N-C_PFDQNFF_VYA_C01"
+    ]
+   ]
+  }
+ },
+ "pairs_grouped_by_only_one_run": [],
+ "repair_log": [],
+ "usage": {
+  "promptTokenCount": 18040,
+  "candidatesTokenCount": 1200,
+  "totalTokenCount": 44938,
+  "thoughtsTokenCount": 25698,
+  "calls": 8
+ },
+ "calls": 8
+}

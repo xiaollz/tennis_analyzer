@@ -1,0 +1,553 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "dDYKuNZtdyU",
+    "url": "https://www.youtube.com/watch?v=dDYKuNZtdyU",
+    "title": "Find Your One-Handed Backhand \"Pull Slot\"",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 666.0,
+    "upload_date": "2024-08-15",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "backhand",
+    "format": "pro_analysis",
+    "reason": "The coach analyzes footage of elite one-handed backhands (Wawrinka, Federer, Gasquet, Thiem) to teach how to find the pull slot and engage the upper back muscles through contact."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/dDYKuNZtdyU.en.vtt",
+    "kind": "auto",
+    "sha256": "d7015085f14e6a080c8cc12897ee96b08637497055b8c82fb0c4ec72c6e1d93b",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v2",
+    "stage1_run_ids": [
+      "s1_r1_dDYKuN",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you find and utilize the 'pull slot' on a one-handed backhand to generate power and control?",
+    "definition": "Players often fail to position the racket into the proper pull slot and lack a synchronized two-handed upper-back pull, resulting in weak, inconsistent, and hard-to-aim one-handed backhands.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "One-handed backhand stroke",
+      "Two-handed racket preparation into forward swing"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q02",
+      "Q04",
+      "Q07",
+      "Q13"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "right here this is where the magic happens this is your power position and I call it the pull slot",
+      "start": 8.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "it is the slot the slot it feels like a slot with your hand where the athlete begins to actively pull with the strong muscles of the upper back to drive through contact",
+      "start": 17.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "and this is how you know when your favorite player has started pulling the off hand here is going to start to move backwards",
+      "start": 25.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "and if you can figure out how to throw the racket accurately into this position and then pull through contact from this position your one-hander is going to feel amazing",
+      "start": 42.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the upper back is going to pull the hands apart so the scapula back here the shoulder blades will be driven together the hands will be driven apart",
+      "start": 76.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "and this is a two-handed pull so as this hand goes forward this hand goes back when you pull with two hands you have a lot more balance and accuracy",
+      "start": 90.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "hypothetically you could just pull with your right side but nobody does that because it's less balanced it's weaker and it's obviously harder to aim",
+      "start": 97.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "this is a lower pulse slot but it doesn't matter it's the same fundamental idea except that the racket is thrown here down into a lower pulse slot",
+      "start": 108.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "watch the off hand here hanging out by the hip and see that it has started to move away when it starts to move back this hand is moving forward",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "you have to watch this hand because this hand will just hang out until the active pull starts",
+      "start": 205.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "the two-handed nature of the single-handed backhand for so much of the Swing so watch him attack the pulse slot with the left hand as well",
+      "start": 222.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "without this left hand supporting the racket down to here it gets much more difficult to accurately get into this slot",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "and if you're not accurately in this slot it's obviously difficult to accurately drive through contact",
+      "start": 250.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "out in front of the body feeling where you kind of throw the racket almost to your stomach maybe a little farther back than that let it drift out to here and then pull from here",
+      "start": 273.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "when you pull farther away from your body like Roger feder does and in my opinion working with people the the more rotational swing is more difficult",
+      "start": 284.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "allow either hand to pass well in front of your torso and then pull when it's out here and pull on a line through the ball you're going to get a fall tolerant Hitting Zone",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "as you start to feel more and more comfortable feel free to add to your racket this makes the swing harder to control and more Dynamic",
+      "start": 343.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "again we're attacking the pull slot with two hands coming into it about to pull",
+      "start": 426.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "The important thing with the Torso and hip rotation is that you get the racket to the right pulse slot so the end of the stroke you can pull",
+      "start": 438.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "the harder you're going to pull the less forgiving your spacing and timing is and so using that left hand to really accurately get into the exact pull slot you want is very important",
+      "start": 493.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "it's a two-handed pull because he wants to pull this way to get a little more margin on the shot the left hand is going to pull down a little bit equal and opposite on the pull",
+      "start": 548.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "it is a two-handed pull both hands use the entire upper back to control it",
+      "start": 558.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "are sound so the fundamentals is he's seeing the ball he knows exactly where the ball is so even if his feet aren't in perfect position he knows exactly where the ball is he throws the racket into a pulse",
+      "start": 591.76,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "even if things aren't perfect as long as you're seeing the ball and you're pulling with the right muscles at the right rhythm with your own stroke",
+      "start": 639.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The backhand feels weak, unbalanced, and difficult to aim when pulled only with the dominant side.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player fails to drive accurately and consistently through the contact point.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The off hand fails to separate and move backward away from the hitting hand prior to and through contact.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q05",
+        "Q09",
+        "Q10"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02",
+        "Q05",
+        "Q06",
+        "Q22"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Failing to throw and deliver the racket accurately into the pull slot before pulling through contact.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04",
+        "Q12",
+        "Q13",
+        "Q19"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Letting go of the racket with the non-dominant hand too early instead of supporting it deep into the forward swing.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q20"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Pulling too close to the body or relying excessively on rotational body mechanics rather than pulling well out in front.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14",
+        "Q15",
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12",
+        "Q20"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04",
+        "Q13",
+        "Q19"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q14",
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03",
+        "Q05",
+        "Q09"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The upper back engages by driving the scapulae together, creating an equal and opposite two-handed pull where hands separate.",
+      "evidence": [
+        "Q05",
+        "Q06",
+        "Q21",
+        "Q22"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "visual_model",
+      "summary": "The exact timing of the pull slot can be identified by the moment the non-dominant hand stops hanging out and begins moving backward away from the hitting hand.",
+      "evidence": [
+        "Q03",
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Roger Federer keeps his left hand assisting the racket almost down to the stomach and initiates the pull well out in front of his sideways torso.",
+      "evidence": [
+        "Q11",
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Richard Gasquet utilizes extreme racket cocking and heavy torso rotation but still routes the racket into the pull slot before pulling apart with the upper back.",
+      "evidence": [
+        "Q17",
+        "Q18",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "pro_example",
+      "summary": "Dominic Thiem pulls with maximum intensity in an equal and opposite direction regardless of stance or jumping position.",
+      "evidence": [
+        "Q20",
+        "Q21",
+        "Q23",
+        "Q24"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "feel",
+      "summary": "The pull slot feels like an exact slot with the hand from which the player actively pulls with the upper back.",
+      "evidence": [
+        "Q02",
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Attack the pull slot using both hands, keeping the non-dominant hand supporting the racket down toward the stomach before releasing.",
+      "external_goal": "Keep the non-dominant hand supporting the racket almost until stomach level",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q14",
+        "Q20"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Execute an equal and opposite two-handed pull through contact by driving the shoulder blades together as the hands pull apart.",
+      "external_goal": "Pull the off hand backward while driving the hitting hand forward",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05",
+        "Q06",
+        "Q21",
+        "Q22"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "S03"
+      ],
+      "summary": "Review video footage to verify that the non-dominant hand drifts backward to open up space relative to the hitting hand at the start of the pull.",
+      "external_goal": "Observe the visual gap opening between the off hand and the hitting hand/torso",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q03",
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Allow the hands to pass well in front of the torso and pull on a line through the ball for a fault-tolerant hitting zone.",
+      "external_goal": "Pull on a straight line through the ball out in front of the torso",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14",
+        "Q16"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

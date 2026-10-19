@@ -1,0 +1,508 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "1W1rope5l0k",
+    "url": "https://www.youtube.com/watch?v=1W1rope5l0k",
+    "title": "Why Every Pro Serves In-to-Out, rather than Low-to-High",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 691.0,
+    "upload_date": "2025-11-06",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable progressions including isolating forearm pronation, horizontal bopping above the head, and the ball-in-a-sock lasso drill."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/1W1rope5l0k.en.vtt",
+    "kind": "auto",
+    "sha256": "d796235a4e08675e7ab0abe2e7022b89509924611cc179cc48368142af4a8d8f",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_1W1rop",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why should the serve be an in-to-out motion rather than low-to-high?",
+    "definition": "Players often conceptualize and swing the serve as a vertical down-to-up or low-to-high motion, which prevents proper elastic stretching and whipping of the shoulder, pecs, and forearm.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "continental grip",
+      "basic serve toss capability"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The serve is fundamentally an in to out to in motion. And a lot of where it goes wrong for people is internally as as an up to down to up motion.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "This ball and sock should never go behind your back. You should be swinging it in to out horizontally above your head like a lasso.",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "This is what stretches your pecs and your shoulder in the way that they need to stretch for velocity on the serve.",
+      "start": 27.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "So, to hit a great serve, you need your arm to do two things. One is pronate.",
+      "start": 53.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "The other one, which many people are missing, is shoulder rotation. So, if I if I go here and I just roll the forearm, that's where you get this kind of reaching up arm stationary serve here.",
+      "start": 75.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And what unlocks the full serve is this stretching and rolling as well. So, the shoulder rolling back and then the shoulder rolling forward as well.",
+      "start": 87.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "the ball down into the box. So, that lasso drill, the reason that lasso drill is so critical is this stretch on the pecs and external internal whip of the shoulder doesn't work in the down to up plane. It",
+      "start": 107.03999999999999,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And in the serve it comes around the opposite way. And so, this is why we have to combine pronation with shoulder rotation.",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Take your racket in continental grip and just rotate your forearm. And make sure you actually can feel. Yeah, okay. My racket hits the ball down when my forearm rotates.",
+      "start": 182.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "I want you to toss the ball above your head and you're just going to pronate like this.",
+      "start": 208.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Now, the reason you have to toss these above your head is if you toss them out here, you're probably going to be tempted to push it more like a forehand volley.",
+      "start": 245.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "one of the cheat codes for making sure you get good pronation on your serve is to imagine approaching the ball from the inside. So, if you imagine the the low to high serve. The problem with that is you",
+      "start": 272.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "See how I'm coming around the outside here? And we're getting that pushy that pushy action. But if I start my racket from the inside and flick out, that's where we get the actual slapping action",
+      "start": 315.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "I want to point out that if you take this ball, toss it above your head, pronate through it, and just hit it super hard to the back fence, that is an amazing serve progression.",
+      "start": 364.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "get confused. And if you hit a serve like this and then you want it to go in, you'll go like this and try to pull it down like this. Your intuition will go, \"Oh, that hit it out. I",
+      "start": 388.2,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Now, you know, fundamentally, in order to hit it down, you just throw it a little more in front of you. And now that same pronation ends up hitting it down.",
+      "start": 425.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So, she's going to stand this way and just feel the stretch here and bop the ball into the ground.",
+      "start": 481.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "the trickiest part is probably the next progression, which is that same forearm stretch and release above your head horizontally like this.",
+      "start": 527.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "You see how the the tip of her racket, it always approaches the ball from the left side to the right side. So, it is an in to out action.",
+      "start": 576.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "One of the best tools for feeling how to activate your throwing chain is the in-to-out lasso.",
+      "start": 600.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "If you're hitting it long, you just toss the ball like a little bit farther in front of you and do the exact same thing.",
+      "start": 662.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The server exhibits a reaching up, arm stationary serve with no shoulder roll or body load.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The racket pushes the ball from the outside like a forehand volley rather than snapping elastically.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "R",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The server pulls their entire arm downwards to force the ball into the court instead of allowing pronation.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Conceptualizing the serve in a vertical down-to-up plane prevents the pecs and shoulder from stretching horizontally for whip velocity.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Missing shoulder rotation (rolling back and forward) leaves the arm reaching up stationary with only forearm roll.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Approaching the ball from the top or outside creates a pushy volley-like contact rather than loading the forearm elastically from the inside.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Intuition causes the player to yank the entire arm down after seeing pronated balls sail long instead of adjusting toss depth.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "analogy",
+      "summary": "Swinging a ball in a sock horizontally above your head like a lasso loads the pecs and shoulder elastically.",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "A full serve requires combining forearm pronation with external/internal shoulder rotation.",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Coming around the outside produces a pushy contact, whereas starting inside and flicking out generates elastic snap.",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Andy Roddick is famous for strings facing away on his finish due to complete forearm pronation.",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Swing a ball in a sock horizontally above your head like a lasso to feel chest, scapula, and shoulder momentum without dropping it behind your back.",
+      "external_goal": "Keep the ball in a sock spinning horizontally overhead like a lasso",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Hold continental grip down low and rotate the forearm back and forth to feel the elastic stretch and bounce of pronation.",
+      "external_goal": "Bop the ball straight into the ground by rotating the forearm",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09",
+        "Q17"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Toss the ball directly above your head and isolate pronation to bop the ball horizontally across the net without pushing forward like a volley.",
+      "external_goal": "Bop the overhead ball across the net using only horizontal forearm rotation",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q10",
+        "Q11",
+        "Q18"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Imagine the racket tip approaching the ball from the inside (left-to-right) rather than from the top or outside.",
+      "external_goal": "Approach the ball from its left/inside edge",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12",
+        "Q19"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Toss overhead and pronate aggressively to hit balls as hard as possible past the baseline and into the back fence without trying to pull down.",
+      "external_goal": "Hit the ball hard into the back fence using pure pronation",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "progression",
+      "targets": [
+        "C04"
+      ],
+      "summary": "To bring the fast serve into the box, shift your toss slightly further in front rather than yanking the arm down.",
+      "external_goal": "Toss slightly farther out in front while keeping identical swing mechanics",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16",
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

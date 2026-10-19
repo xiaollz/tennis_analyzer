@@ -1,0 +1,567 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "uJpuDUx0jIA",
+    "url": "https://www.youtube.com/watch?v=uJpuDUx0jIA",
+    "title": "Why Your Forehand Keeps Disappearing, and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1427.0,
+    "upload_date": "2026-09-22",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "FTT teaching episode from subtitle extraction"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/uJpuDUx0jIA.en.vtt",
+    "kind": "auto",
+    "sha256": "84aae97fffc86abd21c4b6865012118411f3cb77d5767511728f1d04856ed123",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v1",
+    "stage1_run_ids": [
+      "s1_r1_uJpuDU",
+      "s1_r2_uJpuDU"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does your forehand keep disappearing, and how do you build a repeatable, controllable stroke?",
+    "definition": "Players lose control and consistency on their forehand because they lack proximal stability in the hips, trunk, and shoulder blade, forcing the arm and hand to make unstable upper body compensations.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Players attempting to generate topspin or power on their forehand but suffering from intermittent loss of control and ball shanking."
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q09"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The forehand that we're going to be building today, it's not the fastest version of your forehand. It's not the heaviest version of your forehand, but it is stable, it is controllable, it is",
+      "start": 0.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "arm. She's still not trying to hit it that hard. Her control here is not gone",
+      "start": 89.28,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "things working for them. And the reason you you try to imitate that at the arm and it doesn't work is because you're",
+      "start": 149.04,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "your hips. For most players, if they intentionally try to pop this forward, you're going to get this hip coming past the trunk unstable popping up position. which is going to turn the simple swing into a overrotated popping up",
+      "start": 191.44,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And so we're kind of hitting almost as if we are doing a Romanian deadlift. And it's going to feel ridiculous. And you're going to notice, huh, even though it feels ridiculous, because it is forcing me to activate my",
+      "start": 344.479,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "What normally happens is players instead of getting low like that, they go knees forward, chest up. And this kind of like tricks you into thinking that it's a similar athletic ready position. But",
+      "start": 408.96,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "toe, thumb toe, pinky toe. And if you feel unbalanced, not powerful, not stable, you're rolling the knee out towards the outside of the ball of your foot rather than the inside of the ball of your foot. Another way",
+      "start": 503.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "weight transfer feels really good. The key to keeping that simple lower body activation that's gonna make the shoulder self organized, finish balanced",
+      "start": 664.399,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "effective forehand. She's doing so many upper body compensations to make up for the fact that she's not able to transfer her weight cleanly onto that front foot.",
+      "start": 730.32,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "gentle semicircle around a table. That is because she is stabilizing with her back here. If she doesn't do that, and you might see this in your own strokes,",
+      "start": 877.76,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "It's your back and your side. The first thing is we don't want to shrug. So the upper traps here, you shrug up for me. If you are doing this, undo that shrug first. Undo that shrug. Okay. Now the",
+      "start": 914.24,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So that that that chest over hips, it creates this swinging lane. And if we look laterally, that's actually pretty far to her right. Whereas, if I were to put the ball here, notice she can't use that swinging lane",
+      "start": 1135.2,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "if you twist the racket, if you push the racket, it can't slide in your hand. Your whole hand has to move with the handle. And you want to engineer a grip so you can do that while holding as",
+      "start": 1244.96,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "hitting arm. So, the hand is a sensory organ which is helping you time the upstream stuff, right? When I feel like I felt there, oh, that contact didn't feel that good. Why? Well, because I actually fell back a",
+      "start": 1394.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Sudden loss of ball control or spraying balls long to the back fence even at slow swing speeds.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Torso popping up and over-rotating around through the stroke instead of maintaining posture.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Falling backward, to the left, or to the right on follow-through instead of finishing balanced over the front foot.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Contacting the ball too close to the body, crowding the swing and forcing an arm-push.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "S05",
+      "description": "Racket sliding, micro-twisting, or lacking stable sensory connection in the palm during stroke.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Hips extending forward in front of the shoulders with knees forward and chest up (quad dominant posture) rather than maintaining a hip hinge.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02",
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Intentionally driving the pelvis open forward instead of rotating the upper body over a stable pelvic base.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Loading weight onto the inside heel / over-pronated flat foot rather than loading the arch and ball of the foot.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Failing to transfer weight cleanly onto the front foot anchor at finish.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Upper trapezius shrugging and lack of isometric engagement in the mid-traps and serratus anterior, detaching the hitting arm from the trunk.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "Positioning too close laterally to the ball, blocking the natural swing lane created by trunk flexion.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "Gripping too loosely (0/10) or with gaps between the handle and palm, causing the racket to twist upon contact.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C07",
+      "to": "S05",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Explosive throwing mechanics in the arm only function when rooted in proximal stability at the hip-trunk connection and the scapula-shoulder interface.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Stabilizing the hip and upper body mimics a Romanian deadlift position where the butt stays back and the chest stays forward throughout the swing.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "The hitting elbow should be visualized as tracing a smooth, gentle semicircle along the surface of a table supported by back engagement.",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Players often try to intentionally pop their hips forward or keep their grip completely loose (0/10), which actually destroys control and leads to popping up and twisting.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "The hand acts as a sensory organ communicating upstream balance and timing, while the large muscles of the trunk and hips provide the physical driving force for the hitting arm.",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "S02"
+      ],
+      "summary": "Exaggerate keeping butt back, chest forward, and knees relatively straight with back flat through the entire swing, rotating the spine and trunk over anchored hips.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "S02"
+      ],
+      "summary": "Set hips sideways and imagine only turning the upper body without intentionally rotating the pelvis; allow the back hip to contribute only intuitively.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Feel the range of knee motion over the foot, ensuring weight is rolled over the arch and outside of the ball of the foot rather than collapsing onto the inside heel.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C04",
+        "S03"
+      ],
+      "summary": "Glide weight smoothly onto the front foot and hold a completely balanced finish over that front foot without falling backward or sideways.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C05",
+        "S01"
+      ],
+      "summary": "Undo any upper trap shrugging, activate isometric tone in the mid-traps and serratus to attach the shoulder down, and swing the elbow along an imaginary table.",
+      "external_goal": "Swing the elbow along the surface of an imaginary table",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "drill",
+      "targets": [
+        "C06",
+        "S04"
+      ],
+      "summary": "Position further away from the ball laterally to allow the racket to swing freely through the natural lane established by the hinged trunk posture.",
+      "external_goal": "Keep the ball pushed farther away laterally to the side into the natural swinging lane",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D07",
+      "kind": "drill",
+      "targets": [
+        "C07",
+        "S05"
+      ],
+      "summary": "Push racket firmly into palm/V with non-dominant hand, eliminate grip gaps to maximize skin-to-handle contact, and raise tension to 5-6/10 if losing control so the racket cannot twist independently.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

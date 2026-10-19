@@ -1,0 +1,382 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "FxDmVi3EFnE",
+    "url": "https://www.youtube.com/watch?v=FxDmVi3EFnE",
+    "title": "The Truth About the Topspin Pro",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 928.0,
+    "upload_date": "2025-05-04",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach analyzes the mechanics of topspin, critiques training aids and misconceptions, and demonstrates how to properly combine spin and drive."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/FxDmVi3EFnE.en.vtt",
+    "kind": "auto",
+    "sha256": "c0eba9beb40e3c2e895830e1b56f06f86ab60eab83bf3953dbdb82294e5a06d8",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_run_ids": [
+      "s1_r2_FxDmVi",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does trying to brush the ball create thin contact and inconsistency on topspin shots?",
+    "definition": "Focusing solely on brushing up the back of the ball creates an excessively thin contact window that leads to shanks, lack of depth, and inconsistency unless paired with a driving forward vector.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic understanding of topspin",
+      "Hitting groundstrokes with topspin"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Like a week and a half of brushing. The ball does not go to the other side of the net.",
+      "start": 37.0,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "She's like, 'You brush the ball too much. You need to hit the ball. Hit the ball.'",
+      "start": 57.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "I really do think that the wings on the top spin pro and this brushing fiasco... come from the same basic misunderstanding of exactly what top spin is",
+      "start": 72.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Top spin is one interaction and one interaction only. It is an upward strike up the back of the ball and that causes the back of the ball to rotate up",
+      "start": 112.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "top spin always makes contact thinner.",
+      "start": 157.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "when I create some sort of low to high action through the hitting zone, the contact always gets thinner. Because now, if I hit the ball here, perfect. But what if I hit the ball here? Shank",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Well, we resolve it by combining the upward vector of the racket's movement which creates top spin with a backtofront driving vector.",
+      "start": 205.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "The issue with the wings is that they encourage you to just create the upward vector and not create the forward vector.",
+      "start": 262.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "And the low to high swing path, it's mostly a myth.",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "the shoulder is much better used for that back to front driving through the ball action. And then the forearm and rotation about the forearm is the best tool to use for top spin.",
+      "start": 286.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So with the Top Spin Pro, if you're using it with the wings, in my opinion, you should be slapping into the wings every time and the thing should be bouncing all around your room because you're whacking through it.",
+      "start": 362.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Because top spin actually works when you translate and drive through the ball while brushing it. And it actually doesn't work at all if you just brush because you have to hit the ball absolutely perfectly.",
+      "start": 373.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "You're probably not shifting your weight through the ball enough. You're not getting enough of that through vector. contact gets very thin.",
+      "start": 420.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "the main strings deform down when you contact the ball on an upward vector and then they press back to where they were and that hits the ball up.",
+      "start": 452.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "They lose the ability to snap back. That's the term people usually use, snapback. And they lose their ability to press up on the back of the ball during the few milliseconds of contact, imparting that rotation.",
+      "start": 571.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Carlos Alcarez, he's one of the highest RPM players, but look at that hand... Look how little actual low to high action.",
+      "start": 687.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "That roll is unwinding itself through here creating the spin... The reason he's so consistent despite hitting with ridiculous RPMs is because of this driving vector.",
+      "start": 711.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "He hits with so much spin and yet that spin is combined with this vector back to front. That racket is shooting back to front through the ball and so that spin is imparted while sacrificing very little fault tolerance.",
+      "start": 782.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Even Raphael Nadal is going to be whacking the wings off the top spin pro with his 5,000 RPM top spin swing.",
+      "start": 858.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "And what he's done is he's taken the wings off and rigged it up with weights on the bottom. So, now you're no longer discouraged from driving through the ball while you practice your top spin.",
+      "start": 875.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Shanking or making off-center contact on the stringbed when attempting topspin",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Ball fails to clear the net or lacks penetration and depth despite high effort brushing",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Creating a purely upward or steep low-to-high action narrows the hitting zone and makes contact thinner, requiring millisecond-precise timing.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Failing to combine the upward brushing vector with a back-to-front driving vector prevents the contact zone from elongating through space.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Relying on an exaggerated vertical swing path instead of shoulder drive and forearm rotation to generate topspin.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Failing to shift body weight through the ball on slower incoming shots, which amplifies the thin contact of an upward stroke.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Topspin requires combining the upward vector with a back-to-front driving vector to elongate the contact zone and maintain fault tolerance.",
+      "evidence": [
+        "Q07",
+        "Q12"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "The low-to-high swing path as the primary driver of topspin is largely a myth; most spin comes from forearm and shoulder rotation.",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Elite players like Alcaraz and Djokovic achieve heavy spin and consistency through a back-to-front driving vector rather than large vertical hand elevation.",
+      "evidence": [
+        "Q16",
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Polyester strings enable topspin via string deformation and snapback, pressing upward on the back of the ball during impact.",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C01"
+      ],
+      "summary": "Remove the guide wings from the Topspin Pro and weight the base so you can practice driving back-to-front through the ball while spinning it.",
+      "external_goal": "Drive through the ball on the modified device without being restricted by guide wings.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

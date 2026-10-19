@@ -1,0 +1,151 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "QrRYuVjVibU",
+    "url": "https://www.youtube.com/watch?v=QrRYuVjVibU",
+    "title": "When You Get A Low Forehand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 16.0,
+    "upload_date": "2024-06-24",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "short",
+    "reason": "The coach gives an actionable cue to tilt the torso and let the chest almost face the ground when preparing for a low forehand."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/QrRYuVjVibU.en.vtt",
+    "kind": "auto",
+    "sha256": "3280573d9d7eb8e5de44db872992ff57cb3c4869b2d7a856416ea1dac28e8ed2",
+    "coverage_ratio": 0.7675
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_QrRYuV",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should you adjust your body when dealing with a low forehand?",
+    "definition": "On a low forehand, players struggle to strike the ball with their normal swing mechanics if they do not tilt their torso.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "low forehand"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "When you get a low forehand, tilt your torso.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "That'll let you strike the ball the way you normally do.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "If the ball is sufficiently low, your chest can almost be facing the ground as you prepare.",
+      "start": 4.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The incoming ball is low to the ground, requiring an adjustment to strike normally.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Failing to tilt the torso on a low ball prevents you from striking the ball the way you normally do.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Tilting the torso allows you to maintain your normal striking mechanics even when the ball is low.",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "visual_model",
+      "summary": "On sufficiently low balls, the chest can be almost facing the ground as you prepare.",
+      "evidence": [
+        "Q03"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "When you get a low forehand, tilt your torso so your chest can almost face the ground during preparation.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "episode_card.schema.json",
+  "title": "FTT episode card (one YouTube episode = one common problem)",
+  "description": "Stage 1 (subtitle) fills everything except video_layer; stage 2 (Gemini video) may only append to video_layer and conflicts. See PLAN_v2.md §3.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "video", "classification", "transcript", "extraction", "problem", "quotes", "symptoms", "causes", "chain", "angles", "solutions", "video_layer", "conflicts", "status"],
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["2.0"]},
+    "video": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "url", "title", "channel", "duration_s", "upload_date", "metadata_source"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"},
+        "url": {"type": "string", "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"},
+        "title": {"type": "string", "minLength": 1},
+        "channel": {"type": "string", "enum": ["Fault Tolerant Tennis"]},
+        "duration_s": {"type": "number", "minimum": 1},
+        "upload_date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "metadata_source": {"type": "string", "enum": ["yt-dlp", "youtube-api"]}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["is_teaching", "stroke", "format", "reason"],
+      "properties": {
+        "is_teaching": {"type": "string", "enum": ["teaching", "partial", "non_teaching"]},
+        "stroke": {"type": "string", "enum": ["forehand", "backhand", "serve", "volley", "movement", "general", "other"]},
+        "format": {"type": "string", "enum": ["lecture", "demo_with_player", "lesson_review", "pro_analysis", "short", "vlog_other"]},
+        "reason": {"type": "string", "minLength": 4}
+      }
+    },
+    "transcript": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "kind", "sha256", "coverage_ratio"],
+      "properties": {
+        "path": {"type": "string", "description": "Outside the repo, e.g. /workspace/ftt_subs/<id>.en.vtt. Full transcripts are never committed."},
+        "kind": {"type": "string", "enum": ["official", "auto", "whisper"]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "coverage_ratio": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "extraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage1_model", "stage1_prompt_version", "stage1_run_ids", "user_context_in_prompt"],
+      "properties": {
+        "stage1_model": {"type": "string"},
+        "stage1_prompt_version": {"type": "string", "pattern": "^ep_s1_v\\d+$"},
+        "stage1_run_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+        "stage2_model": {"type": "string"},
+        "stage2_prompt_version": {"type": "string", "pattern": "^ep_s2_v\\d+$"},
+        "stage2_run_ids": {"type": "array", "items": {"type": "string"}},
+        "user_context_in_prompt": {"type": "boolean", "enum": [false]}
+      }
+    },
+    "problem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title_as_question", "definition", "node_id", "prerequisites", "target_player", "evidence"],
+      "properties": {
+        "title_as_question": {"type": "string", "minLength": 4},
+        "definition": {"type": "string", "minLength": 4},
+        "node_id": {"type": "string", "pattern": "^(N-[A-Z0-9_]+|PENDING)$"},
+        "prerequisites": {"type": "array", "items": {"type": "string"}},
+        "target_player": {"type": "string"},
+        "evidence": {"$ref": "#/definitions/evidence_list"}
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "text", "start", "speaker", "about", "source"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^Q\\d{2,3}$"},
+          "text": {"type": "string", "minLength": 3, "maxLength": 320, "description": "English verbatim from transcript, <= 40 words"},
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "speaker": {"type": "string", "enum": ["coach", "player", "unknown"]},
+          "about": {"type": "string", "enum": ["general", "demonstrator_natural", "demonstrator_induced", "pro_footage"]},
+          "source": {"type": "string", "enum": ["subtitle", "video"]}
+        }
+      }
+    },
+    "symptoms": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "description", "kind", "layer", "obs_ref", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^S\\d{2}$"},
+          "description": {"type": "string", "minLength": 4},
+          "kind": {"type": "string", "enum": ["visible", "ball_outcome", "feel"]},
+          "layer": {"$ref": "#/definitions/layer"},
+          "camera": {"type": "string", "enum": ["S", "B", "R", "any", "none"]},
+          "phase": {"$ref": "#/definitions/phase"},
+          "obs_ref": {"type": "string", "pattern": "^(OBS-\\d{2}|NEW-OBS|NONE)$"},
+          "evidence": {"$ref": "#/definitions/evidence_list"}
+        }
+      }
+    },
+    "causes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "statement", "depth", "layer", "node_id", "active_or_passive", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^C\\d{2}$"},
+          "statement": {"type": "string", "minLength": 4},
+          "depth": {"type": "integer", "minimum": 1, "maximum": 5, "description": "1 = immediate cause of the symptom; larger = further upstream"},
+          "layer": {"$ref": "#/definitions/layer"},
+          "node_id": {"type": "string", "pattern": "^(N-[A-Z0-9_]+|PENDING)$"},
+          "active_or_passive": {"type": "string", "enum": ["active", "passive", "unclear"]},
+          "evidence": {"$ref": "#/definitions/evidence_list"}
+        }
+      }
+    },
+    "chain": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["from", "to", "strength", "evidence"],
+        "properties": {
+          "from": {"type": "string", "pattern": "^C\\d{2}$"},
+          "to": {"type": "string", "pattern": "^(C\\d{2}|S\\d{2}|PROBLEM)$"},
+          "strength": {"type": "string", "enum": ["coach_stated", "coach_implied", "inferred"]},
+          "evidence": {"$ref": "#/definitions/evidence_list"}
+        }
+      }
+    },
+    "angles": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "type", "summary", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^A\\d{2}$"},
+          "type": {"type": "string", "enum": ["mechanics", "feel", "visual_model", "analogy", "contrast_demo", "misconception", "pro_example"]},
+          "summary": {"type": "string", "minLength": 4},
+          "evidence": {"$ref": "#/definitions/evidence_list"}
+        }
+      }
+    },
+    "solutions": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "kind", "targets", "summary", "scenario_fit", "ban_conflict", "intuition_first_ok", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^D\\d{2}$"},
+          "kind": {"type": "string", "enum": ["drill", "cue", "check", "progression"]},
+          "targets": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^(C\\d{2}|S\\d{2}|PROBLEM)$"}},
+          "summary": {"type": "string", "minLength": 4},
+          "external_goal": {"type": "string", "description": "One-sentence external-focus target (ball/racket/court). Empty if none."},
+          "scenario_fit": {"type": "string", "enum": ["machine_low", "mini_tennis", "shadow", "needs_feeder", "match_only"]},
+          "ban_conflict": {
+            "type": "object", "additionalProperties": false, "required": ["flag", "terms", "note"],
+            "properties": {
+              "flag": {"type": "boolean"},
+              "terms": {"type": "array", "items": {"type": "string", "enum": ["推肘", "降拍", "旋后", "伸肘"]}},
+              "note": {"type": "string"}
+            }
+          },
+          "intuition_first_ok": {"type": "boolean"},
+          "evidence": {"$ref": "#/definitions/evidence_list"}
+        }
+      }
+    },
+    "video_layer": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "kind", "target", "content", "start", "runs_agree", "status"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^V\\d{2}$"},
+          "kind": {"type": "string", "enum": ["visual_detail", "demo_visible_fault", "correction_proposal", "new_claim"]},
+          "target": {"type": "string", "description": "Item id it refines (S01/C02/D01/Q03) or NEW"},
+          "content": {"type": "string", "minLength": 4},
+          "start": {"type": "number", "minimum": 0},
+          "runs_agree": {"type": "string", "pattern": "^\\d/\\d$"},
+          "status": {"type": "string", "enum": ["proposed", "accepted", "rejected", "conflict"]}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "between", "description", "resolution"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^X\\d{2}$"},
+          "between": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+          "description": {"type": "string"},
+          "resolution": {"type": "string", "enum": ["subtitle_wins", "video_accepted_visual_only", "open_user_decides", "book_vs_video_both_kept"]}
+        }
+      }
+    },
+    "status": {"type": "string", "enum": ["stage1_draft", "stage1_verified", "stage2_draft", "stage2_verified"], "description": "Non-teaching episodes get no card; they are recorded in loop/manifest.json with a reason."}
+  },
+  "definitions": {
+    "layer": {"type": "string", "enum": ["A", "B", "C"], "description": "A = stable from current phone video by model; B = needs specified camera + pose/frames; C = only feel / test"},
+    "phase": {"type": "string", "enum": ["ready", "unit_turn", "placement", "forward_swing", "contact", "follow_through", "recovery", "whole"]},
+    "evidence_list": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^(Q\\d{2,3}|V\\d{2}|BOOK:p\\d+)$"}}
+  }
+}

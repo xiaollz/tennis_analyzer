@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "cause_anchor_exact": 4,
+    "cause_anchor_miss": 1,
+    "solution_anchor_evidence_spills": 1,
+    "solution_anchor_exact": 2,
+    "solution_anchor_miss": 1
+  },
+  "detail": [
+    "cause_anchor_miss: C04 anchor_bucket=10 evidence_buckets=[9]",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=4 evidence_buckets=[4, 5]",
+    "solution_anchor_miss: D03 anchor_bucket=11 evidence_buckets=[9, 10]"
+  ]
+}

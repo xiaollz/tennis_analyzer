@@ -1,0 +1,749 @@
+{
+  "report_id": "verify_2026-10-18_round6",
+  "generated_at": "2026-10-18T17:10:26+08:00",
+  "timezone": "Asia/Shanghai",
+  "round": 6,
+  "scope": "(a) ep_s1_v6 = v5 + is_teaching discrimination rule (rule 4) + cause_survey list-then-merge step (rule 13); (b) 6 new FTT long videos, technique-first by deterministic title-keyword rule then oldest-first, >=400s, holdout and existing cards excluded",
+  "branch": "cursor/diagnosis-phase1",
+  "base_commit": "06cbe17",
+  "model": "gemini-3.8-flash",
+  "endpoint": "https://www.micuapi.ai",
+  "prompt_version": "ep_s1_v6",
+  "prompt_upgraded_from": "ep_s1_v5",
+  "prompt_changes": [
+    "rule 4 rewritten as 'is_teaching discrimination': scan the subtitles for an executable instruction/exercise (what to do / how to practise / what to say to yourself / how to check); at least one => teaching regardless of topic (technique, tactics, psychology, match commentary); only when NO executable advice exists => partial (analysis/commentary only) or non_teaching (highlights/chat/ads/announcements); abstract example sentences; reason must name the instruction found",
+    "rule 13 gets a mandatory 'survey first, merge second' step: temporary field cause_survey lists every distinct 30 s bucket that explains a cause with a short mechanism phrase and a group label; buckets sharing a mechanism are merged into one cause (anchor = earliest bucket); causes count = number of distinct groups (still 3-5); cause_survey is transient like cause_anchors/solution_anchors and never enters the card",
+    "rules 12/16 mention cause_survey; everything else identical to v5; rule numbers unchanged; no user/KB concepts (check_neutrality PASS, 8 prompts, v1-v5 kept)"
+  ],
+  "thresholds_changed": false,
+  "config_json_changed": false,
+  "check_rerun_changed": false,
+  "script_changes": "s1_extract.py: (1) defaults S1_PROMPT ep_s1_v6 / S1_WORK round6; (2) snap_quote now counts quote length with tokens() (the same count validate_cards R05 uses) and trims a snapped quote to a verbatim prefix that satisfies it — fixes 2 R05 FAILs (FjjvhNbk3q4 Q17, tzgAWr3QGv0 Q18, hyphenated words) found at validation; the 17 raw runs were re-normalized from the saved raw responses (no new Gemini calls) and final/consensus re-run: outcomes identical, only 2 quote excerpts shortened; consensus/final logic untouched. norm.tsv for the 6 new videos generated from .en.vtt with the existing cue rule (byte-identity to existing files re-verified on UB6SbA_KX9E and Qszz0N4fRb4); lives in /workspace/ftt_subs (outside repo)",
+  "selftest": {
+    "verify_all_selftest": "PASS",
+    "mutations": 30
+  },
+  "v5_vs_v6": {
+    "caveat": "v6 ran on 6 NEW episodes, v5 baseline is the 5 episodes of round5 (not the same episodes) -> episode difficulty confounded; 6 vs 5 pairs; direction only, not proof",
+    "v6_new6_pair12": {
+      "causes": 0.635,
+      "chain_roots": 0.68,
+      "solutions": 0.43,
+      "n_pairs": 6
+    },
+    "v6_new6_all_pairs": {
+      "causes": 0.575,
+      "chain_roots": 0.606,
+      "solutions": 0.434,
+      "n_pairs": 16
+    },
+    "v5_round5_pair12": {
+      "causes": 0.532,
+      "chain_roots": 0.532,
+      "solutions": 0.562,
+      "n_pairs": 5
+    },
+    "v5_round5_all_pairs": {
+      "causes": 0.62,
+      "chain_roots": 0.62,
+      "solutions": 0.549,
+      "n_pairs": 13
+    },
+    "pair_1_2_causes_mean": {
+      "v5_round5": 0.532,
+      "v6_round6": 0.635,
+      "delta": 0.103
+    },
+    "pair_1_2_chain_roots_mean": {
+      "v5_round5": 0.532,
+      "v6_round6": 0.68
+    },
+    "pair_1_2_solutions_mean": {
+      "v5_round5": 0.562,
+      "v6_round6": 0.43,
+      "delta": -0.132
+    },
+    "all_pairs_causes_mean": {
+      "v5_round5": 0.62,
+      "v6_round6": 0.575,
+      "delta": -0.045,
+      "n_pairs": [
+        13,
+        16
+      ]
+    },
+    "all_pairs_solutions_mean": {
+      "v5_round5": 0.549,
+      "v6_round6": 0.434
+    },
+    "pair_1_2_per_episode_v6": {
+      "XXlndjnrA4E": {
+        "causes": 0.75,
+        "chain_roots": 0.75,
+        "solutions": 0.29
+      },
+      "FjjvhNbk3q4": {
+        "causes": 1.0,
+        "chain_roots": 1.0,
+        "solutions": 0.25
+      },
+      "tzgAWr3QGv0": {
+        "causes": 0.6,
+        "chain_roots": 0.6,
+        "solutions": 0.38
+      },
+      "KU7FHy1qQOI": {
+        "causes": 0.33,
+        "chain_roots": 0.33,
+        "solutions": 0.38
+      },
+      "0m3BMfDDShI": {
+        "causes": 0.33,
+        "chain_roots": 0.4,
+        "solutions": 0.45
+      },
+      "lwS7Xxqrrdw": {
+        "causes": 0.8,
+        "chain_roots": 1.0,
+        "solutions": 0.83
+      }
+    },
+    "is_teaching_stability": {
+      "v5_round5": {
+        "episodes": 5,
+        "episodes_all_runs_same_label": 3,
+        "runs": 14,
+        "runs_not_teaching": 2
+      },
+      "v6_round6": {
+        "episodes": 6,
+        "episodes_all_runs_same_label": 6,
+        "runs": 17,
+        "runs_not_teaching": 0
+      },
+      "v4_round4": {
+        "episodes": 7,
+        "episodes_all_runs_same_label": 7,
+        "runs": 19,
+        "runs_not_teaching": 0
+      }
+    },
+    "n_causes_per_raw_run": {
+      "v6": {
+        "3": 4,
+        "4": 12,
+        "5": 1
+      },
+      "v5_round5": {
+        "note": "see round5 report: 3-5 per run"
+      }
+    },
+    "cause_survey_usage": "all 17 raw runs returned a cause_survey; distinct survey groups == number of causes in 15/17 runs (FjjvhNbk3q4 run1 and run3 listed 5 groups but wrote 4 causes)",
+    "raw_run_solution_granularity": {
+      "runs": 17,
+      "n_solutions_dist": {
+        "3": 1,
+        "4": 5,
+        "5": 5,
+        "6": 6
+      },
+      "in_3to6_rate": 1.0,
+      "mean_n_solutions": 4.94,
+      "buckets_with_gt1_solution": 0,
+      "adjacent_bucket_solution_pairs": 7,
+      "solutions_total": 84,
+      "solutions_with_cause_target": 84
+    }
+  },
+  "low_confidence": {
+    "note": "No new thin cards this round: all 3 verified and all 3 draft cards have causes>=3 and solutions>=3, so no new low-confidence annotation. Existing ones (ExkBtFRhUWY, JIMgI3jiVns) unchanged."
+  },
+  "episodes": [
+    {
+      "id": "XXlndjnrA4E",
+      "title": "Peripheral Vision Lets You Volley Like the Pros",
+      "duration_s": 499.0,
+      "upload_date": "2025-06-29",
+      "role": "new_round6",
+      "status": "stage1_verified",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "volley",
+      "format": "pro_analysis",
+      "n_quotes": 26,
+      "n_symptoms": 3,
+      "n_causes": 3,
+      "n_solutions": 4,
+      "n_angles": 5,
+      "n_causes_per_raw_run": [
+        3,
+        4,
+        3
+      ],
+      "n_solutions_per_raw_run": [
+        4,
+        5,
+        4
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 3,
+        "drill": 1,
+        "check": 0,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "rerun_resolution": "verified_raw_pair_1-3",
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": true
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 0.75,
+          "chain_roots": 0.75,
+          "solutions": 0.29
+        },
+        "1-3": {
+          "causes": 1.0,
+          "chain_roots": 1.0,
+          "solutions": 0.6
+        },
+        "2-3": {
+          "causes": 0.75,
+          "chain_roots": 0.75,
+          "solutions": 0.5
+        }
+      },
+      "rerun_consensus": null,
+      "runs_used": 3,
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 25689,
+        "candidatesTokenCount": 12297,
+        "thoughtsTokenCount": 10021,
+        "totalTokenCount": 48007,
+        "cachedContentTokenCount": 6536
+      }
+    },
+    {
+      "id": "FjjvhNbk3q4",
+      "title": "7 Tips for an Effortless Serve ft. Giovanni Mpetshi-Perricard",
+      "duration_s": 1262.0,
+      "upload_date": "2025-07-03",
+      "role": "new_round6",
+      "status": "stage1_draft",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "serve",
+      "format": "pro_analysis",
+      "n_quotes": 22,
+      "n_symptoms": 3,
+      "n_causes": 4,
+      "n_solutions": 3,
+      "n_angles": 4,
+      "n_causes_per_raw_run": [
+        4,
+        4,
+        4
+      ],
+      "n_solutions_per_raw_run": [
+        4,
+        4,
+        3
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 2,
+        "drill": 1,
+        "check": 0,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "FAIL",
+      "rerun_resolution": "stage1_draft_all_pairs_and_consensus_fail",
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 1.0,
+          "chain_roots": 1.0,
+          "solutions": 0.25
+        },
+        "1-3": {
+          "causes": 0.29,
+          "chain_roots": 0.33,
+          "solutions": 0.17
+        },
+        "2-3": {
+          "causes": 0.29,
+          "chain_roots": 0.33,
+          "solutions": 0.12
+        }
+      },
+      "rerun_consensus": {
+        "pass": false,
+        "base_run": 1,
+        "dropped_causes": [],
+        "dropped_solutions": [
+          "D01"
+        ]
+      },
+      "runs_used": 3,
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 39869,
+        "candidatesTokenCount": 11333,
+        "thoughtsTokenCount": 194,
+        "totalTokenCount": 51396,
+        "cachedContentTokenCount": 11255
+      }
+    },
+    {
+      "id": "tzgAWr3QGv0",
+      "title": "7 Steps for a Sinner-Like Forehand | #5: Tilt!",
+      "duration_s": 1132.0,
+      "upload_date": "2025-07-11",
+      "role": "new_round6",
+      "status": "stage1_verified",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "pro_analysis",
+      "n_quotes": 26,
+      "n_symptoms": 3,
+      "n_causes": 4,
+      "n_solutions": 5,
+      "n_angles": 4,
+      "n_causes_per_raw_run": [
+        4,
+        4,
+        5
+      ],
+      "n_solutions_per_raw_run": [
+        5,
+        5,
+        6
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 5,
+        "drill": 0,
+        "check": 0,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "rerun_resolution": "verified_raw_pair_2-3",
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": true
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 0.6,
+          "chain_roots": 0.6,
+          "solutions": 0.38
+        },
+        "1-3": {
+          "causes": 0.5,
+          "chain_roots": 0.5,
+          "solutions": 0.38
+        },
+        "2-3": {
+          "causes": 0.8,
+          "chain_roots": 0.8,
+          "solutions": 0.71
+        }
+      },
+      "rerun_consensus": null,
+      "runs_used": 3,
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 37728,
+        "candidatesTokenCount": 15347,
+        "thoughtsTokenCount": 11717,
+        "totalTokenCount": 64792,
+        "cachedContentTokenCount": 10542
+      }
+    },
+    {
+      "id": "KU7FHy1qQOI",
+      "title": "The Physics, Geometry, and Biomechanics of Power Development",
+      "duration_s": 1088.0,
+      "upload_date": "2025-07-18",
+      "role": "new_round6",
+      "status": "stage1_draft",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "demo_with_player",
+      "n_quotes": 22,
+      "n_symptoms": 4,
+      "n_causes": 3,
+      "n_solutions": 4,
+      "n_angles": 5,
+      "n_causes_per_raw_run": [
+        4,
+        4,
+        4
+      ],
+      "n_solutions_per_raw_run": [
+        5,
+        6,
+        4
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 2,
+        "drill": 2,
+        "check": 0,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "FAIL",
+      "rerun_resolution": "stage1_draft_all_pairs_and_consensus_fail",
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 0.33,
+          "chain_roots": 0.33,
+          "solutions": 0.38
+        },
+        "1-3": {
+          "causes": 0.33,
+          "chain_roots": 0.33,
+          "solutions": 0.8
+        },
+        "2-3": {
+          "causes": 0.33,
+          "chain_roots": 0.33,
+          "solutions": 0.43
+        }
+      },
+      "rerun_consensus": {
+        "pass": false,
+        "base_run": 3,
+        "dropped_causes": [
+          "C03"
+        ],
+        "dropped_solutions": []
+      },
+      "runs_used": 3,
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 36531,
+        "candidatesTokenCount": 14576,
+        "thoughtsTokenCount": 25414,
+        "totalTokenCount": 76521,
+        "cachedContentTokenCount": 10143
+      }
+    },
+    {
+      "id": "0m3BMfDDShI",
+      "title": "Build This Foundation - The Rest Will Follow",
+      "duration_s": 890.0,
+      "upload_date": "2025-07-25",
+      "role": "new_round6",
+      "status": "stage1_draft",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "demo_with_player",
+      "n_quotes": 18,
+      "n_symptoms": 3,
+      "n_causes": 3,
+      "n_solutions": 5,
+      "n_angles": 5,
+      "n_causes_per_raw_run": [
+        4,
+        3,
+        3
+      ],
+      "n_solutions_per_raw_run": [
+        6,
+        6,
+        6
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 2,
+        "drill": 3,
+        "check": 0,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "FAIL",
+      "rerun_resolution": "stage1_draft_all_pairs_and_consensus_fail",
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 0.33,
+          "chain_roots": 0.4,
+          "solutions": 0.45
+        },
+        "1-3": {
+          "causes": 0.6,
+          "chain_roots": 0.75,
+          "solutions": 0.33
+        },
+        "2-3": {
+          "causes": 0.5,
+          "chain_roots": 0.5,
+          "solutions": 0.33
+        }
+      },
+      "rerun_consensus": {
+        "pass": false,
+        "base_run": 3,
+        "dropped_causes": [],
+        "dropped_solutions": [
+          "D04"
+        ]
+      },
+      "runs_used": 3,
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 31377,
+        "candidatesTokenCount": 13451,
+        "thoughtsTokenCount": 5418,
+        "totalTokenCount": 50246,
+        "cachedContentTokenCount": 8428
+      }
+    },
+    {
+      "id": "lwS7Xxqrrdw",
+      "title": "The Simple Foundation of the 2-Handed Backhand",
+      "duration_s": 781.0,
+      "upload_date": "2025-08-13",
+      "role": "new_round6",
+      "status": "stage1_verified",
+      "prompt_version": "ep_s1_v6",
+      "is_teaching": "teaching",
+      "stroke": "backhand",
+      "format": "demo_with_player",
+      "n_quotes": 22,
+      "n_symptoms": 4,
+      "n_causes": 4,
+      "n_solutions": 6,
+      "n_angles": 4,
+      "n_causes_per_raw_run": [
+        4,
+        4
+      ],
+      "n_solutions_per_raw_run": [
+        6,
+        5
+      ],
+      "is_teaching_per_raw_run": [
+        "teaching",
+        "teaching"
+      ],
+      "solution_kinds": {
+        "cue": 4,
+        "drill": 1,
+        "check": 1,
+        "progression": 0
+      },
+      "solutions_all_target_a_cause": true,
+      "video_layer_len": 0,
+      "thin_card": false,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "rerun_resolution": "verified_raw_pair_1-2",
+      "rerun_raw_pairs": {
+        "1-2": true
+      },
+      "rerun_pair_jaccard_v6": {
+        "1-2": {
+          "causes": 0.8,
+          "chain_roots": 1.0,
+          "solutions": 0.83
+        }
+      },
+      "rerun_consensus": null,
+      "runs_used": 2,
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 20372,
+        "candidatesTokenCount": 9532,
+        "thoughtsTokenCount": 0,
+        "totalTokenCount": 29904,
+        "cachedContentTokenCount": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "episodes_attempted": 6,
+    "new6_verified": [
+      "XXlndjnrA4E",
+      "tzgAWr3QGv0",
+      "lwS7Xxqrrdw"
+    ],
+    "new6_draft_rerun_fail": [
+      "FjjvhNbk3q4",
+      "KU7FHy1qQOI",
+      "0m3BMfDDShI"
+    ],
+    "third_run_episodes": [
+      "XXlndjnrA4E",
+      "FjjvhNbk3q4",
+      "tzgAWr3QGv0",
+      "KU7FHy1qQOI",
+      "0m3BMfDDShI"
+    ],
+    "consensus_episodes": [
+      "FjjvhNbk3q4",
+      "KU7FHy1qQOI",
+      "0m3BMfDDShI"
+    ],
+    "consensus_passed": [],
+    "total_cards_in_episodes_dir": 31,
+    "stage1_verified_total": 25,
+    "stage1_draft_total": 6,
+    "stage1_draft_ids": [
+      "wd4YRQW3TOc",
+      "E_zmENJIj4g",
+      "w1FakobNq1Q",
+      "FjjvhNbk3q4",
+      "KU7FHy1qQOI",
+      "0m3BMfDDShI"
+    ],
+    "validate_cards": "PASS (31 cards, 0 FAIL; 2 pre-existing R07 WARN on 2Nn9tyMECZU/wzLMv4ASg9s)",
+    "check_quotes": "PASS (718 quotes, text_ok 718, ts_ok 718)",
+    "check_manifest": "PASS",
+    "check_neutrality": "PASS (8 prompts incl. ep_s1_v6)",
+    "verify_all_selftest": "PASS",
+    "stage2": "not_run",
+    "video_layer": "empty_on_all_cards",
+    "remaining_unextracted_teaching_videos": {
+      "definition": "type_guess=教学长视频, .en.vtt present, no card, holdout=False",
+      "total": 35,
+      ">=400s": 22,
+      "300-400s": 7,
+      "<300s": 6,
+      "technique_first_ge400s": 18,
+      "tactics_psychology_ge400s": 4,
+      "next_6_by_rule": [
+        [
+          "Z9XwaXDVkZg",
+          "1170",
+          "The Simple Foundation of the One-Handed Backhand"
+        ],
+        [
+          "m1NBdd3Bigg",
+          "1013",
+          "Simple Serve Progressions - From Beginner to Advanced | with Johnny & Alexa"
+        ],
+        [
+          "T5meVwBOKR4",
+          "511",
+          "How Alcaraz Hits Harder Than Everyone"
+        ],
+        [
+          "LoSrMj-Qxkc",
+          "718",
+          "Their Mothers are Sisters, Their Forehands AREN'T"
+        ],
+        [
+          "1W1rope5l0k",
+          "691",
+          "Why Every Pro Serves In-to-Out, rather than Low-to-High"
+        ],
+        [
+          "9NirSL59an0",
+          "620",
+          "The Paradoxical Nature of Modern Topspin"
+        ]
+      ]
+    },
+    "normalizer_event_totals": {
+      "quote_snapped": 16,
+      "cause_anchor_exact": 57,
+      "cause_anchor_evidence_spills": 3,
+      "solution_anchor_exact": 73,
+      "chain_depth_retarget_to_PROBLEM": 1,
+      "intuition_first_forced_false": 30,
+      "cause_anchor_miss": 5,
+      "solution_anchor_miss": 5,
+      "solution_anchor_evidence_spills": 6
+    }
+  },
+  "gemini_usage_total": {
+    "calls": 17,
+    "promptTokenCount": 191566,
+    "candidatesTokenCount": 76536,
+    "thoughtsTokenCount": 52764,
+    "totalTokenCount": 320866,
+    "cachedContentTokenCount": 46904
+  },
+  "notes": [
+    "XXlndjnrA4E verified via raw pair 1-3 (1.00/1.00/0.60); pair 1-2 failed only on solutions (0.29).",
+    "tzgAWr3QGv0 verified via raw pair 2-3 (0.80/0.80/0.71); pair 1-2 causes 0.60 (= threshold) but solutions 0.38.",
+    "lwS7Xxqrrdw verified via raw pair 1-2 with only 2 runs (0.80/1.00/0.83).",
+    "FjjvhNbk3q4 (serve): causes stable (1-2 causes 1.00) but solutions 0.12-0.25 on every pair and run3 causes 0.29; consensus fails; kept stage1_draft.",
+    "KU7FHy1qQOI (Physics/Geometry/Biomechanics): causes 0.33 on every pair (4 causes in every run, different buckets); consensus fails; kept stage1_draft.",
+    "0m3BMfDDShI (Build This Foundation): solutions 0.33-0.45 on every pair; causes 0.33-0.60; consensus fails; kept stage1_draft.",
+    "Drafts are unedited by hand; thresholds untouched.",
+    "No MICU key is stored in the repo (grep of worktree for the key value: 0 hits); raw responses and rendered prompts stay in /workspace/s1_work/round6 (outside repo)."
+  ],
+  "VERIFY": "PARTIAL",
+  "key_scan": {
+    "grep_worktree_for_key_value_hits": 0,
+    "key_pattern_scan_docs_diagnosis": 0
+  }
+}

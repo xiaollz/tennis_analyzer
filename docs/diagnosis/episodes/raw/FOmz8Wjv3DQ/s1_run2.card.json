@@ -1,0 +1,485 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "FOmz8Wjv3DQ",
+    "url": "https://www.youtube.com/watch?v=FOmz8Wjv3DQ",
+    "title": "Deeper Than Just \"Footwork\" | Tennis Movement Fundamentals Explained",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1066.0,
+    "upload_date": "2025-06-07",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "movement",
+    "format": "pro_analysis",
+    "reason": "The coach analyzes Roger Federer's glide steps and single-foot balance mechanics, explains root causes behind poor stance and balance, and presents progressive physical movement drills."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/FOmz8Wjv3DQ.en.vtt",
+    "kind": "auto",
+    "sha256": "4799ce8b8902df50c32b5f1ade8518f5d97c1c451c0ed101be4a3b2f7d3089f9",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v5",
+    "stage1_run_ids": [
+      "s1_r2_FOmz8W",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do players struggle to move explosively and glide smoothly on court like Federer?",
+    "definition": "Players move with a narrow, upright base, land flatfooted after the split step, and lack the single-leg balance and physical capacity to absorb forces dynamically without flailing their upper body.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic tracking of the ball over the net",
+      "Attempting to split step"
+    ],
+    "target_player": "Tennis players who struggle to get wide, land flatfooted, or feel narrow and unbalanced during movement",
+    "evidence": [
+      "Q02",
+      "Q04",
+      "Q08"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Footwork and movement in tennis is goal driven. And so, what we're doing is we are building our ability to perceive what's happening in front of us and coordinate our lower body appropriately.",
+      "start": 60.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Fundamentally is about getting a wider base because a wider base allows you more leverage over your body in the ground.",
+      "start": 87.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "it from. And then right around here, you're either flatfooted or some of you, to your credit, do try to stay on the balls of your feet, try to keep your knees and your hips bent, but you're here as",
+      "start": 110.479,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And this is a position where you have far more leverage and can move your body with far more control than this position where I see most of you guys receiving from.",
+      "start": 137.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the feet are purely and 100% connected to the eyes here. So, we've jumped, right? And we've jumped at a rough time so that when we land, we can already be receiving the ball.",
+      "start": 166.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "if he were planted here and he had to move to the right, it would be far less quick than if he's able to land and run as part of a landing.",
+      "start": 196.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "you need to split step late enough and high enough that you know where the ball is going before you land because that way if we watch this glide step on the landing, that is purposeful.",
+      "start": 236.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "If you land and you don't know where the ball is going when you land, you're going to land flatfooted.",
+      "start": 261.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "His weights kind of on his heels. His feet are kind of together. Now, I see a lot of players who think they're in the middle of the point, finishing their shots and recovering like this.",
+      "start": 331.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "If your legs are right here, the main way you can push is up and down. The wider you're able to get, the more your legs can push left and right.",
+      "start": 458.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "The straighter this knee is, the less all the muscles in here contribute to lateral movement, balance, etc. And the more bent it is, the more they can contribute.",
+      "start": 515.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So, this whole triple bend here is a big part of what produces high quality movement. And the stance width, which we're going to talk about later, it doesn't even really work without the triple bend.",
+      "start": 576.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Tennis players try to avoid full sprints and instead we want to maintain all of our bends and every time we land we are landing fully absorbing the force fully getting back on balance.",
+      "start": 632.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "fall over. So Roger Federer cannot fall over without this left foot hitting the ground. He has enough balance and control over his body here that what he's doing is he's not letting that foot hit to intentionally cause himself",
+      "start": 706.079,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Even once you know that a lot of times the reason you're narrow is because your brain is physically protecting your soft tissue from those higher forces.",
+      "start": 775.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "The goal is to have fast feet and move one of your feet over and back across the line while the other one just taps in place and you move up and back across the court as you do that.",
+      "start": 849.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So even a simple drill like this where you basically just pick your foot off the ground and land. Notice I'm not even really jumping here. Just hopping and working on the landing can help you learn that feeling",
+      "start": 912.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Now, the final drill we're going to go over today is these lateral jumps where you stop and pause on that foot before you jump back the other way.",
+      "start": 934.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Now, whenever I do this with kids, I always need to actually count them down. Five, four, three, two, one, before they can jump again. Because for most people, their intuition is to go back and forth",
+      "start": 953.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "The last thing with this drill is that I'm doing it with my hands behind my back. You don't have to do that, but what we want to understand is that in everyday life, you use your limbs to balance.",
+      "start": 1016.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player lands flatfooted after the split step rather than moving continuously into the shot.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q08"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player's feet stay narrow and together with weight resting back on the heels during recovery and preparation.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player feels unable to push laterally or explosively to either side, feeling restricted to pushing mostly up and down.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The stance is too narrow, preventing the leg muscles from aligning along lateral push vectors and giving insufficient ground leverage.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The split step is timed too early or too low, forcing the player to land before visually recognizing where the ball is going.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player lacks the triple bend at the knee, hip, and ankle, leaving the legs too straight to recruit stabilizing musculature.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The brain subconsciously forces a narrow stance to protect soft tissue because the lower body lacks the conditioning to absorb high landing forces.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Pushing from a wide stance directs force vectors laterally to generate left-and-right movement and reflexive balance adjustments.",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "Running from a standstill takes three slow steps, whereas landing into motion utilizes stored elastic energy like a continuous sprint.",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Achieving an effective athletic base will initially feel comically wide compared to what you are used to.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Federer recovers with narrow feet and heels down when he thinks he missed, but instantly widens and loads when he realizes the ball is in.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Single-leg balance allows a player to selectively delay foot contact and let gravity initiate lateral acceleration toward a volley.",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "S01"
+      ],
+      "summary": "Split step late enough and jump high enough so you recognize ball direction in the air and land directly in motion.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03",
+        "C04"
+      ],
+      "summary": "Perform fast-feet line taps moving one foot back and forth across a court line while the other taps in place moving up and down the court.",
+      "external_goal": "Court line",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C03",
+        "C04"
+      ],
+      "summary": "Practice simple low hops on one foot focusing purely on a triple-bend landing to absorb force through the hip and thigh.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Perform single-leg lateral jumps, pausing and holding each landing for a full countdown to completely absorb force before jumping back.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "progression",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Execute the single-leg lateral jumping drill with hands held behind your back so that balance is generated entirely by the lower body.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

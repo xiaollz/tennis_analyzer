@@ -1,0 +1,487 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "wVa4XQPcaqs",
+    "url": "https://www.youtube.com/watch?v=wVa4XQPcaqs",
+    "title": "Use The Wall to Find Your Perfect Contact",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 275.0,
+    "upload_date": "2024-07-19",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "lecture",
+    "reason": "The coach provides an actionable drill where players press their racket or hand against a wall to test force generation and visually memorize their optimal contact point."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/wVa4XQPcaqs.en.vtt",
+    "kind": "auto",
+    "sha256": "ced9e9015c290a30903f035051b07f19c5cd96d507ef6cf24967f3a07939a282",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_wVa4XQ",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can you find your perfect contact point on any stroke using a wall?",
+    "definition": "Players often struggle with uncomfortable contact points and weak force generation because they lack an objective reference for where their body biomechanics can actually produce force.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "access to a wall",
+      "basic racket handling"
+    ],
+    "target_player": "players struggling with contact consistency or force generation on any stroke",
+    "evidence": [
+      "Q01"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "here's how you can find your perfect contact point on any stroke all you need is a wall you don't even need to Rack it although I'm going to use it",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "so here's what we're going to do we're going to go to contact or roughly where we think contact is we're going to place that against the wall and then feel what our body feels like",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "and now I'm going to feel this and I'm going to press",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "so I'm pressing with this through the wall right here and see I can change things right like I could go a little more closed",
+      "start": 32.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "so if I get stuck in this position that's my contact point if I get a full rotation in then that's my contact point and you can do this on any stroke",
+      "start": 40.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "now the the important thing here is you have to look at it because this is a visual thing",
+      "start": 55.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "so I'm looking at that spot in space because that's the spot where I was able to press through with my chest in order to create strength through contact",
+      "start": 62.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "so that's the spot so I probe the ball into that spot I know I could press with the same muscles I was just pressing",
+      "start": 76.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "and that's why that feels so comfortable and it feels comfortable there for the same reason that I can generate Force into the wall right there",
+      "start": 86.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "let's say you're having trouble with your contact on the back end you go here okay I can't press at all I can't generate any Force into this wall",
+      "start": 101.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "which means if I catch the back end there it's going to feel awful and it's always going to feel awful",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "now here I can generate a lot of force and so I'm remembering what that looks like here and I'm probing the ball into that spot",
+      "start": 122.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "again if I do it wrong I can feel the fact that I can't generate Force so I'm going to adjust my positioning",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "let's you have trouble with the high one-hander it's a hard shot okay if you probe it into here I mean you can feel how would I get my racket to go through the wall I can't",
+      "start": 147.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "whereas now I'm using my upper back to generate some real Force through that wall so I know I look at the spot I remember where that was",
+      "start": 161.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "and I know if I catch the ball there I'm going to be able to use those same muscles I just felt to generate Force",
+      "start": 170.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "you can use this for any shot you know High backand volley similar again you don't even you don't even need your racket although it helps with your racket but you can just do this with your hand",
+      "start": 180.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "so you can literally inside in in your you know in your apartment even if it's too small to use your racket you can just do it with your hand",
+      "start": 191.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "you adjust your body along the wall looking at where your racket's contacting it until you can really feel this pressing on the forehand",
+      "start": 208.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "you're pressing on the wall so you your you're verifying can I actually generate Force through this contact point",
+      "start": 236.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "if you can generate force statically on the wall you can do it dynamically through the air like this",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "and if you can prob the ball into that spot which you're remembering what it looks like from what it looked like there set it up into that spot remember what it looks like",
+      "start": 246.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "and then you'll be able to generate Force Through contact and your Strokes will be comfortable",
+      "start": 255.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Contact feels weak, awkward, or awful when attempting to hit the stroke.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The racket contacts the ball at a position where the upper body cannot exert force forward.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player is stuck in a closed stance position without body rotation into contact.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player catches the ball in a spatial position where the body has zero biomechanical leverage to generate force.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player lacks a clear visual spatial reference in three-dimensional space where their torso muscles can press through.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player's contact point does not adjust to the amount of body rotation achieved into the shot.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "On high balls, the racket is not positioned where large postural muscle groups like the upper back can push through.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Force generation through contact requires anatomical alignment where chest or back muscles can press directly through the racket face.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "visual_model",
+      "summary": "Finding contact is fundamentally a visual task of identifying and remembering an exact point in 3D space.",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Static pressing against a wall directly translates to dynamic comfort and force generation through the air.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates an ineffective backhand contact with zero force generation versus an aligned posture.",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Place the racket against the wall at the estimated contact point and press into the wall to feel body alignment and force generation.",
+      "external_goal": "Press the racket firmly against the wall at contact height.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Look at the exact spot in space against the wall and cue yourself to probe the incoming ball into that memorized spot.",
+      "external_goal": "Probe the incoming ball into the exact visual spot memorized on the wall.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Check whether you can generate force into the wall; if you feel zero force, adjust your body positioning until force is maximized.",
+      "external_goal": "Press against the wall to verify static force transmission.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "progression",
+      "targets": [
+        "C04"
+      ],
+      "summary": "For high contact points such as the high one-handed backhand, test the wall press higher up to locate where the upper back muscles recruit force.",
+      "external_goal": "Press the racket against the wall at high contact height.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "progression",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Perform the wall pressing drill using just your bare hand when practicing in confined indoor spaces without a racket.",
+      "external_goal": "Press the bare hand directly against the wall.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

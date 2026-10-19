@@ -1,0 +1,421 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "x_WIg59Wr9Y",
+    "url": "https://www.youtube.com/watch?v=x_WIg59Wr9Y",
+    "title": "Why You Should Start Your Swing at Contact",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 651.0,
+    "upload_date": "2025-12-24",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides executable cues and video-check instructions, such as intuiting the swing as accelerating the hand all the way to contact rather than stopping far from the ball, and checking 60 fps / 120 fps video frame counts before contact."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/x_WIg59Wr9Y.en.vtt",
+    "kind": "auto",
+    "sha256": "9ccf25d90c21de671a52923d9b8ecd82e06fab1f5517746b4592919ca454a8ed",
+    "coverage_ratio": 0.9978
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_x_WIg5",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why Should You Think of Starting Your Forehand Swing at Contact?",
+    "definition": "Players often stop accelerating their hand too early before contact, releasing the wrist's elastic spring prematurely, which leaks energy, diminishes power, and causes loss of directional control.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "modern forehand with wrist lag",
+      "fundamental swing path"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q05",
+      "Q09",
+      "Q11"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "These three frames are the hitting action, the contact action on the modern forehand. It is roughly 40 milliseconds long.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And if you see that your video is at 60 fps up here, then you can go to contact your favorite player. Go back three frames by pressing the less than key three times.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "04 seconds before contact is the time when the racket very rapidly takes over the hand.",
+      "start": 65.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "We get to three frames before contact and the racket takes over.",
+      "start": 90.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "happens. And this is why I like cues like the swing starts at contact. It's just really counterintuitive. Like so many people I find intuitit a really long delay between when they stop accelerating their hand in and when they",
+      "start": 136.959,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And again, I would recommend you intuitit this as accelerate all the way to contact rather than actually trying to feel this tiny timing window.",
+      "start": 237.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "So, remember we said the spring has got to be 1, two, three. So, here we go. It's very difficult to time in these kind of running forehand on the rise situations.",
+      "start": 252.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And we lose control of the shot. So what happens is, you know, if you mistime your acceleration and you aren't able to accelerate your hand all the way to the ball, then you get to here. Okay. So now",
+      "start": 277.04,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "able to accelerate all the way in. And so now you get to here and now your brain has to flex this. It has to pull the racket back to like try to keep the string angle consistent. and you're",
+      "start": 297.6,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "is. It's the the three frames on a 60 fps video where the spring releases from your hand and you have to be able to accelerate that and drag it onto the ball and then you're gonna get that effortless",
+      "start": 337.6,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "9 10 11 12. 12 frames at 120 fps, which is double, which means this is a six frame window on 60 fps. So, it's literally twice as long. And so, we are really not recruiting a whole lot of",
+      "start": 386.96,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "The way elastic energy works in your body, it's just like every millisecond longer it stays in there, it leaks out a little bit and it's pretty linear.",
+      "start": 441.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Right there. It starts 1 2 3 4 5. Perfect. Five frames at 120 fps. Perfect. Elastic usage of the energy that she had there.",
+      "start": 495.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Ah, yeah. So, that one she actually dragged it a little too far, which probably why she missed this one a little bit long.",
+      "start": 542.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "So, I probably need to be accelerating my hand in farther and not stopping so far from the ball.",
+      "start": 620.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "from the ball. And then we got a whole bunch of tools like pressing with your chest or rotating your hips or having a nice strong base, which we made a ton of other videos about, which are like how",
+      "start": 625.76,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Racket wrist spring releases too early, taking 6 frames or more at 60 fps (12+ frames at 120 fps) before contact.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Loss of shot control, spraying balls wide or long, and hitting with reduced pace.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Lack of effortless power crack sensation, feeling like slow-twitch muscles must manipulate the racket.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player fails to accelerate the hand all the way toward the ball, causing the wrist spring to release prematurely ahead of contact.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "When the wrist spring releases prematurely, the brain compensates with slow-twitch muscle flexing to manipulate string face angle.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Elastic energy loaded in the wrist leaks out linearly with every millisecond the release window is extended beyond the ideal 40ms.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08",
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10",
+        "Q11",
+        "Q12"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The racket overtaking the hand occurs across roughly 40 milliseconds (3 frames at 60 fps or 5-6 frames at 120 fps) before contact.",
+      "evidence": [
+        "Q01",
+        "Q03",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "Two audio pops spaced 0.04 seconds apart illustrate how imperceptibly close spring release is to contact.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Players intuitively imagine a wide delay between hand acceleration stopping and contact, whereas kinetically it is almost simultaneous.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Pros like Federer, Alcaraz, and Raducanu release the spring exactly 3 frames before contact at 60 fps, while mistiming on a running ball releases earlier.",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "contrast_demo",
+      "summary": "Student Amelia improved her wrist release duration from 12 frames at 120 fps down to 5-6 frames, transforming her power and crispness.",
+      "evidence": [
+        "Q11",
+        "Q13"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Inspect 60 fps video at contact and press the backward key three times to verify whether wrist spring begins releasing within a 3-frame window.",
+      "external_goal": "Step back three frames from contact in 60 fps video stats to see if the spring is just releasing.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Think of the swing as starting at contact so that hand acceleration does not halt early.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Intuit the swing as accelerating all the way to contact rather than trying to micromanage a 40ms timing gap.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Drive through the kinetic chain using chest press, hip rotation, and a solid base to keep accelerating the hand deep into contact before letting the racket snap.",
+      "external_goal": "Keep hand accelerating until right next to the ball before snapping.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15",
+        "Q16"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

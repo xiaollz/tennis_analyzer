@@ -1,0 +1,197 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "boMJDzuFhM4",
+    "url": "https://www.youtube.com/watch?v=boMJDzuFhM4",
+    "title": "Alcaraz's Anxiety Secret | Mental Mastery in Tennis",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 50.0,
+    "upload_date": "2025-06-11",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "整期视频仅对大比赛关键分上阿尔卡拉斯的焦虑水平及庆祝动作进行心理学机制分析，没有给出任何让观众执行的训练或口令。"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/boMJDzuFhM4.en.vtt",
+    "kind": "auto",
+    "sha256": "0862fb74dab0432367f2e39b2d1166ed196a26abb4378df71c24274d3095251b",
+    "coverage_ratio": 0.9808
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_boMJDz",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does excessive anxiety ruin performance in big moments, and how does Alcaraz manage it?",
+    "definition": "Under high pressure, players often allow their anxiety to spike to a maximum level, triggering tension responses like death gripping the racket or holding breath that ruin performance.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "playing under high-pressure match situations"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q03",
+      "Q04"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Now, on this final point of the tiebreak, I want to pay attention to Carlos's mental state.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Athletes function best at a midpoint of anxiety. High, but not too high.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "A lot of times, the issue in these big moments is that you get so high that even if you're able to dial your anxiety into a fight response,",
+      "start": 8.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "you end up either death gripping the racket or holding your breath, both of which will ruin your performance.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And so what we tend to see from the best players under pressure is that there's not actually an immediate release right after they win",
+      "start": 21.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "because their anxiety was like a seven or eight out of 10 and not a 10 out of 10 lest they be unable to play.",
+      "start": 26.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And so we see that sort of delayed fuse from Carlos Alcarez where first it's just the arms up and then it's the big vomo scream",
+      "start": 33.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "showing that his anxiety was just the seven or eight. wasn't maxed out while he was playing.",
+      "start": 39.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Death gripping the tennis racket under high pressure.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Holding breath during high-pressure moments.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Performance completely ruined under pressure.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Anxiety levels spike too high beyond the optimal midpoint during big moments, channeling into a fight response that causes death gripping the racket or holding breath.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Athletes perform best at a moderate midpoint of anxiety rather than letting anxiety max out.",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Carlos Alcaraz demonstrates a delayed fuse celebration, confirming his anxiety was kept around a seven or eight rather than maxed out at ten.",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    }
+  ],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

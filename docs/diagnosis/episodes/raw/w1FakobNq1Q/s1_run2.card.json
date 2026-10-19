@@ -1,0 +1,508 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "w1FakobNq1Q",
+    "url": "https://www.youtube.com/watch?v=w1FakobNq1Q",
+    "title": "Breaking Down the Greatest Tiebreak Ever Played",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 684.0,
+    "upload_date": "2025-06-09",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The video analyzes the Alcaraz vs Sinner tiebreak to extract practical lessons on anxiety modulation, shot selection, and decisive execution under match pressure."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/w1FakobNq1Q.en.vtt",
+    "kind": "auto",
+    "sha256": "bb49cb91537dee1f08001deb181ed59169459ad3be2f8406c4c77c35eff2234a",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v5",
+    "stage1_run_ids": [
+      "s1_r2_w1Fako",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you manage anxiety, make sound shot decisions, and execute decisively under extreme pressure in a tiebreak?",
+    "definition": "Under high match pressure, players often break down physically and tactically by either freezing up from excessive anxiety, hesitating on committed swings, or stubbornly engaging in rallies where their opponent holds the technical advantage.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Ability to sustain baseline rallies",
+      "Experience playing competitive match tiebreaks"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Well, there are a couple things that are fundamental to what he did that we can take from this, but at certain points during this video, we're just going to be wowed.",
+      "start": 28.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "and during our discussion talk about anxiety, shot selection, and luck of which I'm sure you know, good players make their own.",
+      "start": 50.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "You need to alter your patient but ruthless equilibrium point based on your opponent.",
+      "start": 96.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Carlos can't really hit with center backhand to backhand... Sinner just has a better backhand so Carlos is going to get out hit on that side more times than not.",
+      "start": 133.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Carlos is just going to take some of these neutral backhands up the line high margin not to try to hit a winner but just to change the pattern of the rally",
+      "start": 141.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the truth is the other guys just got a better backhand than you. So, you're going to miss first. And if that's true off both wings, you're just not going to win.",
+      "start": 183.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Your targets were too small, the other person's targets weren't, and the math didn't work, and you got crushed.",
+      "start": 207.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "the critical idea here is after you missed that shot at 0 0, you have to decide, was that a good decision and I just missed or was it a bad decision?",
+      "start": 235.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "When you get the same shot on another pressure point three points later, you have to be okay with the fact that you might miss. So you cannot hesitate.",
+      "start": 250.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Anxiety in humans upregulates something we call the sympathetic nervous system which prepares the body for three kinds of behaviors. Freeze, fight or flight.",
+      "start": 315.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "which indicates to me that his anxiety is manifesting more as the freeze behavior, which is actually really common. And it's a reason you might find that when you get nervous, you physically can't move your feet.",
+      "start": 337.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "freeze response can also manifest as a little bit too much tension early in the stroke, which leads to a little bit less of a stretch backwards and a little bit less velocity through the contact",
+      "start": 377.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "a little bit less top spin, and those balls float long, which is exactly what we saw on this backhand miss.",
+      "start": 388.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Athletes function best at a midpoint of anxiety, high, but not too high.",
+      "start": 396.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "high, but not too high. A lot of times the issue in these big moments is that you get so high that even if you're able to dial your anxiety into a fight response, you end up either death gripping",
+      "start": 400.639,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "because their anxiety was like a seven or eight out of 10 and not a 10 out of 10 less they be unable to play.",
+      "start": 421.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "First, modulate your anxiety. Seven, eight out of 10. Don't let it get to 10. and work that into a fight response, not a freeze or a flight response.",
+      "start": 450.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Second, generally aim to safe targets, but be okay going for more if your opponent demands it. Third, make your own luck by not hesitating when you hit to those targets.",
+      "start": 458.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "When you know it's the right decision, you swing out. You don't worry that you might miss and you don't hesitate. That's how you make your own luck.",
+      "start": 486.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "His anxiety is high enough that he can focus, but it's not so high that the strokes break down. Even the tiniest bit of extra tension, and these forehands are wide.",
+      "start": 509.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "We would be remiss if we didn't quickly pause and say work on this shot if you have a big heavy forehand because your opponent wants to play deep.",
+      "start": 550.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "and hesitating is much much worse than making kind of a maybe questionable decision once in a while.",
+      "start": 591.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "If you don't want to rally with your opponent's backhand, you don't have to practice this higher margin, well away from the lines, backhand down the line.",
+      "start": 604.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "You have to learn what the right level of anxiety feels like. High enough that you're laser focused, but you still got to breathe. You can't freeze. And you got to be loose early in your strokes.",
+      "start": 659.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Groundstrokes float long over the baseline due to lack of topspin and restricted racket speed.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player repeatedly gets out-hit and misses first from neutral baseline rallies against an opponent with a superior wing.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Feet become completely frozen and unresponsive under nervous tension.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Feeling extreme muscular tension including death gripping the racket and holding one's breath during pressure points.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Engaging in stubborn rally patterns where the opponent's wing is superior shrinks the mathematical margin of error, forcing errors.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Fear of missing after previous errors causes players to hesitate rather than committing to a full, decisive swing.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Anxiety triggers a sympathetic freeze response that creates early muscle tension, limiting the backward stretch and racket speed.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Anxiety escalates to a maximum level (10 out of 10) instead of maintaining an optimal midpoint, overwhelming the player's motor control.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Freeze-induced anxiety tightens muscles early in the stroke, reducing unit stretch, forward acceleration, and topspin generation.",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "Ideal competitive performance occurs at an anxiety level of 7 or 8 out of 10, keeping the mind sharp while breathing and staying loose.",
+      "evidence": [
+        "Q14",
+        "Q24"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Players often falsely blame mechanical failure for errors when they are simply being mathematically out-hit in unfavorable tactical patterns.",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Carlos Alcaraz channels his anxiety into a fight response with loose forearms, swinging out decisively and redirecting neutral backhands down the line.",
+      "evidence": [
+        "Q05",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C04",
+        "C03"
+      ],
+      "summary": "Keep anxiety dialed at a 7 or 8 out of 10 rather than 10, channeling excitement into a fight response while continuing to breathe and staying loose.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Once a shot decision is made, swing fully without second-guessing or worrying about missing, refusing to hesitate.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice disguising drop shots off heavy forehand setups to punish opponents who retreat deep behind the baseline expecting heavy topspin.",
+      "external_goal": "A soft drop shot landing short and dying near the net",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice hitting high-margin, deep rally balls down the line to change patterns and safely escape crosscourt exchanges against a superior wing.",
+      "external_goal": "High clearance over the net landing deep and well inside the sideline",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

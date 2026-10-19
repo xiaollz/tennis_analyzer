@@ -1,0 +1,2039 @@
+{
+ "date": "2026-10-18",
+ "base_commit": "1053946",
+ "pre_commit": "1053946",
+ "branch": "cursor/diagnosis-phase1",
+ "verdict": "FAIL",
+ "tree_v4": {
+  "file": "docs/diagnosis/ftt_tree/tree_v4.json (tree.json = v1 baseline, tree_v2.json / tree_v3.json = previous versions, all untouched)",
+  "builder": "pipeline/build_tree_v2.py with --binding obs_binding_v4.json --merge mech_merge_v4.json",
+  "observables": 29,
+  "problem_nodes": 22,
+  "cause_nodes_v1": 97,
+  "cause_nodes_v4": 92,
+  "edges": 102,
+  "core_edges": 1
+ },
+ "new_observables": {
+  "rule": "NOT the cross-episode promotion rule: each is a single-episode candidate the user approved by hand (approved_by_user 2026-10-18); the >=2 episode rule itself is unchanged and recorded as exception in ftt_tree/new_obs_promotion.json -> user_approved_single_episode_exceptions",
+  "promoted_by_hand": [
+   {
+    "obs": "OBS-26",
+    "description": "Vertical launch angle of the ball off the racket face at contact",
+    "values": [
+     "steep_upward_angle",
+     "shallow_angle",
+     "flat_or_downward"
+    ],
+    "layer": "B",
+    "camera": "S",
+    "episodes": [
+     "5-Ia7c4XzfU"
+    ],
+    "source": "ftt_tree/obs_binding_v3.json",
+    "candidate": "NC005",
+    "approved_by_user": "2026-10-18",
+    "file": "observables/OBS-26_vertical_launch_angle_ball_off.md"
+   },
+   {
+    "obs": "OBS-27",
+    "description": "At contact, does the angle between the racket shaft and forearm remain fixed or break downward?",
+    "values": [
+     "fixed_angle",
+     "wrist_flexes_or_chops"
+    ],
+    "layer": "B",
+    "camera": "S",
+    "episodes": [
+     "NEpD7fIM7HI"
+    ],
+    "source": "ftt_tree/obs_binding.json",
+    "candidate": "NC020",
+    "approved_by_user": "2026-10-18",
+    "file": "observables/OBS-27_contact_angle_between_racket_shaft.md"
+   },
+   {
+    "obs": "OBS-28",
+    "description": "At the contact frame, angle of the racket face relative to the vertical plane",
+    "values": [
+     "tilted_open",
+     "perpendicular_vertical",
+     "tilted_closed"
+    ],
+    "layer": "B",
+    "camera": "S",
+    "episodes": [
+     "Qszz0N4fRb4"
+    ],
+    "source": "ftt_tree/obs_binding.json",
+    "candidate": "NC068",
+    "approved_by_user": "2026-10-18",
+    "file": "observables/OBS-28_contact_frame_angle_racket_face.md"
+   },
+   {
+    "obs": "OBS-29",
+    "description": "During the forward swing into contact, does the spine display lateral side-bending with the hitting shoulder dipping lower than the non-hitting shoulder?",
+    "values": [
+     "lateral_bend_present",
+     "no_lateral_bend"
+    ],
+    "layer": "B",
+    "camera": "B",
+    "episodes": [
+     "wFIrPMutzRo"
+    ],
+    "source": "ftt_tree/obs_binding_v3.json",
+    "candidate": "NC076",
+    "approved_by_user": "2026-10-18",
+    "file": "observables/OBS-29_forward_swing_into_contact_spine.md"
+   }
+  ],
+  "note": "question + values copied verbatim from model-written candidates (no discriminator invented; no prescription). OBS-28 is racket-face tilt at contact (Qszz0N4fRb4 candidate); the wrist-break candidates (NEW-OBS-28/39 of the v2 run) were NOT used because they restate OBS-24. OBS-27's second value is named wrist_flexes_or_chops in the source candidate."
+ },
+ "before_after": {
+  "v3_before (25 observables)": {
+   "nodes_total": 115,
+   "problem_with_required": 0,
+   "cause_with_required": 27,
+   "cause_total": 93,
+   "problem_total": 22,
+   "nodes_with_required": 27,
+   "nodes_with_any_signature": 66,
+   "must_fix_without_required": {
+    "unobservable_per_model": 69,
+    "has_NEW_OBS_candidate": 19,
+    "total": 88
+   },
+   "binding_items_with_required": {
+    "symptom": 33,
+    "cause": 30
+   },
+   "symptom_obs_ref": {
+    "OBS-15": 6,
+    "NONE": 19,
+    "OBS-16": 20,
+    "OBS-19": 4,
+    "OBS-11": 2,
+    "OBS-04": 2,
+    "OBS-05": 2,
+    "OBS-13": 4,
+    "OBS-24": 3,
+    "OBS-10": 1,
+    "OBS-20": 2,
+    "OBS-18": 1,
+    "OBS-25": 1,
+    "OBS-21": 1,
+    "NEW-OBS": 1,
+    "OBS-14": 2,
+    "OBS-22": 2,
+    "OBS-07": 1,
+    "OBS-02": 4,
+    "OBS-03": 3,
+    "OBS-09": 2
+   },
+   "new_obs_candidates": 85,
+   "new_obs_clusters": 52
+  },
+  "v4_after (29 observables)": {
+   "nodes_total": 114,
+   "problem_with_required": 1,
+   "cause_with_required": 35,
+   "cause_total": 92,
+   "problem_total": 22,
+   "nodes_with_required": 36,
+   "nodes_with_any_signature": 68,
+   "must_fix_without_required": {
+    "unobservable_per_model": 58,
+    "has_NEW_OBS_candidate": 20,
+    "total": 78
+   },
+   "binding_items_with_required": {
+    "symptom": 35,
+    "cause": 38,
+    "problem": 1
+   },
+   "symptom_obs_ref": {
+    "OBS-15": 4,
+    "NONE": 20,
+    "OBS-16": 21,
+    "OBS-26": 1,
+    "OBS-04": 2,
+    "NEW-OBS": 3,
+    "OBS-05": 1,
+    "OBS-13": 3,
+    "OBS-24": 3,
+    "OBS-10": 1,
+    "OBS-11": 2,
+    "OBS-20": 2,
+    "OBS-25": 2,
+    "OBS-19": 4,
+    "OBS-21": 1,
+    "OBS-14": 3,
+    "OBS-22": 1,
+    "OBS-07": 1,
+    "OBS-02": 4,
+    "OBS-03": 3,
+    "OBS-09": 1
+   },
+   "new_obs_candidates": 74,
+   "new_obs_clusters": 46
+  },
+  "T05_fail": {
+   "before": 88,
+   "after": 78
+  },
+  "T08_fail": {
+   "before": 14,
+   "after": 11
+  },
+  "check_tree_fail_total": {
+   "before": 102,
+   "after": 89
+  },
+  "T09_warn": {
+   "before": 19,
+   "after": 28
+  },
+  "T08_pairs_after": [
+   "N-P_FXDMVI3EFNE and N-C_FXDMVI3EFNE_C01 have identical required signatures and no differential",
+   "N-P_FXDMVI3EFNE and N-C_FXDMVI3EFNE_C03 have identical required signatures and no differential",
+   "N-C_FXDMVI3EFNE_C01 and N-C_FXDMVI3EFNE_C03 have identical required signatures and no differential",
+   "N-C_2NN9TYMECZU_C03 and N-C_UJPUDUX0JIA_C06 have identical required signatures and no differential",
+   "N-C_APCKJDADZEK_C01 and N-C_WZLMV4ASG9S_C07 have identical required signatures and no differential",
+   "N-C_FXDMVI3EFNE_C02 and N-C_PUN6QIIYU_4_C02 have identical required signatures and no differential",
+   "N-C_LWS7XXQRRDW_C02 and N-C_PQ793MBQE50_C01 have identical required signatures and no differential",
+   "N-C_NEPD7FIM7HI_C02 and N-C_XXLNDJNRA4E_C03 have identical required signatures and no differential",
+   "N-C_QSZZ0N4FRB4_C04 and N-C_UB6SBA_KX9E_C04 have identical required signatures and no differential",
+   "N-C_TZGAWR3QGV0_C03 and N-C_WFIRPMUTZRO_C03 have identical required signatures and no differential",
+   "N-C_UJPUDUX0JIA_C01 and N-C_WFIRPMUTZRO_C02 have identical required signatures and no differential"
+  ],
+  "T08_pairs_resolved": [
+   [
+    "N-C_5_IA7C4XZFU_C02",
+    "N-C_FXDMVI3EFNE_C01"
+   ],
+   [
+    "N-C_5_IA7C4XZFU_C02",
+    "N-C_FXDMVI3EFNE_C03"
+   ],
+   [
+    "N-C_LWS7XXQRRDW_C02",
+    "N-C_NEPD7FIM7HI_C01"
+   ],
+   [
+    "N-C_LWS7XXQRRDW_C03",
+    "N-C_UJPUDUX0JIA_C01"
+   ],
+   [
+    "N-C_LWS7XXQRRDW_C03",
+    "N-C_WFIRPMUTZRO_C02"
+   ],
+   [
+    "N-C_NEPD7FIM7HI_C01",
+    "N-C_PQ793MBQE50_C01"
+   ],
+   [
+    "N-C_PSIDJEI5BNI_C04",
+    "N-C_PUN6QIIYU_4_C01"
+   ]
+  ],
+  "T08_pairs_new": [
+   [
+    "N-C_FXDMVI3EFNE_C01",
+    "N-P_FXDMVI3EFNE"
+   ],
+   [
+    "N-C_FXDMVI3EFNE_C03",
+    "N-P_FXDMVI3EFNE"
+   ],
+   [
+    "N-C_QSZZ0N4FRB4_C04",
+    "N-C_UB6SBA_KX9E_C04"
+   ],
+   [
+    "N-C_TZGAWR3QGV0_C03",
+    "N-C_WFIRPMUTZRO_C03"
+   ]
+  ],
+  "T08_review_groups_before": {
+   "OBS-11 group (5-Ia7c4XzfU:C02 / FxDmVi3EFnE:C01 / C03)": [
+    [
+     "N-C_5_IA7C4XZFU_C02",
+     "N-C_FXDMVI3EFNE_C01"
+    ],
+    [
+     "N-C_5_IA7C4XZFU_C02",
+     "N-C_FXDMVI3EFNE_C03"
+    ],
+    [
+     "N-C_FXDMVI3EFNE_C01",
+     "N-C_FXDMVI3EFNE_C03"
+    ],
+    [
+     "N-C_FXDMVI3EFNE_C02",
+     "N-C_PUN6QIIYU_4_C02"
+    ]
+   ],
+   "OBS-24 group (lwS7:C02 / NEpD:C01 / pQ79:C01)": [
+    [
+     "N-C_LWS7XXQRRDW_C02",
+     "N-C_NEPD7FIM7HI_C01"
+    ],
+    [
+     "N-C_LWS7XXQRRDW_C02",
+     "N-C_PQ793MBQE50_C01"
+    ],
+    [
+     "N-C_NEPD7FIM7HI_C01",
+     "N-C_PQ793MBQE50_C01"
+    ]
+   ],
+   "OBS-22 group (lwS7:C03 / UJPU:C01 / WFIR:C02)": [
+    [
+     "N-C_LWS7XXQRRDW_C03",
+     "N-C_UJPUDUX0JIA_C01"
+    ],
+    [
+     "N-C_LWS7XXQRRDW_C03",
+     "N-C_WFIRPMUTZRO_C02"
+    ],
+    [
+     "N-C_UJPUDUX0JIA_C01",
+     "N-C_WFIRPMUTZRO_C02"
+    ]
+   ]
+  },
+  "T08_review_groups_after": {
+   "OBS-11 group (5-Ia7c4XzfU:C02 / FxDmVi3EFnE:C01 / C03)": [
+    [
+     "N-C_FXDMVI3EFNE_C01",
+     "N-C_FXDMVI3EFNE_C03"
+    ],
+    [
+     "N-C_FXDMVI3EFNE_C01",
+     "N-P_FXDMVI3EFNE"
+    ],
+    [
+     "N-C_FXDMVI3EFNE_C02",
+     "N-C_PUN6QIIYU_4_C02"
+    ],
+    [
+     "N-C_FXDMVI3EFNE_C03",
+     "N-P_FXDMVI3EFNE"
+    ]
+   ],
+   "OBS-24 group (lwS7:C02 / NEpD:C01 / pQ79:C01)": [
+    [
+     "N-C_LWS7XXQRRDW_C02",
+     "N-C_PQ793MBQE50_C01"
+    ]
+   ],
+   "OBS-22 group (lwS7:C03 / UJPU:C01 / WFIR:C02)": [
+    [
+     "N-C_UJPUDUX0JIA_C01",
+     "N-C_WFIRPMUTZRO_C02"
+    ]
+   ]
+  },
+  "t08_note": "no differential added, rules unchanged; remaining/new pairs are listed as they are"
+ },
+ "obs_usage_v4": {
+  "OBS-01": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 0,
+   "nodes_supporting": 2,
+   "symptoms_required": 0
+  },
+  "OBS-02": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 4,
+   "symptoms_required": 3
+  },
+  "OBS-03": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 1,
+   "nodes_supporting": 4,
+   "symptoms_required": 2
+  },
+  "OBS-04": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 0,
+   "nodes_supporting": 3,
+   "symptoms_required": 0
+  },
+  "OBS-05": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 0,
+   "nodes_supporting": 6,
+   "symptoms_required": 0
+  },
+  "OBS-06": {
+   "layer": "A",
+   "camera": "B",
+   "nodes_required": 0,
+   "nodes_supporting": 1,
+   "symptoms_required": 0
+  },
+  "OBS-07": {
+   "layer": "A",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 2,
+   "symptoms_required": 0
+  },
+  "OBS-08": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 1,
+   "symptoms_required": 0
+  },
+  "OBS-09": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 0,
+   "nodes_supporting": 7,
+   "symptoms_required": 2
+  },
+  "OBS-10": {
+   "layer": "A",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 7,
+   "symptoms_required": 1
+  },
+  "OBS-11": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 3,
+   "nodes_supporting": 13,
+   "symptoms_required": 0
+  },
+  "OBS-12": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 0,
+   "nodes_supporting": 0,
+   "symptoms_required": 0
+  },
+  "OBS-13": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 1,
+   "nodes_supporting": 9,
+   "symptoms_required": 1
+  },
+  "OBS-14": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 1,
+   "nodes_supporting": 6,
+   "symptoms_required": 2
+  },
+  "OBS-15": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 2,
+   "nodes_supporting": 13,
+   "symptoms_required": 4
+  },
+  "OBS-16": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 0,
+   "nodes_supporting": 15,
+   "symptoms_required": 12
+  },
+  "OBS-17": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 0,
+   "nodes_supporting": 4,
+   "symptoms_required": 0
+  },
+  "OBS-18": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 0,
+   "nodes_supporting": 7,
+   "symptoms_required": 0
+  },
+  "OBS-19": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 3,
+   "symptoms_required": 4
+  },
+  "OBS-20": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 3,
+   "nodes_supporting": 4,
+   "symptoms_required": 1
+  },
+  "OBS-21": {
+   "layer": "A",
+   "camera": "any",
+   "nodes_required": 2,
+   "nodes_supporting": 1,
+   "symptoms_required": 1
+  },
+  "OBS-22": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 4,
+   "nodes_supporting": 4,
+   "symptoms_required": 1
+  },
+  "OBS-23": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 2,
+   "nodes_supporting": 3,
+   "symptoms_required": 0
+  },
+  "OBS-24": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 3,
+   "nodes_supporting": 1,
+   "symptoms_required": 2
+  },
+  "OBS-25": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 3,
+   "nodes_supporting": 2,
+   "symptoms_required": 2
+  },
+  "OBS-26": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 3,
+   "nodes_supporting": 3,
+   "symptoms_required": 1
+  },
+  "OBS-27": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 1,
+   "nodes_supporting": 4,
+   "symptoms_required": 0
+  },
+  "OBS-28": {
+   "layer": "B",
+   "camera": "S",
+   "nodes_required": 0,
+   "nodes_supporting": 2,
+   "symptoms_required": 0
+  },
+  "OBS-29": {
+   "layer": "B",
+   "camera": "B",
+   "nodes_required": 2,
+   "nodes_supporting": 1,
+   "symptoms_required": 0
+  }
+ },
+ "obs_never_used": [
+  "OBS-12"
+ ],
+ "new_obs_cluster_list_v4": [
+  {
+   "id": "NEW-OBS-01",
+   "description": "Hitting elbow path during forward swing: linear pull across chest vs rotational arc",
+   "values": [
+    "linear_pull_across",
+    "rotational_arc"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 4,
+   "episodes": [
+    "2Nn9tyMECZU",
+    "wzLMv4ASg9s"
+   ],
+   "from_items": [
+    "2Nn9tyMECZU:C02",
+    "SYM_WZLMV4ASG9S_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-02",
+   "description": "Height of the hitting hand at preparation relative to the incoming ball",
+   "values": [
+    "far_below_ball",
+    "level_with_ball",
+    "above_ball"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 4,
+   "episodes": [
+    "Psidjei5BnI"
+   ],
+   "from_items": [
+    "Psidjei5BnI:C03",
+    "SYM_PSIDJEI5BNI_S03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-03",
+   "description": "During the forward swing, does the front knee cave inward toward the midline or stay stable/drive outward?",
+   "values": [
+    "caves_inward",
+    "stable_or_drives_outward"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 4,
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "from_items": [
+    "SYM_APCKJDADZEK_S01",
+    "aPcKJDadzek:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-04",
+   "description": "During forward swing, does the front knee drift forward past the toes or stay behind the toes?",
+   "values": [
+    "drifts_past_toes",
+    "stays_behind_toes"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 4,
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "from_items": [
+    "SYM_APCKJDADZEK_S05",
+    "aPcKJDadzek:C06"
+   ]
+  },
+  {
+   "id": "NEW-OBS-05",
+   "description": "At or through contact, does the lead/front foot stay grounded or lift/pivot off the court?",
+   "values": [
+    "front_foot_grounded",
+    "front_foot_lifts_or_pivots"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 3,
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "from_items": [
+    "SYM_XLS469ZVMPU_S03",
+    "xLs469ZVMPU:C04"
+   ]
+  },
+  {
+   "id": "NEW-OBS-06",
+   "description": "On a volley preparation, whether the racket hand takes a backward swing past the torso or sets stationary in front.",
+   "values": [
+    "backswing_behind_torso",
+    "held_in_front"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "candidates": 3,
+   "episodes": [
+    "XXlndjnrA4E"
+   ],
+   "from_items": [
+    "SYM_XXLNDJNRA4E_S03",
+    "XXlndjnrA4E:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-07",
+   "description": "Hand placement along the racket grip relative to butt cap",
+   "values": [
+    "choked_up_visible_butt_cap",
+    "heel_of_hand_on_butt_cap"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "from_items": [
+    "2Nn9tyMECZU:C04"
+   ]
+  },
+  {
+   "id": "NEW-OBS-08",
+   "description": "Width between feet when setting up to hit relative to shoulder width.",
+   "values": [
+    "narrow_inside_shoulders",
+    "shoulder_width",
+    "wide_outside_shoulders"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "FOmz8Wjv3DQ:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-09",
+   "description": "At the start of the forward swing, does the racket head drop below the wrist into a lag position?",
+   "values": [
+    "lags_below_wrist",
+    "remains_above_wrist"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 2,
+   "episodes": [
+    "wzLMv4ASg9s"
+   ],
+   "from_items": [
+    "N-P_WZLMV4ASG9S"
+   ]
+  },
+  {
+   "id": "NEW-OBS-10",
+   "description": "Depth of ball bounce in opponent court relative to service line and baseline",
+   "values": [
+    "short_near_service_line",
+    "deep_near_baseline",
+    "beyond_baseline"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "5-Ia7c4XzfU"
+   ],
+   "from_items": [
+    "SYM_5_IA7C4XZFU_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-11",
+   "description": "During forward swing and contact on a one-handed backhand, does the non-hitting arm move backward to counterbalance?",
+   "values": [
+    "moves_backward",
+    "stays_near_hitting_arm_or_body"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "from_items": [
+    "SYM_DDYKUNZTDYU_S03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-12",
+   "description": "During recovery and ready position, width between the feet relative to shoulder width.",
+   "values": [
+    "narrower_than_shoulders",
+    "shoulder_width",
+    "wider_than_shoulders"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "SYM_FOMZ8WJV3DQ_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-13",
+   "description": "Direction of the hand and racket path through the contact zone",
+   "values": [
+    "forward_toward_target",
+    "sideways_across_torso"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 2,
+   "episodes": [
+    "pQ793MBQE50"
+   ],
+   "from_items": [
+    "SYM_PQ793MBQE50_S04"
+   ]
+  },
+  {
+   "id": "NEW-OBS-14",
+   "description": "Position of the hitting arm relative to torso rotation during the forward swing",
+   "values": [
+    "lagging_behind_torso",
+    "in_unison_with_torso",
+    "leading_torso"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 2,
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "from_items": [
+    "SYM_TZGAWR3QGV0_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-15",
+   "description": "On the return of serve, whether the returner touches the ball or is cleanly aced",
+   "values": [
+    "aced_cleanly",
+    "touches_ball",
+    "makes_return"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 2,
+   "episodes": [
+    "V-QkILd4V-w"
+   ],
+   "from_items": [
+    "SYM_V_QKILD4V_W_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-16",
+   "description": "During the backswing transition, does the racket drop below the ball in a continuous gravity-assisted loop?",
+   "values": [
+    "continuous_loop_drop",
+    "no_loop_linear_drop"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 2,
+   "episodes": [
+    "lwS7Xxqrrdw"
+   ],
+   "from_items": [
+    "lwS7Xxqrrdw:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-17",
+   "description": "Angle between hitting forearm and racket shaft in the preparation phase",
+   "values": [
+    "roughly_90_degrees",
+    "obtuse_around_135_degrees"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 2,
+   "episodes": [
+    "pQ793MBQE50"
+   ],
+   "from_items": [
+    "pQ793MBQE50:C02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-18",
+   "description": "Hitting shoulder elevation (shrug) during preparation and forward swing",
+   "values": [
+    "shoulder_shrugged_up",
+    "shoulder_depressed_relaxed"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 2,
+   "episodes": [
+    "uJpuDUx0jIA"
+   ],
+   "from_items": [
+    "uJpuDUx0jIA:C05"
+   ]
+  },
+  {
+   "id": "NEW-OBS-19",
+   "description": "Degree of joint flexion at hips and knees during preparation and movement.",
+   "values": [
+    "flexed",
+    "moderately_straight",
+    "fully_upright"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "FOmz8Wjv3DQ:C03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-20",
+   "description": "Trajectory angle of the racket head through the contact zone",
+   "values": [
+    "steeply_upward",
+    "through_the_ball",
+    "descending"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "FxDmVi3EFnE"
+   ],
+   "from_items": [
+    "FxDmVi3EFnE:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-21",
+   "description": "Spine curvature during preparation and swing: is the spine rounded or neutral?",
+   "values": [
+    "rounded_spine",
+    "neutral_spine"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "from_items": [
+    "NEpD7fIM7HI:C03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-22",
+   "description": "During knee and hip bending on low shots, is the player's spine neutral or rounded into flexion?",
+   "values": [
+    "neutral_spine",
+    "rounded_spine"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "from_items": [
+    "NEpD7fIM7HI:C03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-23",
+   "description": "Orientation of the racket head relative to the hitting hand at the completion of follow-through",
+   "values": [
+    "racket_down_past_hand",
+    "racket_above_or_level_with_hand"
+   ],
+   "layer": "A",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "from_items": [
+    "SYM_2NN9TYMECZU_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-24",
+   "description": "Elbow height relative to hand during follow-through roll",
+   "values": [
+    "elbow_above_hand",
+    "elbow_level_with_or_below_hand"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "from_items": [
+    "SYM_2NN9TYMECZU_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-25",
+   "description": "Height of the hitting elbow during the follow-through roll relative to shoulder level",
+   "values": [
+    "elbow_elevated",
+    "elbow_stays_down"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "2Nn9tyMECZU"
+   ],
+   "from_items": [
+    "SYM_2NN9TYMECZU_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-26",
+   "description": "Racket head speed progression during the forward swing into contact",
+   "values": [
+    "accelerates_into_contact",
+    "decelerates_before_contact",
+    "constant_speed"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "8r09TliP-Ak"
+   ],
+   "from_items": [
+    "SYM_8R09TLIP_AK_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-27",
+   "description": "Ball trajectory pace and depth off the racket",
+   "values": [
+    "deep_with_pace",
+    "short_and_weak"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "from_items": [
+    "SYM_APCKJDADZEK_S06"
+   ]
+  },
+  {
+   "id": "NEW-OBS-28",
+   "description": "Portion of the foot bearing weight during recovery or receiving",
+   "values": [
+    "weight_on_heels",
+    "weight_on_forefoot"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "SYM_FOMZ8WJV3DQ_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-29",
+   "description": "Part of the foot making initial contact upon landing from the split step.",
+   "values": [
+    "forefoot",
+    "flat_foot",
+    "heel"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "SYM_FOMZ8WJV3DQ_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-30",
+   "description": "At the split step landing, do the heels contact the ground flat or stay elevated?",
+   "values": [
+    "flatfooted_heels_down",
+    "heels_elevated_on_balls_of_feet"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "FOmz8Wjv3DQ"
+   ],
+   "from_items": [
+    "SYM_FOMZ8WJV3DQ_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-31",
+   "description": "Post-hit balance recovery: whether the player maintains balance or stumbles and braces against the ground",
+   "values": [
+    "balanced_recovery",
+    "loss_of_balance_or_bracing"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "JzcA_ku7Yhk"
+   ],
+   "from_items": [
+    "SYM_JZCA_KU7YHK_S03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-32",
+   "description": "During or immediately after the stroke, does the player touch the racket to the court surface to maintain balance?",
+   "values": [
+    "braces_with_racket",
+    "no_racket_brace"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "JzcA_ku7Yhk"
+   ],
+   "from_items": [
+    "SYM_JZCA_KU7YHK_S03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-33",
+   "description": "Angle between racket shaft and forearm during follow-through: does the racket flip past the forearm line?",
+   "values": [
+    "flips_past_forearm",
+    "maintains_angle"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "from_items": [
+    "SYM_NEPD7FIM7HI_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-34",
+   "description": "During the follow-through of a slice, does the racket maintain an angle with the forearm or straighten and flip past it?",
+   "values": [
+    "maintains_angle",
+    "straightens_or_flips"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "NEpD7fIM7HI"
+   ],
+   "from_items": [
+    "SYM_NEPD7FIM7HI_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-35",
+   "description": "Forearm pronation or supination rapidly twisting the racket face orientation through contact",
+   "values": [
+    "stable_face_angle",
+    "rapidly_twisting_angle"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "pQ793MBQE50"
+   ],
+   "from_items": [
+    "SYM_PQ793MBQE50_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-36",
+   "description": "Vertical movement of the hitting elbow during forward swing on low balls",
+   "values": [
+    "elbow_drops_downward",
+    "elbow_stays_level"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "from_items": [
+    "SYM_TZGAWR3QGV0_S02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-37",
+   "description": "During trunk rotation into contact, does the torso appear fluid with dynamic tilt or stiff and upright?",
+   "values": [
+    "fluid_dynamic_tilt",
+    "stiff_and_upright"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "wFIrPMutzRo"
+   ],
+   "from_items": [
+    "SYM_WFIRPMUTZRO_S01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-38",
+   "description": "During preparation, is body weight loaded over the back leg before stepping forward?",
+   "values": [
+    "loaded_on_back_leg",
+    "rushes_to_front_foot"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "aPcKJDadzek"
+   ],
+   "from_items": [
+    "aPcKJDadzek:C05"
+   ]
+  },
+  {
+   "id": "NEW-OBS-39",
+   "description": "At the start of the forward swing, is the racket delivered into the slot with the butt cap leading?",
+   "values": [
+    "in_slot_butt_cap_leading",
+    "racket_not_in_slot"
+   ],
+   "layer": "B",
+   "camera": "S",
+   "candidates": 1,
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "from_items": [
+    "dDYKuNZtdyU:C02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-40",
+   "description": "At what point does the non-dominant hand release the racket throat on a one-handed backhand?",
+   "values": [
+    "during_turn_or_backswing",
+    "at_drop_initiation",
+    "deep_in_forward_swing"
+   ],
+   "layer": "A",
+   "camera": "any",
+   "candidates": 1,
+   "episodes": [
+    "dDYKuNZtdyU"
+   ],
+   "from_items": [
+    "dDYKuNZtdyU:C03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-41",
+   "description": "During the forward swing into contact, does the lead shoulder actively pull the arm forward along the target line?",
+   "values": [
+    "lead_shoulder_pulls",
+    "lead_shoulder_passive"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "lwS7Xxqrrdw"
+   ],
+   "from_items": [
+    "lwS7Xxqrrdw:C02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-42",
+   "description": "Height of the hitting hand at the peak of the backswing loop",
+   "values": [
+    "shoulder_height_or_above",
+    "chest_height",
+    "waist_height_or_below"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "tzgAWr3QGv0"
+   ],
+   "from_items": [
+    "tzgAWr3QGv0:C02"
+   ]
+  },
+  {
+   "id": "NEW-OBS-43",
+   "description": "Foot pressure distribution or ankle eversion/pronation on the back foot during loading",
+   "values": [
+    "pronated_inside_heel",
+    "neutral_arch_and_ball",
+    "supinated_outer_edge"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "uJpuDUx0jIA"
+   ],
+   "from_items": [
+    "uJpuDUx0jIA:C03"
+   ]
+  },
+  {
+   "id": "NEW-OBS-44",
+   "description": "At forward swing initiation, is there dynamic diagonal stretch separation between the hip line and shoulder line?",
+   "values": [
+    "stretch_separation_present",
+    "no_separation_isolated_rotation"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "wFIrPMutzRo"
+   ],
+   "from_items": [
+    "wFIrPMutzRo:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-45",
+   "description": "Direction of hitting elbow and racket extension during forward swing relative to chest facing direction",
+   "values": [
+    "straight_toward_ball",
+    "along_chest_facing"
+   ],
+   "layer": "B",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "wzLMv4ASg9s"
+   ],
+   "from_items": [
+    "wzLMv4ASg9s:C01"
+   ]
+  },
+  {
+   "id": "NEW-OBS-46",
+   "description": "Within 0.5 s after contact, does the non-dominant foot kick upward or across the body?",
+   "values": [
+    "kicks_up_or_across",
+    "stays_grounded_or_drags"
+   ],
+   "layer": "A",
+   "camera": "B",
+   "candidates": 1,
+   "episodes": [
+    "xLs469ZVMPU"
+   ],
+   "from_items": [
+    "xLs469ZVMPU:C03"
+   ]
+  }
+ ],
+ "aggregation_fix": {
+  "what": "obs_bind.agg: if both runs require two different values of the SAME observable (model meant 'any of', e.g. OBS-16 long/wide/net), that cannot all hold as 'required' (check_obs_binding O3 FAILed it) -> those conditions are demoted to supporting. check_obs_binding O10 re-derives exactly this. Stricter, never adds a required; no rule relaxed.",
+  "items_demoted": [
+   "SYM_NEPD7FIM7HI_S02"
+  ],
+  "side_effect": "tree_v3 artifacts no longer pass check_obs_binding O9 against the extended 29-observable catalog (history only; selftest now runs on v4 artifacts)"
+ },
+ "mechanism_merge_v4": {
+  "groups": 4,
+  "group_sizes": [
+   3,
+   2,
+   2,
+   2
+  ],
+  "cause_nodes": "97 -> 92",
+  "same_groups_as_v3_run": false,
+  "differences_vs_v3_run": "model sampling: group 'N-C_PQ793MBQE50_C03 + N-C_DDYKUNZTDYU_C04' now represented by DDYK:C04; new group N-C_UJPUDUX0JIA_C05 + N-C_WZLMV4ASG9S_C05 (both runs agreed; scapula-stabilisation causes, forehand)",
+  "groups_detail": [
+   {
+    "rep": "N-C_WZLMV4ASG9S_C07",
+    "stroke": "forehand",
+    "members": [
+     "N-C_2NN9TYMECZU_C05",
+     "N-C_WZLMV4ASG9S_C07",
+     "N-C_XLS469ZVMPU_C01"
+    ],
+    "lexical_cos_pairs": {
+     "N-C_2NN9TYMECZU_C05|N-C_WZLMV4ASG9S_C07": 0.046,
+     "N-C_2NN9TYMECZU_C05|N-C_XLS469ZVMPU_C01": 0.051,
+     "N-C_WZLMV4ASG9S_C07|N-C_XLS469ZVMPU_C01": 0.098
+    },
+    "why_run1": "Rotating the trunk continuously through contact instead of decelerating to transfer momentum to the arm.",
+    "why_run2": "Continuously rotating the trunk through contact rather than decelerating it to transfer momentum to the arm."
+   },
+   {
+    "rep": "N-C_DDYKUNZTDYU_C04",
+    "stroke": "backhand",
+    "members": [
+     "N-C_DDYKUNZTDYU_C04",
+     "N-C_PQ793MBQE50_C03"
+    ],
+    "lexical_cos_pairs": {
+     "N-C_DDYKUNZTDYU_C04|N-C_PQ793MBQE50_C03": 0.315
+    },
+    "why_run1": "Pulling or setting the contact point too close to the body instead of extending well out in front.",
+    "why_run2": "Pulling or setting the racket pull slot too close to the body rather than out in front."
+   },
+   {
+    "rep": "N-C_UJPUDUX0JIA_C01",
+    "stroke": "forehand",
+    "members": [
+     "N-C_APCKJDADZEK_C06",
+     "N-C_UJPUDUX0JIA_C01"
+    ],
+    "lexical_cos_pairs": {
+     "N-C_APCKJDADZEK_C06|N-C_UJPUDUX0JIA_C01": 0.313
+    },
+    "why_run1": "Pushing hips and knees forward instead of maintaining a hip hinge with hips back.",
+    "why_run2": "Allowing hips and knees to drift forward instead of maintaining a hip hinge."
+   },
+   {
+    "rep": "N-C_WZLMV4ASG9S_C05",
+    "stroke": "forehand",
+    "members": [
+     "N-C_UJPUDUX0JIA_C05",
+     "N-C_WZLMV4ASG9S_C05"
+    ],
+    "lexical_cos_pairs": {
+     "N-C_UJPUDUX0JIA_C05|N-C_WZLMV4ASG9S_C05": 0.168
+    },
+    "why_run1": "Failing to stabilize the scapula with back muscles, detaching the hitting arm from the trunk.",
+    "why_run2": "Failing to stabilize the scapula with the mid-back musculature, disconnecting the hitting arm from trunk drive."
+   }
+  ]
+ },
+ "verify_all_full": {
+  "pass": false,
+  "selftest_pass": true,
+  "mutations": 57,
+  "checks": {
+   "validate_cards": {
+    "fail": 0,
+    "warn": 2
+   },
+   "check_quotes": {
+    "fail": 0,
+    "warn": 0
+   },
+   "check_tree": {
+    "fail": 89,
+    "warn": 32
+   },
+   "check_obs_binding": {
+    "fail": 0,
+    "warn": 1
+   },
+   "check_mech_merge": {
+    "fail": 0,
+    "warn": 0
+   },
+   "check_manifest": {
+    "fail": 0,
+    "warn": 0
+   },
+   "check_neutrality": {
+    "fail": 0,
+    "warn": 0
+   },
+   "blind_replay": {
+    "fail": 4,
+    "warn": 0
+   }
+  },
+  "fail_rule_breakdown": {
+   "validate_cards": {},
+   "check_quotes": {},
+   "check_tree": {
+    "T05": 78,
+    "T08": 11
+   },
+   "check_obs_binding": {},
+   "check_mech_merge": {},
+   "check_manifest": {},
+   "check_neutrality": {},
+   "blind_replay": {}
+  },
+  "blind_replay_V5_muted_clips": "FAIL (G1: 0 cases) - no clips downloaded, no muted-clip test (user decision)",
+  "t05_note": "must_fix never changed; check_tree rules unchanged",
+  "raw": {
+   "time": "2026-10-18T21:25:29",
+   "selftest": {
+    "good": {
+     "validate_cards": [],
+     "check_quotes": [],
+     "check_tree": [],
+     "check_manifest": [],
+     "check_rerun": [],
+     "check_neutrality": [],
+     "blind_replay": [],
+     "tree_v2_artifacts": []
+    },
+    "mutations": [
+     {
+      "name": "fabricated quote",
+      "expect": "Q04",
+      "caught": true
+     },
+     {
+      "name": "shifted timestamp",
+      "expect": "Q03",
+      "caught": true
+     },
+     {
+      "name": "transcript changed",
+      "expect": "Q01",
+      "caught": true
+     },
+     {
+      "name": "cause without subtitle quote",
+      "expect": "R06",
+      "caught": true
+     },
+     {
+      "name": "dangling evidence",
+      "expect": "R04",
+      "caught": true
+     },
+     {
+      "name": "depth not decreasing",
+      "expect": "R07",
+      "caught": true
+     },
+     {
+      "name": "feel labelled visible layer",
+      "expect": "R08",
+      "caught": true
+     },
+     {
+      "name": "banned cue unflagged",
+      "expect": "R09",
+      "caught": true
+     },
+     {
+      "name": "user context leaked",
+      "expect": "not in [False]",
+      "caught": true
+     },
+     {
+      "name": "video item before stage 2",
+      "expect": "R11",
+      "caught": true
+     },
+     {
+      "name": "tree cites holdout",
+      "expect": "T02",
+      "caught": true
+     },
+     {
+      "name": "feel as required obs",
+      "expect": "T04",
+      "caught": true
+     },
+     {
+      "name": "unconstrained must_fix node",
+      "expect": "T05",
+      "caught": true
+     },
+     {
+      "name": "banned next_one_thing",
+      "expect": "T06",
+      "caught": true
+     },
+     {
+      "name": "indistinguishable nodes",
+      "expect": "T08",
+      "caught": true
+     },
+     {
+      "name": "core edge from one episode",
+      "expect": "T10",
+      "caught": true
+     },
+     {
+      "name": "cycle",
+      "expect": "T11",
+      "caught": true
+     },
+     {
+      "name": "tree cites unverified card",
+      "expect": "T03",
+      "caught": true
+     },
+     {
+      "name": "cited quote has no quote_sources entry",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "quote_sources text differs from card",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "solution links unknown node",
+      "expect": "T13",
+      "caught": true
+     },
+     {
+      "name": "unmuted blind clip",
+      "expect": "B02",
+      "caught": true
+     },
+     {
+      "name": "label not about demonstrator",
+      "expect": "B01",
+      "caught": true
+     },
+     {
+      "name": "project term in fact prompt",
+      "expect": "N01",
+      "caught": true
+     },
+     {
+      "name": "rerun anchors disagree",
+      "expect": "Jaccard",
+      "caught": true
+     },
+     {
+      "name": "manifest duplicate entry",
+      "expect": "M01",
+      "caught": true
+     },
+     {
+      "name": "manifest unknown state",
+      "expect": "M02",
+      "caught": true
+     },
+     {
+      "name": "non_teaching without reason",
+      "expect": "M03",
+      "caught": true
+     },
+     {
+      "name": "state claims transcript that is missing",
+      "expect": "M04",
+      "caught": true
+     },
+     {
+      "name": "merged claimed but card only stage1_verified",
+      "expect": "M05",
+      "caught": true
+     },
+     {
+      "name": "stage1_verified claimed but card missing",
+      "expect": "M05",
+      "caught": true
+     },
+     {
+      "name": "merged but no tree node cites it",
+      "expect": "M06",
+      "caught": true
+     },
+     {
+      "name": "card exists but episode not in manifest",
+      "expect": "M07",
+      "caught": true
+     },
+     {
+      "name": "binding: unknown OBS id",
+      "expect": "O2",
+      "caught": true
+     },
+     {
+      "name": "binding: value outside the observable's list",
+      "expect": "O2",
+      "caught": true
+     },
+     {
+      "name": "binding: 4 required conditions",
+      "expect": "O5",
+      "caught": true
+     },
+     {
+      "name": "binding: contradictory required values",
+      "expect": "O3",
+      "caught": true
+     },
+     {
+      "name": "binding: silently empty signature",
+      "expect": "O4",
+      "caught": true
+     },
+     {
+      "name": "binding: must_fix node with no required and no account",
+      "expect": "O6",
+      "caught": true
+     },
+     {
+      "name": "binding: NEW-OBS candidate in no cluster",
+      "expect": "O7",
+      "caught": true
+     },
+     {
+      "name": "binding: tree required condition not from any binding item",
+      "expect": "O11",
+      "caught": true
+     },
+     {
+      "name": "binding: aggregated signature differs from its runs",
+      "expect": "O10",
+      "caught": true
+     },
+     {
+      "name": "binding: symptom without binding item",
+      "expect": "O1",
+      "caught": true
+     },
+     {
+      "name": "binding: tree observables drift from catalog",
+      "expect": "O9",
+      "caught": true
+     },
+     {
+      "name": "binding: user conclusion in a prompt",
+      "expect": "O8",
+      "caught": true
+     },
+     {
+      "name": "binding: knowledge-base term in a prompt",
+      "expect": "O8",
+      "caught": true
+     },
+     {
+      "name": "merge: members of different stroke types",
+      "expect": "M02",
+      "caught": true
+     },
+     {
+      "name": "merge: two members from one video",
+      "expect": "M02",
+      "caught": true
+     },
+     {
+      "name": "merge: member text rewritten",
+      "expect": "M03",
+      "caught": true
+     },
+     {
+      "name": "merge: merged node name rewritten",
+      "expect": "M03",
+      "caught": true
+     },
+     {
+      "name": "merge: evidence lost in merged node",
+      "expect": "M05",
+      "caught": true
+     },
+     {
+      "name": "merge: v1 edge lost",
+      "expect": "M06",
+      "caught": true
+     },
+     {
+      "name": "merge: cycle in v2 edges",
+      "expect": "M07",
+      "caught": true
+     },
+     {
+      "name": "merge: group goes beyond what both runs said",
+      "expect": "M08",
+      "caught": true
+     },
+     {
+      "name": "merge: node in two groups",
+      "expect": "M01",
+      "caught": true
+     },
+     {
+      "name": "merge: rep not a member",
+      "expect": "M01",
+      "caught": true
+     },
+     {
+      "name": "merge: node counts disagree",
+      "expect": "M04",
+      "caught": true
+     }
+    ],
+    "pass": true
+   },
+   "checks": {
+    "validate_cards": {
+     "fail": [],
+     "warn": [
+      "[WARN] ../episodes/2Nn9tyMECZU.card.json: R07 top-depth root C04 rests on an inferred link",
+      "[WARN] ../episodes/wzLMv4ASg9s.card.json: R07 top-depth root C06 rests on an inferred link"
+     ]
+    },
+    "check_quotes": {
+     "fail": [],
+     "warn": []
+    },
+    "check_tree": {
+     "fail": [
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_2NN9TYMECZU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_5_IA7C4XZFU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_8R09TLIP_AK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_APCKJDADZEK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_DDYKUNZTDYU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_FOMZ8WJV3DQ must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_JZCA_KU7YHK must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_LWS7XXQRRDW must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_NEPD7FIM7HI must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_PQ793MBQE50 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_PSIDJEI5BNI must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_PUN6QIIYU_4 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_QSZZ0N4FRB4 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_TZGAWR3QGV0 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_UB6SBA_KX9E must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_UJPUDUX0JIA must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_V_QKILD4V_W must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_WFIRPMUTZRO must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_WZLMV4ASG9S must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_XLS469ZVMPU must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-P_XXLNDJNRA4E must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_2NN9TYMECZU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_2NN9TYMECZU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_2NN9TYMECZU_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_5_IA7C4XZFU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_5_IA7C4XZFU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_8R09TLIP_AK_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_8R09TLIP_AK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_8R09TLIP_AK_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_APCKJDADZEK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_APCKJDADZEK_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_DDYKUNZTDYU_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_DDYKUNZTDYU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_DDYKUNZTDYU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_FOMZ8WJV3DQ_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_FOMZ8WJV3DQ_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_FOMZ8WJV3DQ_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_FXDMVI3EFNE_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_JZCA_KU7YHK_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_JZCA_KU7YHK_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_JZCA_KU7YHK_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_JZCA_KU7YHK_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_LWS7XXQRRDW_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_LWS7XXQRRDW_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_NEPD7FIM7HI_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_NEPD7FIM7HI_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_NEPD7FIM7HI_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_PQ793MBQE50_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_PSIDJEI5BNI_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_PSIDJEI5BNI_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_PSIDJEI5BNI_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_PUN6QIIYU_4_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_QSZZ0N4FRB4_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_QSZZ0N4FRB4_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_QSZZ0N4FRB4_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_TZGAWR3QGV0_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_TZGAWR3QGV0_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_UB6SBA_KX9E_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_UB6SBA_KX9E_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_UB6SBA_KX9E_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_UJPUDUX0JIA_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_UJPUDUX0JIA_C07 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_V_QKILD4V_W_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_V_QKILD4V_W_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_V_QKILD4V_W_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WFIRPMUTZRO_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WFIRPMUTZRO_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C05 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_WZLMV4ASG9S_C06 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_XLS469ZVMPU_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_XLS469ZVMPU_C03 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_XLS469ZVMPU_C04 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_XXLNDJNRA4E_C01 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T05 N-C_XXLNDJNRA4E_C02 must_fix node has no required observable: it can never be confirmed from video",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-P_FXDMVI3EFNE and N-C_FXDMVI3EFNE_C01 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-P_FXDMVI3EFNE and N-C_FXDMVI3EFNE_C03 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_FXDMVI3EFNE_C01 and N-C_FXDMVI3EFNE_C03 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_2NN9TYMECZU_C03 and N-C_UJPUDUX0JIA_C06 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_APCKJDADZEK_C01 and N-C_WZLMV4ASG9S_C07 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_FXDMVI3EFNE_C02 and N-C_PUN6QIIYU_4_C02 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_LWS7XXQRRDW_C02 and N-C_PQ793MBQE50_C01 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_NEPD7FIM7HI_C02 and N-C_XXLNDJNRA4E_C03 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_QSZZ0N4FRB4_C04 and N-C_UB6SBA_KX9E_C04 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_TZGAWR3QGV0_C03 and N-C_WFIRPMUTZRO_C03 have identical required signatures and no differential",
+      "[FAIL] ../ftt_tree/tree_v4.json: T08 N-C_UJPUDUX0JIA_C01 and N-C_WFIRPMUTZRO_C02 have identical required signatures and no differential"
+     ],
+     "warn": [
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_FXDMVI3EFNE_C03 shares OBS-11=down_then_forward_and_up with ['N-C_FXDMVI3EFNE_C01', 'N-P_FXDMVI3EFNE'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-P_FXDMVI3EFNE shares OBS-11=down_then_forward_and_up with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_FXDMVI3EFNE_C01 shares OBS-11=down_then_forward_and_up with ['N-C_FXDMVI3EFNE_C03', 'N-P_FXDMVI3EFNE'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_2NN9TYMECZU_C03 shares OBS-02=touching_torso with ['N-C_UJPUDUX0JIA_C06'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_UJPUDUX0JIA_C06 shares OBS-02=touching_torso with ['N-C_2NN9TYMECZU_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_2NN9TYMECZU_C06 shares OBS-08=small_turn with ['N-C_LWS7XXQRRDW_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_LWS7XXQRRDW_C03 shares OBS-08=small_turn with ['N-C_2NN9TYMECZU_C06'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_PUN6QIIYU_4_C01 shares OBS-26=flat_or_downward with ['N-C_8R09TLIP_AK_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_8R09TLIP_AK_C01 shares OBS-26=flat_or_downward with ['N-C_PUN6QIIYU_4_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_APCKJDADZEK_C01 shares OBS-19=accelerates_through_contact with ['N-C_WZLMV4ASG9S_C07'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_WZLMV4ASG9S_C07 shares OBS-19=accelerates_through_contact with ['N-C_APCKJDADZEK_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_APCKJDADZEK_C04 shares OBS-22=extended_forward with ['N-C_LWS7XXQRRDW_C03', 'N-C_UJPUDUX0JIA_C01', 'N-C_WFIRPMUTZRO_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_LWS7XXQRRDW_C03 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C04', 'N-C_UJPUDUX0JIA_C01', 'N-C_WFIRPMUTZRO_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_UJPUDUX0JIA_C01 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C04', 'N-C_LWS7XXQRRDW_C03', 'N-C_WFIRPMUTZRO_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_WFIRPMUTZRO_C02 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C04', 'N-C_LWS7XXQRRDW_C03', 'N-C_UJPUDUX0JIA_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_PUN6QIIYU_4_C02 shares OBS-15=b:wraps_back_to_body_immediately with ['N-C_FXDMVI3EFNE_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_FXDMVI3EFNE_C02 shares OBS-15=b:wraps_back_to_body_immediately with ['N-C_PUN6QIIYU_4_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_PQ793MBQE50_C01 shares OBS-24=wrist_flexes_rapidly with ['N-C_LWS7XXQRRDW_C02', 'N-C_NEPD7FIM7HI_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_LWS7XXQRRDW_C02 shares OBS-24=wrist_flexes_rapidly with ['N-C_NEPD7FIM7HI_C01', 'N-C_PQ793MBQE50_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_NEPD7FIM7HI_C01 shares OBS-24=wrist_flexes_rapidly with ['N-C_LWS7XXQRRDW_C02', 'N-C_PQ793MBQE50_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_XXLNDJNRA4E_C03 shares OBS-23=nearly_straight with ['N-C_NEPD7FIM7HI_C02'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_NEPD7FIM7HI_C02 shares OBS-23=nearly_straight with ['N-C_XXLNDJNRA4E_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_PUN6QIIYU_4_C01 shares OBS-20=knee_to_waist with ['N-C_PSIDJEI5BNI_C04'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_PSIDJEI5BNI_C04 shares OBS-20=knee_to_waist with ['N-C_PUN6QIIYU_4_C01'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_QSZZ0N4FRB4_C04 shares OBS-25=shoulders_lead_hips with ['N-C_UB6SBA_KX9E_C04'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_UB6SBA_KX9E_C04 shares OBS-25=shoulders_lead_hips with ['N-C_QSZZ0N4FRB4_C04'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_WFIRPMUTZRO_C03 shares OBS-29=no_lateral_bend with ['N-C_TZGAWR3QGV0_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T09 N-C_TZGAWR3QGV0_C03 shares OBS-29=no_lateral_bend with ['N-C_WFIRPMUTZRO_C03'] but lists no differential",
+      "[WARN] ../ftt_tree/tree_v4.json: T10 edge N-C_2NN9TYMECZU_C04->N-P_2NN9TYMECZU marked inferred but cites episode evidence; use single_episode/core",
+      "[WARN] ../ftt_tree/tree_v4.json: T10 edge N-C_WZLMV4ASG9S_C06->N-P_WZLMV4ASG9S marked inferred but cites episode evidence; use single_episode/core",
+      "[WARN] ../ftt_tree/tree_v4.json: T12 ExkBtFRhUWY verified but problem not mapped to a node",
+      "[WARN] ../ftt_tree/tree_v4.json: T12 JIMgI3jiVns verified but problem not mapped to a node"
+     ]
+    },
+    "check_obs_binding": {
+     "fail": [],
+     "warn": [
+      "[WARN] obs_binding: O6 accounted gaps (still FAIL in check_tree T05): {'visible_false': 58, 'new_obs_candidate': 20}"
+     ]
+    },
+    "check_mech_merge": {
+     "fail": [],
+     "warn": []
+    },
+    "check_manifest": {
+     "fail": [],
+     "warn": []
+    },
+    "check_neutrality": {
+     "fail": [],
+     "warn": []
+    },
+    "blind_replay": {
+     "fail": [
+      "[FAIL] gate G1: cases 0 >= 10",
+      "[FAIL] gate G1: episodes 0 >= 5",
+      "[FAIL] gate G1: recall@3 0.00 >= 0.6",
+      "[FAIL] gate G1: negatives 0 > 0 and high-conf FP 0.00 <= 0.2"
+     ],
+     "warn": []
+    }
+   },
+   "replay_metrics": {
+    "cases": 0,
+    "positives": 0,
+    "negatives": 0,
+    "episodes": 0,
+    "recall_at_3": 0.0,
+    "top1": 0.0,
+    "abstain_rate": 0.0,
+    "negative_high_conf": 0.0,
+    "rerun_top1_stable": null
+   },
+   "inputs": {
+    "cards": 31,
+    "tree_sha256": "f4cc1a6a0dfe3e8df51d2733daca453649d93264c3df722ed9a1a49d4df9bd59"
+   },
+   "pass": false
+  }
+ },
+ "text_blind_replay": {
+  "rerun": false,
+  "why": "not requested this round; holdout result stays the tree_v2 one (no prompt tuning)",
+  "library_menu_identical_to_tree_v2_run": false,
+  "latest_result": {
+   "file": "replay/text_blind/results_v2_indep_main.json",
+   "case_hit3": 0.16666666666666666,
+   "coverage_any": 0.16666666666666666
+  }
+ },
+ "gemini_usage": {
+  "model": "gemini-3.8-flash",
+  "base": "micuapi.ai",
+  "by_stage": {
+   "obs_bind round1 v4 (44 calls)": {
+    "promptTokenCount": 125110,
+    "candidatesTokenCount": 45937,
+    "thoughtsTokenCount": 196006,
+    "totalTokenCount": 367053,
+    "calls": 44
+   },
+   "obs_gapfill v4": {
+    "promptTokenCount": 6746,
+    "candidatesTokenCount": 1887,
+    "thoughtsTokenCount": 11391,
+    "totalTokenCount": 20024,
+    "calls": 2
+   },
+   "newobs_cluster v4": {
+    "promptTokenCount": 6480,
+    "candidatesTokenCount": 2093,
+    "thoughtsTokenCount": 9355,
+    "totalTokenCount": 17928,
+    "calls": 2
+   },
+   "mech_merge v4 (6 calls)": {
+    "promptTokenCount": 10966,
+    "candidatesTokenCount": 906,
+    "thoughtsTokenCount": 14686,
+    "totalTokenCount": 26558,
+    "calls": 6
+   },
+   "TOTAL_this_round": {
+    "promptTokenCount": 149302,
+    "candidatesTokenCount": 50823,
+    "thoughtsTokenCount": 231438,
+    "totalTokenCount": 431563,
+    "calls": 54
+   }
+  },
+  "note": "this round only (cached gapfill/clustering included when present); key read from env only."
+ },
+ "remaining_gaps": {
+  "problem_nodes_without_required": "21/22",
+  "must_fix_nodes_without_required": {
+   "unobservable_per_model": 58,
+   "has_NEW_OBS_candidate": 20,
+   "total": 78
+  },
+  "T05_after": 78,
+  "T08_after": 11,
+  "new_obs_clusters_still_open": {
+   "total": 46,
+   "spanning_>=2_episodes": 1
+  },
+  "obs_never_used_by_any_node": [
+   "OBS-12"
+  ],
+  "V5_muted_clip_replay": "0 cases; needs per-segment download approval (PLAN_v2 sec 9.2)"
+ },
+ "no_secrets": true
+}

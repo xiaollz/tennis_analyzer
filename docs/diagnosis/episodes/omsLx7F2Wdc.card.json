@@ -1,0 +1,491 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "omsLx7F2Wdc",
+    "url": "https://www.youtube.com/watch?v=omsLx7F2Wdc",
+    "title": "There's Only 1 Singles Strategy, and This is It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 878.0,
+    "upload_date": "2026-05-26",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "demo_with_player",
+    "reason": "The coach provides clear tactical rules and rally drill progressions instructing the player when to hit crosscourt versus changing direction."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/omsLx7F2Wdc.en.vtt",
+    "kind": "auto",
+    "sha256": "78f3ebb9c21a5c42a2ad025f6f1a8c64b13dae61327eb7868c7b6219fbc05021",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_omsLx7",
+      "s1_r2_omsLx7",
+      "s1_r3_omsLx7"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "What is the single optimal baseline rally strategy to minimize your movement and maximize your opponent's?",
+    "definition": "Players often hit down the line from wide corners or fail to redirect central balls, resulting in exhausting wind sprints across the court and hitting into low-margin geometry.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic baseline rally ability"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "And it's that every single ball that is wider than the outside third of the court, she's hitting cross court.",
+      "start": 15.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And when the ball is more centralized, she's changing the direction of the rally. So, wherever the ball came from, she's going the other way.",
+      "start": 23.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And the reason is that the geometry of this rally, which we'll get more to in a second, minimizes the amount that you yourself have to move while maximizing the amount that your opponent has to move.",
+      "start": 42.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "The reason that if Alexa gets a wide ball, where she's playing it, you know, almost in the alley, the reason she wants to go cross court is that I am now playing the ball from here.",
+      "start": 74.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Which is only one or two steps from where she played her shot. So, this is what going cross court and recovering into that spot looks like.",
+      "start": 99.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Okay, now, let's say she takes this wide ball and goes down the line and let's look at how the geometry changes.",
+      "start": 127.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Look how many steps away her optimal defensive position is from where she hit. And so this is why when we go almost entirely cross court from wide, we save a lot of energy.",
+      "start": 152.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Now she's running a wind sprint. Whereas there's no real wind sprint you have to run if you go cross court.",
+      "start": 170.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "When the ball is more centralized. So, if she gets this ball instead, and now changes direction.",
+      "start": 183.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "She's only like one two steps from the optimal place to play those balls. And the beautiful thing about change of direction is, okay, so I play this shot, she's only one or two steps",
+      "start": 205.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "That's really more of a change-up, right? Because it comes right back to me. So, if I'm cheating, she'll get me, but this is a great opportunity to hit open court",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And what happens is your opponent just ends up running side to side to side to side to side, while you take two steps, two steps, two steps, two steps, two steps.",
+      "start": 378.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And so, there's two like really good versions of the drill. One of them where you're getting a lot of corner balls, and you got to really fight your way out of the corner.",
+      "start": 386.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And then the other version of the drill, which is the one you see Alexa doing here, where like a lot of the balls are floating into the center, and she can just go change, change, change, change, change.",
+      "start": 394.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "It's 6 in lower in the middle than it is on the edges, and the closer to the middle it is, the shorter it is.",
+      "start": 422.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "So, you go down the line from wide, you have the shortest court to aim into, and you're hitting over the highest part of the net.",
+      "start": 437.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So, the first one is, you know, roughly 20% of the time, one in five shots, maybe one in six shots, you can just break the pattern just to keep your opponent honest.",
+      "start": 466.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "So, you're just hitting with high margin over the net. You might have to slow your swing down cuz you're hitting into a small part of the court.",
+      "start": 492.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Depending on your ability on the shot, you might be able to hit a down the line winner instead of playing a neutral rally that's not actually neutral cuz you're behind.",
+      "start": 532.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Knowing whether you should deviate like this is about being honest with yourself about what your percentages actually are.",
+      "start": 568.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "You know, that said, you know, Wawrinka would hit backhands down the line and I think it was 20 or 30% of his backhands down the line were winners",
+      "start": 596.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Okay, the last big deviation is if your opponent has an extreme mismatch in forehand backhand quality",
+      "start": 622.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "with hit every single ball to the bad side. And the reason is all of this is about movement and saving movement and energy",
+      "start": 643.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "And then the two poles in the back, it's just tension. We want this loose cuz when this is loose, the balls hit it and it absorbs the force instead of launching the ball back out of the net.",
+      "start": 756.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "Ace Mate is great if you want to change these change of direction patterns. Use our link if you want to buy it and we'll see you next time.",
+      "start": 872.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player is forced to run an exhausting wind sprint across the entire court to reach the opponent's return.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The opponent remains standing comfortably in place without being forced to run side to side.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Down-the-line attempts from wide positions land long or clip the net due to insufficient geometric clearance.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Hitting down the line from a wide court position alters the return geometry, leaving your optimal defensive recovery spot many steps away across the court.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Failing to change rally direction on centralized balls sends the ball directly back into the opponent's strike zone without forcing them to move.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Hitting down the line from wide targets the highest section of the net (6 inches higher than the middle) and into the shortest court depth.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q15",
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Crosscourt rally geometry passes over the lowest middle portion of the net and allows recovery in only one to two steps.",
+      "evidence": [
+        "Q03",
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "Alexa demonstrates recovering easily in two steps after hitting crosscourt versus facing a massive sprint when hitting down the line.",
+      "evidence": [
+        "Q05",
+        "Q07"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "The geometry cone of the opponent's easiest return positions your ideal defensive spot right where you already stand when hitting crosscourt.",
+      "evidence": [
+        "Q04",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Players think attacking down the line from wide gains an advantage, overlooking that it causes extreme recovery penalties and lower geometric margin.",
+      "evidence": [
+        "Q07",
+        "Q16"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "pro_example",
+      "summary": "Stan Wawrinka was statistically effective bailing out of defensive corners with down-the-line backhand winners, but recreational players rarely have those percentages.",
+      "evidence": [
+        "Q20",
+        "Q21"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Whenever receiving a ball wider than the outside third of the court, hit crosscourt to minimize defensive recovery movement to one or two steps.",
+      "external_goal": "Direct every ball hit from outside the outer third back crosscourt.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Whenever receiving a centralized ball, change the direction of the rally to attack the open court and force the opponent to run.",
+      "external_goal": "Redirect centralized balls into the opposite open court from where the ball originated.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Practice two rally drill versions: one fighting out of deep corner feeds crosscourt, and another repeatedly changing direction on central feeds.",
+      "external_goal": "Fight out of corner feeds crosscourt until a central feed appears, then redirect down the line.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "When breaking the rally pattern down the line to catch a cheating opponent, slow your swing down and aim with high margin over the net.",
+      "external_goal": "Shape the ball high over the net into the smaller down-the-line target area.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_omsLx7",
+        "s1_r2_omsLx7",
+        "s1_r3_omsLx7"
+      ],
+      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_draft"
+}

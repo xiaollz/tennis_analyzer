@@ -1,0 +1,540 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "aPcKJDadzek",
+    "url": "https://www.youtube.com/watch?v=aPcKJDadzek",
+    "title": "The Pros \"Step In\" Differently Than You",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 817.0,
+    "upload_date": "2026-07-27",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "FTT teaching episode from subtitle extraction"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/aPcKJDadzek.en.vtt",
+    "kind": "auto",
+    "sha256": "dad840cb485588e29b7f563e7b922edea9e5b0b67d1397ac91187e905a1eddf0",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v1",
+    "stage1_run_ids": [
+      "s1_r1_aPcKJD",
+      "s1_r2_aPcKJD"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do pros step into their shots differently from amateur players?",
+    "definition": "Amateur players often step forward without creating a stable front-leg anchor, caving the front knee inward, leaving weight behind or spinning out, rather than braking the trunk to snap the kinetic chain.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Players learning or executing closed or semi-closed stepping-in groundstrokes (specifically backhands) seeking power and directional control."
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "getting balanced. Her head is stacked over her loading foot, her outside foot. And so, you're always getting balanced over your outside foot, whether you're about to hit open stance, or whether about to step in.",
+      "start": 38.48,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "with that, but the really important thing is that this knee is not caving in, this knee is driving out over the center of your foot, and it's maintained there, so it's driving out even on the outside of your",
+      "start": 71.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "If this knee caves in early, you're going to lose your anchor and are going to over-rotate. So, I'm going to feed a",
+      "start": 88.88,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "see how this anchor is rock solid here, and the shoulders are swinging into that hip anchor. So, this isn't collapsing, and the shoulders are swinging into that hip hip anchor, and this is, you know,",
+      "start": 160.28,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "sometimes players see that at full speed and they think you're supposed to pop up to here on purpose as part of the swing. No, that's not what's happening. You are driving like this during the swing, but",
+      "start": 187.76,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "issues with the step that happens is if you step forward, but then you don't take your weight with it onto your front foot, then you can't actually create that stable that stable anchor we were just talking about, and",
+      "start": 271.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "the ground. And so if you are feeling the load through the heel and the inside part of your foot here, you don't have a strong anchor. Hypothetically you could hurt yourself. I mean this is how ACLs are torn.",
+      "start": 381.88,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So see how that load shifts onto the ball and arch of the foot. So from the thumb toe wrapping around here onto the ball and arch of the foot rather than the inside and the heel. And so a",
+      "start": 402.52,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "anchor. And that's how you get that snapping effect where the arms just shoot through at the end because the that this anchors the the trunk and then the trunk gets stuck and the arms shoot.",
+      "start": 457.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "sometimes coaches will will will will coach you to pull the back leg around, but you don't want to do that cuz again, that's part of the follow-through. You are swinging into your front leg and everything's stopping right",
+      "start": 475.15999999999997,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "into it. If you exaggerate this too much, you might like end up over your front foot right away, and then you're not using your back leg at all. And, you know, that looks like this, which is a",
+      "start": 516.64,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "play tennis. So, you want to drift your head over your foot but keep your hips back. So, your head, your shoulders over the feet, hips back. You're seeing that",
+      "start": 605.84,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "and you're going to keep your hips behind you. So, you're going to hinge here so that the knee doesn't have to come as well. So, you watch that here. See that? See this leverage here? So,",
+      "start": 640.36,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "hips behind me. So, anytime we're playing tennis, we're always playing with a 10-15 15° lean at all times. The only time it ever goes away is temporarily right after a hip pops for",
+      "start": 747.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "more of this kind of a swing where not only is it less powerful because the kinetic chain doesn't snap, but also, like I can't like change the vector like that. Like I'm trying to go down the line, I",
+      "start": 788.12,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Front knee collapses or caves inward toward the midline during the forward swing instead of driving outward.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player over-rotates or spins out through the shot rather than braking rotation against the front side.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Feeling the body load pressing through the inside of the foot and the heel rather than the ball and arch.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Player deliberately pops up and straightens their posture during the forward swing trying to create power.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "S05",
+      "description": "Front knee drifts excessively far forward over the toes without maintaining hip hinge.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S06",
+      "description": "Shot produces weak, pushing contact and poor directional control due to lack of snap in the kinetic chain.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q15"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The front hip collapses and the knee caves inward, destroying the rigid front-leg brake/anchor necessary to halt trunk rotation.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q02",
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player steps forward with the foot but leaves their body weight and head behind rather than transferring them over the front hip.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player mistakes passive follow-through reactions (popping up, hip extension, spinning the back leg around) for intentional active elements of the forward swing.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05",
+        "Q10"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "The player rushes immediately onto the front foot without first balancing and coiling their head and weight over the outside back leg.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "The player lets the hips drift forward and slides the knee forward over the toes instead of hinging at the hips and keeping the hips behind.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12",
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C05",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "S05",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S06",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The front leg serves as an immovable anchor that abruptly halts trunk rotation, forcing the kinetic chain to snap and release the arms into the ball.",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Players must feel ground reaction forces through the ball and arch of the foot (from the big toe around) rather than through the inside heel.",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Maintaining an open envelope at the front hip where the knee drifts outward over the outside foot margin, keeping the hips behind in a hinge.",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Federer sets a rock-solid front-leg hip anchor with shoulders swinging into it, and hip extension occurs only as a passive consequence in the follow-through.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Players think popping up or pulling the rear leg around creates power, but those are purely follow-through releases after the stroke has finished.",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "S01"
+      ],
+      "summary": "Land front foot at roughly 45 degrees and actively drive the front knee outward over the arch/outside of the foot to keep the hip open and anchor solid.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C03",
+        "S03"
+      ],
+      "summary": "After initial heel/inside foot touchdown, consciously shift ground contact load onto the ball, thumb toe, and arch of the front foot before swinging.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C05",
+        "C02"
+      ],
+      "summary": "First stack head and body weight over the outside back leg to coil, then flow head and weight forward stacked over the front hip anchor during the step.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q06"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C06",
+        "S05"
+      ],
+      "summary": "Maintain a hip hinge with the hips held behind you so the knee stays stacked over the heel/foot rather than drifting forward past the toes.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12",
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "check",
+      "targets": [
+        "C04",
+        "S02",
+        "S04"
+      ],
+      "summary": "Check that the trunk stops against the firm front hip and the arms snap through without jumping, popping up, or prematurely swinging the rear leg around.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04",
+        "Q09",
+        "Q10"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

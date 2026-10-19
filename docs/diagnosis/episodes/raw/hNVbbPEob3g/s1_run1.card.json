@@ -1,0 +1,508 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "hNVbbPEob3g",
+    "url": "https://www.youtube.com/watch?v=hNVbbPEob3g",
+    "title": "Chest Engagement Makes Controlling the Racket Face Easy",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 379.0,
+    "upload_date": "2025-06-23",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "Coach instructs the player to imagine the arm is attached to the torso and engage the chest early rather than letting the arm lag behind the rotation."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/hNVbbPEob3g.en.vtt",
+    "kind": "auto",
+    "sha256": "a848f4a919fff1c989c84f57ba0b05974ce32aa29838dcc1a6361b5241fa657c",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_hNVbbP",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does engaging the chest improve racket face control and timing on the forehand?",
+    "definition": "Allowing the arm to lag behind the chest creates extra degrees of freedom and timing difficulty, whereas engaging the chest keeps the swing compact and allows confident acceleration.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Forehand topspin drive mechanics",
+      "Torso rotation fundamentals"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "One of the biggest things destroying your timing on the forehand is the way you use your chest. I see this all the time where the chest lags behind the swing.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, you will get more power in some sense if you let your chest go first, let the arm lag here, and then let it whip through. But, it's not worth the control that you lose.",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "What we want instead is no matter how far you're winding up back here, as you drive, you make this attached. You don't let the arm lag behind the torso as you drive forward.",
+      "start": 28.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Instead, you just imagine these are attached and you force the arm to come forward with your trunk as you rotate. Makes the whole swing a whole lot smaller, a whole lot easier at a time.",
+      "start": 43.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "When we let the chest lag behind, it's very difficult for the arm to actually catch up to the contact point.",
+      "start": 58.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Now, that one I tried really, really hard with my eyes and stuff to time it right. But that timing window is much more difficult to hit as opposed to if I force the arm to go forward with the",
+      "start": 68.24,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And I could even play this on one foot without moving and I still know where the racket head is going to be because I have such good command over the upper body here.",
+      "start": 88.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "your brain is not going to be willing to recruit this as aggressively unless you have control. And so you actually end up hitting harder using your chest more conservatively.",
+      "start": 114.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "When you take your arm and when you attach it to your chest, what happens is you have one less degree of freedom that you have to time.",
+      "start": 124.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "freedom that you have to time. So if I let this go back, I have to make sure I time this stretch reflex to go through the ball right at the contact point. So that is an extra element that",
+      "start": 131.2,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "now it's extremely simple to time this part of the swing. I just turn and the racket is right there.",
+      "start": 152.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Whereas if I loosen this up and I loosen this up together, that's where it gets almost impossible to get the ball and the racket to actually meet coherently in the air because it's just there's not enough control through",
+      "start": 168.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And so by locking this together, what it lets you do is lets you make that part of your swing so compact that you can connect your trunk almost directly into your hand and wrist.",
+      "start": 184.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "So, if I let this go back, it is much more difficult to coordinate it to actually get right there where the ball was.",
+      "start": 216.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Even if I don't really move, even if I accidentally jam myself, it's very easy for me to put racket on ball because there's so much less moving action, there's so much less freedom within here.",
+      "start": 231.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "And so what I want to do is engage the chest early. Even if I have an aggressive prep where I have it stretched in the back during this early part of the swing instead of keeping it back there,",
+      "start": 241.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "that chest is engaged that by the time I get to here, either the arm is exactly where it started or it's even caught up to the trunk a little bit and then that pressing action, that motion that finishes",
+      "start": 254.879,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Instead of doing that, we keep the arm together and then that pressing action that finishes the swing is very very easy to control because it's so short.",
+      "start": 278.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "the chest is still engaged and pressing even when they're attached. But that kind of stretch reflex you get like the thing that we get on the shoulder on the serve for example, you don't get that.",
+      "start": 301.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "So when I use that stretch reflex, okay, the ball does go really really fast. So that is it's a power source you might be tempted to use. Okay, here's the problem.",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "all of a sudden, you notice I'm not getting more power when I allow myself to lag. And the reason is now that I'm actually trying to hit the ball in the court, my brain is telling me,",
+      "start": 332.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "hey, you can't swing that fast because if you do, you're not going to be able to control where that release unwinds.",
+      "start": 342.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "And this is why paradoxically if I just attach the arm to the chest, which you know in a vacuum seems like I would get less power,",
+      "start": 348.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "all of a sudden because the swing is more compact through the chest, I can actually hit that same contact point while engaging the big strong muscles of the body.",
+      "start": 363.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Difficulty coordinating and timing the contact point, feeling a narrow timing window.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Arm lags behind the torso during the forward swing instead of moving forward together.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q03"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Loss of effective shot power and consistency when trying to land the ball in the court.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Allowing the chest to turn first while the arm lags behind forces the arm through an extended, difficult-to-control catching-up distance.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Disconnecting the arm from the chest creates an extra degree of freedom that introduces an unpredictable stretch reflex timing demand.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Simultaneously loosening the upper chest/arm and the wrist deprives the stroke of upper-body structural control.",
+      "depth": 4,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The brain subconsciously throttles swing speed when attempting to make the court because it cannot reliably predict where the stretch release unwinds.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q21",
+        "Q22"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "Players confuse beneficial wrist lag with chest lag, incorrectly assuming lagging the arm behind the torso creates usable dynamic power.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Attaching the arm to the chest eliminates a degree of freedom and connects trunk rotation directly into the hand and wrist.",
+      "evidence": [
+        "Q09",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Engaging the chest early leaves only a tiny, controllable pressing action that occurs naturally at the end when trunk rotation slows.",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates hitting on one foot without moving to prove that an engaged chest provides total command over racket head position in space.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "analogy",
+      "summary": "Shoulder stretch reflexes work on serves, but on the forehand the resulting timing and control penalty is not worth the raw power.",
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Imagine the arm and torso are attached, forcing the arm to rotate forward in unison with the trunk rather than lagging behind.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Lock the upper arm to the chest to keep the stroke compact and connect trunk rotation directly into the hand and wrist.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Engage the chest early in the forward swing so the arm stays level with or ahead of the torso, reserving the pressing action solely for the very end.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Keep the arm attached to the chest while aggressively twisting off the hips and trunk, allowing the large body muscles to drive the ball with full commitment.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

@@ -1,0 +1,527 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "wFIrPMutzRo",
+    "url": "https://www.youtube.com/watch?v=wFIrPMutzRo",
+    "title": "2 Secrets to Rotational Power | Side Bending + The Abdominal X",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 765.0,
+    "upload_date": "2025-03-20",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach uses an on-court demonstrator, props, and drills to explain rotational mechanics (the abdominal X and side bending) for the forehand."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/wFIrPMutzRo.en.vtt",
+    "kind": "auto",
+    "sha256": "ed502bfde944dcaf8099d413f869a052f3d3884a56d1b6e71a5248f1ada85330",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v3",
+    "stage1_run_ids": [
+      "s1_r2_wFIrPM",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you unlock effortless rotational power and trunk control on the forehand?",
+    "definition": "Players often rotate upright on a single plane, leading to a stiff, robotic swing where they fail to engage the trunk's diagonal stretch connections and cannot generate natural groundstroke trajectory without arming the ball.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand groundstroke swing"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q11",
+      "Q12"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "When she's at her forehand contact position, she has this side bend in the spine. And that's one of the concepts we're going to address today that unlocks that rotational energy",
+      "start": 5.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "The other one is a way to think about the connections that run through your trunk, specifically the connections between the shoulder and the opposite hip.",
+      "start": 20.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Visualize an X through the abdomen. It goes to the front and the back and it connects one shoulder to the opposite hip.",
+      "start": 65.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "the off shoulder, she's right-handed, so her left shoulder is stretched against her right hip.",
+      "start": 83.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "This is what coiling is is you're stretching the shoulder against the hip. And then the natural thing if you release the contact is to unwind.",
+      "start": 108.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "So one of the common checkpoints we use when we're checking how well how efficiently someone's harnessing this engine is whether this hip pops forward when you drive.",
+      "start": 117.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And if you've ever struggled getting this right hip to fire or if you've ever been told to use your left shoulder and it never quite made sense to you, maybe you weren't thinking about them together as connecting",
+      "start": 165.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "because the way the X in your trunk works is it stretches equal and opposite of each other.",
+      "start": 180.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "So, a really simple motion we can use to learn how to feel this is trying to drive the right elbow to the left knee.",
+      "start": 230.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Now, if Alexa just stands straight up and I tell her to rotate, so go ahead. It can look something like this. and you rotate back and forth and it doesn't feel very athletic.",
+      "start": 278.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "it doesn't feel very athletic. And the reason is you're only allowing yourself to rotate in one plane of rotation and that's very limiting. So to unlock this engine, you have to be willing one to bend your hips, but",
+      "start": 287.68,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And you are, but without allowing yourself to side bend on the way forward, you're always going to feel a little restricted. It's never going to feel quite right.",
+      "start": 327.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "It's robotic. It's stiff. And it's hard to get this ball to go over the net. You'd have to kind of arm it over.",
+      "start": 343.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And just that little bit of tilt lets me fully relax, release that shoulder through the way it wants to go. And that sends the ball on a trajectory that clears the net and creates a nice heavy ground stroke.",
+      "start": 369.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "All that you have to do is learn what it feels like to control your body and control where your racket ends up using these connections in your trunk.",
+      "start": 479.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "The medicine ball is one of the best tools for learning to feel these connections and how to use them. The reason is it's heavy and it's heavier than your racket.",
+      "start": 501.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "One of the things you can do is you can use a tool like this to lock your arms in place. And now, your only axis of control is your trunk and your spinal rotation.",
+      "start": 593.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "a full forehand swing. My goal here is just going to be to contact the ball with the end here. So, all I'm trying to do is look in space, right? So, I'm still doing that tracking piece of the",
+      "start": 618.399,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Now, I'm not going to even try this because I'm so unstable. I can feel all the forces in my lower back right now because my glutes aren't helping with this motion now.",
+      "start": 665.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "So, this nice wide base and that little bit of hip flexion allows me to actually have control and stability over where my right side ends up.",
+      "start": 677.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "There are two great hitting patterns for working on trunk activation. This is the first which is left and right. So you hit all forehands, you hit crosscourt and then inside and then crosscourt and then inside in.",
+      "start": 715.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "And the other one is moving yourself forward and back because it's the same thing. You need that nice solid base, that quick twist, that compact explosive rotation in order to succeed in this pattern.",
+      "start": 732.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "internalize that X. So remember that you're stretching one shoulder against the other hip and get that little bit of side bend to unlock that rotation and keep your shoulder loose and firing",
+      "start": 754.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The trunk rotation looks upright, robotic, and stiff during the swing.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Rotation feels restricted, unathletic, and never quite right.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10",
+        "Q12"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "It is difficult to clear the net without having to arm the ball over.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "The hitting hip fails to pop forward and drive into contact.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player treats the shoulder and hip as isolated parts rather than diagonal connections across the trunk that stretch and fire together.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player rotates purely in a single upright plane without hip flexion or multi-planar movement.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player lacks spine side bending on the way forward into contact.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Lacking a wide base and hip flexion disables glute support and shifts rotational load to lower back muscles.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "visual_model",
+      "summary": "An abdominal X connecting opposite shoulders and hips across front and back visualizes how coiling stretches and unwinds the trunk.",
+      "evidence": [
+        "Q03",
+        "Q04",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates hitting upright without side bending (stiff, robotic, misses net) versus with side tilt (smooth, relaxed, clears net with heavy ball).",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Players believe they need to memorize 20 footwork patterns, but feet naturally adapt to balance the same core trunk contractions.",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Side bending tilts the spine into contact, allowing the hitting shoulder to fully release through on a natural net-clearing trajectory.",
+      "evidence": [
+        "Q01",
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice driving the right elbow diagonally toward the left knee with progressive rotational force to feel trunk coiling and uncoiling.",
+      "external_goal": "Drive the right elbow toward the left knee.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Launch a medicine ball through diagonal trunk contractions to feel the shoulder-hip connection under heavier resistance than a tennis racket.",
+      "external_goal": "Launch the medicine ball forward using hip and shoulder coil.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Hold a light pipe across the chest to lock the arms and track incoming feeds, contacting the ball using only trunk rotation and a wide base.",
+      "external_goal": "Contact the ball with the end of the pipe.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Hit alternating crosscourt and inside-out forehands moving side-to-side, or forward and back, under time pressure to force explosive compact trunk rotation.",
+      "external_goal": "Hit all forehands alternating crosscourt and inside-out.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q21",
+        "Q22"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Internalize the X by stretching shoulder against opposite hip and adding a slight side bend to keep the hitting shoulder loose and firing.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

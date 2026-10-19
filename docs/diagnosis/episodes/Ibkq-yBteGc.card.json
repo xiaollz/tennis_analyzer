@@ -1,0 +1,148 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "Ibkq-yBteGc",
+    "url": "https://www.youtube.com/watch?v=Ibkq-yBteGc",
+    "title": "To Hit the Low Backhand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 9.0,
+    "upload_date": "2024-06-24",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "backhand",
+    "format": "short",
+    "reason": "The coach provides direct actionable cues to get the back knee down, tilt the shoulder, and extend through contact on a low backhand."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/Ibkq-yBteGc.en.vtt",
+    "kind": "auto",
+    "sha256": "6f33b87896a7750ff3e6090da378626167051ee9e34f428b6217ade48518fac7",
+    "coverage_ratio": 0.8622
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_Ibkq-y",
+      "s1_r2_Ibkq-y"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should you hit a low backhand?",
+    "definition": "Executing a backhand stroke when handling a low incoming ball.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic backhand groundstroke technique"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "to hit the low backhand get the back",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "knee down tilt the shoulder extend",
+      "start": 1.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "through the contact",
+      "start": 4.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player faces an incoming ball that stays low on the backhand side.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Successfully hitting the low backhand requires dropping the back knee, tilting the shoulder, and extending through contact.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The coach presents three mechanical keys for the low backhand: dropping the back knee down, tilting the shoulder, and extending through contact.",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Cue yourself to get the back knee down, tilt the shoulder, and extend through contact on the low backhand.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "kind": "extraction",
+      "description": "validate_cards FAIL after Shorts extract; demoted to stage1_draft, must not enter the tree. See findings: [FAIL] ../episodes/Ibkq-yBteGc.card.json: R12 transcript coverage 0.8622 < 0.9"
+    }
+  ],
+  "status": "stage1_draft"
+}

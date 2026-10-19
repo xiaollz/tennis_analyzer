@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "quote_snapped": 1,
+    "cause_anchor_exact": 3,
+    "chain_depth_retarget_to_PROBLEM": 2,
+    "chain_added_missing_cause_inferred": 1,
+    "intuition_first_forced_false": 1,
+    "solution_anchor_exact": 4,
+    "solution_anchor_evidence_spills": 2
+  },
+  "detail": [
+    "quote_snapped: Q18 score=1.00",
+    "chain_depth_retarget_to_PROBLEM: C01->C02",
+    "chain_depth_retarget_to_PROBLEM: C02->C03",
+    "chain_added_missing_cause_inferred: C03",
+    "intuition_first_forced_false: solutions.1 no external_goal",
+    "solution_anchor_evidence_spills: D02 anchor_bucket=4 evidence_buckets=[4, 5]",
+    "solution_anchor_evidence_spills: D05 anchor_bucket=11 evidence_buckets=[11, 12]"
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "7_JPqhG4G64",
+    "url": "https://www.youtube.com/watch?v=7_JPqhG4G64",
+    "title": "What He Does Next Separates Pros from Amateurs",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 305.0,
+    "upload_date": "2025-11-22",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable match cues and rules, such as never thinking about the point ending and not stopping the intent to strike until visual confirmation is received."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/7_JPqhG4G64.en.vtt",
+    "kind": "auto",
+    "sha256": "e2e42a66b790f62bd9687e603392c31038d1d6585c320184d2439ce5a3613e02",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_7_JPqh",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do recreational players stop moving or get caught flat-footed between shots?",
+    "definition": "Recreational players frequently disengage mentally between shots, failing to recover to defend open court and letting opponents hit clean winners.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic rally capability",
+      "understanding of court recovery"
+    ],
+    "target_player": "Recreational players who lose focus or hesitate between shots",
+    "evidence": [
+      "Q06",
+      "Q08"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "He is going to the center of the cone of his opponent's possible shots.",
+      "start": 36.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "the second this ball is in, his brain is immediately running a process of where are my opponent's possible shots and how do I get in the center of my ability to defend those?",
+      "start": 70.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "There is a chance that you're not in this attention pattern between the shots you hit in tennis.",
+      "start": 105.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Some of the biggest culprits are post-processing your own shot.",
+      "start": 111.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Instead, we discard all that when we're playing matches. And we have this level of intent on the tennis ball.",
+      "start": 137.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "your only task when playing matches is to intercept the tennis ball over and over and over again until you can't.",
+      "start": 144.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "So, the last thing I want to talk about is do not think about ending the point ever.",
+      "start": 151.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "they see the ball go in, they don't do this, they go, \"Ah, he probably won't get it.\" And then they don't move.",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Every single ball, there's all these irrelevant thoughts about whether the point's going to end or not, or how the point's going to end or whether the shot's going to be a winner",
+      "start": 176.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "the wreck player just stands back here and accidentally lets the opponent hit a winner.",
+      "start": 197.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "The proper attention pattern in a match situation is strike the ball over and over again until the point ends. It doesn't matter how it ends.",
+      "start": 213.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "reck players would be apologizing right here and that's why they miss. It's not because they're apologizing. It's because the attention pattern is ending abruptly.",
+      "start": 236.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "the only thing that his brain is running is a command to strike the ball, which is not yet on his side of the net.",
+      "start": 273.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And that process can only stop once you have literal visual confirmation the ball is not coming over.",
+      "start": 279.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And the reason he's still staring at it is his brain is still running to strike that ball.",
+      "start": 296.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Player stands still after hitting a shot instead of sprinting to recover position.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08",
+        "Q10"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Opponent hits a winner into open space because the player stopped tracking and defending.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player mentally evaluates mechanics or shot quality immediately after contact.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "follow_through",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players post-process their own shot and critique technique rather than locking into the opponent.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players assume the opponent cannot retrieve the ball and guess the point will end, causing them not to move.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The attention pattern ends abruptly before the ball is confirmed dead, causing players to disengage prematurely.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Fabian Marozsan sprints immediately to the center of the cone of possible replies even on an accidental shank.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Recreational players think pros flow naturally when in reality their defensive recovery sprint is highly intentional.",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Pros keep their gaze lingered on the ball to hit it while recreational players prematurely apologize or freeze.",
+      "evidence": [
+        "Q12",
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Discard internal technical judgment during matches and focus solely on intercepting the next ball.",
+      "external_goal": "Intercept the tennis ball over and over again",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Never think about ending the point or whether a shot will be a winner while the rally is live.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Maintain the single task of striking the ball over and over again until the point literally ends.",
+      "external_goal": "Strike the ball over and over again until the point ends",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Verify that you only terminate the intention to strike once you have clear visual confirmation the ball is out of play.",
+      "external_goal": "Literal visual confirmation the ball is not coming over",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

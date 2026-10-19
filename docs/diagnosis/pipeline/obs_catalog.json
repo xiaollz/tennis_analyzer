@@ -1,0 +1,1473 @@
+{
+  "_comment": "OBS-01..18 transcribed (neutral English) from docs/diagnosis/observables/OBS-*.md: definition, frame, best camera, layer. Values are closed answer sets; a value whose text starts with a:/b:/c: belongs to sub-item (a)/(b)/(c) of that observable. 'reliability' is deliberately 'untested' here (the 10/17 per-model agreement counts live in the OBS md files and are not re-measured). No FTT/book/fault references in this file.",
+  "observables": [
+    {
+      "id": "OBS-01",
+      "src": "OBS-01_contact_elbow_angle.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "At the contact frame, is the hitting elbow clearly bent (roughly 90-120 degrees) or nearly straight?",
+      "values": [
+        "clearly_bent",
+        "nearly_straight"
+      ]
+    },
+    {
+      "id": "OBS-02",
+      "src": "OBS-02_contact_hand_torso_distance.md",
+      "layer": "B",
+      "camera": "B",
+      "question": "At the contact frame, how far is the hitting hand/wrist from the side of the torso: upper arm touching the ribs, or a visible gap?",
+      "values": [
+        "touching_torso",
+        "visible_gap"
+      ]
+    },
+    {
+      "id": "OBS-03",
+      "src": "OBS-03_contact_point_vs_front_hip.md",
+      "layer": "B",
+      "camera": "S",
+      "question": "At the contact frame, where is the ball (or string center) relative to the front hip, front to back?",
+      "values": [
+        "ahead_of_front_hip",
+        "level_with_hip",
+        "behind_hip"
+      ]
+    },
+    {
+      "id": "OBS-04",
+      "src": "OBS-04_backswing_top_pause.md",
+      "layer": "A",
+      "camera": "any",
+      "question": "At the top of the backswing, does the racket stop for a noticeable moment (about 0.3 s or more) before the forward swing starts?",
+      "values": [
+        "pause_present",
+        "no_pause"
+      ]
+    },
+    {
+      "id": "OBS-05",
+      "src": "OBS-05_split_step_adjust_steps.md",
+      "layer": "A",
+      "camera": "any",
+      "question": "Between the ball leaving the machine/opponent and contact, does the player show a split step and small adjusting steps with the feet?",
+      "values": [
+        "split_step_and_adjust_steps",
+        "few_adjust_steps",
+        "no_steps_stands_still"
+      ]
+    },
+    {
+      "id": "OBS-06",
+      "src": "OBS-06_stance_type.md",
+      "layer": "A",
+      "camera": "B",
+      "question": "At the start of the forward swing (after the feet are set), how are the feet oriented relative to the incoming ball direction?",
+      "values": [
+        "open",
+        "semi_open",
+        "neutral",
+        "closed"
+      ]
+    },
+    {
+      "id": "OBS-07",
+      "src": "OBS-07_non_hitting_arm.md",
+      "layer": "A",
+      "camera": "B",
+      "question": "Non-hitting arm: (a) when the shoulder turn is completed, does it reach across the front of the body; (b) does it leave the racket before or after the turn is completed; (c) at the start of the forward swing, has it already dropped to the side or does it rotate with the chest?",
+      "values": [
+        "a:reaches_across_body_front",
+        "a:does_not_reach_across",
+        "b:leaves_racket_before_turn_complete",
+        "b:leaves_racket_after_turn_complete",
+        "c:already_dropped_to_side",
+        "c:rotates_back_with_chest"
+      ]
+    },
+    {
+      "id": "OBS-08",
+      "src": "OBS-08_unit_turn_amount.md",
+      "layer": "B",
+      "camera": "B",
+      "question": "At the end of the preparation turn (before the hand starts to drop under the ball), how far are the shoulder line and hip line rotated away from the target?",
+      "values": [
+        "clearly_sideways",
+        "small_turn",
+        "almost_facing_front"
+      ]
+    },
+    {
+      "id": "OBS-09",
+      "src": "OBS-09_hips_square_at_contact.md",
+      "layer": "B",
+      "camera": "B",
+      "question": "At the contact frame, have the hips rotated back to roughly face the target?",
+      "values": [
+        "square_or_past",
+        "still_clearly_sideways"
+      ]
+    },
+    {
+      "id": "OBS-10",
+      "src": "OBS-10_back_foot.md",
+      "layer": "A",
+      "camera": "B",
+      "question": "Back foot: (a) is the heel off the ground at contact; (b) within 0.5 s after contact does the foot swing around to the front, kick backward, or stay in place?",
+      "values": [
+        "a:heel_up_at_contact",
+        "a:heel_down_at_contact",
+        "b:swings_forward_around_front",
+        "b:kicks_backward",
+        "b:stays_in_place"
+      ]
+    },
+    {
+      "id": "OBS-11",
+      "src": "OBS-11_hand_path_to_contact.md",
+      "layer": "B",
+      "camera": "S",
+      "question": "Between the start of the forward swing and contact, what path does the hitting hand take?",
+      "values": [
+        "roughly_horizontal_forward",
+        "down_then_forward_and_up",
+        "lifts_up_first"
+      ]
+    },
+    {
+      "id": "OBS-12",
+      "src": "OBS-12_forearm_orientation_at_contact.md",
+      "layer": "B",
+      "camera": "S",
+      "question": "At the contact frame: (a) is the forearm roughly horizontal, tilted up or tilted down; (b) is the racket shaft near horizontal, tilted, or near vertical?",
+      "values": [
+        "a:forearm_roughly_horizontal",
+        "a:forearm_tilted_up",
+        "a:forearm_tilted_down",
+        "b:racket_near_horizontal",
+        "b:racket_tilted",
+        "b:racket_near_vertical"
+      ]
+    },
+    {
+      "id": "OBS-13",
+      "src": "OBS-13_weight_and_trunk_after_contact.md",
+      "layer": "B",
+      "camera": "S",
+      "question": "(a) At the contact frame, is the body weight mainly on the front foot, the back foot or between them; (b) within 0.5 s after contact does the body keep moving toward the net, or go backward/upward?",
+      "values": [
+        "a:weight_on_front_foot",
+        "a:weight_on_back_foot",
+        "a:weight_between_feet",
+        "b:body_keeps_moving_toward_net",
+        "b:body_goes_backward_or_upward"
+      ]
+    },
+    {
+      "id": "OBS-14",
+      "src": "OBS-14_trunk_tilt_change.md",
+      "layer": "B",
+      "camera": "S",
+      "question": "Forward lean of the trunk (hip center to shoulder center versus vertical): how does it change from the moment the preparation is complete to the contact frame?",
+      "values": [
+        "lean_unchanged",
+        "more_upright_or_leaning_back",
+        "leans_more_forward"
+      ]
+    },
+    {
+      "id": "OBS-15",
+      "src": "OBS-15_follow_through.md",
+      "layer": "A",
+      "camera": "any",
+      "question": "Follow-through: (a) where does the racket finish relative to the non-hitting shoulder; (b) after contact does the hand extend toward the target for a stretch or wrap back to the body immediately; (c) at the end, is the hitting elbow in front of the chest?",
+      "values": [
+        "a:finish_above_non_hitting_shoulder",
+        "a:finish_below_non_hitting_shoulder",
+        "a:stops_in_front_of_body",
+        "b:extends_toward_target_after_contact",
+        "b:wraps_back_to_body_immediately",
+        "c:elbow_in_front_of_chest_at_end",
+        "c:elbow_not_in_front_of_chest_at_end"
+      ]
+    },
+    {
+      "id": "OBS-16",
+      "src": "OBS-16_ball_outcome_callout.md",
+      "layer": "A",
+      "camera": "any",
+      "question": "Result of each shot (spoken by the player or visible from where the ball lands / how it is struck).",
+      "values": [
+        "good",
+        "net",
+        "long",
+        "wide",
+        "cramped_contact",
+        "frame_hit"
+      ]
+    },
+    {
+      "id": "OBS-17",
+      "src": "OBS-17_racket_head_at_deepest_backswing.md",
+      "layer": "B",
+      "camera": "B",
+      "question": "At the deepest point of the backswing (just before the forward swing starts), where does the racket head point?",
+      "values": [
+        "straight_back_toward_back_fence",
+        "diagonally_behind",
+        "straight_out_to_the_side",
+        "pointing_up"
+      ]
+    },
+    {
+      "id": "OBS-18",
+      "src": "OBS-18_initiation_sequence.md",
+      "layer": "B",
+      "camera": "B",
+      "question": "At the start of the forward swing, which part starts moving toward the target first?",
+      "values": [
+        "hips_first_then_trunk_and_arm",
+        "nearly_simultaneous",
+        "arm_first"
+      ]
+    },
+    {
+      "id": "OBS-19",
+      "src": "OBS-19_trunk_rotation_decelerate_before_contact.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Does trunk rotation decelerate before contact or continue accelerating through contact?",
+      "values": [
+        "decelerates_before_contact",
+        "accelerates_through_contact"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-01"
+        ],
+        "episodes": [
+          "2Nn9tyMECZU",
+          "wzLMv4ASg9s"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-20",
+      "src": "OBS-20_height_ball_contact_frame_relative.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Height of the ball at the contact frame relative to the player's body.",
+      "values": [
+        "below_knee",
+        "knee_to_waist",
+        "waist_to_chest",
+        "above_chest"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-02"
+        ],
+        "episodes": [
+          "PUN6qIIYU-4",
+          "Psidjei5BnI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-21",
+      "src": "OBS-21_timing_split_step_landing_relative.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Timing of split step landing relative to opponent contact: before opponent contact, at contact, or after contact.",
+      "values": [
+        "before_contact",
+        "at_contact",
+        "after_contact"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-06"
+        ],
+        "episodes": [
+          "FOmz8Wjv3DQ",
+          "V-QkILd4V-w"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-22",
+      "src": "OBS-22_start_forward_swing_hips_hinged.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At the start of forward swing, are the hips hinged back or pushed forward under upright shoulders?",
+      "values": [
+        "hinged_back",
+        "extended_forward"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-09"
+        ],
+        "episodes": [
+          "uJpuDUx0jIA",
+          "wFIrPMutzRo"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-23",
+      "src": "OBS-23_contact_low_balls_much_knees.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At contact on low balls, how much are the knees flexed?",
+      "values": [
+        "deeply_bent",
+        "slightly_bent",
+        "nearly_straight"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-16"
+        ],
+        "episodes": [
+          "NEpD7fIM7HI",
+          "XXlndjnrA4E"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-24",
+      "src": "OBS-24_wrist_angle_change_hitting_wrist.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Wrist angle change: does the hitting wrist flex rapidly around contact instead of staying stable?",
+      "values": [
+        "wrist_flexes_rapidly",
+        "wrist_stable"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-26",
+          "NEW-OBS-39"
+        ],
+        "episodes": [
+          "lwS7Xxqrrdw",
+          "pQ793MBQE50"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-25",
+      "src": "OBS-25_initiation_forward_swing_body_segment.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "At the initiation of the forward swing, which body segment rotates toward the target first: shoulders or hips?",
+      "values": [
+        "shoulders_lead_hips",
+        "hips_lead_shoulders",
+        "simultaneous"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-31",
+          "NEW-OBS-68"
+        ],
+        "episodes": [
+          "UB6SbA_KX9E",
+          "wFIrPMutzRo"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-26",
+      "src": "OBS-26_vertical_launch_angle_ball_off.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Vertical launch angle of the ball off the racket face at contact",
+      "values": [
+        "steep_upward_angle",
+        "shallow_angle",
+        "flat_or_downward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v3.json",
+        "candidate": "NC005",
+        "cluster": "NEW-OBS-28",
+        "episodes": [
+          "5-Ia7c4XzfU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-27",
+      "src": "OBS-27_contact_angle_between_racket_shaft.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At contact, does the angle between the racket shaft and forearm remain fixed or break downward?",
+      "values": [
+        "fixed_angle",
+        "wrist_flexes_or_chops"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding.json",
+        "candidate": "NC020",
+        "cluster": "NEW-OBS-15",
+        "episodes": [
+          "NEpD7fIM7HI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-28",
+      "src": "OBS-28_contact_frame_angle_racket_face.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At the contact frame, angle of the racket face relative to the vertical plane",
+      "values": [
+        "tilted_open",
+        "perpendicular_vertical",
+        "tilted_closed"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding.json",
+        "candidate": "NC068",
+        "cluster": "NEW-OBS-29",
+        "episodes": [
+          "Qszz0N4fRb4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-29",
+      "src": "OBS-29_forward_swing_into_contact_spine.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing into contact, does the spine display lateral side-bending with the hitting shoulder dipping lower than the non-hitting shoulder?",
+      "values": [
+        "lateral_bend_present",
+        "no_lateral_bend"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-18",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v3.json",
+        "candidate": "NC076",
+        "cluster": "NEW-OBS-24",
+        "episodes": [
+          "wFIrPMutzRo"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-30",
+      "src": "OBS-30_depth_ball_bounce_opponent_court.md",
+      "layer": "A",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Depth of ball bounce in the opponent court",
+      "values": [
+        "short_near_service_line",
+        "deep_near_baseline",
+        "past_baseline"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-04"
+        ],
+        "episodes": [
+          "5-Ia7c4XzfU",
+          "LoSrMj-Qxkc",
+          "T5meVwBOKR4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-31",
+      "src": "OBS-31_angle_racket_trajectory_relative_horizontal.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Angle of racket trajectory relative to horizontal through the contact zone",
+      "values": [
+        "steeply_upward",
+        "forward_and_upward",
+        "horizontal"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-05",
+          "NEW-OBS-28"
+        ],
+        "episodes": [
+          "FxDmVi3EFnE",
+          "dZadhzVEsds"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-32",
+      "src": "OBS-32_forward_swing_hitting_elbow_pull.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing, does the hitting elbow pull linearly across the torso before arm extension?",
+      "values": [
+        "elbow_drags_linearly",
+        "rotational_drive"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-07",
+          "NEW-OBS-43"
+        ],
+        "episodes": [
+          "2Nn9tyMECZU",
+          "wzLMv4ASg9s"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-33",
+      "src": "OBS-33_contact_frame_far_ball_from.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+      "values": [
+        "within_about_one_forearm_length",
+        "more_than_one_forearm_length"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "2Nn9tyMECZU",
+          "9NirSL59an0",
+          "PwkGLkRm73o",
+          "T5meVwBOKR4"
+        ],
+        "pairs": [
+          "N-C_2NN9TYMECZU_C03 | N-C_9NIRSL59AN0_C03",
+          "N-C_2NN9TYMECZU_C03 | N-C_PWKGLKRM73O_C03",
+          "N-C_9NIRSL59AN0_C03 | N-C_T5MEVWBOKR4_C03",
+          "N-C_PWKGLKRM73O_C03 | N-C_T5MEVWBOKR4_C03"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-34",
+      "src": "OBS-34_forward_swing_before_contact_front.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+      "values": [
+        "moves_inward",
+        "stays_above_front_foot"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "T5meVwBOKR4",
+          "aPcKJDadzek",
+          "xLs469ZVMPU"
+        ],
+        "pairs": [
+          "N-P_XLS469ZVMPU | N-C_APCKJDADZEK_C01",
+          "N-C_APCKJDADZEK_C01 | N-C_T5MEVWBOKR4_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-35",
+      "src": "OBS-35_start_forward_swing_far_racket.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+      "values": [
+        "far_behind_hand",
+        "slightly_behind_hand",
+        "level_with_or_ahead_of_hand"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "FxDmVi3EFnE",
+          "LoSrMj-Qxkc"
+        ],
+        "pairs": [
+          "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+          "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-36",
+      "src": "OBS-36_between_start_forward_swing_contact.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Between the start of the forward swing and contact, does the hitting hand first move outward away from the body, or directly toward the ball?",
+      "values": [
+        "outward_first",
+        "directly_toward_ball"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v5.json",
+        "episodes": [
+          "2Nn9tyMECZU",
+          "wzLMv4ASg9s"
+        ],
+        "pairs": [
+          "N-C_2NN9TYMECZU_C02 | N-C_WZLMV4ASG9S_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-37",
+      "src": "OBS-37_backswing_hands_drop_down_come.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the backswing, do the hands drop down and come back up in a loop before the forward swing, or stay at about the same height?",
+      "values": [
+        "drop_in_loop",
+        "stay_at_same_height"
+      ],
+      "origin": {
+        "from_cc_review": true,
+        "approved_by_user": "2026-10-18",
+        "source_review": "ftt_tree/t08_cc_review_v7.json",
+        "episodes": [
+          "GsHkML2mVEI",
+          "lwS7Xxqrrdw"
+        ],
+        "pairs": [
+          "N-C_GSHKML2MVEI_C01 | N-C_LWS7XXQRRDW_C01"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py from_review"
+      }
+    },
+    {
+      "id": "OBS-38",
+      "src": "OBS-38_width_stance_between_feet_start.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Width of stance between feet at the start of forward swing relative to shoulder width",
+      "values": [
+        "narrower_than_shoulders",
+        "shoulder_width_or_wider"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-03"
+        ],
+        "episodes": [
+          "Vg8lbXOhM3E",
+          "dx8aGSIo24w"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-39",
+      "src": "OBS-39_curvature_thoracic_lumbar_spine_stroke.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Curvature of the thoracic and lumbar spine during stroke preparation and contact",
+      "values": [
+        "rounded_kyphotic",
+        "neutral_flat"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-15"
+        ],
+        "episodes": [
+          "NEpD7fIM7HI",
+          "QXAtdSEUkfY"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-40",
+      "src": "OBS-40_alignment_hitting_arm_with_chest.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Alignment of hitting arm with chest rotation during the forward swing",
+      "values": [
+        "racket_arm_behind_torso_line",
+        "moves_together_with_chest"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-32",
+          "NEW-OBS-47"
+        ],
+        "episodes": [
+          "hNVbbPEob3g",
+          "tzgAWr3QGv0"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-41",
+      "src": "OBS-41_point_non_hitting_hand_release.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "At what point does the non-hitting hand release the racket on a backhand forward swing?",
+      "values": [
+        "before_forward_swing",
+        "during_forward_swing_drop",
+        "deep_into_forward_drive"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-98",
+          "NEW-OBS-99"
+        ],
+        "episodes": [
+          "dDYKuNZtdyU",
+          "pQ793MBQE50"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-42",
+      "src": "OBS-42_footwork_approach_arms_raised_flailed.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "During footwork approach, are the arms raised or flailed out to counterbalance trunk movement?",
+      "values": [
+        "arms_flailed_for_balance",
+        "arms_in_ready_unit_turn"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC007",
+        "cluster": "NEW-OBS-01",
+        "episodes": [
+          "42BfbKsTGb4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-43",
+      "src": "OBS-43_foot_activity_after_finishing_stroke.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Foot activity after finishing a stroke: dynamic recovery stepping or halting feet completely in place",
+      "values": [
+        "dynamic_recovery_stepping",
+        "halts_feet_in_place"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC153",
+        "cluster": "NEW-OBS-55",
+        "episodes": [
+          "toArb3WkJcs"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-44",
+      "src": "OBS-44_vertical_distance_between_ball_player.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Vertical distance between the ball and the player's eyes at contact",
+      "values": [
+        "near_eye_level",
+        "moderate_distance",
+        "far_below_eye_level"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC010",
+        "cluster": "NEW-OBS-02",
+        "episodes": [
+          "AppdZqxH_2k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-45",
+      "src": "OBS-45_serve_forward_swing_racket_head.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "On the serve forward swing, does the racket head approach the ball from inside-to-out or from outside/top?",
+      "values": [
+        "inside_to_out",
+        "outside_or_top"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC001",
+        "cluster": "NEW-OBS-08",
+        "episodes": [
+          "1W1rope5l0k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-46",
+      "src": "OBS-46_forward_swing_acceleration_racket_handle.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During forward swing acceleration, does the racket handle shift or rotate independently inside the player's grip?",
+      "values": [
+        "racket_shifts_in_grip",
+        "racket_firmly_coupled"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v10.json",
+        "candidate": "NC146",
+        "cluster": "NEW-OBS-92",
+        "episodes": [
+          "fjpr9PS02tM"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve",
+        "unlocks_t05": true,
+        "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
+      }
+    },
+    {
+      "id": "OBS-47",
+      "src": "OBS-47_arm_throwing_trajectory_serve_forward.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Arm throwing trajectory during the serve forward swing",
+      "values": [
+        "forward_toward_service_box",
+        "angled_out_to_side"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC134",
+        "cluster": "NEW-OBS-49",
+        "episodes": [
+          "YbLit9png2U"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-48",
+      "src": "OBS-48_stroke_preparation_racket_tip_move.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During stroke preparation, does the racket tip move inward toward the player before lagging back?",
+      "values": [
+        "moves_inward",
+        "stays_static_or_moves_outward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC128",
+        "cluster": "NEW-OBS-47",
+        "episodes": [
+          "WoVEWh7fFfc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-49",
+      "src": "OBS-49_serve_racket_drop_behind_back.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the serve racket drop behind the back, how deeply does the racket drop below the shoulders?",
+      "values": [
+        "deep_stretch_drop",
+        "shallow_restricted_drop"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC131",
+        "cluster": "NEW-OBS-48",
+        "episodes": [
+          "WoVEWh7fFfc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-50",
+      "src": "OBS-50_reaction_volleys_hitting_hand_take.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "On reaction volleys, does the hitting hand take a backswing or hover in front of the body?",
+      "values": [
+        "takes_backswing",
+        "hovers_in_front"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC132",
+        "cluster": "NEW-OBS-06",
+        "episodes": [
+          "XXlndjnrA4E"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-51",
+      "src": "OBS-51_flexion_hips_knees_ankles_ready.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Flexion at the hips, knees, and ankles during ready stance",
+      "values": [
+        "triple_flexion_present",
+        "joints_extended_upright"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC014",
+        "cluster": "NEW-OBS-63",
+        "episodes": [
+          "FOmz8Wjv3DQ"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-52",
+      "src": "OBS-52_preparation_phase_before_forward_swing.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the preparation phase before the forward swing, how flexed is the rear knee?",
+      "values": [
+        "deeply_bent",
+        "slightly_bent",
+        "nearly_straight"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC028",
+        "cluster": "NEW-OBS-67",
+        "episodes": [
+          "QXAtdSEUkfY"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-53",
+      "src": "OBS-53_preparation_before_swing_non_hitting.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "During preparation before the swing, does the non-hitting hand adjust or seat the racket handle into the hitting palm?",
+      "values": [
+        "off_hand_seats_racket",
+        "no_off_hand_seating"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC144",
+        "cluster": "NEW-OBS-51",
+        "episodes": [
+          "fjpr9PS02tM"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-54",
+      "src": "OBS-54_position_player_s_hitting_hand.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Position of the player's hitting hand along the racket handle relative to the butt cap flare.",
+      "values": [
+        "choked_up_on_handle",
+        "pinky_on_butt_cap_flare"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC005",
+        "cluster": "NEW-OBS-10",
+        "episodes": [
+          "2Nn9tyMECZU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-55",
+      "src": "OBS-55_contact_frame_player_positioned_relative.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "At the contact frame, where is the player positioned relative to the baseline?",
+      "values": [
+        "inside_baseline",
+        "behind_baseline"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC024",
+        "cluster": "NEW-OBS-12",
+        "episodes": [
+          "PUN6qIIYU-4"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-56",
+      "src": "OBS-56_transition_between_stroke_recovery_next.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Transition between stroke recovery and next stroke preparation: seamless continuous movement or interrupted by pause",
+      "values": [
+        "seamless_continuous_transition",
+        "interrupted_by_pause"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC155",
+        "cluster": "NEW-OBS-56",
+        "episodes": [
+          "toArb3WkJcs"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-57",
+      "src": "OBS-57_height_racket_head_relative_ball.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Height of racket head relative to the ball when forward body rotation begins",
+      "values": [
+        "above_ball",
+        "below_ball",
+        "level_with_ball"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC142",
+        "cluster": "NEW-OBS-50",
+        "episodes": [
+          "dZadhzVEsds"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-58",
+      "src": "OBS-58_backswing_preparation_body_weight_loaded.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During backswing preparation, is body weight loaded over the outside back leg before stepping forward?",
+      "values": [
+        "loaded_on_back_leg",
+        "transfers_forward_early"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC138",
+        "cluster": "NEW-OBS-90",
+        "episodes": [
+          "aPcKJDadzek"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-59",
+      "src": "OBS-59_backswing_loading_rear_foot_roll.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During backswing loading, does the rear foot roll excessively onto its inside edge or remain neutrally supported?",
+      "values": [
+        "rolls_onto_inside_edge",
+        "neutral_arch_support"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC157",
+        "cluster": "NEW-OBS-57",
+        "episodes": [
+          "uJpuDUx0jIA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-60",
+      "src": "OBS-60_degree_chest_rotation_relative_net.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Degree of chest rotation relative to net line at the start of forward arm acceleration",
+      "values": [
+        "over_rotated_past_net",
+        "square_to_net",
+        "side_on"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC009",
+        "cluster": "NEW-OBS-62",
+        "episodes": [
+          "9NirSL59an0"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-61",
+      "src": "OBS-61_angle_between_forearm_long_axis.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Angle between forearm long axis and racket handle during preparation",
+      "values": [
+        "orthogonal_near_90",
+        "slanted_near_135"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC151",
+        "cluster": "NEW-OBS-54",
+        "episodes": [
+          "pQ793MBQE50"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-62",
+      "src": "OBS-62_forward_swing_hitting_shoulder_visibly.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the forward swing, is the hitting shoulder visibly shrugged upward toward the ear?",
+      "values": [
+        "shrugged_upward",
+        "neutral_depressed"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC160",
+        "cluster": "NEW-OBS-58",
+        "episodes": [
+          "uJpuDUx0jIA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-63",
+      "src": "OBS-63_immediately_after_contact_front_foot.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "At and immediately after contact, does the front foot pivot/spin open or maintain its placement?",
+      "values": [
+        "spins_open",
+        "lifts_off_court",
+        "remains_anchored"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC167",
+        "cluster": "NEW-OBS-61",
+        "episodes": [
+          "xLs469ZVMPU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-64",
+      "src": "OBS-64_follow_through_non_dominant_foot.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During follow-through, does the non-dominant foot kick across or upward behind the body?",
+      "values": [
+        "counter_kicking",
+        "remains_grounded",
+        "steps_forward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v12.json",
+        "candidate": "NC165",
+        "cluster": "NEW-OBS-60",
+        "episodes": [
+          "xLs469ZVMPU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-65",
+      "src": "OBS-65_serve_stroke_hitting_shoulder_roll.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the serve stroke, does the hitting shoulder roll through dynamic external and internal rotation?",
+      "values": [
+        "dynamic_shoulder_roll",
+        "stationary_shoulder"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC003",
+        "cluster": "NEW-OBS-09",
+        "episodes": [
+          "1W1rope5l0k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-66",
+      "src": "OBS-66_speed_acceleration_hitting_hand_backward.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Speed and acceleration of hitting hand during backward preparation",
+      "values": [
+        "smooth_controlled",
+        "explosive_thrown_back"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC016",
+        "cluster": "NEW-OBS-04",
+        "episodes": [
+          "GsHkML2mVEI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-67",
+      "src": "OBS-67_immediately_after_contact_racket_head.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Immediately after contact, does the racket head maintain forward linear velocity or rapidly roll into rotational closure?",
+      "values": [
+        "forward_drive_continues",
+        "rolls_over_immediately"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC147",
+        "cluster": "NEW-OBS-52",
+        "episodes": [
+          "lCKDP2gKR_Y"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-68",
+      "src": "OBS-68_scapular_position_hitting_side_completion.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Scapular position on the hitting side at completion of backswing",
+      "values": [
+        "retracted_pinched",
+        "neutral"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC018",
+        "cluster": "NEW-OBS-11",
+        "episodes": [
+          "LoSrMj-Qxkc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-69",
+      "src": "OBS-69_placement_racket_handle_hand_before.md",
+      "layer": "B",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Placement of the racket handle in the hand before swinging",
+      "values": [
+        "deep_in_hand_v",
+        "shallow_in_palm"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC026",
+        "cluster": "NEW-OBS-66",
+        "episodes": [
+          "PfDqnff_vYA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-70",
+      "src": "OBS-70_angle_between_arm_throwing_vector.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Angle between arm throwing vector and ball flight line on serve",
+      "values": [
+        "aligned_or_small_angle",
+        "high_angle_orthogonal"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC136",
+        "cluster": "NEW-OBS-88",
+        "episodes": [
+          "YbLit9png2U"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    }
+  ]
+}

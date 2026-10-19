@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "wFOy0RKWBTg",
+    "url": "https://www.youtube.com/watch?v=wFOy0RKWBTg",
+    "title": "Swing OUT on the Forehand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 31.0,
+    "upload_date": "2024-06-25",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "short",
+    "reason": "The coach instructs the player to direct the swing's first vector outward away from the ball before adducting the shoulder through contact."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/wFOy0RKWBTg.en.vtt",
+    "kind": "auto",
+    "sha256": "287b8e567906209ffe4884d1cccf2fc21862754a8c694507a3bc679fab3149ba",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r2_wFOy0R",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why shouldn't the racket go directly towards the ball on the forehand?",
+    "definition": "Directing the racket straight towards the ball prematurely reduces shot velocity and turns the forehand stroke into a volley-like push.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand stroke mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q04",
+      "Q05"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "hands that first Vector is out and then because I go out when I get",
+      "start": 19.68,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "here see how my racket's going that way",
+      "start": 1.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "if I release the racket before I actually adct my shoulder the racket should not go towards the ball",
+      "start": 4.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "if the racket does go towards the ball means you're not going to have velocity right",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "that's a volley that's not a forehand",
+      "start": 12.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "that's a volley volleys go like this cuz we're not trying to hit with a ton of velocity",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "four hands that first Vector is out",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "and then because I go out when I get to here I can now addock my shoulder through the ball",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The forehand lacks velocity and mimics a push volley.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The racket moves directly towards the ball upon initial release instead of moving outward.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player directs the racket straight towards the ball upon release instead of moving outward, preventing proper shoulder adduction for velocity.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Releasing the racket outward first positions the arm properly so the shoulder can adduct powerfully through the ball.",
+      "evidence": [
+        "Q03",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "Moving directly towards the ball is appropriate for a volley where velocity is not needed, but incorrect for a forehand.",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Focus on making the first vector of the swing go outward before adducting the shoulder through the ball.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

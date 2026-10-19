@@ -1,0 +1,753 @@
+{
+ "report_id": "verify_2026-10-18_round3",
+ "generated_at": "2026-10-18T16:02:05+08:00",
+ "timezone": "Asia/Shanghai",
+ "round": 3,
+ "scope": "(a) re-extract Am8j1Zw5KrE + ExkBtFRhUWY with ep_s1_v3; (b) 5 new FTT long teaching videos, oldest-first, >=400s preferred",
+ "branch": "cursor/diagnosis-phase1",
+ "base_commit": "f9f3c60",
+ "model": "gemini-3.8-flash",
+ "endpoint": "https://www.micuapi.ai",
+ "prompt_version": "ep_s1_v3",
+ "prompt_upgraded_from": "ep_s1_v2",
+ "prompt_changes": [
+  "solution.kind definitions (cue/drill/check/progression) with judging sentences + 6 ordered confusion rules; classify by speaker's main intent, one kind per passage; generic examples only, no user/KB concepts",
+  "cause_anchors (30 s bucket) must be written BEFORE causes; cause evidence only from its anchor bucket",
+  "solution_anchors likewise; at most one solution per 30 s bucket; temp fields cause_anchors/solution_anchors are used only for diagnostic stats and not written to cards"
+ ],
+ "thresholds_changed": false,
+ "config_json_changed": false,
+ "check_rerun_changed": false,
+ "script_changes": "s1_extract.py: prompt version via env S1_PROMPT (default ep_s1_v3), work dir /workspace/s1_work/round3, anchor-compliance stats in norm_events (diagnostic only, never edits card); consensus/final logic untouched",
+ "v2_archive": "raw/Am8j1Zw5KrE/v2/ and raw/ExkBtFRhUWY/v2/ (all v2 runs, adjudication, final draft card)",
+ "selftest": {
+  "verify_all_selftest": "PASS",
+  "mutations": 30,
+  "output_tail": [
+   "selftest: good fixtures + 30 mutations -> PASS",
+   "VERIFY: PASS"
+  ]
+ },
+ "episodes": [
+  {
+   "id": "Am8j1Zw5KrE",
+   "title": "Shoulder Adduction Unlocks the Tennis Forehand",
+   "duration_s": 556.0,
+   "upload_date": "2024-06-03",
+   "role": "reextract",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 20,
+   "n_symptoms": 3,
+   "n_causes": 5,
+   "n_solutions": 6,
+   "n_angles": 4,
+   "solution_kinds": {
+    "cue": 2,
+    "drill": 2,
+    "check": 2,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_2-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": true
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.44,
+     "chain_roots": 0.67,
+     "solutions": 0.1,
+     "solutions_bucket_only": 0.25
+    },
+    "1-3": {
+     "causes": 0.62,
+     "chain_roots": 0.8,
+     "solutions": 0.38,
+     "solutions_bucket_only": 0.38
+    },
+    "2-3": {
+     "causes": 0.67,
+     "chain_roots": 0.8,
+     "solutions": 0.5,
+     "solutions_bucket_only": 0.83
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": {
+    "1-2": {
+     "causes": 0.54,
+     "chain_roots": 0.29,
+     "solutions": 0.13,
+     "solutions_bucket_only": 0.42
+    },
+    "1-3": {
+     "causes": 0.44,
+     "chain_roots": 0.43,
+     "solutions": 0.19,
+     "solutions_bucket_only": 0.55
+    },
+    "2-3": {
+     "causes": 0.64,
+     "chain_roots": 0.57,
+     "solutions": 0.33,
+     "solutions_bucket_only": 0.5
+    }
+   },
+   "rerun_consensus": null,
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 20973,
+    "candidatesTokenCount": 12686,
+    "thoughtsTokenCount": 0,
+    "totalTokenCount": 33659,
+    "cachedContentTokenCount": 4038
+   }
+  },
+  {
+   "id": "ExkBtFRhUWY",
+   "title": "The Magic of Single-Foot Forehand Training",
+   "duration_s": 497.0,
+   "upload_date": "2024-06-15",
+   "role": "reextract",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "demo_with_player",
+   "n_quotes": 25,
+   "n_symptoms": 4,
+   "n_causes": 2,
+   "n_solutions": 4,
+   "n_angles": 5,
+   "solution_kinds": {
+    "cue": 3,
+    "drill": 1,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_by_3run_consensus(base_run3)",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.2,
+     "chain_roots": 0.2,
+     "solutions": 0.6,
+     "solutions_bucket_only": 0.6
+    },
+    "1-3": {
+     "causes": 0.2,
+     "chain_roots": 0.2,
+     "solutions": 1.0,
+     "solutions_bucket_only": 1.0
+    },
+    "2-3": {
+     "causes": 0.5,
+     "chain_roots": 0.5,
+     "solutions": 0.6,
+     "solutions_bucket_only": 0.6
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": {
+    "1-2": {
+     "causes": 0.4,
+     "chain_roots": 0.4,
+     "solutions": 0.21,
+     "solutions_bucket_only": 0.42
+    },
+    "1-3": {
+     "causes": 0.64,
+     "chain_roots": 0.4,
+     "solutions": 0.36,
+     "solutions_bucket_only": 0.36
+    },
+    "2-3": {
+     "causes": 0.45,
+     "chain_roots": 0.2,
+     "solutions": 0.4,
+     "solutions_bucket_only": 0.56
+    }
+   },
+   "rerun_consensus": {
+    "closeness": {
+     "1": 2.4,
+     "2": 2.6,
+     "3": 3.0
+    },
+    "base_run": 3,
+    "dropped_causes": [
+     "C03"
+    ],
+    "evidence_pruned": 1,
+    "dropped_solutions": [],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.25 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.25 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 1.00 (min 0.5)"
+      ]
+     },
+     "final-r2": {
+      "pass": true,
+      "findings": [
+       "[PASS] rerun: causes transcript-anchor Jaccard 0.67 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.67 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.60 (min 0.5)"
+      ]
+     }
+    },
+    "pass": true
+   },
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 20268,
+    "candidatesTokenCount": 13328,
+    "thoughtsTokenCount": 46869,
+    "totalTokenCount": 80465,
+    "cachedContentTokenCount": 4735
+   }
+  },
+  {
+   "id": "xLs469ZVMPU",
+   "title": "Fix Your Forehand Over-Rotation | 3 Counter-Rotational Balance Techniques",
+   "duration_s": 734.0,
+   "upload_date": "2024-12-24",
+   "role": "new_round3",
+   "status": "stage1_draft",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "lecture",
+   "n_quotes": 23,
+   "n_symptoms": 3,
+   "n_causes": 3,
+   "n_solutions": 3,
+   "n_angles": 5,
+   "solution_kinds": {
+    "cue": 0,
+    "drill": 2,
+    "check": 1,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "FAIL",
+   "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.25,
+     "chain_roots": 0.25,
+     "solutions": 0.5,
+     "solutions_bucket_only": 0.5
+    },
+    "1-3": {
+     "causes": 0.11,
+     "chain_roots": 0.12,
+     "solutions": 0.4,
+     "solutions_bucket_only": 0.4
+    },
+    "2-3": {
+     "causes": 0.5,
+     "chain_roots": 0.67,
+     "solutions": 0.75,
+     "solutions_bucket_only": 0.75
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": null,
+   "rerun_consensus": {
+    "closeness": {
+     "1": 1.636,
+     "2": 2.917,
+     "3": 2.553
+    },
+    "base_run": 2,
+    "dropped_causes": [],
+    "evidence_pruned": 0,
+    "dropped_solutions": [],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.25 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.25 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.50 (min 0.5)"
+      ]
+     },
+     "final-r3": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.50 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 0.67 (min 0.5)",
+       "[PASS] rerun: solutions transcript-anchor Jaccard 0.75 (min 0.5)"
+      ]
+     }
+    },
+    "pass": false
+   },
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 23387,
+    "candidatesTokenCount": 11991,
+    "thoughtsTokenCount": 24160,
+    "totalTokenCount": 59538,
+    "cachedContentTokenCount": 0
+   }
+  },
+  {
+   "id": "V-QkILd4V-w",
+   "title": "8 Visual Return Strategies Tested by a WTA Pro",
+   "duration_s": 1021.0,
+   "upload_date": "2025-01-21",
+   "role": "new_round3",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "other",
+   "format": "demo_with_player",
+   "n_quotes": 27,
+   "n_symptoms": 4,
+   "n_causes": 4,
+   "n_solutions": 4,
+   "n_angles": 5,
+   "solution_kinds": {
+    "cue": 2,
+    "drill": 1,
+    "check": 1,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": true
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.29,
+     "chain_roots": 0.29,
+     "solutions": 0.33,
+     "solutions_bucket_only": 0.33
+    },
+    "1-3": {
+     "causes": 0.8,
+     "chain_roots": 0.8,
+     "solutions": 0.5,
+     "solutions_bucket_only": 0.5
+    },
+    "2-3": {
+     "causes": 0.43,
+     "chain_roots": 0.43,
+     "solutions": 0.5,
+     "solutions_bucket_only": 0.5
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": null,
+   "rerun_consensus": null,
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 30695,
+    "candidatesTokenCount": 15417,
+    "thoughtsTokenCount": 13488,
+    "totalTokenCount": 59600,
+    "cachedContentTokenCount": 8201
+   }
+  },
+  {
+   "id": "wd4YRQW3TOc",
+   "title": "4 Tips For Effortless, Controllable Topspin",
+   "duration_s": 1338.0,
+   "upload_date": "2025-02-28",
+   "role": "new_round3",
+   "status": "stage1_draft",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "pro_analysis",
+   "n_quotes": 25,
+   "n_symptoms": 5,
+   "n_causes": 3,
+   "n_solutions": 4,
+   "n_angles": 6,
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 1,
+    "check": 2,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "FAIL",
+   "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": false
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.33,
+     "chain_roots": 0.4,
+     "solutions": 0.0,
+     "solutions_bucket_only": 0.71
+    },
+    "1-3": {
+     "causes": 0.25,
+     "chain_roots": 0.29,
+     "solutions": 0.2,
+     "solutions_bucket_only": 0.5
+    },
+    "2-3": {
+     "causes": 0.6,
+     "chain_roots": 0.6,
+     "solutions": 0.25,
+     "solutions_bucket_only": 0.67
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": null,
+   "rerun_consensus": {
+    "closeness": {
+     "1": 1.469,
+     "2": 2.183,
+     "3": 2.186
+    },
+    "base_run": 3,
+    "dropped_causes": [
+     "C02",
+     "C04"
+    ],
+    "evidence_pruned": 2,
+    "dropped_solutions": [
+     "D03"
+    ],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+     "final-r1": {
+      "pass": false,
+      "findings": [
+       "[FAIL] rerun: causes transcript-anchor Jaccard 0.33 (min 0.6)",
+       "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.22 (min 0.5)"
+      ]
+     },
+     "final-r2": {
+      "pass": false,
+      "findings": [
+       "[PASS] rerun: causes transcript-anchor Jaccard 1.00 (min 0.6)",
+       "[PASS] rerun: chain roots transcript-anchor Jaccard 1.00 (min 0.5)",
+       "[FAIL] rerun: solutions transcript-anchor Jaccard 0.29 (min 0.5)"
+      ]
+     }
+    },
+    "pass": false
+   },
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 36407,
+    "candidatesTokenCount": 15219,
+    "thoughtsTokenCount": 18997,
+    "totalTokenCount": 70623,
+    "cachedContentTokenCount": 10102
+   }
+  },
+  {
+   "id": "NEpD7fIM7HI",
+   "title": "Learning from Federer's Slice | 4 Tips + 3 Drills",
+   "duration_s": 1051.0,
+   "upload_date": "2025-03-20",
+   "role": "new_round3",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "backhand",
+   "format": "lecture",
+   "n_quotes": 19,
+   "n_symptoms": 3,
+   "n_causes": 5,
+   "n_solutions": 7,
+   "n_angles": 5,
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 3,
+    "check": 1,
+    "progression": 2
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_1-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": true
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 1.0,
+     "chain_roots": 1.0,
+     "solutions": 0.44,
+     "solutions_bucket_only": 0.44
+    },
+    "1-3": {
+     "causes": 0.83,
+     "chain_roots": 0.83,
+     "solutions": 0.5,
+     "solutions_bucket_only": 0.5
+    },
+    "2-3": {
+     "causes": 0.83,
+     "chain_roots": 0.83,
+     "solutions": 0.83,
+     "solutions_bucket_only": 0.83
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": null,
+   "rerun_consensus": null,
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 29828,
+    "candidatesTokenCount": 15842,
+    "thoughtsTokenCount": 23889,
+    "totalTokenCount": 69559,
+    "cachedContentTokenCount": 7913
+   }
+  },
+  {
+   "id": "wFIrPMutzRo",
+   "title": "2 Secrets to Rotational Power | Side Bending + The Abdominal X",
+   "duration_s": 765.0,
+   "upload_date": "2025-03-20",
+   "role": "new_round3",
+   "status": "stage1_verified",
+   "prompt_version": "ep_s1_v3",
+   "is_teaching": "teaching",
+   "stroke": "forehand",
+   "format": "demo_with_player",
+   "n_quotes": 23,
+   "n_symptoms": 4,
+   "n_causes": 4,
+   "n_solutions": 5,
+   "n_angles": 4,
+   "solution_kinds": {
+    "cue": 1,
+    "drill": 4,
+    "check": 0,
+    "progression": 0
+   },
+   "video_layer_len": 0,
+   "validate_cards": "PASS",
+   "check_quotes": "PASS",
+   "check_rerun": "PASS",
+   "rerun_resolution": "verified_raw_pair_2-3",
+   "rerun_raw_pairs": {
+    "1-2": false,
+    "1-3": false,
+    "2-3": true
+   },
+   "rerun_pair_jaccard_v3": {
+    "1-2": {
+     "causes": 0.4,
+     "chain_roots": 0.4,
+     "solutions": 0.71,
+     "solutions_bucket_only": 0.71
+    },
+    "1-3": {
+     "causes": 0.5,
+     "chain_roots": 0.5,
+     "solutions": 0.43,
+     "solutions_bucket_only": 0.43
+    },
+    "2-3": {
+     "causes": 0.75,
+     "chain_roots": 0.75,
+     "solutions": 0.71,
+     "solutions_bucket_only": 0.71
+    }
+   },
+   "rerun_pair_jaccard_v2_baseline": null,
+   "rerun_consensus": null,
+   "third_run_used": true,
+   "gemini_usage": {
+    "calls": 3,
+    "promptTokenCount": 25414,
+    "candidatesTokenCount": 14214,
+    "thoughtsTokenCount": 7323,
+    "totalTokenCount": 46951,
+    "cachedContentTokenCount": 0
+   }
+  }
+ ],
+ "v2_vs_v3_solutions": {
+  "raw_pair_mean_jaccard_two_failed_eps": {
+   "v2": {
+    "causes": 0.518,
+    "chain_roots": 0.382,
+    "solutions": 0.27,
+    "solutions_bucket_only": 0.468,
+    "n_pairs": 6
+   },
+   "v3": {
+    "causes": 0.438,
+    "chain_roots": 0.528,
+    "solutions": 0.53,
+    "solutions_bucket_only": 0.61,
+    "n_pairs": 6
+   }
+  },
+  "raw_pair_mean_jaccard_all": {
+   "v2_round2_5eps": {
+    "causes": 0.631,
+    "chain_roots": 0.515,
+    "solutions": 0.404,
+    "solutions_bucket_only": 0.564,
+    "n_pairs": 11
+   },
+   "v3_7eps": {
+    "causes": 0.5,
+    "chain_roots": 0.54,
+    "solutions": 0.487,
+    "solutions_bucket_only": 0.578,
+    "n_pairs": 21
+   },
+   "v3_new5": {
+    "causes": 0.525,
+    "chain_roots": 0.544,
+    "solutions": 0.47,
+    "solutions_bucket_only": 0.565,
+    "n_pairs": 15
+   }
+  },
+  "kind_agreement_on_shared_buckets": {
+   "v2_two_failed": {
+    "shared_buckets": 31,
+    "same_kind": 21,
+    "rate": 0.677
+   },
+   "v2_round2_all5": {
+    "shared_buckets": 69,
+    "same_kind": 54,
+    "rate": 0.783
+   },
+   "v3_two_reextract": {
+    "shared_buckets": 20,
+    "same_kind": 18,
+    "rate": 0.9
+   },
+   "v3_all7": {
+    "shared_buckets": 74,
+    "same_kind": 63,
+    "rate": 0.851
+   }
+  },
+  "reading": "solutions Jaccard on the two failed episodes 0.27 -> 0.53 (6 pairs each); kind agreement on shared buckets 68% -> 90%; but cause Jaccard on the same two episodes fell 0.52 -> 0.44 and across all 7 v3 episodes causes avg 0.50 vs v2 round2 0.63, so v3 shifted the bottleneck from solutions to causes. Small samples; not a proven improvement."
+ },
+ "anchor_compliance": {
+  "cause": {
+   "exact": 74,
+   "evidence_spills": 7,
+   "miss": 6
+  },
+  "solution": {
+   "exact": 94,
+   "evidence_spills": 3,
+   "miss": 4
+  }
+ },
+ "aggregate": {
+  "episodes_attempted": 7,
+  "reextract_verified": [
+   "Am8j1Zw5KrE",
+   "ExkBtFRhUWY"
+  ],
+  "new5_verified": [
+   "V-QkILd4V-w",
+   "NEpD7fIM7HI",
+   "wFIrPMutzRo"
+  ],
+  "new5_draft_rerun_fail": [
+   "xLs469ZVMPU",
+   "wd4YRQW3TOc"
+  ],
+  "total_cards_in_episodes_dir": 15,
+  "stage1_verified_total": 13,
+  "stage1_draft_total": 2,
+  "validate_cards": "PASS (15 cards, 0 FAIL)",
+  "check_quotes": "PASS (348 quotes, text_ok 348, ts_ok 348)",
+  "check_manifest": "PASS",
+  "check_neutrality": "PASS (5 prompts incl. ep_s1_v3)",
+  "verify_all_selftest": "PASS",
+  "stage2": "not_run",
+  "video_layer": "empty_on_all_cards",
+  "third_run_episodes": [
+   "Am8j1Zw5KrE",
+   "ExkBtFRhUWY",
+   "xLs469ZVMPU",
+   "V-QkILd4V-w",
+   "wd4YRQW3TOc",
+   "NEpD7fIM7HI",
+   "wFIrPMutzRo"
+  ],
+  "normalizer_event_totals": {
+   "quote_snapped": 38,
+   "cause_anchor_exact": 74,
+   "intuition_first_forced_false": 15,
+   "solution_anchor_exact": 94,
+   "cause_anchor_evidence_spills": 7,
+   "solution_anchor_evidence_spills": 3,
+   "solution_anchor_miss": 4,
+   "cause_anchor_miss": 6,
+   "chain_depth_retarget_to_PROBLEM": 1
+  }
+ },
+ "gemini_usage_total": {
+  "calls": 21,
+  "promptTokenCount": 186972,
+  "candidatesTokenCount": 98697,
+  "thoughtsTokenCount": 134726,
+  "totalTokenCount": 420395,
+  "cachedContentTokenCount": 34989
+ },
+ "notes": [
+  "All 7 episodes needed a 3rd run (v3 did not make raw 1-2 pair pass on any of them).",
+  "Am8j1Zw5KrE verified via raw pair 2-3 (solutions Jaccard exactly 0.50 = threshold, PASS since rule is val < min). Final card = run2 text, run ids list all 3 runs.",
+  "ExkBtFRhUWY verified via 3-run consensus card (base run3, deterministic: dropped cause C03 for lack of cross-run support -> only 2 causes / 4 solutions remain; passes vs run2 only, fails vs run1). Thin card; treat as lowest-confidence verified card.",
+  "xLs469ZVMPU and wd4YRQW3TOc: all pairs and consensus fail; kept stage1_draft (manifest state subs_ready), no manual edits, thresholds untouched; must not enter the tree.",
+  "Selection: manifest.tsv type_guess=教学长视频 + .en.vtt + no card, upload_date ascending, <300s excluded, >=400s preferred (GsHkML2mVEI 350s skipped).",
+  "No MICU key is stored in the repo; raw model responses and rendered prompts stay in /workspace/s1_work/round3 (outside repo)."
+ ],
+ "VERIFY": "PARTIAL"
+}

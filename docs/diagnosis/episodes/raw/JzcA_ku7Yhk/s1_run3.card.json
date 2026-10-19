@@ -1,0 +1,393 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "JzcA_ku7Yhk",
+    "url": "https://www.youtube.com/watch?v=JzcA_ku7Yhk",
+    "title": "The Misunderstanding LOSING You Matches",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 430.0,
+    "upload_date": "2025-03-29",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach analyzes a match clip of Coco Gauff to explain the misunderstanding between practice tennis and match tennis, showing how players must train for awkwardness and adaptability."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/JzcA_ku7Yhk.en.vtt",
+    "kind": "auto",
+    "sha256": "b5a1ceba775de2ce919a968c6da880f44f30762ac3edb675c8fdcbba340024d1",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_run_ids": [
+      "s1_r3_JzcA_k",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does your forehand fall apart in matches despite feeling great in practice?",
+    "definition": "Players experience a severe drop in stroke quality during matches because their practice is built around executing clean, identical swings in predictable environments, leaving them unable to adapt when match conditions force awkward body positions and split-second decisions.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Ability to hit clean forehands during practice drills, lessons, or ball machine sessions"
+    ],
+    "target_player": "Players whose strokes perform well in static practice or lessons but break down completely in competitive matches",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Coach, my forehand, it's so good in practice. It's it's good in practice or it's good in my lessons. It's it's great on the ball machine.",
+      "start": 1.0,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "And then I get into matches and it all falls apart and then I'm losing to players I shouldn't be losing to and I can't even produce the stroke that I know I can produce.",
+      "start": 8.0,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "this kind of fundamental misunderstanding about what match tennis is that causes this dichotomy or apparent dichotomy in people's minds.",
+      "start": 23.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "it's kind of making fun of Koko Goff for looking so awkward here right like oh she's kind of off balance her followrough looks weird here she lose her balance",
+      "start": 35.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "This is actually demonstrating an incredibly high level of skill. The fact that she's able to succeed while off balance.",
+      "start": 66.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "she's actually hitting shots that are so high quality while offbalance that she gets her opponent on defense, gets an approach shot, finishes that approach shot with a very difficult approach volley combination",
+      "start": 86.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "So, almost every single one of these balls, through no fault of her own, is not where she really wants it to be when she has to hit it.",
+      "start": 146.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And yet she hits five or six successful shots in a row, contorting her body, contorting her arm, contorting her balance, and finishes with an offensive combination to win the tennis point.",
+      "start": 153.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Did it feel like every shot was a unique car crash and you had milliseconds to decide how to coordinate your body to hit what you wanted to do?",
+      "start": 176.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "And if your practice didn't feel like that, your match isn't going to look like this.",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Oh, she doesn't know how to adjust her followrough like that, so she shanks it. That one's pretty good, but maybe she falls and lose her balance there. She can't lean over like that, so she shanks it.",
+      "start": 199.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "they could look phenomenal crosscourt for 100 shots. That tells you nothing about Koko Goff's ability to play this tennis in the wind at the highest level",
+      "start": 217.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "that's why you can't play matches is because you have the wrong understanding of what match tennis is. We we used to think that athletic performance was about being able to repeat things over and over again the same way.",
+      "start": 260.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "It's a skill set. It's I want to hit the ball like this. Do I know how to do that out of a wide variety of different restraining conditions?",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "It's not because she can hit the same shot a 100 times in a row. It's because she can produce the same result with a hundred different strokes.",
+      "start": 305.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "And the more your practices look like this, paradoxically, the more your practices look like this. Even if you are missing, the more your practices look like this, the better your matches are going to get.",
+      "start": 326.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "to communicate to you. Practice like this. Push yourself in practice. make things awkward in practice and all of a sudden you're going to notice, oh yeah, my forehand is really good. My mechanics are good, but I can't actually",
+      "start": 337.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "situation. Or the second I have to decide on my shot selection instead of just hitting it to one spot every time, it breaks down. Or maybe the second the ball is not where I thought it was going to",
+      "start": 350.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "And so, you have to build your adaptability and your fault tolerance into your skill set. That's what this is. That's the misunderstanding that's costing you matches.",
+      "start": 389.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "It's not about teaching you to swing a specifically once every time. It's about giving you a set of sensations to work off of so you can build these instincts into your game.",
+      "start": 404.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Player's stroke falls apart and fails to produce the expected quality during competitive matches.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player shanks the ball when forced to lean over, leave their feet, or alter their follow-through.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Stroke mechanics break down when the ball position deviates or when required to make active shot selection decisions.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player lacks the skill set to coordinate their body and produce quality shots out of restraining conditions like being off-balance or coping with wind.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Practice sessions rely on clean, predictable feeds from ball machines or static cooperative rallies rather than simulating chaotic, split-second match situations.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player operates under the false belief that athletic excellence comes from repeating an identical stroke pattern rather than achieving consistent outcomes through adaptable strokes.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "The coach analyzes Coco Gauff contorting her body and hitting off-balance in windy conditions to demonstrate that awkwardness in matches is a display of elite skill.",
+      "evidence": [
+        "Q05",
+        "Q06",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "True skill is not hitting the same stroke 100 times in a row, but producing the desired result using a hundred different variations under restraining conditions.",
+      "evidence": [
+        "Q13",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "analogy",
+      "summary": "Match tennis feels like each shot is a unique car crash where players have milliseconds to decide how to coordinate their body.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "Two players can look equally phenomenal hitting 100 crosscourt balls in practice, but the one who can play awkwardly in the wind will dominate 6-0, 6-0.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "feel",
+      "summary": "Training should build instincts and a set of sensations to react from rather than trying to execute a rigid, pre-planned swing.",
+      "evidence": [
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Make practice awkward by pushing into difficult situations, altering shot selection on the fly, and hitting out of unideal ball locations to test and adapt mechanics under stress.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

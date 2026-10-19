@@ -1,0 +1,501 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "UB6SbA_KX9E",
+    "url": "https://www.youtube.com/watch?v=UB6SbA_KX9E",
+    "title": "Proper Trunk Sequencing will Transform Your Tennis",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 714.0,
+    "upload_date": "2025-06-17",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach explains the biomechanics and mental models of trunk-hip rotational sequencing in tennis strokes using figure skating and pro footage."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/UB6SbA_KX9E.en.vtt",
+    "kind": "auto",
+    "sha256": "d2d4cf8c3cf1c53cb0b448f8e2bbb3e6fc006013f58d9592e0bef762459d596c",
+    "coverage_ratio": 0.9996
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v5",
+    "stage1_run_ids": [
+      "s1_r1_UB6SbA",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can tennis players properly sequence trunk and hip rotation to generate linear power instead of over-rotating?",
+    "definition": "Tennis players often spin out, over-rotate, or experience slow acceleration because they misjudge trunk-hip sequencing, visualizing a full continuous turn rather than an early trunk command followed by a compact hip power pulse.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic understanding of rotational mechanics in tennis groundstrokes"
+    ],
+    "target_player": "Tennis players struggling with over-rotation, spinning out, or slow swing acceleration",
+    "evidence": [
+      "Q13",
+      "Q22"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "What you're seeing here is called a quad jump. And it's one of the most rotationally demanding activities in sports.",
+      "start": 3.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Whereas our goal is to create the highest velocity linear strike we can.",
+      "start": 27.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "We have to start with the somewhat misleading idea that power comes from the ground.",
+      "start": 47.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "So that is a trunk driven movement where the shoulders are thrown into rotation and that commands the rest of the body to go into rotation.",
+      "start": 73.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Those shoulders are being thrown out while the legs are still loading up.",
+      "start": 92.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the command for your rotational movement comes from your trunk and not from your legs. Your legs are a force multiplier.",
+      "start": 106.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "the mental model for generating rotational power is rotate with your trunk.",
+      "start": 146.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "That mental command executes itself first and foremost at the trunk and then the legs are recruited as a force multiplier on that motion.",
+      "start": 161.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "watch the sequencing between the upper body, which is pulling out here, commanding rotation here, and the lower body, which is still loading up there",
+      "start": 204.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "This initial intention of the swing is trunk driven. Those shoulders, that upper part of the trunk is the first thing to command the body to rotate.",
+      "start": 241.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "Right here, that right leg explosively straightens to add that power pulse to the rotation right here.",
+      "start": 259.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So even in tennis where everything is so compact, the hips are a power pulse in the middle of your rotation. That speeds it up.",
+      "start": 323.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "they lose the trunk command followed by the force multiplication, they lose that acceleration rhythm. And that's where things get so slow and awkward feeling.",
+      "start": 398.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "What happens to a lot of people is they visualize pulling their left shoulder to here and rotating to here.",
+      "start": 427.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "The upper body has already started swinging but the hips haven't fired yet. Pulse. And now the hips are done.",
+      "start": 464.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "what you want to visualize is this as your goal position.",
+      "start": 498.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "you're just trying to throw the racket into here with as much velocity as possible.",
+      "start": 510.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "if you try to rotate to here, your hips are going to end up firing way too late and you're going to end up spinning instead of doing what we want in tennis",
+      "start": 522.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "from here at contact, that trunk is actually going to slow a little and the arm takes over.",
+      "start": 544.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "the most efficient version of the swing often feels like throwing your hip into the ball or throwing your hip behind the ball",
+      "start": 580.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "think of this position as the end goal of your rotation. And that's going to sync up your hip power to create that whip on the end",
+      "start": 613.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "that's why a lot of you guys struggle with over rotation and why you guys struggle with spinning around",
+      "start": 658.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "if you're visualizing trying to get max velocity right through here, that is going to naturally cause your brain to command your hips to fire through here.",
+      "start": 682.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "you create the linear force by trying to get your max velocity here. And so your hips are naturally going to fire there.",
+      "start": 706.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player over-rotates and spins around rather than producing a compact rotational pulse and a linear finish.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18",
+        "Q22"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player experiences a slow, awkward acceleration feeling during the swing.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player rotates the shoulders excessively far forward before the hips fire their power pulse.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players incorrectly assume the rotational command originates from the legs or the ground rather than understanding the trunk commands rotation while legs act as force multipliers.",
+      "depth": 4,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "When attempting to imitate compact swings, players disrupt the acceleration rhythm by losing the trunk command followed by hip force multiplication.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players mentally visualize rotating their shoulder line continuously all the way across from preparation to follow-through.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Aiming to rotate all the way through causes the hips to fire their power pulse far too late in the swing cycle, producing spin instead of linear forward drive.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "contrast_demo",
+      "summary": "The coach contrasts the figure skater quad jump's continuous spinning objective with the tennis player's need for a compact pulse to generate a linear strike.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "The coach addresses the misleading idea that power comes from the ground, clarifying that the trunk commands rotation while the legs act as a force multiplier.",
+      "evidence": [
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Biomechanically, the upper body initiates rotation while the legs are still loading, and the hips deliver a power pulse in the middle of rotation to multiply speed.",
+      "evidence": [
+        "Q05",
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "Pro footage of Alcaraz and Federer demonstrates that trunk rotation leads, the hip pulse completes early, and the trunk slows at contact as the arm takes over.",
+      "evidence": [
+        "Q10",
+        "Q15",
+        "Q19"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "feel",
+      "summary": "An efficient swing feels like throwing the hip into or behind the ball rather than spinning around the axis.",
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "visual_model",
+      "summary": "Players should visualize the forward press slot as the rotational finish line so the hips fire on time and transfer power into a linear finish.",
+      "evidence": [
+        "Q16",
+        "Q21"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Say to yourself: 'Rotate with your trunk' to initiate the movement so that the legs naturally recruit as a force multiplier.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C03",
+        "C04"
+      ],
+      "summary": "Visualize the forward slot position as the end goal of your rotation and focus on throwing the racket into that spot with maximum velocity.",
+      "external_goal": "The racket arriving at the forward contact slot",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Cue the feeling of throwing your hip into the ball or behind the ball during the power pulse rather than spinning around.",
+      "external_goal": "The ball",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C03",
+        "C04"
+      ],
+      "summary": "Visualize reaching peak upper body velocity early in the swing to naturally trigger the brain to fire the hips linearly into the strike.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

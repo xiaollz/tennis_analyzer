@@ -1,0 +1,985 @@
+{
+ "tree": "../ftt_tree/tree_v5.json",
+ "n_pairs": 36,
+ "verdicts": {
+  "existing_obs": 1,
+  "same_mechanism": 19,
+  "not_visible": 2,
+  "new_obs_needed": 14
+ },
+ "gate_pass": 32,
+ "gate_fail": [
+  "N-C_9NIRSL59AN0_C03 | N-C_UJPUDUX0JIA_C06",
+  "N-C_PWKGLKRM73O_C03 | N-C_UJPUDUX0JIA_C06",
+  "N-C_2NN9TYMECZU_C06 | N-C_APCKJDADZEK_C05",
+  "N-C_9NIRSL59AN0_C02 | N-C_DDYKUNZTDYU_C04"
+ ],
+ "proposed_new_observables": [
+  {
+   "question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "camera": "side view (S)",
+   "pairs": [
+    "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+    "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04"
+   ],
+   "episodes_of_cited_quotes": [
+    "FxDmVi3EFnE",
+    "LoSrMj-Qxkc"
+   ]
+  },
+  {
+   "question": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+   "values": [
+    "moves_inward",
+    "stays_above_front_foot"
+   ],
+   "camera": "back view (B)",
+   "pairs": [
+    "N-P_XLS469ZVMPU | N-C_APCKJDADZEK_C01",
+    "N-C_APCKJDADZEK_C01 | N-C_T5MEVWBOKR4_C01"
+   ],
+   "episodes_of_cited_quotes": [
+    "T5meVwBOKR4",
+    "aPcKJDadzek",
+    "xLs469ZVMPU"
+   ]
+  },
+  {
+   "question": "Between the start of the forward swing and contact, does the hitting hand first move outward away from the body, or directly toward the ball?",
+   "values": [
+    "outward_first",
+    "directly_toward_ball"
+   ],
+   "camera": "back view (B)",
+   "pairs": [
+    "N-C_2NN9TYMECZU_C02 | N-C_WZLMV4ASG9S_C01"
+   ],
+   "episodes_of_cited_quotes": [
+    "2Nn9tyMECZU",
+    "wzLMv4ASg9s"
+   ]
+  },
+  {
+   "question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "pairs": [
+    "N-C_2NN9TYMECZU_C03 | N-C_9NIRSL59AN0_C03",
+    "N-C_2NN9TYMECZU_C03 | N-C_PWKGLKRM73O_C03",
+    "N-C_9NIRSL59AN0_C03 | N-C_T5MEVWBOKR4_C03",
+    "N-C_9NIRSL59AN0_C03 | N-C_UJPUDUX0JIA_C06",
+    "N-C_PWKGLKRM73O_C03 | N-C_T5MEVWBOKR4_C03",
+    "N-C_PWKGLKRM73O_C03 | N-C_UJPUDUX0JIA_C06"
+   ],
+   "episodes_of_cited_quotes": [
+    "2Nn9tyMECZU",
+    "9NirSL59an0",
+    "PwkGLkRm73o",
+    "T5meVwBOKR4"
+   ]
+  },
+  {
+   "question": "At the end of the preparation turn, is the body weight mainly over the back foot, between the feet, or over the front foot?",
+   "values": [
+    "over_back_foot",
+    "between_feet",
+    "over_front_foot"
+   ],
+   "camera": "side view (S)",
+   "pairs": [
+    "N-C_2NN9TYMECZU_C06 | N-C_APCKJDADZEK_C05"
+   ],
+   "episodes_of_cited_quotes": [
+    "aPcKJDadzek"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both describe the same thing, 'pure brushing ... thin contact' vs 'upward brushing ... contact extremely thin', and both cite the same quote 'top spin always makes contact thinner'.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "The problem node is resolved by 'combining the upward vector ... with a back-to-front driving vector', and C02 is 'lacks a back-to-front driving vector', so it is the same thing seen from the missing-ingredient side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Pure brushing' vs 'excessive low-to-high swing path rather than shoulder drive': both describe topspin made by an upward path without the back-to-front shoulder drive.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "new_values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "camera": "side view (S)",
+   "reason": "LoSrMj-Qxkc attributes the problem to how far the racket 'lags backwards' (visible amount of layback), whereas the problem node attributes it to the swing vector; no catalog observable measures lag amount, and the problem node's quote makes no claim about lag, so only the B side directly motivates the question.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "C01 'upward brushing stroke' and C02 'just create the upward vector and not create the forward vector' describe the same upward-only swing; C01 states its consequence (thin contact).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Upward brushing stroke' and 'excessive low-to-high swing path' are two wordings of the same steep upward swing.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "new_values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "camera": "side view (S)",
+   "reason": "LoSrMj-Qxkc ties the difficulty to how much the racket 'lags backwards', a visible amount no catalog observable covers; C01 makes no claim about lag, so the question is motivated mainly by the B side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C02 | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "C02 'not create the forward vector' and C03 'rather than shoulder drive' with 'the shoulder ... for that back to front driving' both name the same missing back-to-front shoulder drive.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "new_values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "camera": "side view (S)",
+   "reason": "The B node's cause is the visible amount the racket 'lags backwards', while C02's is the missing forward vector; no catalog observable measures lag, and C02's quote does not address lag.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": "At the start of the forward swing, how far does the racket head trail behind the hitting hand?",
+   "new_values": [
+    "far_behind_hand",
+    "slightly_behind_hand",
+    "level_with_or_ahead_of_hand"
+   ],
+   "camera": "side view (S)",
+   "reason": "LoSrMj-Qxkc locates the cause in heavy shoulder stretch/layback ('the more this lags backwards'), which is visible but not in the catalog; C03 locates it in the swing path and makes no lag claim.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_XLS469ZVMPU | N-C_APCKJDADZEK_C01",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "xLs469ZVMPU:Q03"
+   ],
+   "quotes_B": [
+    "aPcKJDadzek:Q05"
+   ],
+   "new_question": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+   "new_values": [
+    "moves_inward",
+    "stays_above_front_foot"
+   ],
+   "camera": "back view (B)",
+   "reason": "aPcKJDadzek names a specific visible cause of over-rotation ('If this knee caves in early, you're going to lose your anchor'), while the problem node frames it as hip rotation that does not 'start and stop'; no catalog observable covers knee caving.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_XLS469ZVMPU | N-C_T5MEVWBOKR4_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "xLs469ZVMPU:Q03"
+   ],
+   "quotes_B": [
+    "T5meVwBOKR4:Q06"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Hip rotation ... has to be transient which means it starts and stops' and 'fails to freeze or decelerate the trunk right before contact' / 'how slow it's moving right before contact' describe the same rotation-braking failure.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_APCKJDADZEK_C01 | N-C_T5MEVWBOKR4_C01",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "aPcKJDadzek:Q05"
+   ],
+   "quotes_B": [
+    "T5meVwBOKR4:Q06"
+   ],
+   "new_question": "During the forward swing before contact, does the front knee move inward toward the other leg, or stay above the front foot?",
+   "new_values": [
+    "moves_inward",
+    "stays_above_front_foot"
+   ],
+   "camera": "back view (B)",
+   "reason": "A attributes the unbraked rotation to the front knee caving in, a visible event; B only describes the trunk not slowing ('how slow it's moving right before contact') with no knee claim, and the catalog has no knee-caving observable.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C02 | N-C_WZLMV4ASG9S_C01",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14"
+   ],
+   "quotes_B": [
+    "wzLMv4ASg9s:Q01"
+   ],
+   "new_question": "Between the start of the forward swing and contact, does the hitting hand first move outward away from the body, or directly toward the ball?",
+   "new_values": [
+    "outward_first",
+    "directly_toward_ball"
+   ],
+   "camera": "back view (B)",
+   "reason": "B is specifically about swing direction ('swing it out first, not straight towards the ball') while A is about a linear push across the body ('push the shoulder through'); OBS-11 covers vertical hand path, not outward vs toward-the-ball direction.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C03 | N-C_9NIRSL59AN0_C03",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14"
+   ],
+   "quotes_B": [
+    "9NirSL59an0:Q09"
+   ],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A's cause is where the ball is relative to the body ('If I feed the ball here'), while B's is arm posture ('relaxes the elbow down in') regardless of ball position; OBS-02 measures hand-to-torso distance, which both nodes trigger, and no catalog observable measures ball-to-body distance.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C03 | N-C_PWKGLKRM73O_C03",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14"
+   ],
+   "quotes_B": [
+    "PwkGLkRm73o:Q11"
+   ],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A attributes the touching elbow to ball spacing ('If I feed the ball here'), B to the elbow 'dropping in' from lack of stabilization; ball-to-body distance would separate them and is not in the catalog.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C03 | N-C_T5MEVWBOKR4_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14"
+   ],
+   "quotes_B": [
+    "T5meVwBOKR4:Q14"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Spacing too close to the body' and 'Swinging too close to the body crowds the contact point' ('swing through the ball close to your body') describe the same spacing error.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C03 | N-C_UJPUDUX0JIA_C06",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14"
+   ],
+   "quotes_B": [],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "By text both are the same spacing error ('Spacing too close to the body' vs 'Positioning too close laterally to the ball'), but none of B's listed quotes (uJpuDUx0jIA:Q01, Q05, Q23) mention spacing, so B's side has no quote support.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_9NIRSL59AN0_C03 | N-C_PWKGLKRM73O_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "9NirSL59an0:Q09"
+   ],
+   "quotes_B": [
+    "PwkGLkRm73o:Q11"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Relaxes her whole upper back complex here and relaxes the elbow down in' and 'My elbow's not dropping in here ... your back ... stabilizing the elbow' describe the same elbow collapse from an unsupported back.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_9NIRSL59AN0_C03 | N-C_T5MEVWBOKR4_C03",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "9NirSL59an0:Q09"
+   ],
+   "quotes_B": [
+    "T5meVwBOKR4:Q14"
+   ],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A's cause is arm posture (elbow relaxed 'down in'), B's is swinging 'through the ball close to your body'; ball-to-body distance would separate them and no catalog observable measures it.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_9NIRSL59AN0_C03 | N-C_UJPUDUX0JIA_C06",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "9NirSL59an0:Q09"
+   ],
+   "quotes_B": [],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A is arm posture (elbow 'down in') while B's text is lateral positioning to the ball, which ball-to-body distance would show; B's listed quotes do not mention spacing, so only its text motivates the question.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_PWKGLKRM73O_C03 | N-C_T5MEVWBOKR4_C03",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "PwkGLkRm73o:Q11"
+   ],
+   "quotes_B": [
+    "T5meVwBOKR4:Q14"
+   ],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A attributes the elbow being near the body to lack of stabilization ('My elbow's not dropping in here'), B to swinging 'close to your body'; ball-to-body distance separates them and is not in the catalog.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_PWKGLKRM73O_C03 | N-C_UJPUDUX0JIA_C06",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "PwkGLkRm73o:Q11"
+   ],
+   "quotes_B": [],
+   "new_question": "At the contact frame, how far is the ball from the hitting-side hip, side to side?",
+   "new_values": [
+    "within_about_one_forearm_length",
+    "more_than_one_forearm_length"
+   ],
+   "camera": "back view (B)",
+   "reason": "A is elbow stabilization, B's text is lateral positioning to the ball; B's listed quotes do not mention spacing, so only its text motivates the question.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_T5MEVWBOKR4_C03 | N-C_UJPUDUX0JIA_C06",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "T5meVwBOKR4:Q14"
+   ],
+   "quotes_B": [],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "By text both are the same spacing error ('Swinging too close to the body' vs 'Positioning too close laterally to the ball'), but B's listed quotes do not address spacing, so B's side has no quote support.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C06 | N-C_APCKJDADZEK_C05",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [],
+   "quotes_B": [
+    "aPcKJDadzek:Q01",
+    "aPcKJDadzek:Q18"
+   ],
+   "new_question": "At the end of the preparation turn, is the body weight mainly over the back foot, between the feet, or over the front foot?",
+   "new_values": [
+    "over_back_foot",
+    "between_feet",
+    "over_front_foot"
+   ],
+   "camera": "side view (S)",
+   "reason": "B's cause is rushing onto the front foot instead of 'turning over your outside foot' during preparation, which is visible; OBS-13 only covers weight at and after contact, and A's listed quotes (shoulder loading, racket roll, pro elbow path) do not support A's hip-coil text.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_9NIRSL59AN0_C02 | N-C_DDYKUNZTDYU_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-24",
+   "vA": "wrist_flexes_rapidly",
+   "vB": null,
+   "quotes_A": [
+    "9NirSL59an0:Q06"
+   ],
+   "quotes_B": [],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A ties the fault to striking the ball after the wrist is 'back to neutral' in the rolling follow-through (wrist motion through contact), while B's texts and quotes concern pulling close to vs 'farther away from your body' and make no wrist claim, so OBS-24 separates them only to the extent that B shows a stable wrist, which the material does not state.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_APPDZQXH_2K_C02 | N-C_PUN6QIIYU_4_C04",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "AppdZqxH_2k:Q08"
+   ],
+   "quotes_B": [
+    "PUN6qIIYU-4:Q11"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both describe the ball being taken too low ('far away from eye level' / 'the ball is just a little too low') and differ only in why it fails, harder perception of depth and timing vs the racket angle sending the ball 'down into the net', which a camera cannot separate when the visible contact is the same.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DDYKUNZTDYU_C03 | N-C_PQ793MBQE50_C04",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dDYKuNZtdyU:Q12"
+   ],
+   "quotes_B": [
+    "pQ793MBQE50:Q24"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Without this left hand supporting the racket down to here' and 'instead of just taking the left hand off coming to the pull slot' describe the same early release of the non-hitting hand.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DZADHZVESDS_C03 | N-C_TZGAWR3QGV0_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dZadhzVEsds:Q12"
+   ],
+   "quotes_B": [
+    "tzgAWr3QGv0:Q16"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A 'start with their shoulders level ... take your off shoulder and swing it higher' and B 'Keeping shoulders level ... prevents spinal side bend' describe the same missing shoulder tilt; B narrows it to low balls.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DZADHZVESDS_C03 | N-C_WFIRPMUTZRO_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dZadhzVEsds:Q12"
+   ],
+   "quotes_B": [
+    "wFIrPMutzRo:Q12"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Rotating 'on a flat horizontal plane' without the off-shoulder rising and 'without allowing yourself to side bend on the way forward' are the same lack of trunk tilt into contact.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_TZGAWR3QGV0_C03 | N-C_WFIRPMUTZRO_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "tzgAWr3QGv0:Q16"
+   ],
+   "quotes_B": [
+    "wFIrPMutzRo:Q12"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Prevents spinal side bend' and 'lacks spine side bending on the way forward' name the same thing; A adds its downstream effect (elbow 'leaking down', 'very army' swing).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DZADHZVESDS_C04 | N-C_UJPUDUX0JIA_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dZadhzVEsds:Q15"
+   ],
+   "quotes_B": [],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "By text both are the absence of a hip hinge ('fails to hinge at the hips' vs 'rather than maintaining a hip hinge'), but none of B's listed quotes (aPcKJDadzek:Q01/Q05/Q23, uJpuDUx0jIA:Q01) mention hinging, so B's side has no quote support.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DZADHZVESDS_C04 | N-C_VG8LBXOHM3E_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dZadhzVEsds:Q15"
+   ],
+   "quotes_B": [
+    "Vg8lbXOhM3E:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both describe the same missing lower-body posture ('hinge at the hips' vs 'hip tilt, knee bend', 'I'm not really doing any of the things I just said'); B only adds a reason (predictable feeds) that is not itself visible.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_UJPUDUX0JIA_C01 | N-C_VG8LBXOHM3E_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [],
+   "quotes_B": [
+    "Vg8lbXOhM3E:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "By text both are the missing hip hinge or tilt ('rather than maintaining a hip hinge' vs 'do not require hip tilt'); A's listed quotes do not mention hinging, so A's side has no quote support.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_LWS7XXQRRDW_C02 | N-C_PQ793MBQE50_C01",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "lwS7Xxqrrdw:Q08"
+   ],
+   "quotes_B": [
+    "pQ793MBQE50:Q11",
+    "pQ793MBQE50:Q14"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both show the same visible result (a 'really, really wristy' break), and the difference lies in muscle engagement ('the right hand providing the driving vector' vs 'at least a little bit of forearm tension'), which a camera cannot show.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_NEPD7FIM7HI_C02 | N-C_XXLNDJNRA4E_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "NEpD7fIM7HI:Q05"
+   ],
+   "quotes_B": [
+    "XXlndjnrA4E:Q25"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Adjust to low contact using the hand alone rather than bending at the knee and hip' and 'far below their eye level without bending their knees and hips' are the same failure to lower the body for low balls; B is stated for volleys.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  }
+ ]
+}

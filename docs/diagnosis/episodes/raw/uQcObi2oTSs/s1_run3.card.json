@@ -1,0 +1,152 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "uQcObi2oTSs",
+    "url": "https://www.youtube.com/watch?v=uQcObi2oTSs",
+    "title": "The Low-to-High Forehand is Mostly a Myth",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 10.0,
+    "upload_date": "2024-06-20",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "short",
+    "reason": "The coach provides a concrete swing execution instruction for specific situations: when close to the net or when the ball is high, swing basically back to front."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/uQcObi2oTSs.en.vtt",
+    "kind": "auto",
+    "sha256": "ba1469fe003567e024b4c9f38adc7bd8353e8f2360e358ecb94f8ed25dd5a09a",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_uQcObi",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Is the low-to-high forehand swing path mostly a myth?",
+    "definition": "Players often assume the forehand swing must always be low-to-high, whereas in situations close to the net or on high balls the racket path is predominantly back-to-front with negligible vertical rise.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "hitting a forehand",
+      "ball is high or player is close to the net"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "the low to high forehand is mostly a myth",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "especially when you're close to the net or the ball is high you're swinging basically back to front",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "the elevation gain is so minimal you might not even notice it",
+      "start": 5.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The racket's vertical elevation gain through the swing is minimal or virtually unnoticeable.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "When positioned close to the net or dealing with a high ball, the swing moves essentially back to front with minimal elevation gain.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "The coach debunks the common dogma that forehands are inherently hit low to high.",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "The coach explains that situational factors like being close to the net or receiving high balls produce a back-to-front swing trajectory.",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Swing basically back to front when close to the net or when the ball is high.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

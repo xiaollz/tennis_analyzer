@@ -1,0 +1,502 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "ExkBtFRhUWY",
+    "url": "https://www.youtube.com/watch?v=ExkBtFRhUWY",
+    "title": "The Magic of Single-Foot Forehand Training",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 497.0,
+    "upload_date": "2024-06-15",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach uses video demonstrations of himself and a high-level demonstrator to teach forehand probing footwork and loading mechanics using a single-foot drill."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/ExkBtFRhUWY.en.vtt",
+    "kind": "auto",
+    "sha256": "792e944bc8a9cf085330f1f7c51ba8eeeb74617515d11ecaf982651827a64db7",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v3",
+    "stage1_run_ids": [
+      "s1_r1_ExkBtF",
+      "s1_r2_ExkBtF",
+      "s1_r3_ExkBtF"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do players struggle with forehand weight transfer and foot positioning, and how does single-foot training improve probing?",
+    "definition": "Players fail to move deep enough into the forehand corner to set their rear loading foot behind the ball, preventing body weight transfer through the shot and forcing an arm-dominated reaching swing.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand groundstroke technique",
+      "open or semi-open stance loading mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q04",
+      "Q08"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "all right here's a drill I think is really worth adding to your forehand practice and it's probing the ball on one foot instead of two so let's watch a couple reps of Alexa doing it",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "and what I want you to notice is just how difficult it is so it it's it's extremely punishing of being in the wrong spot but it makes it more difficult to get into the right spot",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "we're practicing many things but especially is this loading foot we're both right-handed so we're talking about the right foot here",
+      "start": 51.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "the right foot needs to get behind the ball behind your shot so it can press through the court that's what gives the shot power that's what makes it work",
+      "start": 59.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "otherwise you end up reaching with your arm and trying to kind of curl the ball around",
+      "start": 69.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "you'll notice the foot is not really behind the ball here she can't press this way towards the crosscore Target because the foot hasn't gotten deep deep enough into this corner",
+      "start": 82.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "both of us on our students see this all the time on two feet where our students do not run deep enough into the forehand corner",
+      "start": 96.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "and because they don't run deep enough into this corner they can't press out of the corner and so you get this kind of reaching swing you'll notice there there's no weight transfer",
+      "start": 100.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "you kind of have to reach around and try to curl it with your arm and you can maybe make it but it's just never going to feel that good",
+      "start": 117.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "because look at where the foot is loaded now and now it can press through and see how the entire body just naturally unloads this way through the shot now",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "so you have to get behind the ball you have to get deep enough into the corner that you can press back out of the corner",
+      "start": 157.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "boom the weight transfers into the shot and let's see what happens the body weight when we're not probed into the correct spot",
+      "start": 175.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "she tries to transfer for but the foot's just not in the right spot and so the transfer just doesn't really work",
+      "start": 190.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "you'll notice I'm having to adjust with my upper body on almost every single shot in order to make the forehand",
+      "start": 220.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "on pretty much every single one of her reps she probes the ball into the perfect spot here and by the perfect spot what I mean is the spot that's most comfortable for her swing in her body",
+      "start": 240.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "and now we have me in here and I'm not tracking it nearly as well as she is",
+      "start": 270.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "this one I let get on top of me too much and so again I'm using my eyes I'm swinging through the ball that's in front of me so I can still hit a good shot here",
+      "start": 282.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "why just vision and you know ability to probe the ball into the right spot",
+      "start": 303.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "I'm going to look at the ball and I'm going to swing through the ball that I'm seeing",
+      "start": 356.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "what I am not going to do is take the same swing every shot and just miss the shots where I'm poorly probed",
+      "start": 365.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "see the ball try to take the same swing through contact that you always take and just use your body to adjust to make that happen",
+      "start": 396.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "so that through contact that's roughly the same swing through contact that I take",
+      "start": 414.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "the eyes are better the feet are better and almost every shot is right around here exactly where she wants it and every swing looks much more similar to each other",
+      "start": 458.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "it really punishes you it forces you it creates a training stimulus it's more difficult than what you do in the game",
+      "start": 483.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "really critically right here these ones out here you get out here and then you press the foot back towards the court you get the foot out there and you press it back into the court",
+      "start": 488.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player exhibits no forward weight transfer through the shot during the forward swing.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "R",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q08",
+        "Q13"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player reaches with the arm and curls the racket around the ball rather than driving forward.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05",
+        "Q08"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Contact with the ball never feels clean, comfortable, or solid to the player.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "The upper body leans and adjusts awkwardly on almost every shot to compensate for spacing errors.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The rear loading foot fails to get behind the ball and cannot press through the court into the shot.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player does not run deep enough into the forehand corner to set up their base behind the ball.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Shot power and natural body unloading require the loading foot to be placed behind the ball so body weight can press through the court toward the target.",
+      "evidence": [
+        "Q04",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "Contrasting the demonstrator's clean probing and repeatable swing with the coach's uneven tracking and constant upper-body compensations.",
+      "evidence": [
+        "Q14",
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Debunking the idea that a player should take an identical rigid swing on every shot regardless of positioning, instead of adapting to the ball seen.",
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Reaching with the arm to curl the ball around may occasionally make the court, but it will never feel solid or clean.",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "visual_model",
+      "summary": "Visualizing the loading foot reaching deep into the corner and pressing back out into the court along the line of the shot.",
+      "evidence": [
+        "Q11",
+        "Q25"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Practice probing and hitting forehands while balanced entirely on one foot to heavily punish poor positioning and build heightened visual and physical tracking.",
+      "external_goal": "Probe on one foot and hit incoming tossed balls cleanly through the court.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "PROBLEM"
+      ],
+      "summary": "Look at the ball and swing through the ball that you actually see in front of you rather than executing a pre-planned rigid swing.",
+      "external_goal": "Look at the ball and swing through the ball that is seen.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "S04"
+      ],
+      "summary": "Use your body to dynamically adjust and lean into the ball so that your racket path through the contact zone remains consistent despite imperfect probing.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "On wide balls, reach the loading foot out behind the ball and actively press it back toward the court through the shot.",
+      "external_goal": "Press the loading foot back towards the court.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_r1_ExkBtF",
+        "s1_r2_ExkBtF",
+        "s1_r3_ExkBtF"
+      ],
+      "description": "No raw run pair met check_rerun thresholds after 3 runs; final card = closest run adjudicated by 3-run majority (unsupported cause/solution evidence removed, solution kind voted); no text rewritten. See raw/<id>/rerun_adjudication.json. LOW CONFIDENCE (round4 annotation, no content changed): thin 3-run consensus card (2 causes / 4 solutions; passes check_rerun against run2 only, fails against run1); the user must check it against the subtitles before it enters the tree.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_verified"
+}

@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "cause_anchor_exact": 2,
+    "cause_anchor_miss": 2,
+    "intuition_first_forced_false": 2,
+    "solution_anchor_miss": 1,
+    "solution_anchor_evidence_spills": 2,
+    "solution_anchor_exact": 1
+  },
+  "detail": [
+    "cause_anchor_miss: C02 anchor_bucket=13 evidence_buckets=[12]",
+    "cause_anchor_miss: C03 anchor_bucket=19 evidence_buckets=[17]",
+    "intuition_first_forced_false: solutions.1 no external_goal",
+    "intuition_first_forced_false: solutions.2 no external_goal",
+    "solution_anchor_miss: D01 anchor_bucket=15 evidence_buckets=[14]",
+    "solution_anchor_evidence_spills: D02 anchor_bucket=19 evidence_buckets=[19, 20]",
+    "solution_anchor_evidence_spills: D03 anchor_bucket=23 evidence_buckets=[23, 24]"
+  ]
+}

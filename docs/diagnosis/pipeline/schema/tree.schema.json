@@ -1,0 +1,504 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tree.schema.json",
+  "title": "FTT diagnosis tree v1 (machine-readable; generated views replace hand indexes)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "holdout_episodes",
+    "observables",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "2.0"
+      ]
+    },
+    "holdout_episodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{11}$"
+      },
+      "description": "Episodes reserved for blind replay; nodes/edges must not cite them."
+    },
+    "observables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "question",
+          "values",
+          "layer",
+          "camera"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^OBS-\\d{2}$"
+          },
+          "question": {
+            "type": "string",
+            "description": "Neutral wording, no FTT / project terms"
+          },
+          "values": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "layer": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "camera": {
+            "type": "string",
+            "enum": [
+              "S",
+              "B",
+              "R",
+              "any",
+              "none"
+            ]
+          },
+          "reliability": {
+            "type": "string",
+            "pattern": "^(\\d+/\\d+|untested)$"
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "phase",
+          "must_fix",
+          "signature",
+          "differentials",
+          "evidence",
+          "flt_ref"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "problem",
+              "cause",
+              "style"
+            ]
+          },
+          "phase": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "unit_turn",
+              "placement",
+              "forward_swing",
+              "contact",
+              "follow_through",
+              "recovery",
+              "whole"
+            ]
+          },
+          "must_fix": {
+            "type": "boolean"
+          },
+          "flt_ref": {
+            "type": "string",
+            "pattern": "^(FLT-\\d{2}|NONE)$"
+          },
+          "layer": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "description": "optional: A/B/C layer of the source cause (copied from the card)"
+          },
+          "signature": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "required",
+              "supporting",
+              "excluding"
+            ],
+            "properties": {
+              "required": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cond"
+                }
+              },
+              "supporting": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cond"
+                }
+              },
+              "excluding": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cond"
+                }
+              }
+            }
+          },
+          "differentials": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "vs",
+                "discriminator"
+              ],
+              "properties": {
+                "vs": {
+                  "type": "string",
+                  "pattern": "^N-[A-Z0-9_]+$"
+                },
+                "discriminator": {
+                  "type": "string",
+                  "description": "OBS-xx=value or a 10-ball test description"
+                }
+              }
+            }
+          },
+          "test10": {
+            "type": "string",
+            "description": "10-ball confirm/exclude test (machine_low)"
+          },
+          "next_one_thing": {
+            "type": "string",
+            "description": "One external-focus goal; must pass ban scan"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"
+            }
+          },
+          "diagnostic_layer": {
+            "type": "string",
+            "enum": [
+              "awareness"
+            ],
+            "description": "Optional. 'awareness' = body-feel / tactics / intent / model-unobservable; excluded from T05 required-OBS scope (user 2026-10-19). Does not delete or rewrite node text."
+          },
+          "self_feel_only": {
+            "type": "boolean",
+            "description": "Optional. True when the node participates in a not_visible T08 pair that can only be distinguished by self-feel (user 2026-10-19)."
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from",
+          "to",
+          "evidence",
+          "strength"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "core",
+              "single_episode",
+              "inferred"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"
+            }
+          }
+        }
+      }
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "episode",
+          "problem",
+          "description",
+          "kind",
+          "layer",
+          "phase",
+          "obs_ref",
+          "caused_by",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SYM_[A-Z0-9_]+$"
+          },
+          "episode": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "problem": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "visible",
+              "ball_outcome",
+              "feel"
+            ]
+          },
+          "layer": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "camera": {
+            "type": "string",
+            "enum": [
+              "S",
+              "B",
+              "R",
+              "any",
+              "none"
+            ]
+          },
+          "phase": {
+            "type": "string"
+          },
+          "obs_ref": {
+            "type": "string",
+            "pattern": "^(OBS-\\d{2}|NEW-OBS|NONE)$"
+          },
+          "caused_by": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^N-[A-Z0-9_]+$"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"
+            }
+          }
+        }
+      }
+    },
+    "solutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "episode",
+          "problem",
+          "kind",
+          "summary",
+          "targets_causes",
+          "targets_symptoms",
+          "ban_conflict",
+          "usable_as_prescription",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SOL_[A-Z0-9_]+$"
+          },
+          "episode": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "problem": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "drill",
+              "cue",
+              "check",
+              "progression"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "external_goal": {
+            "type": "string"
+          },
+          "scenario_fit": {
+            "type": "string"
+          },
+          "ban_conflict": {
+            "type": "boolean"
+          },
+          "intuition_first_ok": {
+            "type": "boolean"
+          },
+          "usable_as_prescription": {
+            "type": "boolean"
+          },
+          "targets_causes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^N-[A-Z0-9_]+$"
+            }
+          },
+          "targets_symptoms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^SYM_[A-Z0-9_]+$"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"
+            }
+          }
+        }
+      }
+    },
+    "angles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "episode",
+          "problem",
+          "type",
+          "summary",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ANG_[A-Z0-9_]+$"
+          },
+          "episode": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "problem": {
+            "type": "string",
+            "pattern": "^N-[A-Z0-9_]+$"
+          },
+          "type": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^([A-Za-z0-9_-]{11}:(Q\\d{2,3}|V\\d{2})|BOOK:p\\d+)$"
+            }
+          }
+        }
+      }
+    },
+    "video_layer": {
+      "type": "array",
+      "description": "Stage 2 items; empty until Stage 2 runs"
+    },
+    "quote_sources": {
+      "type": "object",
+      "description": "ref -> verbatim card quote (video_id, start, about, text), so every node/edge cites episode + timestamp + words"
+    },
+    "build": {
+      "type": "object",
+      "description": "provenance of the deterministic builder"
+    }
+  },
+  "definitions": {
+    "cond": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "obs",
+        "value"
+      ],
+      "properties": {
+        "obs": {
+          "type": "string",
+          "pattern": "^OBS-\\d{2}$"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

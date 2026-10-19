@@ -1,0 +1,492 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "PUN6qIIYU-4",
+    "url": "https://www.youtube.com/watch?v=PUN6qIIYU-4",
+    "title": "4 Tips for the Two-Handed Backhand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 886.0,
+    "upload_date": "2024-06-07",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "backhand",
+    "format": "lesson_review",
+    "reason": "The coach analyzes video footage of a UTR 9 student hitting two-handed backhands and breaks down four key technical pillars, followed by a pro match review of Djokovic."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/PUN6qIIYU-4.en.vtt",
+    "kind": "auto",
+    "sha256": "429e46a820eea7730041f73dc9006e6091c626aa42ef7ec272d132d09cc655f9",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v2",
+    "stage1_run_ids": [
+      "s1_r1_PUN6qI",
+      "s1_r2_PUN6qI"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can you improve consistency and aggression on the two-handed backhand?",
+    "definition": "Players often miss into the net, lack consistency, or pull across their body too early on the two-handed backhand because of improper lower-body drive, poor contact spatial probing, attacking at the wrong height inside the court, and failing to achieve extension along the shot line.",
+    "node_id": "N-P_PUN6QIIYU_4",
+    "prerequisites": [
+      "two-handed backhand grip and stroke fundamentals"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q07",
+      "Q12",
+      "Q14"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "all right let's take a look at the two-handed backand here this player is pretty good he's like a ut9",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "and a big reason for that is is the lower body Activation so just like the forehand the Bal the backhand starts from the from the ground",
+      "start": 58.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "so what we want to see on pretty much any shot is weight transfer toward the target",
+      "start": 84.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "when you watch Tennis it kind of looks like the hands are doing more than they are but mostly the hands are being driven by Upstream links in the chain like the lower body",
+      "start": 109.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "because it's a lot easier to drive with your legs precisely than it is to use like the small muscles of the hand and the wrist to throw the racket super precisely",
+      "start": 124.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "so that's that's the first big one is feeling the balance especially on this outside foot on the two-hander feeling your balance and feeling that balance transfer",
+      "start": 157.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "what really matters is that that gaze is still during contact doesn't actually matter that you're looking at contact it matters that your gaze is still",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "and you're going to have to probe the ball into a spot such that when you press into the court the stroke makes sense",
+      "start": 280.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "do you know what it feels like to transfer your weight press with your left hand since he's right-handed press with your left hand and have your string angle consistent",
+      "start": 333.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "what's going wrong is it's mostly just a slight probing issue where it's see so again great balance right we see see the back leg pressing through towards the target",
+      "start": 352.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "this spot the ball is just a little too low it's actually very difficult for the hands to like put this ball up and through and that's why he's hitting these down into the net",
+      "start": 367.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "the way gravity works you have a lot more time for the ball to go up and down when you're at the Baseline and a lot less time when you're at net",
+      "start": 390.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "attacking these balls early at chest height makes a massive difference in his level of execution here because when you're hitting flat and you're hitting inside the court every inch of height that you have",
+      "start": 459.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "you really should try to avoid playing aggressive backhands at knee height unless you have an exceptionally um heavy Top Spin backand",
+      "start": 493.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "find this exact spot and this is harder to do when you're moving forward than it is when you're moving sideways because you are moving into the ball while the ball is moving to you",
+      "start": 523.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "what we're trying to visualize here is we're trying to visualize a line through the ball this way so wherever we're aiming over here there's a line through the ball a vector right here",
+      "start": 553.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "what you're trying to do is press all the way through that ball imagine a line through the ball and then drive that racket all the way through that ball",
+      "start": 584.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "we're visualizing the vector through the ball and we're throwing our hands through that Vector driving all the way through it we're not yanking across the body early",
+      "start": 691.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "look at how through the court he goes his racket has barely even come around his body yet it's almost entirely back to front here driving straight through the court like that",
+      "start": 711.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "loads on that back foot nice and balanced nice clean weight transfer through into the court and if you watch the hands full extension look at this extension through the contact Zone",
+      "start": 762.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "number one you you attack the ball at shoulder height so you can hit it flat and number two again Lower Body Balance drive with your legs into the court",
+      "start": 779.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "don't go For Broke on a knee height backand it's just not a good idea and this is something jokovic does amazingly well is when he's forced to play these knee height backand he doesn't go for that much",
+      "start": 841.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Approach backhands driven down into the net when hitting inside the court.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player yanks the racket across the body early instead of driving back-to-front through the court.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Lack of consistency and precise ball control when relying on hand and wrist manipulation.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Trying to play an aggressive, flat backhand at knee height from inside the court where gravity has less distance and time to pull the ball down.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "N-C_PUN6QIIYU_4_C01",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q11",
+        "Q12",
+        "Q14"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Failing to extend the racket all the way through a straight target vector, pulling across the body prematurely.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "N-C_PUN6QIIYU_4_C02",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Relying on the small hand and wrist muscles to guide the swing rather than driving weight transfer from the loaded back leg.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "N-C_PUN6QIIYU_4_C03",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Improper contact point probing where the ball is taken too low or out of the strike window where the string angle is naturally aligned.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "N-C_PUN6QIIYU_4_C04",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08",
+        "Q10",
+        "Q11",
+        "Q15"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q11",
+        "Q12"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10",
+        "Q11",
+        "Q15"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The stroke is driven by upstream links in the kinetic chain, starting from balance on the outside back leg and transferring weight towards the target.",
+      "evidence": [
+        "Q02",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "You do not need your eyes locked precisely onto the contact point, but rather a completely still gaze during contact.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Inside the court there is less flight distance and time for gravity to bring flat shots down, making knee-height aggressive drives low percentage.",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "visual_model",
+      "summary": "Visualize a directional vector line straight through the ball towards the target and drive the racket through that entire line before wrapping around.",
+      "evidence": [
+        "Q16",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "pro_example",
+      "summary": "Djokovic demonstrates loading balance on the back foot, hitting flat balls at shoulder height, achieving full extension, and playing neutral margin when forced to hit at knee height.",
+      "evidence": [
+        "Q20",
+        "Q21",
+        "Q22"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Load weight on the outside/back foot, maintain balance, and cleanly drive weight forward towards the target through the ball.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "check",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Probe the ball into your personalized contact slot where pressing with the non-dominant hand naturally produces a square string angle with a still gaze.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07",
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Step forward quickly with your feet to attack flatter inside-the-court balls early at chest/waist height; if forced to strike at knee height, reduce pace and aim high and deep for margin.",
+      "external_goal": "Take the ball at chest or waist height rather than letting it fall to knee height",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13",
+        "Q14",
+        "Q22"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Visualize a vector line through the ball toward the target and throw your hands straight through that vector with full extension before wrapping around the body.",
+      "external_goal": "Drive the racket along the visualized target line through the ball",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q16",
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

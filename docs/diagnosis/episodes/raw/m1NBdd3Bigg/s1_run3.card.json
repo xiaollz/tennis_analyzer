@@ -1,0 +1,567 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "m1NBdd3Bigg",
+    "url": "https://www.youtube.com/watch?v=m1NBdd3Bigg",
+    "title": "Simple Serve Progressions - From Beginner to Advanced | with Johnny & Alexa",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1013.0,
+    "upload_date": "2025-08-31",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "demo_with_player",
+    "reason": "The coach provides explicit actionable drills and cues, such as starting from the service line to connect downward shoulder roll to an upward throw, using the back to stabilize and hold the shoulder back, and throwing the chest to the sky."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/m1NBdd3Bigg.en.vtt",
+    "kind": "auto",
+    "sha256": "4df8bdac8cc0eca32a88435e47386d126bdde3efe2bd33a0fdf5d1ed1b5c863d",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_m1NBdd",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can you build an effortless and powerful serve progression from beginner to advanced?",
+    "definition": "Players struggle to develop effortless serve power and net clearance because they push or reach with their arm, tense their upper traps, or focus on leg drive rather than mastering the foundational shoulder rolling whip action.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic overhead throwing mechanics"
+    ],
+    "target_player": "players developing their serve or struggling with pushing the ball",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "This is the simplest effective overhead motion.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, first we're going to help you feel this shoulder release action, and then we're going to help you build that into a full serve.",
+      "start": 11.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "So, when I say 9090, I mean this angle roughly 90. This angle roughly 90. Now, that's not a hard and fast rule, but this should feel the most comfortable as you twist around.",
+      "start": 30.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "the way you can find this 9090 position is to use your back to kind of lock your elbow in, but then wiggle this because you want this stuff nice, relaxed, and ready to roll",
+      "start": 72.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "The reason that I recommend you try to find your effortless shoulder whip release from the service line is this is fundamentally a downward motion that we are going to connect to an upward throwing motion.",
+      "start": 134.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "If you try to find this and work this from the baseline, you might hit the net a lot.",
+      "start": 154.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Of course, we have to get it over the net in tennis. And so, what we have to do is throw up.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Right here is the area, you know, relative to her body where that shoulder is super comfortably coming through the air. There's a lot of other places you can try to intercept it and it's just not going to feel",
+      "start": 240.72,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Now, there's one more little trick I want to talk about, and it is to pull your arm back at the top here to create this whip.",
+      "start": 289.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "if they just imagine using the back to hold the shoulder back at the top, all of the sudden that whips through a lot more.",
+      "start": 325.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "The momentum of this part of the arm stops going forward and rolls in place. That is because of a backward force exerted to create that whip.",
+      "start": 343.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "If you toss too far in front of you, often you'll find yourself reaching for it and you won't be able to get that, you know, snapback whipping action.",
+      "start": 395.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "If you toss it behind the baseline, you know, now like even that early upward throwing motion doesn't really have enough space to launch the shoulder into that final action.",
+      "start": 434.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And one of them is engaging the traps up here when you try to reach up for the serve.",
+      "start": 525.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "If you use this to reach up, so you tighten your shoulder against your head, that is going to break the efficiency of your shoulder.",
+      "start": 549.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "the key is in order to delo this, you use your back to pull the shoulder back and down. And you trust it.",
+      "start": 570.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "And on the serve, the wrist really doesn't do a whole lot. And if you find yourself using your wrist, if you find yourself trying to snap over with your wrist like that, it probably means that you are jamming",
+      "start": 598.56,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Alexa's wrist. It really only follows, it really only flexes as part of the follow through to decelerate the racket effortlessly, but almost all of the velocity of the serve is created at the shoulder.",
+      "start": 623.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "one of the things that I want you to notice is that the left arm is not just a passive toss the ball and do nothing. It actually helps you stretch the front side of your trunk leading to a",
+      "start": 655.279,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Now, our second stretch is back here on your serve. Imagine throwing your chest at the sky.",
+      "start": 741.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "What that's going to do again is it's going to give you confidence in your net clearance so you can trust holding your shoulder back here and you're not tempted to move it and press it up.",
+      "start": 787.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "What's important is one of the degrees of freedom you can play with is how much you feel like stretching back here by pulling your arm this way.",
+      "start": 852.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "Lastly, we are going to talk about the legs. And this might seem controversial, but forget about your legs unless you already have a very good serve.",
+      "start": 868.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "Now, you'll notice her serve was slower and less controlled. Now, that's not necessarily because the amount she bent her knees there was wrong, but it's because she's thinking about bending her knees instead of about coordinating that whip",
+      "start": 909.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "So keep your attention on your simplest motion, feeling that release and intercepting the ball with it, and forget about the legs, unless you have a very good serve already.",
+      "start": 1004.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Serve frequently clips the net or lands short on good motions when trying to roll the shoulder from the baseline.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Serve lacks whip and feels like a flat forward press or push through the ball.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player tightens upper traps and shrugs the shoulder up toward the head attempting to reach for the ball.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "The player attempts an active wrist snap instead of an effortless shoulder release whip.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "S05",
+      "description": "Deep intentional knee bend causes delayed, staccato timing, resulting in slower serve speed and poor control.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The throwing motion is directed straight forward rather than launched upward to give the downward shoulder snap sufficient net clearance.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Improper spacing between the body and the ball leaves insufficient room for the shoulder rolling action to comfortably accelerate.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The upper arm momentum continues drifting forward through contact because the player fails to exert backward stabilizing force from the back muscles.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player engages their upper trapezius muscles to reach upward toward the ball, jamming the shoulder against the head and breaking roll efficiency.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Consciously trying to bend the knees deeply and jump diverts focus away from coordinating the upper-body whip and disrupts kinetic chain timing.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "S05",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Serve velocity is generated by backward force exerted by the back muscles to roll the shoulder in place rather than an active wrist snap.",
+      "evidence": [
+        "Q11",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "feel",
+      "summary": "In the 90-90 preparation, the front chest and shoulder soft tissue must feel relaxed and ready to roll while the back stabilizes.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Snapping the wrist actively is a misconception; the wrist merely flexes passively during follow-through deceleration.",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "Demonstrating an exaggerated deep knee bend shows that leg-focused cues cause staccato timing and produce a slower serve.",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Lock the elbow in a 90-90 prep using the back muscles while wiggling the arm to ensure the front soft tissue stays loose.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Practice hitting serves from the service line to comfortably connect the downward shoulder whip onto an upward throw without netting the ball.",
+      "external_goal": "Clear the net from the service line with effortless downward whip.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Imagine using your back to hold the shoulder back at the top to let the upper arm roll and whip through.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Use your back to pull the shoulder back and down and trust it rather than pushing or shrugging your shoulder up to the ball.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Throw your chest up at the sky during the explosive upward extension to secure net clearance and keep the shoulder back.",
+      "external_goal": "Point your chest directly toward the sky on contact.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q20",
+        "Q21"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "cue",
+      "targets": [
+        "C05"
+      ],
+      "summary": "Forget about conscious leg drive during development and keep full attention on feeling upper-body shoulder release intercepting the ball.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q25"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "xLs469ZVMPU",
+  "run": 2,
+  "model": "gemini-3.8-flash",
+  "prompt_version": "ep_s1_v4",
+  "temperature": 0.45,
+  "ts": "2026-10-18 16:04:50 +0800",
+  "calls": 1,
+  "attempts": [
+    {
+      "status": "ok",
+      "elapsed_s": 46.9,
+      "usage": {
+        "promptTokenCount": 8197,
+        "candidatesTokenCount": 4402,
+        "totalTokenCount": 14147,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 8197
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 4402
+          }
+        ],
+        "thoughtsTokenCount": 1548
+      },
+      "response_chars": 14581
+    }
+  ],
+  "usage_total": {
+    "promptTokenCount": 8197,
+    "candidatesTokenCount": 4402,
+    "totalTokenCount": 14147,
+    "thoughtsTokenCount": 1548,
+    "cachedContentTokenCount": 0
+  },
+  "ok": true
+}

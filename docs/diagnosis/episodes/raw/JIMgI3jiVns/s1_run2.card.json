@@ -1,0 +1,423 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "JIMgI3jiVns",
+    "url": "https://www.youtube.com/watch?v=JIMgI3jiVns",
+    "title": "How Shoulder Rotation Syncs Your Contact",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 448.0,
+    "upload_date": "2025-04-28",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach explains how internal shoulder rotation timing dictates each player's individual contact point using pro video analysis and provides principles to find one's own contact zone."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/JIMgI3jiVns.en.vtt",
+    "kind": "auto",
+    "sha256": "00947213108cfafd27d142818e28d51683a6ec04f10f93e08e1c2282ec2cd10b",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_run_ids": [
+      "s1_r2_JIMgI3",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does shoulder rotation determine your optimal forehand contact point?",
+    "definition": "Players often try to copy an arbitrary contact point (such as hitting far out in front), which leads to mishits and poor racket face control if it does not match where their shoulder naturally begins internal rotation.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand forward swing",
+      "awareness of shoulder rotation"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "every forehand is struck right at the beginning of that player's internal shoulder rotation.",
+      "start": 14.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "this part of the arm, during the early part of the swing, rolls backwards and then during that pressing action that finishes the swing, it rolls forwards.",
+      "start": 24.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "What matters isn't the exact point in space, but what matters is that your shoulder rolling forward matches where you're hitting the ball.",
+      "start": 40.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "when you take your comfortable pressing swing, press that racket through nice and comfortable, nice and painless. When you take that, where has your shoulder just started to turn over?",
+      "start": 51.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Because if it's turned over too much, you're not going to be able to hit the ball.",
+      "start": 62.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "So, you find that spot where the shoulder has just started to turn over. So, for me, it's right around there. And that is my contact point.",
+      "start": 64.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "You actively receive the ball. You use your feet and your eyes to actively receive the ball into that spot. And then you fire and you just let the shoulder go.",
+      "start": 79.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "contact happens right as the shoulder is starting its release.",
+      "start": 111.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "Notice the humor is just starting to roll and then a lot of the roll is going to take place after contact because it destroys the string angle.",
+      "start": 181.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Whereas for Roger Federer, he prefers to hold that rotation longer and release it later.",
+      "start": 206.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So there is no objective contact point. There is what fits your swing and your body.",
+      "start": 236.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "This rhythm is intuitive to Federer. So he hits here. A rhythm back here is intuitive to EGA because her shoulder's releasing here. She's got a hit back here.",
+      "start": 243.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And so you're going to see that contact way out in front because that shoulder is not releasing until we're way out in front.",
+      "start": 267.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "and then right at the beginning of that forwards roll out here. That's that transition point. That's our contact point.",
+      "start": 298.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Max stretch right around here and right through the beginning of that internal rotation is contact.",
+      "start": 315.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "There's a very natural feeling of when that shoulder stops stretching and releases forward that you're trying to hit through. And you can learn to feel that.",
+      "start": 334.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "And that transition point right around here, he probes the ball into there. He gets that top spin release with consistency.",
+      "start": 368.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "If your shoulder feels most comfortable releasing out here, hit the ball way out here.",
+      "start": 390.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "But don't try to hit the ball out here if your shoulder's releasing through here like EGAS does because then it's going to feel awful.",
+      "start": 398.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "he would hit the ball straight into the ground with a racket angle that looks like that.",
+      "start": 428.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "And this is a lot of what we end up working on when we work with people is not the contact point, it's your contact point.",
+      "start": 431.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "Learning to feel your shoulder release, making it comfortable for you, and then matching your swing to it.",
+      "start": 437.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Hitting the ball straight into the ground or burying it due to a severely closed racket angle.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05",
+        "Q20"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The strike feels uncomfortable, painful, or unnatural during the forward swing.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q04",
+        "Q19"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The ball is not met at the exact transition where internal shoulder rotation just starts, causing the shoulder to have rolled over too much.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Allowing internal shoulder rotation to occur before contact disrupts and closes the string angle prematurely.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "A player tries to force an arbitrary contact point out in front despite their shoulder naturally releasing closer to the body.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The humerus externally rotates during the early forward swing and contact must coincide exactly with the start of internal rotation.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "There is no single objective contact point in space; contact location depends on individual shoulder release timing.",
+      "evidence": [
+        "Q03",
+        "Q11"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Iga Swiatek releases her shoulder early and contacts the ball deeper with a bent elbow, while Roger Federer holds lag longer and contacts far in front.",
+      "evidence": [
+        "Q10",
+        "Q12"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "The transition point can be felt naturally as the moment the shoulder stops stretching back and releases forward.",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Take a comfortable, painless pressing swing and identify the exact spatial spot where your shoulder humerus has just started to turn forward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Use your feet and eyes to actively receive the ball directly into your shoulder's natural release spot, then fire and let the shoulder go.",
+      "external_goal": "Actively receive the incoming ball into your specific transition zone.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "progression",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Progress by learning to feel your own shoulder release timing comfortably, matching your individual contact point to your swing rather than copying someone else's.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

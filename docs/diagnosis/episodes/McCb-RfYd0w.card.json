@@ -1,0 +1,358 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "McCb-RfYd0w",
+    "url": "https://www.youtube.com/watch?v=McCb-RfYd0w",
+    "title": "The Magic of the Non-Dominant Side on the Forehand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 192.0,
+    "upload_date": "2025-05-03",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach provides executable cues to internalize the non-dominant side action, specifically 'hold the shoulder' and feeling the inward pressing action during the swing."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/McCb-RfYd0w.en.vtt",
+    "kind": "auto",
+    "sha256": "cafab9ebb5ac8299c4c59c478f346b92dba4ef40a2d3a5ac27b8d4899e18bf2f",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_McCb-R",
+      "s1_r2_McCb-R"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does the non-dominant side function to stabilize the forehand?",
+    "definition": "Understanding and executing the active inward pressing action of the non-dominant chest and arm, which balances rotational momentum and achieves a proper tucked elbow position.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic rotational forehand mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q03",
+      "Q06",
+      "Q07"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Look at the forehand K ends this point with. Strange, right? His arms actually crossed.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, how is this going to help my forehand? Well, the left side of your chest, it actually presses back across the body on every forehand",
+      "start": 23.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "normally you can't see it because that initial rotational explosion that starts the swing, it sends the left side out with momentum",
+      "start": 32.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "and then that pressing action where the left side presses back in. The net effect is just this elbow tuck rather than an actual press back across",
+      "start": 46.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "because that outward vector is getting cancelled out by the inward vector. You're only going to see the arms actually cross on forehands with minimal rotation",
+      "start": 55.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Now, if you didn't press at all though, it would look like this. And all of the sudden, oh, okay, you can see that doesn't look like a very well balanced forehand.",
+      "start": 68.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And that inward pressing action is necessary to get that tucked elbow position that you see everyone play the forehand in.",
+      "start": 80.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Lorenzo Mousetti is a great one to look at for this because he occasionally hits these running down the line forehand winners.",
+      "start": 88.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "because he cuts off that rotation a little bit early on those to hit that down the line target, you can actually see that left arm across pressing action",
+      "start": 94.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "You can actually see that hand appear on the other side of his torso.",
+      "start": 105.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "That early rotational explosion that sends the elbow out and then that pressing action that finishes the swing that sends it back in",
+      "start": 114.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "So, there are two cues, two ways to internalize this depending on what feels more intuitive for you.",
+      "start": 129.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "One is the literal action that's happening, which is hold the shoulder. So, as you swing, we don't want to let this happen. We want to hold that shoulder.",
+      "start": 135.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "The second one, and this is my favorite because I think more people find it intuitive, is it will feel like you're pressing like this",
+      "start": 145.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "even on your regular forehands where rotation cancels out most of that inwards momentum.",
+      "start": 153.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "And that's because without pressing, you get this. And that pressing action for most people, their brain thinks it's doing this",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "watch how expertly he uses his left side to control his forehands and overheads.",
+      "start": 171.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The forehand appears off-balance without the proper tucked elbow finish of the non-dominant side.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The non-dominant arm and shoulder fly open and flail outward during forward swing rather than holding position.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q13"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The left side of the chest must actively press back across the body to oppose outward rotational momentum.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The initial rotational explosion that starts the swing sends the left side outward with strong momentum.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Failing to actively press inward leaves outward momentum unchecked, destroying stroke balance.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The outward vector from torso rotation is cancelled out by the active inward vector of the chest press, producing a net elbow tuck.",
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Lorenzo Musetti visibly crosses his non-dominant arm across the torso when cutting off rotation early on running down-the-line forehands.",
+      "evidence": [
+        "Q08",
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates how a forehand without inward pressing looks completely unbalanced with an uncontrolled non-dominant arm.",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Even though full rotation makes the arm appear just tucked, the player's brain should subjectively feel an active crossing or pressing action.",
+      "evidence": [
+        "Q14",
+        "Q16"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03",
+        "S02"
+      ],
+      "summary": "Use the cue 'hold that shoulder' as you swing to prevent the non-dominant shoulder from opening wildly.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Feel as though you are actively pressing your non-dominant arm and chest across your body during the regular forehand swing.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

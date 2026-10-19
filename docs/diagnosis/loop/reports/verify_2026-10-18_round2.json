@@ -1,0 +1,447 @@
+{
+  "report_id": "verify_2026-10-18_round2",
+  "generated_at": "2026-10-18T15:44:27+08:00",
+  "timezone": "Asia/Shanghai",
+  "round": 2,
+  "scope": "Stage1 subtitle extraction for 5 more FTT long teaching videos (oldest remaining, >=300s)",
+  "branch": "cursor/diagnosis-phase1",
+  "model": "gemini-3.8-flash",
+  "endpoint": "https://www.micuapi.ai",
+  "prompt_version": "ep_s1_v2",
+  "prompt_upgraded_from": "ep_s1_v1",
+  "prompt_changes": [
+    "fixed JSON skeleton with schema field names + enum values spelled out (statement/summary/kind/...)",
+    "transcript timestamps given as seconds [123] so quotes.start is copied, not converted from mm:ss",
+    "structure rules stated in prompt (chain depth direction, every cause is a chain.from, feel=>layer C, evidence ids)"
+  ],
+  "pipeline_script": "docs/diagnosis/pipeline/s1_extract.py (run / final / consensus; deterministic normalizer logs every action to raw/<id>/s1_run*.norm_events.json)",
+  "selftest": {
+    "verify_all_selftest": "PASS",
+    "mutations": 30,
+    "output_tail": [
+      "selftest: good fixtures + 30 mutations -> PASS",
+      "VERIFY: PASS"
+    ]
+  },
+  "episodes": [
+    {
+      "id": "Am8j1Zw5KrE",
+      "title": "Shoulder Adduction Unlocks the Tennis Forehand",
+      "duration_s": 556.0,
+      "upload_date": "2024-06-03",
+      "status": "stage1_draft",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 24,
+      "n_symptoms": 4,
+      "n_causes": 6,
+      "n_solutions": 5,
+      "n_angles": 5,
+      "validate_cards": "PASS",
+      "validate_warn": [],
+      "check_quotes": "PASS",
+      "quotes_text_ok": "24/24",
+      "quotes_ts_ok": "24/24",
+      "runs_executed": [
+        1,
+        2,
+        3
+      ],
+      "third_run_used": true,
+      "rerun_raw_pair_1_2": "FAIL",
+      "rerun_raw_pair_1_2_findings": [
+        "[FAIL] rerun: causes transcript-anchor Jaccard 0.54 (min 0.6)",
+        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.29 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.13 (min 0.5)"
+      ],
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "check_rerun": "FAIL",
+      "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+      "rerun_consensus": {
+        "closeness": {
+          "1": 2.011,
+          "2": 2.505,
+          "3": 2.601
+        },
+        "base_run": 3,
+        "dropped_causes": [],
+        "evidence_pruned": 3,
+        "dropped_solutions": [],
+        "kind_votes_changed": [],
+        "pairs_vs_final": {
+          "final-r1": {
+            "pass": false,
+            "findings": [
+              "[FAIL] rerun: causes transcript-anchor Jaccard 0.54 (min 0.6)",
+              "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.43 (min 0.5)",
+              "[FAIL] rerun: solutions transcript-anchor Jaccard 0.20 (min 0.5)"
+            ]
+          },
+          "final-r2": {
+            "pass": false,
+            "findings": [
+              "[PASS] rerun: causes transcript-anchor Jaccard 0.82 (min 0.6)",
+              "[PASS] rerun: chain roots transcript-anchor Jaccard 0.57 (min 0.5)",
+              "[FAIL] rerun: solutions transcript-anchor Jaccard 0.36 (min 0.5)"
+            ]
+          }
+        },
+        "pass": false
+      },
+      "norm_events": {
+        "quote_snapped": 3,
+        "intuition_first_forced_false": 3
+      },
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 17286,
+        "candidatesTokenCount": 14435,
+        "totalTokenCount": 56921,
+        "thoughtsTokenCount": 25200,
+        "cachedContentTokenCount": 7492,
+        "elapsed_s": [
+          79.9,
+          56.9,
+          107.6
+        ]
+      }
+    },
+    {
+      "id": "PUN6qIIYU-4",
+      "title": "4 Tips for the Two-Handed Backhand",
+      "duration_s": 886.0,
+      "upload_date": "2024-06-07",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "backhand",
+      "format": "lesson_review",
+      "n_quotes": 22,
+      "n_symptoms": 3,
+      "n_causes": 4,
+      "n_solutions": 4,
+      "n_angles": 5,
+      "validate_cards": "PASS",
+      "validate_warn": [],
+      "check_quotes": "PASS",
+      "quotes_text_ok": "22/22",
+      "quotes_ts_ok": "22/22",
+      "runs_executed": [
+        1,
+        2
+      ],
+      "third_run_used": false,
+      "rerun_raw_pair_1_2": "PASS",
+      "rerun_raw_pair_1_2_findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.62 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.80 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.91 (min 0.5)"
+      ],
+      "rerun_raw_pairs": {
+        "1-2": true
+      },
+      "check_rerun": "PASS",
+      "rerun_resolution": "raw_pair_1_2",
+      "rerun_consensus": null,
+      "norm_events": {
+        "intuition_first_forced_false": 1,
+        "quote_snapped": 7
+      },
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 14550,
+        "candidatesTokenCount": 8754,
+        "totalTokenCount": 23304,
+        "thoughtsTokenCount": 0,
+        "cachedContentTokenCount": 0,
+        "elapsed_s": [
+          25.0,
+          25.7
+        ]
+      }
+    },
+    {
+      "id": "ExkBtFRhUWY",
+      "title": "The Magic of Single-Foot Forehand Training",
+      "duration_s": 497.0,
+      "upload_date": "2024-06-15",
+      "status": "stage1_draft",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "demo_with_player",
+      "n_quotes": 28,
+      "n_symptoms": 4,
+      "n_causes": 3,
+      "n_solutions": 2,
+      "n_angles": 4,
+      "validate_cards": "PASS",
+      "validate_warn": [],
+      "check_quotes": "PASS",
+      "quotes_text_ok": "28/28",
+      "quotes_ts_ok": "28/28",
+      "runs_executed": [
+        1,
+        2,
+        3
+      ],
+      "third_run_used": true,
+      "rerun_raw_pair_1_2": "FAIL",
+      "rerun_raw_pair_1_2_findings": [
+        "[FAIL] rerun: causes transcript-anchor Jaccard 0.40 (min 0.6)",
+        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.21 (min 0.5)"
+      ],
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "check_rerun": "FAIL",
+      "rerun_resolution": "unresolved_all_pairs_and_consensus_fail",
+      "rerun_consensus": {
+        "closeness": {
+          "1": 2.414,
+          "2": 2.069,
+          "3": 2.455
+        },
+        "base_run": 3,
+        "dropped_causes": [],
+        "evidence_pruned": 2,
+        "dropped_solutions": [],
+        "kind_votes_changed": [],
+        "pairs_vs_final": {
+          "final-r1": {
+            "pass": false,
+            "findings": [
+              "[PASS] rerun: causes transcript-anchor Jaccard 0.78 (min 0.6)",
+              "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
+              "[FAIL] rerun: solutions transcript-anchor Jaccard 0.36 (min 0.5)"
+            ]
+          },
+          "final-r2": {
+            "pass": false,
+            "findings": [
+              "[FAIL] rerun: causes transcript-anchor Jaccard 0.56 (min 0.6)",
+              "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.20 (min 0.5)",
+              "[FAIL] rerun: solutions transcript-anchor Jaccard 0.40 (min 0.5)"
+            ]
+          }
+        },
+        "pass": false
+      },
+      "norm_events": {
+        "quote_snapped": 3
+      },
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 16578,
+        "candidatesTokenCount": 12829,
+        "totalTokenCount": 41600,
+        "thoughtsTokenCount": 12193,
+        "cachedContentTokenCount": 3512,
+        "elapsed_s": [
+          79.3,
+          21.9,
+          45.6
+        ]
+      }
+    },
+    {
+      "id": "pQ793MBQE50",
+      "title": "How Scap Retraction Powers the One-Handed Backhand",
+      "duration_s": 988.0,
+      "upload_date": "2024-08-04",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "backhand",
+      "format": "lecture",
+      "n_quotes": 26,
+      "n_symptoms": 4,
+      "n_causes": 5,
+      "n_solutions": 4,
+      "n_angles": 5,
+      "validate_cards": "PASS",
+      "validate_warn": [],
+      "check_quotes": "PASS",
+      "quotes_text_ok": "26/26",
+      "quotes_ts_ok": "26/26",
+      "runs_executed": [
+        1,
+        2,
+        3
+      ],
+      "third_run_used": true,
+      "rerun_raw_pair_1_2": "FAIL",
+      "rerun_raw_pair_1_2_findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.67 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.67 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.42 (min 0.5)"
+      ],
+      "rerun_raw_pairs": {
+        "1-2": false,
+        "1-3": false,
+        "2-3": false
+      },
+      "check_rerun": "PASS",
+      "rerun_resolution": "3run_majority_consensus_vs_closest_run",
+      "rerun_consensus": {
+        "closeness": {
+          "1": 3.274,
+          "2": 3.85,
+          "3": 3.624
+        },
+        "base_run": 2,
+        "dropped_causes": [],
+        "evidence_pruned": 1,
+        "dropped_solutions": [],
+        "kind_votes_changed": [
+          "D01:drill->check"
+        ],
+        "pairs_vs_final": {
+          "final-r1": {
+            "pass": true,
+            "findings": [
+              "[PASS] rerun: causes transcript-anchor Jaccard 0.71 (min 0.6)",
+              "[PASS] rerun: chain roots transcript-anchor Jaccard 0.67 (min 0.5)",
+              "[PASS] rerun: solutions transcript-anchor Jaccard 0.55 (min 0.5)"
+            ]
+          },
+          "final-r3": {
+            "pass": true,
+            "findings": [
+              "[PASS] rerun: causes transcript-anchor Jaccard 0.93 (min 0.6)",
+              "[PASS] rerun: chain roots transcript-anchor Jaccard 0.83 (min 0.5)",
+              "[PASS] rerun: solutions transcript-anchor Jaccard 0.50 (min 0.5)"
+            ]
+          }
+        },
+        "pass": true
+      },
+      "norm_events": {
+        "intuition_first_forced_false": 1,
+        "quote_snapped": 1
+      },
+      "gemini_usage": {
+        "calls": 3,
+        "promptTokenCount": 23405,
+        "candidatesTokenCount": 13719,
+        "totalTokenCount": 48264,
+        "thoughtsTokenCount": 11140,
+        "cachedContentTokenCount": 5777,
+        "elapsed_s": [
+          19.8,
+          78.7,
+          52.6
+        ]
+      }
+    },
+    {
+      "id": "dDYKuNZtdyU",
+      "title": "Find Your One-Handed Backhand \"Pull Slot\"",
+      "duration_s": 666.0,
+      "upload_date": "2024-08-15",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "backhand",
+      "format": "pro_analysis",
+      "n_quotes": 24,
+      "n_symptoms": 3,
+      "n_causes": 4,
+      "n_solutions": 4,
+      "n_angles": 6,
+      "validate_cards": "PASS",
+      "validate_warn": [],
+      "check_quotes": "PASS",
+      "quotes_text_ok": "24/24",
+      "quotes_ts_ok": "24/24",
+      "runs_executed": [
+        1,
+        2
+      ],
+      "third_run_used": false,
+      "rerun_raw_pair_1_2": "PASS",
+      "rerun_raw_pair_1_2_findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 1.00 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.50 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.80 (min 0.5)"
+      ],
+      "rerun_raw_pairs": {
+        "1-2": true
+      },
+      "check_rerun": "PASS",
+      "rerun_resolution": "raw_pair_1_2",
+      "rerun_consensus": null,
+      "norm_events": {
+        "quote_snapped": 1
+      },
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 13300,
+        "candidatesTokenCount": 8117,
+        "totalTokenCount": 26094,
+        "thoughtsTokenCount": 4677,
+        "cachedContentTokenCount": 0,
+        "elapsed_s": [
+          51.8,
+          22.1
+        ]
+      }
+    }
+  ],
+  "aggregate": {
+    "episodes_attempted": 5,
+    "episodes_stage1_verified": 3,
+    "episodes_stage1_draft_rerun_fail": [
+      "Am8j1Zw5KrE",
+      "ExkBtFRhUWY"
+    ],
+    "validate_cards": "PASS",
+    "check_quotes": "PASS",
+    "check_rerun": "3/5 PASS",
+    "check_manifest": "PASS",
+    "verify_all_selftest": "PASS",
+    "stage2": "not_run",
+    "video_layer": "empty_on_all_cards",
+    "third_run_episodes": [
+      "Am8j1Zw5KrE",
+      "ExkBtFRhUWY",
+      "pQ793MBQE50"
+    ],
+    "third_run_count": 3,
+    "field_alias_normalizations_total": 0,
+    "normalizer_event_totals": {
+      "quote_snapped": 15,
+      "intuition_first_forced_false": 5
+    },
+    "round1_for_comparison": "round1 normalizer silently mapped aliases without logging; round2 logs every action"
+  },
+  "gemini_usage_total": {
+    "calls": 13,
+    "promptTokenCount": 85119,
+    "candidatesTokenCount": 57854,
+    "totalTokenCount": 196183,
+    "thoughtsTokenCount": 53210,
+    "cachedContentTokenCount": 16781
+  },
+  "notes": [
+    "Selection: oldest-first among 教学长视频 with .en.vtt and no card, excluding <300s; 5KdScDKxVSI (357s, holdout) skipped in favour of >=400s videos per the \"prefer >=400s\" rule.",
+    "Holdout flags kept from manifest (Am8j1Zw5KrE is holdout) — PLAN_v2 says holdout episodes still get cards; they must not enter the tree.",
+    "Quotes: model quotes kept verbatim when they already pass the Q03/Q04 test; otherwise snapped to the verbatim VTT excerpt (counted in quote_snapped).",
+    "Am8j1Zw5KrE and ExkBtFRhUWY: check_rerun failed on all three run pairs and on the 3-run consensus card; thresholds NOT relaxed, no manual alignment. Cards kept as stage1_draft (manifest state subs_ready); they must not enter the tree until resolved.",
+    "pQ793MBQE50: raw pairs failed after 3 runs; passed after deterministic 3-run majority consensus (only removed unsupported evidence and voted solution kind; no text rewritten); conflict X01 recorded (open_user_decides).",
+    "Rendered prompts and raw model responses are kept outside the repo (/workspace/s1_work/round2); transcripts not committed.",
+    "No secrets in repo; MICU_GEMINI_KEY only from env."
+  ],
+  "next_round_suggestions": [
+    "check_rerun solutions metric uses (kind, 30s bucket): label noise (check vs drill vs cue for the same passage) dominates failures (Jaccard 0.13-0.42 while causes are 0.54-1.00). Ask the user whether to compare solutions by bucket only, or force solution.kind via a post-hoc deterministic vote; do not change config without user consent.",
+    "For Am8j1Zw5KrE / ExkBtFRhUWY consider a 4th run or a human subtitle adjudication (user decision); until then keep them out of the tree.",
+    "Prompt v3 idea: ask for 30-s anchor ids (start seconds of the cause quote) before filling causes, and fix solution.kind rules (cue = a short verbal instruction, drill = a repeatable practice, check = a self-test, progression = a harder variant).",
+    "Stage2 (video_layer) still not run; spot-check 10 quotes per episode before starting.",
+    "Next batch: oldest remaining subs_ready teaching videos (5KdScDKxVSI 357s is eligible if short ones are accepted; otherwise xLs469ZVMPU, V-QkILd4V-w, wd4YRQW3TOc, GsHkML2mVEI)."
+  ],
+  "VERIFY": "PARTIAL"
+}

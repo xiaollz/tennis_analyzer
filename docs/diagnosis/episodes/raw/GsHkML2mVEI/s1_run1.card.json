@@ -1,0 +1,420 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "GsHkML2mVEI",
+    "url": "https://www.youtube.com/watch?v=GsHkML2mVEI",
+    "title": "Nishioka's Unique \"Backswing\" Timing | Two Styles Contrasted",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 350.0,
+    "upload_date": "2025-03-07",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides an actionable drill where players drop the ball near the service line to bounce below knee height to find their natural topspin swing timing."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/GsHkML2mVEI.en.vtt",
+    "kind": "auto",
+    "sha256": "a11444556b3faab9a7efe1f5db2ba026341038630322f26d04c74e6c4b1535b0",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_GsHkML",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should you time your forearm rolling back relative to trunk rotation on the forehand?",
+    "definition": "Players often misunderstand the timing between the early preparation ('backswing') and the trunk forward drive, either pausing before pulling or violently throwing the racket back, losing the dynamic stretch needed for topspin.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Modern forehand unit turn",
+      "Trunk rotation mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "we're specifically going to talk about the timing between that early part of the swing and what I'll call the drive phase, where the trunk really starts to unwind and fire that racket forward.",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "On the left, we have Yoshihito Nishioa, and he rolls his racket backwards a lot before dragging it forward with the trunk. And on the right, we have Raphael Nadal, who's on the opposite end of the spectrum",
+      "start": 30.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "where he drags it and rolls it while he's dragging it forward.",
+      "start": 41.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Both the off shoulders are still wound. This off shoulder blade is still wound up. This off shoulder blade is still wound up. But Nishioa has wound his forearm all the way back to here.",
+      "start": 77.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Whereas Rafa's forearm is basically still in the same position it started. This is the preparation phase of the of the swing. The forward swing hasn't started yet.",
+      "start": 89.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "with Rafa during this part of the swing is when the forearm does its rolling back. Whereas with Yoshi Nuji, yeah, it rolls back a little bit more, but it's mostly finished rolling back",
+      "start": 133.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And you'll notice Nishioa has not finished rolling back, paused and then started the trunk rotation. And that's the end of the timing window.",
+      "start": 159.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And if you're going to do it like Nishioa, you have to make sure it's still rolling while you pull with the trunk. That's the key here.",
+      "start": 173.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "when that trunk rotation starts, when the core starts dragging the racket this way, it's still rolling back, which is why we still get a dynamic stretch at the forearm here.",
+      "start": 187.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "identically, but similarly. The best way to figure out which top spin motion works for you is this drill. You drop the ball right around the service line and you drop it in such a way that it bounces up",
+      "start": 206.159,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "If your motion's not working well, you're going to shank the ball all over the place. You'll hit into the net. You'll hit long and you might be like, \"Oh, that sounds really frustrating.\"",
+      "start": 226.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "First, you need this double bend in your prep position. A bend at the hips, a bend at the knees. If either one of those is straight on a low forehand, you're going to have a bad time.",
+      "start": 244.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And the second is keep that trunk engaged. Stay nice and balanced. Over rotation is going to make this almost impossible.",
+      "start": 254.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "The reason I lean away from the term back swing is that it's hard to describe what Rafa is doing during preparation as a swing. There's not really any dynamic action until the forward swing.",
+      "start": 290.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "with Yoshiito Nishioa, you could call that early backwards roll of the forearm a back swing, but even that is not explosive. He's not like throwing the racket tip back as hard as he can",
+      "start": 301.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "because people who feel naturally inclined towards the Nishio rhythm might throw their hand backwards with a little too much velocity and either end up hurting themselves or at best having a very uncontrolled swing.",
+      "start": 322.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "very uncontrolled swing. And I've seen this kind of jerky back and then front swing in some players who I think are trying to do a back swing, not realizing that the point of the forearm rolling back during the",
+      "start": 331.039,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "into that position to get that nice natural stretch when you fire the trunk, which is what really powers the stroke.",
+      "start": 343.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Shanking the ball, hitting into the net, or spraying balls long on low bounces.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "A jerky, uncontrolled back-and-forth swing motion during preparation and forward drive.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q16",
+        "Q17"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The forearm completes rolling back and pauses before the trunk initiates forward rotation.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player loses the dynamic stretch at the forearm because the racket is not still actively rolling back when the trunk begins pulling.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Lacking knee and hip flexion or over-rotating the trunk on low balls destabilizes balance and swing path.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Throwing the hand backward aggressively with excessive velocity creates a jerky, uncontrolled motion.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07",
+        "Q09"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q09",
+        "Q11"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q16",
+        "Q17"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "contrast_demo",
+      "summary": "Nishioka rolls his racket back early during preparation while Nadal keeps his hand still and rolls back during the trunk forward pull.",
+      "evidence": [
+        "Q02",
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Trunk engagement initiated by the off shoulder blade pulling forward is what fires the racket forward in the modern forehand.",
+      "evidence": [
+        "Q01",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "misconception",
+      "summary": "Thinking of the preparation as a 'backswing' misleads players into throwing the racket back aggressively instead of guiding it into position.",
+      "evidence": [
+        "Q14",
+        "Q15",
+        "Q17"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Check that the forearm is still rolling back at the exact moment the off shoulder unwinds and the trunk initiates rotation.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Drop a ball around the service line so it bounces just below knee height, forcing your body to adapt its topspin timing to clear the net.",
+      "external_goal": "Drop the ball near the service line so it bounces below knee height",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Maintain a double bend at the hips and knees in prep, keeping the trunk engaged without over-rotating.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Treat the forearm rolling back during preparation merely as guiding the racket into position rather than an explosive backswing.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

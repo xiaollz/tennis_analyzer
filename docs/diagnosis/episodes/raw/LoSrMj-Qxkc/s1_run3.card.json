@@ -1,0 +1,485 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "LoSrMj-Qxkc",
+    "url": "https://www.youtube.com/watch?v=LoSrMj-Qxkc",
+    "title": "Their Mothers are Sisters, Their Forehands AREN'T",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 718.0,
+    "upload_date": "2025-10-14",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach provides actionable drills to alternate between short high approach balls and deep backed-up positions to develop both forehand styles."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/LoSrMj-Qxkc.en.vtt",
+    "kind": "auto",
+    "sha256": "308effb1b88c899bc16e0d687b762b7b8fe8e2b9d50a6dca5059379039e04b6f",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_LoSrMj",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do shoulder-driven and chest-driven forehand mechanics differ, and how can you develop both?",
+    "definition": "Shoulder-driven forehands maximize topspin and defensive quality from deep but struggle on short high approaches, whereas chest-driven forehands provide stability and early interception inside the court but lack heavy RPMs when pushed back.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "baseline forehand swing fundamentals",
+      "basic topspin mechanics"
+    ],
+    "target_player": "Players looking to optimize their forehand for either heavy baseline topspin or aggressive early-taking court positioning",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Vashro leaning more into a shoulder rip driven action. Allah Nadal, which gives you more advantages with height and spin, and Ritter Nash leaning into more of a chest driven, hand on the ball style swing.",
+      "start": 8.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "so that you know when you're developing your forehand, exactly what to do if you want top spin and height and racket head speed, and exactly what to do if you want to take the ball early with accuracy",
+      "start": 40.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "During early rotation, that shoulder rolls back more. And we can see the counterbalancing force where look, the left elbow is protruding back as well.",
+      "start": 61.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "This entire scapular complex right here is supporting the shoulder as inertia drags it back while the trunk drags it forward. And even deep into the swing, the shoulder is in external rotation.",
+      "start": 70.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So we're going to see a lot less elbow space early. And then watch the back. A lot less retraction of the scapula here.",
+      "start": 100.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Instead, what's happening here is he is pressing with the chest on the right side. So watch the elbow. It's going to very quickly disappear. So that elbow catches up to the trunk very quickly.",
+      "start": 114.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "So we are loading less stretch into the back, less stretch into the shoulder. But the result of that is it is much easier and stabler to deliver the hand onto the ball.",
+      "start": 128.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "versus less stretch and more stability through the shoulder. Easier to get the hand precisely on the ball, easier to take it early, but harder to generate that 4,000m top spin rafa-like ball",
+      "start": 151.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "the amount of motion through the shoulder is so minimal. This elbow, it never gets behind the back and it's pressed forward across the body immediately. So this is just pure stability.",
+      "start": 183.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "We are simply taking the hand in the racket head and placing it through the ball. See, he's almost swinging across his body there.",
+      "start": 198.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "look at the weight transfer back foot to front foot. He's always leaning in on all of his shots.",
+      "start": 225.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And the reason he's always leaning in is that he's not using as much rotation and elastic shoulder whip. And so he's leaning in to get the same velocity and he's directing from side to side.",
+      "start": 233.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And because he has more shoulder whip, he has access to a high heavy rally ball in more of this negative balance.",
+      "start": 267.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "We call this negative balance where you're leaning back as you hit. And it only works with an elastic shoulder and great hip rotation.",
+      "start": 286.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "this is the shot that really only the shoulder whippy guys like Rafael Nadal can hit a shot with this much quality from that position.",
+      "start": 378.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Shoulder doesn't really roll back. And it's not like this is a bad shot, but the amount of RPMs is so much lower that this is so much easier to time off the ground than the shot that Vashro gave",
+      "start": 412.96,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "even though they have their one style, they at least have an intuition for how to do the opposite. So, how to be more stable shorter in the court or when you really need a shoulder rip, how to at",
+      "start": 454.24,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "When we train people, we work with this all the time on switching on a dime between moving in and that stability and then if you're falling back, getting more of that whip.",
+      "start": 471.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "The more shoulder stretch, the more shoulder roll, the more this lags backwards, the harder this ball is to time.",
+      "start": 505.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "taking this ball on the rise early, either deflecting it to here, deflecting it to here with accuracy, leaning in, and following it to net",
+      "start": 531.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "your racket has so much vertical action, it's very difficult to probe the depth.",
+      "start": 558.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "put yourself in this situation all the time and then put yourself in this situation backed up all the time and you'll naturally learn how to develop both.",
+      "start": 577.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "how to get out of that shoulder driven action and into a more render style stability lean-in hand on ball, you know, pick a target and go action, which is what works inside the court.",
+      "start": 606.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "guy taking over with spin? Can he keep the other guy deep and prevent him from leaning in? And when he gets in, can he pass him? Or can this guy lean in just enough to take over with good",
+      "start": 697.68,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Shanking or hitting short approach balls because excessive shoulder lag creates timing errors inside the court.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q19",
+        "Q21"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Lower topspin RPMs and flatter trajectory making balls easier for the opponent to time when defending from deep.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player visibly leaning back in negative balance or constantly transferring weight forward into the ball.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Large scapular retraction and external shoulder roll create massive elastic whip for spin and height, but increase timing complexity.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Pressing early with the chest resists backward shoulder lag and moves the elbow forward quickly, prioritizing hand stability over top spin RPMs.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Lacking rotational shoulder whip requires players to constantly lean in with linear weight transfer to generate pace, struggling when forced into negative balance.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Deep shoulder stretch and lag impose a severe timing tax on high floating approach balls, producing a vertical swing path that struggles to control depth.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Shoulder-driven forehands rely on scapular retraction and external rotation to create whip, whereas chest-driven forehands press early across the body for stability.",
+      "evidence": [
+        "Q04",
+        "Q06"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "visual_model",
+      "summary": "Balance exists in positive (leaning forward into the ball), neutral, and negative (falling back while hitting) states depending on swing mechanics.",
+      "evidence": [
+        "Q11",
+        "Q14"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Vacherot generates heavy topspin from shoestring positions using shoulder whip, while Rinderknech excels at early diagonal cut-offs and net rushes with chest-driven stability.",
+      "evidence": [
+        "Q01",
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "pro_example",
+      "summary": "The mechanical contrast between Vacherot and Rinderknech mirrors the classic matchup dynamic between Rafael Nadal's heavy spin and Roger Federer's early-timing attack.",
+      "evidence": [
+        "Q01",
+        "Q15",
+        "Q24"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "On returns or fast incoming balls, press the elbow across the body immediately and simply place the hand and racket head through the ball without lag.",
+      "external_goal": "Place the hand and racket head through the ball across the body",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Practice switching on a dime between moving in with chest stability on attacking balls and activating shoulder whip when falling back in defense.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "On high short approach balls, lean in, take the ball on the rise early, and deflect it accurately before following the shot to the net.",
+      "external_goal": "Deflect the ball with accuracy and follow it to the net",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q20"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Repeatedly place yourself in high floating short approach situations and deep backed-up situations to naturally develop the intuition for both mechanical styles.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

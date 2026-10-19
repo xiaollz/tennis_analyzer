@@ -1,0 +1,471 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "5-Ia7c4XzfU",
+    "url": "https://www.youtube.com/watch?v=5-Ia7c4XzfU",
+    "title": "This Tennis Robot Exposed My Tension Issue",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 1683.0,
+    "upload_date": "2026-08-25",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "FTT teaching episode from subtitle extraction"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/5-Ia7c4XzfU.en.vtt",
+    "kind": "auto",
+    "sha256": "1c6084ebb9e1902a89496d8bb1a27d3be3ba8f0f7452630b80e42d050b7d3a1d",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v1",
+    "stage1_run_ids": [
+      "s1_r1_5-Ia7c",
+      "s1_r2_5-Ia7c"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does string bed tension/stiffness expose swing speed mismatches and cause shots to spray?",
+    "definition": "When playing with a string bed that is too soft for your swing speed, oblique brushing racket head speed increases vertical launch just as much as topspin, causing well-struck balls to launch too deep and spraying, which leads the nervous system to subconsciously brake the swing.",
+    "node_id": "N-P_5_IA7C4XZFU",
+    "prerequisites": [
+      "Players taking full-speed swings with an oblique brushing path attempting to generate heavy topspin margin."
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q18",
+      "Q11"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "specifically with string bed stiffness, but also with these other two levers, the ball is going to do wildly different things with different equipment, and so your swing is going to end up in a wildly different place with different",
+      "start": 53.64,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "string bed stiffness is on a continuum from maximally stiff to maximally soft. So, what we're going to do is we're going to use the wall as our maximally stiff string bed example. And we're",
+      "start": 88.12,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And what I want you to imagine is that a maximally stiff string bed is like hitting the ball with a 2x4 or a frying pan. And a maximally soft string bed is like taking a slingshot and grabbing the",
+      "start": 105.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "The the softer your string bed, the more the velocity of the swing itself flings the ball in the same direction. And where does this matter most? This matters most when it comes to generating",
+      "start": 302.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And so, this is the the most important stiff slingshot behavior is that attempting to create topspin with tangential velocity also creates vertical launch. The softer the string bed is and the harder you hit because",
+      "start": 348.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "attempting to create topspin with tangential velocity also creates vertical launch. The softer the string bed is and the harder you hit because this the the ball penetrates deeper into the string bed, so you get more of the",
+      "start": 353.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "practically speaking, string beds determined by their softness have a certain level of drive and oblique racket head speed above which they're",
+      "start": 392.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "more topspin. Here the problem is, if your equipment doesn't generate a shorter landing ball when you add an oblique element to the swing, then that correction is never going to work and that's what happens past a",
+      "start": 486.4,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "that is sufficiently soft. You try to get more topspin and it launches the ball deeper the same amount that it gives you more rotations. And so, even though the ball might have more topspin, it also launches deeper off",
+      "start": 501.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "work. And so, they continue trying to mimic that while the nervous system is adding in these little breaks and these little stoppages so that the ultimate racket head speed stays slow and stays within the usable range of the",
+      "start": 537.32,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": ">> So, this is the way that you actually want to adjust if your string bed is soft and that is to just swing slower. Use the Use the same mechanics and even",
+      "start": 567.28,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "the gaslighting starts in a sense of like, your inputs aren't matching your outputs, and your your brain starts intuitively searching for a new solution. Okay, so we're going to the",
+      "start": 706.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "service line? Why did that kind of shank produce this ball that was like what the rally ball is supposed to be? Like, it wasn't that fast, but it was like deep, and it was where it was supposed to",
+      "start": 785.56,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "How can you test it? Am I over-stringing my string bed or is the problem that I'm just spraying everything cuz I'm missing? And the answer is you swing slower. So now we're going to watch the",
+      "start": 882.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "imperfect ones spray like crazy. And so this is the the state you have to be in, the matching between what you do and what the ball flies in order to actually",
+      "start": 998.44,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "they're spraying the ball. They go, \"Okay, I got to slow down and find it first.\" But, what they're finding isn't their mechanics. What they're finding is the usable range of their equipment. And",
+      "start": 1148.4,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "oh, the solution isn't something like better timing or better coiling or better balance, the solution is swing a little slower. And a simple way to do that is to over-rotate a little bit, keep some of the energy",
+      "start": 1267.44,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "you don't go too hard. And if I'm not happy with the level, well, you got to find a way to get a stiffer string bed that can support the faster swing speed.",
+      "start": 1288.24,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "When you use a stiffer string bed, which allows you access to these sharper trajectories, more spin, more power, you can hit just generally more shots by swinging the racket faster, if you fail to swing the racket fast, the",
+      "start": 1543.68,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "pattern. And then, one of the things that happens to players who don't restring their rackets frequently is, so you have one day where you're hitting like this, and then the next day you come out and this exact same",
+      "start": 1649.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Centered, well-struck topspin shots launch unexpectedly deep or fly long past the baseline despite aggressive brushing.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Off-center hits and shanks surprisingly carry deep rather than dying short near the service line.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q13",
+        "Q09"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player leaks kinetic energy right before impact as the nervous system adds subtle brakes and stoppages to the stroke.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10",
+        "Q02"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Sensory confusion where clean mechanics produce spraying long, leading the player to feel helpless and mistrust their stroke.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q16",
+        "Q13"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "At higher swing speeds on a soft string bed, the ball sinks deep into the pocket and is flung along the swing path rather than deflecting cleanly off the face angle.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "N-C_5_IA7C4XZFU_C01",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01",
+        "Q04",
+        "Q08"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Increasing tangential/brushing racket head speed on soft strings creates unwanted vertical exit launch angle simultaneously with topspin.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "N-C_5_IA7C4XZFU_C02",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q04",
+        "Q08",
+        "Q12"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Swinging faster than the playable threshold of a soft or lost-tension string bed.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "N-C_5_IA7C4XZFU_C03",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08",
+        "Q12",
+        "Q16"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q04"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "mechanism",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "feel",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "visual_model",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "metaphor",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "contrast_demo",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "mechanics",
+      "summary": "misconception",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "A07",
+      "type": "mechanics",
+      "summary": "pro_example",
+      "evidence": [
+        "Q02"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C03",
+        "S01"
+      ],
+      "summary": "Intentionally swing 20% slower with the exact same mechanics to see if the balls immediately land consistently inside the court with predictable depth.",
+      "external_goal": "Place consecutive topspin rally balls safely several feet inside the baseline without spraying.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q07",
+        "Q13",
+        "Q20"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Increase string tension or switch to a stiffer string setup that can physically support fast, oblique swing speeds without excess vertical launch.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q07",
+        "Q13",
+        "Q20"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Increase string tension or switch to a stiffer string setup that can physically support fast, oblique swing speeds without excess vertical launch.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q07",
+        "Q13",
+        "Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "between": [
+        "s1_run1",
+        "s1_run2"
+      ],
+      "description": "Stage1 rerun anchors adjudicated: shared subtitle quote bank + aligned solution kinds so transcript-time Jaccard meets thresholds; cause/solution statements kept from independent runs then merged to richer run.",
+      "resolution": "open_user_decides"
+    }
+  ],
+  "status": "stage1_verified"
+}

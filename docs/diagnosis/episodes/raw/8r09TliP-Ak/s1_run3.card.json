@@ -1,0 +1,421 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "8r09TliP-Ak",
+    "url": "https://www.youtube.com/watch?v=8r09TliP-Ak",
+    "title": "I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow)",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 684.0,
+    "upload_date": "2025-06-01",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The video analyzes match footage of Jack Draper, Joao Fonseca, Rafael Nadal, and Carlos Alcaraz to extract strategic and technical patterns for singles shot selection and forehand execution."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/8r09TliP-Ak.en.vtt",
+    "kind": "auto",
+    "sha256": "b0033b1711127fdb58e4c668d21523166efc404750648ae9ad1d26523ac2dbc6",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v5",
+    "stage1_run_ids": [
+      "s1_r3_8r09Tl",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why are you taking too much risk on offensive and defensive shots without getting enough reward?",
+    "definition": "Players often try to hit flat, high-speed slaps or pinpoint aggressive shots that carry extreme risk and difficulty but fail to yield a decisive advantage, leading to avoidable unforced errors.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "ability to generate racket head speed",
+      "basic topspin forehand mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q02",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "give you three takeaways that you can take, practice tomorrow that's going to improve your singles and your forehand.",
+      "start": 17.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "this point shows a leak that Fon Seca has and it's a leak that I think Alcarez has as well. But, Draper doesn't and it's hitting these balls too hard and getting nothing out of them.",
+      "start": 32.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "Sometimes they interpret that as slow down, but no, that's actually counterproductive. I want you to take full swings and not hesitate. I just want you to visualize different goals as you do it.",
+      "start": 72.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Draper leaves his feet. He's swinging hard, but he uses his racket head speed to go high over the middle of the net.",
+      "start": 84.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "critically, he's not aiming for the baseline. He's not trying to win this point in one shot. He's just trying to hit the ball deep enough that it's not trivial to attack.",
+      "start": 97.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "There is a riskreward problem with this shot because it is very high risk and very high degree of difficulty to hit this flat slapshot forehand at 100 miles an hour or whatever this was.",
+      "start": 131.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "And yet, despite that high level of risk, there wasn't a whole lot of reward. This ball lands here, slows down on the clay. Draper hits cleanly.",
+      "start": 143.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "Now, the theme with this point from Rafa is going to be that risk always leads to reward. And where there's not that much reward, there's minimal risk.",
+      "start": 184.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "We play it with height and spin to a big target down the line. Now, this is minimal risk.",
+      "start": 196.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Whereas, if you try to hit this slap slap flat hard, you do lose a lot of points right here.",
+      "start": 218.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "It's high enough over the net that even though it's a slight missit, he doesn't miss. And that's a big target. He's never going to miss that.",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Puts it high, puts it over the middle, puts it in the court, make the other guy earn it",
+      "start": 308.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And doing stuff like this instead of just outright missing, going for crazy defensive shots, puts so much more pressure on your opponent in the long term.",
+      "start": 318.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And boom, slapshot winner from Fon Seca. And that's going to happen. It's going to happen a couple times. It's about math and frequencies.",
+      "start": 357.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Boom, slap, hit almost as hard as you can. Jack Draper, relatively easy defensive shot over the middle, high part of the net.",
+      "start": 410.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "He could play close to risk-free tennis while getting massive reward profit right there.",
+      "start": 483.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Number one, return targeting high, middle, full swing. Don't aim for the baseline, just deep enough your opponent can't attack you.",
+      "start": 631.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Number two, pay attention to your riskreward as you play. If you find yourself hitting shots that are difficult and you're not getting rewarded for it, throw those shots away.",
+      "start": 640.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "You want to hit easy, easy winners rather than hitting difficult shots that only get you a small advantage.",
+      "start": 647.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Three, one of the best ways to do this is height. When you play high, you can go over the higher part of the net into a big target.",
+      "start": 654.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player hits flat, high-speed slaps that land in court but allow the opponent to comfortably reset the point.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The player commits outright errors when attempting low-percentage, high-risk defensive shots.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q10",
+        "Q13"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players attempt to hit the ball too hard without generating an advantage or reward from the extra pace.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players choose high-risk, flat slapshot forehands at maximum velocity rather than leveraging net clearance and spin into large targets.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q06",
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players under defensive pressure attempt low-margin hero shots instead of putting a high ball into the middle to force the opponent to earn the point.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "misconception",
+      "summary": "Players often incorrectly equate playing with higher margin and patience to slowing down their swing, whereas they should maintain full racket head speed with different trajectory targets.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "pro_example",
+      "summary": "Rafael Nadal tilts risk-reward ratios in his favor by using heavy spin and high net clearance into large targets down the line rather than hitting risky flat winners.",
+      "evidence": [
+        "Q08",
+        "Q09"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "Occasional opponent winners off high-risk shots are normal and should be accepted through a probabilistic mindset of long-term math and frequencies.",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Take full swings without hesitation on returns and groundstrokes, directing racket head speed high over the lowest part of the net.",
+      "external_goal": "Clear the ball high over the middle strap of the net.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Do not aim for the baseline to win points in one shot; aim just deep enough so the incoming ball cannot be trivially attacked.",
+      "external_goal": "Land the ball comfortably inside the baseline with sufficient depth.",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "When forced into defensive positions, hit the ball high over the middle of the court to stay in the rally and force the opponent to execute.",
+      "external_goal": "Send the ball high over the net into the deep middle of the opponent's court.",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Evaluate your shots during play: if a shot carries high difficulty without producing significant reward, stop attempting it and favor easier high-margin options.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

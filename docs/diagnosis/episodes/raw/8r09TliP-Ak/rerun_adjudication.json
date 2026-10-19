@@ -1,0 +1,74 @@
+{
+  "id": "8r09TliP-Ak",
+  "runs": [
+    1,
+    2,
+    3
+  ],
+  "pairs": {
+    "1-2": {
+      "pass": false,
+      "findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 1.00 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 1.00 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.40 (min 0.5)"
+      ]
+    },
+    "1-3": {
+      "pass": false,
+      "findings": [
+        "[FAIL] rerun: is_teaching differs between runs",
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.40 (min 0.5)"
+      ]
+    },
+    "2-3": {
+      "pass": false,
+      "findings": [
+        "[FAIL] rerun: is_teaching differs between runs",
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.60 (min 0.5)"
+      ]
+    }
+  },
+  "chosen_pair": [
+    "consensus",
+    "r2"
+  ],
+  "consensus": {
+    "closeness": {
+      "1": 4.3,
+      "2": 4.5,
+      "3": 4.0
+    },
+    "base_run": 2,
+    "dropped_causes": [],
+    "evidence_pruned": 0,
+    "dropped_solutions": [
+      "D02"
+    ],
+    "kind_votes_changed": [],
+    "pairs_vs_final": {
+      "final-r1": {
+        "pass": true,
+        "findings": [
+          "[PASS] rerun: causes transcript-anchor Jaccard 1.00 (min 0.6)",
+          "[PASS] rerun: chain roots transcript-anchor Jaccard 1.00 (min 0.5)",
+          "[PASS] rerun: solutions transcript-anchor Jaccard 0.50 (min 0.5)"
+        ]
+      },
+      "final-r3": {
+        "pass": false,
+        "findings": [
+          "[FAIL] rerun: is_teaching differs between runs",
+          "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+          "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+          "[PASS] rerun: solutions transcript-anchor Jaccard 0.75 (min 0.5)"
+        ]
+      }
+    },
+    "pass": true
+  }
+}

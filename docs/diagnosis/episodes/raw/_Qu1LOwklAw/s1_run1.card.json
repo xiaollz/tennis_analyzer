@@ -1,0 +1,531 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "_Qu1LOwklAw",
+    "url": "https://www.youtube.com/watch?v=_Qu1LOwklAw",
+    "title": "Patient but Ruthless | How Alcaraz Broke Down Sinner in Rome",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 394.0,
+    "upload_date": "2025-05-19",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach provides concrete, actionable singles tactical directives and cues on shot selection, anxiety calibration, and closing the net."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/_Qu1LOwklAw.en.vtt",
+    "kind": "auto",
+    "sha256": "4b004cd66f1ab4587bf010b2a4d22d58cc7cdb2d66070b903733c8ff2d1e234b",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1__Qu1LO",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How can singles players balance patience and ruthlessness to avoid overplaying and win more points?",
+    "definition": "Singles players frequently overplay neutral balls by pressing for low-margin winners, or conversely stay overly passive and fail to attack short balls, especially under pressure in big moments.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "consistent baseline rally capability",
+      "ability to generate topspin"
+    ],
+    "target_player": "competitive singles players struggling with shot selection and unforced errors",
+    "evidence": [
+      "Q05",
+      "Q10"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "See, look at where this forehand lands. It is well inside both lines. The safety margin on this shot is huge.",
+      "start": 16.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Raphael Nadal once said he hits half of his winners by accident. And that's really what you want on the singles court.",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And I cannot overstate how much the patience ingredient in the patience but ruthless strategy was critical to his success here.",
+      "start": 35.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "when he takes his backhand and plays it high and deep, that is a great patient shot selection and he forces his opponent into an extremely high degree of difficulty winner.",
+      "start": 49.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "When you're playing singles, you want to lose to shots like this. If you're never losing to shots like that, you are overplaying and you're going to lose more points in the long run.",
+      "start": 60.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "Ruthlessness combines so well with patience to put even more pressure on your opponent than just not missing does.",
+      "start": 85.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Instead, there's immediate recognition that this ball is short and floaty. He runs up. He hits it. That's not a safe shot.",
+      "start": 101.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "He might miss it, but his reward for hitting it that hard is he gets the mis hit. He almost gets the outright error, which would be great.",
+      "start": 112.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "This combination of ruthlessness and patience comes from actively practicing your decision-making.",
+      "start": 122.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Singles is tricky because you need to keep your anxiety low enough that you don't just go crazy and try to blast the neutral balls.",
+      "start": 138.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And yet high enough that you can immediately recognize, explode, and attack the balls you need to attack.",
+      "start": 144.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And that context switching, patient, patient, patient, ruthless, patient, patient, patient, ruthless based on what you're seeing in front of you, is really at the heart of successful singles tennis",
+      "start": 149.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "If you're already aiming for the corner when you hit this forehand, if you mish hit it a little bit, it goes out. But when you're aiming to big targets, all of a sudden your myths even help you",
+      "start": 172.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And you have to trust your patient but ruthless practice when you get into the big moments. Don't overhit just because it's a big moment. Don't be tentative just because it's a big moment.",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Here, Alcarez is playing safe and high just like he's been doing the whole match. S goes for that backand down the line. He's human. He misses it.",
+      "start": 197.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "He's going to win more points playing like this. And I think the second set score line really evidenced just how true that was.",
+      "start": 216.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "Look, patient, patient, patient. Not overhitting just because it's a big point. The second he gets the short ball and feels center wide. Ruthless.",
+      "start": 232.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "Not only do we go down the line, but he's in the net, no hesitation, finishes the point off.",
+      "start": 240.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "And maybe you missed this shot, but you should know from your practice whether or not this shot is in your repertoire. And if it is, just commit and go for it.",
+      "start": 260.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "You should know from practice if you have it. If you don't have it, that's fine. Stay patient. Slice it crosscourt. Live to fight another day.",
+      "start": 281.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "Coming to net here is so critical. Once you get your opponent on the ropes, you choke them out. You don't give them another chance to breathe.",
+      "start": 290.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "He's not hitting three balls an inch from the baseline and then missing one like he sometimes does. A lot of these shots are hitting the service line",
+      "start": 305.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "So, he never loses that edge, that aggressiveness that makes him who he is. But, he's gotten rid of, at least in this tournament, just hitting four balls to the baseline for no reason and then missing.",
+      "start": 320.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "It's that your standard patient rally ball, which lands close to the service line, is really difficult to attack. This is what Rafa did his whole career.",
+      "start": 338.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "He would hit these forehands that were almost impossible to miss because he was hitting them so short in the court. And yet, you felt like you were constantly under fire",
+      "start": 346.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "you can't out hit my rally ball. I am not going to miss. I am not going to press, but I'm still Carlos Algarez. Second you mis hit a ball even a little bit, I'm going to use that tremendous",
+      "start": 359.199,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q27",
+      "text": "You go back to the well. Patient but ruthless instinct drop shot just like you'd always do. Doesn't matter that this game's gotten a little tight.",
+      "start": 384.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Player hits multiple high-risk shots close to the baseline on neutral balls and commits unforced errors.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q23"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Player fails to immediately recognize and aggressively attack short, floaty balls, remaining passive.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Player feels heightened anxiety during rallies, leading to overhitting neutral balls or freezing under pressure.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q10",
+        "Q14"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players overplay and commit excessive errors because they refuse to accept losing points to high-difficulty opponent winners.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players fail to calibrate anxiety properly, making anxiety either too high to stay patient on neutral balls or too low to immediately attack short balls.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players aim directly for lines and corners instead of big targets, causing ordinary mishits to land out instead of staying safe in the court.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Players abandon their tactical discipline on big points by either overhitting out of pressure or playing excessively tentative.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C04",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "inferred",
+      "evidence": [
+        "Q05"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Carlos Alcaraz forced Sinner into extremely high-difficulty winners by maintaining high, deep, patient baseline balls before ruthlessly attacking weak replies.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Players wrongly assume winners must be painted near the lines, whereas elite players hit many winners by accident while aiming for large safety margins.",
+      "evidence": [
+        "Q02",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "Heavy topspin allows rally balls landing around the service line to kick high and become difficult to attack while remaining virtually impossible to miss.",
+      "evidence": [
+        "Q24",
+        "Q25"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "feel",
+      "summary": "Successful singles play requires managing anxiety so that one can effortlessly switch contexts between patient neutral rallying and explosive ruthlessness.",
+      "evidence": [
+        "Q10",
+        "Q12"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Accept losing points when an opponent hits an extremely difficult winner rather than overplaying on neutral balls to prevent it.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Actively practice rally decision-making to develop the context-switching instinct between patient neutral rallying and ruthless attack on short balls.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C04"
+      ],
+      "summary": "On big points, tell yourself not to overhit and not to be tentative, trusting the same patient-high rally strategy used throughout the match.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C02",
+        "C03"
+      ],
+      "summary": "Verify from practice whether an attacking down-the-line shot is reliably in your repertoire; if yes, fully commit, and if no, stay patient and slice crosscourt.",
+      "external_goal": "Aim well inside the baseline and sideline rather than trying to hit the line",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Once you put your opponent on the ropes with an attacking shot, move into the net immediately without hesitation to choke out the point.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

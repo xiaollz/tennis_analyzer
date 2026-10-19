@@ -1,0 +1,486 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "JzcA_ku7Yhk",
+    "url": "https://www.youtube.com/watch?v=JzcA_ku7Yhk",
+    "title": "The Misunderstanding LOSING You Matches",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 430.0,
+    "upload_date": "2025-03-29",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "pro_analysis",
+    "reason": "The coach analyzes pro match footage of Coco Gauff to explain why players' forehands break down in matches and how practice must incorporate awkwardness and adaptability."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/JzcA_ku7Yhk.en.vtt",
+    "kind": "auto",
+    "sha256": "b5a1ceba775de2ce919a968c6da880f44f30762ac3edb675c8fdcbba340024d1",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_run_ids": [
+      "s1_r2_JzcA_k",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does your forehand fall apart in matches despite being great in practice?",
+    "definition": "Players fail to replicate their practice strokes during competition and lose to beatable opponents because they lack adaptability when forced to hit out of awkward, unpredictable match conditions.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Ability to hit solid forehands during lessons, ball machine practice, or repetitive crosscourt drills"
+    ],
+    "target_player": "Players who struggle with forehand consistency and breakdown during competitive match play",
+    "evidence": [
+      "Q01",
+      "Q02"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "I have students all the time who say, \"Coach, my forehand, it's so good in practice. It's it's good in practice or it's good in my lessons. It's it's great on the ball machine.\" And then I get into matches",
+      "start": 0.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "then I'm losing to players I shouldn't be losing to and I can't even produce the stroke that I know I can produce.",
+      "start": 10.0,
+      "speaker": "player",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "some of why that happens and this kind of fundamental misunderstanding about what match tennis is that causes this dichotomy or apparent dichotomy in people's minds.",
+      "start": 21.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "it's kind of making fun of Koko Goff for looking so awkward here right like oh she's kind of off balance her followrough looks weird here she lose her balance and has to hit the ground with her racket",
+      "start": 35.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "demonstrating an incredibly high level of skill. The fact that she's able to succeed while off balance. The fact that she knows to hit the ground with a racket there so she doesn't fall over.",
+      "start": 66.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "not only is she hitting the strings, she's actually hitting shots that are so high quality while offbalance that she gets her opponent on defense, gets an approach shot",
+      "start": 82.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "she's just not making the ball in out of difficult situations. She's hitting quality shots out of difficult situations.",
+      "start": 96.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "here's what I want you to think when you think about your matches and your forehand, which is surprisingly so bad in matches. Does it look like this?",
+      "start": 105.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "this is how it's supposed to look. I'm going to play this clip for you actually because you probably don't realize how windy it is.",
+      "start": 120.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "almost every single one of these balls, through no fault of her own, is not where she really wants it to be when she has to hit it.",
+      "start": 143.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "she hits five or six successful shots in a row, contorting her body, contorting her arm, contorting her balance, and finishes with an offensive combination to win the tennis point.",
+      "start": 153.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "Did it feel like every shot was a unique car crash and you had milliseconds to decide how to coordinate your body to hit what you wanted to do? Because that's what a match feels like.",
+      "start": 176.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "And if your practice didn't feel like that, your match isn't going to look like this.",
+      "start": 186.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "Every single one of these shots, you could replace Koko Gooff's successful forehand with a shank. Replace that. Oh, she doesn't know how to leave her feet like that. It's a shank.",
+      "start": 192.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "they could look phenomenal crosscourt for 100 shots. That tells you nothing about Koko Goff's ability to play this tennis in the wind at the highest level",
+      "start": 217.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "they could both look equally amazing and yet Koko goth could do this and if the other one can't, Koko would win a match 0 and0.",
+      "start": 235.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "that's why you can't play matches is because you have the wrong understanding of what match tennis is.",
+      "start": 260.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "We we used to think that athletic performance was about being able to repeat things over and over again the same way. That's what we used to think back when we were naive.",
+      "start": 265.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "It's a skill set. It's I want to hit the ball like this. Do I know how to do that out of a wide variety of different restraining conditions?",
+      "start": 274.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "She has to decide how to coordinate her body every single time under a very wide array of variety and decisions. That is why she's go so good.",
+      "start": 292.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "It's not because she can hit the same shot a 100 times in a row. It's because she can produce the same result with a hundred different strokes.",
+      "start": 305.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "the more your practices look like this. Even if you are missing, the more your practices look like this, the better your matches are going to get.",
+      "start": 326.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "Practice like this. Push yourself in practice. make things awkward in practice and all of a sudden you're going to notice, oh yeah, my forehand is really good.",
+      "start": 337.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "situation. Or the second I have to decide on my shot selection instead of just hitting it to one spot every time, it breaks down. Or maybe the second the ball is not where I thought it was going to",
+      "start": 350.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "And so, you have to build your adaptability and your fault tolerance into your skill set. That's what this is. That's the misunderstanding that's costing you matches.",
+      "start": 389.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "It's not about teaching you to swing a specifically once every time. It's about giving you a set of sensations to work off of so you can build these instincts into your game.",
+      "start": 404.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q27",
+      "text": "What you're seeing here is skill. All of this awkwardness is skill. And the fact that not only does she keep the ball in, but she finishes in an offensive combination is so incredibly impressive.",
+      "start": 418.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Forehand mechanics fall apart during competitive matches despite hitting high-quality strokes in practice, lessons, or on the ball machine.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Visible loss of balance, awkward contortions of the arm/body, and unconventional follow-throughs when retrieving difficult match balls.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04",
+        "Q11"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Shanking balls repeatedly whenever footwork, balance, or tracking must be adjusted under wind or pressure.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Feeling like every incoming shot is a unique car crash requiring split-second coordination under pressure.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q12"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players operate under the naive misunderstanding that athletic skill means repeating the exact same swing over and over identically rather than achieving consistent outcomes with varied strokes.",
+      "depth": 4,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Practice drills are conducted in comfortable, predictable conditions (ball machine, lessons, clean crosscourt rallies) that fail to replicate the chaotic 'car crash' sensation of real matches.",
+      "depth": 3,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player lacks the skill set and body coordination required to execute shots under wide-ranging restraining conditions, such as being off-balance or fighting wind.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Stroke mechanics break down the moment the ball is not in the expected location or the player is forced to make real-time shot selection decisions.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q24"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Coco Gauff succeeds while completely off-balance in extreme wind, using awkward body contortions and hitting the ground with her racket to win points.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "analogy",
+      "summary": "A real tennis match feels like a series of unique car crashes where you only have milliseconds to figure out how to coordinate your body.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "contrast_demo",
+      "summary": "Two players can look equally phenomenal trading 100 repetitive crosscourt balls in practice, but the one who can adapt to windy, awkward match conditions will win 6-0, 6-0.",
+      "evidence": [
+        "Q15",
+        "Q16"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "The mistaken idea that elite tennis is about producing the exact same stroke repeatedly, when in reality it is about producing the same result through 100 different strokes.",
+      "evidence": [
+        "Q18",
+        "Q21"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "True match skill requires coordinating the body to hit target shots out of varied restraining conditions including disrupted balance, wind, and active shot selection.",
+      "evidence": [
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "S01"
+      ],
+      "summary": "Evaluate your match forehands to check whether they embrace awkward, adaptable problem-solving rather than expecting clean, repetitive practice form.",
+      "external_goal": "",
+      "scenario_fit": "match_only",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "summary": "Deliberately make practice uncomfortable and awkward by pushing yourself into unpredictable situations and requiring real-time decisions instead of repetitive grooving.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

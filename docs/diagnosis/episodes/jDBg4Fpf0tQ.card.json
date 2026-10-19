@@ -1,0 +1,91 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "jDBg4Fpf0tQ",
+    "url": "https://www.youtube.com/watch?v=jDBg4Fpf0tQ",
+    "title": "Uncle Iroh Explains the Tennis Forehand",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 44.0,
+    "upload_date": "2026-06-27",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "non_teaching",
+    "stroke": "forehand",
+    "format": "short",
+    "reason": "The transcript contains no actionable tennis instructions, drills, or cues, consisting entirely of an entertainment audio quote from Avatar: The Last Airbender about lightning bending."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/jDBg4Fpf0tQ.en.vtt",
+    "kind": "auto",
+    "sha256": "fb3ed301d9ff2be55f2628c5ef0fba6f744684ffd5cfefefee8ca675bab17081",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_jDBg4F",
+      "s1_r2_jDBg4F"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How does Uncle Iroh explain the tennis forehand?",
+    "definition": "The video does not present or define a tennis problem, featuring dialogue from an animated series over tennis footage.",
+    "node_id": "PENDING",
+    "prerequisites": [],
+    "target_player": "",
+    "evidence": [
+      "Q01"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "There is energy all around us. The energy is both yin y in and yang. Positive energy and negative energy.",
+      "start": 0.0,
+      "speaker": "unknown",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Only a select few fire benders can separate these energies. This creates an imbalance. The energy wants to restore balance.",
+      "start": 9.0,
+      "speaker": "unknown",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And in the moment the positive and negative energy come crashing back together, you provide release and guidance creating lightning.",
+      "start": 17.0,
+      "speaker": "unknown",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "I'm ready to try it.",
+      "start": 42.0,
+      "speaker": "unknown",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [],
+  "causes": [],
+  "chain": [],
+  "angles": [],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [
+    {
+      "id": "X01",
+      "kind": "extraction",
+      "description": "validate_cards FAIL after Shorts extract; demoted to stage1_draft, must not enter the tree. See findings: [FAIL] $.symptoms: needs >= 1 items, [FAIL] $.causes: needs >= 1 items, [FAIL] $.chain: needs >= 1 items"
+    }
+  ],
+  "status": "stage1_draft"
+}

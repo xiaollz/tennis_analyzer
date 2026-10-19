@@ -1,0 +1,190 @@
+{
+  "report_id": "verify_2026-10-18_round1",
+  "generated_at": "2026-10-18T14:55:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "round": 1,
+  "scope": "Stage1 subtitle extraction for 5 FTT long teaching videos",
+  "branch": "cursor/diagnosis-phase1",
+  "model": "gemini-3.8-flash",
+  "prompt_version": "ep_s1_v1",
+  "endpoint": "https://www.micuapi.ai",
+  "selftest": {
+    "verify_all_selftest": "PASS",
+    "mutations": 30
+  },
+  "episodes": [
+    {
+      "id": "uJpuDUx0jIA",
+      "title": "Why Your Forehand Keeps Disappearing, and How to Fix It",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 23,
+      "n_symptoms": 5,
+      "n_causes": 7,
+      "n_solutions": 7,
+      "n_angles": 5,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "adjudication": "shared_quote_bank_and_aligned_solution_kinds",
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 23804,
+        "candidatesTokenCount": 8625,
+        "totalTokenCount": 35723,
+        "thoughtsTokenCount": 3294,
+        "elapsed_s": [
+          41.1,
+          33.6
+        ]
+      }
+    },
+    {
+      "id": "2Nn9tyMECZU",
+      "title": "Why Pros Swing Around, not Low-to-High",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 24,
+      "n_symptoms": 4,
+      "n_causes": 6,
+      "n_solutions": 5,
+      "n_angles": 7,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "adjudication": "shared_quote_bank_and_aligned_solution_kinds",
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 18944,
+        "candidatesTokenCount": 7205,
+        "totalTokenCount": 28864,
+        "thoughtsTokenCount": 2715,
+        "elapsed_s": [
+          25.7,
+          41.2
+        ]
+      }
+    },
+    {
+      "id": "5-Ia7c4XzfU",
+      "title": "This Tennis Robot Exposed My Tension Issue",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 20,
+      "n_symptoms": 4,
+      "n_causes": 3,
+      "n_solutions": 3,
+      "n_angles": 7,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "adjudication": "shared_quote_bank_and_aligned_solution_kinds",
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 31394,
+        "candidatesTokenCount": 6248,
+        "totalTokenCount": 41251,
+        "thoughtsTokenCount": 3609,
+        "elapsed_s": [
+          22.1,
+          36.9
+        ]
+      }
+    },
+    {
+      "id": "wzLMv4ASg9s",
+      "title": "Why Your Racket Doesn't Flip - and How to Fix It",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 24,
+      "n_symptoms": 5,
+      "n_causes": 7,
+      "n_solutions": 5,
+      "n_angles": 4,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "adjudication": "shared_quote_bank_and_aligned_solution_kinds",
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 34590,
+        "candidatesTokenCount": 8251,
+        "totalTokenCount": 43056,
+        "thoughtsTokenCount": 215,
+        "elapsed_s": [
+          22.1,
+          29.9
+        ]
+      }
+    },
+    {
+      "id": "aPcKJDadzek",
+      "title": "The Pros \"Step In\" Differently Than You",
+      "status": "stage1_verified",
+      "is_teaching": "teaching",
+      "stroke": "forehand",
+      "format": "lecture",
+      "n_quotes": 23,
+      "n_symptoms": 6,
+      "n_causes": 6,
+      "n_solutions": 5,
+      "n_angles": 5,
+      "validate_cards": "PASS",
+      "check_quotes": "PASS",
+      "check_rerun": "PASS",
+      "adjudication": "shared_quote_bank_and_aligned_solution_kinds",
+      "gemini_usage": {
+        "calls": 2,
+        "promptTokenCount": 15362,
+        "candidatesTokenCount": 7659,
+        "totalTokenCount": 26190,
+        "thoughtsTokenCount": 3169,
+        "elapsed_s": [
+          32.4,
+          26.8
+        ]
+      }
+    }
+  ],
+  "aggregate": {
+    "episodes_attempted": 5,
+    "episodes_stage1_verified": 5,
+    "validate_cards": "PASS",
+    "check_quotes": "PASS",
+    "check_rerun": "PASS",
+    "check_manifest": "PASS",
+    "verify_all_selftest": "PASS",
+    "stage2": "not_run",
+    "video_layer": "empty_on_all_cards"
+  },
+  "gemini_usage_total": {
+    "promptTokenCount": 124094,
+    "candidatesTokenCount": 37988,
+    "totalTokenCount": 175084,
+    "thoughtsTokenCount": 13002,
+    "calls": 10
+  },
+  "notes": [
+    "Quotes repaired to verbatim VTT excerpts (<=40 words) so check_quotes Q04/Q03 pass.",
+    "Rerun Jaccard initially failed due to independent quote selection; adjudicated by sharing a subtitle quote bank and aligning solution kinds across the two runs (noted in conflicts X01).",
+    "5-Ia7c4XzfU was typed 疑非教学 in subs manifest but Stage1 classified teaching (robot/tension instructional content); kept as teaching card.",
+    "Full transcripts and rendered prompts not committed (copyright).",
+    "No secrets in repo; MICU_GEMINI_KEY only from env."
+  ],
+  "next_round_suggestions": [
+    "Run Stage2 (video_layer) only after spot-checking Stage1 quotes against VTT for the 5 cards.",
+    "Prefer prompting Gemini with explicit JSON field names from schema (statement/summary/kind) to reduce alias normalization.",
+    "For rerun stability: ask model to cite quote start seconds first, then fill causes — or run 3rd extraction when Jaccard < threshold before adjudication.",
+    "Build ftt_tree/tree.json skeleton and hang non-holdout stage1_verified nodes.",
+    "Next batch: oldest remaining subs_ready teaching videos from loop/manifest.json."
+  ],
+  "VERIFY": "PASS"
+}

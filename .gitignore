@@ -99,6 +99,10 @@ docs/*
 !docs/hermes_context_export_*.tar.gz
 !docs/hermes_context_export_*.zip
 
+# ===== diagnosis knowledge base (FTT trunk, phase 1) =====
+!docs/diagnosis/
+!docs/diagnosis/**
+
 # ===== 2026-05-11 整理后 docs/research/ 新子目录显式白名单 =====
 # 虽然 !docs/research/** 已经覆盖，下面是 defense-in-depth + 文档化新结构
 !docs/research/ftt/

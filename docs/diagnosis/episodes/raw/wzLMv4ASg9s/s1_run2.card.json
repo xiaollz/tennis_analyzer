@@ -1,0 +1,623 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "wzLMv4ASg9s",
+    "url": "https://www.youtube.com/watch?v=wzLMv4ASg9s",
+    "title": "Why Your Racket Doesn't Flip - and How to Fix It",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 2066.0,
+    "upload_date": "2026-08-12",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "FTT teaching episode from subtitle extraction"
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/wzLMv4ASg9s.en.vtt",
+    "kind": "auto",
+    "sha256": "68baea71771c73db3afd62786ad537b1d45601bf505ed7af9ad51877e5f17d93",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v1",
+    "stage1_run_ids": [
+      "s1_r1_wzLMv4",
+      "s1_r2_wzLMv4"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why doesn't your racket flip into lag during the forehand, and how do you achieve an effortless flip and release?",
+    "definition": "The racket fails to flip naturally behind the forearm into lag and release effortlessly, often because the player drives the elbow across the body toward the ball, pulls the wrist/racket head early, lacks scapular stability, confuses the hit with the roll, or spins continuously without trunk deceleration.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Players attempting to generate topspin and racket head speed on the modern forehand."
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q10"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The secret to the racket flip is that you want to take your racket and swing it out first, not straight towards the ball. Now, it doesn't mean that you have",
+      "start": 0.4,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "sideways. And so, the key here is that you're going to take your racket and drive it in the same direction you're facing rather than taking your elbow and coming straight towards the ball.",
+      "start": 18.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "And so, if you feel like you have to fight for your top spin, part of the reason might be cuz your racket's not flipping the way we want. So, here's",
+      "start": 49.32,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "show you is that like really vivid visual flick in behind the forearm. That is a result of swinging fast. You're not",
+      "start": 61.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "the grip. And the key to the grip is to make sure that the handle is seated in the top of your hand. So, if you're an",
+      "start": 78.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "the hand bending backwards. Whereas, without that, it is much less visceral with this gap here, much less visceral connection between that articulation where that thing flicks behind the forearm",
+      "start": 110.24000000000001,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "racket forward. The key to this is exactly what I want you to press is the inside of your elbow. I want you to press that in the same direction that you're facing. So,",
+      "start": 186.12,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "we're going for. We are going for the direction that I'm facing, press the inside of the elbow, boom. Inside of the elbow in the direction",
+      "start": 205.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "during this part of the swing, it is very, very important that the bottom of your hand is not tight and trying to pull the racket head around early. So, if any coach, including",
+      "start": 296.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "it is very, very important that the bottom of your hand is not tight and trying to pull the racket head around early. So, if any coach, including",
+      "start": 298.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "speed, the physical reality of it is that you are going to have to grip tighter and tighter and tighter specifically at the bottom of the handle to make this happen. If you don't grip",
+      "start": 386.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "control.\" The key is coupling. One-to-one coupling between the racket and the hand. Your goal is for the handle and the hand to always move as one unit. So, here when you're",
+      "start": 494.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "why that's dangerous. The way the forehand works, you are not making contact at the fastest part of your roll. The fastest part of your roll is in the follow-through. And so if you are",
+      "start": 630.56,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "roll. The fastest part of your roll is in the follow-through. And so if you are perceiving this as the lag and this as the swing, you're going to end up making contact in this really brushy follow-through",
+      "start": 638.64,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "There's the contact. See how little of the windshield wiper has taken place. The racket's down here, so we're using like the first 25% of the windshield wiper to hit the swing. Now, watch this.",
+      "start": 731.64,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "requires that the scapula back here be stabilized by the back and the side. And",
+      "start": 923.48,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "drop the racket in there. The key though is that when Alexa is and we're going to watch her Arthur Ashe after this, when",
+      "start": 1150.76,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "that is not the racket flip. So, if during the drop from the loop, if you go for that racket flip in the drop from the loop, that's where you're going to",
+      "start": 1159.88,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "flip the racket. They like flip the racket and dive bomb straight into the contact zone and that gets you just this ridiculous up and down vector, down down down up that sprays. But if we watch",
+      "start": 1234.52,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "you throw. This Dragon net tool, it cracks [snorts] when you get that late acceleration pop.",
+      "start": 1449.36,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "you're going to notice that your optimal contact point is actually surprisingly far away from you in the lateral direction.",
+      "start": 1739.24,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "when your trunk starts to slow down, your arm is going to snap over and around. And so, you're going to use your hips and your abs to control the timing of your swing.",
+      "start": 1803.84,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "And the reason is that my trunk is never actually slowing down. So, I'm just dragging the racket through like this, and there's never any momentum handoff where this slows down and transfers the momentum to the later links. Here's",
+      "start": 1830.32,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "momentum to the later links. Here's how we fix that. We coil instead of just spinning. So, we twist",
+      "start": 1841.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Feeling like having to fight and exert high effort to produce topspin",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q03",
+        "Q23"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Stroke appears visually stiff with lack of racket flip behind the forearm",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q04",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Loss of crisp impact, spraying shots, and losing control of racket face angle",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q12",
+        "Q22"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "Less pronounced crack or pop sound on release tool when wrist is locked",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q20",
+        "Q17"
+      ]
+    },
+    {
+      "id": "S05",
+      "description": "Racket dragged through with body without dynamic whipping release",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q23"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Pulling or driving the elbow straight towards the ball across the chest rather than driving the inside of the elbow outward in the facing direction",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01",
+        "Q05",
+        "Q10"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Squeezing tightly with the bottom of the hand early before the hinge, pulling the racket head around actively",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05",
+        "Q10",
+        "Q14"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Confusing the back-to-front flip with the follow-through rolling/windshield wiper action, attempting to make contact at peak roll speed",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10",
+        "Q14",
+        "Q19"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Lack of isometric stability in the mid/lower traps, lats, and rhomboids, letting the shoulder shrug or disengage",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q14",
+        "Q19",
+        "Q24"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Flipping the racket straight down from a high elbow loop and dive-bombing into contact instead of dropping elbow into slot first",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q19",
+        "Q24",
+        "Q01"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "Spinning the trunk continuously at constant speed without an anchor or coiling pulse, failing to decelerate the trunk to transfer momentum to the arm",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q24",
+        "Q01",
+        "Q05"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "Handle not properly seated into the top of the hand, disconnecting the brain's sensory feedback from the racket flip",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01",
+        "Q05",
+        "Q10"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C07",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "S05",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q24"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The racket flip is a passive consequence of swinging the inside of the elbow outward in the direction the chest is facing while the hand is loose.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "Feel the handle seated firmly against the top of the hand for sensory awareness while relaxing the bottom fingers early in acceleration.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "visual_model",
+      "summary": "Contact occurs at the beginning of the windshield wiper roll (first 25%), not at the fastest rolling or internal rotation phase.",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "mechanics",
+      "summary": "Relaxation and firm contact are reconciled by keeping the bottom of the hand relaxed during early acceleration, building isometric coupling at impact, and relaxing again in the follow-through.",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "pro_example",
+      "summary": "Federer and Arthur Ashe drop into an attached elbow slot before driving out, contacting early in the windshield wiper arc while extreme rolling is purely deceleration.",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "A06",
+      "type": "analogy",
+      "summary": "The release is like cracking a whip or throwing a ball, where proximal deceleration forces the distal end to snap through.",
+      "evidence": [
+        "Q23"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "drill",
+      "targets": [
+        "C07"
+      ],
+      "summary": "Seat the handle deeply into the top of the hand using the off-hand to press it into the palm/V, then curl fingers around for clear sensory feedback of the flip.",
+      "external_goal": "Use off-hand to push handle firmly into the palm or index finger V before gripping.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "From a sideways chest orientation, drive and press the inside of the elbow outward in the direction your chest faces instead of pulling across toward the ball.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Practice shrugging and undoing the shrug; engage mid/lower traps and lats to stabilize the scapula down and in before initiating the elbow press.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Open stance lunge drill without moving the feet to adapt to the wider lateral contact point demanded by the outward racket flip swing path.",
+      "external_goal": "Contact the ball surprisingly far away laterally from the body without moving the anchored feet.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C06"
+      ],
+      "summary": "Coil into the back foot with an open hip anchor; initiate rotation as a sharp torso power pulse that brakes/stops, allowing proximal deceleration to snap the arm forward.",
+      "external_goal": "Anchor the ball of the foot and pulse the thorax to start and stop rotation.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q01",
+        "Q08",
+        "Q16",
+        "Q24"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
