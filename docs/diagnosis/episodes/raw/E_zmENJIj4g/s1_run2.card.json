@@ -13,7 +13,7 @@
     "is_teaching": "teaching",
     "stroke": "serve",
     "format": "pro_analysis",
-    "reason": "The coach analyzes slow-motion footage of professional serves to explain core mechanics, anatomical constraints, ocular dominance, and actionable techniques for recreational players."
+    "reason": "The coach provides explicit actionable cues and drill recommendations, such as using a pure-dextral pinpoint stance, throwing the chest to the sky, and setting a 90/90 arm prep."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/E_zmENJIj4g.en.vtt",
@@ -23,7 +23,7 @@
   },
   "extraction": {
     "stage1_model": "gemini-3.8-flash",
-    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_prompt_version": "ep_s1_v6",
     "stage1_run_ids": [
       "s1_r2_E_zmEN",
       "s1_pair_pending"
@@ -31,17 +31,16 @@
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How should you tailor your serve mechanics to your personal anatomy, spinal mobility, and eye dominance?",
-    "definition": "Many players blindly copy aesthetically pleasing pro motions like Federer's without accounting for eye dominance, leading to lost court awareness, misaligned arm slots, and poor rotational power from the trunk and shoulder.",
+    "title_as_question": "How should you adapt your serve mechanics to your personal ocular dominance, spinal mobility, and arm slot?",
+    "definition": "Blindly copying professional serves—especially Federer's deep coiling—causes recreational servers to lose target vision and mechanical efficiency unless technique is matched to their eye dominance, spinal mobility, and shoulder plane.",
     "node_id": "PENDING",
     "prerequisites": [
-      "Basic understanding of continental serve motion",
-      "Ability to toss and strike an overhead serve"
+      "overhead throwing motion fundamentals",
+      "continental grip"
     ],
-    "target_player": "Players struggling with serve velocity, accuracy, or copying pro serves that feel awkward",
+    "target_player": "Players struggling with serve accuracy, velocity, or power leakage due to misaligned mechanics or copying incompatible pro styles",
     "evidence": [
       "Q07",
-      "Q08",
       "Q10"
     ]
   },
@@ -56,160 +55,200 @@
     },
     {
       "id": "Q02",
-      "text": "Elbow and shoulder down and back. Elbow and shoulder down and back. So what we have here, we have the opposite. Here we're stretched in the back. Here we're stretched in the front.",
-      "start": 125.0,
+      "text": "is this thoracic extension we get here. So see how the spine is curved back. The top of the spine is curved back here.",
+      "start": 188.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q03",
-      "text": "So see how the spine is curved back. The top of the spine is curved back here. Again, not every player can do this, but Shelton can.",
-      "start": 192.0,
-      "speaker": "coach",
-      "about": "pro_footage",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q04",
-      "text": "arm slot, absolute arm slot with respect to the ground is not as important as keeping your arm in the same plane of rotation as your shoulders.",
+      "text": "The thing that I want to mention though is that arm slot, absolute arm slot with respect to the ground is not as important as keeping your arm in the same plane of rotation as your shoulders.",
       "start": 260.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q05",
-      "text": "If you pronate, great. If you don't pronate, it's not that big of a deal. What I want you to notice with pistol P. The shoulder drives serve velocity.",
-      "start": 454.0,
+      "id": "Q04",
+      "text": "The shoulder drives serve velocity. So, so the the motion is driven from the trunk. The trunk is connected to the shoulder.",
+      "start": 458.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q06",
-      "text": "Because it was stretched backwards, it internally rotates forcibly reactively through the hitting zone. Shoulder rotation is what drives serve velocity.",
-      "start": 502.0,
+      "id": "Q05",
+      "text": "Shoulder rotation is what drives serve velocity. Now, he pronates a little, but that that's not that important.",
+      "start": 509.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
+      "id": "Q06",
+      "text": "He's twisted the trunk against the hips in order to create that stretch back here on this part of the X. And that is a perfectly fine way to do it.",
+      "start": 714.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
       "id": "Q07",
-      "text": "And I think, ironically enough, Federer looking so good serving with this technique has actually created a lot of issues for players trying to learn the serve.",
-      "start": 726.0,
+      "text": "really, we should be doing it from first principles of how it feels. But if you want to copy a pro, you have to find a pro whose body is sufficiently similar to yours.",
+      "start": 758.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q08",
-      "text": "If you can't see the service box, your aim is going to be way, way worse. And if you can't see your opponent, you're never going to know when they cheat on your serve.",
-      "start": 817.0,
+      "text": "When you are serving, you must be able to see the service box and your opponent in your peripheral vision.",
+      "start": 791.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q09",
-      "text": "The upshot here, you cannot copy a player's loading phase if you have the opposite eye dominance that they have because it will not work.",
-      "start": 905.0,
+      "text": "And players who are right eye dominant copy federous serve. They're using this eye. They have no peripheral awareness of what's going on here at all and they can't aim and the serve will forever feel awkward.",
+      "start": 882.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q10",
-      "text": "When you're right eye dominant, you just need to keep everything facing forward more. But in order to power your serve, you must rotate.",
-      "start": 1006.0,
+      "text": "The upshot here, you cannot copy a player's loading phase if you have the opposite eye dominance that they have because it will not work.",
+      "start": 907.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q11",
-      "text": "And so the only way to to meet both of those criteria is to allow yourself to fall off to the left and rotate.",
-      "start": 1015.0,
+      "text": "It's facing the side. You cannot coil by twisting the torso back the way you can if you're left eye dominant. If this back eye needs that peripheral sight line to the service box.",
+      "start": 960.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q12",
-      "text": "And if you've never felt this, if you're a right eye dominant player and you've never felt this, you've got to try serving more forward. All of a sudden, your accuracy is going to go way up.",
-      "start": 1143.0,
+      "text": "That is not a flaw. That is a feature. When you're right eye dominant, you just need to keep everything facing forward more. But in order to power your serve, you must rotate.",
+      "start": 1005.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q13",
-      "text": "Now, Yakob Mezv uses my favorite technique for the right eye dominant server, which is what I call the purodextral pinpoint. And I want you to look at the way he does this pinpoint.",
-      "start": 1219.0,
-      "speaker": "coach",
-      "about": "pro_footage",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q14",
-      "text": "If you're already serving pinpoint and you're right eye dominant, try this pinpoint because you're going to be able to coil your shoulder against your hip a lot more without having to turn so far away from the court.",
-      "start": 1290.0,
+      "text": "if you're a right eye dominant player and you've never felt this, you've got to try serving more forward. All of a sudden, your accuracy is going to go way up.",
+      "start": 1146.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
+      "id": "Q14",
+      "text": "what I call the purodextral pinpoint. And I want you to look at the way he does this pinpoint. So, watch the back foot. He steps onto the right, the hitting side of his off foot.",
+      "start": 1226.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
       "id": "Q15",
-      "text": "This you you lose such a tiny amount of power, but you completely protect your elbow against hyperextension. So don't think that your arm has to straighten out.",
-      "start": 1434.0,
+      "text": "If you're already serving pinpoint and you're right eye dominant, try this pinpoint because you're going to be able to coil your shoulder against your hip a lot more without having to turn so far away from the court.",
+      "start": 1291.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q16",
-      "text": "And you are going to get much bigger bang for your buck by working on your upper body than you are by trying to use your legs.",
-      "start": 1546.0,
+      "text": "it's serving is about internal shoulder rotation. Your shoulder can rotate if your elbow is bent. So the elbow does not need to straighten out.",
+      "start": 1445.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q17",
-      "text": "See where the hand is being thrown. See how the hand is being thrown towards the ad side service box and then internal shoulder rotation will cause the racket to send the ball to your left.",
-      "start": 1850.0,
+      "text": "the serve, it's an upper body dominant motion. Yes, the legs add 10, 20%. And if your upper body mechanics are already perfect, then the legs are where you go.",
+      "start": 1531.0,
       "speaker": "coach",
-      "about": "pro_footage",
+      "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q18",
-      "text": "I want to work on one of the cues that I find helps people really get there and it's to throw your chest to the sky.",
-      "start": 1879.0,
+      "text": "the more you can internally rotate your shoulder during prep, the more length it has, the more distance as it whips back into external rotation, so you can get more momentum into external rotation",
+      "start": 1564.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q19",
-      "text": "If you rotate, you're not twisting forward. You're twisting diagonally up and forward.",
-      "start": 1961.0,
+      "text": "Well, where do we throw the hand? Towards the center of the other service box.",
+      "start": 1843.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q20",
-      "text": "Alexis preparation is one that you can copy if you're struggling with the early rhythm. Just take your arm, put it back in the 9090 position. Very simple, just place it there.",
-      "start": 2500.0,
+      "text": "it's to throw your chest to the sky. Here's kind of coming into the end of preparation.",
+      "start": 1881.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q21",
-      "text": "And this where you finish, you land, you get wide, you split, and then you react and you track and receive that first ball. that has to be seamlessly integrated into the service process",
-      "start": 2594.0,
+      "text": "The serve is an upward throw. So take your chest, throw it to the sky. When you rotate, you're not twisting forward. You're twisting diagonally up and forward.",
+      "start": 1960.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "you're going to notice a stark lack of of thoracic extension which you see in most of the other guys here.",
+      "start": 2005.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q23",
+      "text": "I think you want to throw from a more horizontal arm slot on the first serve. This kind of gives you this kind of up and down sort of action and saps a little bit of that rotational power.",
+      "start": 2268.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q24",
+      "text": "This 9090 angle right here is going to give you the best anatomical position to throw that shoulder forward.",
+      "start": 2387.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q25",
+      "text": "Just take your arm, put it back in the 9090 position. Very simple, just place it there. You don't need to momentum your way.",
+      "start": 2503.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q26",
+      "text": "at some point you need to connect the serve to the act of receiving the first ball. And this where you finish, you land, you get wide, you split, and then you react",
+      "start": 2588.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -218,128 +257,120 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "Serve aim is inaccurate and the player is unaware of opponent repositioning during toss and loading.",
-      "kind": "ball_outcome",
-      "layer": "B",
-      "camera": "any",
-      "phase": "placement",
-      "obs_ref": "NEW-OBS",
+      "description": "Server loses peripheral vision of the opponent and service box, resulting in inaccurate targeting and awkward motion.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "unit_turn",
+      "obs_ref": "NONE",
       "evidence": [
-        "Q08"
+        "Q08",
+        "Q09"
       ]
     },
     {
       "id": "S02",
-      "description": "Right-eye dominant server falls to the left during and immediately after the forward swing.",
+      "description": "Arm elevates out of the shoulder line rather than rotating within the shoulder plane, sapping rotational velocity.",
       "kind": "visible",
-      "layer": "A",
+      "layer": "B",
       "camera": "B",
-      "phase": "follow_through",
+      "phase": "forward_swing",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q11"
+        "Q03"
       ]
     },
     {
       "id": "S03",
-      "description": "Severe loss of serve velocity when the hitting arm is elevated vertically out of plane with level shoulders.",
-      "kind": "ball_outcome",
+      "description": "Upper spine stays flat or neutral during the cocking phase without thoracic extension, eliminating upward trunk spring.",
+      "kind": "visible",
       "layer": "B",
-      "camera": "B",
-      "phase": "contact",
+      "camera": "S",
+      "phase": "unit_turn",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q04"
+        "Q02",
+        "Q22"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "The hitting arm is raised independently without sufficient shoulder tilt, pulling it out of the shoulders' plane of rotation.",
-      "depth": 1,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "active",
-      "evidence": [
-        "Q04"
-      ]
-    },
-    {
-      "id": "C02",
-      "statement": "Players attempt to generate serve velocity primarily through forearm pronation or leg push rather than reactive trunk and shoulder internal rotation.",
-      "depth": 2,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "active",
-      "evidence": [
-        "Q05",
-        "Q06"
-      ]
-    },
-    {
-      "id": "C03",
-      "statement": "Right-eye dominant players copy cross-dextral coil positions, blinding their dominant back eye from tracking the court in peripheral vision.",
-      "depth": 3,
-      "layer": "B",
-      "node_id": "PENDING",
-      "active_or_passive": "active",
-      "evidence": [
-        "Q08"
-      ]
-    },
-    {
-      "id": "C04",
-      "statement": "Right-eye dominant servers must keep the torso more forward to maintain peripheral vision while still rotating forcefully into the ball.",
+      "statement": "Failing to spring-load the trunk with thoracic extension and backward side bending removes upward acceleration.",
       "depth": 2,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "passive",
       "evidence": [
-        "Q10",
-        "Q11"
+        "Q02"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Moving the hitting arm out of plane relative to the shoulder line instead of titling the shoulders reduces rotational efficiency.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Treating forearm pronation or leg drive as the primary engine instead of the trunk and reactive shoulder rotation limits serve velocity.",
+      "depth": 2,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Right-eye dominant players copying cross-dextral coil twist their upper torso away, cutting off peripheral vision of the court.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
       ]
     }
   ],
   "chain": [
     {
-      "from": "C03",
-      "to": "S01",
+      "from": "C01",
+      "to": "S03",
       "strength": "coach_stated",
       "evidence": [
-        "Q08"
+        "Q02"
       ]
     },
     {
-      "from": "C04",
+      "from": "C02",
       "to": "S02",
       "strength": "coach_stated",
       "evidence": [
-        "Q11"
+        "Q03"
       ]
     },
     {
-      "from": "C01",
-      "to": "S03",
+      "from": "C03",
+      "to": "PROBLEM",
       "strength": "coach_stated",
       "evidence": [
         "Q04"
       ]
     },
     {
-      "from": "C03",
-      "to": "C04",
-      "strength": "coach_implied",
+      "from": "C04",
+      "to": "S01",
+      "strength": "coach_stated",
       "evidence": [
-        "Q10"
-      ]
-    },
-    {
-      "from": "C02",
-      "to": "PROBLEM",
-      "strength": "inferred",
-      "evidence": [
-        "Q05"
+        "Q09"
       ]
     }
   ],
@@ -347,38 +378,45 @@
     {
       "id": "A01",
       "type": "mechanics",
-      "summary": "Serve power originates from stretching the off shoulder against the back hip and spring-loading the trunk through thoracic extension and shoulder external rotation.",
+      "summary": "Serve velocity is primarily powered by the trunk stretch-contracting and reactively whipping the shoulder from external to internal rotation, not by forearm pronation.",
       "evidence": [
-        "Q01",
-        "Q03",
-        "Q06"
+        "Q04",
+        "Q05"
       ]
     },
     {
       "id": "A02",
       "type": "misconception",
-      "summary": "Forearm pronation and leg drive are heavily overrated for velocity compared to trunk spring-loading and reactive internal shoulder rotation.",
+      "summary": "Copying Roger Federer's deep coiling is counterproductive for pure-dextral players because turning the upper body away completely blinds their dominant right eye.",
       "evidence": [
-        "Q05",
-        "Q16"
+        "Q09",
+        "Q10"
       ]
     },
     {
       "id": "A03",
-      "type": "pro_example",
-      "summary": "Federer can coil deeply because his court-facing left eye is dominant, allowing peripheral court tracking that right-eye dominant players cannot replicate.",
+      "type": "visual_model",
+      "summary": "High contact should be achieved via a cartwheel shoulder tilt rather than raising the arm independently above the shoulder line.",
       "evidence": [
-        "Q07",
-        "Q08"
+        "Q03"
       ]
     },
     {
       "id": "A04",
-      "type": "feel",
-      "summary": "Serving is felt as an upward throwing motion where the chest fires to the sky rather than twisting flat toward the net.",
+      "type": "pro_example",
+      "summary": "Jakub Mensik demonstrates the pure-dextral pinpoint stance by stepping his rear foot to the hitting side to coil without blinding his rear eye.",
       "evidence": [
-        "Q18",
-        "Q19"
+        "Q14",
+        "Q15"
+      ]
+    },
+    {
+      "id": "A05",
+      "type": "mechanics",
+      "summary": "Thinking of the serve as throwing the chest to the sky promotes upward thoracic extension rather than dumping rotation forward.",
+      "evidence": [
+        "Q20",
+        "Q21"
       ]
     }
   ],
@@ -387,29 +425,10 @@
       "id": "D01",
       "kind": "cue",
       "targets": [
-        "C03"
+        "C04"
       ],
-      "summary": "If right-eye dominant, keep your head and chest facing more forward so your back eye retains peripheral vision of the court.",
-      "external_goal": "Keep the service box visible in your peripheral vision during preparation.",
-      "scenario_fit": "shadow",
-      "ban_conflict": {
-        "flag": false,
-        "terms": [],
-        "note": ""
-      },
-      "intuition_first_ok": true,
-      "evidence": [
-        "Q12"
-      ]
-    },
-    {
-      "id": "D02",
-      "kind": "drill",
-      "targets": [
-        "C03"
-      ],
-      "summary": "Use the pure-dextral pinpoint by stepping the back foot onto the hitting side of the off foot to achieve coil without over-turning the torso away from the court.",
-      "external_goal": "Step back foot onto the hitting side of front foot into an open-stance base.",
+      "summary": "If right-eye dominant, keep your head, chest, and eyes oriented more forward toward the court during prep to maintain peripheral vision.",
+      "external_goal": "Keep the service box and opponent in peripheral view with the back eye",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -418,57 +437,36 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q13",
-        "Q14"
+        "Q13"
       ]
     },
     {
-      "id": "D03",
-      "kind": "cue",
+      "id": "D02",
+      "kind": "drill",
       "targets": [
-        "C02"
+        "C04"
       ],
-      "summary": "Throw your hitting hand toward the center of the opposite service box and let reactive shoulder internal rotation direct the ball.",
-      "external_goal": "Center of the ad-side service box (for a right-hander).",
-      "scenario_fit": "machine_low",
-      "ban_conflict": {
-        "flag": false,
-        "terms": [],
-        "note": ""
-      },
-      "intuition_first_ok": true,
-      "evidence": [
-        "Q17"
-      ]
-    },
-    {
-      "id": "D04",
-      "kind": "cue",
-      "targets": [
-        "C01"
-      ],
-      "summary": "Throw your chest to the sky during upward drive rather than rotating flat toward the net.",
-      "external_goal": "The sky above.",
+      "summary": "Practice the pure-dextral pinpoint footwork by stepping your back foot onto the hitting side of your front foot to coil without turning away from the net.",
+      "external_goal": "Step back foot across to the hitting side into an open-stance base",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
         "terms": [],
         "note": ""
       },
-      "intuition_first_ok": true,
+      "intuition_first_ok": false,
       "evidence": [
-        "Q18",
-        "Q19"
+        "Q15"
       ]
     },
     {
-      "id": "D05",
-      "kind": "drill",
+      "id": "D03",
+      "kind": "cue",
       "targets": [
         "C01"
       ],
-      "summary": "Simplify preparation by pre-placing the hitting arm directly into the 90-90 position to bypass early rhythm and timing problems.",
-      "external_goal": "",
+      "summary": "Cue yourself to throw your chest to the sky into the cocking phase to engage thoracic extension and drive upward acceleration.",
+      "external_goal": "Point the chest up toward the sky during the windup",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -481,14 +479,15 @@
       ]
     },
     {
-      "id": "D06",
+      "id": "D04",
       "kind": "drill",
       "targets": [
-        "PROBLEM"
+        "C02",
+        "C03"
       ],
-      "summary": "Integrate the serve finish immediately into landing wide, split-stepping, and tracking the incoming return ball.",
-      "external_goal": "The incoming return ball across the net.",
-      "scenario_fit": "needs_feeder",
+      "summary": "Simplify early prep by placing the hitting arm directly into a 90/90 position before throwing to guarantee arm-shoulder plane alignment.",
+      "external_goal": "Set 90 degrees at the elbow and upper arm during prep",
+      "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
         "terms": [],
@@ -496,7 +495,7 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q21"
+        "Q25"
       ]
     }
   ],

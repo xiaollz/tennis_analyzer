@@ -1,0 +1,42 @@
+{
+  "builder": "v15 + tree_base_v16 (+E_zm,wd4Y,x_WIg,pWzy) + obs_binding_v16_new4 + mech_merge_v16 + overlay",
+  "parent": "tree_v15.json",
+  "problem_nodes": 60,
+  "cause_nodes": 207,
+  "edges": 244,
+  "observables": 77,
+  "nodes_with_required": 116,
+  "awareness_nodes": 113,
+  "promoted": [
+    {
+      "obs": "OBS-73",
+      "node": "N-C_E_ZMENJIJ4G_C01"
+    },
+    {
+      "obs": "OBS-74",
+      "node": "N-C_E_ZMENJIJ4G_C03"
+    },
+    {
+      "obs": "OBS-75",
+      "node": "N-C_E_ZMENJIJ4G_C04"
+    },
+    {
+      "obs": "OBS-76",
+      "node": "N-C_WD4YRQW3TOC_C04"
+    },
+    {
+      "obs": "OBS-77",
+      "node": "N-C_X_WIG59WR9Y_C02"
+    }
+  ],
+  "new_episodes": [
+    "E_zmENJIj4g",
+    "wd4YRQW3TOc",
+    "x_WIg59Wr9Y",
+    "pWzyP-xfLfU"
+  ],
+  "note": "T05 via OBS-73..77 + awareness; T08 via 8 diffs; V5 skipped",
+  "awareness_new_extra": [
+    "N-P_X_WIG59WR9Y"
+  ]
+}

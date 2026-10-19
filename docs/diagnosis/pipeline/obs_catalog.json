@@ -1515,6 +1515,122 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py approve"
       }
+    },
+    {
+      "id": "OBS-73",
+      "src": "OBS-73_angle_hitting_arm_relative_lateral.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Angle of the hitting arm relative to the lateral shoulder tilt axis on serve",
+      "values": [
+        "matched_to_shoulder_tilt",
+        "elevated_out_of_plane"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v16_new4.json",
+        "candidate": "NC001",
+        "cluster": "NEW-OBS-04",
+        "episodes": [
+          "E_zmENJIj4g"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-74",
+      "src": "OBS-74_thoracic_spine_extension_serve_trophy.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Thoracic spine extension during serve trophy cocking phase",
+      "values": [
+        "visibly_extended_arched",
+        "flat_or_flexed"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v16_new4.json",
+        "candidate": "NC003",
+        "cluster": "NEW-OBS-06",
+        "episodes": [
+          "E_zmENJIj4g"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-75",
+      "src": "OBS-75_degree_upper_torso_coiling_away.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Degree of upper torso coiling away from the net during the serve trophy position",
+      "values": [
+        "excessively_coiled_back_to_net",
+        "standard_side_on"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v16_new4.json",
+        "candidate": "NC004",
+        "cluster": "NEW-OBS-01",
+        "episodes": [
+          "E_zmENJIj4g"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-76",
+      "src": "OBS-76_early_swing_preparation_player_visibly.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During early swing preparation, does the player visibly roll the racket face backward to initiate dynamic stretch?",
+      "values": [
+        "rolls_backward",
+        "no_backward_roll"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v16_new4.json",
+        "candidate": "NC009",
+        "cluster": "NEW-OBS-03",
+        "episodes": [
+          "wd4YRQW3TOc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-77",
+      "src": "OBS-77_timing_racket_head_overtaking_hitting.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Timing of the racket head overtaking the hitting hand relative to contact",
+      "values": [
+        "overtakes_before_contact",
+        "overtakes_at_contact",
+        "trails_behind_hand"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v16_new4.json",
+        "candidate": "NC011",
+        "cluster": "NEW-OBS-08",
+        "episodes": [
+          "x_WIg59Wr9Y"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }

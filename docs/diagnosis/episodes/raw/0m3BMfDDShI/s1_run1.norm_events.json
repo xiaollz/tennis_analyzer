@@ -2,9 +2,15 @@
   "counts": {
     "quote_snapped": 1,
     "cause_anchor_exact": 3,
-    "solution_anchor_exact": 6
+    "cause_anchor_evidence_spills": 1,
+    "solution_anchor_evidence_spills": 3,
+    "solution_anchor_exact": 3
   },
   "detail": [
-    "quote_snapped: Q25 score=1.00"
+    "quote_snapped: Q21 score=1.00",
+    "cause_anchor_evidence_spills: C03 anchor_bucket=11 evidence_buckets=[10, 11]",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=4 evidence_buckets=[4, 5]",
+    "solution_anchor_evidence_spills: D02 anchor_bucket=5 evidence_buckets=[5, 6]",
+    "solution_anchor_evidence_spills: D05 anchor_bucket=16 evidence_buckets=[15, 16]"
   ]
 }
