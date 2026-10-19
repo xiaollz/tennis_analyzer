@@ -1,0 +1,49 @@
+{
+ "builder": "v13 + promote_new_obs approve OBS-65..70 + patch required (6 single-ep T05)",
+ "parent": "tree_v13.json",
+ "problem_nodes": 54,
+ "cause_nodes": 183,
+ "edges": 219,
+ "observables": 70,
+ "nodes_with_required": 99,
+ "awareness_nodes": 104,
+ "promoted": [
+  {
+   "obs": "OBS-65",
+   "node": "N-C_1W1ROPE5L0K_C02",
+   "value": "stationary_shoulder",
+   "meaning": "serve shoulder roll vs stationary"
+  },
+  {
+   "obs": "OBS-66",
+   "node": "N-C_GSHKML2MVEI_C02",
+   "value": "explosive_thrown_back",
+   "meaning": "explosive hand throw-back on backswing"
+  },
+  {
+   "obs": "OBS-67",
+   "node": "N-C_LCKDP2GKR_Y_C03",
+   "value": "rolls_over_immediately",
+   "meaning": "racket head rolls over right after contact"
+  },
+  {
+   "obs": "OBS-68",
+   "node": "N-C_LOSRMJ_QXKC_C01",
+   "value": "retracted_pinched",
+   "meaning": "hitting-side scapula retracted at backswing end"
+  },
+  {
+   "obs": "OBS-69",
+   "node": "N-C_PFDQNFF_VYA_C03",
+   "value": "shallow_in_palm",
+   "meaning": "racket handle shallow in palm (not deep in V)"
+  },
+  {
+   "obs": "OBS-70",
+   "node": "N-C_YBLIT9PNG2U_C03",
+   "value": "aligned_or_small_angle",
+   "meaning": "arm throw vector not orthogonal to ball flight"
+  }
+ ],
+ "note": "tree_v14 = tree_v13 + OBS-65..70; tree.json v1 untouched; thresholds unchanged; V5 skipped this round"
+}

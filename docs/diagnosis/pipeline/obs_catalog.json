@@ -1330,6 +1330,144 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py approve"
       }
+    },
+    {
+      "id": "OBS-65",
+      "src": "OBS-65_serve_stroke_hitting_shoulder_roll.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "During the serve stroke, does the hitting shoulder roll through dynamic external and internal rotation?",
+      "values": [
+        "dynamic_shoulder_roll",
+        "stationary_shoulder"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC003",
+        "cluster": "NEW-OBS-09",
+        "episodes": [
+          "1W1rope5l0k"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-66",
+      "src": "OBS-66_speed_acceleration_hitting_hand_backward.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Speed and acceleration of hitting hand during backward preparation",
+      "values": [
+        "smooth_controlled",
+        "explosive_thrown_back"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC016",
+        "cluster": "NEW-OBS-04",
+        "episodes": [
+          "GsHkML2mVEI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-67",
+      "src": "OBS-67_immediately_after_contact_racket_head.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Immediately after contact, does the racket head maintain forward linear velocity or rapidly roll into rotational closure?",
+      "values": [
+        "forward_drive_continues",
+        "rolls_over_immediately"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC147",
+        "cluster": "NEW-OBS-52",
+        "episodes": [
+          "lCKDP2gKR_Y"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-68",
+      "src": "OBS-68_scapular_position_hitting_side_completion.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Scapular position on the hitting side at completion of backswing",
+      "values": [
+        "retracted_pinched",
+        "neutral"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC018",
+        "cluster": "NEW-OBS-11",
+        "episodes": [
+          "LoSrMj-Qxkc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-69",
+      "src": "OBS-69_placement_racket_handle_hand_before.md",
+      "layer": "B",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Placement of the racket handle in the hand before swinging",
+      "values": [
+        "deep_in_hand_v",
+        "shallow_in_palm"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC026",
+        "cluster": "NEW-OBS-66",
+        "episodes": [
+          "PfDqnff_vYA"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-70",
+      "src": "OBS-70_angle_between_arm_throwing_vector.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Angle between arm throwing vector and ball flight line on serve",
+      "values": [
+        "aligned_or_small_angle",
+        "high_angle_orthogonal"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v13.json",
+        "candidate": "NC136",
+        "cluster": "NEW-OBS-88",
+        "episodes": [
+          "YbLit9png2U"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }
