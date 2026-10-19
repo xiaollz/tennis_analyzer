@@ -182,6 +182,8 @@ MUTATIONS = [
     ("tree cites holdout", "T02", tree_mut(lambda t: t["nodes"][0]["evidence"].append("SYNTHETIC02:Q01"))),
     ("feel as required obs", "T04", tree_mut(lambda t: t["nodes"][0]["signature"]["required"].append({"obs": "OBS-20", "value": "high"}))),
     ("unconstrained must_fix node", "T05", tree_mut(lambda t: t["nodes"][1]["signature"].update(required=[]))),
+    # Path A: empty-req problem is still T05 when no edge-linked cause has required
+    ("problem without signed cause", "T05", tree_mut(lambda t: (t["nodes"][0]["signature"].update(required=[]), t["nodes"][1]["signature"].update(required=[])))),
     ("banned next_one_thing", "T06", tree_mut(lambda t: t["nodes"][0].update(next_one_thing="触球时伸直手臂"))),
     ("indistinguishable nodes", "T08", tree_mut(lambda t: [t["nodes"][1]["signature"].update(required=[{"obs": "OBS-02", "value": "touching"}]), t["nodes"][0].update(differentials=[]), t["nodes"][1].update(differentials=[])])),
     ("core edge from one episode", "T10", tree_mut(lambda t: t["edges"][0].update(strength="core"))),

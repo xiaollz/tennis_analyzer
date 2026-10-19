@@ -48,6 +48,17 @@ def check(tree, ep_dir, where="tree"):
                 F("T03", f"{ctx} cites {ref}: video item missing or not accepted")
         return ep
 
+    # cause -> problem edges (build_tree B4); used by T05 path A
+    causes_of = defaultdict(list)  # problem id -> [cause ids]
+    for e in tree["edges"]:
+        frm, to = e["from"], e["to"]
+        if frm in nodes and to in nodes and nodes[frm]["kind"] == "cause" and nodes[to]["kind"] == "problem":
+            causes_of[to].append(frm)
+
+    def problem_has_signed_cause(pid):
+        """Path A: a problem is confirmable if at least one edge-linked cause has required."""
+        return any(nodes[c]["signature"]["required"] for c in causes_of.get(pid, []) if c in nodes)
+
     # T04 signatures: obs exist, values legal, no C-layer in required, must_fix nodes are constrained
     sig_keys = {}
     for n in tree["nodes"]:
@@ -63,8 +74,13 @@ def check(tree, ep_dir, where="tree"):
                 if part == "required" and o["layer"] == "C":
                     F("T04", f"{nid} required uses C-layer {cond['obs']} (feel cannot be seen in video)")
         req = n["signature"]["required"]
+        # T05: must_fix nodes need required — except kind=problem under path A, when an
+        # edge-linked cause already has required (confirm problem ≡ confirm ≥1 root cause).
         if n["kind"] != "style" and n["must_fix"] and not req:
-            F("T05", f"{nid} must_fix node has no required observable: it can never be confirmed from video")
+            if n["kind"] == "problem" and problem_has_signed_cause(nid):
+                pass
+            else:
+                F("T05", f"{nid} must_fix node has no required observable: it can never be confirmed from video")
         key = tuple(sorted((c["obs"], c["value"]) for c in req))
         if req:
             sig_keys.setdefault(key, []).append(nid)

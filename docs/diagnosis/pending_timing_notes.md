@@ -64,3 +64,10 @@
 - **可见性提醒**：「意识里在关注什么」（注意力）从视频里**看不到**，只能看到结果（手有没有额外往前走）。因此即使录像里看到「没有额外往前」，也不能反推用户当时的注意力放在哪里；注意力部分只能靠用户自述，不进树、不进 OBS。
 - **写法约束不变**：只能记为观察项 / 待核对问题，不得写成「让手被动 supinate」之类的口令，也不得进入 `next_one_thing`。
 - **待办（并入第 6 节）**：6.6 拿到球场录像后，对照候选 A 逐拍标注（被带着 roll / 额外往前 / 额外往上），并与用户当拍自述的注意力对照，仅作个人记录。
+
+
+## 8. 核实进展（2026-10-19）
+
+- **主链接（高置信）**：https://www.youtube.com/watch?v=dw4hymptl9k — TPA《The Truth About Forehand Supination and Pronation》。自动字幕含 *body rotates as you supinate* 与 *transferring to my left leg, I'm supinating at the same time*。详见 `docs/diagnosis/coaches/tom_allsopp_rotation_supination_2026-10-19.md`。
+- **次链接（中高）**：https://www.youtube.com/watch?v=ubFJi2M3AMM — 《Improving Your Forehand Kinetic Chain…》；*rotate the body to supinate the arm*（顺序表述）。
+- 待用户打开主链接确认是否即所指那集；确认前仍不进 `next_one_thing` / 不升级 OBS。

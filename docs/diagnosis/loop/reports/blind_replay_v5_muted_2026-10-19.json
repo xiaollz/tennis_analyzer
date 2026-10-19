@@ -1,0 +1,188 @@
+{
+ "metrics": {
+  "cases": 10,
+  "positives": 10,
+  "negatives": 0,
+  "episodes": 10,
+  "recall_at_3": 0.0,
+  "top1": 0.0,
+  "abstain_rate": 0.7,
+  "negative_high_conf": 0.0,
+  "rerun_top1_stable": null
+ },
+ "rows": [
+  {
+   "case": "v5_1W1rope5l0k_76-106",
+   "episode": "1W1rope5l0k",
+   "negative": false,
+   "expected": [
+    "N-P_1W1ROPE5L0K"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_42BfbKsTGb4_87-117",
+   "episode": "42BfbKsTGb4",
+   "negative": false,
+   "expected": [
+    "N-P_42BFBKSTGB4"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_9NirSL59an0_172-202",
+   "episode": "9NirSL59an0",
+   "negative": false,
+   "expected": [
+    "N-P_9NIRSL59AN0"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_Am8j1Zw5KrE_70-100",
+   "episode": "Am8j1Zw5KrE",
+   "negative": false,
+   "expected": [
+    "N-P_HNVBBPEOB3G",
+    "N-P_LOSRMJ_QXKC",
+    "N-P_MCCB_RFYD0W",
+    "N-C_HNVBBPEOB3G_C01"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": true
+  },
+  {
+   "case": "v5_PfDqnff_vYA_48-78",
+   "episode": "PfDqnff_vYA",
+   "negative": false,
+   "expected": [
+    "N-P_PFDQNFF_VYA"
+   ],
+   "got": [
+    "N-C_DX8AGSIO24W_C04",
+    "N-C_GSHKML2MVEI_C01"
+   ],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": false,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_Psidjei5BnI_108-138",
+   "episode": "Psidjei5BnI",
+   "negative": false,
+   "expected": [
+    "N-P_PSIDJEI5BNI",
+    "N-C_PSIDJEI5BNI_C02"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_RVfmDk-iEwo_98-128",
+   "episode": "RVfmDk-iEwo",
+   "negative": false,
+   "expected": [
+    "N-P_RVFMDK_IEWO"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_V-QkILd4V-w_102-132",
+   "episode": "V-QkILd4V-w",
+   "negative": false,
+   "expected": [
+    "N-P_V_QKILD4V_W"
+   ],
+   "got": [],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": true,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_dx8aGSIo24w_39-69",
+   "episode": "dx8aGSIo24w",
+   "negative": false,
+   "expected": [
+    "N-P_DX8AGSIO24W",
+    "N-C_DX8AGSIO24W_C01"
+   ],
+   "got": [
+    "N-C_PSIDJEI5BNI_C04",
+    "N-C_PUN6QIIYU_4_C01"
+   ],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": false,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  },
+  {
+   "case": "v5_wVa4XQPcaqs_92-122",
+   "episode": "wVa4XQPcaqs",
+   "negative": false,
+   "expected": [
+    "N-P_WVA4XQPCAQS"
+   ],
+   "got": [
+    "N-C_PSIDJEI5BNI_C02"
+   ],
+   "hit3": false,
+   "hit1": false,
+   "neg_high_conf": false,
+   "abstain": false,
+   "runs": 1,
+   "top1_stable": 1.0,
+   "holdout": false
+  }
+ ]
+}

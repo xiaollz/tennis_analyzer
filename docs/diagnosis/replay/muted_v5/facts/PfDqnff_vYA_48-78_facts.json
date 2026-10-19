@@ -1,0 +1,94 @@
+{
+  "clip_id": "PfDqnff_vYA_48-78",
+  "camera": "B",
+  "audio_stripped": true,
+  "prompt_version": "facts_v2",
+  "model": "gemini-3.8-flash",
+  "runs": 3,
+  "facts": [
+    {
+      "obs": "OBS-01",
+      "value": "nearly_straight",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-04",
+      "value": "pause_present",
+      "agree": "3/3",
+      "source": "model",
+      "strokes": "3/3"
+    },
+    {
+      "obs": "OBS-05",
+      "value": "few_adjust_steps",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-06",
+      "value": "neutral",
+      "agree": "1/3",
+      "source": "model",
+      "strokes": "1/3"
+    },
+    {
+      "obs": "OBS-07",
+      "value": "a:reaches_across_body_front",
+      "agree": "3/3",
+      "source": "model",
+      "strokes": "3/3"
+    },
+    {
+      "obs": "OBS-10",
+      "value": "a:heel_up_at_contact",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-15",
+      "value": "a:finish_below_non_hitting_shoulder",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-16",
+      "value": "good",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-20",
+      "value": "above_chest",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-21",
+      "value": "unclear",
+      "agree": "2/3",
+      "source": "model",
+      "strokes": "2/3"
+    },
+    {
+      "obs": "OBS-30",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model",
+      "strokes": "3/3"
+    },
+    {
+      "obs": "OBS-11",
+      "value": "down_then_forward_and_up",
+      "agree": "3/3",
+      "source": "model",
+      "strokes": "3/3"
+    }
+  ]
+}
