@@ -1468,6 +1468,53 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py approve"
       }
+    },
+    {
+      "id": "OBS-71",
+      "src": "OBS-71_pelvic_rotation_visibly_decelerate_halt.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+      "values": [
+        "pelvis_decelerates_and_halts",
+        "pelvis_continues_rotating"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v15_new2.json",
+        "candidate": "NC001",
+        "cluster": "NEW-OBS-01",
+        "episodes": [
+          "6ak4ZScH_gc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-72",
+      "src": "OBS-72_impact_location_ball_across_racket.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Impact location of the ball across the racket string bed face",
+      "values": [
+        "center_sweet_spot",
+        "off_center_strings",
+        "frame"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-20",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v15_new2.json",
+        "candidate": "NC002",
+        "cluster": "NEW-OBS-02",
+        "episodes": [
+          "KU7FHy1qQOI"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }

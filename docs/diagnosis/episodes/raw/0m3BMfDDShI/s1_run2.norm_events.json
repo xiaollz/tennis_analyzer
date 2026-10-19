@@ -1,11 +1,12 @@
 {
   "counts": {
+    "quote_snapped": 1,
     "cause_anchor_exact": 3,
-    "intuition_first_forced_false": 2,
-    "solution_anchor_exact": 6
+    "solution_anchor_exact": 5,
+    "solution_anchor_miss": 1
   },
   "detail": [
-    "intuition_first_forced_false: solutions.2 no external_goal",
-    "intuition_first_forced_false: solutions.4 no external_goal"
+    "quote_snapped: Q23 score=1.00",
+    "solution_anchor_miss: D06 anchor_bucket=28 evidence_buckets=[27]"
   ]
 }

@@ -1,0 +1,878 @@
+{
+  "schema_version": "2.0",
+  "holdout_episodes": [
+    "-ZmnDrRFfjc",
+    "2J8q7sn4JLc",
+    "5KdScDKxVSI",
+    "5jHCDc44SQM",
+    "97vo-kFis6c",
+    "Am8j1Zw5KrE",
+    "BbGzWTp5pCM",
+    "Bhzd6cM-oFU",
+    "Cwc4YcKFZrU",
+    "EkzzGZkqCgc",
+    "Fu6DkHvZlGY",
+    "MWjBfarwNlA",
+    "XjJHA91HDbU",
+    "agtIR3PuNsw",
+    "emZxTmSVSa8",
+    "gehRK0Y6AdQ",
+    "hqganBxzQNM",
+    "mOFtt9PllI0",
+    "q6LrQYDvxmY",
+    "ui-RFRdQKRk"
+  ],
+  "observables": [],
+  "nodes": [
+    {
+      "id": "N-P_6AK4ZSCH_GC",
+      "name": "How should the hips and pelvis work during the forehand, and what should you actually feel?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q01",
+        "6ak4ZScH_gc:Q03",
+        "6ak4ZScH_gc:Q04"
+      ]
+    },
+    {
+      "id": "N-P_KU7FHY1QQOI",
+      "name": "How do physics, geometry, and biomechanics interact to develop true power on the forehand?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q01",
+        "KU7FHy1qQOI:Q02",
+        "KU7FHy1qQOI:Q04"
+      ]
+    },
+    {
+      "id": "N-C_6AK4ZSCH_GC_C01",
+      "name": "The external oblique and fascial chain connecting the hip and shoulder creates an equal and opposite tension that flings the shoulder forward while pulling the hip backward.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q07",
+        "6ak4ZScH_gc:Q08"
+      ]
+    },
+    {
+      "id": "N-C_6AK4ZSCH_GC_C02",
+      "name": "The pelvis accelerates forward initially solely to pre-stretch and maximize tension across this connecting fascial line before releasing the shoulders.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q09",
+        "6ak4ZScH_gc:Q10"
+      ]
+    },
+    {
+      "id": "N-C_6AK4ZSCH_GC_C03",
+      "name": "Consciously trying to push the hitting hip forward through the shot causes the player to avoid stretching the core fascia, resulting in hips and shoulders rotating together.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q13"
+      ]
+    },
+    {
+      "id": "N-C_6AK4ZSCH_GC_C04",
+      "name": "The backward force from the unwinding fascia causes backward acceleration that decelerates and stops the forward-moving pelvis rather than visibly reversing its direction.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q19",
+        "6ak4ZScH_gc:Q20"
+      ]
+    },
+    {
+      "id": "N-C_KU7FHY1QQOI_C01",
+      "name": "Hitting the ball off-center on the string bed imposes an immediate power tax of up to 50%, canceling out kinetic chain effort.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q01"
+      ]
+    },
+    {
+      "id": "N-C_KU7FHY1QQOI_C02",
+      "name": "The player hits without clear visual and kinesthetic intent, vaguely tracking the ball without an internal model of relative body positioning.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "C",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q08"
+      ]
+    },
+    {
+      "id": "N-C_KU7FHY1QQOI_C03",
+      "name": "Feet get stuck and reaction is delayed, failing to actively probe the ball and letting it drop low rather than attacking it at peak height.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "A",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q10"
+      ]
+    },
+    {
+      "id": "N-C_KU7FHY1QQOI_C04",
+      "name": "When approaching forward on shorter balls, players fail to coil their upper body sideways, causing premature or excessive rotation into the shot.",
+      "kind": "cause",
+      "phase": "unit_turn",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "A",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q17"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "N-C_6AK4ZSCH_GC_C01",
+      "to": "N-C_6AK4ZSCH_GC_C02",
+      "strength": "single_episode",
+      "evidence": [
+        "6ak4ZScH_gc:Q09"
+      ]
+    },
+    {
+      "from": "N-C_6AK4ZSCH_GC_C02",
+      "to": "N-C_6AK4ZSCH_GC_C04",
+      "strength": "single_episode",
+      "evidence": [
+        "6ak4ZScH_gc:Q19"
+      ]
+    },
+    {
+      "from": "N-C_6AK4ZSCH_GC_C03",
+      "to": "N-P_6AK4ZSCH_GC",
+      "strength": "single_episode",
+      "evidence": [
+        "6ak4ZScH_gc:Q13"
+      ]
+    },
+    {
+      "from": "N-C_6AK4ZSCH_GC_C04",
+      "to": "N-C_6AK4ZSCH_GC_C03",
+      "strength": "single_episode",
+      "evidence": [
+        "6ak4ZScH_gc:Q13"
+      ]
+    },
+    {
+      "from": "N-C_KU7FHY1QQOI_C01",
+      "to": "N-P_KU7FHY1QQOI",
+      "strength": "single_episode",
+      "evidence": [
+        "KU7FHy1qQOI:Q01"
+      ]
+    },
+    {
+      "from": "N-C_KU7FHY1QQOI_C02",
+      "to": "N-P_KU7FHY1QQOI",
+      "strength": "single_episode",
+      "evidence": [
+        "KU7FHy1qQOI:Q08"
+      ]
+    },
+    {
+      "from": "N-C_KU7FHY1QQOI_C03",
+      "to": "N-C_KU7FHY1QQOI_C01",
+      "strength": "single_episode",
+      "evidence": [
+        "KU7FHy1qQOI:Q10"
+      ]
+    },
+    {
+      "from": "N-C_KU7FHY1QQOI_C04",
+      "to": "N-P_KU7FHY1QQOI",
+      "strength": "single_episode",
+      "evidence": [
+        "KU7FHy1qQOI:Q17"
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "SYM_6AK4ZSCH_GC_S01",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "description": "The shoulders and hips rotate together as a block rather than rotating opposite each other under tension.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q14"
+      ]
+    },
+    {
+      "id": "SYM_6AK4ZSCH_GC_S02",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "description": "Lack of stretch tension felt across the diagonal core and fascial chain between the hip and opposite shoulder.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "caused_by": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q13"
+      ]
+    },
+    {
+      "id": "SYM_6AK4ZSCH_GC_S03",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "description": "The pelvis continues rotating forward through the shot without stopping to let the shoulders overtake it.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q02"
+      ]
+    },
+    {
+      "id": "SYM_KU7FHY1QQOI_S01",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "description": "Ball comes off the string bed with roughly 50% less energy and velocity despite a full kinetic chain swing.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_KU7FHY1QQOI_C01"
+      ],
+      "evidence": [
+        "KU7FHy1qQOI:Q01",
+        "KU7FHy1qQOI:Q03"
+      ]
+    },
+    {
+      "id": "SYM_KU7FHY1QQOI_S02",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "description": "Player feels jammed, restricted, or awkward through contact instead of effortless power.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "caused_by": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q05",
+        "KU7FHy1qQOI:Q08"
+      ]
+    },
+    {
+      "id": "SYM_KU7FHY1QQOI_S03",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "description": "Player lets short balls drop down to knee level instead of taking them at waist or net height.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "S",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q11",
+        "KU7FHy1qQOI:Q12"
+      ]
+    },
+    {
+      "id": "SYM_KU7FHY1QQOI_S04",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "description": "Player runs forward toward a short ball facing square to the net without winding the torso, leading to over-rotation and spraying wide.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "B",
+      "phase": "unit_turn",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_KU7FHY1QQOI_C04"
+      ],
+      "evidence": [
+        "KU7FHy1qQOI:Q17",
+        "KU7FHy1qQOI:Q18"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "SOL_6AK4ZSCH_GC_D01",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "kind": "cue",
+      "summary": "Intend to take the hitting side hip and fire or pull it backwards as you begin the forward swing.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_6AK4ZSCH_GC_C01",
+        "N-C_6AK4ZSCH_GC_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q04"
+      ]
+    },
+    {
+      "id": "SOL_6AK4ZSCH_GC_D02",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "kind": "cue",
+      "summary": "Use the combined cue to 'drive shoulders forward, hips back' when coiled and about to swing to maximize diagonal tension.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_6AK4ZSCH_GC_C01",
+        "N-C_6AK4ZSCH_GC_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q11",
+        "6ak4ZScH_gc:Q12"
+      ]
+    },
+    {
+      "id": "SOL_6AK4ZSCH_GC_D03",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "kind": "check",
+      "summary": "Check for the exact transition moment where the pelvis feels yanked backwards while the shoulders are yanked forward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_6AK4ZSCH_GC_C01",
+        "N-C_6AK4ZSCH_GC_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q16"
+      ]
+    },
+    {
+      "id": "SOL_6AK4ZSCH_GC_D04",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "kind": "check",
+      "summary": "Check that the pelvis feels under tension getting pulled backwards and slowing down rather than rotating freely through the shot.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_6AK4ZSCH_GC_C03",
+        "N-C_6AK4ZSCH_GC_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "6ak4ZScH_gc:Q19"
+      ]
+    },
+    {
+      "id": "SOL_KU7FHY1QQOI_D01",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "kind": "drill",
+      "summary": "Shadow swing with a 2.5 lb hand weight while looking forward to calibrate and feel your effortless contact window in space.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_KU7FHY1QQOI_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q05"
+      ]
+    },
+    {
+      "id": "SOL_KU7FHY1QQOI_D02",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "kind": "cue",
+      "summary": "Visualize the specific shot and the exact relative spacing between your body and the ball as it approaches.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_KU7FHY1QQOI_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q07"
+      ]
+    },
+    {
+      "id": "SOL_KU7FHY1QQOI_D03",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "kind": "drill",
+      "summary": "Hit self-drops or feeds with an elastic resistance band anchored to the fence and positioned across the hip crease to feel forward momentum and leg recruitment.",
+      "external_goal": "Drive against the elastic band anchored to the back fence",
+      "scenario_fit": "machine_low",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_KU7FHY1QQOI_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q15"
+      ]
+    },
+    {
+      "id": "SOL_KU7FHY1QQOI_D04",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "kind": "cue",
+      "summary": "Feel your non-dominant arm pull the trunk sideways against the hips to coil fully even while moving forward.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_KU7FHY1QQOI_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q19"
+      ]
+    },
+    {
+      "id": "SOL_KU7FHY1QQOI_D05",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "kind": "cue",
+      "summary": "Apply a quick, controlled 5 to 6 out of 10 rotational trunk pulse to accelerate racket speed without over-swinging.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_KU7FHY1QQOI_C01"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "KU7FHy1qQOI:Q21"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "ANG_6AK4ZSCH_GC_A01",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "type": "mechanics",
+      "summary": "The external oblique and connected fascial chain stretch and unstretch to transfer energy between the pelvis and shoulders.",
+      "evidence": [
+        "6ak4ZScH_gc:Q05"
+      ]
+    },
+    {
+      "id": "ANG_6AK4ZSCH_GC_A02",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "type": "visual_model",
+      "summary": "A corkscrew tool with hip and shoulder anchors illustrates how twisting forces on one anchor create opposite tension on the other.",
+      "evidence": [
+        "6ak4ZScH_gc:Q06"
+      ]
+    },
+    {
+      "id": "ANG_6AK4ZSCH_GC_A03",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "type": "contrast_demo",
+      "summary": "Demonstrating how trying to push the hip far forward is only possible when upper body resistance is removed, proving it kills fascial tension.",
+      "evidence": [
+        "6ak4ZScH_gc:Q13"
+      ]
+    },
+    {
+      "id": "ANG_6AK4ZSCH_GC_A04",
+      "episode": "6ak4ZScH_gc",
+      "problem": "N-P_6AK4ZSCH_GC",
+      "type": "misconception",
+      "summary": "Explaining that the cue to drive the right hip through the shot misleads players because human brains perceive acceleration and tension rather than absolute position.",
+      "evidence": [
+        "6ak4ZScH_gc:Q14",
+        "6ak4ZScH_gc:Q21"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A01",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "mechanics",
+      "summary": "Bouncing the ball on string edges yields roughly half the energy return of the sweet spot, nullifying body rotation.",
+      "evidence": [
+        "KU7FHy1qQOI:Q01",
+        "KU7FHy1qQOI:Q03"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A02",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "feel",
+      "summary": "Swinging a heavier object reveals the exact height and distance where the body feels strong and effortless.",
+      "evidence": [
+        "KU7FHy1qQOI:Q05"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A03",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "visual_model",
+      "summary": "A kinesthetic movie in the mind sets up an expectation that subconsciously alerts the brain whenever ball spacing is off.",
+      "evidence": [
+        "KU7FHy1qQOI:Q07",
+        "KU7FHy1qQOI:Q08"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A04",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "contrast_demo",
+      "summary": "Demonstrator contrasts sprinting forward to hit at net tape height versus waiting back to hit a knee-level ball that stays in the air longer.",
+      "evidence": [
+        "KU7FHy1qQOI:Q11",
+        "KU7FHy1qQOI:Q13"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A05",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "pro_example",
+      "summary": "Jannik Sinner appears to play at double speed by taking the ball early and close to the net, stealing opponent reaction time.",
+      "evidence": [
+        "KU7FHy1qQOI:Q13"
+      ]
+    },
+    {
+      "id": "ANG_KU7FHY1QQOI_A06",
+      "episode": "KU7FHy1qQOI",
+      "problem": "N-P_KU7FHY1QQOI",
+      "type": "mechanics",
+      "summary": "Trunk angular velocity coordinates directly with racket head angular velocity, allowing quick rotational pulses to drive power.",
+      "evidence": [
+        "KU7FHy1qQOI:Q20"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "quote_sources": {
+    "6ak4ZScH_gc:Q01": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 10.0,
+      "about": "general",
+      "text": "why the pelvis fires forward and why even though the pelvis fires forward, I am telling you to imagine a feeling of yanking your pelvis back"
+    },
+    "6ak4ZScH_gc:Q03": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 40.0,
+      "about": "general",
+      "text": "The main crux of the question here is when, if at all, does the pelvis physically rotate forwards? What does that feel like? And what should you try to do?"
+    },
+    "6ak4ZScH_gc:Q04": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 50.0,
+      "about": "general",
+      "text": "clarify exactly why, even though your pelvis is going to physically rotate forward, I think you should intend to take this side and fire it backwards."
+    },
+    "6ak4ZScH_gc:Q07": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 156.0,
+      "about": "general",
+      "text": "And so, that's the key is the same tension that flings your shoulder forward, flings your hip backwards. That's the same thing."
+    },
+    "6ak4ZScH_gc:Q08": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 173.0,
+      "about": "general",
+      "text": "And what it is is it's stretched when the shoulders and the hips are trying to be twisted opposite."
+    },
+    "6ak4ZScH_gc:Q09": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 198.0,
+      "about": "general",
+      "text": "Well, what's the best way now if this bit if pretend this back anchor is the shoulders. What is the best way to get this boom, through? It's to go boom, like that."
+    },
+    "6ak4ZScH_gc:Q10": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 209.0,
+      "about": "general",
+      "text": "Boom, and pull boom on that front anchor just a little bit more before I let it fling forwards."
+    },
+    "6ak4ZScH_gc:Q13": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 296.0,
+      "about": "general",
+      "text": "I'm not going to tension it because if my shoulder stretch against it, now I can't move it forwards nearly as much and I can feel myself pulling it back."
+    },
+    "6ak4ZScH_gc:Q19": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 463.0,
+      "about": "general",
+      "text": "So you want to feel your pelvis under tension getting pulled backwards as you accelerate your shoulder, but it's not going to move backwards on most shots"
+    },
+    "6ak4ZScH_gc:Q20": {
+      "video_id": "6ak4ZScH_gc",
+      "start": 476.0,
+      "about": "general",
+      "text": "it is going to be moving forwards, yanked backwards, and then it's just going to slow down. It's not actually going to reverse direction on many shots."
+    },
+    "KU7FHy1qQOI:Q01": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 18.0,
+      "about": "general",
+      "text": "hitting the ball in the center of the string bed. So you know, as you coordinate your kinetic chain better and better, you might get 10 20 30 40% more power."
+    },
+    "KU7FHy1qQOI:Q02": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 87.0,
+      "about": "general",
+      "text": "You could do everything right. You get this to fire. You get this to fire. Your chest fires you. Everything comes through... And then if you hit here instead of here, you've just undone everything"
+    },
+    "KU7FHy1qQOI:Q04": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 137.0,
+      "about": "general",
+      "text": "The most important parts of your body for hitting hard are your eyes and your feet. And then in order to use them effectively, you need to know where your swing ends up in space."
+    },
+    "KU7FHy1qQOI:Q08": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 336.0,
+      "about": "general",
+      "text": "without intent, it doesn't happen. So, a lot of times I see this where it's like all I really kind of did there was vaguely watch the ball and then just kind of vaguely try to hit it"
+    },
+    "KU7FHy1qQOI:Q10": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 415.0,
+      "about": "demonstrator_induced",
+      "text": "Now, do a couple where your feet get stuck where you're not really paying attention. You don't really split step and all of a sudden a slow ball like this, you can't hit it hard."
+    },
+    "KU7FHy1qQOI:Q17": {
+      "video_id": "KU7FHy1qQOI",
+      "start": 780.0,
+      "about": "general",
+      "text": "what I see from a lot of players that I work with as they come up for shorter balls is they they see a shorter ball, but they don't actually turn sideways."
+    }
+  },
+  "build": {
+    "builder": "build_tree_v1",
+    "merge_cosine": 0.4,
+    "episodes_used": [
+      "6ak4ZScH_gc",
+      "KU7FHy1qQOI"
+    ],
+    "skipped": [
+      {
+        "episode": "0m3BMfDDShI",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "5jHCDc44SQM",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "Am8j1Zw5KrE",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "E_zmENJIj4g",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "ExkBtFRhUWY",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "FjjvhNbk3q4",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Ibkq-yBteGc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "JIMgI3jiVns",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "QrRYuVjVibU",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Z9XwaXDVkZg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "jDBg4Fpf0tQ",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "m1NBdd3Bigg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "omsLx7F2Wdc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "pWzyP-xfLfU",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "ui-RFRdQKRk",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "w1FakobNq1Q",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "wd4YRQW3TOc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "x_WIg59Wr9Y",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      }
+    ],
+    "note": "slice for obs_bind round10 new eps only"
+  }
+}

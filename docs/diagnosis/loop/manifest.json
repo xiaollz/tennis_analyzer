@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
-  "updated": "2026-10-18",
-  "round": "round9",
+  "updated": "2026-10-20",
+  "round": "round10",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -64,19 +64,21 @@
       "id": "6ak4ZScH_gc",
       "title": "You Can Feel This - Here's How",
       "duration_s": 614.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
       "holdout": false,
-      "round": "round7",
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
+      "round": "round10",
+      "note": "ep_s1_v6 verified via raw pair 2-3 (3 runs); 4 causes / 4 solutions"
     },
     {
       "id": "ui-RFRdQKRk",
       "title": "The Pros \"Rotate\" Differently Than You",
       "duration_s": 692.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round10",
+      "note": "ep_s1_v6 verified via raw pair 1-2 (2 runs); 3 causes / 5 solutions"
     },
     {
       "id": "jDBg4Fpf0tQ",
@@ -413,20 +415,20 @@
       "title": "Build This Foundation - The Rest Will Follow",
       "duration_s": 890.0,
       "state": "subs_ready",
-      "updated": "2026-10-18",
+      "updated": "2026-10-20",
       "holdout": false,
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (solutions Jaccard 0.33-0.45; causes 0.33-0.60); kept stage1_draft, must not enter the tree",
-      "round": "round6"
+      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree",
+      "round": "round10"
     },
     {
       "id": "KU7FHy1qQOI",
       "title": "The Physics, Geometry, and Biomechanics of Power Development",
       "duration_s": 1088.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
       "holdout": false,
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun (causes Jaccard 0.33-0.40 on every pair); kept stage1_draft, must not enter the tree",
-      "round": "round6"
+      "note": "ep_s1_v6 verified via 3-run consensus vs r2 (3 runs); 4 causes / 5 solutions",
+      "round": "round10"
     },
     {
       "id": "FBJnFBtZozE",
@@ -480,9 +482,11 @@
       "id": "5jHCDc44SQM",
       "title": "The Abdominal Corkscrew ft. Carson Branstine",
       "duration_s": 457.0,
-      "state": "subs_ready",
-      "updated": "2026-10-18",
-      "holdout": true
+      "state": "stage1_verified",
+      "updated": "2026-10-20",
+      "holdout": true,
+      "round": "round10",
+      "note": "ep_s1_v6 verified via 3-run consensus vs r3 (3 runs); 4 causes / 4 solutions"
     },
     {
       "id": "XXlndjnrA4E",
@@ -1179,6 +1183,28 @@
         "uQcObi2oTSs"
       ],
       "stage1_draft_rerun_fail": []
+    }
+  },
+  "round10_selection": {
+    "rule": "twist_priority_20261019: P1 ui-RFRdQKRk (holdout OK for Stage1 knowledge) + P2 kinetic/power + P3 corkscrew/hip + foundation; ≤5; holdout cards may verify but build_tree skips them (T02)",
+    "prompt_version": "ep_s1_v6",
+    "ids": [
+      "ui-RFRdQKRk",
+      "KU7FHy1qQOI",
+      "6ak4ZScH_gc",
+      "0m3BMfDDShI",
+      "5jHCDc44SQM"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "ui-RFRdQKRk",
+        "KU7FHy1qQOI",
+        "6ak4ZScH_gc",
+        "5jHCDc44SQM"
+      ],
+      "stage1_draft_rerun_fail": [
+        "0m3BMfDDShI"
+      ]
     }
   }
 }

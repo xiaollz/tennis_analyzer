@@ -1,0 +1,35 @@
+{
+  "builder": "v14 + tree_base_v15 (+6ak4, KU7) + obs_binding_v15_new2 + mech_merge_v15(=v14 groups) + overlay awareness/T08/sigs",
+  "parent": "tree_v14.json",
+  "problem_nodes": 56,
+  "cause_nodes": 191,
+  "edges": 227,
+  "observables": 72,
+  "nodes_with_required": 105,
+  "awareness_nodes": 106,
+  "promoted": [
+    {
+      "obs": "OBS-71",
+      "node": "N-C_6AK4ZSCH_GC_C04",
+      "value": "pelvis_decelerates_and_halts"
+    },
+    {
+      "obs": "OBS-72",
+      "node": "N-C_KU7FHY1QQOI_C01",
+      "value": "off_center_strings"
+    }
+  ],
+  "awareness_new": [
+    "N-C_6AK4ZSCH_GC_C01",
+    "N-C_KU7FHY1QQOI_C02"
+  ],
+  "new_episodes": [
+    "6ak4ZScH_gc",
+    "KU7FHy1qQOI"
+  ],
+  "holdout_verified_not_in_tree": [
+    "ui-RFRdQKRk",
+    "5jHCDc44SQM"
+  ],
+  "note": "T05 via OBS-71/72 + 2 awareness; T08 via 4 differentials; thresholds unchanged; V5 skipped"
+}

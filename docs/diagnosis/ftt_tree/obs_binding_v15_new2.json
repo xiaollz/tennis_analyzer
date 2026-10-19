@@ -1,0 +1,1260 @@
+{
+ "version": "obs_bind_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/obs_bind_v1.md",
+ "runs": 2,
+ "catalog_sha256": "35b4f6ca69b5a4ad92d8c974cffda4789892ca7aeaf99b8bed16db4025a1a42e",
+ "source_tree": "docs/diagnosis/ftt_tree/tree.json (v1)",
+ "aggregation": "required = in both runs' required; supporting = any other condition either run named; invalid obs/values dropped",
+ "items": {
+  "N-P_6AK4ZSCH_GC": {
+   "kind": "problem",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "P",
+   "node": "N-P_6AK4ZSCH_GC",
+   "text": "How should the hips and pelvis work during the forehand, and what should you actually feel?",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "General question asking about mechanics and internal feel, not an observable action.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_6AK4ZSCH_GC_S01": {
+   "kind": "symptom",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "S01",
+   "node": null,
+   "text": "The shoulders and hips rotate together as a block rather than rotating opposite each other under tension.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-18",
+     "value": "nearly_simultaneous"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Shoulders and hips rotate at the same time as a single block.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    },
+    {
+     "obs": "OBS-18",
+     "value": "nearly_simultaneous"
+    },
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "simultaneous"
+      },
+      {
+       "obs": "OBS-18",
+       "value": "nearly_simultaneous"
+      }
+     ],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "simultaneous"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-18",
+       "value": "nearly_simultaneous"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_6AK4ZSCH_GC_S02": {
+   "kind": "symptom",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "S02",
+   "node": null,
+   "text": "Lack of stretch tension felt across the diagonal core and fascial chain between the hip and opposite shoulder.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Internal feeling of stretch tension cannot be observed in video.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_6AK4ZSCH_GC_S03": {
+   "kind": "symptom",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "S03",
+   "node": null,
+   "text": "The pelvis continues rotating forward through the shot without stopping to let the shoulders overtake it.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-19",
+     "value": "accelerates_through_contact"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "square_or_past"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Pelvic rotation speed profile into contact: does the pelvis decelerate before contact or continue rotating through contact?",
+     "values": [
+      "decelerates_before_contact",
+      "continues_rotating"
+     ],
+     "layer": "B",
+     "camera": "B"
+    },
+    {
+     "description": "Does pelvic rotation decelerate or stop before contact, or continue rotating forward through the shot?",
+     "values": [
+      "pelvis_decelerates_before_contact",
+      "pelvis_rotates_continuously"
+     ],
+     "layer": "B",
+     "camera": "B"
+    }
+   ],
+   "reason": "Pelvis does not decelerate before contact, continuing to rotate through the shot.",
+   "agreement": "required 0/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-19",
+     "value": "accelerates_through_contact"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-19",
+       "value": "accelerates_through_contact"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-09",
+       "value": "square_or_past"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Pelvic rotation speed profile into contact: does the pelvis decelerate before contact or continue rotating through contact?",
+       "values": [
+        "decelerates_before_contact",
+        "continues_rotating"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-19",
+       "value": "accelerates_through_contact"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "square_or_past"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Does pelvic rotation decelerate or stop before contact, or continue rotating forward through the shot?",
+       "values": [
+        "pelvis_decelerates_before_contact",
+        "pelvis_rotates_continuously"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    }
+   ]
+  },
+  "6ak4ZScH_gc:C01": {
+   "kind": "cause",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "C01",
+   "node": "N-C_6AK4ZSCH_GC_C01",
+   "text": "The external oblique and fascial chain connecting the hip and shoulder creates an equal and opposite tension that flings the shoulder forward while pulling the hip backward.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Describes internal muscle forces and fascial tension, which cannot be observed directly.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "6ak4ZScH_gc:C02": {
+   "kind": "cause",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "C02",
+   "node": "N-C_6AK4ZSCH_GC_C02",
+   "text": "The pelvis accelerates forward initially solely to pre-stretch and maximize tension across this connecting fascial line before releasing the shoulders.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-25",
+     "value": "hips_lead_shoulders"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-18",
+     "value": "hips_first_then_trunk_and_arm"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Pelvis initiates forward rotation before the shoulders release and rotate forward.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-25",
+     "value": "hips_lead_shoulders"
+    },
+    {
+     "obs": "OBS-18",
+     "value": "hips_first_then_trunk_and_arm"
+    },
+    {
+     "obs": "OBS-25",
+     "value": "hips_lead_shoulders"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "hips_lead_shoulders"
+      },
+      {
+       "obs": "OBS-18",
+       "value": "hips_first_then_trunk_and_arm"
+      }
+     ],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "hips_lead_shoulders"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-18",
+       "value": "hips_first_then_trunk_and_arm"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "6ak4ZScH_gc:C03": {
+   "kind": "cause",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "C03",
+   "node": "N-C_6AK4ZSCH_GC_C03",
+   "text": "Consciously trying to push the hitting hip forward through the shot causes the player to avoid stretching the core fascia, resulting in hips and shoulders rotating together.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-18",
+     "value": "nearly_simultaneous"
+    },
+    {
+     "obs": "OBS-22",
+     "value": "extended_forward"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Hips and shoulders rotate together simultaneously instead of rotating sequentially under tension.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    },
+    {
+     "obs": "OBS-18",
+     "value": "nearly_simultaneous"
+    },
+    {
+     "obs": "OBS-25",
+     "value": "simultaneous"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "simultaneous"
+      },
+      {
+       "obs": "OBS-18",
+       "value": "nearly_simultaneous"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-22",
+       "value": "extended_forward"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-25",
+       "value": "simultaneous"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-18",
+       "value": "nearly_simultaneous"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "6ak4ZScH_gc:C04": {
+   "kind": "cause",
+   "episode": "6ak4ZScH_gc",
+   "local_id": "C04",
+   "node": "N-C_6AK4ZSCH_GC_C04",
+   "text": "The backward force from the unwinding fascia causes backward acceleration that decelerates and stops the forward-moving pelvis rather than visibly reversing its direction.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-19",
+     "value": "decelerates_before_contact"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+     "values": [
+      "pelvis_decelerates_and_halts",
+      "pelvis_continues_rotating"
+     ],
+     "layer": "B",
+     "camera": "B"
+    }
+   ],
+   "reason": "Pelvis rotation decelerates and halts its forward progress prior to contact.",
+   "agreement": "required 0/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-19",
+     "value": "decelerates_before_contact"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-19",
+       "value": "decelerates_before_contact"
+      }
+     ],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-19",
+       "value": "decelerates_before_contact"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+       "values": [
+        "pelvis_decelerates_and_halts",
+        "pelvis_continues_rotating"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    }
+   ]
+  },
+  "N-P_KU7FHY1QQOI": {
+   "kind": "problem",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "P",
+   "node": "N-P_KU7FHY1QQOI",
+   "text": "How do physics, geometry, and biomechanics interact to develop true power on the forehand?",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "General theoretical question about biomechanics and physics, not directly observable as a specific movement pattern.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_KU7FHY1QQOI_S01": {
+   "kind": "symptom",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "S01",
+   "node": null,
+   "text": "Ball comes off the string bed with roughly 50% less energy and velocity despite a full kinetic chain swing.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-30",
+     "value": "short_near_service_line"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Ball exit speed and pace off the racket strings relative to swing velocity",
+     "values": [
+      "high_pace",
+      "medium_pace",
+      "low_or_dead_pace"
+     ],
+     "layer": "A",
+     "camera": "any"
+    },
+    {
+     "description": "Ball exit speed and rebound energy off strings relative to incoming ball and swing speed",
+     "values": [
+      "normal_proportional_speed",
+      "noticeably_weak_or_dead"
+     ],
+     "layer": "A",
+     "camera": "any"
+    }
+   ],
+   "reason": "Ball leaves with minimal pace and energy, landing short in the court.",
+   "agreement": "required 0/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-30",
+     "value": "short_near_service_line"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-30",
+       "value": "short_near_service_line"
+      }
+     ],
+     "supporting": [],
+     "new_obs": [
+      {
+       "description": "Ball exit speed and pace off the racket strings relative to swing velocity",
+       "values": [
+        "high_pace",
+        "medium_pace",
+        "low_or_dead_pace"
+       ],
+       "layer": "A",
+       "camera": "any"
+      }
+     ]
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-30",
+       "value": "short_near_service_line"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Ball exit speed and rebound energy off strings relative to incoming ball and swing speed",
+       "values": [
+        "normal_proportional_speed",
+        "noticeably_weak_or_dead"
+       ],
+       "layer": "A",
+       "camera": "any"
+      }
+     ]
+    }
+   ]
+  },
+  "SYM_KU7FHY1QQOI_S02": {
+   "kind": "symptom",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "S02",
+   "node": null,
+   "text": "Player feels jammed, restricted, or awkward through contact instead of effortless power.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Internal sensations of feeling jammed, restricted, or awkward cannot be directly observed on court video.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_KU7FHY1QQOI_S03": {
+   "kind": "symptom",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "S03",
+   "node": null,
+   "text": "Player lets short balls drop down to knee level instead of taking them at waist or net height.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-55",
+     "value": "inside_baseline"
+    },
+    {
+     "obs": "OBS-23",
+     "value": "deeply_bent"
+    },
+    {
+     "obs": "OBS-44",
+     "value": "far_below_eye_level"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Player contacts the ball below knee height when stepping inside the court.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-55",
+       "value": "inside_baseline"
+      },
+      {
+       "obs": "OBS-23",
+       "value": "deeply_bent"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-44",
+       "value": "far_below_eye_level"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_KU7FHY1QQOI_S04": {
+   "kind": "symptom",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "S04",
+   "node": null,
+   "text": "Player runs forward toward a short ball facing square to the net without winding the torso, leading to over-rotation and spraying wide.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "wide"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-60",
+     "value": "over_rotated_past_net"
+    },
+    {
+     "obs": "OBS-55",
+     "value": "inside_baseline"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "square_or_past"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Player approaches square to the net without turning, over-rotates, and misses the shot wide.",
+   "agreement": "required 2/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "wide"
+    },
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "wide"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-08",
+       "value": "almost_facing_front"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "wide"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-60",
+       "value": "over_rotated_past_net"
+      },
+      {
+       "obs": "OBS-55",
+       "value": "inside_baseline"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-08",
+       "value": "almost_facing_front"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "wide"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-60",
+       "value": "over_rotated_past_net"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "square_or_past"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "KU7FHy1qQOI:C01": {
+   "kind": "cause",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "C01",
+   "node": "N-C_KU7FHY1QQOI_C01",
+   "text": "Hitting the ball off-center on the string bed imposes an immediate power tax of up to 50%, canceling out kinetic chain effort.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-16",
+     "value": "frame_hit"
+    },
+    {
+     "obs": "OBS-30",
+     "value": "short_near_service_line"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Impact location of the ball across the racket string bed face",
+     "values": [
+      "center_sweet_spot",
+      "off_center_strings",
+      "frame"
+     ],
+     "layer": "B",
+     "camera": "S"
+    },
+    {
+     "description": "Location of ball impact on the racket string bed relative to center",
+     "values": [
+      "center_sweet_spot",
+      "off_center_perimeter"
+     ],
+     "layer": "A",
+     "camera": "any"
+    }
+   ],
+   "reason": "Ball impacts the string bed away from the center sweet spot, deadening the ball.",
+   "agreement": "required 0/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-16",
+     "value": "frame_hit"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-16",
+       "value": "frame_hit"
+      },
+      {
+       "obs": "OBS-30",
+       "value": "short_near_service_line"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Impact location of the ball across the racket string bed face",
+       "values": [
+        "center_sweet_spot",
+        "off_center_strings",
+        "frame"
+       ],
+       "layer": "B",
+       "camera": "S"
+      }
+     ]
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-16",
+       "value": "frame_hit"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-30",
+       "value": "short_near_service_line"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Location of ball impact on the racket string bed relative to center",
+       "values": [
+        "center_sweet_spot",
+        "off_center_perimeter"
+       ],
+       "layer": "A",
+       "camera": "any"
+      }
+     ]
+    }
+   ]
+  },
+  "KU7FHy1qQOI:C02": {
+   "kind": "cause",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "C02",
+   "node": "N-C_KU7FHY1QQOI_C02",
+   "text": "The player hits without clear visual and kinesthetic intent, vaguely tracking the ball without an internal model of relative body positioning.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Kinesthetic intent and internal tracking models are internal cognitive processes not visible on video.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "KU7FHy1qQOI:C03": {
+   "kind": "cause",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "C03",
+   "node": "N-C_KU7FHY1QQOI_C03",
+   "text": "Feet get stuck and reaction is delayed, failing to actively probe the ball and letting it drop low rather than attacking it at peak height.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-05",
+     "value": "no_steps_stands_still"
+    },
+    {
+     "obs": "OBS-21",
+     "value": "after_contact"
+    },
+    {
+     "obs": "OBS-05",
+     "value": "few_adjust_steps"
+    },
+    {
+     "obs": "OBS-43",
+     "value": "halts_feet_in_place"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Feet stop moving, split step is delayed, and the ball drops low below knee level.",
+   "agreement": "required 1/3 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-05",
+     "value": "no_steps_stands_still"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    },
+    {
+     "obs": "OBS-05",
+     "value": "few_adjust_steps"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-05",
+       "value": "no_steps_stands_still"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-21",
+       "value": "after_contact"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-05",
+       "value": "few_adjust_steps"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-21",
+       "value": "after_contact"
+      },
+      {
+       "obs": "OBS-43",
+       "value": "halts_feet_in_place"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "KU7FHy1qQOI:C04": {
+   "kind": "cause",
+   "episode": "KU7FHy1qQOI",
+   "local_id": "C04",
+   "node": "N-C_KU7FHY1QQOI_C04",
+   "text": "When approaching forward on shorter balls, players fail to coil their upper body sideways, causing premature or excessive rotation into the shot.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-60",
+     "value": "over_rotated_past_net"
+    },
+    {
+     "obs": "OBS-25",
+     "value": "shoulders_lead_hips"
+    },
+    {
+     "obs": "OBS-55",
+     "value": "inside_baseline"
+    },
+    {
+     "obs": "OBS-09",
+     "value": "square_or_past"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Player fails to turn shoulders sideways on the approach, causing premature over-rotation.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    },
+    {
+     "obs": "OBS-60",
+     "value": "over_rotated_past_net"
+    },
+    {
+     "obs": "OBS-08",
+     "value": "almost_facing_front"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-08",
+       "value": "almost_facing_front"
+      },
+      {
+       "obs": "OBS-60",
+       "value": "over_rotated_past_net"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-25",
+       "value": "shoulders_lead_hips"
+      },
+      {
+       "obs": "OBS-55",
+       "value": "inside_baseline"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-08",
+       "value": "almost_facing_front"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-60",
+       "value": "over_rotated_past_net"
+      },
+      {
+       "obs": "OBS-09",
+       "value": "square_or_past"
+      },
+      {
+       "obs": "OBS-25",
+       "value": "shoulders_lead_hips"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  }
+ },
+ "new_obs_candidates": [
+  {
+   "cid": "NC001",
+   "item": "6ak4ZScH_gc:C04",
+   "description": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+   "values": [
+    "pelvis_decelerates_and_halts",
+    "pelvis_continues_rotating"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC002",
+   "item": "KU7FHy1qQOI:C01",
+   "description": "Impact location of the ball across the racket string bed face",
+   "values": [
+    "center_sweet_spot",
+    "off_center_strings",
+    "frame"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "cid": "NC003",
+   "item": "KU7FHy1qQOI:C01",
+   "description": "Location of ball impact on the racket string bed relative to center",
+   "values": [
+    "center_sweet_spot",
+    "off_center_perimeter"
+   ],
+   "layer": "A",
+   "camera": "any"
+  },
+  {
+   "cid": "NC004",
+   "item": "SYM_6AK4ZSCH_GC_S03",
+   "description": "Pelvic rotation speed profile into contact: does the pelvis decelerate before contact or continue rotating through contact?",
+   "values": [
+    "decelerates_before_contact",
+    "continues_rotating"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC005",
+   "item": "SYM_6AK4ZSCH_GC_S03",
+   "description": "Does pelvic rotation decelerate or stop before contact, or continue rotating forward through the shot?",
+   "values": [
+    "pelvis_decelerates_before_contact",
+    "pelvis_rotates_continuously"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC006",
+   "item": "SYM_KU7FHY1QQOI_S01",
+   "description": "Ball exit speed and pace off the racket strings relative to swing velocity",
+   "values": [
+    "high_pace",
+    "medium_pace",
+    "low_or_dead_pace"
+   ],
+   "layer": "A",
+   "camera": "any"
+  },
+  {
+   "cid": "NC007",
+   "item": "SYM_KU7FHY1QQOI_S01",
+   "description": "Ball exit speed and rebound energy off strings relative to incoming ball and swing speed",
+   "values": [
+    "normal_proportional_speed",
+    "noticeably_weak_or_dead"
+   ],
+   "layer": "A",
+   "camera": "any"
+  }
+ ],
+ "new_obs_clusters": [
+  {
+   "id": "NEW-OBS-01",
+   "rep": "NC001",
+   "members": [
+    "NC001",
+    "NC004",
+    "NC005"
+   ]
+  },
+  {
+   "id": "NEW-OBS-02",
+   "rep": "NC002",
+   "members": [
+    "NC002",
+    "NC003"
+   ]
+  },
+  {
+   "id": "NEW-OBS-03",
+   "rep": "NC006",
+   "members": [
+    "NC006",
+    "NC007"
+   ]
+  }
+ ],
+ "stats": {
+  "gapfill": null,
+  "items": 17,
+  "invalid_dropped": 0,
+  "items_with_missing_run": [],
+  "usage": {
+   "promptTokenCount": 19664,
+   "candidatesTokenCount": 4263,
+   "totalTokenCount": 43508,
+   "thoughtsTokenCount": 19581,
+   "calls": 7
+  },
+  "bind_calls": 4,
+  "newobs_cluster_calls": 2
+ }
+}

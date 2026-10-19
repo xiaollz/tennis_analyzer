@@ -1833,6 +1833,45 @@
    ],
    "layer": "B",
    "camera": "B"
+  },
+  {
+   "obs": "OBS-71",
+   "file": "observables/OBS-71_pelvic_rotation_visibly_decelerate_halt.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round10: unlock T05 on 6ak4 C04 + KU7 C01; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v15_new2.json",
+   "candidate": "NC001",
+   "cluster": "NEW-OBS-01",
+   "episodes": [
+    "6ak4ZScH_gc"
+   ],
+   "description": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+   "values": [
+    "pelvis_decelerates_and_halts",
+    "pelvis_continues_rotating"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "obs": "OBS-72",
+   "file": "observables/OBS-72_impact_location_ball_across_racket.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round10: unlock T05 on 6ak4 C04 + KU7 C01; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v15_new2.json",
+   "candidate": "NC002",
+   "cluster": "NEW-OBS-02",
+   "episodes": [
+    "KU7FHy1qQOI"
+   ],
+   "description": "Impact location of the ball across the racket string bed face",
+   "values": [
+    "center_sweet_spot",
+    "off_center_strings",
+    "frame"
+   ],
+   "layer": "B",
+   "camera": "S"
   }
  ],
  "from_cc_review": [
