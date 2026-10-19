@@ -1,0 +1,297 @@
+{
+ "clip_id": "2Nn9tyMECZU_457-487",
+ "camera": "B",
+ "audio_stripped": true,
+ "prompt_version": "facts_v3",
+ "model": "gemini-3.8-flash",
+ "runs": 3,
+ "facts": [
+  {
+   "obs": "OBS-01",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-02",
+   "value": "visible_gap",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-03",
+   "value": "ahead_of_front_hip",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-04",
+   "value": "pause_present",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-05",
+   "value": "no_steps_stands_still",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-06",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-07",
+   "value": "a:reaches_across_body_front",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-08",
+   "value": "clearly_sideways",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-09",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-10",
+   "value": "a:heel_up_at_contact",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-11",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-12",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-13",
+   "value": "a:weight_on_front_foot",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-14",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-15",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-16",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "7/11"
+  },
+  {
+   "obs": "OBS-17",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-18",
+   "value": "unclear",
+   "agree": "0/3",
+   "source": "model",
+   "strokes": "0/11"
+  },
+  {
+   "obs": "OBS-19",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-20",
+   "value": "waist_to_chest",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "10/11"
+  },
+  {
+   "obs": "OBS-21",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-22",
+   "value": "hinged_back",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-23",
+   "value": "slightly_bent",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-24",
+   "value": "wrist_stable",
+   "agree": "2/3",
+   "source": "model",
+   "strokes": "11/11"
+  },
+  {
+   "obs": "OBS-25",
+   "value": "simultaneous",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-26",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "7/11"
+  },
+  {
+   "obs": "OBS-27",
+   "value": "fixed_angle",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-28",
+   "value": "perpendicular_vertical",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-29",
+   "value": "no_lateral_bend",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-30",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-31",
+   "value": "horizontal",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-32",
+   "value": "rotational_drive",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-33",
+   "value": "more_than_one_forearm_length",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-34",
+   "value": "stays_above_front_foot",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-35",
+   "value": "slightly_behind_hand",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-36",
+   "value": "directly_toward_ball",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-37",
+   "value": "stay_at_same_height",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-38",
+   "value": "shoulder_width_or_wider",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-39",
+   "value": "neutral_flat",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-40",
+   "value": "moves_together_with_chest",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  },
+  {
+   "obs": "OBS-41",
+   "value": "unclear",
+   "agree": "1/3",
+   "source": "model",
+   "strokes": "9/11"
+  }
+ ]
+}

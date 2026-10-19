@@ -1,0 +1,907 @@
+{
+ "tree": "../ftt_tree/tree_v10.json",
+ "n_pairs": 37,
+ "verdicts": {
+  "existing_obs": 6,
+  "same_mechanism": 23,
+  "not_visible": 6,
+  "new_obs_needed": 2
+ },
+ "gate_pass": 30,
+ "gate_fail": [
+  "N-P_2NN9TYMECZU | N-C_LOSRMJ_QXKC_C04",
+  "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+  "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+  "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+  "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04",
+  "N-P_DX8AGSIO24W | N-P_LBDQPIHVXYA",
+  "N-C_9NIRSL59AN0_C02 | N-C_PQ793MBQE50_C03"
+ ],
+ "proposed_new_observables": [
+  {
+   "question": "Through the contact zone, which part visibly rotates around the long axis of the arm: the whole arm from the shoulder, only the forearm, or neither?",
+   "values": [
+    "whole_arm",
+    "forearm_only",
+    "no_visible_rotation"
+   ],
+   "camera": "back view (B)",
+   "pairs": [
+    "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C03"
+   ],
+   "episodes_of_cited_quotes": [
+    "2Nn9tyMECZU",
+    "FxDmVi3EFnE"
+   ]
+  },
+  {
+   "question": "On which side of the body is the ball struck, and how many hands are on the racket at contact?",
+   "values": [
+    "forehand_one_hand",
+    "backhand_one_hand",
+    "backhand_two_hands"
+   ],
+   "camera": "back view (B)",
+   "pairs": [
+    "N-P_DX8AGSIO24W | N-P_LBDQPIHVXYA"
+   ],
+   "episodes_of_cited_quotes": [
+    "dx8aGSIo24w"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "pair": "N-P_2NN9TYMECZU | N-P_FXDMVI3EFNE",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q12"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both treat the low-to-high/brushing swing as the fault and point to the same missing forward component ('press the racket the direction I'm facing' vs 'combining the upward vector ... with a backtofront driving vector').",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q12"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A's fault is a 'low-to-high' 'linear swing' and C01's is an 'upward brushing stroke'; both describe the same steep upward swing, and C01 only adds its consequence (thin contact).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q12"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Get out of the linear swing and into the rotational swing where I press the racket the direction I'm facing' and 'just create the upward vector and not create the forward vector' describe the same missing forward drive.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_2NN9TYMECZU | N-C_FXDMVI3EFNE_C03",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q07",
+    "2Nn9tyMECZU:Q12"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": "Through the contact zone, which part visibly rotates around the long axis of the arm: the whole arm from the shoulder, only the forearm, or neither?",
+   "new_values": [
+    "whole_arm",
+    "forearm_only",
+    "no_visible_rotation"
+   ],
+   "camera": "back view (B)",
+   "reason": "Both name a low-to-high path, but A's faulty players roll 'just the forearm, not the whole arm', while C03's low-to-high path comes 'rather than ... forearm rotation' (the forearm is 'the best tool to use for top spin'), and no catalog observable records which segment rotates.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_2NN9TYMECZU | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-35",
+   "vA": null,
+   "vB": "far_behind_hand",
+   "quotes_A": [],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "B's cause is heavy layback ('the more this lags backwards, the harder this ball is to time'), which OBS-35 shows as far_behind_hand, while A's quotes concern forearm-only roll and the swing direction and make no claim about lag, so OBS-35 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Pure brushing ... thin contact' and 'upward brushing stroke ... making contact extremely thin' are the same thing, and both rest on the same quote 'top spin always makes contact thinner'.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "The problem is resolved by 'combining the upward vector ... with a backtofront driving vector', and C02 is that driving vector missing ('not create the forward vector').",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q07"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Pure brushing' and 'excessive low-to-high swing path rather than shoulder drive' both describe an upward path without the back-to-front shoulder drive.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_FXDMVI3EFNE | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-35",
+   "vA": null,
+   "vB": "far_behind_hand",
+   "quotes_A": [],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "B attributes the problem to how far the racket 'lags backwards' (OBS-35 far_behind_hand), while A attributes it to the swing vector and makes no lag claim, so OBS-35 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "An 'upward brushing stroke' and a swing that 'just create[s] the upward vector and not ... the forward vector' are the same upward-only swing; C01 adds its consequence.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q05"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Upward brushing stroke' and 'excessive low-to-high swing path' are two wordings of the same steep upward swing.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C01 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-35",
+   "vA": null,
+   "vB": "far_behind_hand",
+   "quotes_A": [],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "B's cause is heavy layback ('the more this lags backwards'), shown by OBS-35 far_behind_hand, while A's quote ('top spin always makes contact thinner') makes no lag claim, so OBS-35 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C02 | N-C_FXDMVI3EFNE_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "FxDmVi3EFnE:Q08"
+   ],
+   "quotes_B": [
+    "FxDmVi3EFnE:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Not create the forward vector' and 'rather than shoulder drive' ('the shoulder is much better used for that back to front driving') name the same missing back-to-front drive.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C02 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-35",
+   "vA": null,
+   "vB": "far_behind_hand",
+   "quotes_A": [],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "B's cause is the racket lagging far back ('the more this lags backwards'), shown by OBS-35 far_behind_hand, while A's cause is the missing forward vector with no lag claim, so OBS-35 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_FXDMVI3EFNE_C03 | N-C_LOSRMJ_QXKC_C04",
+   "verdict": "existing_obs",
+   "obs": "OBS-35",
+   "vA": null,
+   "vB": "far_behind_hand",
+   "quotes_A": [],
+   "quotes_B": [
+    "LoSrMj-Qxkc:Q18"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "B locates the cause in heavy shoulder stretch/layback ('the more this lags backwards'), shown by OBS-35 far_behind_hand, while A locates it in the swing path and makes no lag claim, so OBS-35 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-P_DX8AGSIO24W | N-P_LBDQPIHVXYA",
+   "verdict": "new_obs_needed",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q01"
+   ],
+   "quotes_B": [],
+   "new_question": "On which side of the body is the ball struck, and how many hands are on the racket at contact?",
+   "new_values": [
+    "forehand_one_hand",
+    "backhand_one_hand",
+    "backhand_two_hands"
+   ],
+   "camera": "back view (B)",
+   "reason": "A concerns low two-handed backhands ('four low backand tips') and B concerns forehands hit during a sprint; stroke side is visible but not in the catalog, and B's only quote (lbdQpIHvXYA:Q02) states neither the stroke nor the sprint, so B's side rests on its text alone.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G4": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-P_DX8AGSIO24W | N-C_PUN6QIIYU_4_C04",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q01"
+   ],
+   "quotes_B": [
+    "PUN6qIIYU-4:Q11"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A's only quote announces 'four low backand tips' and states no mechanism, so the material gives nothing visible that would differ from B's low contact point ('the ball is just a little too low').",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_LBDQPIHVXYA | N-C_PUN6QIIYU_4_C04",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "lbdQpIHvXYA:Q02"
+   ],
+   "quotes_B": [
+    "PUN6qIIYU-4:Q11"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A's only quote refers vaguely to 'this kind of a preparation' without describing anything visible, so the material gives no camera-visible feature that separates it from B's low contact point.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_WFOY0RKWBTG | N-C_WZLMV4ASG9S_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "wFOy0RKWBTg:Q05",
+    "wFOy0RKWBTg:Q08"
+   ],
+   "quotes_B": [
+    "wzLMv4ASg9s:Q01"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'If the racket does go towards the ball ... not going to have velocity' / 'that first Vector is out' and 'swing it out first, not straight towards the ball' describe the same fault (B also lists wFOy0RKWBTg:Q05).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-P_WZLMV4ASG9S | N-C_RVFMDK_IEWO_C03",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "wzLMv4ASg9s:Q05",
+    "wzLMv4ASg9s:Q11"
+   ],
+   "quotes_B": [
+    "RVfmDk-iEwo:Q08"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "A's listed quotes are about grip ('handle is seated in the top of your hand', 'grip tighter ... at the bottom of the handle'), which a camera cannot show, while the visible part of B ('racket kind of out of phase with the hand') is already the shared required observable OBS-35.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_2NN9TYMECZU_C03 | N-C_UJPUDUX0JIA_C06",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "2Nn9tyMECZU:Q14",
+    "T5meVwBOKR4:Q14"
+   ],
+   "quotes_B": [],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "By text both are the same spacing error ('Spacing too close to the body' vs 'Positioning too close laterally to the ball'), but none of B's listed quotes (uJpuDUx0jIA:Q01, Q05, Q23) mention spacing, so B's side has no quote support.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_9NIRSL59AN0_C02 | N-C_PQ793MBQE50_C03",
+   "verdict": "existing_obs",
+   "obs": "OBS-02",
+   "vA": null,
+   "vB": "touching_torso",
+   "quotes_A": [],
+   "quotes_B": [
+    "dDYKuNZtdyU:Q14",
+    "dDYKuNZtdyU:Q16"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both are late contacts, but B's lateness comes from a pull slot 'almost to your stomach' instead of letting the hand 'pass well in front of your torso' (OBS-02 touching_torso), while A's quote is about striking after the wrist is 'back to neutral' and makes no claim about distance from the body, so OBS-02 separates them only on B's side.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G5_enters_tree": false
+   },
+   "gate_pass": false
+  },
+  {
+   "pair": "N-C_APCKJDADZEK_C06 | N-C_DX8AGSIO24W_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [],
+   "quotes_B": [
+    "dx8aGSIo24w:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both describe the missing hip bend ('instead of hinging at the hips' vs 'the hips aren't bent'); A's text also has the knee sliding forward, which could differ from B's 'the knees aren't bent', but none of A's listed quotes support that, so the material cannot separate them.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_APCKJDADZEK_C06 | N-C_DZADHZVESDS_C04",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [],
+   "quotes_B": [
+    "dZadhzVEsds:Q15"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Instead of hinging at the hips and keeping the hips behind' and 'fails to hinge at the hips' ('you can also hinge at the hips') are the same missing hip hinge; none of A's listed quotes mention hinging, so A's side rests on its text.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_APCKJDADZEK_C06 | N-C_QXATDSEUKFY_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [],
+   "quotes_B": [
+    "QXAtdSEUkfY:Q09"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Instead of hinging at the hips' and 'not tilted forward from a hip hinge' ('her hips are hinged') are the same missing hinge; B adds a swing-path consequence, and A's listed quotes do not mention hinging.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DX8AGSIO24W_C02 | N-C_DZADHZVESDS_C04",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q10"
+   ],
+   "quotes_B": [
+    "dZadhzVEsds:Q15"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Without this double Bend in the in the hips and the knees' and 'you can also hinge at the hips ... his whole hitting apparatus is lower' describe the same failure to lower the body through the hips.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DX8AGSIO24W_C02 | N-C_QXATDSEUKFY_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q10"
+   ],
+   "quotes_B": [
+    "QXAtdSEUkfY:Q09"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'The hips aren't bent' and 'her hips are hinged, and that allows her racket path to go more low to high' describe the same hip hinge, present in B's demo and missing in A's fault; B adds the swing-path consequence.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DZADHZVESDS_C04 | N-C_QXATDSEUKFY_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dZadhzVEsds:Q15"
+   ],
+   "quotes_B": [
+    "QXAtdSEUkfY:Q09"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Fails to hinge at the hips with a flat back' and 'not tilted forward from a hip hinge with a straight back' ('Her back is erect ... her hips are hinged') describe the same flat-back hip hinge; they differ only in the consequence named.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DX8AGSIO24W_C03 | N-C_FOMZ8WJV3DQ_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q12"
+   ],
+   "quotes_B": [
+    "FOmz8Wjv3DQ:Q03"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'The stance is too narrow' ('you need a base to twist off of') and 'an overly narrow stance width' ('you're here as far as stance width') are the same narrow stance; they differ only in the consequence named (twisting vs pushing).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_DX8AGSIO24W_C04 | N-C_GSHKML2MVEI_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "dx8aGSIo24w:Q17",
+    "dx8aGSIo24w:Q18"
+   ],
+   "quotes_B": [
+    "GsHkML2mVEI:Q06"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both texts describe a static pause before the swing that removes the dynamic load ('Starting the racket statically ... removes swing momentum' vs 'pausing before trunk rotation starts, which destroys the dynamic forearm stretch'); A's quotes only report the resulting feel ('feels stiff and restricted'), so the material offers no visible feature to separate them.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_HNVBBPEOB3G_C01 | N-C_HNVBBPEOB3G_C02",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "hNVbbPEob3g:Q02"
+   ],
+   "quotes_B": [
+    "hNVbbPEob3g:Q09",
+    "hNVbbPEob3g:Q10"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Let your chest go first, let the arm lag here, and then let it whip through' and 'if I let this go back, I have to make sure I time this stretch reflex' (vs attaching the arm 'to your chest') describe the same arm lagging behind the chest; they differ only in the cost named (control vs timing).",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_LWS7XXQRRDW_C02 | N-C_PQ793MBQE50_C01",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "lwS7Xxqrrdw:Q08"
+   ],
+   "quotes_B": [
+    "pQ793MBQE50:Q14"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both show the same visible wrist break; they differ only in which muscle effort is missing ('the right hand providing the driving vector' vs 'at least a little bit of forearm tension'), which a camera cannot show.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_LWS7XXQRRDW_C02 | N-C_PUN6QIIYU_4_C03",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "lwS7Xxqrrdw:Q08"
+   ],
+   "quotes_B": [
+    "PUN6qIIYU-4:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both show the same wristy swing and differ only in which source of effort is missing ('the right hand providing the driving vector' vs 'drive with your legs ... than ... the small muscles of the hand and the wrist'), which the quotes do not tie to any distinct visible feature.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_PQ793MBQE50_C01 | N-C_PUN6QIIYU_4_C03",
+   "verdict": "not_visible",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "pQ793MBQE50:Q14"
+   ],
+   "quotes_B": [
+    "PUN6qIIYU-4:Q05"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both show the wrist breaking at contact and differ only in muscle use ('a little bit of forearm tension' vs relying on 'the small muscles of the hand and the wrist' instead of the legs), which a camera cannot show.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_NEPD7FIM7HI_C02 | N-C_XXLNDJNRA4E_C03",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "NEpD7fIM7HI:Q05"
+   ],
+   "quotes_B": [
+    "XXlndjnrA4E:Q25"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Adjust to low contact using the hand alone rather than bending at the knee and hip' and 'far below their eye level without bending their knees and hips' are the same failure to lower the body; B is stated for volleys.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_T5MEVWBOKR4_C01 | N-C_XLS469ZVMPU_C01",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "T5meVwBOKR4:Q06"
+   ],
+   "quotes_B": [
+    "xLs469ZVMPU:Q03"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "'Fails to freeze or decelerate the trunk right before contact' ('how slow it's moving right before contact') and 'it starts and stops you don't just twist all the way through contact' describe the same missing rotational brake.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  },
+  {
+   "pair": "N-C_VG8LBXOHM3E_C02 | N-C_WFIRPMUTZRO_C04",
+   "verdict": "same_mechanism",
+   "obs": null,
+   "vA": null,
+   "vB": null,
+   "quotes_A": [
+    "Vg8lbXOhM3E:Q05"
+   ],
+   "quotes_B": [
+    "wFIrPMutzRo:Q20"
+   ],
+   "new_question": null,
+   "new_values": [],
+   "camera": null,
+   "reason": "Both describe the same missing base ('hip tilt, knee bend, or wide-stance stability' vs 'this nice wide base and that little bit of hip flexion'); A's extra reason (predictable feeds) and B's extra consequence (load felt 'in my lower back') are not visible.",
+   "gate": {
+    "G1": true,
+    "G2": true,
+    "G5_enters_tree": false
+   },
+   "gate_pass": true
+  }
+ ]
+}

@@ -694,6 +694,97 @@
         ],
         "promoted_by": "pipeline/promote_new_obs.py from_review"
       }
+    },
+    {
+      "id": "OBS-38",
+      "src": "OBS-38_width_stance_between_feet_start.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Width of stance between feet at the start of forward swing relative to shoulder width",
+      "values": [
+        "narrower_than_shoulders",
+        "shoulder_width_or_wider"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-03"
+        ],
+        "episodes": [
+          "Vg8lbXOhM3E",
+          "dx8aGSIo24w"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-39",
+      "src": "OBS-39_curvature_thoracic_lumbar_spine_stroke.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Curvature of the thoracic and lumbar spine during stroke preparation and contact",
+      "values": [
+        "rounded_kyphotic",
+        "neutral_flat"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-15"
+        ],
+        "episodes": [
+          "NEpD7fIM7HI",
+          "QXAtdSEUkfY"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-40",
+      "src": "OBS-40_alignment_hitting_arm_with_chest.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Alignment of hitting arm with chest rotation during the forward swing",
+      "values": [
+        "arm_lags_behind_chest",
+        "moves_together_with_chest"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-32",
+          "NEW-OBS-47"
+        ],
+        "episodes": [
+          "hNVbbPEob3g",
+          "tzgAWr3QGv0"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
+    },
+    {
+      "id": "OBS-41",
+      "src": "OBS-41_point_non_hitting_hand_release.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "At what point does the non-hitting hand release the racket on a backhand forward swing?",
+      "values": [
+        "before_forward_swing",
+        "during_forward_swing_drop",
+        "deep_into_forward_drive"
+      ],
+      "origin": {
+        "new_obs_clusters": [
+          "NEW-OBS-98",
+          "NEW-OBS-99"
+        ],
+        "episodes": [
+          "dDYKuNZtdyU",
+          "pQ793MBQE50"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py"
+      }
     }
   ]
 }
