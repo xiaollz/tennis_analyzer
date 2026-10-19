@@ -911,6 +911,191 @@
         "unlocks_t05": true,
         "note": "user 2026-10-19「按你建议」: cautious single-episode OBS (max 5) that unlock ≥1 T05; camera/layer/no-ban/2-run bind OK"
       }
+    },
+    {
+      "id": "OBS-47",
+      "src": "OBS-47_arm_throwing_trajectory_serve_forward.md",
+      "layer": "B",
+      "camera": "B",
+      "reliability": "untested",
+      "question": "Arm throwing trajectory during the serve forward swing",
+      "values": [
+        "forward_toward_service_box",
+        "angled_out_to_side"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC134",
+        "cluster": "NEW-OBS-49",
+        "episodes": [
+          "YbLit9png2U"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-48",
+      "src": "OBS-48_stroke_preparation_racket_tip_move.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During stroke preparation, does the racket tip move inward toward the player before lagging back?",
+      "values": [
+        "moves_inward",
+        "stays_static_or_moves_outward"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC128",
+        "cluster": "NEW-OBS-47",
+        "episodes": [
+          "WoVEWh7fFfc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-49",
+      "src": "OBS-49_serve_racket_drop_behind_back.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the serve racket drop behind the back, how deeply does the racket drop below the shoulders?",
+      "values": [
+        "deep_stretch_drop",
+        "shallow_restricted_drop"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC131",
+        "cluster": "NEW-OBS-48",
+        "episodes": [
+          "WoVEWh7fFfc"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-50",
+      "src": "OBS-50_reaction_volleys_hitting_hand_take.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "On reaction volleys, does the hitting hand take a backswing or hover in front of the body?",
+      "values": [
+        "takes_backswing",
+        "hovers_in_front"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC132",
+        "cluster": "NEW-OBS-06",
+        "episodes": [
+          "XXlndjnrA4E"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-51",
+      "src": "OBS-51_flexion_hips_knees_ankles_ready.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "Flexion at the hips, knees, and ankles during ready stance",
+      "values": [
+        "triple_flexion_present",
+        "joints_extended_upright"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC014",
+        "cluster": "NEW-OBS-63",
+        "episodes": [
+          "FOmz8Wjv3DQ"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-52",
+      "src": "OBS-52_preparation_phase_before_forward_swing.md",
+      "layer": "B",
+      "camera": "S",
+      "reliability": "untested",
+      "question": "During the preparation phase before the forward swing, how flexed is the rear knee?",
+      "values": [
+        "deeply_bent",
+        "slightly_bent",
+        "nearly_straight"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC028",
+        "cluster": "NEW-OBS-67",
+        "episodes": [
+          "QXAtdSEUkfY"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-53",
+      "src": "OBS-53_preparation_before_swing_non_hitting.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "During preparation before the swing, does the non-hitting hand adjust or seat the racket handle into the hitting palm?",
+      "values": [
+        "off_hand_seats_racket",
+        "no_off_hand_seating"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC144",
+        "cluster": "NEW-OBS-51",
+        "episodes": [
+          "fjpr9PS02tM"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
+    },
+    {
+      "id": "OBS-54",
+      "src": "OBS-54_position_player_s_hitting_hand.md",
+      "layer": "A",
+      "camera": "any",
+      "reliability": "untested",
+      "question": "Position of the player's hitting hand along the racket handle relative to the butt cap flare.",
+      "values": [
+        "choked_up_on_handle",
+        "pinky_on_butt_cap_flare"
+      ],
+      "origin": {
+        "approved_by_user": "2026-10-19",
+        "single_episode_exception": true,
+        "source": "ftt_tree/obs_binding_v11.json",
+        "candidate": "NC005",
+        "cluster": "NEW-OBS-10",
+        "episodes": [
+          "2Nn9tyMECZU"
+        ],
+        "promoted_by": "pipeline/promote_new_obs.py approve"
+      }
     }
   ]
 }

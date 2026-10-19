@@ -59,9 +59,12 @@ def check(tree, ep_dir, where="tree"):
         """Path A: a problem is confirmable if at least one edge-linked cause has required."""
         return any(nodes[c]["signature"]["required"] for c in causes_of.get(pid, []) if c in nodes)
 
-    # T08 exemptions (user 2026-10-19): same-episode problem↔cause same_mechanism; self_feel_only pairs.
+    # T08 exemptions (user 2026-10-19 / v12): same_mechanism problem↔cause; same-card cause↔cause;
+    # same_mechanism pairs where merge is structurally blocked; self_feel_only pairs.
     ex = tree.get("build", {}).get("t08_exemptions", {})
     pc_exempt = {frozenset(x) for x in ex.get("same_mechanism_problem_cause", [])}
+    cc_exempt = {frozenset(x) for x in ex.get("same_mechanism_cause_cause", [])}
+    sm_exempt = {frozenset(x) for x in ex.get("same_mechanism_pairs", [])}
     self_feel = {frozenset(x) for x in ex.get("self_feel_only_pairs", [])}
 
     # T04 signatures: obs exist, values legal, no C-layer in required, must_fix nodes are constrained
@@ -107,8 +110,14 @@ def check(tree, ep_dir, where="tree"):
                 db = {d["vs"] for d in nodes[b]["differentials"]}
                 if b in da or a in db:
                     continue
-                # same-episode problem↔cause judged same_mechanism (review ×2) — exempt (user 2026-10-19)
+                # same-mechanism problem↔cause (review ×2) — exempt (user 2026-10-19)
                 if pair in pc_exempt:
+                    continue
+                # same-card cause↔cause same_mechanism (review ×2) — exempt (user 2026-10-19「同卡 C↔C」)
+                if pair in cc_exempt:
+                    continue
+                # same_mechanism but merge blocked (M02/M08/not-cause-cause) — exempt with review evidence (v12)
+                if pair in sm_exempt:
                     continue
                 # not_visible / self_feel_only — report INFO, not FAIL (user 2026-10-19)
                 if pair in self_feel:

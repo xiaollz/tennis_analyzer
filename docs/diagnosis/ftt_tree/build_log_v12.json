@@ -1,0 +1,10 @@
+{
+ "builder": "build_tree_v2 + v12 patches",
+ "problem_nodes": 54,
+ "cause_nodes": 183,
+ "edges": 219,
+ "observables": 54,
+ "nodes_with_required": 83,
+ "awareness_nodes": 100,
+ "note": "tree_v12 = tree_v11 + OBS-47..54 + T08 diffs/exemptions + awareness problems + merge UJPU_C06→2NN9_C03; tree.json v1 untouched; thresholds unchanged"
+}
