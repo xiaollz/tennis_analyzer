@@ -4,7 +4,7 @@
 > 用途：诊断时先认树干，再认是哪根粗枝，最后才挂叶子（OBS）。这是给系统诊断用的，不是场上口令。
 > 引用规则：
 > - 只引已核对卡片的原话（`episodes/<id>.card.json`）和书页码。
-> - 6ak4ZScH_gc、KU7FHy1qQOI 在这里只有卡片摘要，标「卡片摘要」，不当原话用。
+> - KU7FHy1qQOI 在这里只有卡片摘要，标「卡片摘要」，不当原话用。6ak4ZScH_gc 已于 2026-10-20 按字幕（auto，`/workspace/ftt_subs/6ak4ZScH_gc.norm.tsv`）核对原话，见 `sources/ftt_hips_6ak4_uiRF_2026-10-20.md`；它仍不是已核对卡片，只作知识引用，不进 tree evidence。
 > - ui-RFRdQKRk、5jHCDc44SQM 是 **holdout 期**：可以作为知识引用，**不得写进 tree 节点的 evidence**（check_tree T02）。
 > 禁令：推肘 / 降拍 / 旋后 / 伸肘不作任何处方口令。原话里出现的 supinate / pronate 等词只作知识记录，不作口令。
 > 本文件不改 tree.json v1，也不改 tree_v18 或任何 verify 阈值。
@@ -69,7 +69,12 @@ FTT 出处：
 - 「The unit doesn't include your hips. If I go backwards with my hips as well, then I create no tension...」— ui-RFRdQKRk:Q03（holdout）
 - 躯干比髋扭得更多、转得更快 — 5jHCDc44SQM:Q03 / Q04（holdout）
 - 只靠髋去发、腹部没接上，挥拍就散 — 5jHCDc44SQM:Q05–Q06（holdout）
-- 6ak4ZScH_gc（卡片摘要）：骨盆先往前发、预拉筋膜，然后肩超过它
+- 「the same tension that flings your shoulder forward, flings your hip backwards.」— 6ak4ZScH_gc@2:38（字幕原话）
+- 「the best way to stretch this is to start by throwing that pelvis forward to create more stretch before it swaps off.」— 6ak4ZScH_gc@9:12（字幕原话）
+- 「most players when I see them trying to send their right hip through the shot, they send … back together, front together」— 6ak4ZScH_gc@5:05（字幕原话；这正是「象征性蹬髋」的一种机制解释）
+- 「we don't really perceive motion. We perceive tension and thereby acceleration.」— 6ak4ZScH_gc@9:55（字幕原话；体感点是「髋被往后拽」，不是「髋往前送」）
+- 「my pelvis and shoulders … are going back together, forward together. Versus counter-rotating.」— ui-RFRdQKRk@2:43（holdout）
+- 「I can compensate by swinging up more」— ui-RFRdQKRk@2:35（holdout；无扭转时用往上挥补力 → 与「小臂上抬」吻合）
 - 书 p.30：触球时髋胸仍侧对，手臂被卡住
 - 小臂上抬的成因线索：
   - 「even if your arm and hand are not moving low to high, your racket tip can still move low to high」— PwkGLkRm73o:Q03。树节点 N-C_PWKGLKRM73O_C02：大脑怕打到地上，逼手臂从下往上兜。
