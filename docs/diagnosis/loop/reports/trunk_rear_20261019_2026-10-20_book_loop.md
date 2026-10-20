@@ -1,0 +1,87 @@
+# 树干报告：rear_20261019（compose_trunk_report，待验证）
+
+> 由 `compose_trunk_report.py` 按 `trunk_branches.json` 重写。V5 未过关前全部「待验证」。
+> 禁令口令未写入任何处方。
+
+## 1. 树干
+
+**动力链：蹬地进腿 → 髋先启动，并和肩形成反向扭转张力（coil，不是单纯侧身）→ 躯干带胸整体转回 → 手臂和拍子被动甩出；并在对的时间启动**
+
+id=`TRUNK_KINETIC_CHAIN` · sources=BOOK:p83, BOOK:p116, BOOK:p30, BOOK:p84, BOOK:p90, BOOK:p111, PwkGLkRm73o:Q02
+
+## 2. 粗枝 1：髋肩之间没有反向扭转张力（coil 不足）→ 力断在髋 → 手臂往上兜代偿（有事实）
+
+- status=`has_facts` · confidence=`medium` · 待验证
+- FLT: FLT-05, FLT-02
+
+| 叶子 | role | state | 证据 |
+|---|---|---|---|
+| 前挥肩先转、髋不领先 | evidence | fact | OBS-25=shoulders_lead_hips (3/3) |
+| 前挥手臂先动 | evidence | fact | OBS-18=arm_first (3/3) |
+| 准备时肩比髋多转了一点，但髋没留住、没坐进后髋，不形成反向张力（turn ≠ coil） | evidence | candidate | 候选 NEW-SHOULDER_VS_HIP_PREP=shoulders_farther_than_hips (3/3) |
+| 准备转离幅度小 | context | fact | OBS-08=small_turn (2/3) |
+| 触球时髋线已朝网（开放站位下不等于扭转后转回，要结合 OBS-25 读） | context | fact | OBS-09=square_or_past (3/3) |
+| 小臂往上抬 / 往上兜（没 coil 时的补力方式） | evidence | self_report | 用户自述：正后方肉眼能明显看出小臂向上抬 |
+| 蹬髋只是象征性：髋肩一起往前走、没有反向张力，身体前移、力没传上去（C 层为主；「约 45° 往前上」为用户自述，非 FTT 出处） | evidence | self_report | 用户自述：每次蹬髋只是象征性腿部往前 / 往上蹬，髋没攒住力，身体往前移，力没往上传 |
+| 脚钉死 / 宽开放站位钉在原地 | upstream_condition | legacy | 宽开放站位钉在原地，无侧移 / 交叉 / 垫步 |
+| 膝盖没有深弯（正后方看不准深浅） | upstream_condition | legacy | 膝盖弯曲不明显（直立微屈） |
+| 随挥马上缠回左肩 | downstream | legacy | 随挥落左肩至左前胸 |
+| 臂和胸是否同步（正后方实测看不清） | not_visible | not_visible | OBS-40=unclear / 机位不可见 |
+| 躯干是否减速（实测看不清） | not_visible | not_visible | OBS-19=unclear / 机位不可见 |
+| 骨盆是否减速（实测看不清） | not_visible | not_visible | OBS-71=unclear / 机位不可见 |
+
+削弱的旁支：
+- FLT-04: 准备阶段转肩一体化引拍 OK → 削弱「准备不足」一支
+- FLT-01: 横向间距 OK、没被挤住 → 削弱「被挤住」一支
+
+holdout 知识（不进 tree evidence）：ui-RFRdQKRk:Q01, ui-RFRdQKRk:Q02, ui-RFRdQKRk:Q03, 5jHCDc44SQM:Q03, 5jHCDc44SQM:Q04
+
+## 3. 粗枝 2：挥拍启动过早（击球点与时机）（待测 / 仅自述）
+
+- status=`pending_self_report` · confidence=`low` · 待验证
+
+| 叶子 | role | state | 证据 |
+|---|---|---|---|
+| 前挥启动时球还在弹起 / 未到最高点 | evidence | self_report | 用户自述：复看视频发现在球到最高点之前就开始挥，怕打不到的急躁 |
+| 开始转体时拍头还在球上方 | evidence | missing | 缺失 |
+| 触球点在身体前后（与启动时机是两个量） | evidence | missing | 缺失 |
+| 引拍顶点停顿 | context | missing | 缺失 |
+| 口播结果 / 下网 | downstream | missing | 缺失 |
+
+缺失的中立事实（待测）：
+- NEW-SWING_START_VS_BOUNCE（机位 S）：At the moment the forward swing starts, is the incoming ball still rising after the bounce, at about its highest point, or already descending?
+- OBS-57（机位 S）
+- OBS-03（机位 S）
+
+## 关系（推断，不是证据）
+
+- B2_SWING_START_TOO_EARLY → B1_HIP_TRANSFER_ARM_COMPENSATION（inferred）: 急着挥 → 髋没扭起来手臂就抢先（推断，不是证据）
+
+## 撤回
+
+- **击球点偏晚**（`contact_late`）：first pass was prompt-led; rear view cannot see contact depth; it concerns contact position, not swing-start timing
+- **脚下锁死是第一要害**（`feet_locked_first_priority`）：violates FTT P3; feet planted is an upstream condition under B1
+
+## 下一次只改一件事
+
+> 准备时鼻吸，启动前挥至触球时用嘴短促呼气。
+
+**外部目标：等球过了最高点、开始往下落，再启动前挥。**
+
+出处：dZadhzVEsds:Q02; BOOK:p75
+
+协议：发球机最低速 40 球：10 基线 + 2×10 目标 + 10 复测，每球口播结果
+
+验证：
+- NEW-SWING_START_VS_BOUNCE 目标组多数 descending/near_highest_point
+- OBS-18 是否仍 arm_first
+- 口播「好」不少于基线
+
+## 附录：diagnose.py 扁平排名（不决定粗枝）
+
+- N-C_2NN9TYMECZU_C06 Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion conf=medium score=3 evid=['OBS-08=small_turn (model, 2/3)', 'OBS-09=square_or_past (model, 3/3)']
+- N-C_UB6SBA_KX9E_C04 Aiming to rotate all the way through causes the hips to fire their power pulse far too late in the swing cycle, producing spin instead of linear forward drive. conf=medium score=2 evid=['OBS-25=shoulders_lead_hips (model, 3/3)']
+- N-C_PUN6QIIYU_4_C03 Relying on the small hand and wrist muscles to guide the swing rather than driving weight transfer from the loaded back leg. conf=low score=2 evid=['OBS-18=arm_first (model, 3/3)', 'OBS-25=shoulders_lead_hips (model, 3/3)']
+
+---
+meta: clip=rear_20261019_small camera=B v5_passed=False

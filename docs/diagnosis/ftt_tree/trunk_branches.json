@@ -1,10 +1,11 @@
 {
-  "_comment": "Machine-readable trunk/branch map for compose_trunk_report.py. Human version: kinetic_chain_trunk.md. Rules: only branches listed here may appear at top level; every leaf has a role; status rules are fixed here, not in the script. Changing this file requires user approval and a note in kinetic_chain_trunk.md.",
-  "version": "2026-10-20",
+  "_comment": "Machine-readable trunk/branch map for compose_trunk_report.py. Human version: kinetic_chain_trunk.md. Rules: only branches listed here may appear at top level; every leaf has a role; status rules are fixed here, not in the script. Changing this file requires user approval and a note in kinetic_chain_trunk.md. 2026-10-20 book-loop: text/sources re-grounded on the FTT book (see loop/reports/book_grounded_opt_2026-10-20.md); no id, role, obs or value changed.",
+  "version": "2026-10-20 book-loop",
+  "banned_cue_extra": ["送髋", "把髋送进球里", "髋往前顶"],
   "trunk": {
     "id": "TRUNK_KINETIC_CHAIN",
-    "zh": "动力链：力从地面经腿、髋扭转、躯干传到手臂和拍子，并在对的时间启动",
-    "sources": ["BOOK:p83", "BOOK:p116", "PwkGLkRm73o:Q02"]
+    "zh": "动力链：蹬地进腿 → 髋先启动，并和肩形成反向扭转张力（coil，不是单纯侧身）→ 躯干带胸整体转回 → 手臂和拍子被动甩出；并在对的时间启动",
+    "sources": ["BOOK:p83", "BOOK:p116", "BOOK:p30", "BOOK:p84", "BOOK:p90", "BOOK:p111", "PwkGLkRm73o:Q02"]
   },
   "status_rules": {
     "has_facts": "at least one leaf with role=evidence matched by an input fact with source in [model, pose, manual] and agree >= 2/3 and value != unclear",
@@ -15,19 +16,26 @@
   "branches": [
     {
       "id": "B1_HIP_TRANSFER_ARM_COMPENSATION",
-      "zh": "粗枝 1：髋没把力传上来 → 手臂 / 小臂代偿",
+      "zh": "粗枝 1：髋肩之间没有反向扭转张力（coil 不足）→ 力断在髋 → 手臂往上兜代偿",
       "trunk_question": "how_force_travels",
       "flt_refs": ["FLT-05", "FLT-02"],
-      "sources": ["PwkGLkRm73o:Q02", "PwkGLkRm73o:Q03", "2Nn9tyMECZU:Q05", "BOOK:p30", "BOOK:p83"],
-      "holdout_knowledge": ["ui-RFRdQKRk:Q03", "5jHCDc44SQM:Q03", "5jHCDc44SQM:Q04"],
+      "sources": ["PwkGLkRm73o:Q02", "PwkGLkRm73o:Q03", "2Nn9tyMECZU:Q05", "BOOK:p30", "BOOK:p53", "BOOK:p83", "BOOK:p84", "BOOK:p91", "BOOK:p111"],
+      "holdout_knowledge": ["ui-RFRdQKRk:Q01", "ui-RFRdQKRk:Q02", "ui-RFRdQKRk:Q03", "5jHCDc44SQM:Q03", "5jHCDc44SQM:Q04"],
+      "video_knowledge": [
+        {"ref": "6ak4ZScH_gc@2:38", "zh": "同一股张力把肩甩向前、把髋甩向后", "status": "subtitle_timestamp_no_card"},
+        {"ref": "6ak4ZScH_gc@5:05", "zh": "髋肩一起往后、一起往前（back together, front together）没有张力；「送髋」口令常害人", "status": "subtitle_timestamp_no_card"},
+        {"ref": "6ak4ZScH_gc@7:28", "zh": "骨盆确实先于肩往前加速", "status": "subtitle_timestamp_no_card"},
+        {"ref": "6ak4ZScH_gc@7:56", "zh": "髋多数情况下不倒退，只是减速", "status": "subtitle_timestamp_no_card"},
+        {"ref": "ui-RFRdQKRk@2:33", "zh": "没有 coil 时力不足，会用往上挥来补", "status": "holdout_subtitle_timestamp"}
+      ],
       "leaves": [
         {"id": "L1_shoulders_lead", "role": "evidence", "obs": "OBS-25", "value": "shoulders_lead_hips", "camera": "B", "zh": "前挥肩先转、髋不领先"},
         {"id": "L1_arm_first", "role": "evidence", "obs": "OBS-18", "value": "arm_first", "camera": "B", "zh": "前挥手臂先动"},
-        {"id": "L1_turn_not_coil", "role": "evidence", "obs": "NEW-SHOULDER_VS_HIP_PREP", "value": "shoulders_farther_than_hips", "camera": "B", "zh": "准备时上身转了一点，但不是坐进后髋的扭", "note": "NEW candidate, not in catalog; may be shown but never counts toward has_facts"},
+        {"id": "L1_turn_not_coil", "role": "evidence", "obs": "NEW-SHOULDER_VS_HIP_PREP", "value": "shoulders_farther_than_hips", "camera": "B", "zh": "准备时肩比髋多转了一点，但髋没留住、没坐进后髋，不形成反向张力（turn ≠ coil）", "note": "NEW candidate, not in catalog; may be shown but never counts toward has_facts"},
         {"id": "L1_prep_turn_small", "role": "context", "obs": "OBS-08", "value": "small_turn", "camera": "B", "zh": "准备转离幅度小"},
         {"id": "L1_hips_open_at_contact", "role": "context", "obs": "OBS-09", "value": "square_or_past", "camera": "B", "zh": "触球时髋线已朝网（开放站位下不等于扭转后转回，要结合 OBS-25 读）"},
-        {"id": "L1_forearm_lift", "role": "evidence", "obs": "NEW-HAND_VS_ELBOW_REAR", "value": "hand_rises_above_elbow", "camera": "B", "self_report_key": "forearm_lift", "zh": "小臂向上抬", "note": "catalog OBS-12a/OBS-11 are side-view only"},
-        {"id": "L1_symbolic_hip_push", "role": "evidence", "obs": "OBS-10", "value": null, "camera": "B", "self_report_key": "symbolic_hip_push", "zh": "蹬髋只是象征性：身体往前移、力不往上传（C 层为主）"},
+        {"id": "L1_forearm_lift", "role": "evidence", "obs": "NEW-HAND_VS_ELBOW_REAR", "value": "hand_rises_above_elbow", "camera": "B", "self_report_key": "forearm_lift", "zh": "小臂往上抬 / 往上兜（没 coil 时的补力方式）", "note": "catalog OBS-12a/OBS-11 are side-view only"},
+        {"id": "L1_symbolic_hip_push", "role": "evidence", "obs": "OBS-10", "value": null, "camera": "B", "self_report_key": "symbolic_hip_push", "zh": "蹬髋只是象征性：髋肩一起往前走、没有反向张力，身体前移、力没传上去（C 层为主；「约 45° 往前上」为用户自述，非 FTT 出处）"},
         {"id": "L1_feet_planted", "role": "upstream_condition", "legacy_key": "stance_planted", "camera": "B", "zh": "脚钉死 / 宽开放站位钉在原地"},
         {"id": "L1_knees_straightish", "role": "upstream_condition", "legacy_key": "knees_not_deep", "camera": "S", "zh": "膝盖没有深弯（正后方看不准深浅）"},
         {"id": "L1_finish_wraps", "role": "downstream", "legacy_key": "finish_left_shoulder", "obs": "OBS-15", "value": "b:wraps_back_to_body_immediately", "camera": "any", "zh": "随挥马上缠回左肩"},
@@ -46,7 +54,7 @@
       "trunk_question": "when_chain_starts",
       "flt_refs": [],
       "tree_nodes": ["N-C_DZADHZVESDS_C01"],
-      "sources": ["dZadhzVEsds:Q02", "dZadhzVEsds:Q03"],
+      "sources": ["dZadhzVEsds:Q02", "dZadhzVEsds:Q03", "BOOK:p75"],
       "leaves": [
         {"id": "L2_start_vs_bounce", "role": "evidence", "obs": "NEW-SWING_START_VS_BOUNCE", "value": "still_rising", "camera": "S", "self_report_key": "early_swing_start", "zh": "前挥启动时球还在弹起 / 未到最高点"},
         {"id": "L2_racket_above_ball", "role": "evidence", "obs": "OBS-57", "value": "above_ball", "camera": "S", "zh": "开始转体时拍头还在球上方"},
@@ -66,7 +74,7 @@
   ],
   "next_one_thing": {
     "zh": "等球过了最高点、开始往下落，再启动前挥。",
-    "source": "dZadhzVEsds:Q02",
+    "source": "dZadhzVEsds:Q02; BOOK:p75",
     "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
     "protocol": "发球机最低速 40 球：10 基线 + 2×10 目标 + 10 复测，每球口播结果",
     "verify": ["NEW-SWING_START_VS_BOUNCE 目标组多数 descending/near_highest_point", "OBS-18 是否仍 arm_first", "口播「好」不少于基线"]

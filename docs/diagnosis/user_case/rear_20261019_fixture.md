@@ -62,3 +62,9 @@ OBS-03 击球点前后、OBS-23 膝角深浅、OBS-57 转体时拍头相对球�
 ## 7. 变更记录
 
 - 2026-10-20：登记；冻结快照 v1；golden v1。
+
+
+## 7b. book-loop 2026-10-20
+- golden `ban_terms` += 「送髋」（加严；与 trunk banned_cue_extra / config ban_patterns 中文项对齐）。
+- trunk 文案 book-grounded；**未改** branch id / OBS 期望。
+- live OBS-08 DRIFT 见 `loop/reports/gemini_vs_frozen_book_loop_2026-10-20.md`；frozen 未改。

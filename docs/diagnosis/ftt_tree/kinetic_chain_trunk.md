@@ -1,19 +1,20 @@
 # 动力链树干 + 粗枝地图（kinetic_chain_trunk）
 
-> 版本：2026-10-20 午｜按用户拍板的结构重写：**树干 = 动力链；粗枝 = 少数几根主问题；叶子 = 挂在粗枝下的可观测细节**。
+> 版本：2026-10-20 book-loop｜按用户拍板的结构：**树干 = 动力链；粗枝 = 少数几根主问题；叶子 = 挂在粗枝下的可观测细节**。
+> 本版以 FTT 原书（John Kumpf，`books/ftt_fault_tolerant_forehand/original.pdf`）为根基重写了树干和粗枝 1 的说法。依据与核对状态见 `loop/reports/book_grounded_opt_2026-10-20.md`。所有 id、叶子角色、OBS 都没变，与 `trunk_branches.json` 同步。
 > 用途：诊断时先认树干，再认是哪根粗枝，最后才挂叶子（OBS）。这是给系统诊断用的，不是场上口令。
 > 引用规则：
 > - 只引已核对卡片的原话（`episodes/<id>.card.json`）和书页码。
 > - KU7FHy1qQOI 在这里只有卡片摘要，标「卡片摘要」，不当原话用。6ak4ZScH_gc 已于 2026-10-20 按字幕（auto，`/workspace/ftt_subs/6ak4ZScH_gc.norm.tsv`）核对原话，见 `sources/ftt_hips_6ak4_uiRF_2026-10-20.md`；它仍不是已核对卡片，只作知识引用，不进 tree evidence。
 > - ui-RFRdQKRk、5jHCDc44SQM 是 **holdout 期**：可以作为知识引用，**不得写进 tree 节点的 evidence**（check_tree T02）。
-> 禁令：推肘 / 降拍 / 旋后 / 伸肘不作任何处方口令。原话里出现的 supinate / pronate 等词只作知识记录，不作口令。
+> 禁令：推肘 / 降拍 / 旋后 / 伸肘 / 送髋（含「把髋送进球里」「髋往前顶」）不作任何处方口令。原话里出现的 supinate / pronate 等词只作知识记录，不作口令。
 > 本文件不改 tree.json v1，也不改 tree_v18 或任何 verify 阈值。
 
 ---
 
 ## 0. 树干（一句话）
 
-**动力链：力从地面进腿，腿把髋扭起来（不是单纯转过去），躯干接住这股扭力带动胸转回，手臂和拍子被动甩出；而且整条链要在对的时间启动。**
+**动力链：蹬地进腿 → 髋先启动，并和肩形成反向扭转张力（coil，不是单纯侧身）→ 躯干带胸整体转回 → 手臂和拍子被动甩出；并在对的时间启动。**
 
 树干回答三个问题，下面的粗枝分别挂在其中一个上：
 
@@ -23,9 +24,14 @@
 | 什么时候启动 | 启动太早，链还没准备好就开始挥 | 粗枝 2 |
 | 传到拍子上的是不是身体的力 | 结果层，由前两问决定 | 叶子（随挥、球质、口播结果） |
 
-FTT 出处：
+FTT 出处（书；英文均【已核对】，见 FLT-02 / 04 / 05 卡）：
 - 「the answer is not to pull with your arm」（书 p.83）
 - 「Power does not come from swinging harder with the arm」（书 p.116）
+- 「When, instead, our hips and chest are still sideways at contact, the arm is much more impinged.」（书 p.30）
+- 「A full hip rotation is actually impossible if both of your feet are firmly planted on the ground.」（书 p.84）
+- 「When a player consciously initiates their swing by exploding off of their hitting leg, they are far less likely to leave their hips under-rotated」（书 p.111）
+- 腹部 coil：髋转动时肩髋角度保持，之后腹部展开、把肩胸转回目标（书 p.89–90；**笔记归纳，英文待逐字核**）；在场上去想「先髋、后腹、再胸」的时序「almost definitely useless」（书 p.90）
+- 肩转比髋多 = 肩髋分离角，多出一个旋转环节（POWER Checklist，约 p.117–118；**笔记归纳，页码与英文待核**）
 - 「we aren't harnessing rotation. And we can't harness rotation because that energy isn't passing through the shoulder in a throwing chain.」— PwkGLkRm73o:Q02
 - 「The secret to effortless power in tennis is to coil with your trunk. But, coiling means more than just turning sideways.」— ui-RFRdQKRk:Q01（holdout）
 
@@ -35,16 +41,16 @@ FTT 出处：
 
 ```mermaid
 flowchart TD
-  T["树干：动力链<br/>地面 → 腿 → 髋扭转 → 躯干/胸 → 手臂 → 拍子<br/>+ 启动时机"]
+  T["树干：动力链<br/>地面 → 腿 → 髋先启动 + 髋肩反向张力（coil）→ 躯干/胸整体转回 → 手臂 → 拍子<br/>+ 启动时机"]
 
-  T --> B1["粗枝 1：髋没把力传上来 → 手臂/小臂代偿<br/>（怎么传）"]
+  T --> B1["粗枝 1：髋肩没有反向扭转张力（coil 不足）→ 力断在髋 → 手臂往上兜代偿<br/>（怎么传）"]
   T --> B2["粗枝 2：挥拍启动过早<br/>（什么时候启动）"]
 
   B1 --> L11["叶：肩先转、髋不领先 OBS-25"]
   B1 --> L12["叶：前挥手臂先动 OBS-18"]
-  B1 --> L13["叶：准备时只是上身转，髋没坐进去<br/>NEW 肩线 vs 髋线 · OBS-08"]
-  B1 --> L14["叶：小臂向上抬<br/>OBS-12a / OBS-11（侧面）· 正后方 NEW-OBS 候选"]
-  B1 --> L15["叶：蹬髋只是象征性，身体往前移、力不往上走<br/>OBS-10 · OBS-13b · 体感 C 层"]
+  B1 --> L13["叶：准备时肩比髋多转一点，但髋没留住、没坐进后髋（turn ≠ coil）<br/>NEW 肩线 vs 髋线 · OBS-08"]
+  B1 --> L14["叶：小臂往上抬 / 往上兜（没 coil 时的补力方式）<br/>OBS-12a / OBS-11（侧面）· 正后方 NEW-OBS 候选"]
+  B1 --> L15["叶：蹬髋只是象征性：髋肩一起往前走、没有反向张力<br/>OBS-10 · OBS-13b · 体感 C 层"]
   B1 --> U1["上游条件：脚钉死 / 腿没加载<br/>OBS-05 · OBS-38 · OBS-23"]
   B1 --> D1["下游：随挥马上缠回左肩 OBS-15b"]
 
@@ -61,11 +67,27 @@ flowchart TD
 
 ---
 
-## 2. 粗枝 1：髋没把力传上来 → 手臂 / 小臂代偿
+## 2. 粗枝 1：髋肩之间没有反向扭转张力（coil 不足）→ 力断在髋 → 手臂往上兜代偿
 
-**一句话**：髋没有扭起来、没有领先，下半身的力在髋这里断了一截；身体只好下意识用手臂和小臂去补，表现之一就是小臂往上抬。
+**一句话**：髋没有先启动，也没有和肩之间形成反向的扭转张力。髋和肩只是一起转走、一起转回，下半身的力在髋这里断了一截；身体只好用手臂去补，表现之一是小臂往上抬、往上兜。
 
-FTT 出处：
+**这根粗枝说的不是「髋往前送得不够」**：
+- FTT 的问题是**髋肩之间缺少反向张力**，不是髋送得不够远；
+- 所以本粗枝**禁用「送髋」类口令**（「送髋」「把髋送进球里」「髋往前顶」）。6ak4ZScH_gc@5:05 指出，这类意图常让人髋肩一起走，反而没张力。
+
+**两个「back together」不要混**：
+- 书 p.111「back together, forward together」指**上半身**（双臂 + 胸）作为整体转离、转回，是正面提示；
+- 6ak4@5:05 和 ui@2:43 的「back together, front/forward together」指**髋和肩**一起走，是负面例子。
+
+**「约 45° 往前上」**：这是用户的说法，书和视频里都**没有**力的 45° 方向（ui@9:38 的 45° 指脚的朝向）。只作用户自述，不当 FTT 证据，也不作处方。
+
+FTT 出处（书，【已核对】）：
+- 书 p.53 / p.55：爆发式挥拍时髋扭转是 fundamental，「There's no leeway here」
+- 书 p.84：双脚钉死，完整转髋不可能 → 脚钉死只是上游条件
+- 书 p.91：「…unlike, say, pulling the racket forward using the hand and arm.」
+- 书 p.111：从击球腿蹬出启动，髋就不容易转不够；非持拍手肘过早拉开会过早开胸
+
+FTT 出处（视频 / holdout 知识）：
 - 「The unit doesn't include your hips. If I go backwards with my hips as well, then I create no tension...」— ui-RFRdQKRk:Q03（holdout）
 - 躯干比髋扭得更多、转得更快 — 5jHCDc44SQM:Q03 / Q04（holdout）
 - 只靠髋去发、腹部没接上，挥拍就散 — 5jHCDc44SQM:Q05–Q06（holdout）
@@ -87,13 +109,13 @@ FTT 出处：
 |---|---|---|---|
 | 前挥谁先转：肩还是髋 | OBS-25 | ✅（B 机位题） | — |
 | 前挥谁先往目标动 | OBS-18 | ✅ | — |
-| 准备结束时肩线比髋线转得多还是一样 | NEW 候选（肩线 vs 髋线） | ✅ | 「坐进后髋」的张力本身看不到（C 层） |
+| 准备时肩比髋多转了一点，但髋没留住、没坐进后髋，不形成反向张力（turn ≠ coil） | NEW 候选（肩线 vs 髋线） | ✅ | 「坐进后髋」的张力本身看不到（C 层） |
 | 准备转离幅度 | OBS-08 | ✅ | — |
 | 触球时髋是否已朝网 | OBS-09 | ✅ | 开放站位下「已朝网」≠「扭转后转回」，要结合 OBS-25 读 |
 | 骨盆在前挥中是否减速 | OBS-71 | 实测 3/3 unclear | 需更高帧率或侧面 |
 | 臂和胸是否同步 | OBS-40 | 实测 3/3 unclear | 胸平面被挡 |
-| 小臂向上抬 | OBS-12a（`forearm_tilted_up`）、OBS-11（`lifts_up_first`） | catalog 标的是**侧面 S** | 正后方要单独出题，见下方 NEW-OBS 候选 |
-| 蹬髋象征性：身体往前移、不往上传 | OBS-10（后脚）、OBS-13b（触球后身体走向） | OBS-10 ✅ | OBS-13 需侧面；「髋攒没攒住力」是 C 层体感 |
+| 小臂往上抬 / 往上兜（没 coil 时的补力方式） | OBS-12a（`forearm_tilted_up`）、OBS-11（`lifts_up_first`） | catalog 标的是**侧面 S** | 正后方要单独出题，见下方 NEW-OBS 候选 |
+| 蹬髋象征性：髋肩一起往前走、没有反向张力，身体前移、力没传上去（「约 45° 往前上」为用户自述，非 FTT 出处） | OBS-10（后脚）、OBS-13b（触球后身体走向） | OBS-10 ✅ | OBS-13 需侧面；「髋攒没攒住力」是 C 层体感 |
 | 上游：脚钉死 / 腿没加载 | OBS-05、OBS-38 | ✅ | 膝角深浅 OBS-23 需侧面 |
 | 下游：随挥马上缠回身体 | OBS-15b | ✅ | — |
 
@@ -110,6 +132,9 @@ FTT 出处：
 **一句话**：球还没到该挥的位置就开始挥，链还没准备好就启动。树干的「什么时候启动」这一问没答对。
 
 FTT 出处：
+- 书 p.75（Inhale and Wait，【已核对】）：「the last step of preparation is a short waiting period between body preparation and swing initiation」「On balls that come extremely slowly, this waiting period may be long.」「Your cue for when to initiate the forward swing is… a visual cue.」
+  - 书支持「等球、由视觉信号启动」；**书没有规定**「最高点 / 下落 80%」这种具体时点，那是用户的说法和 dZadhzVEsds 的推论。
+- 书 p.110–114（Forward Swing Progression）讲扭转同步，不讲相对来球的时机；「急了 → 断链」只是推断（branch_links 虚线）。
 - 「now we have to be patient. If I load the hand up here, the racket's max velocity is going to be down into the ground. And then you're going to either spray the ball or have to try to wrist」— dZadhzVEsds:Q02
 - 「we need to be patient for either our pendulum or just our kind of placing the racket back to actually get below at least to the height of the ball. Preferably below our anticipated contact.」— dZadhzVEsds:Q03
 - 树节点 N-C_DZADHZVESDS_C01：手和拍还在球的高度之上，就开始了向前的转体加速（required OBS-57=`above_ball`）

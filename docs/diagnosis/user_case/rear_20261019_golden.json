@@ -1,35 +1,86 @@
 {
-  "_comment": "Golden expectations for compose_trunk_report.py on the frozen fixture (rear_20261019_facts_frozen.json + ftt_tree/trunk_branches.json). check_trunk_fixture.py compares the report against this. Changing an expectation needs user approval and a line in rear_20261019_fixture.md §7.",
+  "_comment": "Golden expectations for compose_trunk_report.py on the frozen fixture (rear_20261019_facts_frozen.json + ftt_tree/trunk_branches.json). check_trunk_fixture.py compares the report against this. Changing an expectation needs user approval and a line in rear_20261019_fixture.md §7. book-loop: ban_terms += 送髋 (stricter).",
   "fixture": "rear_20261019",
   "trunk_id": "TRUNK_KINETIC_CHAIN",
-  "branch_ids_exact": ["B1_HIP_TRANSFER_ARM_COMPENSATION", "B2_SWING_START_TOO_EARLY"],
+  "branch_ids_exact": [
+    "B1_HIP_TRANSFER_ARM_COMPENSATION",
+    "B2_SWING_START_TOO_EARLY"
+  ],
   "branches": {
     "B1_HIP_TRANSFER_ARM_COMPENSATION": {
       "status": "has_facts",
-      "evidence_must_include": ["OBS-18=arm_first", "OBS-25=shoulders_lead_hips"],
-      "self_report_leaves": ["L1_forearm_lift", "L1_symbolic_hip_push"],
-      "upstream_must_include": ["L1_feet_planted"],
-      "downstream_must_include": ["L1_finish_wraps"],
-      "not_visible_must_include": ["OBS-40", "OBS-19", "OBS-71"],
-      "candidate_leaves": ["L1_turn_not_coil"],
-      "excluded_siblings": ["FLT-04", "FLT-01"]
+      "evidence_must_include": [
+        "OBS-18=arm_first",
+        "OBS-25=shoulders_lead_hips"
+      ],
+      "self_report_leaves": [
+        "L1_forearm_lift",
+        "L1_symbolic_hip_push"
+      ],
+      "upstream_must_include": [
+        "L1_feet_planted"
+      ],
+      "downstream_must_include": [
+        "L1_finish_wraps"
+      ],
+      "not_visible_must_include": [
+        "OBS-40",
+        "OBS-19",
+        "OBS-71"
+      ],
+      "candidate_leaves": [
+        "L1_turn_not_coil"
+      ],
+      "excluded_siblings": [
+        "FLT-04",
+        "FLT-01"
+      ]
     },
     "B2_SWING_START_TOO_EARLY": {
       "status": "pending_self_report",
-      "must_not_have_fact_values_for": ["NEW-SWING_START_VS_BOUNCE", "OBS-57", "OBS-03"],
-      "missing_facts_must_include": ["NEW-SWING_START_VS_BOUNCE", "OBS-57", "OBS-03"],
+      "must_not_have_fact_values_for": [
+        "NEW-SWING_START_VS_BOUNCE",
+        "OBS-57",
+        "OBS-03"
+      ],
+      "missing_facts_must_include": [
+        "NEW-SWING_START_VS_BOUNCE",
+        "OBS-57",
+        "OBS-03"
+      ],
       "missing_camera": "S"
     }
   },
-  "never_top_level": ["L1_feet_planted", "L1_finish_wraps", "L1_forearm_lift", "L2_contact_depth", "contact_late"],
-  "retracted_must_include": ["contact_late", "feet_locked_first_priority"],
-  "branch_links": [{"from": "B2_SWING_START_TOO_EARLY", "to": "B1_HIP_TRANSFER_ARM_COMPENSATION", "kind": "inferred"}],
+  "never_top_level": [
+    "L1_feet_planted",
+    "L1_finish_wraps",
+    "L1_forearm_lift",
+    "L2_contact_depth",
+    "contact_late"
+  ],
+  "retracted_must_include": [
+    "contact_late",
+    "feet_locked_first_priority"
+  ],
+  "branch_links": [
+    {
+      "from": "B2_SWING_START_TOO_EARLY",
+      "to": "B1_HIP_TRANSFER_ARM_COMPENSATION",
+      "kind": "inferred"
+    }
+  ],
   "global": {
     "validation_label": "待验证",
     "v5_passed": false,
     "next_one_thing_count": 1,
     "breath_reminder_required": true,
-    "ban_terms": ["推肘", "降拍", "旋后", "伸肘"],
+    "ban_terms": [
+      "推肘",
+      "降拍",
+      "旋后",
+      "伸肘",
+      "送髋"
+    ],
     "max_confidence": "medium"
   }
 }

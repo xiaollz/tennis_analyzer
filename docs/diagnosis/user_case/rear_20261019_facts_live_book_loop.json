@@ -1,0 +1,60 @@
+{
+  "_comment": "book-loop live majority from rear_obs_trunk run1/2/3 2026-10-20; for check_trunk_fixture --live only; NOT frozen",
+  "clip_id": "rear_20261019_small",
+  "camera": "B",
+  "model": "gemini-3.8-flash",
+  "runs": 3,
+  "facts": [
+    {
+      "obs": "OBS-18",
+      "value": "arm_first",
+      "agree": "2/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-25",
+      "value": "shoulders_lead_hips",
+      "agree": "2/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-09",
+      "value": "square_or_past",
+      "agree": "2/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-08",
+      "value": "clearly_sideways",
+      "agree": "2/3",
+      "source": "model",
+      "note": "DRIFT vs frozen small_turn"
+    },
+    {
+      "obs": "OBS-40",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-19",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-71",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    }
+  ],
+  "candidate_facts": [
+    {
+      "obs": "NEW-SHOULDER_VS_HIP_PREP",
+      "value": "shoulders_farther_than_hips",
+      "agree": "3/3",
+      "source": "model"
+    }
+  ]
+}
