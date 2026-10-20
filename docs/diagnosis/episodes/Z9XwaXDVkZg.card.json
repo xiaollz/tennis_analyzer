@@ -34,7 +34,7 @@
   "problem": {
     "title_as_question": "What is the simple foundation required to control and power a one-handed backhand?",
     "definition": "Players struggle to control the racket head and squarely hit the ball on a one-handed backhand because they lack foundational upper back engagement and proper structural alignment.",
-    "node_id": "PENDING",
+    "node_id": "N-P_Z9XWAXDVKZG",
     "prerequisites": [
       "one-handed backhand grip",
       "basic contact timing"
@@ -252,7 +252,7 @@
       "statement": "The upper back around the shoulder blade is not engaged down and back during preparation and swing.",
       "depth": 1,
       "layer": "B",
-      "node_id": "PENDING",
+      "node_id": "N-C_Z9XWAXDVKZG_C01",
       "active_or_passive": "active",
       "evidence": [
         "Q02",
@@ -264,7 +264,7 @@
       "statement": "The grip has too much of a continental slant rather than roughly 90 degrees, preventing forearm roll.",
       "depth": 2,
       "layer": "B",
-      "node_id": "PENDING",
+      "node_id": "N-C_Z9XWAXDVKZG_C02",
       "active_or_passive": "active",
       "evidence": [
         "Q06"
@@ -275,7 +275,7 @@
       "statement": "The arm completely relaxes into the gravity drop instead of keeping the racket landing on the soft tissue complex.",
       "depth": 2,
       "layer": "C",
-      "node_id": "PENDING",
+      "node_id": "N-C_Z9XWAXDVKZG_C03",
       "active_or_passive": "active",
       "evidence": [
         "Q07"
@@ -286,7 +286,7 @@
       "statement": "The player stands straight and drops the arm instead of lowering the torso and bending the knees on low balls.",
       "depth": 2,
       "layer": "A",
-      "node_id": "PENDING",
+      "node_id": "N-C_Z9XWAXDVKZG_C04",
       "active_or_passive": "active",
       "evidence": [
         "Q09"
@@ -297,7 +297,7 @@
       "statement": "The physical muscular strength of the upper back and shoulder complex is insufficient to support and maneuver the racket weight.",
       "depth": 3,
       "layer": "C",
-      "node_id": "PENDING",
+      "node_id": "N-C_Z9XWAXDVKZG_C05",
       "active_or_passive": "passive",
       "evidence": [
         "Q11"
@@ -498,9 +498,9 @@
         "s1_r2_Z9XwaX",
         "s1_r3_Z9XwaX"
       ],
-      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "description": "user-authorized draft adjudication 2026-10-20: solutions Jaccard only. Causes/chain already met check_rerun between aligned runs; solutions transcript-anchor Jaccard stayed below threshold across raw pairs and 3-run consensus. Human selected consensus card (base_run closest to transcript; unsupported solutions already dropped); quotes+validate_cards PASS; thresholds in config.json unchanged. See raw/<id>/rerun_adjudication.json and loop/reports/round15_draft_adjudication_2026-10-20.md.",
       "resolution": "open_user_decides"
     }
   ],
-  "status": "stage1_draft"
+  "status": "stage1_verified"
 }

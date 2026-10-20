@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "channel": "Fault Tolerant Tennis",
   "updated": "2026-10-20",
-  "round": "round14",
+  "round": "round15",
   "videos": [
     {
       "id": "q6LrQYDvxmY",
@@ -396,11 +396,11 @@
       "id": "Z9XwaXDVkZg",
       "title": "The Simple Foundation of the One-Handed Backhand",
       "duration_s": 1170.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-20",
       "holdout": false,
-      "round": "round12",
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree"
+      "round": "round15",
+      "note": "round15 user-authorized solutions Jaccard adjudication 2026-10-20; quotes+validate PASS"
     },
     {
       "id": "lwS7Xxqrrdw",
@@ -426,11 +426,11 @@
       "id": "0m3BMfDDShI",
       "title": "Build This Foundation - The Rest Will Follow",
       "duration_s": 890.0,
-      "state": "subs_ready",
+      "state": "stage1_verified",
       "updated": "2026-10-20",
       "holdout": false,
-      "note": "ep_s1_v6: all raw pairs and 3-run consensus fail check_rerun; kept stage1_draft, must not enter the tree",
-      "round": "round11"
+      "note": "round15 user-authorized solutions Jaccard adjudication 2026-10-20; quotes+validate PASS",
+      "round": "round15"
     },
     {
       "id": "KU7FHy1qQOI",
@@ -1332,6 +1332,22 @@
       "yt_dlp": "HTTP 429 + bot sign-in required",
       "listed_to_subs_ready": 0,
       "log": "/workspace/ftt_subs/_listed_fetch/"
+    }
+  },
+  "round15_selection": {
+    "rule": "user-authorized draft adjudication 2026-10-20 (solutions Jaccard only); listed cookies 0/7 TranscriptsDisabled",
+    "prompt_version": "ep_s1_v6 (prior runs; no re-extract)",
+    "ids": [
+      "0m3BMfDDShI",
+      "Z9XwaXDVkZg"
+    ],
+    "outcome": {
+      "stage1_verified": [
+        "0m3BMfDDShI",
+        "Z9XwaXDVkZg"
+      ],
+      "listed_subs_success": 0,
+      "listed_subs_fail_reason": "TranscriptsDisabled / no captions (Shorts); cookies OK"
     }
   }
 }

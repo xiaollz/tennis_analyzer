@@ -174,3 +174,14 @@ Z9XwaXDVkZg / FjjvhNbk3q4 / m1NBdd3Bigg / 2J8q7sn4JLc / 5KdScDKxVSI — consensu
 
 ### 给用户拍板
 **建议停在「NH 池枯竭 + 阻塞片 + listed 字幕 IP 封」**：再 loop 边际收益低。若要继续需：① 本机/带 cookies 补 listed 字幕；或 ② 放宽 rerun 规则（**需明确授权**）；或 ③ 人工拆 draft 卡。
+
+
+---
+
+## §11 round15 / tree_v18（2026-10-20）
+| 项 | 值 |
+|----|----|
+| tree 最新 | **tree_v18** VERIFY PASS |
+| 新挂树 | `0m3BMfDDShI`, `Z9XwaXDVkZg`（solutions Jaccard 授权裁决） |
+| listed | 0/7（cookies OK，TranscriptsDisabled） |
+| V5 | skip |

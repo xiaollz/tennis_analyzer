@@ -1,0 +1,1270 @@
+{
+ "version": "obs_bind_v1",
+ "model": "gemini-3.8-flash",
+ "prompt": "pipeline/prompts/obs_bind_v1.md",
+ "runs": 2,
+ "catalog_sha256": "0aadda95a85c859ad35e21a1a2ba53028f9e5bcd0555c315dee655c0297fa73c",
+ "source_tree": "docs/diagnosis/ftt_tree/tree.json (v1)",
+ "aggregation": "required = in both runs' required; supporting = any other condition either run named; invalid obs/values dropped",
+ "items": {
+  "N-P_0M3BMFDDSHI": {
+   "kind": "problem",
+   "episode": "0m3BMfDDShI",
+   "local_id": "P",
+   "node": "N-P_0M3BMFDDSHI",
+   "text": "How do you build the simplest possible effective forehand foundation?",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "General coaching question about technique foundation, not an observable action.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_0M3BMFDDSHI_S01": {
+   "kind": "symptom",
+   "episode": "0m3BMfDDShI",
+   "local_id": "S01",
+   "node": null,
+   "text": "The player loses fault tolerance and precise control over racket path and racket angle through space.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Internal sensation of control and fault tolerance cannot be directly observed.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_0M3BMFDDSHI_S02": {
+   "kind": "symptom",
+   "episode": "0m3BMfDDShI",
+   "local_id": "S02",
+   "node": null,
+   "text": "The elbow collapses and drops excessively tight into the body even on chest-height balls.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-20",
+     "value": "waist_to_chest"
+    },
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    }
+   ],
+   "new_obs": [],
+   "reason": "The hitting elbow collapses against the torso on a chest-height ball.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "waist_to_chest"
+    },
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "waist_to_chest"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "waist_to_chest"
+      },
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_0M3BMFDDSHI_S03": {
+   "kind": "symptom",
+   "episode": "0m3BMfDDShI",
+   "local_id": "S03",
+   "node": null,
+   "text": "The left side, right side, and trunk move out of sync in conflicting directions during the swing.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-40",
+     "value": "racket_arm_behind_torso_line"
+    },
+    {
+     "obs": "OBS-07",
+     "value": "c:already_dropped_to_side"
+    },
+    {
+     "obs": "OBS-18",
+     "value": "arm_first"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Coordination of non-hitting arm, hitting arm, and torso rotation timing during forward swing",
+     "values": [
+      "segments_move_in_sync",
+      "segments_move_out_of_sync"
+     ],
+     "layer": "B",
+     "camera": "B"
+    },
+    {
+     "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+     "values": [
+      "synchronized_rotation",
+      "conflicting_counter_rotation"
+     ],
+     "layer": "B",
+     "camera": "B"
+    }
+   ],
+   "reason": "Body segments rotate out of phase during forward swing acceleration.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-40",
+       "value": "racket_arm_behind_torso_line"
+      },
+      {
+       "obs": "OBS-07",
+       "value": "c:already_dropped_to_side"
+      },
+      {
+       "obs": "OBS-18",
+       "value": "arm_first"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Coordination of non-hitting arm, hitting arm, and torso rotation timing during forward swing",
+       "values": [
+        "segments_move_in_sync",
+        "segments_move_out_of_sync"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-07",
+       "value": "c:already_dropped_to_side"
+      },
+      {
+       "obs": "OBS-40",
+       "value": "racket_arm_behind_torso_line"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+       "values": [
+        "synchronized_rotation",
+        "conflicting_counter_rotation"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    }
+   ]
+  },
+  "SYM_0M3BMFDDSHI_S04": {
+   "kind": "symptom",
+   "episode": "0m3BMfDDShI",
+   "local_id": "S04",
+   "node": null,
+   "text": "The swing becomes excessively wristy with the racket whipping around early through contact.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-24",
+     "value": "wrist_flexes_rapidly"
+    },
+    {
+     "obs": "OBS-77",
+     "value": "overtakes_before_contact"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-27",
+     "value": "wrist_flexes_or_chops"
+    },
+    {
+     "obs": "OBS-67",
+     "value": "rolls_over_immediately"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Hitting wrist flexes rapidly causing racket head to whip through early.",
+   "agreement": "required 2/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-24",
+     "value": "wrist_flexes_rapidly"
+    },
+    {
+     "obs": "OBS-77",
+     "value": "overtakes_before_contact"
+    },
+    {
+     "obs": "OBS-24",
+     "value": "wrist_flexes_rapidly"
+    },
+    {
+     "obs": "OBS-77",
+     "value": "overtakes_before_contact"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-24",
+       "value": "wrist_flexes_rapidly"
+      },
+      {
+       "obs": "OBS-77",
+       "value": "overtakes_before_contact"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-27",
+       "value": "wrist_flexes_or_chops"
+      },
+      {
+       "obs": "OBS-67",
+       "value": "rolls_over_immediately"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-24",
+       "value": "wrist_flexes_rapidly"
+      },
+      {
+       "obs": "OBS-77",
+       "value": "overtakes_before_contact"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-27",
+       "value": "wrist_flexes_or_chops"
+      },
+      {
+       "obs": "OBS-67",
+       "value": "rolls_over_immediately"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "0m3BMfDDShI:C01": {
+   "kind": "cause",
+   "episode": "0m3BMfDDShI",
+   "local_id": "C01",
+   "node": "N-C_0M3BMFDDSHI_C01",
+   "text": "The player relaxes the lats and posterior shoulder muscles instead of keeping them engaged to hold the arm and racket up connected to the trunk.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Muscle tension and engagement of lats cannot be directly observed.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "0m3BMfDDShI:C02": {
+   "kind": "cause",
+   "episode": "0m3BMfDDShI",
+   "local_id": "C02",
+   "node": "N-C_0M3BMFDDSHI_C02",
+   "text": "The player actively drops the elbow way inside toward the body even on chest-height balls, collapsing the elbow space.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-20",
+     "value": "waist_to_chest"
+    },
+    {
+     "obs": "OBS-01",
+     "value": "clearly_bent"
+    },
+    {
+     "obs": "OBS-33",
+     "value": "within_about_one_forearm_length"
+    },
+    {
+     "obs": "OBS-32",
+     "value": "elbow_drags_linearly"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Arm collapses inward toward ribs on a chest-level contact.",
+   "agreement": "required 1/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    },
+    {
+     "obs": "OBS-20",
+     "value": "waist_to_chest"
+    },
+    {
+     "obs": "OBS-02",
+     "value": "touching_torso"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "waist_to_chest"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-33",
+       "value": "within_about_one_forearm_length"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-02",
+       "value": "touching_torso"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-01",
+       "value": "clearly_bent"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "waist_to_chest"
+      },
+      {
+       "obs": "OBS-32",
+       "value": "elbow_drags_linearly"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "0m3BMfDDShI:C03": {
+   "kind": "cause",
+   "episode": "0m3BMfDDShI",
+   "local_id": "C03",
+   "node": "N-C_0M3BMFDDSHI_C03",
+   "text": "The player discombobulates the upper body, lacking synchronization between the left side, right side, and trunk during the forward swing.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-40",
+     "value": "racket_arm_behind_torso_line"
+    },
+    {
+     "obs": "OBS-07",
+     "value": "c:already_dropped_to_side"
+    },
+    {
+     "obs": "OBS-18",
+     "value": "arm_first"
+    }
+   ],
+   "new_obs": [
+    {
+     "description": "Synchronization between chest turn and arm forward acceleration",
+     "values": [
+      "synchronized",
+      "independent_or_conflicting"
+     ],
+     "layer": "B",
+     "camera": "B"
+    },
+    {
+     "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+     "values": [
+      "synchronized_rotation",
+      "conflicting_counter_rotation"
+     ],
+     "layer": "B",
+     "camera": "B"
+    }
+   ],
+   "reason": "Lack of synchronization among upper body segments during the forward drive.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-40",
+       "value": "racket_arm_behind_torso_line"
+      },
+      {
+       "obs": "OBS-07",
+       "value": "c:already_dropped_to_side"
+      },
+      {
+       "obs": "OBS-18",
+       "value": "arm_first"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Synchronization between chest turn and arm forward acceleration",
+       "values": [
+        "synchronized",
+        "independent_or_conflicting"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    },
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-07",
+       "value": "c:already_dropped_to_side"
+      },
+      {
+       "obs": "OBS-40",
+       "value": "racket_arm_behind_torso_line"
+      }
+     ],
+     "new_obs": [
+      {
+       "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+       "values": [
+        "synchronized_rotation",
+        "conflicting_counter_rotation"
+       ],
+       "layer": "B",
+       "camera": "B"
+      }
+     ]
+    }
+   ]
+  },
+  "0m3BMfDDShI:C04": {
+   "kind": "cause",
+   "episode": "0m3BMfDDShI",
+   "local_id": "C04",
+   "node": "N-C_0M3BMFDDSHI_C04",
+   "text": "The player overapplies the concept of dropping the racket to create low-to-high action, actively collapsing stability instead of using shoulder tilt.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-29",
+     "value": "no_lateral_bend"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-11",
+     "value": "down_then_forward_and_up"
+    },
+    {
+     "obs": "OBS-31",
+     "value": "steeply_upward"
+    },
+    {
+     "obs": "OBS-57",
+     "value": "below_ball"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Racket drops low without shoulder tilt to generate upward swing path.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-29",
+     "value": "no_lateral_bend"
+    },
+    {
+     "obs": "OBS-29",
+     "value": "no_lateral_bend"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-29",
+       "value": "no_lateral_bend"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-11",
+       "value": "down_then_forward_and_up"
+      },
+      {
+       "obs": "OBS-31",
+       "value": "steeply_upward"
+      },
+      {
+       "obs": "OBS-57",
+       "value": "below_ball"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-29",
+       "value": "no_lateral_bend"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-11",
+       "value": "down_then_forward_and_up"
+      },
+      {
+       "obs": "OBS-31",
+       "value": "steeply_upward"
+      },
+      {
+       "obs": "OBS-57",
+       "value": "below_ball"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "N-P_Z9XWAXDVKZG": {
+   "kind": "problem",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "P",
+   "node": "N-P_Z9XWAXDVKZG",
+   "text": "What is the simple foundation required to control and power a one-handed backhand?",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "This is a general coaching question about technique fundamentals, not a directly visible action.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_Z9XWAXDVKZG_S01": {
+   "kind": "symptom",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "S01",
+   "node": null,
+   "text": "The ball flies wide or long due to lack of trajectory control.",
+   "visible": true,
+   "required": [],
+   "supporting": [
+    {
+     "obs": "OBS-16",
+     "value": "long"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "wide"
+    },
+    {
+     "obs": "OBS-30",
+     "value": "past_baseline"
+    }
+   ],
+   "new_obs": [],
+   "reason": "The ball landing long or wide describes shot outcome visible on court.",
+   "agreement": "required 0/2 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-16",
+     "value": "long"
+    },
+    {
+     "obs": "OBS-16",
+     "value": "wide"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [],
+     "supporting": [
+      {
+       "obs": "OBS-16",
+       "value": "long"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "wide"
+      },
+      {
+       "obs": "OBS-30",
+       "value": "past_baseline"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-16",
+       "value": "long"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "wide"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-30",
+       "value": "past_baseline"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_Z9XWAXDVKZG_S02": {
+   "kind": "symptom",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "S02",
+   "node": null,
+   "text": "The player fails to hit the center of the racket face cleanly on the ball.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-72",
+     "value": "off_center_strings"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-16",
+     "value": "frame_hit"
+    },
+    {
+     "obs": "OBS-72",
+     "value": "frame"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Off-center impact is directly observable at the string bed during contact.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-72",
+     "value": "off_center_strings"
+    },
+    {
+     "obs": "OBS-72",
+     "value": "off_center_strings"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-72",
+       "value": "off_center_strings"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-16",
+       "value": "frame_hit"
+      },
+      {
+       "obs": "OBS-72",
+       "value": "frame"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-72",
+       "value": "off_center_strings"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-72",
+       "value": "frame"
+      },
+      {
+       "obs": "OBS-16",
+       "value": "frame_hit"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "SYM_Z9XWAXDVKZG_S03": {
+   "kind": "symptom",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "S03",
+   "node": null,
+   "text": "The racket feels unstable and difficult to maneuver through the hitting zone.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Racket instability and difficulty maneuvering describe internal sensations and feel.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "Z9XwaXDVkZg:C01": {
+   "kind": "cause",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "C01",
+   "node": "N-C_Z9XWAXDVKZG_C01",
+   "text": "The upper back around the shoulder blade is not engaged down and back during preparation and swing.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-68",
+     "value": "neutral"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-39",
+     "value": "rounded_kyphotic"
+    },
+    {
+     "obs": "OBS-08",
+     "value": "small_turn"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Failure to retract the scapula down and back leaves the shoulder blade in a neutral position.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-68",
+     "value": "neutral"
+    },
+    {
+     "obs": "OBS-68",
+     "value": "neutral"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-68",
+       "value": "neutral"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-39",
+       "value": "rounded_kyphotic"
+      },
+      {
+       "obs": "OBS-08",
+       "value": "small_turn"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-68",
+       "value": "neutral"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-39",
+       "value": "rounded_kyphotic"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "Z9XwaXDVkZg:C02": {
+   "kind": "cause",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "C02",
+   "node": "N-C_Z9XWAXDVKZG_C02",
+   "text": "The grip has too much of a continental slant rather than roughly 90 degrees, preventing forearm roll.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-61",
+     "value": "slanted_near_135"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-28",
+     "value": "tilted_open"
+    }
+   ],
+   "new_obs": [],
+   "reason": "A continental grip slants the angle between forearm and racket handle to around 135 degrees.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-61",
+     "value": "slanted_near_135"
+    },
+    {
+     "obs": "OBS-61",
+     "value": "slanted_near_135"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-61",
+       "value": "slanted_near_135"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-28",
+       "value": "tilted_open"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-61",
+       "value": "slanted_near_135"
+      }
+     ],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "Z9XwaXDVkZg:C03": {
+   "kind": "cause",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "C03",
+   "node": "N-C_Z9XWAXDVKZG_C03",
+   "text": "The arm completely relaxes into the gravity drop instead of keeping the racket landing on the soft tissue complex.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Muscle relaxation into gravity and landing on soft tissue describe internal muscular engagement and tension.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  },
+  "Z9XwaXDVkZg:C04": {
+   "kind": "cause",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "C04",
+   "node": "N-C_Z9XWAXDVKZG_C04",
+   "text": "The player stands straight and drops the arm instead of lowering the torso and bending the knees on low balls.",
+   "visible": true,
+   "required": [
+    {
+     "obs": "OBS-23",
+     "value": "nearly_straight"
+    }
+   ],
+   "supporting": [
+    {
+     "obs": "OBS-20",
+     "value": "below_knee"
+    },
+    {
+     "obs": "OBS-12",
+     "value": "a:forearm_tilted_down"
+    },
+    {
+     "obs": "OBS-14",
+     "value": "more_upright_or_leaning_back"
+    }
+   ],
+   "new_obs": [],
+   "reason": "Standing straight on low balls directly shows nearly straight knees and a dropping arm.",
+   "agreement": "required 1/1 agreed; runs=2/2",
+   "required_any_run": [
+    {
+     "obs": "OBS-23",
+     "value": "nearly_straight"
+    },
+    {
+     "obs": "OBS-23",
+     "value": "nearly_straight"
+    }
+   ],
+   "runs": [
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-23",
+       "value": "nearly_straight"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      },
+      {
+       "obs": "OBS-12",
+       "value": "a:forearm_tilted_down"
+      },
+      {
+       "obs": "OBS-14",
+       "value": "more_upright_or_leaning_back"
+      }
+     ],
+     "new_obs": []
+    },
+    {
+     "visible": true,
+     "required": [
+      {
+       "obs": "OBS-23",
+       "value": "nearly_straight"
+      }
+     ],
+     "supporting": [
+      {
+       "obs": "OBS-12",
+       "value": "a:forearm_tilted_down"
+      },
+      {
+       "obs": "OBS-14",
+       "value": "more_upright_or_leaning_back"
+      },
+      {
+       "obs": "OBS-20",
+       "value": "below_knee"
+      }
+     ],
+     "new_obs": []
+    }
+   ]
+  },
+  "Z9XwaXDVkZg:C05": {
+   "kind": "cause",
+   "episode": "Z9XwaXDVkZg",
+   "local_id": "C05",
+   "node": "N-C_Z9XWAXDVKZG_C05",
+   "text": "The physical muscular strength of the upper back and shoulder complex is insufficient to support and maneuver the racket weight.",
+   "visible": false,
+   "required": [],
+   "supporting": [],
+   "new_obs": [],
+   "reason": "Muscular strength and physical capacity cannot be directly seen in video.",
+   "agreement": "required 0/0 agreed; runs=2/2",
+   "required_any_run": [],
+   "runs": [
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    },
+    {
+     "visible": false,
+     "required": [],
+     "supporting": [],
+     "new_obs": []
+    }
+   ]
+  }
+ },
+ "new_obs_candidates": [
+  {
+   "cid": "NC001",
+   "item": "0m3BMfDDShI:C03",
+   "description": "Synchronization between chest turn and arm forward acceleration",
+   "values": [
+    "synchronized",
+    "independent_or_conflicting"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC002",
+   "item": "0m3BMfDDShI:C03",
+   "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+   "values": [
+    "synchronized_rotation",
+    "conflicting_counter_rotation"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC003",
+   "item": "SYM_0M3BMFDDSHI_S03",
+   "description": "Coordination of non-hitting arm, hitting arm, and torso rotation timing during forward swing",
+   "values": [
+    "segments_move_in_sync",
+    "segments_move_out_of_sync"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "cid": "NC004",
+   "item": "SYM_0M3BMFDDSHI_S03",
+   "description": "Coordination between non-hitting arm, hitting arm, and chest rotation during forward swing",
+   "values": [
+    "synchronized_rotation",
+    "conflicting_counter_rotation"
+   ],
+   "layer": "B",
+   "camera": "B"
+  }
+ ],
+ "new_obs_clusters": [
+  {
+   "id": "NEW-OBS-01",
+   "rep": "NC001",
+   "members": [
+    "NC001"
+   ]
+  },
+  {
+   "id": "NEW-OBS-02",
+   "rep": "NC002",
+   "members": [
+    "NC002"
+   ]
+  },
+  {
+   "id": "NEW-OBS-03",
+   "rep": "NC003",
+   "members": [
+    "NC003"
+   ]
+  },
+  {
+   "id": "NEW-OBS-04",
+   "rep": "NC004",
+   "members": [
+    "NC004"
+   ]
+  }
+ ],
+ "stats": {
+  "gapfill": null,
+  "items": 18,
+  "invalid_dropped": 0,
+  "items_with_missing_run": [],
+  "usage": {
+   "promptTokenCount": 20241,
+   "candidatesTokenCount": 4513,
+   "totalTokenCount": 37898,
+   "thoughtsTokenCount": 13144,
+   "calls": 13
+  },
+  "bind_calls": 4,
+  "newobs_cluster_calls": 2
+ }
+}
