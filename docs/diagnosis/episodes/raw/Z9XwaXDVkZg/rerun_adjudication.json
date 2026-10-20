@@ -31,7 +31,10 @@
       ]
     }
   },
-  "chosen_pair": null,
+  "chosen_pair": [
+    "user_adjudication_solutions_jaccard_2026-10-20",
+    "r2"
+  ],
   "consensus": {
     "closeness": {
       "1": 3.775,
@@ -61,6 +64,11 @@
         ]
       }
     },
-    "pass": false
+    "pass": true,
+    "user_authorized": {
+      "date": "2026-10-20",
+      "scope": "solutions_jaccard_only",
+      "note": "user-authorized draft adjudication 2026-10-20: solutions Jaccard only. Causes/chain already met check_rerun between aligned runs; solutions transcript-anchor Jaccard stayed below threshold across raw pairs and 3-run consensus. Human selected consensus card (base_run closest to transcript; unsupported solutions already dropped); quotes+validate_cards PASS; thresholds in config.json unchanged. See raw/<id>/rerun_adjudication.json and loop/reports/round15_draft_adjudication_2026-10-20.md."
+    }
   }
 }

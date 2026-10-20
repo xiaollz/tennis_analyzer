@@ -34,7 +34,7 @@
   "problem": {
     "title_as_question": "How do you build the simplest possible effective forehand foundation?",
     "definition": "Developing the simplest effective forehand foundation by stabilizing the racket with the posterior shoulder/back muscles and moving the upper body as a synchronized unit, rather than introducing loose, disconnected moving parts.",
-    "node_id": "PENDING",
+    "node_id": "N-P_0M3BMFDDSHI",
     "prerequisites": [
       "Basic forehand unit turn and preparation"
     ],
@@ -286,7 +286,7 @@
       "statement": "The player relaxes the lats and posterior shoulder muscles instead of keeping them engaged to hold the arm and racket up connected to the trunk.",
       "depth": 1,
       "layer": "C",
-      "node_id": "PENDING",
+      "node_id": "N-C_0M3BMFDDSHI_C01",
       "active_or_passive": "active",
       "evidence": [
         "Q04",
@@ -298,7 +298,7 @@
       "statement": "The player actively drops the elbow way inside toward the body even on chest-height balls, collapsing the elbow space.",
       "depth": 2,
       "layer": "A",
-      "node_id": "PENDING",
+      "node_id": "N-C_0M3BMFDDSHI_C02",
       "active_or_passive": "active",
       "evidence": [
         "Q09"
@@ -309,7 +309,7 @@
       "statement": "The player discombobulates the upper body, lacking synchronization between the left side, right side, and trunk during the forward swing.",
       "depth": 2,
       "layer": "A",
-      "node_id": "PENDING",
+      "node_id": "N-C_0M3BMFDDSHI_C03",
       "active_or_passive": "active",
       "evidence": [
         "Q12"
@@ -320,7 +320,7 @@
       "statement": "The player overapplies the concept of dropping the racket to create low-to-high action, actively collapsing stability instead of using shoulder tilt.",
       "depth": 3,
       "layer": "B",
-      "node_id": "PENDING",
+      "node_id": "N-C_0M3BMFDDSHI_C04",
       "active_or_passive": "active",
       "evidence": [
         "Q16",
@@ -516,9 +516,9 @@
         "s1_r2_0m3BMf",
         "s1_r3_0m3BMf"
       ],
-      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
+      "description": "user-authorized draft adjudication 2026-10-20: solutions Jaccard only. Causes/chain already met check_rerun between aligned runs; solutions transcript-anchor Jaccard stayed below threshold across raw pairs and 3-run consensus. Human selected consensus card (base_run closest to transcript; unsupported solutions already dropped); quotes+validate_cards PASS; thresholds in config.json unchanged. See raw/<id>/rerun_adjudication.json and loop/reports/round15_draft_adjudication_2026-10-20.md.",
       "resolution": "open_user_decides"
     }
   ],
-  "status": "stage1_draft"
+  "status": "stage1_verified"
 }

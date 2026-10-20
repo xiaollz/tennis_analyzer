@@ -1,0 +1,268 @@
+{
+ "builder": "build_tree_v1",
+ "merge_cosine": 0.4,
+ "episodes_used": [
+  "0m3BMfDDShI",
+  "1W1rope5l0k",
+  "2Nn9tyMECZU",
+  "42BfbKsTGb4",
+  "5-Ia7c4XzfU",
+  "6ak4ZScH_gc",
+  "7_JPqhG4G64",
+  "8r09TliP-Ak",
+  "9NirSL59an0",
+  "AppdZqxH_2k",
+  "E_zmENJIj4g",
+  "FBJnFBtZozE",
+  "FOmz8Wjv3DQ",
+  "FxDmVi3EFnE",
+  "GsHkML2mVEI",
+  "JzcA_ku7Yhk",
+  "KU7FHy1qQOI",
+  "LoSrMj-Qxkc",
+  "McCb-RfYd0w",
+  "NEpD7fIM7HI",
+  "OYf48k-cfNI",
+  "PUN6qIIYU-4",
+  "PfDqnff_vYA",
+  "PjvOQkqH9DA",
+  "Psidjei5BnI",
+  "PwkGLkRm73o",
+  "QXAtdSEUkfY",
+  "Qszz0N4fRb4",
+  "RVfmDk-iEwo",
+  "T5meVwBOKR4",
+  "UB6SbA_KX9E",
+  "V-QkILd4V-w",
+  "Vg8lbXOhM3E",
+  "WoVEWh7fFfc",
+  "XXlndjnrA4E",
+  "YbLit9png2U",
+  "Z9XwaXDVkZg",
+  "_Qu1LOwklAw",
+  "aPcKJDadzek",
+  "boMJDzuFhM4",
+  "cIIEYn42o4g",
+  "dDYKuNZtdyU",
+  "dZadhzVEsds",
+  "dx8aGSIo24w",
+  "fjpr9PS02tM",
+  "hNVbbPEob3g",
+  "lCKDP2gKR_Y",
+  "lbdQpIHvXYA",
+  "lwS7Xxqrrdw",
+  "p41GGc_y5Xk",
+  "pQ793MBQE50",
+  "pWzyP-xfLfU",
+  "toArb3WkJcs",
+  "tzgAWr3QGv0",
+  "uJpuDUx0jIA",
+  "uQcObi2oTSs",
+  "wFIrPMutzRo",
+  "wFOy0RKWBTg",
+  "wVa4XQPcaqs",
+  "wd4YRQW3TOc",
+  "wzLMv4ASg9s",
+  "xLs469ZVMPU",
+  "x_WIg59Wr9Y"
+ ],
+ "skipped": [
+  {
+   "episode": "2J8q7sn4JLc",
+   "reason": "holdout",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "5KdScDKxVSI",
+   "reason": "holdout",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "5jHCDc44SQM",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "Am8j1Zw5KrE",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "BbGzWTp5pCM",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "EkzzGZkqCgc",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "ExkBtFRhUWY",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "FjjvhNbk3q4",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "Fu6DkHvZlGY",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "Ibkq-yBteGc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "JIMgI3jiVns",
+   "reason": "low_confidence",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "MWjBfarwNlA",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "QrRYuVjVibU",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "XjJHA91HDbU",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "emZxTmSVSa8",
+   "reason": "holdout",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "gehRK0Y6AdQ",
+   "reason": "holdout",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "hqganBxzQNM",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "jDBg4Fpf0tQ",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "m1NBdd3Bigg",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "omsLx7F2Wdc",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "q6LrQYDvxmY",
+   "reason": "holdout",
+   "status": "stage1_draft"
+  },
+  {
+   "episode": "ui-RFRdQKRk",
+   "reason": "holdout",
+   "status": "stage1_verified"
+  },
+  {
+   "episode": "w1FakobNq1Q",
+   "reason": "status stage1_draft",
+   "status": "stage1_draft"
+  }
+ ],
+ "counts": {
+  "problem_nodes": 63,
+  "cause_nodes": 237,
+  "cause_items_before_merge": 242,
+  "symptoms": 201,
+  "solutions": 254,
+  "angles": 276,
+  "edges": 257
+ },
+ "merged_clusters": [
+  {
+   "node": "N-C_0M3BMFDDSHI_C02",
+   "members": [
+    "0m3BMfDDShI:C02",
+    "wzLMv4ASg9s:C01"
+   ],
+   "cosines": [
+    0.407
+   ],
+   "statements": [
+    "The player actively drops the elbow way inside toward the body even on chest-height balls, collapsing the elbow space.",
+    "Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing."
+   ]
+  },
+  {
+   "node": "N-C_PFDQNFF_VYA_C01",
+   "members": [
+    "PfDqnff_vYA:C01",
+    "YbLit9png2U:C02"
+   ],
+   "cosines": [
+    0.412
+   ],
+   "statements": [
+    "The player attempts to throw the racket up or down-and-up directly at the ball rather than throwing it out to the hitting side.",
+    "Players attempt to use a flat serve throwing trajectory or actively throw straight forward at the service box where they are aiming."
+   ]
+  },
+  {
+   "node": "N-C_Z9XWAXDVKZG_C04",
+   "members": [
+    "Z9XwaXDVkZg:C04",
+    "dx8aGSIo24w:C02"
+   ],
+   "cosines": [
+    0.436
+   ],
+   "statements": [
+    "The player stands straight and drops the arm instead of lowering the torso and bending the knees on low balls.",
+    "Players stand too upright on low balls without activating a double bend at both the knees and hips."
+   ]
+  },
+  {
+   "node": "N-C_APCKJDADZEK_C03",
+   "members": [
+    "aPcKJDadzek:C03",
+    "uJpuDUx0jIA:C03"
+   ],
+   "cosines": [
+    0.441
+   ],
+   "statements": [
+    "The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch.",
+    "Loading weight onto the inside heel / over-pronated flat foot rather than loading the arch and ball of the foot."
+   ]
+  },
+  {
+   "node": "N-C_DDYKUNZTDYU_C01",
+   "members": [
+    "dDYKuNZtdyU:C01",
+    "pQ793MBQE50:C05"
+   ],
+   "cosines": [
+    0.455
+   ],
+   "statements": [
+    "Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together.",
+    "Failing to drive the racket forward using upper back scapular retraction (rhomboids and traps pulling shoulder blades together)."
+   ]
+  }
+ ],
+ "dropped_edges": []
+}
