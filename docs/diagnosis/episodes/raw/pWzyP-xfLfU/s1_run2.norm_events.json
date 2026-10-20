@@ -1,16 +1,19 @@
 {
   "counts": {
-    "quote_snapped": 3,
-    "cause_anchor_exact": 4,
-    "ban_rescan_added": 1,
-    "solution_anchor_exact": 4,
-    "solution_anchor_evidence_spills": 1
+    "quote_snapped": 2,
+    "cause_anchor_exact": 3,
+    "cause_anchor_miss": 1,
+    "cause_anchor_evidence_spills": 1,
+    "intuition_first_forced_false": 1,
+    "solution_anchor_evidence_spills": 1,
+    "solution_anchor_exact": 4
   },
   "detail": [
-    "quote_snapped: Q07 score=1.00",
-    "quote_snapped: Q09 score=1.00",
-    "quote_snapped: Q13 score=1.00",
-    "ban_rescan_added: solutions.4:降拍",
-    "solution_anchor_evidence_spills: D04 anchor_bucket=25 evidence_buckets=[25, 26]"
+    "quote_snapped: Q02 score=1.00",
+    "quote_snapped: Q22 score=0.74",
+    "cause_anchor_miss: C02 anchor_bucket=11 evidence_buckets=[10]",
+    "cause_anchor_evidence_spills: C04 anchor_bucket=22 evidence_buckets=[22, 24]",
+    "intuition_first_forced_false: solutions.4 no external_goal",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=5 evidence_buckets=[5, 7]"
   ]
 }

@@ -1,0 +1,367 @@
+{
+  "schema_version": "2.0",
+  "holdout_episodes": [
+    "-ZmnDrRFfjc",
+    "2J8q7sn4JLc",
+    "5KdScDKxVSI",
+    "5jHCDc44SQM",
+    "97vo-kFis6c",
+    "Am8j1Zw5KrE",
+    "BbGzWTp5pCM",
+    "Bhzd6cM-oFU",
+    "Cwc4YcKFZrU",
+    "EkzzGZkqCgc",
+    "Fu6DkHvZlGY",
+    "MWjBfarwNlA",
+    "XjJHA91HDbU",
+    "agtIR3PuNsw",
+    "emZxTmSVSa8",
+    "gehRK0Y6AdQ",
+    "hqganBxzQNM",
+    "mOFtt9PllI0",
+    "q6LrQYDvxmY",
+    "ui-RFRdQKRk"
+  ],
+  "observables": [],
+  "nodes": [
+    {
+      "id": "N-P_OYF48K_CFNI",
+      "name": "What is fault tolerance in action and why is it essential?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "OYf48k-cfNI:Q01",
+        "OYf48k-cfNI:Q12"
+      ]
+    },
+    {
+      "id": "N-C_OYF48K_CFNI_C01",
+      "name": "The player probes imperfectly with footwork and gets way too close to the ball.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "A",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "OYf48k-cfNI:Q03"
+      ]
+    },
+    {
+      "id": "N-C_OYF48K_CFNI_C02",
+      "name": "The player's arm cannot properly extend and the hips are stuck due to crowded spacing.",
+      "kind": "cause",
+      "phase": "forward_swing",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "OYf48k-cfNI:Q04"
+      ]
+    },
+    {
+      "id": "N-C_OYF48K_CFNI_C03",
+      "name": "High-level opponent quality and deep incoming shots force the player to hit from an out-of-position state.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "A",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "OYf48k-cfNI:Q09"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "N-C_OYF48K_CFNI_C01",
+      "to": "N-C_OYF48K_CFNI_C02",
+      "strength": "single_episode",
+      "evidence": [
+        "OYf48k-cfNI:Q04"
+      ]
+    },
+    {
+      "from": "N-C_OYF48K_CFNI_C02",
+      "to": "N-P_OYF48K_CFNI",
+      "strength": "single_episode",
+      "evidence": [
+        "OYf48k-cfNI:Q05"
+      ]
+    },
+    {
+      "from": "N-C_OYF48K_CFNI_C03",
+      "to": "N-C_OYF48K_CFNI_C01",
+      "strength": "single_episode",
+      "evidence": [
+        "OYf48k-cfNI:Q09"
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "SYM_OYF48K_CFNI_S01",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "description": "The player is forced into an awkward swing up above the head with restricted rotation.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_OYF48K_CFNI_C02"
+      ],
+      "evidence": [
+        "OYf48k-cfNI:Q05"
+      ]
+    },
+    {
+      "id": "SYM_OYF48K_CFNI_S02",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "description": "The player shanks the ball into the stands or hits it into the bottom of the net when jammed.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "OYf48k-cfNI:Q10"
+      ]
+    },
+    {
+      "id": "SYM_OYF48K_CFNI_S03",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "description": "The player floats a passive ball back to the middle and resets to neutral instead of attacking.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "OYf48k-cfNI:Q14"
+      ]
+    }
+  ],
+  "solutions": [],
+  "angles": [
+    {
+      "id": "ANG_OYF48K_CFNI_A01",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "type": "pro_example",
+      "summary": "The coach reviews pro footage of Cameron Norrie and his opponent exchanging fast inside-in forehands to demonstrate playing under compromised conditions.",
+      "evidence": [
+        "OYf48k-cfNI:Q02"
+      ]
+    },
+    {
+      "id": "ANG_OYF48K_CFNI_A02",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "type": "mechanics",
+      "summary": "Even with compromised footwork and jammed hips, preserving fundamental contact out in front produces an effective shot.",
+      "evidence": [
+        "OYf48k-cfNI:Q11"
+      ]
+    },
+    {
+      "id": "ANG_OYF48K_CFNI_A03",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "type": "contrast_demo",
+      "summary": "The coach contrasts the jammed forehand with a subsequent shot featuring perfect probing and extension to highlight shot differences.",
+      "evidence": [
+        "OYf48k-cfNI:Q16"
+      ]
+    },
+    {
+      "id": "ANG_OYF48K_CFNI_A04",
+      "episode": "OYf48k-cfNI",
+      "problem": "N-P_OYF48K_CFNI",
+      "type": "misconception",
+      "summary": "Winning tennis matches is driven by keeping compromised shots 80% effective rather than focusing solely on producing perfect 100% shots.",
+      "evidence": [
+        "OYf48k-cfNI:Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "quote_sources": {
+    "OYf48k-cfNI:Q01": {
+      "video_id": "OYf48k-cfNI",
+      "start": 0.0,
+      "about": "pro_footage",
+      "text": "okay we've got a really great example of fault tolerance here let's watch the point first it's fault tolerance in action"
+    },
+    "OYf48k-cfNI:Q03": {
+      "video_id": "OYf48k-cfNI",
+      "start": 25.0,
+      "about": "pro_footage",
+      "text": "this is not I mean it's fine probing but it's not good probing this is not perfect he's way too close to the ball"
+    },
+    "OYf48k-cfNI:Q04": {
+      "video_id": "OYf48k-cfNI",
+      "start": 30.0,
+      "about": "pro_footage",
+      "text": "the arm can't really extend the hips are a little stuck"
+    },
+    "OYf48k-cfNI:Q05": {
+      "video_id": "OYf48k-cfNI",
+      "start": 34.0,
+      "about": "pro_footage",
+      "text": "he's doing a pretty good job adjusting with his body takes this kind of awkward swing up above his head"
+    },
+    "OYf48k-cfNI:Q09": {
+      "video_id": "OYf48k-cfNI",
+      "start": 67.0,
+      "about": "pro_footage",
+      "text": "because the game is very difficult you're going to be a little bit out of position and you're going to have to succeed when you're out of position"
+    },
+    "OYf48k-cfNI:Q12": {
+      "video_id": "OYf48k-cfNI",
+      "start": 90.0,
+      "about": "pro_footage",
+      "text": "and he creates a decent shot from a compromised position and that is fall tolerance right there"
+    }
+  },
+  "build": {
+    "builder": "build_tree_v1",
+    "merge_cosine": 0.4,
+    "episodes_used": [
+      "OYf48k-cfNI"
+    ],
+    "skipped": [
+      {
+        "episode": "0m3BMfDDShI",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "2J8q7sn4JLc",
+        "reason": "holdout",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "5KdScDKxVSI",
+        "reason": "holdout",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "5jHCDc44SQM",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "Am8j1Zw5KrE",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "EkzzGZkqCgc",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "ExkBtFRhUWY",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "FjjvhNbk3q4",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Ibkq-yBteGc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "JIMgI3jiVns",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "QrRYuVjVibU",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Z9XwaXDVkZg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "gehRK0Y6AdQ",
+        "reason": "holdout",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "hqganBxzQNM",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "jDBg4Fpf0tQ",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "m1NBdd3Bigg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "omsLx7F2Wdc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "q6LrQYDvxmY",
+        "reason": "holdout",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "ui-RFRdQKRk",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "w1FakobNq1Q",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      }
+    ],
+    "note": "skeleton: observables empty, signatures empty (no card carries an OBS ref); video layer empty (Stage 2 not run)"
+  }
+}

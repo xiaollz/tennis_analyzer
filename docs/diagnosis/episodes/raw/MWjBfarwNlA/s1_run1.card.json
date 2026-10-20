@@ -1,0 +1,176 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "MWjBfarwNlA",
+    "url": "https://www.youtube.com/watch?v=MWjBfarwNlA",
+    "title": "Alcaraz's Secret Weapon | Backhand Line RALLY Ball",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 34.0,
+    "upload_date": "2025-06-11",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "partial",
+    "stroke": "backhand",
+    "format": "pro_analysis",
+    "reason": "The speaker analyzes Alcaraz's tactical choice to hit a backhand down the line against Sinner, but does not provide any actionable drill, cue, or instruction for the viewer."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/MWjBfarwNlA.en.vtt",
+    "kind": "auto",
+    "sha256": "7d46959af3e294950441ac62ce391afb944d6850f5a7c03b2b251b68a3305b79",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_MWjBfa",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How should a player break out of a disadvantageous backhand-to-backhand rally pattern?",
+    "definition": "When unable to outhit an opponent in a backhand crosscourt exchange, hitting a rally ball down the line resets the pattern, provided the player commits without hesitation.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Engaging in a baseline backhand crosscourt rally exchange"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "Now, remember earlier when I said Alcarez can't hit with center in the backhand to backhand pattern.",
+      "start": 0.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "So, what do you think he's going to do with this ball? Going crosscourt would obviously be fine,",
+      "start": 4.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "but Allah Federer versus Rafa, he's going to hit a rally ball up the line just to change the pattern.",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "Now, this next one is hit very hard and very flat and very close to the line.",
+      "start": 18.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "But here's the thing. When you're feeling good, you can just do things.",
+      "start": 22.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And hesitating is much much worse than making kind of a maybe questionable decision once in a",
+      "start": 26.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Being unable to stay competitive in a backhand-to-backhand rally exchange against a superior opponent.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "B",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Hesitating during shot execution rather than committing fully to a decision.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q06"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Staying in an unfavorable crosscourt backhand exchange results in being outhit, and hesitating to change direction is far worse than committing to a bold tactical choice.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q01"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Alcaraz hits a rally ball down the line against Sinner to change the pattern, similar to Federer's tactic against Nadal.",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "mechanics",
+      "summary": "The subsequent shot down the line is struck very hard, flat, and tight to the line.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "feel",
+      "summary": "When feeling confident, a player can act decisively, and hesitating is far worse than making a questionable decision.",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    }
+  ],
+  "solutions": [],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

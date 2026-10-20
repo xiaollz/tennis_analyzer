@@ -1,13 +1,14 @@
 {
   "counts": {
-    "quote_snapped": 2,
-    "cause_anchor_exact": 4,
-    "ban_rescan_added": 1,
-    "solution_anchor_exact": 5
+    "quote_snapped": 3,
+    "cause_anchor_exact": 5,
+    "solution_anchor_evidence_spills": 1,
+    "solution_anchor_exact": 4
   },
   "detail": [
-    "quote_snapped: Q14 score=1.00",
+    "quote_snapped: Q02 score=1.00",
+    "quote_snapped: Q06 score=1.00",
     "quote_snapped: Q17 score=1.00",
-    "ban_rescan_added: solutions.4:降拍"
+    "solution_anchor_evidence_spills: D01 anchor_bucket=5 evidence_buckets=[5, 7]"
   ]
 }

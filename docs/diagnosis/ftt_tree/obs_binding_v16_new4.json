@@ -1,0 +1,2128 @@
+{
+  "version": "obs_bind_v1",
+  "model": "gemini-3.8-flash",
+  "prompt": "pipeline/prompts/obs_bind_v1.md",
+  "runs": 2,
+  "catalog_sha256": "7846ff25cb525d0d81b5cb07cab03847b63b8d4d07da28de078b04e314a1f0f7",
+  "source_tree": "docs/diagnosis/ftt_tree/tree.json (v1)",
+  "aggregation": "required = in both runs' required; supporting = any other condition either run named; invalid obs/values dropped",
+  "items": {
+    "N-P_E_ZMENJIJ4G": {
+      "kind": "problem",
+      "episode": "E_zmENJIj4g",
+      "local_id": "P",
+      "node": "N-P_E_ZMENJIJ4G",
+      "text": "How Should You Optimize Your Serve Mechanics Based on Your Anatomy and Eye Dominance?",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "This is a general coaching question regarding anatomical adaptation and eye dominance, not an observable fault.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_E_ZMENJIJ4G_S01": {
+      "kind": "symptom",
+      "episode": "E_zmENJIj4g",
+      "local_id": "S01",
+      "node": null,
+      "text": "The server loses peripheral awareness of the service box and opponent, causing poor aiming and awkward physical compensations.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Peripheral awareness and poor aiming are internal cognitive perceptions and attention states that cannot be seen.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_E_ZMENJIJ4G_S02": {
+      "kind": "symptom",
+      "episode": "E_zmENJIj4g",
+      "local_id": "S02",
+      "node": null,
+      "text": "The hitting arm moves out of plane with the tilted shoulder axis at contact, causing loss of effortless power and arm strain.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-47",
+          "value": "angled_out_to_side"
+        },
+        {
+          "obs": "OBS-70",
+          "value": "high_angle_orthogonal"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Alignment of the hitting upper arm with the tilted shoulder line at serve contact",
+          "values": [
+            "in_plane_with_shoulders",
+            "out_of_plane_elevated"
+          ],
+          "layer": "B",
+          "camera": "B"
+        },
+        {
+          "description": "Alignment of the hitting arm with the tilted shoulder axis at serve contact",
+          "values": [
+            "in_plane_with_shoulders",
+            "elevated_out_of_plane"
+          ],
+          "layer": "B",
+          "camera": "B"
+        }
+      ],
+      "reason": "The arm moves out of plane relative to the tilted shoulder line during the serve swing.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-47",
+              "value": "angled_out_to_side"
+            },
+            {
+              "obs": "OBS-70",
+              "value": "high_angle_orthogonal"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Alignment of the hitting upper arm with the tilted shoulder line at serve contact",
+              "values": [
+                "in_plane_with_shoulders",
+                "out_of_plane_elevated"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-70",
+              "value": "high_angle_orthogonal"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Alignment of the hitting arm with the tilted shoulder axis at serve contact",
+              "values": [
+                "in_plane_with_shoulders",
+                "elevated_out_of_plane"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "SYM_E_ZMENJIJ4G_S03": {
+      "kind": "symptom",
+      "episode": "E_zmENJIj4g",
+      "local_id": "S03",
+      "node": null,
+      "text": "Serve velocity is weak because the player manually forces forearm pronation instead of unleashing explosive shoulder internal rotation.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        }
+      ],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Forcing isolated forearm pronation without explosive shoulder internal rotation keeps the shoulder joint comparatively stationary.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        },
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-65",
+              "value": "stationary_shoulder"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-65",
+              "value": "stationary_shoulder"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "E_zmENJIj4g:C01": {
+      "kind": "cause",
+      "episode": "E_zmENJIj4g",
+      "local_id": "C01",
+      "node": "N-C_E_ZMENJIJ4G_C01",
+      "text": "The arm slot is elevated out of plane with the shoulder rotation axis rather than matching the tilt of the shoulders.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-47",
+          "value": "angled_out_to_side"
+        },
+        {
+          "obs": "OBS-70",
+          "value": "high_angle_orthogonal"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Angle of the hitting arm relative to the lateral shoulder tilt axis on serve",
+          "values": [
+            "matched_to_shoulder_tilt",
+            "elevated_out_of_plane"
+          ],
+          "layer": "B",
+          "camera": "B"
+        },
+        {
+          "description": "Angle of hitting arm relative to lateral shoulder tilt line during forward swing",
+          "values": [
+            "aligned_in_plane",
+            "elevated_out_of_plane"
+          ],
+          "layer": "B",
+          "camera": "B"
+        }
+      ],
+      "reason": "The arm slot is elevated out of plane rather than aligned with the shoulder rotation tilt.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-47",
+              "value": "angled_out_to_side"
+            },
+            {
+              "obs": "OBS-70",
+              "value": "high_angle_orthogonal"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Angle of the hitting arm relative to the lateral shoulder tilt axis on serve",
+              "values": [
+                "matched_to_shoulder_tilt",
+                "elevated_out_of_plane"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-70",
+              "value": "high_angle_orthogonal"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Angle of hitting arm relative to lateral shoulder tilt line during forward swing",
+              "values": [
+                "aligned_in_plane",
+                "elevated_out_of_plane"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "E_zmENJIj4g:C02": {
+      "kind": "cause",
+      "episode": "E_zmENJIj4g",
+      "local_id": "C02",
+      "node": "N-C_E_ZMENJIJ4G_C02",
+      "text": "The player overemphasizes active forearm pronation rather than allowing the trunk and shoulder stretch-shortening cycle to drive internal rotation.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-49",
+          "value": "shallow_restricted_drop"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Overemphasizing active forearm pronation replaces dynamic internal shoulder rotation during the serve.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        },
+        {
+          "obs": "OBS-65",
+          "value": "stationary_shoulder"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-65",
+              "value": "stationary_shoulder"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-65",
+              "value": "stationary_shoulder"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-49",
+              "value": "shallow_restricted_drop"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "E_zmENJIj4g:C03": {
+      "kind": "cause",
+      "episode": "E_zmENJIj4g",
+      "local_id": "C03",
+      "node": "N-C_E_ZMENJIJ4G_C03",
+      "text": "The thoracic spine lacks extension during the cocking phase, preventing the trunk's soft tissue from spring-loading to accelerate the shoulder.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-39",
+          "value": "neutral_flat"
+        },
+        {
+          "obs": "OBS-49",
+          "value": "shallow_restricted_drop"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Thoracic spine extension during serve trophy cocking phase",
+          "values": [
+            "visibly_extended_arched",
+            "flat_or_flexed"
+          ],
+          "layer": "B",
+          "camera": "S"
+        }
+      ],
+      "reason": "Lacking thoracic extension prevents spinal arching and restricts the depth of the racket drop.",
+      "agreement": "required 0/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-39",
+          "value": "neutral_flat"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-39",
+              "value": "neutral_flat"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-49",
+              "value": "shallow_restricted_drop"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-49",
+              "value": "shallow_restricted_drop"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Thoracic spine extension during serve trophy cocking phase",
+              "values": [
+                "visibly_extended_arched",
+                "flat_or_flexed"
+              ],
+              "layer": "B",
+              "camera": "S"
+            }
+          ]
+        }
+      ]
+    },
+    "E_zmENJIj4g:C04": {
+      "kind": "cause",
+      "episode": "E_zmENJIj4g",
+      "local_id": "C04",
+      "node": "N-C_E_ZMENJIJ4G_C04",
+      "text": "A right-eye dominant server blindly copies a deep torso turn away from the net, cutting off their dominant eye's peripheral vision to the target.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-08",
+          "value": "clearly_sideways"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Degree of upper torso coiling away from the net during the serve trophy position",
+          "values": [
+            "excessively_coiled_back_to_net",
+            "standard_side_on"
+          ],
+          "layer": "B",
+          "camera": "B"
+        },
+        {
+          "description": "Chest rotation away from net during serve trophy phase",
+          "values": [
+            "excessively_turned_back",
+            "standard_side_on"
+          ],
+          "layer": "B",
+          "camera": "B"
+        }
+      ],
+      "reason": "The player executes an exaggerated torso turn that faces their back excessively toward the net.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-08",
+              "value": "clearly_sideways"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Degree of upper torso coiling away from the net during the serve trophy position",
+              "values": [
+                "excessively_coiled_back_to_net",
+                "standard_side_on"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [],
+          "new_obs": [
+            {
+              "description": "Chest rotation away from net during serve trophy phase",
+              "values": [
+                "excessively_turned_back",
+                "standard_side_on"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "N-P_PWZYP_XFLFU": {
+      "kind": "problem",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "P",
+      "node": "N-P_PWZYP_XFLFU",
+      "text": "Why do amateur players struggle with racket lag and hitting slot control compared to pros?",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-32",
+          "value": "elbow_drags_linearly"
+        },
+        {
+          "obs": "OBS-11",
+          "value": "roughly_horizontal_forward"
+        },
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        },
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Struggling with racket lag means the racket head fails to trail behind the hand into the hitting slot.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-32",
+              "value": "elbow_drags_linearly"
+            },
+            {
+              "obs": "OBS-11",
+              "value": "roughly_horizontal_forward"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            },
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_PWZYP_XFLFU_S01": {
+      "kind": "symptom",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "S01",
+      "node": null,
+      "text": "Player shows a pushing style of swing instead of a real hit with the racket head.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-32",
+          "value": "elbow_drags_linearly"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        },
+        {
+          "obs": "OBS-11",
+          "value": "roughly_horizontal_forward"
+        },
+        {
+          "obs": "OBS-15",
+          "value": "b:extends_toward_target_after_contact"
+        }
+      ],
+      "new_obs": [],
+      "reason": "A pushing swing shows linear elbow dragging and lack of racket head lag rather than dynamic rotation.",
+      "agreement": "required 0/2 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-32",
+          "value": "elbow_drags_linearly"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-32",
+              "value": "elbow_drags_linearly"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            },
+            {
+              "obs": "OBS-11",
+              "value": "roughly_horizontal_forward"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-11",
+              "value": "roughly_horizontal_forward"
+            },
+            {
+              "obs": "OBS-15",
+              "value": "b:extends_toward_target_after_contact"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_PWZYP_XFLFU_S02": {
+      "kind": "symptom",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "S02",
+      "node": null,
+      "text": "Lack of effortless lag action, velocity control, and spin.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-31",
+          "value": "horizontal"
+        },
+        {
+          "obs": "OBS-30",
+          "value": "short_near_service_line"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Lacking lag action directly means the racket head does not trail behind the hitting hand.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-31",
+              "value": "horizontal"
+            },
+            {
+              "obs": "OBS-30",
+              "value": "short_near_service_line"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-31",
+              "value": "horizontal"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_PWZYP_XFLFU_S03": {
+      "kind": "symptom",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "S03",
+      "node": null,
+      "text": "Player feels disconnected from the tool, playing blind and hoping the ball goes where intended without feeling the hitting slot.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Feeling disconnected, playing blind, and lacking internal perception describe subjective somatic sensations that cannot be seen.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "pWzyP-xfLfU:C01": {
+      "kind": "cause",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "C01",
+      "node": "N-C_PWZYP_XFLFU_C01",
+      "text": "The top haptic reference at the palm or V is disengaged or unmapped, leaving the player with no perception of racket momentum.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Haptic perception and internal cognitive mapping of racket momentum are internal sensations that cannot be observed.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "pWzyP-xfLfU:C02": {
+      "kind": "cause",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "C02",
+      "node": "N-C_PWZYP_XFLFU_C02",
+      "text": "Bottom fingers are used to cheat and force the racket head path rather than acting as a humble guide for racket momentum.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Individual finger pressure and forcing racket path through subtle finger effort are tactile and not observable on video.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "pWzyP-xfLfU:C03": {
+      "kind": "cause",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "C03",
+      "node": "N-C_PWZYP_XFLFU_C03",
+      "text": "Excess tension in the wrist prevents it from bending backwards, arresting the racket's momentum in the backswing.",
+      "visible": false,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Excess wrist tension is an internal sensation and muscle state that cannot be directly observed on court video.",
+      "agreement": "required 0/2 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            },
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        }
+      ],
+      "note_v16": "visible forced false: wrist tension internal (matches extractor reason); awareness on tree"
+    },
+    "pWzyP-xfLfU:C04": {
+      "kind": "cause",
+      "episode": "pWzyP-xfLfU",
+      "local_id": "C04",
+      "node": "N-C_PWZYP_XFLFU_C04",
+      "text": "The bottom fingers squeeze too early in the forward swing, substituting slow-twitch wrist flexion for elastic energy transfer.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-27",
+          "value": "wrist_flexes_or_chops"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Substituting wrist flexion during the forward swing produces visible rapid wrist flexion around contact.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        },
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-27",
+              "value": "wrist_flexes_or_chops"
+            },
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-27",
+              "value": "wrist_flexes_or_chops"
+            },
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "N-P_WD4YRQW3TOC": {
+      "kind": "problem",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "P",
+      "node": "N-P_WD4YRQW3TOC",
+      "text": "How can players generate effortless, controllable topspin with clean contact?",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "This is a general coaching objective and technique question, not a directly observable event.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_WD4YRQW3TOC_S01": {
+      "kind": "symptom",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "S01",
+      "node": null,
+      "text": "The player pauses after rotating into the back position before pulling forward instead of executing a continuous dynamic roll.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-56",
+          "value": "interrupted_by_pause"
+        }
+      ],
+      "new_obs": [],
+      "reason": "The player noticeably pauses the racket at the top of the backswing before moving forward.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        },
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-56",
+              "value": "interrupted_by_pause"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_WD4YRQW3TOC_S02": {
+      "kind": "symptom",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "S02",
+      "node": null,
+      "text": "The racket rolls over early through contact, shortening the effective contact zone window.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        },
+        {
+          "obs": "OBS-28",
+          "value": "tilted_closed"
+        }
+      ],
+      "new_obs": [],
+      "reason": "The racket head rolls closed prematurely through contact instead of extending through the contact zone.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            },
+            {
+              "obs": "OBS-28",
+              "value": "tilted_closed"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            },
+            {
+              "obs": "OBS-28",
+              "value": "tilted_closed"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_WD4YRQW3TOC_S03": {
+      "kind": "symptom",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "S03",
+      "node": null,
+      "text": "The player muscles or pushes the ball forward with mental tension rather than releasing the arm effortlessly.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Muscling the ball and internal mental tension are felt sensations that cannot be seen on video.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "wd4YRQW3TOc:C01": {
+      "kind": "cause",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "C01",
+      "node": "N-C_WD4YRQW3TOC_C01",
+      "text": "Players separate the roll and forward pull into two disconnected motions with a pause, which eliminates the dynamic inertial stretch in the arm.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-56",
+          "value": "interrupted_by_pause"
+        }
+      ],
+      "new_obs": [],
+      "reason": "The player inserts a distinct pause between takeback and forward swing, interrupting continuous movement.",
+      "agreement": "required 1/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        },
+        {
+          "obs": "OBS-04",
+          "value": "pause_present"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-04",
+              "value": "pause_present"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-56",
+              "value": "interrupted_by_pause"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "wd4YRQW3TOc:C02": {
+      "kind": "cause",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "C02",
+      "node": "N-C_WD4YRQW3TOC_C02",
+      "text": "The racket does not roll back flush, causing the string angle to close or roll over prematurely and shortening the contact window.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-28",
+          "value": "tilted_closed"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-27",
+          "value": "wrist_flexes_or_chops"
+        },
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        }
+      ],
+      "new_obs": [],
+      "reason": "The racket face closes prematurely and rolls into rotational closure through contact.",
+      "agreement": "required 2/2 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-28",
+          "value": "tilted_closed"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        },
+        {
+          "obs": "OBS-28",
+          "value": "tilted_closed"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-28",
+              "value": "tilted_closed"
+            },
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-27",
+              "value": "wrist_flexes_or_chops"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-28",
+              "value": "tilted_closed"
+            },
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "wd4YRQW3TOc:C03": {
+      "kind": "cause",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "C03",
+      "node": "N-C_WD4YRQW3TOC_C03",
+      "text": "The contact point is probed too far out in front, where the shoulder has already unwound too much, preventing clean release and triggering defensive tightening.",
+      "visible": true,
+      "required": [
+        {
+          "obs": "OBS-03",
+          "value": "ahead_of_front_hip"
+        }
+      ],
+      "supporting": [
+        {
+          "obs": "OBS-60",
+          "value": "over_rotated_past_net"
+        },
+        {
+          "obs": "OBS-09",
+          "value": "square_or_past"
+        },
+        {
+          "obs": "OBS-25",
+          "value": "shoulders_lead_hips"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Contact is made far out in front of the front hip with the upper body over-rotated.",
+      "agreement": "required 1/2 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-03",
+          "value": "ahead_of_front_hip"
+        },
+        {
+          "obs": "OBS-03",
+          "value": "ahead_of_front_hip"
+        },
+        {
+          "obs": "OBS-60",
+          "value": "over_rotated_past_net"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-03",
+              "value": "ahead_of_front_hip"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-60",
+              "value": "over_rotated_past_net"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-03",
+              "value": "ahead_of_front_hip"
+            },
+            {
+              "obs": "OBS-60",
+              "value": "over_rotated_past_net"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-09",
+              "value": "square_or_past"
+            },
+            {
+              "obs": "OBS-25",
+              "value": "shoulders_lead_hips"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "wd4YRQW3TOc:C04": {
+      "kind": "cause",
+      "episode": "wd4YRQW3TOc",
+      "local_id": "C04",
+      "node": "N-C_WD4YRQW3TOC_C04",
+      "text": "The player fails to roll the racket backwards somewhat on purpose during the early swing, missing the initial roll needed for inertia to load the stretch.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-48",
+          "value": "stays_static_or_moves_outward"
+        },
+        {
+          "obs": "OBS-35",
+          "value": "level_with_or_ahead_of_hand"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "During early swing preparation, does the player visibly roll the racket face backward to initiate dynamic stretch?",
+          "values": [
+            "rolls_backward",
+            "no_backward_roll"
+          ],
+          "layer": "B",
+          "camera": "B"
+        },
+        {
+          "description": "During the early backswing preparation, does the racket head roll backward into external rotation before forward acceleration?",
+          "values": [
+            "rolls_backward",
+            "stays_neutral_or_unrotated"
+          ],
+          "layer": "B",
+          "camera": "B"
+        }
+      ],
+      "reason": "No existing item captures whether the racket rolls backward during early preparation.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-48",
+              "value": "stays_static_or_moves_outward"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "During early swing preparation, does the player visibly roll the racket face backward to initiate dynamic stretch?",
+              "values": [
+                "rolls_backward",
+                "no_backward_roll"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-35",
+              "value": "level_with_or_ahead_of_hand"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "During the early backswing preparation, does the racket head roll backward into external rotation before forward acceleration?",
+              "values": [
+                "rolls_backward",
+                "stays_neutral_or_unrotated"
+              ],
+              "layer": "B",
+              "camera": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "N-P_X_WIG59WR9Y": {
+      "kind": "problem",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "P",
+      "node": "N-P_X_WIG59WR9Y",
+      "text": "Why should you start your swing at contact?",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "This is a conceptual question and coaching cue, not a directly visible action.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_X_WIG59WR9Y_S01": {
+      "kind": "symptom",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "S01",
+      "node": null,
+      "text": "Spraying shots and losing directional control on the ball.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-16",
+          "value": "wide"
+        },
+        {
+          "obs": "OBS-16",
+          "value": "long"
+        },
+        {
+          "obs": "OBS-16",
+          "value": "net"
+        },
+        {
+          "obs": "OBS-30",
+          "value": "past_baseline"
+        }
+      ],
+      "new_obs": [],
+      "reason": "Spraying shots and directional loss manifests as balls landing wide, long, or into the net.",
+      "agreement": "required 0/2 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-16",
+          "value": "wide"
+        },
+        {
+          "obs": "OBS-16",
+          "value": "long"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-16",
+              "value": "wide"
+            },
+            {
+              "obs": "OBS-16",
+              "value": "long"
+            },
+            {
+              "obs": "OBS-16",
+              "value": "net"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-16",
+              "value": "wide"
+            },
+            {
+              "obs": "OBS-16",
+              "value": "long"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-16",
+              "value": "net"
+            },
+            {
+              "obs": "OBS-30",
+              "value": "past_baseline"
+            }
+          ],
+          "new_obs": []
+        }
+      ]
+    },
+    "SYM_X_WIG59WR9Y_S02": {
+      "kind": "symptom",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "S02",
+      "node": null,
+      "text": "Hitting the ball significantly slower and missing effortless power.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-30",
+          "value": "short_near_service_line"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Speed of the ball after leaving the racket strings",
+          "values": [
+            "slow_floating",
+            "medium_pace",
+            "fast_penetrating"
+          ],
+          "layer": "A",
+          "camera": "any"
+        }
+      ],
+      "reason": "Significantly slower ball speed and lack of power results in shallow ball depth.",
+      "agreement": "required 0/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-30",
+          "value": "short_near_service_line"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-30",
+              "value": "short_near_service_line"
+            }
+          ],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-30",
+              "value": "short_near_service_line"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Speed of the ball after leaving the racket strings",
+              "values": [
+                "slow_floating",
+                "medium_pace",
+                "fast_penetrating"
+              ],
+              "layer": "A",
+              "camera": "any"
+            }
+          ]
+        }
+      ]
+    },
+    "SYM_X_WIG59WR9Y_S03": {
+      "kind": "symptom",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "S03",
+      "node": null,
+      "text": "Feeling forced to actively pull and manipulate the racket face with slow-twitch muscle flexing.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Internal feeling of effort and slow-twitch muscle flexing cannot be seen in court video.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "x_WIg59Wr9Y:C01": {
+      "kind": "cause",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "C01",
+      "node": "N-C_X_WIG59WR9Y_C01",
+      "text": "Players mentally intuit a long delay between when hand acceleration stops and when contact happens.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Mental intuition and perception of timing are internal psychological processes.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "x_WIg59Wr9Y:C02": {
+      "kind": "cause",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "C02",
+      "node": "N-C_X_WIG59WR9Y_C02",
+      "text": "The player mistimes acceleration and fails to accelerate the hand all the way to the ball, letting the wrist spring release too early.",
+      "visible": true,
+      "required": [],
+      "supporting": [
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        },
+        {
+          "obs": "OBS-27",
+          "value": "wrist_flexes_or_chops"
+        },
+        {
+          "obs": "OBS-67",
+          "value": "rolls_over_immediately"
+        }
+      ],
+      "new_obs": [
+        {
+          "description": "Timing of the racket head overtaking the hitting hand relative to contact",
+          "values": [
+            "overtakes_before_contact",
+            "overtakes_at_contact",
+            "trails_behind_hand"
+          ],
+          "layer": "B",
+          "camera": "S"
+        },
+        {
+          "description": "Hitting hand acceleration profile approaching contact",
+          "values": [
+            "accelerates_into_contact",
+            "decelerates_before_contact"
+          ],
+          "layer": "B",
+          "camera": "S"
+        }
+      ],
+      "reason": "Premature wrist release manifests as rapid wrist flexion before or through contact.",
+      "agreement": "required 0/1 agreed; runs=2/2",
+      "required_any_run": [
+        {
+          "obs": "OBS-24",
+          "value": "wrist_flexes_rapidly"
+        }
+      ],
+      "runs": [
+        {
+          "visible": true,
+          "required": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            }
+          ],
+          "supporting": [
+            {
+              "obs": "OBS-27",
+              "value": "wrist_flexes_or_chops"
+            },
+            {
+              "obs": "OBS-67",
+              "value": "rolls_over_immediately"
+            }
+          ],
+          "new_obs": []
+        },
+        {
+          "visible": true,
+          "required": [],
+          "supporting": [
+            {
+              "obs": "OBS-24",
+              "value": "wrist_flexes_rapidly"
+            },
+            {
+              "obs": "OBS-27",
+              "value": "wrist_flexes_or_chops"
+            }
+          ],
+          "new_obs": [
+            {
+              "description": "Timing of the racket head overtaking the hitting hand relative to contact",
+              "values": [
+                "overtakes_before_contact",
+                "overtakes_at_contact",
+                "trails_behind_hand"
+              ],
+              "layer": "B",
+              "camera": "S"
+            },
+            {
+              "description": "Hitting hand acceleration profile approaching contact",
+              "values": [
+                "accelerates_into_contact",
+                "decelerates_before_contact"
+              ],
+              "layer": "B",
+              "camera": "S"
+            }
+          ]
+        }
+      ]
+    },
+    "x_WIg59Wr9Y:C03": {
+      "kind": "cause",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "C03",
+      "node": "N-C_X_WIG59WR9Y_C03",
+      "text": "Because the spring released before the ball arrived, the brain actively flexes and pulls the racket with slow-twitch muscles to maintain string angle.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Brain commands and slow-twitch muscle recruitment are internal neuro-muscular phenomena.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    },
+    "x_WIg59Wr9Y:C04": {
+      "kind": "cause",
+      "episode": "x_WIg59Wr9Y",
+      "local_id": "C04",
+      "node": "N-C_X_WIG59WR9Y_C04",
+      "text": "Stored elastic energy in the wrist leaks out linearly with every extra millisecond the lag release window extends beyond 40 milliseconds.",
+      "visible": false,
+      "required": [],
+      "supporting": [],
+      "new_obs": [],
+      "reason": "Millisecond-level elastic energy dissipation is a theoretical physics explanation not directly observable.",
+      "agreement": "required 0/0 agreed; runs=2/2",
+      "required_any_run": [],
+      "runs": [
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        },
+        {
+          "visible": false,
+          "required": [],
+          "supporting": [],
+          "new_obs": []
+        }
+      ]
+    }
+  },
+  "new_obs_candidates": [
+    {
+      "cid": "NC001",
+      "item": "E_zmENJIj4g:C01",
+      "description": "Angle of the hitting arm relative to the lateral shoulder tilt axis on serve",
+      "values": [
+        "matched_to_shoulder_tilt",
+        "elevated_out_of_plane"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC002",
+      "item": "E_zmENJIj4g:C01",
+      "description": "Angle of hitting arm relative to lateral shoulder tilt line during forward swing",
+      "values": [
+        "aligned_in_plane",
+        "elevated_out_of_plane"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC003",
+      "item": "E_zmENJIj4g:C03",
+      "description": "Thoracic spine extension during serve trophy cocking phase",
+      "values": [
+        "visibly_extended_arched",
+        "flat_or_flexed"
+      ],
+      "layer": "B",
+      "camera": "S"
+    },
+    {
+      "cid": "NC004",
+      "item": "E_zmENJIj4g:C04",
+      "description": "Degree of upper torso coiling away from the net during the serve trophy position",
+      "values": [
+        "excessively_coiled_back_to_net",
+        "standard_side_on"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC005",
+      "item": "E_zmENJIj4g:C04",
+      "description": "Chest rotation away from net during serve trophy phase",
+      "values": [
+        "excessively_turned_back",
+        "standard_side_on"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC006",
+      "item": "SYM_E_ZMENJIJ4G_S02",
+      "description": "Alignment of the hitting upper arm with the tilted shoulder line at serve contact",
+      "values": [
+        "in_plane_with_shoulders",
+        "out_of_plane_elevated"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC007",
+      "item": "SYM_E_ZMENJIJ4G_S02",
+      "description": "Alignment of the hitting arm with the tilted shoulder axis at serve contact",
+      "values": [
+        "in_plane_with_shoulders",
+        "elevated_out_of_plane"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC008",
+      "item": "SYM_X_WIG59WR9Y_S02",
+      "description": "Speed of the ball after leaving the racket strings",
+      "values": [
+        "slow_floating",
+        "medium_pace",
+        "fast_penetrating"
+      ],
+      "layer": "A",
+      "camera": "any"
+    },
+    {
+      "cid": "NC009",
+      "item": "wd4YRQW3TOc:C04",
+      "description": "During early swing preparation, does the player visibly roll the racket face backward to initiate dynamic stretch?",
+      "values": [
+        "rolls_backward",
+        "no_backward_roll"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC010",
+      "item": "wd4YRQW3TOc:C04",
+      "description": "During the early backswing preparation, does the racket head roll backward into external rotation before forward acceleration?",
+      "values": [
+        "rolls_backward",
+        "stays_neutral_or_unrotated"
+      ],
+      "layer": "B",
+      "camera": "B"
+    },
+    {
+      "cid": "NC011",
+      "item": "x_WIg59Wr9Y:C02",
+      "description": "Timing of the racket head overtaking the hitting hand relative to contact",
+      "values": [
+        "overtakes_before_contact",
+        "overtakes_at_contact",
+        "trails_behind_hand"
+      ],
+      "layer": "B",
+      "camera": "S"
+    },
+    {
+      "cid": "NC012",
+      "item": "x_WIg59Wr9Y:C02",
+      "description": "Hitting hand acceleration profile approaching contact",
+      "values": [
+        "accelerates_into_contact",
+        "decelerates_before_contact"
+      ],
+      "layer": "B",
+      "camera": "S"
+    }
+  ],
+  "new_obs_clusters": [
+    {
+      "id": "NEW-OBS-01",
+      "rep": "NC004",
+      "members": [
+        "NC004",
+        "NC005"
+      ]
+    },
+    {
+      "id": "NEW-OBS-02",
+      "rep": "NC006",
+      "members": [
+        "NC006",
+        "NC007"
+      ]
+    },
+    {
+      "id": "NEW-OBS-03",
+      "rep": "NC009",
+      "members": [
+        "NC009",
+        "NC010"
+      ]
+    },
+    {
+      "id": "NEW-OBS-04",
+      "rep": "NC001",
+      "members": [
+        "NC001"
+      ]
+    },
+    {
+      "id": "NEW-OBS-05",
+      "rep": "NC002",
+      "members": [
+        "NC002"
+      ]
+    },
+    {
+      "id": "NEW-OBS-06",
+      "rep": "NC003",
+      "members": [
+        "NC003"
+      ]
+    },
+    {
+      "id": "NEW-OBS-07",
+      "rep": "NC008",
+      "members": [
+        "NC008"
+      ]
+    },
+    {
+      "id": "NEW-OBS-08",
+      "rep": "NC011",
+      "members": [
+        "NC011"
+      ]
+    },
+    {
+      "id": "NEW-OBS-09",
+      "rep": "NC012",
+      "members": [
+        "NC012"
+      ]
+    }
+  ],
+  "stats": {
+    "gapfill": null,
+    "items": 32,
+    "invalid_dropped": 0,
+    "items_with_missing_run": [],
+    "usage": {
+      "promptTokenCount": 39158,
+      "candidatesTokenCount": 7452,
+      "totalTokenCount": 76715,
+      "thoughtsTokenCount": 30105,
+      "calls": 10
+    },
+    "bind_calls": 8,
+    "newobs_cluster_calls": 2
+  }
+}

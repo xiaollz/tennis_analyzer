@@ -9,62 +9,22 @@
     "1-2": {
       "pass": false,
       "findings": [
-        "[FAIL] rerun: causes transcript-anchor Jaccard 0.12 (min 0.6)",
-        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.14 (min 0.5)",
-        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.30 (min 0.5)"
+        "[FAIL] rerun: causes transcript-anchor Jaccard 0.33 (min 0.6)",
+        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.33 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.80 (min 0.5)"
       ]
     },
     "1-3": {
-      "pass": false,
+      "pass": true,
       "findings": [
-        "[FAIL] rerun: causes transcript-anchor Jaccard 0.33 (min 0.6)",
-        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.33 (min 0.5)",
-        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.00 (min 0.5)"
-      ]
-    },
-    "2-3": {
-      "pass": false,
-      "findings": [
-        "[FAIL] rerun: causes transcript-anchor Jaccard 0.29 (min 0.6)",
-        "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.14 (min 0.5)",
-        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.44 (min 0.5)"
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.60 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.60 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.80 (min 0.5)"
       ]
     }
   },
-  "chosen_pair": null,
-  "consensus": {
-    "closeness": {
-      "1": 1.235,
-      "2": 1.441,
-      "3": 1.54
-    },
-    "base_run": 3,
-    "dropped_causes": [
-      "C03"
-    ],
-    "evidence_pruned": 1,
-    "dropped_solutions": [],
-    "kind_votes_changed": [
-      "D05:progression->drill"
-    ],
-    "pairs_vs_final": {
-      "final-r1": {
-        "pass": false,
-        "findings": [
-          "[FAIL] rerun: causes transcript-anchor Jaccard 0.40 (min 0.6)",
-          "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.40 (min 0.5)",
-          "[FAIL] rerun: solutions transcript-anchor Jaccard 0.11 (min 0.5)"
-        ]
-      },
-      "final-r2": {
-        "pass": false,
-        "findings": [
-          "[FAIL] rerun: causes transcript-anchor Jaccard 0.33 (min 0.6)",
-          "[FAIL] rerun: chain roots transcript-anchor Jaccard 0.17 (min 0.5)",
-          "[PASS] rerun: solutions transcript-anchor Jaccard 0.62 (min 0.5)"
-        ]
-      }
-    },
-    "pass": false
-  }
+  "chosen_pair": [
+    1,
+    3
+  ]
 }

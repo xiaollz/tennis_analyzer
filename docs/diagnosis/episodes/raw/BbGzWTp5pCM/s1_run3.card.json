@@ -1,0 +1,455 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "BbGzWTp5pCM",
+    "url": "https://www.youtube.com/watch?v=BbGzWTp5pCM",
+    "title": "Practicing in Slow Motion is Killing Your Match Play",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 259.0,
+    "upload_date": "2025-04-08",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "demo_with_player",
+    "reason": "The coach demonstrates the multi-split step drill for ball machine practice, instructing the player to recover immediately and hop continuously at split width between feeds to maintain match intensity."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/BbGzWTp5pCM.en.vtt",
+    "kind": "auto",
+    "sha256": "b5f578531b6c35e141ddc587ba8910a02e18c7d6040659e0f51ac489db4152a4",
+    "coverage_ratio": 0.9876
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_BbGzWT",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why does practicing in slow motion hurt match play, and how can players build match intensity in drills?",
+    "definition": "Practicing at a casual warm-up pace allows strokes to look good in isolated drills but prevents technique and footwork from holding up under match conditions.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "Basic groundstroke mechanics",
+      "Experience with hand-feed or ball machine drills"
+    ],
+    "target_player": "Players whose strokes look good in practice or on the ball machine but break down during competitive matches",
+    "evidence": [
+      "Q03",
+      "Q08"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "This is Raphael Nadal playing tennis at 13 years old.",
+      "start": 2.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "it reveals just how much intensity he's able to put into his match tennis even though he's so young.",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "That intensity is why you're losing matches. It's why you're good in practice but not in matches.",
+      "start": 32.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "It's why your strokes are good, but you can't translate them into winning points.",
+      "start": 36.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "So, when I'm teaching lessons and I'm doing hand feed drills, this is what it usually looks like the first time.",
+      "start": 45.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "you might look at this and think, well, coach, that looks fine. I mean, you're moving your feet, you're you're breathing, you're hitting the ball",
+      "start": 69.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "this is not anywhere close to match intensity. If you want your practice to translate into matches, it should look more like this.",
+      "start": 79.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "And the contrast between these two is what we mean when we say that people are practicing for hours and hours in slow motion.",
+      "start": 108.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "This movement in the second video you're watching here, this urgency with the feet, this wide stance so I can press off in any direction.",
+      "start": 114.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "The exhale through contact, the forcible exhale to make sure I can oxygenate my body while I do this.",
+      "start": 119.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "All of that intensity and all of that intentionality has to be practiced if you want to do it on the match court.",
+      "start": 124.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "And most people just for whatever reason naturally get stuck in that slow motion warm-up style for hours and hours, which does not help.",
+      "start": 130.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Now, the ball machine is one of the biggest offenders here. It is such a great tool, and yet it is so easy to get stuck practicing in slow motion",
+      "start": 138.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And you get into the match and it breaks down because you didn't realize you were practicing in slow motion.",
+      "start": 154.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "And so really, you warmed up your forehand for 5 minutes and the rest of it was pointless.",
+      "start": 160.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "So here's how we fix that. I call it the multi-split step.",
+      "start": 163.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "your ball machine's not going to have a racket. So you're not going to be able to time an actual split step to your opponent's hitting rhythm.",
+      "start": 169.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "All you do is in between shots, recover immediately and then just hop in place at your split width until the next ball comes.",
+      "start": 176.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "Once you see it, go to it with urgency. That's it.",
+      "start": 184.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "The very act of split, split, split, split, split, split, split, that act is going to keep you intense. It's going to cue your brain to be intense",
+      "start": 188.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "and you're naturally going to treat every ball more seriously at a match intensity just by forcing yourself into that multi-split step.",
+      "start": 194.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "stop practicing in slow motion. Get that intensity up for the vast majority of your practice.",
+      "start": 244.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Strokes hit cleanly in practice break down completely in matches and fail to translate into winning points.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q04",
+        "Q14"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Footwork appears casual and upright between shots rather than urgent with an active wide split stance.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "recovery",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06",
+        "Q09"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Players hit without match intensity and intentionality during practice, preventing skills from holding up under match pressure.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Players move casually without urgent footwork, a wide athletic base to push off in any direction, or forcible exhalation on contact.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players naturally default into an easy warm-up rhythm for hours, a habit heavily reinforced by high-volume ball machine sessions.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Ball machines lack a visual swing rhythm or racket contact, leaving players unable to time a conventional split step.",
+      "depth": 3,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q17"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C04",
+      "to": "C03",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "PROBLEM",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "pro_example",
+      "summary": "Audio from Rafael Nadal competing at age 13 illustrates the extraordinary intensity required in competitive point play.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "A typical casual hand-feed repetition is directly contrasted with a match-intensity repetition featuring urgent feet and dynamic breathing.",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "A forceful exhalation through contact is necessary to oxygenate the body during high-intensity rally movements.",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Hitting hundreds of balls comfortably on a machine feels productive, but without match intensity only the first five minutes serve as a real warm-up.",
+      "evidence": [
+        "Q13",
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Forcibly exhale through ball contact to oxygenate your body during high-effort stroke production.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "drill",
+      "targets": [
+        "C04",
+        "C03"
+      ],
+      "summary": "Recover immediately after hitting and hop continuously in place at split width until the ball machine ejects the next ball.",
+      "external_goal": "Hop continuously in place at split width between shots",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C01"
+      ],
+      "summary": "The instant you spot the incoming ball, attack and move toward it with urgent footwork.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Stop practicing in slow motion and demand full match-level intensity across the vast majority of your practice sessions.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

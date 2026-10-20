@@ -1,22 +1,19 @@
 {
   "counts": {
-    "quote_snapped": 6,
+    "quote_snapped": 2,
     "cause_anchor_evidence_spills": 1,
-    "cause_anchor_miss": 2,
-    "cause_anchor_exact": 2,
-    "solution_anchor_evidence_spills": 1,
-    "solution_anchor_exact": 4
+    "cause_anchor_exact": 4,
+    "ban_rescan_added": 1,
+    "solution_anchor_evidence_spills": 3,
+    "solution_anchor_exact": 2
   },
   "detail": [
     "quote_snapped: Q01 score=1.00",
-    "quote_snapped: Q10 score=1.00",
-    "quote_snapped: Q14 score=1.00",
     "quote_snapped: Q15 score=1.00",
-    "quote_snapped: Q17 score=1.00",
-    "quote_snapped: Q20 score=1.00",
     "cause_anchor_evidence_spills: C01 anchor_bucket=2 evidence_buckets=[2, 3]",
-    "cause_anchor_miss: C02 anchor_bucket=7 evidence_buckets=[6]",
-    "cause_anchor_miss: C05 anchor_bucket=16 evidence_buckets=[15]",
-    "solution_anchor_evidence_spills: D01 anchor_bucket=2 evidence_buckets=[2, 3]"
+    "ban_rescan_added: solutions.2:降拍",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=2 evidence_buckets=[2, 3]",
+    "solution_anchor_evidence_spills: D03 anchor_bucket=13 evidence_buckets=[13, 14]",
+    "solution_anchor_evidence_spills: D05 anchor_bucket=28 evidence_buckets=[28, 30]"
   ]
 }

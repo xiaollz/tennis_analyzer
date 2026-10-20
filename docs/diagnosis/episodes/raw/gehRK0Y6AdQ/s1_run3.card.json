@@ -1,0 +1,523 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "gehRK0Y6AdQ",
+    "url": "https://www.youtube.com/watch?v=gehRK0Y6AdQ",
+    "title": "The Pros \"Brush\" Differently From You",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 818.0,
+    "upload_date": "2025-10-28",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "demo_with_player",
+    "reason": "The coach provides executable drills and cues, such as oscillating between conscious awareness and blank hitting, and the adaptive response drill alternating between short attacking balls and deep balls."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/gehRK0Y6AdQ.en.vtt",
+    "kind": "auto",
+    "sha256": "6efc245c4646f6fb917a973289bc74cfb55071533209d5f55a7bcea1399e2c32",
+    "coverage_ratio": 0.9962
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_gehRK0",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why do amateur players brush the ball differently from pros when trying to hit topspin?",
+    "definition": "Players often try to create topspin by purely brushing or pulling up across the back of the ball without driving through, resulting in floaty rotation with no penetration or control.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic topspin forehand swing"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q02",
+      "Q20"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "So obviously you're hitting through when you hit flat, but even with tops spin, your racket is hitting through the ball. So if I just roll with no hit, this is what it looks like.",
+      "start": 12.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "The ball is rotating, but I know this isn't the shot that you're trying to produce. Okay. So, what's the secret? Well, the secret is we are going to use a racket angle that is below horizontal",
+      "start": 30.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "The only difference is I am hitting the ball with my racket head through the ball rather than just brushing. The other thing is if I try to connect the rest of my trunk to the pure brush, it gets",
+      "start": 60.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "And the way to do that is with my knees and my hips, I get as low as I can.",
+      "start": 123.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "And then by instead of approaching the ball here, if I approach the ball here, now my hand can come through in a similar way, but instead of hitting the ball down, it hits the ball up.",
+      "start": 137.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "when you try to take your arm and accelerate in, you have to kind of find how to send your arm behind the ball such that your hand wants to finish the swing.",
+      "start": 164.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Here I don't have enough space and so my hand doesn't finish the swing when I get to the ball. Here I'm in front of my power slot. So, I can't I accelerate in and I can't keep the energy",
+      "start": 179.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "So, experiment with that. Try not to fight it. Like, if you feel like you're fighting it, it's probably not the right depth or not the right lateral spacing.",
+      "start": 223.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "balance. It is tempting to try to create lift by leaning back as you hit. So, I know if I lean back, everything's going to go up. And this is actually not that bad from behind the baseline, but it",
+      "start": 242.08,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "Again, you can get this kind of brushy top spin, but it's going to be hard to direct the ball and drive it. So, what we need to do is lean in.",
+      "start": 257.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "And the key here is if you are hitting the net as you lean in, you need to get lower here. You need to get lower here. And you need to approach the ball with a slightly lower angle.",
+      "start": 268.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "the faster you are moving and the earlier you're taking the ball generally the flatter you want to hit.",
+      "start": 308.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "C. So, it goes back and down and then up and forward. And it kind of is a C, but it's really more like the Nike whoosh where only a little bit of the motion is back and down and",
+      "start": 349.28,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "it is probably because you're stuck in that more of a actual C rather than what we want, which it's still a C motion in a way, but it is the woof where a lot of that action",
+      "start": 375.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "Now, related to this is if you go from here and like dive bomb it in and then try to come up, it gets very sloppy and very tough to time.",
+      "start": 411.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "get one. There we go. I got one. So, we want to generally try to get the hand at least to the level of the ball. You're probably not going to get below the ball on this, but we want",
+      "start": 428.8,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "So we always want to iterate when we're doing these cues. like first, okay, I'm going to think about this incidence angle a little bit and just going to train my brain that that incidence angle lets me actually hit",
+      "start": 496.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And we oscillate between automatic and conscious until the automatic starts to get up to the point where you're like, \"Yeah, I'll trust this in a match.\"",
+      "start": 550.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "the baseline next. And I call this the adaptive response drill. And it's training you that when you are leaning in, attacking a shorter ball, you generally want to hit flatter. And when you are stuck behind the baseline, leaning",
+      "start": 557.76,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "And another thing with this is like not trying to like just purely use your hand and hit with like 3,000 RPMs because it's very very awkward. Now, the last thing here is level shoulders.",
+      "start": 739.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "ideally, you want to lean over a little, have a slight shoulder slant, and then again, I can drive through with just a slight slant down of my incidence angle on the ball",
+      "start": 757.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "the only way I can get spin with my shoulders level is to swing my arm up like this. And again, it's giving you more of that floaty spin, which is not what you're looking for",
+      "start": 782.0,
+      "speaker": "coach",
+      "about": "demonstrator_induced",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The ball has spin and rotation but lacks driving power and penetration, producing a weak floaty ball.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q02",
+        "Q22"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The trunk fails to connect to the swing and cannot transfer energy into the hand strike.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player pulls the arm straight upward with level shoulders instead of driving forward on a shallow diagonal.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "R",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q20",
+        "Q22"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player attempts to generate topspin by purely rolling or brushing upward without driving the racket head forward through the ball.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player fails to set the correct lateral spacing or depth relative to the power slot, causing the hand to fight the swing rather than rolling naturally.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player leans back to lift the ball instead of leaning in and lowering the body stance inside the court.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The player conceptualizes the swing path as a symmetrical C shape or dive-bombs steep down-and-up rather than a forward-driving Nike swoosh diagonal.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "The player keeps the shoulders level, leaving upward arm pulling as the only way to impart spin.",
+      "depth": 2,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q01"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "analogy",
+      "summary": "The coach compares the proper topspin swing shape to the Nike swoosh rather than a circular C loop, emphasizing a shallow forward diagonal.",
+      "evidence": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates pure rolling with no hit versus driving through with a below-horizontal incidence angle.",
+      "evidence": [
+        "Q01",
+        "Q03"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "mechanics",
+      "summary": "A slight shoulder slant and low body stance allow the racket to approach on a shallow downward angle while driving forward and up through contact.",
+      "evidence": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Players wrongly assume topspin requires pulling up aggressively with the hand or jumping backwards to lift the ball.",
+      "evidence": [
+        "Q09",
+        "Q20"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Approach the ball with a racket incidence angle below horizontal and drive straight through the ball.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q02"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Lower your knees and hips as much as possible so the hand starts lower without altering comfortable swing mechanics.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04",
+        "Q05"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Experiment with arm firing depth and lateral distance from the power slot until the hand naturally wants to roll through contact without fighting.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "check",
+      "targets": [
+        "C04"
+      ],
+      "summary": "Ensure the hand gets closer to the level of the ball before forward acceleration to prevent dive-bombing down into contact.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C04"
+      ],
+      "summary": "Oscillate between focusing consciously on a cue (like hand height or incidence angle) and hitting with a blank mind until the movement becomes automatic.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "D06",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Execute the adaptive response drill by alternating between running forward to hit flatter on short balls and hitting heavy topspin while balanced or backing up.",
+      "external_goal": "",
+      "scenario_fit": "needs_feeder",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q19"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

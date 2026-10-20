@@ -1,0 +1,426 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "5jHCDc44SQM",
+    "url": "https://www.youtube.com/watch?v=5jHCDc44SQM",
+    "title": "The Abdominal Corkscrew ft. Carson Branstine",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 457.0,
+    "upload_date": "2025-07-01",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "general",
+    "format": "pro_analysis",
+    "reason": "The coach provides an actionable drill at the end of the video where the player takes a wide stance and drives the knee to the elbow to feel abdominal tension."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/5jHCDc44SQM.en.vtt",
+    "kind": "auto",
+    "sha256": "50fa9a48559d39f80de026d42ac0bd1c58d40a35a14d9744ec463d139dfe3c7f",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_5jHCDc",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do you generate easy, effortless power with a compact swing using your trunk and hips?",
+    "definition": "Players often misunderstand hip drive and let the hips move disconnected from the upper body, resulting in a discombobulated swing that fails to produce effortless power.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic unit turn and hip rotation mechanics"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q03",
+      "Q06"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The reason I call her power easy or effortless, is because of points like this, which they don't look as flashy as winners.",
+      "start": 12.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Now, the secret to this easy, effortless power is in the abdomen.",
+      "start": 26.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "you can see in her abdomen, you can see in the skin on her abdomen that her trunk, her shoulder line, her chest, it is twisted back farther than her hips.",
+      "start": 47.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "The first thing I want you to notice is that the trunk is moving faster than the hips for pretty much the entire swing.",
+      "start": 71.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "you know a lot of people get the idea of hip drive into their mind and that's amazing except it must be connected to the trunk through that tension in the abdomen.",
+      "start": 112.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "If your hips are going by themselves, then your swing is actually getting discombobulated and you're losing that tension corkcrew coil that she's recruiting through the abdomen here.",
+      "start": 133.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "Now biomechanically the hips, the pelvis, it actually moves faster than the trunk for about 25 milliseconds. But you're not going to be able to feel that.",
+      "start": 145.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "I want you to aim for that feeling of tension and power in your abdomen rather than thinking about the timing windows because the timing windows are too small for you to actually feel.",
+      "start": 188.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "See how her front shoulder is pulled across her body here and then watch the front shoulder boom explosively pulls forward into the swing.",
+      "start": 202.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "That shoulder line, that upper part of the trunk really needs to yank itself out and participate in that explosive twist.",
+      "start": 216.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "So the purpose of the hips is to speed up the trunk. And then of course the purpose of the trunk is to speed up the arm.",
+      "start": 248.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "That tension between the upper part of the thorax and the hips. That tension is what makes it so that as the hips drive, the trunk comes with it.",
+      "start": 310.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "Very important not to overfocus on your hips from a sensory perspective because right away the trunk is going with the hips.",
+      "start": 348.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "And so you want to perceive that sensation of that shoulder line, your chest, your trunk firing around.",
+      "start": 365.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "is the amount of stretch you use can vary from shot to shot.",
+      "start": 392.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "Depending on the shot you're playing, you can wind up more or less. you can load more or less power into your trunk and hips and make that power control trade-off shot by shot as you see fit.",
+      "start": 414.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "You get in a nice wide stance and you drive your knee to the elbow on the side of your body like this.",
+      "start": 436.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "And this is going to help you feel that tension and you're going to be able to explode faster and harder and faster and harder as you start to feel that sensation your abdomen",
+      "start": 443.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The swing becomes discombobulated with disconnected motion between the hips and the upper body.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Lack of effortless velocity on shots despite initiating a hip turn.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "B",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q01",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Absence of abdominal tension sensation during the coiling and forward swing phase.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "unit_turn",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q06",
+        "Q08"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The trunk, shoulder line, and chest fail to twist back farther than the hips to create stretch in the abdomen.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The hips drive on their own without connecting to the trunk through abdominal tension, discombobulating the swing.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q05",
+        "Q06"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Players try to track imperceptibly small timing windows rather than focusing on the physical sensation of abdominal tension.",
+      "depth": 3,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The front shoulder line fails to explosively yank itself out and participate in the forward uncoiling twist.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C03",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "C01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q06"
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "S02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The trunk moves faster than the hips throughout the forward swing, flinging forward once abdominal stretch uncoils.",
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Hip-shoulder separation occurs for only 25 milliseconds biomechanically and is impossible to perceive directly through conscious timing.",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Carlos Alcaraz utilizes the same abdominal stretch and rapid thorax uncoiling on his forehand, varying the stretch based on incoming ball pace.",
+      "evidence": [
+        "Q12",
+        "Q15"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Aim for the sensation of tension and power in your abdomen rather than consciously thinking about micro timing windows.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02",
+        "C04"
+      ],
+      "summary": "Focus your sensory perception on feeling your shoulder line, chest, and trunk actively firing around rather than overfocusing on your hips.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "check",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Adjust the depth of abdominal coil shot by shot, using less stretch when blocking fast balls and maximizing coil on floaters.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q16"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Assume a wide stance and drive your knee to the elbow on the side of your body to recruit and feel the abdominal stretch corkscrew.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}

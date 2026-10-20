@@ -1,11 +1,17 @@
 {
   "counts": {
+    "quote_snapped": 2,
     "cause_anchor_exact": 3,
-    "intuition_first_forced_false": 2,
-    "solution_anchor_exact": 6
+    "cause_anchor_miss": 1,
+    "solution_anchor_evidence_spills": 1,
+    "solution_anchor_exact": 4,
+    "solution_anchor_miss": 1
   },
   "detail": [
-    "intuition_first_forced_false: solutions.2 no external_goal",
-    "intuition_first_forced_false: solutions.4 no external_goal"
+    "quote_snapped: Q21 score=1.00",
+    "quote_snapped: Q23 score=1.00",
+    "cause_anchor_miss: C03 anchor_bucket=10 evidence_buckets=[11]",
+    "solution_anchor_evidence_spills: D01 anchor_bucket=4 evidence_buckets=[4, 5]",
+    "solution_anchor_miss: D04 anchor_bucket=9 evidence_buckets=[12]"
   ]
 }

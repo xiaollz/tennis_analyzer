@@ -1,0 +1,16 @@
+{
+  "counts": {
+    "enum_fallback": 1,
+    "cause_anchor_exact": 3,
+    "cause_anchor_evidence_spills": 1,
+    "intuition_first_forced_false": 1,
+    "solution_anchor_miss": 1,
+    "solution_anchor_exact": 2
+  },
+  "detail": [
+    "enum_fallback: symptoms.S03.phase=cocking->whole",
+    "cause_anchor_evidence_spills: C03 anchor_bucket=7 evidence_buckets=[7, 8]",
+    "intuition_first_forced_false: solutions.2 no external_goal",
+    "solution_anchor_miss: D01 anchor_bucket=9 evidence_buckets=[10]"
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "ui-RFRdQKRk",
+    "url": "https://www.youtube.com/watch?v=ui-RFRdQKRk",
+    "title": "The Pros \"Rotate\" Differently Than You",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 692.0,
+    "upload_date": "2026-07-15",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "forehand",
+    "format": "lecture",
+    "reason": "The coach provides executable drills including single-foot counter-rotational balance swings, medicine ball throwing variations, and walking into the shot on one foot."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/ui-RFRdQKRk.en.vtt",
+    "kind": "auto",
+    "sha256": "c34d4f56e89d2cf0b8f214afa73ae6ed82c0e561eb0161faf1c33d1df56e5964",
+    "coverage_ratio": 1.0
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r1_ui-RFR",
+      "s1_r2_ui-RFR"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "How do pros rotate differently than recreational players to create effortless power and balance?",
+    "definition": "Players often turn their entire body sideways together rather than counter-rotating their pelvis against their thorax, leading to a lack of torsional trunk tension and loss of balance at higher swing speeds.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "basic forehand unit turn"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03",
+      "Q05"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "The secret to effortless power in tennis is to coil with your trunk. But, coiling means more than just turning sideways.",
+      "start": 7.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "Here I am not coiled. I'm just turned sideways. Here I'm actually coiled into this hip.",
+      "start": 19.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "The unit doesn't include your hips. If I go backwards with my hips as well, then I create no tension, which can then unwind through the swing.",
+      "start": 37.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "You're going to take your hitting hip, rotate it out, drive this point forward, and then perform your unit turn. And now my back glute is loaded",
+      "start": 55.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "Is that the pelvis is going back with my body versus holding the pelvis so that I load against it.",
+      "start": 139.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "And my pelvis and shoulders, my thorax and my hips are going back together, forward together. Versus counter-rotating.",
+      "start": 162.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "once you start actually getting power from your trunk, you're going to have to throw the racket more overhand to keep the ball.",
+      "start": 187.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "when I have the coil on, I actually have to hit the ball a lot more overhand and a lot more down in order to get that trajectory.",
+      "start": 208.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "There's kind of four uh kind of simple counter-rotational balance patterns you can practice off of one foot so you can get this equal and opposite feeling through the trunk.",
+      "start": 218.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "I'm just going to stay in balance while I swing. And that's going to require sending my left hip back when I prepare and across when I swing.",
+      "start": 238.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "like you're probably not going to pick one foot up and try to swing that way cuz you're going to immediately realize that you're falling all over the place.",
+      "start": 287.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "The the the hips and the shoulders playing equal and opposite roles at the trunk. So we are always corkscrewing one side against the other.",
+      "start": 313.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "So, this is the open stance forehand, but I'm going to go back together forward together and you're always going to have to drop your foot",
+      "start": 333.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "You'll never Even if you can like maybe technically keep your balance, you'll never uh keep your balance at speed if you don't counter-rotate.",
+      "start": 369.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "I try to hit any harder without equal and opposite coiling, and I mean, I I mean, okay, technically I made it, but I basically just missed that one.",
+      "start": 407.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "I promise you if you can get this feeling of coiling off of your front foot where you use that right hip here.",
+      "start": 458.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "half of my trunk. You can practice these counter-rotational balance patterns with a medicine ball. This is off of your front foot on the forehand. And your goal is just see how many reps you can get through without",
+      "start": 501.16,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "shoulders here. So we're not trying to throw the med ball, we're not trying to use our hands for the med ball. It's just an underhand release of the med ball and you're accelerating your hitting shoulder towards your partner",
+      "start": 529.12,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "So now here's the back foot on the forehand, and you may have to lean in a little bit when you're doing this.",
+      "start": 551.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "Front foot on the backhand, similar. Uh, as far as foot position here, you know, normally like 45-ish degrees, so like a little bit sideways",
+      "start": 572.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "another great drill for this is to walk to the ball and then pick a foot up while you prepare.",
+      "start": 614.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "So, instead of taking like a hundred little steps, it's like I'm just trying to hit my last step balanced and coiled.",
+      "start": 628.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "The player hits functional shots with less effortless power and has to compensate by swinging upward aggressively.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q01",
+        "Q05"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "The hips and pelvis rotate backward together with the upper thorax instead of counter-rotating.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "unit_turn",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q03",
+        "Q06"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "The player loses rotational balance and cannot maintain balance at high swing speeds without immediately dropping the lifted foot.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "follow_through",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q11",
+        "Q13",
+        "Q14"
+      ]
+    },
+    {
+      "id": "S04",
+      "description": "When rotational power is finally unlocked, balls fly long if the swing trajectory stays underhand rather than throwing overhand and downward.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q07",
+        "Q08"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "The player rotates the hips and pelvis backward together with the unit turn instead of keeping the pelvis stable or counter-rotating to load the glute.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "The player retains a low-to-high underhand swing trajectory that sprays balls long once trunk rotational power is added.",
+      "depth": 1,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q07"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The player lacks equal and opposite counter-rotation between the lower and upper trunk, making balance impossible at high swing velocity.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q14"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q03"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q14"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S04",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q07"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "The unit turn comprises the entire upper thorax while the pelvis acts as an anchor or counter-rotates to stretch and load the rear glute.",
+      "evidence": [
+        "Q03",
+        "Q04"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "misconception",
+      "summary": "Turning sideways is not the same as coiling, as coiling requires torsional tension between thorax and hips.",
+      "evidence": [
+        "Q01",
+        "Q02"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "analogy",
+      "summary": "The hips and shoulders function as an equal and opposite corkscrew mechanism against each other across the trunk.",
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "contrast_demo",
+      "summary": "The coach demonstrates hitting with hips and shoulders rotating together versus counter-rotating off one foot to show immediate balance breakdown.",
+      "evidence": [
+        "Q13",
+        "Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "cue",
+      "targets": [
+        "C01"
+      ],
+      "summary": "Rotate the hitting hip outward and drive it forward toward the target as you perform your unit turn to pre-load the glute.",
+      "external_goal": "Drive hitting hip point forward toward the camera or opponent.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q04"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "cue",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Throw the racket more overhand and downward through contact to control trajectory when swinging with full trunk coil.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q08"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Practice single-foot counter-rotational balance swings on each foot, sending the hip back during prep and across during the forward swing without putting the other foot down.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "D04",
+      "kind": "drill",
+      "targets": [
+        "C03"
+      ],
+      "summary": "Perform single-leg medicine ball rotational throws, underhand releasing the ball while accelerating the hitting shoulder toward a partner or wall without putting the foot down.",
+      "external_goal": "Accelerate hitting shoulder towards partner or wall with underhand release.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "id": "D05",
+      "kind": "drill",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Walk toward the ball and balance on one foot as you prepare and swing, eliminating excess small steps to force deliberate coiling into the final step.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q21",
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_verified"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hqganBxzQNM",
+  "runs": [
+    1,
+    2,
+    3
+  ],
+  "pairs": {
+    "1-2": {
+      "pass": false,
+      "findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.80 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.75 (min 0.5)",
+        "[FAIL] rerun: solutions transcript-anchor Jaccard 0.38 (min 0.5)"
+      ]
+    },
+    "1-3": {
+      "pass": true,
+      "findings": [
+        "[PASS] rerun: causes transcript-anchor Jaccard 0.75 (min 0.6)",
+        "[PASS] rerun: chain roots transcript-anchor Jaccard 0.50 (min 0.5)",
+        "[PASS] rerun: solutions transcript-anchor Jaccard 0.56 (min 0.5)"
+      ]
+    }
+  },
+  "chosen_pair": [
+    1,
+    3
+  ]
+}

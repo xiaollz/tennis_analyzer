@@ -1,0 +1,1520 @@
+{
+  "schema_version": "2.0",
+  "holdout_episodes": [
+    "-ZmnDrRFfjc",
+    "2J8q7sn4JLc",
+    "5KdScDKxVSI",
+    "5jHCDc44SQM",
+    "97vo-kFis6c",
+    "Am8j1Zw5KrE",
+    "BbGzWTp5pCM",
+    "Bhzd6cM-oFU",
+    "Cwc4YcKFZrU",
+    "EkzzGZkqCgc",
+    "Fu6DkHvZlGY",
+    "MWjBfarwNlA",
+    "XjJHA91HDbU",
+    "agtIR3PuNsw",
+    "emZxTmSVSa8",
+    "gehRK0Y6AdQ",
+    "hqganBxzQNM",
+    "mOFtt9PllI0",
+    "q6LrQYDvxmY",
+    "ui-RFRdQKRk"
+  ],
+  "observables": [],
+  "nodes": [
+    {
+      "id": "N-P_E_ZMENJIJ4G",
+      "name": "How Should You Optimize Your Serve Mechanics Based on Your Anatomy and Eye Dominance?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "E_zmENJIj4g:Q10",
+        "E_zmENJIj4g:Q12"
+      ]
+    },
+    {
+      "id": "N-P_PWZYP_XFLFU",
+      "name": "Why do amateur players struggle with racket lag and hitting slot control compared to pros?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q01",
+        "pWzyP-xfLfU:Q02"
+      ]
+    },
+    {
+      "id": "N-P_WD4YRQW3TOC",
+      "name": "How can players generate effortless, controllable topspin with clean contact?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q01",
+        "wd4YRQW3TOc:Q02",
+        "wd4YRQW3TOc:Q06"
+      ]
+    },
+    {
+      "id": "N-P_X_WIG59WR9Y",
+      "name": "Why should you start your swing at contact?",
+      "kind": "problem",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q07",
+        "x_WIg59Wr9Y:Q08"
+      ]
+    },
+    {
+      "id": "N-C_E_ZMENJIJ4G_C01",
+      "name": "The arm slot is elevated out of plane with the shoulder rotation axis rather than matching the tilt of the shoulders.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "E_zmENJIj4g:Q04"
+      ]
+    },
+    {
+      "id": "N-C_E_ZMENJIJ4G_C02",
+      "name": "The player overemphasizes active forearm pronation rather than allowing the trunk and shoulder stretch-shortening cycle to drive internal rotation.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "E_zmENJIj4g:Q06"
+      ],
+      "next_one_thing": "center of the opposite service box"
+    },
+    {
+      "id": "N-C_E_ZMENJIJ4G_C03",
+      "name": "The thoracic spine lacks extension during the cocking phase, preventing the trunk's soft tissue from spring-loading to accelerate the shoulder.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "E_zmENJIj4g:Q09"
+      ]
+    },
+    {
+      "id": "N-C_E_ZMENJIJ4G_C04",
+      "name": "A right-eye dominant server blindly copies a deep torso turn away from the net, cutting off their dominant eye's peripheral vision to the target.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "E_zmENJIj4g:Q12"
+      ]
+    },
+    {
+      "id": "N-C_PWZYP_XFLFU_C01",
+      "name": "The top haptic reference at the palm or V is disengaged or unmapped, leaving the player with no perception of racket momentum.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q05"
+      ]
+    },
+    {
+      "id": "N-C_PWZYP_XFLFU_C02",
+      "name": "Bottom fingers are used to cheat and force the racket head path rather than acting as a humble guide for racket momentum.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q09"
+      ]
+    },
+    {
+      "id": "N-C_PWZYP_XFLFU_C03",
+      "name": "Excess tension in the wrist prevents it from bending backwards, arresting the racket's momentum in the backswing.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "C",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q10"
+      ]
+    },
+    {
+      "id": "N-C_PWZYP_XFLFU_C04",
+      "name": "The bottom fingers squeeze too early in the forward swing, substituting slow-twitch wrist flexion for elastic energy transfer.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q13"
+      ]
+    },
+    {
+      "id": "N-C_WD4YRQW3TOC_C01",
+      "name": "Players separate the roll and forward pull into two disconnected motions with a pause, which eliminates the dynamic inertial stretch in the arm.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "A",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q06"
+      ],
+      "next_one_thing": "Watch the dip of the ball over the net"
+    },
+    {
+      "id": "N-C_WD4YRQW3TOC_C02",
+      "name": "The racket does not roll back flush, causing the string angle to close or roll over prematurely and shortening the contact window.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q09"
+      ]
+    },
+    {
+      "id": "N-C_WD4YRQW3TOC_C03",
+      "name": "The contact point is probed too far out in front, where the shoulder has already unwound too much, preventing clean release and triggering defensive tightening.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q15"
+      ],
+      "next_one_thing": "Watch the dip of the ball over the net"
+    },
+    {
+      "id": "N-C_WD4YRQW3TOC_C04",
+      "name": "The player fails to roll the racket backwards somewhat on purpose during the early swing, missing the initial roll needed for inertia to load the stretch.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q18"
+      ]
+    },
+    {
+      "id": "N-C_X_WIG59WR9Y_C01",
+      "name": "Players mentally intuit a long delay between when hand acceleration stops and when contact happens.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "C",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q08"
+      ]
+    },
+    {
+      "id": "N-C_X_WIG59WR9Y_C02",
+      "name": "The player mistimes acceleration and fails to accelerate the hand all the way to the ball, letting the wrist spring release too early.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q12"
+      ],
+      "next_one_thing": "Step back three frames from contact on a 60 fps video"
+    },
+    {
+      "id": "N-C_X_WIG59WR9Y_C03",
+      "name": "Because the spring released before the ball arrived, the brain actively flexes and pulls the racket with slow-twitch muscles to maintain string angle.",
+      "kind": "cause",
+      "phase": "whole",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "B",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q13"
+      ]
+    },
+    {
+      "id": "N-C_X_WIG59WR9Y_C04",
+      "name": "Stored elastic energy in the wrist leaks out linearly with every extra millisecond the lag release window extends beyond 40 milliseconds.",
+      "kind": "cause",
+      "phase": "contact",
+      "must_fix": true,
+      "flt_ref": "NONE",
+      "layer": "C",
+      "signature": {
+        "required": [],
+        "supporting": [],
+        "excluding": []
+      },
+      "differentials": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q17"
+      ],
+      "next_one_thing": "Step back three frames from contact on a 60 fps video"
+    }
+  ],
+  "edges": [
+    {
+      "from": "N-C_E_ZMENJIJ4G_C01",
+      "to": "N-P_E_ZMENJIJ4G",
+      "strength": "single_episode",
+      "evidence": [
+        "E_zmENJIj4g:Q04"
+      ]
+    },
+    {
+      "from": "N-C_E_ZMENJIJ4G_C02",
+      "to": "N-P_E_ZMENJIJ4G",
+      "strength": "single_episode",
+      "evidence": [
+        "E_zmENJIj4g:Q06"
+      ]
+    },
+    {
+      "from": "N-C_E_ZMENJIJ4G_C03",
+      "to": "N-C_E_ZMENJIJ4G_C02",
+      "strength": "single_episode",
+      "evidence": [
+        "E_zmENJIj4g:Q09"
+      ]
+    },
+    {
+      "from": "N-C_E_ZMENJIJ4G_C04",
+      "to": "N-P_E_ZMENJIJ4G",
+      "strength": "single_episode",
+      "evidence": [
+        "E_zmENJIj4g:Q12"
+      ]
+    },
+    {
+      "from": "N-C_PWZYP_XFLFU_C01",
+      "to": "N-P_PWZYP_XFLFU",
+      "strength": "single_episode",
+      "evidence": [
+        "pWzyP-xfLfU:Q01",
+        "pWzyP-xfLfU:Q02",
+        "pWzyP-xfLfU:Q08"
+      ]
+    },
+    {
+      "from": "N-C_PWZYP_XFLFU_C02",
+      "to": "N-C_PWZYP_XFLFU_C01",
+      "strength": "single_episode",
+      "evidence": [
+        "pWzyP-xfLfU:Q05"
+      ]
+    },
+    {
+      "from": "N-C_PWZYP_XFLFU_C03",
+      "to": "N-P_PWZYP_XFLFU",
+      "strength": "single_episode",
+      "evidence": [
+        "pWzyP-xfLfU:Q10"
+      ]
+    },
+    {
+      "from": "N-C_PWZYP_XFLFU_C04",
+      "to": "N-P_PWZYP_XFLFU",
+      "strength": "single_episode",
+      "evidence": [
+        "pWzyP-xfLfU:Q13"
+      ]
+    },
+    {
+      "from": "N-C_WD4YRQW3TOC_C01",
+      "to": "N-P_WD4YRQW3TOC",
+      "strength": "single_episode",
+      "evidence": [
+        "wd4YRQW3TOc:Q06",
+        "wd4YRQW3TOc:Q07"
+      ]
+    },
+    {
+      "from": "N-C_WD4YRQW3TOC_C02",
+      "to": "N-P_WD4YRQW3TOC",
+      "strength": "single_episode",
+      "evidence": [
+        "wd4YRQW3TOc:Q09"
+      ]
+    },
+    {
+      "from": "N-C_WD4YRQW3TOC_C03",
+      "to": "N-P_WD4YRQW3TOC",
+      "strength": "single_episode",
+      "evidence": [
+        "wd4YRQW3TOc:Q15",
+        "wd4YRQW3TOc:Q17"
+      ]
+    },
+    {
+      "from": "N-C_WD4YRQW3TOC_C04",
+      "to": "N-C_WD4YRQW3TOC_C01",
+      "strength": "single_episode",
+      "evidence": [
+        "wd4YRQW3TOc:Q06",
+        "wd4YRQW3TOc:Q18"
+      ]
+    },
+    {
+      "from": "N-C_X_WIG59WR9Y_C01",
+      "to": "N-C_X_WIG59WR9Y_C02",
+      "strength": "single_episode",
+      "evidence": [
+        "x_WIg59Wr9Y:Q08"
+      ]
+    },
+    {
+      "from": "N-C_X_WIG59WR9Y_C02",
+      "to": "N-C_X_WIG59WR9Y_C03",
+      "strength": "single_episode",
+      "evidence": [
+        "x_WIg59Wr9Y:Q13"
+      ]
+    },
+    {
+      "from": "N-C_X_WIG59WR9Y_C02",
+      "to": "N-C_X_WIG59WR9Y_C04",
+      "strength": "single_episode",
+      "evidence": [
+        "x_WIg59Wr9Y:Q12"
+      ]
+    },
+    {
+      "from": "N-C_X_WIG59WR9Y_C03",
+      "to": "N-P_X_WIG59WR9Y",
+      "strength": "single_episode",
+      "evidence": [
+        "x_WIg59Wr9Y:Q13",
+        "x_WIg59Wr9Y:Q14"
+      ]
+    },
+    {
+      "from": "N-C_X_WIG59WR9Y_C04",
+      "to": "N-P_X_WIG59WR9Y",
+      "strength": "single_episode",
+      "evidence": [
+        "x_WIg59Wr9Y:Q14"
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "SYM_E_ZMENJIJ4G_S01",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "description": "The server loses peripheral awareness of the service box and opponent, causing poor aiming and awkward physical compensations.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "whole",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_E_ZMENJIJ4G_C04"
+      ],
+      "evidence": [
+        "E_zmENJIj4g:Q12"
+      ]
+    },
+    {
+      "id": "SYM_E_ZMENJIJ4G_S02",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "description": "The hitting arm moves out of plane with the tilted shoulder axis at contact, causing loss of effortless power and arm strain.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_E_ZMENJIJ4G_C01"
+      ],
+      "evidence": [
+        "E_zmENJIj4g:Q04",
+        "E_zmENJIj4g:Q05"
+      ]
+    },
+    {
+      "id": "SYM_E_ZMENJIJ4G_S03",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "description": "Serve velocity is weak because the player manually forces forearm pronation instead of unleashing explosive shoulder internal rotation.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "B",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_E_ZMENJIJ4G_C02"
+      ],
+      "evidence": [
+        "E_zmENJIj4g:Q06",
+        "E_zmENJIj4g:Q08"
+      ]
+    },
+    {
+      "id": "SYM_PWZYP_XFLFU_S01",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "description": "Player shows a pushing style of swing instead of a real hit with the racket head.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q03"
+      ]
+    },
+    {
+      "id": "SYM_PWZYP_XFLFU_S02",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "description": "Lack of effortless lag action, velocity control, and spin.",
+      "kind": "ball_outcome",
+      "layer": "B",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q02"
+      ]
+    },
+    {
+      "id": "SYM_PWZYP_XFLFU_S03",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "description": "Player feels disconnected from the tool, playing blind and hoping the ball goes where intended without feeling the hitting slot.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "whole",
+      "obs_ref": "NONE",
+      "caused_by": [
+        "N-C_PWZYP_XFLFU_C01"
+      ],
+      "evidence": [
+        "pWzyP-xfLfU:Q08"
+      ]
+    },
+    {
+      "id": "SYM_WD4YRQW3TOC_S01",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "description": "The player pauses after rotating into the back position before pulling forward instead of executing a continuous dynamic roll.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_WD4YRQW3TOC_C01"
+      ],
+      "evidence": [
+        "wd4YRQW3TOc:Q06",
+        "wd4YRQW3TOc:Q07"
+      ]
+    },
+    {
+      "id": "SYM_WD4YRQW3TOC_S02",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "description": "The racket rolls over early through contact, shortening the effective contact zone window.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_WD4YRQW3TOC_C02"
+      ],
+      "evidence": [
+        "wd4YRQW3TOc:Q09",
+        "wd4YRQW3TOc:Q12"
+      ]
+    },
+    {
+      "id": "SYM_WD4YRQW3TOC_S03",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "description": "The player muscles or pushes the ball forward with mental tension rather than releasing the arm effortlessly.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "caused_by": [
+        "N-C_WD4YRQW3TOC_C01",
+        "N-C_WD4YRQW3TOC_C03"
+      ],
+      "evidence": [
+        "wd4YRQW3TOc:Q07",
+        "wd4YRQW3TOc:Q15",
+        "wd4YRQW3TOc:Q17"
+      ]
+    },
+    {
+      "id": "SYM_X_WIG59WR9Y_S01",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "description": "Spraying shots and losing directional control on the ball.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_X_WIG59WR9Y_C03"
+      ],
+      "evidence": [
+        "x_WIg59Wr9Y:Q14"
+      ]
+    },
+    {
+      "id": "SYM_X_WIG59WR9Y_S02",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "description": "Hitting the ball significantly slower and missing effortless power.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "caused_by": [
+        "N-C_X_WIG59WR9Y_C04"
+      ],
+      "evidence": [
+        "x_WIg59Wr9Y:Q14"
+      ]
+    },
+    {
+      "id": "SYM_X_WIG59WR9Y_S03",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "description": "Feeling forced to actively pull and manipulate the racket face with slow-twitch muscle flexing.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "forward_swing",
+      "obs_ref": "NONE",
+      "caused_by": [
+        "N-C_X_WIG59WR9Y_C03"
+      ],
+      "evidence": [
+        "x_WIg59Wr9Y:Q13",
+        "x_WIg59Wr9Y:Q14"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "SOL_E_ZMENJIJ4G_D01",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "kind": "cue",
+      "summary": "Serve with the head, chest, and eyes oriented more forward toward the court if you are right-eye dominant to preserve peripheral aim.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_E_ZMENJIJ4G_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "E_zmENJIj4g:Q14"
+      ]
+    },
+    {
+      "id": "SOL_E_ZMENJIJ4G_D02",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "kind": "drill",
+      "summary": "Adopt the pure-dextral pinpoint footwork by stepping the back foot onto the hitting side of the front foot to coil without turning away blind.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_E_ZMENJIJ4G_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "E_zmENJIj4g:Q16"
+      ]
+    },
+    {
+      "id": "SOL_E_ZMENJIJ4G_D03",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "kind": "cue",
+      "summary": "Throw the hitting hand toward the opposite service box and let natural internal shoulder rotation slap the ball into the target.",
+      "external_goal": "center of the opposite service box",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": true,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_E_ZMENJIJ4G_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "E_zmENJIj4g:Q19"
+      ]
+    },
+    {
+      "id": "SOL_E_ZMENJIJ4G_D04",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "kind": "cue",
+      "summary": "Cue throwing your chest to the sky during the upward drive instead of twisting forward to engage the thoracic extension spring.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_E_ZMENJIJ4G_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "E_zmENJIj4g:Q20"
+      ]
+    },
+    {
+      "id": "SOL_E_ZMENJIJ4G_D05",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "kind": "drill",
+      "summary": "Simplify the prep by placing the arm directly into a 90-90 trophy position in line with the shoulders to prevent timing and slot errors.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_E_ZMENJIJ4G_C01"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "E_zmENJIj4g:Q24"
+      ]
+    },
+    {
+      "id": "SOL_PWZYP_XFLFU_D01",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "kind": "drill",
+      "summary": "Hit with only two fingers on the racket, removing the bottom fingers to eliminate butt-cap leverage and force the pivot to occur at the top of the hand.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_PWZYP_XFLFU_C01",
+        "N-C_PWZYP_XFLFU_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q04",
+        "pWzyP-xfLfU:Q06"
+      ]
+    },
+    {
+      "id": "SOL_PWZYP_XFLFU_D02",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "kind": "check",
+      "summary": "Check whether you feel the exact same haptic signal on your top fingers with a full grip as you felt during the two-finger drill.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_PWZYP_XFLFU_C01",
+        "N-C_PWZYP_XFLFU_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q12"
+      ]
+    },
+    {
+      "id": "SOL_PWZYP_XFLFU_D03",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "kind": "cue",
+      "summary": "Stay relaxed early in the swing and allow grip tension to build passively only as acceleration demands not dropping the racket.",
+      "external_goal": "",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_PWZYP_XFLFU_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q14"
+      ]
+    },
+    {
+      "id": "SOL_PWZYP_XFLFU_D04",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "kind": "drill",
+      "summary": "In the initial preparation phase, nestle the racket into the top haptic reference (palm or V) first, and only then wrap the remaining fingers around the handle.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_PWZYP_XFLFU_C01"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "pWzyP-xfLfU:Q16"
+      ]
+    },
+    {
+      "id": "SOL_WD4YRQW3TOC_D01",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "kind": "drill",
+      "summary": "Practice adding a flush roll back of the forearm during the early swing to ensure the string angle stays consistent through the contact zone.",
+      "external_goal": "Keep strings pointing flush/down during the early backwards roll",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_WD4YRQW3TOC_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q11"
+      ]
+    },
+    {
+      "id": "SOL_WD4YRQW3TOC_D02",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "kind": "check",
+      "summary": "Shift your contact point location to test and find the exact spot where your shoulder can fully release without closing the string angle.",
+      "external_goal": "",
+      "scenario_fit": "machine_low",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_WD4YRQW3TOC_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q16"
+      ]
+    },
+    {
+      "id": "SOL_WD4YRQW3TOC_D03",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "kind": "drill",
+      "summary": "Experiment with intentionally initiating the backwards roll of the racket early while dragging it forward with trunk acceleration to build dynamic inertial stretch.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_WD4YRQW3TOC_C01",
+        "N-C_WD4YRQW3TOC_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q19"
+      ]
+    },
+    {
+      "id": "SOL_WD4YRQW3TOC_D04",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "kind": "check",
+      "summary": "Calmly observe how the ball dips and how it feels off the strings, tuning into whether the arm stretch in the back matches the release through contact.",
+      "external_goal": "Watch the dip of the ball over the net",
+      "scenario_fit": "mini_tennis",
+      "ban_conflict": false,
+      "intuition_first_ok": true,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_WD4YRQW3TOC_C01",
+        "N-C_WD4YRQW3TOC_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "wd4YRQW3TOc:Q20"
+      ]
+    },
+    {
+      "id": "SOL_X_WIG59WR9Y_D01",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "kind": "check",
+      "summary": "Check your release timing on video by opening Stats for Nerds on a 60 fps clip, finding contact, and stepping back three frames with the comma key.",
+      "external_goal": "Step back three frames from contact on a 60 fps video",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": true,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_X_WIG59WR9Y_C02",
+        "N-C_X_WIG59WR9Y_C04"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q02"
+      ]
+    },
+    {
+      "id": "SOL_X_WIG59WR9Y_D02",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "kind": "cue",
+      "summary": "Think 'the swing starts at contact' to intuitively eliminate perceived lag delay and keep the hand accelerating directly into impact.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_X_WIG59WR9Y_C01",
+        "N-C_X_WIG59WR9Y_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q07"
+      ]
+    },
+    {
+      "id": "SOL_X_WIG59WR9Y_D03",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "kind": "cue",
+      "summary": "Intuit the swing as accelerating all the way to contact rather than trying to consciously micromanage a 40-millisecond release window.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_X_WIG59WR9Y_C01",
+        "N-C_X_WIG59WR9Y_C02"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q11"
+      ]
+    },
+    {
+      "id": "SOL_X_WIG59WR9Y_D04",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "kind": "cue",
+      "summary": "Continue accelerating the racket until right next to the ball before letting it snap by driving through the kinetic chain with chest press, hip rotation, and a strong base.",
+      "external_goal": "",
+      "scenario_fit": "shadow",
+      "ban_conflict": false,
+      "intuition_first_ok": false,
+      "usable_as_prescription": true,
+      "targets_causes": [
+        "N-C_X_WIG59WR9Y_C02",
+        "N-C_X_WIG59WR9Y_C03"
+      ],
+      "targets_symptoms": [],
+      "evidence": [
+        "x_WIg59Wr9Y:Q21"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "ANG_E_ZMENJIJ4G_A01",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "type": "mechanics",
+      "summary": "Serve velocity is predominantly powered by trunk rotation triggering an explosive external-to-internal shoulder stretch-shortening cycle.",
+      "evidence": [
+        "E_zmENJIj4g:Q07",
+        "E_zmENJIj4g:Q08"
+      ]
+    },
+    {
+      "id": "ANG_E_ZMENJIJ4G_A02",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "type": "mechanics",
+      "summary": "Effective coiling is produced by stretching the off-shoulder diagonally across against the hitting-side hip.",
+      "evidence": [
+        "E_zmENJIj4g:Q01"
+      ]
+    },
+    {
+      "id": "ANG_E_ZMENJIJ4G_A03",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "type": "misconception",
+      "summary": "Forearm pronation is heavily overrated by many players; real pace comes from trunk loading and reactive shoulder rotation.",
+      "evidence": [
+        "E_zmENJIj4g:Q06"
+      ]
+    },
+    {
+      "id": "ANG_E_ZMENJIJ4G_A04",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "type": "pro_example",
+      "summary": "Roger Federer can coil deeply because his left-eye dominance keeps the court in peripheral view, a mechanic right-eye dominant servers should not copy.",
+      "evidence": [
+        "E_zmENJIj4g:Q10",
+        "E_zmENJIj4g:Q12"
+      ]
+    },
+    {
+      "id": "ANG_E_ZMENJIJ4G_A05",
+      "episode": "E_zmENJIj4g",
+      "problem": "N-P_E_ZMENJIJ4G",
+      "type": "visual_model",
+      "summary": "Stepping the back foot across to the hitting side creates an open-stance pinpoint that coils the trunk without twisting the head away from the court.",
+      "evidence": [
+        "E_zmENJIj4g:Q15",
+        "E_zmENJIj4g:Q16"
+      ]
+    },
+    {
+      "id": "ANG_PWZYP_XFLFU_A01",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "type": "mechanics",
+      "summary": "Pivoting at the top of the hand moves the butt cap forward and out as the racket tip goes back, creating an equal and opposite racket flip effect.",
+      "evidence": [
+        "pWzyP-xfLfU:Q01",
+        "pWzyP-xfLfU:Q02"
+      ]
+    },
+    {
+      "id": "ANG_PWZYP_XFLFU_A02",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "type": "analogy",
+      "summary": "Innervating the grip is like imagining the nervous system fanning out into the handle to treat fingers as sensory organs rather than force producers.",
+      "evidence": [
+        "pWzyP-xfLfU:Q15",
+        "pWzyP-xfLfU:Q16"
+      ]
+    },
+    {
+      "id": "ANG_PWZYP_XFLFU_A03",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "type": "misconception",
+      "summary": "Relaxation does not mean staying limp through contact; it means relaxing early and allowing passive gripping tension to build up as the swing accelerates.",
+      "evidence": [
+        "pWzyP-xfLfU:Q14"
+      ]
+    },
+    {
+      "id": "ANG_PWZYP_XFLFU_A04",
+      "episode": "pWzyP-xfLfU",
+      "problem": "N-P_PWZYP_XFLFU",
+      "type": "pro_example",
+      "summary": "Top pros like Federer, Alcaraz, and Sinner nestle the top haptic reference first before wrapping fingers around to innervate the racket before each shot.",
+      "evidence": [
+        "pWzyP-xfLfU:Q16"
+      ]
+    },
+    {
+      "id": "ANG_WD4YRQW3TOC_A01",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "type": "mechanics",
+      "summary": "The kinetic chain relies on external shoulder rotation and forearm supination rolling back under inertial stretch, then naturally releasing forward through contact.",
+      "evidence": [
+        "wd4YRQW3TOc:Q03",
+        "wd4YRQW3TOc:Q04",
+        "wd4YRQW3TOc:Q05"
+      ]
+    },
+    {
+      "id": "ANG_WD4YRQW3TOC_A02",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "type": "pro_example",
+      "summary": "Rafael Nadal rolls his forearm back flush with strings pointing down while the trunk yanks forward, allowing his shoulder to release right at contact.",
+      "evidence": [
+        "wd4YRQW3TOc:Q10",
+        "wd4YRQW3TOc:Q13",
+        "wd4YRQW3TOc:Q14"
+      ]
+    },
+    {
+      "id": "ANG_WD4YRQW3TOC_A03",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "type": "misconception",
+      "summary": "The racket head flicking over at contact is a passive reaction to ball impact, not an intentional stroke mechanic.",
+      "evidence": [
+        "wd4YRQW3TOc:Q12"
+      ]
+    },
+    {
+      "id": "ANG_WD4YRQW3TOC_A04",
+      "episode": "wd4YRQW3TOc",
+      "problem": "N-P_WD4YRQW3TOC",
+      "type": "feel",
+      "summary": "Effortless relaxation on the forehand comes from automatic muscle recoil rather than conscious muscular engagement through the contact zone.",
+      "evidence": [
+        "wd4YRQW3TOc:Q07",
+        "wd4YRQW3TOc:Q21"
+      ]
+    },
+    {
+      "id": "ANG_X_WIG59WR9Y_A01",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "type": "visual_model",
+      "summary": "Scrubbing backwards three frames on a 60 fps YouTube video displays the exact 40-millisecond release window where the racket takes over the hand.",
+      "evidence": [
+        "x_WIg59Wr9Y:Q02",
+        "x_WIg59Wr9Y:Q04"
+      ]
+    },
+    {
+      "id": "ANG_X_WIG59WR9Y_A02",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "type": "feel",
+      "summary": "The delay between the spring release and contact is so tiny (0.04 seconds) that it physically feels almost simultaneous.",
+      "evidence": [
+        "x_WIg59Wr9Y:Q05",
+        "x_WIg59Wr9Y:Q06"
+      ]
+    },
+    {
+      "id": "ANG_X_WIG59WR9Y_A03",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "type": "pro_example",
+      "summary": "Elena Rybakina mistimed an on-the-rise forehand by releasing the spring five frames before impact, forcing an awkward slow-twitch compensation.",
+      "evidence": [
+        "x_WIg59Wr9Y:Q12",
+        "x_WIg59Wr9Y:Q13"
+      ]
+    },
+    {
+      "id": "ANG_X_WIG59WR9Y_A04",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "type": "contrast_demo",
+      "summary": "Amelia's forehand improved from an inefficient 12-frame release at 120 fps to a clean, elastic 5-to-6 frame release.",
+      "evidence": [
+        "x_WIg59Wr9Y:Q16",
+        "x_WIg59Wr9Y:Q18"
+      ]
+    },
+    {
+      "id": "ANG_X_WIG59WR9Y_A05",
+      "episode": "x_WIg59Wr9Y",
+      "problem": "N-P_X_WIG59WR9Y",
+      "type": "mechanics",
+      "summary": "Elastic wrist energy leaks out linearly for every millisecond the release window is delayed past the ideal 0.04-second duration.",
+      "evidence": [
+        "x_WIg59Wr9Y:Q17"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "quote_sources": {
+    "E_zmENJIj4g:Q04": {
+      "video_id": "E_zmENJIj4g",
+      "start": 260.0,
+      "about": "pro_footage",
+      "text": "The thing that I want to mention though is that arm slot, absolute arm slot with respect to the ground is not as important as keeping your arm in the same plane of rotation as your shoulders."
+    },
+    "E_zmENJIj4g:Q06": {
+      "video_id": "E_zmENJIj4g",
+      "start": 443.0,
+      "about": "pro_footage",
+      "text": "Now, a lot of people overrate the role of forearm rotation, pronation and supernation, specifically pronation on the surf. It is not that important."
+    },
+    "E_zmENJIj4g:Q09": {
+      "video_id": "E_zmENJIj4g",
+      "start": 624.0,
+      "about": "pro_footage",
+      "text": "There's no way to hit a serve at 150 mph without good spinal mobility because you have to springload the thoracic spine like this."
+    },
+    "E_zmENJIj4g:Q10": {
+      "video_id": "E_zmENJIj4g",
+      "start": 735.0,
+      "about": "general",
+      "text": "I've both seen on the internet and worked personally with players who copy Federer serve because it looks good. But there are tons of ways to use your spine, tons of ways to use your shoulder"
+    },
+    "E_zmENJIj4g:Q12": {
+      "video_id": "E_zmENJIj4g",
+      "start": 883.0,
+      "about": "pro_footage",
+      "text": "And players who are right eye dominant copy federous serve. They're using this eye. They have no peripheral awareness of what's going on here at all and they can't aim and the serve will forever feel awkward."
+    },
+    "pWzyP-xfLfU:Q01": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 0.0,
+      "about": "general",
+      "text": "One of the things I check for every player is whether their racket is pivoting here as they swing or whether it's pivoting at the butt cap here"
+    },
+    "pWzyP-xfLfU:Q02": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 9.44,
+      "about": "general",
+      "text": "because so much of this lag elusive lag action that players are chasing comes from pivoting it at the top of your hand. And if you pivot the racket at the bottom of your hand, you will never uncover that"
+    },
+    "pWzyP-xfLfU:Q05": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 194.0,
+      "about": "general",
+      "text": "And players who pivot off the bottom a lot of times have these top references, these top haptic references disengage. Maybe they have gaps here or even if the hand is all the way around they just don't really know"
+    },
+    "pWzyP-xfLfU:Q08": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 410.0,
+      "about": "general",
+      "text": "If I don't have a haptic sensation through the hand here, then everything I do up here isn't really connected anything. I do something random, I hit the ball, I hope it goes where I want."
+    },
+    "pWzyP-xfLfU:Q09": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 549.0,
+      "about": "general",
+      "text": "when I use my bottom fingers, I can cheat the momentum of my racket head. So, even if my racket head wanted to hit the ball into the ground... I can cheat it and like wrist it up"
+    },
+    "pWzyP-xfLfU:Q10": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 671.0,
+      "about": "general",
+      "text": "So, number one, the wrist needs to be relaxed enough to bend backwards. Because if I have tension here, now I go here, and now the racket doesn't keep its momentum, and I swing forward, and I don't get anything."
+    },
+    "pWzyP-xfLfU:Q13": {
+      "video_id": "pWzyP-xfLfU",
+      "start": 720.0,
+      "about": "general",
+      "text": "If I like squeeze these bottom two fingers to like keep pushing the racket forward, I can really mess up the swing... Now, I'm like actively hitting with slow twitch flexion of the wrist."
+    },
+    "wd4YRQW3TOc:Q01": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 0.0,
+      "about": "pro_footage",
+      "text": "ATP players somehow generate thousands of RPMs of Top Spin but they use compact efficient controllable swings"
+    },
+    "wd4YRQW3TOc:Q02": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 35.0,
+      "about": "pro_footage",
+      "text": "The Secret is what happens here during the early part of the Swing when the racket rolls backwards"
+    },
+    "wd4YRQW3TOc:Q06": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 185.0,
+      "about": "general",
+      "text": "a lot of the issues that newer players or even dis decent intermediate players have is they rotate into this position pause and then pull and when you do that you don't get nearly as good of a stretch"
+    },
+    "wd4YRQW3TOc:Q07": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 225.0,
+      "about": "general",
+      "text": "whereas if you were to do it as two motions roll back pause pull you don't get a dynamic stretch like this and then you kind of have to muscle the Top Spin"
+    },
+    "wd4YRQW3TOc:Q09": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 326.0,
+      "about": "general",
+      "text": "the front of the racket's not rolling over and the back of the racket it's not rolling over both of those would make the contact Zone really short"
+    },
+    "wd4YRQW3TOc:Q15": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 510.0,
+      "about": "pro_footage",
+      "text": "If you ever see uh an ATB player like accidentally probe the ball too far in front of them and they often it looks like they have to kind of push it and they just kind of push it back"
+    },
+    "wd4YRQW3TOc:Q17": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 566.0,
+      "about": "general",
+      "text": "what'll probably happen instead is your brain will know that this won't work and so it'll make you tighten up and you won't release that shoulder fully and you'll still just push through the ball"
+    },
+    "wd4YRQW3TOc:Q18": {
+      "video_id": "wd4YRQW3TOc",
+      "start": 654.0,
+      "about": "general",
+      "text": "you do still have to roll the racket backwards at least somewhat on purpose"
+    },
+    "x_WIg59Wr9Y:Q07": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 137.0,
+      "about": "general",
+      "text": "And this is why I like cues like the swing starts at contact. It's just really counterintuitive."
+    },
+    "x_WIg59Wr9Y:Q08": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 141.0,
+      "about": "general",
+      "text": "Like so many people I find intuitit a really long delay between when they stop accelerating their hand in and when they smack the ball."
+    },
+    "x_WIg59Wr9Y:Q12": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 282.0,
+      "about": "pro_footage",
+      "text": "if you mistime your acceleration and you aren't able to accelerate your hand all the way to the ball, then you get to here. Okay. So now the spring is coming out even though it's not supposed to be yet"
+    },
+    "x_WIg59Wr9Y:Q13": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 300.0,
+      "about": "pro_footage",
+      "text": "And so now you get to here and now your brain has to flex this. It has to pull the racket back to like try to keep the string angle consistent."
+    },
+    "x_WIg59Wr9Y:Q14": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 310.0,
+      "about": "general",
+      "text": "and you're going to hit slower. You're going to injure yourself more often and you're going to spray more often because now you're not just using your release action."
+    },
+    "x_WIg59Wr9Y:Q17": {
+      "video_id": "x_WIg59Wr9Y",
+      "start": 441.0,
+      "about": "general",
+      "text": "The way elastic energy works in your body, it's just like every millisecond longer it stays in there, it leaks out a little bit and it's pretty linear."
+    }
+  },
+  "build": {
+    "builder": "build_tree_v1",
+    "merge_cosine": 0.4,
+    "episodes_used": [
+      "E_zmENJIj4g",
+      "pWzyP-xfLfU",
+      "wd4YRQW3TOc",
+      "x_WIg59Wr9Y"
+    ],
+    "skipped": [
+      {
+        "episode": "0m3BMfDDShI",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "5jHCDc44SQM",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "Am8j1Zw5KrE",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "ExkBtFRhUWY",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "FjjvhNbk3q4",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Ibkq-yBteGc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "JIMgI3jiVns",
+        "reason": "low_confidence",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "QrRYuVjVibU",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "Z9XwaXDVkZg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "jDBg4Fpf0tQ",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "m1NBdd3Bigg",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "omsLx7F2Wdc",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      },
+      {
+        "episode": "ui-RFRdQKRk",
+        "reason": "holdout",
+        "status": "stage1_verified"
+      },
+      {
+        "episode": "w1FakobNq1Q",
+        "reason": "status stage1_draft",
+        "status": "stage1_draft"
+      }
+    ],
+    "note": "slice round11 new eps for obs_bind"
+  }
+}

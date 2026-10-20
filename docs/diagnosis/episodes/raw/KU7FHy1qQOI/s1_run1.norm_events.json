@@ -1,7 +1,17 @@
 {
   "counts": {
     "cause_anchor_exact": 4,
-    "solution_anchor_exact": 5
+    "cause_anchor_evidence_spills": 1,
+    "intuition_first_forced_false": 1,
+    "solution_anchor_exact": 2,
+    "solution_anchor_evidence_spills": 4
   },
-  "detail": []
+  "detail": [
+    "cause_anchor_evidence_spills: C05 anchor_bucket=26 evidence_buckets=[26, 27]",
+    "intuition_first_forced_false: solutions.6 no external_goal",
+    "solution_anchor_evidence_spills: D03 anchor_bucket=13 evidence_buckets=[13, 15]",
+    "solution_anchor_evidence_spills: D04 anchor_bucket=22 evidence_buckets=[22, 24, 25]",
+    "solution_anchor_evidence_spills: D05 anchor_bucket=29 evidence_buckets=[27, 29]",
+    "solution_anchor_evidence_spills: D06 anchor_bucket=35 evidence_buckets=[34, 35]"
+  ]
 }

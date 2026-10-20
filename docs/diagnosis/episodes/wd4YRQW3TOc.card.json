@@ -13,7 +13,7 @@
     "is_teaching": "teaching",
     "stroke": "forehand",
     "format": "pro_analysis",
-    "reason": "The coach analyzes slow-motion footage of pro players to explain the mechanical principles of creating effortless topspin and gives practical guidance for recreational players."
+    "reason": "The coach gives explicit actionable drills and self-checks, such as experimenting with intentionally rolling the racket back early and moving the contact point around to find where the shoulder fully releases."
   },
   "transcript": {
     "path": "/workspace/ftt_subs/wd4YRQW3TOc.en.vtt",
@@ -23,7 +23,7 @@
   },
   "extraction": {
     "stage1_model": "gemini-3.8-flash",
-    "stage1_prompt_version": "ep_s1_v4",
+    "stage1_prompt_version": "ep_s1_v6",
     "stage1_run_ids": [
       "s1_r1_wd4YRQ",
       "s1_r2_wd4YRQ",
@@ -32,17 +32,18 @@
     "user_context_in_prompt": false
   },
   "problem": {
-    "title_as_question": "How can you generate effortless, controllable topspin on the forehand?",
-    "definition": "Players often struggle to create heavy topspin without muscling the ball, frequently losing control over string angle or choking under tension.",
+    "title_as_question": "How can players generate effortless, controllable topspin with clean contact?",
+    "definition": "Players struggle to produce heavy topspin cleanly and consistently, often muscling the ball, tightening up, or pushing through contact because their early racket roll and shoulder release timing are flawed.",
     "node_id": "PENDING",
     "prerequisites": [
-      "Basic forehand groundstroke mechanics",
-      "Unit turn and racket preparation"
+      "basic forehand rally ability",
+      "ability to initiate forward swing with trunk rotation"
     ],
-    "target_player": "Intermediate players struggling to produce heavy topspin smoothly",
+    "target_player": "intermediate players struggling with topspin consistency and muscling the ball",
     "evidence": [
       "Q01",
-      "Q02"
+      "Q02",
+      "Q06"
     ]
   },
   "quotes": [
@@ -59,7 +60,7 @@
       "text": "The Secret is what happens here during the early part of the Swing when the racket rolls backwards",
       "start": 35.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
@@ -67,7 +68,7 @@
       "text": "however the arm is stretched back here during this part of the Swing when the racket rolls back that's exactly how it's going to fire through through contact",
       "start": 67.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
@@ -75,11 +76,19 @@
       "text": "the arm this soft tissue system here it is rolling back and getting stretched while it does that and then because of that it's going to spring back in the opposite direction through contact",
       "start": 111.0,
       "speaker": "coach",
-      "about": "general",
+      "about": "pro_footage",
       "source": "subtitle"
     },
     {
       "id": "Q05",
+      "text": "because we are pulling this while it rolls back because the trunk is driving this racket forward inertia's pulling back on the arm creating this stretch",
+      "start": 177.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
       "text": "a lot of the issues that newer players or even dis decent intermediate players have is they rotate into this position pause and then pull and when you do that you don't get nearly as good of a stretch",
       "start": 185.0,
       "speaker": "coach",
@@ -87,7 +96,7 @@
       "source": "subtitle"
     },
     {
-      "id": "Q06",
+      "id": "Q07",
       "text": "whereas if you were to do it as two motions roll back pause pull you don't get a dynamic stretch like this and then you kind of have to muscle the Top Spin",
       "start": 225.0,
       "speaker": "coach",
@@ -95,23 +104,31 @@
       "source": "subtitle"
     },
     {
-      "id": "Q07",
-      "text": "that incident angle is going to change very little through this part of the Swing",
-      "start": 275.0,
+      "id": "Q08",
+      "text": "right here there's this contact Zone where the incident angle doesn't change much",
+      "start": 294.0,
       "speaker": "coach",
       "about": "pro_footage",
       "source": "subtitle"
     },
     {
-      "id": "Q08",
-      "text": "so if you were to hit the ball here you head straight down into the net but right here there's this contact Zone where the incident angle doesn't change much",
-      "start": 290.0,
+      "id": "Q09",
+      "text": "the front of the racket's not rolling over and the back of the racket it's not rolling over both of those would make the contact Zone really short",
+      "start": 326.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
-      "id": "Q09",
+      "id": "Q10",
+      "text": "this backwards roll of the racket rolls flush you see that so look at the strings here see how the strings are basically pointed down",
+      "start": 343.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
       "text": "add a nice flush roll back of your forearm to your swing and work on a little",
       "start": 377.0,
       "speaker": "coach",
@@ -119,31 +136,47 @@
       "source": "subtitle"
     },
     {
-      "id": "Q10",
-      "text": "if you just roll your forearm back stationary and then leave it there and then pause and then pull it won't get stretched",
-      "start": 440.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q11",
-      "text": "you wouldn't be able to do that if the ball were here right because if the ball were here you'd hit it straight down into the ground because your shoulders Unwound too far",
-      "start": 538.0,
-      "speaker": "coach",
-      "about": "demonstrator_natural",
-      "source": "subtitle"
-    },
-    {
       "id": "Q12",
-      "text": "if you're struggling with your Top Spin try moving around your contact point and figure out the spot where you can fully release your shoulder through it and your string angle is fine",
-      "start": 547.0,
+      "text": "imagine if this were happening without the ball hitting it then through here there would only be a very tiny window where the string angle was correct",
+      "start": 421.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q13",
+      "text": "Rafa is rolling this forearm back as the trunk Yanks the arm forward which is why by the time we get here we have such a great stretch here",
+      "start": 450.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "one of the things that determines your optimal contact point is you want to have your shoulder just start to unwind through contact",
+      "start": 496.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "If you ever see uh an ATB player like accidentally probe the ball too far in front of them and they often it looks like they have to kind of push it and they just kind of push it back",
+      "start": 510.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "try moving around your contact point and figure out the spot where you can fully release your shoulder through it and your string angle is fine",
+      "start": 548.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
       "text": "what'll probably happen instead is your brain will know that this won't work and so it'll make you tighten up and you won't release that shoulder fully and you'll still just push through the ball",
       "start": 566.0,
       "speaker": "coach",
@@ -151,57 +184,41 @@
       "source": "subtitle"
     },
     {
-      "id": "Q14",
-      "text": "you do need to experiment with rolling the racket back on purpose at least to some degree during that early part of your swing",
-      "start": 691.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q15",
-      "text": "see the ball swing and calmly observe the result figure out how it felt off the string watch how it dips see if you got your Spin and then just adjust and adjust",
-      "start": 769.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q16",
-      "text": "you have to feel your shoulder stretch and feel your shoulder release and map them together in your mind that's how you develop a swing like this",
-      "start": 915.0,
-      "speaker": "coach",
-      "about": "general",
-      "source": "subtitle"
-    },
-    {
-      "id": "Q17",
-      "text": "the benefit of this kind of a style is we get to recruit gravity during this rolling action and the way the racket rolls is flush",
-      "start": 1060.0,
-      "speaker": "coach",
-      "about": "pro_footage",
-      "source": "subtitle"
-    },
-    {
       "id": "Q18",
-      "text": "the roll is happening while the racket is being dragged which gives you a lot of that extra stretch",
-      "start": 1124.0,
+      "text": "you do still have to roll the racket backwards at least somewhat on purpose",
+      "start": 654.0,
       "speaker": "coach",
-      "about": "pro_footage",
+      "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q19",
-      "text": "if you were to take this hand and pull it down into the Press slot here with tons of velocity then you wouldn't get a nice consistent roll the strings would be all over your place",
-      "start": 1207.0,
+      "text": "you do need to experiment with rolling the racket back on purpose at least to some degree during that early part of your swing",
+      "start": 690.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
     },
     {
       "id": "Q20",
-      "text": "work on those try to feel it let your intuition guide you you're going to be able to rip the ball",
-      "start": 1334.0,
+      "text": "relaxing I if not physically mentally relaxing see the ball swing and calmly observe the result figure out how it felt off the string watch how it dips see if you got your Spin",
+      "start": 765.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "pay attention to how this feels as well and pay attention to how intricately connected these two things are",
+      "start": 787.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "if you were to take this hand and pull it down into the Press slot here with tons of velocity then you wouldn't get a nice consistent roll the strings would be all over your place",
+      "start": 1207.0,
       "speaker": "coach",
       "about": "general",
       "source": "subtitle"
@@ -210,78 +227,101 @@
   "symptoms": [
     {
       "id": "S01",
-      "description": "Player feels forced to consciously muscle the topspin rather than having the arm fire through effortlessly.",
-      "kind": "feel",
-      "layer": "C",
-      "camera": "none",
-      "phase": "forward_swing",
-      "obs_ref": "NONE",
+      "description": "The player pauses after rotating into the back position before pulling forward instead of executing a continuous dynamic roll.",
+      "kind": "visible",
+      "layer": "A",
+      "camera": "any",
+      "phase": "placement",
+      "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q06"
+        "Q06",
+        "Q07"
       ]
     },
     {
       "id": "S02",
-      "description": "Ball flies straight down into the net or contact feels thin and inconsistent due to changing string angles.",
-      "kind": "ball_outcome",
-      "layer": "A",
-      "camera": "any",
+      "description": "The racket rolls over early through contact, shortening the effective contact zone window.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "S",
       "phase": "contact",
       "obs_ref": "NEW-OBS",
       "evidence": [
-        "Q08",
-        "Q11"
+        "Q09",
+        "Q12"
       ]
     },
     {
       "id": "S03",
-      "description": "Arm and shoulder tighten up, resulting in pushing through contact rather than freely releasing.",
-      "kind": "visible",
-      "layer": "A",
-      "camera": "any",
+      "description": "The player muscles or pushes the ball forward with mental tension rather than releasing the arm effortlessly.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
       "phase": "contact",
-      "obs_ref": "NEW-OBS",
+      "obs_ref": "NONE",
       "evidence": [
-        "Q13"
+        "Q07",
+        "Q15",
+        "Q17"
       ]
     }
   ],
   "causes": [
     {
       "id": "C01",
-      "statement": "Players separate the roll and pull into two distinct motions by pausing, which prevents inertia from creating a dynamic soft tissue stretch.",
-      "depth": 2,
+      "statement": "Players separate the roll and forward pull into two disconnected motions with a pause, which eliminates the dynamic inertial stretch in the arm.",
+      "depth": 1,
       "layer": "A",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q05"
+        "Q06"
       ]
     },
     {
       "id": "C02",
-      "statement": "Contact point is probed too far in front, forcing the shoulder to unwind past its release window and closing the string face prematurely.",
+      "statement": "The racket does not roll back flush, causing the string angle to close or roll over prematurely and shortening the contact window.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q09"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "The contact point is probed too far out in front, where the shoulder has already unwound too much, preventing clean release and triggering defensive tightening.",
       "depth": 2,
       "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q11"
+        "Q15"
       ]
     },
     {
-      "id": "C03",
-      "statement": "From a tip-up preparation, the player violently pulls the hand downwards into the slot instead of allowing the racket to roll back and down first.",
+      "id": "C04",
+      "statement": "The player fails to roll the racket backwards somewhat on purpose during the early swing, missing the initial roll needed for inertia to load the stretch.",
       "depth": 3,
-      "layer": "A",
+      "layer": "B",
       "node_id": "PENDING",
       "active_or_passive": "active",
       "evidence": [
-        "Q19"
+        "Q18"
       ]
     }
   ],
   "chain": [
+    {
+      "from": "C04",
+      "to": "C01",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q06",
+        "Q18"
+      ]
+    },
     {
       "from": "C01",
       "to": "S01",
@@ -291,19 +331,28 @@
       ]
     },
     {
-      "from": "C02",
+      "from": "C01",
       "to": "S03",
       "strength": "coach_stated",
       "evidence": [
-        "Q13"
+        "Q07"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q09"
       ]
     },
     {
       "from": "C03",
-      "to": "PROBLEM",
+      "to": "S03",
       "strength": "coach_stated",
       "evidence": [
-        "Q19"
+        "Q15",
+        "Q17"
       ]
     }
   ],
@@ -311,35 +360,38 @@
     {
       "id": "A01",
       "type": "mechanics",
-      "summary": "External shoulder rotation and forearm supination load the arm under stretch as the trunk initiates forward movement, springing back through contact.",
+      "summary": "The kinetic chain relies on external shoulder rotation and forearm supination rolling back under inertial stretch, then naturally releasing forward through contact.",
       "evidence": [
         "Q03",
-        "Q04"
+        "Q04",
+        "Q05"
       ]
     },
     {
       "id": "A02",
       "type": "pro_example",
-      "summary": "Rafael Nadal keeps his strings down and rolls his forearm flush back while dragging forward, allowing a completely relaxed shoulder and forearm release.",
+      "summary": "Rafael Nadal rolls his forearm back flush with strings pointing down while the trunk yanks forward, allowing his shoulder to release right at contact.",
       "evidence": [
-        "Q09",
-        "Q10"
+        "Q10",
+        "Q13",
+        "Q14"
       ]
     },
     {
       "id": "A03",
       "type": "misconception",
-      "summary": "Topspin is not generated by actively rolling the wrist or racket over the ball during impact; that visual rollover is primarily an effect of ball collision.",
+      "summary": "The racket head flicking over at contact is a passive reaction to ball impact, not an intentional stroke mechanic.",
       "evidence": [
-        "Q08"
+        "Q12"
       ]
     },
     {
       "id": "A04",
       "type": "feel",
-      "summary": "True relaxation on the forehand comes from the arm firing automatically in reaction to a pre-stretch rather than from conscious muscle manipulation.",
+      "summary": "Effortless relaxation on the forehand comes from automatic muscle recoil rather than conscious muscular engagement through the contact zone.",
       "evidence": [
-        "Q16"
+        "Q07",
+        "Q21"
       ]
     }
   ],
@@ -350,8 +402,8 @@
       "targets": [
         "C02"
       ],
-      "summary": "Practice rolling the forearm back flush so strings remain pointing down while the arm is dragged forward to ensure a consistent string angle.",
-      "external_goal": "",
+      "summary": "Practice adding a flush roll back of the forearm during the early swing to ensure the string angle stays consistent through the contact zone.",
+      "external_goal": "Keep strings pointing flush/down during the early backwards roll",
       "scenario_fit": "shadow",
       "ban_conflict": {
         "flag": false,
@@ -360,16 +412,16 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q09"
+        "Q11"
       ]
     },
     {
       "id": "D02",
       "kind": "check",
       "targets": [
-        "C02"
+        "C03"
       ],
-      "summary": "Move the contact point closer or farther until you find the exact spot where the shoulder can fully release without tilting the string face down.",
+      "summary": "Shift your contact point location to test and find the exact spot where your shoulder can fully release without closing the string angle.",
       "external_goal": "",
       "scenario_fit": "machine_low",
       "ban_conflict": {
@@ -379,16 +431,17 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q12"
+        "Q16"
       ]
     },
     {
       "id": "D03",
       "kind": "drill",
       "targets": [
-        "C01"
+        "C01",
+        "C04"
       ],
-      "summary": "Consciously roll the racket backwards during the early forward drag to actively engage inertia and initiate the stretch.",
+      "summary": "Experiment with intentionally initiating the backwards roll of the racket early while dragging it forward with trunk acceleration to build dynamic inertial stretch.",
       "external_goal": "",
       "scenario_fit": "shadow",
       "ban_conflict": {
@@ -398,17 +451,18 @@
       },
       "intuition_first_ok": false,
       "evidence": [
-        "Q14"
+        "Q19"
       ]
     },
     {
       "id": "D04",
-      "kind": "cue",
+      "kind": "check",
       "targets": [
-        "PROBLEM"
+        "C01",
+        "C03"
       ],
-      "summary": "Calmly observe ball trajectory and dip after swinging, using string sensation rather than rigid mechanical thoughts to adjust the stroke.",
-      "external_goal": "Watch how the ball dips and see if you got topspin",
+      "summary": "Calmly observe how the ball dips and how it feels off the strings, tuning into whether the arm stretch in the back matches the release through contact.",
+      "external_goal": "Watch the dip of the ball over the net",
       "scenario_fit": "mini_tennis",
       "ban_conflict": {
         "flag": false,
@@ -417,22 +471,11 @@
       },
       "intuition_first_ok": true,
       "evidence": [
-        "Q15"
+        "Q20"
       ]
     }
   ],
   "video_layer": [],
-  "conflicts": [
-    {
-      "id": "X01",
-      "between": [
-        "s1_r1_wd4YRQ",
-        "s1_r2_wd4YRQ",
-        "s1_r3_wd4YRQ"
-      ],
-      "description": "check_rerun FAILED on every run pair and on the 3-run consensus card; kept as stage1_draft, not verified. See raw/<id>/rerun_adjudication.json.",
-      "resolution": "open_user_decides"
-    }
-  ],
-  "status": "stage1_draft"
+  "conflicts": [],
+  "status": "stage1_verified"
 }

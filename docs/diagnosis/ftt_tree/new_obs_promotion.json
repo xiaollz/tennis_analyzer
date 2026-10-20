@@ -1833,6 +1833,141 @@
    ],
    "layer": "B",
    "camera": "B"
+  },
+  {
+   "obs": "OBS-71",
+   "file": "observables/OBS-71_pelvic_rotation_visibly_decelerate_halt.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round10: unlock T05 on 6ak4 C04 + KU7 C01; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v15_new2.json",
+   "candidate": "NC001",
+   "cluster": "NEW-OBS-01",
+   "episodes": [
+    "6ak4ZScH_gc"
+   ],
+   "description": "Does pelvic rotation visibly decelerate and halt prior to contact without reversing direction?",
+   "values": [
+    "pelvis_decelerates_and_halts",
+    "pelvis_continues_rotating"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "obs": "OBS-72",
+   "file": "observables/OBS-72_impact_location_ball_across_racket.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round10: unlock T05 on 6ak4 C04 + KU7 C01; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v15_new2.json",
+   "candidate": "NC002",
+   "cluster": "NEW-OBS-02",
+   "episodes": [
+    "KU7FHy1qQOI"
+   ],
+   "description": "Impact location of the ball across the racket string bed face",
+   "values": [
+    "center_sweet_spot",
+    "off_center_strings",
+    "frame"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "obs": "OBS-73",
+   "file": "observables/OBS-73_angle_hitting_arm_relative_lateral.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round11: unlock T05 on E_zm C01/C03/C04, wd4Y C04, x_WIg C02; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v16_new4.json",
+   "candidate": "NC001",
+   "cluster": "NEW-OBS-04",
+   "episodes": [
+    "E_zmENJIj4g"
+   ],
+   "description": "Angle of the hitting arm relative to the lateral shoulder tilt axis on serve",
+   "values": [
+    "matched_to_shoulder_tilt",
+    "elevated_out_of_plane"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "obs": "OBS-74",
+   "file": "observables/OBS-74_thoracic_spine_extension_serve_trophy.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round11: unlock T05 on E_zm C01/C03/C04, wd4Y C04, x_WIg C02; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v16_new4.json",
+   "candidate": "NC003",
+   "cluster": "NEW-OBS-06",
+   "episodes": [
+    "E_zmENJIj4g"
+   ],
+   "description": "Thoracic spine extension during serve trophy cocking phase",
+   "values": [
+    "visibly_extended_arched",
+    "flat_or_flexed"
+   ],
+   "layer": "B",
+   "camera": "S"
+  },
+  {
+   "obs": "OBS-75",
+   "file": "observables/OBS-75_degree_upper_torso_coiling_away.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round11: unlock T05 on E_zm C01/C03/C04, wd4Y C04, x_WIg C02; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v16_new4.json",
+   "candidate": "NC004",
+   "cluster": "NEW-OBS-01",
+   "episodes": [
+    "E_zmENJIj4g"
+   ],
+   "description": "Degree of upper torso coiling away from the net during the serve trophy position",
+   "values": [
+    "excessively_coiled_back_to_net",
+    "standard_side_on"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "obs": "OBS-76",
+   "file": "observables/OBS-76_early_swing_preparation_player_visibly.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round11: unlock T05 on E_zm C01/C03/C04, wd4Y C04, x_WIg C02; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v16_new4.json",
+   "candidate": "NC009",
+   "cluster": "NEW-OBS-03",
+   "episodes": [
+    "wd4YRQW3TOc"
+   ],
+   "description": "During early swing preparation, does the player visibly roll the racket face backward to initiate dynamic stretch?",
+   "values": [
+    "rolls_backward",
+    "no_backward_roll"
+   ],
+   "layer": "B",
+   "camera": "B"
+  },
+  {
+   "obs": "OBS-77",
+   "file": "observables/OBS-77_timing_racket_head_overtaking_hitting.md",
+   "approved_by_user": "2026-10-20",
+   "reason": "sweet-zone round11: unlock T05 on E_zm C01/C03/C04, wd4Y C04, x_WIg C02; single-ep exceptions; cross-ep rule unchanged",
+   "source": "ftt_tree/obs_binding_v16_new4.json",
+   "candidate": "NC011",
+   "cluster": "NEW-OBS-08",
+   "episodes": [
+    "x_WIg59Wr9Y"
+   ],
+   "description": "Timing of the racket head overtaking the hitting hand relative to contact",
+   "values": [
+    "overtakes_before_contact",
+    "overtakes_at_contact",
+    "trails_behind_hand"
+   ],
+   "layer": "B",
+   "camera": "S"
   }
  ],
  "from_cc_review": [

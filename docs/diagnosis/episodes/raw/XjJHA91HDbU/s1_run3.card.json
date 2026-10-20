@@ -1,0 +1,446 @@
+{
+  "schema_version": "2.0",
+  "video": {
+    "id": "XjJHA91HDbU",
+    "url": "https://www.youtube.com/watch?v=XjJHA91HDbU",
+    "title": "Don't Swing AT the Ball on the Overhead",
+    "channel": "Fault Tolerant Tennis",
+    "duration_s": 212.0,
+    "upload_date": "2024-07-23",
+    "metadata_source": "yt-dlp"
+  },
+  "classification": {
+    "is_teaching": "teaching",
+    "stroke": "serve",
+    "format": "lecture",
+    "reason": "The coach provides actionable cues and drills to throw the hand toward a consistent spot while allowing natural internal shoulder rotation to slap the ball across the body."
+  },
+  "transcript": {
+    "path": "/workspace/ftt_subs/XjJHA91HDbU.en.vtt",
+    "kind": "auto",
+    "sha256": "ffc6fd83d024faecb87691d6c0abdf91d279ed14525c97cc33e632a85bf0188f",
+    "coverage_ratio": 0.9949
+  },
+  "extraction": {
+    "stage1_model": "gemini-3.8-flash",
+    "stage1_prompt_version": "ep_s1_v6",
+    "stage1_run_ids": [
+      "s1_r3_XjJHA9",
+      "s1_pair_pending"
+    ],
+    "user_context_in_prompt": false
+  },
+  "problem": {
+    "title_as_question": "Why shouldn't you swing directly at the ball on an overhead?",
+    "definition": "Players often try to direct their hand path straight at their intended target on the overhead, which misaligns with natural shoulder rotation and degrades wrist stability.",
+    "node_id": "PENDING",
+    "prerequisites": [
+      "overhead or serve motion",
+      "shoulder internal rotation"
+    ],
+    "target_player": "",
+    "evidence": [
+      "Q01",
+      "Q03"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "Q01",
+      "text": "so when I say don't swing at the ball this is what I mean look at Alexa's hand here and imagine if she were throwing a football or a baseball or something like that or actually releasing her Racket",
+      "start": 10.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q02",
+      "text": "and I'm going to mark on The Back Fence where that throw would end up and it's into the adside service box it's maybe a foot over from the adside even though the ball is going towards the duai Target",
+      "start": 20.0,
+      "speaker": "coach",
+      "about": "demonstrator_natural",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q03",
+      "text": "and you're going to see this offset 10 15 20 30° in almost every high level overhead",
+      "start": 32.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q04",
+      "text": "so look at Ben Shelton here now he's left-handed but again the same principle applies",
+      "start": 37.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q05",
+      "text": "same principle applies when the shoulder internally rotates the natural slap of the ball that happens is across the body",
+      "start": 42.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q06",
+      "text": "so because Shelton's left-handed he throws his racket kind of into the de side service box here and yet the ball shoots all the way out to his right he's actually hitting a wide serve on the ad side",
+      "start": 49.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q07",
+      "text": "this is so crucial if you can internalize the difference between what your hand is doing and what your racket is doing",
+      "start": 66.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q08",
+      "text": "let's look at Andy rodic possibly the best height adjusted server of all time and you're going to notice he's throwing his hand to the same spot no matter whether he's hitting a flat or a slice surve",
+      "start": 73.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q09",
+      "text": "when you're new if you want to throw your hand more to your left when you're hitting a slice that's fine",
+      "start": 84.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q10",
+      "text": "ultimately people are going to be able to read that good returners are going to be able to get on that early",
+      "start": 89.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q11",
+      "text": "and so what you need to be able to do is throw your hand at the same spot and then use your forearm slightly differently",
+      "start": 93.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q12",
+      "text": "so the first thing is just figuring out where is the comfortable spot that I can throw my hand to hit my serves",
+      "start": 101.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q13",
+      "text": "and for Ben Shelton neic it's about the middle of the other service box and then you're using your internal rotation to hit the ball back the other way",
+      "start": 106.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q14",
+      "text": "then the key is building an athletic understanding of what your forearm is doing how your racket is flying through the air",
+      "start": 115.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q15",
+      "text": "and then disguising your serves by throwing your hand to that same spot but allowing your form to rotate a little more a little less or a little earlier or a little later in order to change the Target",
+      "start": 121.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q16",
+      "text": "you actually can throw straight to where you want to hit your overhead it's just not optimal",
+      "start": 136.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q17",
+      "text": "so if you just hit a little bit later in your internal shoulder rotation instead of the ball crossing your body like rodx is crossing to the left here if he just hits this a split second later",
+      "start": 142.0,
+      "speaker": "coach",
+      "about": "pro_footage",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q18",
+      "text": "number one your wrist isn't going to feel quite as strong in that position it's stronger earlier in that motion",
+      "start": 156.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q19",
+      "text": "and then the second thing is it's not quite as fault tolerant you're closer to the end of your motion you're closer to shanking the ball and you're closer to Mish hitting the ball",
+      "start": 162.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q20",
+      "text": "the main thing I want you to take from this video is that the hand goes one way and the racket goes a different way",
+      "start": 175.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q21",
+      "text": "you want to harness your natural throwing motion and build and develop an athletic understanding of how the racket is flicking through space when you throw your hand to a certain spot",
+      "start": 180.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    },
+    {
+      "id": "Q22",
+      "text": "for now just get a feeling of throwing the hand to a spot and allowing the racket to naturally slap the ball 15 to 20° to the left of where you threw your hand",
+      "start": 198.0,
+      "speaker": "coach",
+      "about": "general",
+      "source": "subtitle"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "S01",
+      "description": "Mishitting or shanking the ball due to reduced fault tolerance at contact.",
+      "kind": "ball_outcome",
+      "layer": "A",
+      "camera": "any",
+      "phase": "contact",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "id": "S02",
+      "description": "Wrist feels structurally weaker during contact when trying to hit straight toward the target.",
+      "kind": "feel",
+      "layer": "C",
+      "camera": "none",
+      "phase": "contact",
+      "obs_ref": "NONE",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "id": "S03",
+      "description": "Hand throwing path directly aligned with the ball's final flight line without an angular offset.",
+      "kind": "visible",
+      "layer": "B",
+      "camera": "B",
+      "phase": "forward_swing",
+      "obs_ref": "NEW-OBS",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    }
+  ],
+  "causes": [
+    {
+      "id": "C01",
+      "statement": "Internal shoulder rotation naturally propels the racket to slap across the body at an angle offset from the hand's throwing path.",
+      "depth": 2,
+      "layer": "B",
+      "node_id": "PENDING",
+      "active_or_passive": "passive",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Varying the hand throwing trajectory to direct different spins allows returners to read and anticipate shots early.",
+      "depth": 1,
+      "layer": "A",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q10"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Delaying contact to hit straight in the direction of the hand throw places the wrist in a weaker structural position near the end of the swing range.",
+      "depth": 1,
+      "layer": "C",
+      "node_id": "PENDING",
+      "active_or_passive": "active",
+      "evidence": [
+        "Q18",
+        "Q19"
+      ]
+    }
+  ],
+  "chain": [
+    {
+      "from": "C01",
+      "to": "C03",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C02",
+      "strength": "coach_implied",
+      "evidence": [
+        "Q10",
+        "Q11"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S01",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q19"
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "S02",
+      "strength": "coach_stated",
+      "evidence": [
+        "Q18"
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "PROBLEM",
+      "strength": "inferred",
+      "evidence": [
+        "Q10"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "A01",
+      "type": "mechanics",
+      "summary": "Shoulder internal rotation naturally slaps the racket across the body relative to where the hand throws.",
+      "evidence": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "A02",
+      "type": "visual_model",
+      "summary": "Projecting the hand throw path onto the back fence shows a 10 to 30 degree offset from the ball's actual landing target.",
+      "evidence": [
+        "Q02",
+        "Q03"
+      ]
+    },
+    {
+      "id": "A03",
+      "type": "pro_example",
+      "summary": "Andy Roddick and Ben Shelton throw their hands toward the opposite service box while internal rotation sends the ball to their target.",
+      "evidence": [
+        "Q06",
+        "Q08",
+        "Q13"
+      ]
+    },
+    {
+      "id": "A04",
+      "type": "misconception",
+      "summary": "Believing that optimal overhead power and accuracy come from throwing the hand directly at the ball target.",
+      "evidence": [
+        "Q01",
+        "Q16"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "D01",
+      "kind": "check",
+      "targets": [
+        "C01",
+        "C02"
+      ],
+      "summary": "Identify a comfortable target spot in the opposite service box where your hand naturally throws on serves and overheads.",
+      "external_goal": "Locate the comfortable hand throwing spot in the opposite service box.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "D02",
+      "kind": "progression",
+      "targets": [
+        "C02"
+      ],
+      "summary": "Disguise shot directions by throwing the hand to the same spot while rotating the forearm slightly earlier, later, more, or less.",
+      "external_goal": "Throw hand to the exact same spot while altering shot targets through forearm rotation.",
+      "scenario_fit": "machine_low",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": false,
+      "evidence": [
+        "Q15"
+      ]
+    },
+    {
+      "id": "D03",
+      "kind": "cue",
+      "targets": [
+        "C01",
+        "C03"
+      ],
+      "summary": "Throw your hand toward your chosen spot while feeling the racket naturally slap the ball 15 to 20 degrees to the left.",
+      "external_goal": "Allow the racket to slap the ball 15 to 20 degrees to the left of the hand throw direction.",
+      "scenario_fit": "shadow",
+      "ban_conflict": {
+        "flag": false,
+        "terms": [],
+        "note": ""
+      },
+      "intuition_first_ok": true,
+      "evidence": [
+        "Q22"
+      ]
+    }
+  ],
+  "video_layer": [],
+  "conflicts": [],
+  "status": "stage1_draft"
+}
