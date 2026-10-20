@@ -1,0 +1,74 @@
+{
+  "_comment": "Machine-readable trunk/branch map for compose_trunk_report.py. Human version: kinetic_chain_trunk.md. Rules: only branches listed here may appear at top level; every leaf has a role; status rules are fixed here, not in the script. Changing this file requires user approval and a note in kinetic_chain_trunk.md.",
+  "version": "2026-10-20",
+  "trunk": {
+    "id": "TRUNK_KINETIC_CHAIN",
+    "zh": "动力链：力从地面经腿、髋扭转、躯干传到手臂和拍子，并在对的时间启动",
+    "sources": ["BOOK:p83", "BOOK:p116", "PwkGLkRm73o:Q02"]
+  },
+  "status_rules": {
+    "has_facts": "at least one leaf with role=evidence matched by an input fact with source in [model, pose, manual] and agree >= 2/3 and value != unclear",
+    "pending_self_report": "no qualifying fact, but at least one self_report mapped to this branch",
+    "pending_untested": "no qualifying fact and no self_report",
+    "rule": "a branch is NEVER dropped from the report; it is shown with one of the three statuses"
+  },
+  "branches": [
+    {
+      "id": "B1_HIP_TRANSFER_ARM_COMPENSATION",
+      "zh": "粗枝 1：髋没把力传上来 → 手臂 / 小臂代偿",
+      "trunk_question": "how_force_travels",
+      "flt_refs": ["FLT-05", "FLT-02"],
+      "sources": ["PwkGLkRm73o:Q02", "PwkGLkRm73o:Q03", "2Nn9tyMECZU:Q05", "BOOK:p30", "BOOK:p83"],
+      "holdout_knowledge": ["ui-RFRdQKRk:Q03", "5jHCDc44SQM:Q03", "5jHCDc44SQM:Q04"],
+      "leaves": [
+        {"id": "L1_shoulders_lead", "role": "evidence", "obs": "OBS-25", "value": "shoulders_lead_hips", "camera": "B", "zh": "前挥肩先转、髋不领先"},
+        {"id": "L1_arm_first", "role": "evidence", "obs": "OBS-18", "value": "arm_first", "camera": "B", "zh": "前挥手臂先动"},
+        {"id": "L1_turn_not_coil", "role": "evidence", "obs": "NEW-SHOULDER_VS_HIP_PREP", "value": "shoulders_farther_than_hips", "camera": "B", "zh": "准备时上身转了一点，但不是坐进后髋的扭", "note": "NEW candidate, not in catalog; may be shown but never counts toward has_facts"},
+        {"id": "L1_prep_turn_small", "role": "context", "obs": "OBS-08", "value": "small_turn", "camera": "B", "zh": "准备转离幅度小"},
+        {"id": "L1_hips_open_at_contact", "role": "context", "obs": "OBS-09", "value": "square_or_past", "camera": "B", "zh": "触球时髋线已朝网（开放站位下不等于扭转后转回，要结合 OBS-25 读）"},
+        {"id": "L1_forearm_lift", "role": "evidence", "obs": "NEW-HAND_VS_ELBOW_REAR", "value": "hand_rises_above_elbow", "camera": "B", "self_report_key": "forearm_lift", "zh": "小臂向上抬", "note": "catalog OBS-12a/OBS-11 are side-view only"},
+        {"id": "L1_symbolic_hip_push", "role": "evidence", "obs": "OBS-10", "value": null, "camera": "B", "self_report_key": "symbolic_hip_push", "zh": "蹬髋只是象征性：身体往前移、力不往上传（C 层为主）"},
+        {"id": "L1_feet_planted", "role": "upstream_condition", "legacy_key": "stance_planted", "camera": "B", "zh": "脚钉死 / 宽开放站位钉在原地"},
+        {"id": "L1_knees_straightish", "role": "upstream_condition", "legacy_key": "knees_not_deep", "camera": "S", "zh": "膝盖没有深弯（正后方看不准深浅）"},
+        {"id": "L1_finish_wraps", "role": "downstream", "legacy_key": "finish_left_shoulder", "obs": "OBS-15", "value": "b:wraps_back_to_body_immediately", "camera": "any", "zh": "随挥马上缠回左肩"},
+        {"id": "L1_arm_chest_sync", "role": "not_visible", "obs": "OBS-40", "camera": "B", "zh": "臂和胸是否同步（正后方实测看不清）"},
+        {"id": "L1_trunk_decel", "role": "not_visible", "obs": "OBS-19", "camera": "B", "zh": "躯干是否减速（实测看不清）"},
+        {"id": "L1_pelvis_decel", "role": "not_visible", "obs": "OBS-71", "camera": "B", "zh": "骨盆是否减速（实测看不清）"}
+      ],
+      "excluded_siblings": [
+        {"legacy_key": "unit_turn_ok", "weakens": "FLT-04", "zh": "准备阶段转肩一体化引拍 OK → 削弱「准备不足」一支"},
+        {"legacy_key": "lateral_spacing_ok", "weakens": "FLT-01", "zh": "横向间距 OK、没被挤住 → 削弱「被挤住」一支"}
+      ]
+    },
+    {
+      "id": "B2_SWING_START_TOO_EARLY",
+      "zh": "粗枝 2：挥拍启动过早（击球点与时机）",
+      "trunk_question": "when_chain_starts",
+      "flt_refs": [],
+      "tree_nodes": ["N-C_DZADHZVESDS_C01"],
+      "sources": ["dZadhzVEsds:Q02", "dZadhzVEsds:Q03"],
+      "leaves": [
+        {"id": "L2_start_vs_bounce", "role": "evidence", "obs": "NEW-SWING_START_VS_BOUNCE", "value": "still_rising", "camera": "S", "self_report_key": "early_swing_start", "zh": "前挥启动时球还在弹起 / 未到最高点"},
+        {"id": "L2_racket_above_ball", "role": "evidence", "obs": "OBS-57", "value": "above_ball", "camera": "S", "zh": "开始转体时拍头还在球上方"},
+        {"id": "L2_contact_depth", "role": "evidence", "obs": "OBS-03", "value": null, "camera": "S", "zh": "触球点在身体前后（与启动时机是两个量）"},
+        {"id": "L2_backswing_pause", "role": "context", "obs": "OBS-04", "camera": "any", "zh": "引拍顶点停顿"},
+        {"id": "L2_outcome", "role": "downstream", "obs": "OBS-16", "camera": "any", "zh": "口播结果 / 下网"}
+      ],
+      "missing_facts_if_pending": [
+        {"obs": "NEW-SWING_START_VS_BOUNCE", "camera": "S", "question": "At the moment the forward swing starts, is the incoming ball still rising after the bounce, at about its highest point, or already descending?", "values": ["still_rising", "near_highest_point", "descending"]},
+        {"obs": "OBS-57", "camera": "S"},
+        {"obs": "OBS-03", "camera": "S"}
+      ]
+    }
+  ],
+  "branch_links": [
+    {"from": "B2_SWING_START_TOO_EARLY", "to": "B1_HIP_TRANSFER_ARM_COMPENSATION", "kind": "inferred", "zh": "急着挥 → 髋没扭起来手臂就抢先（推断，不是证据）"}
+  ],
+  "next_one_thing": {
+    "zh": "等球过了最高点、开始往下落，再启动前挥。",
+    "source": "dZadhzVEsds:Q02",
+    "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
+    "protocol": "发球机最低速 40 球：10 基线 + 2×10 目标 + 10 复测，每球口播结果",
+    "verify": ["NEW-SWING_START_VS_BOUNCE 目标组多数 descending/near_highest_point", "OBS-18 是否仍 arm_first", "口播「好」不少于基线"]
+  }
+}
