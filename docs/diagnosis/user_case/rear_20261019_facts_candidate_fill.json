@@ -1,0 +1,198 @@
+{
+  "_comment": "CANDIDATE snapshot (2026-10-21 rear fill). = frozen + established new facts from rear_20261019_obs_fill_consensus.md (2 valid runs, run1 429 DRIFT). Not frozen; frozen/golden untouched.",
+  "clip_id": "rear_20261019_small",
+  "camera": "B",
+  "audio_stripped": true,
+  "prompt_version": "facts_rear_trunk_obs_v1 + facts_rear_fill_v1",
+  "model": "gemini-3.8-flash",
+  "runs": 3,
+  "facts": [
+    {
+      "obs": "OBS-18",
+      "value": "arm_first",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-25",
+      "value": "shoulders_lead_hips",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-09",
+      "value": "square_or_past",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-08",
+      "value": "small_turn",
+      "agree": "2/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-40",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-19",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-71",
+      "value": "unclear",
+      "agree": "3/3",
+      "source": "model"
+    },
+    {
+      "obs": "OBS-10b",
+      "value": "stays_in_place",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-04",
+      "value": "pause_present",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-15a",
+      "value": "finish_above_non_hitting_shoulder",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-15b",
+      "value": "wraps_back_to_body_immediately",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-15c",
+      "value": "elbow_in_front_of_chest_at_end",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-38",
+      "value": "shoulder_width_or_wider",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-33",
+      "value": "more_than_one_forearm_length",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-36",
+      "value": "directly_toward_ball",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-02",
+      "value": "visible_gap",
+      "agree": "2/2",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    }
+  ],
+  "candidate_facts": [
+    {
+      "obs": "NEW-SHOULDER_VS_HIP_PREP",
+      "value": "shoulders_farther_than_hips",
+      "agree": "3/3",
+      "source": "model",
+      "note": "NEW candidate, not in catalog"
+    }
+  ],
+  "legacy_facts": [
+    {
+      "key": "stance_planted",
+      "zh": "宽开放站位钉在原地，无侧移 / 交叉 / 垫步",
+      "source": "rear_20261019_facts.md"
+    },
+    {
+      "key": "knees_not_deep",
+      "zh": "膝盖弯曲不明显（直立微屈）",
+      "source": "rear_20261019_facts.md"
+    },
+    {
+      "key": "shoulder_semi_open_contact",
+      "zh": "触球时肩线半开、背部仍朝镜头",
+      "source": "rear_20261019_facts.md"
+    },
+    {
+      "key": "unit_turn_ok",
+      "zh": "转肩一体化引拍，左手扶拍喉",
+      "source": "rear_20261019_desc.md（优点部分）"
+    },
+    {
+      "key": "finish_left_shoulder",
+      "zh": "随挥落左肩至左前胸",
+      "source": "rear_20261019_facts.md"
+    },
+    {
+      "key": "lateral_spacing_ok",
+      "zh": "触球时拍在身体右侧较多，横向间距明显",
+      "source": "rear_20261019_facts.md"
+    }
+  ],
+  "self_reports": [
+    {
+      "key": "forearm_lift",
+      "zh": "正后方肉眼能明显看出小臂向上抬",
+      "date": "2026-10-20"
+    },
+    {
+      "key": "symbolic_hip_push",
+      "zh": "每次蹬髋只是象征性腿部往前 / 往上蹬，髋没攒住力，身体往前移，力没往上传",
+      "date": "2026-10-20"
+    },
+    {
+      "key": "early_swing_start",
+      "zh": "复看视频发现在球到最高点之前就开始挥，怕打不到的急躁",
+      "date": "2026-10-20"
+    }
+  ],
+  "retracted_claims": [
+    {
+      "key": "contact_late",
+      "zh": "击球点偏晚",
+      "origin": "rear_20261019_desc.md",
+      "reason": "first pass was prompt-led; rear view cannot see contact depth; it concerns contact position, not swing-start timing"
+    },
+    {
+      "key": "feet_locked_first_priority",
+      "zh": "脚下锁死是第一要害",
+      "origin": "rear_20261019_desc.md",
+      "reason": "violates FTT P3; feet planted is an upstream condition under B1"
+    }
+  ],
+  "unseen_by_camera": [
+    "OBS-03",
+    "OBS-23",
+    "OBS-57",
+    "OBS-12",
+    "OBS-13",
+    "OBS-28",
+    "OBS-35",
+    "NEW-SWING_START_VS_BOUNCE"
+  ]
+}
