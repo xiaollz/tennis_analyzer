@@ -127,6 +127,17 @@ def match_leaf(leaf: dict, facts_doc: dict, qfacts: dict) -> dict:
         f = qfacts[obs]
         if want is None or f["value"] == want:
             fact = f
+    if fact is None and obs and not is_new:
+        # Deterministic sub-part mapping: multi-part catalog OBS are extracted as
+        # OBS-15b=<v>; leaves bind OBS-15 + "b:<v>". value=None -> lowest part letter.
+        if want and re.fullmatch(r"[a-z]:.+", want):
+            f = qfacts.get(obs + want[0])
+            if f is not None and f["value"] == want[2:]:
+                fact = f
+        elif want is None:
+            for k in sorted(k for k in qfacts if re.fullmatch(re.escape(obs) + r"[a-z]", k)):
+                fact = qfacts[k]
+                break
 
     if role == "not_visible" or unclear is not None:
         out["state"] = "not_visible"
@@ -136,6 +147,9 @@ def match_leaf(leaf: dict, facts_doc: dict, qfacts: dict) -> dict:
         return out
 
     if fact is not None:
+        if fact["obs"] != obs:
+            out["leaf_obs"] = obs
+            out["obs"] = fact["obs"]
         out["state"] = "fact"
         out["value"] = fact["value"]
         out["agree"] = fact["agree"]

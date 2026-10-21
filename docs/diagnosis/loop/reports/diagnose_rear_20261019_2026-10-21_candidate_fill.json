@@ -1,0 +1,134 @@
+{
+ "clip_id": "rear_20261019_small",
+ "camera": "B",
+ "top": [
+  {
+   "node": "N-C_WZLMV4ASG9S_C01",
+   "name": "Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 2,
+   "evidence": [
+    "OBS-36=directly_toward_ball (model, 3/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "Press inside of elbow in the direction chest faces.",
+   "sources": [
+    "wFOy0RKWBTg:Q03",
+    "wFOy0RKWBTg:Q05",
+    "wzLMv4ASg9s:Q01"
+   ],
+   "upstream_of": [
+    "N-P_WFOY0RKWBTG"
+   ]
+  },
+  {
+   "node": "N-C_2NN9TYMECZU_C06",
+   "name": "Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 4,
+   "evidence": [
+    "OBS-08=small_turn (model, 2/3)",
+    "OBS-09=square_or_past (model, 3/3)",
+    "OBS-06=open (model, 2/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "",
+   "sources": [
+    "2Nn9tyMECZU:Q01",
+    "2Nn9tyMECZU:Q05",
+    "2Nn9tyMECZU:Q24"
+   ],
+   "upstream_of": []
+  },
+  {
+   "node": "N-C_LBDQPIHVXYA_C04",
+   "name": "The player maintains the same wide horizontal spacing on low balls instead of moving the body closer for a vertical swing path.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 3,
+   "evidence": [
+    "OBS-33=more_than_one_forearm_length (model, 3/3)",
+    "OBS-02=visible_gap (model, 3/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "",
+   "sources": [
+    "lbdQpIHvXYA:Q19"
+   ],
+   "upstream_of": []
+  }
+ ],
+ "insufficient": false,
+ "style_not_fixed": [],
+ "dropped_facts": [
+  {
+   "obs": "OBS-40",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-19",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-71",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-10a",
+   "value": "heel_down_at_contact",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-10b",
+   "value": "stays_in_place",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15a",
+   "value": "finish_above_non_hitting_shoulder",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15b",
+   "value": "wraps_back_to_body_immediately",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15c",
+   "value": "elbow_in_front_of_chest_at_end",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07a",
+   "value": "reaches_across_body_front",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07b",
+   "value": "leaves_racket_after_turn_complete",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07c",
+   "value": "rotates_back_with_chest",
+   "why": "unknown obs"
+  }
+ ],
+ "next_session": {
+  "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
+  "one_thing": "Press inside of elbow in the direction chest faces.",
+  "test10": "",
+  "note": ""
+ }
+}

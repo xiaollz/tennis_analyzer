@@ -1,0 +1,407 @@
+{
+  "branch_links": [
+    {
+      "from": "B2_SWING_START_TOO_EARLY",
+      "kind": "inferred",
+      "to": "B1_HIP_TRANSFER_ARM_COMPENSATION",
+      "zh": "急着挥 → 髋没先启动、手臂就抢先（推断，不是证据）；链内过早开胸本身归 B1 旁支"
+    }
+  ],
+  "branches": [
+    {
+      "confidence": "medium",
+      "excluded_siblings": [
+        {
+          "legacy_key": "unit_turn_ok",
+          "weakens": "FLT-04",
+          "zh": "准备阶段转肩一体化引拍 OK → 削弱「准备不足」一支"
+        },
+        {
+          "legacy_key": "lateral_spacing_ok",
+          "weakens": "FLT-01",
+          "zh": "横向间距 OK、没被挤住 → 削弱「被挤住」一支"
+        }
+      ],
+      "flt_refs": [
+        "FLT-05",
+        "FLT-02"
+      ],
+      "holdout_knowledge": [
+        {
+          "id": "ui-RFRdQKRk:Q01",
+          "label": "holdout"
+        },
+        {
+          "id": "ui-RFRdQKRk:Q02",
+          "label": "holdout"
+        },
+        {
+          "id": "ui-RFRdQKRk:Q03",
+          "label": "holdout"
+        },
+        {
+          "id": "5jHCDc44SQM:Q03",
+          "label": "holdout"
+        },
+        {
+          "id": "5jHCDc44SQM:Q04",
+          "label": "holdout"
+        }
+      ],
+      "id": "B1_HIP_TRANSFER_ARM_COMPENSATION",
+      "leaves": [
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_shoulders_lead",
+          "obs": "OBS-25",
+          "role": "evidence",
+          "source": "model",
+          "state": "fact",
+          "value": "shoulders_lead_hips",
+          "zh": "前挥肩先转、髋不领先"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_arm_first",
+          "obs": "OBS-18",
+          "role": "evidence",
+          "source": "model",
+          "state": "fact",
+          "value": "arm_first",
+          "zh": "前挥手臂先动"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_turn_not_coil",
+          "note": "NEW candidate, not in catalog; may be shown but never counts toward has_facts; enhancement not core",
+          "obs": "NEW-SHOULDER_VS_HIP_PREP",
+          "role": "evidence",
+          "state": "candidate",
+          "value": "shoulders_farther_than_hips",
+          "zh": "准备时肩比髋多转了一点，但髋没留住（turn ≠ coil）；coil 为增强项 BOOK:p119，非 B1 唯一核心"
+        },
+        {
+          "agree": "2/3",
+          "camera": "B",
+          "id": "L1_prep_turn_small",
+          "obs": "OBS-08",
+          "role": "context",
+          "source": "model",
+          "state": "fact",
+          "value": "small_turn",
+          "zh": "准备转离幅度小"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_hips_open_at_contact",
+          "obs": "OBS-09",
+          "role": "context",
+          "source": "model",
+          "state": "fact",
+          "value": "square_or_past",
+          "zh": "触球时髋线已朝网（开放站位下不等于扭转后转回，要结合 OBS-25 读）"
+        },
+        {
+          "camera": "B",
+          "id": "L1_forearm_lift",
+          "note": "catalog OBS-12a/OBS-11 are side-view only",
+          "obs": "NEW-HAND_VS_ELBOW_REAR",
+          "role": "evidence",
+          "self_report_key": "forearm_lift",
+          "self_report_zh": "正后方肉眼能明显看出小臂向上抬",
+          "state": "self_report",
+          "zh": "小臂往上抬 / 往上兜（视频 ui holdout / 用户自述；书对应是手臂被卡、用小肌肉 p.30，非「往上兜」原词）"
+        },
+        {
+          "camera": "B",
+          "id": "L1_symbolic_hip_push",
+          "obs": "OBS-10",
+          "role": "evidence",
+          "self_report_key": "symbolic_hip_push",
+          "self_report_zh": "每次蹬髋只是象征性腿部往前 / 往上蹬，髋没攒住力，身体往前移，力没往上传",
+          "state": "self_report",
+          "zh": "蹬髋只是象征性：身体前移、力没沿链上传（C 层为主）；「约 45° 往前上」为用户自述。书要的是扭回面向网 / 髋引导启动，不是把髋往球方向推（见 banned_cue_extra）"
+        },
+        {
+          "camera": "B",
+          "id": "L1_feet_planted",
+          "legacy_key": "stance_planted",
+          "legacy_zh": "宽开放站位钉在原地，无侧移 / 交叉 / 垫步",
+          "obs": null,
+          "role": "upstream_condition",
+          "state": "legacy",
+          "zh": "脚钉死 / 宽开放站位钉在原地"
+        },
+        {
+          "camera": "S",
+          "id": "L1_knees_straightish",
+          "legacy_key": "knees_not_deep",
+          "legacy_zh": "膝盖弯曲不明显（直立微屈）",
+          "obs": null,
+          "role": "upstream_condition",
+          "state": "legacy",
+          "zh": "膝盖没有深弯（正后方看不准深浅）"
+        },
+        {
+          "camera": "any",
+          "id": "L1_finish_wraps",
+          "legacy_key": "finish_left_shoulder",
+          "legacy_zh": "随挥落左肩至左前胸",
+          "obs": "OBS-15",
+          "role": "downstream",
+          "state": "legacy",
+          "zh": "随挥马上缠回左肩"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_arm_chest_sync",
+          "obs": "OBS-40",
+          "role": "not_visible",
+          "state": "not_visible",
+          "value": "unclear",
+          "zh": "臂和胸是否同步（正后方实测看不清）"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_trunk_decel",
+          "obs": "OBS-19",
+          "role": "not_visible",
+          "state": "not_visible",
+          "value": "unclear",
+          "zh": "躯干是否减速（实测看不清）"
+        },
+        {
+          "agree": "3/3",
+          "camera": "B",
+          "id": "L1_pelvis_decel",
+          "obs": "OBS-71",
+          "role": "not_visible",
+          "state": "not_visible",
+          "value": "unclear",
+          "zh": "骨盆是否减速（实测看不清）"
+        }
+      ],
+      "missing_facts": [],
+      "sources": [
+        "BOOK:p83",
+        "BOOK:p84",
+        "BOOK:p88",
+        "BOOK:p111",
+        "BOOK:p115",
+        "BOOK:p117",
+        "BOOK:p30",
+        "BOOK:p53",
+        "BOOK:p91",
+        "PwkGLkRm73o:Q02",
+        "PwkGLkRm73o:Q03",
+        "2Nn9tyMECZU:Q05"
+      ],
+      "status": "has_facts",
+      "trunk_question": "how_force_travels",
+      "validation_label": "待验证",
+      "zh": "粗枝 1：髋没先启动（未蹬后腿、未把髋扭回面向网）→ 力断在髋 / 髋胸未转回 → 手臂代偿（「往上兜」为视频/用户自述，非书证据）"
+    },
+    {
+      "confidence": "low",
+      "excluded_siblings": [],
+      "flt_refs": [],
+      "id": "B2_SWING_START_TOO_EARLY",
+      "leaves": [
+        {
+          "camera": "S",
+          "id": "L2_start_vs_bounce",
+          "obs": "NEW-SWING_START_VS_BOUNCE",
+          "role": "evidence",
+          "self_report_key": "early_swing_start",
+          "self_report_zh": "复看视频发现在球到最高点之前就开始挥，怕打不到的急躁",
+          "state": "self_report",
+          "zh": "前挥启动时球还在弹起 / 未到最高点"
+        },
+        {
+          "camera": "S",
+          "id": "L2_racket_above_ball",
+          "obs": "OBS-57",
+          "role": "evidence",
+          "state": "missing",
+          "zh": "开始转体时拍头还在球上方"
+        },
+        {
+          "camera": "S",
+          "id": "L2_contact_depth",
+          "obs": "OBS-03",
+          "role": "evidence",
+          "state": "missing",
+          "zh": "触球点在身体前后（与启动时机是两个量）"
+        },
+        {
+          "camera": "any",
+          "id": "L2_backswing_pause",
+          "obs": "OBS-04",
+          "role": "context",
+          "state": "missing",
+          "zh": "引拍顶点停顿"
+        },
+        {
+          "camera": "any",
+          "id": "L2_outcome",
+          "obs": "OBS-16",
+          "role": "downstream",
+          "state": "missing",
+          "zh": "口播结果 / 下网"
+        }
+      ],
+      "missing_facts": [
+        {
+          "camera": "S",
+          "obs": "NEW-SWING_START_VS_BOUNCE",
+          "question": "At the moment the forward swing starts, is the incoming ball still rising after the bounce, at about its highest point, or already descending?",
+          "values": [
+            "still_rising",
+            "near_highest_point",
+            "descending"
+          ]
+        },
+        {
+          "camera": "S",
+          "obs": "OBS-57",
+          "question": null,
+          "values": null
+        },
+        {
+          "camera": "S",
+          "obs": "OBS-03",
+          "question": null,
+          "values": null
+        }
+      ],
+      "sources": [
+        "BOOK:p75",
+        "dZadhzVEsds:Q02",
+        "dZadhzVEsds:Q03"
+      ],
+      "status": "pending_self_report",
+      "trunk_question": "when_chain_starts",
+      "validation_label": "待验证",
+      "zh": "粗枝 2：相对来球的等待不足（启动过早）——主挂 CH13 Inhale and Wait（BOOK:p75）"
+    }
+  ],
+  "diagnose_appendix": [
+    {
+      "confidence": "medium",
+      "evidence": [
+        "OBS-08=small_turn (model, 2/3)",
+        "OBS-09=square_or_past (model, 3/3)"
+      ],
+      "falsify_if": [],
+      "full_match": true,
+      "missing": [],
+      "name": "Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion",
+      "next_one_thing": "",
+      "node": "N-C_2NN9TYMECZU_C06",
+      "score": 3,
+      "sources": [
+        "2Nn9tyMECZU:Q01",
+        "2Nn9tyMECZU:Q05",
+        "2Nn9tyMECZU:Q24"
+      ],
+      "test10": "",
+      "upstream_of": []
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        "OBS-25=shoulders_lead_hips (model, 3/3)"
+      ],
+      "falsify_if": [],
+      "full_match": true,
+      "missing": [],
+      "name": "Aiming to rotate all the way through causes the hips to fire their power pulse far too late in the swing cycle, producing spin instead of linear forward drive.",
+      "next_one_thing": "",
+      "node": "N-C_UB6SBA_KX9E_C04",
+      "score": 2,
+      "sources": [
+        "UB6SbA_KX9E:Q18"
+      ],
+      "test10": "",
+      "upstream_of": []
+    },
+    {
+      "confidence": "low",
+      "evidence": [
+        "OBS-18=arm_first (model, 3/3)",
+        "OBS-25=shoulders_lead_hips (model, 3/3)"
+      ],
+      "falsify_if": [
+        "coach_text=PUN6 small_hand_muscles vs pWzy bottom_finger_squeeze"
+      ],
+      "full_match": false,
+      "missing": [
+        "OBS-24"
+      ],
+      "name": "Relying on the small hand and wrist muscles to guide the swing rather than driving weight transfer from the loaded back leg.",
+      "next_one_thing": "",
+      "node": "N-C_PUN6QIIYU_4_C03",
+      "score": 2,
+      "sources": [
+        "PUN6qIIYU-4:Q04",
+        "PUN6qIIYU-4:Q05"
+      ],
+      "test10": "",
+      "upstream_of": []
+    }
+  ],
+  "fixture": "rear_20261019",
+  "meta": {
+    "branches_file_sha256": "a194749876a37d442c189708f118c1329a0678edcc9c4e8ab27c17b5702dfbf0",
+    "camera": "B",
+    "clip_id": "rear_20261019_small",
+    "facts_file_sha256": "03743194ca0004ccfa19a793bad5c7ca294f9894abae2352f644e56002e92fd1",
+    "v5_passed": false
+  },
+  "next_one_thing": {
+    "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
+    "protocol": "来球：中速、中等弧线的上旋球（手抛 / 喂球 / 对打 / 发球机均可），共 40 球：10 基线 + 2×10 目标 + 10 复测，每球口播结果",
+    "source": "BOOK:p75; 用户时点自述（最高点/下落约80%，非书规定）; dZadhzVEsds:Q02",
+    "verify": [
+      "NEW-SWING_START_VS_BOUNCE 目标组多数 descending/near_highest_point",
+      "OBS-18 是否仍 arm_first",
+      "口播「好」不少于基线"
+    ],
+    "zh": "等球过了最高点、开始往下落，再启动前挥。"
+  },
+  "retracted": [
+    {
+      "key": "contact_late",
+      "origin": "rear_20261019_desc.md",
+      "reason": "first pass was prompt-led; rear view cannot see contact depth; it concerns contact position, not swing-start timing",
+      "zh": "击球点偏晚"
+    },
+    {
+      "key": "feet_locked_first_priority",
+      "origin": "rear_20261019_desc.md",
+      "reason": "violates FTT P3; feet planted is an upstream condition under B1",
+      "zh": "脚下锁死是第一要害"
+    }
+  ],
+  "trunk": {
+    "id": "TRUNK_KINETIC_CHAIN",
+    "sources": [
+      "BOOK:p83",
+      "BOOK:p116",
+      "BOOK:p117",
+      "BOOK:p30",
+      "BOOK:p84",
+      "BOOK:p90",
+      "BOOK:p111",
+      "BOOK:p119",
+      "PwkGLkRm73o:Q02"
+    ],
+    "zh": "动力链：蹬地进腿 → 髋先启动（蹬后腿、把髋扭回面向网）→ 躯干带胸整体转回 → 手臂和拍子被动甩出；并在对的时间启动。髋肩反向扭转张力（coil）为非必需增强项（BOOK:p119）"
+  }
+}
