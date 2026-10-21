@@ -1,0 +1,2345 @@
+{
+ "schema": "book_attach_v1",
+ "attachments": [
+  {
+   "node_id": "N-P_2NN9TYMECZU",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH04-S3"
+   ],
+   "reason_zh": "书 p.92–93：上旋主要来自拍绕前臂转动，而不是整个拍臂向上平移；p.34 挥拍路径是缓和斜线",
+   "reason": "书 p.92–93：上旋主要来自拍绕前臂转动，而不是整个拍臂向上平移；p.34 挥拍路径是缓和斜线",
+   "obs": [
+    "OBS-31",
+    "OBS-11",
+    "OBS-15",
+    "OBS-26"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_42BFBKSTGB4",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "书 p.134：要有身体与球理想相对位置的目标，再用移动去达成；对应「接球」这一半",
+   "reason": "书 p.134：要有身体与球理想相对位置的目标，再用移动去达成；对应「接球」这一半",
+   "obs": [
+    "OBS-05",
+    "OBS-16"
+   ],
+   "visual_cue": "看每拍击球前脚是否有调整步、到位后身体与球的距离是否一致",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_6AK4ZSCH_GC",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18",
+    "BR-CH19"
+   ],
+   "reason_zh": "书 p.83 前挥从髋转动开始、p.89 髋启动后腹部再展开；本期讲的是同一段的体感",
+   "reason": "书 p.83 前挥从髋转动开始、p.89 髋启动后腹部再展开；本期讲的是同一段的体感",
+   "obs": [],
+   "visual_cue": "看前挥启动时髋是否先于肩转动（OBS-25）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_8R09TLIP_AK",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137：只选成功率 80% 以上的球路；本期讲风险收益比",
+   "reason": "书 p.137：只选成功率 80% 以上的球路；本期讲风险收益比",
+   "obs": [],
+   "visual_cue": "看落点分布与失误类型（OBS-16）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_9NIRSL59AN0",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH04-S2",
+    "BR-CH21-S2"
+   ],
+   "reason_zh": "书 p.33–34、p.104：上旋要拍面略闭，低球也不打开拍面；所以感觉像「往下打」",
+   "reason": "书 p.33–34、p.104：上旋要拍面略闭，低球也不打开拍面；所以感觉像「往下打」",
+   "obs": [],
+   "visual_cue": "看触球时拍面是否略闭、未朝天（OBS-28）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_APCKJDADZEK",
+   "source": "tree_v18",
+   "book_node": "BR-CH18",
+   "reason_zh": "书 p.85–86 讲向前移动时双脚跟转动、重心到前脚；本期讲迈步击球（前腿制动细节书里没有，见对应根因）",
+   "reason": "书 p.85–86 讲向前移动时双脚跟转动、重心到前脚；本期讲迈步击球（前腿制动细节书里没有，见对应根因）",
+   "obs": [],
+   "visual_cue": "看迈步后前脚、前膝和重心的位置",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_APPDZQXH_2K",
+   "source": "tree_v18",
+   "book_node": "BR-CH14",
+   "reason_zh": "书 p.76：从对方击球到球离开自己拍线，视觉几乎全给球",
+   "reason": "书 p.76：从对方击球到球离开自己拍线，视觉几乎全给球",
+   "obs": [],
+   "visual_cue": "看头部是否在触球时仍对着击球点",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_DZADHZVESDS",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH04-S3",
+    "BR-CH26"
+   ],
+   "reason_zh": "书 p.34：手准备在预期击球高度以下、缓和斜线；p.124–125 用力超过上限成功率崩",
+   "reason": "书 p.34：手准备在预期击球高度以下、缓和斜线；p.124–125 用力超过上限成功率崩",
+   "obs": [
+    "OBS-16",
+    "OBS-30",
+    "OBS-26"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_FXDMVI3EFNE",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH04-S3"
+   ],
+   "reason_zh": "书 p.92：「刷球」说法误导，要 out、up、through 三向量；p.34 路径是缓和斜线",
+   "reason": "书 p.92：「刷球」说法误导，要 out、up、through 三向量；p.34 路径是缓和斜线",
+   "obs": [
+    "OBS-31",
+    "OBS-16",
+    "OBS-30"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_HNVBBPEOB3G",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "书 p.114：持拍侧胸肌稳住手臂、不让它滞后过多，同时手腕放松",
+   "reason": "书 p.114：持拍侧胸肌稳住手臂、不让它滞后过多，同时手腕放松",
+   "obs": [],
+   "visual_cue": "看前挥中持拍臂是否落在躯干线后（OBS-40）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_JZCA_KU7YHK",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.129–133：练习不能转到比赛，是因为练习条件掩盖了缺陷；要练比比赛更难的球",
+   "reason": "书 p.129–133：练习不能转到比赛，是因为练习条件掩盖了缺陷；要练比比赛更难的球",
+   "obs": [],
+   "visual_cue": "看非预期来球（位置变化）时动作是否变形",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_KU7FHY1QQOI",
+   "source": "tree_v18",
+   "book_node": "BR-CH24-S1",
+   "reason_zh": "书 p.116：力量从属于击球点；本期讲物理/几何对力量的约束",
+   "reason": "书 p.116：力量从属于击球点；本期讲物理/几何对力量的约束",
+   "obs": [],
+   "visual_cue": "看触球点是否在身前且离开身体（OBS-03、OBS-33）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_LCKDP2GKR_Y",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17-S1",
+    "BR-CH03-S2"
+   ],
+   "reason_zh": "书 p.82：手腕是铰链、不发力；p.25 用大肌群移拍、手腕只稳定；本期讲手腕疼",
+   "reason": "书 p.82：手腕是铰链、不发力；p.25 用大肌群移拍、手腕只稳定；本期讲手腕疼",
+   "obs": [],
+   "visual_cue": "看触球前后手腕角度是否快速屈折（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_LOSRMJ_QXKC",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH23-S4",
+    "BR-CH10-S3"
+   ],
+   "reason_zh": "书 p.114 胸肌稳住手臂 vs 让手臂滞后；p.59 肩转越多越有力但越难控",
+   "reason": "书 p.114 胸肌稳住手臂 vs 让手臂滞后；p.59 肩转越多越有力但越难控",
+   "obs": [],
+   "visual_cue": "看前挥开始时拍头落后手多少（OBS-35）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_OYF48K_CFNI",
+   "source": "tree_v18",
+   "book_node": "BR-CH01",
+   "reason_zh": "书 p.10–15：容错就是在位置不好、时机不准时仍能成功",
+   "reason": "书 p.10–15：容错就是在位置不好、时机不准时仍能成功",
+   "obs": [],
+   "visual_cue": "看被挤住或离位时球是否仍能进",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_P41GGC_Y5XK",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17",
+    "BR-CH30"
+   ],
+   "reason_zh": "书 p.82 手的反直觉角色（只握到拍不飞出）；p.147 手感来自保持夹角、身前击球",
+   "reason": "书 p.82 手的反直觉角色（只握到拍不飞出）；p.147 手感来自保持夹角、身前击球",
+   "obs": [],
+   "visual_cue": "看触球时拍与前臂夹角是否保持",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_PJVOQKQH9DA",
+   "source": "tree_v18",
+   "book_node": "BR-CH28",
+   "reason_zh": "书 p.136–137：需要高成功率的进攻球、只选 80% 球路；本期讲如何拿下更弱的对手",
+   "reason": "书 p.136–137：需要高成功率的进攻球、只选 80% 球路；本期讲如何拿下更弱的对手",
+   "obs": [],
+   "visual_cue": "看进攻球的失误率（OBS-16）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_PSIDJEI5BNI",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.131：慢球没有球速可借，缺陷暴露；本期讲如何打慢球",
+   "reason": "书 p.131：慢球没有球速可借，缺陷暴露；本期讲如何打慢球",
+   "obs": [
+    "OBS-16",
+    "OBS-30"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_PWKGLKRM73O",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18-S1",
+    "BR-CH04-S1"
+   ],
+   "reason_zh": "书 p.83 不用手臂拉、髋启动；p.30 触球时髋胸侧对则手臂被卡",
+   "reason": "书 p.83 不用手臂拉、髋启动；p.30 触球时髋胸侧对则手臂被卡",
+   "obs": [
+    "OBS-20",
+    "OBS-09",
+    "OBS-18"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_PWZYP_XFLFU",
+   "source": "tree_v18",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "书 p.65–66：滞后是放松后的被动结果，主动摆会破坏铰链；本期讲业余球员滞后差",
+   "reason": "书 p.65–66：滞后是放松后的被动结果，主动摆会破坏铰链；本期讲业余球员滞后差",
+   "obs": [
+    "OBS-35",
+    "OBS-32",
+    "OBS-11",
+    "OBS-04",
+    "OBS-24"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_QSZZ0N4FRB4",
+   "source": "tree_v18",
+   "book_node": "BR-CH25-S1",
+   "reason_zh": "书 p.122：觉得要紧握才能控拍，说明没在用大肌群；本期讲发紧犹豫",
+   "reason": "书 p.122：觉得要紧握才能控拍，说明没在用大肌群；本期讲发紧犹豫",
+   "obs": [
+    "OBS-04"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_RVFMDK_IEWO",
+   "source": "tree_v18",
+   "book_node": "BR-CH17-S1",
+   "reason_zh": "书 p.82：手腕放松作为铰链才能高效传力；「手槽」说法书里没有，但目标一致",
+   "reason": "书 p.82：手腕放松作为铰链才能高效传力；「手槽」说法书里没有，但目标一致",
+   "obs": [],
+   "visual_cue": "看前挥中拍头是否落后于手（OBS-35）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_T5MEVWBOKR4",
+   "source": "tree_v18",
+   "book_node": "BR-CH24-S4",
+   "reason_zh": "书 p.120：鞭打要在中途急停才能把能量传到末端；本期讲 Alcaraz 的躯干急停",
+   "reason": "书 p.120：鞭打要在中途急停才能把能量传到末端；本期讲 Alcaraz 的躯干急停",
+   "obs": [],
+   "visual_cue": "看躯干在触球前是否减速（OBS-19）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_TZGAWR3QGV0",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH23",
+    "BR-CH12"
+   ],
+   "reason_zh": "书 p.110–114 前挥四步、p.71 用躯干倾斜调整；本期讲 Sinner 正手与倾斜",
+   "reason": "书 p.110–114 前挥四步、p.71 用躯干倾斜调整；本期讲 Sinner 正手与倾斜",
+   "obs": [],
+   "visual_cue": "看低球时躯干是否倾斜、有无侧屈（OBS-29）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_UB6SBA_KX9E",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH24-S4",
+    "BR-CH22-S1"
+   ],
+   "reason_zh": "书 p.120–121 不过度转髋；p.107 触球是平移的、要指向目标（其「躯干主导」根因与书冲突，见孤儿 B）",
+   "reason": "书 p.120–121 不过度转髋；p.107 触球是平移的、要指向目标（其「躯干主导」根因与书冲突，见孤儿 B）",
+   "obs": [
+    "OBS-19",
+    "OBS-15",
+    "OBS-25"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_UJPUDUX0JIA",
+   "source": "tree_v18",
+   "book_node": "BR-CH01-S1",
+   "reason_zh": "书 p.13：不稳定的根源是机制扛不住误差；本期讲正手「消失」（其骨盆根因与书冲突，见孤儿 B）",
+   "reason": "书 p.13：不稳定的根源是机制扛不住误差；本期讲正手「消失」（其骨盆根因与书冲突，见孤儿 B）",
+   "obs": [
+    "OBS-16",
+    "OBS-30"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_UQCOBI2OTSS",
+   "source": "tree_v18",
+   "book_node": "BR-CH20",
+   "reason_zh": "书 p.93：Thiem 随挥在非持拍肩以下仍有重上旋，上旋主要来自拍绕前臂转动",
+   "reason": "书 p.93：Thiem 随挥在非持拍肩以下仍有重上旋，上旋主要来自拍绕前臂转动",
+   "obs": [],
+   "visual_cue": "看随挥终点是否在非持拍肩以下（OBS-15）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_VG8LBXOHM3E",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.132：训练要比比赛更难，才能让比赛的球变得平常",
+   "reason": "书 p.132：训练要比比赛更难，才能让比赛的球变得平常",
+   "obs": [],
+   "visual_cue": "看来球变化时脚和身体是否参与调整",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WD4YRQW3TOC",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH05"
+   ],
+   "reason_zh": "书 p.95 向外挥产生拍绕前臂转动；p.38–41 拍面角度保持不变",
+   "reason": "书 p.95 向外挥产生拍绕前臂转动；p.38–41 拍面角度保持不变",
+   "obs": [],
+   "visual_cue": "看击球区拍面角度是否保持（OBS-28）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WFIRPMUTZRO",
+   "source": "tree_v18",
+   "book_node": "BR-CH19",
+   "reason_zh": "书 p.89：髋启动后腹部把肩胸扭回，展开肩髋分离",
+   "reason": "书 p.89：髋启动后腹部把肩胸扭回，展开肩髋分离",
+   "obs": [],
+   "visual_cue": "看准备结束时肩线是否比髋线转得多（OBS-08）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WFOY0RKWBTG",
+   "source": "tree_v18",
+   "book_node": "BR-CH20",
+   "reason_zh": "书 p.92–95：向外是三向量中最重要的",
+   "reason": "书 p.92–95：向外是三向量中最重要的",
+   "obs": [
+    "OBS-36",
+    "OBS-32",
+    "OBS-30",
+    "OBS-11"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WOVEWH7FFFC",
+   "source": "tree_v18",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "书 p.65–66：放松后拍会因惯性自然滞后；本期讲成年人如何利用弹性",
+   "reason": "书 p.65–66：放松后拍会因惯性自然滞后；本期讲成年人如何利用弹性",
+   "obs": [],
+   "visual_cue": "看前挥开始时拍头是否落后于手（OBS-35）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WVA4XQPCAQS",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "书 p.134：心里要有身体与球的最佳相对位置，再去达成",
+   "reason": "书 p.134：心里要有身体与球的最佳相对位置，再去达成",
+   "obs": [],
+   "visual_cue": "看每拍触球点相对身体的位置是否一致",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_WZLMV4ASG9S",
+   "source": "tree_v18",
+   "book_node": "BR-CH20",
+   "reason_zh": "书 p.95–96：向外挥、手腕放松，拍到活动范围尽头自然绕前臂甩出",
+   "reason": "书 p.95–96：向外挥、手腕放松，拍到活动范围尽头自然绕前臂甩出",
+   "obs": [
+    "OBS-35",
+    "OBS-32",
+    "OBS-40",
+    "OBS-19"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_XLS469ZVMPU",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH24-S4",
+    "BR-CH18"
+   ],
+   "reason_zh": "书 p.120–121 不过度转髋；p.83 后腿可向后踢来平衡转动",
+   "reason": "书 p.120–121 不过度转髋；p.83 后腿可向后踢来平衡转动",
+   "obs": [
+    "OBS-19",
+    "OBS-09",
+    "OBS-10",
+    "OBS-13"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_X_WIG59WR9Y",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S3",
+   "reason_zh": "书 p.113：心里挥拍在触球那一刻结束；本期讲「从触球开始挥」，都是把注意力放在触球",
+   "reason": "书 p.113：心里挥拍在触球那一刻结束；本期讲「从触球开始挥」，都是把注意力放在触球",
+   "obs": [],
+   "visual_cue": "看触球后拍是否继续朝目标向前",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P__QU1LOWKLAW",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137–138：只选 80% 球路，连续失误就把目标往里收",
+   "reason": "书 p.137–138：只选 80% 球路，连续失误就把目标往里收",
+   "obs": [],
+   "visual_cue": "看落点离边线多远、失误多少（OBS-16、OBS-30）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-P_0M3BMFDDSHI",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH03",
+    "BR-CH04"
+   ],
+   "reason_zh": "书 p.26 最简有效正手、p.28 最简有效上旋正手；本期讲最简基础",
+   "reason": "书 p.26 最简有效正手、p.28 最简有效上旋正手；本期讲最简基础",
+   "obs": [],
+   "visual_cue": "看触球时拍与前臂夹角、是否在身前（OBS-01、OBS-03）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_2NN9TYMECZU_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20-S1",
+    "BR-CH21"
+   ],
+   "reason_zh": "书 p.92–93 上旋主要靠拍绕前臂转动而非整体向上；p.103 只想「向上」会丢掉其他向量",
+   "reason": "书 p.92–93 上旋主要靠拍绕前臂转动而非整体向上；p.103 只想「向上」会丢掉其他向量",
+   "obs": [],
+   "visual_cue": "看随挥终点是否一直往上、触球是否缺少向外",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_2NN9TYMECZU_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH19-S1",
+   "reason_zh": "书 p.89：只有持拍臂自己走、上半身没整体转回；本节点说肘直线拖过身体",
+   "reason": "书 p.89：只有持拍臂自己走、上半身没整体转回；本节点说肘直线拖过身体",
+   "obs": [
+    "OBS-32",
+    "OBS-40"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_2NN9TYMECZU_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20-S2",
+    "BR-CH24-S1"
+   ],
+   "reason_zh": "书 p.96、p.98：触球点横向太近身体，甩鞭消失；p.116 必须离开身体击球",
+   "reason": "书 p.96、p.98：触球点横向太近身体，甩鞭消失；p.116 必须离开身体击球",
+   "obs": [
+    "OBS-33",
+    "OBS-02",
+    "OBS-16",
+    "OBS-01"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_2NN9TYMECZU_C06",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18-S3",
+    "BR-CH10"
+   ],
+   "reason_zh": "书 p.83 脚注：髋卷得比脚多、胸转得比髋多才额外储能；p.59 Unit Turn 时髋转离",
+   "reason": "书 p.83 脚注：髋卷得比脚多、胸转得比髋多才额外储能；p.59 Unit Turn 时髋转离",
+   "obs": [
+    "OBS-08",
+    "OBS-09",
+    "OBS-06"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_42BFBKSTGB4_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "书 p.134：靠移动把身体放到与球的理想相对位置；本节点说用手臂和上身代偿步法",
+   "reason": "书 p.134：靠移动把身体放到与球的理想相对位置；本节点说用手臂和上身代偿步法",
+   "obs": [
+    "OBS-42",
+    "OBS-05",
+    "OBS-14",
+    "OBS-33"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_42BFBKSTGB4_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "书 p.134：要有身体与球最佳相对位置的心里模型",
+   "reason": "书 p.134：要有身体与球最佳相对位置的心里模型",
+   "obs": [],
+   "visual_cue": "看每拍触球时身体与球距离是否一致",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_6AK4ZSCH_GC_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18-S3",
+    "BR-CH19"
+   ],
+   "reason_zh": "书 p.83 脚注：胸-髋分离角在腹部储能，腹部展开时释放；本节点用筋膜链描述同一张力",
+   "reason": "书 p.83 脚注：胸-髋分离角在腹部储能，腹部展开时释放；本节点用筋膜链描述同一张力",
+   "obs": [],
+   "visual_cue": "体感为主；看准备结束时肩线是否比髋线转得多",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_6AK4ZSCH_GC_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18",
+    "BR-CH19"
+   ],
+   "reason_zh": "书 p.83 前挥从髋转开始；p.89 髋转动阶段肩髋相对角度保持、几毫秒后腹部再展开",
+   "reason": "书 p.83 前挥从髋转开始；p.89 髋转动阶段肩髋相对角度保持、几毫秒后腹部再展开",
+   "obs": [
+    "OBS-25",
+    "OBS-18"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_6AK4ZSCH_GC_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH24-S4",
+   "reason_zh": "书 p.120：髋转到指向目标附近就停，鞭子要中途急停才把能量传到末端；本节点说骨盆是被拉住减速而非倒转",
+   "reason": "书 p.120：髋转到指向目标附近就停，鞭子要中途急停才把能量传到末端；本节点说骨盆是被拉住减速而非倒转",
+   "obs": [
+    "OBS-71",
+    "OBS-19"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_8R09TLIP_AK_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137：只选成功率 80% 以上的球路；本节点说又平又狠却没有战术回报",
+   "reason": "书 p.137：只选成功率 80% 以上的球路；本节点说又平又狠却没有战术回报",
+   "obs": [
+    "OBS-26",
+    "OBS-28",
+    "OBS-31"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_8R09TLIP_AK_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH26",
+   "reason_zh": "书 p.124–125 区分省力与费力的力量；留余量不等于减慢挥速（书 p.16 说机制有缺陷时才应更慢更平）",
+   "reason": "书 p.124–125 区分省力与费力的力量；留余量不等于减慢挥速（书 p.16 说机制有缺陷时才应更慢更平）",
+   "obs": [],
+   "visual_cue": "看挥速与落点余量（OBS-16、OBS-30）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_8R09TLIP_AK_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137：风险收益不划算的球路不该选",
+   "reason": "书 p.137：风险收益不划算的球路不该选",
+   "obs": [
+    "OBS-26",
+    "OBS-31",
+    "OBS-28"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_9NIRSL59AN0_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH21",
+   "reason_zh": "书 p.103：脑子里想「把球抬起来」会导致三种错误；本节点说想往上打会让人变紧",
+   "reason": "书 p.103：脑子里想「把球抬起来」会导致三种错误；本节点说想往上打会让人变紧",
+   "obs": [],
+   "visual_cue": "看低球时拍面是否打开、随挥是否只往上",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_9NIRSL59AN0_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH05",
+   "reason_zh": "书 p.38、p.43–44：拍面翻转是随挥的一部分，触球区要保持拍面角度；在翻转阶段才击球就不稳",
+   "reason": "书 p.38、p.43–44：拍面翻转是随挥的一部分，触球区要保持拍面角度；在翻转阶段才击球就不稳",
+   "obs": [
+    "OBS-03",
+    "OBS-24",
+    "OBS-16"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_9NIRSL59AN0_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH11-S1",
+    "BR-CH12"
+   ],
+   "reason_zh": "书 p.62–63、p.71：肘要离开身体，躯干与手臂的夹角太窄时手臂甩不出去",
+   "reason": "书 p.62–63、p.71：肘要离开身体，躯干与手臂的夹角太窄时手臂甩不出去",
+   "obs": [
+    "OBS-02",
+    "OBS-39",
+    "OBS-01",
+    "OBS-32"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_9NIRSL59AN0_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH19-S3",
+    "BR-CH23-S2"
+   ],
+   "reason_zh": "书 p.91、p.111：转得过早或过多、胸过早打开，与动力链不同步",
+   "reason": "书 p.91、p.111：转得过早或过多、胸过早打开，与动力链不同步",
+   "obs": [
+    "OBS-60",
+    "OBS-16",
+    "OBS-25",
+    "OBS-15",
+    "OBS-40"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APCKJDADZEK_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18",
+    "BR-CH24"
+   ],
+   "reason_zh": "书 p.86 向前击球时把重心转到前脚、p.116 蹬后腿推动全身向前",
+   "reason": "书 p.86 向前击球时把重心转到前脚、p.116 蹬后腿推动全身向前",
+   "obs": [
+    "OBS-13",
+    "OBS-14"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APCKJDADZEK_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH22",
+    "BR-CH18"
+   ],
+   "reason_zh": "书 p.107–108：随挥是被动结果，不是挥拍的一部分；p.83、p.87 后腿随挥绕前或踢后是转动的结果",
+   "reason": "书 p.107–108：随挥是被动结果，不是挥拍的一部分；p.83、p.87 后腿随挥绕前或踢后是转动的结果",
+   "obs": [
+    "OBS-14",
+    "OBS-10",
+    "OBS-22",
+    "OBS-13"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APCKJDADZEK_C06",
+   "source": "tree_v18",
+   "book_node": "BR-CH11",
+   "reason_zh": "书 p.69：我们打球时始终在髋部保持轻微的折叠（maintain a slight hinge at our hips）；本节点说髋前移、没有折叠",
+   "reason": "书 p.69：我们打球时始终在髋部保持轻微的折叠（maintain a slight hinge at our hips）；本节点说髋前移、没有折叠",
+   "obs": [
+    "OBS-22",
+    "OBS-14",
+    "OBS-23",
+    "OBS-39"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APPDZQXH_2K_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH14",
+    "BR-CH07-S1"
+   ],
+   "reason_zh": "书 p.76 视觉一直跟球；p.51–52 执行时不想肌肉细节",
+   "reason": "书 p.76 视觉一直跟球；p.51–52 执行时不想肌肉细节",
+   "obs": [],
+   "visual_cue": "看触球时头是否仍对着击球点",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APPDZQXH_2K_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH14",
+   "reason_zh": "书 p.76：视觉要一直跟到球离开拍线；本节点说注意力被手和拍柄吸走",
+   "reason": "书 p.76：视觉要一直跟到球离开拍线；本节点说注意力被手和拍柄吸走",
+   "obs": [],
+   "visual_cue": "看触球时头是否仍对着击球点",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_APPDZQXH_2K_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH14",
+   "reason_zh": "书 p.76：球离开对手拍后几乎全部视觉给球；本节点说注意力停在目标上",
+   "reason": "书 p.76：球离开对手拍后几乎全部视觉给球；本节点说注意力停在目标上",
+   "obs": [],
+   "visual_cue": "看触球时头是否仍对着击球点",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_DZADHZVESDS_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH04-S3",
+    "BR-CH13"
+   ],
+   "reason_zh": "书 p.34：手要准备在预期击球高度以下；p.75：手准备好后等球到位再启动",
+   "reason": "书 p.34：手要准备在预期击球高度以下；p.75：手准备好后等球到位再启动",
+   "obs": [
+    "OBS-57",
+    "OBS-11",
+    "OBS-37"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_DZADHZVESDS_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17-S1",
+    "BR-CH25-S1"
+   ],
+   "reason_zh": "书 p.82、p.122：手腕紧是低效铰链；觉得必须紧握才能控拍，说明没在用大肌群",
+   "reason": "书 p.82、p.122：手腕紧是低效铰链；觉得必须紧握才能控拍，说明没在用大肌群",
+   "obs": [],
+   "visual_cue": "体感为主；看引拍和前挥中手腕是否僵住（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_DZADHZVESDS_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH12",
+   "reason_zh": "书 p.71–72：用躯干倾斜来调整击球高度；侧屈 / 倾斜转动平面书只讲到倾斜躯干这一层",
+   "reason": "书 p.71–72：用躯干倾斜来调整击球高度；侧屈 / 倾斜转动平面书只讲到倾斜躯干这一层",
+   "obs": [
+    "OBS-29",
+    "OBS-31",
+    "OBS-20",
+    "OBS-18",
+    "OBS-14",
+    "OBS-16"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_FBJNFBTZOZE_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH26-S1",
+   "reason_zh": "书 p.125：过了某个点，想更用力会表现为手紧、臂紧、动力链发顿；本节点是焦虑导致的同类紧张",
+   "reason": "书 p.125：过了某个点，想更用力会表现为手紧、臂紧、动力链发顿；本节点是焦虑导致的同类紧张",
+   "obs": [
+    "OBS-28",
+    "OBS-19",
+    "OBS-16"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_FJPR9PS02TM_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH17",
+   "reason_zh": "书 p.82：握拍只握到拍子不飞出去的程度；本节点说死握与过松两个极端都不对",
+   "reason": "书 p.82：握拍只握到拍子不飞出去的程度；本节点说死握与过松两个极端都不对",
+   "obs": [],
+   "visual_cue": "看触球时拍是否在手里转动、手腕是否僵住",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_FXDMVI3EFNE_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH04-S3",
+    "BR-CH20"
+   ],
+   "reason_zh": "书 p.34：过陡的上挥让早晚都失误；p.92 刷球说法误导",
+   "reason": "书 p.34：过陡的上挥让早晚都失误；p.92 刷球说法误导",
+   "obs": [
+    "OBS-31",
+    "OBS-16",
+    "OBS-11"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_FXDMVI3EFNE_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH21-S1",
+    "BR-CH04"
+   ],
+   "reason_zh": "书 p.103：只有向上没有穿过会把球旋进网；p.28 上旋要向上又向前",
+   "reason": "书 p.103：只有向上没有穿过会把球旋进网；p.28 上旋要向上又向前",
+   "obs": [
+    "OBS-31",
+    "OBS-15"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_FXDMVI3EFNE_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH20-S1",
+   "reason_zh": "书 p.92–93：上旋主要来自拍绕前臂转动，而非整个拍臂向上平移",
+   "reason": "书 p.92–93：上旋主要来自拍绕前臂转动，而非整个拍臂向上平移",
+   "obs": [
+    "OBS-31",
+    "OBS-11"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_GSHKML2MVEI_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH11",
+   "reason_zh": "书 p.63：引拍没有真正的「挥」，是把拍放到球后；本节点说把引拍当爆发挥动",
+   "reason": "书 p.63：引拍没有真正的「挥」，是把拍放到球后；本节点说把引拍当爆发挥动",
+   "obs": [
+    "OBS-66"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_HNVBBPEOB3G_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "书 p.114：持拍侧胸肌放松时，拍手臂会滞后过多、别扭无力",
+   "reason": "书 p.114：持拍侧胸肌放松时，拍手臂会滞后过多、别扭无力",
+   "obs": [
+    "OBS-40",
+    "OBS-03",
+    "OBS-35"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_HNVBBPEOB3G_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH23-S4",
+    "BR-CH19-S1"
+   ],
+   "reason_zh": "书 p.114 胸要稳住手臂；p.89 上半身作为整体转回",
+   "reason": "书 p.114 胸要稳住手臂；p.89 上半身作为整体转回",
+   "obs": [
+    "OBS-40",
+    "OBS-35"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_HNVBBPEOB3G_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "书 p.114：手臂要被胸稳住，只有手腕放松；同时放松胸和手腕就失去结构",
+   "reason": "书 p.114：手臂要被胸稳住，只有手腕放松；同时放松胸和手腕就失去结构",
+   "obs": [],
+   "visual_cue": "看前挥中手臂是否落在躯干线后（OBS-40）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_JZCA_KU7YHK_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.131–133：比赛来球不在预期位置时，练习中被掩盖的缺陷暴露",
+   "reason": "书 p.131–133：比赛来球不在预期位置时，练习中被掩盖的缺陷暴露",
+   "obs": [],
+   "visual_cue": "看来球位置变化时动作是否变形",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_JZCA_KU7YHK_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH01",
+    "BR-CH27"
+   ],
+   "reason_zh": "书 p.11、p.134–135：要有能在不完美位置成功的击球，并练在不完美位置发力",
+   "reason": "书 p.11、p.134–135：要有能在不完美位置成功的击球，并练在不完美位置发力",
+   "obs": [],
+   "visual_cue": "看离位、被迫移动时的击球结果",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_JZCA_KU7YHK_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH27",
+   "reason_zh": "书 p.132：训练要比比赛更难；本节点说练习太单调",
+   "reason": "书 p.132：训练要比比赛更难；本节点说练习太单调",
+   "obs": [],
+   "visual_cue": "看练习来球是否有变化",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_JZCA_KU7YHK_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH04-S4",
+   "reason_zh": "书 p.35：先想球的飞行和需要的接触，再想身体；不同情境的「正手」本就不一样",
+   "reason": "书 p.35：先想球的飞行和需要的接触，再想身体；不同情境的「正手」本就不一样",
+   "obs": [],
+   "visual_cue": "看不同来球下动作是否随之调整",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_KU7FHY1QQOI_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH27-S2",
+    "BR-CH14"
+   ],
+   "reason_zh": "书 p.134 心里要有身体与球的相对位置；p.76 视觉跟球",
+   "reason": "书 p.134 心里要有身体与球的相对位置；p.76 视觉跟球",
+   "obs": [],
+   "visual_cue": "看触球时头是否对着球、身体与球距离是否一致",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_KU7FHY1QQOI_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH10",
+    "BR-CH19-S3"
+   ],
+   "reason_zh": "书 p.59：要转回就得先转离；p.91 转得过早过多同样适得其反",
+   "reason": "书 p.59：要转回就得先转离；p.91 转得过早过多同样适得其反",
+   "obs": [
+    "OBS-08",
+    "OBS-60",
+    "OBS-25",
+    "OBS-55",
+    "OBS-09"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LBDQPIHVXYA_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH09",
+    "BR-CH13"
+   ],
+   "reason_zh": "书 p.58 准备要先完成；p.75 准备好后等待、看视觉信号启动；本节点说跑到球边才准备",
+   "reason": "书 p.58 准备要先完成；p.75 准备好后等待、看视觉信号启动；本节点说跑到球边才准备",
+   "obs": [
+    "OBS-04"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LCKDP2GKR_Y_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH24-S1",
+    "BR-CH17-S1"
+   ],
+   "reason_zh": "书 p.116：击球偏晚时力量收益被抵消；p.82 手腕只是铰链，不该主动推",
+   "reason": "书 p.116：击球偏晚时力量收益被抵消；p.82 手腕只是铰链，不该主动推",
+   "obs": [
+    "OBS-03",
+    "OBS-24",
+    "OBS-27"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LCKDP2GKR_Y_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17",
+    "BR-CH20-S3"
+   ],
+   "reason_zh": "书 p.82：小肌肉不产生拍速；p.96 手腕手的肌肉在雨刷中不产生力",
+   "reason": "书 p.82：小肌肉不产生拍速；p.96 手腕手的肌肉在雨刷中不产生力",
+   "obs": [],
+   "visual_cue": "看触球前后手腕是否主动屈折（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LCKDP2GKR_Y_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH22-S2",
+   "reason_zh": "书 p.109：肘在胸前、手臂向前延伸说明旋转力转成了向前的平移力；本节点说向前速度一触球就消失只剩翻转",
+   "reason": "书 p.109：肘在胸前、手臂向前延伸说明旋转力转成了向前的平移力；本节点说向前速度一触球就消失只剩翻转",
+   "obs": [
+    "OBS-67",
+    "OBS-15"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LOSRMJ_QXKC_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH10-S3",
+    "BR-CH23-S4"
+   ],
+   "reason_zh": "书 p.59 肩转越多越有力但越难控；p.114 手臂滞后过多会别扭（本节点讲的是另一种风格的利弊）",
+   "reason": "书 p.59 肩转越多越有力但越难控；p.114 手臂滞后过多会别扭（本节点讲的是另一种风格的利弊）",
+   "obs": [
+    "OBS-68",
+    "OBS-35",
+    "OBS-40",
+    "OBS-25"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LOSRMJ_QXKC_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "书 p.114：胸肌要稳住手臂，不让它向后滞后，并在适当时机把拍往前带",
+   "reason": "书 p.114：胸肌要稳住手臂，不让它向后滞后，并在适当时机把拍往前带",
+   "obs": [
+    "OBS-40",
+    "OBS-36",
+    "OBS-35"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_LOSRMJ_QXKC_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH10-S3",
+   "reason_zh": "书 p.59：肩转得越多，需要的协调和时机越多，越难控制",
+   "reason": "书 p.59：肩转得越多，需要的协调和时机越多，越难控制",
+   "obs": [
+    "OBS-31",
+    "OBS-35",
+    "OBS-40",
+    "OBS-30"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_MCCB_RFYD0W_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH19",
+   "reason_zh": "书 p.89–90：髋启动转动后，上半身被带着往前转，Nadal 把非持拍手肘向外拉开",
+   "reason": "书 p.89–90：髋启动转动后，上半身被带着往前转，Nadal 把非持拍手肘向外拉开",
+   "obs": [
+    "OBS-18",
+    "OBS-25"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_OYF48K_CFNI_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH01",
+    "BR-CH27-S2"
+   ],
+   "reason_zh": "书 p.15：可以站得离球太近一点仍然进；p.134 用移动找最佳相对位置",
+   "reason": "书 p.15：可以站得离球太近一点仍然进；p.134 用移动找最佳相对位置",
+   "obs": [
+    "OBS-33",
+    "OBS-05",
+    "OBS-02",
+    "OBS-16",
+    "OBS-01"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_OYF48K_CFNI_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH04-S1",
+    "BR-CH12"
+   ],
+   "reason_zh": "书 p.30 髋胸侧对手臂被卡；p.71 躯干与手臂夹角太窄时手臂甩不出去",
+   "reason": "书 p.30 髋胸侧对手臂被卡；p.71 躯干与手臂夹角太窄时手臂甩不出去",
+   "obs": [
+    "OBS-01",
+    "OBS-09",
+    "OBS-02",
+    "OBS-33",
+    "OBS-15"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_OYF48K_CFNI_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH01",
+   "reason_zh": "书 p.11：对手越强，越要在离位时击球；所以需要容错",
+   "reason": "书 p.11：对手越强，越要在离位时击球；所以需要容错",
+   "obs": [],
+   "visual_cue": "看被逼离位时击球是否仍进",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_P41GGC_Y5XK_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17-S1",
+    "BR-CH03-S2"
+   ],
+   "reason_zh": "书 p.82：手腕是铰链、只传递；p.25 用大肌群移拍",
+   "reason": "书 p.82：手腕是铰链、只传递；p.25 用大肌群移拍",
+   "obs": [],
+   "visual_cue": "体感为主；看手腕是否主动屈折（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_P41GGC_Y5XK_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH07-S1",
+   "reason_zh": "书 p.52：执行时不按顺序想肌肉；本节点说不要去管单个手指",
+   "reason": "书 p.52：执行时不按顺序想肌肉；本节点说不要去管单个手指",
+   "obs": [],
+   "visual_cue": "体感为主，看动作是否发紧发顿",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PJVOQKQH9DA_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137：只选成功率 80% 以上的球路，而不是冒险打高难度球",
+   "reason": "书 p.137：只选成功率 80% 以上的球路，而不是冒险打高难度球",
+   "obs": [],
+   "visual_cue": "看压力分时落点离边线多远、失误类型（OBS-16、OBS-30）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PSIDJEI5BNI_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.129、p.131：零速度 / 慢来球要击球者自己产生全部球速",
+   "reason": "书 p.129、p.131：零速度 / 慢来球要击球者自己产生全部球速",
+   "obs": [],
+   "visual_cue": "看慢球的出球深度（OBS-30）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PSIDJEI5BNI_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18",
+    "BR-CH24"
+   ],
+   "reason_zh": "书 p.86 向前进攻时把重心转到前脚；p.116 蹬后腿推动全身向前",
+   "reason": "书 p.86 向前进攻时把重心转到前脚；p.116 蹬后腿推动全身向前",
+   "obs": [
+    "OBS-10",
+    "OBS-13"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PSIDJEI5BNI_C05",
+   "source": "tree_v18",
+   "book_node": "BR-CH14",
+   "reason_zh": "书 p.76：从对方击球到离开自己拍线视觉都给球；本节点说慢球让人放松不看落地",
+   "reason": "书 p.76：从对方击球到离开自己拍线视觉都给球；本节点说慢球让人放松不看落地",
+   "obs": [],
+   "visual_cue": "看头是否跟着球的落点",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PWKGLKRM73O_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH18-S1",
+    "BR-CH07"
+   ],
+   "reason_zh": "书 p.49 转动是引擎，躯干的能量要传到拍；p.83 不用手臂拉",
+   "reason": "书 p.49 转动是引擎，躯干的能量要传到拍；p.83 不用手臂拉",
+   "obs": [],
+   "visual_cue": "看前挥启动时是否手臂先动（OBS-18）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PWKGLKRM73O_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH21",
+    "BR-CH20-S1"
+   ],
+   "reason_zh": "书 p.103 只想往上会出错；p.92–93 上旋主要来自拍绕前臂转动",
+   "reason": "书 p.103 只想往上会出错；p.92–93 上旋主要来自拍绕前臂转动",
+   "obs": [],
+   "visual_cue": "看前挥是否从下往上兜（OBS-11）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PWKGLKRM73O_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH11",
+   "reason_zh": "书 p.63–64：电视画面误导，看起来像用手臂大圈挥，其实不是",
+   "reason": "书 p.63–64：电视画面误导，看起来像用手臂大圈挥，其实不是",
+   "obs": [],
+   "visual_cue": "看引拍是否主动绕大圈",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_PWZYP_XFLFU_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH11-S2",
+    "BR-CH17-S1"
+   ],
+   "reason_zh": "书 p.65：手腕放松时拍会因惯性自然滞后；p.82 紧手腕是低效铰链",
+   "reason": "书 p.65：手腕放松时拍会因惯性自然滞后；p.82 紧手腕是低效铰链",
+   "obs": [
+    "OBS-04",
+    "OBS-35"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_QSZZ0N4FRB4_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH07-S1",
+   "reason_zh": "书 p.52：执行时忽略肌肉级分析；本节点说触球翻转太快，来不及有意识操控",
+   "reason": "书 p.52：执行时忽略肌肉级分析；本节点说触球翻转太快，来不及有意识操控",
+   "obs": [],
+   "visual_cue": "体感为主",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_QSZZ0N4FRB4_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH27-S2",
+    "BR-CH24-S1"
+   ],
+   "reason_zh": "书 p.134 用脚和眼找最佳相对位置；p.116 力量从属于击球点",
+   "reason": "书 p.134 用脚和眼找最佳相对位置；p.116 力量从属于击球点",
+   "obs": [
+    "OBS-05",
+    "OBS-33",
+    "OBS-02",
+    "OBS-16"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_QSZZ0N4FRB4_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH24",
+    "BR-CH18-S1"
+   ],
+   "reason_zh": "书 p.116：力量不来自用手臂更用力挥；p.83 不用手臂拉",
+   "reason": "书 p.116：力量不来自用手臂更用力挥；p.83 不用手臂拉",
+   "obs": [
+    "OBS-25",
+    "OBS-18",
+    "OBS-09",
+    "OBS-13"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_RVFMDK_IEWO_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH17-S1",
+   "reason_zh": "书 p.82：不要绷紧手腕去榨取小肌肉的力，放松当铰链",
+   "reason": "书 p.82：不要绷紧手腕去榨取小肌肉的力，放松当铰链",
+   "obs": [],
+   "visual_cue": "体感为主；看手腕是否主动屈折（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_RVFMDK_IEWO_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH03-S1",
+   "reason_zh": "书 p.25：只调拍头而不调整整套拍-臂系统，会失去对拍头的控制",
+   "reason": "书 p.25：只调拍头而不调整整套拍-臂系统，会失去对拍头的控制",
+   "obs": [],
+   "visual_cue": "看调整击球高度时是用拍头还是整个拍-臂系统",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_RVFMDK_IEWO_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "书 p.65：放松时拍因惯性向后滞后，这才是滞后的来源",
+   "reason": "书 p.65：放松时拍因惯性向后滞后，这才是滞后的来源",
+   "obs": [
+    "OBS-35",
+    "OBS-40"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_RVFMDK_IEWO_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH13",
+    "BR-CH18"
+   ],
+   "reason_zh": "书 p.75 等球到位再启动；p.83 用髋和腿发起",
+   "reason": "书 p.75 等球到位再启动；p.83 用髋和腿发起",
+   "obs": [
+    "OBS-18",
+    "OBS-13",
+    "OBS-03",
+    "OBS-25"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_T5MEVWBOKR4_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH24-S4",
+   "reason_zh": "书 p.120：鞭子要中途急停才能把能量传到末端",
+   "reason": "书 p.120：鞭子要中途急停才能把能量传到末端",
+   "obs": [
+    "OBS-19",
+    "OBS-09",
+    "OBS-40",
+    "OBS-10"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_T5MEVWBOKR4_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH11-S2",
+    "BR-CH20"
+   ],
+   "reason_zh": "书 p.65 放松后的被动滞后；p.95–96 拍到尽头绕前臂甩出",
+   "reason": "书 p.65 放松后的被动滞后；p.95–96 拍到尽头绕前臂甩出",
+   "obs": [
+    "OBS-24",
+    "OBS-35"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_T5MEVWBOKR4_C04",
+   "source": "tree_v18",
+   "book_node": "BR-CH24",
+   "reason_zh": "书 p.116：蹬后腿推动全身向前、转髋，是省力力量的基础；本节点说从负平衡往后倒着打",
+   "reason": "书 p.116：蹬后腿推动全身向前、转髋，是省力力量的基础；本节点说从负平衡往后倒着打",
+   "obs": [
+    "OBS-13",
+    "OBS-14"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_TZGAWR3QGV0_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "书 p.114：胸肌要稳住手臂，否则手臂被留在转动的躯干后面",
+   "reason": "书 p.114：胸肌要稳住手臂，否则手臂被留在转动的躯干后面",
+   "obs": [],
+   "visual_cue": "看前挥中持拍臂是否被留在躯干后面（OBS-40）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_TZGAWR3QGV0_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH09",
+    "BR-CH11"
+   ],
+   "reason_zh": "书 p.58 准备越简单越好；p.63 引拍不是大圈挥",
+   "reason": "书 p.58 准备越简单越好；p.63 引拍不是大圈挥",
+   "obs": [
+    "OBS-37",
+    "OBS-11",
+    "OBS-17"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_UB6SBA_KX9E_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH22-S1",
+   "reason_zh": "书 p.107：随挥被强行拉过身体、把目标放在随挥位置是错的；本节点说心里想着把肩线一直转过去",
+   "reason": "书 p.107：随挥被强行拉过身体、把目标放在随挥位置是错的；本节点说心里想着把肩线一直转过去",
+   "obs": [],
+   "visual_cue": "看随挥是否被强行拉过身体（OBS-15）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_UB6SBA_KX9E_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH24-S4",
+    "BR-CH22"
+   ],
+   "reason_zh": "书 p.120–121 不过度转髋；p.107 触球是平移，要指向目标",
+   "reason": "书 p.120–121 不过度转髋；p.107 触球是平移，要指向目标",
+   "obs": [
+    "OBS-25",
+    "OBS-19",
+    "OBS-15"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_UJPUDUX0JIA_C07",
+   "source": "tree_v18",
+   "book_node": "BR-CH17",
+   "reason_zh": "书 p.82、p.117：握拍只要防止拍子飞出、保持拍面角度即可；本节点说握得过松（0/10）拍会在触球时转动",
+   "reason": "书 p.82、p.117：握拍只要防止拍子飞出、保持拍面角度即可；本节点说握得过松（0/10）拍会在触球时转动",
+   "obs": [],
+   "visual_cue": "看触球时拍是否在手里转",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_UQCOBI2OTSS_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH04"
+   ],
+   "reason_zh": "书 p.93：随挥在非持拍肩以下仍有重上旋，几乎不靠向上平移；p.34 拍面与路径的配合",
+   "reason": "书 p.93：随挥在非持拍肩以下仍有重上旋，几乎不靠向上平移；p.34 拍面与路径的配合",
+   "obs": [
+    "OBS-11",
+    "OBS-31",
+    "OBS-20",
+    "OBS-26"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_VG8LBXOHM3E_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "书 p.132–133：比赛里机制不好球也能进，大脑仍给奖励，所以难以在比赛条件下改动作",
+   "reason": "书 p.132–133：比赛里机制不好球也能进，大脑仍给奖励，所以难以在比赛条件下改动作",
+   "obs": [],
+   "visual_cue": "看练习来球变化与结果是否脱节",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_VG8LBXOHM3E_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH12",
+    "BR-CH04-S4"
+   ],
+   "reason_zh": "书 p.71 用腿和躯干调整、手臂-躯干关系不变；p.35 每个正手都略有不同",
+   "reason": "书 p.71 用腿和躯干调整、手臂-躯干关系不变；p.35 每个正手都略有不同",
+   "obs": [],
+   "visual_cue": "看不同高度来球时腿和躯干是否参与调整（OBS-14、OBS-23）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WD4YRQW3TOC_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH05",
+   "reason_zh": "书 p.38–41：拍面在击球区要保持角度，主动翻转会压窄击球窗口",
+   "reason": "书 p.38–41：拍面在击球区要保持角度，主动翻转会压窄击球窗口",
+   "obs": [
+    "OBS-28",
+    "OBS-67",
+    "OBS-27",
+    "OBS-24"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WFIRPMUTZRO_C01",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH19",
+    "BR-CH18-S3"
+   ],
+   "reason_zh": "书 p.89 腹部把肩胸扭回；p.83 脚注胸-髋分离在腹部储能",
+   "reason": "书 p.89 腹部把肩胸扭回；p.83 脚注胸-髋分离在腹部储能",
+   "obs": [],
+   "visual_cue": "体感为主；看准备时肩线是否比髋线多转",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WFIRPMUTZRO_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH12",
+   "reason_zh": "书 p.71–72：用躯干倾斜调整；本节点说只在单一直立平面转动、没有髋屈",
+   "reason": "书 p.71–72：用躯干倾斜调整；本节点说只在单一直立平面转动、没有髋屈",
+   "obs": [
+    "OBS-22",
+    "OBS-29",
+    "OBS-14"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WOVEWH7FFFC_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH17-S1",
+   "reason_zh": "书 p.82：手腕紧是低效铰链，拍子无法自由甩",
+   "reason": "书 p.82：手腕紧是低效铰链，拍子无法自由甩",
+   "obs": [],
+   "visual_cue": "看手腕在前挥中是否僵住（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WOVEWH7FFFC_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "书 p.64–66：不要有意识地摆滞后，交给被动的惯性",
+   "reason": "书 p.64–66：不要有意识地摆滞后，交给被动的惯性",
+   "obs": [],
+   "visual_cue": "体感为主",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WVA4XQPCAQS_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "书 p.134：心里要有身体与球最佳相对位置，再用移动去到达",
+   "reason": "书 p.134：心里要有身体与球最佳相对位置，再用移动去到达",
+   "obs": [],
+   "visual_cue": "看每拍击球点相对身体是否一致",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WVA4XQPCAQS_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH12",
+    "BR-CH04-S1"
+   ],
+   "reason_zh": "书 p.71 要用有效的身体排列；p.30 侧对时只能用小肌肉",
+   "reason": "书 p.71 要用有效的身体排列；p.30 侧对时只能用小肌肉",
+   "obs": [],
+   "visual_cue": "看触球时髋胸是否还侧对（OBS-09）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WZLMV4ASG9S_C01",
+   "source": "tree_v18",
+   "book_node": "BR-CH20",
+   "reason_zh": "书 p.104：让拍向外甩到球，而不是直冲向球",
+   "reason": "书 p.104：让拍向外甩到球，而不是直冲向球",
+   "obs": [
+    "OBS-36",
+    "OBS-30",
+    "OBS-32"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WZLMV4ASG9S_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH05",
+    "BR-CH22"
+   ],
+   "reason_zh": "书 p.38 翻转是随挥的一部分不是挥拍的一部分；p.109 随挥里拍继续转是被动的",
+   "reason": "书 p.38 翻转是随挥的一部分不是挥拍的一部分；p.109 随挥里拍继续转是被动的",
+   "obs": [
+    "OBS-15",
+    "OBS-24",
+    "OBS-31"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_WZLMV4ASG9S_C06",
+   "source": "tree_v18",
+   "book_node": "BR-CH11",
+   "reason_zh": "书 p.63：引拍不是大圈挥；本节点说不要从高引拍环直接翻拍",
+   "reason": "书 p.63：引拍不是大圈挥；本节点说不要从高引拍环直接翻拍",
+   "obs": [
+    "OBS-17",
+    "OBS-11"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_XLS469ZVMPU_C02",
+   "source": "tree_v18",
+   "book_node": "BR-CH18",
+   "reason_zh": "书 p.83、p.86：后腿可向后踢到前腿后面以平衡转动",
+   "reason": "书 p.83、p.86：后腿可向后踢到前腿后面以平衡转动",
+   "obs": [
+    "OBS-10",
+    "OBS-13"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_XLS469ZVMPU_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH18-S2",
+   "reason_zh": "书 p.84–85：脚要允许离地，非持拍脚抬起可让转动不受限",
+   "reason": "书 p.84–85：脚要允许离地，非持拍脚抬起可让转动不受限",
+   "obs": [
+    "OBS-64"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_X_WIG59WR9Y_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH17-S1",
+    "BR-CH05-S1"
+   ],
+   "reason_zh": "书 p.82 手腕不该主动发力；p.38 拍面要靠放松保持，主动拉会破坏",
+   "reason": "书 p.82 手腕不该主动发力；p.38 拍面要靠放松保持，主动拉会破坏",
+   "obs": [],
+   "visual_cue": "看触球前后手腕是否主动屈折（OBS-24）",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C__QU1LOWKLAW_C03",
+   "source": "tree_v18",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "书 p.137–138：目标太激进时把目标往里收、抬高过网",
+   "reason": "书 p.137–138：目标太激进时把目标往里收、抬高过网",
+   "obs": [
+    "OBS-16",
+    "OBS-30"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_0M3BMFDDSHI_C02",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH11-S1",
+    "BR-CH12"
+   ],
+   "reason_zh": "书 p.63：不要把手臂收近身体来降手；p.71 躯干-手臂夹角太窄手臂甩不出",
+   "reason": "书 p.63：不要把手臂收近身体来降手；p.71 躯干-手臂夹角太窄手臂甩不出",
+   "obs": [
+    "OBS-02",
+    "OBS-20",
+    "OBS-01",
+    "OBS-33",
+    "OBS-32"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_0M3BMFDDSHI_C03",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH19-S1",
+    "BR-CH23-S2"
+   ],
+   "reason_zh": "书 p.89 上半身要整体转回；p.111 上半身不同步",
+   "reason": "书 p.89 上半身要整体转回；p.111 上半身不同步",
+   "obs": [
+    "OBS-40",
+    "OBS-07",
+    "OBS-18"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "N-C_0M3BMFDDSHI_C04",
+   "source": "tree_v18",
+   "book_node": [
+    "BR-CH12",
+    "BR-CH11"
+   ],
+   "reason_zh": "书 p.63、p.71：降手用腿下坐或躯干倾斜，不靠把手臂收近或塌下",
+   "reason": "书 p.63、p.71：降手用腿下坐或躯干倾斜，不靠把手臂收近或塌下",
+   "obs": [
+    "OBS-29",
+    "OBS-11",
+    "OBS-31",
+    "OBS-57"
+   ],
+   "visual_cue": "",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:0m3BMfDDShI",
+   "source": "episode",
+   "book_node": [
+    "BR-CH03",
+    "BR-CH04"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH03, BR-CH04，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH03, BR-CH04，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:2Nn9tyMECZU",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH04-S3"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH04-S3，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH04-S3，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:42BfbKsTGb4",
+   "source": "episode",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:5KdScDKxVSI",
+   "source": "episode",
+   "book_node": [
+    "BR-CH23-S4",
+    "BR-CH02"
+   ],
+   "reason_zh": "书 p.113–114：持拍侧胸肌稳住手臂并在触球前把拍往前带；p.21–22 一切从属于击球本身（本期强调水平肩内收是触球基础）",
+   "reason": "书 p.113–114：持拍侧胸肌稳住手臂并在触球前把拍往前带；p.21–22 一切从属于击球本身（本期强调水平肩内收是触球基础）",
+   "obs": [],
+   "visual_cue": "看触球前胸-臂夹角是否收小（OBS-40）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:5jHCDc44SQM",
+   "source": "episode",
+   "book_node": "BR-CH19",
+   "reason_zh": "书 p.89：髋启动后几毫秒腹部把肩胸扭回，展开肩髋分离；本期讲腹部螺旋",
+   "reason": "书 p.89：髋启动后几毫秒腹部把肩胸扭回，展开肩髋分离；本期讲腹部螺旋",
+   "obs": [],
+   "visual_cue": "看准备结束时肩线是否比髋线转得多（OBS-08）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:6ak4ZScH_gc",
+   "source": "episode",
+   "book_node": [
+    "BR-CH18",
+    "BR-CH19"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH18, BR-CH19，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH18, BR-CH19，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:8r09TliP-Ak",
+   "source": "episode",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH28-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH28-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:9NirSL59an0",
+   "source": "episode",
+   "book_node": [
+    "BR-CH04-S2",
+    "BR-CH21-S2"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH04-S2, BR-CH21-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH04-S2, BR-CH21-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:Am8j1Zw5KrE",
+   "source": "episode",
+   "book_node": [
+    "BR-CH23-S4",
+    "BR-CH05"
+   ],
+   "reason_zh": "书 p.113–114 胸肌把拍往前带；p.38–42 拍面角度在击球区基本保持，只允许很小的自然闭合",
+   "reason": "书 p.113–114 胸肌把拍往前带；p.38–42 拍面角度在击球区基本保持，只允许很小的自然闭合",
+   "obs": [],
+   "visual_cue": "看触球前后拍面是否大幅翻转（OBS-28）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:AppdZqxH_2k",
+   "source": "episode",
+   "book_node": "BR-CH14",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH14，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH14，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:BbGzWTp5pCM",
+   "source": "episode",
+   "book_node": "BR-CH27",
+   "reason_zh": "书 p.131–132：练习要比比赛更难；减速挥拍能让球进，却掩盖了缺陷",
+   "reason": "书 p.131–132：练习要比比赛更难；减速挥拍能让球进，却掩盖了缺陷",
+   "obs": [],
+   "visual_cue": "看练习中的挥速与步伐强度",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:EkzzGZkqCgc",
+   "source": "episode",
+   "book_node": "BR-CH20",
+   "reason_zh": "书 p.95–96：向外挥、手腕放松，拍到活动范围尽头自然绕前臂甩出",
+   "reason": "书 p.95–96：向外挥、手腕放松，拍到活动范围尽头自然绕前臂甩出",
+   "obs": [],
+   "visual_cue": "看前挥第一段手是先往外还是直奔球（OBS-36）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:ExkBtFRhUWY",
+   "source": "episode",
+   "book_node": [
+    "BR-CH24",
+    "BR-CH18-S1"
+   ],
+   "reason_zh": "书 p.116–117：蹬后腿推动全身向前并转髋；p.83 不用手臂拉。本期：后脚没到球后方、只能用手臂够球",
+   "reason": "书 p.116–117：蹬后腿推动全身向前并转髋；p.83 不用手臂拉。本期：后脚没到球后方、只能用手臂够球",
+   "obs": [],
+   "visual_cue": "看前挥中重心是否向前转移（OBS-13）",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:FxDmVi3EFnE",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH04-S3"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH04-S3，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH04-S3，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:JzcA_ku7Yhk",
+   "source": "episode",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:KU7FHy1qQOI",
+   "source": "episode",
+   "book_node": "BR-CH24-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:LoSrMj-Qxkc",
+   "source": "episode",
+   "book_node": [
+    "BR-CH23-S4",
+    "BR-CH10-S3"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S4, BR-CH10-S3，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S4, BR-CH10-S3，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:OYf48k-cfNI",
+   "source": "episode",
+   "book_node": "BR-CH01",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH01，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH01，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:PjvOQkqH9DA",
+   "source": "episode",
+   "book_node": "BR-CH28",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH28，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH28，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:Psidjei5BnI",
+   "source": "episode",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:PwkGLkRm73o",
+   "source": "episode",
+   "book_node": [
+    "BR-CH18-S1",
+    "BR-CH04-S1"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH18-S1, BR-CH04-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH18-S1, BR-CH04-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:QrRYuVjVibU",
+   "source": "episode",
+   "book_node": [
+    "BR-CH21",
+    "BR-CH12"
+   ],
+   "reason_zh": "书 p.100、p.71–72：低球用腿坐低、躯干倾斜，保持正常的机制",
+   "reason": "书 p.100、p.71–72：低球用腿坐低、躯干倾斜，保持正常的机制",
+   "obs": [],
+   "visual_cue": "看低球时躯干是否更倾斜（OBS-14）",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:Qszz0N4fRb4",
+   "source": "episode",
+   "book_node": "BR-CH25-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH25-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH25-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:RVfmDk-iEwo",
+   "source": "episode",
+   "book_node": "BR-CH17-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH17-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH17-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:T5meVwBOKR4",
+   "source": "episode",
+   "book_node": "BR-CH24-S4",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:UB6SbA_KX9E",
+   "source": "episode",
+   "book_node": [
+    "BR-CH24-S4",
+    "BR-CH22-S1"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4, BR-CH22-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4, BR-CH22-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:Vg8lbXOhM3E",
+   "source": "episode",
+   "book_node": "BR-CH27-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:WoVEWh7fFfc",
+   "source": "episode",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH11-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH11-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:_Qu1LOwklAw",
+   "source": "episode",
+   "book_node": "BR-CH28-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH28-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH28-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:aPcKJDadzek",
+   "source": "episode",
+   "book_node": "BR-CH18",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH18，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH18，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:dZadhzVEsds",
+   "source": "episode",
+   "book_node": [
+    "BR-CH04-S3",
+    "BR-CH26"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH04-S3, BR-CH26，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH04-S3, BR-CH26，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:gehRK0Y6AdQ",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH21-S1",
+    "BR-CH04-S3"
+   ],
+   "reason_zh": "书 p.92 刷球说法误导、要 out-up-through；p.103 丢了穿过会旋进网；p.34 路径是缓和斜线",
+   "reason": "书 p.92 刷球说法误导、要 out-up-through；p.103 丢了穿过会旋进网；p.34 路径是缓和斜线",
+   "obs": [],
+   "visual_cue": "看挥拍路径是否过陡（OBS-31）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:hNVbbPEob3g",
+   "source": "episode",
+   "book_node": "BR-CH23-S4",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S4，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S4，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:hqganBxzQNM",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20-S1",
+    "BR-CH23-S4"
+   ],
+   "reason_zh": "书 p.92–93：上旋主要来自拍绕前臂转动而非向上平移；p.114 胸肌稳住并带动手臂",
+   "reason": "书 p.92–93：上旋主要来自拍绕前臂转动而非向上平移；p.114 胸肌稳住并带动手臂",
+   "obs": [],
+   "visual_cue": "看前挥路径是否接近水平绕身体（OBS-11）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:lCKDP2gKR_Y",
+   "source": "episode",
+   "book_node": [
+    "BR-CH17-S1",
+    "BR-CH03-S2"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH17-S1, BR-CH03-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH17-S1, BR-CH03-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:p41GGc_y5Xk",
+   "source": "episode",
+   "book_node": [
+    "BR-CH17",
+    "BR-CH30"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH17, BR-CH30，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH17, BR-CH30，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:pWzyP-xfLfU",
+   "source": "episode",
+   "book_node": "BR-CH11-S2",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH11-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH11-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:q6LrQYDvxmY",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20-S2",
+    "BR-CH24-S1",
+    "BR-CH10"
+   ],
+   "reason_zh": "书 p.96、p.98 触球点被拉近身体甩鞭消失；p.116 必须离开身体击球；p.62 非持拍手横过身体",
+   "reason": "书 p.96、p.98 触球点被拉近身体甩鞭消失；p.116 必须离开身体击球；p.62 非持拍手横过身体",
+   "obs": [],
+   "visual_cue": "看触球时球离持拍侧髋的横向距离（OBS-33）",
+   "holdout": true
+  },
+  {
+   "node_id": "EP:tzgAWr3QGv0",
+   "source": "episode",
+   "book_node": [
+    "BR-CH23",
+    "BR-CH12"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH23, BR-CH12，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH23, BR-CH12，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:uJpuDUx0jIA",
+   "source": "episode",
+   "book_node": "BR-CH01-S1",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH01-S1，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH01-S1，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:uQcObi2oTSs",
+   "source": "episode",
+   "book_node": "BR-CH20",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:wFIrPMutzRo",
+   "source": "episode",
+   "book_node": "BR-CH19",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH19，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH19，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:wFOy0RKWBTg",
+   "source": "episode",
+   "book_node": "BR-CH20",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:wVa4XQPcaqs",
+   "source": "episode",
+   "book_node": "BR-CH27-S2",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S2，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH27-S2，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:wd4YRQW3TOc",
+   "source": "episode",
+   "book_node": [
+    "BR-CH20",
+    "BR-CH05"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH05，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20, BR-CH05，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:wzLMv4ASg9s",
+   "source": "episode",
+   "book_node": "BR-CH20",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH20，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:xLs469ZVMPU",
+   "source": "episode",
+   "book_node": [
+    "BR-CH24-S4",
+    "BR-CH18"
+   ],
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4, BR-CH18，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH24-S4, BR-CH18，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  },
+  {
+   "node_id": "EP:x_WIg59Wr9Y",
+   "source": "episode",
+   "book_node": "BR-CH23-S3",
+   "reason_zh": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S3，理由见对应 N-P 条目",
+   "reason": "本期主问题（tree_v18 问题节点）挂在 BR-CH23-S3，理由见对应 N-P 条目",
+   "obs": [],
+   "visual_cue": "见对应 N-P 节点的视觉 cue",
+   "holdout": false
+  }
+ ]
+}

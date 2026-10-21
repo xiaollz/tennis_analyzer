@@ -1,0 +1,692 @@
+{
+ "schema": "book_visual_v1",
+ "_comment": "rear_fixture=true 仅当 catalog camera 为 B/any，且正后方固定样本 rear_20261019 没有实测 3/3 unclear；OBS-40/19/71 虽为 B 机位但实测看不清，记 false。NEW-* 为未入 catalog 的候选。",
+ "book_nodes": [
+  {
+   "book_node": "BR-CH01",
+   "obs": [
+    {
+     "id": "OBS-16",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "被挤住或离位时球是否仍能进（容错是否存在）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-33",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "离位时触球点离身体多远（CH01-S1 机制不容错 vs 只是位置不好）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH02",
+   "obs": [
+    {
+     "id": "OBS-09",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球时是否还侧着身（CH02-S1）",
+     "source": "catalog"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH03",
+   "obs": [
+    {
+     "id": "OBS-01",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "触球时拍臂系统是否整体移动、夹角是否保持（CH03-S1 的可见部分；夹角本身仍需侧面）",
+     "source": "catalog"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH04",
+   "obs": [
+    {
+     "id": "OBS-09",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球时髋胸是否侧对、手臂被卡（CH04-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-31",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "挥拍路径是否过陡（CH04-S3）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-11",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "手是否先准备在球下再沿斜线向上（CH04-S3）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-28",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "触球拍面是否略闭（CH04-S2）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH05",
+   "obs": [
+    {
+     "id": "OBS-28",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "击球区拍面角度是否保持（CH05-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-24",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "触球前后手腕是否快速屈折 / 主动翻拍（CH05-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-67",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "触球后拍是否立刻翻转而非继续向前（CH05-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH10",
+   "obs": [
+    {
+     "id": "OBS-08",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "准备结束时肩线和髋线转离目标多少（CH10 转离；CH10-S3 肩转幅度）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-07",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "非持拍手是否横过身体、是否在转完前离拍（CH10-S1）",
+     "source": "catalog"
+    },
+    {
+     "id": "NEW-SHOULDER_VS_HIP_PREP",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "准备结束时肩线是否比髋线转得多（CH10 肩比髋多转；正后方三跑 shoulders_farther_than_hips 3/3，未入 catalog）",
+     "source": "video:ui-RFRdQKRk@0:37"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH11",
+   "obs": [
+    {
+     "id": "OBS-02",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球时手臂是否贴近躯干（CH11-S1 把手臂收近身体来降手）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-32",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥中肘是否直线拖过身体（CH11-S1 下游）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-35",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "前挥开始时拍头落后手多少（CH11-S2 滞后是否被动产生）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-04",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "引拍顶点是否停住（CH11 引拍没有真正的挥）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH12",
+   "obs": [
+    {
+     "id": "OBS-29",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "低球时是否靠躯干倾斜 / 侧屈调整（CH12-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-14",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "低球时躯干前倾是否加大（CH12-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-23",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "低球时是否屈膝坐低（CH12-S1）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-02",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "躯干-手臂夹角是否被压窄（CH12 原则）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH13",
+   "obs": [
+    {
+     "id": "OBS-04",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "准备完成后是否有等待（CH13-S1；书 p.75 认为等待正常）",
+     "source": "attach"
+    },
+    {
+     "id": "NEW-SWING_START_VS_BOUNCE",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "前挥启动时球在弹跳后的哪一段（CH13-S1 启动看视觉信号；粗枝 2 的缺失事实）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-57",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "开始转体时拍头相对球的高度（CH13 与 CH04-S3 交界）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH14",
+   "obs": [
+    {
+     "id": "NEW-HEAD_AT_CONTACT",
+     "camera": "any",
+     "rear_fixture": false,
+     "answers_zh": "触球时头是否仍对着击球点（CH14-S1 打框误击）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH15",
+   "obs": [
+    {
+     "id": "OBS-06",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥开始时站位朝向（CH15）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-09",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球时髋是否已正对目标（CH15-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-10",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "后脚随挥是否绕到身前（CH15-S2 书 p.79 的转髋指示）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH17",
+   "obs": [
+    {
+     "id": "OBS-24",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "触球前后手腕是否主动屈折（CH17-S1 手腕紧）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-27",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "拍臂夹角是否保持还是折断（CH17-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH18",
+   "obs": [
+    {
+     "id": "OBS-25",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥启动时髋是否先于肩转动（CH18-S1 用手臂拉代替转体）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-18",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥启动时谁先动（CH18-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-10",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "后脚是否离地 / 随挥绕前或踢后（CH18-S2 脚解放髋）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-05",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "击球前是否有调整步（CH18-S2 脚钉死的上游）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-38",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "站距（CH18-S2 上游条件）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-13",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "重心是否转到前脚（CH18 向前击球）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH19",
+   "obs": [
+    {
+     "id": "OBS-40",
+     "camera": "B",
+     "rear_fixture": false,
+     "answers_zh": "前挥中手臂是否与胸一起转（CH19-S1 只有持拍臂自己走；正后方 3/3 看不清）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-25",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "髋先启动、腹部再展开的顺序（CH19）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-07",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥开始时非持拍手是否已垂下还是随胸转回（CH19-S1、CH19-S3）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-60",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前臂加速开始时胸已转过网多少（CH19-S3 过早 / 过多）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH20",
+   "obs": [
+    {
+     "id": "OBS-36",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "前挥第一段手是先往外还是直奔球（CH20-S1 没向外）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-33",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球点离持拍侧髋的横向距离（CH20-S2 触球点被拉近）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-31",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "挥拍路径陡度（CH20 三向量）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-11",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "手的路径（CH20）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-15",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "随挥终点高低（CH20：随挥在肩下仍可有重上旋）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH21",
+   "obs": [
+    {
+     "id": "OBS-14",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "低球躯干是否倾斜（CH21-S3）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-28",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "低球拍面是否打开（CH21-S2）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-15",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "低球随挥是否向前延伸（CH21-S1 丢了穿过）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-16",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "低球是否下网（CH21-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH22",
+   "obs": [
+    {
+     "id": "OBS-15",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "随挥是否被强拉过身体、肘是否在胸前结束（CH22-S1、CH22-S2）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-67",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "触球后是否仍有向前速度（CH22-S2）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH23",
+   "obs": [
+    {
+     "id": "OBS-09",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "触球时髋是否转回（CH23-S1 髋转不够）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-10",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "击球腿是否蹬地引导、后脚是否被带走（CH23-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-07",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "非持拍手肘是否过早拉开（CH23-S2）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-40",
+     "camera": "B",
+     "rear_fixture": false,
+     "answers_zh": "手臂是否落后躯干线太多（CH23-S4；正后方 3/3 看不清）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-15",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "心里挥拍是否在触球结束、随挥是否强拉（CH23-S3）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH24",
+   "obs": [
+    {
+     "id": "OBS-19",
+     "camera": "B",
+     "rear_fixture": false,
+     "answers_zh": "躯干在触球前是否减速（CH24-S4 鞭打急停；正后方 3/3 看不清）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-71",
+     "camera": "B",
+     "rear_fixture": false,
+     "answers_zh": "骨盆是否在触球前减速停住（CH24-S4；正后方 3/3 看不清）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-09",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "髋是否转到指向目标附近（CH24-S4）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-33",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "加力后触球点是否仍离开身体（CH24-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-13",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "蹬后腿是否带动身体向前（CH24-S3）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH25",
+   "obs": [
+    {
+     "id": "OBS-24",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "放松是否丢失：手腕是否主动屈折（CH25-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH26",
+   "obs": [
+    {
+     "id": "OBS-16",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "加力后失误是否激增（CH26-S1）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-30",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "出球深度是否失控（CH26-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH27",
+   "obs": [
+    {
+     "id": "OBS-05",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "移动后是否有调整步去找位置（CH27-S2）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-33",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "每拍身体与球的距离是否一致（CH27-S2）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-16",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "慢来球 / 进攻球是否失误（CH27-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH28",
+   "obs": [
+    {
+     "id": "OBS-30",
+     "camera": "B",
+     "rear_fixture": true,
+     "answers_zh": "落点离底线多远（CH28-S1 球路选择）",
+     "source": "attach"
+    },
+    {
+     "id": "OBS-16",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "进攻球失误率（CH28-S1）",
+     "source": "attach"
+    }
+   ]
+  },
+  {
+   "book_node": "BR-CH30",
+   "obs": [
+    {
+     "id": "OBS-01",
+     "camera": "any",
+     "rear_fixture": true,
+     "answers_zh": "近身 / 低短球时拍臂夹角是否保持（CH30-S1；夹角本身需侧面）",
+     "source": "catalog"
+    },
+    {
+     "id": "OBS-03",
+     "camera": "S",
+     "rear_fixture": false,
+     "answers_zh": "是否在身前接球（CH30-S1）",
+     "source": "catalog"
+    }
+   ]
+  }
+ ],
+ "rear_fixture_obs": [
+  {
+   "id": "OBS-18",
+   "why_zh": "已答：正后方三跑 arm_first 3/3。前挥启动时谁先往目标方向动，正后方能看到髋、肩、臂的先后"
+  },
+  {
+   "id": "OBS-25",
+   "why_zh": "已答：正后方三跑 shoulders_lead_hips 3/3。肩线与髋线谁先转，正后方看两条线的转动最清楚"
+  },
+  {
+   "id": "OBS-09",
+   "why_zh": "已答：正后方三跑 square_or_past 3/3。触球帧髋线是否朝网，正后方能直接看到髋线方向"
+  },
+  {
+   "id": "OBS-08",
+   "why_zh": "已答：正后方三跑 small_turn 2/3（live 有 DRIFT）。准备结束时肩线、髋线转离多少，正后方能看到背部转出多少"
+  },
+  {
+   "id": "OBS-10",
+   "why_zh": "可答未测：后脚脚跟是否离地、随挥绕前还是踢后，正后方全身入画即可见（fixture §6 待补）"
+  },
+  {
+   "id": "OBS-04",
+   "why_zh": "可答未测：引拍顶点是否停顿，任何机位都可见，需按帧计时（fixture §6 待补）"
+  },
+  {
+   "id": "OBS-05",
+   "why_zh": "可答未测：击球前有无分步和调整步，任何机位可见"
+  },
+  {
+   "id": "OBS-15",
+   "why_zh": "可答未测：随挥终点与是否马上缠回身体，任何机位可见（旧事实已有「随挥落左肩」文字描述）"
+  },
+  {
+   "id": "OBS-38",
+   "why_zh": "可答未测：站距与肩宽之比，正后方左右方向最准（旧事实已有「宽开放站位」文字描述）"
+  },
+  {
+   "id": "OBS-33",
+   "why_zh": "可答未测：触球时球离持拍侧髋的横向距离，正后方横向方向不被压缩（旧事实已有「横向间距明显」）"
+  },
+  {
+   "id": "OBS-36",
+   "why_zh": "可答未测：前挥第一段手先往外还是直奔球，横向运动正后方可见"
+  },
+  {
+   "id": "OBS-32",
+   "why_zh": "可答未测：肘是否直线拖过躯干，横向运动正后方可见"
+  },
+  {
+   "id": "OBS-02",
+   "why_zh": "可答未测：触球时手臂与躯干侧面的间隙，正后方可见"
+  },
+  {
+   "id": "OBS-07",
+   "why_zh": "可答未测：非持拍手是否横过身体 / 何时离拍，正后方可见"
+  },
+  {
+   "id": "OBS-16",
+   "why_zh": "可答未测：每球结果（口播或落点），与机位无关"
+  }
+ ]
+}

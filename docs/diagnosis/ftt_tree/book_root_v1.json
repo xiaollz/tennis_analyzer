@@ -1,0 +1,1409 @@
+{
+ "schema": "book_root_v1",
+ "source": "original.pdf",
+ "trunk": {
+  "id": "BR-TRUNK",
+  "claim_zh": "正手的根是容错的击球：在身前、离开身体、保持拍臂夹角与拍面角度地击球，小误差也能成功；转离再转回的旋转动力链（髋先、腹胸跟上、手臂放松传力）只是为了让同一个容错击球更快，不是另一个独立目标。",
+  "quotes": [
+   {
+    "text": "If you understand contact, you understand the forehand.",
+    "page": 22
+   },
+   {
+    "text": "The rotational kinetic chain’s only purpose is to increase racket head speed through contact.",
+    "page": 23
+   },
+   {
+    "text": "Most forehand inconsistency is not proximally caused by those small preparation or execution inaccuracies, but rather by a swing which lacks the fault tolerance to handle them.",
+    "page": 13
+   },
+   {
+    "text": "The rotational kinetic chain is merely a tool we employ to increase the speed of translational contact.",
+    "page": 108
+   }
+  ]
+ },
+ "chapters": [
+  {
+   "id": "BR-CH01",
+   "title": "What is Fault Tolerance Anyway? / The Modern Forehand – A Biomechanical Masterpiece / Carnage and Misconceptions from Chronically Bad Coaching",
+   "pages": [
+    10,
+    19
+   ],
+   "principle_zh": "容错是正手的目标：不是完美时打得最好，而是有小误差时仍能成功。不稳定的根源是机制扛不住误差，而不是误差本身；教练要找成因，不是复述看得见的症状。",
+   "quotes": [
+    {
+     "text": "Elite forehands are also fault tolerant. They can tolerate small inaccuracies in preparation, timing, or execution without failing.",
+     "page": 10
+    },
+    {
+     "text": "Most forehand inconsistency is not proximally caused by those small preparation or execution inaccuracies, but rather by a swing which lacks the fault tolerance to handle them.",
+     "page": 13
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH01-S1",
+     "symptom_zh": "准备击球时紧张、觉得一点小错就会出界或下网",
+     "mechanism_zh": "机制本身错了，不是练得少；需要从根本上改动作模式",
+     "quotes": [
+      {
+       "text": "like the smallest mistake will send the ball flying into the back fence or spiraling down into the bottom of the net, that is because you are performing the forehand mechanically wrong.",
+       "page": 13
+      }
+     ]
+    },
+    {
+     "id": "BR-CH01-S2",
+     "symptom_zh": "越加速、越加上旋，失误越多",
+     "mechanism_zh": "机制有缺陷时，更快的速度和更陡的挥拍路径会放大核心问题",
+     "quotes": [
+      {
+       "text": "If a player has biomechanical issues in their swing, then swinging faster and attempting to generate topspin will likely decrease their margin for error",
+       "page": 16
+      }
+     ],
+     "prescription_zh": "机制没理顺前，先用更平、更慢的挥拍保证每球一样地击中"
+    },
+    {
+     "id": "BR-CH01-S3",
+     "symptom_zh": "被纠正了看得见的错误（脚的位置、手腕、下网），却没有变好",
+     "mechanism_zh": "看得见的错误多半是系统性问题的症状；只纠正症状会把一种错换成另一种错",
+     "quotes": [
+      {
+       "text": "in almost every case, these observed flaws are merely symptoms of an underlying systemic issue, not the cause of the failing stroke themselves.",
+       "page": 17
+      },
+      {
+       "text": "We diagnose the cause and then help the student with the cause, rather than simply relaying the clues themselves back to the student",
+       "page": 18
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH02",
+   "title": "Why Start With Contact? / Contact at a Glance",
+   "pages": [
+    21,
+    23
+   ],
+   "principle_zh": "一切从击球出发：所有身体动作都从属于击球本身；动力链只是为了让同样的容错击球更快。",
+   "quotes": [
+    {
+     "text": "all of the body movement that gets you to the strike is fundamentally subordinate to the strike itself.",
+     "page": 21
+    },
+    {
+     "text": "If you understand contact, you understand the forehand.",
+     "page": 22
+    },
+    {
+     "text": "The rotational kinetic chain’s only purpose is to increase racket head speed through contact.",
+     "page": 23
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH02-S1",
+     "symptom_zh": "触球时还侧着身（髋胸没转回目标）",
+     "mechanism_zh": "被教「侧身」却不知道为什么侧身：侧身只是为了转回来，转不回来反而毁掉容错",
+     "quotes": [
+      {
+       "text": "SO MANY recreational players hit their forehands while still sideways, instead of allowing their hips and chest to rotate back towards the target as they swing. This destroys the stroke’s fault tolerance",
+       "page": 21
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH03",
+   "title": "The Fundamental Theorem of Tennis",
+   "pages": [
+    24,
+    26
+   ],
+   "principle_zh": "两条定理：拍与前臂保持 90–135° 的夹角；在身前触球。拍的位置由大肌群整体移动来调整，手腕只稳定、不发力。",
+   "quotes": [
+    {
+     "text": "1. The racket makes a 90-135o angle with the forearm 2. The racket strikes the ball in front of the body (in a pinch, in front of the forearm) Any shot which follows these two rules will work.",
+     "page": 24
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH03-S1",
+     "symptom_zh": "只动拍头去够球，拍头失控",
+     "mechanism_zh": "只调拍头而不调整整套拍-臂系统，会拉长拍臂夹角，失去对拍头的精细控制",
+     "quotes": [
+      {
+       "text": "Adjusting with just the racket head, instead of the entire racket-arm system elongates the angle between the arm and racket and causes you to lose fine control over the racket head’s movements.",
+       "page": 25
+      }
+     ],
+     "prescription_zh": "保持拍与前臂的夹角，用腿和躯干把整套拍-臂系统移到球后"
+    },
+    {
+     "id": "BR-CH03-S2",
+     "symptom_zh": "为了保持夹角而手腕发紧",
+     "mechanism_zh": "夹角可以用很小的张力保持；秘诀是用最大的肌群移动拍子，小肌群只做稳定",
+     "quotes": [
+      {
+       "text": "The secret is moving the racket around using the biggest muscles in the body, rather than the small muscles in the forearm and wrist.",
+       "page": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH04",
+   "title": "Topspin Changes the Forehand",
+   "pages": [
+    27,
+    36
+   ],
+   "principle_zh": "上旋接触：拍向上又向前穿过球、拍面略闭，二者必须成对；身体转动不是产生上旋的必要条件，只为加速同一个接触；触球时髋胸正对目标，手臂最自由。",
+   "quotes": [
+    {
+     "text": "The simplest effective topspin forehand consists of taking our right angle racket-arm system, placing it below the ball, and then swinging it up and forward through the ball.",
+     "page": 28
+    },
+    {
+     "text": "Body rotation is not necessary to create topspin",
+     "page": 29
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH04-S1",
+     "symptom_zh": "触球时髋胸仍侧对，手臂被卡住、只能用小肌肉",
+     "mechanism_zh": "侧对时拍几乎不能上下左右调整，也不再由背和胸的大肌群控制，只能靠肱三头肌这类小肌肉",
+     "quotes": [
+      {
+       "text": "When, instead, our hips and chest are still sideways at contact, the arm is much more impinged.",
+       "page": 30
+      },
+      {
+       "text": "the player would need to use smaller, weaker muscles like the triceps in order to move the racket.",
+       "page": 30
+      }
+     ],
+     "prescription_zh": "影子挥拍：先正对目标挥，再从转开 10°、20° 开始逐步加转回的幅度"
+    },
+    {
+     "id": "BR-CH04-S2",
+     "symptom_zh": "拍面朝上或水平时，一加速就出界",
+     "mechanism_zh": "拍面不闭时摩擦把球抬得太多；闭拍面与向上的挥拍路径必须同时存在",
+     "quotes": [
+      {
+       "text": "Only together do the upward swing path and the closed string angle function to produce a high margin, high net clearance, dipping, topspin shot.",
+       "page": 34
+      }
+     ]
+    },
+    {
+     "id": "BR-CH04-S3",
+     "symptom_zh": "刻意「从低到高」挥得太陡，早一点晚一点就失误",
+     "mechanism_zh": "最优路径是缓和的斜线；把手准备在预期击球高度以下，自然就向上穿过球",
+     "quotes": [
+      {
+       "text": "The optimal swing path on the forehand (in the back-to-front plane) is a slight diagonal3.",
+       "page": 34
+      },
+      {
+       "text": "The best way to accomplish this is to prepare your hand below the anticipated contact height; that way, you’ll be forced to fling the racket up through the ball as you swing.",
+       "page": 34
+      }
+     ],
+     "prescription_zh": "来球为腰高时，手放在球下方一点，沿缓和斜线向上向前穿过球"
+    },
+    {
+     "id": "BR-CH04-S4",
+     "symptom_zh": "先选动作再想球，换个情境就不会打",
+     "mechanism_zh": "击球要先想球的飞行，再想需要的接触，最后才想身体怎么配合",
+     "quotes": [
+      {
+       "text": "1. What do I want the ball flight to look like? 2. What contact creates that ball flight? 3. How do I orient my body to produce that contact?",
+       "page": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH05",
+   "title": "The Great “Rolling the Racket” Myth",
+   "pages": [
+    37,
+    45
+   ],
+   "principle_zh": "翻拍不产生上旋：上旋来自向上的摩擦力；拍面角度要在击球区尽量保持不变；拍绕前臂的被动转动不改变拍面，绕拍柄的主动翻转摧毁容错。",
+   "quotes": [
+    {
+     "text": "It is by maintaining our string angle that we make our stroke fault tolerant.",
+     "page": 38
+    },
+    {
+     "text": "Topspin is generated by a strong, upward frictional force between the strings and the back of the ball at contact.",
+     "page": 38
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH05-S1",
+     "symptom_zh": "早了出界、晚了下网，手腕疼",
+     "mechanism_zh": "主动翻拍让拍面在击球区内从朝天变到朝地，可击中的时间窗被压得极窄",
+     "quotes": [
+      {
+       "text": "if we hit the ball slightly too early, our overly open strings will send the ball flying out, and if we hit the ball a little too late, our closed strings will smother it down into the net.",
+       "page": 38
+      }
+     ],
+     "prescription_zh": "拍面角度在击球区保持一致，放松手腕，让拍被动地绕前臂转"
+    },
+    {
+     "id": "BR-CH05-S2",
+     "symptom_zh": "放松手腕后拍面乱翻",
+     "mechanism_zh": "放松时要用核心大肌群沿特定方向拉拍，否则前臂会乱转；紧手腕容易保持拍面，所以人一紧张就收紧",
+     "quotes": [
+      {
+       "text": "You have to pull the racket with your core movers at a pretty specific vector to avoid your forearm going crazy and rolling all over the place.",
+       "page": 41
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH06",
+   "title": "A Brief Comment on Grip / You Can Now Hit a Fault Tolerant Forehand",
+   "pages": [
+    46,
+    47
+   ],
+   "principle_zh": "握拍大多是转移注意力的问题，关键是触球时拍面的朝向；到这里容错接触已经完整，之后的转体、蹬腿都只是增强项。",
+   "quotes": [
+    {
+     "text": "When it comes to coaching the forehand, grip is mostly a red herring.",
+     "page": 46
+    },
+    {
+     "text": "The preceding discussion of fault tolerant contact constitutes all the information that’s universally applicable to every forehand, at every level.",
+     "page": 47
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH06-S1",
+     "symptom_zh": "纠结换握拍",
+     "mechanism_zh": "握拍不是关键；花在强迫换握拍上的时间，不如用自然握拍练动作",
+     "quotes": [
+      {
+       "text": "Contrary to what you’ve been told, the grip is not an important part of the forehand.",
+       "page": 46
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH07",
+   "title": "Why Rotate? / The Brain Behind the Scenes",
+   "pages": [
+    49,
+    52
+   ],
+   "principle_zh": "转动是现代正手的引擎：转离再转回，用腿、髋、腹的大肌群加速拍子；但执行时忽略肌肉级分析，靠本体感受去找对的感觉。",
+   "quotes": [
+    {
+     "text": "Rotation is the engine of the modern forehand.",
+     "page": 49
+    },
+    {
+     "text": "The kinetic energy from our trunk rotation is transferred into the racket during the swing.",
+     "page": 49
+    },
+    {
+     "text": "During the stroke production itself, almost all muscle level analysis should be ignored.",
+     "page": 51
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH07-S1",
+     "symptom_zh": "场上想着按顺序收缩各段肌肉，反而做不出来",
+     "mechanism_zh": "动力链的细节是用来理解和事后观察的，不是挥拍时去想的",
+     "quotes": [
+      {
+       "text": "it’s not possible to teach a tennis player to hit a forehand by having them consciously contract the links in their kinetic chain in some precise sequence.",
+       "page": 52
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH08",
+   "title": "Essential and Non-Essential Movement Patterns",
+   "pages": [
+    53,
+    55
+   ],
+   "principle_zh": "对错只相对于目标：要用全身产生拍速时，髋扭转是必须的，没有商量余地；很多其他动作是风格。教练的两种失败：纠正风格、放过真正的缺陷。",
+   "quotes": [
+    {
+     "text": "The hip twist is fundamental to the rotational chain.",
+     "page": 53
+    },
+    {
+     "text": "There’s no leeway here, no room for player preference.",
+     "page": 53
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH08-S1",
+     "symptom_zh": "爆发式挥拍却转动不足",
+     "mechanism_zh": "转动不足在爆发式挥拍里不是个人风格，而是技术低效，必须纠正",
+     "quotes": [
+      {
+       "text": "If a student is attempting an explosive swing, they shouldn’t be under- rotating.",
+       "page": 55
+      }
+     ]
+    },
+    {
+     "id": "BR-CH08-S2",
+     "symptom_zh": "教练纠正个人风格，或把缺陷当风格放过",
+     "mechanism_zh": "不清楚每个动作的目的，就分不清哪些是根本、哪些是可选",
+     "quotes": [
+      {
+       "text": "1. The coach unnecessarily and harmfully corrects things that need not be corrected, things like the personal stylistic choices of the player.",
+       "page": 55
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH09",
+   "title": "Preparation is Solely a Means to an End",
+   "pages": [
+    57,
+    58
+   ],
+   "principle_zh": "准备只有两个目标：转离目标（为了转回）；把手放到能绕身体自由甩动的位置。准备越简单越好。",
+   "quotes": [
+    {
+     "text": "1. Turn away from the target, so that we can turn back towards it. 2. Start the hand in a location such that it can whip around the body freely.",
+     "page": 58
+    },
+    {
+     "text": "In general, the simpler the preparation, the better.",
+     "page": 58
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH09-S1",
+     "symptom_zh": "准备动作越做越复杂",
+     "mechanism_zh": "把准备当成独立的动作模式，而不是为前挥服务",
+     "quotes": [
+      {
+       "text": "Forehand preparation is entangled with the forward swing. It should not be thought of as independent, its own movement pattern separate from the rest of the stroke.",
+       "page": 57
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH10",
+   "title": "The Unit Turn",
+   "pages": [
+    59,
+    62
+   ],
+   "principle_zh": "整体转身：髋转离目标，肩、臂、手、拍跟着一起走；多数人肩比髋多转，加大腹部参与；手臂相对上身基本不动。",
+   "quotes": [
+    {
+     "text": "The hips turn to the side, away from the target, so that they can explosively twist back towards it during the forward swing.",
+     "page": 59
+    },
+    {
+     "text": "Most players will turn their shoulders farther than their hips, leading to greater abdominal engagement during the forward swing.",
+     "page": 59
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH10-S1",
+     "symptom_zh": "用手臂把拍往后拉，而不是转身",
+     "mechanism_zh": "有害本能：用手臂往后带拍代替整个身体转离",
+     "quotes": [
+      {
+       "text": "Many players have a harmful instinct of preparing their racket by moving their arm back, rather than by turning their entire body away from their target.",
+       "page": 62
+      }
+     ],
+     "prescription_zh": "转身时让非持拍手横过身体；转身完成前两手都留在拍上"
+    },
+    {
+     "id": "BR-CH10-S2",
+     "symptom_zh": "准备阶段手和手臂动作多，正手不稳定",
+     "mechanism_zh": "Unit Turn 本质是髋和胸的转动；手臂只是被带着走",
+     "quotes": [
+      {
+       "text": "Extra, unnecessary motion of the hands and arms during the unit turn is the cause of a lot of forehand inconsistency worldwide.",
+       "page": 61
+      }
+     ]
+    },
+    {
+     "id": "BR-CH10-S3",
+     "symptom_zh": "肩转得越多越难控制",
+     "mechanism_zh": "肩相对髋转得越多，力量越大，但需要的协调和时机也越多；转多少是个人选择",
+     "quotes": [
+      {
+       "text": "The farther a player turns their shoulders relative to their hips, the harder they can hit, but also the harder the stroke is to control.",
+       "page": 59
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH11",
+   "title": "Preparing the Hand (Backswing Confusion / Wrist Lag / Butt Cap / Elbow Extension)",
+   "pages": [
+    63,
+    70
+   ],
+   "principle_zh": "手放在球下即可：用腿下坐、躯干倾斜或肘的自然伸展来降手，不要把手收近身体；引拍没有真正的「挥」；滞后是被动的。",
+   "quotes": [
+    {
+     "text": "there’s no real “swing” happening during the backswing.",
+     "page": 63
+    },
+    {
+     "text": "The wrist lag position is a position that’s entered without conscious effort, and it only occurs during the forward swing.",
+     "page": 66
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH11-S1",
+     "symptom_zh": "用把手臂收近身体的方式来降手",
+     "mechanism_zh": "手臂贴近身体后，拍很难绕身体自由甩出，力量和上旋都会丢",
+     "quotes": [
+      {
+       "text": "What won’t work is lowering the hand by bringing the arm in closer to the body.",
+       "page": 63
+      }
+     ],
+     "prescription_zh": "降手时用腿下坐或躯干倾斜，手臂与身体之间保持空间"
+    },
+    {
+     "id": "BR-CH11-S2",
+     "symptom_zh": "主动摆出滞后姿势、刻意让拍底指网",
+     "mechanism_zh": "主动用力摆滞后会让手腕失去铰链作用，拍速和上旋都下降",
+     "quotes": [
+      {
+       "text": "Adding tension to force the butt cap towards the net ruins our wrist’s performance as a hinge, and thereby causes our racket head speed to crater.",
+       "page": 65
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH12",
+   "title": "Adjusting to Contact",
+   "pages": [
+    71,
+    73
+   ],
+   "principle_zh": "调整击球高度时用最大的肌群：先腿、再躯干，手臂是次选，手腕是最后手段；躯干与手臂的夹角保持一致。",
+   "quotes": [
+    {
+     "text": "We always adjust with the largest muscle group we can.",
+     "page": 71
+    },
+    {
+     "text": "If the angle between the torso and the arm gets too narrow, the arm won’t naturally flick out and around as we rotate our trunk.",
+     "page": 71
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH12-S1",
+     "symptom_zh": "低球用手腕去够",
+     "mechanism_zh": "拉直拍臂夹角去够低球，违反基本定理，失去稳定和控制",
+     "quotes": [
+      {
+       "text": "All too often, I see players using their wrist to adjust to low balls.",
+       "page": 73
+      }
+     ],
+     "prescription_zh": "低球来时，用腿坐低、躯干倾斜，保持拍与前臂的夹角"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH13",
+   "title": "Inhale and Wait",
+   "pages": [
+    74,
+    75
+   ],
+   "principle_zh": "吸气为前挥做准备；准备的最后一步是等待，长短随来球；启动前挥看的是视觉信号（球到达某个位置），而不是固定的时间。",
+   "quotes": [
+    {
+     "text": "the last step of preparation is a short waiting period between body preparation and swing initiation.",
+     "page": 75
+    },
+    {
+     "text": "Your cue for when to initiate the forward swing is not that a fixed amount of time has passed since you started your forehand preparation. Rather, it is a visual cue.",
+     "page": 75
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH13-S1",
+     "symptom_zh": "按固定节奏出手，来球一变就乱",
+     "mechanism_zh": "把准备当成每次都一样的连续动作；实际上准备要在球到位前完成，然后等",
+     "quotes": [
+      {
+       "text": "Forehand preparation is not one, fluid, continuous motion that occurs the same way every time.",
+       "page": 75
+      },
+      {
+       "text": "once the ball gets to a certain location, you initiate your swing.",
+       "page": 75
+      }
+     ],
+     "prescription_zh": "慢来球：准备好后等球到位再启动；快来球：等待可以为零"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH14",
+   "title": "Visual Tracking",
+   "pages": [
+    76,
+    76
+   ],
+   "principle_zh": "球离开对手拍面后，几乎全部视觉注意力都给球，一直看到球离开自己的拍线；挥拍中的小调整靠视觉完成。",
+   "quotes": [
+    {
+     "text": "nearly all of your visual focus belongs on the ball from the time when it is struck by your opponent, to the time when it leaves your own strings.",
+     "page": 76
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH14-S1",
+     "symptom_zh": "打框、误击",
+     "mechanism_zh": "没有看球进拍，大脑无法在挥拍过程中做小调整",
+     "quotes": [
+      {
+       "text": "If, as an experiment, you force yourself to not watch the ball through contact, you’ll be amazed at just how often you mishit the ball or frame it.",
+       "page": 76
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH15",
+   "title": "A Brief Comment On Stance",
+   "pages": [
+    77,
+    79
+   ],
+   "principle_zh": "站位是风格，关键是髋：不管什么站位，触球时髋要正对目标；封闭式站位很难把髋转回来。",
+   "quotes": [
+    {
+     "text": "The fault tolerance of forehand contact is maximized when the hips are square to the target.",
+     "page": 77
+    },
+    {
+     "text": "the feet are not what’s critical – what’s critical is where the hips are aligned.",
+     "page": 78
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH15-S1",
+     "symptom_zh": "中性站位准备，触球时髋还侧着",
+     "mechanism_zh": "有不转髋的习惯时，中性站位会让髋在触球时仍侧对，严重伤害容错",
+     "quotes": [
+      {
+       "text": "If you have a habit of not rotating your hips as you swing, then if you prepare using a neutral stance, your hips will end up still sideways at contact",
+       "page": 77
+      }
+     ],
+     "prescription_zh": "过渡方案：先改用完全开放式站位，让髋在准备和挥拍中都朝向目标"
+    },
+    {
+     "id": "BR-CH15-S2",
+     "symptom_zh": "封闭式站位，髋转不回来",
+     "mechanism_zh": "封闭站位要转回髋需要很大的转动量，多数人干脆不转，毁掉容错；后脚随挥是否绕到身前可作检查",
+     "quotes": [
+      {
+       "text": "Your back foot’s follow- through provides a good indicator of how well you’re rotating your hips out of a closed stance",
+       "page": 79
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH16",
+   "title": "That’s It",
+   "pages": [
+    80,
+    80
+   ],
+   "principle_zh": "准备只有两件事：转动主要发力部位离开目标、准备好手；大多数准备错误不是少做了，而是多做了。",
+   "quotes": [
+    {
+     "text": "Forehand preparation fundamentally constitutes two goals: 1. We turn the prime movers away from the target. 2. We prepare the hand.",
+     "page": 80
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH16-S1",
+     "symptom_zh": "引拍阶段加了很多多余动作",
+     "mechanism_zh": "多余动作让前挥更不稳定；主动用手臂把拍拉到身后会妨碍前挥",
+     "quotes": [
+      {
+       "text": "Things like adding tension to point your butt cap at the net, or using your arm to pull the racket way back behind the back, actively hinder the forward swing.",
+       "page": 80
+      }
+     ],
+     "prescription_zh": "转身、准备好手、吸气、放松、等待，然后挥"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH17",
+   "title": "Exhale and Relax / The Counter-Intuitive Role of the Hand",
+   "pages": [
+    82,
+    82
+   ],
+   "principle_zh": "前挥第一步是呼气放松：只有在髋、躯干、腹部启动时需要强收缩；手腕是铰链，负责传递而不是产生力量。",
+   "quotes": [
+    {
+     "text": "a strong, braced muscle contraction is only needed at the very beginning, when the hips, trunk, and abs initiate the movement.",
+     "page": 82
+    },
+    {
+     "text": "The wrist’s role is to transfer energy from the rest of the kinetic chain into the racket.",
+     "page": 82
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH17-S1",
+     "symptom_zh": "手腕紧，挥拍慢",
+     "mechanism_zh": "紧的手腕是低效的铰链，腿和躯干产生的能量大部分在传到球之前就损失了",
+     "quotes": [
+      {
+       "text": "This is why a tight wrist leads to such a slow swing.",
+       "page": 82
+      }
+     ],
+     "prescription_zh": "握拍只握到拍子不会飞出去的程度"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH18",
+   "title": "Lead With The Hips / How the Feet Liberate the Hips",
+   "pages": [
+    83,
+    88
+   ],
+   "principle_zh": "前挥从髋的转动开始，不是用手臂拉：蹬后腿把全身转回目标，臀肌把卷过脚的髋拉直；脚要允许离地，双脚钉死不可能完整转髋；张力在腿和躯干，手臂和手腕放松。",
+   "quotes": [
+    {
+     "text": "Hint – the answer is not to pull with your arm.",
+     "page": 83
+    },
+    {
+     "text": "The key that unlocks forehand racket head speed is body rotation, and body rotation starts with a rotation of the hips.",
+     "page": 83
+    },
+    {
+     "text": "I recommend internalizing it as “twisting the hips back towards the net.”",
+     "page": 83
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH18-S1",
+     "symptom_zh": "用手臂拉拍代替转体",
+     "mechanism_zh": "挥拍的启动应由髋的大肌群完成，而不是手臂",
+     "quotes": [
+      {
+       "text": "as long as you initiate your twist back towards the target by utilizing the strong muscles in the hips, your stroke will be explosive.",
+       "page": 83
+      }
+     ],
+     "prescription_zh": "心里想「把髋扭回面向网」"
+    },
+    {
+     "id": "BR-CH18-S2",
+     "symptom_zh": "双脚钉在地上转髋（膝、踝受扭力）",
+     "mechanism_zh": "脚不离地时完整转髋不可能，还会把扭力压到膝和踝上",
+     "quotes": [
+      {
+       "text": "A full hip rotation is actually impossible if both of your feet are firmly planted on the ground.",
+       "page": 84
+      },
+      {
+       "text": "Trying to rotate your hips while your feet stay planted will put a large amount of torsion force on your knees and ankles; don’t do it.",
+       "page": 84
+      }
+     ],
+     "prescription_zh": "允许脚随髋转动：中性回合球抬起非持拍脚；低球双脚跟抬起在前脚掌上转"
+    },
+    {
+     "id": "BR-CH18-S3",
+     "symptom_zh": "髋和脚之间、胸和髋之间没有分离角，少了额外储能",
+     "mechanism_zh": "髋转得比脚多储能于臀，胸转得比髋多储能于腹部；展开这些角度时能量释放",
+     "quotes": [
+      {
+       "text": "The chest-hip separation angle stores extra energy in the abdomen, and when the abs unwind that angle, that energy is released.",
+       "page": 83
+      }
+     ]
+    },
+    {
+     "id": "BR-CH18-S4",
+     "symptom_zh": "大力击球时手臂也跟着紧",
+     "mechanism_zh": "跳起正手等大力击球里，张力全部在腿和躯干，链条外端必须完全放松才能把力传到拍上",
+     "quotes": [
+      {
+       "text": "all the tension is in the legs and trunk, and none of the tension is in the arm or hand.",
+       "page": 87
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH19",
+   "title": "The Abdominal Coil – Unwinding the Upper Body / Unit Turn, Unit Swing",
+   "pages": [
+    89,
+    91
+   ],
+   "principle_zh": "髋启动后几毫秒，腹部主动把肩胸扭回目标，展开准备时的肩髋分离；整个上半身（胸和双臂）一起转离、一起转回；场上不要去想肌肉时序。",
+   "quotes": [
+    {
+     "text": "During the hip rotation phase of the kinetic chain, the relative angle of the shoulders and hips is maintained.",
+     "page": 89
+    },
+    {
+     "text": "A few milliseconds after hip rotation initiates the swing, the abdominals fully engage: they act to actively twist the shoulders and chest back toward the target, thereby unwinding this angle.",
+     "page": 89
+    },
+    {
+     "text": "thinking about this timing during stroke production is almost definitely useless.",
+     "page": 90
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH19-S1",
+     "symptom_zh": "只有持拍臂自己往前走，胸和非持拍臂没跟上",
+     "mechanism_zh": "上半身没有作为整体转回",
+     "quotes": [
+      {
+       "text": "This ensures that the entire upper body rotates towards the ball as a unit, rather than just the hitting-arm going alone.",
+       "page": 89
+      }
+     ],
+     "prescription_zh": "非持拍手肘随持拍手肘一起绕身体转回"
+    },
+    {
+     "id": "BR-CH19-S2",
+     "symptom_zh": "髋胸转回不足（under-rotation）",
+     "mechanism_zh": "很多人挥拍时髋和胸没有充分转回网",
+     "quotes": [
+      {
+       "text": "Many players fail to sufficiently rotate their hips and chest back towards the net as they swing.",
+       "page": 90
+      }
+     ]
+    },
+    {
+     "id": "BR-CH19-S3",
+     "symptom_zh": "刻意拉非持拍手后，转得过早或过多",
+     "mechanism_zh": "「拉非持拍手」只是转动不足的解法；本来转得对的人用它会过早、过多",
+     "quotes": [
+      {
+       "text": "if a player is already rotating properly, and that player is coached to “pull the non-hitting arm around,” they may start rotating too early, or too much.",
+       "page": 91
+      }
+     ]
+    },
+    {
+     "id": "BR-CH19-S4",
+     "symptom_zh": "用手和手臂往前拉拍，动作散、易受伤",
+     "mechanism_zh": "由腹部驱动的上半身整体转动稳定而爆发，和用手臂拉拍相反",
+     "quotes": [
+      {
+       "text": "It’s a rotation that can be performed extremely explosively and extremely quickly without injury, unlike, say, pulling the racket forward using the hand and arm.",
+       "page": 91
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH20",
+   "title": "Out, Up, and Through",
+   "pages": [
+    92,
+    98
+   ],
+   "principle_zh": "挥拍三向量：向外、向上、穿过，其中向外最被忽视也最重要；向外挥、放松手腕，拍会被动绕前臂甩动（雨刷），这是上旋的主要来源。",
+   "quotes": [
+    {
+     "text": "There are three critical vectors to the correct swing path, not two. Out, up, and through.",
+     "page": 92
+    },
+    {
+     "text": "By consciously swinging out to the ball and contacting it laterally away from the body, we generate the forces that cause the racket to naturally whip around the wrist.",
+     "page": 95
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH20-S1",
+     "symptom_zh": "上旋不足",
+     "mechanism_zh": "没有向外挥，拍得不到被手拦停后转为绕前臂旋转的那股力",
+     "quotes": [
+      {
+       "text": "If, during a particular practice session, you feel like you aren’t getting sufficient topspin on your shot, a failure to properly swing out to the ball may be the culprit.",
+       "page": 98
+      }
+     ],
+     "prescription_zh": "影子挥拍时试不同的向外方向，感受拍向外的速度被止住、转成绕手腕转动的那一刻"
+    },
+    {
+     "id": "BR-CH20-S2",
+     "symptom_zh": "触球点被拉近身体，甩鞭消失",
+     "mechanism_zh": "拍被甩到横向更靠近身体的触球点时，没有向外的速度可以转成旋转",
+     "quotes": [
+      {
+       "text": "This rotational whip is far more muted if the racket is flung to a contact point that is laterally closer to the body",
+       "page": 96
+      },
+      {
+       "text": "Or perhaps you’ve subconsciously altered your contact point, pulling it in towards the body, thereby preventing that dynamic, rotational racket flick which generates so much spin.",
+       "page": 98
+      }
+     ]
+    },
+    {
+     "id": "BR-CH20-S3",
+     "symptom_zh": "想用手腕或手臂主动做出雨刷动作",
+     "mechanism_zh": "拍绕前臂转动是自动结果；主动去做只会带来紧张、无效击球和伤病",
+     "quotes": [
+      {
+       "text": "Racket rotation about the forearm through the hitting zone is automatic – it is NOT created via conscious effort",
+       "page": 96
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH21",
+   "title": "Dominate the Slicer with Heavy Low Forehands",
+   "pages": [
+    99,
+    106
+   ],
+   "principle_zh": "低球用和腰高球相同的机制：腿坐低、躯干倾斜，不把手收近身体；脑子里只想「向上」会导致三种错误：忘了穿过、忘了向外、打开拍面。",
+   "quotes": [
+    {
+     "text": "you adjust to a low forehand by sitting lower with your legs and by tilting your torso, not by pulling your hand closer to your body.",
+     "page": 100
+    },
+    {
+     "text": "The over focus on up tends to lead to three common mistakes: 1. Forgetting to extend through the ball 2. Forgetting to swing out to the ball 3. Opening or changing the string angle through contact",
+     "page": 103
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH21-S1",
+     "symptom_zh": "低球下网，球转得很多但不往前",
+     "mechanism_zh": "只想往上，丢了穿过的向量，缺少把球送过网的向前动量",
+     "quotes": [
+      {
+       "text": "you’ll spin the ball down into the net – the shot will have plenty of topspin, but your purely up swing path won’t supply the required forward momentum to drive the ball back over the net.",
+       "page": 103
+      }
+     ],
+     "prescription_zh": "低球时心里想「向外、向上、穿过」，重点放在「穿过」"
+    },
+    {
+     "id": "BR-CH21-S2",
+     "symptom_zh": "低球打开拍面，球飞出",
+     "mechanism_zh": "想把球抬起来而让拍面朝天；即使是低球，拍面也应平行或略闭",
+     "quotes": [
+      {
+       "text": "even on a low forehand, the strings, through the hitting zone, should be either parallel to the net, or even still slightly closed towards the court.",
+       "page": 104
+      }
+     ]
+    },
+    {
+     "id": "BR-CH21-S3",
+     "symptom_zh": "低球把手收近身体，球软",
+     "mechanism_zh": "手越近身体，越妨碍躯干转动的能量传到拍上；旋转圈越大，外端越快",
+     "quotes": [
+      {
+       "text": "the closer you pull your hand in, the more you inhibit the transfer of energy from the trunk’s rotation into the racket.",
+       "page": 100
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH22",
+   "title": "A Brief Comment on Follow-Through",
+   "pages": [
+    107,
+    109
+   ],
+   "principle_zh": "随挥只是诊断工具，本身不影响击球；触球是平移的、要指向目标；拍子绝不能被主动拉过身体；肘在胸前结束说明旋转力成功转成了向前的平移力。",
+   "quotes": [
+    {
+     "text": "the follow-through itself doesn’t affect the swing. It’s merely a diagnostic tool at our disposal.",
+     "page": 107
+    },
+    {
+     "text": "The racket should never be actively pulled across the body in any way.",
+     "page": 107
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH22-S1",
+     "symptom_zh": "随挥被强行拉过身体、动作发紧发顿",
+     "mechanism_zh": "目标变成「把拍拉到随挥位置」而不是「甩过球」，力的方向错了",
+     "quotes": [
+      {
+       "text": "instead of the player’s goal through contact being to flick through the ball, their goal through contact is to get the racket into its follow-through position.",
+       "page": 107
+      }
+     ]
+    },
+    {
+     "id": "BR-CH22-S2",
+     "symptom_zh": "随挥没有向前延伸、肘没在胸前结束",
+     "mechanism_zh": "肘在胸前结束、手臂向前延伸，说明旋转力成功转成了穿过球的平移力；反之说明转换不足",
+     "quotes": [
+      {
+       "text": "finishes well in front of her chest, indicating that she’s successfully transferred the rotational force from her trunk into back-to-front translational force through the ball.",
+       "page": 109
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH23",
+   "title": "Forward Swing Progression",
+   "pages": [
+    110,
+    114
+   ],
+   "principle_zh": "前挥学习四步：内化为「扭向网」；用击球腿蹬地引导；一起转离、一起转回；穿过触球延伸。一次只加一件事。",
+   "quotes": [
+    {
+     "text": "1. Internalize the forward swing as “twisting towards the net.” 2. Lead the twist with your hitting leg. Drive off the ground; contract your glutes. 3. Rotate back together, rotate forward together.",
+     "page": 110
+    },
+    {
+     "text": "At its core, the forehand is a twist action.",
+     "page": 110
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH23-S1",
+     "symptom_zh": "髋转不够（under-rotated）",
+     "mechanism_zh": "击球腿没有蹬地引导；有意识地从击球腿发力时，髋就不容易转不够",
+     "quotes": [
+      {
+       "text": "When a player consciously initiates their swing by exploding off of their hitting leg, they are far less likely to leave their hips under-rotated",
+       "page": 111
+      }
+     ],
+     "prescription_zh": "先只想「扭向网」；不够时加一件事：用击球腿蹬地引导这个扭转"
+    },
+    {
+     "id": "BR-CH23-S2",
+     "symptom_zh": "非持拍手肘过早拉开，胸过早打开；或完全不转回",
+     "mechanism_zh": "上半身没有作为整体转动，腹部转动与动力链其余部分不同步",
+     "quotes": [
+      {
+       "text": "In some cases, the non-hitting elbow is pulled around the body too early in the swing, causing the chest to open up too early, thereby desynchronizing the abdominal rotation from the rest of the kinetic chain.",
+       "page": 111
+      }
+     ],
+     "prescription_zh": "想着「一起回、一起转」；同时练两件事太难时，暂时用完全开放式站位只练上半身"
+    },
+    {
+     "id": "BR-CH23-S3",
+     "symptom_zh": "过早把拍拉回身体（强行随挥）",
+     "mechanism_zh": "心里把挥拍终点放在随挥上，而不是穿过球",
+     "quotes": [
+      {
+       "text": "The player should envision the racket flicking forward through the ball. In their mind, the swing is finished at contact.",
+       "page": 113
+      }
+     ],
+     "prescription_zh": "想象拍子朝目标向前甩穿球，挥拍在触球那一刻结束"
+    },
+    {
+     "id": "BR-CH23-S4",
+     "symptom_zh": "手臂落后身体太多，感觉别扭无力",
+     "mechanism_zh": "持拍侧胸肌完全放松时，拍、手、臂会滞后过多；胸要稳住手臂，手腕才放松滞后",
+     "quotes": [
+      {
+       "text": "the chest should keep the arm stable, not allowing it to lag backwards as the upper body rotates.",
+       "page": 114
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH24",
+   "title": "The Forehand POWER Checklist",
+   "pages": [
+    115,
+    121
+   ],
+   "principle_zh": "力量从属于击球点；力量不来自手臂。六项：蹬后腿、放松、吸气后在触球时呼气、转肩（肩比髋多转是加分项而非必需）、拉开非持拍手肘、不要过度转髋。",
+   "quotes": [
+    {
+     "text": "Power is subordinate to contact point.",
+     "page": 116
+    },
+    {
+     "text": "Power does not come from swinging harder with the arm; only tension, misses, and injury do.",
+     "page": 116
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH24-S1",
+     "symptom_zh": "加力后击球点变差（偏晚或太近）",
+     "mechanism_zh": "追求力量时很容易打乱击球点，任何力量收益都会被低效动作抵消",
+     "quotes": [
+      {
+       "text": "the ball must be contacted away from the body – both laterally away from the body and out in front of it.",
+       "page": 116
+      }
+     ]
+    },
+    {
+     "id": "BR-CH24-S2",
+     "symptom_zh": "没有肩髋分离就以为转体没用",
+     "mechanism_zh": "肩比髋多转只是多一个环节；只要髋先启动，即使肩髋转得一样多，髋的转动仍然有效",
+     "quotes": [
+      {
+       "text": "The angle separation isn’t necessary for effortless power, though; it just helps add yet another link to the rotational kinetic chain.",
+       "page": 119
+      },
+      {
+       "text": "As long as the hips unlock first, even if the shoulders and hips turn away by the same amount, the hip rotation contributor of the rotational kinetic chain will still accelerate the racket as expected.",
+       "page": 119
+      }
+     ]
+    },
+    {
+     "id": "BR-CH24-S3",
+     "symptom_zh": "蹬腿当成持续用力",
+     "mechanism_zh": "蹬后腿是一次快速爆发的收缩，不是长时间用髋往前顶",
+     "quotes": [
+      {
+       "text": "This is a very quick, explosive contraction. It’s not about driving off the hip for a longer period of time, but rather driving harder during the quick, explosive turn.",
+       "page": 117
+      }
+     ],
+     "prescription_zh": "高慢短球想加力时，后腿坐得更低、转得更开，然后一下爆发"
+    },
+    {
+     "id": "BR-CH24-S4",
+     "symptom_zh": "髋一直转过头，力没传到拍上",
+     "mechanism_zh": "鞭打要在中途急停才能把能量传到末端；髋转到正好指向目标或略过时停最好（但过转好过转不够）",
+     "quotes": [
+      {
+       "text": "Attempt to have your hip rotation stop right as they’re pointed at the target, or slightly past it.",
+       "page": 120
+      },
+      {
+       "text": "Again, over-rotating the hips when hitting hard is strongly preferable to leaving them under- rotated.",
+       "page": 121
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH25",
+   "title": "Are You Still Relaxed?",
+   "pages": [
+    122,
+    122
+   ],
+   "principle_zh": "放松是力量、上旋和稳定的钥匙；学新技术时最先丢的就是放松；觉得必须紧握才能控拍，通常说明没在用大肌群。",
+   "quotes": [
+    {
+     "text": "Relaxation is the key that unlocks power, topspin, and consistency on the modern forehand.",
+     "page": 122
+    },
+    {
+     "text": "breathe in, relax, then exhale as you swing.",
+     "page": 122
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH25-S1",
+     "symptom_zh": "觉得要绷紧手腕才能控制拍子",
+     "mechanism_zh": "没有用最大的肌群操控拍，而是在用手臂拉、用手腕发力",
+     "quotes": [
+      {
+       "text": "Typically, this indicates that they aren’t properly utilizing the biggest muscles in the body to manipulate the racket, and are instead doing things like pulling with their arm and trying to generate force with their wrist.",
+       "page": 122
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH26",
+   "title": "What if I Want to Hit Really, Really Hard?",
+   "pages": [
+    124,
+    128
+   ],
+   "principle_zh": "每人都有可用力量上限；超过后成功率崩塌，越用力反而越慢；找到成功率约 80% 的最大力度，之后要靠变强壮而不是更用力。",
+   "quotes": [
+    {
+     "text": "For every player, there exists a physical upper limit to how much effortful power they can inject into their stroke before their margin for error drops off a cliff.",
+     "page": 124
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH26-S1",
+     "symptom_zh": "越想打重，球越慢、失误越多",
+     "mechanism_zh": "用力过了某个点，表现为手紧、臂紧、动力链发顿不协调，引擎熄火",
+     "quotes": [
+      {
+       "text": "Most of the time, after a certain point, conscious effort to “try and hit harder” manifests as tightness in your hand, tightness in your arm, and an overall jerkiness and discoordination in the rotational kinetic chain.",
+       "page": 125
+      }
+     ],
+     "prescription_zh": "练习中找到成功率约 80% 的最大用力程度，把这个感觉记住并守住"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH27",
+   "title": "Drop Feed for Forehand Development",
+   "pages": [
+    129,
+    135
+   ],
+   "principle_zh": "零速度来球迫使你全力挥拍，暴露被减速掩盖的缺陷；练习比比赛更难，坏机制就该失误；之后加难度练找击球点与在不完美位置发力。",
+   "quotes": [
+    {
+     "text": "Drop feed is the gold standard for ironing out mechanical glitches.",
+     "page": 135
+    },
+    {
+     "text": "This drill forces you to swing fast.",
+     "page": 131
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH27-S1",
+     "symptom_zh": "练习打得好，比赛进攻球（高短慢球）总失误",
+     "mechanism_zh": "机制缺陷被「减速挥拍、借对方球速挡回去」掩盖；没有球速可借时缺陷暴露",
+     "quotes": [
+      {
+       "text": "Players with non fault tolerant strokes slow down their swing to restore consistency, but it only works because their opponent’s ball has some velocity on it that they can redirect",
+       "page": 131
+      }
+     ],
+     "prescription_zh": "用零速度或很慢的来球练习，迫使自己产生 100% 的球速；连续打进约 20 球后再把来球放到不同位置"
+    },
+    {
+     "id": "BR-CH27-S2",
+     "symptom_zh": "移动后找不到合适的击球点",
+     "mechanism_zh": "没有身体与球之间理想相对位置的目标，只会按习惯的步子走",
+     "quotes": [
+      {
+       "text": "they’ll need a mental idea of what the optimal relative position between their body and the ball should be when they swing, and then they’ll move to get into that position.",
+       "page": 134
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH28",
+   "title": "Training to Crush the Pusher / Offense-Defense",
+   "pages": [
+    136,
+    142
+   ],
+   "principle_zh": "进攻要有高成功率；只选成功率 80% 以上的球路；用攻防对抗练习真实的进攻球（需要对手，本项目当前场景不适用）。",
+   "quotes": [
+    {
+     "text": "In order to beat a pusher, you need high percentage offensive shots.",
+     "page": 136
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH28-S1",
+     "symptom_zh": "进攻位置连续失误、越打越急",
+     "mechanism_zh": "进攻球从未练成，却在比赛中硬打，形成挫败螺旋",
+     "quotes": [
+      {
+       "text": "select shots that you know you can make with an 80% probability or better.",
+       "page": 137
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH29",
+   "title": "The X-Drill for Forehand Conditioning",
+   "pages": [
+    143,
+    145
+   ],
+   "principle_zh": "疲劳会让小错误渗入机制；在比比赛更累的环境里训练，比赛才会显得轻松（需要对打，本项目当前场景不适用）。",
+   "quotes": [
+    {
+     "text": "Playing under fatigue is one of the extremely common situations in which small faults will tend to creep into your mechanics.",
+     "page": 143
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH29-S1",
+     "symptom_zh": "长回合后半段动作变形",
+     "mechanism_zh": "肌肉能量被消耗，后期爆发力下降，小错误进入机制",
+     "quotes": [
+      {
+       "text": "You are a physically less explosive player on shot 50 of a rally than you were on shot 1.",
+       "page": 143
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BR-CH30",
+   "title": "Develop the Feel of Federer",
+   "pages": [
+    146,
+    148
+   ],
+   "principle_zh": "手感来自基本定理：永远在身前触球，永远保持拍与前臂的夹角，调整整只手臂而不是拉直手腕。",
+   "quotes": [
+    {
+     "text": "He adjusts his entire arm when he has to adjust – he does not adjust by straightening out his wrist. That’s really all there is to feel.",
+     "page": 147
+    }
+   ],
+   "symptoms": [
+    {
+     "id": "BR-CH30-S1",
+     "symptom_zh": "近身球、低短球手感差",
+     "mechanism_zh": "调整时拉直了拍臂夹角或把球放晚了",
+     "quotes": [
+      {
+       "text": "gaining a feel for the ball is as simple as gaining an understanding of how to adjust your racket in space without straightening out your forearm-racket angle and without catching the ball late.",
+       "page": 147
+      }
+     ],
+     "prescription_zh": "mini tennis：放松手，只用保持夹角的张力，球在身前接，比觉得自然的位置更早接球"
+    }
+   ]
+  },
+  {
+   "id": "BR-CH31",
+   "title": "Closing Thoughts",
+   "pages": [
+    149,
+    151
+   ],
+   "principle_zh": "全书是原则而不是规则：每条技术建议都附有理由，理解「为什么」才能应对所有情况。",
+   "quotes": [
+    {
+     "text": "This book, fundamentally, is about principles.",
+     "page": 150
+    },
+    {
+     "text": "What I’ve provided instead is a set of principles that do apply universally, along with subsequent explanations of why those principles apply.",
+     "page": 150
+    }
+   ],
+   "symptoms": []
+  }
+ ],
+ "legacy_branches": [
+  {
+   "id": "LB-1",
+   "name_zh": "髋肩coil不足导致手臂代偿",
+   "attached_to": [
+    "BR-CH18",
+    "BR-CH19",
+    "BR-CH24",
+    "BR-CH04",
+    "BR-CH10",
+    "BR-CH23",
+    "BR-CH08"
+   ],
+   "note_zh": "主体有书证：用手臂拉代替髋启动（BR-CH18 p.83、BR-CH24 p.116）、触球时髋胸侧对→手臂被卡只能用小肌肉（BR-CH04 p.30）、转动不足是必须纠正（BR-CH08 p.53/55）。需改说法：(1) 书里髋肩分离角是加分项而非必需——p.119 明说只要髋先启动、肩髋转同样多也有效，所以核心应写成「髋没有先启动 / 髋胸没转回」，coil（肩比髋多转）降为增强项；(2)「手臂往上兜」不是书的说法，书对应的是「手臂被卡、用小肌肉」（p.30）和「转动不足」（p.90、p.111），往上兜来自视频 ui-RFRdQKRk（holdout）与 PwkGLkRm73o；(3) 书 p.83 自己的场上意象是「把髋扭回面向网」（twisting the hips back towards the net），可作外部意象，不得写成「送髋」类口令。"
+  },
+  {
+   "id": "LB-2",
+   "name_zh": "启动过早",
+   "attached_to": [
+    "BR-CH13",
+    "BR-CH19",
+    "BR-CH23",
+    "BR-CH04"
+   ],
+   "note_zh": "书里有两种「早」，要分开：(a) 相对来球的启动时机——BR-CH13 p.75：准备的最后一步是等待，启动看视觉信号（球到某个位置），慢球可以等很久；书没有给出「最高点 / 下落 80%」这种具体时点，那是用户说法。(b) 上半身过早转开——BR-CH19 p.91、BR-CH23 p.111：拉非持拍手过早导致胸过早打开、与腹部转动不同步，这是动力链内部的时序问题，不是相对来球的时机。LB-2 目前说的是 (a)，挂 BR-CH13 最直接；(b) 应作为 LB-1 下的一片叶子，不并进 LB-2。另 BR-CH04 p.34 的「早一点晚一点仍成功」靠缓和斜线挥拍，是容错侧的旁证。需改说法：把「启动过早」明确为「启动时机未由视觉信号决定（相对来球）」，并注明具体时点非书出处。"
+  }
+ ]
+}
