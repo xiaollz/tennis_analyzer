@@ -1,0 +1,116 @@
+{
+  "gate": {
+    "checks": [
+      {
+        "detail": "got=TRUNK_KINETIC_CHAIN want=TRUNK_KINETIC_CHAIN",
+        "id": "K01",
+        "result": "PASS"
+      },
+      {
+        "detail": "got=['B1_HIP_TRANSFER_ARM_COMPENSATION', 'B2_SWING_START_TOO_EARLY'] want=['B1_HIP_TRANSFER_ARM_COMPENSATION', 'B2_SWING_START_TOO_EARLY']",
+        "id": "K02",
+        "result": "PASS"
+      },
+      {
+        "detail": "status=has_facts evid=['OBS-25=shoulders_lead_hips', 'OBS-18=arm_first', 'OBS-08=small_turn', 'OBS-09=square_or_past'] need=['OBS-18=arm_first', 'OBS-25=shoulders_lead_hips']",
+        "id": "K03",
+        "result": "PASS"
+      },
+      {
+        "detail": "status=pending_self_report want=pending_self_report",
+        "id": "K04",
+        "result": "PASS"
+      },
+      {
+        "detail": "forged=[]",
+        "id": "K05",
+        "result": "PASS"
+      },
+      {
+        "detail": "mf=['NEW-SWING_START_VS_BOUNCE', 'OBS-03', 'OBS-57'] cams={'S'}",
+        "id": "K06",
+        "result": "PASS"
+      },
+      {
+        "detail": "top_bad=[] feet_ok=True finish_ok=True",
+        "id": "K07",
+        "result": "PASS"
+      },
+      {
+        "detail": "ret=['contact_late', 'feet_locked_first_priority'] leaked=[]",
+        "id": "K08",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[] have_nv=['OBS-19', 'OBS-40', 'OBS-71']",
+        "id": "K09",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K10",
+        "result": "PASS"
+      },
+      {
+        "detail": "invented=[]",
+        "id": "K11",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K12",
+        "result": "PASS"
+      },
+      {
+        "detail": "zh=True breath=True",
+        "id": "K13",
+        "result": "PASS"
+      },
+      {
+        "detail": "hits=[]",
+        "id": "K14",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K15",
+        "result": "PASS"
+      },
+      {
+        "detail": "determinism hashes present (caller may re-run compose for byte check)",
+        "id": "K16",
+        "result": "PASS"
+      },
+      {
+        "detail": "cur=03743194ca00… meta=03743194ca00…",
+        "id": "K17",
+        "result": "PASS"
+      }
+    ],
+    "drifts": [
+      {
+        "from": "arm_first (3/3)",
+        "obs": "OBS-18",
+        "to": "arm_first (2/3)"
+      },
+      {
+        "from": "shoulders_lead_hips (3/3)",
+        "obs": "OBS-25",
+        "to": "shoulders_lead_hips (2/3)"
+      },
+      {
+        "from": "square_or_past (3/3)",
+        "obs": "OBS-09",
+        "to": "square_or_past (2/3)"
+      },
+      {
+        "from": "small_turn (2/3)",
+        "obs": "OBS-08",
+        "to": "clearly_sideways (2/3)"
+      }
+    ],
+    "fail_count": 0,
+    "pass": true
+  },
+  "selftest": null
+}

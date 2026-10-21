@@ -1,25 +1,97 @@
 {
-  "_comment": "Thresholds are initial values (2026-10-18). Change only with user approval and record the change in PLAN_v2.md §8 changelog. No secrets here; keys come from environment variables only.",
-  "quote_match_min": {"official": 0.85, "auto": 0.75, "whisper": 0.75},
+  "_comment": "Thresholds are initial values (2026-10-18). Change only with user approval and record the change in PLAN_v2.md §8 changelog. No secrets here; keys come from environment variables only. 2026-10-20 book-loop: added 送髋 to ban_patterns (stricter; aligns with FTT book + 6ak4; see book_grounded_opt_2026-10-20.md).",
+  "quote_match_min": {
+    "official": 0.85,
+    "auto": 0.75,
+    "whisper": 0.75
+  },
   "timestamp_tolerance_s": 10,
   "quote_search_window_s": 90,
   "quote_max_words": 40,
   "transcript_min_coverage": 0.9,
-  "rerun_min_jaccard": {"causes_nodes": 0.6, "chain_edges": 0.5, "solutions_kind_targets": 0.5},
+  "rerun_min_jaccard": {
+    "causes_nodes": 0.6,
+    "chain_edges": 0.5,
+    "solutions_kind_targets": 0.5
+  },
   "fact_min_agree": "2/3",
   "replay_gate": {
-    "G1": {"min_cases": 10, "min_episodes": 5, "recall_at_3": 0.6, "max_negative_high_conf": 0.2},
-    "G2": {"min_cases": 30, "min_episodes": 15, "recall_at_3": 0.7, "top1": 0.4, "max_negative_high_conf": 0.15, "rerun_top1_stable": 0.8}
+    "G1": {
+      "min_cases": 10,
+      "min_episodes": 5,
+      "recall_at_3": 0.6,
+      "max_negative_high_conf": 0.2
+    },
+    "G2": {
+      "min_cases": 30,
+      "min_episodes": 15,
+      "recall_at_3": 0.7,
+      "top1": 0.4,
+      "max_negative_high_conf": 0.15,
+      "rerun_top1_stable": 0.8
+    }
   },
   "ban_patterns": {
-    "推肘": ["推肘", "肘.{0,3}(往前|向前)?推", "送肘", "push(ing)? (the|your) elbow", "drive (the|your) elbow"],
-    "降拍": ["降拍", "主动.{0,4}(放|降|掉)拍", "drop (the|your) racket( head)?", "lower (the|your) racket"],
-    "旋后": ["旋后", "supinat"],
-    "伸肘": ["伸肘", "伸直.{0,3}(手臂|肘)", "straighten (the|your) (arm|elbow)", "extend (the|your) elbow"]
+    "推肘": [
+      "推肘",
+      "肘.{0,3}(往前|向前)?推",
+      "送肘",
+      "push(ing)? (the|your) elbow",
+      "drive (the|your) elbow"
+    ],
+    "降拍": [
+      "降拍",
+      "主动.{0,4}(放|降|掉)拍",
+      "drop (the|your) racket( head)?",
+      "lower (the|your) racket"
+    ],
+    "旋后": [
+      "旋后",
+      "supinat"
+    ],
+    "伸肘": [
+      "伸肘",
+      "伸直.{0,3}(手臂|肘)",
+      "straighten (the|your) (arm|elbow)",
+      "extend (the|your) elbow"
+    ],
+    "送髋": [
+      "送髋",
+      "把髋送进球里",
+      "髋往前顶"
+    ]
   },
   "neutral_prompt_forbidden": [
-    "FTT", "Fault Tolerant", "HSA", "ESR", "ISR", "lag", "slot", "jammed", "被挤", "unit turn", "Unit Turn",
-    "手主导", "arm-dominated", "arming", "wiper", "雨刷", "out vector", "pressing", "鞭打", "whip",
-    "pronation", "旋内", "外旋", "内旋", "lasso", "kinetic chain", "动力链", "学员问题", "用户", "屈书毅", "N-"
+    "FTT",
+    "Fault Tolerant",
+    "HSA",
+    "ESR",
+    "ISR",
+    "lag",
+    "slot",
+    "jammed",
+    "被挤",
+    "unit turn",
+    "Unit Turn",
+    "手主导",
+    "arm-dominated",
+    "arming",
+    "wiper",
+    "雨刷",
+    "out vector",
+    "pressing",
+    "鞭打",
+    "whip",
+    "pronation",
+    "旋内",
+    "外旋",
+    "内旋",
+    "lasso",
+    "kinetic chain",
+    "动力链",
+    "学员问题",
+    "用户",
+    "屈书毅",
+    "N-"
   ]
 }

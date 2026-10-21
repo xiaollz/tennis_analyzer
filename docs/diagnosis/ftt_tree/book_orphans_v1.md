@@ -1,0 +1,206 @@
+# 书根挂接孤儿 v1（tree_v18 节点 + episode 卡）
+
+> 对应 `book_attach_v1.json`。每个 tree_v18 节点和每张 episode 卡在 attach 与本文件中恰好出现一次。
+> 书：John Kumpf《The Fault Tolerant Forehand》；页码 = PDF 页码。
+
+## A 书里没讲的细节
+
+> 发球 / 反手 / 截击 / 战术 / 心理 / 球线 / 握拍触觉等书（只讲正手）没有涉及的内容。
+
+- `N-P_1W1ROPE5L0K` | Why should players serve in-to-out rather than low-to-high? | 发球内容，书只讲正手
+- `N-P_5_IA7C4XZFU` | How does string bed tension/stiffness expose swing speed mismatches and cause shots to spray? | 球线张力 / 拍床与挥速匹配，书里没讲
+- `N-P_7_JPQHG4G64` | Why do recreational players stop moving or get caught flat-footed between shots? | 击球间隙停脚、注意力模式；书只在 p.11 泛提步法，无具体内容
+- `N-P_BOMJDZUFHM4` | How should players manage anxiety during high-pressure moments in tennis? | 焦虑管理，书里没讲
+- `N-P_CIIEYN42O4G` | What is the #1 backscratch mistake on the serve, and how do you fix it? | 发球背挠位，书只讲正手
+- `N-P_DDYKUNZTDYU` | How do you find and utilize the 'pull slot' on a one-handed backhand to generate power and control? | 单反，书只讲正手
+- `N-P_DX8AGSIO24W` | How can you hit low two-handed backhands with more power, spin, and confidence? | 双反低球，书只讲正手
+- `N-P_E_ZMENJIJ4G` | How Should You Optimize Your Serve Mechanics Based on Your Anatomy and Eye Dominance? | 发球，书只讲正手
+- `N-P_FBJNFBTZOZE` | How can players prevent choking and freezing up during high-pressure moments in tennis? | 关键分紧张 / 冻结，书里没讲心理
+- `N-P_FJPR9PS02TM` | Why don't 99% of tennis grips work? | 讲的是手与拍柄的触觉耦合（掌心/虎口贴合），书 p.46 只说握拍类型不重要，没讲这种手感细节
+- `N-P_FOMZ8WJV3DQ` | Why do players struggle to move explosively and stay balanced on the tennis court? | 移动基础（站距、分步、三屈），书没有系统讲
+- `N-P_LWS7XXQRRDW` | How do you build a simple, controllable foundation for the two-handed backhand and scale it up to rally pace? | 双反基础，书只讲正手
+- `N-P_NEPD7FIM7HI` | How can players improve their backhand slice using fundamentals from Federer's technique? | 反手切削，书只讲正手
+- `N-P_PFDQNFF_VYA` | Why is your overhead and serve so slow and weak? | 发球 / 高压，书只讲正手
+- `N-P_PQ793MBQE50` | How does scapular retraction power the one-handed backhand? | 单反，书只讲正手
+- `N-P_PUN6QIIYU_4` | How can you improve consistency and aggression on the two-handed backhand? | 双反，书只讲正手
+- `N-P_QXATDSEUKFY` | How can you rip low backhands effectively? | 低位反手，书只讲正手
+- `N-P_TOARB3WKJCS` | What is the most common ball-machine mistake and how can you fix it? | 发球机喂球间隔与停脚，书只讲 drop feed 零速度来球（p.129），没讲喂球节奏
+- `N-P_V_QKILD4V_W` | Which visual tracking strategy allows a player to see the serve best and time the return effectively? | 接发球的视觉策略，书只在 p.22 提到接发靠击球理解，没讲视觉方法
+- `N-P_XXLNDJNRA4E` | How can you use peripheral vision and proper mechanics to hit clean reaction volleys under time pressure? | 截击，书只讲正手
+- `N-P_YBLIT9PNG2U` | How should you direct your racket trajectory to hit an effective kick serve? | 上旋发球，书只讲正手
+- `N-P_Z9XWAXDVKZG` | What is the simple foundation required to control and power a one-handed backhand? | 单反基础，书只讲正手
+- `N-C_1W1ROPE5L0K_C01` | Approaching the ball from the top or outside rather than from the inside prevents forearm elastic stretch and results in a pushy strike. | 发球（in-to-out 发球轨迹），书只讲正手
+- `N-C_1W1ROPE5L0K_C02` | Failing to roll the shoulder back and forward leaves the arm stationary and prevents stretching energy through the pecs. | 发球肩部前后滚动，书只讲正手
+- `N-C_1W1ROPE5L0K_C04` | Intuitive panic when hitting long leads players to deliberately yank the entire arm down instead of preserving the pronation swing path. | 发球打长后的恐慌反应，书只讲正手
+- `N-C_2NN9TYMECZU_C04` | Hand choked up too far on the handle rather than resting pinky on the flare of the butt cap, restricting topspin leverage | 握拍位置（手握得太靠上），书 p.46 只说握拍类型不重要，没讲握柄位置
+- `N-C_42BFBKSTGB4_C03` | Players hyperfocus on the sending piece of the equation (the swing) and neglect deliberate practice on the receiving half of tennis. | 训练只练「发球」一半、忽视「接球」，书没有这个划分
+- `N-C_5_IA7C4XZFU_C01` | At higher swing speeds on a soft string bed, the ball sinks deep into the pocket and is flung along the swing path rather than deflecting cleanly off the face angle. | 软线床让球陷进拍床，书里没讲球线
+- `N-C_5_IA7C4XZFU_C02` | Increasing tangential/brushing racket head speed on soft strings creates unwanted vertical exit launch angle simultaneously with topspin. | 软线床加刷球导致出球角过陡，书里没讲球线
+- `N-C_5_IA7C4XZFU_C03` | Swinging faster than the playable threshold of a soft or lost-tension string bed. | 挥速超过线床可用上限，书里没讲球线
+- `N-C_7_JPQHG4G64_C01` | Players post-process their own shot and critique technique rather than locking into the opponent. | 击球后自我评判而不盯对手，书里没讲
+- `N-C_7_JPQHG4G64_C02` | Players assume the opponent cannot retrieve the ball and guess the point will end, causing them not to move. | 以为对手回不来就停步，书里没讲
+- `N-C_7_JPQHG4G64_C03` | The attention pattern ends abruptly before the ball is confirmed dead, causing players to disengage prematurely. | 注意力过早结束，书里没讲
+- `N-C_8R09TLIP_AK_C04` | Players grant opponents too much respect on defense and attempt wild bailout shots rather than hitting high, safe balls back into court. | 防守时过度尊重对手、乱打救命球，书没讲防守战术
+- `N-C_APCKJDADZEK_C01` | The front hip collapses and the knee caves inward, destroying the rigid front-leg brake/anchor necessary to halt trunk rotation. | 前髋塌、前膝内扣破坏前腿制动：书没讲前腿制动/锚定
+- `N-C_APCKJDADZEK_C03` | The player drives force through the heel and inside edge of the front foot where it first touches down, failing to shift pressure onto the ball and arch. | 前脚着地后足底压力分布（脚跟/内侧 vs 前掌），书里没讲
+- `N-C_APPDZQXH_2K_C02` | Catching or striking the ball far away from eye level makes it much harder to judge depth and timing. | 离视线高度远的球更难判断深度和时机：书 p.71–72 只讲用腿和躯干调整高度，没讲视线高度
+- `N-C_CIIEYN42O4G_C01` | Players mistakenly treat the backscratch position as the maximum power launch point rather than an arbitrary dynamic pass-through position. | 发球背挠位，书只讲正手
+- `N-C_CIIEYN42O4G_C02` | Players focus on the shoulder as the final link of the kinetic chain rather than recognizing that forearm pronation strikes the ball. | 发球中把肩当最后一环，书只讲正手
+- `N-C_CIIEYN42O4G_C03` | Players lack awareness that the forearm must first roll out and stretch into supination to unleash explosive pronation. | 发球前臂的预拉伸，书只讲正手
+- `N-C_DDYKUNZTDYU_C01` | Failing to initiate an active two-handed pull driven by squeezing the upper back shoulder blades together. | 单反双手拉，书只讲正手
+- `N-C_DDYKUNZTDYU_C02` | Failing to throw and deliver the racket accurately into the pull slot before pulling through contact. | 单反把拍送进拉拍位，书只讲正手
+- `N-C_DX8AGSIO24W_C01` | Players attempt to bunt or steer the low ball instead of releasing their hands all the way through contact. | 双反低球不放开双手，书只讲正手
+- `N-C_DX8AGSIO24W_C02` | Players stand too upright on low balls without activating a double bend at both the knees and hips. | 双反低球站太直（反手），书只讲正手
+- `N-C_DX8AGSIO24W_C03` | The stance is too narrow, failing to provide a stable wide base to twist the trunk against the hips. | 双反站距太窄，书只讲正手
+- `N-C_DX8AGSIO24W_C04` | Starting the racket statically down in the back removes swing momentum, making the stroke feel stiff and restricted. | 双反引拍静止在后方，书只讲正手
+- `N-C_E_ZMENJIJ4G_C01` | The arm slot is elevated out of plane with the shoulder rotation axis rather than matching the tilt of the shoulders. | 发球手臂槽位，书只讲正手
+- `N-C_E_ZMENJIJ4G_C02` | The player overemphasizes active forearm pronation rather than allowing the trunk and shoulder stretch-shortening cycle to drive internal rotation. | 发球中过度主动旋内，书只讲正手
+- `N-C_E_ZMENJIJ4G_C03` | The thoracic spine lacks extension during the cocking phase, preventing the trunk's soft tissue from spring-loading to accelerate the shoulder. | 发球胸椎伸展，书只讲正手
+- `N-C_E_ZMENJIJ4G_C04` | A right-eye dominant server blindly copies a deep torso turn away from the net, cutting off their dominant eye's peripheral vision to the target. | 发球转身与主视眼，书只讲正手
+- `N-C_FBJNFBTZOZE_C02` | A psychological flight response leads to sideways recovery and waiting passively on the baseline instead of pressing forward. | 心理逃避导致侧向回位、在底线被动等待，书没讲战术站位
+- `N-C_FBJNFBTZOZE_C03` | Remaining at the baseline allows athletic opponents time to recover and counter, requiring multiple consecutive high-quality baseline shots to win points. | 留在底线给对手恢复时间，书没讲战术
+- `N-C_FBJNFBTZOZE_C04` | Fixation on match outcome rather than acceptance creates anxiety that blocks aggressive commitment. | 执着比分结果造成焦虑，书没讲心理
+- `N-C_FJPR9PS02TM_C01` | Players do not use the off-hand to seat the racket back into the palm or V before each swing, preventing complete haptic coupling. | 用非持拍手把拍柄重新压回掌心 / 虎口，书没讲这个握拍触觉细节
+- `N-C_FJPR9PS02TM_C02` | The racket moves independently inside the hand rather than moving as a coupled unit, so the hand cannot perceive the racket face during acceleration. | 拍在手里滑动、手感知不到拍面，书没讲手-拍触觉耦合
+- `N-C_FOMZ8WJV3DQ_C01` | Players maintain an overly narrow stance width, restricting leg push vectors to vertical rather than lateral directions. | 站距过窄限制横向蹬地，书没讲站距（p.71 只说可加宽腿来调整高度）
+- `N-C_FOMZ8WJV3DQ_C02` | Players land from their split step before recognizing where the ball is travelling, resulting in a static, flatfooted landing. | 分步落地太早，书没讲分步时机
+- `N-C_FOMZ8WJV3DQ_C03` | Lack of a triple bend at the hips, knees, and ankles disengages the lower-body musculature and prevents force absorption and lateral pushing. | 缺少髋膝踝三屈导致下肢脱力，书没讲移动中的三屈
+- `N-C_FOMZ8WJV3DQ_C04` | The brain subconsciously forces a narrow stance to protect unprepared soft tissues from higher physical impact forces. | 大脑为保护软组织而收窄站距，书没讲
+- `N-C_FXDMVI3EFNE_C04` | Training devices like the Topspin Pro have physical wings that disincentivize players from driving through the ball. | 训练器 Topspin Pro 的结构问题，书里没讲
+- `N-C_HNVBBPEOB3G_C04` | The brain subconsciously throttles swing speed when attempting to make the court because it cannot reliably predict where the stretch release unwinds. | 大脑因无法预测拉伸释放而自动降速，书没讲
+- `N-C_KU7FHY1QQOI_C01` | Hitting the ball off-center on the string bed imposes an immediate power tax of up to 50%, canceling out kinetic chain effort. | 打到拍面偏心损失力量，书没讲甜点区
+- `N-C_KU7FHY1QQOI_C03` | Feet get stuck and reaction is delayed, failing to actively probe the ball and letting it drop low rather than attacking it at peak height. | 脚卡住、让短球掉低再打：书没讲主动迎前在最高点打
+- `N-C_LBDQPIHVXYA_C01` | The hitting arm apparatus is not stabilized because the player fails to engage the upper back, scapula, and lat muscles while running. | 跑动中靠上背、肩胛、背阔稳定持拍臂，书没讲
+- `N-C_LBDQPIHVXYA_C03` | The player prepares the hand high at chest level on low balls, requiring an extreme and error-prone vertical trajectory. | 低球却把手准备在胸高：书 p.34 说手准备在击球高度以下、p.101 低球可准备在击球高度；「手在胸高」这个具体错误书里没有
+- `N-C_LOSRMJ_QXKC_C03` | Without elastic shoulder whip and rotational lag, the player must consistently lean in with linear weight transfer to generate shot velocity. | 没有肩部弹性滞后时靠线性重心转移出速：书没讲这种风格替代
+- `N-C_LWS7XXQRRDW_C01` | Holding the hands tight and eliminating the gravity loop removes natural momentum and makes the stroke stiff. | 双反引拍的重力环，书只讲正手
+- `N-C_LWS7XXQRRDW_C02` | Failing to engage the right hand and shoulder to pull the driving vector leaves the stroke purely wristy. | 双反右手与肩拉动，书只讲正手
+- `N-C_LWS7XXQRRDW_C04` | Hitting at improper contact depth jams rotation or exhausts body release before the ball is struck. | 双反击球深度不当，书只讲正手
+- `N-C_NEPD7FIM7HI_C01` | Chopping at the slice with the hand and wrist instead of driving the stroke with the trunk, shoulder, legs, and core while maintaining the racket-forearm angle. | 反手切削，书只讲正手
+- `N-C_NEPD7FIM7HI_C02` | Trying to adjust to low contact using the hand alone rather than bending at the knee and hip. | 反手切削低球调整（书 p.71–73 讲的是正手同理，但本节点是切削反手）
+- `N-C_NEPD7FIM7HI_C03` | Rounding the back instead of maintaining a neutral spine while bending at the hips and knees. | 反手切削时脊柱弯曲，书只讲正手
+- `N-C_NEPD7FIM7HI_C04` | Attempting to copy a pro's exact swing angle instead of calibrating to one's own string bed and setup. | 照抄职业球员的切削拍角而不按自己拍线校准，书只讲正手
+- `N-C_NEPD7FIM7HI_C05` | Attempting to stretch and release the shoulder for extra velocity before establishing racket angle control, posture, and calibration. | 切削时过早追求肩部释放，书只讲正手
+- `N-C_P41GGC_Y5XK_C02` | Players fail to sense racket head orientation through hand pressure sensors, leaving them unable to manipulate the ball on demanding shots like low balls. | 通过手的压力感知拍面方向，书没讲手部感受器
+- `N-C_PFDQNFF_VYA_C01` | The player attempts to throw the racket up or down-and-up directly at the ball rather than throwing it out to the hitting side. | 发球/高压往球上直接抛拍，书只讲正手
+- `N-C_PFDQNFF_VYA_C02` | The brain is psychologically anchored on clearing the net, preventing a committed and free outward release. | 发球时心理锚定过网，书只讲正手
+- `N-C_PFDQNFF_VYA_C03` | The racket is not nestled deep into the V of the hand and index palm, preventing relaxed control and inertia perception of the racket face. | 拍柄没深入虎口与掌心，书没讲这个握拍细节
+- `N-C_PFDQNFF_VYA_C04` | The player fails to recognize that the overhead/serve uses the exact same outward release and flip mechanics as the forehand along a different plane. | 发球与正手同为向外释放，书只讲正手
+- `N-C_PJVOQKQH9DA_C02` | Players' egos prevent them from accepting that an inferior opponent hit a good shot, provoking premature counter-attacks on defense. | 自尊心导致过早反击，书没讲心理
+- `N-C_PJVOQKQH9DA_C03` | Players become emotionally perturbed and distracted when an opponent attacks their weaker shot, falsely assuming superior players cannot be threatened. | 对手攻弱点时情绪波动，书没讲心理
+- `N-C_PQ793MBQE50_C01` | The wrist is allowed to break freely through contact instead of using forearm tension to restrict rotation to a plane that keeps string angle stable. | 单反手腕自由折断（书 p.38–41 正手讲保持拍面，但本节点是单反）
+- `N-C_PQ793MBQE50_C02` | Holding the racket with knuckles slanted offside at a ~135 degree volley angle rather than a strict 90-degree orthogonal angle between forearm and handle. | 单反握拍角度，书只讲正手
+- `N-C_PQ793MBQE50_C03` | Catching the ball too late with the pull slot set too close to the stomach rather than out in front. | 单反拉拍位离腹部太近，书只讲正手
+- `N-C_PQ793MBQE50_C04` | Initiating the stroke solely with one hand instead of executing a two-handed forward movement into the pull slot. | 单反只用一只手发起，书只讲正手
+- `N-C_PSIDJEI5BNI_C04` | Players react late to short balls, allowing them to drop low below net height where attacking is no longer viable. | 对短球反应慢、让它掉到网高以下：书没讲迎前时机
+- `N-C_PUN6QIIYU_4_C01` | Trying to play an aggressive, flat backhand at knee height from inside the court where gravity has less distance and time to pull the ball down. | 双反在场内膝高进攻，书只讲正手
+- `N-C_PUN6QIIYU_4_C02` | Failing to extend the racket all the way through a straight target vector, pulling across the body prematurely. | 双反未沿目标线延伸，书只讲正手
+- `N-C_PUN6QIIYU_4_C03` | Relying on the small hand and wrist muscles to guide the swing rather than driving weight transfer from the loaded back leg. | 双反靠手腕小肌肉引导，书只讲正手
+- `N-C_PUN6QIIYU_4_C04` | Improper contact point probing where the ball is taken too low or out of the strike window where the string angle is naturally aligned. | 双反击球点探测不当，书只讲正手
+- `N-C_PWZYP_XFLFU_C01` | The top haptic reference at the palm or V is disengaged or unmapped, leaving the player with no perception of racket momentum. | 掌心 / 虎口的上部触觉参照，书没讲
+- `N-C_PWZYP_XFLFU_C02` | Bottom fingers are used to cheat and force the racket head path rather than acting as a humble guide for racket momentum. | 用下面几根手指强行控制拍头路径，书没讲手指分工
+- `N-C_PWZYP_XFLFU_C04` | The bottom fingers squeeze too early in the forward swing, substituting slow-twitch wrist flexion for elastic energy transfer. | 下面几根手指过早收紧导致慢肌屈腕，书没讲手指时序
+- `N-C_QSZZ0N4FRB4_C02` | The player lacks trust in the release because they have not identified a single comfortable arm sensation and built upstream trunk and non-dominant arm mechanics around it. | 先找一种舒服的手臂感觉、再围绕它建上游机制，书没讲这种方法
+- `N-C_QXATDSEUKFY_C01` | The player does not sit into a deep back knee bend, preventing them from maintaining balance and driving through the low ball. | 低位反手后膝深屈，书只讲正手
+- `N-C_QXATDSEUKFY_C03` | The player yanks the racket over the shoulder rather than throwing and driving the hands forward through the shot. | 反手随挥把拍拽过肩，书只讲正手
+- `N-C_TOARB3WKJCS_C01` | Feeding balls too slowly leaves several seconds of idle time, prompting rational verbal thinking rather than intuitive execution during stroke play. | 喂球太慢留下空闲时间引发理性思考，书没讲喂球节奏
+- `N-C_TOARB3WKJCS_C02` | The prolonged interval between feeds makes continuous foot movement unnatural, conditioning players to halt their feet after each rep. | 喂球间隔长让人停脚，书没讲
+- `N-C_TOARB3WKJCS_C03` | Practicing with a pause between shots prevents the player from linking the landing recovery of one stroke directly into the preparation of the next stroke. | 击球间停顿使落地与下一次准备无法衔接，书没讲
+- `N-C_UJPUDUX0JIA_C05` | Upper trapezius shrugging and lack of isometric engagement in the mid-traps and serratus anterior, detaching the hitting arm from the trunk. | 斜方肌耸肩、中下斜方与前锯肌不发力，书没讲肩胛稳定
+- `N-C_VG8LBXOHM3E_C02` | The player fails to recruit an athletic base because predictable ball feeds do not require hip tilt, knee bend, or wide-stance stability. | 可预测的来球不需要髋倾、屈膝、宽站：书没讲练习来球与运动姿态的关系
+- `N-C_VG8LBXOHM3E_C04` | Common match-specific awkward patterns, such as low short approach shots, are habitually avoided or allowed to double bounce during practice. | 练习中回避低短的上网球，书没讲
+- `N-C_V_QKILD4V_W_C01` | The returner cannot synchronize the timing of their split step and return rhythm with the server's contact. | 接发球分步与发球方击球同步，书没讲
+- `N-C_V_QKILD4V_W_C02` | The returner fails to see the ball early during the initial phase of the serve to accurately detect when contact will occur. | 接发时看抛球早期，书没讲
+- `N-C_V_QKILD4V_W_C03` | Fixating on the server's racket face or body parts fails because the racket moves too rapidly through contact to provide readable visual cues. | 盯发球者拍面无用，书 p.76 说对方拍面触球时能透露轨迹，但没讲接发具体看哪
+- `N-C_V_QKILD4V_W_C04` | Human serve motions vary significantly between players and speeds, unlike the ball toss which follows a predictable gravitational trajectory. | 发球动作差异大、抛球轨迹可预测，书没讲
+- `N-C_WFIRPMUTZRO_C04` | Lacking a wide base and hip flexion disables glute support and shifts rotational load to lower back muscles. | 缺宽站和髋屈让臀不出力、转动压力转到下背，书没讲
+- `N-C_WOVEWH7FFFC_C01` | The racket tip does not have enough inward momentum during preparation to spring-load the wrist apparatus naturally. | 准备中拍头向内的动量去给手腕预加载，书没讲
+- `N-C_WOVEWH7FFFC_C04` | The racket fails to load into-out on the serve because there is insufficient stretch in the back of the drop. | 发球的由内向外加载，书只讲正手
+- `N-C_WZLMV4ASG9S_C02` | Handle is not firmly seated in the top of the hand, losing visceral tactile connection to the racket head hinge. | 拍柄没坐稳在手的上部、失去触觉连接，书没讲
+- `N-C_WZLMV4ASG9S_C03` | Squeezing tightly with the bottom of the hand too early before the natural hinge occurs. | 下部手指过早捏紧，书没讲手指时序
+- `N-C_WZLMV4ASG9S_C05` | Failure to stabilize the scapula with back and side muscles (lats, mid/lower traps) during forward drive. | 前挥中靠背阔、中下斜方稳定肩胛，书没讲
+- `N-C_XLS469ZVMPU_C04` | The player fails to produce static pressing force into the court through the lead foot, allowing the foot to lift or twist out early. | 前脚向地面施加静态压力以制动，书没讲前脚制动
+- `N-C_XXLNDJNRA4E_C01` | Players try to take a backswing on reaction volleys instead of hovering the hand behind the ball and waiting. | 截击，书只讲正手
+- `N-C_XXLNDJNRA4E_C02` | Players attempt to track the ball immediately off the strings with foveal focus rather than processing its motion through peripheral vision. | 截击用周边视觉，书只讲正手（且与 p.76 看球到拍线不同，但属截击）
+- `N-C_XXLNDJNRA4E_C03` | Players strike low volleys far below their eye level without bending their knees and hips to lower their perspective. | 低截击不屈膝，书只讲正手
+- `N-C_X_WIG59WR9Y_C01` | Players mentally intuit a long delay between when hand acceleration stops and when contact happens. | 对手停止加速到触球之间延迟的直觉，书没讲
+- `N-C_X_WIG59WR9Y_C02` | The player mistimes acceleration and fails to accelerate the hand all the way to the ball, letting the wrist spring release too early. | 手的加速没持续到球、手腕弹簧过早释放：书没讲释放时机
+- `N-C_X_WIG59WR9Y_C04` | Stored elastic energy in the wrist leaks out linearly with every extra millisecond the lag release window extends beyond 40 milliseconds. | 弹性能量每毫秒线性泄漏（40 ms 窗口），书没讲
+- `N-C_YBLIT9PNG2U_C01` | Players fundamentally fail to create proper kick serve racket motion because they do not understand how sideways the trajectory vector must be. | 上旋发球，书只讲正手
+- `N-C_YBLIT9PNG2U_C03` | Players do not utilize the high degree of orthogonality required between the arm's throwing vector and the ball's final flight line. | 上旋发球的正交性，书只讲正手
+- `N-C__QU1LOWKLAW_C01` | Players overplay and press because they feel they should never lose points to an opponent's high-difficulty winner. | 觉得不该输给对手的高难度制胜球而过度发力，书没讲心理
+- `N-C__QU1LOWKLAW_C02` | Players fail to calibrate anxiety properly, either over-hyping and blasting neutral balls or lacking alertness to attack short balls. | 焦虑校准，书没讲心理
+- `N-C__QU1LOWKLAW_C04` | Under big-moment pressure, players alter their game by overhitting or becoming tentative instead of trusting their pattern. | 关键分改变打法，书没讲心理
+- `N-C_0M3BMFDDSHI_C01` | The player relaxes the lats and posterior shoulder muscles instead of keeping them engaged to hold the arm and racket up connected to the trunk. | 放松背阔和肩后肌群导致手臂和拍失去与躯干的连接：书 p.114 只讲胸肌稳住手臂，没讲背阔
+- `N-C_Z9XWAXDVKZG_C01` | The upper back around the shoulder blade is not engaged down and back during preparation and swing. | 单反上背肩胛，书只讲正手
+- `N-C_Z9XWAXDVKZG_C02` | The grip has too much of a continental slant rather than roughly 90 degrees, preventing forearm roll. | 单反握拍角度，书只讲正手
+- `N-C_Z9XWAXDVKZG_C03` | The arm completely relaxes into the gravity drop instead of keeping the racket landing on the soft tissue complex. | 单反手臂完全放松进重力下坠，书只讲正手
+- `N-C_Z9XWAXDVKZG_C04` | The player stands straight and drops the arm instead of lowering the torso and bending the knees on low balls. | 单反低球站直，书只讲正手
+- `N-C_Z9XWAXDVKZG_C05` | The physical muscular strength of the upper back and shoulder complex is insufficient to support and maneuver the racket weight. | 单反上背力量不足，书只讲正手
+- `EP:1W1rope5l0k` | Why Every Pro Serves In-to-Out, rather than Low-to-High | 发球，书只讲正手
+- `EP:2J8q7sn4JLc` | Why Your Forehand Sprays, and How to Fix It | （holdout）拍柄尺寸与手掌贴合的触觉，书没讲
+- `EP:5-Ia7c4XzfU` | This Tennis Robot Exposed My Tension Issue | 球线张力与挥速匹配，书里没讲
+- `EP:7_JPqhG4G64` | What He Does Next Separates Pros from Amateurs | 击球间注意力与停脚，书里没讲
+- `EP:E_zmENJIj4g` | Coiling / Spinal Motion / Eye Dominance / Arm Slot - 15 Serves Explained | 发球，书只讲正手
+- `EP:FBJnFBtZozE` | How Sinner Choke-Proofed His Game | 关键分心理与战术，书里没讲（仅其中一个根因可挂 BR-CH26，见节点条目）
+- `EP:FOmz8Wjv3DQ` | Deeper Than Just "Footwork" / Tennis Movement Fundamentals Explained | 移动基础（站距、分步、三屈），书没有系统讲
+- `EP:FjjvhNbk3q4` | 7 Tips for an Effortless Serve ft. Giovanni Mpetshi-Perricard | 发球，书只讲正手
+- `EP:Fu6DkHvZlGY` | The Pure-Dextral Pinpoint / Serve Like Jakob Mensik | （holdout）发球，书只讲正手
+- `EP:Ibkq-yBteGc` | To Hit the Low Backhand | 低位反手，书只讲正手
+- `EP:MWjBfarwNlA` | Alcaraz's Secret Weapon / Backhand Line RALLY Ball | （holdout）反手战术，书只讲正手
+- `EP:NEpD7fIM7HI` | Learning from Federer's Slice / 4 Tips + 3 Drills | 反手切削，书只讲正手
+- `EP:PUN6qIIYU-4` | 4 Tips for the Two-Handed Backhand | 双反，书只讲正手
+- `EP:PfDqnff_vYA` | Why Your Serve is So Slow | 发球 / 高压，书只讲正手
+- `EP:QXAtdSEUkfY` | 3 Tips to Rip the Low Backhand | 低位反手，书只讲正手
+- `EP:V-QkILd4V-w` | 8 Visual Return Strategies Tested by a WTA Pro | 接发球视觉策略，书没讲
+- `EP:XXlndjnrA4E` | Peripheral Vision Lets You Volley Like the Pros | 截击，书只讲正手
+- `EP:XjJHA91HDbU` | Don't Swing AT the Ball on the Overhead | （holdout）高压 / 发球，书只讲正手
+- `EP:YbLit9png2U` | Fix Your Kick Serve by Throwing Sideways | 上旋发球，书只讲正手
+- `EP:Z9XwaXDVkZg` | The Simple Foundation of the One-Handed Backhand | 单反，书只讲正手
+- `EP:boMJDzuFhM4` | Alcaraz's Anxiety Secret / Mental Mastery in Tennis | 焦虑管理，书里没讲
+- `EP:cIIEYn42o4g` | The #1 Backscratch Mistake — and How to Fix It | 发球，书只讲正手
+- `EP:dDYKuNZtdyU` | Find Your One-Handed Backhand "Pull Slot" | 单反，书只讲正手
+- `EP:dx8aGSIo24w` | 4 Tips for Two-Handers with Alexa & Johnny | 双反，书只讲正手
+- `EP:emZxTmSVSa8` | Master Pronation in 2 Minutes at Home | （holdout）发球旋内，书只讲正手
+- `EP:fjpr9PS02tM` | Why 99% Of Grips Don't Work | 手与拍柄的触觉耦合，书没讲
+- `EP:jDBg4Fpf0tQ` | Uncle Iroh Explains the Tennis Forehand | 非教学视频（动画对白配网球画面），无可挂内容
+- `EP:lwS7Xxqrrdw` | The Simple Foundation of the 2-Handed Backhand | 双反，书只讲正手
+- `EP:m1NBdd3Bigg` | Simple Serve Progressions - From Beginner to Advanced / with Johnny & Alexa | 发球，书只讲正手
+- `EP:omsLx7F2Wdc` | There's Only 1 Singles Strategy, and This is It | 单打战术，书没讲
+- `EP:pQ793MBQE50` | How Scap Retraction Powers the One-Handed Backhand | 单反，书只讲正手
+- `EP:toArb3WkJcs` | The Most Common Ball-Machine Mistake and How to Fix It | 发球机喂球节奏与停脚，书没讲（书只讲 drop feed 零速度来球）
+- `EP:w1FakobNq1Q` | Breaking Down the Greatest Tiebreak Ever Played | 抢七心理与战术，书没讲
+
+## B 和书冲突（FTT 内部冲突，按 README §1）
+
+> 书与视频说法相反。按 README §1：两者都记，交用户裁决，不自行取舍；以下不挂书节点。
+> **2026-10-21 裁决进度**：髋冲突（6ak4 C03 / ujpu C02）= **书赢**；Unit Turn（EP:ui-RFRdQKRk）= **用户意识层解释**。详见 `book_orphans_adjudication_2026-10-21.md`。历史条目保留，仅追加状态标注。
+
+- `N-C_6AK4ZSCH_GC_C03` | Consciously trying to push the hitting hip forward through the shot causes the player to avoid stretching the core fascia, resulting in hips and shoulders rotating together. | 书 p.89：「During the hip rotation phase of the kinetic chain, the relative angle of the shoulders and hips is maintained」（髋转动阶段肩髋一起走是正常的）；p.83、p.117 还建议有意识地蹬后腿、想「把髋扭回面向网」。视频：有意识地把持拍侧髋往前推，会让髋肩一起转、核心筋膜拉不开 【状态 2026-10-21：书赢 / adjudicated_book_wins】
+- `N-C_LBDQPIHVXYA_C04` | The player maintains the same wide horizontal spacing on low balls instead of moving the body closer for a vertical swing path. | 书 p.71–72、p.100：低球用腿坐低、躯干倾斜来保持同样的躯干-手臂关系，不改变站位与手臂间距；视频：低球不该保持同样的横向宽间距，要把身体移近球、走更竖直的路径
+- `N-C_MCCB_RFYD0W_C01` | The left side of the chest must actively press back across the body to oppose outward rotational momentum. | 书 p.89–91、p.111：「pulling the non-hitting elbow out and around the body」、上半身「turn back as a unit」，非持拍侧是跟着往外、往回绕；视频：左胸要主动向回压过身体，去对抗向外的转动惯性
+- `N-C_PSIDJEI5BNI_C03` | Players prepare their hand way below the incoming ball to brush topspin instead of matching hand height to drive flatter. | 书 p.34：「prepare your hand below the anticipated contact height」，手准备在击球高度以下是最好的做法；视频：打慢球时把手放在球下很远去刷上旋是错的，要让手和来球同高、打得更平
+- `N-C_TZGAWR3QGV0_C04` | The non-hitting arm swings freely with the trunk rotation rather than pressing back or anchoring, forfeiting upper-body balance and leverage. | 书 p.89–91、p.111：非持拍手肘要和持拍手肘、胸一起绕身体转回（back together, forward together）；视频：非持拍手随躯干一起自由转动是错的，应该向回压或固定住
+- `N-C_UB6SBA_KX9E_C01` | Players incorrectly assume the rotational command originates from the legs or the ground rather than understanding the trunk commands rotation while legs act as force multipliers. | 书 p.83、p.110–111：「the forward swing starts by initiating rotation by driving off of the back leg」，从击球腿发力引导扭转；视频：转动的指令来自躯干而不是腿，腿只是力量放大器 【状态 2026-10-21：pending_default_book】
+- `N-C_UJPUDUX0JIA_C02` | Intentionally driving the pelvis open forward instead of rotating the upper body over a stable pelvic base. | 书 p.83：「body rotation starts with a rotation of the hips」，有意识地「twisting the hips back towards the net」；p.117 蹬后腿让髋转回目标。视频：有意驱动骨盆向前打开是错的，应在稳定的骨盆上转动上半身 【状态 2026-10-21：书赢 / adjudicated_book_wins】
+- `N-C_WD4YRQW3TOC_C03` | The contact point is probed too far out in front, where the shoulder has already unwound too much, preventing clean release and triggering defensive tightening. | 书 p.147：「the correct contact point on a touch shot will often initially feel quite far in front of you」，p.21–24 在身前击球；视频：击球点探得太靠前时肩已转完，反而不能干净释放
+- `N-C_WD4YRQW3TOC_C04` | The player fails to roll the racket backwards somewhat on purpose during the early swing, missing the initial roll needed for inertia to load the stretch. | 书 p.65–66：滞后「should not be entered volitionally」，引拍时拍面朝向是被动的；视频：前挥早期要「somewhat on purpose」把拍往后转，才有惯性拉伸
+- `EP:ui-RFRdQKRk` | The Pros "Rotate" Differently Than You | （holdout）书 p.59：「The hips turn to the side, away from the target, so that they can explosively twist back towards it」，Unit Turn 时髋也转离；视频：「The unit doesn't include your hips」，准备时髋不随肩一起后转，要留住或反向，才能产生张力 【状态 2026-10-21：用户意识层解释 / adjudicated_user_consciousness】
+
+## C 拿不准
+
+> 能找到相关章节，但挂上去会改变书的意思或需要先裁决别的冲突，暂不挂。
+
+- `N-P_GSHKML2MVEI` | How should you time your forearm rolling back relative to trunk rotation on the forehand? | 前臂回卷与转体的时序：书 p.64–67 只说准备时手腕前臂不主动、滞后是被动的，没讲回卷时机；是否与书冲突拿不准
+- `N-P_LBDQPIHVXYA` | How can players stabilize their forehand hitting arm during a dead sprint to execute difficult low running shots? | 全速跑动中的低球：书只在 p.26、p.60、p.82 脚注说跑动中转体受限、可用手臂；本期讲的背部稳定法书里没有，挂哪章拿不准
+- `N-P_MCCB_RFYD0W` | How does the non-dominant side function to stabilize the forehand? | 非持拍侧的稳定作用：书 p.89–91、p.111 讲非持拍手肘随胸一起转回；本期说左胸要向回压住外甩，二者是否同一回事拿不准
+- `N-C_APCKJDADZEK_C05` | The player rushes immediately onto the front foot without first balancing and coiling their head and weight over the outside back leg. | 急着上前脚、没先在后腿上平衡蓄力：书 p.83、p.117 讲蹬后腿，但没讲「先在后腿上平衡」这一步；挂不挂拿不准
+- `N-C_GSHKML2MVEI_C01` | Finishing the forearm roll-back too early and pausing before trunk rotation starts, which destroys the dynamic forearm stretch. | 前臂回卷完成后停顿再转体：书 p.75 说准备后的等待是正常的最后一步，本节点说这种停顿毁掉前臂动态拉伸；两者看起来相反，但书没讲前臂回卷，是否冲突拿不准
+- `N-C_MCCB_RFYD0W_C03` | Failing to actively press inward leaves outward momentum unchecked, destroying stroke balance. | 不主动内压就失衡：书 p.62 只说肘离开身体有助于平衡，没讲随挥中非持拍侧内压；拿不准
+- `N-C_UB6SBA_KX9E_C02` | When attempting to imitate compact swings, players disrupt the acceleration rhythm by losing the trunk command followed by hip force multiplication. | 模仿紧凑挥拍时失去「躯干指令→髋放大」节奏：说法依赖 C01 的「躯干主导」，书序相反；是否冲突取决于 C01 的裁决，拿不准
+- `N-C_WD4YRQW3TOC_C01` | Players separate the roll and forward pull into two disconnected motions with a pause, which eliminates the dynamic inertial stretch in the arm. | 把回卷和前拉分成两段、中间停顿：书 p.75 说准备后的等待是正常的；本节点说停顿消除了手臂的惯性拉伸，是否冲突拿不准（同 GsHk C01）
+- `N-C_WVA4XQPCAQS_C01` | The player's contact point changes depending on their degree of rotation and body orientation. | 击球点随转动程度和身体朝向变化：书 p.29–30 说正对目标时可接受范围最宽，但没讲击球点随转动漂移；拿不准
+- `EP:GsHkML2mVEI` | Nishioka's Unique "Backswing" Timing / Two Styles Contrasted | 前臂回卷与转体的时序，书没讲回卷；与 p.75「等待」是否冲突拿不准
+- `EP:JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 触球点要和肩内旋起点同步、可以比「标准」更靠近身体：书 p.116 强调身前且离开身体，p.147 说正确点常感觉很靠前；是否冲突拿不准
+- `EP:McCb-RfYd0w` | The Magic of the Non-Dominant Side on the Forehand | 非持拍侧向回压：与书 p.89–91 非持拍手肘随胸一起转回的关系拿不准（其 C01 列入 B）
+- `EP:lbdQpIHvXYA` | The Stabilization Secret in Khachanov's Forehand | 全速跑动中的低球与背部稳定：书只在 p.26、p.60、p.82 提到跑动中转体受限，挂哪章拿不准
