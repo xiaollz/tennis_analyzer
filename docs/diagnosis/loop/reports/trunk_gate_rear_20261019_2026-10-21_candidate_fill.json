@@ -12,7 +12,7 @@
         "result": "PASS"
       },
       {
-        "detail": "status=has_facts evid=['OBS-25=shoulders_lead_hips', 'OBS-18=arm_first', 'OBS-08=small_turn', 'OBS-09=square_or_past'] need=['OBS-18=arm_first', 'OBS-25=shoulders_lead_hips']",
+        "detail": "status=has_facts evid=['OBS-25=shoulders_lead_hips', 'OBS-18=arm_first', 'OBS-08=small_turn', 'OBS-09=square_or_past', 'OBS-10a=heel_down_at_contact', 'OBS-15b=wraps_back_to_body_immediately'] need=['OBS-18=arm_first', 'OBS-25=shoulders_lead_hips']",
         "id": "K03",
         "result": "PASS"
       },
@@ -82,7 +82,7 @@
         "result": "PASS"
       },
       {
-        "detail": "cur=ffa143396a33… meta=ffa143396a33…",
+        "detail": "cur=355105dff45a… meta=355105dff45a…",
         "id": "K17",
         "result": "PASS"
       }
@@ -172,6 +172,13 @@
         "caught": true,
         "failed_ids": [
           "K17"
+        ]
+      },
+      {
+        "case": "subkey_wrong_value",
+        "caught": true,
+        "failed_ids": [
+          "K11"
         ]
       }
     ],

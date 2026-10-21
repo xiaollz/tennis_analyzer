@@ -366,6 +366,24 @@ def run_selftest(compose_mod, branches_path: Path, facts_path: Path, golden: dic
     m["meta"]["facts_file_sha256"] = "0" * 64
     expect_fail("facts_sha_mismatch", m, expect_ids=["K17"])
 
+    # 11 sub-part key mapping (OBS-15b <-> leaf OBS-15 + "b:"): mapping must link,
+    # and a wrong-part value presented as fact must be caught as invented.
+    mf = copy.deepcopy(facts)
+    mf["facts"] = [f for f in mf.get("facts", []) if f.get("obs") != "OBS-15b"] + [
+        {"obs": "OBS-15b", "value": "wraps_back_to_body_immediately", "agree": "3/3", "source": "model"}]
+    mb = ctr.compose(branches, mf)
+    mb["meta"] = dict(base["meta"])
+    linked = any(L.get("id") == "L1_finish_wraps" and L.get("state") == "fact" and L.get("obs") == "OBS-15b"
+                 for b in mb["branches"] for L in b["leaves"])
+    for b in mb["branches"]:
+        for L in b["leaves"]:
+            if L.get("id") == "L1_finish_wraps":
+                L["value"] = "extends_toward_target_after_contact"
+    if linked:
+        expect_fail("subkey_wrong_value", mb, mutated_facts=mf, expect_ids=["K11"])
+    else:
+        results.append({"case": "subkey_wrong_value", "caught": False, "failed_ids": ["mapping_not_linked"]})
+
     all_caught = all(r["caught"] for r in results)
     return {"pass": all_caught, "cases": results}
 

@@ -22,10 +22,10 @@ id=`TRUNK_KINETIC_CHAIN` · sources=BOOK:p83, BOOK:p116, BOOK:p117, BOOK:p30, BO
 | 准备转离幅度小 | context | fact | OBS-08=small_turn (2/3) |
 | 触球时髋线已朝网（开放站位下不等于扭转后转回，要结合 OBS-25 读） | context | fact | OBS-09=square_or_past (3/3) |
 | 小臂往上抬 / 往上兜（视频 ui holdout / 用户自述；书对应是手臂被卡、用小肌肉 p.30，非「往上兜」原词） | evidence | self_report | 用户自述：正后方肉眼能明显看出小臂向上抬 |
-| 蹬髋只是象征性：身体前移、力没沿链上传（C 层为主）；「约 45° 往前上」为用户自述。书要的是扭回面向网 / 髋引导启动，不是把髋往球方向推（见 banned_cue_extra） | evidence | self_report | 用户自述：每次蹬髋只是象征性腿部往前 / 往上蹬，髋没攒住力，身体往前移，力没往上传 |
+| 蹬髋只是象征性：身体前移、力没沿链上传（C 层为主）；「约 45° 往前上」为用户自述。书要的是扭回面向网 / 髋引导启动，不是把髋往球方向推（见 banned_cue_extra） | evidence | fact | OBS-10a=heel_down_at_contact (2/3) |
 | 脚钉死 / 宽开放站位钉在原地 | upstream_condition | legacy | 宽开放站位钉在原地，无侧移 / 交叉 / 垫步 |
 | 膝盖没有深弯（正后方看不准深浅） | upstream_condition | legacy | 膝盖弯曲不明显（直立微屈） |
-| 随挥马上缠回左肩 | downstream | legacy | 随挥落左肩至左前胸 |
+| 随挥马上缠回左肩 | downstream | fact | OBS-15b=wraps_back_to_body_immediately (3/3) |
 | 臂和胸是否同步（正后方实测看不清） | not_visible | not_visible | OBS-40=unclear / 机位不可见 |
 | 躯干是否减速（实测看不清） | not_visible | not_visible | OBS-19=unclear / 机位不可见 |
 | 骨盆是否减速（实测看不清） | not_visible | not_visible | OBS-71=unclear / 机位不可见 |
@@ -45,7 +45,7 @@ holdout 知识（不进 tree evidence）：ui-RFRdQKRk:Q01, ui-RFRdQKRk:Q02, ui-
 | 前挥启动时球还在弹起 / 未到最高点 | evidence | self_report | 用户自述：复看视频发现在球到最高点之前就开始挥，怕打不到的急躁 |
 | 开始转体时拍头还在球上方 | evidence | missing | 缺失 |
 | 触球点在身体前后（与启动时机是两个量） | evidence | missing | 缺失 |
-| 引拍顶点停顿 | context | fact | OBS-04=pause_present (2/2) |
+| 引拍顶点停顿 | context | fact | OBS-04=pause_present (3/3) |
 | 口播结果 / 下网 | downstream | missing | 缺失 |
 
 缺失的中立事实（待测）：
@@ -79,9 +79,9 @@ holdout 知识（不进 tree evidence）：ui-RFRdQKRk:Q01, ui-RFRdQKRk:Q02, ui-
 
 ## 附录：diagnose.py 扁平排名（不决定粗枝）
 
-- N-C_WZLMV4ASG9S_C01 Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing. conf=medium score=2 evid=['OBS-36=directly_toward_ball (model, 2/2)']
-- N-C_2NN9TYMECZU_C06 Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion conf=medium score=3 evid=['OBS-08=small_turn (model, 2/3)', 'OBS-09=square_or_past (model, 3/3)']
-- N-C_LBDQPIHVXYA_C04 The player maintains the same wide horizontal spacing on low balls instead of moving the body closer for a vertical swing path. conf=medium score=3 evid=['OBS-33=more_than_one_forearm_length (model, 2/2)', 'OBS-02=visible_gap (model, 2/2)']
+- N-C_WZLMV4ASG9S_C01 Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing. conf=medium score=2 evid=['OBS-36=directly_toward_ball (model, 3/3)']
+- N-C_2NN9TYMECZU_C06 Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion conf=medium score=4 evid=['OBS-08=small_turn (model, 2/3)', 'OBS-09=square_or_past (model, 3/3)', 'OBS-06=open (model, 2/3)']
+- N-C_LBDQPIHVXYA_C04 The player maintains the same wide horizontal spacing on low balls instead of moving the body closer for a vertical swing path. conf=medium score=3 evid=['OBS-33=more_than_one_forearm_length (model, 3/3)', 'OBS-02=visible_gap (model, 3/3)']
 
 ---
 meta: clip=rear_20261019_small camera=B v5_passed=False

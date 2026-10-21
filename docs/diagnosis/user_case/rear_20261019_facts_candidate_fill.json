@@ -1,5 +1,5 @@
 {
-  "_comment": "CANDIDATE snapshot (2026-10-21 rear fill). = frozen + established new facts from rear_20261019_obs_fill_consensus.md (2 valid runs, run1 429 DRIFT). Not frozen; frozen/golden untouched.",
+  "_comment": "CANDIDATE snapshot (2026-10-21 rear fill). = frozen + established new facts from rear_20261019_obs_fill_consensus.md (3 valid runs: run4 replaces 429 run1, run2, run3). OBS-08 re-ask NOT applied (frozen pending adjudication). Multi-part OBS keyed OBS-NNx; compose maps to leaf OBS-NN + 'x:' value. Frozen/golden untouched.",
   "clip_id": "rear_20261019_small",
   "camera": "B",
   "audio_stripped": true,
@@ -50,65 +50,114 @@
       "source": "model"
     },
     {
+      "obs": "OBS-10a",
+      "value": "heel_down_at_contact",
+      "agree": "2/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
       "obs": "OBS-10b",
       "value": "stays_in_place",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-04",
       "value": "pause_present",
-      "agree": "2/2",
+      "agree": "3/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-05",
+      "value": "no_steps_stands_still",
+      "agree": "2/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-15a",
       "value": "finish_above_non_hitting_shoulder",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-15b",
       "value": "wraps_back_to_body_immediately",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-15c",
       "value": "elbow_in_front_of_chest_at_end",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-38",
       "value": "shoulder_width_or_wider",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-33",
       "value": "more_than_one_forearm_length",
-      "agree": "2/2",
+      "agree": "3/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-36",
       "value": "directly_toward_ball",
-      "agree": "2/2",
+      "agree": "3/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-32",
+      "value": "rotational_drive",
+      "agree": "2/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     },
     {
       "obs": "OBS-02",
       "value": "visible_gap",
-      "agree": "2/2",
+      "agree": "3/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-07a",
+      "value": "reaches_across_body_front",
+      "agree": "2/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-07b",
+      "value": "leaves_racket_after_turn_complete",
+      "agree": "2/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-07c",
+      "value": "rotates_back_with_chest",
+      "agree": "2/3",
+      "source": "model",
+      "prompt": "facts_rear_fill_v1"
+    },
+    {
+      "obs": "OBS-06",
+      "value": "open",
+      "agree": "2/3",
       "source": "model",
       "prompt": "facts_rear_fill_v1"
     }

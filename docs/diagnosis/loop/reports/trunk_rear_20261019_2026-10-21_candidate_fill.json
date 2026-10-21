@@ -117,13 +117,15 @@
           "zh": "小臂往上抬 / 往上兜（视频 ui holdout / 用户自述；书对应是手臂被卡、用小肌肉 p.30，非「往上兜」原词）"
         },
         {
+          "agree": "2/3",
           "camera": "B",
           "id": "L1_symbolic_hip_push",
-          "obs": "OBS-10",
+          "leaf_obs": "OBS-10",
+          "obs": "OBS-10a",
           "role": "evidence",
-          "self_report_key": "symbolic_hip_push",
-          "self_report_zh": "每次蹬髋只是象征性腿部往前 / 往上蹬，髋没攒住力，身体往前移，力没往上传",
-          "state": "self_report",
+          "source": "model",
+          "state": "fact",
+          "value": "heel_down_at_contact",
           "zh": "蹬髋只是象征性：身体前移、力没沿链上传（C 层为主）；「约 45° 往前上」为用户自述。书要的是扭回面向网 / 髋引导启动，不是把髋往球方向推（见 banned_cue_extra）"
         },
         {
@@ -147,13 +149,15 @@
           "zh": "膝盖没有深弯（正后方看不准深浅）"
         },
         {
+          "agree": "3/3",
           "camera": "any",
           "id": "L1_finish_wraps",
-          "legacy_key": "finish_left_shoulder",
-          "legacy_zh": "随挥落左肩至左前胸",
-          "obs": "OBS-15",
+          "leaf_obs": "OBS-15",
+          "obs": "OBS-15b",
           "role": "downstream",
-          "state": "legacy",
+          "source": "model",
+          "state": "fact",
+          "value": "wraps_back_to_body_immediately",
           "zh": "随挥马上缠回左肩"
         },
         {
@@ -240,7 +244,7 @@
           "zh": "触球点在身体前后（与启动时机是两个量）"
         },
         {
-          "agree": "2/2",
+          "agree": "3/3",
           "camera": "any",
           "id": "L2_backswing_pause",
           "obs": "OBS-04",
@@ -298,7 +302,7 @@
     {
       "confidence": "medium",
       "evidence": [
-        "OBS-36=directly_toward_ball (model, 2/2)"
+        "OBS-36=directly_toward_ball (model, 3/3)"
       ],
       "falsify_if": [],
       "full_match": true,
@@ -321,7 +325,8 @@
       "confidence": "medium",
       "evidence": [
         "OBS-08=small_turn (model, 2/3)",
-        "OBS-09=square_or_past (model, 3/3)"
+        "OBS-09=square_or_past (model, 3/3)",
+        "OBS-06=open (model, 2/3)"
       ],
       "falsify_if": [],
       "full_match": true,
@@ -329,7 +334,7 @@
       "name": "Failing to coil with an open hip and ground force, leading player to search for velocity by using excessive trunk twist range of motion",
       "next_one_thing": "",
       "node": "N-C_2NN9TYMECZU_C06",
-      "score": 3,
+      "score": 4,
       "sources": [
         "2Nn9tyMECZU:Q01",
         "2Nn9tyMECZU:Q05",
@@ -341,8 +346,8 @@
     {
       "confidence": "medium",
       "evidence": [
-        "OBS-33=more_than_one_forearm_length (model, 2/2)",
-        "OBS-02=visible_gap (model, 2/2)"
+        "OBS-33=more_than_one_forearm_length (model, 3/3)",
+        "OBS-02=visible_gap (model, 3/3)"
       ],
       "falsify_if": [],
       "full_match": true,
@@ -363,7 +368,7 @@
     "branches_file_sha256": "a194749876a37d442c189708f118c1329a0678edcc9c4e8ab27c17b5702dfbf0",
     "camera": "B",
     "clip_id": "rear_20261019_small",
-    "facts_file_sha256": "ffa143396a333ec4da39712b71c0c45e64f53bae527a3e0c67177f5333eabaf5",
+    "facts_file_sha256": "355105dff45aec0c5143c6cb4ff9ba715d6b15d71b8d8c2dccc76c8b19a39807",
     "v5_passed": false
   },
   "next_one_thing": {
