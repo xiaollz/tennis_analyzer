@@ -1,0 +1,187 @@
+{
+  "gate": {
+    "checks": [
+      {
+        "detail": "got=TRUNK_KINETIC_CHAIN want=TRUNK_KINETIC_CHAIN",
+        "id": "K01",
+        "result": "PASS"
+      },
+      {
+        "detail": "got=['B1_HIP_TRANSFER_ARM_COMPENSATION', 'B2_SWING_START_TOO_EARLY'] want=['B1_HIP_TRANSFER_ARM_COMPENSATION', 'B2_SWING_START_TOO_EARLY']",
+        "id": "K02",
+        "result": "PASS"
+      },
+      {
+        "detail": "status=has_facts evid=['OBS-25=shoulders_lead_hips', 'OBS-18=arm_first', 'OBS-09=square_or_past', 'OBS-15b=wraps_back_to_body_immediately'] need=['OBS-18=arm_first', 'OBS-25=shoulders_lead_hips']",
+        "id": "K03",
+        "result": "PASS"
+      },
+      {
+        "detail": "status=pending_self_report want=pending_self_report",
+        "id": "K04",
+        "result": "PASS"
+      },
+      {
+        "detail": "forged=[]",
+        "id": "K05",
+        "result": "PASS"
+      },
+      {
+        "detail": "mf=['NEW-SWING_START_VS_BOUNCE', 'OBS-03', 'OBS-57'] cams={'S'}",
+        "id": "K06",
+        "result": "PASS"
+      },
+      {
+        "detail": "top_bad=[] feet_ok=True finish_ok=True",
+        "id": "K07",
+        "result": "PASS"
+      },
+      {
+        "detail": "ret=['contact_late', 'feet_locked_first_priority'] leaked=[]",
+        "id": "K08",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[] have_nv=['OBS-19', 'OBS-40', 'OBS-71']",
+        "id": "K09",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K10",
+        "result": "PASS"
+      },
+      {
+        "detail": "invented=[]",
+        "id": "K11",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K12",
+        "result": "PASS"
+      },
+      {
+        "detail": "zh=True breath=True",
+        "id": "K13",
+        "result": "PASS"
+      },
+      {
+        "detail": "hits=[]",
+        "id": "K14",
+        "result": "PASS"
+      },
+      {
+        "detail": "bad=[]",
+        "id": "K15",
+        "result": "PASS"
+      },
+      {
+        "detail": "determinism hashes present (caller may re-run compose for byte check)",
+        "id": "K16",
+        "result": "PASS"
+      },
+      {
+        "detail": "cur=9129e41768f6… meta=9129e41768f6…",
+        "id": "K17",
+        "result": "PASS"
+      }
+    ],
+    "drifts": [],
+    "fail_count": 0,
+    "pass": true
+  },
+  "selftest": {
+    "cases": [
+      {
+        "case": "drop_B2",
+        "caught": true,
+        "failed_ids": [
+          "K02",
+          "K04",
+          "K05",
+          "K06"
+        ]
+      },
+      {
+        "case": "forge_B2_timing",
+        "caught": true,
+        "failed_ids": [
+          "K04",
+          "K05",
+          "K06",
+          "K11"
+        ]
+      },
+      {
+        "case": "feet_top_level",
+        "caught": true,
+        "failed_ids": [
+          "K02",
+          "K07"
+        ]
+      },
+      {
+        "case": "drop_retract_contact_late",
+        "caught": true,
+        "failed_ids": [
+          "K08"
+        ]
+      },
+      {
+        "case": "contact_late_as_leaf",
+        "caught": true,
+        "failed_ids": [
+          "K05",
+          "K08",
+          "K11"
+        ]
+      },
+      {
+        "case": "OBS40_as_fact",
+        "caught": true,
+        "failed_ids": [
+          "K09",
+          "K11"
+        ]
+      },
+      {
+        "case": "forearm_as_fact",
+        "caught": true,
+        "failed_ids": [
+          "K10",
+          "K11"
+        ]
+      },
+      {
+        "case": "B1_high_conf",
+        "caught": true,
+        "failed_ids": [
+          "K12"
+        ]
+      },
+      {
+        "case": "ban_伸肘",
+        "caught": true,
+        "failed_ids": [
+          "K14"
+        ]
+      },
+      {
+        "case": "facts_sha_mismatch",
+        "caught": true,
+        "failed_ids": [
+          "K17"
+        ]
+      },
+      {
+        "case": "subkey_wrong_value",
+        "caught": true,
+        "failed_ids": [
+          "K11"
+        ]
+      }
+    ],
+    "pass": true
+  }
+}
