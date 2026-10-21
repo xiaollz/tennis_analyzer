@@ -1,0 +1,434 @@
+{
+ "time": "2026-10-21T16:36:21",
+ "selftest": {
+  "good": {
+   "validate_cards": [],
+   "check_quotes": [],
+   "check_tree": [],
+   "check_manifest": [],
+   "check_rerun": [],
+   "check_neutrality": [],
+   "blind_replay": [],
+   "tree_v2_artifacts": []
+  },
+  "mutations": [
+   {
+    "name": "fabricated quote",
+    "expect": "Q04",
+    "caught": true
+   },
+   {
+    "name": "shifted timestamp",
+    "expect": "Q03",
+    "caught": true
+   },
+   {
+    "name": "transcript changed",
+    "expect": "Q01",
+    "caught": true
+   },
+   {
+    "name": "cause without subtitle quote",
+    "expect": "R06",
+    "caught": true
+   },
+   {
+    "name": "dangling evidence",
+    "expect": "R04",
+    "caught": true
+   },
+   {
+    "name": "depth not decreasing",
+    "expect": "R07",
+    "caught": true
+   },
+   {
+    "name": "feel labelled visible layer",
+    "expect": "R08",
+    "caught": true
+   },
+   {
+    "name": "banned cue unflagged",
+    "expect": "R09",
+    "caught": true
+   },
+   {
+    "name": "user context leaked",
+    "expect": "not in [False]",
+    "caught": true
+   },
+   {
+    "name": "video item before stage 2",
+    "expect": "R11",
+    "caught": true
+   },
+   {
+    "name": "tree cites holdout",
+    "expect": "T02",
+    "caught": true
+   },
+   {
+    "name": "feel as required obs",
+    "expect": "T04",
+    "caught": true
+   },
+   {
+    "name": "unconstrained must_fix node",
+    "expect": "T05",
+    "caught": true
+   },
+   {
+    "name": "problem without signed cause",
+    "expect": "T05",
+    "caught": true
+   },
+   {
+    "name": "banned next_one_thing",
+    "expect": "T06",
+    "caught": true
+   },
+   {
+    "name": "indistinguishable nodes",
+    "expect": "T08",
+    "caught": true
+   },
+   {
+    "name": "core edge from one episode",
+    "expect": "T10",
+    "caught": true
+   },
+   {
+    "name": "cycle",
+    "expect": "T11",
+    "caught": true
+   },
+   {
+    "name": "tree cites unverified card",
+    "expect": "T03",
+    "caught": true
+   },
+   {
+    "name": "cited quote has no quote_sources entry",
+    "expect": "T13",
+    "caught": true
+   },
+   {
+    "name": "quote_sources text differs from card",
+    "expect": "T13",
+    "caught": true
+   },
+   {
+    "name": "solution links unknown node",
+    "expect": "T13",
+    "caught": true
+   },
+   {
+    "name": "unmuted blind clip",
+    "expect": "B02",
+    "caught": true
+   },
+   {
+    "name": "label not about demonstrator",
+    "expect": "B01",
+    "caught": true
+   },
+   {
+    "name": "project term in fact prompt",
+    "expect": "N01",
+    "caught": true
+   },
+   {
+    "name": "rerun anchors disagree",
+    "expect": "Jaccard",
+    "caught": true
+   },
+   {
+    "name": "manifest duplicate entry",
+    "expect": "M01",
+    "caught": true
+   },
+   {
+    "name": "manifest unknown state",
+    "expect": "M02",
+    "caught": true
+   },
+   {
+    "name": "non_teaching without reason",
+    "expect": "M03",
+    "caught": true
+   },
+   {
+    "name": "state claims transcript that is missing",
+    "expect": "M04",
+    "caught": true
+   },
+   {
+    "name": "merged claimed but card only stage1_verified",
+    "expect": "M05",
+    "caught": true
+   },
+   {
+    "name": "stage1_verified claimed but card missing",
+    "expect": "M05",
+    "caught": true
+   },
+   {
+    "name": "merged but no tree node cites it",
+    "expect": "M06",
+    "caught": true
+   },
+   {
+    "name": "card exists but episode not in manifest",
+    "expect": "M07",
+    "caught": true
+   },
+   {
+    "name": "binding: unknown OBS id",
+    "expect": "O2",
+    "caught": true
+   },
+   {
+    "name": "binding: value outside the observable's list",
+    "expect": "O2",
+    "caught": true
+   },
+   {
+    "name": "binding: 4 required conditions",
+    "expect": "O5",
+    "caught": true
+   },
+   {
+    "name": "binding: contradictory required values",
+    "expect": "O3",
+    "caught": true
+   },
+   {
+    "name": "binding: silently empty signature",
+    "expect": "O4",
+    "caught": true
+   },
+   {
+    "name": "binding: must_fix node with no required and no account",
+    "expect": "O6",
+    "caught": true
+   },
+   {
+    "name": "binding: NEW-OBS candidate in no cluster",
+    "expect": "O7",
+    "caught": true
+   },
+   {
+    "name": "binding: tree required condition not from any binding item",
+    "expect": "O11",
+    "caught": true
+   },
+   {
+    "name": "binding: aggregated signature differs from its runs",
+    "expect": "O10",
+    "caught": true
+   },
+   {
+    "name": "binding: symptom without binding item",
+    "expect": "O1",
+    "caught": true
+   },
+   {
+    "name": "binding: tree observables drift from catalog",
+    "expect": "O9",
+    "caught": true
+   },
+   {
+    "name": "binding: user conclusion in a prompt",
+    "expect": "O8",
+    "caught": true
+   },
+   {
+    "name": "binding: knowledge-base term in a prompt",
+    "expect": "O8",
+    "caught": true
+   },
+   {
+    "name": "merge: members of different stroke types",
+    "expect": "M02",
+    "caught": true
+   },
+   {
+    "name": "merge: two members from one video",
+    "expect": "M02",
+    "caught": true
+   },
+   {
+    "name": "merge: member text rewritten",
+    "expect": "M03",
+    "caught": true
+   },
+   {
+    "name": "merge: merged node name rewritten",
+    "expect": "M03",
+    "caught": true
+   },
+   {
+    "name": "merge: evidence lost in merged node",
+    "expect": "M05",
+    "caught": true
+   },
+   {
+    "name": "merge: v1 edge lost",
+    "expect": "M06",
+    "caught": true
+   },
+   {
+    "name": "merge: cycle in v2 edges",
+    "expect": "M07",
+    "caught": true
+   },
+   {
+    "name": "merge: group goes beyond what both runs said",
+    "expect": "M08",
+    "caught": true
+   },
+   {
+    "name": "merge: node in two groups",
+    "expect": "M01",
+    "caught": true
+   },
+   {
+    "name": "merge: rep not a member",
+    "expect": "M01",
+    "caught": true
+   },
+   {
+    "name": "merge: node counts disagree",
+    "expect": "M04",
+    "caught": true
+   }
+  ],
+  "pass": true
+ },
+ "checks": {
+  "validate_cards": {
+   "fail": [],
+   "warn": [
+    "[WARN] ../episodes/2Nn9tyMECZU.card.json: R07 top-depth root C04 rests on an inferred link",
+    "[WARN] ../episodes/toArb3WkJcs.card.json: R07 top-depth root C03 rests on an inferred link",
+    "[WARN] ../episodes/wzLMv4ASg9s.card.json: R07 top-depth root C06 rests on an inferred link"
+   ]
+  },
+  "check_quotes": {
+   "fail": [],
+   "warn": []
+  },
+  "check_tree": {
+   "fail": [],
+   "warn": [
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_2NN9TYMECZU shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C02', 'N-C_LBDQPIHVXYA_C03', 'N-P_FXDMVI3EFNE'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_FXDMVI3EFNE shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C02', 'N-C_FXDMVI3EFNE_C03', 'N-C_LBDQPIHVXYA_C03', 'N-P_2NN9TYMECZU'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LOSRMJ_QXKC_C04 shares OBS-31=steeply_upward with ['N-C_LBDQPIHVXYA_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LBDQPIHVXYA_C03 shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C02', 'N-C_FXDMVI3EFNE_C03', 'N-C_LOSRMJ_QXKC_C04', 'N-P_2NN9TYMECZU', 'N-P_FXDMVI3EFNE'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_FXDMVI3EFNE_C01 shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C02', 'N-C_FXDMVI3EFNE_C03', 'N-C_LBDQPIHVXYA_C03', 'N-P_2NN9TYMECZU', 'N-P_FXDMVI3EFNE'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_FXDMVI3EFNE_C03 shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C02', 'N-C_LBDQPIHVXYA_C03', 'N-P_FXDMVI3EFNE'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_FXDMVI3EFNE_C02 shares OBS-31=steeply_upward with ['N-C_FXDMVI3EFNE_C01', 'N-C_FXDMVI3EFNE_C03', 'N-C_LBDQPIHVXYA_C03', 'N-P_2NN9TYMECZU', 'N-P_FXDMVI3EFNE'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_DX8AGSIO24W shares OBS-20=below_knee with ['N-C_LBDQPIHVXYA_C03', 'N-C_PUN6QIIYU_4_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_PUN6QIIYU_4_C04 shares OBS-20=below_knee with ['N-C_LBDQPIHVXYA_C03', 'N-P_DX8AGSIO24W', 'N-P_LBDQPIHVXYA'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_LBDQPIHVXYA shares OBS-20=below_knee with ['N-C_LBDQPIHVXYA_C03', 'N-C_PUN6QIIYU_4_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LBDQPIHVXYA_C03 shares OBS-20=below_knee with ['N-C_KU7FHY1QQOI_C03', 'N-C_PUN6QIIYU_4_C04', 'N-P_DX8AGSIO24W', 'N-P_LBDQPIHVXYA'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_KU7FHY1QQOI_C03 shares OBS-20=below_knee with ['N-C_LBDQPIHVXYA_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_RVFMDK_IEWO_C03 shares OBS-35=level_with_or_ahead_of_hand with ['N-P_WZLMV4ASG9S'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_WZLMV4ASG9S shares OBS-35=level_with_or_ahead_of_hand with ['N-C_RVFMDK_IEWO_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WZLMV4ASG9S_C01 shares OBS-36=directly_toward_ball with ['N-C_LOSRMJ_QXKC_C02', 'N-P_WFOY0RKWBTG'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-P_WFOY0RKWBTG shares OBS-36=directly_toward_ball with ['N-C_LOSRMJ_QXKC_C02', 'N-C_WZLMV4ASG9S_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LOSRMJ_QXKC_C02 shares OBS-36=directly_toward_ball with ['N-C_WZLMV4ASG9S_C01', 'N-P_WFOY0RKWBTG'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_9NIRSL59AN0_C02 shares OBS-03=behind_hip with ['N-C_LCKDP2GKR_Y_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_PQ793MBQE50_C03 shares OBS-03=behind_hip with ['N-C_LCKDP2GKR_Y_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LCKDP2GKR_Y_C01 shares OBS-03=behind_hip with ['N-C_9NIRSL59AN0_C02', 'N-C_PQ793MBQE50_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_0M3BMFDDSHI_C02 shares OBS-02=touching_torso with ['N-C_9NIRSL59AN0_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_9NIRSL59AN0_C03 shares OBS-02=touching_torso with ['N-C_0M3BMFDDSHI_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_9NIRSL59AN0_C03 shares OBS-39=rounded_kyphotic with ['N-C_NEPD7FIM7HI_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_NEPD7FIM7HI_C03 shares OBS-39=rounded_kyphotic with ['N-C_9NIRSL59AN0_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_T5MEVWBOKR4_C04 shares OBS-14=more_upright_or_leaning_back with ['N-C_APCKJDADZEK_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_APCKJDADZEK_C04 shares OBS-14=more_upright_or_leaning_back with ['N-C_T5MEVWBOKR4_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_VG8LBXOHM3E_C02 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C06', 'N-C_DX8AGSIO24W_C02', 'N-C_WFIRPMUTZRO_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WFIRPMUTZRO_C04 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C06', 'N-C_DX8AGSIO24W_C02', 'N-C_WFIRPMUTZRO_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WFIRPMUTZRO_C02 shares OBS-22=extended_forward with ['N-C_APCKJDADZEK_C06', 'N-C_DX8AGSIO24W_C02', 'N-C_VG8LBXOHM3E_C02', 'N-C_WFIRPMUTZRO_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_APCKJDADZEK_C06 shares OBS-22=extended_forward with ['N-C_VG8LBXOHM3E_C02', 'N-C_WFIRPMUTZRO_C02', 'N-C_WFIRPMUTZRO_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_DX8AGSIO24W_C02 shares OBS-22=extended_forward with ['N-C_VG8LBXOHM3E_C02', 'N-C_WFIRPMUTZRO_C02', 'N-C_WFIRPMUTZRO_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_VG8LBXOHM3E_C02 shares OBS-38=narrower_than_shoulders with ['N-C_DX8AGSIO24W_C03', 'N-C_FOMZ8WJV3DQ_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WFIRPMUTZRO_C04 shares OBS-38=narrower_than_shoulders with ['N-C_DX8AGSIO24W_C03', 'N-C_FOMZ8WJV3DQ_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_FOMZ8WJV3DQ_C01 shares OBS-38=narrower_than_shoulders with ['N-C_VG8LBXOHM3E_C02', 'N-C_WFIRPMUTZRO_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_DX8AGSIO24W_C03 shares OBS-38=narrower_than_shoulders with ['N-C_VG8LBXOHM3E_C02', 'N-C_WFIRPMUTZRO_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_0M3BMFDDSHI_C04 shares OBS-29=no_lateral_bend with ['N-C_WFIRPMUTZRO_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WFIRPMUTZRO_C02 shares OBS-29=no_lateral_bend with ['N-C_0M3BMFDDSHI_C04', 'N-C_DZADHZVESDS_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_DZADHZVESDS_C03 shares OBS-29=no_lateral_bend with ['N-C_WFIRPMUTZRO_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_HNVBBPEOB3G_C02 shares OBS-40=racket_arm_behind_torso_line with ['N-C_HNVBBPEOB3G_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_HNVBBPEOB3G_C01 shares OBS-40=racket_arm_behind_torso_line with ['N-C_HNVBBPEOB3G_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_PWZYP_XFLFU_C04 shares OBS-24=wrist_flexes_rapidly with ['N-C_LCKDP2GKR_Y_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LWS7XXQRRDW_C02 shares OBS-24=wrist_flexes_rapidly with ['N-C_LCKDP2GKR_Y_C01', 'N-C_PQ793MBQE50_C01', 'N-C_PUN6QIIYU_4_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_PUN6QIIYU_4_C03 shares OBS-24=wrist_flexes_rapidly with ['N-C_LCKDP2GKR_Y_C01', 'N-C_LWS7XXQRRDW_C02', 'N-C_PQ793MBQE50_C01'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_PQ793MBQE50_C01 shares OBS-24=wrist_flexes_rapidly with ['N-C_LCKDP2GKR_Y_C01', 'N-C_LWS7XXQRRDW_C02', 'N-C_PUN6QIIYU_4_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LCKDP2GKR_Y_C01 shares OBS-24=wrist_flexes_rapidly with ['N-C_LWS7XXQRRDW_C02', 'N-C_PQ793MBQE50_C01', 'N-C_PUN6QIIYU_4_C03', 'N-C_PWZYP_XFLFU_C04'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_LCKDP2GKR_Y_C03 shares OBS-67=rolls_over_immediately with ['N-C_WD4YRQW3TOC_C02'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T09 N-C_WD4YRQW3TOC_C02 shares OBS-67=rolls_over_immediately with ['N-C_LCKDP2GKR_Y_C03'] but lists no differential",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_2NN9TYMECZU_C04->N-P_2NN9TYMECZU marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_LOSRMJ_QXKC_C03->N-P_LOSRMJ_QXKC marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_LOSRMJ_QXKC_C04->N-P_LOSRMJ_QXKC marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_PWKGLKRM73O_C01->N-P_PWKGLKRM73O marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_TOARB3WKJCS_C03->N-P_TOARB3WKJCS marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T10 edge N-C_WZLMV4ASG9S_C06->N-P_WZLMV4ASG9S marked inferred but cites episode evidence; use single_episode/core",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 McCb-RfYd0w verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 GsHkML2mVEI verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 AppdZqxH_2k verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 fjpr9PS02tM verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 FBJnFBtZozE verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 PfDqnff_vYA verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 wd4YRQW3TOc verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 WoVEWh7fFfc verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 wVa4XQPcaqs verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 PjvOQkqH9DA verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 p41GGc_y5Xk verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 9NirSL59an0 verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 PwkGLkRm73o verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 6ak4ZScH_gc verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 cIIEYn42o4g verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 OYf48k-cfNI verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 wFOy0RKWBTg verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 RVfmDk-iEwo verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 LoSrMj-Qxkc verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 KU7FHy1qQOI verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 7_JPqhG4G64 verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 E_zmENJIj4g verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 JIMgI3jiVns verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 dZadhzVEsds verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 pWzyP-xfLfU verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 lbdQpIHvXYA verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 T5meVwBOKR4 verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 YbLit9png2U verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 uQcObi2oTSs verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 Vg8lbXOhM3E verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 _Qu1LOwklAw verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 hNVbbPEob3g verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 x_WIg59Wr9Y verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 ExkBtFRhUWY verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 42BfbKsTGb4 verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 boMJDzuFhM4 verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 QXAtdSEUkfY verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 1W1rope5l0k verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 dx8aGSIo24w verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 toArb3WkJcs verified but problem not mapped to a node",
+    "[WARN] ../ftt_tree/tree_v18.json: T12 lCKDP2gKR_Y verified but problem not mapped to a node"
+   ]
+  },
+  "check_manifest": {
+   "fail": [],
+   "warn": []
+  },
+  "check_neutrality": {
+   "fail": [],
+   "warn": []
+  }
+ },
+ "inputs": {
+  "cards": 86,
+  "tree_sha256": "bdb464dba580883ab0e60d97b4964b9044b609d6c49b9be6872be63bf7919294"
+ },
+ "pass": true
+}

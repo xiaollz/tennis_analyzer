@@ -1,0 +1,92 @@
+{
+ "clip_id": "rear_20261019_small",
+ "camera": "B",
+ "top": [
+  {
+   "node": "N-C_UB6SBA_KX9E_C04",
+   "name": "Aiming to rotate all the way through causes the hips to fire their power pulse far too late in the swing cycle, producing spin instead of linear forward drive.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 2,
+   "evidence": [
+    "OBS-25=shoulders_lead_hips (model, 3/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "",
+   "sources": [
+    "UB6SbA_KX9E:Q18"
+   ],
+   "upstream_of": []
+  },
+  {
+   "node": "N-C_PUN6QIIYU_4_C03",
+   "name": "Relying on the small hand and wrist muscles to guide the swing rather than driving weight transfer from the loaded back leg.",
+   "confidence": "low",
+   "full_match": false,
+   "score": 2,
+   "evidence": [
+    "OBS-18=arm_first (model, 3/3)",
+    "OBS-25=shoulders_lead_hips (model, 3/3)"
+   ],
+   "missing": [
+    "OBS-24"
+   ],
+   "falsify_if": [
+    "coach_text=PUN6 small_hand_muscles vs pWzy bottom_finger_squeeze"
+   ],
+   "test10": "",
+   "next_one_thing": "",
+   "sources": [
+    "PUN6qIIYU-4:Q04",
+    "PUN6qIIYU-4:Q05"
+   ],
+   "upstream_of": []
+  },
+  {
+   "node": "N-C_QSZZ0N4FRB4_C04",
+   "name": "The player attempts to generate shot velocity by overhitting directly with the shoulder rather than through positive balance and trunk twisting coordination.",
+   "confidence": "low",
+   "full_match": false,
+   "score": 2,
+   "evidence": [
+    "OBS-25=shoulders_lead_hips (model, 3/3)",
+    "OBS-18=arm_first (model, 3/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "Throw a heavy medicine ball while coordinating weight transfer and trunk twist",
+   "sources": [
+    "Qszz0N4fRb4:Q18"
+   ],
+   "upstream_of": []
+  }
+ ],
+ "insufficient": false,
+ "style_not_fixed": [],
+ "dropped_facts": [
+  {
+   "obs": "OBS-40",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-19",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-71",
+   "value": "unclear",
+   "why": "unclear"
+  }
+ ],
+ "next_session": {
+  "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
+  "one_thing": "",
+  "test10": "",
+  "note": ""
+ }
+}
