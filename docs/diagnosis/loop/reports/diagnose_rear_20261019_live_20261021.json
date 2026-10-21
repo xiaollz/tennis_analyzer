@@ -1,0 +1,140 @@
+{
+ "clip_id": "rear_20261019_small",
+ "camera": "B",
+ "top": [
+  {
+   "node": "N-C_WZLMV4ASG9S_C01",
+   "name": "Directing the elbow or racket straight towards the ball rather than driving out in the direction the chest is facing.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 2,
+   "evidence": [
+    "OBS-36=directly_toward_ball (model, 2/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "Press inside of elbow in the direction chest faces.",
+   "sources": [
+    "wFOy0RKWBTg:Q03",
+    "wFOy0RKWBTg:Q05",
+    "wzLMv4ASg9s:Q01"
+   ],
+   "upstream_of": [
+    "N-P_WFOY0RKWBTG"
+   ]
+  },
+  {
+   "node": "N-C_LOSRMJ_QXKC_C02",
+   "name": "Pressing early with the chest on the dominant side resists backward shoulder lag, providing stability to deliver the hand directly onto the ball.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 4,
+   "evidence": [
+    "OBS-40=moves_together_with_chest (model, 2/3)",
+    "OBS-36=directly_toward_ball (model, 2/3)"
+   ],
+   "missing": [],
+   "falsify_if": [],
+   "test10": "",
+   "next_one_thing": "",
+   "sources": [
+    "LoSrMj-Qxkc:Q09"
+   ],
+   "upstream_of": []
+  },
+  {
+   "node": "N-C_DZADHZVESDS_C03",
+   "name": "The torso rotates on a flat horizontal plane parallel to the court instead of tilting on an upward slant with the off-shoulder rising.",
+   "confidence": "medium",
+   "full_match": true,
+   "score": 3,
+   "evidence": [
+    "OBS-29=no_lateral_bend (model, 2/3)",
+    "OBS-18=arm_first (model, 3/3)"
+   ],
+   "missing": [],
+   "falsify_if": [
+    "coach_text=0m3B overapplied_racket_drop_no_shoulder_tilt_foundation vs dZadhz contact-path lateral-bend (shared OBS-29=no_lateral_bend)"
+   ],
+   "test10": "",
+   "next_one_thing": "Maintain tension against the strap away from your ribs throughout the turn.",
+   "sources": [
+    "dZadhzVEsds:Q12",
+    "tzgAWr3QGv0:Q16",
+    "wFIrPMutzRo:Q12"
+   ],
+   "upstream_of": []
+  }
+ ],
+ "insufficient": false,
+ "style_not_fixed": [],
+ "dropped_facts": [
+  {
+   "obs": "OBS-19",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-71",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-10a",
+   "value": "heel_up_at_contact",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-10b",
+   "value": "stays_in_place",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15a",
+   "value": "finish_above_non_hitting_shoulder",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15b",
+   "value": "wraps_back_to_body_immediately",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-15c",
+   "value": "elbow_in_front_of_chest_at_end",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07a",
+   "value": "does_not_reach_across",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07b",
+   "value": "leaves_racket_after_turn_complete",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-07c",
+   "value": "already_dropped_to_side",
+   "why": "unknown obs"
+  },
+  {
+   "obs": "OBS-16",
+   "value": "unclear",
+   "why": "unclear"
+  },
+  {
+   "obs": "OBS-30",
+   "value": "unclear",
+   "why": "unclear"
+  }
+ ],
+ "next_session": {
+  "breath": "准备时鼻吸，启动前挥至触球时用嘴短促呼气。",
+  "one_thing": "Press inside of elbow in the direction chest faces.",
+  "test10": "",
+  "note": ""
+ }
+}

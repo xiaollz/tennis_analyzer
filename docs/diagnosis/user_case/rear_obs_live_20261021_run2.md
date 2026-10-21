@@ -1,0 +1,29 @@
+<!-- model=gemini-3.8-flash run=2 camera=rear_straight prompt=facts_rear_live_all_v1 -->
+
+- OBS-18: arm_first | t≈0:04s | reason: The arm begins dropping and driving forward while the hips remain stationary.
+- OBS-25: shoulders_lead_hips | t≈0:04s | reason: The shoulders initiate the forward turn while the hips stay stationary facing forward.
+- OBS-40: moves_together_with_chest | t≈0:05s | reason: The hitting arm does not lag deeply behind the torso plane during forward motion.
+- OBS-09: square_or_past | t≈0:05s | reason: The hips remain facing squarely toward the net at contact.
+- OBS-08: almost_facing_front | t≈0:04s | reason: Both the hips and shoulder line remain nearly facing the net during preparation.
+- OBS-19: unclear | t≈0:05s | reason: Trunk rotational acceleration cannot be accurately measured from this camera view.
+- OBS-71: unclear | t≈0:05s | reason: Pelvic rotation deceleration timing cannot be determined from this angle.
+- OBS-10a: heel_down_at_contact | t≈0:05s | reason: The right heel remains flat on the court surface at contact.
+- OBS-10b: stays_in_place | t≈0:06s | reason: The back foot stays firmly planted on the ground after contact without stepping or kicking.
+- OBS-04: pause_present | t≈0:04s | reason: The player holds the racket stationary at the top of the backswing waiting for the incoming ball.
+- OBS-05: no_steps_stands_still | t≈0:04s | reason: The player stands stationary with feet planted between ball release and contact.
+- OBS-15a: finish_above_non_hitting_shoulder | t≈0:06s | reason: The racket finishes wrapped high over the non-hitting shoulder.
+- OBS-15b: wraps_back_to_body_immediately | t≈0:05s | reason: The hand wraps directly across toward the body immediately following contact.
+- OBS-15c: elbow_in_front_of_chest_at_end | t≈0:06s | reason: The hitting elbow finishes pointing forward in front of the chest.
+- OBS-38: shoulder_width_or_wider | t≈0:04s | reason: The feet are set significantly wider than shoulder width.
+- OBS-33: more_than_one_forearm_length | t≈0:05s | reason: The ball is struck well outside the body with an extended arm.
+- OBS-36: outward_first | t≈0:04s | reason: The hitting hand drops down and outward away from the body before driving to the ball.
+- OBS-32: rotational_drive | t≈0:05s | reason: The elbow does not drag linearly across the chest prior to extension.
+- OBS-02: visible_gap | t≈0:05s | reason: A clear gap is visible between the upper hitting arm and torso at contact.
+- OBS-07a: does_not_reach_across | t≈0:04s | reason: The non-hitting arm stays bent near the chest and does not reach across the front of the body.
+- OBS-07b: leaves_racket_after_turn_complete | t≈0:04s | reason: The non-hitting hand remains on the throat until the turn is complete and the forward swing begins.
+- OBS-07c: already_dropped_to_side | t≈0:05s | reason: The non-hitting arm drops down toward the side as the forward swing starts.
+- OBS-16: unclear | t≈0:06s | reason: Landing location on the far court cannot be clearly resolved from this angle.
+- OBS-06: open | t≈0:04s | reason: The feet are aligned parallel to the net in a wide open stance.
+- OBS-29: no_lateral_bend | t≈0:05s | reason: The spine remains upright with shoulders staying relatively level through contact.
+- OBS-30: unclear | t≈0:06s | reason: The ball bounce location on the opponent court cannot be seen clearly.
+- OBS-60: square_to_net | t≈0:04s | reason: The chest remains oriented square to the net at the start of forward arm acceleration.
