@@ -195,3 +195,9 @@ FTT 出处：
 4. 两根粗枝同时出现时，不并列成两个第一要害：先说哪根有事实，另一根标待测，用对照测试分开。
 5. 盲测（V5）没过关之前，对用户视频的所有结论都标「待验证」。
 6. 处方禁用：推肘 / 降拍 / 旋后 / 伸肘 / 送髋。
+
+## 附：辅助视频叶子（2026-10-22）— 5xcIshgCd-E（TPA tennis / Tom Allsopp，非 FTT）
+- 挂粗枝 1（髋没先启动 → 手臂代偿）。要点：「hips first, arm second」@4:25；「not the arm's turn yet」@2:13；「slow enough take back … fire something else before the arms」@2:54。
+- 书支持：CH18 p.83（不是用手拉，髋先转、扭回面向网）；p.64（手的下一次移动是被大肌肉拉动的被动结果）；CH19 p.89（肩胸随髋被动转）；p.82（手腕放松当铰链）。
+- 冲突：视频说手臂可偏紧（@3:36、@4:28）→ 书 p.82 赢，手和手腕保持放松。
+- 详注 `docs/diagnosis/sources/tpa_kinetic_chain_5xcIshgCd-E_2026-10-22.md`。不进 tree evidence、不进中性提示词。
