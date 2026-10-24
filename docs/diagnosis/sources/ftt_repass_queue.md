@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 89，pending 1，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 全部 deep（另有 blocked 5）。Batch B pending 0。Batch C 第五刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch C 里 deep 28、pending 1、blocked 2。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc`、`Fu6DkHvZlGY`、`XjJHA91HDbU`、`MWjBfarwNlA` 虽为 deep，仍是 holdout，不进 tree evidence。`omsLx7F2Wdc`、`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注也不得进树。`boMJDzuFhM4` 不是 holdout，仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU`、`uQcObi2oTSs`、`Ibkq-yBteGc`、`MWjBfarwNlA`、`boMJDzuFhM4` 是 deep-with-gap。Batch C 剩余 pending 只剩 `E_zmENJIj4g`。
+当前计数：deep 90，pending 0，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 全部 deep（另有 blocked 5）。Batch B pending 0。Batch C 收尾见 `SRC-FTT-E_zmENJIj4g_repass_2026-10-24.md`。Batch C 里 deep 29、pending 0、blocked 2。全库 pending 0。剩余 7 行都是 blocked，没有待深吸的有字幕期。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc`、`Fu6DkHvZlGY`、`XjJHA91HDbU`、`MWjBfarwNlA` 虽为 deep，仍是 holdout，不进 tree evidence。`omsLx7F2Wdc`、`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注也不得进树。`E_zmENJIj4g` 不是 holdout，仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU`、`uQcObi2oTSs`、`Ibkq-yBteGc`、`MWjBfarwNlA`、`boMJDzuFhM4` 是 deep-with-gap。Batch C pending 0。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -93,7 +93,7 @@
 | `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 448 | A | deep | Batch A 续；`SRC-FTT-JIMgI3jiVns_repass_2026-10-24.md`；内旋刚开始才接触；不进 tree evidence |
 | `42BfbKsTGb4` | You Aren't Practicing Half of Tennis / RECEIVING Will Transform Your Game | 337 | B | deep | Batch B 第六刀；`SRC-FTT-42BfbKsTGb4_repass_2026-10-24.md`；用腿把球接到接触点 |
 | `Fu6DkHvZlGY` | The Pure-Dextral Pinpoint / Serve Like Jakob Mensik | 435 | C | deep | Batch C 第三刀；`SRC-FTT-Fu6DkHvZlGY_repass_2026-10-24.md`；holdout；发球后脚在持拍侧；pop 不写成送髋 |
-| `E_zmENJIj4g` | Coiling / Spinal Motion / Eye Dominance / Arm Slot - 15 Serves Explained | 2624 | C | pending | 标题是 15 记发球，归 C；内含 coiling / spinal，深吸收时再决定能挂哪根 |
+| `E_zmENJIj4g` | Coiling / Spinal Motion / Eye Dominance / Arm Slot - 15 Serves Explained | 2624 | C | deep | Batch C 收尾；`SRC-FTT-E_zmENJIj4g_repass_2026-10-24.md`；范围旁支；六块不写 15 记流水账；coil 不升正手粗枝；旋前不升口令 |
 | `BbGzWTp5pCM` | Practicing in Slow Motion is Killing Your Match Play | 259 | B | deep | Batch B 第七刀；`SRC-FTT-BbGzWTp5pCM_repass_2026-10-24.md`；holdout；两拍之间小跳；不改写 p.75 |
 | `JzcA_ku7Yhk` | The Misunderstanding LOSING You Matches | 430 | B | deep | Batch B 第六刀；`SRC-FTT-JzcA_ku7Yhk_repass_2026-10-24.md`；同一结果多种挥法；难看不写成可以不转 |
 | `dx8aGSIo24w` | 4 Tips for Two-Handers with Alexa & Johnny | 283 | C | deep | Batch C 第三刀；`SRC-FTT-dx8aGSIo24w_repass_2026-10-24.md`；范围旁支；低球宽站；不改写 p.84 |
@@ -159,5 +159,7 @@ Batch C 第三刀（2026-10-24）：`dDYKuNZtdyU`、`pQ793MBQE50`、`PUN6qIIYU-4
 
 Batch C 第四刀（2026-10-24）：`NEpD7fIM7HI`、`V-QkILd4V-w`、`w1FakobNq1Q`、`XjJHA91HDbU`、`QXAtdSEUkfY`、`Ibkq-yBteGc`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`XjJHA91HDbU` 是 holdout，不进 tree evidence。其余五期也都不进树。`Ibkq-yBteGc` 是 deep-with-gap。六期都是范围旁支，不挂正手粗枝。下刀和由低到高不写成正手降拍。接发的分腿不改写 p.75。内旋不升口令。当时 Batch C 剩余 pending 5（另有 blocked 2，不在这 5 里）：`m1NBdd3Bigg`、`FjjvhNbk3q4`、`MWjBfarwNlA`、`boMJDzuFhM4`、`E_zmENJIj4g`。`E_zmENJIj4g`、`m1NBdd3Bigg`、`FjjvhNbk3q4` 该轮不碰。
 
-Batch C 第五刀（2026-10-24）：`m1NBdd3Bigg`、`FjjvhNbk3q4`、`MWjBfarwNlA`、`boMJDzuFhM4`。四期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`MWjBfarwNlA` 是 holdout，不进 tree evidence。`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注不得进树。`boMJDzuFhM4` 也都不进树。两支短片是 deep-with-gap。四期都是范围旁支，不挂正手粗枝。先别管腿不改写正手髋先。向下抽不写成正手降拍。内旋不升口令。看抛球不改写 p.75。Batch C 剩余 pending 只剩 `E_zmENJIj4g`（另有 blocked 2，不在这一条里）。本轮不碰 `E_zmENJIj4g`。
+Batch C 第五刀（2026-10-24）：`m1NBdd3Bigg`、`FjjvhNbk3q4`、`MWjBfarwNlA`、`boMJDzuFhM4`。四期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`MWjBfarwNlA` 是 holdout，不进 tree evidence。`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注不得进树。`boMJDzuFhM4` 也都不进树。两支短片是 deep-with-gap。四期都是范围旁支，不挂正手粗枝。先别管腿不改写正手髋先。向下抽不写成正手降拍。内旋不升口令。看抛球不改写 p.75。当时 Batch C 剩余 pending 只剩 `E_zmENJIj4g`（另有 blocked 2，不在这一条里）。该轮不碰 `E_zmENJIj4g`。
+
+Batch C 收尾（2026-10-24）：只做 `E_zmENJIj4g`。按字幕段起点 + 抽帧写成 `SRC-FTT-E_zmENJIj4g_repass_2026-10-24.md`，上表 status 为 deep。不按 15 记发球逐人写。六块都是发球范围旁支，不挂正手粗枝。coil 不升成正手核心。旋前不升口令。先上身后腿不改写正手髋先。落地准备不改写 p.75。不是 holdout，仍不进 tree evidence。Batch C pending 0（另有 blocked 2，不在这 0 里）。全库 pending 0。剩余只有 blocked 7。
 
