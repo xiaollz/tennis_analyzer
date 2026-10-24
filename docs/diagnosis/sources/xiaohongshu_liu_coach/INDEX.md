@@ -86,6 +86,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/678fa8cb00000000180115f7?xsec_token=ABpBc_ItBBp2r7YZT8jtn38VktGNvn5MEI5P6piAcoy7c=&xsec_source=pc_user （= 目录 #203） | 德约正手脚步 · 弓字步 / 前脚45°C按字形 / 推弓不改推肘 | **transcribed** | `video_djokovic_fh_footwork_678fa8cb.md` |
 | https://www.xiaohongshu.com/explore/677e533a000000001703a4f0?xsec_token=ABwSKAo0XcaS6ZErtqOSWSmETU58S3k5yb8MFVgY1_b_k=&xsec_source=pc_user （= 目录 #209） | ATP脚步训练 · 平衡不改送重心 / 核心旋转不改转胯 / 外侧脚超越 | **transcribed** | `video_atp_footwork_drill_677e533a.md` |
 | https://www.xiaohongshu.com/explore/676d4336000000000b00fcf7?xsec_token=ABjv3qs90uu6sWunyLgjejx-donOkTheKln2i0p5eWvH0=&xsec_source=pc_user （= 目录 #216） | 前脚角度 · 锁死只引用不改伸肘 / 前脚45°C按字形 / 失平衡不改送髋 | **transcribed** | `video_front_foot_angle_676d4336.md` |
+| https://www.xiaohongshu.com/explore/673c52a4000000000202deb8?xsec_token=ABP5p0AhdrXigXEmRMfBwgzU8G_4pbRF04Jf2Nb6ZGDxo=&xsec_source=pc_user （= 目录 #232） | 正手卡点一二三 · 拍子触球/球拍触球不并 / 同手同脚不改送髋 / 作出递增≠源源不绝 | **transcribed** | `video_fh_timing_points_673c52a4.md` |
 
 ---
 
@@ -198,7 +199,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
 4. ~~下一批从 `6a104c2f`~~ ~~第三批收到 #96~~。~~第四批已收到 #126~~。第五批已收到 #156 `68176f9f`。主页合计约 362，已入目录 **156**。下一条未入表：`6814cefd`（集训营第二天的效果惊艳到你没有？）。还剩约 206。本批曾标 pending_A-E 的：#127、#128、#129、#134、#136、#137、#138、#148、#149、#150、#151、#153。其中 #150、#151、#153 已 **transcribed**（`video_open_hip_then_turn_682b2827.md`、`video_fh_contact_point_sz_68280dc8.md`、`video_xiaobi_neixuan_drill_6821fc37.md`）。其中 #137、#148、#149 亦已 **transcribed**（见下条第 5 点）。2026-10-24 #138、#134、#136 已 **transcribed**（`video_turn_shoulder_hip_68610bb3.md`、`video_kinetic_beginner_68750625.md`、`video_multiball_contact_check_6869ef05.md`）。2026-10-24 #128、#129、#127 已 **transcribed**（`video_rhythm_origin_688f594d.md`、`video_footwork_hard_to_easy_688c9f5d.md`、`video_awareness_footwork_68920b7f.md`）。**第五批 pending_A-E 已清**（旧批空）。打开笔记时曾被安全限制（Account exception）并弹出登录；重登后先深看了 #150/#151/#153，随后 #148/#149/#137，再 #138/#134/#136，再 #128/#129/#127。掉拍头标题（#142）只留原文，不标待深看。
 5. ~~下一批从 `6814cefd`~~ 第六批已收到 #186 `67c2cc85`。主页合计约 362，已入目录 **186**。本批曾标 pending_A-E：#159、#166、#168、#172、#185。2026-10-24 #185、#168、#159 已 **transcribed**（`video_fh_swing_path_67c7020e.md`、`video_push_turn_legs_67efb673.md`、`video_side_start_dui_jiao_680b9445.md`）。本批 #166、#172 已 **transcribed**（`video_no_power_culprit_67f919ba.md`、`video_no_power_error_67e7dd18.md`）。**第六批 pending_A-E 已清**。没有点赞、评论、关注、发布。第五批 #148、#149、#137 已 **transcribed**（`video_fh_steps_682f1ed6.md`、`video_reasonable_takeback_682dbb38.md`、`video_find_ball_turn_hip_6864eff6.md`）。降拍头 / 掉拍头标题（#164、#169）只留原文，不标待深看。时间线里若再遇到与置顶同 id 的 `67b704e8`，它是 #1 的编年重复，不新开深看。
-6. ~~下一批从 `67bf0ce9`~~ 第七批已收到 #216 `676d4336`。主页合计约 362，已入目录 **216**。目录游标 / 下一条未入表：`676bd47c`（上旋发球怎么做zekic手把手教你）。还剩约 146。本批曾标 pending_A-E：#193、#203、#209、#214、#215、#216。2026-10-24 #193、#215、#214 已 **transcribed**（`video_huowa_fh_kinetic_67b0a0c7.md`、`video_fh_path_smooth_6773912b.md`、`video_forearm_wrist_power_6774b35d.md`）。2026-10-24 #203、#209、#216 已 **transcribed**（`video_djokovic_fh_footwork_678fa8cb.md`、`video_atp_footwork_drill_677e533a.md`、`video_front_foot_angle_676d4336.md`）。**第七批 pending_A-E 已清**。`676bd47c` 没有打开。没有点赞、评论、关注、发布。
+6. ~~下一批从 `67bf0ce9`~~ 第七批已收到 #216 `676d4336`。主页合计约 362，当时已入目录 **216**。本批曾标 pending_A-E：#193、#203、#209、#214、#215、#216。2026-10-24 #193、#215、#214 已 **transcribed**（`video_huowa_fh_kinetic_67b0a0c7.md`、`video_fh_path_smooth_6773912b.md`、`video_forearm_wrist_power_6774b35d.md`）。2026-10-24 #203、#209、#216 已 **transcribed**（`video_djokovic_fh_footwork_678fa8cb.md`、`video_atp_footwork_drill_677e533a.md`、`video_front_foot_angle_676d4336.md`）。**第七批 pending_A-E 已清**。没有点赞、评论、关注、发布。第八批已从 `676bd47c` 收到 #246。
 7. 不改 tree / cues / golden；不把本目录材料写入中性 Gemini 提示词。
 
 
@@ -452,6 +453,49 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 215 | 一个好的挥拍轨迹让正手更流畅 | 正手挥拍轨迹 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6773912b000000000b0224de?xsec_token=AB5lBz_RI648pmWjJDinrQoHJ2ZFzaqEYEyG8BBUzIiP0=&xsec_source=pc_user | **transcribed** `video_fh_path_smooth_6773912b.md` |
 | 216 | 前脚做对一个角度让你轻松上到3.0 | 前脚角度 · 脚步 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/676d4336000000000b00fcf7?xsec_token=ABjv3qs90uu6sWunyLgjejx-donOkTheKln2i0p5eWvH0=&xsec_source=pc_user | **transcribed** `video_front_foot_angle_676d4336.md` |
 
-下一条（未入上表）：`676bd47c` 上旋发球怎么做zekic手把手教你。再下：`67693962` ATP职业球员给初学者三点重要建议；`67661942` 退的慢怎么办zekic教你交叉步后退（脚步，下一批可标 pending_A-E）。
+下一条已收入第八批 #217：`676bd47c` 上旋发球怎么做zekic手把手教你。
+
+没有点赞、评论、关注、发布。
+
+## 第八批 30 条（#217–#246，从 `676bd47c` 起）
+
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 215 = 目录 #216 `676d4336`）。从下一条 data-index 216 = `676bd47c` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 245 = 目录 #246。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头只保留教练标题原文，不标待深看，也不当我方 cue。本批曾标 pending_A-E：#219、#223、#225、#231、#232、#233、#234、#237、#238、#240。2026-10-24 #232 已 **transcribed**（`video_fh_timing_points_673c52a4.md`）。仍 pending：#219、#223、#225、#231、#233、#234、#237、#238、#240。`671cff72` 没有打开。#233 正手框架没有打开。
+
+进度：已入目录 **246 / 约 362**。还剩约 116 条未入目录。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 217 | 上旋发球怎么做zekic手把手教你 | 上旋发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/676bd47c000000000b0160c6?xsec_token=ABXOtyAb1gLYrihsIa1wuzTYunHEluvTjKdBGKe7_xtVU=&xsec_source=pc_user | catalog_only |
+| 218 | ATP职业球员给初学者三点重要建议 | 初学建议 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67693962000000000800e9d3?xsec_token=ABYKluULRx31CVUio8rhceHR6Vt2LhXrTQfbOShgnoQ-c=&xsec_source=pc_user | catalog_only |
+| 219 | 退的慢怎么办zekic教你交叉步后退 | 交叉步后退 · 脚步 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67661942000000000b022f7f?xsec_token=ABic9nP6niK7wtXHi2odT5ZigZB4ixZppU5Bm5_z0Ww2g=&xsec_source=pc_user | pending_A-E |
+| 220 | 两步骤学会稳定反手找球 | 反手找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6765144d000000000b01579d?xsec_token=ABpMe6SiI8DBigvfsXbsYkTjNlar0bttC4EYTGcYGB3KI=&xsec_source=pc_user | catalog_only |
+| 221 | 今天打教练 | 花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67650532000000000b020d82?xsec_token=ABpMe6SiI8DBigvfsXbsYkTp08g1ltdUCv7WQ731HD73A=&xsec_source=pc_user | catalog_only |
+| 222 | 完完整整的抛球三步曲连贯说完 | 抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6756e9450000000002025217?xsec_token=ABf_FDxUu-umQRYF7zkSamQgq130Zp5evqTCC3eiLzuY0=&xsec_source=pc_user | catalog_only |
+| 223 | 这样练，改变一下你软绵绵的正手 | 软绵绵正手 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67540ed50000000002016f18?xsec_token=ABTLrA1vtr3Ls7qpXUU2AEnmJd8zgvXHBDzewDZS_isvw=&xsec_source=pc_user | pending_A-E |
+| 224 | 没有一个学不会掉拍头和拍头滞后 | 掉拍头标题原文 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/674ec495000000000202ac9b?xsec_token=ABlHJlCBZlA8KQg8uNKJpxQNcrv3e7aYFrEPnma0ERXds=&xsec_source=pc_user | catalog_only |
+| 225 | 理解原理练习一个王炸的流畅脚步 | 流畅脚步 · 脚步 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/674bb8cf0000000002028d79?xsec_token=ABxVTxsO5I5cQbTntLVcLqEqLKzxycvd2BwTDgQzUS1fU=&xsec_source=pc_user | pending_A-E |
+| 226 | 击球中辅助手怎么用才最有效，看 | 辅助手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6747f513000000000202dc17?xsec_token=ABHfjaboQpDReoc2VLnXcVE9PfaRF6tfG4XoDdtGCdaI8=&xsec_source=pc_user | catalog_only |
+| 227 | 初学发球一定不要犯同类错误 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67465c95000000000203b368?xsec_token=ABHvRyPZMkja4H89lfUbzYsNz39PmRVp6zFhB_U1e7FBw=&xsec_source=pc_user | catalog_only |
+| 228 | 给你一个轻松击准球的方法 | 击准球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67444ba0000000000203b665?xsec_token=ABPPbwpCd0kUJpng9JEg0DSiS2Y4s4K5nHaKf0Sm2f4EU=&xsec_source=pc_user | catalog_only |
+| 229 | 握拍紧还是松?你有这个困惑吗 | 握拍松紧 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6742feaf000000000202a877?xsec_token=AB3Ld604Yf6RfDBGIN0ABAy0y0BRM5y_knEVKXwf2s_c4=&xsec_source=pc_user | catalog_only |
+| 230 | zekic和我一起教发球（一）蓄力抛 | 发球蓄力抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673fea7500000000060157f5?xsec_token=ABAtcSU30G8EUZWjvj3ELMrOtetaZhFvfmBCoXfHOFR5A=&xsec_source=pc_user | catalog_only |
+| 231 | 一口气送5个训练方法（正手版本） | 正手五个训练 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673d8df0000000000203bcd9?xsec_token=AB4CoyZRPJzF-01113cg7Hf0I4bCgrV5vAmRNZiKeeWhU=&xsec_source=pc_user | pending_A-E |
+| 232 | 击球节奏中正手卡点一二三 | 正手卡点 · timing · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673c52a4000000000202deb8?xsec_token=ABP5p0AhdrXigXEmRMfBwgzU8G_4pbRF04Jf2Nb6ZGDxo=&xsec_source=pc_user | **transcribed** `video_fh_timing_points_673c52a4.md` |
+| 233 | 我和职业球员教你建立正手框架 | 正手框架 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6739d917000000003c01ce0c?xsec_token=AB_QsFuuq2Xdga7U1p1pbXdZQhzSjXREznRaTjhVNa9TQ=&xsec_source=pc_user | pending_A-E |
+| 234 | 能打爆球的击球节奏卡点三部曲 | 击球节奏卡点 · timing | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6736dae7000000003c01f7a6?xsec_token=ABzln-GcbD2EkmImzQE5CJhWZqtnOHLW8Mk6dPF0hecCk=&xsec_source=pc_user | pending_A-E |
+| 235 | 新手垫步侧身后竟然错了？你会吗 | 垫步侧身 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673446a8000000003c01cb09?xsec_token=ABaKOyYXQGJpP5hI6uKgcFRVqoOnNEI0hd12UeVRWFSZc=&xsec_source=pc_user | catalog_only |
+| 236 | 2分钟内学会抛好球秘诀 | 抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67338283000000003c01d62e?xsec_token=ABaGRz9yecGHMnoDmDaOkaUpeDSmXe3FRaoYfnNxupq1g=&xsec_source=pc_user | catalog_only |
+| 237 | 拧和捅这两个正手必杀技你会吗？ | 正手拧与捅 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67330cc3000000001a0368c4?xsec_token=ABaGRz9yecGHMnoDmDaOkaUtiUMqdQ00C7rtVNr056DlU=&xsec_source=pc_user | pending_A-E |
+| 238 | 保持低重心的脚步转体训练方法。 | 低重心脚步 · 脚步 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/672f2271000000001a037219?xsec_token=ABioZoE593DSQg1o6Xgraiz-MczzvHcqwhzET9OSqTGjE=&xsec_source=pc_user | pending_A-E |
+| 239 | 反手握拍不是你们以为的大陆式 | 反手握拍 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/672e1ea1000000003c015270?xsec_token=ABI8eRHbjlTAvj9saSvbjNKixrndMsyAC5nM8pwOdGFi4=&xsec_source=pc_user | catalog_only |
+| 240 | 如何利用阻力器练习正手开放式 | 正手开放式 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/672b0456000000001d03b0a7?xsec_token=ABSwfQJg7r6Nw-YX_Hpx4uW2D3n-YV5myZ09TpIXajhfk=&xsec_source=pc_user | pending_A-E |
+| 241 | 侧身抬肘快一倍的方法看这里 | 侧身抬肘 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6728d74c000000003c01e129?xsec_token=ABcdiFHZOXuqX8-4IcTRMcBOGNVoq51kOV2EZT5jnt7CM=&xsec_source=pc_user | catalog_only |
+| 242 | 揭秘ATP运动员定制球拍的秘密 | 定制球拍 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67278f9b000000001d03b643?xsec_token=ABv9GaAv1CL8RnWiGBrcyDuO83fILRQG8KZxTuqEGbWtc=&xsec_source=pc_user | catalog_only |
+| 243 | 记着这句话力量速度平衡你都配拥有 | 力量速度平衡 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67260f64000000001a03795a?xsec_token=ABdXLZU2xXJr6QoCf6GS3kXj-nNEvFiUWnjmK8Pyf5Yjs=&xsec_source=pc_user | catalog_only |
+| 244 | 学习底层逻辑，让打飞球成为历史 | 打飞球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67235618000000003c019a38?xsec_token=AB2rIyhzXjZPXJ0TijgLq-I5QZXkp3HyZyK8wGBHoQThs=&xsec_source=pc_user | catalog_only |
+| 245 | 耸肩你会吗？Zekic给你修正方法 | 耸肩 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671d4f9b000000001b011352?xsec_token=ABV33ggHmS56k4UCtdnxcPTxfuiNPLK3RlJnta2W7PQRU=&xsec_source=pc_user | catalog_only |
+| 246 | 山⛰海🏖游轮🚢游艇红土球场 | 花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671dfb1f000000001600dc82?xsec_token=ABV33ggHmS56k4UCtdnxcPTwsIky8ssr5xv0ua31XusMk=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`671cff72` ATP球员Zekic教正手击球口诀。再下：`671a6c8a` 惊喜ATP现役球员手把手教正手（一）；`6717afb2` 别想太复杂，看看暴力正手很好练（正手，下一批可标 pending_A-E）。
 
 没有点赞、评论、关注、发布。
