@@ -249,6 +249,7 @@ timeline
       10/24 : 📌 Batch C 第四刀：切削 / 接发 / 抢七 / 高压 / 低反手；不升正手粗枝
       10/24 : 📌 Batch C 第五刀：发球进阶 / 反手直线 / 心理短片；pending 只剩超长片
       10/24 : 📌 Batch C 收尾：15 记发球；pending 0；coil 不升正手粗枝
+      10/24 : 📌 视觉补漏：7 期无字幕；deep-with-gap；pending 0；blocked 0
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -303,6 +304,7 @@ timeline
 | ↓ **阶段 7 Batch C 第四刀** | 10/24 | 切削 / 接发 / 抢七 / 高压 / 低反手 | 📌 六期范围旁支；`XjJHA91HDbU` holdout；`Ibkq-yBteGc` deep-with-gap；下刀不写成正手降拍；不改写 p.75；书核心不变 |
 | ↓ **阶段 7 Batch C 第五刀** | 10/24 | 发球进阶 / 反手直线 / 心理短片 | 📌 四期范围旁支；`MWjBfarwNlA` holdout；两短片 deep-with-gap；发球先别管腿不改写 p.83；Batch C pending 只剩 `E_zmENJIj4g`；书核心不变 |
 | ↓ **阶段 7 Batch C 收尾** | 10/24 | 15 记发球 | 📌 `E_zmENJIj4g` 六块范围旁支；coil 不升 p.119；旋前不升口令；Batch C pending 0；书核心不变 |
+| ↓ **阶段 7 视觉补漏** | 10/24 | 7 期无字幕 | 📌 七期 deep-with-gap；肩胛只交叉引用接触叶子；发球和反手是范围旁支；正手示范不挂机制；全库 pending 0、blocked 0；书核心不变 |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -354,6 +356,7 @@ timeline
 - [10/24 Batch C 第四刀：切削 / 接发 / 抢七 / 高压 / 低反手](#oct24-ftt-repass-batch-c4)（文末）— 六期范围旁支；`XjJHA91HDbU` 仍 holdout；`Ibkq-yBteGc` 是 deep-with-gap，口令沿用低反手；下刀和由低到高不写成正手降拍；接发分腿不改写 p.75；不碰 `E_zmENJIj4g`；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch C 第五刀：发球进阶 / 反手直线 / 心理短片](#oct24-ftt-repass-batch-c5)（文末）— 四期范围旁支；`MWjBfarwNlA` 仍 holdout；两短片 deep-with-gap；发球先别管腿不改写 p.83；内旋不升口令；Batch C pending 只剩 `E_zmENJIj4g`；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch C 收尾：15 记发球](#oct24-ftt-repass-batch-c6)（文末）— `E_zmENJIj4g` 六块范围旁支，不写流水账；coil 不升正手粗枝；旋前不升口令；落地准备不改写 p.75；Batch C pending 0；场上主句仍是「肩往前、髋被往后拽」
+- [10/24 视觉补漏：7 期无字幕短片](#oct24-ftt-repass-blocked-visual)（文末）— 七期 deep-with-gap，不编对白；肩胛只交叉引用接触叶子；发球和反手是范围旁支；正手示范不挂机制；全库 pending 0、blocked 0；场上主句仍是「肩往前、髋被往后拽」
 - [10/18 旋转与 supination 同步（待核实）：身体转、胳臂不额外加动作；supination 是被转出来的觉察点，非口令](#oct18-rotation-supination)（文末）— 用户标为非常重要（含 §7 意识层面：只关注重心转移，手被动 supinate）；TPA Tom Alsop 原话待核（尚无字幕）；FTT `PwkGLkRm73o` 唯一明说 supinate，`2Nn9tyMECZU` / `JIMgI3jiVns` / `LoSrMj-Qxkc` 以肩外旋→内旋说同一方向；不新增 cue，不违反禁令
 - [10/15 放松是触发点：手腕一紧击球就感觉不到 ESR；放松打通背部与胸部发力](#oct15-wrist-relax-trigger)（文末）— 手腕紧张吸走注意力并截断近端发力；放松是固定模式的触发点；逻辑理顺比硬练省力；待球场验证
 - [10/15 晚 FTT《Why You're Jammed》：击球槽位三轴，旧被挤住点会回吸](#oct15-ftt-jammed)（文末）— 横向推远+非持拍手/锥桶/远探；纵向缓和上斜线、高肘不俯冲；纵深留足并前倾再加 6 英寸；两端失败（挤住/够过头）；待球场验证
@@ -12817,6 +12820,35 @@ FTT 84 期字幕中，**没有**专门讲「旋转与 supination 同步」的一
 ### 根基怎么动
 
 只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`E_zmENJIj4g` 不是 holdout，仍不进 tree evidence。
+
+场上主句不变：**「肩往前、髋被往后拽。」**
+
+### 等级
+
+📌 流程记录。技术结论仍以 6ak4 和书页为准。
+
+<a id="oct24-ftt-repass-blocked-visual"></a>
+## 📌 2026-10-24 — 视觉补漏：7 期无字幕短片
+
+### 本轮完成
+
+从已合的 main（`7bd4a54`，PR #31）继续。七期都没有可用字幕，按 360p 抽帧写成一份合并稿 `SRC-FTT-blocked-visual-7_repass_2026-10-24.md`。不编对白，不另写练习口令。全部 deep-with-gap。
+
+| 期 | 画面里能站住的 | 挂点 |
+|---|---|---|
+| `dYPv0QfFrsU` | WITHOUT 时肘离躯干更远；WITH 时肘更靠近身侧。肩胛看不出来 | 交叉引用接触叶子 / Am8、5Kd。不升口令 |
+| `6j33LJfl46s` | SCAPULAR GLIDE 字和沿上臂的箭头。肩胛滑了没有，看不出来 | 同一条交叉引用。不升口令 |
+| `Cwc4YcKFZrU` | 多记身前正手。片尾字 the forehand is not a thing of the past | 示范片，不挂机制。holdout |
+| `risP4qTirj8` | 篮筐边手抛，拍在身前碰到球 | 示范片，不挂机制。不改写 p.75 |
+| `XF17hgRlccw` | PERFECT CONTACT 字，拍贴在身前的球上，肘还弯着 | 示范片，不挂机制。perfect 不是测量 |
+| `97vo-kFis6c` | DISGUISED SERVE 字，拍在头侧，落地后往场里走 | 发球范围旁支。伪装看不出来。holdout |
+| `dnNOOornvek` | 双手在拍上，拍在身前碰到球。片尾字 the backhand is not a thing of the past | 反手范围旁支。不另写挥法 |
+
+队列现为 deep 97、pending 0、blocked 0。Batch A 17 deep。Batch B deep 49、pending 0、blocked 0。Batch C deep 31、pending 0、blocked 0。全库 pending 0、blocked 0。
+
+### 根基怎么动
+
+只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`Cwc4YcKFZrU`、`97vo-kFis6c` 是 holdout，不进 tree evidence。其余五期也都不进树。
 
 场上主句不变：**「肩往前、髋被往后拽。」**
 
