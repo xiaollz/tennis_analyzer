@@ -21,13 +21,13 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 5，pending 85，blocked 7。批次 A 17 / B 49 / C 31。Batch A 第一刀已完成的四期见各 `SRC-FTT-<id>_repass_2026-10-24.md`。`ui-RFRdQKRk` 虽为 deep，仍是 holdout，不进 tree evidence。
+当前计数：deep 11，pending 79，blocked 7。批次 A 17 / B 49 / C 31。Batch A 第一刀四期，加本轮续的六期，见各 `SRC-FTT-<id>_repass_2026-10-24.md`。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI` 虽为 deep，仍是 holdout，不进 tree evidence。批次 A 还没全部 deep：`tzgAWr3QGv0`、`5jHCDc44SQM`、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`、`ExkBtFRhUWY` 仍 pending。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
 | `q6LrQYDvxmY` | Why Pros Hit So Far Away | 1036 | B | pending |  |
 | `uJpuDUx0jIA` | Why Your Forehand Keeps Disappearing, and How to Fix It | 1427 | B | pending |  |
-| `2Nn9tyMECZU` | Why Pros Swing Around, not Low-to-High | 1067 | A | pending |  |
+| `2Nn9tyMECZU` | Why Pros Swing Around, not Low-to-High | 1067 | A | deep | Batch A 续；`SRC-FTT-2Nn9tyMECZU_repass_2026-10-24.md`；绕挥叶子；14:42 coil 与 p.119 冲突，书赢 |
 | `5-Ia7c4XzfU` | This Tennis Robot Exposed My Tension Issue | 1683 | B | pending |  |
 | `wzLMv4ASg9s` | Why Your Racket Doesn't Flip - and How to Fix It | 2066 | B | pending |  |
 | `agtIR3PuNsw` | Why Alfie Hewett Hits Harder Than You | 271 | B | pending |  |
@@ -38,7 +38,7 @@
 | `toArb3WkJcs` | The Most Common Ball-Machine Mistake and How to Fix It | 554 | B | pending |  |
 | `fjpr9PS02tM` | Why 99% Of Grips Don't Work | 617 | B | pending |  |
 | `omsLx7F2Wdc` | There's Only 1 Singles Strategy, and This is It | 878 | C | pending |  |
-| `PwkGLkRm73o` | The Pros Swing Differently Than You (with lesson transformation) | 859 | A | pending |  |
+| `PwkGLkRm73o` | The Pros Swing Differently Than You (with lesson transformation) | 859 | A | deep | Batch A 续；`SRC-FTT-PwkGLkRm73o_repass_2026-10-24.md`；拍头路径 ≠ 手臂路径；不改成肩先于髋 |
 | `AppdZqxH_2k` | How to Master Tennis's Most Important Skill | 467 | B | pending |  |
 | `lCKDP2gKR_Y` | Why Your Wrist Hurts, and How to Fix It | 286 | B | pending |  |
 | `2J8q7sn4JLc` | Why Your Forehand Sprays, and How to Fix It | 500 | B | pending |  |
@@ -90,7 +90,7 @@
 | `Psidjei5BnI` | 4 Tips For Consistently Crushing Slow Balls | 475 | B | pending |  |
 | `FxDmVi3EFnE` | The Truth About the Topspin Pro | 928 | B | pending |  |
 | `McCb-RfYd0w` | The Magic of the Non-Dominant Side on the Forehand | 192 | A | pending |  |
-| `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 448 | A | pending |  |
+| `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 448 | A | deep | Batch A 续；`SRC-FTT-JIMgI3jiVns_repass_2026-10-24.md`；内旋刚开始才接触；不进 tree evidence |
 | `42BfbKsTGb4` | You Aren't Practicing Half of Tennis / RECEIVING Will Transform Your Game | 337 | B | pending |  |
 | `Fu6DkHvZlGY` | The Pure-Dextral Pinpoint / Serve Like Jakob Mensik | 435 | C | pending |  |
 | `E_zmENJIj4g` | Coiling / Spinal Motion / Eye Dominance / Arm Slot - 15 Serves Explained | 2624 | C | pending | 标题是 15 记发球，归 C；内含 coiling / spinal，深吸收时再决定能挂哪根 |
@@ -102,7 +102,7 @@
 | `GsHkML2mVEI` | Nishioka's Unique "Backswing" Timing / Two Styles Contrasted | 350 | B | pending |  |
 | `wd4YRQW3TOc` | 4 Tips For Effortless, Controllable Topspin | 1338 | B | pending |  |
 | `V-QkILd4V-w` | 8 Visual Return Strategies Tested by a WTA Pro | 1021 | C | pending |  |
-| `xLs469ZVMPU` | Fix Your Forehand Over-Rotation / 3 Counter-Rotational Balance Techniques | 734 | A | pending |  |
+| `xLs469ZVMPU` | Fix Your Forehand Over-Rotation / 3 Counter-Rotational Balance Techniques | 734 | A | deep | Batch A 续；`SRC-FTT-xLs469ZVMPU_repass_2026-10-24.md`；反旋刹车；1:11 禁止送髋 |
 | `dDYKuNZtdyU` | Find Your One-Handed Backhand "Pull Slot" | 666 | C | pending |  |
 | `pQ793MBQE50` | How Scap Retraction Powers the One-Handed Backhand | 988 | C | pending |  |
 | `YbLit9png2U` | Fix Your Kick Serve by Throwing Sideways | 202 | C | pending |  |
@@ -112,7 +112,7 @@
 | `wFOy0RKWBTg` | Swing OUT on the Forehand | 31 | B | pending |  |
 | `QrRYuVjVibU` | When You Get A Low Forehand | 16 | B | pending |  |
 | `Ibkq-yBteGc` | To Hit the Low Backhand | 9 | C | pending |  |
-| `5KdScDKxVSI` | Shoulder Adduction Will Transform Your Forehand Contact | 357 | A | pending |  |
+| `5KdScDKxVSI` | Shoulder Adduction Will Transform Your Forehand Contact | 357 | A | deep | Batch A 续；`SRC-FTT-5KdScDKxVSI_repass_2026-10-24.md`；holdout；接触叶子；「可以不转」书赢 |
 | `uQcObi2oTSs` | The Low-to-High Forehand is Mostly a Myth | 10 | A | pending |  |
 | `Cwc4YcKFZrU` | Retired WTA Pro Still Ripping the Forehand | 25 | B | blocked | 无字幕，先补字幕 |
 | `risP4qTirj8` | WTA Pro Training with Hand Toss Forehands | 31 | B | blocked | 无字幕，先补字幕 |
@@ -120,14 +120,16 @@
 | `dnNOOornvek` | Retired WTA Pro Still Ripping Backhands | 48 | C | blocked | 无字幕，先补字幕 |
 | `ExkBtFRhUWY` | The Magic of Single-Foot Forehand Training | 497 | A | pending |  |
 | `PUN6qIIYU-4` | 4 Tips for the Two-Handed Backhand | 886 | C | pending |  |
-| `Am8j1Zw5KrE` | Shoulder Adduction Unlocks the Tennis Forehand | 556 | A | pending |  |
+| `Am8j1Zw5KrE` | Shoulder Adduction Unlocks the Tennis Forehand | 556 | A | deep | Batch A 续；`SRC-FTT-Am8j1Zw5KrE_repass_2026-10-24.md`；holdout；肩内收是接触叶子，不进 tree evidence |
 | `OYf48k-cfNI` | Fault Tolerance In Action | 232 | B | pending |  |
 
 ## 本轮（Batch A 第一刀）
 
-优先顺序：`ui-RFRdQKRk` → `wFIrPMutzRo` → `UB6SbA_KX9E` → `KU7FHy1qQOI`。这四期已按字幕段起点 + 抽帧目视写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。
+第一刀：`ui-RFRdQKRk` → `wFIrPMutzRo` → `UB6SbA_KX9E` → `KU7FHy1qQOI`。已 deep。
 
-仍 pending、本轮未开：`Am8j1Zw5KrE`、`JIMgI3jiVns`、`5KdScDKxVSI`、`xLs469ZVMPU`、`PwkGLkRm73o`、`2Nn9tyMECZU`。
+续（2026-10-24 第二刀）：`Am8j1Zw5KrE`、`JIMgI3jiVns`、`5KdScDKxVSI`、`xLs469ZVMPU`、`PwkGLkRm73o`、`2Nn9tyMECZU`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`Am8j1Zw5KrE`、`5KdScDKxVSI` 仍是 holdout。
 
 `6ak4ZScH_gc` 不重写，只引用 `SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`。`ui-RFRdQKRk` 虽已 deep，仍是 holdout，不进 tree evidence。
+
+批次 A 剩余 pending：`tzgAWr3QGv0`、`5jHCDc44SQM`（holdout）、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`、`ExkBtFRhUWY`。未开 Batch B。
 
