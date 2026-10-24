@@ -39,6 +39,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/6a82efae0000000005032555?xsec_token=ABejk44JBXv1f3Mm4JnAywl374BHX8SCWFErhEl43EDP0=&xsec_source=pc_user （= 目录 #36） | 引拍与找球 · 大臂别夹着；收拍高度不强制 | **transcribed** | `video_qa_takeback_6a82efae.md` |
 | https://www.xiaohongshu.com/explore/6a72f5630000000005030d1b?xsec_token=AB6DkRkM6hI5kVu9RkeWcEo64sY-mxIvqMn6wNQN23ZzE=&xsec_source=pc_user （= 目录 #43） | 大引拍改小引拍 · 靠墙 automatic | **transcribed** | `video_small_takeback_6a72f563.md` |
 | https://www.xiaohongshu.com/explore/6a5a2098000000000301cfbe?xsec_token=ABiI3EQEpOGTiDsAomvTnUzKYvZy_cR04Pjw1N6Rqf_YE=&xsec_source=pc_user （= 目录 #49） | 可乐瓶红盖当拍头轨迹 | **transcribed** | `video_coke_path_6a5a2098.md` |
+| https://www.xiaohongshu.com/explore/6a3e79de000000001c025160?xsec_token=AB9pEtX7BbGikUw11N2sLo2rpI_i3bPU2NzL1Kw_UxeY4=&xsec_source=pc_user （= 目录 #55） | 暴力正手 · 转髋引拍 / 压前脚 / 前脚发力支撑 | **transcribed** | `video_violent_fh_6a3e79de.md` |
+| https://www.xiaohongshu.com/explore/6a2d088a0000000017029f54?xsec_token=AB_a9NpfivGG9jBs8SgrE2vaoQcUfznfoAaHmrcRJb5aw=&xsec_source=pc_user （= 目录 #58） | 引拍还要调 · 往外不往后；侧身关闭式与脚步 | **transcribed** | `video_wta_takeback_6a2d088a.md` |
+| https://www.xiaohongshu.com/explore/6a7818e0000000002402eb04?xsec_token=ABAhE7_Pxspw0-0zPPONubswriascQKpZHQRCOxoyO2hg=&xsec_source=pc_user （= 目录 #41） | 30 分钟初学切片 · 击球点 / 拍头滞后 / 节奏 | **transcribed** | `video_beginner_30min_6a7818e0.md` |
 
 ---
 
@@ -94,13 +97,16 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 - `6a82efae…` → transcribed（引拍与找球 · 大臂别夹）
 - `6a72f563…` → transcribed（大引拍转小引拍 · 靠墙）
 - `6a5a2098…` → transcribed（可乐瓶红盖轨迹）
+- `6a3e79de…` → transcribed（暴力正手 · 转髋 / 压前脚）
+- `6a2d088a…` → transcribed（引拍往外不往后）
+- `6a7818e0…` → transcribed（30 分钟初学 · 击球点 / 滞后 / 节奏）
 
 ---
 
 ## 待办
 
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
-2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**。~~#36、#43、#49 已深看~~。FH 优先队列仍 pending：#41 初学常见问题、#55 正手、#58 引拍调整、#60 先练脚、#61 蹲腿。
+2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**。~~#36、#43、#49、#41、#55、#58 已深看~~。FH 优先队列仍 pending：#60 先练脚、#61 蹲腿。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
 4. 下一批从 `6a104c2f` 接着收。主页合计约 362，已入目录 62。
 5. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
@@ -123,7 +129,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 38 | 暴力反手是打好网球底气（第三招） | 反手第三招 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a7f04ac000000002203148a?xsec_token=ABn1nKSDypQ4F1qxz6m80_oe1FHm-Rayb-DeWR6XF-pic=&xsec_source=pc_user | catalog_only |
 | 39 | 暴力反手是打好网球的底气(第二节) | 反手第二节 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a7c4d6d0000000025005a44?xsec_token=ABf2DwqclF2xd24ucQ3EwoNJYK8zwDKoaBqG9Ro3gwPZU=&xsec_source=pc_user | catalog_only |
 | 40 | 暴力反手是你打网球的底气(第一招) | 反手第一招 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a7aebfa0000000025006cbc?xsec_token=ABiwbAB8hIY01UWdflHTrOnfVsmbnSnXxahTO2mz4WNxc=&xsec_source=pc_user | catalog_only |
-| 41 | 高效(30分钟)处理初学者常见问题 | 初学常见问题 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a7818e0000000002402eb04?xsec_token=ABAhE7_Pxspw0-0zPPONubswriascQKpZHQRCOxoyO2hg=&xsec_source=pc_user | **pending_A-E** |
+| 41 | 高效(30分钟)处理初学者常见问题 | 初学常见问题 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a7818e0000000002402eb04?xsec_token=ABAhE7_Pxspw0-0zPPONubswriascQKpZHQRCOxoyO2hg=&xsec_source=pc_user | **transcribed** `video_beginner_30min_6a7818e0.md` |
 | 42 | 1.5球友如何训练动作同时加练脚步 | 动作加脚步 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a75c797000000000600555b?xsec_token=ABukG_FlRSrSG0fpouV0kJiBR3htXlHP6-oCoxTbOEzgU=&xsec_source=pc_user | catalog_only |
 | 43 | 打引拍转小引拍(automatic训练版) | 大引拍改小引拍 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a72f5630000000005030d1b?xsec_token=AB6DkRkM6hI5kVu9RkeWcEo64sY-mxIvqMn6wNQN23ZzE=&xsec_source=pc_user | **transcribed** `video_small_takeback_6a72f563.md` |
 | 44 | 女生打网球更需暴力请get这两点 | 两点要领 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a707e9b0000000005032f0f?xsec_token=ABXbdIcRIOdFTJEBp-wp5CIAts-EGrz3vhwW6H6_-emMM=&xsec_source=pc_user | catalog_only |
@@ -137,10 +143,10 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 52 | 老父亲太炸裂了5小时必看精华 | 长集锦 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a4d7e9a0000000015025308?xsec_token=ABNV0iU4OcF1xoZnq0wA-KnyLL6qcjmK42lzEcTxzfgX8=&xsec_source=pc_user | catalog_only |
 | 53 | 20分钟4小练习魔改正手动力链 | 正手动力链 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a49d6600000000015026ee7?xsec_token=ABnVeJyIObRLneIVeRpnJG-iN9pdsCnwyLhyF-dzq3Gqw=&xsec_source=pc_user | **transcribed** `video_4drills_kinetic_6a49d660.md` |
 | 54 | 99.99％球友没掌握的暴力网球技巧 | 技巧向 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a4087e0000000001c0277e4?xsec_token=ABQ4Jf4enwNcdqerg_Qczt32VQP8_A6ov6yG2jRaJSEjE=&xsec_source=pc_user | catalog_only |
-| 55 | 需要暴力正手吗？来，保证教会 | 正手 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a3e79de000000001c025160?xsec_token=AB9pEtX7BbGikUw11N2sLo2rpI_i3bPU2NzL1Kw_UxeY4=&xsec_source=pc_user | **pending_A-E** |
+| 55 | 需要暴力正手吗？来，保证教会 | 正手 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a3e79de000000001c025160?xsec_token=AB9pEtX7BbGikUw11N2sLo2rpI_i3bPU2NzL1Kw_UxeY4=&xsec_source=pc_user | **transcribed** `video_violent_fh_6a3e79de.md` |
 | 56 | 我最爱的小徒弟（基本功细节）训练 | 基本功 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a37c72a000000001603f2a5?xsec_token=AB9-0OCrtLTO2tJbqmcRvs96aBlujDUbF-mSJD8ulHtdU=&xsec_source=pc_user | catalog_only |
 | 57 | 半年，我的暴力女孩出现了 | 学员记录 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a329cf4000000001702b9df?xsec_token=ABcPNUYKKEgSsugYhVugLvsA3oJ2Hlg0SWdtAvYaurPLA=&xsec_source=pc_user | catalog_only |
-| 58 | 引拍对于马上打wta的娃也还要调整 | 引拍还要调 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a2d088a0000000017029f54?xsec_token=AB_a9NpfivGG9jBs8SgrE2vaoQcUfznfoAaHmrcRJb5aw=&xsec_source=pc_user | **pending_A-E** |
+| 58 | 引拍对于马上打wta的娃也还要调整 | 引拍还要调 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a2d088a0000000017029f54?xsec_token=AB_a9NpfivGG9jBs8SgrE2vaoQcUfznfoAaHmrcRJb5aw=&xsec_source=pc_user | **transcribed** `video_wta_takeback_6a2d088a.md` |
 | 59 | 这非常讲节奏的运动你们掌握的如何 | 节奏 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a27e1e90000000017028e2f?xsec_token=AB0qv9oMkQ1wNSEMt5wd7OMqgWv9g_2KjhBpzNP4Fbilk=&xsec_source=pc_user | catalog_only |
 | 60 | 先练脚啥意思?看看职业的就明白了 | 先练脚 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a1db4540000000036032aa1?xsec_token=ABfx4dVhXzOibuJeXotJ28MjRj7deMKzoZUaJcBZluJGw=&xsec_source=pc_user | **pending_A-E** |
 | 61 | 蹲腿就能0失误拍头还能更快 | 蹲腿 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a181dfc000000003601896d?xsec_token=AB0wmL7di2m7gq44iJCuN_wyd-Cr2CXVNcJQYi1TTcyVs=&xsec_source=pc_user | **pending_A-E** |
