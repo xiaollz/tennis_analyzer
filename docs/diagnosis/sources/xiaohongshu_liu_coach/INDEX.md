@@ -897,3 +897,48 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`61be9e21` 小女孩半年的🎾网球自信❤。再下：`61b7108b` 这个办法练🎾脚步不好，你来打我。主页在本批之后未到尽头；本批下滚见到 data-index 512，未见「没有更多」。
 
 没有点赞、评论、关注、发布。
+
+## 第十七批 30 条（#487–#516，从 `61be9e21` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 486–515 = 目录 #487–#516）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十六批末 data-index 485 = 目录 #486 `61c03801`）。从下一条 data-index 486 = `61be9e21` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 515 = 目录 #516。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（#495 封面以 🎾🎾🎾 起头，表内去掉开头球符），标题中间的 🎾 保留（#487、#488、#489、#493）。本批下滚见到 data-index 541，页面没有「没有更多」文案，未到尽头。
+
+本批 pending_A-E 共 2 条：#488 `61b7108b` 这个办法练🎾脚步不好，你来打我。（标题有脚步）。#506 `60c95e34` 网球正手细节详细分析（标题明确正手）。#489「击🎾球」没有击球点 / timing / power，不单标。#491「不敢发的朋友圈」不是发球。#496 动作、#509 球拍推荐、#516 练习不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **516**。页面「笔记」计数仍约 362，时间线长于计数（本批下滚见到 data-index 541，无「没有更多」文案）。本批之后未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 487 | 小女孩半年的🎾网球自信❤ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61be9e21000000000102986b?xsec_token=ABWgdyJz4PZlgSuZJ04UEzxkCPx9W6Q1t95051Chl-2-0=&xsec_source=pc_user | catalog_only |
+| 488 | 这个办法练🎾脚步不好，你来打我。 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61b7108b000000000102dc64?xsec_token=ABAcaX1XPXt_yFyTKVm-W9ZTk9vWwoidIBqK4o-psp6JY=&xsec_source=pc_user | pending_A-E |
+| 489 | 以后不教这种方式击🎾球了 | 击球方式 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61b00139000000000102a34d?xsec_token=ABYE8VPW3SgvSQfUjIyZSUAlHv1qkhwFhl6RDZouxGnTE=&xsec_source=pc_user | catalog_only |
+| 490 | 有颜值，凭啥靠技术打球呢？ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61ade83a0000000021037732?xsec_token=ABATHNWsJosXNqXV3buIDcSdB1DqKnJHStdXDShNBYF1I=&xsec_source=pc_user | catalog_only |
+| 491 | 不敢发的朋友圈 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/617bbdaa0000000001025e72?xsec_token=AB-thqM8aUydk1nm57pyRjNg4a3SJsY2VVKIh5my6pSVA=&xsec_source=pc_user | catalog_only |
+| 492 | 邪不能胜正，欢迎孟女士回国 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/614e747c000000000102e0dd?xsec_token=ABs1adqo2EYkHJie9AiKkxHbgui2F7LRwica9B_4k-lS8=&xsec_source=pc_user | catalog_only |
+| 493 | 2021美网🎾冠军，中文很溜 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/613d93910000000021035f30?xsec_token=ABY9F0VObjoWuq7QsMW-Q-FTc566bzpS6W7FeGQJfY8K8=&xsec_source=pc_user | catalog_only |
+| 494 | 有中国血统的妹妹扬威美网赛场 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/613d2b53000000002103e9d8?xsec_token=ABY9F0VObjoWuq7QsMW-Q-FX-a80O8prkfCPZMaeJ4Ztc=&xsec_source=pc_user | catalog_only |
+| 495 | 世界第一的53回合慢镜头 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/613c888700000000210358d5?xsec_token=ABJJoNCPPVUNfLKtz4Yb1d7Avlh3VOuT9XCHcHAAnC2-s=&xsec_source=pc_user | catalog_only |
+| 496 | 网球动作需要干净简洁 | 动作 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61395caa00000000010283b4?xsec_token=ABQu4OaqwvIU1QXCk9pznNihwyVF3vLpQfxMjWguK6LCU=&xsec_source=pc_user | catalog_only |
+| 497 | 很安全的地铁，但不允许吵闹哦 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6132536b0000000021034d9b?xsec_token=AB6fleh5js7Ob_e7kyRbWTUHtEhRH0dLbb3KYOhe9LVJg=&xsec_source=pc_user | catalog_only |
+| 498 | 猜猜哪个城市，非*安 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/613250720000000021034754?xsec_token=AB6fleh5js7Ob_e7kyRbWTUM4n3p5tPvLnBh0b4uZqFC4=&xsec_source=pc_user | catalog_only |
+| 499 | 约会打网球的女生拍照 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61206298000000000102a01a?xsec_token=AB4JWtpQ3OPoa6xKcdAVJP4Y84hlTVbfeQF0VGP38lR9s=&xsec_source=pc_user | catalog_only |
+| 500 | 官宣东京奥运最后排名出来 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/610faffa00000000010275c4?xsec_token=ABsp8nT8WVPhs-Ucb8hCSvMLFfcyr_G8fdXO1n43xDuc4=&xsec_source=pc_user | catalog_only |
+| 501 | 马上要比赛，加油小朋友 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/610bb0c10000000021039c8a?xsec_token=ABOEP7iilwRZ__38Uu-vnv9vYT_vsESK-6RputJ3BubJg=&xsec_source=pc_user | catalog_only |
+| 502 | 本周乐坛播放率最高的一首歌 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6109145a000000000102e92d?xsec_token=ABuIo2xe8G7GYkuOP4_aS9CvdCOeEFxmtWdMVzGPFklS4=&xsec_source=pc_user | catalog_only |
+| 503 | 专业角度分析苏教授的决赛成绩 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61075138000000000102530d?xsec_token=ABzu_tZ96H8xMQ7GGWs3nLuAA8jUmyNWnFo3Ys_LNVJlk=&xsec_source=pc_user | catalog_only |
+| 504 | 如果能这么灵活，我不介意这体型🙄 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/610207bd000000002103f0cc?xsec_token=AByECpX_1jbb1ypoEIcDjFgxNq1tLMg_MF6wRHMvuMQME=&xsec_source=pc_user | catalog_only |
+| 505 | 不太满意的一节训练课 | 训练课 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60fcbf05000000002103c62a?xsec_token=AB2AVOMni3tNOl2rOChxHYuHZhb53xNQ3KDXWLF0wdkLQ=&xsec_source=pc_user | catalog_only |
+| 506 | 网球正手细节详细分析 | 正手细节 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c95e34000000000102606b?xsec_token=ABtfD8veRxb9UAb9AnGrKzBkxBHIRQO9TA3Z-xDO5wMSA=&xsec_source=pc_user | pending_A-E |
+| 507 | 有人认得他吗😍 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c8bee8000000002103f3d1?xsec_token=ABLQb-DLTcaUGq9Pcc5g4xJ9INZvysCxPzSdrUg7KGj1M=&xsec_source=pc_user | catalog_only |
+| 508 | 摄影师用一盏灯改变你的世界 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c83bb10000000001024180?xsec_token=ABLQb-DLTcaUGq9Pcc5g4xJ0klUZGfOmM6SMhFBe2r4Wo=&xsec_source=pc_user | catalog_only |
+| 509 | 专业的网球拍分析推荐 | 球拍推荐 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c6ad89000000000102aca1?xsec_token=AB0FOvZif-8Svb690403QOTryO_h3weFQKuQkb_cUOBwo=&xsec_source=pc_user | catalog_only |
+| 510 | 富二代学习能力也这么强吗？ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60beaf0f000000002103d455?xsec_token=ABzE8YzQladxY8q-8kIOAzboNol99Ks4IVoONOTaD5fZg=&xsec_source=pc_user | catalog_only |
+| 511 | 就是差一丢丢 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60bc29000000000021035c0d?xsec_token=ABR7nhLx3lwmsnK_klCqxxGhrn3p8bybu5Ol2YolIh6NU=&xsec_source=pc_user | catalog_only |
+| 512 | 三十年老广州没曾见过 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60ae5061000000002103d823?xsec_token=ABCRMOnG8WNjA4BqVXQA3_tBKi-_5-cNYjBI9M1RXhlSA=&xsec_source=pc_user | catalog_only |
+| 513 | 早上8点，广州已经35°。 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60aa247a0000000021036850?xsec_token=ABTjEu43ooEanjNKmeVlfOtuwB8KdxuhXuzeY5H6bZpDE=&xsec_source=pc_user | catalog_only |
+| 514 | 西安的美女既有古典还有现代 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/608e5f6f0000000001026391?xsec_token=AB3w13Z-ibf_gX5h0avGu83phaDUbPjPP7nxE4yMx58Vo=&xsec_source=pc_user | catalog_only |
+| 515 | 云南建水慵懒的夏天 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6045b3b1000000000102cff5?xsec_token=ABo0sb9xGQj7ArAYM-FuWwm2WuAlKv_SCNGDYehuOqXH8=&xsec_source=pc_user | catalog_only |
+| 516 | 网球也可以这样练习 | 练习 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6039f947000000002103433e?xsec_token=ABhx9rBf2ut2z-cf1XZlb_l3KBlnQejYBf62q922r-kLA=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`603233b0` 我德澳网九宫格。再下：`600fba2d` 2021澳网，下周开打。主页在本批之后未到尽头；本批下滚见到 data-index 541，未见「没有更多」。
+
+没有点赞、评论、关注、发布。
