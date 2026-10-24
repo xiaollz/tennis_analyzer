@@ -42,6 +42,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/6a3e79de000000001c025160?xsec_token=AB9pEtX7BbGikUw11N2sLo2rpI_i3bPU2NzL1Kw_UxeY4=&xsec_source=pc_user （= 目录 #55） | 暴力正手 · 转髋引拍 / 压前脚 / 前脚发力支撑 | **transcribed** | `video_violent_fh_6a3e79de.md` |
 | https://www.xiaohongshu.com/explore/6a2d088a0000000017029f54?xsec_token=AB_a9NpfivGG9jBs8SgrE2vaoQcUfznfoAaHmrcRJb5aw=&xsec_source=pc_user （= 目录 #58） | 引拍还要调 · 往外不往后；侧身关闭式与脚步 | **transcribed** | `video_wta_takeback_6a2d088a.md` |
 | https://www.xiaohongshu.com/explore/6a7818e0000000002402eb04?xsec_token=ABAhE7_Pxspw0-0zPPONubswriascQKpZHQRCOxoyO2hg=&xsec_source=pc_user （= 目录 #41） | 30 分钟初学切片 · 击球点 / 拍头滞后 / 节奏 | **transcribed** | `video_beginner_30min_6a7818e0.md` |
+| https://www.xiaohongshu.com/explore/6a1db4540000000036032aa1?xsec_token=ABfx4dVhXzOibuJeXotJ28MjRj7deMKzoZUaJcBZluJGw=&xsec_source=pc_user （= 目录 #60） | 先练脚 · 全程脚跟不落地 | **transcribed** | `video_feet_first_6a1db454.md` |
+| https://www.xiaohongshu.com/explore/6a181dfc000000003601896d?xsec_token=AB0wmL7di2m7gq44iJCuN_wyd-Cr2CXVNcJQYi1TTcyVs=&xsec_source=pc_user （= 目录 #61） | 蹲腿 · 高球也提前蹲 | **transcribed** | `video_squat_legs_6a181dfc.md` |
 
 ---
 
@@ -100,13 +102,15 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 - `6a3e79de…` → transcribed（暴力正手 · 转髋 / 压前脚）
 - `6a2d088a…` → transcribed（引拍往外不往后）
 - `6a7818e0…` → transcribed（30 分钟初学 · 击球点 / 滞后 / 节奏）
+- `6a1db454…` → transcribed（先练脚 · 脚跟不落地）
+- `6a181dfc…` → transcribed（蹲腿 · 高球也提前蹲）
 
 ---
 
 ## 待办
 
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
-2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**。~~#36、#43、#49、#41、#55、#58 已深看~~。FH 优先队列仍 pending：#60 先练脚、#61 蹲腿。
+2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**。~~#36、#43、#49、#41、#55、#58、#60、#61 已深看~~。FH 优先队列里 #60 先练脚、#61 蹲腿已完。下一批目录仍从 #63 / `6a104c2f` 起，本轮不收。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
 4. 下一批从 `6a104c2f` 接着收。主页合计约 362，已入目录 62。
 5. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
@@ -148,8 +152,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 57 | 半年，我的暴力女孩出现了 | 学员记录 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a329cf4000000001702b9df?xsec_token=ABcPNUYKKEgSsugYhVugLvsA3oJ2Hlg0SWdtAvYaurPLA=&xsec_source=pc_user | catalog_only |
 | 58 | 引拍对于马上打wta的娃也还要调整 | 引拍还要调 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a2d088a0000000017029f54?xsec_token=AB_a9NpfivGG9jBs8SgrE2vaoQcUfznfoAaHmrcRJb5aw=&xsec_source=pc_user | **transcribed** `video_wta_takeback_6a2d088a.md` |
 | 59 | 这非常讲节奏的运动你们掌握的如何 | 节奏 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a27e1e90000000017028e2f?xsec_token=AB0qv9oMkQ1wNSEMt5wd7OMqgWv9g_2KjhBpzNP4Fbilk=&xsec_source=pc_user | catalog_only |
-| 60 | 先练脚啥意思?看看职业的就明白了 | 先练脚 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a1db4540000000036032aa1?xsec_token=ABfx4dVhXzOibuJeXotJ28MjRj7deMKzoZUaJcBZluJGw=&xsec_source=pc_user | **pending_A-E** |
-| 61 | 蹲腿就能0失误拍头还能更快 | 蹲腿 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a181dfc000000003601896d?xsec_token=AB0wmL7di2m7gq44iJCuN_wyd-Cr2CXVNcJQYi1TTcyVs=&xsec_source=pc_user | **pending_A-E** |
+| 60 | 先练脚啥意思?看看职业的就明白了 | 先练脚 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a1db4540000000036032aa1?xsec_token=ABfx4dVhXzOibuJeXotJ28MjRj7deMKzoZUaJcBZluJGw=&xsec_source=pc_user | **transcribed** `video_feet_first_6a1db454.md` |
+| 61 | 蹲腿就能0失误拍头还能更快 | 蹲腿 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a181dfc000000003601896d?xsec_token=AB0wmL7di2m7gq44iJCuN_wyd-Cr2CXVNcJQYi1TTcyVs=&xsec_source=pc_user | **transcribed** `video_squat_legs_6a181dfc.md` |
 | 62 | 🇷🇸教练演示提升反手哪些细节最重要 | 反手细节 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6a1423d100000000380346cb?xsec_token=ABASpmK0eD0Bu-vxYOQ6fpNSCZNTv4RADV_jf-VepAJkc=&xsec_source=pc_user | catalog_only |
 
 下一条（未入上表，滚动时已见到，留给下一批开头）：`6a104c2f` 反手怎么打🇷🇸教练直接送你全部答。
