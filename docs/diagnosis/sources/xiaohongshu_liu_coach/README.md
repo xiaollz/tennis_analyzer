@@ -4,6 +4,7 @@
 - 角色：**辅助来源（auxiliary / 非 FTT）**。不定义新故障、不进 tree evidence、不进中性 Gemini 提示词。
 - 树干：FTT 书 `books/ftt_fault_tolerant_forehand`（及本目录上级的 FTT SRC 卡）。与书冲突 → **书赢**；冲突写进该视频笔记的对照节，不删原话。
 - 抓取：薯片（xiaohongshu fetch）另线进行；本目录只等内容到位后再写深看笔记，**不因等待而阻塞建档**。
+- 综述：已 transcribed 条目的主题聚类与 FTT 书对照见 [`SYNTHESIS_FTT_CORRELATION.md`](./SYNTHESIS_FTT_CORRELATION.md)。
 
 ## 入库形态（每条视频一篇）
 
@@ -29,6 +30,7 @@
 |---|---|
 | `INDEX.md` | 视频总表（链接、主题、状态） |
 | `README.md` | 本文件：入库规则 |
+| `SYNTHESIS_FTT_CORRELATION.md` | **已深看要点整理 × FTT 书关联**（同向/书赢/待拍板/不进树；映射粗枝1/2） |
 | `<note_id>.md` | 单条深看笔记（内容到位后新增；命名用小红书 note id 或短链 slug） |
 
 挂接：需要时挂到对应粗枝的 `video_knowledge`，`role = auxiliary_*`，非证据。详见同级 TPA 叶 `../tpa_kinetic_chain_5xcIshgCd-E_2026-10-22.md`。

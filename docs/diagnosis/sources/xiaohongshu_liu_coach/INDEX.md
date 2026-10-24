@@ -18,6 +18,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 状态说明：`transcribed` = 本目录已有 A–E 深看；`stub` = 短 stub；`pending_A-E` = 已入目录、待深看（置顶 + FH 相关优先）；`catalog_only` = 仅链入目录。
 
+**综述（transcribed × FTT 书）**：[`SYNTHESIS_FTT_CORRELATION.md`](./SYNTHESIS_FTT_CORRELATION.md) — 主题聚类、同向/冲突书赢/待拍板、粗枝1/2 映射。
+
 ---
 
 ## 已深看 / stub
