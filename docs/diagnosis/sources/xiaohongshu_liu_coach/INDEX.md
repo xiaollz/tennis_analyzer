@@ -650,3 +650,46 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`662bbd60` 郑钦文输只有一个原因就是。再下：`662875b3` 基本功来源于初学时细致的分析。再往后封面还见 `6625ffcb` 突破3.0，必须学会这样发力方式（发力，下一批可标 pending_A-E）；主页未到尽头。
 
 没有点赞、评论、关注、发布。
+
+## 第十二批 30 条（#337–#366，从 `662bbd60` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；时间线 data-index 在本批之后还在继续，本次滚动见到至少 data-index 519，没有「没有更多」，未到尽头）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十一批末 data-index 335 = 目录 #336 `6634b938`）。从下一条 data-index 336 = `662bbd60` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 365 = 目录 #366。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（非脚/脚步）只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看（本批没有这类标题）。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#339 `6625ffcb` 突破3.0发力方式：标题有发力且非发球语境，**pending_A-E**。#342 `661208ba` 标题明确正手（双刀流未写反手，不按正反手合题降级），**pending_A-E**。#360 `65750b95`「力由脚生」有脚，**pending_A-E**。#364 `656bc45e`「移动及发力」有发力且非发球，**pending_A-E**。#345 `6601223d` 是反手里的发力，只 `catalog_only`。#366 `65692359` 标题虽有正手，主题是侧身，按侧身只 `catalog_only`。#340 下蹲、#343 转体、#347 找球、#348–#351 与 #357 反手/反拍只 `catalog_only`。#341 双刀流未写正手或反手，不单标。#344 蹬地没有发力/脚/脚步字样，不单标。核心、肘、力气、留头不单标。本批没有再遇已深看 id（`67b704e8` / `66f56ddf` / `67014cc5` / `66bd88a3` 等），无指回新开。**第十二批 pending_A-E**：#339 `6625ffcb`、#342 `661208ba`、#360 `65750b95`、#364 `656bc45e`。第十一批 pending_A-E 已清。没有点赞、评论、关注、发布。
+
+进度：已入目录 **366**。页面「笔记」计数仍约 362，但时间线长于计数（至少到 data-index 519），未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 337 | 郑钦文输只有一个原因就是 | 郑钦文 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/662bbd60000000001c005cec?xsec_token=ABogCDk9cQCfsnvRnsFF65x7ZV0wL9kf4qFmC9lY601Cc=&xsec_source=pc_user | catalog_only |
+| 338 | 基本功来源于初学时细致的分析 | 基本功 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/662875b3000000001c00a09d?xsec_token=ABjMS1R_zs8pTReYampd7khUgquQtkckJXPmOJhZpzIq4=&xsec_source=pc_user | catalog_only |
+| 339 | 突破3.0，必须学会这样发力方式 | 发力方式 · power | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6625ffcb000000000302281e?xsec_token=ABw4VFopliksVgIrGNm5DXZ_JgL31ggmvqewz40DwTcrs=&xsec_source=pc_user | **pending_A-E** |
+| 340 | 下蹲击球如同拎包入住一样简单 | 下蹲 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/661f420a000000001c0094ae?xsec_token=ABLM1Ptw9o97bBTV5OghCpzHaWG6Af4IxkM7gtc93X890=&xsec_source=pc_user | catalog_only |
+| 341 | 双刀流整体协调训练后篇 | 双刀流协调 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66137f93000000001b00e11f?xsec_token=ABskXbqP5_w0QLJFezX58-ZkeMWFO4tkTfj8OP4qo6ZWA=&xsec_source=pc_user | catalog_only |
+| 342 | 正手双刀流动作详细讲解 | 正手双刀流 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/661208ba0000000004019358?xsec_token=ABETPOU4fSO7ndh8Yv1y3XojeuuewlOR3hXnDus9xYB-A=&xsec_source=pc_user | **pending_A-E** |
+| 343 | 不用羡慕专业的转体，你也可以 | 转体 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66110784000000001b010ed7?xsec_token=ABCj1T7NUvRPaf0vOoP6aIYtaEsZ5O8d-0n8gLn0_ku_c=&xsec_source=pc_user | catalog_only |
+| 344 | 蹬地，家里可以练习😄 | 蹬地 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/660754520000000012036a52?xsec_token=AB70wPDgz8P_gWpnDc0imMTj8L0Ib__9YIx5LP2vMiKA8=&xsec_source=pc_user | catalog_only |
+| 345 | 1个动作检查自反手发力方向是否正确 | 反手发力方向 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6601223d0000000012030029?xsec_token=ABZ9owe2oTFHkX4baHSqZXf1FOxab6plCe-MnBUxwUH5w=&xsec_source=pc_user | catalog_only |
+| 346 | 这样试试，包裹球轻易get到 | 包裹球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f643350000000013027960?xsec_token=ABp68MmkNsmv9TyLea2TK3xefIqscivL35YO3OuZcP1Os=&xsec_source=pc_user | catalog_only |
+| 347 | 探头找球，教练有教你吗 | 找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f4dfd500000000120314c7?xsec_token=ABIAgggILdJ3ZyZV7x9c4gllqeVZTUlFEz96z5CLXVAzw=&xsec_source=pc_user | catalog_only |
+| 348 | 反手，这学不好的来骂我4 | 反手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f2425d0000000012036323?xsec_token=ABwmyVYI7J9AYIKTJnX8PU6NS5rNXiKkfjL5La4-eEfUQ=&xsec_source=pc_user | catalog_only |
+| 349 | 反手，这学不好的来骂我3 | 反手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f2415a0000000014004c9d?xsec_token=ABwmyVYI7J9AYIKTJnX8PU6PZOUq6hWNX-uGaUjx6j3Ug=&xsec_source=pc_user | catalog_only |
+| 350 | 反手，这学不好的来骂我2 | 反手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f240450000000014004753?xsec_token=ABwmyVYI7J9AYIKTJnX8PU6K1vgns2CzWU7BcxvS2g-EE=&xsec_source=pc_user | catalog_only |
+| 351 | 反手，这学不好的来骂我1 | 反手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65f23ea30000000012034fdb?xsec_token=ABwmyVYI7J9AYIKTJnX8PU6H_2SgMtSnKmwLmHLw7V0oY=&xsec_source=pc_user | catalog_only |
+| 352 | 莱巴金娜打力量，丝袜妹打节奏 | 莱巴金娜 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65d0d547000000000b02208a?xsec_token=ABfvtARcI1ule2n4x5RxIOSRhuSvv20Xj3TwZB4YoUW1I=&xsec_source=pc_user | catalog_only |
+| 353 | 通过费雯丽看莱巴金娜和郑钦文差距 | 莱巴金娜郑钦文 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65ce3b26000000000b022831?xsec_token=ABXOyRA1vX9EJl3tr0jPB3gPUYvND4YyghoM2TkAKA3uw=&xsec_source=pc_user | catalog_only |
+| 354 | 谁懂莱巴金娜的难🎾 | 莱巴金娜 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65c822d2000000000a033fb8?xsec_token=ABzxFCioZBgAivH2-GhTV9RAxySvko__eZpdCnCP9JY7Q=&xsec_source=pc_user | catalog_only |
+| 355 | 你们猜萨巴伦卡这个时候多少岁 | 萨巴伦卡 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65b36add000000001100e73c?xsec_token=ABmnNaD2GEfBLSxqshZFBZe6LQ3ZiyxEz61BRvSQIQAjg=&xsec_source=pc_user | catalog_only |
+| 356 | 细节：保持核心才能获得身体平衡 | 核心平衡 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6580fa6c000000000901dd8d?xsec_token=ABN1uoqU76ks-vZV9um7otkC7f3dBW33rQBhbRcIIPZGI=&xsec_source=pc_user | catalog_only |
+| 357 | 一个视频教你用简单工具练好反拍 | 反拍 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/657bbf6e00000000090243b5?xsec_token=ABnPjTsA54FpbopAo-lNnAoqWooTih-7IDHY8FSnj2eRI=&xsec_source=pc_user | catalog_only |
+| 358 | 必须掌握的知识：把力气送哪里 | 力气去向 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6577ca5b0000000007009d8f?xsec_token=ABpMU5V_K-hmrJENkFxlxKA_bcrbOcxfLmor6dlhn0DN8=&xsec_source=pc_user | catalog_only |
+| 359 | 细节：第一次打球就该知道知识 | 初学细节 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/657661b5000000000901ee60?xsec_token=ABtriTWkuwZZ8PFI-fA2mv-66gQudtu3OjDTQ58ciVsqw=&xsec_source=pc_user | catalog_only |
+| 360 | 细节：错过力由脚生，后悔兼白学 | 力由脚生 · 脚 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65750b950000000009023d9b?xsec_token=ABUiiAmKt7PnvReb16acXYPa6EQ5jevqTNkY-tAEQEeIc=&xsec_source=pc_user | **pending_A-E** |
+| 361 | 学会这个动作，让你少走十节课的弯路 | 少走弯路 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6573b346000000000901a6f7?xsec_token=AByUn6he44dxhpW1SWyK_dFkOjjRqaP2mH5etpOrGagPU=&xsec_source=pc_user | catalog_only |
+| 362 | 技巧：费德勒式的留头神操作 | 留头 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6571a04f0000000005039113?xsec_token=ABa54cm-bC7l3DhrZKKBu7y-44urKZbBauZs4tW8rqgJE=&xsec_source=pc_user | catalog_only |
+| 363 | 小技巧，新手看完就懂的回球技巧 | 回球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/656fc831000000000700a885?xsec_token=ABId8vD1C0iQ2E_VIW7Q7L6skEXRJzeHz4hDoYbz9e9JU=&xsec_source=pc_user | catalog_only |
+| 364 | 细节之移动及发力 | 移动及发力 · power | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/656bc45e00000000090225e2?xsec_token=ABv1jSh6LlI2TnJkJn0GJkHCryzxOvLUTYHiBhh7Ek1sU=&xsec_source=pc_user | **pending_A-E** |
+| 365 | 不能不知道的训练细节：转身抬肘 | 转身抬肘 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/656a7142000000000901e74e?xsec_token=ABoyvcTM9KmPdLLBIkI2DbswSlZ1jluh4I8AVfxEU9TiA=&xsec_source=pc_user | catalog_only |
+| 366 | 正手细节之侧身 | 正手侧身 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65692359000000003203ba85?xsec_token=AB1BXEpC40io1pXTVzYga2fzBsA9p8ue82uQU4WJ6AF9k=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`656681a5` 训练方法：一箭三雕的好方法。再下：`6563fd8a` 训练方法：10秒练习蹬地转腰。主页未到尽头。
+
+没有点赞、评论、关注、发布。
