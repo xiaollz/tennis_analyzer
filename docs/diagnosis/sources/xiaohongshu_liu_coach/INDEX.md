@@ -944,3 +944,48 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`603233b0` 我德澳网九宫格。再下：`600fba2d` 2021澳网，下周开打。主页在本批之后未到尽头；本批下滚见到 data-index 541，未见「没有更多」。
 
 没有点赞、评论、关注、发布。
+
+## 第十八批 30 条（#517–#546，从 `603233b0` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 516–545 = 目录 #517–#546）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十七批末 data-index 515 = 目录 #516 `6039f947`）。从下一条 data-index 516 = `603233b0` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 545 = 目录 #546。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面），标题中间的 🎾 保留（#529）。本批下滚见到 data-index 558，底部仍显示「加载中」，页面没有「没有更多」文案，未到尽头。
+
+本批 pending_A-E：无。#544 `5eafaf86` 标准的反拍技术（欧洲）按反手只 `catalog_only`。#517、#518 澳网花絮只 `catalog_only`。#522「练动作」、#524「网球的细节」不单标（没有正手 / 脚 / 脚步 / 击球点 / timing / power / 发力）。本批没有正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、发力，没有发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **546**。页面「笔记」计数仍约 362，时间线长于计数（本批下滚见到 data-index 558，底部「加载中」，无「没有更多」文案）。本批之后未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 517 | 我德澳网九宫格 | 澳网 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/603233b0000000000102d16f?xsec_token=AB0NaCzQzS9D36yxo_I-N1stmZ2rtv71ZxG36ncNCxFYk=&xsec_source=pc_user | catalog_only |
+| 518 | 2021澳网，下周开打 | 澳网 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/600fba2d00000000010038d8?xsec_token=AB-q_M-ZUE8pJ19QbMFsnKTpn3J1cAPWo7BPDzUWmyY9I=&xsec_source=pc_user | catalog_only |
+| 519 | 疫情下的新年音乐会 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ff08fce0000000001001029?xsec_token=ABd3dmRWjsYOMCqMEeTUNwSkmAM9xmEIeeIo2xeBcRm6A=&xsec_source=pc_user | catalog_only |
+| 520 | 晒晒7日喀纳斯之旅费用（巨便宜） | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5fac93fa000000000100b983?xsec_token=ABa0E76PtT0WRVRxVGLZDsE0k9c6epgVgcdCza8krFhnU=&xsec_source=pc_user | catalog_only |
+| 521 | 网球教练化身快递小哥了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5fab7c780000000001003594?xsec_token=AB527xHT6ADBwmQ2Z04QlNgT4tCOIPFpGrhzgB9z2SpVM=&xsec_source=pc_user | catalog_only |
+| 522 | 小朋友在练动作的时候需要自己体会 | 动作 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f83fe810000000001009520?xsec_token=ABR8-LjYY8a9xEDxTBaA5WGhbOkOYMPhFmxZ-CMuEGzb0=&xsec_source=pc_user | catalog_only |
+| 523 | 德约，真的不要那么准好嘛? | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f7b420c000000000100af0c?xsec_token=AB4nxN4Wutw22pJc04AaNOHUutUxqKpr-Ql4l4-qCAbyA=&xsec_source=pc_user | catalog_only |
+| 524 | 网球的细节比LV的细节多 | 细节 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f5513af000000000101c32b?xsec_token=ABKM825pCal8w1lIh8VHWH9UBTi6ijDg8W4xC370SM95s=&xsec_source=pc_user | catalog_only |
+| 525 | 好美的画面 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f464de50000000001007c59?xsec_token=AB2RfHos8TC9nCaraklCQBDnyV7ss70FlVLqqjES8nYGI=&xsec_source=pc_user | catalog_only |
+| 526 | 徳粉不忘收藏奶粉限量版 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f40b5a90000000001009dff?xsec_token=ABoxmbtmNUqTzl36gI5Bw3i-VIGWaE3OU_iI4LwBGzUDc=&xsec_source=pc_user | catalog_only |
+| 527 | 父亲半桶水，娃娃要被毁 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f223e8600000000010024d3?xsec_token=ABC5iBKjBVUQVq7wLfWdaC0jMYnUP6_hFshgUf0eda4MY=&xsec_source=pc_user | catalog_only |
+| 528 | 收全新的，一份情感和记忆 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f0ebc610000000001003aa9?xsec_token=ABmDdT-035_RsRgJUK3d6VBbWehWgVSmEK-9O-UK2PJqQ=&xsec_source=pc_user | catalog_only |
+| 529 | 随意拍，爱打🎾🎾🎾网球的小姐姐 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5f01cfcd0000000001002803?xsec_token=ABbgi2vgf0PqXLqrkGX-8orcSai7aH5keWTHzwkBObnx8=&xsec_source=pc_user | catalog_only |
+| 530 | 结束塞尔维亚训练跟国家包机（免费）回来 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ee84e9a00000000010058e9?xsec_token=ABR_oc4NhFPaewGXOtEDvzG02kLYikiaAmqgkn_NCzARE=&xsec_source=pc_user | catalog_only |
+| 531 | 中美，中欧，中澳值得入手的航班 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ee64b22000000000101daef?xsec_token=ABKp9-w75GtvlHhTTP1oWGBjePb6HplEwzgyBeZxbzc_A=&xsec_source=pc_user | catalog_only |
+| 532 | 太好了7月份正式告别票贩子了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ee181c50000000001006b85?xsec_token=ABo5MH1XkGHkuMopXsM4ZeaaOZL37EVTbg7NkR2xngg4w=&xsec_source=pc_user | catalog_only |
+| 533 | 果然如此，9月开放航班 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ed454d90000000001003122?xsec_token=ABrXhVSCawApBnlnxhqSn54u65eEb9AHT7-KusHoe3OII=&xsec_source=pc_user | catalog_only |
+| 534 | 小红书求支招（已经圆满解决） | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ed21438000000000100499f?xsec_token=ABV_EA3Ga6j0uTinmvMZQ9ufg0tQzAEt-PPxP5ysp7358=&xsec_source=pc_user | catalog_only |
+| 535 | 傻眼了，我能找到我的车吗？ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ec75043000000000101c5d0?xsec_token=ABxEpf5nO4qZJEb82G_yb_jSRR-ube0r8w43FbDOr-xio=&xsec_source=pc_user | catalog_only |
+| 536 | ✈回国新线路6月7首航，刚刚朋友告知 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ec52cd400000000010065e6?xsec_token=ABvDTy222JxZfQn-BPrLAQvKPYwi1WX9JkdtQwjrjE5wE=&xsec_source=pc_user | catalog_only |
+| 537 | 想回家的华人，不要当上融资的主角了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ec47b12000000000100767e?xsec_token=ABQVvFtrqc6oBRjip3QNSCAo2tbDlBPqkdRqqR_YZBH5M=&xsec_source=pc_user | catalog_only |
+| 538 | 💪💪南航厦航计划可见，回国还是艰难 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ec32d83000000000101d4cb?xsec_token=ABZYuePKVVlt-AS-18o5PcjqKqs5srXDeSpHBwiWNTU78=&xsec_source=pc_user | catalog_only |
+| 539 | 感动中国，神兽上学，boss护航 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ec31d2c0000000001001cf2?xsec_token=ABZYuePKVVlt-AS-18o5PcjrZHHz34tN_-p1GY3rLoz8c=&xsec_source=pc_user | catalog_only |
+| 540 | 请继续去大使馆的登记回国包机 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ebbfdb90000000001005fd4?xsec_token=ABo7AVhoUpEDtDurnGbpX1MNTu6KT0rPkuynC21zSzdoY=&xsec_source=pc_user | catalog_only |
+| 541 | 国家一堆的包机，大家快登记快回来吧 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5eb93ae800000000010045db?xsec_token=ABFf8yvaOSLziDUgnzAE0n_AiGa-lo2t5U6MPWkmZUYHk=&xsec_source=pc_user | catalog_only |
+| 542 | 带你玩塞尔维亚。老铁，我又要来了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5eb7687c0000000001001852?xsec_token=ABVz_bYn98_11UU2MnNiXyAiCVtT7YHYX74_LQyB_Kevs=&xsec_source=pc_user | catalog_only |
+| 543 | 塞尔维亚机场5月7号要解封了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5eb0e5e60000000001004944?xsec_token=ABIAaFTR2zMieF6lnwZTF9jccJbc6UsHBMdQbFi4vZxSY=&xsec_source=pc_user | catalog_only |
+| 544 | 标准的反拍技术（欧洲） | 反拍 · 反手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5eafaf8600000000010040be?xsec_token=AB2Xo5v8EXUKMe2mMOJPfIVutklZaOaz6J2Kp51ppcx7k=&xsec_source=pc_user | catalog_only |
+| 545 | 南航同款走起，铁定能走 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ead4e0f0000000001007355?xsec_token=ABPmrYmFyNoDWx1Djv5_RGq_UUA06R6PfieE_L8uDxSO0=&xsec_source=pc_user | catalog_only |
+| 546 | 今晚妥妥的买到了票 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5eaacff60000000001000ad3?xsec_token=ABvOk0Bz8e0ki5fk_nMLEttzMFtClCtT_c1hLIL7ljRs0=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`5ea64606` 收拾东西，睹物思人，想起我爸爸了。再下：`5ea21adf` 预约南航最简单粗暴的方法。主页在本批之后未到尽头；本批下滚见到 data-index 558，底部仍显示「加载中」，未见「没有更多」。
+
+没有点赞、评论、关注、发布。
