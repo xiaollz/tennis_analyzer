@@ -5,12 +5,13 @@
 > 用途：诊断时先认树干，再认是哪根粗枝，最后才挂叶子（OBS）。这是给系统诊断用的，不是场上口令。
 > 引用规则：
 > - 只引已核对卡片的原话（`episodes/<id>.card.json`）和书页码。
-> - KU7FHy1qQOI 在这里只有卡片摘要，标「卡片摘要」，不当原话用。6ak4ZScH_gc 已于 2026-10-20 按字幕核对原话，2026-10-24 再用 norm.tsv 段起点加画面核对，收成粗枝 1 的体感旁支；它仍不是已核对卡片，只作知识引用，不进 tree evidence。精确原话见 `docs/diagnosis/sources/SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`。
+> - KU7FHy1qQOI 的原话以 2026-10-24 重过稿的字幕段起点为准（`SRC-FTT-KU7FHy1qQOI_repass_2026-10-24.md`）。它仍不是已核对卡片，只作知识引用，不进 tree evidence。6ak4ZScH_gc 已于 2026-10-20 按字幕核对原话，2026-10-24 再用 norm.tsv 段起点加画面核对，收成粗枝 1 的体感旁支；它仍不是已核对卡片，只作知识引用，不进 tree evidence。精确原话见 `docs/diagnosis/sources/SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`。
 > - ui-RFRdQKRk、5jHCDc44SQM 是 **holdout 期**：可以作为知识引用，**不得写进 tree 节点的 evidence**（check_tree T02）。
 > 禁令：推肘 / 降拍 / 旋后 / 伸肘 / 送髋（含「把髋送进球里」「髋往前顶」）不作任何处方口令。原话里出现的 supinate / pronate 等词只作知识记录，不作口令。
 > 本文件不改 tree.json v1，也不改 tree_v18 或任何 verify 阈值。
 > 裁决文件：`book_orphans_adjudication_2026-10-21.md`。
 > **2026-10-24**：粗枝 1 增加知识旁支「体感层：感知张力不感知运动（6ak4）」。它只回答「髋先启动时该感到什么」。粗枝 1 的书核心不变（髋没先启动 / 扭回面向网，BOOK:p.83 / p.117）。coil 仍是 BOOK:p.119 的非必需增强，不升成粗枝 1 的唯一核心。这条旁支只写在本文件和 `docs/diagnosis/sources/SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`，**不**给 `trunk_branches.json` 新 id，因此 compose / verify 仍走 2026-10-21 的 id、叶子角色和 OBS。不改 tree.json，不改 verify 黄金。
+> **2026-10-24 Batch A 第一刀**：在同一条「只加旁支、不改书核心」的规则下，补四期重过的交叉引用。`ui-RFRdQKRk` 仍是 holdout。`wFIrPMutzRo` 的腹斜 X 和少量侧屈、`UB6SbA_KX9E` 的短终点脉冲、`KU7FHy1qQOI` 的甜区 / 几何与旋转旋钮，都只作知识旁支或结果层前面的条件。详注见各 `SRC-FTT-*_repass_2026-10-24.md`。不给 `trunk_branches.json` 新 id。
 
 ---
 
@@ -59,6 +60,7 @@ flowchart TD
   B1 --> L12["叶：前挥手臂先动 OBS-18"]
   B1 --> L13["叶：turn ≠ coil（增强旁支 BOOK:p119）"]
   B1 --> L13b["旁支：体感层：感知张力不感知运动（6ak4）<br/>找到髋先启动的正确体感<br/>不改书核心；coil 仍非唯一核心"]
+  B1 --> L13c["旁支 2026-10-24：ui holdout turn≠coil<br/>腹斜 X + 少量侧屈（wFIr）<br/>髋脉冲落在短终点（UB6）<br/>甜区/几何在链前（KU7）<br/>都不改书核心；ui 不进 tree evidence"]
   B1 --> L14["叶：小臂往上抬 / 往上兜<br/>视频 ui holdout / 用户自述"]
   B1 --> L15["叶：象征性蹬髋；禁用送髋"]
   B1 --> L16["旁支：链内过早开胸 / 肩抢先<br/>（从原 B2 混入项拆出）"]
@@ -125,6 +127,15 @@ flowchart TD
 
 **不进树的边界**：无新 OBS id。张力是 C 层。骨盆是否减速仍用既有 OBS-71（正后方实测 unclear）。6ak4 仍不进 tree evidence。同日补充也不新开 id。
 
+### 旁支：2026-10-24 Batch A 第一刀（只加叶子，不改上面的一句话）
+
+四期都按字幕段起点加重抽帧。书核心仍是髋没先启动 / 扭回面向网。coil 仍是 p.119 的非必需增强。都不进 tree evidence。
+
+- **ui-RFRdQKRk（holdout）**：侧身不等于 coil。0:37「The unit doesn't include your hips」。2:38「I can compensate by swinging up more」（旧注 @2:35）。2:46 起髋和肩 back together, forward together，是负面例子。4:58 挥拍时髋向后，和 6ak4 同向。0:55「drive this point forward」只是准备时把髋留成锚，不写成送髋。0:07 把 coil 说成力量秘诀，书 p.119 赢。详注 `SRC-FTT-ui-RFRdQKRk_repass_2026-10-24.md`。
+- **wFIrPMutzRo**：腹斜 X，左肩拉在右髋上；背后那一侧是右肩向前时右髋向后（3:48），和 6ak4 同一股张力。髋角变直（2:04 hip pops forward）是录像，不是送髋。少量侧屈让直立硬转不再发僵（0:08、5:43 对 5:58）；侧屈不是后倒，也不写成口令。3:53 肘去左膝只是演示，不作推肘。详注 `SRC-FTT-wFIrPMutzRo_repass_2026-10-24.md`。
+- **UB6SbA_KX9E**：肩线可以在腿还弯着时已经转开，右腿随后伸直。这和书「髋先于肩启动」是两套时钟。**书赢，不改成肩先于髋。** 留下的是：髋的脉冲要落在短终点（8:24 press slot），不要落在转完整圈的末尾。9:42「throwing your hip into the ball」只记录，禁止写成送髋。8:32 手臂随后把拍带走，禁止写成推肘。详注 `SRC-FTT-UB6SbA_KX9E_repass_2026-10-24.md`。
+- **KU7FHy1qQOI**：甜区和高度 / 距离排在链的前面，不新开粗枝。上身即使往前跑也要先拧上（13:30），这是 coil 增强。16:16 挥拍更短就稍等，是粗枝 2 的视频补充，书核心仍是 p.75。14:44 左臂把躯干拉到髋上，只作准备感觉，不写成拉左臂。详注 `SRC-FTT-KU7FHy1qQOI_repass_2026-10-24.md`。
+
 **两个「back together」不要混**：
 - 书 p.111「back together, forward together」指**上半身**（双臂 + 胸）作为整体转离、转回，是正面提示；
 - 6ak4@5:21 和 ui@2:43 的「back together, front/forward together」指**髋和肩**一起走，是负面例子 / 防误用。旧注把 6ak4 收成 @5:05，那是 "send your right hip through" 附近的约数。
@@ -142,7 +153,7 @@ FTT 出处（书，【已核对】）：
 
 FTT 出处（视频 / holdout 知识；补充，不压过书）：
 - 「The unit doesn't include your hips…」— ui-RFRdQKRk:Q03（holdout）→ 见 §0 用户意识层解释
-- 「I can compensate by swinging up more」— ui-RFRdQKRk@2:35（holdout；**往上兜视频源**）
+- 「I can compensate by swinging up more」— ui-RFRdQKRk@2:38（holdout；**往上兜视频源**。旧注 @2:35）
 - 「most players … send their right hip through the shot … back together, front together」— 6ak4@5:17（back together 段起点 5:21；旧注 @5:05）（**防误用**，书赢）
 - 「same tension that flings your shoulder forward, flings your hip backwards.」— 6ak4@2:39（其前的 the 在 2:36；旧注 @2:38；同一股张力，体感旁支的机制句）
 - 「we don't really perceive motion. We perceive tension and thereby acceleration.」— 6ak4@9:51（**体感旁支**。不替换粗枝 1 的书核心，也不把 coil 升成唯一核心）
@@ -157,6 +168,10 @@ FTT 出处（视频 / holdout 知识；补充，不压过书）：
 | 前挥谁先往目标动 | OBS-18 | ✅ | — |
 | 准备时肩比髋多转了一点，但髋没留住（turn ≠ coil；**增强旁支**） | NEW 候选 | ✅ | 张力本身看不到（C 层） |
 | 旁支：体感层：感知张力不感知运动（6ak4） | 无新 OBS（C 层；不进 tree evidence） | 录像能看到骨盆前移、肩随后超越 | 「被往后拽」看不到；减速仍用 OBS-71 |
+| 旁支：turn ≠ coil；往上兜（ui，holdout） | 无新 OBS；不进 tree evidence | 准备结束肩比髋多转、单脚会不会落脚 | 张力（C）。45° 是脚的朝向 |
+| 旁支：腹斜 X；少量侧屈（wFIr） | 无新 OBS | 触球时躯干有没有侧屈；直立硬转时球进不进网 | 「被拉开」看不到。侧屈不是后倒 |
+| 旁支：髋脉冲的短终点（UB6） | 无新 OBS | 人有没有转到随挥才出球 | 不把「肩线先动」写成肩先于髋。书赢 |
+| 条件：甜区与高低远近（KU7） | 无新 OBS | 球是否打在拍面中心；触球高低 | 不新开粗枝。原话不进 tree evidence |
 | 准备转离幅度 | OBS-08 | ✅ | — |
 | 触球时髋是否已朝网 | OBS-09 | ✅ | 开放站位下要结合 OBS-25 读 |
 | 骨盆在前挥中是否减速 | OBS-71 | 实测 3/3 unclear | 需更高帧率或侧面 |
@@ -232,6 +247,7 @@ FTT 出处：
 5. 盲测（V5）没过关之前，对用户视频的所有结论都标「待验证」。
 6. 处方禁用：推肘 / 降拍 / 旋后 / 伸肘 / 送髋。
 7. 粗枝 1 的体感旁支只用来解释「录像上的前转」和「被往后拽的体感」为什么可以同时为真。场上只留「肩往前、髋被往后拽」。往回拉是张力，不是髋倒退；左肩由躯干带着走，不单独抡左臂（防书 p.111 过早开胸，沿用已有旁支）。它不单独开训练清单，不升成新粗枝，也不把 coil 当成这根粗枝的唯一核心。
+8. 2026-10-24 的四期旁支同样不单开训练清单。ui 的准备锚、wFIr 的肘去膝和侧屈、UB6 的「髋扔进球」、KU7 的左臂拉躯干，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。
 
 ## 附：辅助视频叶子（2026-10-22）— 5xcIshgCd-E（TPA tennis / Tom Allsopp，非 FTT）
 - 挂粗枝 1（髋没先启动 → 手臂代偿）。要点：「hips first, arm second」@4:25；「not the arm's turn yet」@2:13；「slow enough take back … fire something else before the arms」@2:54。

@@ -232,6 +232,7 @@ timeline
       10/17 : ⭐ 球场片段 : 手主导外观 + 触球区偏僵（Gemini）
       10/18 : ⭐ 旋转与 supination 同步（待核实）: 身体转、胳臂不额外加动作；意识只放重心转移，手被动 supinate、不主动往前拉；非口令
       10/24 : ⭐ 6ak4 体感第一性原理 : 感知张力不感知运动，挂粗枝1旁支；书核心不变
+      10/24 : 📌 FTT 全库重过启动 : Batch A 四期深吸收（ui holdout / wFIr / UB6 / KU7）；书核心不变
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -269,6 +270,7 @@ timeline
 | ↓ **阶段 7 放松触发补充** | 10/15 | 手腕放松 = 固定模式触发点 | ⭐ 手腕紧→注意力被吸走、击球时丢失 ESR 体感；放松后连贯，背/胸才能发力 |
 | ↓ **阶段 7 时序觉察点补充** | 10/18 | 旋转与 supination 同步（TPA Tom Alsop，待核实） | ⭐ 身体负责旋转，胳臂只带出 supination、不再往前挥/往上提；意识层面只关注重心转移、手被动 supinate（不主动往前拉）；只作觉察点与录像观察项，非口令；FTT 无专门一期，Tom 原视频待拿字幕 |
 | ↓ **阶段 7 体感第一性原理** | 10/24 | 感知张力不感知运动，挂进粗枝 1 旁支 | ⭐ 6ak4 字幕 + 画面核对后吸收；粗枝 1 书核心仍是髋没先启动 / 扭回面向网（p.83 / p.117）；coil 仍是 p.119 非必需增强 |
+| ↓ **阶段 7 FTT 全库重过** | 10/24 | 字幕 + 画面 → 第一性原理 → 写进根基 | 📌 启动约 97 期重过；本轮 deep：`ui-RFRdQKRk`（holdout）、`wFIrPMutzRo`、`UB6SbA_KX9E`、`KU7FHy1qQOI`；书核心不变 |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -303,6 +305,7 @@ timeline
 
 ⭐ **关键突破**：
 - [10/24 6ak4 体感第一性原理：感知张力不感知运动，挂进粗枝 1 旁支](#oct24-6ak4-feel-tension)（文末）— 用户认定本期醍醐灌顶；字幕段起点 + 画面核对（红皮筋双锚、文章叠图、错误目标下皮筋松、减速不换向）；同日补充：左肩往前带出 X 型拉伸后才感到髋力，往回拉是张力不是髋倒退，左肩由躯干带着走、不单独抡左臂（防 p.111 过早开胸）；粗枝 1 书核心不变（p.83 / p.117），coil 仍是 p.119 非必需增强；不进 tree evidence
+- [10/24 FTT 全库重过启动：Batch A 四期](#oct24-ftt-repass-batch-a)（文末）— 因 6ak4 第一次推荐只靠旧摘要而启动全库重过；本轮完成 `ui-RFRdQKRk`（holdout）、`wFIrPMutzRo`、`UB6SbA_KX9E`、`KU7FHy1qQOI`；字幕段起点 + 抽帧核对；只加旁支，不改书核心，不进 tree evidence
 - [10/18 旋转与 supination 同步（待核实）：身体转、胳臂不额外加动作；supination 是被转出来的觉察点，非口令](#oct18-rotation-supination)（文末）— 用户标为非常重要（含 §7 意识层面：只关注重心转移，手被动 supinate）；TPA Tom Alsop 原话待核（尚无字幕）；FTT `PwkGLkRm73o` 唯一明说 supinate，`2Nn9tyMECZU` / `JIMgI3jiVns` / `LoSrMj-Qxkc` 以肩外旋→内旋说同一方向；不新增 cue，不违反禁令
 - [10/15 放松是触发点：手腕一紧击球就感觉不到 ESR；放松打通背部与胸部发力](#oct15-wrist-relax-trigger)（文末）— 手腕紧张吸走注意力并截断近端发力；放松是固定模式的触发点；逻辑理顺比硬练省力；待球场验证
 - [10/15 晚 FTT《Why You're Jammed》：击球槽位三轴，旧被挤住点会回吸](#oct15-ftt-jammed)（文末）— 横向推远+非持拍手/锥桶/远探；纵向缓和上斜线、高肘不俯冲；纵深留足并前倾再加 6 英寸；两端失败（挤住/够过头）；待球场验证
@@ -12291,3 +12294,37 @@ FTT 84 期字幕中，**没有**专门讲「旋转与 supination 同步」的一
 ### 等级
 
 ⭐ 用户认定的第一性原理吸收。机制与书 p.83 同向，coil 的地位仍由 p.119 决定。同日的 X 型拉伸和「往回拉」是这条旁支上的用户映射，不是新粗枝。个人症状映射仍是假设，等下一次中速中等弧线上旋来球的录像再核对「减速」「小臂上抬」和「左臂有没有单独抡出」是否一起出现。
+
+<a id="oct24-ftt-repass-batch-a"></a>
+## 📌 2026-10-24 — 启动 FTT 全库重过；Batch A 第一刀完成四期
+
+### 为什么启动
+
+6ak4 第一次被推荐时，助手只靠旧摘要，没有按「字幕 + 画面 → 第一性原理 → 写进根基」看懂。用户要求 FTT 全库按同一标准重过，并更新诊断根基。6ak4 本身已在同日按这个标准吸收（见上一条），本条只记全库流程和本轮完成的期。
+
+### 本轮完成
+
+队列：`docs/diagnosis/sources/ftt_repass_queue.md`。清单 97 期。当前 deep 5（含已合的 `6ak4ZScH_gc`），pending 85，blocked 7（缺字幕）。
+
+本轮按上传的 `norm.tsv` 段起点，加上抽帧目视，写成四份来源稿：
+
+| id | 稿 | 挂哪里 |
+|---|---|---|
+| `ui-RFRdQKRk` | `SRC-FTT-ui-RFRdQKRk_repass_2026-10-24.md` | 粗枝 1 旁支；**holdout**，可作知识，不进 tree evidence |
+| `wFIrPMutzRo` | `SRC-FTT-wFIrPMutzRo_repass_2026-10-24.md` | 腹斜 X + 少量侧屈；侧屈不是后倒 |
+| `UB6SbA_KX9E` | `SRC-FTT-UB6SbA_KX9E_repass_2026-10-24.md` | 髋脉冲落在短终点；书赢，不改成「肩先于髋」 |
+| `KU7FHy1qQOI` | `SRC-FTT-KU7FHy1qQOI_repass_2026-10-24.md` | 甜区和高度/距离在动力链前面；不是新粗枝 |
+
+画面路径：yt-dlp 直连被 YouTube 登录墙挡住。四期画面来自同一条公开流的 360p，经 Invidious 本地代理取到后按字幕秒抽帧。原话只认字幕段起点。各稿第 3 节和第 3.1 节写了看过的演示。
+
+未开、仍 pending：`Am8j1Zw5KrE`、`JIMgI3jiVns`、`5KdScDKxVSI`、`xLs469ZVMPU`、`PwkGLkRm73o`、`2Nn9tyMECZU`。
+
+### 根基怎么动
+
+只在 `docs/diagnosis/ftt_tree/kinetic_chain_trunk.md` 加旁支、叶子和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p83 / p.117）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金，不给 `trunk_branches.json` 新 id，不进 tree evidence。
+
+场上不因这四期加新口令。仍只留 6ak4 那一句：「肩往前、髋被往后拽」。片中的准备锚、肘去膝、侧屈、「髋扔进球」、左臂拉躯干，都留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。
+
+### 等级
+
+📌 流程记录，不是新的技术圣经。技术结论仍以上一条 6ak4 和书页为准。
