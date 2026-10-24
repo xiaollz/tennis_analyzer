@@ -66,6 +66,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/682f1ed600000000120024b0?xsec_token=ABrjyjPiSL830aOSMMFgEUoqjFTSJpwGvo-zCR5Vids9A=&xsec_source=pc_user （= 目录 #148） | 正手四步唤醒 · 掉拍头送重心只引用 / 内旋只引用 / 转髋只引用 | **transcribed** | `video_fh_steps_682f1ed6.md` |
 | https://www.xiaohongshu.com/explore/682dbb38000000000f03149d?xsec_token=ABS-rLKKbv00wPMUoLc6EYhkxMKVFIZ71XkNXW35hF_PU=&xsec_source=pc_user （= 目录 #149） | 合理引拍 · 小引拍 / 重心向前送只引用 / 转髋只引用 | **transcribed** | `video_reasonable_takeback_682dbb38.md` |
 | https://www.xiaohongshu.com/explore/6864eff60000000017034f49?xsec_token=ABdN54_5c3q2DUu2V_4xUG119eRv8QkRT1fsjTQhBqwAQ=&xsec_source=pc_user （= 目录 #137） | 找球转髋合力 · 标题转髋只引用 / 动力链 / 左臂发力 | **transcribed** | `video_find_ball_turn_hip_6864eff6.md` |
+| https://www.xiaohongshu.com/explore/68610bb30000000017036951?xsec_token=AB7M8lLffD0hOiAFvYTzAESsXWyQ36piArNGcfEfZyTFc=&xsec_source=pc_user （= 目录 #138） | 转肩转髋 · 蹬地转髋只引用 / 拍头自己滞后不改掉拍头 | **transcribed** | `video_turn_shoulder_hip_68610bb3.md` |
+| https://www.xiaohongshu.com/explore/687506250000000017037595?xsec_token=ABKn7JyqOpCRPePQkSYw2vtdamBAeYsn2ABXWtL8dS7Lw=&xsec_source=pc_user （= 目录 #134） | 初学者动力链 · 转胯只引用 / 掉拍头只引用 / 直臂不改伸肘 | **transcribed** | `video_kinetic_beginner_68750625.md` |
+| https://www.xiaohongshu.com/explore/6869ef05000000001202dfce?xsec_token=ABWVQv2kbXZxPFtaWq-mlREvo8yfu1MOOKNQ82VK0y3R0=&xsec_source=pc_user （= 目录 #136） | 多球检查击球点 · 击球点只引用 / 这个点不补 | **transcribed** | `video_multiball_contact_check_6869ef05.md` |
 | https://www.xiaohongshu.com/explore/682b2827000000000f03aa14?xsec_token=ABmSyfsbHb6vhBmiV7RcN6xNk302XFXkOeAQAtwcGamgY=&xsec_source=pc_user （= 目录 #150） | 打开髋再转髋 · 垫步开髋 / 开髋只引用 | **transcribed** | `video_open_hip_then_turn_682b2827.md` |
 | https://www.xiaohongshu.com/explore/68280dc8000000001101e3e6?xsec_token=AB_lHsVn96uXKGqoJsIyPjOrteNB12VGGJRB4ExHUkL1I=&xsec_source=pc_user （= 目录 #151） | 正手找击球点深圳版 · 同框 / 无下降期 | **transcribed** | `video_fh_contact_point_sz_68280dc8.md` |
 | https://www.xiaohongshu.com/explore/6821fc370000000012002af6?xsec_token=ABHZLONxicuM2hnmInNzLpksbiii8C2ISmuU_NZalm8z0=&xsec_source=pc_user （= 目录 #153） | 小臂内旋超训法 · 地面翻拍 / 内旋只引用 | **transcribed** | `video_xiaobi_neixuan_drill_6821fc37.md` |
@@ -151,6 +154,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 - `682f1ed6…` → transcribed（正手四步唤醒 · 掉拍头/送重心/内旋/转髋只引用）
 - `682dbb38…` → transcribed（合理引拍 · 重心向前送 / 转髋只引用）
 - `6864eff6…` → transcribed（找球转髋合力 · 转髋只在标题引用）
+- `68610bb3…` → transcribed（转肩转髋 · 蹬地转髋只引用 / 拍头自己滞后）
+- `68750625…` → transcribed（初学者动力链 · 转胯 / 掉拍头只引用 / 直臂不改伸肘）
+- `6869ef05…` → transcribed（多球检查击球点 · 击球点只引用 / 这个点不补）
 - `682b2827…` → transcribed（打开髋再转髋 · 垫步开髋 / 开髋只引用）
 - `68280dc8…` → transcribed（正手找击球点深圳版 · 同框 / 无下降期）
 - `6821fc37…` → transcribed（小臂内旋超训法 · 地面翻拍 / 内旋只引用）
@@ -162,7 +168,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
 2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 已 **transcribed**（`video_drophead_hip_67b704e8.md`、`video_wrist_drop_66f56ddf.md`）。~~#36–#61 第一/二批 FH 深看已完~~。第三批 #63–#96 已入目录；其中 FH 优先队列（含 #67/#70/#71/#74/#77/#81/#82/#88/#91/#95/#96 等）均已 **transcribed**，**第三批 FH pending_A-E 已清**。第四批 #97–#126 已入目录（从 `69479ade` 起）。本批曾标 pending_A-E 的：#100、#105、#114、#116、#121、#122。其中 #100、#105、#114、#116、#121、#122 均已 **transcribed**。第四批这 6 条 pending_A-E 已清。降拍头标题（#99、#115）只留原文，不标待深看。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
-4. ~~下一批从 `6a104c2f`~~ ~~第三批收到 #96~~。~~第四批已收到 #126~~。第五批已收到 #156 `68176f9f`。主页合计约 362，已入目录 **156**。下一条未入表：`6814cefd`（集训营第二天的效果惊艳到你没有？）。还剩约 206。本批曾标 pending_A-E 的：#127、#128、#129、#134、#136、#137、#138、#148、#149、#150、#151、#153。其中 #150、#151、#153 已 **transcribed**（`video_open_hip_then_turn_682b2827.md`、`video_fh_contact_point_sz_68280dc8.md`、`video_xiaobi_neixuan_drill_6821fc37.md`）。其中 #137、#148、#149 亦已 **transcribed**（见下条第 5 点）。仍 pending_A-E：#127、#128、#129、#134、#136、#138。打开笔记时曾被安全限制（Account exception）并弹出登录；重登后先深看了 #150/#151/#153，随后 #148/#149/#137。掉拍头标题（#142）只留原文，不标待深看。
+4. ~~下一批从 `6a104c2f`~~ ~~第三批收到 #96~~。~~第四批已收到 #126~~。第五批已收到 #156 `68176f9f`。主页合计约 362，已入目录 **156**。下一条未入表：`6814cefd`（集训营第二天的效果惊艳到你没有？）。还剩约 206。本批曾标 pending_A-E 的：#127、#128、#129、#134、#136、#137、#138、#148、#149、#150、#151、#153。其中 #150、#151、#153 已 **transcribed**（`video_open_hip_then_turn_682b2827.md`、`video_fh_contact_point_sz_68280dc8.md`、`video_xiaobi_neixuan_drill_6821fc37.md`）。其中 #137、#148、#149 亦已 **transcribed**（见下条第 5 点）。2026-10-24 #138、#134、#136 已 **transcribed**（`video_turn_shoulder_hip_68610bb3.md`、`video_kinetic_beginner_68750625.md`、`video_multiball_contact_check_6869ef05.md`）。仍 pending_A-E：#127、#128、#129。打开笔记时曾被安全限制（Account exception）并弹出登录；重登后先深看了 #150/#151/#153，随后 #148/#149/#137。掉拍头标题（#142）只留原文，不标待深看。
 5. ~~下一批从 `6814cefd`~~ 第六批已收到 #186 `67c2cc85`。主页合计约 362，已入目录 **186**。下一条未入表：`67bf0ce9`（告别发球翻手腕，这个方法确定有效）。还剩约 176。本批标 pending_A-E 的：#159、#166、#168、#172、#185。按甜区优先，本批新 pending 先不深看。第五批 #148、#149、#137 已 **transcribed**（`video_fh_steps_682f1ed6.md`、`video_reasonable_takeback_682dbb38.md`、`video_find_ball_turn_hip_6864eff6.md`）。降拍头 / 掉拍头标题（#164、#169）只留原文，不标待深看。时间线里若再遇到与置顶同 id 的 `67b704e8`，它是 #1 的编年重复，不新开深看。
 6. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
 
@@ -311,11 +317,11 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 131 | 不翻手腕且有力量的发球可以这样练 | 发球不翻腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/687e46a6000000001203fac7?xsec_token=ABvyqe7x4omlSzM_QQcNpbRoMo_eJePdpypL5_Yh-ABcI=&xsec_source=pc_user | catalog_only |
 | 132 | 轻易修正发球翻手腕的2个贴士 | 发球翻腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6878efc90000000013011fb2?xsec_token=ABRx7YIhxznJsVoUlA5LL-u0QjZeaegMf5UaqeDybPOfg=&xsec_source=pc_user | catalog_only |
 | 133 | “大尺度”用在网球转肩是什么意思 | 转肩 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6877b40c00000000170351c3?xsec_token=ABPgYxT4FDv8hZnPieFVQrhnHwnPS6Ssk03v3mF0GUQzs=&xsec_source=pc_user | catalog_only |
-| 134 | 集训营为初学者设计的动力链训练组 | 动力链训练 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/687506250000000017037595?xsec_token=ABKn7JyqOpCRPePQkSYw2vtdamBAeYsn2ABXWtL8dS7Lw=&xsec_source=pc_user | pending_A-E |
+| 134 | 集训营为初学者设计的动力链训练组 | 动力链训练 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/687506250000000017037595?xsec_token=ABKn7JyqOpCRPePQkSYw2vtdamBAeYsn2ABXWtL8dS7Lw=&xsec_source=pc_user | **transcribed** `video_kinetic_beginner_68750625.md` |
 | 135 | 周末集训营之反手找球训练方法 | 反手找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/686e725d000000001203ee10?xsec_token=ABq1EC7C0JJWEDiEGQSmphBNkqquZ0b_dzAkxdDoI29DY=&xsec_source=pc_user | catalog_only |
-| 136 | 多球练习中洗脑自己击球点是否正确 | 击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6869ef05000000001202dfce?xsec_token=ABWVQv2kbXZxPFtaWq-mlREvo8yfu1MOOKNQ82VK0y3R0=&xsec_source=pc_user | pending_A-E |
+| 136 | 多球练习中洗脑自己击球点是否正确 | 击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6869ef05000000001202dfce?xsec_token=ABWVQv2kbXZxPFtaWq-mlREvo8yfu1MOOKNQ82VK0y3R0=&xsec_source=pc_user | **transcribed** `video_multiball_contact_check_6869ef05.md` |
 | 137 | 找球转髋合力三合一的训练方法 | 找球转髋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6864eff60000000017034f49?xsec_token=ABdN54_5c3q2DUu2V_4xUG119eRv8QkRT1fsjTQhBqwAQ=&xsec_source=pc_user | **transcribed** `video_find_ball_turn_hip_6864eff6.md` |
-| 138 | 职业球员的转肩转髋业余球友的秒会 | 转肩转髋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68610bb30000000017036951?xsec_token=AB7M8lLffD0hOiAFvYTzAESsXWyQ36piArNGcfEfZyTFc=&xsec_source=pc_user | pending_A-E |
+| 138 | 职业球员的转肩转髋业余球友的秒会 | 转肩转髋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68610bb30000000017036951?xsec_token=AB7M8lLffD0hOiAFvYTzAESsXWyQ36piArNGcfEfZyTFc=&xsec_source=pc_user | **transcribed** `video_turn_shoulder_hip_68610bb3.md` |
 | 139 | 开始学习什么样的框架才好呢？看… | 动作框架 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/685e9a47000000001203e18c?xsec_token=ABOlML3TIvqU_zUIqUkI1J6HbOuZmlpA6VFh3FIHKGc5g=&xsec_source=pc_user | catalog_only |
 | 140 | 合力很好练，把墙打“疼”就OK了 | 合力打墙 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6853ecca0000000012021bd7?xsec_token=ABfhgECJsZj68263Pjn4VzAJtjlpi1OdF3tvg4qlzZj-8=&xsec_source=pc_user | catalog_only |
 | 141 | 优秀教练先给初学者灌输4“意识” | 四个意识 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6852722f0000000012022f37?xsec_token=ABfHfMFqBpu3PmDyXH9p8p2lT4gLLjaPX4nlrcaFHHT9U=&xsec_source=pc_user | catalog_only |
