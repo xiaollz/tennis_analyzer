@@ -102,6 +102,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/66c74343000000001f014641?xsec_token=ABcDcgi3T-Xmb_b9M1uckJ3r2aeM4HHdQvlAmGR1asns8=&xsec_source=pc_user （= 目录 #273） | 寻找击球点公式 · 因数不改因素 / 击球点只在标题文案 / 8字秘诀按字形 / 下降不改拍头下降 | **transcribed** | `video_contact_point_formula_66c74343.md` |
 | https://www.xiaohongshu.com/explore/66c5f846000000001f01d8d3?xsec_token=AB8Eqdh7-thjTRKCa3VFOhD7J8Kj542EjefKjoSlLGFNE=&xsec_source=pc_user （= 目录 #274） | 套公式找击球点 · 4大步三处不并 / 延长线上与延长线分开 / 蹬蹬蹬蹬不改送重心 | **transcribed** | `video_contact_point_formula2_66c5f846.md` |
 | https://www.xiaohongshu.com/explore/66c2d706000000001f039338?xsec_token=ABtF3zz6K3fQ1P_vZweBAG9pnORndGdOCHashHL7lAYKc=&xsec_source=pc_user （= 目录 #276） | 用腿发力 · 曲直互换 / 曲腿不改屈 / 进过不并经过 / 直起来不改伸肘 / 击球点只引用 | **transcribed** | `video_leg_power_66c2d706.md` |
+| https://www.xiaohongshu.com/explore/66c079e1000000000503b557?xsec_token=ABb-amDyFsYfEPiYLcnFCIKuqjh5nO9FJLAU_fgOmbdu4=&xsec_source=pc_user （= 目录 #277） | 正手4.0 · 倚天剑 / 拍头压平不改降拍 / 拖地声音越长 / 肚脐转向不改转髋 / 4.0只在标题文案 | **transcribed** | `video_fh_40_66c079e1.md` |
+| https://www.xiaohongshu.com/explore/66a6523f000000000d032764?xsec_token=ABWrIOuek3gOt1Ji-_jt-mwwo3YHsyonNhBwTPw1YLUls=&xsec_source=pc_user （= 目录 #284） | 击球点偏后 · 太后给挤到不并偏后 / 转体不改转髋 / 后肘一定要比前肘高不改推肘 / 30minlater / 转髋只在评论 | **transcribed** | `video_contact_point_late_66a6523f.md` |
+| https://www.xiaohongshu.com/explore/6694dedd000000000d00c0c1?xsec_token=AB0Ch6dVKgY77o1yUy8Idjvr6Y2Y-QTwRNzzeKXBBMMbw=&xsec_source=pc_user （= 目录 #288） | 向前脚步 · 前后相对难不改送重心 / 并步向前击球与并步上前不并 / 前交叉+并步 / “击球”“救球”引号分开 | **transcribed** | `video_forward_footwork_6694dedd.md` |
 
 ---
 
@@ -560,24 +563,24 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第十批 30 条（#277–#306，从 `66c079e1` 起）
 
-薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 275 = 目录 #276 `66c2d706`）。从下一条 data-index 276 = `66c079e1` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 305 = 目录 #306。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue（本批没有这类标题）。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#294 是跑位、不是脚/脚步，只 `catalog_only`。#299 标题是「拉拍」不是引拍，且含转体，只 `catalog_only`。data-index 277 = `66bd88a3` 已有深看，目录 #278 只指回 `video_deng_not_arm_66bd88a3.md`，不新开。本批 pending_A-E：#277、#284、#288、#293。第九批 pending_A-E 已清。没有点赞、评论、关注、发布。
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 275 = 目录 #276 `66c2d706`）。从下一条 data-index 276 = `66c079e1` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 305 = 目录 #306。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue（本批没有这类标题）。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#294 是跑位、不是脚/脚步，只 `catalog_only`。#299 标题是「拉拍」不是引拍，且含转体，只 `catalog_only`。data-index 277 = `66bd88a3` 已有深看，目录 #278 只指回 `video_deng_not_arm_66bd88a3.md`，不新开。2026-10-24 #277、#284、#288 已 **transcribed**（`video_fh_40_66c079e1.md`、`video_contact_point_late_66a6523f.md`、`video_forward_footwork_6694dedd.md`）。这三条已 transcribed；仍 pending 的是 #293。第九批 pending_A-E 已清。没有点赞、评论、关注、发布。
 
 进度：已入目录 **306 / 约 362**。还剩约 56 条未入目录。
 
 | # | 标题 | 一句话/类型 | 完整链接 | A–E |
 |---|---|---|---|---|
-| 277 | 有了这个，正手都可以4.0了 | 正手到4.0 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c079e1000000000503b557?xsec_token=ABb-amDyFsYfEPiYLcnFCIKuqjh5nO9FJLAU_fgOmbdu4=&xsec_source=pc_user | pending_A-E |
+| 277 | 有了这个，正手都可以4.0了 | 正手到4.0 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c079e1000000000503b557?xsec_token=ABb-amDyFsYfEPiYLcnFCIKuqjh5nO9FJLAU_fgOmbdu4=&xsec_source=pc_user | **transcribed** `video_fh_40_66c079e1.md` |
 | 278 | 戒掉用手臂带身体，你要蹬 | 蹬不用手臂带身体 · 已有深看 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66bd88a3000000000503ac53?xsec_token=AB8bnWtlXGMla6j8SaOEttWrMDbo02nWqQ4HziS0mUZNA=&xsec_source=pc_user | **transcribed** `video_deng_not_arm_66bd88a3.md`（已有深看，不新开） |
 | 279 | 反手找到击球点并推送的练习方法 | 反手击球点 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66bc39340000000005031d5f?xsec_token=AB2QEOQwuiWg3IX8_KxClfItVo1v-y3dQ6AhXveZLZN_4=&xsec_source=pc_user | catalog_only |
 | 280 | 对号入座你们的水平分级 | 水平分级 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66baea50000000000d0315fe?xsec_token=AB8Ekts8tDD_mM0XA9Lm2GN7Uc5RB15vY5_PbCaxZRBzQ=&xsec_source=pc_user | catalog_only |
 | 281 | 发球秘籍来了（王欣瑜提供） | 发球秘籍 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66b82d23000000000d033fd5?xsec_token=ABIwmeX73RbrCzu9kgpAfSeND1PWn4mcd1OUbC07hGGDY=&xsec_source=pc_user | catalog_only |
 | 282 | 教练和学员应该如何沟通呢 | 教练沟通 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66ab08c10000000005031278?xsec_token=ABNd1CapFWNNWxZ2DMDd5y6sDDn0t0-xQ9hb-VxNYleSk=&xsec_source=pc_user | catalog_only |
 | 283 | 你一定要知道辅助手训练神器 | 辅助手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66a7a7ac0000000005033406?xsec_token=ABWMHzIjopRf_McBmqnXMBlKW_r0LhVxVdxzDB5OtDmm0=&xsec_source=pc_user | catalog_only |
-| 284 | 一小时处理击球点偏后问题（初学必看） | 击球点偏后 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66a6523f000000000d032764?xsec_token=ABWrIOuek3gOt1Ji-_jt-mwwo3YHsyonNhBwTPw1YLUls=&xsec_source=pc_user | pending_A-E |
+| 284 | 一小时处理击球点偏后问题（初学必看） | 击球点偏后 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66a6523f000000000d032764?xsec_token=ABWrIOuek3gOt1Ji-_jt-mwwo3YHsyonNhBwTPw1YLUls=&xsec_source=pc_user | **transcribed** `video_contact_point_late_66a6523f.md` |
 | 285 | 每个学生我都会搭建好框架 | 搭建框架 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66a36d1500000000050301bc?xsec_token=ABZak1H9taqCMo42MXB486fT3kpdbEFOnVfipoDc1TJSg=&xsec_source=pc_user | catalog_only |
 | 286 | 肚脐给予的转体暴力 | 转体 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66a1ebdb000000000a025d94?xsec_token=ABdAnA_RrneeOcifAS0bUYOlMcFg0hcVtG06JAeTVsXJw=&xsec_source=pc_user | catalog_only |
 | 287 | 这样，可带出费德勒同款盯球和拍面角度 | 盯球拍面 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/669a6a03000000000500781b?xsec_token=ABHNgd0_QLzbip_fpRA_EsaiBXgIa_qVnHz-HgBWUi12g=&xsec_source=pc_user | catalog_only |
-| 288 | 脚步脚步最难的向前脚步我们如何处理 | 向前脚步 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6694dedd000000000d00c0c1?xsec_token=AB0Ch6dVKgY77o1yUy8Idjvr6Y2Y-QTwRNzzeKXBBMMbw=&xsec_source=pc_user | pending_A-E |
+| 288 | 脚步脚步最难的向前脚步我们如何处理 | 向前脚步 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6694dedd000000000d00c0c1?xsec_token=AB0Ch6dVKgY77o1yUy8Idjvr6Y2Y-QTwRNzzeKXBBMMbw=&xsec_source=pc_user | **transcribed** `video_forward_footwork_6694dedd.md` |
 | 289 | 发球黑技术来了玄机就在这 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66923ec1000000000d00d62f?xsec_token=AB5mUn7E6D5gQ15atZs5oMqyTJPp8msm6QUTmRWrvy2ck=&xsec_source=pc_user | catalog_only |
 | 290 | 推荐一个躺平也能提升0.5的方法 | 躺平提升 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66909a130000000005004261?xsec_token=ABEVwFMb9M7xTO7oFCSpKZK0OKdu0AeQrAn5ByDWxer8Y=&xsec_source=pc_user | catalog_only |
 | 291 | 黑技术第二招反手“敬礼” | 反手敬礼 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/668f80d6000000000d00c540?xsec_token=AB2fmAnxJueSHNUW15KGPCnQPdu9mhuzqnS4rJDIoo5zc=&xsec_source=pc_user | catalog_only |
