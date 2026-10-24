@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 79，pending 11，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 全部 deep（另有 blocked 5）。Batch B pending 0。Batch C 第三刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch C 里 deep 18、pending 11、blocked 2。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc`、`Fu6DkHvZlGY` 虽为 deep，仍是 holdout，不进 tree evidence。`omsLx7F2Wdc` 旧注也不得进树。`dDYKuNZtdyU`、`pQ793MBQE50`、`PUN6qIIYU-4`、`dx8aGSIo24w`、`YbLit9png2U` 不是 holdout，仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。`E_zmENJIj4g` 仍 pending。
+当前计数：deep 85，pending 5，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 全部 deep（另有 blocked 5）。Batch B pending 0。Batch C 第四刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch C 里 deep 24、pending 5、blocked 2。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc`、`Fu6DkHvZlGY`、`XjJHA91HDbU` 虽为 deep，仍是 holdout，不进 tree evidence。`omsLx7F2Wdc` 旧注也不得进树。`NEpD7fIM7HI`、`V-QkILd4V-w`、`w1FakobNq1Q`、`QXAtdSEUkfY`、`Ibkq-yBteGc` 不是 holdout，仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU`、`uQcObi2oTSs`、`Ibkq-yBteGc` 是 deep-with-gap。`E_zmENJIj4g`、`m1NBdd3Bigg`、`FjjvhNbk3q4` 仍 pending。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -82,7 +82,7 @@
 | `UB6SbA_KX9E` | Proper Trunk Sequencing will Transform Your Tennis | 714 | A | deep | Batch A 第一刀；`SRC-FTT-UB6SbA_KX9E_repass_2026-10-24.md`；短终点脉冲；书赢，不改成肩先于髋 |
 | `MWjBfarwNlA` | Alcaraz's Secret Weapon / Backhand Line RALLY Ball | 34 | C | pending |  |
 | `boMJDzuFhM4` | Alcaraz's Anxiety Secret / Mental Mastery in Tennis | 50 | C | pending |  |
-| `w1FakobNq1Q` | Breaking Down the Greatest Tiebreak Ever Played | 684 | C | pending |  |
+| `w1FakobNq1Q` | Breaking Down the Greatest Tiebreak Ever Played | 684 | C | deep | Batch C 第四刀；`SRC-FTT-w1FakobNq1Q_repass_2026-10-24.md`；范围旁支；发紧仍过高网打大目标；屏气是错例 |
 | `FOmz8Wjv3DQ` | Deeper Than Just "Footwork" / Tennis Movement Fundamentals Explained | 1066 | C | deep | Batch C 第二刀；`SRC-FTT-FOmz8Wjv3DQ_repass_2026-10-24.md`；落地前认出方向；粗枝 2 旁注；不改写 p.75 |
 | `8r09TliP-Ak` | I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow) | 684 | B | deep | Batch B 第五刀；`SRC-FTT-8r09TliP-Ak_repass_2026-10-24.md`；全速高过网中段；patient 不改写 p.75 |
 | `_Qu1LOwklAw` | Patient but Ruthless / How Alcaraz Broke Down Sinner in Rome | 394 | B | deep | Batch B 第六刀；`SRC-FTT-_Qu1LOwklAw_repass_2026-10-24.md`；耐心是大目标；press 不写成推肘；不改写 p.75 |
@@ -98,20 +98,20 @@
 | `JzcA_ku7Yhk` | The Misunderstanding LOSING You Matches | 430 | B | deep | Batch B 第六刀；`SRC-FTT-JzcA_ku7Yhk_repass_2026-10-24.md`；同一结果多种挥法；难看不写成可以不转 |
 | `dx8aGSIo24w` | 4 Tips for Two-Handers with Alexa & Johnny | 283 | C | deep | Batch C 第三刀；`SRC-FTT-dx8aGSIo24w_repass_2026-10-24.md`；范围旁支；低球宽站；不改写 p.84 |
 | `wFIrPMutzRo` | 2 Secrets to Rotational Power / Side Bending + The Abdominal X | 765 | A | deep | Batch A 第一刀；`SRC-FTT-wFIrPMutzRo_repass_2026-10-24.md`；腹斜 X + 少量侧屈 |
-| `NEpD7fIM7HI` | Learning from Federer's Slice / 4 Tips + 3 Drills | 1051 | C | pending |  |
+| `NEpD7fIM7HI` | Learning from Federer's Slice / 4 Tips + 3 Drills | 1051 | C | deep | Batch C 第四刀；`SRC-FTT-NEpD7fIM7HI_repass_2026-10-24.md`；范围旁支；切削角度留住；下刀不写成正手降拍 |
 | `GsHkML2mVEI` | Nishioka's Unique "Backswing" Timing / Two Styles Contrasted | 350 | B | deep | Batch B 第五刀；`SRC-FTT-GsHkML2mVEI_repass_2026-10-24.md`；前臂滚和躯干重叠；链内时序不改写 p.75 |
 | `wd4YRQW3TOc` | 4 Tips For Effortless, Controllable Topspin | 1338 | B | deep | Batch B 第三刀；`SRC-FTT-wd4YRQW3TOc_repass_2026-10-24.md`；上旋松开挂粗枝 1；打到球后上不升刷；Press slot 不写成降拍 |
-| `V-QkILd4V-w` | 8 Visual Return Strategies Tested by a WTA Pro | 1021 | C | pending |  |
+| `V-QkILd4V-w` | 8 Visual Return Strategies Tested by a WTA Pro | 1021 | C | deep | Batch C 第四刀；`SRC-FTT-V-QkILd4V-w_repass_2026-10-24.md`；范围旁支；接发先看抛球；不改写 p.75 |
 | `xLs469ZVMPU` | Fix Your Forehand Over-Rotation / 3 Counter-Rotational Balance Techniques | 734 | A | deep | Batch A 续；`SRC-FTT-xLs469ZVMPU_repass_2026-10-24.md`；反旋刹车；1:11 禁止送髋 |
 | `dDYKuNZtdyU` | Find Your One-Handed Backhand "Pull Slot" | 666 | C | deep | Batch C 第三刀；`SRC-FTT-dDYKuNZtdyU_repass_2026-10-24.md`；范围旁支；单反拉槽；不改成正手肩先 |
 | `pQ793MBQE50` | How Scap Retraction Powers the One-Handed Backhand | 988 | C | deep | Batch C 第三刀；`SRC-FTT-pQ793MBQE50_repass_2026-10-24.md`；范围旁支；肩胛回缩；不改写正手松腕 |
 | `YbLit9png2U` | Fix Your Kick Serve by Throwing Sideways | 202 | C | deep | Batch C 第三刀；`SRC-FTT-YbLit9png2U_repass_2026-10-24.md`；范围旁支；踢高球侧向出拍；不升口令 |
-| `XjJHA91HDbU` | Don't Swing AT the Ball on the Overhead | 212 | C | pending |  |
+| `XjJHA91HDbU` | Don't Swing AT the Ball on the Overhead | 212 | C | deep | Batch C 第四刀；`SRC-FTT-XjJHA91HDbU_repass_2026-10-24.md`；holdout；高压手扔向旁边；内旋不升口令 |
 | `wVa4XQPcaqs` | Use The Wall to Find Your Perfect Contact | 275 | B | deep | Batch B 第六刀；`SRC-FTT-wVa4XQPcaqs_repass_2026-10-24.md`；墙上能用力的点；press 不写成推肘 |
-| `QXAtdSEUkfY` | 3 Tips to Rip the Low Backhand | 186 | C | pending |  |
+| `QXAtdSEUkfY` | 3 Tips to Rip the Low Backhand | 186 | C | deep | Batch C 第四刀；`SRC-FTT-QXAtdSEUkfY_repass_2026-10-24.md`；范围旁支；低反手沉膝侧过来；由低到高不写成正手降拍 |
 | `wFOy0RKWBTg` | Swing OUT on the Forehand | 31 | B | deep | Batch B 第七刀；`SRC-FTT-wFOy0RKWBTg_repass_2026-10-24.md`；第一下朝外，指向 wzL |
 | `QrRYuVjVibU` | When You Get A Low Forehand | 16 | B | deep | Batch B 第七刀；`SRC-FTT-QrRYuVjVibU_repass_2026-10-24.md`；deep-with-gap；低球指向 tzg/lbd |
-| `Ibkq-yBteGc` | To Hit the Low Backhand | 9 | C | pending |  |
+| `Ibkq-yBteGc` | To Hit the Low Backhand | 9 | C | deep | Batch C 第四刀；`SRC-FTT-Ibkq-yBteGc_repass_2026-10-24.md`；deep-with-gap；9 秒只有三格；口令沿用 QX |
 | `5KdScDKxVSI` | Shoulder Adduction Will Transform Your Forehand Contact | 357 | A | deep | Batch A 续；`SRC-FTT-5KdScDKxVSI_repass_2026-10-24.md`；holdout；接触叶子；「可以不转」书赢 |
 | `uQcObi2oTSs` | The Low-to-High Forehand is Mostly a Myth | 10 | A | deep | Batch A 收尾；deep-with-gap；`SRC-FTT-uQcObi2oTSs_repass_2026-10-24.md`；Shorts 约 10 秒，只有一句，指向 2Nn/Pwk |
 | `Cwc4YcKFZrU` | Retired WTA Pro Still Ripping the Forehand | 25 | B | blocked | 无字幕，先补字幕 |
@@ -155,5 +155,7 @@ Batch C 第一刀（2026-10-24）：`omsLx7F2Wdc`、`PfDqnff_vYA`、`WoVEWh7fFfc
 
 Batch C 第二刀（2026-10-24）：`Z9XwaXDVkZg`、`lwS7Xxqrrdw`、`FOmz8Wjv3DQ`、`FBJnFBtZozE`、`PjvOQkqH9DA`、`XXlndjnrA4E`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。六期都不是 holdout，仍不进 tree evidence。五期是范围旁支。`FOmz8Wjv3DQ` 的落地前认出方向挂粗枝 2 旁注，不改写 p.75。单反的由低到高不写成正手降拍。双反的 coil 不升正手核心。挥得更快不写成手臂发力。截击没有后摆不写成正手不要引拍。当时 Batch C 剩余 pending 17（另有 blocked 2，不在这 17 里）。`E_zmENJIj4g` 仍 pending，该轮不碰。
 
-Batch C 第三刀（2026-10-24）：`dDYKuNZtdyU`、`pQ793MBQE50`、`PUN6qIIYU-4`、`dx8aGSIo24w`、`Fu6DkHvZlGY`、`YbLit9png2U`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`Fu6DkHvZlGY` 是 holdout，不进 tree evidence。其余五期也都不进树。六期都是范围旁支，不挂正手粗枝。肩胛回缩和上背拉开不改成正手肩先。侧扔和踢高球不升口令。不改写 p.75。Batch C 剩余 pending 11（另有 blocked 2，不在这 11 里）。`E_zmENJIj4g` 仍 pending，本轮不碰。
+Batch C 第三刀（2026-10-24）：`dDYKuNZtdyU`、`pQ793MBQE50`、`PUN6qIIYU-4`、`dx8aGSIo24w`、`Fu6DkHvZlGY`、`YbLit9png2U`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`Fu6DkHvZlGY` 是 holdout，不进 tree evidence。其余五期也都不进树。六期都是范围旁支，不挂正手粗枝。肩胛回缩和上背拉开不改成正手肩先。侧扔和踢高球不升口令。不改写 p.75。当时 Batch C 剩余 pending 11（另有 blocked 2，不在这 11 里）。`E_zmENJIj4g` 仍 pending，该轮不碰。
+
+Batch C 第四刀（2026-10-24）：`NEpD7fIM7HI`、`V-QkILd4V-w`、`w1FakobNq1Q`、`XjJHA91HDbU`、`QXAtdSEUkfY`、`Ibkq-yBteGc`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`XjJHA91HDbU` 是 holdout，不进 tree evidence。其余五期也都不进树。`Ibkq-yBteGc` 是 deep-with-gap。六期都是范围旁支，不挂正手粗枝。下刀和由低到高不写成正手降拍。接发的分腿不改写 p.75。内旋不升口令。Batch C 剩余 pending 5（另有 blocked 2，不在这 5 里）：`m1NBdd3Bigg`、`FjjvhNbk3q4`、`MWjBfarwNlA`、`boMJDzuFhM4`、`E_zmENJIj4g`。`E_zmENJIj4g`、`m1NBdd3Bigg`、`FjjvhNbk3q4` 本轮不碰。
 
