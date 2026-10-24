@@ -234,6 +234,7 @@ timeline
       10/24 : ⭐ 6ak4 体感第一性原理 : 感知张力不感知运动，挂粗枝1旁支；书核心不变
       10/24 : 📌 FTT 全库重过启动 : Batch A 四期深吸收（ui holdout / wFIr / UB6 / KU7）；书核心不变
       10/24 : 📌 Batch A 续六期 : 肩内收 / 内旋起点 / 反旋刹车 / 绕挥；肩不升粗枝
+      10/24 : 📌 Batch A 收尾：tilt / corkscrew holdout / 胸参与 / 非持拍侧 / 低到高缺口 / 单脚；书核心不变
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -273,6 +274,7 @@ timeline
 | ↓ **阶段 7 体感第一性原理** | 10/24 | 感知张力不感知运动，挂进粗枝 1 旁支 | ⭐ 6ak4 字幕 + 画面核对后吸收；粗枝 1 书核心仍是髋没先启动 / 扭回面向网（p.83 / p.117）；coil 仍是 p.119 非必需增强 |
 | ↓ **阶段 7 FTT 全库重过** | 10/24 | 字幕 + 画面 → 第一性原理 → 写进根基 | 📌 启动约 97 期重过；本轮 deep：`ui-RFRdQKRk`（holdout）、`wFIrPMutzRo`、`UB6SbA_KX9E`、`KU7FHy1qQOI`；书核心不变 |
 | ↓ **阶段 7 Batch A 续** | 10/24 | 肩内收 / 反旋 / 绕挥六期 | 📌 `Am8j1Zw5KrE`、`5KdScDKxVSI`（皆 holdout）、`JIMgI3jiVns`、`xLs469ZVMPU`、`PwkGLkRm73o`、`2Nn9tyMECZU`；肩不升粗枝；场上主句不变 |
+| ↓ **阶段 7 Batch A 收尾** | 10/24 | tilt / corkscrew / 胸 / 非持拍侧 / 单脚 | 📌 `tzgAWr3QGv0`、`5jHCDc44SQM`（holdout）、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`（deep-with-gap）、`ExkBtFRhUWY`；批次 A 全部 deep；书核心不变 |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -309,6 +311,7 @@ timeline
 - [10/24 6ak4 体感第一性原理：感知张力不感知运动，挂进粗枝 1 旁支](#oct24-6ak4-feel-tension)（文末）— 用户认定本期醍醐灌顶；字幕段起点 + 画面核对（红皮筋双锚、文章叠图、错误目标下皮筋松、减速不换向）；同日补充：左肩往前带出 X 型拉伸后才感到髋力，往回拉是张力不是髋倒退，左肩由躯干带着走、不单独抡左臂（防 p.111 过早开胸）；粗枝 1 书核心不变（p.83 / p.117），coil 仍是 p.119 非必需增强；不进 tree evidence
 - [10/24 FTT 全库重过启动：Batch A 四期](#oct24-ftt-repass-batch-a)（文末）— 因 6ak4 第一次推荐只靠旧摘要而启动全库重过；本轮完成 `ui-RFRdQKRk`（holdout）、`wFIrPMutzRo`、`UB6SbA_KX9E`、`KU7FHy1qQOI`；字幕段起点 + 抽帧核对；只加旁支，不改书核心，不进 tree evidence
 - [10/24 Batch A 续：肩内收 / 反旋 / 绕挥六期](#oct24-ftt-repass-batch-a2)（文末）— `Am8j1Zw5KrE` 与 `5KdScDKxVSI` 仍 holdout；接触是肩内收叶子；内旋刚开始才接触；转动要被刹车停住；绕挥不是低到高；「可以不转」和「coil 更重要」书赢；场上主句仍是「肩往前、髋被往后拽」
+- [10/24 Batch A 收尾：tilt / corkscrew / 胸 / 非持拍侧 / 单脚](#oct24-ftt-repass-batch-a3)（文末）— `5jHCDc44SQM` 仍 holdout；低球侧屈、腹部张力、驱动时臂贴躯干、非持拍侧、单脚探球都是叶子或上游；`uQcObi2oTSs` 只有一句；批次 A 全部 deep；场上主句仍是「肩往前、髋被往后拽」
 - [10/18 旋转与 supination 同步（待核实）：身体转、胳臂不额外加动作；supination 是被转出来的觉察点，非口令](#oct18-rotation-supination)（文末）— 用户标为非常重要（含 §7 意识层面：只关注重心转移，手被动 supinate）；TPA Tom Alsop 原话待核（尚无字幕）；FTT `PwkGLkRm73o` 唯一明说 supinate，`2Nn9tyMECZU` / `JIMgI3jiVns` / `LoSrMj-Qxkc` 以肩外旋→内旋说同一方向；不新增 cue，不违反禁令
 - [10/15 放松是触发点：手腕一紧击球就感觉不到 ESR；放松打通背部与胸部发力](#oct15-wrist-relax-trigger)（文末）— 手腕紧张吸走注意力并截断近端发力；放松是固定模式的触发点；逻辑理顺比硬练省力；待球场验证
 - [10/15 晚 FTT《Why You're Jammed》：击球槽位三轴，旧被挤住点会回吸](#oct15-ftt-jammed)（文末）— 横向推远+非持拍手/锥桶/远探；纵向缓和上斜线、高肘不俯冲；纵深留足并前倾再加 6 英寸；两端失败（挤住/够过头）；待球场验证
@@ -12355,6 +12358,34 @@ FTT 84 期字幕中，**没有**专门讲「旋转与 supination 同步」的一
 只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`ui-RFRdQKRk` 继续 holdout。
 
 场上主句不变：**「肩往前、髋被往后拽。」** 六期各自的一句只写在来源稿的练习口令旁支，不替换这句。
+
+### 等级
+
+📌 流程记录。技术结论仍以 6ak4 和书页为准。
+
+<a id="oct24-ftt-repass-batch-a3"></a>
+## 📌 2026-10-24 — Batch A 收尾：tilt / corkscrew / 胸 / 非持拍侧 / 单脚
+
+### 本轮完成
+
+从已合的 main（`bcb92de`，PR #16）继续。六期都按上传 `norm.tsv` 段起点，加上 360p 抽帧，写成来源稿。yt-dlp 直连仍被登录墙挡住。六期都取到经典 itag 134。
+
+| id | 一句机制 | 挂点 | 和书 |
+|---|---|---|---|
+| `tzgAWr3QGv0` | 低球时整段躯干斜一点；胸把臂留在躯干上；脉冲很短 | 粗枝 1 叶子，接 wFIr 侧屈和 UB6 短终点 | 不冲突。press / extend through 不升口令 |
+| `5jHCDc44SQM` | 腹部被拉开的张力能感到；髋的物理领先大约 25 毫秒感觉不到 | 粗枝 1 的 coil 增强旁支；holdout | 1:13 把躯干说成几乎整段更快，p.119 书赢 |
+| `hNVbbPEob3g` | 驱动时臂贴着躯干；收尾在躯干放慢之后 | 粗枝 1 叶子，接短终点 | 0:22 胸先走是放弃的一档。5:58 仍从髋上拧出 |
+| `McCb-RfYd0w` | 启动把左侧送出去，向回压通常只留下肘收 | 粗枝 1 叶子 | 不冲突。不写成提前拉左臂 |
+| `uQcObi2oTSs` | 近网或高球基本由后向前，升高可能注意不到 | 指向 2Nn / Pwk；deep-with-gap | 一句不够改书 |
+| `ExkBtFRhUWY` | 右脚探到球后面，人才能从那个点向球场压出去 | 粗枝 1 上游 | 和 p.84、p.111 同侧。脚的 press 不写成送髋 |
+
+队列现为 deep 17、pending 73、blocked 7。批次 A 17 期全部 deep。`uQcObi2oTSs` 在 deep 上注明 deep-with-gap。未开 Batch B。
+
+### 根基怎么动
+
+只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`ui-RFRdQKRk` 与 `5jHCDc44SQM` 继续 holdout。
+
+场上主句不变：**「肩往前、髋被往后拽。」** 五期各自的一句只写在来源稿的练习口令旁支，不替换这句。`uQcObi2oTSs` 不另写练习口令，沿用 2Nn。
 
 ### 等级
 
