@@ -65,3 +65,7 @@
 - 感知定律段起点 9:51：「we don't really perceive motion. We perceive tension and thereby acceleration.」张力那半句从 9:54 起。旧注 @9:55 是这半句的约数。
 
 本补记不改 A–D 的原文。ui-RFRdQKRk 仍是 holdout，仍不得进 tree evidence。6ak4 也不进 tree evidence。
+
+## F. 2026-10-24 ui 重过指针
+
+ui 的深吸收改到 `SRC-FTT-ui-RFRdQKRk_repass_2026-10-24.md`。字幕段起点和抽帧核对都在那一版。上面 B 节的时间是 2026-10-20 的约数，原文不改。和书的关系不变：coil 仍是 BOOK:p119 的非必需增强，不把粗枝 1 的核心改成 coil。holdout 不进 tree evidence。

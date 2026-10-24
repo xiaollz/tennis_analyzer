@@ -1,6 +1,6 @@
 # SRC-FTT-ui-RFRdQKRk　The Pros "Rotate" Differently Than You（yt-dlp 核对的标题）
 
-> **本期没有取到字幕，也没有取到音频**（YouTube 429 / 403，见 `raw/ui-RFRdQKRk/calls.md`）。所以下面所有「字幕核对」都是**未核对**；只做了一份与旧笔记的二手比对（`raw/ui-RFRdQKRk/secondary_check_vs_old_note.md`），那不等于字幕核对。
+> **2026-10-24 重过以 `SRC-FTT-ui-RFRdQKRk_repass_2026-10-24.md` 为准。** 那一版用官方自动字幕 norm.tsv 的段起点，加上按字幕秒数抽出的画面。下面这份 2026-10-18 稿当时没有字幕，时间戳全部未核对，只留作抽取记录。本期仍是 holdout：可作知识，不进 tree evidence。
 
 - URL：https://www.youtube.com/watch?v=ui-RFRdQKRk
 - 频道 / 教练：频道 **Fault Tolerant Tennis**（yt-dlp 核对）；主讲人姓名【未核对】（旧笔记写 Hugh Clarke，不采信）。
