@@ -128,6 +128,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/633e7544000000001d024b7c?xsec_token=AB_PWnIDoL8-QCTFVoUOT0Tl351H7TK_xitCP4R85n1Rw=&xsec_source=pc_user （= 目录 #450） | 200个球拍头滞后转体蹬地 · 拍头滞后只在标题不改降拍头 / 转体不改转髋 / 初学着按字形 / 片尾 PRODUCED BY 彭彭 | **transcribed** | `video_lag_turn_dengdi_633e7544.md` |
 | https://www.xiaohongshu.com/explore/632d0ee60000000009030694?xsec_token=ABhvc3Wb7rzYnxymxtlJLoKkeoCQ0lSMFenHcSwPu7RQM=&xsec_source=pc_user （= 目录 #452） | 靠前的击球点 · 击球点只引用 / 靠前不并靠后 / 護苗网球是场地字 / 徐卡西只在评论 | **transcribed** | `video_forward_contact_point_632d0ee6.md` |
 | https://www.xiaohongshu.com/explore/621e2579000000002103c327?xsec_token=ABK-Lrp9PKqt1hMblP3zvBDKPanu7NkrzFvpUDjLU15Rk=&xsec_source=pc_user （= 目录 #473） | 2022款正手 · 小拉拍/大转体不并成小引拍或转髋 / 2020与2022不并 / 80秒不并时长 / 画面无教练大字 | **transcribed** | `video_fh_2022_621e2579.md` |
+| https://www.xiaohongshu.com/explore/61b7108b000000000102dc64?xsec_token=ABAcaX1XPXt_yFyTKVm-W9ZTk9vWwoidIBqK4o-psp6JY=&xsec_source=pc_user （= 目录 #488） | 练🎾脚步 · 画面无教练大字 / 2分钟不并 01:56 / 脚分开穿插只在评论 / 击球点只在评论 | **transcribed** | `video_footwork_method_61b7108b.md` |
+| https://www.xiaohongshu.com/explore/60c95e34000000000102606b?xsec_token=ABtfD8veRxb9UAb9AnGrKzBkxBHIRQO9TA3Z-xDO5wMSA=&xsec_source=pc_user （= 目录 #506） | 正手细节图文 · 手握凸前不并手腕凸前 / 拍头略微向下不改拍头下降 / 拍头滞后只在文案 / 送球不改送髋 / 图4与图五不并 | **transcribed** | `video_fh_detail_analysis_60c95e34.md` |
 
 ---
 
@@ -902,14 +904,14 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 486–515 = 目录 #487–#516）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十六批末 data-index 485 = 目录 #486 `61c03801`）。从下一条 data-index 486 = `61be9e21` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 515 = 目录 #516。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（#495 封面以 🎾🎾🎾 起头，表内去掉开头球符），标题中间的 🎾 保留（#487、#488、#489、#493）。本批下滚见到 data-index 541，页面没有「没有更多」文案，未到尽头。
 
-本批 pending_A-E 共 2 条：#488 `61b7108b` 这个办法练🎾脚步不好，你来打我。（标题有脚步）。#506 `60c95e34` 网球正手细节详细分析（标题明确正手）。#489「击🎾球」没有击球点 / timing / power，不单标。#491「不敢发的朋友圈」不是发球。#496 动作、#509 球拍推荐、#516 练习不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+本批 2 条 pending 已全部 transcribed（#488 #506）。#488 `61b7108b` 这个办法练🎾脚步不好，你来打我。（标题有脚步）。#506 `60c95e34` 网球正手细节详细分析（标题明确正手）。#489「击🎾球」没有击球点 / timing / power，不单标。#491「不敢发的朋友圈」不是发球。#496 动作、#509 球拍推荐、#516 练习不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
 
 进度：已入目录 **516**。页面「笔记」计数仍约 362，时间线长于计数（本批下滚见到 data-index 541，无「没有更多」文案）。本批之后未到尽头。
 
 | # | 标题 | 一句话/类型 | 完整链接 | A–E |
 |---|---|---|---|---|
 | 487 | 小女孩半年的🎾网球自信❤ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61be9e21000000000102986b?xsec_token=ABWgdyJz4PZlgSuZJ04UEzxkCPx9W6Q1t95051Chl-2-0=&xsec_source=pc_user | catalog_only |
-| 488 | 这个办法练🎾脚步不好，你来打我。 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61b7108b000000000102dc64?xsec_token=ABAcaX1XPXt_yFyTKVm-W9ZTk9vWwoidIBqK4o-psp6JY=&xsec_source=pc_user | pending_A-E |
+| 488 | 这个办法练🎾脚步不好，你来打我。 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61b7108b000000000102dc64?xsec_token=ABAcaX1XPXt_yFyTKVm-W9ZTk9vWwoidIBqK4o-psp6JY=&xsec_source=pc_user | **transcribed** `video_footwork_method_61b7108b.md` |
 | 489 | 以后不教这种方式击🎾球了 | 击球方式 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61b00139000000000102a34d?xsec_token=ABYE8VPW3SgvSQfUjIyZSUAlHv1qkhwFhl6RDZouxGnTE=&xsec_source=pc_user | catalog_only |
 | 490 | 有颜值，凭啥靠技术打球呢？ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61ade83a0000000021037732?xsec_token=ABATHNWsJosXNqXV3buIDcSdB1DqKnJHStdXDShNBYF1I=&xsec_source=pc_user | catalog_only |
 | 491 | 不敢发的朋友圈 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/617bbdaa0000000001025e72?xsec_token=AB-thqM8aUydk1nm57pyRjNg4a3SJsY2VVKIh5my6pSVA=&xsec_source=pc_user | catalog_only |
@@ -927,7 +929,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 503 | 专业角度分析苏教授的决赛成绩 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61075138000000000102530d?xsec_token=ABzu_tZ96H8xMQ7GGWs3nLuAA8jUmyNWnFo3Ys_LNVJlk=&xsec_source=pc_user | catalog_only |
 | 504 | 如果能这么灵活，我不介意这体型🙄 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/610207bd000000002103f0cc?xsec_token=AByECpX_1jbb1ypoEIcDjFgxNq1tLMg_MF6wRHMvuMQME=&xsec_source=pc_user | catalog_only |
 | 505 | 不太满意的一节训练课 | 训练课 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60fcbf05000000002103c62a?xsec_token=AB2AVOMni3tNOl2rOChxHYuHZhb53xNQ3KDXWLF0wdkLQ=&xsec_source=pc_user | catalog_only |
-| 506 | 网球正手细节详细分析 | 正手细节 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c95e34000000000102606b?xsec_token=ABtfD8veRxb9UAb9AnGrKzBkxBHIRQO9TA3Z-xDO5wMSA=&xsec_source=pc_user | pending_A-E |
+| 506 | 网球正手细节详细分析 | 正手细节 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c95e34000000000102606b?xsec_token=ABtfD8veRxb9UAb9AnGrKzBkxBHIRQO9TA3Z-xDO5wMSA=&xsec_source=pc_user | **transcribed** `video_fh_detail_analysis_60c95e34.md` |
 | 507 | 有人认得他吗😍 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c8bee8000000002103f3d1?xsec_token=ABLQb-DLTcaUGq9Pcc5g4xJ9INZvysCxPzSdrUg7KGj1M=&xsec_source=pc_user | catalog_only |
 | 508 | 摄影师用一盏灯改变你的世界 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c83bb10000000001024180?xsec_token=ABLQb-DLTcaUGq9Pcc5g4xJ0klUZGfOmM6SMhFBe2r4Wo=&xsec_source=pc_user | catalog_only |
 | 509 | 专业的网球拍分析推荐 | 球拍推荐 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/60c6ad89000000000102aca1?xsec_token=AB0FOvZif-8Svb690403QOTryO_h3weFQKuQkb_cUOBwo=&xsec_source=pc_user | catalog_only |
