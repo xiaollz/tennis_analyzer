@@ -801,3 +801,50 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`645b10e6` 德约陪练Marko展示一下平击发球和旋转发球。再下：`6459e91f` 网球要切得平，职业运动员示范给你看。主页在本批之后未到尽头；再往下滚 data-index 停在 558，未见「没有更多」。
 
 没有点赞、评论、关注、发布。
+
+## 第十五批 30 条（#427–#456，从 `645b10e6` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 426–455 = 目录 #427–#456）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十四批末 data-index 425 = 目录 #426 `645ceb51`）。从下一条 data-index 426 = `645b10e6` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 455 = 目录 #456。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 与第十四批一样不写入表内标题（本批仅 #436 封面以 🎾 起头），标题中间的 🎾 保留。本批下滚见到 data-index 457，页面没有「没有更多」文案，未到尽头。
+
+**第十五批 pending_A-E**（3 条，未打开）：#445 `636e1d30` 脚步；#450 `633e7544` 蹬地（标题同时有转体、拍头滞后；拍头滞后不是降拍头/掉拍头，不按掉拍头排除，蹬地仍标 pending）；#452 `632d0ee6` 击球点。
+
+#427、#433、#434 发球只 `catalog_only`。#428「切得平」按切削只 `catalog_only`。#436 盯球不是找球，不单标。#450 转体与蹬地同标题，蹬地明确，不按单独转体降成 catalog_only。#451 费费花絮不单标。选教练、花絮、费德勒、代言不单标。本批没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **456**。页面「笔记」计数仍约 362，时间线长于计数（本批见到 data-index 457，无「没有更多」文案）。本批之后未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 427 | 德约陪练Marko展示一下平击发球和旋转发球 | 平击/旋转发球 · 发球 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/645b10e60000000013034bf6?xsec_token=ABfcs4rVorxNe4Hbk-mm5oY2-1pWz7DYEIDgJgN8dyLY8=&xsec_source=pc_user | catalog_only |
+| 428 | 网球要切得平，职业运动员示范给你看 | 切得平 · 切削 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6459e91f00000000130374b9?xsec_token=ABHMYdmXR6n8Uc9cMx78J5JsciiCpghhGiCpOs37ehmW4=&xsec_source=pc_user | catalog_only |
+| 429 | 德约科维奇球迷看过来 | 球迷 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/644fd7f6000000001203f868?xsec_token=ABVVjIJHYSTcdwbZb9YLVez7OprX8qpoueksnxAusHM2k=&xsec_source=pc_user | catalog_only |
+| 430 | 风和日丽的novak中心练球 | 练球 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/644a3ef4000000002702a4f9?xsec_token=ABxH2aZrWM9rnvcP_Vas9rRx9Lkph8Q_lLzZ2_nYPSigY=&xsec_source=pc_user | catalog_only |
+| 431 | 网球🎾训练也要拼，不然看下场 | 训练 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64466d100000000013014e8a?xsec_token=ABOyw31KIm0FuktAj711wEMa_gQ2e9QcFvg2OgKHwlLjA=&xsec_source=pc_user | catalog_only |
+| 432 | 早上下雨，novak应该会取消今天的训练 | 雨天 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/644626670000000013005a22?xsec_token=ABOyw31KIm0FuktAj711wEMZwd3OKJHB9_pxVuTur5trc=&xsec_source=pc_user | catalog_only |
+| 433 | 今天的网球训练，王欣瑜发球后的相持 | 发球后相持 · 发球 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/644370e700000000130301b5?xsec_token=ABfDRRndlUOcbU0nCBhaHbrjXHkJtLLXPrD8-g4Obut9c=&xsec_source=pc_user | catalog_only |
+| 434 | 网球怎么发，王欣瑜慢动作教你 | 发球慢动作 · 发球 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64417946000000001301320e?xsec_token=ABP0MAFVTkBxr9znSFBO24qA8BVzDu6JPOmWfn4-Y8e-E=&xsec_source=pc_user | catalog_only |
+| 435 | 网球🎾图 | 配图 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/643d1e24000000001303009b?xsec_token=ABihSsR0Dpl73ogKoG1MYt0Tm3B2FIlttpwc5rFi4puew=&xsec_source=pc_user | catalog_only |
+| 436 | 盯球，你们有没有小朋友的水平 | 盯球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/642f9327000000001303c94a?xsec_token=ABelUwuQGZiC_o977nAq5f2YPwnl_Ac0jBUfgAgwDgjxY=&xsec_source=pc_user | catalog_only |
+| 437 | 哇🎾场完美的动作，完美的比较视频 | 动作比较 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6423b2a8000000001303637f?xsec_token=ABepcmNAfXs0XsarNNlGoEbcLUB9tFdaMkARHbqy_EX9c=&xsec_source=pc_user | catalog_only |
+| 438 | 孩子们都在🎾比赛了，你们呢 | 比赛 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/641bc55e0000000013030194?xsec_token=ABs-9osfWBMPMTjNuBoX1kSNvDT1swTSSailHeNmBFzxQ=&xsec_source=pc_user | catalog_only |
+| 439 | 谢谢小姐姐对网球的热爱和俱乐部教练的肯定 | 致谢 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/641304ae0000000011011df6?xsec_token=ABXG6zMleWuTkOZDng983OnexXT6ptpqsd7YK7fOeOQXQ=&xsec_source=pc_user | catalog_only |
+| 440 | 确认，中国男网🎾第一冠 | 男网 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/63e964980000000007039b47?xsec_token=AB1kP28nezWdsGGa0UUNGdgxg5tiKy1i4KcrxHC46nAdY=&xsec_source=pc_user | catalog_only |
+| 441 | 无论如何，人品影响成长 | 人品 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/63be184d000000001f009425?xsec_token=AB6UQgxmnVfeoBR1tol2v6mjQIDBhw_Ie4e2Q3Dk-iW4s=&xsec_source=pc_user | catalog_only |
+| 442 | 羊不怕，有💊 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/63987a7f00000000180134d4?xsec_token=ABIgJs9ydtg9v6uOXr5ndv9DiY-hhcfghlNyJAD0OzAZc=&xsec_source=pc_user | catalog_only |
+| 443 | 女生学会网球后就是各种花式拍拍拍 | 花式 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/639450f4000000002203919e?xsec_token=ABKCV28uw58IrxV8rlJQ2aF6HAgj0eashNUUPPTAr8v98=&xsec_source=pc_user | catalog_only |
+| 444 | 是机遇也是挑战 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/638708360000000022039eeb?xsec_token=ABs7Wj2OlFyW6xEbBMf-xD-6E8uW9naKGhjMaB9zGOG0E=&xsec_source=pc_user | catalog_only |
+| 445 | 教好她脚步👣就开始虐师傅 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/636e1d300000000022029e2c?xsec_token=ABI03ap4bkbrbNwbPUnULGJIqPL2hF_ZxLwzru4H4E9OA=&xsec_source=pc_user | pending_A-E |
+| 446 | 谁信？这堆🎾球拍全是送出去的 | 球拍 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6369f8390000000008010266?xsec_token=ABdKVWX1faRkhbRQ1Eu4rAIynecWgKBRGVJy-q0ikcQvI=&xsec_source=pc_user | catalog_only |
+| 447 | 多次多艺的🎾教练 | 教练 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/635e49a2000000001502d9da?xsec_token=AB4YB-3HbTJPFVXYtuAIEaUemVhz9L_EtwvmbE-DQBgD4=&xsec_source=pc_user | catalog_only |
+| 448 | 选教练之进阶篇 | 选教练 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/63491d60000000000601e574?xsec_token=ABJt9FLklns_SKNV16I7GDDE1GfMNRwZyh8V5Swel4Izk=&xsec_source=pc_user | catalog_only |
+| 449 | 如何选网球🎾教练，看过来 | 选教练 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6346bba0000000000703bcb3?xsec_token=ABaC1f8N1Ya2ZizzfqFBq7yAyxn6Xtoq4R4zLBobskY4E=&xsec_source=pc_user | catalog_only |
+| 450 | 只需要200个球练成拍头滞后，转体蹬地， | 蹬地 · 蹬地（标题同时有转体、拍头滞后） | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/633e7544000000001d024b7c?xsec_token=AB_PWnIDoL8-QCTFVoUOT0Tl351H7TK_xitCP4R85n1Rw=&xsec_source=pc_user | pending_A-E |
+| 451 | 费费，你是来搞笑的吗 | 费德勒 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/633021f800000000170396cb?xsec_token=ABtmGtLxhkwKn9lqUrMYVlMDdarwooI6v0qiSuwg5M7BM=&xsec_source=pc_user | catalog_only |
+| 452 | 无需教练如何拥有网球正确靠前的击球点 | 击球点 · 击球点 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/632d0ee60000000009030694?xsec_token=ABhvc3Wb7rzYnxymxtlJLoKkeoCQ0lSMFenHcSwPu7RQM=&xsec_source=pc_user | pending_A-E |
+| 453 | 怎么看似满头白发，费费绝唱 | 费德勒 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/632abd190000000008019458?xsec_token=ABhg68R_SDQEUNRAMPK3myzJLlvnbAaZEC-KEXvKfMc8I=&xsec_source=pc_user | catalog_only |
+| 454 | 网球🎾老费退了吗？ | 费德勒 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/63232a63000000000900ac3a?xsec_token=AB4IvwfeS_dnBgUWQaoTg4NfzWXKkx6lla0m5nMqY3H7c=&xsec_source=pc_user | catalog_only |
+| 455 | 我们都是lacoste🐊和babolat的代言 | 代言 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/62f7935000000000080129a5?xsec_token=ABCBp0oTKcX9YA1CeRd3iFW2Pn_eXOn2hBWSsHDiCI_7M=&xsec_source=pc_user | catalog_only |
+| 456 | 天天下雨，出售德约科维奇一枚 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/62f261eb000000000900fda1?xsec_token=ABbtpP9Fqf7ojPqZPs-vgHdbzyoqa2LabyStk2CjjWX50=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`62e3584c` 国产的孩子，进口的教练。再下：`62d766a7` 中国科学院高工的退休工资原来真的这么少。主页在本批之后未到尽头；本批下滚见到 data-index 457，未见「没有更多」。
+
+没有点赞、评论、关注、发布。
