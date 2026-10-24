@@ -130,6 +130,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/621e2579000000002103c327?xsec_token=ABK-Lrp9PKqt1hMblP3zvBDKPanu7NkrzFvpUDjLU15Rk=&xsec_source=pc_user （= 目录 #473） | 2022款正手 · 小拉拍/大转体不并成小引拍或转髋 / 2020与2022不并 / 80秒不并时长 / 画面无教练大字 | **transcribed** | `video_fh_2022_621e2579.md` |
 | https://www.xiaohongshu.com/explore/61b7108b000000000102dc64?xsec_token=ABAcaX1XPXt_yFyTKVm-W9ZTk9vWwoidIBqK4o-psp6JY=&xsec_source=pc_user （= 目录 #488） | 练🎾脚步 · 画面无教练大字 / 2分钟不并 01:56 / 脚分开穿插只在评论 / 击球点只在评论 | **transcribed** | `video_footwork_method_61b7108b.md` |
 | https://www.xiaohongshu.com/explore/60c95e34000000000102606b?xsec_token=ABtfD8veRxb9UAb9AnGrKzBkxBHIRQO9TA3Z-xDO5wMSA=&xsec_source=pc_user （= 目录 #506） | 正手细节图文 · 手握凸前不并手腕凸前 / 拍头略微向下不改拍头下降 / 拍头滞后只在文案 / 送球不改送髋 / 图4与图五不并 | **transcribed** | `video_fh_detail_analysis_60c95e34.md` |
+| https://www.xiaohongshu.com/explore/5e7c17f200000000010081ad?xsec_token=ABJaVneWg1e_J42jpHKvgz4FSIYedLXarEMJzY1yfyOQc=&xsec_source=pc_user （= 目录 #556） | 网球正手密码 · 屏录泰摩/t-Tube / 直线线按字形 / 由内而外只引用 / 击球手肘部不改推肘 / 拍头加速不改拍头下降 / 这一样一个与有不补 | **transcribed** | `video_fh_password_5e7c17f2.md` |
 
 ---
 
@@ -993,9 +994,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第十九批 13 条（#547–#559，从 `5ea64606` 起）
 
-薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 546–558 = 目录 #547–#559）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十八批末 data-index 545 = 目录 #546 `5eaacff6`）。从下一条 data-index 546 = `5ea64606` 起，按主页从上到下（新→旧）再收，到 data-index 558 = 目录 #559 后再也滚不出新卡。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面）。#549 封面以 👏 起头，表内保留。刷新主页后再从顶滚到底，窗口仍停在 data-index 542–558（17 张卡），滚轮不再带动列表；DOM 里「加载中」仍在（视口外），没有「没有更多」文案。按再也滚不出新卡，记主页渲染尽头在 #559。实收 13 条，不足 30。
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 546–558 = 目录 #547–#559）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十八批末 data-index 545 = 目录 #546 `5eaacff6`）。从下一条 data-index 546 = `5ea64606` 起，按主页从上到下（新→旧）再收，到 data-index 558 = 目录 #559 后再也滚不出新卡。一句话来自封面标题。#556 已逐条打开，其余本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面）。#549 封面以 👏 起头，表内保留。刷新主页后再从顶滚到底，窗口仍停在 data-index 542–558（17 张卡），滚轮不再带动列表；DOM 里「加载中」仍在（视口外），没有「没有更多」文案。按再也滚不出新卡，记主页渲染尽头在 #559。实收 13 条，不足 30。
 
-本批 pending_A-E：#556 `5e7c17f2` 网球正手密码在这（标题明确正手）。其余为机票/生活花絮，不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+本批曾标 pending_A-E：#556 `5e7c17f2` 网球正手密码在这（标题明确正手）。2026-10-24 #556 已 **transcribed**（`video_fh_password_5e7c17f2.md`）。本批 1 条 pending 已 transcribed（#556）；主页目录渲染尽头于 #559。其余为机票/生活花絮，不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。打开的是主页路径，页面落到同 token 的 explore。#556 评论区是「这是一片荒地点击评论」，没有「展开」，没有「- THE END -」。没有点赞、评论、关注、发布。
 
 进度：已入目录 **559**。页面「笔记」计数仍约 362，时间线长于计数。本批之后主页渲染到尽头（data-index 558 之后无新卡；DOM 仍有「加载中」，未见「没有更多」）。没有下一条游标。
 
@@ -1010,7 +1011,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 553 | 国航5月全球航空时间表（附小技巧） | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e985c3100000000010029d1?xsec_token=ABAtPFBQXZPfrPuhnJrc9ahYLbEgwNb8wH7eqpsc3Fei8=&xsec_source=pc_user | catalog_only |
 | 554 | 南航国际航线最新安排 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e86fe6d00000000010073e3?xsec_token=AB8JFAl_N3WFs66DMcY7m46_AQG4MTszqpRCVlrQKtI-w=&xsec_source=pc_user | catalog_only |
 | 555 | 不能出去玩，只能在回忆 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e84bc400000000001007d6d?xsec_token=ABZnMwcX86rBnnlVZz90FPg08EJTBdGwfELdc1Rzlqo2Q=&xsec_source=pc_user | catalog_only |
-| 556 | 网球正手密码在这 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e7c17f200000000010081ad?xsec_token=ABJaVneWg1e_J42jpHKvgz4FSIYedLXarEMJzY1yfyOQc=&xsec_source=pc_user | **pending_A-E** |
+| 556 | 网球正手密码在这 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e7c17f200000000010081ad?xsec_token=ABJaVneWg1e_J42jpHKvgz4FSIYedLXarEMJzY1yfyOQc=&xsec_source=pc_user | **transcribed** `video_fh_password_5e7c17f2.md` |
 | 557 | 我拍的，可惜今年都没有机会出去浪了。 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e74af1e000000000100be60?xsec_token=ABQYUOWgqqjHU8g7uRokDW5kT_k5om4ApHNMheOBHRkMI=&xsec_source=pc_user | catalog_only |
 | 558 | 疫情期间人和动物 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e7023f10000000001006f7e?xsec_token=AB4AkgLu8wAMeCaTTumepF_P8jGgDwMBYhbh2Ml6ph3GM=&xsec_source=pc_user | catalog_only |
 | 559 | 寄口罩给以色列和塞尔维亚的朋友 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e6f2b1e0000000001003390?xsec_token=ABFPfD9P42n18Whde-9acHYGTBEK3Xk-_rhbaK5ToRf3c=&xsec_source=pc_user | catalog_only |
