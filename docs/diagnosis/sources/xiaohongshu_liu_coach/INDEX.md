@@ -46,6 +46,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/6a181dfc000000003601896d?xsec_token=AB0wmL7di2m7gq44iJCuN_wyd-Cr2CXVNcJQYi1TTcyVs=&xsec_source=pc_user （= 目录 #61） | 蹲腿 · 高球也提前蹲 | **transcribed** | `video_squat_legs_6a181dfc.md` |
 | https://www.xiaohongshu.com/explore/694a84100000000019024f31?xsec_token=ABBAmXtNr65QbWmHjFiijJyUdREdI_3Opo0eRS7NwpSaY=&xsec_source=pc_user （= 目录 #95） | 转髋 · predag 多转 / 髋比引拍更是重点 | **transcribed** | `video_hip_turn_694a8410.md` |
 | https://www.xiaohongshu.com/explore/699592f1000000001b014a22?xsec_token=ABW2rpbFMQxDdKU8Mh-urVCPuGu-JVw2uT_kwRwRFX10Q=&xsec_source=pc_user （= 目录 #82） | 拍头滞后 · 管子辅助动力链 | **transcribed** | `video_lag_tool_699592f1.md` |
+| https://www.xiaohongshu.com/explore/69d50a25000000002103bc15?xsec_token=ABiUTNs8ZpC13IY5wo7QYhXwLqJ3gMDcoRz3cJD6DkHsU=&xsec_source=pc_user （= 目录 #71） | 药球动力链 · 从身后到前腿；转胯 | **transcribed** | `video_medball_kinetic_69d50a25.md` |
+| https://www.xiaohongshu.com/explore/696e09a70000000021029ab0?xsec_token=AB_SUwzEdsVxCZrEML9V4r745X2m1N7xbFz2E7IsNxBeU=&xsec_source=pc_user （= 目录 #88） | 转髋送肩留头 · 一键三连 | **transcribed** | `video_hip_shoulder_head_696e09a7.md` |
+| https://www.xiaohongshu.com/explore/69da4a41000000001a021107?xsec_token=ABSrgfBDyK5JU5o-mlFMlBHAVhcFxnbQSEJo3e43APwaU=&xsec_source=pc_user （= 目录 #70） | 正手全套 · 文科四题 + 实操 | **transcribed** | `video_fh_full_points_69da4a41.md` |
 
 ---
 
@@ -108,13 +111,16 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 - `6a181dfc…` → transcribed（蹲腿 · 高球也提前蹲）
 - `694a8410…` → transcribed（转髋 · predag 多转）
 - `699592f1…` → transcribed（拍头滞后 · 管子）
+- `69d50a25…` → transcribed（药球动力链 · 转胯）
+- `696e09a7…` → transcribed（转髋送肩留头 · 一键三连）
+- `69da4a41…` → transcribed（正手全套 · 文科 + 实操）
 
 ---
 
 ## 待办
 
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
-2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**（本轮仍不打开）。~~#36、#43、#49、#41、#55、#58、#60、#61 已深看~~。第三批 #63–#96 已入目录。~~#82 `699592f1` 拍头滞后、#95 `694a8410` 转髋已深看~~。其余标题明确是正手 / 动力链 / 髋 / 脚 / 引拍 / 击球 的仍 **pending_A-E**。
+2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**（本轮仍不打开）。~~#36、#43、#49、#41、#55、#58、#60、#61 已深看~~。第三批 #63–#96 已入目录。~~#82 `699592f1` 拍头滞后、#95 `694a8410` 转髋已深看~~。~~#70 `69da4a41` 正手全套、#71 `69d50a25` 药球动力链、#88 `696e09a7` 转髋送肩留头已深看~~。其余标题明确是正手 / 动力链 / 髋 / 脚 / 引拍 / 击球 的仍 **pending_A-E**。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
 4. ~~下一批从 `6a104c2f`~~ 第三批已收到 #96 `69494a96`。主页合计约 362，已入目录 **96**。下一条未入表：`69479ade`（发好球的前提当然是抛好）。还剩约 266。
 5. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
@@ -177,8 +183,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 67 | 6节课拥有2.0的正手因为学会了引拍 | 正手引拍 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69f4a6ab000000003700dfd4?xsec_token=ABkmynhzJzrr5g3x8YX9QIKO_7P1pyvoOd8A0RU1xko3s=&xsec_source=pc_user | **pending_A-E** |
 | 68 | 这谁受得了德约科维奇来到我的主场 | 德约到场 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69f0a411000000003601c556?xsec_token=ABYU0QVYSJYJTUHlQbgoA9D5F2lK5A_B2DKkzN986HvhY=&xsec_source=pc_user | catalog_only |
 | 69 | 这样练站稳再打 easy do | 站稳再打 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69e3296b000000001a030bf4?xsec_token=ABDk_-FO4wCyv_JM1jrSxY2PW3s5owL1SoeT1iyas-W6E=&xsec_source=pc_user | catalog_only |
-| 70 | 超详细的正手全套动作要点分析分享 | 正手全套要点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69da4a41000000001a021107?xsec_token=ABSrgfBDyK5JU5o-mlFMlBHAVhcFxnbQSEJo3e43APwaU=&xsec_source=pc_user | **pending_A-E** |
-| 71 | 动力链的练习，药球最事半功倍 | 药球动力链 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69d50a25000000002103bc15?xsec_token=ABiUTNs8ZpC13IY5wo7QYhXwLqJ3gMDcoRz3cJD6DkHsU=&xsec_source=pc_user | **pending_A-E** |
+| 70 | 超详细的正手全套动作要点分析分享 | 正手全套要点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69da4a41000000001a021107?xsec_token=ABSrgfBDyK5JU5o-mlFMlBHAVhcFxnbQSEJo3e43APwaU=&xsec_source=pc_user | **transcribed** `video_fh_full_points_69da4a41.md` |
+| 71 | 动力链的练习，药球最事半功倍 | 药球动力链 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69d50a25000000002103bc15?xsec_token=ABiUTNs8ZpC13IY5wo7QYhXwLqJ3gMDcoRz3cJD6DkHsU=&xsec_source=pc_user | **transcribed** `video_medball_kinetic_69d50a25.md` |
 | 72 | 人生下半场，网球技术继续涨 | 学员记录 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69cdca02000000002102ee42?xsec_token=ABgzywvsZNwBAApx2pY5ozoGCPJ4unBNzc5PgeOGe5tKY=&xsec_source=pc_user | catalog_only |
 | 73 | 训练让这成为大家心目中的标配网球 | 标配训练 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69c8e96400000000210388a9?xsec_token=ABnCm9JIsE-eXPthcvYJB6zQTu5tQEN9kbu2b3AKf8sfA=&xsec_source=pc_user | catalog_only |
 | 74 | 耐心1节课正手改到人见人爱的效果 | 正手一课改 · 纠错 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69be954000000000210125a5?xsec_token=ABa-KWzz0Bg5kN-uomkIgRy6Vg3Wt772r3m59Vwab-NeY=&xsec_source=pc_user | **pending_A-E** |
@@ -195,7 +201,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 85 | 消除发球翻手腕改成转肩的训练方法 | 发球转肩 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6974bbcd000000002103fcea?xsec_token=ABgsHcLxDD2A27zmzXs-zparKockpXBo0TkbBgC0kh6n4=&xsec_source=pc_user | catalog_only |
 | 86 | 掌握抛球后再发球流畅性会升 | 抛球流畅 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6972130b000000002202c148?xsec_token=ABllTB2oiJY6-aLQtQjbpNXavkhyQkQzKlukIVnNB9tPY=&xsec_source=pc_user | catalog_only |
 | 87 | 打球不会曲腿降重心的我包治疗 | 曲腿降重心 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/696f5e26000000002103ce31?xsec_token=ABXWwnNd9h5nyM4hjWSOO_ucDsI8sbkxjTCMVxi_kO7u0=&xsec_source=pc_user | catalog_only |
-| 88 | 初学者如何转髋送肩留头（一键三连 | 转髋送肩留头 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/696e09a70000000021029ab0?xsec_token=AB_SUwzEdsVxCZrEML9V4r745X2m1N7xbFz2E7IsNxBeU=&xsec_source=pc_user | **pending_A-E** |
+| 88 | 初学者如何转髋送肩留头（一键三连 | 转髋送肩留头 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/696e09a70000000021029ab0?xsec_token=AB_SUwzEdsVxCZrEML9V4r745X2m1N7xbFz2E7IsNxBeU=&xsec_source=pc_user | **transcribed** `video_hip_shoulder_head_696e09a7.md` |
 | 89 | 最难的发球和反手一起练反而很容易 | 发球反手同练 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/696b6b4d0000000022030954?xsec_token=ABcu45iwWdvjAR-MNatCPJV222PZpV0sFcXlQPIsVkxkI=&xsec_source=pc_user | catalog_only |
 | 90 | 上海集训「给我一小时」魔改击球框 | 击球框 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/696786750000000022023fc2?xsec_token=ABcV5t0eyREMaS7YYJhT90sgRCZ4yRS1TJxhrgcPLP-qY=&xsec_source=pc_user | catalog_only |
 | 91 | 鞭打前奏～必须重视的击球timing | 击球timing · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6964e7ea0000000021032f29?xsec_token=ABx7UenUFMZ10xyhIqVFq02rXvJCQXdsv32wwuQ8gphvI=&xsec_source=pc_user | **pending_A-E** |
