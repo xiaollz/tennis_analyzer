@@ -604,3 +604,46 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`666d5dbd` 最难的小臂内旋快速安全练习法。再下：`666bb01d` 蹬地掉拍头“一箭双雕”的训练方法（掉拍头只留原文，不标 pending_A-E）。
 
 没有点赞、评论、关注、发布。
+
+## 第十一批 30 条（#307–#336，从 `666d5dbd` 起）
+
+薯片 2026-10-24。主页「笔记・362」。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十批末 data-index 305 = 目录 #306 `66712994`）。从下一条 data-index 306 = `666d5dbd` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 335 = 目录 #336。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（非脚/脚步）只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#307 `666d5dbd` 小臂内旋快速安全练习：标题无反手语境，与既往 #114 / #153 同类（内旋只引用、手臂/动力链教学优先），标 **pending_A-E**。#315 `665eb410` 是发球里的小臂内旋，按发球只 `catalog_only`，不并到正手内旋。#308 `666bb01d` 蹬地掉拍头、#317 `665d3e32` 降拍头只留原文，不标 pending_A-E。#313 是步点、不是脚/脚步，只 `catalog_only`（封面标题引号未闭合，按封面原文）。#311 反手、#318 侧身只 `catalog_only`。合力、重心、肘、核心力量标题没有正手/动力链/脚/脚步/引拍/击球点/发力，不单标。#327「击球时间」按击球 timing 标 **pending_A-E**。#320 标题明确正手，标 **pending_A-E**。本批没有再遇已深看 id（`67b704e8` / `66f56ddf` / `67014cc5` / `66bd88a3` 等），无指回新开。**本批 pending_A-E：#307 `666d5dbd`、#320 `66591c01`、#327 `6652a818`。** 第十批 pending_A-E 已清。没有点赞、评论、关注、发布。
+
+进度：已入目录 **336 / 约 362**。还剩约 26 条未入目录。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 307 | 最难的小臂内旋快速安全练习法 | 小臂内旋 · 教学 · 手臂 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/666d5dbd000000001d015722?xsec_token=ABtAsnfWIfs4KeSd1V-7kTs6sPuNBeH3RDMTOBPh0IXSk=&xsec_source=pc_user | pending_A-E |
+| 308 | 蹬地掉拍头“一箭双雕”的训练方法 | 掉拍头只留原文 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/666bb01d000000001d01b996?xsec_token=ABiBZfFJNQgO6vBw3eIBCoyDRovYK_Tyk0FGfa9OlaTEw=&xsec_source=pc_user | catalog_only |
+| 309 | 网球人谁不想要一个waterdrop | waterdrop · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/666a79f3000000001d01bbad?xsec_token=AB5CV_4NTEfQs5qDu7cJdRBG46LFWixCx8SHTNrUSF6TM=&xsec_source=pc_user | catalog_only |
+| 310 | 新手必知 一个意识让你永远停留2.0水平 | 2.0意识 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/666915ee000000001d0154f2?xsec_token=ABSuBj25DmvEqNR6KnVX7lNPKoohasTNP79zTwX49XgRE=&xsec_source=pc_user | catalog_only |
+| 311 | 学会“钟摆”反手大涨 | 反手钟摆 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6667c768000000001d019ec0?xsec_token=ABzs737pTJLLmjLmOloVnievBmIqT0ncEaR-0vhfv_u94=&xsec_source=pc_user | catalog_only |
+| 312 | 2024法网女单冠军现场照片 | 法网照片 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/666591c8000000000f00c7e5?xsec_token=ABSS1eMoE-Zo7NqkRLCbbRLPjaJ_T7XjNQW9y98apL99w=&xsec_source=pc_user | catalog_only |
+| 313 | 想要更准确的步点，学一招“改斜归正 | 步点 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66651421000000000c01b7c4?xsec_token=ABSS1eMoE-Zo7NqkRLCbbRLCQbf6AvyMahp5c8dUWApuE=&xsec_source=pc_user | catalog_only |
+| 314 | 掌握这个要点，你的球技一定大涨 | 要点涨球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66614e97000000001303ea7e?xsec_token=ABGi8cmXahxsKjssJKdw6REAqHU5b9PbSxAzc_UK-w-tU=&xsec_source=pc_user | catalog_only |
+| 315 | 家中轻松练发球里面最难的小臂内旋 | 发球小臂内旋 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/665eb410000000001500a7cd?xsec_token=ABBXOz2818K1S16n2DkMpZ9vBWPlhXk2MYk-iLRLZ938o=&xsec_source=pc_user | catalog_only |
+| 316 | 依旧是你GOAT恭喜德约还在签表上 | 德约签表 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/665e12310000000015013ed4?xsec_token=ABBXOz2818K1S16n2DkMpZ9oluNKUdIdhd1gh7yXdMcgk=&xsec_source=pc_user | catalog_only |
+| 317 | 让novak学校老师讲解最专业的降拍头 | 降拍头只留原文 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/665d3e32000000000f00d386?xsec_token=AB-tmAKhmkvPmNwnNLzCOD8pmwZiVQ3L5Q_lPPt0zvFsQ=&xsec_source=pc_user | catalog_only |
+| 318 | 孩子理解后的侧身击球让她自己说说 | 侧身击球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/665c281a000000001500bd66?xsec_token=ABUGUmUyeCF7htcpk66eJeUAcI75YZO1UiilvKofr8JYc=&xsec_source=pc_user | catalog_only |
+| 319 | 挥洒汗水💦法网今晚小王你怎么了 | 法网花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6659e73f000000001500b5bb?xsec_token=ABVB0oxu8p7CEaxpeXYsvYI0GPpnlRf9kSQwHO7Zn5uZ4=&xsec_source=pc_user | catalog_only |
+| 320 | 5.0的正手绝对是这样练出来的 | 正手到5.0 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66591c01000000000f00cd6c?xsec_token=ABVB0oxu8p7CEaxpeXYsvYIzNhNtdLdj81Xl2nzy9zFtA=&xsec_source=pc_user | pending_A-E |
+| 321 | 刨除叫声外谁动作最帅 | 动作花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66584ada0000000015008827?xsec_token=ABQe43MwjfYU7xXXe4r0yr2ILaU1MIqB7D6GKXEHQJ7TQ=&xsec_source=pc_user | catalog_only |
+| 322 | 能轻松涨球的“肘”我实在忍不住不说 | 肘 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66581d28000000000c018d2a?xsec_token=ABQe43MwjfYU7xXXe4r0yr2KmtqDDc7Uy9wunMgWXxpT8=&xsec_source=pc_user | catalog_only |
+| 323 | 利用合力配合手腕做最有效的击球 | 合力手腕击球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6656b314000000000c018f8f?xsec_token=ABjSTW8A9U2iQzszYvAiPmjXUVI-PRD733qSQlNIgknbQ=&xsec_source=pc_user | catalog_only |
+| 324 | 合力训练第三式“撞门击球” | 合力撞门 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66555701000000001303f5f6?xsec_token=ABwe3DNLunVHlXmeP4CBlFK1b_RxSUbgds_Uls2MqpzTA=&xsec_source=pc_user | catalog_only |
+| 325 | 法网“兄弟没有发量很难保发的” | 法网花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6654a689000000000c0192df?xsec_token=ABTllnzjlX39Rmngx1qhowPEBZVfAaazQKgvPZH_fPHms=&xsec_source=pc_user | catalog_only |
+| 326 | 拿捏合力训练之重心转移 | 重心转移 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6653f24b000000000c018dc4?xsec_token=ABGrHXnjurjzYaQJOhS9EP5GZv-VAMQI9zRBRIqnYrFfw=&xsec_source=pc_user | catalog_only |
+| 327 | 轻松发合力训练第一篇“击球时间” | 击球时间 · timing · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6652a818000000000c01a12b?xsec_token=ABTFt065-9cdnO_bS3WoYe1x0p3XkN9PGj66Zl18i0IWY=&xsec_source=pc_user | pending_A-E |
+| 328 | n.0都需要懂一阳指控制拍面角度 | 拍面角度 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/665007f0000000000f00ebeb?xsec_token=ABo8XCneDC9squVy4c22cgVjZb55jUPyyxgmAfCDeobfA=&xsec_source=pc_user | catalog_only |
+| 329 | 90秒看懂如何不打飞球 | 不打飞球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/664e9285000000000c01bb25?xsec_token=AB2rPF_OWPJP3GbsN9RVkjhk4MNrhf9rjcfZgGCHqJk_U=&xsec_source=pc_user | catalog_only |
+| 330 | 想涨球学学核心力量的使用 | 核心力量 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/664bfeb5000000000c01984c?xsec_token=AB3A6LfI4FWTgkgUvJPk7xgkrjxGChbsAmml2Lyy47yx4=&xsec_source=pc_user | catalog_only |
+| 331 | 细节忽略了，水平不超过3.0 | 细节 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6649c259000000000f00e35f?xsec_token=ABxWYS_HoaqzaSA36YmPr4M0uF2dYPOd6qONV_kIov8YM=&xsec_source=pc_user | catalog_only |
+| 332 | 1.0到职业都需要包裹球，方法立刻看 | 包裹球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6642fe41000000001e0212c3?xsec_token=ABL9GGmVx_vnXYOBibTZwsF8tlhMGiUA23mjgz3COl7m8=&xsec_source=pc_user | catalog_only |
+| 333 | “把球打深”3.0必须拥有的技术 | 把球打深 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/663ef9b8000000001e021d38?xsec_token=ABs9eFqGLYLnl67Gq5Gf01085bxRQktOZPLqY5AO-HdGE=&xsec_source=pc_user | catalog_only |
+| 334 | 这个问题你不注意3.0一定没希望 | 3.0要点 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/663b24a5000000001e0216b5?xsec_token=ABaZ-TdGi1o_93p6ZOOcZ9MbfCbirkN5DDlbF4F3r4i6c=&xsec_source=pc_user | catalog_only |
+| 335 | 谁敢说现在的女子网坛水 | 女子网坛 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/663693fa000000001e018f4a?xsec_token=ABGgm126SW1m1ehPYsuadLuTyCV-1B4EQWDoUpvnybNoY=&xsec_source=pc_user | catalog_only |
+| 336 | 打出3.0的球质不能不懂这个 | 球质 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6634b938000000001e0218ae?xsec_token=ABkWUOC3RG3m_Afd3HzRQMVzDkXgPSh3f1PLhb56fM91I=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`662bbd60` 郑钦文输只有一个原因就是。再下：`662875b3` 基本功来源于初学时细致的分析。再往后封面还见 `6625ffcb` 突破3.0，必须学会这样发力方式（发力，下一批可标 pending_A-E）；主页未到尽头。
+
+没有点赞、评论、关注、发布。
