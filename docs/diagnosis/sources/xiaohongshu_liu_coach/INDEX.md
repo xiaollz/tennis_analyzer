@@ -749,3 +749,49 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`6529567f` 發球后如何瞬間銜接下一拍進攻。再下：`6528aec8` 10秒看懂正手先轉肩的動作（标题有正手，下一批可标 pending_A-E）。主页未到尽头。
 
 没有点赞、评论、关注、发布。
+## 第十四批 30 条（#397–#426，从 `6529567f` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 396–425 = 目录 #397–#426）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十三批末 data-index 395 = 目录 #396 `652a53e2`）。从下一条 data-index 396 = `6529567f` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 425 = 目录 #426。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 与第十三批一样不写入表内标题，标题中间的 🎾 保留。继续下滚见到至少 data-index 558（寄口罩给以色列和塞尔维亚的朋友），之后多次下滚不再增长，页面没有「没有更多」文案，不能把尽头写成已确认。
+
+**第十四批 pending_A-E（6）**：#398 `6528aec8` 正手转肩。#413 `648d0cca` 脚步。#418 `64801119` 正手。#421 `6474a372` 脚步。#424 `6469748c` 正手。#426 `645ceb51` 脚步。
+
+#397 发球后衔接只 `catalog_only`。#403 切🎾 按切削只 `catalog_only`。#411 直臂击球没有击球点 / timing / power，不单标。#414 反拍、#425 女双反只 `catalog_only`。#416 平台式发球两脚站位是发球标题，两脚不单标脚。#422 拉球不是引拍，只 `catalog_only`。核心力量、花絮、球场、招募不单标。本批没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **426**。页面「笔记」计数仍约 362，时间线长于计数（本次下滚停在 data-index 558，无「没有更多」文案）。本批之后未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 397 | 發球后如何瞬間銜接下一拍進攻 | 发球衔接 · 发球 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6529567f000000001a017cd3?xsec_token=ABdfrQrPLRcu-KhfXPQS6bl06jk190fnCU2nUy1Eyo5W8=&xsec_source=pc_user | catalog_only |
+| 398 | 10秒看懂🎾正手先轉肩的動作 | 正手转肩 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6528aec8000000001a022442?xsec_token=AB1g9BKUmh9nY_vpaSK3fYltAijnB0fRSx5bioFITas2g=&xsec_source=pc_user | pending_A-E |
+| 399 | 学球一年，今天化身最灵活的胖子 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/652018f9000000002301af7f?xsec_token=ABoINCu3BqCmcS1UBtveXicf-CXFKQmeCa_77hP-OZbtE=&xsec_source=pc_user | catalog_only |
+| 400 | 相当相当标准的动作，为师很满意哦 | 动作 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/651aae68000000002101c369?xsec_token=AB5syPfPdr03rmHivpnS9xfNXksjl8aEScqkYQlZyi7Fg=&xsec_source=pc_user | catalog_only |
+| 401 | 孩子的核心力量 | 核心力量 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65198556000000001a015517?xsec_token=ABQCFLywFBAuxdUEgcZO2OJFfZavjuV11v_eIYbROLgF8=&xsec_source=pc_user | catalog_only |
+| 402 | 今年不来，明年又要去找你。 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65110f05000000001500a3a9?xsec_token=ABbD97Q9eoZt8R-0Px-sJ1Mb0q9sarQOmHbOAb1zHNPWo=&xsec_source=pc_user | catalog_only |
+| 403 | 切🎾，职业和业余差别蛮大 | 切削 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64f4159b000000001e00c526?xsec_token=AB8bIJVRaz0Z_du_4GvqCjHv-_o2ozdkaazj5qA8KXULE=&xsec_source=pc_user | catalog_only |
+| 404 | 功亏一篑，只拿了亚军 | 比赛 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64e0a1b7000000000b028f10?xsec_token=ABPNn43cG6JrdnzJEzrJfjvsG_gMmMoh7tx1bBFD-oW8E=&xsec_source=pc_user | catalog_only |
+| 405 | 小鲜肉🎾主打一个帅 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64dec427000000000c03541e?xsec_token=ABxMaGuSXy7eWt8xkAtKa7lm0klUBSueAEt3dIyX8IbYI=&xsec_source=pc_user | catalog_only |
+| 406 | 谢谢我的赞助商babolat给我的鼎力支持 | 赞助 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64bcef18000000000800e0c3?xsec_token=ABR8MQ4Dk2M0P2RXe2kWQcSn0Aj9oX82kBCfF6BJoCmYc=&xsec_source=pc_user | catalog_only |
+| 407 | 我们賊漂亮的🎾球场 | 球场 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64bb4c2d000000000800c992?xsec_token=ABqhpZj6R1pPUOjoAWnyjkZhcoFEEE5nC_MA8NB6BZyzs=&xsec_source=pc_user | catalog_only |
+| 408 | 2023温布顿🎾最后一场了 | 温网 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64b3a6cc0000000023037094?xsec_token=ABGGJi9FmAvlaApHROGh7Ks7LicEN5WpFcX_WbxkMOb18=&xsec_source=pc_user | catalog_only |
+| 409 | 暑假有兼职或者全职教练吗？ | 招募 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64ae1f84000000001e019ca8?xsec_token=ABgHPmgGhNlYtE3vsJkqT4kd0qmQVyouksTCa76rmSIbo=&xsec_source=pc_user | catalog_only |
+| 410 | 為啥三大球為國爭光的都是女隊 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/64a11d58000000001402518c?xsec_token=ABMkmBG-e29pmQMIoIwYlr7BAUVhV_-ToBEzBkh_zNpPY=&xsec_source=pc_user | catalog_only |
+| 411 | 網球🎾中的直臂擊球 | 直臂击球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/649ae275000000001300d272?xsec_token=AByegHoaTl9bdy9L8Hro5NuYnTVSAQ_2wQ1034D_sU0qE=&xsec_source=pc_user | catalog_only |
+| 412 | 镜子动作 | 镜子动作 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/648fb5f4000000001203d790?xsec_token=ABwctFDfRNPJHkvSA7XjE2U-HkrTtS9i9DbHNZ9GLMpiY=&xsec_source=pc_user | catalog_only |
+| 413 | filip教练纠正小白脚步 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/648d0cca00000000130147b9?xsec_token=ABdXc8olja-icuGHAo13GfkvtkORbcyabAsCq_brOXSe8=&xsec_source=pc_user | pending_A-E |
+| 414 | 看filip教练如何调整学生的反拍动作 | 反拍 · 反手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/648bc911000000000800c601?xsec_token=ABQZ_YhJPuElQCRXThboAXWBGbyzYzbDiqFbPCSsA2--c=&xsec_source=pc_user | catalog_only |
+| 415 | 2000欧的衣服5个月就过季 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6486c9c1000000001303e8d6?xsec_token=ABOCOIh2WOV2O5aayABsrvcYNSD-TclSsM9yZZrOoBQ0U=&xsec_source=pc_user | catalog_only |
+| 416 | 德约科维奇平台式发球两脚站位 | 发球站位 · 发球 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6485f3310000000027010826?xsec_token=ABjqbwepj4_hrPH95me4jIsIFObQtVcExCNwzv8nxNmJE=&xsec_source=pc_user | catalog_only |
+| 417 | 我感觉我俩都没想到你在巴黎能呆14天 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6485ba6e0000000027013785?xsec_token=ABjqbwepj4_hrPH95me4jIsOxSYp5tLVEzRwalvMUX4A0=&xsec_source=pc_user | catalog_only |
+| 418 | 这个正手我满意 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/648011190000000013003d3c?xsec_token=AB6xgAXm3Q56XzhzVM8NNvFbNV1BUWc8bKzhsKYLBGB1I=&xsec_source=pc_user | pending_A-E |
+| 419 | 法网冠军王欣瑜赛前训练集锦 | 赛前 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6478a9de0000000013012deb?xsec_token=ABBAcVEbswAQBZAYKJhfh5ceoEP35kWnFyUFAmTZLO3Iw=&xsec_source=pc_user | catalog_only |
+| 420 | 学球20小时的女孩考试 | 考试 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6475f1cf0000000013035b35?xsec_token=ABzMkQrRR_xlD9tsX8NaeNPrpZDTyPikwpOjha0su1cYA=&xsec_source=pc_user | catalog_only |
+| 421 | 再次欣赏德约科维奇的脚步 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6474a3720000000027002bb3?xsec_token=ABi0Byh6QDKEq7ltgCNtxxXvLquOUnq3Wm31vYH9lRHLg=&xsec_source=pc_user | pending_A-E |
+| 422 | 8.0的拉球，novak | 拉球 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/646f771d000000001300d36f?xsec_token=ABHE4MlY2xMKy6FsSaf4ygo8xbnTRrkXTRTkQtnULqmhw=&xsec_source=pc_user | catalog_only |
+| 423 | 各地各个不同的网球角色 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/646ee7d20000000011010f5f?xsec_token=ABQsdXAf3WEF98pN1csuHcKBDnYzi8KL5zOxQ8QaKU5Lo=&xsec_source=pc_user | catalog_only |
+| 424 | novak tennisceter送给初学者的正手视频 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6469748c000000002700381c?xsec_token=ABsduAQtosmkgMOc-X-4SG0FqQqT-nxfIzHFuHUJf37v4=&xsec_source=pc_user | pending_A-E |
+| 425 | 女双反的常见问题，你也是这样吗 | 双反 · 反手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6464c1dc000000001300a246?xsec_token=ABPvPwfZgHslwhOlV4fDacXwO0BPKnYWfh3thox8R3SNA=&xsec_source=pc_user | catalog_only |
+| 426 | 网球脚步，今天来一组小梅杰的脚步训练视频 | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/645ceb5100000000130137a3?xsec_token=ABxxzfHbsfA3-S3uXiNDjB4OijVIAEgjihLSTdFopbIds=&xsec_source=pc_user | pending_A-E |
+
+下一条（未入上表）：`645b10e6` 德约陪练Marko展示一下平击发球和旋转发球。再下：`6459e91f` 网球要切得平，职业运动员示范给你看。主页在本批之后未到尽头；再往下滚 data-index 停在 558，未见「没有更多」。
+
+没有点赞、评论、关注、发布。
