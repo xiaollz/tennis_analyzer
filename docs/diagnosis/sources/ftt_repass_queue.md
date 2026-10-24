@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 61，pending 29，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀至收尾见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 44、pending 0、blocked 5。Batch B pending 0。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0` 虽为 deep，仍是 holdout，不进 tree evidence。第七刀其余五期、以及本轮这一期，也仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。未开 Batch C。
+当前计数：deep 67，pending 23，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 全部 deep（另有 blocked 5）。Batch B pending 0。Batch C 第一刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch C 里 deep 6、pending 23、blocked 2。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc` 虽为 deep，仍是 holdout，不进 tree evidence。`omsLx7F2Wdc` 旧注也不得进树。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。`E_zmENJIj4g` 仍 pending。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -37,7 +37,7 @@
 | `jDBg4Fpf0tQ` | Uncle Iroh Explains the Tennis Forehand | 44 | B | deep | Batch B 第七刀；`SRC-FTT-jDBg4Fpf0tQ_repass_2026-10-24.md`；deep-with-gap；动画对白，不挂粗枝 |
 | `toArb3WkJcs` | The Most Common Ball-Machine Mistake and How to Fix It | 554 | B | deep | Batch B 第三刀；`SRC-FTT-toArb3WkJcs_repass_2026-10-24.md`；连续对拉节奏，不写死发球机最低速；不改写 p.75 |
 | `fjpr9PS02tM` | Why 99% Of Grips Don't Work | 617 | B | deep | Batch B 第三刀；`SRC-FTT-fjpr9PS02tM_repass_2026-10-24.md`；握拍针眼，链前，同 2J8 / pWzy |
-| `omsLx7F2Wdc` | There's Only 1 Singles Strategy, and This is It | 878 | C | pending |  |
+| `omsLx7F2Wdc` | There's Only 1 Singles Strategy, and This is It | 878 | C | deep | Batch C 第一刀；`SRC-FTT-omsLx7F2Wdc_repass_2026-10-24.md`；范围旁支；宽球斜线；旧注不得进树 |
 | `PwkGLkRm73o` | The Pros Swing Differently Than You (with lesson transformation) | 859 | A | deep | Batch A 续；`SRC-FTT-PwkGLkRm73o_repass_2026-10-24.md`；拍头路径 ≠ 手臂路径；不改成肩先于髋 |
 | `AppdZqxH_2k` | How to Master Tennis's Most Important Skill | 467 | B | deep | Batch B 第三刀；`SRC-FTT-AppdZqxH_2k_repass_2026-10-24.md`；眼睛在链前；晚看不改写 p.75 |
 | `lCKDP2gKR_Y` | Why Your Wrist Hurts, and How to Fix It | 286 | B | deep | Batch B 第七刀；`SRC-FTT-lCKDP2gKR_Y_repass_2026-10-24.md`；腕还满着时打出；pronation 不升口令 |
@@ -45,26 +45,26 @@
 | `pWzyP-xfLfU` | The Pros Grip Differently From You (with lesson examples) | 1262 | B | deep | Batch B 第二刀；`SRC-FTT-pWzyP-xfLfU_repass_2026-10-24.md`；转轴在手上侧；15:36 书 p.83 赢 |
 | `mOFtt9PllI0` | The Geometry of Measured Aggression | 3104 | B | deep | Batch B 收尾；`SRC-FTT-mOFtt9PllI0_repass_2026-10-24.md`；holdout；有节制的进攻是几何；through and down 不写成降拍；不改写 p.75；不进 tree evidence |
 | `dYPv0QfFrsU` | Forehand With/Without Scapular Activation | 12 | B | blocked | 无字幕，先补字幕 |
-| `PfDqnff_vYA` | Why Your Serve is So Slow | 533 | C | pending |  |
+| `PfDqnff_vYA` | Why Your Serve is So Slow | 533 | C | deep | Batch C 第一刀；`SRC-FTT-PfDqnff_vYA_repass_2026-10-24.md`；范围：高压朝外扔；不改写正手 |
 | `EkzzGZkqCgc` | Why Your Racket Doesn't Flip | 425 | B | deep | Batch B 第五刀；`SRC-FTT-EkzzGZkqCgc_repass_2026-10-24.md`；holdout；短版指向 wzL，不另写机制 |
 | `emZxTmSVSa8` | Master Pronation in 2 Minutes at Home | 379 | B | deep | Batch B 第六刀；`SRC-FTT-emZxTmSVSa8_repass_2026-10-24.md`；holdout；发球旋前只作描述；不挂正手粗枝 |
 | `hqganBxzQNM` | Why I Give Every Student a Weight to Swing (and why it works) | 403 | B | deep | Batch B 第五刀；`SRC-FTT-hqganBxzQNM_repass_2026-10-24.md`；holdout；水平半圆；火肘不写成推肘；不改写 p.75 |
 | `dZadhzVEsds` | How to Hit Hard Without Missing Long | 1259 | B | deep | Batch B 第二刀；`SRC-FTT-dZadhzVEsds_repass_2026-10-24.md`；耐心挂粗枝 2；不改 OBS-57，不改写 p.75 |
 | `x_WIg59Wr9Y` | Why You Should Start Your Swing at Contact | 651 | B | deep | Batch B 第一刀；`SRC-FTT-x_WIg59Wr9Y_repass_2026-10-24.md`；释放窗口挂粗枝 2；「从触球开始」书 p.75 赢 |
-| `WoVEWh7fFfc` | 57-Year-Old Ripping Forehands (and Serves) / 3 Lessons | 457 | C | pending |  |
+| `WoVEWh7fFfc` | 57-Year-Old Ripping Forehands (and Serves) / 3 Lessons | 457 | C | deep | Batch C 第一刀；`SRC-FTT-WoVEWh7fFfc_repass_2026-10-24.md`；手松拍头回进来；发球往下不挂正手 |
 | `RVfmDk-iEwo` | Find Your Hand Slot, and Everything Gets Easier | 1302 | B | deep | Batch B 第二刀；`SRC-FTT-RVfmDk-iEwo_repass_2026-10-24.md`；手槽挂粗枝 1；等或送挂粗枝 2 |
 | `7_JPqhG4G64` | What He Does Next Separates Pros from Amateurs | 305 | B | deep | Batch B 第七刀；`SRC-FTT-7_JPqhG4G64_repass_2026-10-24.md`；打完去找下一颗；不改写 p.75 |
 | `cIIEYn42o4g` | The #1 Backscratch Mistake — and How to Fix It | 504 | B | deep | Batch B 第六刀；`SRC-FTT-cIIEYn42o4g_repass_2026-10-24.md`；发球背挠，范围旁支，不挂正手粗枝 |
 | `9NirSL59an0` | The Paradoxical Nature of Modern Topspin | 620 | B | deep | Batch B 第三刀；`SRC-FTT-9NirSL59an0_repass_2026-10-24.md`；手感往下打指向 2Nn / Pwk / geh；侧身练习，p.30 书赢 |
-| `1W1rope5l0k` | Why Every Pro Serves In-to-Out, rather than Low-to-High | 691 | C | pending |  |
+| `1W1rope5l0k` | Why Every Pro Serves In-to-Out, rather than Low-to-High | 691 | C | deep | Batch C 第一刀；`SRC-FTT-1W1rope5l0k_repass_2026-10-24.md`；范围：发球由内向外；旋前不升口令 |
 | `gehRK0Y6AdQ` | The Pros "Brush" Differently From You | 818 | B | deep | Batch B 第二刀；`SRC-FTT-gehRK0Y6AdQ_repass_2026-10-24.md`；holdout；刷指向 2Nn/Pwk，书赢 |
 | `LoSrMj-Qxkc` | Their Mothers are Sisters, Their Forehands AREN'T | 718 | B | deep | Batch B 第四刀；`SRC-FTT-LoSrMj-Qxkc_repass_2026-10-24.md`；多拉和早稳住是两端；胸压不写成推肘；等下落不改写 p.75 |
 | `6j33LJfl46s` | Scapular Glide on the Tennis Forehand | 12 | B | blocked | 无字幕，先补字幕 |
 | `p41GGc_y5Xk` | How Your Hand Controls Every Shot | 384 | B | deep | Batch B 第五刀；`SRC-FTT-p41GGc_y5Xk_repass_2026-10-24.md`；手只导向，力在上游 |
 | `T5meVwBOKR4` | How Alcaraz Hits Harder Than Everyone | 511 | B | deep | Batch B 第四刀；`SRC-FTT-T5meVwBOKR4_repass_2026-10-24.md`；髋把动量交出去；向前不写成送髋 |
 | `Vg8lbXOhM3E` | Training to Play Loose in Matches | 676 | B | deep | Batch B 第四刀；`SRC-FTT-Vg8lbXOhM3E_repass_2026-10-24.md`；变化来球里接触段不变；不写成必须去打比赛 |
-| `Bhzd6cM-oFU` | How to Hit Crazy Slice Like Carlos Alcaraz | 226 | C | pending |  |
-| `-ZmnDrRFfjc` | 3 Brilliant Alcaraz Tactics ANYONE Can Use | 382 | C | pending |  |
+| `Bhzd6cM-oFU` | How to Hit Crazy Slice Like Carlos Alcaraz | 226 | C | deep | Batch C 第一刀；`SRC-FTT-Bhzd6cM-oFU_repass_2026-10-24.md`；holdout；切削高压；不挂正手 |
+| `-ZmnDrRFfjc` | 3 Brilliant Alcaraz Tactics ANYONE Can Use | 382 | C | deep | Batch C 第一刀；`SRC-FTT--ZmnDrRFfjc_repass_2026-10-24.md`；holdout；防守用高度；不改写 p.75 |
 | `m1NBdd3Bigg` | Simple Serve Progressions - From Beginner to Advanced / with Johnny & Alexa | 1013 | C | pending |  |
 | `Z9XwaXDVkZg` | The Simple Foundation of the One-Handed Backhand | 1170 | C | pending |  |
 | `lwS7Xxqrrdw` | The Simple Foundation of the 2-Handed Backhand | 781 | C | pending |  |
@@ -149,5 +149,7 @@ Batch B 第六刀（2026-10-24）：`JzcA_ku7Yhk`、`cIIEYn42o4g`、`_Qu1LOwklAw
 
 Batch B 第七刀（2026-10-24）：`agtIR3PuNsw`、`jDBg4Fpf0tQ`、`lCKDP2gKR_Y`、`7_JPqhG4G64`、`BbGzWTp5pCM`、`wFOy0RKWBTg`、`QrRYuVjVibU`。七期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`agtIR3PuNsw`、`BbGzWTp5pCM` 是 holdout，不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。动画短片不挂粗枝。coil 不升成唯一核心。旋前不升口令。小跳和下一颗球不改写 p.75。当时 Batch B 剩余 pending 只剩 `mOFtt9PllI0`（另有 blocked 5，不在这一条里）。未开 Batch C。该轮不碰 `mOFtt9PllI0`。
 
-Batch B 收尾（2026-10-24）：只做 `mOFtt9PllI0`。按字幕段起点 + 抽帧写成 `SRC-FTT-mOFtt9PllI0_repass_2026-10-24.md`，上表 status 为 deep。holdout，不进 tree evidence。有节制的进攻是几何。through and down 不写成降拍。计划更新和站得很深都不改写 p.75。发球和接发不挂正手粗枝。Batch B 剩余 pending 0（另有 blocked 5，不在这 0 里）。未开 Batch C。
+Batch B 收尾（2026-10-24）：只做 `mOFtt9PllI0`。按字幕段起点 + 抽帧写成 `SRC-FTT-mOFtt9PllI0_repass_2026-10-24.md`，上表 status 为 deep。holdout，不进 tree evidence。有节制的进攻是几何。through and down 不写成降拍。计划更新和站得很深都不改写 p.75。发球和接发不挂正手粗枝。Batch B 剩余 pending 0（另有 blocked 5，不在这 0 里）。该轮未开 Batch C。
+
+Batch C 第一刀（2026-10-24）：`omsLx7F2Wdc`、`PfDqnff_vYA`、`WoVEWh7fFfc`、`1W1rope5l0k`、`Bhzd6cM-oFU`、`-ZmnDrRFfjc`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`Bhzd6cM-oFU`、`-ZmnDrRFfjc` 是 holdout，不进 tree evidence。`omsLx7F2Wdc` 旧注也不得进树。五期是范围旁支。`WoVEWh7fFfc` 的正手弹性挂粗枝 1 叶子，push 不写成推肘。旋前、内旋不升口令。高度不改写 p.75。Batch C 剩余 pending 23（另有 blocked 2，不在这 23 里）。`E_zmENJIj4g` 仍 pending，本轮不碰。
 
