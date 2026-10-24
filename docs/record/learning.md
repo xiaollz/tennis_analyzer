@@ -240,6 +240,7 @@ timeline
       10/24 : 📌 Batch B 第三刀：上旋松开 / 握拍针眼 / 连续来球 / 眼睛 / 发紧；书核心不变
       10/24 : 📌 Batch B 第四刀：Topspin Pro / 正手对比 / 放松 / 大力 / 慢球 / 稳定；书核心不变
       10/24 : 📌 Batch B 第五刀：Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错；书核心不变
+      10/24 : 📌 Batch B 第六刀：误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练；发球不挂正手粗枝
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -285,6 +286,7 @@ timeline
 | ↓ **阶段 7 Batch B 第三刀** | 10/24 | 上旋 / 握拍针眼 / 连续来球 / 眼睛 / 发紧 | 📌 `wd4YRQW3TOc`、`9NirSL59an0`、`fjpr9PS02tM`、`toArb3WkJcs`、`AppdZqxH_2k`、`Qszz0N4fRb4`；刷 / 低到高不升口令；不写死发球机最低速；书核心不变 |
 | ↓ **阶段 7 Batch B 第四刀** | 10/24 | Topspin Pro / 正手对比 / 放松 / 大力 / 慢球 / 稳定 | 📌 `FxDmVi3EFnE`、`LoSrMj-Qxkc`、`Vg8lbXOhM3E`、`T5meVwBOKR4`、`Psidjei5BnI`、`lbdQpIHvXYA`；刷 / 低到高不升口令；不改写 p.75；书核心不变 |
 | ↓ **阶段 7 Batch B 第五刀** | 10/24 | Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错 | 📌 `EkzzGZkqCgc`、`hqganBxzQNM`（皆 holdout）、`8r09TliP-Ak`、`p41GGc_y5Xk`、`GsHkML2mVEI`、`OYf48k-cfNI`；短版指向 wzL；不改写 p.75；书核心不变 |
+| ↓ **阶段 7 Batch B 第六刀** | 10/24 | 误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练 | 📌 `emZxTmSVSa8`（holdout，发球）、`cIIEYn42o4g`（发球背挠，不挂正手粗枝）、`JzcA_ku7Yhk`、`_Qu1LOwklAw`、`42BfbKsTGb4`、`wVa4XQPcaqs`；旋前旋后不升口令；书核心不变 |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -327,6 +329,7 @@ timeline
 - [10/24 Batch B 第三刀：上旋 / 握拍 / 发球机错 / 技能 / 发紧](#oct24-ftt-repass-batch-b3)（文末）— 上旋松开和手感往下打挂粗枝 1，刷 / 低到高指向 2Nn / Pwk / geh；握拍针眼和眼睛在链前；连续来球不改写 p.75，也不写成发球机最低速；半秒里不插口令；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch B 第四刀：Topspin Pro / 正手对比 / 放松 / 大力 / 慢球 / 稳定](#oct24-ftt-repass-batch-b4)（文末）— 上旋仍是打穿，刷指向 2Nn / Pwk / geh；多拉和早稳住不升成胸先；髋把动量交出去；慢球和高短球的时机不改写 p.75；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch B 第五刀：Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错](#oct24-ftt-repass-batch-b5)（文末）— `EkzzGZkqCgc` 指向 wzL，不另写翻转；后摆时序在链内，不改写 p.75；容错仍是打在身前，髋卡住则书 p.21 赢；场上主句仍是「肩往前、髋被往后拽」
+- [10/24 Batch B 第六刀：误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练](#oct24-ftt-repass-batch-b6)（文末）— 发球背挠和发球旋前不挂正手粗枝；旋前旋后不升口令；耐心是大目标，不改写 p.75；场上主句仍是「肩往前、髋被往后拽」
 - [10/18 旋转与 supination 同步（待核实）：身体转、胳臂不额外加动作；supination 是被转出来的觉察点，非口令](#oct18-rotation-supination)（文末）— 用户标为非常重要（含 §7 意识层面：只关注重心转移，手被动 supinate）；TPA Tom Alsop 原话待核（尚无字幕）；FTT `PwkGLkRm73o` 唯一明说 supinate，`2Nn9tyMECZU` / `JIMgI3jiVns` / `LoSrMj-Qxkc` 以肩外旋→内旋说同一方向；不新增 cue，不违反禁令
 - [10/15 放松是触发点：手腕一紧击球就感觉不到 ESR；放松打通背部与胸部发力](#oct15-wrist-relax-trigger)（文末）— 手腕紧张吸走注意力并截断近端发力；放松是固定模式的触发点；逻辑理顺比硬练省力；待球场验证
 - [10/15 晚 FTT《Why You're Jammed》：击球槽位三轴，旧被挤住点会回吸](#oct15-ftt-jammed)（文末）— 横向推远+非持拍手/锥桶/远探；纵向缓和上斜线、高肘不俯冲；纵深留足并前倾再加 6 英寸；两端失败（挤住/够过头）；待球场验证
@@ -12541,6 +12544,34 @@ FTT 84 期字幕中，**没有**专门讲「旋转与 supination 同步」的一
 只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`EkzzGZkqCgc` 与 `hqganBxzQNM` 继续 holdout。本刀其余四期也仍不进 tree evidence。
 
 场上主句不变：**「肩往前、髋被往后拽。」** `EkzzGZkqCgc` 沿用 wzL 的练习口令，不另写一句。其余各期的一句只写在来源稿的练习口令旁支，不替换主句。
+
+### 等级
+
+📌 流程记录。技术结论仍以 6ak4 和书页为准。
+
+<a id="oct24-ftt-repass-batch-b6"></a>
+## 📌 2026-10-24 — Batch B 第六刀：误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练
+
+### 本轮完成
+
+从已合的 main（`adc1124`，PR #22）继续。只做 Batch B 这六期，不扫完 B，不开 C，不碰 `mOFtt9PllI0`。都按上传 `norm.tsv` 段起点，加上 360p 抽帧，写成来源稿。yt-dlp 直连仍被登录墙挡住。六期都取到经典 itag 134。
+
+| id | 一句机制 | 挂点 | 和书 |
+|---|---|---|---|
+| `JzcA_ku7Yhk` | 同一结果可以用很多种挥法打出来 | 粗枝 1 结果层 | 和 p.13 同向。难看若当成不转髋，p.21 书赢 |
+| `cIIEYn42o4g` | 发球的背挠只是前臂路过的位置 | 范围旁支：发球 | 正手若改成用前臂造力，p.116 书赢。旋前旋后不升口令 |
+| `_Qu1LOwklAw` | 中性球打进大目标，短球再打深 | 结果层旁支 | patient 不改写 p.75。press 不写成推肘 |
+| `42BfbKsTGb4` | 用腿把球接到已经选好的接触点 | 粗枝 1 上游 | 和 p.25 同向。非持拍臂若提前开胸，p.111 书赢 |
+| `emZxTmSVSa8` | 柄上的加速是结果，整个人投进去才更快 | 范围旁支：发球；holdout | 和 p.116 同向。旋前旋后不升口令 |
+| `wVa4XQPcaqs` | 看着墙上能把力用出去的那一点，把球打进去 | 粗枝 1 上游 | press 不写成推肘。胸先于髋则 p.83 书赢 |
+
+队列现为 deep 53、pending 37、blocked 7。Batch B 剩余 pending 8，另有 blocked 5。未开 Batch C。`mOFtt9PllI0` 仍 pending。
+
+### 根基怎么动
+
+只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`cIIEYn42o4g` 与 `emZxTmSVSa8` 不挂正手粗枝。`emZxTmSVSa8` 继续 holdout。本刀其余五期也仍不进 tree evidence。
+
+场上主句不变：**「肩往前、髋被往后拽。」** 发球两期的练习句只属于各自的发球或在家练习，不替换主句。其余各期的一句只写在来源稿的练习口令旁支。
 
 ### 等级
 
