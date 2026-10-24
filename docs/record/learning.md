@@ -242,6 +242,7 @@ timeline
       10/24 : 📌 Batch B 第五刀：Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错；书核心不变
       10/24 : 📌 Batch B 第六刀：误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练；发球不挂正手粗枝
       10/24 : 📌 Batch B 第七刀：大力 / Iroh / 腕伤 / 下一拍 / 慢动作 / 外挥 / 低球；pending 只剩超长片
+      10/24 : 📌 Batch B 收尾：Geometry of Measured Aggression；pending 0；书核心不变
 ```
 
 ### 阶段表（可点击跳转到具体 entry）
@@ -289,6 +290,7 @@ timeline
 | ↓ **阶段 7 Batch B 第五刀** | 10/24 | Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错 | 📌 `EkzzGZkqCgc`、`hqganBxzQNM`（皆 holdout）、`8r09TliP-Ak`、`p41GGc_y5Xk`、`GsHkML2mVEI`、`OYf48k-cfNI`；短版指向 wzL；不改写 p.75；书核心不变 |
 | ↓ **阶段 7 Batch B 第六刀** | 10/24 | 误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练 | 📌 `emZxTmSVSa8`（holdout，发球）、`cIIEYn42o4g`（发球背挠，不挂正手粗枝）、`JzcA_ku7Yhk`、`_Qu1LOwklAw`、`42BfbKsTGb4`、`wVa4XQPcaqs`；旋前旋后不升口令；书核心不变 |
 | ↓ **阶段 7 Batch B 第七刀** | 10/24 | 大力 / Iroh / 腕伤 / 下一拍 / 慢动作 / 外挥 / 低球 | 📌 `agtIR3PuNsw`、`BbGzWTp5pCM`（皆 holdout）、`jDBg4Fpf0tQ`、`QrRYuVjVibU`（皆 deep-with-gap）、`lCKDP2gKR_Y`、`7_JPqhG4G64`、`wFOy0RKWBTg`；Batch B pending 只剩 `mOFtt9PllI0`；书核心不变 |
+| ↓ **阶段 7 Batch B 收尾** | 10/24 | Geometry of Measured Aggression | 📌 `mOFtt9PllI0`（holdout）；有节制的进攻是几何；through and down 不写成降拍；Batch B pending 0；书核心不变 |
 
 ### 关键 entry 索引（按重要性排序）
 
@@ -333,6 +335,7 @@ timeline
 - [10/24 Batch B 第五刀：Draper / flip 短版 / 配重 / 手控 / 后摆 / 容错](#oct24-ftt-repass-batch-b5)（文末）— `EkzzGZkqCgc` 指向 wzL，不另写翻转；后摆时序在链内，不改写 p.75；容错仍是打在身前，髋卡住则书 p.21 赢；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch B 第六刀：误解 / 背挠 / 耐心凶狠 / 接球 / 旋前 / 墙练](#oct24-ftt-repass-batch-b6)（文末）— 发球背挠和发球旋前不挂正手粗枝；旋前旋后不升口令；耐心是大目标，不改写 p.75；场上主句仍是「肩往前、髋被往后拽」
 - [10/24 Batch B 第七刀：大力 / Iroh / 腕伤 / 下一拍 / 慢动作 / 外挥 / 低球](#oct24-ftt-repass-batch-b7)（文末）— coil 不升成唯一核心；Iroh 与低球短片是缺口；外挥指向 wzL；Batch B pending 只剩 `mOFtt9PllI0`；场上主句仍是「肩往前、髋被往后拽」
+- [10/24 Batch B 收尾：Geometry of Measured Aggression](#oct24-ftt-repass-batch-b8)（文末）— `mOFtt9PllI0` 仍 holdout；有节制的进攻是几何；through and down 不写成降拍；不改写 p.75；Batch B pending 0；场上主句仍是「肩往前、髋被往后拽」
 - [10/18 旋转与 supination 同步（待核实）：身体转、胳臂不额外加动作；supination 是被转出来的觉察点，非口令](#oct18-rotation-supination)（文末）— 用户标为非常重要（含 §7 意识层面：只关注重心转移，手被动 supinate）；TPA Tom Alsop 原话待核（尚无字幕）；FTT `PwkGLkRm73o` 唯一明说 supinate，`2Nn9tyMECZU` / `JIMgI3jiVns` / `LoSrMj-Qxkc` 以肩外旋→内旋说同一方向；不新增 cue，不违反禁令
 - [10/15 放松是触发点：手腕一紧击球就感觉不到 ESR；放松打通背部与胸部发力](#oct15-wrist-relax-trigger)（文末）— 手腕紧张吸走注意力并截断近端发力；放松是固定模式的触发点；逻辑理顺比硬练省力；待球场验证
 - [10/15 晚 FTT《Why You're Jammed》：击球槽位三轴，旧被挤住点会回吸](#oct15-ftt-jammed)（文末）— 横向推远+非持拍手/锥桶/远探；纵向缓和上斜线、高肘不俯冲；纵深留足并前倾再加 6 英寸；两端失败（挤住/够过头）；待球场验证
@@ -12602,6 +12605,34 @@ FTT 84 期字幕中，**没有**专门讲「旋转与 supination 同步」的一
 ### 根基怎么动
 
 只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`agtIR3PuNsw` 不另写练习口令。`jDBg4Fpf0tQ` 不挂粗枝。`QrRYuVjVibU` 沿用 tzg。
+
+场上主句不变：**「肩往前、髋被往后拽。」**
+
+### 等级
+
+📌 流程记录。技术结论仍以 6ak4 和书页为准。
+
+<a id="oct24-ftt-repass-batch-b8"></a>
+## 📌 2026-10-24 — Batch B 收尾：Geometry of Measured Aggression
+
+### 本轮完成
+
+从已合的 main（`081ecc5`，PR #24）继续。只深吸超长片 `mOFtt9PllI0`（The Geometry of Measured Aggression，约 52 分钟）。不开 C。按上传 `norm.tsv` 段起点，加上 360p 抽帧，写成一份来源稿，内部分块，不写比赛流水账。yt-dlp 直连仍被登录墙挡住。取到经典 itag 134。
+
+| 块 | 一句机制 | 挂点 | 和书 |
+|---|---|---|---|
+| A 几何 | 有节制的进攻是眼前的几何，不是比分 | 粗枝 1 结果层；holdout | 和 p.13 / p.24 同向。不升战术粗枝 |
+| B 球和网 | through and down 是球过网最低那段还能容错 | 粗枝 1 结果层，指向 wFOy / wzL | 若读成降拍，2Nn / Pwk / geh 与 p.92 书赢 |
+| C 稍挤 | 间距不完美，接触仍打进身前的球 | 粗枝 1 接触叶子 | 后段链若读成手发力，p.116 / p.25 书赢 |
+| D 计划 | 计划改到球真的到了身前 | 粗枝 1 上游 | 不改写 p.75。不写成触球才启动 |
+| E 发紧 | 发紧时仍打身前那颗球 | 粗枝 1 上游 | 挥得更快若读成手臂发力，p.116 书赢 |
+| F 站得很深 | 弹起之后还有时间调接触 | 粗枝 2 旁注，不新开叶子 | 不改写 p.75。不写成退到底线后 |
+
+发球和接发只标范围，不挂正手粗枝。队列现为 deep 61、pending 29、blocked 7。Batch B 剩余 pending 0，另有 blocked 5。未开 Batch C。
+
+### 根基怎么动
+
+只在 `kinetic_chain_trunk.md` 加旁支和交叉引用。粗枝 1 的书核心仍是髋没先启动 / 扭回面向网（BOOK:p.83 / p.117）。粗枝 2 的书核心仍是相对来球等不够（BOOK:p.75）。coil 仍是 p.119 的非必需增强。不改 `tree.json`，不改 verify 黄金。`mOFtt9PllI0` 继续 holdout，不进 tree evidence。
 
 场上主句不变：**「肩往前、髋被往后拽。」**
 

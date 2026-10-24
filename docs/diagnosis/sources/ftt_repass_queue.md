@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 60，pending 30，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀至第七刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 43、pending 1、blocked 5。pending 只剩 `mOFtt9PllI0`。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM` 虽为 deep，仍是 holdout，不进 tree evidence。第七刀其余五期也仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。未开 Batch C。`mOFtt9PllI0` 仍 pending，本轮不碰。
+当前计数：deep 61，pending 29，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀至收尾见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 44、pending 0、blocked 5。Batch B pending 0。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ`、`EkzzGZkqCgc`、`hqganBxzQNM`、`emZxTmSVSa8`、`agtIR3PuNsw`、`BbGzWTp5pCM`、`mOFtt9PllI0` 虽为 deep，仍是 holdout，不进 tree evidence。第七刀其余五期、以及本轮这一期，也仍不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。未开 Batch C。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -43,7 +43,7 @@
 | `lCKDP2gKR_Y` | Why Your Wrist Hurts, and How to Fix It | 286 | B | deep | Batch B 第七刀；`SRC-FTT-lCKDP2gKR_Y_repass_2026-10-24.md`；腕还满着时打出；pronation 不升口令 |
 | `2J8q7sn4JLc` | Why Your Forehand Sprays, and How to Fix It | 500 | B | deep | Batch B 第一刀；`SRC-FTT-2J8q7sn4JLc_repass_2026-10-24.md`；holdout；柄贴进手，链前条件 |
 | `pWzyP-xfLfU` | The Pros Grip Differently From You (with lesson examples) | 1262 | B | deep | Batch B 第二刀；`SRC-FTT-pWzyP-xfLfU_repass_2026-10-24.md`；转轴在手上侧；15:36 书 p.83 赢 |
-| `mOFtt9PllI0` | The Geometry of Measured Aggression | 3104 | B | pending |  |
+| `mOFtt9PllI0` | The Geometry of Measured Aggression | 3104 | B | deep | Batch B 收尾；`SRC-FTT-mOFtt9PllI0_repass_2026-10-24.md`；holdout；有节制的进攻是几何；through and down 不写成降拍；不改写 p.75；不进 tree evidence |
 | `dYPv0QfFrsU` | Forehand With/Without Scapular Activation | 12 | B | blocked | 无字幕，先补字幕 |
 | `PfDqnff_vYA` | Why Your Serve is So Slow | 533 | C | pending |  |
 | `EkzzGZkqCgc` | Why Your Racket Doesn't Flip | 425 | B | deep | Batch B 第五刀；`SRC-FTT-EkzzGZkqCgc_repass_2026-10-24.md`；holdout；短版指向 wzL，不另写机制 |
@@ -147,5 +147,7 @@ Batch B 第五刀（2026-10-24）：`8r09TliP-Ak`、`EkzzGZkqCgc`、`hqganBxzQNM
 
 Batch B 第六刀（2026-10-24）：`JzcA_ku7Yhk`、`cIIEYn42o4g`、`_Qu1LOwklAw`、`42BfbKsTGb4`、`emZxTmSVSa8`、`wVa4XQPcaqs`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`emZxTmSVSa8` 是 holdout，不进 tree evidence。`cIIEYn42o4g` 与 `emZxTmSVSa8` 是发球范围旁支，不挂正手粗枝。旋前、旋后不升口令。选目标的耐心不改写 p.75。Batch B 剩余 pending 8（另有 blocked 5，不在这 8 里）。未扫完 Batch B。未开 Batch C。`mOFtt9PllI0` 仍 pending。
 
-Batch B 第七刀（2026-10-24）：`agtIR3PuNsw`、`jDBg4Fpf0tQ`、`lCKDP2gKR_Y`、`7_JPqhG4G64`、`BbGzWTp5pCM`、`wFOy0RKWBTg`、`QrRYuVjVibU`。七期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`agtIR3PuNsw`、`BbGzWTp5pCM` 是 holdout，不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。动画短片不挂粗枝。coil 不升成唯一核心。旋前不升口令。小跳和下一颗球不改写 p.75。Batch B 剩余 pending 只剩 `mOFtt9PllI0`（另有 blocked 5，不在这一条里）。未开 Batch C。本轮不碰 `mOFtt9PllI0`。
+Batch B 第七刀（2026-10-24）：`agtIR3PuNsw`、`jDBg4Fpf0tQ`、`lCKDP2gKR_Y`、`7_JPqhG4G64`、`BbGzWTp5pCM`、`wFOy0RKWBTg`、`QrRYuVjVibU`。七期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`agtIR3PuNsw`、`BbGzWTp5pCM` 是 holdout，不进 tree evidence。`jDBg4Fpf0tQ`、`QrRYuVjVibU` 是 deep-with-gap。动画短片不挂粗枝。coil 不升成唯一核心。旋前不升口令。小跳和下一颗球不改写 p.75。当时 Batch B 剩余 pending 只剩 `mOFtt9PllI0`（另有 blocked 5，不在这一条里）。未开 Batch C。该轮不碰 `mOFtt9PllI0`。
+
+Batch B 收尾（2026-10-24）：只做 `mOFtt9PllI0`。按字幕段起点 + 抽帧写成 `SRC-FTT-mOFtt9PllI0_repass_2026-10-24.md`，上表 status 为 deep。holdout，不进 tree evidence。有节制的进攻是几何。through and down 不写成降拍。计划更新和站得很深都不改写 p.75。发球和接发不挂正手粗枝。Batch B 剩余 pending 0（另有 blocked 5，不在这 0 里）。未开 Batch C。
 
