@@ -105,6 +105,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/66c079e1000000000503b557?xsec_token=ABb-amDyFsYfEPiYLcnFCIKuqjh5nO9FJLAU_fgOmbdu4=&xsec_source=pc_user （= 目录 #277） | 正手4.0 · 倚天剑 / 拍头压平不改降拍 / 拖地声音越长 / 肚脐转向不改转髋 / 4.0只在标题文案 | **transcribed** | `video_fh_40_66c079e1.md` |
 | https://www.xiaohongshu.com/explore/66a6523f000000000d032764?xsec_token=ABWrIOuek3gOt1Ji-_jt-mwwo3YHsyonNhBwTPw1YLUls=&xsec_source=pc_user （= 目录 #284） | 击球点偏后 · 太后给挤到不并偏后 / 转体不改转髋 / 后肘一定要比前肘高不改推肘 / 30minlater / 转髋只在评论 | **transcribed** | `video_contact_point_late_66a6523f.md` |
 | https://www.xiaohongshu.com/explore/6694dedd000000000d00c0c1?xsec_token=AB0Ch6dVKgY77o1yUy8Idjvr6Y2Y-QTwRNzzeKXBBMMbw=&xsec_source=pc_user （= 目录 #288） | 向前脚步 · 前后相对难不改送重心 / 并步向前击球与并步上前不并 / 前交叉+并步 / “击球”“救球”引号分开 | **transcribed** | `video_forward_footwork_6694dedd.md` |
+| https://www.xiaohongshu.com/explore/668b875200000000050044f4?xsec_token=AByczRgrno6hPBlvQILkzwC42taMvd-0XsApCB9PD_ZOw=&xsec_source=pc_user （= 目录 #293） | 要3.0发力原理 · 弹簧的原理不并文案弹簧原理 / 曲到直不改伸肘 / 转还不改转髋 / 正》非》正按字形 | **transcribed** | `video_power_principle_668b8752.md` |
 
 ---
 
@@ -563,7 +564,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第十批 30 条（#277–#306，从 `66c079e1` 起）
 
-薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 275 = 目录 #276 `66c2d706`）。从下一条 data-index 276 = `66c079e1` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 305 = 目录 #306。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue（本批没有这类标题）。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#294 是跑位、不是脚/脚步，只 `catalog_only`。#299 标题是「拉拍」不是引拍，且含转体，只 `catalog_only`。data-index 277 = `66bd88a3` 已有深看，目录 #278 只指回 `video_deng_not_arm_66bd88a3.md`，不新开。2026-10-24 #277、#284、#288 已 **transcribed**（`video_fh_40_66c079e1.md`、`video_contact_point_late_66a6523f.md`、`video_forward_footwork_6694dedd.md`）。这三条已 transcribed；仍 pending 的是 #293。第九批 pending_A-E 已清。没有点赞、评论、关注、发布。
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 275 = 目录 #276 `66c2d706`）。从下一条 data-index 276 = `66c079e1` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 305 = 目录 #306。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue（本批没有这类标题）。发球标题里的发力仍只 `catalog_only`（本批发球标题未单标发力）。#294 是跑位、不是脚/脚步，只 `catalog_only`。#299 标题是「拉拍」不是引拍，且含转体，只 `catalog_only`。data-index 277 = `66bd88a3` 已有深看，目录 #278 只指回 `video_deng_not_arm_66bd88a3.md`，不新开。2026-10-24 #277、#284、#288 已 **transcribed**（`video_fh_40_66c079e1.md`、`video_contact_point_late_66a6523f.md`、`video_forward_footwork_6694dedd.md`）。2026-10-24 #293 已 **transcribed**（`video_power_principle_668b8752.md`）。**第十批 pending_A-E 已清**（本批曾标的四条都已深看）。第九批 pending_A-E 已清。打开的是主页路径，页面落到同 token 的 explore。#293 点过一次「展开 4 条回复」，只为阅读，展开后读到 THE END。没有点赞、评论、关注、发布。
 
 进度：已入目录 **306 / 约 362**。还剩约 56 条未入目录。
 
@@ -585,7 +586,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 290 | 推荐一个躺平也能提升0.5的方法 | 躺平提升 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66909a130000000005004261?xsec_token=ABEVwFMb9M7xTO7oFCSpKZK0OKdu0AeQrAn5ByDWxer8Y=&xsec_source=pc_user | catalog_only |
 | 291 | 黑技术第二招反手“敬礼” | 反手敬礼 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/668f80d6000000000d00c540?xsec_token=AB2fmAnxJueSHNUW15KGPCnQPdu9mhuzqnS4rJDIoo5zc=&xsec_source=pc_user | catalog_only |
 | 292 | “交杯酒”送给学员的五集黑科技一 | 黑科技花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/668e2e4f000000000500691d?xsec_token=ABW5Nz55lTpY6TRbgmxNNVv_xOlRz0gsgk2vvmhZK4TRg=&xsec_source=pc_user | catalog_only |
-| 293 | 要3.0不得不了解发力原理 | 发力原理 · power · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/668b875200000000050044f4?xsec_token=AByczRgrno6hPBlvQILkzwC42taMvd-0XsApCB9PD_ZOw=&xsec_source=pc_user | pending_A-E |
+| 293 | 要3.0不得不了解发力原理 | 发力原理 · power · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/668b875200000000050044f4?xsec_token=AByczRgrno6hPBlvQILkzwC42taMvd-0XsApCB9PD_ZOw=&xsec_source=pc_user | **transcribed** `video_power_principle_668b8752.md` |
 | 294 | 前后跑位我们可以利用舒适区解决 | 前后跑位 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6688a193000000000a006b82?xsec_token=ABRiK5v2tJH5uK9Iw9RBH5UJO6-pGUm159bXl1nC-KgSE=&xsec_source=pc_user | catalog_only |
 | 295 | 很难的移动找球我们学习简单化 | 移动找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66860aa70000000005005809?xsec_token=AB5Tu43UWIT0ph3aLUxQGS3AujyiC0EpeV3POwt_XyX48=&xsec_source=pc_user | catalog_only |
 | 296 | 恐龙帮忙练反手挥拍轨迹练合力 | 反手挥拍轨迹 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66840fb2000000000a0051d7?xsec_token=ABC6ami9X50baSjRVeX7qWeI6aLQ8mO4G2V_YYJk7yqMY=&xsec_source=pc_user | catalog_only |
