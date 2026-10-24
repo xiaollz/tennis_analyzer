@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 35，pending 55，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀、第二刀、第三刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 18、pending 26、blocked 5。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ` 虽为 deep，仍是 holdout，不进 tree evidence。本刀六期都不是 holdout，仍不进 tree evidence。未开 Batch C。Batch B 未扫完。`mOFtt9PllI0` 仍 pending。
+当前计数：deep 41，pending 49，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀至第四刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 24、pending 20、blocked 5。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ` 虽为 deep，仍是 holdout，不进 tree evidence。第四刀六期都不是 holdout，仍不进 tree evidence。未开 Batch C。Batch B 未扫完。`mOFtt9PllI0` 仍 pending。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -58,17 +58,17 @@
 | `9NirSL59an0` | The Paradoxical Nature of Modern Topspin | 620 | B | deep | Batch B 第三刀；`SRC-FTT-9NirSL59an0_repass_2026-10-24.md`；手感往下打指向 2Nn / Pwk / geh；侧身练习，p.30 书赢 |
 | `1W1rope5l0k` | Why Every Pro Serves In-to-Out, rather than Low-to-High | 691 | C | pending |  |
 | `gehRK0Y6AdQ` | The Pros "Brush" Differently From You | 818 | B | deep | Batch B 第二刀；`SRC-FTT-gehRK0Y6AdQ_repass_2026-10-24.md`；holdout；刷指向 2Nn/Pwk，书赢 |
-| `LoSrMj-Qxkc` | Their Mothers are Sisters, Their Forehands AREN'T | 718 | B | pending |  |
+| `LoSrMj-Qxkc` | Their Mothers are Sisters, Their Forehands AREN'T | 718 | B | deep | Batch B 第四刀；`SRC-FTT-LoSrMj-Qxkc_repass_2026-10-24.md`；多拉和早稳住是两端；胸压不写成推肘；等下落不改写 p.75 |
 | `6j33LJfl46s` | Scapular Glide on the Tennis Forehand | 12 | B | blocked | 无字幕，先补字幕 |
 | `p41GGc_y5Xk` | How Your Hand Controls Every Shot | 384 | B | pending |  |
-| `T5meVwBOKR4` | How Alcaraz Hits Harder Than Everyone | 511 | B | pending |  |
-| `Vg8lbXOhM3E` | Training to Play Loose in Matches | 676 | B | pending |  |
+| `T5meVwBOKR4` | How Alcaraz Hits Harder Than Everyone | 511 | B | deep | Batch B 第四刀；`SRC-FTT-T5meVwBOKR4_repass_2026-10-24.md`；髋把动量交出去；向前不写成送髋 |
+| `Vg8lbXOhM3E` | Training to Play Loose in Matches | 676 | B | deep | Batch B 第四刀；`SRC-FTT-Vg8lbXOhM3E_repass_2026-10-24.md`；变化来球里接触段不变；不写成必须去打比赛 |
 | `Bhzd6cM-oFU` | How to Hit Crazy Slice Like Carlos Alcaraz | 226 | C | pending |  |
 | `-ZmnDrRFfjc` | 3 Brilliant Alcaraz Tactics ANYONE Can Use | 382 | C | pending |  |
 | `m1NBdd3Bigg` | Simple Serve Progressions - From Beginner to Advanced / with Johnny & Alexa | 1013 | C | pending |  |
 | `Z9XwaXDVkZg` | The Simple Foundation of the One-Handed Backhand | 1170 | C | pending |  |
 | `lwS7Xxqrrdw` | The Simple Foundation of the 2-Handed Backhand | 781 | C | pending |  |
-| `lbdQpIHvXYA` | The Stabilization Secret in Khachanov's Forehand | 346 | B | pending |  |
+| `lbdQpIHvXYA` | The Stabilization Secret in Khachanov's Forehand | 346 | B | deep | Batch B 第四刀；`SRC-FTT-lbdQpIHvXYA_repass_2026-10-24.md`；跑动时臂先稳住；手到髋高不写成降拍 |
 | `0m3BMfDDShI` | Build This Foundation - The Rest Will Follow | 890 | B | deep | Batch B 第一刀；`SRC-FTT-0m3BMfDDShI_repass_2026-10-24.md`；最简单接触叶子；together 指上身 |
 | `KU7FHy1qQOI` | The Physics, Geometry, and Biomechanics of Power Development | 1088 | A | deep | Batch A 第一刀；`SRC-FTT-KU7FHy1qQOI_repass_2026-10-24.md`；甜区/几何在链前，不进 tree evidence |
 | `FBJnFBtZozE` | How Sinner Choke-Proofed His Game | 604 | C | pending |  |
@@ -87,8 +87,8 @@
 | `8r09TliP-Ak` | I Picked Draper to Win It All (because of 3 patterns you can practice tomorrow) | 684 | B | pending |  |
 | `_Qu1LOwklAw` | Patient but Ruthless / How Alcaraz Broke Down Sinner in Rome | 394 | B | pending |  |
 | `Qszz0N4fRb4` | Why You Get Tight, and How to Fix It / Learning From Sinner's 6-0 6-1 Masterclass | 707 | B | deep | Batch B 第三刀；`SRC-FTT-Qszz0N4fRb4_repass_2026-10-24.md`；半秒一个感觉，速度在腿和躯干；左手若过早开胸 p.111 书赢 |
-| `Psidjei5BnI` | 4 Tips For Consistently Crushing Slow Balls | 475 | B | pending |  |
-| `FxDmVi3EFnE` | The Truth About the Topspin Pro | 928 | B | pending |  |
+| `Psidjei5BnI` | 4 Tips For Consistently Crushing Slow Balls | 475 | B | deep | Batch B 第四刀；`SRC-FTT-Psidjei5BnI_repass_2026-10-24.md`；慢球手在球高打穿；很浅斜线不升口令；不改写 p.75 |
+| `FxDmVi3EFnE` | The Truth About the Topspin Pro | 928 | B | deep | Batch B 第四刀；`SRC-FTT-FxDmVi3EFnE_repass_2026-10-24.md`；上旋是打穿；刷和由低到高指向 2Nn / Pwk / geh |
 | `McCb-RfYd0w` | The Magic of the Non-Dominant Side on the Forehand | 192 | A | deep | Batch A 收尾；`SRC-FTT-McCb-RfYd0w_repass_2026-10-24.md`；非持拍侧叶子；不写成提前拉左臂 |
 | `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 448 | A | deep | Batch A 续；`SRC-FTT-JIMgI3jiVns_repass_2026-10-24.md`；内旋刚开始才接触；不进 tree evidence |
 | `42BfbKsTGb4` | You Aren't Practicing Half of Tennis / RECEIVING Will Transform Your Game | 337 | B | pending |  |
@@ -140,4 +140,6 @@ Batch B 第一刀（2026-10-24）：`q6LrQYDvxmY`、`uJpuDUx0jIA`、`x_WIg59Wr9Y
 Batch B 第二刀（2026-10-24）：`wzLMv4ASg9s`、`5-Ia7c4XzfU`、`RVfmDk-iEwo`、`pWzyP-xfLfU`、`gehRK0Y6AdQ`、`dZadhzVEsds`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`gehRK0Y6AdQ` 仍是 holdout。Batch B 剩余 pending 32（另有 blocked 5，不在这 32 里）。未扫完 Batch B。未开 Batch C。`mOFtt9PllI0` 留给后面单独刀。
 
 Batch B 第三刀（2026-10-24）：`wd4YRQW3TOc`、`9NirSL59an0`、`fjpr9PS02tM`、`toArb3WkJcs`、`AppdZqxH_2k`、`Qszz0N4fRb4`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。六期都不是 holdout，仍不进 tree evidence。`toArb3WkJcs` 写成连续的对拉节奏或略快一点的中等弧线上旋，不写死发球机最低速，也不改写 p.75。Batch B 剩余 pending 26（另有 blocked 5，不在这 26 里）。未扫完 Batch B。未开 Batch C。`mOFtt9PllI0` 仍 pending。
+
+Batch B 第四刀（2026-10-24）：`FxDmVi3EFnE`、`LoSrMj-Qxkc`、`Vg8lbXOhM3E`、`T5meVwBOKR4`、`Psidjei5BnI`、`lbdQpIHvXYA`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。六期都不是 holdout，仍不进 tree evidence。刷和由低到高不升口令，书与 2Nn / Pwk / geh 赢。高短球和慢球的时机不改写 p.75。不写死发球机最低速。Batch B 剩余 pending 20（另有 blocked 5，不在这 20 里）。未扫完 Batch B。未开 Batch C。`mOFtt9PllI0` 仍 pending。
 
