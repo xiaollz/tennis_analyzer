@@ -15,6 +15,7 @@
 > **2026-10-24 Batch A 续**：肩内收、肩滚的接触时机、反旋刹车、上手投和绕挥，六期都只作叶子或旁支。`Am8j1Zw5KrE`、`5KdScDKxVSI` 仍是 holdout。不把肩升成新粗枝，不改成肩先于髋。场上主句仍是「肩往前、髋被往后拽」；各期抽出的一句只写在来源稿的练习口令旁支。
 > **2026-10-24 Batch A 收尾**：tilt、corkscrew、胸参与、非持拍侧、低到高神话（Shorts，deep-with-gap）、单脚探球，六期都只作叶子、旁支或上游。`5jHCDc44SQM` 与 `ui-RFRdQKRk` 仍是 holdout，不进 tree evidence。不升新粗枝，不改成肩或胸先于髋。`uQcObi2oTSs` 只有一句主张，缺口写在来源稿。场上主句不变。
 > **2026-10-24 Batch B 第一刀**：间距、近端稳定、释放窗口、迈进的锚、最简单的接触、柄上的触觉，六期都只作叶子、旁支或上游。`q6LrQYDvxmY`、`2J8q7sn4JLc` 仍是 holdout，不进 tree evidence。`x_WIg59Wr9Y` 的「从触球开始」是释放窗口的体感，不改写粗枝 2 的书核心（BOOK:p.75）。不升新粗枝，不改成肩或胸先于髋。场上主句不变。
+> **2026-10-24 Batch B 第二刀**：翻转、拍床张力、手槽、握拍转轴、刷、大力不出台，六期都只作叶子、旁支或上游。`gehRK0Y6AdQ` 仍是 holdout，不进 tree evidence。刷若和绕挥冲突，书与 2Nn / Pwk 赢。`dZadhzVEsds` 的耐心钉在字幕段起点，不改写粗枝 2 的等球（BOOK:p.75），也不改 OBS-57。不升新粗枝，不改成肩或胸先于髋。场上主句不变。
 
 ---
 
@@ -67,6 +68,7 @@ flowchart TD
   B1 --> L13d["旁支 2026-10-24 续：肩内收是接触叶子<br/>内旋刚开始才接触（JIMg）<br/>转动随后被刹车（xLs）<br/>绕挥 / 拍头路径 ≠ 手臂路径<br/>肩不升粗枝；Am8j、5Kd holdout"]
   B1 --> L13e["旁支 2026-10-24 收尾：低球少量侧屈（tzg）<br/>腹部张力体感（5jHC holdout，书赢）<br/>驱动时臂贴躯干（hNV）<br/>非持拍侧向回留住（McCb）<br/>低到高一句缺口（uQc）<br/>单脚探球在髋启动上游（Exk）<br/>都不升粗枝；5jHC 不进 tree evidence"]
   B1 --> L13f["旁支 2026-10-24 Batch B：间距在持拍侧外（q6 holdout）<br/>近端稳住臂才接上（uJpu）<br/>迈进的前脚锚（aPc）<br/>最简单接触 / 上身一起转回（0m3B）<br/>柄贴进手（2J8 holdout）<br/>都不升粗枝"]
+  B1 --> L13g["旁支 2026-10-24 Batch B 第二刀：拍在躯干慢下来时松开（wzL）<br/>拍床在链前（5-Ia）<br/>手槽（RVfm）<br/>转轴在手上侧（pWzy）<br/>刷指向 2Nn/Pwk（geh holdout）<br/>都不升粗枝"]
   B1 --> L14["叶：小臂往上抬 / 往上兜<br/>视频 ui holdout / 用户自述"]
   B1 --> L15["叶：象征性蹬髋；禁用送髋"]
   B1 --> L16["旁支：链内过早开胸 / 肩抢先<br/>（从原 B2 混入项拆出）"]
@@ -77,6 +79,7 @@ flowchart TD
   B2 --> L22["叶：开始转体时拍头还在球上方 OBS-57"]
   B2 --> L23["叶：口播结果 / 下网 OBS-16"]
   B2 --> L24["旁支 2026-10-24：释放窗口贴着触球（x_WIg）<br/>「从触球开始」是体感<br/>不改写 BOOK:p.75 的等球"]
+  B2 --> L25["旁支 2026-10-24 Batch B 第二刀：拍到球高再加速转动（dZad）<br/>等到球进槽，或把槽送到球上（RVfm）<br/>都不改写 BOOK:p.75"]
 
   B2 -. "推断：急着挥 → 髋没先启动 → 手臂抢先" .-> L12
 ```
@@ -175,9 +178,21 @@ flowchart TD
 - **0m3BMfDDShI**：0:55 肘前空间留着。3:09 的 pull forward 不写成推肘。4:37 不要主动沉拍。6:01 的 together 指上身，和下面「两个 back together」里书 p.111 的正面提示同向。8:31 肩线倾斜指向 tzg。6:54 的一点扭转是加在地基上的劲，不改成胸先于髋。详注 `SRC-FTT-0m3BMfDDShI_repass_2026-10-24.md`。
 - **2J8q7sn4JLc（holdout）**：0:00 柄稍大就感觉不到动量。4:05 细棱贴进虎口。4:18 张开手掌是练习，不是场上握法。和 KU7 的手拍条件同侧。详注 `SRC-FTT-2J8q7sn4JLc_repass_2026-10-24.md`。
 
+### 旁支：2026-10-24 Batch B 第二刀（翻转 / 拍床 / 手槽 / 握拍 / 刷 / 大力，仍不改上面的一句话）
+
+六期都按字幕段起点加 360p 抽帧。翻转、手槽、握拍转轴、刷挂在粗枝 1 下面或它的上游。拍床是链前条件。大力不出台的耐心，和手槽的等或送，挂在粗枝 2 的叶子上。**不升成新粗枝，不改成肩或胸先于髋。** 场上主句仍是「肩往前、髋被往后拽」。各期另有一句练习口令旁支，写在来源稿里，不替换主句。都不进 tree evidence。
+
+- **wzLMv4ASg9s**：0:06 拍先向外送。0:11 的 press 只记录，不写成推肘。10:38 滚动最快在随挥。20:46 高肘是往下往后漂进槽，不写成降拍。22:41 可见的低到高是身体斜着。30:19 的 together 是匀速转、拍放不出去。30:43 的 coil 是让躯干慢下来的一种办法，**书 p.119 赢**，不升成唯一核心。31:38 髋在往后拽，31:42 拽的是躯干，和 6ak4 同向。33:27 不写成送髋。详注 `SRC-FTT-wzLMv4ASg9s_repass_2026-10-24.md`。
+- **5-Ia7c4XzfU**：0:20 拍床是装备杠杆。9:02 软床把斜向速度送高，脑插进停顿。21:09 说办法不是更好的时机或 coil，不许拿来改粗枝 1 或粗枝 2。7:00 的 28° 不是书的页。和 2Nn / Pwk 冲突时，绕挥赢。详注 `SRC-FTT-5-Ia7c4XzfU_repass_2026-10-24.md`。
+- **RVfmDk-iEwo**：0:38 槽在腕松开之前。10:46 等到球进槽，11:52 或把槽送到球上，10:53 两样都不做才打偏。等或送挂粗枝 2，不改写 p.75。13:10 不写成送髋。15:20 之后的反手不进正手。详注 `SRC-FTT-RVfmDk-iEwo_repass_2026-10-24.md`。
+- **pWzyP-xfLfU**：0:06 转轴若在柄端，省力的槽出不来。0:58 拍头往后时柄向前、向外。3:39 两指是练习。15:36 若读成挥拍由手开始，**书 p.83 赢**。16:58 速度仍来自近端，和 p.116 同向。详注 `SRC-FTT-pWzyP-xfLfU_repass_2026-10-24.md`。
+- **gehRK0Y6AdQ（holdout）**：1:05 上旋也是打，不是只刷。6:26 大部分是浅的斜向打穿。12:33 平肩再把手拉高是错例。低于水平、把手放低若读成由低到高或降拍，**2Nn / Pwk 和书赢**。不新开刷的叶子名。详注 `SRC-FTT-gehRK0Y6AdQ_repass_2026-10-24.md`。
+- **dZadhzVEsds**：0:38 有耐心。1:02 拍至少到球高，1:03 他再说 preferably below。这是旧注 Q02 / Q03 的段起点，不改 OBS-57，也不改写 p.75。6:46 加速起在球上面是错例。16:12 单独掉肘丢掉张力，不写成降拍。8:44、11:43 的倾斜和髋铰链指向 tzg。详注 `SRC-FTT-dZadhzVEsds_repass_2026-10-24.md`。
+
 **两个「back together」不要混**：
 - 书 p.111「back together, forward together」指**上半身**（双臂 + 胸）作为整体转离、转回，是正面提示；0m3BMfDDShI@6:01 的 unit swing 是这句；
 - 6ak4@5:21 和 ui@2:43 的「back together, front/forward together」指**髋和肩**一起走，是负面例子 / 防误用。旧注把 6ak4 收成 @5:05，那是 "send your right hip through" 附近的约数。
+- wzLMv4ASg9s@30:19 的 back together, forward together 是躯干一直匀速转、拍交不出去的错例，和 6ak4 同族（都不减速）。不是 0m3B@6:01 的上身一起转回。
 
 **「约 45° 往前上」**：用户说法，书和视频里都**没有**力的 45° 方向。只作用户自述。
 
@@ -200,6 +215,8 @@ FTT 出处（视频 / holdout 知识；补充，不压过书）：
 - 「the hips, the pelvis, it actually moves faster than the trunk for about 25 milliseconds. But you're not going to be able to feel that.」— 5jHCDc44SQM@2:28（holdout。体感是腹部张力。1:13 把躯干说成几乎整段更快，书 p.119 赢。不进 tree evidence）
 - 「as you drive, you make this attached」— hNVbbPEob3g@0:36（驱动时臂贴躯干。0:22 胸先走是他放弃的一档。5:58 仍从髋上拧出）
 - 「the swing starts at contact」— x_WIg59Wr9Y@2:18（释放窗口的体感。字面若读成球到了才准备，书 p.75 赢。不进 tree evidence）
+- 「where the hips are pulling back」— wzLMv4ASg9s@31:38；下一段 31:42 才是 on the trunk（和 6ak4 同向。33:27 的 throwing my pelvis backwards 不写成送髋。不进 tree evidence）
+- 「ball rather than just brushing」— gehRK0Y6AdQ@1:05（holdout。刷不升口令。若读成由低到高，2Nn / Pwk 赢）
 - 对应故障卡：FLT-05（髋没引导）→ FLT-02（手臂主导）
 
 **叶子**（「能见」只表示有机会看到；可靠度以实测一致率为准）：
@@ -231,6 +248,11 @@ FTT 出处（视频 / holdout 知识；补充，不压过书）：
 | 上游：迈进的前脚锚（aPc） | 无新 OBS | 准备是否在外侧脚；前脚膝是否向里倒；头是否跟到前脚 | 弹起是随挥。hip pops 不写成送髋 |
 | 旁支：最简单的接触，上身一起转回（0m3B） | 无新 OBS | 胸高时肘是否还抬着；左右两侧是否拆开 | pull forward 不写成推肘。主动沉拍不写成降拍。together 指上身 |
 | 上游：柄贴进手（2J8，holdout） | 无新 OBS；不进 tree evidence | 虎口和手心有没有缝 | 张开手掌不是场上握法。不进树 |
+| 旁支：拍在躯干慢下来时松开（wzL） | 无新 OBS | 触球时雨刷走了多少，静帧定不出；高肘那张还停在肩后上方 | press 不写成推肘。高肘漂下不写成降拍。30:43 的 coil 仍是 p.119。33:27 不写成送髋 |
+| 上游：拍床让结果读得懂（5-Ia） | 无新 OBS | 硬床、网、斜向触球能看见；出射角和落点看不见 | 21:09 不改粗枝 1 或 2。28° 不是书的页。不压过 2Nn / Pwk |
+| 旁支：手的弹性槽（RVfm） | 无新 OBS | 柄端当靶、地上的球、肩高触球能看见；槽在哪定不出 | 等或送不改写 p.75。13:10 不写成送髋。反手不进正手 |
+| 上游：转轴在手上侧（pWzy） | 无新 OBS | 两指、柄端朝前能看见；转轴在哪一截定不出 | 两指不是场上握法。15:36 若读成手开始挥，书 p.83 赢 |
+| 旁支：刷指向绕挥（geh，holdout） | 无新 OBS；不进 tree evidence；不新开叶子名 | 打穿、髋放低、平肩把手拉高能看见 | 刷、低于水平、把手放低不写成降拍。2Nn / Pwk 赢 |
 | 准备转离幅度 | OBS-08 | ✅ | — |
 | 触球时髋是否已朝网 | OBS-09 | ✅ | 开放站位下要结合 OBS-25 读 |
 | 骨盆在前挥中是否减速 | OBS-71 | 实测 3/3 unclear | 需更高帧率或侧面 |
@@ -262,8 +284,8 @@ FTT 出处（视频 / holdout 知识；补充，不压过书）：
 FTT 出处：
 - 书 p.75（Inhale and Wait，【已核对】）：等待；视觉线索启动。
 - 书 p.110–114（Forward Swing Progression）讲扭转同步，不讲相对来球的时机；「急了 → 断链」只是推断（branch_links 虚线）。
-- dZadhzVEsds:Q02 / Q03：耐心、拍头至少到球高再加速（视频补充）。
-- 树节点 N-C_DZADHZVESDS_C01：手和拍还在球的高度之上就开始向前转体加速（required OBS-57=`above_ball`）
+- dZadhzVEsds:Q02 / Q03：耐心、拍头至少到球高再加速（视频补充）。2026-10-24 重过钉在段起点 0:38、1:02；1:03 的 preferably below 不写成降拍。不改写 BOOK:p.75。
+- 树节点 N-C_DZADHZVESDS_C01：手和拍还在球的高度之上就开始向前转体加速（required OBS-57=`above_ball`）。本轮不改这个节点，也不改 OBS-57。
 
 **叶子**：
 
@@ -274,6 +296,7 @@ FTT 出处：
 | 击球点前后 | OBS-03 | ❌ | 需侧面 S |
 | 引拍顶点停顿 | OBS-04 | ✅ | — |
 | 旁支：释放窗口贴着触球（x_WIg） | 无新 OBS | 静帧数不出 3 帧或 12 帧 | 「从触球开始」是体感。字面读成才准备，书 p.75 赢 |
+| 旁支：拍到球高再加速转动（dZad） | 无新 OBS；不改 OBS-57 | 拍还在头上，和拍已经放低，两张都看见；加速起点定不出 | 1:03、16:12 不写成降拍。晚加速不改写 p.75。斜线不写成由低到高 |
 | 结果：下网 / 打框 / 好 | OBS-16 | ✅ | — |
 
 **两个时间量要分开**：
@@ -311,6 +334,7 @@ FTT 出处：
 9. 2026-10-24 Batch A 续的六期也不单开训练清单，不替换场上主句。肩内收、内旋起点、三种刹车、上手投、绕挥，都只留在来源稿的练习口令旁支里。片中的 pull across、press the hand、fire the hip into the shot、supinate、high to low、press the arm out、drive the pelvis forward，都不写成推肘、降拍、旋后、伸肘或送髋。
 10. 2026-10-24 Batch A 收尾的六期同样不单开训练清单，不替换场上主句。tilt、左手横回、膝去肘、胸把臂带向前、非持拍侧向回压、拍走到头上方、脚向球场压回去，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。`uQcObi2oTSs` 不另写练习口令。`5jHCDc44SQM` 继续 holdout。
 11. 2026-10-24 Batch B 第一刀的六期也不单开训练清单，不替换场上主句。把球推远、横拉肘、从脚跟向左驱动、只转上身、把髋向前顶、pull forward、主动沉拍、张开手掌、hip pops，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。`q6LrQYDvxmY`、`2J8q7sn4JLc` 继续 holdout。`x_WIg59Wr9Y` 不改写粗枝 2 的等球。
+12. 2026-10-24 Batch B 第二刀的六期也不单开训练清单，不替换场上主句。肘内侧 press、提前握紧、从高肘把拍翻下去、两指握、主动屈腕、刷、把骨盆向后扔、反手那段拉过球场、单独掉肘，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。`gehRK0Y6AdQ` 继续 holdout。刷若和绕挥冲突，以书和 2Nn / Pwk 为准。`dZadhzVEsds` 的耐心不改写粗枝 2 的等球。
 
 ## 附：辅助视频叶子（2026-10-22）— 5xcIshgCd-E（TPA tennis / Tom Allsopp，非 FTT）
 - 挂粗枝 1（髋没先启动 → 手臂代偿）。要点：「hips first, arm second」@4:25；「not the arm's turn yet」@2:13；「slow enough take back … fire something else before the arms」@2:54。
