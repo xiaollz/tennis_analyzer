@@ -1,0 +1,36 @@
+# 小红书教练：babolat签约网球刘教练（刘教练 / Rabbit tennis）
+
+- 身份：小红书「babolat签约网球刘教练」（亦称刘教练；先前笔记里偶见 Rabbit tennis）。
+- 角色：**辅助来源（auxiliary / 非 FTT）**。不定义新故障、不进 tree evidence、不进中性 Gemini 提示词。
+- 树干：FTT 书 `books/ftt_fault_tolerant_forehand`（及本目录上级的 FTT SRC 卡）。与书冲突 → **书赢**；冲突写进该视频笔记的对照节，不删原话。
+- 抓取：薯片（xiaohongshu fetch）另线进行；本目录只等内容到位后再写深看笔记，**不因等待而阻塞建档**。
+- 综述：已 transcribed 条目的主题聚类与 FTT 书对照见 [`SYNTHESIS_FTT_CORRELATION.md`](./SYNTHESIS_FTT_CORRELATION.md)。
+
+## 入库形态（每条视频一篇）
+
+每条视频笔记固定三段，对应学员个案逻辑：
+
+1. **学员现象 / 症状**（看得见的问题）
+2. **动力链成因**（背后的顺序 / 代偿，尽量用教练原话 + 时间点）
+3. **改进意见 / 口令 / 练习**（教练见解；对照 FTT 后再决定是否可作处方）
+
+可选第四节：对照 FTT 书（页码）——一致 / 按书改写 / 冲突→书赢。
+
+## 硬约束
+
+- 标签：一律标 **auxiliary（非 FTT）**。
+- **禁止**把本目录材料写入任何中性 Gemini / 事实抽取提示词。
+- **禁止**改 `tree.json` / `tree_vN` / frozen / golden（本脚手架也不碰）。
+- 输出禁令词（不作处方、不写进口令栏）：**推肘、降拍、旋后、伸肘、送髋**。视频原话若出现，只记原文，不翻译成口令。
+- 未核对字幕 / 抽帧前，笔记标【未核对】；不进故障卡证据链。
+
+## 文件约定
+
+| 路径 | 用途 |
+|---|---|
+| `INDEX.md` | 视频总表（链接、主题、状态） |
+| `README.md` | 本文件：入库规则 |
+| `SYNTHESIS_FTT_CORRELATION.md` | **已深看要点整理 × FTT 书关联**（同向/书赢/待拍板/不进树；映射粗枝1/2） |
+| `<note_id>.md` | 单条深看笔记（内容到位后新增；命名用小红书 note id 或短链 slug） |
+
+挂接：需要时挂到对应粗枝的 `video_knowledge`，`role = auxiliary_*`，非证据。详见同级 TPA 叶 `../tpa_kinetic_chain_5xcIshgCd-E_2026-10-22.md`。
