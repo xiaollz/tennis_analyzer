@@ -505,6 +505,49 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 245 | 耸肩你会吗？Zekic给你修正方法 | 耸肩 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671d4f9b000000001b011352?xsec_token=ABV33ggHmS56k4UCtdnxcPTxfuiNPLK3RlJnta2W7PQRU=&xsec_source=pc_user | catalog_only |
 | 246 | 山⛰海🏖游轮🚢游艇红土球场 | 花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671dfb1f000000001600dc82?xsec_token=ABV33ggHmS56k4UCtdnxcPTwsIky8ssr5xv0ua31XusMk=&xsec_source=pc_user | catalog_only |
 
-下一条（未入上表）：`671cff72` ATP球员Zekic教正手击球口诀。再下：`671a6c8a` 惊喜ATP现役球员手把手教正手（一）；`6717afb2` 别想太复杂，看看暴力正手很好练（正手，下一批可标 pending_A-E）。
+下一条已收入第九批 #247：`671cff72` ATP球员Zekic教正手击球口诀。
+
+没有点赞、评论、关注、发布。
+
+## 第九批 30 条（#247–#276，从 `671cff72` 起）
+
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 245 = 目录 #246 `671dfb1f`）。从下一条 data-index 246 = `671cff72` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 275 = 目录 #276。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue。正反手标题（#250、#265）含反手，不单标正手，只 `catalog_only`。#266 标题是「步伐」不是脚/脚步，只 `catalog_only`。发球标题里的发力（#262）仍只 `catalog_only`。data-index 256 = `67014cc5` 已有深看，目录 #257 只指回，不新开。data-index 259 = `66f56ddf` 与置顶 #2 同 id，目录 #260 只指回，不新开。本批新 pending_A-E：#247、#248、#249、#273、#274、#276。第八批 pending_A-E 已清（那十条都已深看）。本批没有打开笔记。没有点赞、评论、关注、发布。
+
+进度：已入目录 **276 / 约 362**。还剩约 86 条未入目录。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 247 | ATP球员Zekic教正手击球口诀 | 正手击球口诀 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671cff72000000001b0105f1?xsec_token=ABhQkdTn6Yxj-U0PE3ruUbzdKdT4idgbuGMdnwxaF9Yqg=&xsec_source=pc_user | **pending_A-E** |
+| 248 | 惊喜ATP现役球员手把手教正手（一） | 正手教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671a6c8a000000001b012960?xsec_token=AB5sfRHJNYI31XUQUYhAgqSLHdCMcOeeBgcczG3G8kV7w=&xsec_source=pc_user | **pending_A-E** |
+| 249 | 别想太复杂，看看暴力正手很好练 | 暴力正手 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6717afb2000000001600d68b?xsec_token=ABKTcYlRjxMWiJn6LCSbU3oZzvR8-i2zJeoOcDTUA_Ol4=&xsec_source=pc_user | **pending_A-E** |
+| 250 | 入门版的正反手握拍位置一定不能错 | 正反手握拍 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6713b6110000000016021df9?xsec_token=ABM7u9tHUz6374sMGRJUSTmRrxUZgf99qFx2Pix8nEfMs=&xsec_source=pc_user | catalog_only |
+| 251 | 必须掌握测与练（击球稳定性）方法 | 击球稳定性 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/671260a5000000001b02f0f9?xsec_token=AB7qYSUoQwQBDDohagQE_5kUOjl_9iBeQFAIcdxjbyr7I=&xsec_source=pc_user | catalog_only |
+| 252 | 击球手臂紧?三步get丝滑击球细节 | 击球手臂紧 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/670fbb95000000001b0110e7?xsec_token=ABv49_OTSVWg23I5nYPnvY5lSNRgyiO8Y5mBELi-AF3Fk=&xsec_source=pc_user | catalog_only |
+| 253 | 偷感十足却能打出好看网球 | 好看网球 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/670d2fa9000000001600c0f7?xsec_token=ABnYEkhr4QKQV1rRXq78787LaW9WNlgm2IccJ_aHzCblI=&xsec_source=pc_user | catalog_only |
+| 254 | 必看30秒就懂侧身的对与错 | 侧身 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/670a8483000000001b010d81?xsec_token=ABksVvFvdud7jRGFmTz9veuM--WLy_J7LY1IHh6VjLkO8=&xsec_source=pc_user | catalog_only |
+| 255 | 为啥击球会翻拍面及练习方法 | 翻拍面 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6707dd4c000000002c02f2ec?xsec_token=ABjLzJN4cILuDot301IbaffeGOATjxupRwBqS_GLi5POY=&xsec_source=pc_user | catalog_only |
+| 256 | 必须知道反手击球时手腕变化细节 | 反手手腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67054794000000002c02f3c6?xsec_token=ABJcs0_wJsKoRrMnVSfmsCm_L0eF1m_QaagsQCOTKDHuo=&xsec_source=pc_user | catalog_only |
+| 257 | 一看就懂，手臂击球改成转髋击球 | 手臂改转髋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67014cc5000000002c02f675?xsec_token=ABc8oSYvL0zbn1C3rA4yEzLH5e6zNaOd0CUCppB7whj7Y=&xsec_source=pc_user | **transcribed** `video_arm_to_hip_67014cc5.md`（已有深看，不新开） |
+| 258 | 注意这一点你学习效率提升快2倍 | 学习效率 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66fea6c1000000002a033277?xsec_token=ABabtQdB5NWl8g_nCCSfDPwin8w4OwPOs9rdzaQ8j_j08=&xsec_source=pc_user | catalog_only |
+| 259 | 我对这张魔法图的补充理解 | 魔法图补充 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66f8153b000000002c02dd7c?xsec_token=ABQFAoW1Ro25RAXFyF6CzjjdaspzWTfWWj414NobDwcYM=&xsec_source=pc_user | catalog_only |
+| 260 | 劝你们正手一定要重视掉腕这个细节 | 同置顶 #2 · 正手掉腕 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66f56ddf000000002c02c5e9?xsec_token=AB2xNs1TZHUxEAKBOSH-jnRD9uaCL5eqMsdsLHqX4F-ZE=&xsec_source=pc_user | **transcribed** `video_wrist_drop_66f56ddf.md`（同置顶 #2，不新开） |
+| 261 | 一个超简单能放松手臂鞭打的方法 | 放松鞭打 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66f2d098000000002a03399c?xsec_token=AB-KVoUHMMyJwAwgjGC0_hOcFzGvqIv_xmhlqoeyNQiPo=&xsec_source=pc_user | catalog_only |
+| 262 | 发球避免翻手腕发力全套慢动作来了 | 发球翻腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66eed7f20000000027000004?xsec_token=ABmnsBXo7F3aIQ211x1f8kZTXZpYx1HjyjVOgnFB-vM2Q=&xsec_source=pc_user | catalog_only |
+| 263 | 发球中一个抛球的秘密在这里 | 发球抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66ec313d0000000027002169?xsec_token=ABlYQLa9Z7fN65UlmZeJ18jEtGh4WTRAxi4e0vsoVDOaQ=&xsec_source=pc_user | catalog_only |
+| 264 | 发球不翻手腕的练习方法 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66e1a62c0000000027004501?xsec_token=ABoWdCQdkAH6DcjPXTFGGI-6r7An6dEf6_wymtystnZ_M=&xsec_source=pc_user | catalog_only |
+| 265 | 莱巴金娜正反手完美细节展示 | 正反手细节 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66df1d3a0000000027004f1f?xsec_token=ABDITzclUyCrQrRwl2MGJnzSVKGBjIy-hepy2VcYB_dRs=&xsec_source=pc_user | catalog_only |
+| 266 | 一个球学会三种步伐（王欣瑜） | 三种步伐 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66ddb4ef0000000027006788?xsec_token=AB9Sw6-p99ZMohceyyEWYtfbjl2CNAOoD3l6EBmOHTaOA=&xsec_source=pc_user | catalog_only |
+| 267 | 奥冠新空调球场回炉狂练基本功 | 基本功花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66d98a20000000002603df9a?xsec_token=ABm8TDt8I8xWAUJkdcnXcP2DNUCxrWXxMeJi_lU_eyEG8=&xsec_source=pc_user | catalog_only |
+| 268 | 经常和萨巴打的都懂这发球可以得分 | 发球得分 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66d866d4000000001f039999?xsec_token=AB_KZGf1yTLVd7C8DFVtXkgJel8U7VlW9AIQ9UTInem5k=&xsec_source=pc_user | catalog_only |
+| 269 | 球踩了这个雷你要飞快进步了 | 踩雷进步 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66d14fec000000001f01fbe8?xsec_token=ABlll-v-GmKjBRHnmyxDjcIR5sZ2gNPRch4KEtUbKK5gM=&xsec_source=pc_user | catalog_only |
+| 270 | 发球我建议要增加静态无球练习 | 发球无球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66cf3102000000001f01ba6b?xsec_token=ABJykV6Md0PT-8M9ECj63h5IAklch08Hz1p9WH8XZ1-vI=&xsec_source=pc_user | catalog_only |
+| 271 | 发球一个小动作让翻腕成历史 | 发球翻腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66cb1a75000000001f03c62e?xsec_token=ABhFFVOUVfuTONMfLOna04CHmu6URwFoPgeuFORG-Vra8=&xsec_source=pc_user | catalog_only |
+| 272 | 框住球，怎么会打不到 | 框住球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c89f3d000000001f0161d3?xsec_token=ABznB0PXckdhXV476atmeQvxdLxr2n1dShQE4SKBHbU0c=&xsec_source=pc_user | catalog_only |
+| 273 | 完善整套寻找击球点的公式 | 寻找击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c74343000000001f014641?xsec_token=ABcDcgi3T-Xmb_b9M1uckJ3r2aeM4HHdQvlAmGR1asns8=&xsec_source=pc_user | **pending_A-E** |
+| 274 | 套公式能找到击球点你们信吗 | 找到击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c5f846000000001f01d8d3?xsec_token=AB8Eqdh7-thjTRKCa3VFOhD7J8Kj542EjefKjoSlLGFNE=&xsec_source=pc_user | **pending_A-E** |
+| 275 | 预判，改变思路会突飞猛进 | 预判 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c4ae7d000000001f03cecb?xsec_token=ABy8ZyapjWKE1j39l_1raBmhXB7YQX8bar9wUoGpf7CcY=&xsec_source=pc_user | catalog_only |
+| 276 | 瞬间说清教会如何用腿发力 | 用腿发力 · power · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c2d706000000001f039338?xsec_token=ABtF3zz6K3fQ1P_vZweBAG9pnORndGdOCHashHL7lAYKc=&xsec_source=pc_user | **pending_A-E** |
+
+下一条（未入上表）：`66c079e1` 有了这个，正手都可以4.0了。再下：`66bd88a3` 戒掉用手臂带身体，你要蹬（已有深看 `video_deng_not_arm_66bd88a3.md`，下一批只指回）。
 
 没有点赞、评论、关注、发布。
