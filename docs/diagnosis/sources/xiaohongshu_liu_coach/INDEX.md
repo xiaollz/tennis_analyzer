@@ -989,3 +989,32 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`5ea64606` 收拾东西，睹物思人，想起我爸爸了。再下：`5ea21adf` 预约南航最简单粗暴的方法。主页在本批之后未到尽头；本批下滚见到 data-index 558，底部仍显示「加载中」，未见「没有更多」。
 
 没有点赞、评论、关注、发布。
+
+
+## 第十九批 13 条（#547–#559，从 `5ea64606` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 546–558 = 目录 #547–#559）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十八批末 data-index 545 = 目录 #546 `5eaacff6`）。从下一条 data-index 546 = `5ea64606` 起，按主页从上到下（新→旧）再收，到 data-index 558 = 目录 #559 后再也滚不出新卡。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面）。#549 封面以 👏 起头，表内保留。刷新主页后再从顶滚到底，窗口仍停在 data-index 542–558（17 张卡），滚轮不再带动列表；DOM 里「加载中」仍在（视口外），没有「没有更多」文案。按再也滚不出新卡，记主页渲染尽头在 #559。实收 13 条，不足 30。
+
+本批 pending_A-E：#556 `5e7c17f2` 网球正手密码在这（标题明确正手）。其余为机票/生活花絮，不单标。本批没有反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、正反手合题、步伐、转肩、重心转移、鞭打、降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **559**。页面「笔记」计数仍约 362，时间线长于计数。本批之后主页渲染到尽头（data-index 558 之后无新卡；DOM 仍有「加载中」，未见「没有更多」）。没有下一条游标。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 547 | 收拾东西，睹物思人，想起我爸爸了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ea646060000000001000198?xsec_token=AB0p12Sm31-Ygw91WdSdAeo_NERJVnBrn02fYG8IZB6yI=&xsec_source=pc_user | catalog_only |
+| 548 | 预约南航最简单粗暴的方法 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ea21adf0000000001005ca4?xsec_token=AB5L9lSbU8prYVlsDbUn8hfN6JpGniBApnbanLA2EVPw8=&xsec_source=pc_user | catalog_only |
+| 549 | 👏教你如何提前预判你们的机票是否给取消 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5ea02d5d00000000010012c1?xsec_token=ABQ_zbttUlTlnR4mfKZ5CJ7zGniUn37U259c7vUnszplk=&xsec_source=pc_user | catalog_only |
+| 550 | 关于留学生回国提前买机票的意见 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e9e458b000000000100b992?xsec_token=ABdC2Mni8ec0WKsstJodREDEWiuH4BSpAatxtRG9dWbn8=&xsec_source=pc_user | catalog_only |
+| 551 | 伦敦到国内的机票60thousand这么贵吗 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e9c62ff00000000010035c7?xsec_token=ABwLijw6Py4waBoZtOBkEaG3ZeoEu0noOLfCfGKj0DsFQ=&xsec_source=pc_user | catalog_only |
+| 552 | 南航5月航班计划（一定要看内容tips） | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e9b09f700000000010006dd?xsec_token=ABS6l0kqPKgtEc-cqILuFj7cDBrJ615V8vNQz7vK8jQFU=&xsec_source=pc_user | catalog_only |
+| 553 | 国航5月全球航空时间表（附小技巧） | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e985c3100000000010029d1?xsec_token=ABAtPFBQXZPfrPuhnJrc9ahYLbEgwNb8wH7eqpsc3Fei8=&xsec_source=pc_user | catalog_only |
+| 554 | 南航国际航线最新安排 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e86fe6d00000000010073e3?xsec_token=AB8JFAl_N3WFs66DMcY7m46_AQG4MTszqpRCVlrQKtI-w=&xsec_source=pc_user | catalog_only |
+| 555 | 不能出去玩，只能在回忆 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e84bc400000000001007d6d?xsec_token=ABZnMwcX86rBnnlVZz90FPg08EJTBdGwfELdc1Rzlqo2Q=&xsec_source=pc_user | catalog_only |
+| 556 | 网球正手密码在这 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e7c17f200000000010081ad?xsec_token=ABJaVneWg1e_J42jpHKvgz4FSIYedLXarEMJzY1yfyOQc=&xsec_source=pc_user | **pending_A-E** |
+| 557 | 我拍的，可惜今年都没有机会出去浪了。 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e74af1e000000000100be60?xsec_token=ABQYUOWgqqjHU8g7uRokDW5kT_k5om4ApHNMheOBHRkMI=&xsec_source=pc_user | catalog_only |
+| 558 | 疫情期间人和动物 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e7023f10000000001006f7e?xsec_token=AB4AkgLu8wAMeCaTTumepF_P8jGgDwMBYhbh2Ml6ph3GM=&xsec_source=pc_user | catalog_only |
+| 559 | 寄口罩给以色列和塞尔维亚的朋友 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/5e6f2b1e0000000001003390?xsec_token=ABFPfD9P42n18Whde-9acHYGTBEK3Xk-_rhbaK5ToRf3c=&xsec_source=pc_user | catalog_only |
+
+下一条：主页已到尽头（末条 #559 `5e6f2b1e` 寄口罩给以色列和塞尔维亚的朋友）。没有下一条游标。data-index 558 之后反复下滚、以及刷新后再从顶滚到底，均无新卡；DOM 仍显示「加载中」，未见「没有更多」。
+
+没有点赞、评论、关注、发布。
