@@ -21,7 +21,7 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 11，pending 79，blocked 7。批次 A 17 / B 49 / C 31。Batch A 第一刀四期，加本轮续的六期，见各 `SRC-FTT-<id>_repass_2026-10-24.md`。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI` 虽为 deep，仍是 holdout，不进 tree evidence。批次 A 还没全部 deep：`tzgAWr3QGv0`、`5jHCDc44SQM`、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`、`ExkBtFRhUWY` 仍 pending。
+当前计数：deep 17，pending 73，blocked 7。批次 A 17 / B 49 / C 31。Batch A 第一刀四期、续六期、收尾六期，见各 `SRC-FTT-<id>_repass_2026-10-24.md`。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM` 虽为 deep，仍是 holdout，不进 tree evidence。批次 A 17 期都已 deep。`uQcObi2oTSs` 是 deep-with-gap：Shorts 约 10 秒，只有一句主张。未开 Batch B。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
@@ -73,12 +73,12 @@
 | `KU7FHy1qQOI` | The Physics, Geometry, and Biomechanics of Power Development | 1088 | A | deep | Batch A 第一刀；`SRC-FTT-KU7FHy1qQOI_repass_2026-10-24.md`；甜区/几何在链前，不进 tree evidence |
 | `FBJnFBtZozE` | How Sinner Choke-Proofed His Game | 604 | C | pending |  |
 | `PjvOQkqH9DA` | Never Lose Another Winnable Match / The Tactical and Psychological Makeup of Beatdowns | 564 | C | pending |  |
-| `tzgAWr3QGv0` | 7 Steps for a Sinner-Like Forehand / #5: Tilt! | 1132 | A | pending |  |
+| `tzgAWr3QGv0` | 7 Steps for a Sinner-Like Forehand / #5: Tilt! | 1132 | A | deep | Batch A 收尾；`SRC-FTT-tzgAWr3QGv0_repass_2026-10-24.md`；低球侧屈叶子；胸参与不升粗枝 |
 | `FjjvhNbk3q4` | 7 Tips for an Effortless Serve ft. Giovanni Mpetshi-Perricard | 1262 | C | pending |  |
 | `97vo-kFis6c` | The Best Disguised Serve on the Tour | 14 | C | blocked | 无字幕，先补字幕 |
-| `5jHCDc44SQM` | The Abdominal Corkscrew ft. Carson Branstine | 457 | A | pending | holdout（既有树规则）；本轮未深吸收 |
+| `5jHCDc44SQM` | The Abdominal Corkscrew ft. Carson Branstine | 457 | A | deep | Batch A 收尾；`SRC-FTT-5jHCDc44SQM_repass_2026-10-24.md`；holdout；腹部张力体感；1:13 与 p.119 冲突，书赢 |
 | `XXlndjnrA4E` | Peripheral Vision Lets You Volley Like the Pros | 499 | C | pending |  |
-| `hNVbbPEob3g` | Chest Engagement Makes Controlling the Racket Face Easy | 379 | A | pending |  |
+| `hNVbbPEob3g` | Chest Engagement Makes Controlling the Racket Face Easy | 379 | A | deep | Batch A 收尾；`SRC-FTT-hNVbbPEob3g_repass_2026-10-24.md`；驱动时臂贴躯干；0:22 胸先走是放弃的一档 |
 | `UB6SbA_KX9E` | Proper Trunk Sequencing will Transform Your Tennis | 714 | A | deep | Batch A 第一刀；`SRC-FTT-UB6SbA_KX9E_repass_2026-10-24.md`；短终点脉冲；书赢，不改成肩先于髋 |
 | `MWjBfarwNlA` | Alcaraz's Secret Weapon / Backhand Line RALLY Ball | 34 | C | pending |  |
 | `boMJDzuFhM4` | Alcaraz's Anxiety Secret / Mental Mastery in Tennis | 50 | C | pending |  |
@@ -89,7 +89,7 @@
 | `Qszz0N4fRb4` | Why You Get Tight, and How to Fix It / Learning From Sinner's 6-0 6-1 Masterclass | 707 | B | pending |  |
 | `Psidjei5BnI` | 4 Tips For Consistently Crushing Slow Balls | 475 | B | pending |  |
 | `FxDmVi3EFnE` | The Truth About the Topspin Pro | 928 | B | pending |  |
-| `McCb-RfYd0w` | The Magic of the Non-Dominant Side on the Forehand | 192 | A | pending |  |
+| `McCb-RfYd0w` | The Magic of the Non-Dominant Side on the Forehand | 192 | A | deep | Batch A 收尾；`SRC-FTT-McCb-RfYd0w_repass_2026-10-24.md`；非持拍侧叶子；不写成提前拉左臂 |
 | `JIMgI3jiVns` | How Shoulder Rotation Syncs Your Contact | 448 | A | deep | Batch A 续；`SRC-FTT-JIMgI3jiVns_repass_2026-10-24.md`；内旋刚开始才接触；不进 tree evidence |
 | `42BfbKsTGb4` | You Aren't Practicing Half of Tennis / RECEIVING Will Transform Your Game | 337 | B | pending |  |
 | `Fu6DkHvZlGY` | The Pure-Dextral Pinpoint / Serve Like Jakob Mensik | 435 | C | pending |  |
@@ -113,12 +113,12 @@
 | `QrRYuVjVibU` | When You Get A Low Forehand | 16 | B | pending |  |
 | `Ibkq-yBteGc` | To Hit the Low Backhand | 9 | C | pending |  |
 | `5KdScDKxVSI` | Shoulder Adduction Will Transform Your Forehand Contact | 357 | A | deep | Batch A 续；`SRC-FTT-5KdScDKxVSI_repass_2026-10-24.md`；holdout；接触叶子；「可以不转」书赢 |
-| `uQcObi2oTSs` | The Low-to-High Forehand is Mostly a Myth | 10 | A | pending |  |
+| `uQcObi2oTSs` | The Low-to-High Forehand is Mostly a Myth | 10 | A | deep | Batch A 收尾；deep-with-gap；`SRC-FTT-uQcObi2oTSs_repass_2026-10-24.md`；Shorts 约 10 秒，只有一句，指向 2Nn/Pwk |
 | `Cwc4YcKFZrU` | Retired WTA Pro Still Ripping the Forehand | 25 | B | blocked | 无字幕，先补字幕 |
 | `risP4qTirj8` | WTA Pro Training with Hand Toss Forehands | 31 | B | blocked | 无字幕，先补字幕 |
 | `XF17hgRlccw` | What Perfect Forehand Contact Looks Like | 6 | B | blocked | 无字幕，先补字幕 |
 | `dnNOOornvek` | Retired WTA Pro Still Ripping Backhands | 48 | C | blocked | 无字幕，先补字幕 |
-| `ExkBtFRhUWY` | The Magic of Single-Foot Forehand Training | 497 | A | pending |  |
+| `ExkBtFRhUWY` | The Magic of Single-Foot Forehand Training | 497 | A | deep | Batch A 收尾；`SRC-FTT-ExkBtFRhUWY_repass_2026-10-24.md`；单脚探球在粗枝 1 上游；低置信已对字幕，仍不进 tree evidence |
 | `PUN6qIIYU-4` | 4 Tips for the Two-Handed Backhand | 886 | C | pending |  |
 | `Am8j1Zw5KrE` | Shoulder Adduction Unlocks the Tennis Forehand | 556 | A | deep | Batch A 续；`SRC-FTT-Am8j1Zw5KrE_repass_2026-10-24.md`；holdout；肩内收是接触叶子，不进 tree evidence |
 | `OYf48k-cfNI` | Fault Tolerance In Action | 232 | B | pending |  |
@@ -131,5 +131,7 @@
 
 `6ak4ZScH_gc` 不重写，只引用 `SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`。`ui-RFRdQKRk` 虽已 deep，仍是 holdout，不进 tree evidence。
 
-批次 A 剩余 pending：`tzgAWr3QGv0`、`5jHCDc44SQM`（holdout）、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`、`ExkBtFRhUWY`。未开 Batch B。
+收尾（2026-10-24 第三刀）：`tzgAWr3QGv0`、`5jHCDc44SQM`、`hNVbbPEob3g`、`McCb-RfYd0w`、`uQcObi2oTSs`、`ExkBtFRhUWY`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`5jHCDc44SQM` 仍是 holdout。`uQcObi2oTSs` 是 deep-with-gap。
+
+批次 A 17 期全部 deep。未开 Batch B。
 
