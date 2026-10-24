@@ -127,6 +127,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/636e1d300000000022029e2c?xsec_token=ABI03ap4bkbrbNwbPUnULGJIqPL2hF_ZxLwzru4H4E9OA=&xsec_source=pc_user （= 目录 #445） | 教好她脚步 · 画面无教练大字 / 初学者只在文案 / 转体推出去转移重心只在评论 | **transcribed** | `video_footwork_bully_coach_636e1d30.md` |
 | https://www.xiaohongshu.com/explore/633e7544000000001d024b7c?xsec_token=AB_PWnIDoL8-QCTFVoUOT0Tl351H7TK_xitCP4R85n1Rw=&xsec_source=pc_user （= 目录 #450） | 200个球拍头滞后转体蹬地 · 拍头滞后只在标题不改降拍头 / 转体不改转髋 / 初学着按字形 / 片尾 PRODUCED BY 彭彭 | **transcribed** | `video_lag_turn_dengdi_633e7544.md` |
 | https://www.xiaohongshu.com/explore/632d0ee60000000009030694?xsec_token=ABhvc3Wb7rzYnxymxtlJLoKkeoCQ0lSMFenHcSwPu7RQM=&xsec_source=pc_user （= 目录 #452） | 靠前的击球点 · 击球点只引用 / 靠前不并靠后 / 護苗网球是场地字 / 徐卡西只在评论 | **transcribed** | `video_forward_contact_point_632d0ee6.md` |
+| https://www.xiaohongshu.com/explore/621e2579000000002103c327?xsec_token=ABK-Lrp9PKqt1hMblP3zvBDKPanu7NkrzFvpUDjLU15Rk=&xsec_source=pc_user （= 目录 #473） | 2022款正手 · 小拉拍/大转体不并成小引拍或转髋 / 2020与2022不并 / 80秒不并时长 / 画面无教练大字 | **transcribed** | `video_fh_2022_621e2579.md` |
 
 ---
 
@@ -854,9 +855,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第十六批 30 条（#457–#486，从 `62e3584c` 起）
 
-薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 456–485 = 目录 #457–#486）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十五批末 data-index 455 = 目录 #456 `62f261eb`）。从下一条 data-index 456 = `62e3584c` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 485 = 目录 #486。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面），标题中间的 🎾 保留（#473、#479、#486）。本批下滚见到 data-index 512，页面没有「没有更多」文案，未到尽头。
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 456–485 = 目录 #457–#486）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十五批末 data-index 455 = 目录 #456 `62f261eb`）。从下一条 data-index 456 = `62e3584c` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 485 = 目录 #486。一句话来自封面标题。#473 已打开并 transcribed，其余本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 不写入表内标题（本批没有以 🎾 起头的封面），标题中间的 🎾 保留（#473、#479、#486）。本批下滚见到 data-index 512，页面没有「没有更多」文案，未到尽头。
 
-本批 pending_A-E 仅 1 条：#473 `621e2579` 教你如何练成2022款🎾正手。#467「找不到球」按找球只 `catalog_only`。#469 蒙眼发球只 `catalog_only`。#480 反手截击切削只 `catalog_only`。#481 标题虽有正手，主题是截击，按截击只 `catalog_only`（同第十二批 #366 正手+侧身）。本批没有降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+本批曾标 pending_A-E 仅 1 条：#473 `621e2579` 教你如何练成2022款🎾正手。2026-10-24 #473 已 **transcribed**（`video_fh_2022_621e2579.md`）。本批 1 条 pending 已 transcribed（#473）。打开的是主页路径，页面落到同 token 的 explore。#473 评论区是「这是一片荒地点击评论」，没有「展开」，没有「- THE END -」。#467「找不到球」按找球只 `catalog_only`。#469 蒙眼发球只 `catalog_only`。#480 反手截击切削只 `catalog_only`。#481 标题虽有正手，主题是截击，按截击只 `catalog_only`（同第十二批 #366 正手+侧身）。本批没有降拍头/掉拍头，没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
 
 进度：已入目录 **486**。页面「笔记」计数仍约 362，时间线长于计数（本批下滚见到 data-index 512，无「没有更多」文案）。本批之后未到尽头。
 
@@ -878,7 +879,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 470 | 第一次这样过生日 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/624722d40000000021036c2e?xsec_token=ABPYdHq47Kw9E4RQ4Cy15bVT_WEBrsCq-h9rxEhuySph0=&xsec_source=pc_user | catalog_only |
 | 471 | 美国回国内有票了 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6243c0da000000000102ea68?xsec_token=ABfAhqNLk16M_34uY8-W7TnA4MENXYOxxRkNPpY7yRC5Y=&xsec_source=pc_user | catalog_only |
 | 472 | 南航伦敦直飞最新进展 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/62345001000000000102ee32?xsec_token=ABz5doB-8NOsyOBe-Q2r9nxvS2UtkT1Ao9jO3aHbIQIjQ=&xsec_source=pc_user | catalog_only |
-| 473 | 教你如何练成2022款🎾正手 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/621e2579000000002103c327?xsec_token=ABK-Lrp9PKqt1hMblP3zvBDKPanu7NkrzFvpUDjLU15Rk=&xsec_source=pc_user | **pending_A-E** |
+| 473 | 教你如何练成2022款🎾正手 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/621e2579000000002103c327?xsec_token=ABK-Lrp9PKqt1hMblP3zvBDKPanu7NkrzFvpUDjLU15Rk=&xsec_source=pc_user | **transcribed** `video_fh_2022_621e2579.md` |
 | 474 | 这个城市你去过？ | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6211a94b000000000102d044?xsec_token=ABtGghKi9PNpFE1zY-pccT4YMhS9ByC_PdkrmzJ_7S71g=&xsec_source=pc_user | catalog_only |
 | 475 | 中国第一金哦 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61fe7f1b0000000021038851?xsec_token=ABGmvzBct8Tyq1Gc3EJzOGG7P0zBnmEcN6E_RkZgjTBAM=&xsec_source=pc_user | catalog_only |
 | 476 | 我还停留在初一的状态 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/61fb3ef10000000001026061?xsec_token=ABy--nkY5E7d81TkphrBDpKrzR7jPkjt7JiVd_lzTIX3Q=&xsec_source=pc_user | catalog_only |
