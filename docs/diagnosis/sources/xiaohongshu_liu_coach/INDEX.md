@@ -87,6 +87,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/677e533a000000001703a4f0?xsec_token=ABwSKAo0XcaS6ZErtqOSWSmETU58S3k5yb8MFVgY1_b_k=&xsec_source=pc_user （= 目录 #209） | ATP脚步训练 · 平衡不改送重心 / 核心旋转不改转胯 / 外侧脚超越 | **transcribed** | `video_atp_footwork_drill_677e533a.md` |
 | https://www.xiaohongshu.com/explore/676d4336000000000b00fcf7?xsec_token=ABjv3qs90uu6sWunyLgjejx-donOkTheKln2i0p5eWvH0=&xsec_source=pc_user （= 目录 #216） | 前脚角度 · 锁死只引用不改伸肘 / 前脚45°C按字形 / 失平衡不改送髋 | **transcribed** | `video_front_foot_angle_676d4336.md` |
 | https://www.xiaohongshu.com/explore/673c52a4000000000202deb8?xsec_token=ABP5p0AhdrXigXEmRMfBwgzU8G_4pbRF04Jf2Nb6ZGDxo=&xsec_source=pc_user （= 目录 #232） | 正手卡点一二三 · 拍子触球/球拍触球不并 / 同手同脚不改送髋 / 作出递增≠源源不绝 | **transcribed** | `video_fh_timing_points_673c52a4.md` |
+| https://www.xiaohongshu.com/explore/6739d917000000003c01ce0c?xsec_token=AB_QsFuuq2Xdga7U1p1pbXdZQhzSjXREznRaTjhVNa9TQ=&xsec_source=pc_user （= 目录 #233） | 正手框架 · 侧身转肩到3点方向不并框架一 / 送前不并先前 | **transcribed** | `video_fh_framework_6739d917.md` |
+| https://www.xiaohongshu.com/explore/6736dae7000000003c01f7a6?xsec_token=ABzln-GcbD2EkmImzQE5CJhWZqtnOHLW8Mk6dPF0hecCk=&xsec_source=pc_user （= 目录 #234） | 卡点三部曲 · 大字起手是反手 / 砰石字旁 / 上步踩不补地 / 平衡不改送重心 | **transcribed** | `video_fh_rhythm_trilogy_6736dae7.md` |
+| https://www.xiaohongshu.com/explore/673d8df0000000000203bcd9?xsec_token=AB4CoyZRPJzF-01113cg7Hf0I4bCgrV5vAmRNZiKeeWhU=&xsec_source=pc_user （= 目录 #231） | 正手五个训练 · 快速内旋不并迅速 / 抬肘不改推肘 / 4颗星星按字形 / 降拍头只在评论 | **transcribed** | `video_fh_five_drills_673d8df0.md` |
 
 ---
 
@@ -459,7 +462,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第八批 30 条（#217–#246，从 `676bd47c` 起）
 
-薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 215 = 目录 #216 `676d4336`）。从下一条 data-index 216 = `676bd47c` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 245 = 目录 #246。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头只保留教练标题原文，不标待深看，也不当我方 cue。本批曾标 pending_A-E：#219、#223、#225、#231、#232、#233、#234、#237、#238、#240。2026-10-24 #232 已 **transcribed**（`video_fh_timing_points_673c52a4.md`）。仍 pending：#219、#223、#225、#231、#233、#234、#237、#238、#240。`671cff72` 没有打开。#233 正手框架没有打开。
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 215 = 目录 #216 `676d4336`）。从下一条 data-index 216 = `676bd47c` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 245 = 目录 #246。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头只保留教练标题原文，不标待深看，也不当我方 cue。本批曾标 pending_A-E：#219、#223、#225、#231、#232、#233、#234、#237、#238、#240。2026-10-24 #232 已 **transcribed**（`video_fh_timing_points_673c52a4.md`）。2026-10-24 #233、#234、#231 已 **transcribed**（`video_fh_framework_6739d917.md`、`video_fh_rhythm_trilogy_6736dae7.md`、`video_fh_five_drills_673d8df0.md`）。仍 pending：#219、#223、#225、#237、#238、#240。`671cff72` 没有打开。没有点赞、评论、关注、发布。#234 点过一次「展开 1 条回复」。#231 点过「展开 N 条回复」把 56 条读到 THE END。
 
 进度：已入目录 **246 / 约 362**。还剩约 116 条未入目录。
 
@@ -479,10 +482,10 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 228 | 给你一个轻松击准球的方法 | 击准球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67444ba0000000000203b665?xsec_token=ABPPbwpCd0kUJpng9JEg0DSiS2Y4s4K5nHaKf0Sm2f4EU=&xsec_source=pc_user | catalog_only |
 | 229 | 握拍紧还是松?你有这个困惑吗 | 握拍松紧 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6742feaf000000000202a877?xsec_token=AB3Ld604Yf6RfDBGIN0ABAy0y0BRM5y_knEVKXwf2s_c4=&xsec_source=pc_user | catalog_only |
 | 230 | zekic和我一起教发球（一）蓄力抛 | 发球蓄力抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673fea7500000000060157f5?xsec_token=ABAtcSU30G8EUZWjvj3ELMrOtetaZhFvfmBCoXfHOFR5A=&xsec_source=pc_user | catalog_only |
-| 231 | 一口气送5个训练方法（正手版本） | 正手五个训练 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673d8df0000000000203bcd9?xsec_token=AB4CoyZRPJzF-01113cg7Hf0I4bCgrV5vAmRNZiKeeWhU=&xsec_source=pc_user | pending_A-E |
+| 231 | 一口气送5个训练方法（正手版本） | 正手五个训练 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673d8df0000000000203bcd9?xsec_token=AB4CoyZRPJzF-01113cg7Hf0I4bCgrV5vAmRNZiKeeWhU=&xsec_source=pc_user | **transcribed** `video_fh_five_drills_673d8df0.md` |
 | 232 | 击球节奏中正手卡点一二三 | 正手卡点 · timing · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673c52a4000000000202deb8?xsec_token=ABP5p0AhdrXigXEmRMfBwgzU8G_4pbRF04Jf2Nb6ZGDxo=&xsec_source=pc_user | **transcribed** `video_fh_timing_points_673c52a4.md` |
-| 233 | 我和职业球员教你建立正手框架 | 正手框架 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6739d917000000003c01ce0c?xsec_token=AB_QsFuuq2Xdga7U1p1pbXdZQhzSjXREznRaTjhVNa9TQ=&xsec_source=pc_user | pending_A-E |
-| 234 | 能打爆球的击球节奏卡点三部曲 | 击球节奏卡点 · timing | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6736dae7000000003c01f7a6?xsec_token=ABzln-GcbD2EkmImzQE5CJhWZqtnOHLW8Mk6dPF0hecCk=&xsec_source=pc_user | pending_A-E |
+| 233 | 我和职业球员教你建立正手框架 | 正手框架 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6739d917000000003c01ce0c?xsec_token=AB_QsFuuq2Xdga7U1p1pbXdZQhzSjXREznRaTjhVNa9TQ=&xsec_source=pc_user | **transcribed** `video_fh_framework_6739d917.md` |
+| 234 | 能打爆球的击球节奏卡点三部曲 | 击球节奏卡点 · timing | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6736dae7000000003c01f7a6?xsec_token=ABzln-GcbD2EkmImzQE5CJhWZqtnOHLW8Mk6dPF0hecCk=&xsec_source=pc_user | **transcribed** `video_fh_rhythm_trilogy_6736dae7.md` |
 | 235 | 新手垫步侧身后竟然错了？你会吗 | 垫步侧身 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/673446a8000000003c01cb09?xsec_token=ABaKOyYXQGJpP5hI6uKgcFRVqoOnNEI0hd12UeVRWFSZc=&xsec_source=pc_user | catalog_only |
 | 236 | 2分钟内学会抛好球秘诀 | 抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67338283000000003c01d62e?xsec_token=ABaGRz9yecGHMnoDmDaOkaUpeDSmXe3FRaoYfnNxupq1g=&xsec_source=pc_user | catalog_only |
 | 237 | 拧和捅这两个正手必杀技你会吗？ | 正手拧与捅 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67330cc3000000001a0368c4?xsec_token=ABaGRz9yecGHMnoDmDaOkaUtiUMqdQ00C7rtVNr056DlU=&xsec_source=pc_user | pending_A-E |
