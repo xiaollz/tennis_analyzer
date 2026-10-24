@@ -21,15 +21,15 @@
 
 清单行数：97。来源：`inventory.tsv`（id、title、duration、has_subs）。
 
-当前计数：deep 23，pending 67，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀六期见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 6、pending 38、blocked 5。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc` 虽为 deep，仍是 holdout，不进 tree evidence。未开 Batch C。
+当前计数：deep 29，pending 61，blocked 7。批次 A 17 / B 49 / C 31。Batch A 已全部 deep。Batch B 第一刀、第二刀见各 `SRC-FTT-<id>_repass_2026-10-24.md`。Batch B 里 deep 12、pending 32、blocked 5。`ui-RFRdQKRk`、`Am8j1Zw5KrE`、`5KdScDKxVSI`、`5jHCDc44SQM`、`q6LrQYDvxmY`、`2J8q7sn4JLc`、`gehRK0Y6AdQ` 虽为 deep，仍是 holdout，不进 tree evidence。未开 Batch C。Batch B 未扫完。`mOFtt9PllI0` 仍 pending。
 
 | id | 标题 | 秒 | batch | status | 备注 |
 |---|---|---:|---|---|---|
 | `q6LrQYDvxmY` | Why Pros Hit So Far Away | 1036 | B | deep | Batch B 第一刀；`SRC-FTT-q6LrQYDvxmY_repass_2026-10-24.md`；holdout；间距在粗枝 1 上游 |
 | `uJpuDUx0jIA` | Why Your Forehand Keeps Disappearing, and How to Fix It | 1427 | B | deep | Batch B 第一刀；`SRC-FTT-uJpuDUx0jIA_repass_2026-10-24.md`；近端稳定叶子；2:41 书赢 |
 | `2Nn9tyMECZU` | Why Pros Swing Around, not Low-to-High | 1067 | A | deep | Batch A 续；`SRC-FTT-2Nn9tyMECZU_repass_2026-10-24.md`；绕挥叶子；14:42 coil 与 p.119 冲突，书赢 |
-| `5-Ia7c4XzfU` | This Tennis Robot Exposed My Tension Issue | 1683 | B | pending |  |
-| `wzLMv4ASg9s` | Why Your Racket Doesn't Flip - and How to Fix It | 2066 | B | pending |  |
+| `5-Ia7c4XzfU` | This Tennis Robot Exposed My Tension Issue | 1683 | B | deep | Batch B 第二刀；`SRC-FTT-5-Ia7c4XzfU_repass_2026-10-24.md`；拍床在链前；21:09 不改粗枝 |
+| `wzLMv4ASg9s` | Why Your Racket Doesn't Flip - and How to Fix It | 2066 | B | deep | Batch B 第二刀；`SRC-FTT-wzLMv4ASg9s_repass_2026-10-24.md`；躯干慢下来拍才松开；coil 仍是 p.119 |
 | `agtIR3PuNsw` | Why Alfie Hewett Hits Harder Than You | 271 | B | pending |  |
 | `aPcKJDadzek` | The Pros "Step In" Differently Than You | 817 | B | deep | Batch B 第一刀；`SRC-FTT-aPcKJDadzek_repass_2026-10-24.md`；迈进的前脚锚；不写成送髋 |
 | `6ak4ZScH_gc` | You Can Feel This - Here's How | 614 | A | deep | 已合 #14；粗枝1体感旁支；不进 tree evidence |
@@ -42,22 +42,22 @@
 | `AppdZqxH_2k` | How to Master Tennis's Most Important Skill | 467 | B | pending |  |
 | `lCKDP2gKR_Y` | Why Your Wrist Hurts, and How to Fix It | 286 | B | pending |  |
 | `2J8q7sn4JLc` | Why Your Forehand Sprays, and How to Fix It | 500 | B | deep | Batch B 第一刀；`SRC-FTT-2J8q7sn4JLc_repass_2026-10-24.md`；holdout；柄贴进手，链前条件 |
-| `pWzyP-xfLfU` | The Pros Grip Differently From You (with lesson examples) | 1262 | B | pending |  |
+| `pWzyP-xfLfU` | The Pros Grip Differently From You (with lesson examples) | 1262 | B | deep | Batch B 第二刀；`SRC-FTT-pWzyP-xfLfU_repass_2026-10-24.md`；转轴在手上侧；15:36 书 p.83 赢 |
 | `mOFtt9PllI0` | The Geometry of Measured Aggression | 3104 | B | pending |  |
 | `dYPv0QfFrsU` | Forehand With/Without Scapular Activation | 12 | B | blocked | 无字幕，先补字幕 |
 | `PfDqnff_vYA` | Why Your Serve is So Slow | 533 | C | pending |  |
 | `EkzzGZkqCgc` | Why Your Racket Doesn't Flip | 425 | B | pending |  |
 | `emZxTmSVSa8` | Master Pronation in 2 Minutes at Home | 379 | B | pending |  |
 | `hqganBxzQNM` | Why I Give Every Student a Weight to Swing (and why it works) | 403 | B | pending |  |
-| `dZadhzVEsds` | How to Hit Hard Without Missing Long | 1259 | B | pending |  |
+| `dZadhzVEsds` | How to Hit Hard Without Missing Long | 1259 | B | deep | Batch B 第二刀；`SRC-FTT-dZadhzVEsds_repass_2026-10-24.md`；耐心挂粗枝 2；不改 OBS-57，不改写 p.75 |
 | `x_WIg59Wr9Y` | Why You Should Start Your Swing at Contact | 651 | B | deep | Batch B 第一刀；`SRC-FTT-x_WIg59Wr9Y_repass_2026-10-24.md`；释放窗口挂粗枝 2；「从触球开始」书 p.75 赢 |
 | `WoVEWh7fFfc` | 57-Year-Old Ripping Forehands (and Serves) / 3 Lessons | 457 | C | pending |  |
-| `RVfmDk-iEwo` | Find Your Hand Slot, and Everything Gets Easier | 1302 | B | pending |  |
+| `RVfmDk-iEwo` | Find Your Hand Slot, and Everything Gets Easier | 1302 | B | deep | Batch B 第二刀；`SRC-FTT-RVfmDk-iEwo_repass_2026-10-24.md`；手槽挂粗枝 1；等或送挂粗枝 2 |
 | `7_JPqhG4G64` | What He Does Next Separates Pros from Amateurs | 305 | B | pending |  |
 | `cIIEYn42o4g` | The #1 Backscratch Mistake — and How to Fix It | 504 | B | pending |  |
 | `9NirSL59an0` | The Paradoxical Nature of Modern Topspin | 620 | B | pending |  |
 | `1W1rope5l0k` | Why Every Pro Serves In-to-Out, rather than Low-to-High | 691 | C | pending |  |
-| `gehRK0Y6AdQ` | The Pros "Brush" Differently From You | 818 | B | pending |  |
+| `gehRK0Y6AdQ` | The Pros "Brush" Differently From You | 818 | B | deep | Batch B 第二刀；`SRC-FTT-gehRK0Y6AdQ_repass_2026-10-24.md`；holdout；刷指向 2Nn/Pwk，书赢 |
 | `LoSrMj-Qxkc` | Their Mothers are Sisters, Their Forehands AREN'T | 718 | B | pending |  |
 | `6j33LJfl46s` | Scapular Glide on the Tennis Forehand | 12 | B | blocked | 无字幕，先补字幕 |
 | `p41GGc_y5Xk` | How Your Hand Controls Every Shot | 384 | B | pending |  |
@@ -136,4 +136,6 @@
 批次 A 17 期全部 deep。
 
 Batch B 第一刀（2026-10-24）：`q6LrQYDvxmY`、`uJpuDUx0jIA`、`x_WIg59Wr9Y`、`aPcKJDadzek`、`0m3BMfDDShI`、`2J8q7sn4JLc`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`q6LrQYDvxmY`、`2J8q7sn4JLc` 仍是 holdout。Batch B 剩余 pending 38（另有 blocked 5，不在这 38 里）。未开 Batch C。
+
+Batch B 第二刀（2026-10-24）：`wzLMv4ASg9s`、`5-Ia7c4XzfU`、`RVfmDk-iEwo`、`pWzyP-xfLfU`、`gehRK0Y6AdQ`、`dZadhzVEsds`。六期都已按字幕段起点 + 抽帧写成 `SRC-FTT-<id>_repass_2026-10-24.md`，上表 status 为 deep。`gehRK0Y6AdQ` 仍是 holdout。Batch B 剩余 pending 32（另有 blocked 5，不在这 32 里）。未扫完 Batch B。未开 Batch C。`mOFtt9PllI0` 留给后面单独刀。
 
