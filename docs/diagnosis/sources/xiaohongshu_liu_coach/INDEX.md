@@ -24,6 +24,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 | explore / 短链 | 主题 | 状态 | 笔记文件 |
 |---|---|---|---|
+| https://www.xiaohongshu.com/explore/67b704e80000000009038f02?xsec_token=ABALq4txpVOcvmmodP873pJM9ZGYTnzcEFR_vEv4kJO4g=&xsec_source=pc_user （= 目录置顶 #1） | 降拍头和转髋击球 · 手腕不能动 / 小臂放拍 / 顶胯收腹 | **transcribed** | `video_drophead_hip_67b704e8.md` |
+| https://www.xiaohongshu.com/explore/66f56ddf000000002c02c5e9?xsec_token=AB2xNs1TZHUxEAKBOSH-jnRD9uaCL5eqMsdsLHqX4F-ZE=&xsec_source=pc_user （= 目录置顶 #2） | 正手掉腕 · 掉手腕不是掉拍头 / 蹬地转髋 | **transcribed** | `video_wrist_drop_66f56ddf.md` |
 | https://www.xiaohongshu.com/explore/67014cc5000000002c02f675 （短链曾用 xhslink `5Dl6oTVMXC`） | 臂→转髋（手臂击球改成转髋击球） | **transcribed** | `video_arm_to_hip_67014cc5.md` |
 | https://www.xiaohongshu.com/explore/6a49d6600000000015026ee7 （短链曾用 xhslink `6IxbBYGVi6I`） | 20min 4 drills · 正手动力链 | **transcribed** | `video_4drills_kinetic_6a49d660.md` |
 | https://www.xiaohongshu.com/explore/6adb2a3c000000002c0189d2 （= 目录 #3） | 正手鞭打放松手 / 放松握拍 | **stub** | `video_relax_hand_6adb2a3c.md` |
@@ -62,8 +64,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 | # | 标题 | 一句话/类型 | 完整链接 | A–E |
 |---|---|---|---|---|
-| 1 | （置顶）躯干中立/转髋相关 | FH · 置顶优先 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67b704e80000000009038f02?xsec_token=ABALq4txpVOcvmmodP873pJM9ZGYTnzcEFR_vEv4kJO4g=&xsec_source=pc_user | **pending_A-E** |
-| 2 | （置顶）FH 优先 | FH · 置顶优先 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66f56ddf000000002c02c5e9?xsec_token=AB2xNs1TZHUxEAKBOSH-jnRD9uaCL5eqMsdsLHqX4F-ZE=&xsec_source=pc_user | **pending_A-E** |
+| 1 | 精准板手把手教你降拍头和转髋击球 | FH · 置顶 · 手腕不能动 / 转髋收腹 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/67b704e80000000009038f02?xsec_token=ABALq4txpVOcvmmodP873pJM9ZGYTnzcEFR_vEv4kJO4g=&xsec_source=pc_user | **transcribed** `video_drophead_hip_67b704e8.md` |
+| 2 | 劝你们正手一定要重视掉腕这个细节 | FH · 置顶 · 掉手腕≠掉拍头 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66f56ddf000000002c02c5e9?xsec_token=AB2xNs1TZHUxEAKBOSH-jnRD9uaCL5eqMsdsLHqX4F-ZE=&xsec_source=pc_user | **transcribed** `video_wrist_drop_66f56ddf.md` |
 | 3 | 正手鞭打放松手 | 放松握拍 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6adb2a3c000000002c0189d2?xsec_token=ABwhjr6Ed5OMxqtVi41DoI1AskcikFCS-a4WoBY0mSTkE=&xsec_source=pc_user | **stub** → pending 升 A–E |
 | 4 | 反手标准动作核心段 | 反手 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6ad9c62f000000002c018fd2?xsec_token=ABpUnq4M1edu4oyX0YJngCmHgbZ2B2w7Al32sOl2PLeK4=&xsec_source=pc_user | catalog_only |
 | 5 | 学生磕发球 | 发球纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6ad8ae740000000024035361?xsec_token=ABV4Ma2jr2sAoeAZYq_Y4vQyo2EqL3SDhvio9W0H3R59g=&xsec_source=pc_user | catalog_only |
@@ -97,6 +99,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ### 同批已另链深看（explore 路径；非上表 profile/note）
 
+- `67b704e8…` → transcribed（置顶 #1 · 降拍头和转髋 · 手腕不能动 / 顶胯收腹）
+- `66f56ddf…` → transcribed（置顶 #2 · 掉腕 · 掉手腕不是掉拍头）
 - `67014cc5…` → transcribed（臂→转髋）
 - `6a49d660…` → transcribed（20min 4 drills）
 - `6aa29add…` → transcribed（细节涨球 · 击球位停留 / 非二次拉拍）
@@ -132,7 +136,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 ## 待办
 
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
-2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 仍 **pending_A-E**（本轮仍不打开）。~~#36–#61 第一/二批 FH 深看已完~~。第三批 #63–#96 已入目录；其中 FH 优先队列（含 #67/#70/#71/#74/#77/#81/#82/#88/#91/#95/#96 等）均已 **transcribed**，**本批 FH pending_A-E 已清**。目录续收从 `69479ade` 起。
+2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 已 **transcribed**（`video_drophead_hip_67b704e8.md`、`video_wrist_drop_66f56ddf.md`）。本轮不打开 `69479ade`。~~#36–#61 第一/二批 FH 深看已完~~。第三批 #63–#96 已入目录；其中 FH 优先队列（含 #67/#70/#71/#74/#77/#81/#82/#88/#91/#95/#96 等）均已 **transcribed**，**本批 FH pending_A-E 已清**。目录续收从 `69479ade` 起。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
 4. ~~下一批从 `6a104c2f`~~ 第三批已收到 #96 `69494a96`。主页合计约 362，已入目录 **96**。下一条未入表：`69479ade`（发好球的前提当然是抛好）。还剩约 266。
 5. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
