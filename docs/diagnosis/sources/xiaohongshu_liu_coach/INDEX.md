@@ -697,3 +697,50 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 下一条（未入上表）：`656681a5` 训练方法：一箭三雕的好方法。再下：`6563fd8a` 训练方法：10秒练习蹬地转腰。主页未到尽头。
 
 没有点赞、评论、关注、发布。
+
+## 第十三批 30 条（#367–#396，从 `656681a5` 起）
+
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；时间线 data-index 在本批之后还在继续，本次滚动见到至少 data-index 556，没有「没有更多」，未到尽头）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十二批末 data-index 365 = 目录 #366 `65692359`）。从下一条 data-index 366 = `656681a5` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 395 = 目录 #396。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（非脚/脚步）只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看。发球标题里的发力或顶胯仍只 `catalog_only`。蹬地相关标 pending（脚）；转腰单独不升。
+
+**第十三批 pending_A-E（5）**：#368 `6563fd8a` 10秒练习蹬地转腰（蹬地，脚；转腰不单独升）。#378 `654b0347` 脚步带动全身协调发力（脚步 + 发力，非发球）。#379 `654a2cf4` 脚步训练（脚步）。#382 `6546f578` 轉肩轉胯發力（转胯按髋，且标题有发力，非发球）。#388 `653cb266` 網球別人用的是腳（脚）。
+
+#371 封面是「🎾的发球是拦路虎…」，球符占了标题开头，按发球只 `catalog_only`。#375 找到球按找球只 `catalog_only`。#377 `654c1a67`、#394 `652cafaa` 顶胯都在发球标题里，只 `catalog_only`。#380–#381、#385 发球/发球花絮只 `catalog_only`。#386 转体只 `catalog_only`。#390 垫步未写脚/脚步，按步伐只 `catalog_only`。#391 转肩不单标。#392 `6530c656`、#393 `6530b589` 标题有降拍头，只留原文不标 pending（#393 同时是下蹲）。#393 封面括号内字符按页面 innerText 作「—」。#395 重心转移不单标。#387 `653f283a` 与 #396 `652a53e2` 封面标题同为「天和场地都这么漂亮」，id 不同，都入目录。鞭打、翘臀、费德勒动作、ATP 花絮不单标。本批没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+
+进度：已入目录 **396**。页面「笔记」计数仍约 362，但时间线长于计数（至少到 data-index 556），未到尽头。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 367 | 训练方法：一箭三雕的好方法 | 训练方法 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/656681a50000000033004e2f?xsec_token=AB0NoetX0kc7V5PuT2JswJeQsF0qFGw8VUQxCSwtNesgs=&xsec_source=pc_user | catalog_only |
+| 368 | 网球训练方法：10秒练习蹬地转腰 | 蹬地转腰 · 脚 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6563fd8a0000000032036a85?xsec_token=ABrNoXZqmFyiPhOkrMG8N9dQ-6TMK-eBp0qsnpbcsvCG4=&xsec_source=pc_user | **pending_A-E** |
+| 369 | 鞭打，男生的效果有多厉害 | 鞭打 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655f37950000000032038b3c?xsec_token=ABg2Qw0cZgy7S3_cqKAQOpT7h7RoaxFOEPkNCD02boNII=&xsec_source=pc_user | catalog_only |
+| 370 | 训练鞭打模式：学生很自信的说她是对的 | 鞭打模式 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655f1e38000000003202fb6d?xsec_token=ABg2Qw0cZgy7S3_cqKAQOpTwMgGBzNhJcCpX_b6QR_C1c=&xsec_source=pc_user | catalog_only |
+| 371 | 的发球是拦路虎，看看费天王对照版 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655eaf7f000000003203b4e5?xsec_token=ABzBHKDTwtefz8pnuE_bHBBFVg0B2AF9QMQj0dIncKHtU=&xsec_source=pc_user | catalog_only |
+| 372 | 现在ATP都管不住这个人了 | ATP · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655b5e08000000003203648b?xsec_token=AB5E7mJuqLDpr_Oq8AR_QP4hD1MC2GnCdXob634xfUZzE=&xsec_source=pc_user | catalog_only |
+| 373 | 30秒教会费德勒的动作怎么练呢？ | 费德勒动作 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65585843000000003300a1f0?xsec_token=ABH0XtMRuVAZFLq90KdYRdBnFV0VHDj4TR5CYs1OOBiUY=&xsec_source=pc_user | catalog_only |
+| 374 | 发球之标准篇“我们可以持拍发球了 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65555d3d0000000033004d09?xsec_token=ABP0tqBCngvR8q0WuO2jsENPWzpnnH_oxVp95pmIC5FNs=&xsec_source=pc_user | catalog_only |
+| 375 | 训练方法10:轻松找到球 | 找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65540e8c0000000032032305?xsec_token=AB2mEnxGIAUOV4t9DuDSawXGwWszFBtEkHnwzWi-5YY08=&xsec_source=pc_user | catalog_only |
+| 376 | 训练方法9:翘臀帮助你提升球质 | 翘臀 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6552f8590000000033000fd5?xsec_token=ABvVybS4KuRJnXixakriHU4KjdOJ2E0NMQHVykoPSOyW8=&xsec_source=pc_user | catalog_only |
+| 377 | 发球训练之下集：顶胯收肩 | 发球顶胯 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654c1a670000000032035322?xsec_token=ABCCwFmvWZcRlWmhrKCvgoCDkBwvhqW3_3ju5RjmfiZ68=&xsec_source=pc_user | catalog_only |
+| 378 | 训练方式8“脚步带动全身协调发力” | 脚步发力 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654b0347000000002500870f?xsec_token=ABJR1AP7o3xTPV_B3U3MWJMu_ln65Uqx8aIKvZ71WOFoI=&xsec_source=pc_user | **pending_A-E** |
+| 379 | 训练方法7“脚步训练” | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654a2cf4000000002202d1c7?xsec_token=ABa7vkZ2RfyJ3MZnvqseT8uGil4P0T6Se6my01xZCLQyk=&xsec_source=pc_user | **pending_A-E** |
+| 380 | 發球學習：中集（沉肩反弓） | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654856d60000000025014e06?xsec_token=ABoc7GpMbWC8RmNQyas_tVqRq5-zl4VnRy82KT_od-Cso=&xsec_source=pc_user | catalog_only |
+| 381 | 發球教學'之花絮 | 发球花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654854e500000000250143c4?xsec_token=ABoc7GpMbWC8RmNQyas_tVqX_XuDxiIzzRgMOMG3Q4v0A=&xsec_source=pc_user | catalog_only |
+| 382 | 訓練方法六“轉肩轉胯發力” | 转胯发力 · 髋 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6546f5780000000025016001?xsec_token=ABQ3mG8e1nB6CLeHfyi5EvSYWoMRUiiF05RaIB2if686s=&xsec_source=pc_user | **pending_A-E** |
+| 383 | 坦白，业余有多少女生可以这样做 | 业余 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654640c9000000002201e5c7?xsec_token=ABQ3mG8e1nB6CLeHfyi5EvScZy14SSvw_tuHMvdk4sDzA=&xsec_source=pc_user | catalog_only |
+| 384 | 孩子太帅，实在忍不住大家看看 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65445cfc0000000025008f68?xsec_token=ABMQao_Y7OJUYLcy3UlBMLbtmN6ol6Yg0lkNdrqZzCuxE=&xsec_source=pc_user | catalog_only |
+| 385 | 要不要这样的发球？3集搞定！！（上） | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6543734700000000230398ce?xsec_token=ABvP-UsmmXcb9Cb2JjV4YhGM5zPQeLzxpnoQXTgx1l8Ho=&xsec_source=pc_user | catalog_only |
+| 386 | 训练方法五“get职业转体一份” | 转体 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6540e814000000002201e5c0?xsec_token=ABTxKSejFzxpv_0fX2Z8MFXuL8qQIQU3vnSqI-S0XKHx4=&xsec_source=pc_user | catalog_only |
+| 387 | 天和场地都这么漂亮 | 场地 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/653f283a00000000040398e7?xsec_token=ABYWX2rJMOvEzyYPXUekjf5xjizGUu85uaYt49ev-n4zY=&xsec_source=pc_user | catalog_only |
+| 388 | 網球別人用的是腳，你呢 | 用脚 · 脚 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/653cb266000000002303b604?xsec_token=ABUzOqrKIqIMzkXD9ddt2dmnmYxlhgycCrDlhufV-6MH4=&xsec_source=pc_user | **pending_A-E** |
+| 389 | 不小心看到费德勒的动作了 | 费德勒 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/653c7d0600000000250170d4?xsec_token=ABUzOqrKIqIMzkXD9ddt2dmjZfNCs_cekilRPJlMJreow=&xsec_source=pc_user | catalog_only |
+| 390 | 訓練方式4彈力帶訓練墊步 | 垫步 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/653b3d2400000000250082ee?xsec_token=ABlGCwrA32rpism1HJD0E4cF4yuLd_lLp1GnIgEP0D6-c=&xsec_source=pc_user | catalog_only |
+| 391 | 练习方法篇（三）先转肩带动手 | 转肩 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6538825c000000002303ae89?xsec_token=ABU30wBHq05q3IgtZoKbcIKOss3Vgm0ALktGomwM8JVSA=&xsec_source=pc_user | catalog_only |
+| 392 | 练习方法篇（二）屈膝降拍头场地训练 | 降拍头原文 · 屈膝 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6530c656000000002402fbf5?xsec_token=ABMxwM8tiu6arn2DNX9pqB2KUO9T-KRsB3RL9ik2udPFk=&xsec_source=pc_user | catalog_only |
+| 393 | 练习方法篇（—）下蹲屈腿降拍头 | 下蹲 · 降拍头原文 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6530b589000000002201cf3e?xsec_token=ABMxwM8tiu6arn2DNX9pqB2Bk0Z-q1A8ZLskq3GMKgQmg=&xsec_source=pc_user | catalog_only |
+| 394 | 發球重要環節，頂胯你知多少？ | 发球顶胯 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/652cafaa000000001d0387bb?xsec_token=ABmHBYQMKge1iXFZ8SQLVr77FlV3jU3OqjaYeMuaxLgdo=&xsec_source=pc_user | catalog_only |
+| 395 | 不懂重心轉移就像沒學一樣 | 重心转移 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/652b52f8000000002101e04e?xsec_token=ABxDBndmNees_QwVIXSlfH0ePPkcBRc7D1evYf_sRjNZE=&xsec_source=pc_user | catalog_only |
+| 396 | 天和场地都这么漂亮 | 场地 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/652a53e2000000001c0155b2?xsec_token=ABdZrTWhsVDGKhHMYocBQ9oLo3pD6CNoNGSm6IAOA7Chg=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`6529567f` 發球后如何瞬間銜接下一拍進攻。再下：`6528aec8` 10秒看懂正手先轉肩的動作（标题有正手，下一批可标 pending_A-E）。主页未到尽头。
+
+没有点赞、评论、关注、发布。
