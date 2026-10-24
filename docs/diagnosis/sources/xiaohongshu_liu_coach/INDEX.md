@@ -99,6 +99,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/671cff72000000001b0105f1?xsec_token=ABhQkdTn6Yxj-U0PE3ruUbzdKdT4idgbuGMdnwxaF9Yqg=&xsec_source=pc_user （= 目录 #247） | Zekic正手口诀 · 口径不并口诀 / circle undertheball 与 under the ball 分开 / 翻肘不改推肘 | **transcribed** | `video_zekic_fh_koujue_671cff72.md` |
 | https://www.xiaohongshu.com/explore/671a6c8a000000001b012960?xsec_token=AB5sfRHJNYI31XUQUYhAgqSLHdCMcOeeBgcczG3G8kV7w=&xsec_source=pc_user （= 目录 #248） | ATP手把手正手（一） · 再于不改在于 / 抬肘不改推肘 / 费用不改发力 / 评论推送少只引用 | **transcribed** | `video_atp_fh_handson_1_671a6c8a.md` |
 | https://www.xiaohongshu.com/explore/6717afb2000000001600d68b?xsec_token=ABKTcYlRjxMWiJn6LCSbU3oZzvR8-i2zJeoOcDTUA_Ol4=&xsec_source=pc_user （= 目录 #249） | 暴力正手很好练 · 文案转髋送重心只引用 / 大字转髋推送前不并 / 关节不改关键 / 推出去不改推肘 | **transcribed** | `video_violent_fh_easy_6717afb2.md` |
+| https://www.xiaohongshu.com/explore/66c74343000000001f014641?xsec_token=ABcDcgi3T-Xmb_b9M1uckJ3r2aeM4HHdQvlAmGR1asns8=&xsec_source=pc_user （= 目录 #273） | 寻找击球点公式 · 因数不改因素 / 击球点只在标题文案 / 8字秘诀按字形 / 下降不改拍头下降 | **transcribed** | `video_contact_point_formula_66c74343.md` |
+| https://www.xiaohongshu.com/explore/66c5f846000000001f01d8d3?xsec_token=AB8Eqdh7-thjTRKCa3VFOhD7J8Kj542EjefKjoSlLGFNE=&xsec_source=pc_user （= 目录 #274） | 套公式找击球点 · 4大步三处不并 / 延长线上与延长线分开 / 蹬蹬蹬蹬不改送重心 | **transcribed** | `video_contact_point_formula2_66c5f846.md` |
+| https://www.xiaohongshu.com/explore/66c2d706000000001f039338?xsec_token=ABtF3zz6K3fQ1P_vZweBAG9pnORndGdOCHashHL7lAYKc=&xsec_source=pc_user （= 目录 #276） | 用腿发力 · 曲直互换 / 曲腿不改屈 / 进过不并经过 / 直起来不改伸肘 / 击球点只引用 | **transcribed** | `video_leg_power_66c2d706.md` |
 
 ---
 
@@ -514,7 +517,7 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 ## 第九批 30 条（#247–#276，从 `671cff72` 起）
 
-薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 245 = 目录 #246 `671dfb1f`）。从下一条 data-index 246 = `671cff72` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 275 = 目录 #276。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue。正反手标题（#250、#265）含反手，不单标正手，只 `catalog_only`。#266 标题是「步伐」不是脚/脚步，只 `catalog_only`。发球标题里的发力（#262）仍只 `catalog_only`。data-index 256 = `67014cc5` 已有深看，目录 #257 只指回，不新开。data-index 259 = `66f56ddf` 与置顶 #2 同 id，目录 #260 只指回，不新开。本批曾标 pending_A-E：#247、#248、#249、#273、#274、#276。第八批 pending_A-E 已清（那十条都已深看）。2026-10-24 #247、#248、#249 已 **transcribed**（`video_zekic_fh_koujue_671cff72.md`、`video_atp_fh_handson_1_671a6c8a.md`、`video_violent_fh_easy_6717afb2.md`）。第九批 pending_A-E 还剩 **#273、#274、#276**。打开的是主页路径，页面落到同 token 的 explore。#247、#248 没有展开按钮。#249 点过两次「展开 N 条回复」，只为阅读。没有点赞、评论、关注、发布。
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（data-index 245 = 目录 #246 `671dfb1f`）。从下一条 data-index 246 = `671cff72` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 275 = 目录 #276。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看，也不当我方 cue。正反手标题（#250、#265）含反手，不单标正手，只 `catalog_only`。#266 标题是「步伐」不是脚/脚步，只 `catalog_only`。发球标题里的发力（#262）仍只 `catalog_only`。data-index 256 = `67014cc5` 已有深看，目录 #257 只指回，不新开。data-index 259 = `66f56ddf` 与置顶 #2 同 id，目录 #260 只指回，不新开。本批曾标 pending_A-E：#247、#248、#249、#273、#274、#276。第八批 pending_A-E 已清（那十条都已深看）。2026-10-24 #247、#248、#249 已 **transcribed**（`video_zekic_fh_koujue_671cff72.md`、`video_atp_fh_handson_1_671a6c8a.md`、`video_violent_fh_easy_6717afb2.md`）。2026-10-24 #273、#274、#276 已 **transcribed**（`video_contact_point_formula_66c74343.md`、`video_contact_point_formula2_66c5f846.md`、`video_leg_power_66c2d706.md`）。**第九批 pending_A-E 已清**（本批曾标的六条都已深看）。打开的是主页路径，页面落到同 token 的 explore。#247、#248 没有展开按钮。#249 点过两次「展开 N 条回复」，只为阅读。#273 没有展开按钮。#274 点过「展开 5 条回复」和「展开 1 条回复」，只为阅读。#276 点过展开，只为把回复读出来。没有点赞、评论、关注、发布。
 
 进度：已入目录 **276 / 约 362**。还剩约 86 条未入目录。
 
@@ -546,10 +549,10 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 270 | 发球我建议要增加静态无球练习 | 发球无球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66cf3102000000001f01ba6b?xsec_token=ABJykV6Md0PT-8M9ECj63h5IAklch08Hz1p9WH8XZ1-vI=&xsec_source=pc_user | catalog_only |
 | 271 | 发球一个小动作让翻腕成历史 | 发球翻腕 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66cb1a75000000001f03c62e?xsec_token=ABhFFVOUVfuTONMfLOna04CHmu6URwFoPgeuFORG-Vra8=&xsec_source=pc_user | catalog_only |
 | 272 | 框住球，怎么会打不到 | 框住球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c89f3d000000001f0161d3?xsec_token=ABznB0PXckdhXV476atmeQvxdLxr2n1dShQE4SKBHbU0c=&xsec_source=pc_user | catalog_only |
-| 273 | 完善整套寻找击球点的公式 | 寻找击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c74343000000001f014641?xsec_token=ABcDcgi3T-Xmb_b9M1uckJ3r2aeM4HHdQvlAmGR1asns8=&xsec_source=pc_user | **pending_A-E** |
-| 274 | 套公式能找到击球点你们信吗 | 找到击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c5f846000000001f01d8d3?xsec_token=AB8Eqdh7-thjTRKCa3VFOhD7J8Kj542EjefKjoSlLGFNE=&xsec_source=pc_user | **pending_A-E** |
+| 273 | 完善整套寻找击球点的公式 | 寻找击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c74343000000001f014641?xsec_token=ABcDcgi3T-Xmb_b9M1uckJ3r2aeM4HHdQvlAmGR1asns8=&xsec_source=pc_user | **transcribed** `video_contact_point_formula_66c74343.md` |
+| 274 | 套公式能找到击球点你们信吗 | 找到击球点 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c5f846000000001f01d8d3?xsec_token=AB8Eqdh7-thjTRKCa3VFOhD7J8Kj542EjefKjoSlLGFNE=&xsec_source=pc_user | **transcribed** `video_contact_point_formula2_66c5f846.md` |
 | 275 | 预判，改变思路会突飞猛进 | 预判 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c4ae7d000000001f03cecb?xsec_token=ABy8ZyapjWKE1j39l_1raBmhXB7YQX8bar9wUoGpf7CcY=&xsec_source=pc_user | catalog_only |
-| 276 | 瞬间说清教会如何用腿发力 | 用腿发力 · power · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c2d706000000001f039338?xsec_token=ABtF3zz6K3fQ1P_vZweBAG9pnORndGdOCHashHL7lAYKc=&xsec_source=pc_user | **pending_A-E** |
+| 276 | 瞬间说清教会如何用腿发力 | 用腿发力 · power · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/66c2d706000000001f039338?xsec_token=ABtF3zz6K3fQ1P_vZweBAG9pnORndGdOCHashHL7lAYKc=&xsec_source=pc_user | **transcribed** `video_leg_power_66c2d706.md` |
 
 下一条（未入上表）：`66c079e1` 有了这个，正手都可以4.0了。再下：`66bd88a3` 戒掉用手臂带身体，你要蹬（已有深看 `video_deng_not_arm_66bd88a3.md`，下一批只指回）。
 
