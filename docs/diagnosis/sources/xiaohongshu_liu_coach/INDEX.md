@@ -113,6 +113,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/661208ba0000000004019358?xsec_token=ABETPOU4fSO7ndh8Yv1y3XojeuuewlOR3hXnDus9xYB-A=&xsec_source=pc_user （= 目录 #342） | 正手双刀流 · 转体只引用 / 伸直不改伸肘 / 转手肘不改推肘 / 降拍头只引用 | **transcribed** | `video_fh_shuangdaoliu_661208ba.md` |
 | https://www.xiaohongshu.com/explore/65750b950000000009023d9b?xsec_token=ABUiiAmKt7PnvReb16acXYPa6EQ5jevqTNkY-tAEQEeIc=&xsec_source=pc_user （= 目录 #360） | 力由脚生 · 内旋只在文案 / 向转向按字形 / Unit turn 不改转髋 | **transcribed** | `video_power_from_feet_65750b95.md` |
 | https://www.xiaohongshu.com/explore/656bc45e00000000090225e2?xsec_token=ABv1jSh6LlI2TnJkJn0GJkHCryzxOvLUTYHiBhh7Ek1sU=&xsec_source=pc_user （= 目录 #364） | 移动及发力 · 保护核心力量/移动快准不并文案移动和发力 / 发力顺序根据四肢位置决定 / 四肢不改髋 | **transcribed** | `video_move_and_power_656bc45e.md` |
+| https://www.xiaohongshu.com/explore/6563fd8a0000000032036a85?xsec_token=ABrNoXZqmFyiPhOkrMG8N9dQ-6TMK-eBp0qsnpbcsvCG4=&xsec_source=pc_user （= 目录 #368） | 10秒蹬地转腰 · 底盖顶球/腿胯狂发力不并标题蹬地转腰 / 拍头后拉 / 手肘带重心向前推不改送重心不改推肘 / 转腰不改转髋 | **transcribed** | `video_dengdi_zhuanyao_6563fd8a.md` |
+| https://www.xiaohongshu.com/explore/654b0347000000002500870f?xsec_token=ABJR1AP7o3xTPV_B3U3MWJMu_ln65Uqx8aIKvZ71WOFoI=&xsec_source=pc_user （= 目录 #378） | 脚步带动全身协调发力 · 侧身半开放式脚步训练/无球 与 脚步/有球无拍训练不并 / 无球拍只在文案 / 发力不改推肘 | **transcribed** | `video_footwork_wholebody_power_654b0347.md` |
+| https://www.xiaohongshu.com/explore/654a2cf4000000002202d1c7?xsec_token=ABa7vkZ2RfyJ3MZnvqseT8uGil4P0T6Se6my01xZCLQyk=&xsec_source=pc_user （= 目录 #379） | 脚步训练 · 侧身、脚步到位 / 侧身4步到位击球不并垫步侧身击球、4步击球 / 4是数字 / 绿字这套衣服不并文案服装 | **transcribed** | `video_footwork_drill_654a2cf4.md` |
 
 ---
 
@@ -702,16 +705,16 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 
 薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；时间线 data-index 在本批之后还在继续，本次滚动见到至少 data-index 556，没有「没有更多」，未到尽头）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十二批末 data-index 365 = 目录 #366 `65692359`）。从下一条 data-index 366 = `656681a5` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 395 = 目录 #396。一句话来自封面标题，本批没有逐条打开。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（非脚/脚步）只 `catalog_only`。掉拍头 / 降拍头只保留教练标题原文，不标待深看。发球标题里的发力或顶胯仍只 `catalog_only`。蹬地相关标 pending（脚）；转腰单独不升。
 
-**第十三批 pending_A-E（5）**：#368 `6563fd8a` 10秒练习蹬地转腰（蹬地，脚；转腰不单独升）。#378 `654b0347` 脚步带动全身协调发力（脚步 + 发力，非发球）。#379 `654a2cf4` 脚步训练（脚步）。#382 `6546f578` 轉肩轉胯發力（转胯按髋，且标题有发力，非发球）。#388 `653cb266` 網球別人用的是腳（脚）。
+**第十三批 pending_A-E（2）**：#382 `6546f578` 轉肩轉胯發力（转胯按髋，且标题有发力，非发球）。#388 `653cb266` 網球別人用的是腳（脚）。#368 `6563fd8a`、#378 `654b0347`、#379 `654a2cf4` 已 **transcribed**（`video_dengdi_zhuanyao_6563fd8a.md`、`video_footwork_wholebody_power_654b0347.md`、`video_footwork_drill_654a2cf4.md`）。
 
-#371 封面是「🎾的发球是拦路虎…」，球符占了标题开头，按发球只 `catalog_only`。#375 找到球按找球只 `catalog_only`。#377 `654c1a67`、#394 `652cafaa` 顶胯都在发球标题里，只 `catalog_only`。#380–#381、#385 发球/发球花絮只 `catalog_only`。#386 转体只 `catalog_only`。#390 垫步未写脚/脚步，按步伐只 `catalog_only`。#391 转肩不单标。#392 `6530c656`、#393 `6530b589` 标题有降拍头，只留原文不标 pending（#393 同时是下蹲）。#393 封面括号内字符按页面 innerText 作「—」。#395 重心转移不单标。#387 `653f283a` 与 #396 `652a53e2` 封面标题同为「天和场地都这么漂亮」，id 不同，都入目录。鞭打、翘臀、费德勒动作、ATP 花絮不单标。本批没有再遇已深看 id，无指回新开。没有点赞、评论、关注、发布。
+#371 封面是「🎾的发球是拦路虎…」，球符占了标题开头，按发球只 `catalog_only`。#375 找到球按找球只 `catalog_only`。#377 `654c1a67`、#394 `652cafaa` 顶胯都在发球标题里，只 `catalog_only`。#380–#381、#385 发球/发球花絮只 `catalog_only`。#386 转体只 `catalog_only`。#390 垫步未写脚/脚步，按步伐只 `catalog_only`。#391 转肩不单标。#392 `6530c656`、#393 `6530b589` 标题有降拍头，只留原文不标 pending（#393 同时是下蹲）。#393 封面括号内字符按页面 innerText 作「—」。#395 重心转移不单标。#387 `653f283a` 与 #396 `652a53e2` 封面标题同为「天和场地都这么漂亮」，id 不同，都入目录。鞭打、翘臀、费德勒动作、ATP 花絮不单标。本批没有再遇已深看 id，无指回新开。2026-10-24 #368、#378、#379 已逐条打开并 **transcribed**。打开的是主页路径，页面落到同 token 的 explore。这三条评论区都是「这是一片荒地点击评论」，没有「展开」，没有「- THE END -」。仍 pending 的是 #382、#388。没有点赞、评论、关注、发布。
 
 进度：已入目录 **396**。页面「笔记」计数仍约 362，但时间线长于计数（至少到 data-index 556），未到尽头。
 
 | # | 标题 | 一句话/类型 | 完整链接 | A–E |
 |---|---|---|---|---|
 | 367 | 训练方法：一箭三雕的好方法 | 训练方法 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/656681a50000000033004e2f?xsec_token=AB0NoetX0kc7V5PuT2JswJeQsF0qFGw8VUQxCSwtNesgs=&xsec_source=pc_user | catalog_only |
-| 368 | 网球训练方法：10秒练习蹬地转腰 | 蹬地转腰 · 脚 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6563fd8a0000000032036a85?xsec_token=ABrNoXZqmFyiPhOkrMG8N9dQ-6TMK-eBp0qsnpbcsvCG4=&xsec_source=pc_user | **pending_A-E** |
+| 368 | 网球训练方法：10秒练习蹬地转腰 | 蹬地转腰 · 脚 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6563fd8a0000000032036a85?xsec_token=ABrNoXZqmFyiPhOkrMG8N9dQ-6TMK-eBp0qsnpbcsvCG4=&xsec_source=pc_user | **transcribed** `video_dengdi_zhuanyao_6563fd8a.md` |
 | 369 | 鞭打，男生的效果有多厉害 | 鞭打 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655f37950000000032038b3c?xsec_token=ABg2Qw0cZgy7S3_cqKAQOpT7h7RoaxFOEPkNCD02boNII=&xsec_source=pc_user | catalog_only |
 | 370 | 训练鞭打模式：学生很自信的说她是对的 | 鞭打模式 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655f1e38000000003202fb6d?xsec_token=ABg2Qw0cZgy7S3_cqKAQOpTwMgGBzNhJcCpX_b6QR_C1c=&xsec_source=pc_user | catalog_only |
 | 371 | 的发球是拦路虎，看看费天王对照版 | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/655eaf7f000000003203b4e5?xsec_token=ABzBHKDTwtefz8pnuE_bHBBFVg0B2AF9QMQj0dIncKHtU=&xsec_source=pc_user | catalog_only |
@@ -721,8 +724,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 375 | 训练方法10:轻松找到球 | 找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/65540e8c0000000032032305?xsec_token=AB2mEnxGIAUOV4t9DuDSawXGwWszFBtEkHnwzWi-5YY08=&xsec_source=pc_user | catalog_only |
 | 376 | 训练方法9:翘臀帮助你提升球质 | 翘臀 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6552f8590000000033000fd5?xsec_token=ABvVybS4KuRJnXixakriHU4KjdOJ2E0NMQHVykoPSOyW8=&xsec_source=pc_user | catalog_only |
 | 377 | 发球训练之下集：顶胯收肩 | 发球顶胯 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654c1a670000000032035322?xsec_token=ABCCwFmvWZcRlWmhrKCvgoCDkBwvhqW3_3ju5RjmfiZ68=&xsec_source=pc_user | catalog_only |
-| 378 | 训练方式8“脚步带动全身协调发力” | 脚步发力 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654b0347000000002500870f?xsec_token=ABJR1AP7o3xTPV_B3U3MWJMu_ln65Uqx8aIKvZ71WOFoI=&xsec_source=pc_user | **pending_A-E** |
-| 379 | 训练方法7“脚步训练” | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654a2cf4000000002202d1c7?xsec_token=ABa7vkZ2RfyJ3MZnvqseT8uGil4P0T6Se6my01xZCLQyk=&xsec_source=pc_user | **pending_A-E** |
+| 378 | 训练方式8“脚步带动全身协调发力” | 脚步发力 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654b0347000000002500870f?xsec_token=ABJR1AP7o3xTPV_B3U3MWJMu_ln65Uqx8aIKvZ71WOFoI=&xsec_source=pc_user | **transcribed** `video_footwork_wholebody_power_654b0347.md` |
+| 379 | 训练方法7“脚步训练” | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654a2cf4000000002202d1c7?xsec_token=ABa7vkZ2RfyJ3MZnvqseT8uGil4P0T6Se6my01xZCLQyk=&xsec_source=pc_user | **transcribed** `video_footwork_drill_654a2cf4.md` |
 | 380 | 發球學習：中集（沉肩反弓） | 发球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654856d60000000025014e06?xsec_token=ABoc7GpMbWC8RmNQyas_tVqRq5-zl4VnRy82KT_od-Cso=&xsec_source=pc_user | catalog_only |
 | 381 | 發球教學'之花絮 | 发球花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/654854e500000000250143c4?xsec_token=ABoc7GpMbWC8RmNQyas_tVqX_XuDxiIzzRgMOMG3Q4v0A=&xsec_source=pc_user | catalog_only |
 | 382 | 訓練方法六“轉肩轉胯發力” | 转胯发力 · 髋 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6546f5780000000025016001?xsec_token=ABQ3mG8e1nB6CLeHfyi5EvSYWoMRUiiF05RaIB2if686s=&xsec_source=pc_user | **pending_A-E** |
