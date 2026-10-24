@@ -1,12 +1,62 @@
 # Video Analysis: You Can Feel This - Here's How
 
 - **URL**: https://www.youtube.com/watch?v=6ak4ZScH_gc
-- **Channel**: Fault Tolerant Tennis (Hugh Clarke)
+- **Channel**: Fault Tolerant Tennis（主讲人姓名【未核对】；旧稿括号里的人名不采信）
 - **Length**: 614s (10:14)
-- **分析日期**: 2026-07-18
-- **⚠️ 来源声明**: Micu 原生 file_data 双模型均 500 `do_request_failed`（第三个故障日：7/12 524 → 7/17 500 → 7/18 500）；备用 packy 403 `insufficient_user_quota`（余额 -$2.15，需充值）。本分析基于**官方自动字幕全文**（/tmp/ftt_feel/6ak4ZScH_gc.en.vtt，已清洗）+ FTT 官网文章交叉验证，**非 VLM 观看**。画面细节仅限字幕可推断范围。
+- **分析日期**: 2026-07-18 字幕稿；**2026-10-24 升级为字幕 + 画面双证据**
+- **⚠️ 来源声明**:
+  - **2026-07-18**：Micu 原生 file_data 双模型均 500 `do_request_failed`（第三个故障日：7/12 524 → 7/17 500 → 7/18 500）；备用 packy 403 `insufficient_user_quota`（余额 -$2.15，需充值）。该稿基于**官方自动字幕全文**（当时路径 `/tmp/ftt_feel/6ak4ZScH_gc.en.vtt`，已清洗）+ FTT 官网文章交叉验证，**非 VLM 观看**。下方「核心命题」起的方括号时间是该稿约数，原话保留。
+  - **2026-10-24**：同一官方自动字幕的 norm.tsv（段起点已逐句对照）+ 当日 watchVideo **画面核对**。画面只确认四件事，见下一节；不外推到腿、拍、小臂。精确段起点以下一节和 `docs/diagnosis/sources/SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md` 为准。
+  - 卡片 `episodes/6ak4ZScH_gc.card.json` 存在，**仍不是树证据用的已核对卡片**。本页只作知识引用，不进 tree evidence。
 
 ---
+
+## 2026-10-24 升级：字幕 + 画面双证据
+
+用户当天认定本期是从第一性原理看出来的，要求吸收进诊断根基。挂法写在树干粗枝 1 的体感旁支里：回答「髋先启动时该感到什么」。粗枝 1 的书核心不变（髋没先启动 / 扭回面向网，BOOK:p.83 / p.117）。coil / 肩髋分离角仍是 BOOK:p.119 的非必需增强，不升成粗枝 1 的唯一核心。
+
+### 画面要点（watchVideo；时间对齐字幕，不另造画面时间戳）
+
+1. **红皮筋髋锚 / 肩锚。** 对齐字幕 1:33–2:48。口述 corkscrew、"this anchor is the hips and this anchor is the shoulders"。画面核对确认演示物是一根红皮筋：一端髋锚，一端肩锚；反向拧时拉长，回弹时两端一起收。
+2. **文章叠图《The Hip-Shoulder Separation Catastrophe》。** 字幕没有读出标题，叠图只算画面证据。博客归纳见 `docs/research/ftt/04_ftt_blog_forehand_2.md` §21：骨盆比躯干早约 25 ms，人感到的不该是这个先后，而是扭转时的张力。25 ms 不写成场上时点。
+3. **持拍侧髋往前当目标时，皮筋松。** 对齐 5:06–5:35。原话 "send your right hip through the shot"，以及 5:21 "back together, front together"，5:31 "I don't want tension on the shoulder anchor"。画面核对：这个目标下皮筋松、两个锚同去同回；反向拧时皮筋拉紧，髋锚几乎带不远。
+4. **减速，不换向。** 对齐 7:43–8:31。画面核对：髋锚仍向前，被拽住后速度掉下来。字幕 7:59 "it's just going to slow down"，8:01 "not actually going to reverse direction on many shots"。
+
+### 原话（norm.tsv 段起点；7/18 约数保留在下方各节）
+
+> [0:55] "I think you should intend to take this side and fire it backwards."
+
+> [1:33] "fascial muscle line that that connects your hip and your shoulder. This is a corkscrew here."
+
+> [1:39] "this anchor is the hips and this anchor is the shoulders."
+
+> [2:39] "same tension that flings your shoulder forward, flings your hip backwards. That's the same thing."
+
+> [4:03] "drive your shoulders forward, hips back."
+
+> [4:29] "the desire to pull my shoulder forward, pelvis backwards, that desire causes me to rotate my pelvis forwards"
+
+> [5:17] "send their right hip through the shot"
+
+> [5:21] "back together, front together"
+
+> [5:42] "the reason that the pelvis fires is actually because if the pelvis fires, it creates more tension on the line of tissue that yanks the pelvis backwards."
+
+> [5:56] "moment that you can feel for is a moment where the pelvis is being yanked backwards and the shoulders are being yanked forward."
+
+> [7:31] "the pelvis does accelerate forward before the shoulders. So, that is true."
+
+> [7:59] "going to slow down. It's not actually going to reverse direction on many shots."
+
+> [8:22] "but it's not actually moving backwards"
+
+> [8:45] "if I tell you to send your pelvis forward, very often you will intentionally not stretch that line of tissue because your brain knows if I stretch this tissue, it's going to pull my pelvis back."
+
+> [9:13] "the best way to stretch this is to start by throwing that pelvis forward to create more stretch before it swaps off."
+
+> [9:51] "we don't really perceive motion. We perceive tension and thereby acceleration."
+
+和书的关系、用户映射、场上意图和禁令不在本页展开，见 SRC。下方从「核心命题」起是 2026-07-18 字幕稿，原话和当时的约数时间戳保留。
 
 ## 核心命题
 
