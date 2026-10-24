@@ -113,7 +113,17 @@ flowchart TD
 - 感知定律 6ak4@9:51："we don't really perceive motion. We perceive tension and thereby acceleration." 要找的瞬间是 @5:56：骨盆被往后拽，肩被往前拽。录像上的前转可以同时为真。@7:59 多数球只是前移中被拽住后减速，不换向（画面核对与这句字幕一致）。
 - 所以 p.119 决定 coil 的地位（增强，可无）；本期决定这个地位在体感上怎么落地（感到张力与加速度，不感到「髋在往前转」）。地位不变。
 
-**不进树的边界**：无新 OBS id。张力是 C 层。骨盆是否减速仍用既有 OBS-71（正后方实测 unclear）。6ak4 仍不进 tree evidence。
+**用户映射（2026-10-24 同日补充；假设，不进 tree evidence）。** 不升成新粗枝，不改书赢。
+
+- 用户自述：以前转髋只转髋；加上非持拍侧左肩往前伸，感到强烈的 X 型拉伸之后，才体会到髋力。这对得上本旁支的斜向筋膜线（髋锚 ↔ 肩锚），不是另一条链。
+- 用户理解：髋末段要有往回拉的意识，力才释放。这里的往回拉 = 张力体感（@5:56 被往后拽，@9:51 感知张力），**不是髋倒退**。@7:57–8:01 多数球是前移中被拽住后减速，不换向。
+
+**场上意图护栏（仍是这一句，不是新清单）。**
+
+- 场上只留：「肩往前、髋被往后拽」。即 6ak4@4:03 "drive your shoulders forward, hips back"，并与 BOOK:p.83「twisting the hips back towards the net」同向。
+- 左肩由躯干带着走，不单独抡左臂。单独把非持拍手肘提前绕开，是书 p.111【已核对】的过早开胸：「In some cases, the non-hitting elbow is pulled around the body too early in the swing, causing the chest to open up too early」。那已经挂在本粗枝的「链内过早开胸」旁支上，不为此再开一根粗枝。
+
+**不进树的边界**：无新 OBS id。张力是 C 层。骨盆是否减速仍用既有 OBS-71（正后方实测 unclear）。6ak4 仍不进 tree evidence。同日补充也不新开 id。
 
 **两个「back together」不要混**：
 - 书 p.111「back together, forward together」指**上半身**（双臂 + 胸）作为整体转离、转回，是正面提示；
@@ -221,7 +231,7 @@ FTT 出处：
 4. 两根粗枝同时出现时，不并列成两个第一要害：先说哪根有事实，另一根标待测，用对照测试分开。
 5. 盲测（V5）没过关之前，对用户视频的所有结论都标「待验证」。
 6. 处方禁用：推肘 / 降拍 / 旋后 / 伸肘 / 送髋。
-7. 粗枝 1 的体感旁支只用来解释「录像上的前转」和「被往后拽的体感」为什么可以同时为真。它不单独开训练清单，也不把 coil 当成这根粗枝的唯一核心。
+7. 粗枝 1 的体感旁支只用来解释「录像上的前转」和「被往后拽的体感」为什么可以同时为真。场上只留「肩往前、髋被往后拽」。往回拉是张力，不是髋倒退；左肩由躯干带着走，不单独抡左臂（防书 p.111 过早开胸，沿用已有旁支）。它不单独开训练清单，不升成新粗枝，也不把 coil 当成这根粗枝的唯一核心。
 
 ## 附：辅助视频叶子（2026-10-22）— 5xcIshgCd-E（TPA tennis / Tom Allsopp，非 FTT）
 - 挂粗枝 1（髋没先启动 → 手臂代偿）。要点：「hips first, arm second」@4:25；「not the arm's turn yet」@2:13；「slow enough take back … fire something else before the arms」@2:54。
