@@ -121,6 +121,9 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/6528aec8000000001a022442?xsec_token=AB1g9BKUmh9nY_vpaSK3fYltAijnB0fRSx5bioFITas2g=&xsec_source=pc_user （= 目录 #398） | 10秒正手先轉肩 · 肩部先動不并轉肩 / 持拍手保持L型 / 轉胯只在文案 / 转髋只在猜你想搜 | **transcribed** | `video_fh_first_turn_shoulder_6528aec8.md` |
 | https://www.xiaohongshu.com/explore/648d0cca00000000130147b9?xsec_token=ABdXc8olja-icuGHAo13GfkvtkORbcyabAsCq_brOXSe8=&xsec_source=pc_user （= 目录 #413） | filip纠正脚步 · 没学过脚步的回位 / 交叉步回并垫步不拆 / “冲” / 腳步只在标签 | **transcribed** | `video_filip_footwork_648d0cca.md` |
 | https://www.xiaohongshu.com/explore/648011190000000013003d3c?xsec_token=AB6xgAXm3Q56XzhzVM8NNvFbNV1BUWc8bKzhsKYLBGB1I=&xsec_source=pc_user （= 目录 #418） | 这个正手我满意 · 上下分屏无教练大字 / 没天赋单肯努力不改但 / 补🉐7788 | **transcribed** | `video_fh_satisfied_64801119.md` |
+| https://www.xiaohongshu.com/explore/6474a3720000000027002bb3?xsec_token=ABi0Byh6QDKEq7ltgCNtxxXvLquOUnq3Wm31vYH9lRHLg=&xsec_source=pc_user （= 目录 #421） | 德约脚步 · small steps / bigger steps 不译不并 / 脚步教科书分析不并文案技术环节 / novak 只在文案 | **transcribed** | `video_djokovic_footwork_6474a372.md` |
+| https://www.xiaohongshu.com/explore/6469748c000000002700381c?xsec_token=ABsduAQtosmkgMOc-X-4SG0FqQqT-nxfIzHFuHUJf37v4=&xsec_source=pc_user （= 目录 #424） | tennisceter 按标题 / 文案 tennis center 分开 / 画面 BRANISLAV PRALICA / Conditioning 只引用 | **transcribed** | `video_novak_beginner_fh_6469748c.md` |
+| https://www.xiaohongshu.com/explore/645ceb5100000000130137a3?xsec_token=ABxxzfHbsfA3-S3uXiNDjB4OijVIAEgjihLSTdFopbIds=&xsec_source=pc_user （= 目录 #426） | 小梅杰脚步 · 画面无教练大字 / 来来来、是训练的是按原文 / 发力只在文案 | **transcribed** | `video_medvedev_footwork_645ceb51.md` |
 
 ---
 
@@ -754,11 +757,11 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 没有点赞、评论、关注、发布。
 ## 第十四批 30 条（#397–#426，从 `6529567f` 起）
 
-薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 396–425 = 目录 #397–#426）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十三批末 data-index 395 = 目录 #396 `652a53e2`）。从下一条 data-index 396 = `6529567f` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 425 = 目录 #426。一句话来自封面标题。#398、#413、#418 已逐条打开并 transcribed，其余本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 与第十三批一样不写入表内标题，标题中间的 🎾 保留。继续下滚见到至少 data-index 558（寄口罩给以色列和塞尔维亚的朋友），之后多次下滚不再增长，页面没有「没有更多」文案，不能把尽头写成已确认。
+薯片 2026-10-24。主页「笔记・362」（页面计数仍是 362；本批 data-index 396–425 = 目录 #397–#426）。登录正常（显示名 babolat签约网球刘教练 / michael0653，已关注状态未改）。置顶 2 条仍在第一批（第十三批末 data-index 395 = 目录 #396 `652a53e2`）。从下一条 data-index 396 = `6529567f` 起，按主页从上到下（新→旧）再收 30 条，到 data-index 425 = 目录 #426。一句话来自封面标题。#398、#413、#418、#421、#424、#426 已逐条打开并 transcribed，其余本批没有逐条打开。标题里明确是正手、动力链、髋/转髋/转胯、脚/脚步、蹬地、引拍、击球点、击球 timing、击球 power / 发力的标 **pending_A-E**。反手、发球、抛球、找球、转体、侧身、下蹲、切削、截击、花絮、正反手合题、步伐（未写脚/脚步）、转肩单独、重心转移单独、鞭打单独、顶胯在发球标题里、降拍头/掉拍头只 `catalog_only`。封面标题开头的 🎾 与第十三批一样不写入表内标题，标题中间的 🎾 保留。继续下滚见到至少 data-index 558（寄口罩给以色列和塞尔维亚的朋友），之后多次下滚不再增长，页面没有「没有更多」文案，不能把尽头写成已确认。
 
-**第十四批 pending_A-E**：曾标 6 条。2026-10-24 #398、#413、#418 已 **transcribed**（`video_fh_first_turn_shoulder_6528aec8.md`、`video_filip_footwork_648d0cca.md`、`video_fh_satisfied_64801119.md`）。这三条已 transcribed。仍 pending 的是 #421 `6474a372` 脚步、#424 `6469748c` 正手、#426 `645ceb51` 脚步。
+**第十四批 pending_A-E**：曾标 6 条。2026-10-24 本批 6 条 pending 已全部 transcribed（#398 #413 #418 #421 #424 #426）（`video_fh_first_turn_shoulder_6528aec8.md`、`video_filip_footwork_648d0cca.md`、`video_fh_satisfied_64801119.md`、`video_djokovic_footwork_6474a372.md`、`video_novak_beginner_fh_6469748c.md`、`video_medvedev_footwork_645ceb51.md`）。
 
-#397 发球后衔接只 `catalog_only`。#403 切🎾 按切削只 `catalog_only`。#411 直臂击球没有击球点 / timing / power，不单标。#414 反拍、#425 女双反只 `catalog_only`。#416 平台式发球两脚站位是发球标题，两脚不单标脚。#422 拉球不是引拍，只 `catalog_only`。核心力量、花絮、球场、招募不单标。本批没有再遇已深看 id，无指回新开。2026-10-24 #398、#413、#418 已逐条打开并 **transcribed**。这三条已 transcribed；仍 pending 的是 #421、#424、#426。打开的是主页路径，页面落到同 token 的 explore。#398 点过「展开 1 条回复」「展开 7 条回复」「展开 2 条回复」和一次「展开更多回复」，只为阅读，读到 THE END。置顶那条回复数显示 2，没有展开按钮，回复正文没有出现。#413 评论 1 条，没有展开，读到 THE END。#418 评论 2 条，没有展开按钮，读到 THE END。没有点赞、评论、关注、发布。
+#397 发球后衔接只 `catalog_only`。#403 切🎾 按切削只 `catalog_only`。#411 直臂击球没有击球点 / timing / power，不单标。#414 反拍、#425 女双反只 `catalog_only`。#416 平台式发球两脚站位是发球标题，两脚不单标脚。#422 拉球不是引拍，只 `catalog_only`。核心力量、花絮、球场、招募不单标。本批没有再遇已深看 id，无指回新开。2026-10-24 #398、#413、#418、#421、#424、#426 已逐条打开并 **transcribed**。本批 6 条 pending 已全部 transcribed（#398 #413 #418 #421 #424 #426）。打开的是主页路径，页面落到同 token 的 explore。#398 点过「展开 1 条回复」「展开 7 条回复」「展开 2 条回复」和一次「展开更多回复」，只为阅读，读到 THE END。置顶那条回复数显示 2，没有展开按钮，回复正文没有出现。#413 评论 1 条，没有展开，读到 THE END。#418 评论 2 条，没有展开按钮，读到 THE END。#421 评论区是「这是一片荒地点击评论」，没有「展开」，没有「- THE END -」。#424 评论 2 条，没有展开按钮，读到 THE END。#426 评论 2 条，没有展开按钮，读到 THE END。没有点赞、评论、关注、发布。
 
 进度：已入目录 **426**。页面「笔记」计数仍约 362，时间线长于计数（本次下滚停在 data-index 558，无「没有更多」文案）。本批之后未到尽头。
 
@@ -788,12 +791,12 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 418 | 这个正手我满意 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/648011190000000013003d3c?xsec_token=AB6xgAXm3Q56XzhzVM8NNvFbNV1BUWc8bKzhsKYLBGB1I=&xsec_source=pc_user | **transcribed** `video_fh_satisfied_64801119.md` |
 | 419 | 法网冠军王欣瑜赛前训练集锦 | 赛前 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6478a9de0000000013012deb?xsec_token=ABBAcVEbswAQBZAYKJhfh5ceoEP35kWnFyUFAmTZLO3Iw=&xsec_source=pc_user | catalog_only |
 | 420 | 学球20小时的女孩考试 | 考试 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6475f1cf0000000013035b35?xsec_token=ABzMkQrRR_xlD9tsX8NaeNPrpZDTyPikwpOjha0su1cYA=&xsec_source=pc_user | catalog_only |
-| 421 | 再次欣赏德约科维奇的脚步 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6474a3720000000027002bb3?xsec_token=ABi0Byh6QDKEq7ltgCNtxxXvLquOUnq3Wm31vYH9lRHLg=&xsec_source=pc_user | pending_A-E |
+| 421 | 再次欣赏德约科维奇的脚步 | 脚步 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6474a3720000000027002bb3?xsec_token=ABi0Byh6QDKEq7ltgCNtxxXvLquOUnq3Wm31vYH9lRHLg=&xsec_source=pc_user | **transcribed** `video_djokovic_footwork_6474a372.md` |
 | 422 | 8.0的拉球，novak | 拉球 · 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/646f771d000000001300d36f?xsec_token=ABHE4MlY2xMKy6FsSaf4ygo8xbnTRrkXTRTkQtnULqmhw=&xsec_source=pc_user | catalog_only |
 | 423 | 各地各个不同的网球角色 | 花絮 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/646ee7d20000000011010f5f?xsec_token=ABQsdXAf3WEF98pN1csuHcKBDnYzi8KL5zOxQ8QaKU5Lo=&xsec_source=pc_user | catalog_only |
-| 424 | novak tennisceter送给初学者的正手视频 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6469748c000000002700381c?xsec_token=ABsduAQtosmkgMOc-X-4SG0FqQqT-nxfIzHFuHUJf37v4=&xsec_source=pc_user | pending_A-E |
+| 424 | novak tennisceter送给初学者的正手视频 | 正手 · 正手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6469748c000000002700381c?xsec_token=ABsduAQtosmkgMOc-X-4SG0FqQqT-nxfIzHFuHUJf37v4=&xsec_source=pc_user | **transcribed** `video_novak_beginner_fh_6469748c.md` |
 | 425 | 女双反的常见问题，你也是这样吗 | 双反 · 反手 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6464c1dc000000001300a246?xsec_token=ABPvPwfZgHslwhOlV4fDacXwO0BPKnYWfh3thox8R3SNA=&xsec_source=pc_user | catalog_only |
-| 426 | 网球脚步，今天来一组小梅杰的脚步训练视频 | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/645ceb5100000000130137a3?xsec_token=ABxxzfHbsfA3-S3uXiNDjB4OijVIAEgjihLSTdFopbIds=&xsec_source=pc_user | pending_A-E |
+| 426 | 网球脚步，今天来一组小梅杰的脚步训练视频 | 脚步训练 · 脚步 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/645ceb5100000000130137a3?xsec_token=ABxxzfHbsfA3-S3uXiNDjB4OijVIAEgjihLSTdFopbIds=&xsec_source=pc_user | **transcribed** `video_medvedev_footwork_645ceb51.md` |
 
 下一条（未入上表）：`645b10e6` 德约陪练Marko展示一下平击发球和旋转发球。再下：`6459e91f` 网球要切得平，职业运动员示范给你看。主页在本批之后未到尽头；再往下滚 data-index 停在 558，未见「没有更多」。
 
