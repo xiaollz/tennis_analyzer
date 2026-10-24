@@ -28,6 +28,7 @@
 > **2026-10-24 Batch C 第四刀**：切削留角度、接发看抛球、发紧打大目标、高压手扔向旁边、低反手沉膝，都是范围旁支，不挂正手粗枝。`Ibkq-yBteGc` 是 deep-with-gap，口令沿用低反手那期，不另编机制。下刀和由低到高不写成正手降拍。接发的分腿不改写等球（BOOK:p.75）。内旋、slap 不升口令。屏气是错例。`XjJHA91HDbU` 是 holdout。不升粗枝，不改成肩或胸先于髋。场上主句不变。不进 tree evidence。不碰 `E_zmENJIj4g`、`m1NBdd3Bigg`、`FjjvhNbk3q4`。
 > **2026-10-24 Batch C 第五刀**：发球先进阶到肩能抽出去、手不朝目标扔、反手直线换线路、关键分紧张留在能打，都是范围旁支，不挂正手粗枝。发球先别管腿，不改写正手髋先（BOOK:p.83 / p.117）。向下抽和球往下走不写成正手降拍。内旋、外旋、slap 不升口令。coil 不升成 p.119 核心。看抛球不改写等球（BOOK:p.75）。`MWjBfarwNlA`、`boMJDzuFhM4` 是 deep-with-gap。`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注不得进树。`MWjBfarwNlA` 是 holdout。不升粗枝，不改成肩或胸先于髋。场上主句不变。不进 tree evidence。不碰 `E_zmENJIj4g`。
 > **2026-10-24 Batch C 收尾**：`E_zmENJIj4g` 不按 15 记发球逐人写。对角拉开、脊柱弹簧、臂槽跟肩、眼睛决定能转开多少、手扔向另一边发球区、腿是后加的，都是发球范围旁支。coil 不升成正手粗枝。若读成肩先于髋，书 p.83 / p.117 赢。p.119 仍是旁支。旋前不升口令。髋 pop、脚更朝前不写成送髋。发完落地准备不改写等球（BOOK:p.75）。不升粗枝，不改成肩或胸先于髋。场上主句不变。不进 tree evidence。Batch C pending 0。
+> **2026-10-24 视觉补漏**：七期无字幕短片都是 deep-with-gap，不编对白，不升口令。`dYPv0QfFrsU`、`6j33LJfl46s` 只交叉引用粗枝 1 的接触叶子和 Am8、5Kd。肩胛本身看不出来。若读成肩先于髋，书 p.83 / p.117 赢。`97vo-kFis6c` 是发球范围旁支。`dnNOOornvek` 是反手范围旁支。`Cwc4YcKFZrU`、`risP4qTirj8`、`XF17hgRlccw` 是示范片，不挂机制。不改成肩或胸先于髋。场上主句不变。不进 tree evidence。全库 pending 0、blocked 0。
 
 ---
 
@@ -96,6 +97,7 @@ flowchart TD
   S11["范围旁支 2026-10-24 Batch C 第四刀：切削角度（NEp）<br/>接发看抛球（V-Qk）<br/>发紧打大目标（w1）<br/>高压手扔向旁边（Xj holdout）<br/>低反手沉膝（QX）<br/>9 秒低反手缺口（Ibkq）<br/>不挂正手粗枝"]
   S12["范围旁支 2026-10-24 Batch C 第五刀：发球先抽肩（m1）<br/>发球手不朝目标（Fjj）<br/>反手直线换向（MWj holdout gap）<br/>紧张留在能打（bo gap）<br/>不挂正手粗枝"]
   S13["范围旁支 2026-10-24 Batch C 收尾：15 记发球的六块（E_zm）<br/>对角拉开不升 coil 核心<br/>臂槽跟肩；旋前不升口令<br/>眼睛决定能转开多少<br/>腿是后加的；落地准备不改写 p.75<br/>不挂正手粗枝"]
+  S14["范围旁支 2026-10-24 视觉补漏：无字幕 7 期<br/>肩胛两期只交叉引用接触叶子<br/>发球短片与反手示范不挂正手<br/>正手三期是示范，不挂机制<br/>deep-with-gap；不升口令"]
   B1 --> L14["叶：小臂往上抬 / 往上兜<br/>视频 ui holdout / 用户自述"]
   B1 --> L15["叶：象征性蹬髋；禁用送髋"]
   B1 --> L16["旁支：链内过早开胸 / 肩抢先<br/>（从原 B2 混入项拆出）"]
@@ -114,7 +116,7 @@ flowchart TD
 ```
 
 规则：
-- 粗枝只有这两根。脚钉死、随挥缠肩、小臂上抬、击球早晚都是**叶子或上游 / 下游**，不能和粗枝平级。`S6` 是发球范围旁支，不挂正手粗枝，也不是第三根粗枝。`S8` 是 Batch C 第一刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S9` 是 Batch C 第二刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S10` 是 Batch C 第三刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S11` 是 Batch C 第四刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。接发的分腿不改写 BOOK:p.75，也不新开 B2 叶子。`S12` 是 Batch C 第五刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。发球先别管腿不改写正手髋先。看抛球不改写 BOOK:p.75，也不新开 B2 叶子。`S13` 是 Batch C 收尾的发球范围旁支，同样不挂正手粗枝，也不是第三根粗枝。片中的 coil 不升成 p.119 核心。落地准备不改写 BOOK:p.75，也不新开 B2 叶子。`L28` 是粗枝 2 的旁注，只说落地前已经认出方向，不改写 BOOK:p.75，也不是新的时机粗枝。`G7` 是动画短片的缺口，不挂粗枝。`mOFtt9PllI0` 的发球一句写在文字里，不新开节点。站得很深也不新开 B2 叶子。
+- 粗枝只有这两根。脚钉死、随挥缠肩、小臂上抬、击球早晚都是**叶子或上游 / 下游**，不能和粗枝平级。`S6` 是发球范围旁支，不挂正手粗枝，也不是第三根粗枝。`S8` 是 Batch C 第一刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S9` 是 Batch C 第二刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S10` 是 Batch C 第三刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。`S11` 是 Batch C 第四刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。接发的分腿不改写 BOOK:p.75，也不新开 B2 叶子。`S12` 是 Batch C 第五刀的范围旁支，同样不挂正手粗枝，也不是第三根粗枝。发球先别管腿不改写正手髋先。看抛球不改写 BOOK:p.75，也不新开 B2 叶子。`S13` 是 Batch C 收尾的发球范围旁支，同样不挂正手粗枝，也不是第三根粗枝。片中的 coil 不升成 p.119 核心。落地准备不改写 BOOK:p.75，也不新开 B2 叶子。`S14` 是无字幕视觉补漏的范围旁支和示范缺口，不挂正手粗枝，也不是第三根粗枝。肩胛两期只交叉引用接触叶子，不升口令。发球短片和反手示范不改写髋先、等球或 p.119。`L28` 是粗枝 2 的旁注，只说落地前已经认出方向，不改写 BOOK:p.75，也不是新的时机粗枝。`G7` 是动画短片的缺口，不挂粗枝。`mOFtt9PllI0` 的发球一句写在文字里，不新开节点。站得很深也不新开 B2 叶子。
 - coil / 髋肩反向张力：叶子或旁支增强，**不是**粗枝 1 的唯一核心。2026-10-24 的「感知张力不感知运动」是另一条旁支：它讲体感，不把 coil 升成核心。
 - 链内过早开胸 / 肩抢先：归粗枝 1，**不要**和粗枝 2「等球」混成一条。
 - 粗枝之间的虚线是推断，不是证据。
@@ -181,6 +183,7 @@ flowchart TD
 
 - **Am8j1Zw5KrE（holdout）**：接触区的最后一环是肩内收，上臂同时转向内（0:58）。0:21 是拉过身体，不写成推肘。5:58 慢打可以只用这一环做干净接触；6:12 后髋 uncork 才加上速度。速度环仍是髋先。详注 `SRC-FTT-Am8j1Zw5KrE_repass_2026-10-24.md`。
 - **5KdScDKxVSI（holdout）**：接触是胸肱角关上（0:05、3:05）。2:29 和 3:49「可以不转」与书冲突，**书赢**。3:56 自己把后腿和躯干放回接触上游。3:12、4:47 的 push 只记录，不写成推肘。详注 `SRC-FTT-5KdScDKxVSI_repass_2026-10-24.md`。
+- **无字幕交叉引用（2026-10-24 视觉补漏）**：`dYPv0QfFrsU`、`6j33LJfl46s` 没有对白。片上有 WITHOUT / WITH SCAPULAR ACTIVATION，以及 SCAPULAR GLIDE 和沿上臂的箭头。肩胛本身看不出来。只交叉引用这一叶子，不升口令，不新开叶子。若读成肩先于髋，**书 p.83 / p.117 赢**。详注 `SRC-FTT-blocked-visual-7_repass_2026-10-24.md`。
 - **JIMgI3jiVns**：接触在这个人内旋刚开始（0:14），大部分滚动在接触后（3:03）。没有客观接触点（3:58）。静帧只认出人和肘的远近，不证明滚动起点。不改成肩先于髋。详注 `SRC-FTT-JIMgI3jiVns_repass_2026-10-24.md`。
 - **xLs469ZVMPU**：髋的转动要开始再被停住（0:57）。右腿向后、左腿向上、前脚在接触时蹬住，是三种刹车。1:11「fire that right hip into the shot」只记录，禁止送髋。和 UB6 的短终点同向。BOOK:p.84 的两脚钉死不和第三种刹车合成一句。详注 `SRC-FTT-xLs469ZVMPU_repass_2026-10-24.md`。
 - **PwkGLkRm73o**：0:24 旋转没穿过肩。0:49 手臂可以不走低到高，拍头仍然可以。1:05 的 supinate / pronate 只作知识。7:12 的高到低是手臂路径，不写成降拍。11:10 能量仍从髋穿过肩；不先叫转髋，是因为肩这一环没接上。详注 `SRC-FTT-PwkGLkRm73o_repass_2026-10-24.md`。
@@ -350,6 +353,20 @@ flowchart TD
 - **手扔向另一边。** 29:40 心里已经在朝球挥，是出拍已经记得，不改写 p.75。30:43 手扔向哪里。30:45 才是另一边发球区的中间。30:58 内旋让球偏到左侧，不升口令。和 Xj、Fjj、m1 同侧。不写成正手降拍。
 - **腿是后加的。** 25:34 以上身为主。25:37 腿再加 10% 到 20%。上身不稳，腿的力进不了臂。**不改写正手髋先，书 p.83 / p.117 赢**。42:40 落地就准备好。42:54 不必跳很多次。不改写 p.75。和 m1、FOmz、BbGz 只交叉引用。详注 `SRC-FTT-E_zmENJIj4g_repass_2026-10-24.md`。
 
+### 旁支：2026-10-24 视觉补漏（无字幕 7 期，仍不改上面的一句话）
+
+七期都没有可用字幕。按 360p 抽帧，不编对白，不另写练习口令。全部 deep-with-gap。**不升成新粗枝，不改成肩或胸先于髋。** 不新开时机粗枝，不改写 BOOK:p.75。coil 不升成 p.119 核心。场上主句仍是「肩往前、髋被往后拽」。`Cwc4YcKFZrU`、`97vo-kFis6c` 是 holdout，不进 tree evidence。其余五期也都不进树。
+
+- **dYPv0QfFrsU**：片头字 WITH/WITHOUT SCAPULAR ACTIVATION。约 2 秒 WITHOUT，臂伸开、肘离躯干较远。约 6.5 秒 WITH，肘更靠近身侧，拍在胸前碰到球。肩胛看不出来。只交叉引用接触叶子和 Am8、5Kd。
+- **6j33LJfl46s**：约 1.5 秒字是 SCAPULAR GLIDE，箭头沿上臂。约 4.5 秒拍在身前的球上。肩胛滑了没有，看不出来。同一条交叉引用，不升口令。
+- **Cwc4YcKFZrU（holdout，示范片）**：多记正手，触球在身前。23 秒片尾字 the forehand is not a thing of the past。不挂机制。
+- **risP4qTirj8（示范片）**：篮筐边的手抛正手。11 秒球在空中。27 秒拍在身前的球上。不改写 p.75。
+- **XF17hgRlccw（示范片）**：约 2.5 秒字是 PERFECT CONTACT，拍贴在身前的球上，肘还弯着。perfect 不是量出来的标准。不挂机制。
+- **97vo-kFis6c（holdout，发球范围旁支）**：片头和片尾字是 DISGUISED SERVE。约 3.5 秒拍在头侧，球在头前上方。伪装在哪看不出来。不挂正手。
+- **dnNOOornvek（反手范围旁支）**：0 秒片头字 Retired WTA Pro Still Ripping Backhands。7 秒双手在拍上，拍在身前碰到球。46 秒片尾字 the backhand is not a thing of the past。不另写挥法。若读成正手降拍，**书 p.92 赢**。
+
+详注 `SRC-FTT-blocked-visual-7_repass_2026-10-24.md`。
+
 **两个「back together」不要混**：
 - 书 p.111「back together, forward together」指**上半身**（双臂 + 胸）作为整体转离、转回，是正面提示；0m3BMfDDShI@6:01 的 unit swing 是这句；
 - 6ak4@5:21 和 ui@2:43 的「back together, front/forward together」指**髋和肩**一起走，是负面例子 / 防误用。旧注把 6ak4 收成 @5:05，那是 "send your right hip through" 附近的约数。
@@ -518,6 +535,12 @@ FTT 出处（视频 / holdout 知识；补充，不压过书）：
 | 缺口：反手直线换向（MWj，holdout，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂正手粗枝；不新开叶子名 | backhand down the line 字样、反手挥到身前能看见；0:18 叠字是 cross court | 挥法不编。很重不写成手臂发力。不改写 p.75 |
 | 缺口：紧张留在能打（bo，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂正手粗枝；不新开叶子名 | 标题字、红土触球、双手举过头顶能看见；握拍和屏气看不出 | 屏气、死握是错例。不另写击球口令。沿用 w1 |
 | 范围旁支：15 记发球的六块（E_zm） | 无新 OBS；不进 tree evidence；不挂正手粗枝；不新开叶子名 | ABDOMINAL X、PRONATION IS NOT IMPORTANT、PURE DEXTRAL PINPOINT 字样能看见；髋 pop 和落地准备不在对应那一张 | coil 不升 p.119。旋前不升口令。pop 不写成送髋。先上身后腿不改写 p.83。落地准备不改写 p.75 |
+| 交叉引用：肩胛标签（dYPv、6j33，deep-with-gap） | 无新 OBS；不进 tree evidence；不新开叶子；无字幕 | WITHOUT / WITH、SCAPULAR GLIDE 和箭头能看见；肩胛本身看不出 | 不升口令。若读成肩先，p.83 / p.117 书赢 |
+| 示范片：退役正手（Cwc，holdout，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂机制；无字幕 | 身前触球、片尾 the forehand is not a thing of the past 能看见 | 不编人名。不写成降拍 |
+| 示范片：手抛正手（risP，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂机制；无字幕 | 篮筐、空中的球、身前触球能看见 | 不改写 p.75。不编喂球速度 |
+| 示范片：一次身前触球（XF17，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂机制；无字幕 | PERFECT CONTACT 字样、拍贴在球上、肘还弯着能看见 | perfect 不是测量。不写成伸肘 |
+| 范围旁支：伪装发球（97vo，holdout，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂正手粗枝；无字幕 | DISGUISED SERVE 字样、拍在头侧、落地进场能看见 | 伪装看不出来。不补旋前或降拍。不改写 p.75 |
+| 范围旁支：反手示范（dnNOO，deep-with-gap） | 无新 OBS；不进 tree evidence；不挂正手粗枝；无字幕 | 片头字、双手在拍上、片尾 the backhand is not a thing of the past 能看见 | 不另写挥法。不写成推肘或降拍 |
 | 准备转离幅度 | OBS-08 | ✅ | — |
 | 触球时髋是否已朝网 | OBS-09 | ✅ | 开放站位下要结合 OBS-25 读 |
 | 骨盆在前挥中是否减速 | OBS-71 | 实测 3/3 unclear | 需更高帧率或侧面 |
@@ -614,6 +637,7 @@ FTT 出处：
 22. 2026-10-24 Batch C 第四刀的六期也不单开训练清单，不替换场上主句。剁、Knife Down、lean in、fire、非持拍手拉开、看抛球、分腿、push、冻结对抗、屏气、完整挥拍、内旋、slap、直线扔、press、shove、extend、由低到高、髋折，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。接发的分腿不改写等球。`Ibkq-yBteGc` 不另写练习口令。`XjJHA91HDbU` 继续 holdout。不碰 `E_zmENJIj4g`、`m1NBdd3Bigg`、`FjjvhNbk3q4`。
 23. 2026-10-24 Batch C 第五刀的四期也不单开训练清单，不替换场上主句。9090、pressing、push、扣腕、向下抽、往上扔、lean in、先别管腿、内旋、外旋、slap、生日帽、左手 press、髋朝前、hip pop、coil、看抛球、上背拉拍、直线相持、死握、屏气，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。发球先别管腿不改写正手髋先。看抛球不改写等球。`MWjBfarwNlA`、`boMJDzuFhM4` 不另写挥拍口令。`MWjBfarwNlA` 继续 holdout。`m1NBdd3Bigg`、`FjjvhNbk3q4` 旧注不得进树。不碰 `E_zmENJIj4g`。
 24. 2026-10-24 Batch C 收尾的 `E_zmENJIj4g` 也不单开训练清单，不替换场上主句。coiling、abdominal X、hip pop、胸椎伸展、侧翻、臂槽、旋前、内旋、外旋、伸肘、抄费德勒、脚更朝前、往左倒、手扔向另一边发球区、腿再加一成到两成、落地准备，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘或送髋。coil 不升成正手核心。旋前不升口令。先上身后腿不改写正手髋先。落地准备不改写等球。Batch C pending 0。
+25. 2026-10-24 视觉补漏的七期无字幕短片也不单开训练清单，不替换场上主句。WITH/WITHOUT、SCAPULAR GLIDE、PERFECT CONTACT、DISGUISED SERVE、the forehand is not a thing of the past、the backhand is not a thing of the past，都只留在来源稿里，不写成推肘、降拍、旋后、伸肘、送髋或肩胛口令。肩胛两期只交叉引用接触叶子。发球和反手不挂正手粗枝。正手三期不挂机制。不改写髋先、等球或 p.119。全库 pending 0、blocked 0。
 
 ## 附：辅助视频叶子（2026-10-22）— 5xcIshgCd-E（TPA tennis / Tom Allsopp，非 FTT）
 - 挂粗枝 1（髋没先启动 → 手臂代偿）。要点：「hips first, arm second」@4:25；「not the arm's turn yet」@2:13；「slow enough take back … fire something else before the arms」@2:54。
