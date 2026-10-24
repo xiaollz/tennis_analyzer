@@ -57,6 +57,8 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | https://www.xiaohongshu.com/explore/69a97d17000000001d012586?xsec_token=ABkxgEx5HhYrLfwbNkyi5MucXKF5f32AdKBcbV3POlmSU=&xsec_source=pc_user （= 目录 #77） | 闷声引拍 · 软网侧方贴着向前 / 远离后背 | **transcribed** | `video_net_outside_69a97d17.md` |
 | https://www.xiaohongshu.com/explore/699945c2000000001b01c6a2?xsec_token=ABysNpOUbfGL3mU2IIlYUNNoT1dpfK30JWnbh1FMGoq5E=&xsec_source=pc_user （= 目录 #81） | 初学者脚步 · X 不能是最后一步 / 转髋挥拍 | **transcribed** | `video_beginner_feet_699945c2.md` |
 | https://www.xiaohongshu.com/explore/6964e7ea0000000021032f29?xsec_token=ABx7UenUFMZ10xyhIqVFq02rXvJCQXdsv32wwuQ8gphvI=&xsec_source=pc_user （= 目录 #91） | 击球 timing · keep住 / 早击球 / 侧身 | **transcribed** | `video_whip_timing_6964e7ea.md` |
+| https://www.xiaohongshu.com/explore/691dcb8b000000000d034f91?xsec_token=AByFSk94if1Z292mlyR4jR9eAjgi4DhM3BnKfwwIF3q9U=&xsec_source=pc_user （= 目录 #100） | 击球会晚 · 落地还在移动 / 对方击球同时做好姿势 | **transcribed** | `video_late_contact_691dcb8b.md` |
+| https://www.xiaohongshu.com/explore/68a1dba0000000001d0347fd?xsec_token=ABuSITYPem3ZH3Xm99M05UsUK-G5VdUNShOCx1VOdX_g8=&xsec_source=pc_user （= 目录 #121） | 下肢发力 · 脚尖平行底线 / 开髋只引用 | **transcribed** | `video_lower_body_power_68a1dba0.md` |
 
 ---
 
@@ -130,15 +132,17 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 - `69a97d17…` → transcribed（闷声引拍 · 软网侧方）
 - `699945c2…` → transcribed（初学者脚步 · X / 转髋挥拍）
 - `6964e7ea…` → transcribed（击球 timing · keep住）
+- `691dcb8b…` → transcribed（击球会晚 · 还在移动就是晚了）
+- `68a1dba0…` → transcribed（下肢发力 · 脚尖 / 开髋只引用）
 
 ---
 
 ## 待办
 
 1. ~~补全目录 #3–#32~~（已落档）。~~#17、#32 已深看~~。
-2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 已 **transcribed**（`video_drophead_hip_67b704e8.md`、`video_wrist_drop_66f56ddf.md`）。本轮不打开 `69479ade`。~~#36–#61 第一/二批 FH 深看已完~~。第三批 #63–#96 已入目录；其中 FH 优先队列（含 #67/#70/#71/#74/#77/#81/#82/#88/#91/#95/#96 等）均已 **transcribed**，**本批 FH pending_A-E 已清**。目录续收从 `69479ade` 起。
+2. 置顶 #1 `67b704e8`、#2 `66f56ddf` 已 **transcribed**（`video_drophead_hip_67b704e8.md`、`video_wrist_drop_66f56ddf.md`）。~~#36–#61 第一/二批 FH 深看已完~~。第三批 #63–#96 已入目录；其中 FH 优先队列（含 #67/#70/#71/#74/#77/#81/#82/#88/#91/#95/#96 等）均已 **transcribed**，**第三批 FH pending_A-E 已清**。第四批 #97–#126 已入目录（从 `69479ade` 起）。本批曾标 pending_A-E 的：#100、#105、#114、#116、#121、#122。其中 #100、#121 本轮已 **transcribed**。仍 pending：#105、#114、#116、#122。降拍头标题（#99、#115）只留原文，不标待深看。
 3. 将 #3 `6adb2a3c` stub 升为正式深看。
-4. ~~下一批从 `6a104c2f`~~ 第三批已收到 #96 `69494a96`。主页合计约 362，已入目录 **96**。下一条未入表：`69479ade`（发好球的前提当然是抛好）。还剩约 266。
+4. ~~下一批从 `6a104c2f`~~ ~~第三批收到 #96~~。第四批已收到 #126 `6893182a`。主页合计约 362，已入目录 **126**。下一条未入表：`68920b7f`（最深刻的意识和脚步让你水平飙升）。还剩约 236。
 5. 不改 tree / frozen / golden；不把本目录材料写入中性 Gemini 提示词。
 
 ---
@@ -227,4 +231,45 @@ https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf?xsec_token=ABM
 | 95 | 对于转髋的理解和使用predrag教练明确指示 | 转髋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/694a84100000000019024f31?xsec_token=ABBAmXtNr65QbWmHjFiijJyUdREdI_3Opo0eRS7NwpSaY=&xsec_source=pc_user | **transcribed** `video_hip_turn_694a8410.md` |
 | 96 | 击球power哪里来怎么练？看完就懂 | 击球力量来源 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69494a96000000000d03d55f?xsec_token=ABxF9YBwRZIjkyrUjZLvewv8bkB0Ud0wW0qwIdsD604is=&xsec_source=pc_user | **transcribed** `video_power_from_hip_69494a96.md` |
 
-下一条（未入上表，滚动时已见到，留给下一批开头）：`69479ade` 发好球的前提当然是抛好，怎么练？再下几条也见过但未入表：`6946a7dc` 一个细节让你击球丝滑；`694166c7` 深圳集训营 automatic 降拍头；`691dcb8b` predag 告诉你为啥击球会晚了。
+下一条已收入第四批 #97：`69479ade` 发好球的前提当然是抛好，怎么练？
+
+## 第四批 30 条（#97–#126，从 `69479ade` 起）
+
+薯片 2026-10-24。主页「笔记・362」。置顶 2 条仍在第一批（页面 data-index 0/1 与目录 #1/#2 对调，从 data-index 2 = 目录 #3 起对齐；本批 data-index 96–125 = 目录 #97–#126）。从第三批末条 `69494a96`（#96）的下一条 `69479ade` 起，按主页从上到下（新→旧）再收 30 条。一句话来自封面标题，目录当时未逐条打开。随后只打开 #100、#121 做了 A–E（文案 + 烧录大字，未听写口播）。标题里明确是正手、动力链、髋、脚/脚步、引拍、击球点、击球 timing / 节奏、击球 power / 下肢发力的标 **pending_A-E**。反手、发球、抛球、开营、花絮只 `catalog_only`。降拍头 / 掉拍头只保留教练标题原文，不标待深看，也不当我方 cue。
+
+进度：已入目录 **126 / 约 362**。还剩约 236 条未入目录。
+
+| # | 标题 | 一句话/类型 | 完整链接 | A–E |
+|---|---|---|---|---|
+| 97 | 发好球的前提当然是抛好，怎么练？ | 抛球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69479ade000000001b0223cf?xsec_token=ABIP1gIsfQA-f8GnvJRspEIESaJDnlXORXftJJkLwMKU4=&xsec_source=pc_user | catalog_only |
+| 98 | 真的不要多，一个细节让你击球丝滑 | 击球丝滑 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6946a7dc000000000d037a4e?xsec_token=AB3cu-z-vYCDvbvT37Rv4wuvGrn--q5CphaCUB6FhvZDQ=&xsec_source=pc_user | catalog_only |
+| 99 | 深圳集训营之automatic 降拍头 | 降拍头 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/694166c7000000001b025111?xsec_token=ABReKtmz_SavCzZHXKHjAcSx_M6xOLSiPbNVDtiCzJaFE=&xsec_source=pc_user | catalog_only |
+| 100 | predag教练告诉你为啥击球会晚了 | 击球会晚 · timing · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/691dcb8b000000000d034f91?xsec_token=AByFSk94if1Z292mlyR4jR9eAjgi4DhM3BnKfwwIF3q9U=&xsec_source=pc_user | **transcribed** `video_late_contact_691dcb8b.md` |
+| 101 | 新手如何控制手腕？100%断绝翻拍 | 手腕翻拍 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6919b33f000000001b033a58?xsec_token=ABBadV8a3YqP49JwtXqCxhEl-J31_e_ZolYcpE19ViZzI=&xsec_source=pc_user | catalog_only |
+| 102 | predag教练谈永远的击球重心问题 | 击球重心 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69187e4a000000001b030755?xsec_token=ABq2jj3zNEOEuPGt9c7GJpup_F_-RqESg4Auh_LTy4EQ0=&xsec_source=pc_user | catalog_only |
+| 103 | 90%初学者会出现的问题，一招解决 | 初学常见问题 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/69173540000000001b0270ec?xsec_token=AB7qrEKldYmHUTgVQOYIdRELNdGRICKQfBywTAB8mxjeA=&xsec_source=pc_user | catalog_only |
+| 104 | 金秋11月深圳周末网球豪华版开营 | 集训开营 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6911e184000000000300d835?xsec_token=ABjBb8GivLe2Z4UYjIsdeWxVMzvoOE1SmVME6egdMB3VA=&xsec_source=pc_user | catalog_only |
+| 105 | 快围观6位职业球员正手🈶你爱的 | 职业球员正手 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68eabc5e000000000301d254?xsec_token=ABGafxZ4re2pHgYGGGf1wYjsNKV6AAR8XmGmxqMaFqr2M=&xsec_source=pc_user | pending_A-E |
+| 106 | 要成为好球员先搭建网球意识 | 网球意识 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68e7b712000000000302c1d0?xsec_token=ABF-6EnsGun2iDC8-3j-PexprpLEyOgrPx5WXZ_XxxNlU=&xsec_source=pc_user | catalog_only |
+| 107 | 大满贯得主教练网球细节提示一 | 细节提示 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68da91a3000000001301fb3d?xsec_token=ABPx5aAtDERJ3IZS5HHgza_cpcgdYVqqUedchO8SgaxuQ=&xsec_source=pc_user | catalog_only |
+| 108 | 反手腿部发力细节，一定不能错 | 反手腿部发力 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68d7ec3f000000001302a7cd?xsec_token=ABVuo79nXyaX4e7EBDfGmAgT2g830zb4UQeBwmFexhOnE=&xsec_source=pc_user | catalog_only |
+| 109 | 收拍必修，这是爆球发力的重要组成 | 收拍发力 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68d4e4a4000000001400af5b?xsec_token=ABPlwemzIcfdxn1QOK5BDS98Y8gBLfdSugM5ZKYEsyxsA=&xsec_source=pc_user | catalog_only |
+| 110 | 正反手好的框架包含哪些细节呢？ | 正反手框架 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68cd4a9d00000000130352c2?xsec_token=ABxO-pz-e7n3BcyV6NonjwZ2eNy1zXBVcD9DraJYzKW1E=&xsec_source=pc_user | catalog_only |
+| 111 | 独家喷水瓶找球，简单易学上手快 | 喷水瓶找球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68c9666b000000001301766e?xsec_token=AB5azFPd3BKSUL0-6RJPOS0UB2jJRuLT5mD_oWUNO0U2M=&xsec_source=pc_user | catalog_only |
+| 112 | 🐶生高光，有趣 | 花絮 · 其它 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68c575df000000001d03577e?xsec_token=ABHS19FS7PyFczdfU44JMjidkf01jxgu_KiIZM805_QWM=&xsec_source=pc_user | catalog_only |
+| 113 | 不想打球掉手腕，老老实实用鞭子练 | 掉腕用鞭 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68becf3a000000001d01eefd?xsec_token=ABgoqrvaxl8wQHuTbXI8nvGHm9U8bODLRiPY00bt8rxew=&xsec_source=pc_user | catalog_only |
+| 114 | 超强小臂内旋练习方法（正手必备） | 正手小臂内旋 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68bd8451000000001d028542?xsec_token=AB2pXvxLCPhE0vgmQC4Njzc1bs1j2szCDCdlg9Q_FpInE=&xsec_source=pc_user | pending_A-E |
+| 115 | 降拍头保险，fizzcoco俱乐部承保 | 降拍头 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68b57927000000001d026257?xsec_token=ABkP-njvlM4sJp3CYEETVB4ciRpkyrsYz_IzgsYhnjhr4=&xsec_source=pc_user | catalog_only |
+| 116 | 讲讲在对的时间遇到对的击球节奏 | 击球节奏 · timing · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68b1a739000000001d024c55?xsec_token=AB3fhkt7TrmEkfBx7bsLOMJ-os5M6Z5Oo7fRWTEbNggvQ=&xsec_source=pc_user | pending_A-E |
+| 117 | 能不能改用手臂打球的坏动作，能 | 改掉用手臂 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68adbc62000000001d03bf11?xsec_token=ABrFe9nKsRNReCAIB53hNZNXOx7cBl3hniy-udoFvfhvU=&xsec_source=pc_user | catalog_only |
+| 118 | 给球挤到，职业球员zekic教你一步化解 | 挤到球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68ab1031000000001d02d696?xsec_token=ABZiGtJIc2jxaJBiCubm9Y1Jp_brmKHAA5XPsp66Nt40M=&xsec_source=pc_user | catalog_only |
+| 119 | 发球不是单纯拍不是切轨迹其实这样 | 发球轨迹 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68a6e7ca000000001d02d3e7?xsec_token=ABnzWLsDdy5RUJCHjuybAY9Rl0o7AtaLdeIFs1rRmKg8E=&xsec_source=pc_user | catalog_only |
+| 120 | 没培养出网球的节奏感就及时止损吧 | 节奏感 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68a43f08000000001d023325?xsec_token=ABMTnUoEtuuN1K29PoZY0Dbidc5Hv_DK8hn6KL4HsGTfc=&xsec_source=pc_user | catalog_only |
+| 121 | 很重要学会这个点下肢才会发力 | 下肢发力 · 教学 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/68a1dba0000000001d0347fd?xsec_token=ABuSITYPem3ZH3Xm99M05UsUK-G5VdUNShOCx1VOdX_g8=&xsec_source=pc_user | **transcribed** `video_lower_body_power_68a1dba0.md` |
+| 122 | 小碎步你真的用对了吗？仔细看 | 小碎步 · 脚步 · FH | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/689eeea6000000001d02bf09?xsec_token=ABVFKzv5G1paaAI0fg4OCtqYQ_2luwnEE6oXNMW69wcWI=&xsec_source=pc_user | pending_A-E |
+| 123 | 职业教练教你打出重炮就像呼吸这么简单 | 重炮 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/689c9c1e000000001d02e3dc?xsec_token=ABOuwypsB-FZaZcfZl4migvUrr-GbEr7oiBpyBwif_t48=&xsec_source=pc_user | catalog_only |
+| 124 | 你知道击打球不同部位有不同的效果 | 击球部位 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/689b22ff000000001d02f243?xsec_token=ABDHIF5kbLmiVvRHzJEqO6CdF0h1PZEuMWlrZ-vXSSANk=&xsec_source=pc_user | catalog_only |
+| 125 | 一招能解决三个常犯，你想学吗 | 常犯错误 · 纠错 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6897532a0000000003033cb0?xsec_token=ABAQ7Bvsx0RrnPw0zjIjT1htAt1RUDBnRfe48Gn9zS5Gs=&xsec_source=pc_user | catalog_only |
+| 126 | 用身体打球的诀窍，看明白你就成功 | 用身体打球 · 教学 | https://www.xiaohongshu.com/user/profile/5b415ecb11be1007b44e37bf/6893182a000000000403c8be?xsec_token=AB9bkPPTTHLqbcqWLyVBs0zO-F15sBHGd2T7x85k6qV3I=&xsec_source=pc_user | catalog_only |
+
+下一条（未入上表）：`68920b7f` 最深刻的意识和脚步让你水平飙升。再下：`688f594d` 一定要讲的击球节奏；`688c9f5d` 最难的脚步学习；`68823e8d` 提高击球稳定性必须get到这意识。
