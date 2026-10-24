@@ -42,3 +42,26 @@
 2. *During the backswing, does the hitting-side hip stay in place or move back together with the shoulders?* `hip_stays_or_counters` / `hip_moves_back_with_shoulders` / `unclear`
 3. *Right after contact, does the player keep balance on the planted feet or need a corrective step/foot drop?* `balanced` / `corrective_step` / `unclear`
 均需 promote 流程审核，未入 catalog。
+
+## E. 2026-10-24 画面核对补记
+
+2026-10-21 裁决之后，粗枝 1 的书核心仍是「髋没先启动 / 扭回面向网」（BOOK:p.83 / p.117）。上面 §C 曾建议把粗枝 1 的核心改成「髋肩之间没有反向张力 / 没 coil」。那条建议已被裁决覆盖，不要再按 §C 改核心。coil 仍是书 p.119 的非必需增强。
+
+2026-10-24 用同一份官方自动字幕，加上 watchVideo 画面核对，把 6ak4 收成粗枝 1 的体感旁支：「感知张力不感知运动」。机制不在这里重写，避免和专题各说各的。全文：`SRC-FTT-6ak4ZScH_gc_feel_tension_2026-10-24.md`。树干挂接：`docs/diagnosis/ftt_tree/kinetic_chain_trunk.md` 粗枝 1 该旁支。
+
+画面核对只记交接确认过的四件。时间对齐字幕段起点，不另造画面时间戳：
+
+1. 红皮筋，两端分别当髋锚和肩锚（字幕 1:39 起 "this anchor is the hips and this anchor is the shoulders"）。
+2. 画面叠了文章《The Hip-Shoulder Separation Catastrophe》。字幕没读出标题，只算画面。
+3. 把持拍侧髋往前当目标时皮筋松、两端同去同回（字幕 5:17 起；"back together, front together" 段起点 5:21）。
+4. 前移中被拽、减速，多数球不换向（字幕 7:59 起 "slow down"，8:01 起 "not reverse direction"）。
+
+时间戳更正（以 norm.tsv 段起点为准；上文 A 节是 2026-10-20 的约数，原文不改）：
+
+- 「the same tension that flings your shoulder forward, flings your hip backwards.」段起点 2:39，不是 2:38。
+- 「drive your shoulders forward, hips back」段起点 4:03，不是 3:50。
+- 「back together, front together」段起点 5:21，不是 5:05。5:06 是 "send your right hip through" 这句措辞第一次出现。
+- 「the pelvis does accelerate forward before the shoulders」段起点 7:31，不是 7:28。
+- 感知定律段起点 9:51：「we don't really perceive motion. We perceive tension and thereby acceleration.」张力那半句从 9:54 起。旧注 @9:55 是这半句的约数。
+
+本补记不改 A–D 的原文。ui-RFRdQKRk 仍是 holdout，仍不得进 tree evidence。6ak4 也不进 tree evidence。
